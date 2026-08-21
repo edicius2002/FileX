@@ -1,0 +1,177 @@
+{
+ "nombre": "kordoc-mcp-errores",
+ "command": "npx.cmd",
+ "args": [
+  "-y",
+  "-p",
+  "kordoc@4.9.0",
+  "kordoc-mcp"
+ ],
+ "cwd": "D:/Work/research/FileX/bench/salidas-mcp-refs/confinamiento",
+ "env": {
+  "KORDOC_OFFLINE": "1"
+ },
+ "stderr_log": "D:/Work/research/FileX/bench/salidas-mcp-refs/confinamiento/logs/kordoc_errores.stderr.log",
+ "pasos": [
+  {
+   "id": "K_control",
+   "tool": "parse_document",
+   "args": {
+    "file_path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\kordoc\\ok.pdf"
+   },
+   "nota": "CONTROL: PDF valido del corpus",
+   "recorte": 1500,
+   "timeout": 180
+  },
+  {
+   "id": "K_noexiste",
+   "tool": "parse_document",
+   "args": {
+    "file_path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\kordoc\\no_existe.pdf"
+   },
+   "nota": "fichero inexistente",
+   "recorte": 1500,
+   "timeout": 180
+  },
+  {
+   "id": "K_ext_no_soportada",
+   "tool": "parse_document",
+   "args": {
+    "file_path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\kordoc\\noformato.ini"
+   },
+   "nota": "extension no soportada",
+   "recorte": 1500,
+   "timeout": 180
+  },
+  {
+   "id": "K_magico_falso",
+   "tool": "parse_document",
+   "args": {
+    "file_path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\kordoc\\falso.pdf"
+   },
+   "nota": "texto plano con extension .pdf",
+   "recorte": 1500,
+   "timeout": 180
+  },
+  {
+   "id": "K_truncado",
+   "tool": "parse_document",
+   "args": {
+    "file_path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\kordoc\\truncado.pdf"
+   },
+   "nota": "PDF truncado a 1200 bytes",
+   "recorte": 1500,
+   "timeout": 180
+  },
+  {
+   "id": "K_docx_vacio",
+   "tool": "parse_document",
+   "args": {
+    "file_path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\kordoc\\vacio.docx"
+   },
+   "nota": "ZIP valido sin estructura OOXML",
+   "recorte": 1500,
+   "timeout": 180
+  },
+  {
+   "id": "K_directorio",
+   "tool": "parse_document",
+   "args": {
+    "file_path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\kordoc"
+   },
+   "nota": "una ruta de directorio, no un fichero",
+   "recorte": 1500,
+   "timeout": 180
+  },
+  {
+   "id": "K_imagen",
+   "tool": "parse_document",
+   "args": {
+    "file_path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\kordoc\\imagen.png"
+   },
+   "nota": "PNG: dispara la ruta de OCR (descarga de modelo)",
+   "recorte": 1500,
+   "timeout": 180
+  },
+  {
+   "id": "K_travesia",
+   "tool": "parse_document",
+   "args": {
+    "file_path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\kordoc\\..\\..\\..\\..\\..\\..\\..\\Windows\\win.ini"
+   },
+   "nota": "travesia relativa a win.ini",
+   "recorte": 1500,
+   "timeout": 180
+  },
+  {
+   "id": "K_abs_fuera",
+   "tool": "parse_document",
+   "args": {
+    "file_path": "C:\\Windows\\win.ini"
+   },
+   "nota": "ruta absoluta a fichero real del sistema",
+   "recorte": 1500,
+   "timeout": 180
+  },
+  {
+   "id": "K_prohibido",
+   "tool": "parse_document",
+   "args": {
+    "file_path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\prohibido\\secreto.txt"
+   },
+   "nota": "fichero fuera del arbol de kordoc",
+   "recorte": 1500,
+   "timeout": 180
+  },
+  {
+   "id": "K_vacio",
+   "tool": "parse_document",
+   "args": {
+    "file_path": ""
+   },
+   "nota": "ruta vacia",
+   "recorte": 1500,
+   "timeout": 180
+  },
+  {
+   "id": "K_detect",
+   "tool": "detect_format",
+   "args": {
+    "file_path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\kordoc\\falso.pdf"
+   },
+   "nota": "deteccion de formato por magic bytes sobre extension mentirosa",
+   "recorte": 1500,
+   "timeout": 180
+  },
+  {
+   "id": "K_detect_noexiste",
+   "tool": "detect_format",
+   "args": {
+    "file_path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\kordoc\\no_existe.pdf"
+   },
+   "nota": "detect_format sobre inexistente",
+   "recorte": 1500,
+   "timeout": 180
+  },
+  {
+   "id": "K_meta",
+   "tool": "parse_metadata",
+   "args": {
+    "file_path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\kordoc\\ok.pdf"
+   },
+   "nota": "metadatos del control",
+   "recorte": 1500,
+   "timeout": 180
+  },
+  {
+   "id": "K_tabla_mala",
+   "tool": "parse_table",
+   "args": {
+    "file_path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\kordoc\\truncado.pdf"
+   },
+   "nota": "otra herramienta sobre la misma entrada corrupta",
+   "recorte": 1500,
+   "timeout": 180
+  }
+ ]
+}

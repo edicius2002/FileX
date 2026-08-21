@@ -1,0 +1,89 @@
+{
+ "nombre": "filesystem-escritura",
+ "command": "npx.cmd",
+ "args": [
+  "-y",
+  "@modelcontextprotocol/server-filesystem",
+  "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\permitido"
+ ],
+ "cwd": "D:/Work/research/FileX/bench/salidas-mcp-refs/confinamiento",
+ "env": {},
+ "stderr_log": "D:/Work/research/FileX/bench/salidas-mcp-refs/confinamiento/logs/fs_escritura.stderr.log",
+ "pasos": [
+  {
+   "id": "E1_write_dentro",
+   "tool": "write_file",
+   "args": {
+    "path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\permitido\\escrito_por_mcp.txt",
+    "content": "escrito dentro de la raiz\n"
+   },
+   "nota": "control de escritura dentro de la raiz",
+   "recorte": 1200,
+   "timeout": 60
+  },
+  {
+   "id": "E2_write_fuera",
+   "tool": "write_file",
+   "args": {
+    "path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\prohibido\\escrito_fuera.txt",
+    "content": "NO DEBERIA EXISTIR\n"
+   },
+   "nota": "escritura fuera de la raiz, pero dentro del sandbox",
+   "recorte": 1200,
+   "timeout": 60
+  },
+  {
+   "id": "E3_write_travesia",
+   "tool": "write_file",
+   "args": {
+    "path": "..\\prohibido\\escrito_travesia.txt",
+    "content": "NO DEBERIA EXISTIR\n"
+   },
+   "nota": "escritura por travesia relativa",
+   "recorte": 1200,
+   "timeout": 60
+  },
+  {
+   "id": "E4_mkdir_fuera",
+   "tool": "create_directory",
+   "args": {
+    "path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\prohibido\\dir_nuevo"
+   },
+   "nota": "crear directorio fuera de la raiz",
+   "recorte": 1200,
+   "timeout": 60
+  },
+  {
+   "id": "E5_move_fuera",
+   "tool": "move_file",
+   "args": {
+    "source": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\permitido\\escrito_por_mcp.txt",
+    "destination": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\prohibido\\movido.txt"
+   },
+   "nota": "mover de dentro a fuera de la raiz",
+   "recorte": 1200,
+   "timeout": 60
+  },
+  {
+   "id": "E6_sobrescribe",
+   "tool": "write_file",
+   "args": {
+    "path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\permitido\\dentro.txt",
+    "content": "SOBRESCRITO SIN AVISAR\n"
+   },
+   "nota": "sobrescritura silenciosa dentro de la raiz (lib.ts:167-180)",
+   "recorte": 1200,
+   "timeout": 60
+  },
+  {
+   "id": "E7_verifica",
+   "tool": "read_text_file",
+   "args": {
+    "path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\permitido\\dentro.txt"
+   },
+   "nota": "confirma que E6 destruyo el original",
+   "recorte": 1200,
+   "timeout": 60
+  }
+ ]
+}

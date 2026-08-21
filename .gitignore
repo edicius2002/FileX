@@ -1,0 +1,77 @@
+# Python: local environments, bytecode, and test/tool caches
+.venv/
+.venv-*/
+venv/
+env/
+ENV/
+__pycache__/
+*.py[cod]
+*.so
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# JavaScript package and build artifacts (if root tooling is added)
+node_modules/
+dist/
+build/
+
+# Local configuration and runtime state
+.env
+.env.*
+!.env.example
+.ccb/
+.claude/settings.local.json
+
+# Cloned third-party repositories used as research references
+repos/
+
+# Editor and operating-system artifacts
+.DS_Store
+Thumbs.db
+
+# Benchmark outputs that are regenerable from bench/salidas-referencia/referencia.json
+# (39 exact commands) or from the scripts in bench/scripts/. Each excluded directory
+# keeps a MANIFIESTO.md with name, sha256, size, and the command that rebuilds it:
+# the evidence stays verifiable without versioning the bytes.
+bench/salidas-fase1/
+bench/salidas-fase2/
+bench/salidas-fidelidad/
+bench/salidas-ocrmypdf/pdf/
+bench/salidas-referencia/audio/
+bench/salidas-referencia/datos/
+bench/salidas-referencia/imagen/
+bench/salidas-referencia/pdf/
+bench/salidas-referencia/video/
+
+# ...pero el manifiesto, los logs y los scripts de cada una SI se versionan:
+# son el texto que hace verificable lo excluido.
+!bench/salidas-referencia/referencia.json
+!bench/salidas-fase1/
+!bench/salidas-fase2/
+!bench/salidas-fidelidad/
+bench/salidas-fase1/*
+bench/salidas-fase2/*
+bench/salidas-fidelidad/*
+!bench/salidas-fase1/MANIFIESTO.md
+!bench/salidas-fase2/MANIFIESTO.md
+!bench/salidas-fidelidad/MANIFIESTO.md
+!bench/salidas-fase1/logs/
+!bench/salidas-fase2/logs/
+!bench/salidas-fidelidad/*.md
+!bench/salidas-fidelidad/*.json
+!bench/salidas-fidelidad/*.py
+!bench/salidas-fidelidad/*.sh
+
+# Intermediate rasterizations and scratch conversions produced while measuring.
+**/tmp_corpus/
+**/_scratch/
+
+# Logs are text, cheap, and are the traceability behind every bench report:
+# they are NOT ignored. Only the noisy install dumps are.
+**/pip-install.log
+**/npm-install.log
+bench/clone.log

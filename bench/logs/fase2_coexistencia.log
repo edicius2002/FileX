@@ -1,0 +1,13 @@
+0 · linea base: 2271 MiB
+1 · + whisper large-v3 residente: 5346 MiB
+2 · + docling OCR-GPU en marcha: 6118 MiB
+3 · + NVENC 1080p terminado (rc=0): 7406 MiB
+PICO TOTAL: 7702 MiB   (libre restante: 4586 MiB)  docling_rc=0
+{"evento": "sesion_ort", "modelo": "PP-OCRv6_det_small.onnx", "providers": ["CUDAExecutionProvider", "CPUExecutionProvider"]}
+{"evento": "sesion_ort", "modelo": "ch_ppocr_mobile_v2.0_cls_mobile.onnx", "providers": ["CUDAExecutionProvider", "CPUExecutionProvider"]}
+{"evento": "sesion_ort", "modelo": "PP-OCRv6_rec_small.onnx", "providers": ["CUDAExecutionProvider", "CPUExecutionProvider"]}
+{"evento": "convert", "archivo": "patologico_escaneado.pdf", "chars": 81, "salida": "D:\\Work\\research\\FileX\\bench\\salidas-fase2\\coex_ocrgpu__patologico_escaneado.pdf.txt", "ok": true, "segundos": 0.91, "n": 3, "rango": [0.8, 7.13]}
+{"evento": "convert", "archivo": "escaneado_d1.pdf", "chars": 85, "salida": "D:\\Work\\research\\FileX\\bench\\salidas-fase2\\coex_ocrgpu__escaneado_d1.pdf.txt", "ok": true, "segundos": 0.57, "n": 3, "rango": [0.55, 0.67]}
+{"evento": "convert", "archivo": "escaneado_d2.pdf", "chars": 86, "salida": "D:\\Work\\research\\FileX\\bench\\salidas-fase2\\coex_ocrgpu__escaneado_d2.pdf.txt", "ok": true, "segundos": 0.52, "n": 3, "rango": [0.49, 1.06]}
+{"evento": "convert", "archivo": "escaneado_d3.pdf", "chars": 38, "salida": "D:\\Work\\research\\FileX\\bench\\salidas-fase2\\coex_ocrgpu__escaneado_d3.pdf.txt", "ok": true, "segundos": 0.52, "n": 3, "rango": [0.51, 0.74]}
+4 · tras liberar todo: 2258 MiB

@@ -1,0 +1,103 @@
+{
+  "sdk_mcp": "2.0.0",
+  "resultados": [
+    {
+      "modo": "auto",
+      "pasos": [
+        {
+          "paso": "t_ping",
+          "ms": 249.7,
+          "isError": false,
+          "contenido": [
+            {
+              "type": "text",
+              "text": "pong"
+            }
+          ]
+        },
+        {
+          "paso": "t_roots_resolve",
+          "ms": 21.9,
+          "isError": false,
+          "contenido": [
+            {
+              "type": "text",
+              "text": "{\"protocolo\": \"2026-07-28\", \"roots\": [{\"uri\": \"file:///D:/Work/research/FileX/bench/salidas-sdk-mcp/raiz_srv/sub\", \"name\": \"sub\"}]}"
+            }
+          ]
+        },
+        {
+          "paso": "t_interseca_resolve",
+          "ms": 10.1,
+          "isError": false,
+          "contenido": [
+            {
+              "type": "text",
+              "text": "{\"protocolo\": \"2026-07-28\", \"servidor\": [\"D:\\\\Work\\\\research\\\\FileX\\\\bench\\\\salidas-sdk-mcp\\\\raiz_srv\"], \"cliente\": [\"file:///D:/Work/research/FileX/bench/salidas-sdk-mcp/raiz_srv/sub\"], \"efectiva\": [\"D:\\\\Work\\\\research\\\\FileX\\\\bench\\\\salidas-sdk-mcp\\\\raiz_srv\\\\sub\"]}"
+            }
+          ]
+        }
+      ],
+      "protocolo_negociado": "2026-07-28",
+      "veces_que_el_cliente_respondio_roots": [
+        {
+          "t": 9.029,
+          "n": 1
+        },
+        {
+          "t": 9.043,
+          "n": 1
+        }
+      ]
+    },
+    {
+      "modo": "legacy",
+      "pasos": [
+        {
+          "paso": "t_ping",
+          "ms": 7.0,
+          "isError": false,
+          "contenido": [
+            {
+              "type": "text",
+              "text": "pong"
+            }
+          ]
+        },
+        {
+          "paso": "t_roots_resolve",
+          "ms": 7.0,
+          "isError": false,
+          "contenido": [
+            {
+              "type": "text",
+              "text": "{\"protocolo\": \"2025-11-25\", \"roots\": [{\"uri\": \"file:///D:/Work/research/FileX/bench/salidas-sdk-mcp/raiz_srv/sub\", \"name\": \"sub\"}]}"
+            }
+          ]
+        },
+        {
+          "paso": "t_interseca_resolve",
+          "ms": 8.0,
+          "isError": false,
+          "contenido": [
+            {
+              "type": "text",
+              "text": "{\"protocolo\": \"2025-11-25\", \"servidor\": [\"D:\\\\Work\\\\research\\\\FileX\\\\bench\\\\salidas-sdk-mcp\\\\raiz_srv\"], \"cliente\": [\"file:///D:/Work/research/FileX/bench/salidas-sdk-mcp/raiz_srv/sub\"], \"efectiva\": [\"D:\\\\Work\\\\research\\\\FileX\\\\bench\\\\salidas-sdk-mcp\\\\raiz_srv\\\\sub\"]}"
+            }
+          ]
+        }
+      ],
+      "protocolo_negociado": "2025-11-25",
+      "veces_que_el_cliente_respondio_roots": [
+        {
+          "t": 4.906,
+          "n": 1
+        },
+        {
+          "t": 4.913,
+          "n": 1
+        }
+      ]
+    }
+  ]
+}

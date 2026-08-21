@@ -1,0 +1,512 @@
+{
+  "spec": "bench/salidas-mcp-refs/multimedia/cat_lite.spec.json",
+  "servidor": "ffmpeg-mcp-lite CATALOGO",
+  "llamadas": [],
+  "arranque_frio_ms": 6689.3,
+  "spawn_proceso_ms": 16.4,
+  "handshake_ms": 6672.9,
+  "server_info": {
+    "name": "ffmpeg-mcp",
+    "version": "1.29.0",
+    "protocolVersion": "2025-11-25",
+    "instructions": null
+  },
+  "list_tools_ms": 4.7,
+  "n_herramientas": 8,
+  "herramientas": [
+    {
+      "name": "ffmpeg_get_info",
+      "description": "Get video/audio file metadata using ffprobe.\n\n    Args:\n        file_path: Path to the media file\n\n    Returns:\n        JSON string with media metadata including duration, resolution,\n        codecs, bitrate, and stream information",
+      "annotations": {},
+      "tiene_readOnlyHint": false,
+      "tiene_destructiveHint": false,
+      "tokens_declaracion": 159,
+      "inputSchema": {
+        "properties": {
+          "file_path": {
+            "title": "File Path",
+            "type": "string"
+          }
+        },
+        "required": [
+          "file_path"
+        ],
+        "title": "ffmpeg_get_infoArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "properties": {
+          "result": {
+            "title": "Result",
+            "type": "string"
+          }
+        },
+        "required": [
+          "result"
+        ],
+        "title": "ffmpeg_get_infoOutput",
+        "type": "object"
+      }
+    },
+    {
+      "name": "ffmpeg_convert",
+      "description": "Convert video/audio to a different format.\n\n    Args:\n        file_path: Path to the input media file\n        output_format: Target format (e.g., mp4, mkv, webm, mp3, wav)\n        scale: Optional resolution scale (e.g., \"1280:720\", \"1920:-1\" for auto height)\n        video_codec: Optional video codec (e.g., libx264, libx265, libvpx-vp9)\n        audio_codec: Optional audio codec (e.g., aac, mp3, opus)\n\n    Returns:\n        Path to the converted file",
+      "annotations": {},
+      "tiene_readOnlyHint": false,
+      "tiene_destructiveHint": false,
+      "tokens_declaracion": 359,
+      "inputSchema": {
+        "properties": {
+          "file_path": {
+            "title": "File Path",
+            "type": "string"
+          },
+          "output_format": {
+            "title": "Output Format",
+            "type": "string"
+          },
+          "scale": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Scale"
+          },
+          "video_codec": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Video Codec"
+          },
+          "audio_codec": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Audio Codec"
+          }
+        },
+        "required": [
+          "file_path",
+          "output_format"
+        ],
+        "title": "ffmpeg_convertArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "properties": {
+          "result": {
+            "title": "Result",
+            "type": "string"
+          }
+        },
+        "required": [
+          "result"
+        ],
+        "title": "ffmpeg_convertOutput",
+        "type": "object"
+      }
+    },
+    {
+      "name": "ffmpeg_compress",
+      "description": "Compress a video file to reduce file size.\n\n    Args:\n        file_path: Path to the input video file\n        quality: Compression quality level - \"low\" (smallest file), \"medium\", or \"high\" (best quality)\n        scale: Optional resolution scale (e.g., \"1280:720\", \"1920:-1\" for auto height)\n        preset: Encoding speed preset - faster presets = larger files, slower = smaller files\n\n    Returns:\n        Path to the compressed file",
+      "annotations": {},
+      "tiene_readOnlyHint": false,
+      "tiene_destructiveHint": false,
+      "tokens_declaracion": 341,
+      "inputSchema": {
+        "properties": {
+          "file_path": {
+            "title": "File Path",
+            "type": "string"
+          },
+          "quality": {
+            "default": "medium",
+            "enum": [
+              "low",
+              "medium",
+              "high"
+            ],
+            "title": "Quality",
+            "type": "string"
+          },
+          "scale": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Scale"
+          },
+          "preset": {
+            "default": "medium",
+            "enum": [
+              "ultrafast",
+              "superfast",
+              "veryfast",
+              "faster",
+              "fast",
+              "medium",
+              "slow",
+              "slower",
+              "veryslow"
+            ],
+            "title": "Preset",
+            "type": "string"
+          }
+        },
+        "required": [
+          "file_path"
+        ],
+        "title": "ffmpeg_compressArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "properties": {
+          "result": {
+            "title": "Result",
+            "type": "string"
+          }
+        },
+        "required": [
+          "result"
+        ],
+        "title": "ffmpeg_compressOutput",
+        "type": "object"
+      }
+    },
+    {
+      "name": "ffmpeg_trim",
+      "description": "Trim a video to extract a specific segment.\n\n    Args:\n        file_path: Path to the input video file\n        start_time: Start time (e.g., \"00:01:30\" or \"90\" for 90 seconds)\n        end_time: End time (e.g., \"00:02:00\"). Mutually exclusive with duration.\n        duration: Duration of the clip (e.g., \"30\" for 30 seconds). Mutually exclusive with end_time.\n\n    Returns:\n        Path to the trimmed file",
+      "annotations": {},
+      "tiene_readOnlyHint": false,
+      "tiene_destructiveHint": false,
+      "tokens_declaracion": 307,
+      "inputSchema": {
+        "properties": {
+          "file_path": {
+            "title": "File Path",
+            "type": "string"
+          },
+          "start_time": {
+            "title": "Start Time",
+            "type": "string"
+          },
+          "end_time": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "End Time"
+          },
+          "duration": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Duration"
+          }
+        },
+        "required": [
+          "file_path",
+          "start_time"
+        ],
+        "title": "ffmpeg_trimArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "properties": {
+          "result": {
+            "title": "Result",
+            "type": "string"
+          }
+        },
+        "required": [
+          "result"
+        ],
+        "title": "ffmpeg_trimOutput",
+        "type": "object"
+      }
+    },
+    {
+      "name": "ffmpeg_extract_audio",
+      "description": "Extract audio track from a video file.\n\n    Args:\n        file_path: Path to the input video file\n        audio_format: Output audio format (mp3, aac, wav, flac, ogg, opus)\n        bitrate: Audio bitrate (e.g., \"128k\", \"192k\", \"320k\"). If not specified, uses format default.\n\n    Returns:\n        Path to the extracted audio file",
+      "annotations": {},
+      "tiene_readOnlyHint": false,
+      "tiene_destructiveHint": false,
+      "tokens_declaracion": 282,
+      "inputSchema": {
+        "properties": {
+          "file_path": {
+            "title": "File Path",
+            "type": "string"
+          },
+          "audio_format": {
+            "default": "mp3",
+            "enum": [
+              "mp3",
+              "aac",
+              "wav",
+              "flac",
+              "ogg",
+              "opus"
+            ],
+            "title": "Audio Format",
+            "type": "string"
+          },
+          "bitrate": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Bitrate"
+          }
+        },
+        "required": [
+          "file_path"
+        ],
+        "title": "ffmpeg_extract_audioArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "properties": {
+          "result": {
+            "title": "Result",
+            "type": "string"
+          }
+        },
+        "required": [
+          "result"
+        ],
+        "title": "ffmpeg_extract_audioOutput",
+        "type": "object"
+      }
+    },
+    {
+      "name": "ffmpeg_merge",
+      "description": "Concatenate multiple video files into one.\n\n    Args:\n        file_paths: List of paths to video files to merge (in order)\n        output_path: Optional output file path. If not specified, saves to default output directory.\n\n    Returns:\n        Path to the merged file",
+      "annotations": {},
+      "tiene_readOnlyHint": false,
+      "tiene_destructiveHint": false,
+      "tokens_declaracion": 210,
+      "inputSchema": {
+        "properties": {
+          "file_paths": {
+            "items": {
+              "type": "string"
+            },
+            "title": "File Paths",
+            "type": "array"
+          },
+          "output_path": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Output Path"
+          }
+        },
+        "required": [
+          "file_paths"
+        ],
+        "title": "ffmpeg_mergeArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "properties": {
+          "result": {
+            "title": "Result",
+            "type": "string"
+          }
+        },
+        "required": [
+          "result"
+        ],
+        "title": "ffmpeg_mergeOutput",
+        "type": "object"
+      }
+    },
+    {
+      "name": "ffmpeg_extract_frames",
+      "description": "Extract frames from a video as images.\n\n    Args:\n        file_path: Path to the input video file\n        interval: Extract one frame every N seconds (e.g., 1.0 for one frame per second)\n        count: Total number of frames to extract (evenly distributed). Mutually exclusive with interval.\n        format: Output image format (jpg, png, bmp, webp)\n\n    Returns:\n        Path to the directory containing extracted frames",
+      "annotations": {},
+      "tiene_readOnlyHint": false,
+      "tiene_destructiveHint": false,
+      "tokens_declaracion": 308,
+      "inputSchema": {
+        "properties": {
+          "file_path": {
+            "title": "File Path",
+            "type": "string"
+          },
+          "interval": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Interval"
+          },
+          "count": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Count"
+          },
+          "format": {
+            "default": "jpg",
+            "enum": [
+              "jpg",
+              "png",
+              "bmp",
+              "webp"
+            ],
+            "title": "Format",
+            "type": "string"
+          }
+        },
+        "required": [
+          "file_path"
+        ],
+        "title": "ffmpeg_extract_framesArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "properties": {
+          "result": {
+            "title": "Result",
+            "type": "string"
+          }
+        },
+        "required": [
+          "result"
+        ],
+        "title": "ffmpeg_extract_framesOutput",
+        "type": "object"
+      }
+    },
+    {
+      "name": "ffmpeg_add_subtitles",
+      "description": "Add subtitles to a video file (burn-in/hardcode).\n\n    Args:\n        file_path: Path to the input video file\n        subtitle_path: Path to the subtitle file (SRT, ASS, VTT)\n        style: Subtitle style - \"outline\" (default), \"shadow\", \"background\", or \"glow\"\n        font_size: Font size for subtitles (default: 24)\n        output_path: Optional output file path. If not specified, saves to default output directory.\n\n    Returns:\n        Path to the output video with subtitles",
+      "annotations": {},
+      "tiene_readOnlyHint": false,
+      "tiene_destructiveHint": false,
+      "tokens_declaracion": 347,
+      "inputSchema": {
+        "properties": {
+          "file_path": {
+            "title": "File Path",
+            "type": "string"
+          },
+          "subtitle_path": {
+            "title": "Subtitle Path",
+            "type": "string"
+          },
+          "style": {
+            "default": "outline",
+            "enum": [
+              "outline",
+              "shadow",
+              "background",
+              "glow"
+            ],
+            "title": "Style",
+            "type": "string"
+          },
+          "font_size": {
+            "default": 24,
+            "title": "Font Size",
+            "type": "integer"
+          },
+          "output_path": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Output Path"
+          }
+        },
+        "required": [
+          "file_path",
+          "subtitle_path"
+        ],
+        "title": "ffmpeg_add_subtitlesArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "properties": {
+          "result": {
+            "title": "Result",
+            "type": "string"
+          }
+        },
+        "required": [
+          "result"
+        ],
+        "title": "ffmpeg_add_subtitlesOutput",
+        "type": "object"
+      }
+    }
+  ],
+  "tokens_catalogo": 2322,
+  "n_anotadas": 0,
+  "n_prompts": 0,
+  "prompts": [],
+  "n_recursos": 0,
+  "recursos": []
+}

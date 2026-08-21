@@ -1,0 +1,27 @@
+=================== docling_cpu ===================
+gpu_antes: 2141,12288,0,56  quiet_peak: 6%
+pico_vram_total_MiB=2141 rc=0
+gpu_despues: 2141,12288,5,56
+   patologico_escaneado.pdf 1.8 s  rango [1.77, 6.73]  chars 81 
+   escaneado_d1.pdf 1.62 s  rango [1.59, 1.95]  chars 85 
+   escaneado_d2.pdf 1.61 s  rango [1.58, 1.96]  chars 85 
+   escaneado_d3.pdf 1.59 s  rango [1.56, 1.62]  chars 38 
+  torch_pico: 0.0 MiB
+=================== docling_cuda_ocrcpu ===================
+gpu_antes: 2141,12288,5,56  quiet_peak: 5%
+pico_vram_total_MiB=2968 rc=0
+gpu_despues: 2142,12288,3,59
+   patologico_escaneado.pdf 1.29 s  rango [1.24, 6.85]  chars 81 
+   escaneado_d1.pdf 1.16 s  rango [1.09, 1.57]  chars 85 
+   escaneado_d2.pdf 1.07 s  rango [1.04, 1.33]  chars 85 
+   escaneado_d3.pdf 1.09 s  rango [0.99, 1.32]  chars 38 
+  torch_pico: 698.0 MiB
+=================== docling_cuda_ocrgpu ===================
+gpu_antes: 2142,12288,4,59  quiet_peak: 4%
+pico_vram_total_MiB=4268 rc=0
+gpu_despues: 2142,12288,2,60
+   patologico_escaneado.pdf 0.71 s  rango [0.69, 6.43]  chars 81 
+   escaneado_d1.pdf 0.53 s  rango [0.51, 0.59]  chars 85 
+   escaneado_d2.pdf 0.48 s  rango [0.45, 0.54]  chars 86 
+   escaneado_d3.pdf 0.51 s  rango [0.45, 0.61]  chars 38 
+  torch_pico: 698.0 MiB

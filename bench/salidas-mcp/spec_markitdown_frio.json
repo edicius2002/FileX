@@ -1,0 +1,33 @@
+{
+ "nombre": "markitdown-mcp arranque en frio",
+ "command": "D:\\Work\\research\\FileX\\.venv-mcp-md\\Scripts\\markitdown-mcp.exe",
+ "args": [],
+ "cwd": "D:\\Work\\research\\FileX",
+ "env": {
+  "MARKITDOWN_ENABLE_PLUGINS": "false"
+ },
+ "stderr_log": "D:/Work/research/FileX/bench/salidas-mcp/stderr_md_frio.log",
+ "pasos": [
+  {
+   "id": "primera_llamada",
+   "tool": "convert_to_markdown",
+   "args": {
+    "uri": "file:///D:/Work/research/FileX/corpus/pdf/tipico_texto.pdf"
+   }
+  },
+  {
+   "id": "segunda_llamada",
+   "tool": "convert_to_markdown",
+   "args": {
+    "uri": "file:///D:/Work/research/FileX/corpus/pdf/trivial.pdf"
+   }
+  },
+  {
+   "id": "tercera_llamada",
+   "tool": "convert_to_markdown",
+   "args": {
+    "uri": "file:///D:/Work/research/FileX/corpus/pdf/escaneado_d1.pdf"
+   }
+  }
+ ]
+}

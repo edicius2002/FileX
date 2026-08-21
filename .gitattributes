@@ -1,0 +1,37 @@
+# Benchmark fixtures and conversion outputs are binary artifacts, not text diffs.
+*.pdf binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.avif binary
+*.tif binary
+*.tiff binary
+*.gif binary
+*.mp3 binary
+*.flac binary
+*.wav binary
+*.m4a binary
+*.mp4 binary
+*.mkv binary
+*.webm binary
+*.zip binary
+*.ods binary
+*.xlsx binary
+# Preserve generated Markdown fixture formatting in MCP benchmark outputs.
+bench/salidas-mcp/*.md whitespace=-blank-at-eof
+corpus/**/*.mp4 filter=lfs diff=lfs merge=lfs -text
+corpus/**/*.mkv filter=lfs diff=lfs merge=lfs -text
+corpus/**/*.webm filter=lfs diff=lfs merge=lfs -text
+corpus/**/*.flac filter=lfs diff=lfs merge=lfs -text
+corpus/**/*.wav filter=lfs diff=lfs merge=lfs -text
+corpus/**/*.mp3 filter=lfs diff=lfs merge=lfs -text
+corpus/**/*.m4a filter=lfs diff=lfs merge=lfs -text
+corpus/**/*.tif filter=lfs diff=lfs merge=lfs -text
+corpus/**/*.tiff filter=lfs diff=lfs merge=lfs -text
+corpus/**/*.png filter=lfs diff=lfs merge=lfs -text
+corpus/**/*.jpg filter=lfs diff=lfs merge=lfs -text
+corpus/**/*.jpeg filter=lfs diff=lfs merge=lfs -text
+corpus/**/*.webp filter=lfs diff=lfs merge=lfs -text
+corpus/**/*.avif filter=lfs diff=lfs merge=lfs -text
+corpus/**/*.pdf filter=lfs diff=lfs merge=lfs -text

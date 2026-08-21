@@ -1,0 +1,1422 @@
+{
+  "spec": "specs/04_kordoc_errores.json",
+  "servidor": "kordoc-mcp-errores",
+  "llamadas": [
+    {
+      "id": "K_control",
+      "tool": "parse_document",
+      "args": {
+        "file_path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\kordoc\\ok.pdf"
+      },
+      "nota": "CONTROL: PDF valido del corpus",
+      "espera": null,
+      "ok": true,
+      "isError": false,
+      "ms": 3829.4,
+      "patron": "PROSA",
+      "n_piezas": 1,
+      "tokens_texto": 56,
+      "tokens_binario_si_se_inyecta": 0,
+      "tokens_total": 56,
+      "bytes_binario": 0,
+      "inviable_para_contexto": false,
+      "piezas": [
+        {
+          "tipo": "text",
+          "clase": "texto",
+          "chars": 155,
+          "tokens": 56
+        }
+      ],
+      "respuesta_recorte": "[포맷: PDF | 페이지: 1]\n\nFileX - documento de prueba con texto seleccionable\n\nSegunda linea: acentos aeiou n ˆ y simbolos % & @\n\nTabla: Col A\n\n1\t2\n\nCol B\n\nCol C"
+    },
+    {
+      "id": "K_noexiste",
+      "tool": "parse_document",
+      "args": {
+        "file_path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\kordoc\\no_existe.pdf"
+      },
+      "nota": "fichero inexistente",
+      "espera": null,
+      "ok": true,
+      "isError": true,
+      "ms": 4.8,
+      "patron": "ASA",
+      "n_piezas": 1,
+      "tokens_texto": 41,
+      "tokens_binario_si_se_inyecta": 0,
+      "tokens_total": 41,
+      "bytes_binario": 0,
+      "inviable_para_contexto": false,
+      "piezas": [
+        {
+          "tipo": "text",
+          "clase": "texto",
+          "chars": 107,
+          "tokens": 41
+        }
+      ],
+      "respuesta_recorte": "오류: 파일을 찾을 수 없습니다: D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\kordoc\\no_existe.pdf"
+    },
+    {
+      "id": "K_ext_no_soportada",
+      "tool": "parse_document",
+      "args": {
+        "file_path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\kordoc\\noformato.ini"
+      },
+      "nota": "extension no soportada",
+      "espera": null,
+      "ok": true,
+      "isError": true,
+      "ms": 13.1,
+      "patron": "PROSA",
+      "n_piezas": 1,
+      "tokens_texto": 55,
+      "tokens_binario_si_se_inyecta": 0,
+      "tokens_total": 55,
+      "bytes_binario": 0,
+      "inviable_para_contexto": false,
+      "piezas": [
+        {
+          "tipo": "text",
+          "clase": "texto",
+          "chars": 100,
+          "tokens": 55
+        }
+      ],
+      "respuesta_recorte": "오류: 지원하지 않는 확장자입니다: .ini (허용: .hwp, .hwpx, .hml, .pdf, .xls, .xlsx, .docx, .png, .jpg, .jpeg, .webp)"
+    },
+    {
+      "id": "K_magico_falso",
+      "tool": "parse_document",
+      "args": {
+        "file_path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\kordoc\\falso.pdf"
+      },
+      "nota": "texto plano con extension .pdf",
+      "espera": null,
+      "ok": true,
+      "isError": true,
+      "ms": 5.9,
+      "patron": "ASA",
+      "n_piezas": 1,
+      "tokens_texto": 37,
+      "tokens_binario_si_se_inyecta": 0,
+      "tokens_total": 37,
+      "bytes_binario": 0,
+      "inviable_para_contexto": false,
+      "piezas": [
+        {
+          "tipo": "text",
+          "clase": "texto",
+          "chars": 102,
+          "tokens": 37
+        }
+      ],
+      "respuesta_recorte": "지원하지 않는 파일 형식입니다: D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\kordoc\\falso.pdf"
+    },
+    {
+      "id": "K_truncado",
+      "tool": "parse_document",
+      "args": {
+        "file_path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\kordoc\\truncado.pdf"
+      },
+      "nota": "PDF truncado a 1200 bytes",
+      "espera": null,
+      "ok": true,
+      "isError": true,
+      "ms": 7.6,
+      "patron": "PROSA",
+      "n_piezas": 1,
+      "tokens_texto": 14,
+      "tokens_binario_si_se_inyecta": 0,
+      "tokens_total": 14,
+      "bytes_binario": 0,
+      "inviable_para_contexto": false,
+      "piezas": [
+        {
+          "tipo": "text",
+          "clase": "texto",
+          "chars": 31,
+          "tokens": 14
+        }
+      ],
+      "respuesta_recorte": "파싱 실패 (pdf): 문서 처리 중 오류가 발생했습니다"
+    },
+    {
+      "id": "K_docx_vacio",
+      "tool": "parse_document",
+      "args": {
+        "file_path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\kordoc\\vacio.docx"
+      },
+      "nota": "ZIP valido sin estructura OOXML",
+      "espera": null,
+      "ok": true,
+      "isError": true,
+      "ms": 6.9,
+      "patron": "PROSA",
+      "n_piezas": 1,
+      "tokens_texto": 20,
+      "tokens_binario_si_se_inyecta": 0,
+      "tokens_total": 20,
+      "bytes_binario": 0,
+      "inviable_para_contexto": false,
+      "piezas": [
+        {
+          "tipo": "text",
+          "clase": "texto",
+          "chars": 37,
+          "tokens": 20
+        }
+      ],
+      "respuesta_recorte": "파싱 실패 (hwpx): HWPX에서 섹션 파일을 찾을 수 없습니다"
+    },
+    {
+      "id": "K_directorio",
+      "tool": "parse_document",
+      "args": {
+        "file_path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\kordoc"
+      },
+      "nota": "una ruta de directorio, no un fichero",
+      "espera": null,
+      "ok": true,
+      "isError": true,
+      "ms": 1.9,
+      "patron": "PROSA",
+      "n_piezas": 1,
+      "tokens_texto": 54,
+      "tokens_binario_si_se_inyecta": 0,
+      "tokens_total": 54,
+      "bytes_binario": 0,
+      "inviable_para_contexto": false,
+      "piezas": [
+        {
+          "tipo": "text",
+          "clase": "texto",
+          "chars": 96,
+          "tokens": 54
+        }
+      ],
+      "respuesta_recorte": "오류: 지원하지 않는 확장자입니다:  (허용: .hwp, .hwpx, .hml, .pdf, .xls, .xlsx, .docx, .png, .jpg, .jpeg, .webp)"
+    },
+    {
+      "id": "K_imagen",
+      "tool": "parse_document",
+      "args": {
+        "file_path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\kordoc\\imagen.png"
+      },
+      "nota": "PNG: dispara la ruta de OCR (descarga de modelo)",
+      "espera": null,
+      "ok": true,
+      "isError": true,
+      "ms": 421.7,
+      "patron": "PROSA",
+      "n_piezas": 1,
+      "tokens_texto": 86,
+      "tokens_binario_si_se_inyecta": 0,
+      "tokens_total": 86,
+      "bytes_binario": 0,
+      "inviable_para_contexto": false,
+      "piezas": [
+        {
+          "tipo": "text",
+          "clase": "texto",
+          "chars": 204,
+          "tokens": 86
+        }
+      ],
+      "respuesta_recorte": "파싱 실패 (image): 폐쇄망 모드(KORDOC_OFFLINE)에서 차단됨: PP-OCRv5 mobile det 모델 다운로드 — 온라인 PC에서 `kordoc models --export <디렉토리>` 로 내보낸 뒤 이 PC에서 `kordoc models --import <디렉토리>` 하거나, KORDOC_MODEL_CACHE 로 모델 캐시 경로를 지정하세요"
+    },
+    {
+      "id": "K_travesia",
+      "tool": "parse_document",
+      "args": {
+        "file_path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\kordoc\\..\\..\\..\\..\\..\\..\\..\\Windows\\win.ini"
+      },
+      "nota": "travesia relativa a win.ini",
+      "espera": null,
+      "ok": true,
+      "isError": true,
+      "ms": 1.5,
+      "patron": "ASA",
+      "n_piezas": 1,
+      "tokens_texto": 18,
+      "tokens_binario_si_se_inyecta": 0,
+      "tokens_total": 18,
+      "bytes_binario": 0,
+      "inviable_para_contexto": false,
+      "piezas": [
+        {
+          "tipo": "text",
+          "clase": "texto",
+          "chars": 42,
+          "tokens": 18
+        }
+      ],
+      "respuesta_recorte": "오류: 파일을 찾을 수 없습니다: D:\\Work\\Windows\\win.ini"
+    },
+    {
+      "id": "K_abs_fuera",
+      "tool": "parse_document",
+      "args": {
+        "file_path": "C:\\Windows\\win.ini"
+      },
+      "nota": "ruta absoluta a fichero real del sistema",
+      "espera": null,
+      "ok": true,
+      "isError": true,
+      "ms": 2.0,
+      "patron": "PROSA",
+      "n_piezas": 1,
+      "tokens_texto": 55,
+      "tokens_binario_si_se_inyecta": 0,
+      "tokens_total": 55,
+      "bytes_binario": 0,
+      "inviable_para_contexto": false,
+      "piezas": [
+        {
+          "tipo": "text",
+          "clase": "texto",
+          "chars": 100,
+          "tokens": 55
+        }
+      ],
+      "respuesta_recorte": "오류: 지원하지 않는 확장자입니다: .ini (허용: .hwp, .hwpx, .hml, .pdf, .xls, .xlsx, .docx, .png, .jpg, .jpeg, .webp)"
+    },
+    {
+      "id": "K_prohibido",
+      "tool": "parse_document",
+      "args": {
+        "file_path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\prohibido\\secreto.txt"
+      },
+      "nota": "fichero fuera del arbol de kordoc",
+      "espera": null,
+      "ok": true,
+      "isError": true,
+      "ms": 1.9,
+      "patron": "PROSA",
+      "n_piezas": 1,
+      "tokens_texto": 55,
+      "tokens_binario_si_se_inyecta": 0,
+      "tokens_total": 55,
+      "bytes_binario": 0,
+      "inviable_para_contexto": false,
+      "piezas": [
+        {
+          "tipo": "text",
+          "clase": "texto",
+          "chars": 100,
+          "tokens": 55
+        }
+      ],
+      "respuesta_recorte": "오류: 지원하지 않는 확장자입니다: .txt (허용: .hwp, .hwpx, .hml, .pdf, .xls, .xlsx, .docx, .png, .jpg, .jpeg, .webp)"
+    },
+    {
+      "id": "K_vacio",
+      "tool": "parse_document",
+      "args": {
+        "file_path": ""
+      },
+      "nota": "ruta vacia",
+      "espera": null,
+      "ok": true,
+      "isError": true,
+      "ms": 1.3,
+      "patron": "ASA",
+      "n_piezas": 1,
+      "tokens_texto": 31,
+      "tokens_binario_si_se_inyecta": 0,
+      "tokens_total": 31,
+      "bytes_binario": 0,
+      "inviable_para_contexto": false,
+      "piezas": [
+        {
+          "tipo": "text",
+          "clase": "texto",
+          "chars": 141,
+          "tokens": 31
+        }
+      ],
+      "respuesta_recorte": "MCP error -32602: Input validation error: Invalid arguments for tool parse_document: String must contain at least 1 character(s) at file_path"
+    },
+    {
+      "id": "K_detect",
+      "tool": "detect_format",
+      "args": {
+        "file_path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\kordoc\\falso.pdf"
+      },
+      "nota": "deteccion de formato por magic bytes sobre extension mentirosa",
+      "espera": null,
+      "ok": true,
+      "isError": false,
+      "ms": 1.9,
+      "patron": "ASA",
+      "n_piezas": 1,
+      "tokens_texto": 31,
+      "tokens_binario_si_se_inyecta": 0,
+      "tokens_total": 31,
+      "bytes_binario": 0,
+      "inviable_para_contexto": false,
+      "piezas": [
+        {
+          "tipo": "text",
+          "clase": "texto",
+          "chars": 93,
+          "tokens": 31
+        }
+      ],
+      "respuesta_recorte": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\kordoc\\falso.pdf: unknown"
+    },
+    {
+      "id": "K_detect_noexiste",
+      "tool": "detect_format",
+      "args": {
+        "file_path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\kordoc\\no_existe.pdf"
+      },
+      "nota": "detect_format sobre inexistente",
+      "espera": null,
+      "ok": true,
+      "isError": true,
+      "ms": 1.4,
+      "patron": "ASA",
+      "n_piezas": 1,
+      "tokens_texto": 41,
+      "tokens_binario_si_se_inyecta": 0,
+      "tokens_total": 41,
+      "bytes_binario": 0,
+      "inviable_para_contexto": false,
+      "piezas": [
+        {
+          "tipo": "text",
+          "clase": "texto",
+          "chars": 107,
+          "tokens": 41
+        }
+      ],
+      "respuesta_recorte": "오류: 파일을 찾을 수 없습니다: D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\kordoc\\no_existe.pdf"
+    },
+    {
+      "id": "K_meta",
+      "tool": "parse_metadata",
+      "args": {
+        "file_path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\kordoc\\ok.pdf"
+      },
+      "nota": "metadatos del control",
+      "espera": null,
+      "ok": true,
+      "isError": false,
+      "ms": 5.4,
+      "patron": "PROSA",
+      "n_piezas": 1,
+      "tokens_texto": 55,
+      "tokens_binario_si_se_inyecta": 0,
+      "tokens_total": 55,
+      "bytes_binario": 0,
+      "inviable_para_contexto": false,
+      "piezas": [
+        {
+          "tipo": "text",
+          "clase": "texto",
+          "chars": 116,
+          "tokens": 55
+        }
+      ],
+      "respuesta_recorte": "{\n  \"format\": \"pdf\",\n  \"pageCount\": 1,\n  \"createdAt\": \"2026-08-19T12:25:38\",\n  \"modifiedAt\": \"2026-08-19T12:25:38\"\n}"
+    },
+    {
+      "id": "K_tabla_mala",
+      "tool": "parse_table",
+      "args": {
+        "file_path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\kordoc\\truncado.pdf"
+      },
+      "nota": "otra herramienta sobre la misma entrada corrupta",
+      "espera": null,
+      "ok": true,
+      "isError": true,
+      "ms": 1.1,
+      "patron": "PROSA",
+      "n_piezas": 1,
+      "tokens_texto": 22,
+      "tokens_binario_si_se_inyecta": 0,
+      "tokens_total": 22,
+      "bytes_binario": 0,
+      "inviable_para_contexto": false,
+      "piezas": [
+        {
+          "tipo": "text",
+          "clase": "texto",
+          "chars": 105,
+          "tokens": 22
+        }
+      ],
+      "respuesta_recorte": "MCP error -32602: Input validation error: Invalid arguments for tool parse_table: Required at table_index"
+    }
+  ],
+  "arranque_frio_ms": 5537.4,
+  "spawn_proceso_ms": 14.8,
+  "handshake_ms": 5522.5,
+  "server_info": {
+    "name": "kordoc",
+    "version": "4.9.0",
+    "protocolVersion": "2024-11-05",
+    "instructions": null
+  },
+  "list_tools_ms": 13.9,
+  "n_herramientas": 15,
+  "herramientas": [
+    {
+      "name": "parse_document",
+      "description": "한국 문서 파일(HWP, HWPX, PDF, XLSX, DOCX)과 이미지(PNG/JPG/WebP)를 마크다운으로 변환합니다. 파일 경로를 입력하면 포맷을 자동 감지하여 텍스트를 추출합니다. 이미지는 OCR(내장 PP-OCRv5)이 자동 적용되고 표 괘선도 복원됩니다.",
+      "annotations": {},
+      "tiene_readOnlyHint": false,
+      "tiene_destructiveHint": false,
+      "tokens_declaracion": 729,
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "file_path": {
+            "type": "string",
+            "minLength": 1,
+            "description": "파싱할 문서 파일의 절대 경로 (HWP, HWPX, PDF, XLSX, DOCX, PNG/JPG/WebP)"
+          },
+          "ocr": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "string",
+                "const": "force"
+              }
+            ],
+            "description": "스캔/이미지 PDF 텍스트 OCR (내장 PP-OCRv5 korean, 첫 사용 시 ~18MB 자동 다운로드). true=텍스트층이 없거나 깨진 페이지만 인식하고 정상 페이지는 그대로 둡니다. \"force\"=텍스트층이 있어도 무시하고 전 페이지 강제 재인식. parse 결과에 NEEDS_OCR 경고가 있으면 이 옵션으로 재시도하세요"
+          },
+          "remove_header_footer": {
+            "type": "boolean",
+            "description": "PDF 머리글/바닥글 자동 제거 (기본 true — false로 끄기, CLI --no-header-footer 대응)"
+          },
+          "formula_ocr": {
+            "type": "boolean",
+            "description": "PDF 수식 OCR 활성화 (MFD+MFR ONNX, 첫 사용 시 모델 ~155MB 자동 다운로드, CLI --formula-ocr 대응)"
+          },
+          "dedupe_running_headers": {
+            "type": "boolean",
+            "description": "HWP5 레이아웃 표 페이지 반복 러닝 헤더 중복 제거 (기본 off — 붙임별 재번호 오삭제 주의, CLI --dedupe-headers 대응)"
+          },
+          "keep_trailing_empty_cols": {
+            "type": "boolean",
+            "description": "표 오른쪽 끝 빈 열(서식 입력란) 보존 (#47, 기본 off: 후행 빈 열 트림, CLI --keep-empty-cols 대응)"
+          },
+          "keep_empty_paragraphs": {
+            "type": "boolean",
+            "description": "빈 문단 보존 — 본문은 빈 paragraph 블록, 표 셀은 빈 줄 (#57, 기본 off, CLI --keep-empty-paragraphs 대응)"
+          },
+          "password": {
+            "type": "string",
+            "description": "암호로 보호된 문서의 열기 암호 (#59, HWPX·HWP3·HWP5 지원. 파싱이 ENCRYPTED로 실패하면 이 옵션으로 재시도하세요. 한컴 DRM 보호 문서는 해당 없음)"
+          },
+          "tables": {
+            "type": "boolean",
+            "description": "PDF 표 감지 (기본 true — false로 끄기, CLI --no-tables 대응). 테두리 박스를 표로 오인해 읽기 순서가 뒤집히는 문서(2단 시험지 등)에서 자연 읽기순 텍스트만 뽑습니다 (#64)"
+          }
+        },
+        "required": [
+          "file_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null
+    },
+    {
+      "name": "detect_format",
+      "description": "파일의 포맷을 매직 바이트로 감지합니다 (hwpx, hwp, hwp3, hwpml, pdf, xls, xlsx, docx, unknown).",
+      "annotations": {},
+      "tiene_readOnlyHint": false,
+      "tiene_destructiveHint": false,
+      "tokens_declaracion": 139,
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "file_path": {
+            "type": "string",
+            "minLength": 1,
+            "description": "감지할 파일의 절대 경로"
+          }
+        },
+        "required": [
+          "file_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null
+    },
+    {
+      "name": "parse_metadata",
+      "description": "문서의 메타데이터(제목, 작성자, 날짜 등)만 빠르게 추출합니다. 전체 파싱 없이 헤더/매니페스트만 읽습니다.",
+      "annotations": {},
+      "tiene_readOnlyHint": false,
+      "tiene_destructiveHint": false,
+      "tokens_declaracion": 142,
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "file_path": {
+            "type": "string",
+            "minLength": 1,
+            "description": "메타데이터를 추출할 문서 파일의 절대 경로"
+          }
+        },
+        "required": [
+          "file_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null
+    },
+    {
+      "name": "parse_pages",
+      "description": "문서의 특정 페이지 범위만 파싱합니다. PDF와 한컴 저장본 HWP/HWPX는 실제 페이지 기준(metadata.pageMode=layout), 조판 캐시가 없는 생성 파일은 섹션 단위 근사(pageMode=section)입니다.",
+      "annotations": {},
+      "tiene_readOnlyHint": false,
+      "tiene_destructiveHint": false,
+      "tokens_declaracion": 198,
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "file_path": {
+            "type": "string",
+            "minLength": 1,
+            "description": "파싱할 문서 파일의 절대 경로"
+          },
+          "pages": {
+            "type": "string",
+            "minLength": 1,
+            "description": "페이지 범위 (예: '1-3', '1,3,5-7')"
+          }
+        },
+        "required": [
+          "file_path",
+          "pages"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null
+    },
+    {
+      "name": "parse_table",
+      "description": "문서에서 N번째 테이블만 추출합니다 (0-based index). 테이블이 없거나 인덱스 범위를 초과하면 오류를 반환합니다.",
+      "annotations": {},
+      "tiene_readOnlyHint": false,
+      "tiene_destructiveHint": false,
+      "tokens_declaracion": 172,
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "file_path": {
+            "type": "string",
+            "minLength": 1,
+            "description": "파싱할 문서 파일의 절대 경로"
+          },
+          "table_index": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "추출할 테이블 인덱스 (0부터 시작)"
+          }
+        },
+        "required": [
+          "file_path",
+          "table_index"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null
+    },
+    {
+      "name": "compare_documents",
+      "description": "두 한국 문서 파일을 비교하여 추가/삭제/변경된 블록을 표시합니다. 신구대조표 생성에 활용됩니다. 크로스 포맷(HWP↔HWPX) 비교 가능.",
+      "annotations": {},
+      "tiene_readOnlyHint": false,
+      "tiene_destructiveHint": false,
+      "tokens_declaracion": 186,
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "file_path_a": {
+            "type": "string",
+            "minLength": 1,
+            "description": "비교 원본 문서의 절대 경로"
+          },
+          "file_path_b": {
+            "type": "string",
+            "minLength": 1,
+            "description": "비교 대상 문서의 절대 경로"
+          }
+        },
+        "required": [
+          "file_path_a",
+          "file_path_b"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null
+    },
+    {
+      "name": "parse_form",
+      "description": "한국 서식 문서에서 레이블-값 쌍을 구조화된 JSON으로 추출합니다. 양식/서식 문서에 최적화.",
+      "annotations": {},
+      "tiene_readOnlyHint": false,
+      "tiene_destructiveHint": false,
+      "tokens_declaracion": 132,
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "file_path": {
+            "type": "string",
+            "minLength": 1,
+            "description": "서식 문서 파일의 절대 경로"
+          }
+        },
+        "required": [
+          "file_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null
+    },
+    {
+      "name": "fill_form",
+      "description": "한국 서식 문서의 빈칸을 채워서 새 문서로 출력합니다. hwpx-preserve를 사용하면 원본 서식(테두리, 폰트, 병합 등)을 100% 유지합니다. HWPX 누름틀(CLICK_HERE) 필드는 이름으로 정확 매칭되어 우선 채워집니다. file_path 대신 template으로 내장 정부 표준 기안문 서식을 쓸 수 있습니다 — gian(일반기안문, 별지 제1호서식: 행정기관명·수신자·경유·제목·본문·붙임·발신명의·기안자·검토자·결재권자 등 23필드) / gian-simple(간이기안문, 별지 제2호서식: 내부결재용 13필드).",
+      "annotations": {},
+      "tiene_readOnlyHint": false,
+      "tiene_destructiveHint": false,
+      "tokens_declaracion": 763,
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "file_path": {
+            "type": "string",
+            "minLength": 1,
+            "description": "서식 템플릿 문서의 절대 경로 (HWP, HWPX, PDF, XLSX, DOCX). template 사용 시 생략"
+          },
+          "template": {
+            "type": "string",
+            "enum": [
+              "gian",
+              "gian-simple",
+              "일반기안문",
+              "간이기안문"
+            ],
+            "description": "내장 정부 표준 서식 이름 — file_path 대신 사용. gian=일반기안문(별지 제1호서식), gian-simple=간이기안문(별지 제2호서식)"
+          },
+          "fields": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "채울 필드 맵 (라벨 → 값). 예: {\"성명\": \"홍길동\", \"전화번호\": \"010-1234-5678\"}"
+          },
+          "formats": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "필드별 값 서식 (라벨 → 포맷). 정준값 하나로 서식마다 다른 모양을 채울 때: date:yy.mm.dd / phone:hyphen·dot·digits / rrn:hyphen·masked / mask:###-## / 자유 패턴(yyyy년 m월 d일, ###-####-####)"
+          },
+          "require_unique": {
+            "type": "boolean",
+            "description": "한 키가 서식의 2곳 이상에 매칭되면 채우지 않고 거부 — 반복 라벨 양식에서 남의 블록 오염 방지 (배열 값은 예외)"
+          },
+          "mask_values": {
+            "type": "boolean",
+            "description": "응답에 값 대신 글자수만 표시 — 개인정보 채움 시 값이 대화 로그에 남지 않게"
+          },
+          "output_format": {
+            "type": "string",
+            "enum": [
+              "markdown",
+              "hwpx",
+              "hwpx-preserve"
+            ],
+            "default": "hwpx-preserve",
+            "description": "출력 포맷: hwpx-preserve (원본 스타일 보존, HWPX 전용), hwpx (새 HWPX 생성), markdown"
+          },
+          "output_path": {
+            "type": "string",
+            "description": "출력 파일 저장 경로 (선택). 지정 시 파일로 저장, 미지정 시 텍스트로 반환"
+          }
+        },
+        "required": [
+          "fields"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null
+    },
+    {
+      "name": "place_seal",
+      "description": "도장/서명 이미지를 앵커 문구(\"(인)\"·\"서명 또는 인\" 등) 위에 부유(글 앞) 배치합니다. 표/페이지를 키우지 않습니다 (HWPX 전용).",
+      "annotations": {},
+      "tiene_readOnlyHint": false,
+      "tiene_destructiveHint": false,
+      "tokens_declaracion": 458,
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "file_path": {
+            "type": "string",
+            "minLength": 1,
+            "description": "대상 HWPX 문서의 절대 경로"
+          },
+          "image_path": {
+            "type": "string",
+            "minLength": 1,
+            "description": "도장/서명 이미지 절대 경로 (투명 배경 PNG 권장)"
+          },
+          "anchor": {
+            "type": "string",
+            "default": "(인)",
+            "description": "앵커 문구 — 이 문구 기준으로 배치"
+          },
+          "occurrence": {
+            "type": "integer",
+            "minimum": 0,
+            "default": 0,
+            "description": "같은 앵커가 여럿일 때 0-based 선택"
+          },
+          "size_mm": {
+            "type": "number",
+            "exclusiveMinimum": 0,
+            "description": "도장 한 변 크기 mm (기본: 줄높이×1.6, 7~18 클램프)"
+          },
+          "mode": {
+            "type": "string",
+            "enum": [
+              "overlap",
+              "right",
+              "auto"
+            ],
+            "default": "auto",
+            "description": "overlap=문구 위 겹침, right=문구 오른쪽 옆, auto=공간 있으면 right"
+          },
+          "dx_mm": {
+            "type": "number",
+            "description": "x 미세조정 mm"
+          },
+          "dy_mm": {
+            "type": "number",
+            "description": "y 미세조정 mm"
+          },
+          "output_path": {
+            "type": "string",
+            "minLength": 1,
+            "description": "출력 HWPX 저장 경로"
+          }
+        },
+        "required": [
+          "file_path",
+          "image_path",
+          "output_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null
+    },
+    {
+      "name": "patch_document",
+      "description": "원본 HWPX/HWP의 서식(글꼴·표·도장칸·이미지)을 1바이트도 건드리지 않고, 편집된 마크다운의 바뀐 텍스트만 제자리 치환해 새 문서로 출력합니다. parse_document로 얻은 마크다운을 수정해 넘기세요 — 양식 빈칸 채우기·문구 수정에 적합하며 한컴 한글에서 변조 경고 없이 열립니다. (블록 추가/삭제·표 구조 변경은 미지원, 미적용 항목은 결과에 보고)",
+      "annotations": {},
+      "tiene_readOnlyHint": false,
+      "tiene_destructiveHint": false,
+      "tokens_declaracion": 357,
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "file_path": {
+            "type": "string",
+            "minLength": 1,
+            "description": "원본 문서의 절대 경로 (HWPX 또는 HWP 5.x)"
+          },
+          "edited_markdown": {
+            "type": "string",
+            "minLength": 1,
+            "description": "parse_document 출력 마크다운을 편집한 전체 마크다운. 바뀐 문단/셀 텍스트만 반영하고 블록 수·순서는 원본과 같게 유지하세요"
+          },
+          "output_path": {
+            "type": "string",
+            "minLength": 1,
+            "description": "출력 파일 저장 절대 경로 (원본과 같은 확장자: .hwpx 또는 .hwp)"
+          }
+        },
+        "required": [
+          "file_path",
+          "edited_markdown",
+          "output_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null
+    },
+    {
+      "name": "render_document",
+      "description": "HWPX 문서를 실제 조판 그대로 렌더해 PNG 이미지(또는 SVG 파일)로 돌려줍니다. generate_document·fill_form·patch_document·place_seal 결과물을 눈으로 확인하는 용도 — 생성/수정 후 이 도구로 렌더해 깨짐·잘림·배치를 검증하고 다시 고치는 루프를 권장합니다. 한컴 저장본은 조판 캐시로, AI 생성본(캐시 없음)은 순수 조판 엔진(reflow)으로 렌더되며 후자는 한컴 실조판의 근사입니다 (참고용 미리보기).",
+      "annotations": {},
+      "tiene_readOnlyHint": false,
+      "tiene_destructiveHint": false,
+      "tokens_declaracion": 440,
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "file_path": {
+            "type": "string",
+            "minLength": 1,
+            "description": "렌더할 HWPX 파일의 절대 경로"
+          },
+          "format": {
+            "type": "string",
+            "enum": [
+              "png",
+              "svg"
+            ],
+            "default": "png",
+            "description": "png=이미지로 응답에 직접 반환 (sharp 필요, 기본 설치됨) / svg=output_path에 파일 저장"
+          },
+          "output_path": {
+            "type": "string",
+            "minLength": 1,
+            "description": "결과 저장 경로 (png는 선택, svg는 필수 — 확장자는 format과 일치)"
+          },
+          "highlights": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "description": "형광펜 표시할 검색어 목록 — 채운 값·수정 문구 위치 확인용"
+          },
+          "reflow_mode": {
+            "type": "string",
+            "enum": [
+              "keep",
+              "charAll"
+            ],
+            "default": "keep",
+            "description": "reflow 줄바꿈: keep=어절 단위, charAll=글자 단위"
+          }
+        },
+        "required": [
+          "file_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null
+    },
+    {
+      "name": "redact_document",
+      "description": "문서의 개인정보(주민번호·전화·이메일·카드·계좌)를 탐지해 서식 보존 마스킹합니다. HWPX/HWP는 원본 서식 1바이트 그대로 patch, 그 외 포맷은 마스킹된 마크다운으로 출력. 자동 검출 보조 도구 — 결과 리포트를 사람이 최종 확인해야 하며 이미지 안 텍스트는 탐지하지 못합니다. 마스킹 후 render_document로 눈으로 확인하는 것을 권장합니다.",
+      "annotations": {},
+      "tiene_readOnlyHint": false,
+      "tiene_destructiveHint": false,
+      "tokens_declaracion": 411,
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "file_path": {
+            "type": "string",
+            "minLength": 1,
+            "description": "대상 문서의 절대 경로"
+          },
+          "rules": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "rrn",
+                "phone",
+                "email",
+                "card",
+                "account",
+                "passport",
+                "driver"
+              ]
+            },
+            "description": "적용 룰 (기본: rrn·phone·email·card·account — passport·driver는 opt-in)"
+          },
+          "mask_char": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1,
+            "description": "마스크 문자 1글자 (기본: ●)"
+          },
+          "output_path": {
+            "type": "string",
+            "minLength": 1,
+            "description": "출력 경로 (HWPX/HWP는 같은 확장자, 그 외는 .md) — dry_run이 아니면 필수"
+          },
+          "dry_run": {
+            "type": "boolean",
+            "default": false,
+            "description": "탐지 리포트만 반환, 파일 미생성"
+          }
+        },
+        "required": [
+          "file_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null
+    },
+    {
+      "name": "parse_chunks",
+      "description": "문서를 RAG용 구조 청크 JSON으로 파싱합니다. 헤딩·개조식 위계(□○- / 1.·가.·1))가 breadcrumb 경로로 보존되고 표는 독립 청크로 나옵니다 — 임베딩·인덱싱 전처리용. 자르기(토큰 상한·오버랩)는 소비자 몫입니다.",
+      "annotations": {},
+      "tiene_readOnlyHint": false,
+      "tiene_destructiveHint": false,
+      "tokens_declaracion": 295,
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "file_path": {
+            "type": "string",
+            "minLength": 1,
+            "description": "대상 문서의 절대 경로 (HWP/HWPX/PDF/XLSX/DOCX)"
+          },
+          "granularity": {
+            "type": "string",
+            "enum": [
+              "section",
+              "block"
+            ],
+            "default": "section",
+            "description": "section=같은 breadcrumb 아래 연속 텍스트 병합(기본), block=IRBlock 1개=청크 1개"
+          },
+          "include_table_cells": {
+            "type": "boolean",
+            "default": false,
+            "description": "표 청크에 셀 텍스트 2차원 배열 포함 여부"
+          }
+        },
+        "required": [
+          "file_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null
+    },
+    {
+      "name": "extract_profile",
+      "description": "참조 HWPX 문서에서 표 서식 프로필(테두리·음영·열 너비·셀 글꼴)을 JSON으로 추출합니다. 추출한 프로필을 generate_document의 profile_path로 넘기면 원본 문서 없이 같은 표 서식을 재현합니다 — \"이 문서 표 서식 그대로 만들어줘\" 워크플로의 1단계.",
+      "annotations": {},
+      "tiene_readOnlyHint": false,
+      "tiene_destructiveHint": false,
+      "tokens_declaracion": 229,
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "hwpx_path": {
+            "type": "string",
+            "minLength": 1,
+            "description": "서식을 추출할 참조 HWPX 파일의 절대 경로"
+          },
+          "output_path": {
+            "type": "string",
+            "minLength": 1,
+            "description": "프로필 JSON 출력 절대 경로 (.json 권장)"
+          }
+        },
+        "required": [
+          "hwpx_path",
+          "output_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null
+    },
+    {
+      "name": "generate_document",
+      "description": "마크다운을 HWPX 한글 문서로 생성합니다. \"보고서로/공문서로/개조식으로/계획서로 뽑아줘·만들어줘\" 요청이 이 도구입니다. 프리셋 매핑: 정부 표준 보고서(표지·목차·로마숫자 장헤더 자동)='개조식', 기안문·시행문·알림공문='기안문', 1페이지 요약보고서='보고서', 추진계획='계획서'. 표는 실측 정부 서식(헤더 음영+이중선·외곽 굵은선·내용 비례 열폭), 쪽번호·결재란·'끝.' 표시 지원. ⚠ 생성 전 확인 권장: 문서종류(보고서/기안문)·제목·기관명(org)·날짜·목차 여부가 불명확하면 사용자에게 물어보세요 — 엉뚱한 프리셋 선택이 가장 흔한 오생성 원인. 마크다운 규칙: #(h1)=문서 제목(표지), ##(h2)=장(Ⅰ Ⅱ Ⅲ 자동), 리스트 깊이=□ ○ - ㆍ 부호, ※시작 문단=참고 스타일, <right>텍스트</right>=우측정렬 출처행. (원본 서식 보존 제자리 수정은 patch_document, 서식 빈칸 채우기는 fill_form)",
+      "annotations": {},
+      "tiene_readOnlyHint": false,
+      "tiene_destructiveHint": false,
+      "tokens_declaracion": 3092,
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "markdown": {
+            "type": "string",
+            "minLength": 1,
+            "description": "HWPX로 변환할 마크다운 전문. 표는 GFM 문법 사용 (예: '| 이름 | 부서 |\\n| --- | --- |\\n| 홍길동 | 기획팀 |')"
+          },
+          "output_path": {
+            "type": "string",
+            "minLength": 1,
+            "description": "출력 HWPX 파일의 절대 경로 (.hwpx 권장)"
+          },
+          "profile_path": {
+            "type": "string",
+            "description": "서식 프로필 JSON 경로 (extract_profile로 추출) — 참조 문서의 표 테두리·음영·열폭·셀 글꼴을 재현. 표 행·열 수와 첫 셀 텍스트가 일치하는 표에만 적용"
+          },
+          "preset": {
+            "type": "string",
+            "enum": [
+              "official",
+              "기안문",
+              "시행문",
+              "공문",
+              "공문서",
+              "report",
+              "보고서",
+              "plan",
+              "계획서",
+              "계획",
+              "notice",
+              "통지",
+              "알림",
+              "안내",
+              "minutes",
+              "회의록",
+              "gaejosik",
+              "개조식",
+              "개조식보고서",
+              "정부보고서",
+              "정부표준개조식보고서",
+              "press",
+              "보도자료"
+            ],
+            "description": "공문서 프리셋 — 지정 시 한국 행정 공문서 표준 서식 적용. '개조식'=정부 표준 개조식 보고서(표지·목차·로마숫자 장 헤더 자동 + □○-※ 부호별 폰트), '보도자료'=머리박스+제목 25pt+□→ㅇ→*(각주) 체계. 미지정 시 범용 마크다운 변환"
+          },
+          "font": {
+            "type": "string",
+            "enum": [
+              "myeongjo",
+              "gothic"
+            ],
+            "description": "본문 글꼴(공문서 모드): myeongjo=명조 계열(개조식·보고서·계획서는 실측 휴먼명조, 그 외 함초롬바탕), gothic=맑은 고딕"
+          },
+          "body_pt": {
+            "type": "integer",
+            "minimum": 6,
+            "maximum": 40,
+            "description": "본문 글자 크기(pt, 공문서 모드). 기본: 기안문 12, 보고서·계획서·통지 15"
+          },
+          "line_spacing": {
+            "type": "integer",
+            "minimum": 50,
+            "maximum": 300,
+            "description": "본문 줄간격(%, 공문서 모드). 기본: 프리셋별 실측값(기안문 160, 회의록 130 등)"
+          },
+          "org": {
+            "type": "string",
+            "description": "표지 기관명 (표지를 켜는 모든 프리셋에서 사용 가능). 미지정 시 표지에 기관명 생략"
+          },
+          "date": {
+            "type": "string",
+            "description": "표지 날짜 ('YYYY. M. D.' 표기 권장). 미지정 시 오늘 날짜"
+          },
+          "toc": {
+            "type": "boolean",
+            "description": "목차 페이지 생성 여부 — h2 목록을 Ⅰ Ⅱ Ⅲ 장으로 자동 구성. 전 프리셋 사용 가능(보도자료 제외). 미지정 시 개조식 프리셋만 켜짐"
+          },
+          "cover": {
+            "type": "boolean",
+            "description": "표지 페이지 생성 여부 — 첫 h1을 제목으로 파랑 장식 표지. 전 프리셋 사용 가능(보도자료 제외 — 머리박스 서식과 양립 불가). 미지정 시 개조식 프리셋만 켜짐 (org/date 지정 시 자동 켜짐)"
+          },
+          "approval": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 6,
+            "description": "결재란 직위 라벨 (최대 6개, 예: ['담당','팀장','과장']) — 문서 최상단 우측에 서명 공란 결재 표 생성"
+          },
+          "page_numbers": {
+            "type": "boolean",
+            "description": "쪽번호(하단 중앙 '- 1 -', 표지·목차 카운트 제외). 미지정 시 개조식·보고서·계획서 켜짐"
+          },
+          "end_mark": {
+            "type": "boolean",
+            "description": "본문 끝 '끝.' 표시 (행정업무규정). 미지정 시 기안문만 켜짐, 본문이 이미 '끝.'으로 끝나면 중복 생성 안 함"
+          },
+          "body_title_box": {
+            "type": "boolean",
+            "description": "본문 첫 페이지 제목 반복 박스 (개조식 실측 관행). 미지정 시 개조식+표지 조합에서 켜짐"
+          },
+          "h2_marker": {
+            "type": "string",
+            "enum": [
+              "box",
+              "number",
+              "none"
+            ],
+            "description": "h2 섹션 제목 말머리(비개조식): box='□ 제목'(실측 보고서 관행), number='1. 제목'(공고문 관행), none=말머리 없음. 미지정 시 보고서·계획서 box, 그 외 none"
+          },
+          "fonts": {
+            "type": "object",
+            "properties": {
+              "body": {
+                "type": "string"
+              },
+              "heading": {
+                "type": "string"
+              },
+              "ref": {
+                "type": "string"
+              },
+              "table": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false,
+            "description": "요소별 글꼴 오버라이드(공문서 모드) — body=본문(○·-)/heading=제목 계열(□·장헤더·표지·목차)/ref=※ 참고/table=표 셀. 개조식·보고서·계획서는 네 역할 전부, 그 외 프리셋은 body만 적용"
+          },
+          "sizes": {
+            "type": "object",
+            "properties": {
+              "dae": {
+                "type": "number",
+                "minimum": 6,
+                "maximum": 60
+              },
+              "cham": {
+                "type": "number",
+                "minimum": 6,
+                "maximum": 60
+              },
+              "chapter": {
+                "type": "number",
+                "minimum": 6,
+                "maximum": 60
+              },
+              "coverTitle": {
+                "type": "number",
+                "minimum": 6,
+                "maximum": 60
+              },
+              "coverSub": {
+                "type": "number",
+                "minimum": 6,
+                "maximum": 60
+              },
+              "tocLabel": {
+                "type": "number",
+                "minimum": 6,
+                "maximum": 60
+              },
+              "tocRoman": {
+                "type": "number",
+                "minimum": 6,
+                "maximum": 60
+              },
+              "tocItem": {
+                "type": "number",
+                "minimum": 6,
+                "maximum": 60
+              },
+              "table": {
+                "type": "number",
+                "minimum": 6,
+                "maximum": 60
+              },
+              "bodyTitle": {
+                "type": "number",
+                "minimum": 6,
+                "maximum": 60
+              }
+            },
+            "additionalProperties": false,
+            "description": "개조식 요소별 글자 크기(pt) 오버라이드 — dae=□/cham=※/chapter=장헤더/coverTitle·coverSub=표지/tocLabel·tocRoman·tocItem=목차/table=표 셀/bodyTitle=본문 첫 페이지 제목 반복 박스. 미지정 요소는 body_pt 비례 기본값"
+          },
+          "bullet2": {
+            "type": "string",
+            "enum": [
+              "ㅇ",
+              "○"
+            ],
+            "description": "2단계 항목부호 — 'ㅇ'(이응, 전자결재 기안문·공고문 실측 지배) / '○'(원, 보고서 양식). 미지정 시 통지·보도자료 ㅇ, 그 외 ○"
+          },
+          "suppress_single": {
+            "type": "boolean",
+            "description": "단일 형제 항목 부호 생략(편람 규정, 법정 번호 standard 전용 — 불릿 체계인 보고서·계획서·개조식·보도자료엔 무효). 기본 false — 하나뿐인 항목에도 부호(1. 가.)를 부여 (부호 없는 계단 들여쓰기가 실무 눈에 어색)"
+          },
+          "doc_head": {
+            "type": "object",
+            "properties": {
+              "org": {
+                "type": "string"
+              },
+              "to": {
+                "type": "string"
+              },
+              "via": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false,
+            "description": "기안문 두문(별지 제1호서식) — org=행정기관명(18pt bold 중앙)/to=수신/via=경유/title=제목. 기안문 프리셋 전용"
+          },
+          "doc_foot": {
+            "type": "object",
+            "properties": {
+              "sender": {
+                "type": "string"
+              },
+              "drafter": {
+                "type": "string"
+              },
+              "reviewer": {
+                "type": "string"
+              },
+              "approver": {
+                "type": "string"
+              },
+              "cooperator": {
+                "type": "string"
+              },
+              "docNum": {
+                "type": "string"
+              },
+              "receive": {
+                "type": "string"
+              },
+              "address": {
+                "type": "string"
+              },
+              "site": {
+                "type": "string"
+              },
+              "phone": {
+                "type": "string"
+              },
+              "fax": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "disclosure": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false,
+            "description": "기안문 결문 — sender=발신명의(22pt 중앙)/drafter·reviewer·approver=기안·검토·결재/docNum=시행/receive=접수/disclosure=공개구분 등. 기안문 프리셋 전용"
+          },
+          "report_info": {
+            "type": "string",
+            "description": "업무보고 우상단 보고정보 행 — 예: '(2026. 7. 11., 과장 홍길동, ☎02-120)' (실측: 12pt 우측정렬)"
+          },
+          "notice_head": {
+            "type": "object",
+            "properties": {
+              "no": {
+                "type": "string"
+              },
+              "date": {
+                "type": "string"
+              },
+              "sender": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false,
+            "description": "공고문 두문·결문 — no=공고번호(본문 위 bold)/date=날짜(본문 아래 우측)/sender=발신명의(우측 bold). 통지 프리셋 전용"
+          },
+          "press": {
+            "type": "object",
+            "properties": {
+              "release": {
+                "type": "string"
+              },
+              "distribute": {
+                "type": "string"
+              },
+              "sub": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "contact": {
+                "type": "object",
+                "properties": {
+                  "dept": {
+                    "type": "string"
+                  },
+                  "manager": {
+                    "type": "string"
+                  },
+                  "phone": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              }
+            },
+            "additionalProperties": false,
+            "description": "보도자료 옵션 — release=보도시점/distribute=배포일(머리박스)/sub=부제 배열('- … -')/contact=담당 부서·담당자·연락처 표"
+          },
+          "paper": {
+            "type": "string",
+            "enum": [
+              "A4",
+              "A3",
+              "B4",
+              "B5",
+              "Letter"
+            ],
+            "description": "용지 크기 (v4.5.0). 기본 A4"
+          },
+          "landscape": {
+            "type": "boolean",
+            "description": "용지 가로 방향 (v4.5.0). 기본 세로"
+          },
+          "columns": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 8,
+            "description": "다단 개수 (v4.5.0). 기본 1단"
+          },
+          "header": {
+            "type": "string",
+            "description": "머리말 텍스트 — 모든 쪽 상단, 인라인 마크다운 허용 (v4.5.0)"
+          },
+          "footer": {
+            "type": "string",
+            "description": "꼬리말 텍스트 — 모든 쪽 하단 (v4.5.0)"
+          },
+          "image_dir": {
+            "type": "string",
+            "description": "마크다운 이미지 참조(![](x.png))를 이 디렉토리에서 읽어 실데이터 임베드 (v4.5.0, PNG/JPEG/GIF/BMP). 미지정 시 참조만 placeholder로 보존"
+          }
+        },
+        "required": [
+          "markdown",
+          "output_path"
+        ],
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null
+    }
+  ],
+  "tokens_catalogo": 7759,
+  "n_anotadas": 0,
+  "n_prompts": null,
+  "prompts": "McpError: Method not found",
+  "n_recursos": null,
+  "recursos": "McpError: Method not found"
+}

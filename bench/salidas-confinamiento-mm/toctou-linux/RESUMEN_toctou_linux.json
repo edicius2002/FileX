@@ -1,0 +1,35 @@
+{
+  "experimento": "TOCTOU contra @modelcontextprotocol/server-filesystem en Linux/WSL2",
+  "fecha": "2026-08-20",
+  "entorno": {
+    "distro": "Ubuntu 26.04 LTS (WSL2, distro por defecto)",
+    "kernel": "6.18.33.2-microsoft-standard-WSL2 x86_64",
+    "node": "v24.19.0 (/usr/bin/node dentro de WSL)",
+    "python": "3.14.4 (venv ~/toctou_venv con paquete mcp)",
+    "filesystem_sandbox": "ext4 NATIVO (/dev/sdd montado en /), bajo $HOME=/home/edicius/toctou_sandbox — NO /mnt/d",
+    "raiz_permitida": "/home/edicius/toctou_sandbox/permitido",
+    "secreto": "/home/edicius/toctou_sandbox/prohibido/secreto.txt"
+  },
+  "mensajes_literales": {
+    "benigno": "FICHERO REGULAR BENIGNO\n",
+    "denegacion_por_enlace": "Access denied - symlink target outside allowed directories: /home/edicius/toctou_sandbox/prohibido/secreto.txt not in /home/edicius/toctou_sandbox/permitido"
+  },
+  "resultados": {
+    "calibracion_B": {"n_llamadas": 3200, "concurrentes": 16, "segundos": 6.2, "swaps": 10502, "err_symlink": 440, "err_write": 0, "err_remove": 796, "benignas": 410, "denegadas": 110, "enoent": 2609, "vacias": 71, "otros": 0, "n_fugas": 0, "TOCTOU_REPRODUCIDO": false, "duty_cycle_servidor_visto_enlace": 0.0344},
+    "grande_B": {"n_llamadas": 51200, "concurrentes": 16, "segundos": 108.28, "swaps": 234868, "err_symlink": 4699, "err_write": 1, "err_remove": 8613, "benignas": 20195, "denegadas": 7531, "enoent": 16558, "vacias": 6910, "otros_EISDIR": 6, "n_fugas": 0, "TOCTOU_REPRODUCIDO": false, "duty_cycle_servidor_visto_enlace": 0.1471, "duty_cycle_condicional_enlace_sobre_ficheros_resueltos": 0.2716},
+    "grande_B2": {"n_llamadas": 48000, "concurrentes": 96, "env": {"UV_THREADPOOL_SIZE": "1"}, "segundos": 75.87, "swaps": 141847, "err_symlink": 4512, "err_write": 2, "err_remove": 8482, "benignas": 21224, "denegadas": 8063, "enoent": 13330, "vacias": 5381, "otros_EISDIR": 2, "n_fugas": 0, "TOCTOU_REPRODUCIDO": false, "duty_cycle_servidor_visto_enlace": 0.168, "duty_cycle_condicional_enlace_sobre_ficheros_resueltos": 0.2753}
+  },
+  "duty_cycle_atacante": {
+    "definicion": "fraccion de intentos os.symlink del atacante que TUVIERON EXITO (no [Errno 17]/lock)",
+    "linux_grande_B": 0.98,
+    "linux_grande_B2": 0.968,
+    "windows_referencia": 0.21,
+    "nota": "En Windows el 79% de os.symlink fallaba con [WinError 183] por bloqueo del fichero abierto; en Linux (ext4) unlink sobre fichero abierto SIEMPRE funciona, asi que el atacante coloca el enlace ~97-98% de las veces. Los err_symlink restantes son EEXIST por carrera entre los 3 hilos, NO bloqueos."
+  },
+  "veredicto": {
+    "TOCTOU_GANADO_EN_LINUX": false,
+    "total_llamadas_agregadas": 102400,
+    "total_fugas": 0,
+    "resumen": "La hipotesis del duty cycle se CONFIRMA (subio de 21% a ~98%): el atacante coloca el enlace casi todo el tiempo. Pero la carrera NO se gana. El servidor deniega miles de veces (7531+8063) al ver el enlace via realpath, demostrando que la ventana SE alcanza masivamente, y aun asi 0 fugas: validatePath resuelve realpath() y RECHAZA el enlace fuera de la allowlist antes de leer, y el readFile abre la ruta canonica ya validada. La proteccion aguanta en POSIX igual que en Windows, pero por un motivo DISTINTO (no por el bloqueo de fichero, sino por la comprobacion realpath+rechazo)."
+  }
+}

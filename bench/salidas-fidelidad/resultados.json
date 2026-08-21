@@ -1,0 +1,6173 @@
+[
+ {
+  "id": "A1",
+  "estrato": "control-imagen",
+  "nota": "",
+  "entrada": "corpus\\imagen\\tipico.png",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "im",
+    "destino": "webp",
+    "args": {},
+    "rc": 0,
+    "ms": 576,
+    "stderr": "",
+    "salida": "A1_p1.webp",
+    "car": {
+     "existe": true,
+     "bytes": 12796,
+     "firma": "webp",
+     "ext": "webp",
+     "img": {
+      "formato": "WEBP",
+      "w": 1920,
+      "h": 1080,
+      "prof": 8,
+      "canales": "srgb  3.0",
+      "espacio": "sRGB",
+      "colores": 2318,
+      "dpix": "72",
+      "dpiy": "72",
+      "n_imagenes": 1
+     },
+     "img_err": "",
+     "alfa_min": 1.0
+    }
+   },
+   {
+    "n": 2,
+    "motor": "im",
+    "destino": "png",
+    "args": {},
+    "rc": 0,
+    "ms": 667,
+    "stderr": "",
+    "salida": "A1_p2.png",
+    "car": {
+     "existe": true,
+     "bytes": 64232,
+     "firma": "png",
+     "ext": "png",
+     "img": {
+      "formato": "PNG",
+      "w": 1920,
+      "h": 1080,
+      "prof": 8,
+      "canales": "srgb  3.0",
+      "espacio": "sRGB",
+      "colores": 2318,
+      "dpix": "72",
+      "dpiy": "72",
+      "n_imagenes": 1
+     },
+     "img_err": "",
+     "alfa_min": 1.0
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 42855,
+   "firma": "png",
+   "ext": "png",
+   "img": {
+    "formato": "PNG",
+    "w": 1920,
+    "h": 1080,
+    "prof": 16,
+    "canales": "srgba 4.0",
+    "espacio": "sRGB",
+    "colores": 2405,
+    "dpix": "72",
+    "dpiy": "72",
+    "n_imagenes": 1
+   },
+   "img_err": "",
+   "alfa_min": 1.0
+  },
+  "final": {
+   "existe": true,
+   "bytes": 64232,
+   "firma": "png",
+   "ext": "png",
+   "img": {
+    "formato": "PNG",
+    "w": 1920,
+    "h": 1080,
+    "prof": 8,
+    "canales": "srgb  3.0",
+    "espacio": "sRGB",
+    "colores": 2318,
+    "dpix": "72",
+    "dpiy": "72",
+    "n_imagenes": 1
+   },
+   "img_err": "",
+   "alfa_min": 1.0
+  }
+ },
+ {
+  "id": "A2",
+  "estrato": "control-imagen",
+  "nota": "",
+  "entrada": "corpus\\imagen\\tipico.png",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "im",
+    "destino": "jpg",
+    "args": {
+     "post": [
+      "-quality",
+      "85"
+     ]
+    },
+    "rc": 0,
+    "ms": 333,
+    "stderr": "",
+    "salida": "A2_p1.jpg",
+    "car": {
+     "existe": true,
+     "bytes": 40963,
+     "firma": "jpg",
+     "ext": "jpg",
+     "img": {
+      "formato": "JPEG",
+      "w": 1920,
+      "h": 1080,
+      "prof": 8,
+      "canales": "srgb  3.0",
+      "espacio": "sRGB",
+      "colores": 2024,
+      "dpix": "72",
+      "dpiy": "72",
+      "n_imagenes": 1
+     },
+     "img_err": "",
+     "alfa_min": 1.0
+    }
+   },
+   {
+    "n": 2,
+    "motor": "im",
+    "destino": "png",
+    "args": {},
+    "rc": 0,
+    "ms": 562,
+    "stderr": "",
+    "salida": "A2_p2.png",
+    "car": {
+     "existe": true,
+     "bytes": 35712,
+     "firma": "png",
+     "ext": "png",
+     "img": {
+      "formato": "PNG",
+      "w": 1920,
+      "h": 1080,
+      "prof": 8,
+      "canales": "srgb  3.0",
+      "espacio": "sRGB",
+      "colores": 2024,
+      "dpix": "72",
+      "dpiy": "72",
+      "n_imagenes": 1
+     },
+     "img_err": "",
+     "alfa_min": 1.0
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 42855,
+   "firma": "png",
+   "ext": "png",
+   "img": {
+    "formato": "PNG",
+    "w": 1920,
+    "h": 1080,
+    "prof": 16,
+    "canales": "srgba 4.0",
+    "espacio": "sRGB",
+    "colores": 2405,
+    "dpix": "72",
+    "dpiy": "72",
+    "n_imagenes": 1
+   },
+   "img_err": "",
+   "alfa_min": 1.0
+  },
+  "final": {
+   "existe": true,
+   "bytes": 35712,
+   "firma": "png",
+   "ext": "png",
+   "img": {
+    "formato": "PNG",
+    "w": 1920,
+    "h": 1080,
+    "prof": 8,
+    "canales": "srgb  3.0",
+    "espacio": "sRGB",
+    "colores": 2024,
+    "dpix": "72",
+    "dpiy": "72",
+    "n_imagenes": 1
+   },
+   "img_err": "",
+   "alfa_min": 1.0
+  }
+ },
+ {
+  "id": "A3",
+  "estrato": "control-imagen",
+  "nota": "",
+  "entrada": "corpus\\imagen\\patologico_16bit.tif",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "im",
+    "destino": "png",
+    "args": {},
+    "rc": 0,
+    "ms": 5991,
+    "stderr": "",
+    "salida": "A3_p1.png",
+    "car": {
+     "existe": true,
+     "bytes": 61849791,
+     "firma": "png",
+     "ext": "png",
+     "img": {
+      "formato": "PNG",
+      "w": 4000,
+      "h": 3000,
+      "prof": 16,
+      "canales": "srgb  3.0",
+      "espacio": "sRGB",
+      "colores": 11935622,
+      "dpix": "72",
+      "dpiy": "72",
+      "n_imagenes": 1
+     },
+     "img_err": "",
+     "alfa_min": 1.0
+    }
+   },
+   {
+    "n": 2,
+    "motor": "im",
+    "destino": "tif",
+    "args": {},
+    "rc": 0,
+    "ms": 7435,
+    "stderr": "",
+    "salida": "A3_p2.tif",
+    "car": {
+     "existe": true,
+     "bytes": 72001016,
+     "firma": "tiff",
+     "ext": "tif",
+     "img": {
+      "formato": "TIFF",
+      "w": 4000,
+      "h": 3000,
+      "prof": 16,
+      "canales": "srgb  3.0",
+      "espacio": "sRGB",
+      "colores": 11935622,
+      "dpix": "72",
+      "dpiy": "72",
+      "n_imagenes": 1
+     },
+     "img_err": "",
+     "alfa_min": 1.0
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 72001016,
+   "firma": "tiff",
+   "ext": "tif",
+   "img": {
+    "formato": "TIFF",
+    "w": 4000,
+    "h": 3000,
+    "prof": 16,
+    "canales": "srgb  3.0",
+    "espacio": "sRGB",
+    "colores": 11935622,
+    "dpix": "72",
+    "dpiy": "72",
+    "n_imagenes": 1
+   },
+   "img_err": "",
+   "alfa_min": 1.0
+  },
+  "final": {
+   "existe": true,
+   "bytes": 72001016,
+   "firma": "tiff",
+   "ext": "tif",
+   "img": {
+    "formato": "TIFF",
+    "w": 4000,
+    "h": 3000,
+    "prof": 16,
+    "canales": "srgb  3.0",
+    "espacio": "sRGB",
+    "colores": 11935622,
+    "dpix": "72",
+    "dpiy": "72",
+    "n_imagenes": 1
+   },
+   "img_err": "",
+   "alfa_min": 1.0
+  }
+ },
+ {
+  "id": "A4",
+  "estrato": "control-imagen",
+  "nota": "",
+  "entrada": "corpus\\imagen\\patologico_16bit.tif",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "im",
+    "destino": "webp",
+    "args": {},
+    "rc": 0,
+    "ms": 2441,
+    "stderr": "",
+    "salida": "A4_p1.webp",
+    "car": {
+     "existe": true,
+     "bytes": 407896,
+     "firma": "webp",
+     "ext": "webp",
+     "img": {
+      "formato": "WEBP",
+      "w": 4000,
+      "h": 3000,
+      "prof": 8,
+      "canales": "srgb  3.0",
+      "espacio": "sRGB",
+      "colores": 358144,
+      "dpix": "72",
+      "dpiy": "72",
+      "n_imagenes": 1
+     },
+     "img_err": "",
+     "alfa_min": 1.0
+    }
+   },
+   {
+    "n": 2,
+    "motor": "im",
+    "destino": "png",
+    "args": {},
+    "rc": 0,
+    "ms": 16637,
+    "stderr": "",
+    "salida": "A4_p2.png",
+    "car": {
+     "existe": true,
+     "bytes": 10421937,
+     "firma": "png",
+     "ext": "png",
+     "img": {
+      "formato": "PNG",
+      "w": 4000,
+      "h": 3000,
+      "prof": 8,
+      "canales": "srgb  3.0",
+      "espacio": "sRGB",
+      "colores": 358144,
+      "dpix": "72",
+      "dpiy": "72",
+      "n_imagenes": 1
+     },
+     "img_err": "",
+     "alfa_min": 1.0
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 72001016,
+   "firma": "tiff",
+   "ext": "tif",
+   "img": {
+    "formato": "TIFF",
+    "w": 4000,
+    "h": 3000,
+    "prof": 16,
+    "canales": "srgb  3.0",
+    "espacio": "sRGB",
+    "colores": 11935622,
+    "dpix": "72",
+    "dpiy": "72",
+    "n_imagenes": 1
+   },
+   "img_err": "",
+   "alfa_min": 1.0
+  },
+  "final": {
+   "existe": true,
+   "bytes": 10421937,
+   "firma": "png",
+   "ext": "png",
+   "img": {
+    "formato": "PNG",
+    "w": 4000,
+    "h": 3000,
+    "prof": 8,
+    "canales": "srgb  3.0",
+    "espacio": "sRGB",
+    "colores": 358144,
+    "dpix": "72",
+    "dpiy": "72",
+    "n_imagenes": 1
+   },
+   "img_err": "",
+   "alfa_min": 1.0
+  }
+ },
+ {
+  "id": "A5",
+  "estrato": "control-imagen",
+  "nota": "",
+  "entrada": "corpus\\imagen\\alpha.png",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "im",
+    "destino": "webp",
+    "args": {},
+    "rc": 0,
+    "ms": 51,
+    "stderr": "",
+    "salida": "A5_p1.webp",
+    "car": {
+     "existe": true,
+     "bytes": 2380,
+     "firma": "webp",
+     "ext": "webp",
+     "img": {
+      "formato": "WEBP",
+      "w": 200,
+      "h": 200,
+      "prof": 8,
+      "canales": "srgba 4.0",
+      "espacio": "sRGB",
+      "colores": 1943,
+      "dpix": "72",
+      "dpiy": "72",
+      "n_imagenes": 1
+     },
+     "img_err": "",
+     "alfa_min": 0.0
+    }
+   },
+   {
+    "n": 2,
+    "motor": "im",
+    "destino": "png",
+    "args": {},
+    "rc": 0,
+    "ms": 44,
+    "stderr": "",
+    "salida": "A5_p2.png",
+    "car": {
+     "existe": true,
+     "bytes": 15207,
+     "firma": "png",
+     "ext": "png",
+     "img": {
+      "formato": "PNG",
+      "w": 200,
+      "h": 200,
+      "prof": 8,
+      "canales": "srgba 4.0",
+      "espacio": "sRGB",
+      "colores": 1943,
+      "dpix": "72",
+      "dpiy": "72",
+      "n_imagenes": 1
+     },
+     "img_err": "",
+     "alfa_min": 0.0
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 2780,
+   "firma": "png",
+   "ext": "png",
+   "img": {
+    "formato": "PNG",
+    "w": 200,
+    "h": 200,
+    "prof": 8,
+    "canales": "srgba 5.0",
+    "espacio": "sRGB",
+    "colores": 210,
+    "dpix": "72",
+    "dpiy": "72",
+    "n_imagenes": 1
+   },
+   "img_err": "",
+   "alfa_min": 0.0
+  },
+  "final": {
+   "existe": true,
+   "bytes": 15207,
+   "firma": "png",
+   "ext": "png",
+   "img": {
+    "formato": "PNG",
+    "w": 200,
+    "h": 200,
+    "prof": 8,
+    "canales": "srgba 4.0",
+    "espacio": "sRGB",
+    "colores": 1943,
+    "dpix": "72",
+    "dpiy": "72",
+    "n_imagenes": 1
+   },
+   "img_err": "",
+   "alfa_min": 0.0
+  }
+ },
+ {
+  "id": "A6",
+  "estrato": "control-imagen",
+  "nota": "",
+  "entrada": "corpus\\imagen\\alpha.png",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "im",
+    "destino": "jpg",
+    "args": {
+     "post": [
+      "-quality",
+      "85"
+     ]
+    },
+    "rc": 0,
+    "ms": 44,
+    "stderr": "",
+    "salida": "A6_p1.jpg",
+    "car": {
+     "existe": true,
+     "bytes": 4643,
+     "firma": "jpg",
+     "ext": "jpg",
+     "img": {
+      "formato": "JPEG",
+      "w": 200,
+      "h": 200,
+      "prof": 8,
+      "canales": "srgb  3.0",
+      "espacio": "sRGB",
+      "colores": 3135,
+      "dpix": "72",
+      "dpiy": "72",
+      "n_imagenes": 1
+     },
+     "img_err": "",
+     "alfa_min": 1.0
+    }
+   },
+   {
+    "n": 2,
+    "motor": "im",
+    "destino": "png",
+    "args": {},
+    "rc": 0,
+    "ms": 45,
+    "stderr": "",
+    "salida": "A6_p2.png",
+    "car": {
+     "existe": true,
+     "bytes": 18591,
+     "firma": "png",
+     "ext": "png",
+     "img": {
+      "formato": "PNG",
+      "w": 200,
+      "h": 200,
+      "prof": 8,
+      "canales": "srgb  3.0",
+      "espacio": "sRGB",
+      "colores": 3135,
+      "dpix": "72",
+      "dpiy": "72",
+      "n_imagenes": 1
+     },
+     "img_err": "",
+     "alfa_min": 1.0
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 2780,
+   "firma": "png",
+   "ext": "png",
+   "img": {
+    "formato": "PNG",
+    "w": 200,
+    "h": 200,
+    "prof": 8,
+    "canales": "srgba 5.0",
+    "espacio": "sRGB",
+    "colores": 210,
+    "dpix": "72",
+    "dpiy": "72",
+    "n_imagenes": 1
+   },
+   "img_err": "",
+   "alfa_min": 0.0
+  },
+  "final": {
+   "existe": true,
+   "bytes": 18591,
+   "firma": "png",
+   "ext": "png",
+   "img": {
+    "formato": "PNG",
+    "w": 200,
+    "h": 200,
+    "prof": 8,
+    "canales": "srgb  3.0",
+    "espacio": "sRGB",
+    "colores": 3135,
+    "dpix": "72",
+    "dpiy": "72",
+    "n_imagenes": 1
+   },
+   "img_err": "",
+   "alfa_min": 1.0
+  }
+ },
+ {
+  "id": "A7",
+  "estrato": "control-imagen",
+  "nota": "",
+  "entrada": "corpus\\imagen\\tipico.png",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "im",
+    "destino": "avif",
+    "args": {},
+    "rc": 0,
+    "ms": 2311,
+    "stderr": "",
+    "salida": "A7_p1.avif",
+    "car": {
+     "existe": true,
+     "bytes": 1595,
+     "firma": "avif",
+     "ext": "avif",
+     "img": {
+      "formato": "AVIF",
+      "w": 1920,
+      "h": 1080,
+      "prof": 12,
+      "canales": "srgba 4.0",
+      "espacio": "sRGB",
+      "colores": 5510,
+      "dpix": "72",
+      "dpiy": "72",
+      "n_imagenes": 1
+     },
+     "img_err": "",
+     "alfa_min": 0.993912
+    }
+   },
+   {
+    "n": 2,
+    "motor": "im",
+    "destino": "png",
+    "args": {},
+    "rc": 0,
+    "ms": 579,
+    "stderr": "",
+    "salida": "A7_p2.png",
+    "car": {
+     "existe": true,
+     "bytes": 47966,
+     "firma": "png",
+     "ext": "png",
+     "img": {
+      "formato": "PNG",
+      "w": 1920,
+      "h": 1080,
+      "prof": 16,
+      "canales": "srgba 4.0",
+      "espacio": "sRGB",
+      "colores": 5510,
+      "dpix": "72",
+      "dpiy": "72",
+      "n_imagenes": 1
+     },
+     "img_err": "",
+     "alfa_min": 0.993912
+    }
+   },
+   {
+    "n": 3,
+    "motor": "im",
+    "destino": "webp",
+    "args": {},
+    "rc": 0,
+    "ms": 1463,
+    "stderr": "",
+    "salida": "A7_p3.webp",
+    "car": {
+     "existe": true,
+     "bytes": 13006,
+     "firma": "webp",
+     "ext": "webp",
+     "img": {
+      "formato": "WEBP",
+      "w": 1920,
+      "h": 1080,
+      "prof": 8,
+      "canales": "srgba 4.0",
+      "espacio": "sRGB",
+      "colores": 2379,
+      "dpix": "72",
+      "dpiy": "72",
+      "n_imagenes": 1
+     },
+     "img_err": "",
+     "alfa_min": 0.992157
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 42855,
+   "firma": "png",
+   "ext": "png",
+   "img": {
+    "formato": "PNG",
+    "w": 1920,
+    "h": 1080,
+    "prof": 16,
+    "canales": "srgba 4.0",
+    "espacio": "sRGB",
+    "colores": 2405,
+    "dpix": "72",
+    "dpiy": "72",
+    "n_imagenes": 1
+   },
+   "img_err": "",
+   "alfa_min": 1.0
+  },
+  "final": {
+   "existe": true,
+   "bytes": 13006,
+   "firma": "webp",
+   "ext": "webp",
+   "img": {
+    "formato": "WEBP",
+    "w": 1920,
+    "h": 1080,
+    "prof": 8,
+    "canales": "srgba 4.0",
+    "espacio": "sRGB",
+    "colores": 2379,
+    "dpix": "72",
+    "dpiy": "72",
+    "n_imagenes": 1
+   },
+   "img_err": "",
+   "alfa_min": 0.992157
+  }
+ },
+ {
+  "id": "A8",
+  "estrato": "control-imagen",
+  "nota": "3 saltos con paleta intermedia",
+  "entrada": "corpus\\imagen\\tipico.png",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "im",
+    "destino": "bmp",
+    "args": {},
+    "rc": 0,
+    "ms": 389,
+    "stderr": "",
+    "salida": "A8_p1.bmp",
+    "car": {
+     "existe": true,
+     "bytes": 8294538,
+     "firma": "bmp",
+     "ext": "bmp",
+     "img": {
+      "formato": "BMP",
+      "w": 1920,
+      "h": 1080,
+      "prof": 8,
+      "canales": "srgba 4.0",
+      "espacio": "sRGB",
+      "colores": 961,
+      "dpix": "28.346456692913385211",
+      "dpiy": "28.346456692913385211",
+      "n_imagenes": 1
+     },
+     "img_err": "",
+     "alfa_min": 1.0
+    }
+   },
+   {
+    "n": 2,
+    "motor": "im",
+    "destino": "gif",
+    "args": {},
+    "rc": 0,
+    "ms": 4968,
+    "stderr": "",
+    "salida": "A8_p2.gif",
+    "car": {
+     "existe": true,
+     "bytes": 86736,
+     "firma": "gif",
+     "ext": "gif",
+     "av": {
+      "formato": "gif",
+      "dur": 0.1,
+      "n_v": 1,
+      "n_a": 0,
+      "codec_v": "gif",
+      "codec_a": null,
+      "w": 1920,
+      "h": 1080,
+      "sr": null,
+      "canales_a": null,
+      "bitrate": "6938880"
+     },
+     "av_err": "",
+     "img": {
+      "formato": "GIF",
+      "w": 1920,
+      "h": 1080,
+      "prof": 8,
+      "canales": "srgb  4.0",
+      "espacio": "sRGB",
+      "colores": 105,
+      "dpix": "72",
+      "dpiy": "72",
+      "n_imagenes": 1
+     }
+    }
+   },
+   {
+    "n": 3,
+    "motor": "im",
+    "destino": "png",
+    "args": {},
+    "rc": 0,
+    "ms": 896,
+    "stderr": "",
+    "salida": "A8_p3.png",
+    "car": {
+     "existe": true,
+     "bytes": 19723,
+     "firma": "png",
+     "ext": "png",
+     "img": {
+      "formato": "PNG",
+      "w": 1920,
+      "h": 1080,
+      "prof": 8,
+      "canales": "srgb  4.0",
+      "espacio": "sRGB",
+      "colores": 105,
+      "dpix": "72",
+      "dpiy": "72",
+      "n_imagenes": 1
+     },
+     "img_err": "",
+     "alfa_min": 1.0
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 42855,
+   "firma": "png",
+   "ext": "png",
+   "img": {
+    "formato": "PNG",
+    "w": 1920,
+    "h": 1080,
+    "prof": 16,
+    "canales": "srgba 4.0",
+    "espacio": "sRGB",
+    "colores": 2405,
+    "dpix": "72",
+    "dpiy": "72",
+    "n_imagenes": 1
+   },
+   "img_err": "",
+   "alfa_min": 1.0
+  },
+  "final": {
+   "existe": true,
+   "bytes": 19723,
+   "firma": "png",
+   "ext": "png",
+   "img": {
+    "formato": "PNG",
+    "w": 1920,
+    "h": 1080,
+    "prof": 8,
+    "canales": "srgb  4.0",
+    "espacio": "sRGB",
+    "colores": 105,
+    "dpix": "72",
+    "dpiy": "72",
+    "n_imagenes": 1
+   },
+   "img_err": "",
+   "alfa_min": 1.0
+  }
+ },
+ {
+  "id": "B2",
+  "estrato": "doc-a-imagen",
+  "nota": "caso hito 1: docx->webp",
+  "entrada": "bench\\salidas-fidelidad\\entradas\\entrada.docx",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "gt-lo",
+    "destino": "pdf",
+    "args": {},
+    "rc": 0,
+    "ms": 4454,
+    "stderr": "HTTP 200",
+    "salida": "B2_p1.pdf",
+    "car": {
+     "existe": true,
+     "bytes": 17090,
+     "firma": "pdf",
+     "ext": "pdf",
+     "chars": 380,
+     "texto": true,
+     "centinela": true,
+     "tabla": true,
+     "paginas": 1
+    }
+   },
+   {
+    "n": 2,
+    "motor": "im",
+    "destino": "webp",
+    "args": {
+     "pre": [
+      "-density",
+      "150"
+     ]
+    },
+    "rc": 0,
+    "ms": 1157,
+    "stderr": "",
+    "salida": "B2_p2.webp",
+    "car": {
+     "existe": true,
+     "bytes": 20024,
+     "firma": "webp",
+     "ext": "webp",
+     "img": {
+      "formato": "WEBP",
+      "w": 1240,
+      "h": 1754,
+      "prof": 8,
+      "canales": "srgba 4.0",
+      "espacio": "sRGB",
+      "colores": 29,
+      "dpix": "72",
+      "dpiy": "72",
+      "n_imagenes": 1
+     },
+     "img_err": "",
+     "alfa_min": 0.0
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 1354,
+   "firma": "zip(ooxml/odf/epub)",
+   "ext": "docx",
+   "chars": 380,
+   "texto": true,
+   "centinela": true,
+   "tabla": true
+  },
+  "final": {
+   "existe": true,
+   "bytes": 20024,
+   "firma": "webp",
+   "ext": "webp",
+   "img": {
+    "formato": "WEBP",
+    "w": 1240,
+    "h": 1754,
+    "prof": 8,
+    "canales": "srgba 4.0",
+    "espacio": "sRGB",
+    "colores": 29,
+    "dpix": "72",
+    "dpiy": "72",
+    "n_imagenes": 1
+   },
+   "img_err": "",
+   "alfa_min": 0.0
+  }
+ },
+ {
+  "id": "B5",
+  "estrato": "doc-a-imagen",
+  "nota": "tabular->imagen",
+  "entrada": "bench\\salidas-fidelidad\\entradas\\entrada.csv",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "gt-lo",
+    "destino": "pdf",
+    "args": {},
+    "rc": 0,
+    "ms": 11676,
+    "stderr": "HTTP 200",
+    "salida": "B5_p1.pdf",
+    "car": {
+     "existe": true,
+     "bytes": 18854,
+     "firma": "pdf",
+     "ext": "pdf",
+     "chars": 170,
+     "texto": true,
+     "centinela": true,
+     "tabla": true,
+     "paginas": 3
+    }
+   },
+   {
+    "n": 2,
+    "motor": "gs",
+    "destino": "png",
+    "args": {
+     "dev": "png16m",
+     "extra": [
+      "-r150"
+     ]
+    },
+    "rc": 0,
+    "ms": 698,
+    "stderr": "",
+    "salida": "B5_p2.png",
+    "car": {
+     "existe": true,
+     "bytes": 35309,
+     "firma": "png",
+     "ext": "png",
+     "img": {
+      "formato": "PNG",
+      "w": 1240,
+      "h": 1754,
+      "prof": 8,
+      "canales": "srgb  3.0",
+      "espacio": "sRGB",
+      "colores": 2,
+      "dpix": "59.060000000000002274",
+      "dpiy": "59.060000000000002274",
+      "n_imagenes": 1
+     },
+     "img_err": "",
+     "alfa_min": 1.0
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 189,
+   "firma": "?636f6469676f2c63",
+   "ext": "csv",
+   "chars": 167,
+   "texto": true,
+   "centinela": true,
+   "tabla": true
+  },
+  "final": {
+   "existe": true,
+   "bytes": 35309,
+   "firma": "png",
+   "ext": "png",
+   "img": {
+    "formato": "PNG",
+    "w": 1240,
+    "h": 1754,
+    "prof": 8,
+    "canales": "srgb  3.0",
+    "espacio": "sRGB",
+    "colores": 2,
+    "dpix": "59.060000000000002274",
+    "dpiy": "59.060000000000002274",
+    "n_imagenes": 1
+   },
+   "img_err": "",
+   "alfa_min": 1.0
+  }
+ },
+ {
+  "id": "B6",
+  "estrato": "doc-a-imagen",
+  "nota": "tabular->imagen",
+  "entrada": "bench\\salidas-fidelidad\\entradas\\entrada.xlsx",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "gt-lo",
+    "destino": "pdf",
+    "args": {},
+    "rc": 0,
+    "ms": 3018,
+    "stderr": "HTTP 200",
+    "salida": "B6_p1.pdf",
+    "car": {
+     "existe": true,
+     "bytes": 17018,
+     "firma": "pdf",
+     "ext": "pdf",
+     "chars": 124,
+     "texto": true,
+     "centinela": true,
+     "tabla": true,
+     "paginas": 1
+    }
+   },
+   {
+    "n": 2,
+    "motor": "gs",
+    "destino": "png",
+    "args": {
+     "dev": "png16m",
+     "extra": [
+      "-r150"
+     ]
+    },
+    "rc": 0,
+    "ms": 354,
+    "stderr": "",
+    "salida": "B6_p2.png",
+    "car": {
+     "existe": true,
+     "bytes": 13500,
+     "firma": "png",
+     "ext": "png",
+     "img": {
+      "formato": "PNG",
+      "w": 1240,
+      "h": 1754,
+      "prof": 8,
+      "canales": "srgb  3.0",
+      "espacio": "sRGB",
+      "colores": 2,
+      "dpix": "59.060000000000002274",
+      "dpiy": "59.060000000000002274",
+      "n_imagenes": 1
+     },
+     "img_err": "",
+     "alfa_min": 1.0
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 1719,
+   "firma": "zip(ooxml/odf/epub)",
+   "ext": "xlsx",
+   "chars": 134,
+   "texto": true,
+   "centinela": true,
+   "tabla": true
+  },
+  "final": {
+   "existe": true,
+   "bytes": 13500,
+   "firma": "png",
+   "ext": "png",
+   "img": {
+    "formato": "PNG",
+    "w": 1240,
+    "h": 1754,
+    "prof": 8,
+    "canales": "srgb  3.0",
+    "espacio": "sRGB",
+    "colores": 2,
+    "dpix": "59.060000000000002274",
+    "dpiy": "59.060000000000002274",
+    "n_imagenes": 1
+   },
+   "img_err": "",
+   "alfa_min": 1.0
+  }
+ },
+ {
+  "id": "B7",
+  "estrato": "doc-a-imagen",
+  "nota": "",
+  "entrada": "bench\\salidas-fidelidad\\entradas\\entrada.rtf",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "gt-lo",
+    "destino": "pdf",
+    "args": {},
+    "rc": 0,
+    "ms": 1845,
+    "stderr": "HTTP 200",
+    "salida": "B7_p1.pdf",
+    "car": {
+     "existe": true,
+     "bytes": 20234,
+     "firma": "pdf",
+     "ext": "pdf",
+     "chars": 376,
+     "texto": true,
+     "centinela": true,
+     "tabla": true,
+     "paginas": 1
+    }
+   },
+   {
+    "n": 2,
+    "motor": "im",
+    "destino": "png",
+    "args": {
+     "pre": [
+      "-density",
+      "150"
+     ]
+    },
+    "rc": 0,
+    "ms": 670,
+    "stderr": "",
+    "salida": "B7_p2.png",
+    "car": {
+     "existe": true,
+     "bytes": 29344,
+     "firma": "png",
+     "ext": "png",
+     "img": {
+      "formato": "PNG",
+      "w": 1275,
+      "h": 1650,
+      "prof": 8,
+      "canales": "graya 2.0",
+      "espacio": "Gray",
+      "colores": 21,
+      "dpix": "150",
+      "dpiy": "150",
+      "n_imagenes": 1
+     },
+     "img_err": "",
+     "alfa_min": 0.0
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 534,
+   "firma": "?7b5c727466315c61",
+   "ext": "rtf",
+   "chars": 390,
+   "texto": true,
+   "centinela": true,
+   "tabla": true
+  },
+  "final": {
+   "existe": true,
+   "bytes": 29344,
+   "firma": "png",
+   "ext": "png",
+   "img": {
+    "formato": "PNG",
+    "w": 1275,
+    "h": 1650,
+    "prof": 8,
+    "canales": "graya 2.0",
+    "espacio": "Gray",
+    "colores": 21,
+    "dpix": "150",
+    "dpiy": "150",
+    "n_imagenes": 1
+   },
+   "img_err": "",
+   "alfa_min": 0.0
+  }
+ },
+ {
+  "id": "B8",
+  "estrato": "doc-a-imagen",
+  "nota": "",
+  "entrada": "bench\\salidas-fidelidad\\entradas\\entrada.odt",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "gt-lo",
+    "destino": "pdf",
+    "args": {},
+    "rc": 0,
+    "ms": 775,
+    "stderr": "HTTP 200",
+    "salida": "B8_p1.pdf",
+    "car": {
+     "existe": true,
+     "bytes": 26784,
+     "firma": "pdf",
+     "ext": "pdf",
+     "chars": 380,
+     "texto": true,
+     "centinela": true,
+     "tabla": true,
+     "paginas": 1
+    }
+   },
+   {
+    "n": 2,
+    "motor": "gs",
+    "destino": "jpg",
+    "args": {
+     "dev": "jpeg",
+     "extra": [
+      "-r150",
+      "-dJPEGQ=85"
+     ]
+    },
+    "rc": 0,
+    "ms": 218,
+    "stderr": "",
+    "salida": "B8_p2.jpg",
+    "car": {
+     "existe": true,
+     "bytes": 99766,
+     "firma": "jpg",
+     "ext": "jpg",
+     "img": {
+      "formato": "JPEG",
+      "w": 1240,
+      "h": 1754,
+      "prof": 8,
+      "canales": "srgb  3.0",
+      "espacio": "sRGB",
+      "colores": 48,
+      "dpix": "150",
+      "dpiy": "150",
+      "n_imagenes": 1
+     },
+     "img_err": "",
+     "alfa_min": 1.0
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 1097,
+   "firma": "zip(ooxml/odf/epub)",
+   "ext": "odt",
+   "chars": 380,
+   "texto": true,
+   "centinela": true,
+   "tabla": true
+  },
+  "final": {
+   "existe": true,
+   "bytes": 99766,
+   "firma": "jpg",
+   "ext": "jpg",
+   "img": {
+    "formato": "JPEG",
+    "w": 1240,
+    "h": 1754,
+    "prof": 8,
+    "canales": "srgb  3.0",
+    "espacio": "sRGB",
+    "colores": 48,
+    "dpix": "150",
+    "dpiy": "150",
+    "n_imagenes": 1
+   },
+   "img_err": "",
+   "alfa_min": 1.0
+  }
+ },
+ {
+  "id": "C2",
+  "estrato": "doc-a-doc",
+  "nota": "docx->pdf->docx",
+  "entrada": "bench\\salidas-fidelidad\\entradas\\entrada.docx",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "gt-lo",
+    "destino": "pdf",
+    "args": {},
+    "rc": 0,
+    "ms": 631,
+    "stderr": "HTTP 200",
+    "salida": "C2_p1.pdf",
+    "car": {
+     "existe": true,
+     "bytes": 17090,
+     "firma": "pdf",
+     "ext": "pdf",
+     "chars": 380,
+     "texto": true,
+     "centinela": true,
+     "tabla": true,
+     "paginas": 1
+    }
+   },
+   {
+    "n": 2,
+    "motor": "gs",
+    "destino": "docx",
+    "args": {
+     "dev": "docxwrite"
+    },
+    "rc": 0,
+    "ms": 364,
+    "stderr": "",
+    "salida": "C2_p2.docx",
+    "car": {
+     "existe": true,
+     "bytes": 10250,
+     "firma": "zip(ooxml/odf/epub)",
+     "ext": "docx",
+     "chars": 481,
+     "texto": true,
+     "centinela": true,
+     "tabla": false
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 1354,
+   "firma": "zip(ooxml/odf/epub)",
+   "ext": "docx",
+   "chars": 380,
+   "texto": true,
+   "centinela": true,
+   "tabla": true
+  },
+  "final": {
+   "existe": true,
+   "bytes": 10250,
+   "firma": "zip(ooxml/odf/epub)",
+   "ext": "docx",
+   "chars": 481,
+   "texto": true,
+   "centinela": true,
+   "tabla": false
+  }
+ },
+ {
+  "id": "C3",
+  "estrato": "doc-a-doc",
+  "nota": "3 saltos que rasterizan: el caso del aviso",
+  "entrada": "bench\\salidas-fidelidad\\entradas\\entrada.docx",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "gt-lo",
+    "destino": "pdf",
+    "args": {},
+    "rc": 0,
+    "ms": 569,
+    "stderr": "HTTP 200",
+    "salida": "C3_p1.pdf",
+    "car": {
+     "existe": true,
+     "bytes": 17090,
+     "firma": "pdf",
+     "ext": "pdf",
+     "chars": 380,
+     "texto": true,
+     "centinela": true,
+     "tabla": true,
+     "paginas": 1
+    }
+   },
+   {
+    "n": 2,
+    "motor": "gs",
+    "destino": "png",
+    "args": {
+     "dev": "png16m",
+     "extra": [
+      "-r150"
+     ]
+    },
+    "rc": 0,
+    "ms": 295,
+    "stderr": "",
+    "salida": "C3_p2.png",
+    "car": {
+     "existe": true,
+     "bytes": 18664,
+     "firma": "png",
+     "ext": "png",
+     "img": {
+      "formato": "PNG",
+      "w": 1240,
+      "h": 1754,
+      "prof": 8,
+      "canales": "srgb  3.0",
+      "espacio": "sRGB",
+      "colores": 2,
+      "dpix": "59.060000000000002274",
+      "dpiy": "59.060000000000002274",
+      "n_imagenes": 1
+     },
+     "img_err": "",
+     "alfa_min": 1.0
+    }
+   },
+   {
+    "n": 3,
+    "motor": "im",
+    "destino": "pdf",
+    "args": {},
+    "rc": 0,
+    "ms": 188,
+    "stderr": "",
+    "salida": "C3_p3.pdf",
+    "car": {
+     "existe": true,
+     "bytes": 11818,
+     "firma": "pdf",
+     "ext": "pdf",
+     "chars": 0,
+     "texto": false,
+     "centinela": false,
+     "tabla": false,
+     "paginas": 1
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 1354,
+   "firma": "zip(ooxml/odf/epub)",
+   "ext": "docx",
+   "chars": 380,
+   "texto": true,
+   "centinela": true,
+   "tabla": true
+  },
+  "final": {
+   "existe": true,
+   "bytes": 11818,
+   "firma": "pdf",
+   "ext": "pdf",
+   "chars": 0,
+   "texto": false,
+   "centinela": false,
+   "tabla": false,
+   "paginas": 1
+  }
+ },
+ {
+  "id": "C5",
+  "estrato": "doc-a-doc",
+  "nota": "tabla->docx",
+  "entrada": "bench\\salidas-fidelidad\\entradas\\entrada.xlsx",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "gt-lo",
+    "destino": "pdf",
+    "args": {},
+    "rc": 0,
+    "ms": 792,
+    "stderr": "HTTP 200",
+    "salida": "C5_p1.pdf",
+    "car": {
+     "existe": true,
+     "bytes": 17018,
+     "firma": "pdf",
+     "ext": "pdf",
+     "chars": 124,
+     "texto": true,
+     "centinela": true,
+     "tabla": true,
+     "paginas": 1
+    }
+   },
+   {
+    "n": 2,
+    "motor": "gs",
+    "destino": "docx",
+    "args": {
+     "dev": "docxwrite"
+    },
+    "rc": 0,
+    "ms": 223,
+    "stderr": "",
+    "salida": "C5_p2.docx",
+    "car": {
+     "existe": true,
+     "bytes": 10076,
+     "firma": "zip(ooxml/odf/epub)",
+     "ext": "docx",
+     "chars": 232,
+     "texto": true,
+     "centinela": true,
+     "tabla": true
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 1719,
+   "firma": "zip(ooxml/odf/epub)",
+   "ext": "xlsx",
+   "chars": 134,
+   "texto": true,
+   "centinela": true,
+   "tabla": true
+  },
+  "final": {
+   "existe": true,
+   "bytes": 10076,
+   "firma": "zip(ooxml/odf/epub)",
+   "ext": "docx",
+   "chars": 232,
+   "texto": true,
+   "centinela": true,
+   "tabla": true
+  }
+ },
+ {
+  "id": "C6",
+  "estrato": "doc-a-doc",
+  "nota": "control conocido de la referencia: PDF->PNG->PDF",
+  "entrada": "corpus\\pdf\\tipico_texto.pdf",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "gs",
+    "destino": "png",
+    "args": {
+     "dev": "png16m",
+     "extra": [
+      "-r150"
+     ]
+    },
+    "rc": 0,
+    "ms": 325,
+    "stderr": "",
+    "salida": "C6_p1.png",
+    "car": {
+     "existe": true,
+     "bytes": 15804,
+     "firma": "png",
+     "ext": "png",
+     "img": {
+      "formato": "PNG",
+      "w": 1240,
+      "h": 1754,
+      "prof": 8,
+      "canales": "srgb  3.0",
+      "espacio": "sRGB",
+      "colores": 2,
+      "dpix": "59.060000000000002274",
+      "dpiy": "59.060000000000002274",
+      "n_imagenes": 1
+     },
+     "img_err": "",
+     "alfa_min": 1.0
+    }
+   },
+   {
+    "n": 2,
+    "motor": "im",
+    "destino": "pdf",
+    "args": {},
+    "rc": 0,
+    "ms": 184,
+    "stderr": "",
+    "salida": "C6_p2.pdf",
+    "car": {
+     "existe": true,
+     "bytes": 8613,
+     "firma": "pdf",
+     "ext": "pdf",
+     "chars": 0,
+     "texto": false,
+     "centinela": false,
+     "tabla": false,
+     "paginas": 1
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 3219,
+   "firma": "pdf",
+   "ext": "pdf",
+   "chars": 104,
+   "texto": true,
+   "centinela": false,
+   "tabla": false,
+   "paginas": 1
+  },
+  "final": {
+   "existe": true,
+   "bytes": 8613,
+   "firma": "pdf",
+   "ext": "pdf",
+   "chars": 0,
+   "texto": false,
+   "centinela": false,
+   "tabla": false,
+   "paginas": 1
+  }
+ },
+ {
+  "id": "C7",
+  "estrato": "doc-a-doc",
+  "nota": "",
+  "entrada": "corpus\\pdf\\tipico_texto.pdf",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "gs",
+    "destino": "pdf",
+    "args": {
+     "dev": "pdfwrite"
+    },
+    "rc": 0,
+    "ms": 6163,
+    "stderr": "",
+    "salida": "C7_p1.pdf",
+    "car": {
+     "existe": true,
+     "bytes": 3284,
+     "firma": "pdf",
+     "ext": "pdf",
+     "chars": 104,
+     "texto": true,
+     "centinela": false,
+     "tabla": false,
+     "paginas": 1
+    }
+   },
+   {
+    "n": 2,
+    "motor": "gs",
+    "destino": "docx",
+    "args": {
+     "dev": "docxwrite"
+    },
+    "rc": 0,
+    "ms": 274,
+    "stderr": "",
+    "salida": "C7_p2.docx",
+    "car": {
+     "existe": true,
+     "bytes": 10047,
+     "firma": "zip(ooxml/odf/epub)",
+     "ext": "docx",
+     "chars": 228,
+     "texto": true,
+     "centinela": false,
+     "tabla": false
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 3219,
+   "firma": "pdf",
+   "ext": "pdf",
+   "chars": 104,
+   "texto": true,
+   "centinela": false,
+   "tabla": false,
+   "paginas": 1
+  },
+  "final": {
+   "existe": true,
+   "bytes": 10047,
+   "firma": "zip(ooxml/odf/epub)",
+   "ext": "docx",
+   "chars": 228,
+   "texto": true,
+   "centinela": false,
+   "tabla": false
+  }
+ },
+ {
+  "id": "D2",
+  "estrato": "imagen-a-doc",
+  "nota": "profundidad a traves de PDF",
+  "entrada": "corpus\\imagen\\patologico_16bit.tif",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "im",
+    "destino": "pdf",
+    "args": {},
+    "rc": 0,
+    "ms": 2548,
+    "stderr": "",
+    "salida": "D2_p1.pdf",
+    "car": {
+     "existe": true,
+     "bytes": 45613738,
+     "firma": "pdf",
+     "ext": "pdf",
+     "chars": 0,
+     "texto": false,
+     "centinela": false,
+     "tabla": false,
+     "paginas": 1
+    }
+   },
+   {
+    "n": 2,
+    "motor": "gs",
+    "destino": "png",
+    "args": {
+     "dev": "png16m",
+     "extra": [
+      "-r150"
+     ]
+    },
+    "rc": 0,
+    "ms": 20087,
+    "stderr": "",
+    "salida": "D2_p2.png",
+    "car": {
+     "existe": true,
+     "bytes": 30202005,
+     "firma": "png",
+     "ext": "png",
+     "img": {
+      "formato": "PNG",
+      "w": 8333,
+      "h": 6250,
+      "prof": 8,
+      "canales": "srgb  3.0",
+      "espacio": "sRGB",
+      "colores": 2116571,
+      "dpix": "59.060000000000002274",
+      "dpiy": "59.060000000000002274",
+      "n_imagenes": 1
+     },
+     "img_err": "",
+     "alfa_min": 1.0
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 72001016,
+   "firma": "tiff",
+   "ext": "tif",
+   "img": {
+    "formato": "TIFF",
+    "w": 4000,
+    "h": 3000,
+    "prof": 16,
+    "canales": "srgb  3.0",
+    "espacio": "sRGB",
+    "colores": 11935622,
+    "dpix": "72",
+    "dpiy": "72",
+    "n_imagenes": 1
+   },
+   "img_err": "",
+   "alfa_min": 1.0
+  },
+  "final": {
+   "existe": true,
+   "bytes": 30202005,
+   "firma": "png",
+   "ext": "png",
+   "img": {
+    "formato": "PNG",
+    "w": 8333,
+    "h": 6250,
+    "prof": 8,
+    "canales": "srgb  3.0",
+    "espacio": "sRGB",
+    "colores": 2116571,
+    "dpix": "59.060000000000002274",
+    "dpiy": "59.060000000000002274",
+    "n_imagenes": 1
+   },
+   "img_err": "",
+   "alfa_min": 1.0
+  }
+ },
+ {
+  "id": "D3",
+  "estrato": "imagen-a-doc",
+  "nota": "",
+  "entrada": "corpus\\imagen\\tipico.jpg",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "im",
+    "destino": "pdf",
+    "args": {
+     "pre": [
+      "-density",
+      "150",
+      "-units",
+      "PixelsPerInch"
+     ]
+    },
+    "rc": 0,
+    "ms": 785,
+    "stderr": "",
+    "salida": "D3_p1.pdf",
+    "car": {
+     "existe": true,
+     "bytes": 89859,
+     "firma": "pdf",
+     "ext": "pdf",
+     "chars": 0,
+     "texto": false,
+     "centinela": false,
+     "tabla": false,
+     "paginas": 1
+    }
+   },
+   {
+    "n": 2,
+    "motor": "gs",
+    "destino": "pdf",
+    "args": {
+     "dev": "pdfwrite"
+    },
+    "rc": 0,
+    "ms": 256,
+    "stderr": "",
+    "salida": "D3_p2.pdf",
+    "car": {
+     "existe": true,
+     "bytes": 90685,
+     "firma": "pdf",
+     "ext": "pdf",
+     "chars": 0,
+     "texto": false,
+     "centinela": false,
+     "tabla": false,
+     "paginas": 1
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 87954,
+   "firma": "jpg",
+   "ext": "jpg",
+   "img": {
+    "formato": "JPEG",
+    "w": 1920,
+    "h": 1080,
+    "prof": 8,
+    "canales": "srgb  3.0",
+    "espacio": "sRGB",
+    "colores": 1605,
+    "dpix": "72",
+    "dpiy": "72",
+    "n_imagenes": 1
+   },
+   "img_err": "",
+   "alfa_min": 1.0
+  },
+  "final": {
+   "existe": true,
+   "bytes": 90685,
+   "firma": "pdf",
+   "ext": "pdf",
+   "chars": 0,
+   "texto": false,
+   "centinela": false,
+   "tabla": false,
+   "paginas": 1
+  }
+ },
+ {
+  "id": "D4",
+  "estrato": "imagen-a-doc",
+  "nota": "alfa a traves de PDF",
+  "entrada": "corpus\\imagen\\alpha.png",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "im",
+    "destino": "pdf",
+    "args": {},
+    "rc": 0,
+    "ms": 53,
+    "stderr": "",
+    "salida": "D4_p1.pdf",
+    "car": {
+     "existe": true,
+     "bytes": 6083,
+     "firma": "pdf",
+     "ext": "pdf",
+     "chars": 2,
+     "texto": false,
+     "centinela": false,
+     "tabla": false,
+     "paginas": 1
+    }
+   },
+   {
+    "n": 2,
+    "motor": "gs",
+    "destino": "png",
+    "args": {
+     "dev": "png16m",
+     "extra": [
+      "-r150"
+     ]
+    },
+    "rc": 0,
+    "ms": 566,
+    "stderr": "",
+    "salida": "D4_p2.png",
+    "car": {
+     "existe": true,
+     "bytes": 6150,
+     "firma": "png",
+     "ext": "png",
+     "img": {
+      "formato": "PNG",
+      "w": 417,
+      "h": 417,
+      "prof": 8,
+      "canales": "srgb  3.0",
+      "espacio": "sRGB",
+      "colores": 193,
+      "dpix": "59.060000000000002274",
+      "dpiy": "59.060000000000002274",
+      "n_imagenes": 1
+     },
+     "img_err": "",
+     "alfa_min": 1.0
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 2780,
+   "firma": "png",
+   "ext": "png",
+   "img": {
+    "formato": "PNG",
+    "w": 200,
+    "h": 200,
+    "prof": 8,
+    "canales": "srgba 5.0",
+    "espacio": "sRGB",
+    "colores": 210,
+    "dpix": "72",
+    "dpiy": "72",
+    "n_imagenes": 1
+   },
+   "img_err": "",
+   "alfa_min": 0.0
+  },
+  "final": {
+   "existe": true,
+   "bytes": 6150,
+   "firma": "png",
+   "ext": "png",
+   "img": {
+    "formato": "PNG",
+    "w": 417,
+    "h": 417,
+    "prof": 8,
+    "canales": "srgb  3.0",
+    "espacio": "sRGB",
+    "colores": 193,
+    "dpix": "59.060000000000002274",
+    "dpiy": "59.060000000000002274",
+    "n_imagenes": 1
+   },
+   "img_err": "",
+   "alfa_min": 1.0
+  }
+ },
+ {
+  "id": "E2",
+  "estrato": "video-a-imagen",
+  "nota": "",
+  "entrada": "corpus\\video\\tipico.mp4",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "ff",
+    "destino": "png",
+    "args": {
+     "extra": [
+      "-frames:v",
+      "1"
+     ]
+    },
+    "rc": 0,
+    "ms": 578,
+    "stderr": "",
+    "salida": "E2_p1.png",
+    "car": {
+     "existe": true,
+     "bytes": 288074,
+     "firma": "png",
+     "ext": "png",
+     "img": {
+      "formato": "PNG",
+      "w": 1920,
+      "h": 1080,
+      "prof": 8,
+      "canales": "srgb  3.0",
+      "espacio": "sRGB",
+      "colores": 58560,
+      "dpix": "1",
+      "dpiy": "1",
+      "n_imagenes": 1
+     },
+     "img_err": "",
+     "alfa_min": 1.0
+    }
+   },
+   {
+    "n": 2,
+    "motor": "im",
+    "destino": "webp",
+    "args": {},
+    "rc": 0,
+    "ms": 634,
+    "stderr": "",
+    "salida": "E2_p2.webp",
+    "car": {
+     "existe": true,
+     "bytes": 45818,
+     "firma": "webp",
+     "ext": "webp",
+     "img": {
+      "formato": "WEBP",
+      "w": 1920,
+      "h": 1080,
+      "prof": 8,
+      "canales": "srgb  3.0",
+      "espacio": "sRGB",
+      "colores": 68732,
+      "dpix": "72",
+      "dpiy": "72",
+      "n_imagenes": 1
+     },
+     "img_err": "",
+     "alfa_min": 1.0
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 16246490,
+   "firma": "mp4/mov",
+   "ext": "mp4",
+   "av": {
+    "formato": "mov,mp4,m4a,3gp,3g2,mj2",
+    "dur": 20.0,
+    "n_v": 1,
+    "n_a": 1,
+    "codec_v": "h264",
+    "codec_a": "aac",
+    "w": 1920,
+    "h": 1080,
+    "sr": "44100",
+    "canales_a": 1,
+    "bitrate": "6498596"
+   },
+   "av_err": ""
+  },
+  "final": {
+   "existe": true,
+   "bytes": 45818,
+   "firma": "webp",
+   "ext": "webp",
+   "img": {
+    "formato": "WEBP",
+    "w": 1920,
+    "h": 1080,
+    "prof": 8,
+    "canales": "srgb  3.0",
+    "espacio": "sRGB",
+    "colores": 68732,
+    "dpix": "72",
+    "dpiy": "72",
+    "n_imagenes": 1
+   },
+   "img_err": "",
+   "alfa_min": 1.0
+  }
+ },
+ {
+  "id": "E3",
+  "estrato": "video-a-video",
+  "nota": "remux ida y vuelta con -c copy",
+  "entrada": "corpus\\video\\patologico_2pistas.mkv",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "ff",
+    "destino": "mp4",
+    "args": {
+     "extra": [
+      "-c",
+      "copy"
+     ]
+    },
+    "rc": 0,
+    "ms": 111,
+    "stderr": "",
+    "salida": "E3_p1.mp4",
+    "car": {
+     "existe": true,
+     "bytes": 3997399,
+     "firma": "mp4/mov",
+     "ext": "mp4",
+     "av": {
+      "formato": "mov,mp4,m4a,3gp,3g2,mj2",
+      "dur": 10.03059,
+      "n_v": 1,
+      "n_a": 1,
+      "codec_v": "h264",
+      "codec_a": "aac",
+      "w": 1280,
+      "h": 720,
+      "sr": "44100",
+      "canales_a": 1,
+      "bitrate": "3188166"
+     },
+     "av_err": ""
+    }
+   },
+   {
+    "n": 2,
+    "motor": "ff",
+    "destino": "mkv",
+    "args": {
+     "extra": [
+      "-c",
+      "copy"
+     ]
+    },
+    "rc": 0,
+    "ms": 160,
+    "stderr": "",
+    "salida": "E3_p2.mkv",
+    "car": {
+     "existe": true,
+     "bytes": 3989770,
+     "firma": "mkv/webm",
+     "ext": "mkv",
+     "av": {
+      "formato": "matroska,webm",
+      "dur": 10.031,
+      "n_v": 1,
+      "n_a": 1,
+      "codec_v": "h264",
+      "codec_a": "aac",
+      "w": 1280,
+      "h": 720,
+      "sr": "44100",
+      "canales_a": 1,
+      "bitrate": "3181951"
+     },
+     "av_err": ""
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 4079196,
+   "firma": "mkv/webm",
+   "ext": "mkv",
+   "av": {
+    "formato": "matroska,webm",
+    "dur": 10.023,
+    "n_v": 1,
+    "n_a": 2,
+    "codec_v": "h264",
+    "codec_a": "aac",
+    "w": 1280,
+    "h": 720,
+    "sr": "44100",
+    "canales_a": 1,
+    "bitrate": "3255868"
+   },
+   "av_err": ""
+  },
+  "final": {
+   "existe": true,
+   "bytes": 3989770,
+   "firma": "mkv/webm",
+   "ext": "mkv",
+   "av": {
+    "formato": "matroska,webm",
+    "dur": 10.031,
+    "n_v": 1,
+    "n_a": 1,
+    "codec_v": "h264",
+    "codec_a": "aac",
+    "w": 1280,
+    "h": 720,
+    "sr": "44100",
+    "canales_a": 1,
+    "bitrate": "3181951"
+   },
+   "av_err": ""
+  }
+ },
+ {
+  "id": "E4",
+  "estrato": "video-a-video",
+  "nota": "invocacion ingenua: pierde la 2a pista",
+  "entrada": "corpus\\video\\patologico_2pistas.mkv",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "ff",
+    "destino": "mp4",
+    "args": {},
+    "rc": 0,
+    "ms": 4001,
+    "stderr": "",
+    "salida": "E4_p1.mp4",
+    "car": {
+     "existe": true,
+     "bytes": 3823351,
+     "firma": "mp4/mov",
+     "ext": "mp4",
+     "av": {
+      "formato": "mov,mp4,m4a,3gp,3g2,mj2",
+      "dur": 10.033008,
+      "n_v": 1,
+      "n_a": 1,
+      "codec_v": "h264",
+      "codec_a": "aac",
+      "w": 1280,
+      "h": 720,
+      "sr": "44100",
+      "canales_a": 1,
+      "bitrate": "3048617"
+     },
+     "av_err": ""
+    }
+   },
+   {
+    "n": 2,
+    "motor": "ff",
+    "destino": "mkv",
+    "args": {},
+    "rc": 0,
+    "ms": 4205,
+    "stderr": "",
+    "salida": "E4_p2.mkv",
+    "car": {
+     "existe": true,
+     "bytes": 3622501,
+     "firma": "mkv/webm",
+     "ext": "mkv",
+     "av": {
+      "formato": "matroska,webm",
+      "dur": 10.036,
+      "n_v": 1,
+      "n_a": 1,
+      "codec_v": "h264",
+      "codec_a": "vorbis",
+      "w": 1280,
+      "h": 720,
+      "sr": "44100",
+      "canales_a": 1,
+      "bitrate": "2887605"
+     },
+     "av_err": ""
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 4079196,
+   "firma": "mkv/webm",
+   "ext": "mkv",
+   "av": {
+    "formato": "matroska,webm",
+    "dur": 10.023,
+    "n_v": 1,
+    "n_a": 2,
+    "codec_v": "h264",
+    "codec_a": "aac",
+    "w": 1280,
+    "h": 720,
+    "sr": "44100",
+    "canales_a": 1,
+    "bitrate": "3255868"
+   },
+   "av_err": ""
+  },
+  "final": {
+   "existe": true,
+   "bytes": 3622501,
+   "firma": "mkv/webm",
+   "ext": "mkv",
+   "av": {
+    "formato": "matroska,webm",
+    "dur": 10.036,
+    "n_v": 1,
+    "n_a": 1,
+    "codec_v": "h264",
+    "codec_a": "vorbis",
+    "w": 1280,
+    "h": 720,
+    "sr": "44100",
+    "canales_a": 1,
+    "bitrate": "2887605"
+   },
+   "av_err": ""
+  }
+ },
+ {
+  "id": "E5",
+  "estrato": "video-a-video",
+  "nota": "",
+  "entrada": "corpus\\video\\patologico_2pistas.mkv",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "ff",
+    "destino": "webm",
+    "args": {
+     "extra": [
+      "-c:v",
+      "libvpx-vp9",
+      "-crf",
+      "40",
+      "-b:v",
+      "0",
+      "-c:a",
+      "libopus",
+      "-t",
+      "3"
+     ]
+    },
+    "rc": 0,
+    "ms": 23849,
+    "stderr": "",
+    "salida": "E5_p1.webm",
+    "car": {
+     "existe": true,
+     "bytes": 738766,
+     "firma": "mkv/webm",
+     "ext": "webm",
+     "av": {
+      "formato": "matroska,webm",
+      "dur": 3.007,
+      "n_v": 1,
+      "n_a": 1,
+      "codec_v": "vp9",
+      "codec_a": "opus",
+      "w": 1280,
+      "h": 720,
+      "sr": "48000",
+      "canales_a": 1,
+      "bitrate": "1965456"
+     },
+     "av_err": ""
+    }
+   },
+   {
+    "n": 2,
+    "motor": "ff",
+    "destino": "mp4",
+    "args": {},
+    "rc": 0,
+    "ms": 1349,
+    "stderr": "[opus @ 0000022e4d7e5800] Error parsing Opus packet header.",
+    "salida": "E5_p2.mp4",
+    "car": {
+     "existe": true,
+     "bytes": 1026245,
+     "firma": "mp4/mov",
+     "ext": "mp4",
+     "av": {
+      "formato": "mov,mp4,m4a,3gp,3g2,mj2",
+      "dur": 3.007,
+      "n_v": 1,
+      "n_a": 1,
+      "codec_v": "h264",
+      "codec_a": "aac",
+      "w": 1280,
+      "h": 720,
+      "sr": "48000",
+      "canales_a": 1,
+      "bitrate": "2730282"
+     },
+     "av_err": ""
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 4079196,
+   "firma": "mkv/webm",
+   "ext": "mkv",
+   "av": {
+    "formato": "matroska,webm",
+    "dur": 10.023,
+    "n_v": 1,
+    "n_a": 2,
+    "codec_v": "h264",
+    "codec_a": "aac",
+    "w": 1280,
+    "h": 720,
+    "sr": "44100",
+    "canales_a": 1,
+    "bitrate": "3255868"
+   },
+   "av_err": ""
+  },
+  "final": {
+   "existe": true,
+   "bytes": 1026245,
+   "firma": "mp4/mov",
+   "ext": "mp4",
+   "av": {
+    "formato": "mov,mp4,m4a,3gp,3g2,mj2",
+    "dur": 3.007,
+    "n_v": 1,
+    "n_a": 1,
+    "codec_v": "h264",
+    "codec_a": "aac",
+    "w": 1280,
+    "h": 720,
+    "sr": "48000",
+    "canales_a": 1,
+    "bitrate": "2730282"
+   },
+   "av_err": ""
+  }
+ },
+ {
+  "id": "E6",
+  "estrato": "video-a-video",
+  "nota": "video->gif->video",
+  "entrada": "corpus\\video\\trivial.mp4",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "ff",
+    "destino": "gif",
+    "args": {
+     "extra": [
+      "-vf",
+      "fps=12",
+      "-t",
+      "3"
+     ]
+    },
+    "rc": 0,
+    "ms": 774,
+    "stderr": "",
+    "salida": "E6_p1.gif",
+    "car": {
+     "existe": true,
+     "bytes": 713276,
+     "firma": "gif",
+     "ext": "gif",
+     "av": {
+      "formato": "gif",
+      "dur": 3.0,
+      "n_v": 1,
+      "n_a": 0,
+      "codec_v": "gif",
+      "codec_a": null,
+      "w": 640,
+      "h": 480,
+      "sr": null,
+      "canales_a": null,
+      "bitrate": "1902069"
+     },
+     "av_err": "",
+     "img": {
+      "formato": "GIF",
+      "w": 640,
+      "h": 480,
+      "prof": 8,
+      "canales": "srgb  4.0",
+      "espacio": "sRGB",
+      "colores": 179,
+      "dpix": "72",
+      "dpiy": "72",
+      "n_imagenes": 36
+     }
+    }
+   },
+   {
+    "n": 2,
+    "motor": "ff",
+    "destino": "mp4",
+    "args": {},
+    "rc": 0,
+    "ms": 499,
+    "stderr": "",
+    "salida": "E6_p2.mp4",
+    "car": {
+     "existe": true,
+     "bytes": 306533,
+     "firma": "mp4/mov",
+     "ext": "mp4",
+     "av": {
+      "formato": "mov,mp4,m4a,3gp,3g2,mj2",
+      "dur": 3.0,
+      "n_v": 1,
+      "n_a": 0,
+      "codec_v": "h264",
+      "codec_a": null,
+      "w": 640,
+      "h": 480,
+      "sr": null,
+      "canales_a": null,
+      "bitrate": "817421"
+     },
+     "av_err": ""
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 552638,
+   "firma": "mp4/mov",
+   "ext": "mp4",
+   "av": {
+    "formato": "mov,mp4,m4a,3gp,3g2,mj2",
+    "dur": 5.0,
+    "n_v": 1,
+    "n_a": 0,
+    "codec_v": "h264",
+    "codec_a": null,
+    "w": 640,
+    "h": 480,
+    "sr": null,
+    "canales_a": null,
+    "bitrate": "884220"
+   },
+   "av_err": ""
+  },
+  "final": {
+   "existe": true,
+   "bytes": 306533,
+   "firma": "mp4/mov",
+   "ext": "mp4",
+   "av": {
+    "formato": "mov,mp4,m4a,3gp,3g2,mj2",
+    "dur": 3.0,
+    "n_v": 1,
+    "n_a": 0,
+    "codec_v": "h264",
+    "codec_a": null,
+    "w": 640,
+    "h": 480,
+    "sr": null,
+    "canales_a": null,
+    "bitrate": "817421"
+   },
+   "av_err": ""
+  }
+ },
+ {
+  "id": "E7",
+  "estrato": "video-a-audio",
+  "nota": "",
+  "entrada": "corpus\\video\\tipico.mp4",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "ff",
+    "destino": "mp3",
+    "args": {
+     "extra": [
+      "-vn",
+      "-b:a",
+      "192k"
+     ]
+    },
+    "rc": 0,
+    "ms": 264,
+    "stderr": "",
+    "salida": "E7_p1.mp3",
+    "car": {
+     "existe": true,
+     "bytes": 482262,
+     "firma": "mp3",
+     "ext": "mp3",
+     "av": {
+      "formato": "mp3",
+      "dur": 20.015601,
+      "n_v": 0,
+      "n_a": 1,
+      "codec_v": null,
+      "codec_a": "mp3",
+      "w": null,
+      "h": null,
+      "sr": "44100",
+      "canales_a": 1,
+      "bitrate": "192754"
+     },
+     "av_err": ""
+    }
+   },
+   {
+    "n": 2,
+    "motor": "ff",
+    "destino": "wav",
+    "args": {},
+    "rc": 0,
+    "ms": 72,
+    "stderr": "",
+    "salida": "E7_p2.wav",
+    "car": {
+     "existe": true,
+     "bytes": 1765454,
+     "firma": "wav",
+     "ext": "wav",
+     "av": {
+      "formato": "wav",
+      "dur": 20.015601,
+      "n_v": 0,
+      "n_a": 1,
+      "codec_v": null,
+      "codec_a": "pcm_s16le",
+      "w": null,
+      "h": null,
+      "sr": "44100",
+      "canales_a": 1,
+      "bitrate": "705631"
+     },
+     "av_err": ""
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 16246490,
+   "firma": "mp4/mov",
+   "ext": "mp4",
+   "av": {
+    "formato": "mov,mp4,m4a,3gp,3g2,mj2",
+    "dur": 20.0,
+    "n_v": 1,
+    "n_a": 1,
+    "codec_v": "h264",
+    "codec_a": "aac",
+    "w": 1920,
+    "h": 1080,
+    "sr": "44100",
+    "canales_a": 1,
+    "bitrate": "6498596"
+   },
+   "av_err": ""
+  },
+  "final": {
+   "existe": true,
+   "bytes": 1765454,
+   "firma": "wav",
+   "ext": "wav",
+   "av": {
+    "formato": "wav",
+    "dur": 20.015601,
+    "n_v": 0,
+    "n_a": 1,
+    "codec_v": null,
+    "codec_a": "pcm_s16le",
+    "w": null,
+    "h": null,
+    "sr": "44100",
+    "canales_a": 1,
+    "bitrate": "705631"
+   },
+   "av_err": ""
+  }
+ },
+ {
+  "id": "F1",
+  "estrato": "audio",
+  "nota": "",
+  "entrada": "corpus\\audio\\tipico.flac",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "ff",
+    "destino": "wav",
+    "args": {},
+    "rc": 0,
+    "ms": 66,
+    "stderr": "",
+    "salida": "F1_p1.wav",
+    "car": {
+     "existe": true,
+     "bytes": 705678,
+     "firma": "wav",
+     "ext": "wav",
+     "av": {
+      "formato": "wav",
+      "dur": 8.0,
+      "n_v": 0,
+      "n_a": 1,
+      "codec_v": null,
+      "codec_a": "pcm_s16le",
+      "w": null,
+      "h": null,
+      "sr": "44100",
+      "canales_a": 1,
+      "bitrate": "705678"
+     },
+     "av_err": ""
+    }
+   },
+   {
+    "n": 2,
+    "motor": "ff",
+    "destino": "mp3",
+    "args": {
+     "extra": [
+      "-b:a",
+      "192k"
+     ]
+    },
+    "rc": 0,
+    "ms": 212,
+    "stderr": "",
+    "salida": "F1_p2.mp3",
+    "car": {
+     "existe": true,
+     "bytes": 193767,
+     "firma": "mp3",
+     "ext": "mp3",
+     "av": {
+      "formato": "mp3",
+      "dur": 8.0,
+      "n_v": 0,
+      "n_a": 1,
+      "codec_v": null,
+      "codec_a": "mp3",
+      "w": null,
+      "h": null,
+      "sr": "44100",
+      "canales_a": 1,
+      "bitrate": "193767"
+     },
+     "av_err": ""
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 104318,
+   "firma": "flac",
+   "ext": "flac",
+   "av": {
+    "formato": "flac",
+    "dur": 8.0,
+    "n_v": 0,
+    "n_a": 1,
+    "codec_v": null,
+    "codec_a": "flac",
+    "w": null,
+    "h": null,
+    "sr": "44100",
+    "canales_a": 1,
+    "bitrate": "104318"
+   },
+   "av_err": ""
+  },
+  "final": {
+   "existe": true,
+   "bytes": 193767,
+   "firma": "mp3",
+   "ext": "mp3",
+   "av": {
+    "formato": "mp3",
+    "dur": 8.0,
+    "n_v": 0,
+    "n_a": 1,
+    "codec_v": null,
+    "codec_a": "mp3",
+    "w": null,
+    "h": null,
+    "sr": "44100",
+    "canales_a": 1,
+    "bitrate": "193767"
+   },
+   "av_err": ""
+  }
+ },
+ {
+  "id": "F2",
+  "estrato": "audio",
+  "nota": "Opus fuerza 48 kHz",
+  "entrada": "corpus\\audio\\tipico.flac",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "ff",
+    "destino": "opus",
+    "args": {
+     "extra": [
+      "-c:a",
+      "libopus",
+      "-b:a",
+      "96k"
+     ]
+    },
+    "rc": 0,
+    "ms": 338,
+    "stderr": "",
+    "salida": "F2_p1.opus",
+    "car": {
+     "existe": true,
+     "bytes": 116918,
+     "firma": "ogg",
+     "ext": "opus",
+     "av": {
+      "formato": "ogg",
+      "dur": 8.0065,
+      "n_v": 0,
+      "n_a": 1,
+      "codec_v": null,
+      "codec_a": "opus",
+      "w": null,
+      "h": null,
+      "sr": "48000",
+      "canales_a": 1,
+      "bitrate": "116823"
+     },
+     "av_err": ""
+    }
+   },
+   {
+    "n": 2,
+    "motor": "ff",
+    "destino": "wav",
+    "args": {},
+    "rc": 0,
+    "ms": 271,
+    "stderr": "",
+    "salida": "F2_p2.wav",
+    "car": {
+     "existe": true,
+     "bytes": 768078,
+     "firma": "wav",
+     "ext": "wav",
+     "av": {
+      "formato": "wav",
+      "dur": 8.0,
+      "n_v": 0,
+      "n_a": 1,
+      "codec_v": null,
+      "codec_a": "pcm_s16le",
+      "w": null,
+      "h": null,
+      "sr": "48000",
+      "canales_a": 1,
+      "bitrate": "768078"
+     },
+     "av_err": ""
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 104318,
+   "firma": "flac",
+   "ext": "flac",
+   "av": {
+    "formato": "flac",
+    "dur": 8.0,
+    "n_v": 0,
+    "n_a": 1,
+    "codec_v": null,
+    "codec_a": "flac",
+    "w": null,
+    "h": null,
+    "sr": "44100",
+    "canales_a": 1,
+    "bitrate": "104318"
+   },
+   "av_err": ""
+  },
+  "final": {
+   "existe": true,
+   "bytes": 768078,
+   "firma": "wav",
+   "ext": "wav",
+   "av": {
+    "formato": "wav",
+    "dur": 8.0,
+    "n_v": 0,
+    "n_a": 1,
+    "codec_v": null,
+    "codec_a": "pcm_s16le",
+    "w": null,
+    "h": null,
+    "sr": "48000",
+    "canales_a": 1,
+    "bitrate": "768078"
+   },
+   "av_err": ""
+  }
+ },
+ {
+  "id": "F3",
+  "estrato": "audio",
+  "nota": "",
+  "entrada": "corpus\\audio\\tipico.mp3",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "ff",
+    "destino": "flac",
+    "args": {},
+    "rc": 0,
+    "ms": 96,
+    "stderr": "",
+    "salida": "F3_p1.flac",
+    "car": {
+     "existe": true,
+     "bytes": 398105,
+     "firma": "flac",
+     "ext": "flac",
+     "av": {
+      "formato": "flac",
+      "dur": 8.0,
+      "n_v": 0,
+      "n_a": 1,
+      "codec_v": null,
+      "codec_a": "flac",
+      "w": null,
+      "h": null,
+      "sr": "44100",
+      "canales_a": 1,
+      "bitrate": "398105"
+     },
+     "av_err": ""
+    }
+   },
+   {
+    "n": 2,
+    "motor": "ff",
+    "destino": "wav",
+    "args": {},
+    "rc": 0,
+    "ms": 100,
+    "stderr": "",
+    "salida": "F3_p2.wav",
+    "car": {
+     "existe": true,
+     "bytes": 705678,
+     "firma": "wav",
+     "ext": "wav",
+     "av": {
+      "formato": "wav",
+      "dur": 8.0,
+      "n_v": 0,
+      "n_a": 1,
+      "codec_v": null,
+      "codec_a": "pcm_s16le",
+      "w": null,
+      "h": null,
+      "sr": "44100",
+      "canales_a": 1,
+      "bitrate": "705678"
+     },
+     "av_err": ""
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 64591,
+   "firma": "mp3",
+   "ext": "mp3",
+   "av": {
+    "formato": "mp3",
+    "dur": 8.0,
+    "n_v": 0,
+    "n_a": 1,
+    "codec_v": null,
+    "codec_a": "mp3",
+    "w": null,
+    "h": null,
+    "sr": "44100",
+    "canales_a": 1,
+    "bitrate": "64591"
+   },
+   "av_err": ""
+  },
+  "final": {
+   "existe": true,
+   "bytes": 705678,
+   "firma": "wav",
+   "ext": "wav",
+   "av": {
+    "formato": "wav",
+    "dur": 8.0,
+    "n_v": 0,
+    "n_a": 1,
+    "codec_v": null,
+    "codec_a": "pcm_s16le",
+    "w": null,
+    "h": null,
+    "sr": "44100",
+    "canales_a": 1,
+    "bitrate": "705678"
+   },
+   "av_err": ""
+  }
+ },
+ {
+  "id": "F4",
+  "estrato": "audio",
+  "nota": "sin perdida despues de con perdida",
+  "entrada": "corpus\\audio\\trivial.wav",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "ff",
+    "destino": "mp3",
+    "args": {
+     "extra": [
+      "-b:a",
+      "192k"
+     ]
+    },
+    "rc": 0,
+    "ms": 175,
+    "stderr": "",
+    "salida": "F4_p1.mp3",
+    "car": {
+     "existe": true,
+     "bytes": 193767,
+     "firma": "mp3",
+     "ext": "mp3",
+     "av": {
+      "formato": "mp3",
+      "dur": 8.0,
+      "n_v": 0,
+      "n_a": 1,
+      "codec_v": null,
+      "codec_a": "mp3",
+      "w": null,
+      "h": null,
+      "sr": "44100",
+      "canales_a": 1,
+      "bitrate": "193767"
+     },
+     "av_err": ""
+    }
+   },
+   {
+    "n": 2,
+    "motor": "ff",
+    "destino": "flac",
+    "args": {},
+    "rc": 0,
+    "ms": 85,
+    "stderr": "",
+    "salida": "F4_p2.flac",
+    "car": {
+     "existe": true,
+     "bytes": 419097,
+     "firma": "flac",
+     "ext": "flac",
+     "av": {
+      "formato": "flac",
+      "dur": 8.0,
+      "n_v": 0,
+      "n_a": 1,
+      "codec_v": null,
+      "codec_a": "flac",
+      "w": null,
+      "h": null,
+      "sr": "44100",
+      "canales_a": 1,
+      "bitrate": "419097"
+     },
+     "av_err": ""
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 705678,
+   "firma": "wav",
+   "ext": "wav",
+   "av": {
+    "formato": "wav",
+    "dur": 8.0,
+    "n_v": 0,
+    "n_a": 1,
+    "codec_v": null,
+    "codec_a": "pcm_s16le",
+    "w": null,
+    "h": null,
+    "sr": "44100",
+    "canales_a": 1,
+    "bitrate": "705678"
+   },
+   "av_err": ""
+  },
+  "final": {
+   "existe": true,
+   "bytes": 419097,
+   "firma": "flac",
+   "ext": "flac",
+   "av": {
+    "formato": "flac",
+    "dur": 8.0,
+    "n_v": 0,
+    "n_a": 1,
+    "codec_v": null,
+    "codec_a": "flac",
+    "w": null,
+    "h": null,
+    "sr": "44100",
+    "canales_a": 1,
+    "bitrate": "419097"
+   },
+   "av_err": ""
+  }
+ },
+ {
+  "id": "G1",
+  "estrato": "orden",
+  "nota": "directo, 1 salto",
+  "entrada": "corpus\\imagen\\patologico_16bit.tif",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "im",
+    "destino": "png",
+    "args": {},
+    "rc": 0,
+    "ms": 6769,
+    "stderr": "",
+    "salida": "G1_p1.png",
+    "car": {
+     "existe": true,
+     "bytes": 61849791,
+     "firma": "png",
+     "ext": "png",
+     "img": {
+      "formato": "PNG",
+      "w": 4000,
+      "h": 3000,
+      "prof": 16,
+      "canales": "srgb  3.0",
+      "espacio": "sRGB",
+      "colores": 11935622,
+      "dpix": "72",
+      "dpiy": "72",
+      "n_imagenes": 1
+     },
+     "img_err": "",
+     "alfa_min": 1.0
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 72001016,
+   "firma": "tiff",
+   "ext": "tif",
+   "img": {
+    "formato": "TIFF",
+    "w": 4000,
+    "h": 3000,
+    "prof": 16,
+    "canales": "srgb  3.0",
+    "espacio": "sRGB",
+    "colores": 11935622,
+    "dpix": "72",
+    "dpiy": "72",
+    "n_imagenes": 1
+   },
+   "img_err": "",
+   "alfa_min": 1.0
+  },
+  "final": {
+   "existe": true,
+   "bytes": 61849791,
+   "firma": "png",
+   "ext": "png",
+   "img": {
+    "formato": "PNG",
+    "w": 4000,
+    "h": 3000,
+    "prof": 16,
+    "canales": "srgb  3.0",
+    "espacio": "sRGB",
+    "colores": 11935622,
+    "dpix": "72",
+    "dpiy": "72",
+    "n_imagenes": 1
+   },
+   "img_err": "",
+   "alfa_min": 1.0
+  }
+ },
+ {
+  "id": "G2",
+  "estrato": "orden",
+  "nota": "el mismo destino via JPEG",
+  "entrada": "corpus\\imagen\\patologico_16bit.tif",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "im",
+    "destino": "jpg",
+    "args": {
+     "post": [
+      "-quality",
+      "85"
+     ]
+    },
+    "rc": 0,
+    "ms": 477,
+    "stderr": "",
+    "salida": "G2_p1.jpg",
+    "car": {
+     "existe": true,
+     "bytes": 1571956,
+     "firma": "jpg",
+     "ext": "jpg",
+     "img": {
+      "formato": "JPEG",
+      "w": 4000,
+      "h": 3000,
+      "prof": 8,
+      "canales": "srgb  3.0",
+      "espacio": "sRGB",
+      "colores": 612123,
+      "dpix": "72",
+      "dpiy": "72",
+      "n_imagenes": 1
+     },
+     "img_err": "",
+     "alfa_min": 1.0
+    }
+   },
+   {
+    "n": 2,
+    "motor": "im",
+    "destino": "png",
+    "args": {},
+    "rc": 0,
+    "ms": 18704,
+    "stderr": "",
+    "salida": "G2_p2.png",
+    "car": {
+     "existe": true,
+     "bytes": 14083087,
+     "firma": "png",
+     "ext": "png",
+     "img": {
+      "formato": "PNG",
+      "w": 4000,
+      "h": 3000,
+      "prof": 8,
+      "canales": "srgb  3.0",
+      "espacio": "sRGB",
+      "colores": 612123,
+      "dpix": "72",
+      "dpiy": "72",
+      "n_imagenes": 1
+     },
+     "img_err": "",
+     "alfa_min": 1.0
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 72001016,
+   "firma": "tiff",
+   "ext": "tif",
+   "img": {
+    "formato": "TIFF",
+    "w": 4000,
+    "h": 3000,
+    "prof": 16,
+    "canales": "srgb  3.0",
+    "espacio": "sRGB",
+    "colores": 11935622,
+    "dpix": "72",
+    "dpiy": "72",
+    "n_imagenes": 1
+   },
+   "img_err": "",
+   "alfa_min": 1.0
+  },
+  "final": {
+   "existe": true,
+   "bytes": 14083087,
+   "firma": "png",
+   "ext": "png",
+   "img": {
+    "formato": "PNG",
+    "w": 4000,
+    "h": 3000,
+    "prof": 8,
+    "canales": "srgb  3.0",
+    "espacio": "sRGB",
+    "colores": 612123,
+    "dpix": "72",
+    "dpiy": "72",
+    "n_imagenes": 1
+   },
+   "img_err": "",
+   "alfa_min": 1.0
+  }
+ },
+ {
+  "id": "G3",
+  "estrato": "orden",
+  "nota": "directo, 1 salto",
+  "entrada": "corpus\\pdf\\tipico_texto.pdf",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "gs",
+    "destino": "txt",
+    "args": {
+     "dev": "txtwrite"
+    },
+    "rc": 0,
+    "ms": 186,
+    "stderr": "",
+    "salida": "G3_p1.txt",
+    "car": {
+     "existe": true,
+     "bytes": 189,
+     "firma": "?202020202046696c",
+     "ext": "txt",
+     "chars": 104,
+     "texto": true,
+     "centinela": false,
+     "tabla": false
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 3219,
+   "firma": "pdf",
+   "ext": "pdf",
+   "chars": 104,
+   "texto": true,
+   "centinela": false,
+   "tabla": false,
+   "paginas": 1
+  },
+  "final": {
+   "existe": true,
+   "bytes": 189,
+   "firma": "?202020202046696c",
+   "ext": "txt",
+   "chars": 104,
+   "texto": true,
+   "centinela": false,
+   "tabla": false
+  }
+ },
+ {
+  "id": "G5",
+  "estrato": "orden",
+  "nota": "directo con -map 0 -c copy",
+  "entrada": "corpus\\video\\patologico_2pistas.mkv",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "ff",
+    "destino": "mp4",
+    "args": {
+     "extra": [
+      "-map",
+      "0",
+      "-c",
+      "copy"
+     ]
+    },
+    "rc": 0,
+    "ms": 94,
+    "stderr": "",
+    "salida": "G5_p1.mp4",
+    "car": {
+     "existe": true,
+     "bytes": 4085275,
+     "firma": "mp4/mov",
+     "ext": "mp4",
+     "av": {
+      "formato": "mov,mp4,m4a,3gp,3g2,mj2",
+      "dur": 10.03059,
+      "n_v": 1,
+      "n_a": 2,
+      "codec_v": "h264",
+      "codec_a": "aac",
+      "w": 1280,
+      "h": 720,
+      "sr": "44100",
+      "canales_a": 1,
+      "bitrate": "3258253"
+     },
+     "av_err": ""
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 4079196,
+   "firma": "mkv/webm",
+   "ext": "mkv",
+   "av": {
+    "formato": "matroska,webm",
+    "dur": 10.023,
+    "n_v": 1,
+    "n_a": 2,
+    "codec_v": "h264",
+    "codec_a": "aac",
+    "w": 1280,
+    "h": 720,
+    "sr": "44100",
+    "canales_a": 1,
+    "bitrate": "3255868"
+   },
+   "av_err": ""
+  },
+  "final": {
+   "existe": true,
+   "bytes": 4085275,
+   "firma": "mp4/mov",
+   "ext": "mp4",
+   "av": {
+    "formato": "mov,mp4,m4a,3gp,3g2,mj2",
+    "dur": 10.03059,
+    "n_v": 1,
+    "n_a": 2,
+    "codec_v": "h264",
+    "codec_a": "aac",
+    "w": 1280,
+    "h": 720,
+    "sr": "44100",
+    "canales_a": 1,
+    "bitrate": "3258253"
+   },
+   "av_err": ""
+  }
+ },
+ {
+  "id": "H3",
+  "estrato": "nominal",
+  "nota": "ffmpeg como conversor de imagen",
+  "entrada": "corpus\\imagen\\tipico.png",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "ff",
+    "destino": "webp",
+    "args": {},
+    "rc": 0,
+    "ms": 2284,
+    "stderr": "",
+    "salida": "H3_p1.webp",
+    "car": {
+     "existe": true,
+     "bytes": 12398,
+     "firma": "webp",
+     "ext": "webp",
+     "img": {
+      "formato": "WEBP",
+      "w": 1920,
+      "h": 1080,
+      "prof": 8,
+      "canales": "srgb  3.0",
+      "espacio": "sRGB",
+      "colores": 2393,
+      "dpix": "72",
+      "dpiy": "72",
+      "n_imagenes": 1
+     },
+     "img_err": "",
+     "alfa_min": 1.0
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 42855,
+   "firma": "png",
+   "ext": "png",
+   "img": {
+    "formato": "PNG",
+    "w": 1920,
+    "h": 1080,
+    "prof": 16,
+    "canales": "srgba 4.0",
+    "espacio": "sRGB",
+    "colores": 2405,
+    "dpix": "72",
+    "dpiy": "72",
+    "n_imagenes": 1
+   },
+   "img_err": "",
+   "alfa_min": 1.0
+  },
+  "final": {
+   "existe": true,
+   "bytes": 12398,
+   "firma": "webp",
+   "ext": "webp",
+   "img": {
+    "formato": "WEBP",
+    "w": 1920,
+    "h": 1080,
+    "prof": 8,
+    "canales": "srgb  3.0",
+    "espacio": "sRGB",
+    "colores": 2393,
+    "dpix": "72",
+    "dpiy": "72",
+    "n_imagenes": 1
+   },
+   "img_err": "",
+   "alfa_min": 1.0
+  }
+ },
+ {
+  "id": "B1",
+  "estrato": "doc-a-imagen",
+  "nota": "caso hito 1: epub->png",
+  "entrada": "bench\\salidas-fidelidad\\entradas\\entrada.epub",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "gt-lo",
+    "destino": "pdf",
+    "args": {},
+    "rc": 1,
+    "ms": 2346,
+    "stderr": "HTTP 500",
+    "salida": "B1_p1.pdf",
+    "fallo": true
+   }
+  ],
+  "ok": false,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 1685,
+   "firma": "zip(ooxml/odf/epub)",
+   "ext": "epub",
+   "chars": 407,
+   "texto": true,
+   "centinela": true,
+   "tabla": true
+  },
+  "final": null
+ },
+ {
+  "id": "B3",
+  "estrato": "doc-a-imagen",
+  "nota": "",
+  "entrada": "bench\\salidas-fidelidad\\entradas\\entrada.html",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "gt-html",
+    "destino": "pdf",
+    "args": {},
+    "rc": 0,
+    "ms": 13505,
+    "stderr": "HTTP 200",
+    "salida": "B3_p1.pdf",
+    "car": {
+     "existe": true,
+     "bytes": 21287,
+     "firma": "pdf",
+     "ext": "pdf",
+     "chars": 380,
+     "texto": true,
+     "centinela": true,
+     "tabla": true,
+     "paginas": 1
+    }
+   },
+   {
+    "n": 2,
+    "motor": "gs",
+    "destino": "png",
+    "args": {
+     "dev": "png16m",
+     "extra": [
+      "-r150"
+     ]
+    },
+    "rc": 0,
+    "ms": 336,
+    "stderr": "",
+    "salida": "B3_p2.png",
+    "car": {
+     "existe": true,
+     "bytes": 19566,
+     "firma": "png",
+     "ext": "png",
+     "img": {
+      "formato": "PNG",
+      "w": 1275,
+      "h": 1650,
+      "prof": 8,
+      "canales": "srgb  3.0",
+      "espacio": "sRGB",
+      "colores": 4,
+      "dpix": "59.060000000000002274",
+      "dpiy": "59.060000000000002274",
+      "n_imagenes": 1
+     },
+     "img_err": "",
+     "alfa_min": 1.0
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 733,
+   "firma": "?3c21646f63747970",
+   "ext": "html",
+   "chars": 392,
+   "texto": true,
+   "centinela": true,
+   "tabla": true
+  },
+  "final": {
+   "existe": true,
+   "bytes": 19566,
+   "firma": "png",
+   "ext": "png",
+   "img": {
+    "formato": "PNG",
+    "w": 1275,
+    "h": 1650,
+    "prof": 8,
+    "canales": "srgb  3.0",
+    "espacio": "sRGB",
+    "colores": 4,
+    "dpix": "59.060000000000002274",
+    "dpiy": "59.060000000000002274",
+    "n_imagenes": 1
+   },
+   "img_err": "",
+   "alfa_min": 1.0
+  }
+ },
+ {
+  "id": "B4",
+  "estrato": "doc-a-imagen",
+  "nota": "",
+  "entrada": "bench\\salidas-fidelidad\\entradas\\entrada.md",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "gt-md",
+    "destino": "pdf",
+    "args": {},
+    "rc": 0,
+    "ms": 3479,
+    "stderr": "HTTP 200",
+    "salida": "B4_p1.pdf",
+    "car": {
+     "existe": true,
+     "bytes": 21884,
+     "firma": "pdf",
+     "ext": "pdf",
+     "chars": 380,
+     "texto": true,
+     "centinela": true,
+     "tabla": true,
+     "paginas": 1
+    }
+   },
+   {
+    "n": 2,
+    "motor": "gs",
+    "destino": "jpg",
+    "args": {
+     "dev": "jpeg",
+     "extra": [
+      "-r150",
+      "-dJPEGQ=85"
+     ]
+    },
+    "rc": 0,
+    "ms": 258,
+    "stderr": "",
+    "salida": "B4_p2.jpg",
+    "car": {
+     "existe": true,
+     "bytes": 103034,
+     "firma": "jpg",
+     "ext": "jpg",
+     "img": {
+      "formato": "JPEG",
+      "w": 1275,
+      "h": 1650,
+      "prof": 8,
+      "canales": "srgb  3.0",
+      "espacio": "sRGB",
+      "colores": 49,
+      "dpix": "150",
+      "dpiy": "150",
+      "n_imagenes": 1
+     },
+     "img_err": "",
+     "alfa_min": 1.0
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 518,
+   "firma": "?2320496e666f726d",
+   "ext": "md",
+   "chars": 410,
+   "texto": true,
+   "centinela": true,
+   "tabla": true
+  },
+  "final": {
+   "existe": true,
+   "bytes": 103034,
+   "firma": "jpg",
+   "ext": "jpg",
+   "img": {
+    "formato": "JPEG",
+    "w": 1275,
+    "h": 1650,
+    "prof": 8,
+    "canales": "srgb  3.0",
+    "espacio": "sRGB",
+    "colores": 49,
+    "dpix": "150",
+    "dpiy": "150",
+    "n_imagenes": 1
+   },
+   "img_err": "",
+   "alfa_min": 1.0
+  }
+ },
+ {
+  "id": "C1",
+  "estrato": "doc-a-doc",
+  "nota": "conserva texto",
+  "entrada": "bench\\salidas-fidelidad\\entradas\\entrada.epub",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "gt-lo",
+    "destino": "pdf",
+    "args": {},
+    "rc": 1,
+    "ms": 25564,
+    "stderr": "HTTP 500",
+    "salida": "C1_p1.pdf",
+    "fallo": true
+   }
+  ],
+  "ok": false,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 1685,
+   "firma": "zip(ooxml/odf/epub)",
+   "ext": "epub",
+   "chars": 407,
+   "texto": true,
+   "centinela": true,
+   "tabla": true
+  },
+  "final": null
+ },
+ {
+  "id": "C4",
+  "estrato": "doc-a-doc",
+  "nota": "orden importa: rasterizar antes de extraer texto (4 saltos)",
+  "entrada": "bench\\salidas-fidelidad\\entradas\\entrada.docx",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "gt-lo",
+    "destino": "pdf",
+    "args": {},
+    "rc": 0,
+    "ms": 10865,
+    "stderr": "HTTP 200",
+    "salida": "C4_p1.pdf",
+    "car": {
+     "existe": true,
+     "bytes": 17090,
+     "firma": "pdf",
+     "ext": "pdf",
+     "chars": 380,
+     "texto": true,
+     "centinela": true,
+     "tabla": true,
+     "paginas": 1
+    }
+   },
+   {
+    "n": 2,
+    "motor": "gs",
+    "destino": "png",
+    "args": {
+     "dev": "png16m",
+     "extra": [
+      "-r150"
+     ]
+    },
+    "rc": 0,
+    "ms": 659,
+    "stderr": "",
+    "salida": "C4_p2.png",
+    "car": {
+     "existe": true,
+     "bytes": 18664,
+     "firma": "png",
+     "ext": "png",
+     "img": {
+      "formato": "PNG",
+      "w": 1240,
+      "h": 1754,
+      "prof": 8,
+      "canales": "srgb  3.0",
+      "espacio": "sRGB",
+      "colores": 2,
+      "dpix": "59.060000000000002274",
+      "dpiy": "59.060000000000002274",
+      "n_imagenes": 1
+     },
+     "img_err": "",
+     "alfa_min": 1.0
+    }
+   },
+   {
+    "n": 3,
+    "motor": "im",
+    "destino": "pdf",
+    "args": {},
+    "rc": 0,
+    "ms": 683,
+    "stderr": "",
+    "salida": "C4_p3.pdf",
+    "car": {
+     "existe": true,
+     "bytes": 11818,
+     "firma": "pdf",
+     "ext": "pdf",
+     "chars": 0,
+     "texto": false,
+     "centinela": false,
+     "tabla": false,
+     "paginas": 1
+    }
+   },
+   {
+    "n": 4,
+    "motor": "gs",
+    "destino": "txt",
+    "args": {
+     "dev": "txtwrite"
+    },
+    "rc": 0,
+    "ms": 594,
+    "stderr": "",
+    "salida": "C4_p4.txt",
+    "car": {
+     "existe": true,
+     "bytes": 0,
+     "firma": "?",
+     "ext": "txt",
+     "chars": 0,
+     "texto": false,
+     "centinela": false,
+     "tabla": false
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 1354,
+   "firma": "zip(ooxml/odf/epub)",
+   "ext": "docx",
+   "chars": 380,
+   "texto": true,
+   "centinela": true,
+   "tabla": true
+  },
+  "final": {
+   "existe": true,
+   "bytes": 0,
+   "firma": "?",
+   "ext": "txt",
+   "chars": 0,
+   "texto": false,
+   "centinela": false,
+   "tabla": false
+  }
+ },
+ {
+  "id": "C8",
+  "estrato": "doc-a-doc",
+  "nota": "captura de pantalla -> PDF",
+  "entrada": "bench\\salidas-fidelidad\\entradas\\entrada.html",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "gt-shot",
+    "destino": "png",
+    "args": {
+     "fmt": "png"
+    },
+    "rc": 0,
+    "ms": 6246,
+    "stderr": "HTTP 200",
+    "salida": "C8_p1.png",
+    "car": {
+     "existe": true,
+     "bytes": 32305,
+     "firma": "png",
+     "ext": "png",
+     "img": {
+      "formato": "PNG",
+      "w": 800,
+      "h": 600,
+      "prof": 8,
+      "canales": "srgb  3.0",
+      "espacio": "sRGB",
+      "colores": 1703,
+      "dpix": "72",
+      "dpiy": "72",
+      "n_imagenes": 1
+     },
+     "img_err": "",
+     "alfa_min": 1.0
+    }
+   },
+   {
+    "n": 2,
+    "motor": "im",
+    "destino": "pdf",
+    "args": {},
+    "rc": 0,
+    "ms": 168,
+    "stderr": "",
+    "salida": "C8_p2.pdf",
+    "car": {
+     "existe": true,
+     "bytes": 26716,
+     "firma": "pdf",
+     "ext": "pdf",
+     "chars": 0,
+     "texto": false,
+     "centinela": false,
+     "tabla": false,
+     "paginas": 1
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 733,
+   "firma": "?3c21646f63747970",
+   "ext": "html",
+   "chars": 392,
+   "texto": true,
+   "centinela": true,
+   "tabla": true
+  },
+  "final": {
+   "existe": true,
+   "bytes": 26716,
+   "firma": "pdf",
+   "ext": "pdf",
+   "chars": 0,
+   "texto": false,
+   "centinela": false,
+   "tabla": false,
+   "paginas": 1
+  }
+ },
+ {
+  "id": "C9",
+  "estrato": "doc-a-doc",
+  "nota": "epub->docx",
+  "entrada": "bench\\salidas-fidelidad\\entradas\\entrada.epub",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "gt-lo",
+    "destino": "pdf",
+    "args": {},
+    "rc": 1,
+    "ms": 5188,
+    "stderr": "HTTP 500",
+    "salida": "C9_p1.pdf",
+    "fallo": true
+   }
+  ],
+  "ok": false,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 1685,
+   "firma": "zip(ooxml/odf/epub)",
+   "ext": "epub",
+   "chars": 407,
+   "texto": true,
+   "centinela": true,
+   "tabla": true
+  },
+  "final": null
+ },
+ {
+  "id": "D1",
+  "estrato": "imagen-a-doc",
+  "nota": "trampa txtwrite: basura de 1-3 chars",
+  "entrada": "corpus\\imagen\\tipico.png",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "im",
+    "destino": "pdf",
+    "args": {},
+    "rc": 0,
+    "ms": 1085,
+    "stderr": "",
+    "salida": "D1_p1.pdf",
+    "car": {
+     "existe": true,
+     "bytes": 17121,
+     "firma": "pdf",
+     "ext": "pdf",
+     "chars": 0,
+     "texto": false,
+     "centinela": false,
+     "tabla": false,
+     "paginas": 1
+    }
+   },
+   {
+    "n": 2,
+    "motor": "gs",
+    "destino": "txt",
+    "args": {
+     "dev": "txtwrite"
+    },
+    "rc": 0,
+    "ms": 636,
+    "stderr": "",
+    "salida": "D1_p2.txt",
+    "car": {
+     "existe": true,
+     "bytes": 0,
+     "firma": "?",
+     "ext": "txt",
+     "chars": 0,
+     "texto": false,
+     "centinela": false,
+     "tabla": false
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 42855,
+   "firma": "png",
+   "ext": "png",
+   "img": {
+    "formato": "PNG",
+    "w": 1920,
+    "h": 1080,
+    "prof": 16,
+    "canales": "srgba 4.0",
+    "espacio": "sRGB",
+    "colores": 2405,
+    "dpix": "72",
+    "dpiy": "72",
+    "n_imagenes": 1
+   },
+   "img_err": "",
+   "alfa_min": 1.0
+  },
+  "final": {
+   "existe": true,
+   "bytes": 0,
+   "firma": "?",
+   "ext": "txt",
+   "chars": 0,
+   "texto": false,
+   "centinela": false,
+   "tabla": false
+  }
+ },
+ {
+  "id": "E1",
+  "estrato": "video-a-imagen",
+  "nota": "",
+  "entrada": "corpus\\video\\tipico.mp4",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "ff",
+    "destino": "gif",
+    "args": {
+     "extra": [
+      "-vf",
+      "fps=12,scale=320:-1",
+      "-t",
+      "3"
+     ]
+    },
+    "rc": 0,
+    "ms": 1157,
+    "stderr": "",
+    "salida": "E1_p1.gif",
+    "car": {
+     "existe": true,
+     "bytes": 140162,
+     "firma": "gif",
+     "ext": "gif",
+     "av": {
+      "formato": "gif",
+      "dur": 3.0,
+      "n_v": 1,
+      "n_a": 0,
+      "codec_v": "gif",
+      "codec_a": null,
+      "w": 320,
+      "h": 180,
+      "sr": null,
+      "canales_a": null,
+      "bitrate": "373765"
+     },
+     "av_err": "",
+     "img": {
+      "formato": "GIF",
+      "w": 320,
+      "h": 180,
+      "prof": 8,
+      "canales": "srgb  4.0",
+      "espacio": "sRGB",
+      "colores": 171,
+      "dpix": "72",
+      "dpiy": "72",
+      "n_imagenes": 36
+     }
+    }
+   },
+   {
+    "n": 2,
+    "motor": "im",
+    "destino": "png",
+    "args": {
+     "sel": "[0]"
+    },
+    "rc": 0,
+    "ms": 113,
+    "stderr": "",
+    "salida": "E1_p2.png",
+    "car": {
+     "existe": true,
+     "bytes": 4641,
+     "firma": "png",
+     "ext": "png",
+     "img": {
+      "formato": "PNG",
+      "w": 320,
+      "h": 180,
+      "prof": 8,
+      "canales": "srgb  4.0",
+      "espacio": "sRGB",
+      "colores": 171,
+      "dpix": "72",
+      "dpiy": "72",
+      "n_imagenes": 1
+     },
+     "img_err": "",
+     "alfa_min": 1.0
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 16246490,
+   "firma": "mp4/mov",
+   "ext": "mp4",
+   "av": {
+    "formato": "mov,mp4,m4a,3gp,3g2,mj2",
+    "dur": 20.0,
+    "n_v": 1,
+    "n_a": 1,
+    "codec_v": "h264",
+    "codec_a": "aac",
+    "w": 1920,
+    "h": 1080,
+    "sr": "44100",
+    "canales_a": 1,
+    "bitrate": "6498596"
+   },
+   "av_err": ""
+  },
+  "final": {
+   "existe": true,
+   "bytes": 4641,
+   "firma": "png",
+   "ext": "png",
+   "img": {
+    "formato": "PNG",
+    "w": 320,
+    "h": 180,
+    "prof": 8,
+    "canales": "srgb  4.0",
+    "espacio": "sRGB",
+    "colores": 171,
+    "dpix": "72",
+    "dpiy": "72",
+    "n_imagenes": 1
+   },
+   "img_err": "",
+   "alfa_min": 1.0
+  }
+ },
+ {
+  "id": "G4",
+  "estrato": "orden",
+  "nota": "el mismo destino via PNG (3 saltos)",
+  "entrada": "corpus\\pdf\\tipico_texto.pdf",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "gs",
+    "destino": "png",
+    "args": {
+     "dev": "png16m",
+     "extra": [
+      "-r150"
+     ]
+    },
+    "rc": 0,
+    "ms": 723,
+    "stderr": "",
+    "salida": "G4_p1.png",
+    "car": {
+     "existe": true,
+     "bytes": 15804,
+     "firma": "png",
+     "ext": "png",
+     "img": {
+      "formato": "PNG",
+      "w": 1240,
+      "h": 1754,
+      "prof": 8,
+      "canales": "srgb  3.0",
+      "espacio": "sRGB",
+      "colores": 2,
+      "dpix": "59.060000000000002274",
+      "dpiy": "59.060000000000002274",
+      "n_imagenes": 1
+     },
+     "img_err": "",
+     "alfa_min": 1.0
+    }
+   },
+   {
+    "n": 2,
+    "motor": "im",
+    "destino": "pdf",
+    "args": {},
+    "rc": 0,
+    "ms": 387,
+    "stderr": "",
+    "salida": "G4_p2.pdf",
+    "car": {
+     "existe": true,
+     "bytes": 8613,
+     "firma": "pdf",
+     "ext": "pdf",
+     "chars": 0,
+     "texto": false,
+     "centinela": false,
+     "tabla": false,
+     "paginas": 1
+    }
+   },
+   {
+    "n": 3,
+    "motor": "gs",
+    "destino": "txt",
+    "args": {
+     "dev": "txtwrite"
+    },
+    "rc": 0,
+    "ms": 383,
+    "stderr": "",
+    "salida": "G4_p3.txt",
+    "car": {
+     "existe": true,
+     "bytes": 0,
+     "firma": "?",
+     "ext": "txt",
+     "chars": 0,
+     "texto": false,
+     "centinela": false,
+     "tabla": false
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 3219,
+   "firma": "pdf",
+   "ext": "pdf",
+   "chars": 104,
+   "texto": true,
+   "centinela": false,
+   "tabla": false,
+   "paginas": 1
+  },
+  "final": {
+   "existe": true,
+   "bytes": 0,
+   "firma": "?",
+   "ext": "txt",
+   "chars": 0,
+   "texto": false,
+   "centinela": false,
+   "tabla": false
+  }
+ },
+ {
+  "id": "H1",
+  "estrato": "nominal",
+  "nota": "ImageMagick declara leer mp4",
+  "entrada": "corpus\\video\\tipico.mp4",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "im",
+    "destino": "pdf",
+    "args": {},
+    "rc": 4294967295,
+    "ms": 145884,
+    "stderr": "",
+    "salida": "H1_p1.pdf",
+    "fallo": true
+   }
+  ],
+  "ok": false,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 16246490,
+   "firma": "mp4/mov",
+   "ext": "mp4",
+   "av": {
+    "formato": "mov,mp4,m4a,3gp,3g2,mj2",
+    "dur": 20.0,
+    "n_v": 1,
+    "n_a": 1,
+    "codec_v": "h264",
+    "codec_a": "aac",
+    "w": 1920,
+    "h": 1080,
+    "sr": "44100",
+    "canales_a": 1,
+    "bitrate": "6498596"
+   },
+   "av_err": ""
+  },
+  "final": null
+ },
+ {
+  "id": "H2",
+  "estrato": "nominal",
+  "nota": "ImageMagick declara leer txt",
+  "entrada": "bench\\salidas-fidelidad\\entradas\\entrada.txt",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "im",
+    "destino": "png",
+    "args": {},
+    "rc": 1,
+    "ms": 100,
+    "stderr": "magick: improper image header `D:\\Work\\research\\FileX\\bench\\salidas-fidelidad\\entradas\\entrada.txt' @ error/txt.c/ReadTXTImage/418.",
+    "salida": "H2_p1.png",
+    "fallo": true
+   }
+  ],
+  "ok": false,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 385,
+   "firma": "?496e666f726d6520",
+   "ext": "txt",
+   "chars": 321,
+   "texto": true,
+   "centinela": true,
+   "tabla": false
+  },
+  "final": null
+ },
+ {
+  "id": "H4",
+  "estrato": "nominal",
+  "nota": "ImageMagick declara escribir txt: en realidad vuelca pixeles",
+  "entrada": "corpus\\pdf\\tipico_texto.pdf",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "im",
+    "destino": "txt",
+    "args": {
+     "pre": [
+      "-density",
+      "150"
+     ]
+    },
+    "rc": 0,
+    "ms": 37005,
+    "stderr": "",
+    "salida": "H4_p1.txt",
+    "car": {
+     "existe": true,
+     "bytes": 159454045,
+     "firma": "?2320496d6167654d",
+     "ext": "txt",
+     "chars": 144229319,
+     "texto": true,
+     "centinela": false,
+     "tabla": false
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 3219,
+   "firma": "pdf",
+   "ext": "pdf",
+   "chars": 104,
+   "texto": true,
+   "centinela": false,
+   "tabla": false,
+   "paginas": 1
+  },
+  "final": {
+   "existe": true,
+   "bytes": 159454045,
+   "firma": "?2320496d6167654d",
+   "ext": "txt",
+   "chars": 144229319,
+   "texto": true,
+   "centinela": false,
+   "tabla": false
+  }
+ },
+ {
+  "id": "I3",
+  "estrato": "parametro",
+  "nota": "grafismo con perdida (malo)",
+  "entrada": "corpus\\imagen\\trivial.png",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "im",
+    "destino": "webp",
+    "args": {
+     "post": [
+      "-quality",
+      "80"
+     ]
+    },
+    "rc": 0,
+    "ms": 38,
+    "stderr": "",
+    "salida": "I3_p1.webp",
+    "car": {
+     "existe": true,
+     "bytes": 94,
+     "firma": "webp",
+     "ext": "webp",
+     "img": {
+      "formato": "WEBP",
+      "w": 64,
+      "h": 64,
+      "prof": 8,
+      "canales": "srgb  3.0",
+      "espacio": "sRGB",
+      "colores": 2,
+      "dpix": "72",
+      "dpiy": "72",
+      "n_imagenes": 1
+     },
+     "img_err": "",
+     "alfa_min": 1.0
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 316,
+   "firma": "png",
+   "ext": "png",
+   "img": {
+    "formato": "PNG",
+    "w": 64,
+    "h": 64,
+    "prof": 1,
+    "canales": "srgb  4.0",
+    "espacio": "sRGB",
+    "colores": 1,
+    "dpix": "72",
+    "dpiy": "72",
+    "n_imagenes": 1
+   },
+   "img_err": "",
+   "alfa_min": 1.0
+  },
+  "final": {
+   "existe": true,
+   "bytes": 94,
+   "firma": "webp",
+   "ext": "webp",
+   "img": {
+    "formato": "WEBP",
+    "w": 64,
+    "h": 64,
+    "prof": 8,
+    "canales": "srgb  3.0",
+    "espacio": "sRGB",
+    "colores": 2,
+    "dpix": "72",
+    "dpiy": "72",
+    "n_imagenes": 1
+   },
+   "img_err": "",
+   "alfa_min": 1.0
+  }
+ },
+ {
+  "id": "I4",
+  "estrato": "parametro",
+  "nota": "el mismo par, sin perdida (bueno y mas pequeno)",
+  "entrada": "corpus\\imagen\\trivial.png",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "im",
+    "destino": "webp",
+    "args": {
+     "post": [
+      "-define",
+      "webp:lossless=true"
+     ]
+    },
+    "rc": 0,
+    "ms": 65,
+    "stderr": "",
+    "salida": "I4_p1.webp",
+    "car": {
+     "existe": true,
+     "bytes": 42,
+     "firma": "webp",
+     "ext": "webp",
+     "img": {
+      "formato": "WEBP",
+      "w": 64,
+      "h": 64,
+      "prof": 8,
+      "canales": "srgb  3.0",
+      "espacio": "sRGB",
+      "colores": 1,
+      "dpix": "72",
+      "dpiy": "72",
+      "n_imagenes": 1
+     },
+     "img_err": "",
+     "alfa_min": 1.0
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 316,
+   "firma": "png",
+   "ext": "png",
+   "img": {
+    "formato": "PNG",
+    "w": 64,
+    "h": 64,
+    "prof": 1,
+    "canales": "srgb  4.0",
+    "espacio": "sRGB",
+    "colores": 1,
+    "dpix": "72",
+    "dpiy": "72",
+    "n_imagenes": 1
+   },
+   "img_err": "",
+   "alfa_min": 1.0
+  },
+  "final": {
+   "existe": true,
+   "bytes": 42,
+   "firma": "webp",
+   "ext": "webp",
+   "img": {
+    "formato": "WEBP",
+    "w": 64,
+    "h": 64,
+    "prof": 8,
+    "canales": "srgb  3.0",
+    "espacio": "sRGB",
+    "colores": 1,
+    "dpix": "72",
+    "dpiy": "72",
+    "n_imagenes": 1
+   },
+   "img_err": "",
+   "alfa_min": 1.0
+  }
+ },
+ {
+  "id": "I5",
+  "estrato": "parametro",
+  "nota": "sin densidad declarada (regla P7)",
+  "entrada": "corpus\\imagen\\tipico.png",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "im",
+    "destino": "pdf",
+    "args": {},
+    "rc": 0,
+    "ms": 444,
+    "stderr": "",
+    "salida": "I5_p1.pdf",
+    "car": {
+     "existe": true,
+     "bytes": 17121,
+     "firma": "pdf",
+     "ext": "pdf",
+     "chars": 0,
+     "texto": false,
+     "centinela": false,
+     "tabla": false,
+     "paginas": 1
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 42855,
+   "firma": "png",
+   "ext": "png",
+   "img": {
+    "formato": "PNG",
+    "w": 1920,
+    "h": 1080,
+    "prof": 16,
+    "canales": "srgba 4.0",
+    "espacio": "sRGB",
+    "colores": 2405,
+    "dpix": "72",
+    "dpiy": "72",
+    "n_imagenes": 1
+   },
+   "img_err": "",
+   "alfa_min": 1.0
+  },
+  "final": {
+   "existe": true,
+   "bytes": 17121,
+   "firma": "pdf",
+   "ext": "pdf",
+   "chars": 0,
+   "texto": false,
+   "centinela": false,
+   "tabla": false,
+   "paginas": 1
+  }
+ },
+ {
+  "id": "I6",
+  "estrato": "parametro",
+  "nota": "con densidad declarada",
+  "entrada": "corpus\\imagen\\tipico.png",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "im",
+    "destino": "pdf",
+    "args": {
+     "pre": [
+      "-density",
+      "150",
+      "-units",
+      "PixelsPerInch"
+     ]
+    },
+    "rc": 0,
+    "ms": 397,
+    "stderr": "",
+    "salida": "I6_p1.pdf",
+    "car": {
+     "existe": true,
+     "bytes": 17127,
+     "firma": "pdf",
+     "ext": "pdf",
+     "chars": 0,
+     "texto": false,
+     "centinela": false,
+     "tabla": false,
+     "paginas": 1
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 42855,
+   "firma": "png",
+   "ext": "png",
+   "img": {
+    "formato": "PNG",
+    "w": 1920,
+    "h": 1080,
+    "prof": 16,
+    "canales": "srgba 4.0",
+    "espacio": "sRGB",
+    "colores": 2405,
+    "dpix": "72",
+    "dpiy": "72",
+    "n_imagenes": 1
+   },
+   "img_err": "",
+   "alfa_min": 1.0
+  },
+  "final": {
+   "existe": true,
+   "bytes": 17127,
+   "firma": "pdf",
+   "ext": "pdf",
+   "chars": 0,
+   "texto": false,
+   "centinela": false,
+   "tabla": false,
+   "paginas": 1
+  }
+ },
+ {
+  "id": "I7",
+  "estrato": "parametro",
+  "nota": "aplanado sobre negro (regla I3)",
+  "entrada": "corpus\\imagen\\alpha.png",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "im",
+    "destino": "jpg",
+    "args": {
+     "post": [
+      "-quality",
+      "85"
+     ]
+    },
+    "rc": 0,
+    "ms": 1445,
+    "stderr": "",
+    "salida": "I7_p1.jpg",
+    "car": {
+     "existe": true,
+     "bytes": 4643,
+     "firma": "jpg",
+     "ext": "jpg",
+     "img": {
+      "formato": "JPEG",
+      "w": 200,
+      "h": 200,
+      "prof": 8,
+      "canales": "srgb  3.0",
+      "espacio": "sRGB",
+      "colores": 3135,
+      "dpix": "72",
+      "dpiy": "72",
+      "n_imagenes": 1
+     },
+     "img_err": "",
+     "alfa_min": 1.0
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 2780,
+   "firma": "png",
+   "ext": "png",
+   "img": {
+    "formato": "PNG",
+    "w": 200,
+    "h": 200,
+    "prof": 8,
+    "canales": "srgba 5.0",
+    "espacio": "sRGB",
+    "colores": 210,
+    "dpix": "72",
+    "dpiy": "72",
+    "n_imagenes": 1
+   },
+   "img_err": "",
+   "alfa_min": 0.0
+  },
+  "final": {
+   "existe": true,
+   "bytes": 4643,
+   "firma": "jpg",
+   "ext": "jpg",
+   "img": {
+    "formato": "JPEG",
+    "w": 200,
+    "h": 200,
+    "prof": 8,
+    "canales": "srgb  3.0",
+    "espacio": "sRGB",
+    "colores": 3135,
+    "dpix": "72",
+    "dpiy": "72",
+    "n_imagenes": 1
+   },
+   "img_err": "",
+   "alfa_min": 1.0
+  }
+ },
+ {
+  "id": "I8",
+  "estrato": "parametro",
+  "nota": "aplanado sobre blanco",
+  "entrada": "corpus\\imagen\\alpha.png",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "im",
+    "destino": "jpg",
+    "args": {
+     "pre": [
+      "-background",
+      "white"
+     ],
+     "post": [
+      "-alpha",
+      "remove",
+      "-quality",
+      "85"
+     ]
+    },
+    "rc": 0,
+    "ms": 90,
+    "stderr": "",
+    "salida": "I8_p1.jpg",
+    "car": {
+     "existe": true,
+     "bytes": 4389,
+     "firma": "jpg",
+     "ext": "jpg",
+     "img": {
+      "formato": "JPEG",
+      "w": 200,
+      "h": 200,
+      "prof": 8,
+      "canales": "srgb  3.0",
+      "espacio": "sRGB",
+      "colores": 3067,
+      "dpix": "72",
+      "dpiy": "72",
+      "n_imagenes": 1
+     },
+     "img_err": "",
+     "alfa_min": 1.0
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 2780,
+   "firma": "png",
+   "ext": "png",
+   "img": {
+    "formato": "PNG",
+    "w": 200,
+    "h": 200,
+    "prof": 8,
+    "canales": "srgba 5.0",
+    "espacio": "sRGB",
+    "colores": 210,
+    "dpix": "72",
+    "dpiy": "72",
+    "n_imagenes": 1
+   },
+   "img_err": "",
+   "alfa_min": 0.0
+  },
+  "final": {
+   "existe": true,
+   "bytes": 4389,
+   "firma": "jpg",
+   "ext": "jpg",
+   "img": {
+    "formato": "JPEG",
+    "w": 200,
+    "h": 200,
+    "prof": 8,
+    "canales": "srgb  3.0",
+    "espacio": "sRGB",
+    "colores": 3067,
+    "dpix": "72",
+    "dpiy": "72",
+    "n_imagenes": 1
+   },
+   "img_err": "",
+   "alfa_min": 1.0
+  }
+ },
+ {
+  "id": "I1",
+  "estrato": "reparacion",
+  "nota": "rasterizar y recuperar el texto con OCR (3 saltos)",
+  "entrada": "corpus\\pdf\\tipico_texto.pdf",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "gs",
+    "destino": "png",
+    "args": {
+     "dev": "png16m",
+     "extra": [
+      "-r150"
+     ]
+    },
+    "rc": 0,
+    "ms": 791,
+    "stderr": "",
+    "salida": "I1_p1.png",
+    "car": {
+     "existe": true,
+     "bytes": 15804,
+     "firma": "png",
+     "ext": "png",
+     "img": {
+      "formato": "PNG",
+      "w": 1240,
+      "h": 1754,
+      "prof": 8,
+      "canales": "srgb  3.0",
+      "espacio": "sRGB",
+      "colores": 2,
+      "dpix": "59.060000000000002274",
+      "dpiy": "59.060000000000002274",
+      "n_imagenes": 1
+     },
+     "img_err": "",
+     "alfa_min": 1.0
+    }
+   },
+   {
+    "n": 2,
+    "motor": "im",
+    "destino": "pdf",
+    "args": {},
+    "rc": 0,
+    "ms": 415,
+    "stderr": "",
+    "salida": "I1_p2.pdf",
+    "car": {
+     "existe": true,
+     "bytes": 8613,
+     "firma": "pdf",
+     "ext": "pdf",
+     "chars": 0,
+     "texto": false,
+     "centinela": false,
+     "tabla": false,
+     "paginas": 1
+    }
+   },
+   {
+    "n": 3,
+    "motor": "gs",
+    "destino": "txt",
+    "args": {
+     "dev": "ocr"
+    },
+    "rc": 0,
+    "ms": 937,
+    "stderr": "",
+    "salida": "I1_p3.txt",
+    "car": {
+     "existe": true,
+     "bytes": 132,
+     "firma": "?46696c6558202d20",
+     "ext": "txt",
+     "chars": 104,
+     "texto": true,
+     "centinela": false,
+     "tabla": false
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 3219,
+   "firma": "pdf",
+   "ext": "pdf",
+   "chars": 104,
+   "texto": true,
+   "centinela": false,
+   "tabla": false,
+   "paginas": 1
+  },
+  "final": {
+   "existe": true,
+   "bytes": 132,
+   "firma": "?46696c6558202d20",
+   "ext": "txt",
+   "chars": 104,
+   "texto": true,
+   "centinela": false,
+   "tabla": false
+  }
+ },
+ {
+  "id": "I2",
+  "estrato": "reparacion",
+  "nota": "docx->pdf->png->pdf con capa de texto reconstruida por OCR (4 saltos)",
+  "entrada": "bench\\salidas-fidelidad\\entradas\\entrada.docx",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "gt-lo",
+    "destino": "pdf",
+    "args": {},
+    "rc": 0,
+    "ms": 1635,
+    "stderr": "HTTP 200",
+    "salida": "I2_p1.pdf",
+    "car": {
+     "existe": true,
+     "bytes": 17090,
+     "firma": "pdf",
+     "ext": "pdf",
+     "chars": 380,
+     "texto": true,
+     "centinela": true,
+     "tabla": true,
+     "paginas": 1
+    }
+   },
+   {
+    "n": 2,
+    "motor": "gs",
+    "destino": "png",
+    "args": {
+     "dev": "png16m",
+     "extra": [
+      "-r150"
+     ]
+    },
+    "rc": 0,
+    "ms": 373,
+    "stderr": "",
+    "salida": "I2_p2.png",
+    "car": {
+     "existe": true,
+     "bytes": 18664,
+     "firma": "png",
+     "ext": "png",
+     "img": {
+      "formato": "PNG",
+      "w": 1240,
+      "h": 1754,
+      "prof": 8,
+      "canales": "srgb  3.0",
+      "espacio": "sRGB",
+      "colores": 2,
+      "dpix": "59.060000000000002274",
+      "dpiy": "59.060000000000002274",
+      "n_imagenes": 1
+     },
+     "img_err": "",
+     "alfa_min": 1.0
+    }
+   },
+   {
+    "n": 3,
+    "motor": "im",
+    "destino": "pdf",
+    "args": {},
+    "rc": 0,
+    "ms": 507,
+    "stderr": "",
+    "salida": "I2_p3.pdf",
+    "car": {
+     "existe": true,
+     "bytes": 11818,
+     "firma": "pdf",
+     "ext": "pdf",
+     "chars": 0,
+     "texto": false,
+     "centinela": false,
+     "tabla": false,
+     "paginas": 1
+    }
+   },
+   {
+    "n": 4,
+    "motor": "gs",
+    "destino": "pdf",
+    "args": {
+     "dev": "pdfocr24",
+     "extra": [
+      "-r150"
+     ]
+    },
+    "rc": 0,
+    "ms": 803,
+    "stderr": "",
+    "salida": "I2_p4.pdf",
+    "car": {
+     "existe": true,
+     "bytes": 21200,
+     "firma": "pdf",
+     "ext": "pdf",
+     "chars": 333,
+     "texto": true,
+     "centinela": true,
+     "tabla": false,
+     "paginas": 1
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 1354,
+   "firma": "zip(ooxml/odf/epub)",
+   "ext": "docx",
+   "chars": 380,
+   "texto": true,
+   "centinela": true,
+   "tabla": true
+  },
+  "final": {
+   "existe": true,
+   "bytes": 21200,
+   "firma": "pdf",
+   "ext": "pdf",
+   "chars": 333,
+   "texto": true,
+   "centinela": true,
+   "tabla": false,
+   "paginas": 1
+  }
+ },
+ {
+  "id": "J1",
+  "estrato": "control-1salto",
+  "nota": "control de E7",
+  "entrada": "corpus\\video\\tipico.mp4",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "ff",
+    "destino": "wav",
+    "args": {},
+    "rc": 0,
+    "ms": 2548,
+    "stderr": "",
+    "salida": "J1_p1.wav",
+    "car": {
+     "existe": true,
+     "bytes": 1765454,
+     "firma": "wav",
+     "ext": "wav",
+     "av": {
+      "formato": "wav",
+      "dur": 20.015601,
+      "n_v": 0,
+      "n_a": 1,
+      "codec_v": null,
+      "codec_a": "pcm_s16le",
+      "w": null,
+      "h": null,
+      "sr": "44100",
+      "canales_a": 1,
+      "bitrate": "705631"
+     },
+     "av_err": ""
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 16246490,
+   "firma": "mp4/mov",
+   "ext": "mp4",
+   "av": {
+    "formato": "mov,mp4,m4a,3gp,3g2,mj2",
+    "dur": 20.0,
+    "n_v": 1,
+    "n_a": 1,
+    "codec_v": "h264",
+    "codec_a": "aac",
+    "w": 1920,
+    "h": 1080,
+    "sr": "44100",
+    "canales_a": 1,
+    "bitrate": "6498596"
+   },
+   "av_err": ""
+  },
+  "final": {
+   "existe": true,
+   "bytes": 1765454,
+   "firma": "wav",
+   "ext": "wav",
+   "av": {
+    "formato": "wav",
+    "dur": 20.015601,
+    "n_v": 0,
+    "n_a": 1,
+    "codec_v": null,
+    "codec_a": "pcm_s16le",
+    "w": null,
+    "h": null,
+    "sr": "44100",
+    "canales_a": 1,
+    "bitrate": "705631"
+   },
+   "av_err": ""
+  }
+ },
+ {
+  "id": "J2",
+  "estrato": "control-1salto",
+  "nota": "control de F4",
+  "entrada": "corpus\\audio\\trivial.wav",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "ff",
+    "destino": "flac",
+    "args": {},
+    "rc": 0,
+    "ms": 167,
+    "stderr": "",
+    "salida": "J2_p1.flac",
+    "car": {
+     "existe": true,
+     "bytes": 104318,
+     "firma": "flac",
+     "ext": "flac",
+     "av": {
+      "formato": "flac",
+      "dur": 8.0,
+      "n_v": 0,
+      "n_a": 1,
+      "codec_v": null,
+      "codec_a": "flac",
+      "w": null,
+      "h": null,
+      "sr": "44100",
+      "canales_a": 1,
+      "bitrate": "104318"
+     },
+     "av_err": ""
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 705678,
+   "firma": "wav",
+   "ext": "wav",
+   "av": {
+    "formato": "wav",
+    "dur": 8.0,
+    "n_v": 0,
+    "n_a": 1,
+    "codec_v": null,
+    "codec_a": "pcm_s16le",
+    "w": null,
+    "h": null,
+    "sr": "44100",
+    "canales_a": 1,
+    "bitrate": "705678"
+   },
+   "av_err": ""
+  },
+  "final": {
+   "existe": true,
+   "bytes": 104318,
+   "firma": "flac",
+   "ext": "flac",
+   "av": {
+    "formato": "flac",
+    "dur": 8.0,
+    "n_v": 0,
+    "n_a": 1,
+    "codec_v": null,
+    "codec_a": "flac",
+    "w": null,
+    "h": null,
+    "sr": "44100",
+    "canales_a": 1,
+    "bitrate": "104318"
+   },
+   "av_err": ""
+  }
+ },
+ {
+  "id": "J3",
+  "estrato": "control-1salto",
+  "nota": "control de B2/C3",
+  "entrada": "bench\\salidas-fidelidad\\entradas\\entrada.docx",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "gt-lo",
+    "destino": "pdf",
+    "args": {},
+    "rc": 0,
+    "ms": 799,
+    "stderr": "HTTP 200",
+    "salida": "J3_p1.pdf",
+    "car": {
+     "existe": true,
+     "bytes": 17090,
+     "firma": "pdf",
+     "ext": "pdf",
+     "chars": 380,
+     "texto": true,
+     "centinela": true,
+     "tabla": true,
+     "paginas": 1
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 1354,
+   "firma": "zip(ooxml/odf/epub)",
+   "ext": "docx",
+   "chars": 380,
+   "texto": true,
+   "centinela": true,
+   "tabla": true
+  },
+  "final": {
+   "existe": true,
+   "bytes": 17090,
+   "firma": "pdf",
+   "ext": "pdf",
+   "chars": 380,
+   "texto": true,
+   "centinela": true,
+   "tabla": true,
+   "paginas": 1
+  }
+ },
+ {
+  "id": "J4",
+  "estrato": "control-1salto",
+  "nota": "control de C6",
+  "entrada": "corpus\\pdf\\tipico_texto.pdf",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "gs",
+    "destino": "pdf",
+    "args": {
+     "dev": "pdfwrite"
+    },
+    "rc": 0,
+    "ms": 278,
+    "stderr": "",
+    "salida": "J4_p1.pdf",
+    "car": {
+     "existe": true,
+     "bytes": 3284,
+     "firma": "pdf",
+     "ext": "pdf",
+     "chars": 104,
+     "texto": true,
+     "centinela": false,
+     "tabla": false,
+     "paginas": 1
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 3219,
+   "firma": "pdf",
+   "ext": "pdf",
+   "chars": 104,
+   "texto": true,
+   "centinela": false,
+   "tabla": false,
+   "paginas": 1
+  },
+  "final": {
+   "existe": true,
+   "bytes": 3284,
+   "firma": "pdf",
+   "ext": "pdf",
+   "chars": 104,
+   "texto": true,
+   "centinela": false,
+   "tabla": false,
+   "paginas": 1
+  }
+ },
+ {
+  "id": "J5",
+  "estrato": "control-1salto",
+  "nota": "control de C7",
+  "entrada": "corpus\\pdf\\tipico_texto.pdf",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "gs",
+    "destino": "docx",
+    "args": {
+     "dev": "docxwrite"
+    },
+    "rc": 0,
+    "ms": 796,
+    "stderr": "",
+    "salida": "J5_p1.docx",
+    "car": {
+     "existe": true,
+     "bytes": 10047,
+     "firma": "zip(ooxml/odf/epub)",
+     "ext": "docx",
+     "chars": 228,
+     "texto": true,
+     "centinela": false,
+     "tabla": false
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 3219,
+   "firma": "pdf",
+   "ext": "pdf",
+   "chars": 104,
+   "texto": true,
+   "centinela": false,
+   "tabla": false,
+   "paginas": 1
+  },
+  "final": {
+   "existe": true,
+   "bytes": 10047,
+   "firma": "zip(ooxml/odf/epub)",
+   "ext": "docx",
+   "chars": 228,
+   "texto": true,
+   "centinela": false,
+   "tabla": false
+  }
+ },
+ {
+  "id": "J6",
+  "estrato": "doc-a-doc",
+  "nota": "sobrevive la tabla como texto?",
+  "entrada": "bench\\salidas-fidelidad\\entradas\\entrada.xlsx",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "gt-lo",
+    "destino": "pdf",
+    "args": {},
+    "rc": 0,
+    "ms": 3440,
+    "stderr": "HTTP 200",
+    "salida": "J6_p1.pdf",
+    "car": {
+     "existe": true,
+     "bytes": 17018,
+     "firma": "pdf",
+     "ext": "pdf",
+     "chars": 124,
+     "texto": true,
+     "centinela": true,
+     "tabla": true,
+     "paginas": 1
+    }
+   },
+   {
+    "n": 2,
+    "motor": "gs",
+    "destino": "txt",
+    "args": {
+     "dev": "txtwrite"
+    },
+    "rc": 0,
+    "ms": 344,
+    "stderr": "",
+    "salida": "J6_p2.txt",
+    "car": {
+     "existe": true,
+     "bytes": 250,
+     "firma": "?2020202020202020",
+     "ext": "txt",
+     "chars": 124,
+     "texto": true,
+     "centinela": true,
+     "tabla": true
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 1719,
+   "firma": "zip(ooxml/odf/epub)",
+   "ext": "xlsx",
+   "chars": 134,
+   "texto": true,
+   "centinela": true,
+   "tabla": true
+  },
+  "final": {
+   "existe": true,
+   "bytes": 250,
+   "firma": "?2020202020202020",
+   "ext": "txt",
+   "chars": 124,
+   "texto": true,
+   "centinela": true,
+   "tabla": true
+  }
+ },
+ {
+  "id": "J7",
+  "estrato": "doc-a-doc",
+  "nota": "tabular -> documento",
+  "entrada": "bench\\salidas-fidelidad\\entradas\\entrada.csv",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "gt-lo",
+    "destino": "pdf",
+    "args": {},
+    "rc": 0,
+    "ms": 2774,
+    "stderr": "HTTP 200",
+    "salida": "J7_p1.pdf",
+    "car": {
+     "existe": true,
+     "bytes": 18854,
+     "firma": "pdf",
+     "ext": "pdf",
+     "chars": 170,
+     "texto": true,
+     "centinela": true,
+     "tabla": true,
+     "paginas": 3
+    }
+   },
+   {
+    "n": 2,
+    "motor": "gs",
+    "destino": "docx",
+    "args": {
+     "dev": "docxwrite"
+    },
+    "rc": 0,
+    "ms": 274,
+    "stderr": "",
+    "salida": "J7_p2.docx",
+    "car": {
+     "existe": true,
+     "bytes": 10144,
+     "firma": "zip(ooxml/odf/epub)",
+     "ext": "docx",
+     "chars": 277,
+     "texto": true,
+     "centinela": true,
+     "tabla": true
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 189,
+   "firma": "?636f6469676f2c63",
+   "ext": "csv",
+   "chars": 167,
+   "texto": true,
+   "centinela": true,
+   "tabla": true
+  },
+  "final": {
+   "existe": true,
+   "bytes": 10144,
+   "firma": "zip(ooxml/odf/epub)",
+   "ext": "docx",
+   "chars": 277,
+   "texto": true,
+   "centinela": true,
+   "tabla": true
+  }
+ },
+ {
+  "id": "J8",
+  "estrato": "orden",
+  "nota": "PDF escaneado -> txt por extraccion: no hay nada que extraer",
+  "entrada": "corpus\\pdf\\patologico_escaneado.pdf",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "gs",
+    "destino": "txt",
+    "args": {
+     "dev": "txtwrite"
+    },
+    "rc": 0,
+    "ms": 673,
+    "stderr": "",
+    "salida": "J8_p1.txt",
+    "car": {
+     "existe": true,
+     "bytes": 0,
+     "firma": "?",
+     "ext": "txt",
+     "chars": 0,
+     "texto": false,
+     "centinela": false,
+     "tabla": false
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 8555521,
+   "firma": "pdf",
+   "ext": "pdf",
+   "chars": 0,
+   "texto": false,
+   "centinela": false,
+   "tabla": false,
+   "paginas": 1
+  },
+  "final": {
+   "existe": true,
+   "bytes": 0,
+   "firma": "?",
+   "ext": "txt",
+   "chars": 0,
+   "texto": false,
+   "centinela": false,
+   "tabla": false
+  }
+ },
+ {
+  "id": "J9",
+  "estrato": "orden",
+  "nota": "el mismo par por OCR: la misma arista con otro coste",
+  "entrada": "corpus\\pdf\\patologico_escaneado.pdf",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "gs",
+    "destino": "txt",
+    "args": {
+     "dev": "ocr"
+    },
+    "rc": 0,
+    "ms": 804,
+    "stderr": "",
+    "salida": "J9_p1.txt",
+    "car": {
+     "existe": true,
+     "bytes": 83,
+     "firma": "?444f43554d454e54",
+     "ext": "txt",
+     "chars": 71,
+     "texto": true,
+     "centinela": false,
+     "tabla": false
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 8555521,
+   "firma": "pdf",
+   "ext": "pdf",
+   "chars": 0,
+   "texto": false,
+   "centinela": false,
+   "tabla": false,
+   "paginas": 1
+  },
+  "final": {
+   "existe": true,
+   "bytes": 83,
+   "firma": "?444f43554d454e54",
+   "ext": "txt",
+   "chars": 71,
+   "texto": true,
+   "centinela": false,
+   "tabla": false
+  }
+ },
+ {
+  "id": "J10",
+  "estrato": "reparacion",
+  "nota": "1 salto: docx sin texto",
+  "entrada": "corpus\\pdf\\patologico_escaneado.pdf",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "gs",
+    "destino": "docx",
+    "args": {
+     "dev": "docxwrite"
+    },
+    "rc": 0,
+    "ms": 589,
+    "stderr": "",
+    "salida": "J10_p1.docx",
+    "car": {
+     "existe": true,
+     "bytes": 9837,
+     "firma": "zip(ooxml/odf/epub)",
+     "ext": "docx",
+     "chars": 108,
+     "texto": true,
+     "centinela": false,
+     "tabla": false
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 8555521,
+   "firma": "pdf",
+   "ext": "pdf",
+   "chars": 0,
+   "texto": false,
+   "centinela": false,
+   "tabla": false,
+   "paginas": 1
+  },
+  "final": {
+   "existe": true,
+   "bytes": 9837,
+   "firma": "zip(ooxml/odf/epub)",
+   "ext": "docx",
+   "chars": 108,
+   "texto": true,
+   "centinela": false,
+   "tabla": false
+  }
+ },
+ {
+  "id": "J11",
+  "estrato": "reparacion",
+  "nota": "2 saltos con OCR intermedio: el camino largo GANA",
+  "entrada": "corpus\\pdf\\patologico_escaneado.pdf",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "gs",
+    "destino": "pdf",
+    "args": {
+     "dev": "pdfocr24",
+     "extra": [
+      "-r150"
+     ]
+    },
+    "rc": 0,
+    "ms": 3610,
+    "stderr": "",
+    "salida": "J11_p1.pdf",
+    "car": {
+     "existe": true,
+     "bytes": 1715593,
+     "firma": "pdf",
+     "ext": "pdf",
+     "chars": 70,
+     "texto": true,
+     "centinela": false,
+     "tabla": false,
+     "paginas": 1
+    }
+   },
+   {
+    "n": 2,
+    "motor": "gs",
+    "destino": "docx",
+    "args": {
+     "dev": "docxwrite"
+    },
+    "rc": 0,
+    "ms": 606,
+    "stderr": "",
+    "salida": "J11_p2.docx",
+    "car": {
+     "existe": true,
+     "bytes": 10154,
+     "firma": "zip(ooxml/odf/epub)",
+     "ext": "docx",
+     "chars": 178,
+     "texto": true,
+     "centinela": false,
+     "tabla": false
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 8555521,
+   "firma": "pdf",
+   "ext": "pdf",
+   "chars": 0,
+   "texto": false,
+   "centinela": false,
+   "tabla": false,
+   "paginas": 1
+  },
+  "final": {
+   "existe": true,
+   "bytes": 10154,
+   "firma": "zip(ooxml/odf/epub)",
+   "ext": "docx",
+   "chars": 178,
+   "texto": true,
+   "centinela": false,
+   "tabla": false
+  }
+ },
+ {
+  "id": "J12",
+  "estrato": "control-1salto",
+  "nota": "control de E1",
+  "entrada": "corpus\\video\\tipico.mp4",
+  "pasos": [
+   {
+    "n": 1,
+    "motor": "ff",
+    "destino": "gif",
+    "args": {
+     "extra": [
+      "-vf",
+      "fps=12,scale=320:-1",
+      "-t",
+      "3"
+     ]
+    },
+    "rc": 0,
+    "ms": 1727,
+    "stderr": "",
+    "salida": "J12_p1.gif",
+    "car": {
+     "existe": true,
+     "bytes": 140162,
+     "firma": "gif",
+     "ext": "gif",
+     "av": {
+      "formato": "gif",
+      "dur": 3.0,
+      "n_v": 1,
+      "n_a": 0,
+      "codec_v": "gif",
+      "codec_a": null,
+      "w": 320,
+      "h": 180,
+      "sr": null,
+      "canales_a": null,
+      "bitrate": "373765"
+     },
+     "av_err": "",
+     "img": {
+      "formato": "GIF",
+      "w": 320,
+      "h": 180,
+      "prof": 8,
+      "canales": "srgb  4.0",
+      "espacio": "sRGB",
+      "colores": 171,
+      "dpix": "72",
+      "dpiy": "72",
+      "n_imagenes": 36
+     }
+    }
+   }
+  ],
+  "ok": true,
+  "car_entrada": {
+   "existe": true,
+   "bytes": 16246490,
+   "firma": "mp4/mov",
+   "ext": "mp4",
+   "av": {
+    "formato": "mov,mp4,m4a,3gp,3g2,mj2",
+    "dur": 20.0,
+    "n_v": 1,
+    "n_a": 1,
+    "codec_v": "h264",
+    "codec_a": "aac",
+    "w": 1920,
+    "h": 1080,
+    "sr": "44100",
+    "canales_a": 1,
+    "bitrate": "6498596"
+   },
+   "av_err": ""
+  },
+  "final": {
+   "existe": true,
+   "bytes": 140162,
+   "firma": "gif",
+   "ext": "gif",
+   "av": {
+    "formato": "gif",
+    "dur": 3.0,
+    "n_v": 1,
+    "n_a": 0,
+    "codec_v": "gif",
+    "codec_a": null,
+    "w": 320,
+    "h": 180,
+    "sr": null,
+    "canales_a": null,
+    "bitrate": "373765"
+   },
+   "av_err": "",
+   "img": {
+    "formato": "GIF",
+    "w": 320,
+    "h": 180,
+    "prof": 8,
+    "canales": "srgb  4.0",
+    "espacio": "sRGB",
+    "colores": 171,
+    "dpix": "72",
+    "dpiy": "72",
+    "n_imagenes": 36
+   }
+  }
+ }
+]

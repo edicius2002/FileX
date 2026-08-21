@@ -1,0 +1,18 @@
+{
+ "command": "C:/Program Files/nodejs/npx.cmd",
+ "args": [
+  "-y",
+  "@boomlinkai/image-worker-mcp"
+ ],
+ "cwd": "D:/Work/research/FileX",
+ "env": {
+  "UPLOAD_SERVICE": "s3",
+  "S3_BUCKET": "filex-dummy-no-existe",
+  "AWS_ACCESS_KEY_ID": "AKIADUMMYNOEXISTE000",
+  "AWS_SECRET_ACCESS_KEY": "dummy-no-existe-secret-key-000000000000",
+  "S3_REGION": "us-east-1"
+ },
+ "nombre": "image-worker-mcp CATALOGO",
+ "pasos": [],
+ "stderr_log": "D:/Work/research/FileX/bench/salidas-mcp-refs/multimedia/cat_img.stderr.log"
+}

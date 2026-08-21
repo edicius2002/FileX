@@ -1,0 +1,20 @@
+[lock] adquirido por fase1-nvenc-rep
+gpu_state: 2270,12288,17,52
+REP 1080p CPU libx264 medium           mediana:  5407 ms  n=9    rango:4808-9586  [SUCIA(pico 17%)]  gpu_antes:2270,12288,13,52  gpu_despues:2255,12288,17,53
+REP 1080p GPU h264_nvenc p4            mediana:  1973 ms  n=9    rango:1748-2419  [SUCIA(pico 17%)]  gpu_antes:2254,12288,19,53  gpu_despues:2254,12288,18,59
+REP 4K    CPU libx264 medium           mediana: 11427 ms  n=9    rango:9601-24674  [SUCIA(pico 18%)]  gpu_antes:2253,12288,28,56  gpu_despues:2297,12288,58,57
+REP 4K    GPU h264_nvenc p4            mediana:  4286 ms  n=9    rango:3343-7795  [SUCIA(pico 58%)]  gpu_antes:2288,12288,6,57  gpu_despues:2280,12288,16,65
+REP 1080p CPU libx265 medium           mediana: 16598 ms  n=9    rango:14937-41015  [SUCIA(pico 16%)]  gpu_antes:2284,12288,30,60  gpu_despues:2174,12288,18,54
+REP 1080p GPU hevc_nvenc p4            mediana:  1978 ms  n=9    rango:1902-3453  [SUCIA(pico 18%)]  gpu_antes:2174,12288,16,54  gpu_despues:2140,12288,15,60
+REP 4K->1080p decCPU+scaleCPU          mediana:  1542 ms  n=9    rango:1526-5515  [SUCIA(pico 23%)]  gpu_antes:2140,12288,22,57  gpu_despues:2118,12288,19,61
+REP 4K->1080p todo GPU                 mediana:  2071 ms  n=9    rango:2042-4484  [SUCIA(pico 16%)]  gpu_antes:2118,12288,18,58  gpu_despues:2118,12288,11,64
+REP 4K decCPU+encGPU                   mediana:  3346 ms  n=9    rango:3299-3612  [SUCIA(pico 17%)]  gpu_antes:2118,12288,23,59  gpu_despues:2118,12288,17,57
+REP 4K decGPU+encGPU                   mediana:  3240 ms  n=9    rango:3195-7313  [SUCIA(pico 23%)]  gpu_antes:2118,12288,4,52  gpu_despues:2117,12288,7,54
+REP 1080p decCPU+encGPU                mediana:  1771 ms  n=9    rango:1756-8150  [SUCIA(pico 10%)]  gpu_antes:2117,12288,21,50  gpu_despues:2117,12288,19,57
+REP 1080p decGPU+encGPU                mediana:  2001 ms  n=9    rango:1731-4360  [SUCIA(pico 54%)]  gpu_antes:2117,12288,25,54  gpu_despues:2177,12288,14,60
+REP 1080p completo CPU (v+a)           mediana:  5248 ms  n=9    rango:4809-6049  [SUCIA(pico 16%)]  gpu_antes:2217,12288,12,57  gpu_despues:2160,12288,4,57
+REP 1080p completo GPU (v+a)           mediana:  1762 ms  n=9    rango:1731-1878  [limpia]  gpu_antes:2188,12288,8,57  gpu_despues:2169,12288,6,63
+REP patologico 2 pistas CPU            mediana:  1358 ms  n=9    rango:1300-1404  [SUCIA(pico 18%)]  gpu_antes:2137,12288,2,59  gpu_despues:2168,12288,0,59
+REP patologico 2 pistas GPU            mediana:   628 ms  n=9    rango:620-667  [SUCIA(pico 18%)]  gpu_antes:2189,12288,0,59  gpu_despues:2193,12288,4,63
+gpu_state final: 2193,12288,0,63
+=== FIN REPETICION ===

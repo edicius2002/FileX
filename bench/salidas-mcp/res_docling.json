@@ -1,0 +1,624 @@
+{
+  "spec": "bench/salidas-mcp/spec_docling.json",
+  "servidor": "docling-mcp (grupos por defecto: conversion+generation+manipulation)",
+  "llamadas": [
+    {
+      "id": "peq_1_frio",
+      "tool": "convert_document_into_docling_document",
+      "args": {
+        "source": "D:\\Work\\research\\FileX\\corpus\\pdf\\tipico_texto.pdf"
+      },
+      "nota": "PDF pequeno, ruta absoluta Windows. Primera conversion: carga modelos.",
+      "ok": true,
+      "isError": false,
+      "ms": 21445.9,
+      "chars_respuesta": 79,
+      "tokens_respuesta": 32,
+      "respuesta_recorte": "{\n  \"from_cache\": false,\n  \"document_key\": \"625d787afbe5be78327a19eb04aa375d\"\n}",
+      "respuesta_completa_en": null,
+      "structuredContent": "{\"from_cache\": false, \"document_key\": \"625d787afbe5be78327a19eb04aa375d\"}",
+      "tokens_structured": 28
+    },
+    {
+      "id": "peq_2_cache",
+      "tool": "convert_document_into_docling_document",
+      "args": {
+        "source": "D:\\Work\\research\\FileX\\corpus\\pdf\\tipico_texto.pdf"
+      },
+      "nota": "Mismo PDF: debe salir de cache.",
+      "ok": true,
+      "isError": false,
+      "ms": 307.0,
+      "chars_respuesta": 78,
+      "tokens_respuesta": 32,
+      "respuesta_recorte": "{\n  \"from_cache\": true,\n  \"document_key\": \"625d787afbe5be78327a19eb04aa375d\"\n}",
+      "respuesta_completa_en": null,
+      "structuredContent": "{\"from_cache\": true, \"document_key\": \"625d787afbe5be78327a19eb04aa375d\"}",
+      "tokens_structured": 28
+    },
+    {
+      "id": "peq_3_cache",
+      "tool": "convert_document_into_docling_document",
+      "args": {
+        "source": "D:\\Work\\research\\FileX\\corpus\\pdf\\tipico_texto.pdf"
+      },
+      "nota": "Tercera llamada.",
+      "ok": true,
+      "isError": false,
+      "ms": 270.6,
+      "chars_respuesta": 78,
+      "tokens_respuesta": 32,
+      "respuesta_recorte": "{\n  \"from_cache\": true,\n  \"document_key\": \"625d787afbe5be78327a19eb04aa375d\"\n}",
+      "respuesta_completa_en": null,
+      "structuredContent": "{\"from_cache\": true, \"document_key\": \"625d787afbe5be78327a19eb04aa375d\"}",
+      "tokens_structured": 28
+    },
+    {
+      "id": "esta_en_cache",
+      "tool": "is_document_in_local_cache",
+      "args": {
+        "document_key": "625d787afbe5be78327a19eb04aa375d"
+      },
+      "nota": "Comprobacion barata de cache.",
+      "ok": true,
+      "isError": false,
+      "ms": 5.1,
+      "chars_respuesta": 22,
+      "tokens_respuesta": 9,
+      "respuesta_recorte": "{\n  \"in_cache\": true\n}",
+      "respuesta_completa_en": null,
+      "structuredContent": "{\"in_cache\": true}",
+      "tokens_structured": 6
+    },
+    {
+      "id": "export_peq",
+      "tool": "export_docling_document_to_markdown",
+      "args": {
+        "document_key": "625d787afbe5be78327a19eb04aa375d"
+      },
+      "nota": "Coste de traer de verdad el contenido pequeno al contexto.",
+      "ok": true,
+      "isError": false,
+      "ms": 46.4,
+      "chars_respuesta": 232,
+      "tokens_respuesta": 80,
+      "respuesta_recorte": "{\n  \"document_key\": \"625d787afbe5be78327a19eb04aa375d\",\n  \"markdown\": \"FileX - documento de prueba con texto seleccionable Segunda linea: acentos aeiou n ˆ  y simbolos % &amp; @ Tabla:  Col A    Col B    Col C 1        2        3\"\n}",
+      "respuesta_completa_en": "bench/salidas-mcp\\dl_peq.md",
+      "structuredContent": "{\"document_key\": \"625d787afbe5be78327a19eb04aa375d\", \"markdown\": \"FileX - documento de prueba con texto seleccionable Segunda linea: acentos aeiou n ˆ  y simbolos % &amp; @ Tabla:  Col A    Col B    Col C 1        2        3\"}",
+      "tokens_structured": 76
+    },
+    {
+      "id": "grande_1",
+      "tool": "convert_document_into_docling_document",
+      "args": {
+        "source": "D:\\Work\\research\\FileX\\bench\\salidas-mcp\\grande_60p.pdf"
+      },
+      "nota": "PDF 60 paginas densas.",
+      "ok": true,
+      "isError": false,
+      "ms": 23300.5,
+      "chars_respuesta": 79,
+      "tokens_respuesta": 36,
+      "respuesta_recorte": "{\n  \"from_cache\": false,\n  \"document_key\": \"774796ed6faa5995b5b3f4a1ed88cf1a\"\n}",
+      "respuesta_completa_en": null,
+      "structuredContent": "{\"from_cache\": false, \"document_key\": \"774796ed6faa5995b5b3f4a1ed88cf1a\"}",
+      "tokens_structured": 32
+    },
+    {
+      "id": "grande_2",
+      "tool": "convert_document_into_docling_document",
+      "args": {
+        "source": "D:\\Work\\research\\FileX\\bench\\salidas-mcp\\grande_60p.pdf"
+      },
+      "nota": "Repeticion: cache.",
+      "ok": true,
+      "isError": false,
+      "ms": 370.4,
+      "chars_respuesta": 78,
+      "tokens_respuesta": 36,
+      "respuesta_recorte": "{\n  \"from_cache\": true,\n  \"document_key\": \"774796ed6faa5995b5b3f4a1ed88cf1a\"\n}",
+      "respuesta_completa_en": null,
+      "structuredContent": "{\"from_cache\": true, \"document_key\": \"774796ed6faa5995b5b3f4a1ed88cf1a\"}",
+      "tokens_structured": 32
+    },
+    {
+      "id": "export_grande",
+      "tool": "export_docling_document_to_markdown",
+      "args": {
+        "document_key": "774796ed6faa5995b5b3f4a1ed88cf1a"
+      },
+      "nota": "Coste de traer el documento grande entero al contexto (opt-in).",
+      "ok": true,
+      "isError": false,
+      "ms": 55.7,
+      "chars_respuesta": 410290,
+      "tokens_respuesta": 85473,
+      "respuesta_recorte": "{\n  \"document_key\": \"774796ed6faa5995b5b3f4a1ed88cf1a\",\n  \"markdown\": \"## FileX - documento sintetico de volumen (pagina densa)\\n\\n01  La conversion universal de archivos plantea un problema de contexto: cuando una herramienta MCP devuelve el 02  documento completo como cadena, cada pagina convertida se convierte en tokens que el modelo debe pagar 03  aunque no vaya a usarlos. Este parrafo existe unicamente para ocupar espacio de forma realista, con una 04  densidad tipografica comparable a la de un informe tecnico corriente. La conversion universal de archivos 05  plantea un problema de contexto: cuando una herramienta MCP devuelve el documento completo como cadena, cada 06  pagina convertida se convierte en tokens que el modelo debe pagar aunque no vaya a usarlos. Este parrafo 07  existe unicamente para ocupar espacio de forma realista, con una densidad tipografica comparable a la de un 08  informe tecnico corriente. La conversion universal de archivos plantea un problema de contexto: cuando una 09  herramienta MCP devuelve el documento completo como cadena, cada pagina convertida se convierte en tokens 10  que el modelo debe pagar aunque no vaya a usarlos. Este parrafo existe un",
+      "respuesta_completa_en": "bench/salidas-mcp\\dl_grande.md",
+      "structuredContent": "{\"document_key\": \"774796ed6faa5995b5b3f4a1ed88cf1a\", \"markdown\": \"## FileX - documento sintetico de volumen (pagina densa)\\n\\n01  La conversion universal de archivos plantea un problema de contexto: cuando una herramienta MCP devuelve el 02  documento completo como cadena, cada pagina convertida se convierte en tokens que el modelo debe pagar 03  aunque no vaya a usarlos. Este parrafo existe unicamente para ocupar espacio de forma realista, con una 04  densidad tipografica comparable a la de un informe tecnico corriente. La conversion universal de archivos 05  plantea un problema de contexto: ",
+      "tokens_structured": 85469
+    },
+    {
+      "id": "export_grande_recortado",
+      "tool": "export_docling_document_to_markdown",
+      "args": {
+        "document_key": "774796ed6faa5995b5b3f4a1ed88cf1a",
+        "max_size": 4000
+      },
+      "nota": "max_size: el asa permite pedir solo un trozo.",
+      "ok": true,
+      "isError": false,
+      "ms": 35.2,
+      "chars_respuesta": 4076,
+      "tokens_respuesta": 871,
+      "respuesta_recorte": "{\n  \"document_key\": \"774796ed6faa5995b5b3f4a1ed88cf1a\",\n  \"markdown\": \"## FileX - documento sintetico de volumen (pagina densa)\\n\\n01  La conversion universal de archivos plantea un problema de contexto: cuando una herramienta MCP devuelve el 02  documento completo como cadena, cada pagina convertida se convierte en tokens que el modelo debe pagar 03  aunque no vaya a usarlos. Este parrafo existe unicamente para ocupar espacio de forma realista, con una 04  densidad tipografica comparable a la de un informe tecnico corriente. La conversion universal de archivos 05  plantea un problema de contexto: cuando una herramienta MCP devuelve el documento completo como cadena, cada 06  pagina convertida se convierte en tokens que el modelo debe pagar aunque no vaya a usarlos. Este parrafo 07  existe unicamente para ocupar espacio de forma realista, con una densidad tipografica comparable a la de un 08  informe tecnico corriente. La conversion universal de archivos plantea un problema de contexto: cuando una 09  herramienta MCP devuelve el documento completo como cadena, cada pagina convertida se convierte en tokens 10  que el modelo debe pagar aunque no vaya a usarlos. Este parrafo existe un",
+      "respuesta_completa_en": null,
+      "structuredContent": "{\"document_key\": \"774796ed6faa5995b5b3f4a1ed88cf1a\", \"markdown\": \"## FileX - documento sintetico de volumen (pagina densa)\\n\\n01  La conversion universal de archivos plantea un problema de contexto: cuando una herramienta MCP devuelve el 02  documento completo como cadena, cada pagina convertida se convierte en tokens que el modelo debe pagar 03  aunque no vaya a usarlos. Este parrafo existe unicamente para ocupar espacio de forma realista, con una 04  densidad tipografica comparable a la de un informe tecnico corriente. La conversion universal de archivos 05  plantea un problema de contexto: ",
+      "tokens_structured": 867
+    },
+    {
+      "id": "anclas_grande",
+      "tool": "get_overview_of_document_anchors",
+      "args": {
+        "document_key": "774796ed6faa5995b5b3f4a1ed88cf1a"
+      },
+      "nota": "Navegacion estructural en vez de volcado.",
+      "ok": true,
+      "isError": false,
+      "ms": 5.4,
+      "chars_respuesta": 7769,
+      "tokens_respuesta": 2347,
+      "respuesta_recorte": "{\n  \"structure\": \"    [anchor:#/texts/0] section_header-1: FileX - documento sintetico de volumen (pagina densa)\\n      [anchor:#/texts/1] text\\n    [anchor:#/texts/2] section_header-1: FileX - documento sintetico de volumen (pagina densa)\\n      [anchor:#/texts/3] text\\n    [anchor:#/texts/4] section_header-1: FileX - documento sintetico de volumen (pagina densa)\\n      [anchor:#/texts/5] text\\n    [anchor:#/texts/6] section_header-1: FileX - documento sintetico de volumen (pagina densa)\\n      [anchor:#/texts/7] text\\n    [anchor:#/texts/8] section_header-1: FileX - documento sintetico de volumen (pagina densa)\\n      [anchor:#/texts/9] text\\n    [anchor:#/texts/10] section_header-1: FileX - documento sintetico de volumen (pagina densa)\\n      [anchor:#/texts/11] text\\n    [anchor:#/text",
+      "respuesta_completa_en": "bench/salidas-mcp\\dl_grande_anclas.txt",
+      "structuredContent": "{\"structure\": \"    [anchor:#/texts/0] section_header-1: FileX - documento sintetico de volumen (pagina densa)\\n      [anchor:#/texts/1] text\\n    [anchor:#/texts/2] section_header-1: FileX - documento sintetico de volumen (pagina densa)\\n      [anchor:#/texts/3] text\\n    [anchor:#/texts/4] section_header-1: FileX - documento sintetico de volumen (pagina densa)\\n      [anchor:#/texts/5] text\\n    [anchor:#/texts/6] section_header-1: FileX - documento sintetico de volumen (pagina densa)\\n      [anchor:#/texts/7] text\\n    [anchor:#/texts/8] section_header-1: FileX - documento sintetico de volum",
+      "tokens_structured": 2344
+    },
+    {
+      "id": "buscar_grande",
+      "tool": "search_for_text_in_document_anchors",
+      "args": {
+        "document_key": "774796ed6faa5995b5b3f4a1ed88cf1a",
+        "text": "contexto"
+      },
+      "nota": "Busqueda dirigida sobre el asa.",
+      "ok": true,
+      "isError": false,
+      "ms": 7.1,
+      "chars_respuesta": 1333,
+      "tokens_respuesta": 556,
+      "respuesta_recorte": "{\n  \"result\": \"Found exact text matches in the following anchors:\\n[anchor:#/texts/1]\\n[anchor:#/texts/3]\\n[anchor:#/texts/5]\\n[anchor:#/texts/7]\\n[anchor:#/texts/9]\\n[anchor:#/texts/11]\\n[anchor:#/texts/13]\\n[anchor:#/texts/15]\\n[anchor:#/texts/17]\\n[anchor:#/texts/19]\\n[anchor:#/texts/21]\\n[anchor:#/texts/23]\\n[anchor:#/texts/25]\\n[anchor:#/texts/27]\\n[anchor:#/texts/29]\\n[anchor:#/texts/31]\\n[anchor:#/texts/33]\\n[anchor:#/texts/35]\\n[anchor:#/texts/37]\\n[anchor:#/texts/39]\\n[anchor:#/texts/41]\\n[anchor:#/texts/43]\\n[anchor:#/texts/45]\\n[anchor:#/texts/47]\\n[anchor:#/texts/49]\\n[anchor:#/texts/51]\\n[anchor:#/texts/53]\\n[anchor:#/texts/55]\\n[anchor:#/texts/57]\\n[anchor:#/texts/59]\\n[anchor:#/texts/61]\\n[anchor:#/texts/63]\\n[anchor:#/texts/65]\\n[anchor:#/texts/67]\\n[anchor:#/texts/69]\\n[an",
+      "respuesta_completa_en": null,
+      "structuredContent": "{\"result\": \"Found exact text matches in the following anchors:\\n[anchor:#/texts/1]\\n[anchor:#/texts/3]\\n[anchor:#/texts/5]\\n[anchor:#/texts/7]\\n[anchor:#/texts/9]\\n[anchor:#/texts/11]\\n[anchor:#/texts/13]\\n[anchor:#/texts/15]\\n[anchor:#/texts/17]\\n[anchor:#/texts/19]\\n[anchor:#/texts/21]\\n[anchor:#/texts/23]\\n[anchor:#/texts/25]\\n[anchor:#/texts/27]\\n[anchor:#/texts/29]\\n[anchor:#/texts/31]\\n[anchor:#/texts/33]\\n[anchor:#/texts/35]\\n[anchor:#/texts/37]\\n[anchor:#/texts/39]\\n[anchor:#/texts/41]\\n[anchor:#/texts/43]\\n[anchor:#/texts/45]\\n[anchor:#/texts/47]\\n[anchor:#/texts/49]\\n[anchor:#/texts/",
+      "tokens_structured": 554
+    },
+    {
+      "id": "item_en_ancla",
+      "tool": "get_text_of_document_item_at_anchor",
+      "args": {
+        "document_key": "774796ed6faa5995b5b3f4a1ed88cf1a",
+        "document_anchor": "#/texts/2"
+      },
+      "nota": "Lectura de un solo item.",
+      "ok": true,
+      "isError": false,
+      "ms": 4.9,
+      "chars_respuesta": 69,
+      "tokens_respuesta": 20,
+      "respuesta_recorte": "{\n  \"text\": \"FileX - documento sintetico de volumen (pagina densa)\"\n}",
+      "respuesta_completa_en": null,
+      "structuredContent": "{\"text\": \"FileX - documento sintetico de volumen (pagina densa)\"}",
+      "tokens_structured": 18
+    },
+    {
+      "id": "err_inexistente",
+      "tool": "convert_document_into_docling_document",
+      "args": {
+        "source": "D:\\Work\\research\\FileX\\corpus\\pdf\\no_existe_jamas.pdf"
+      },
+      "nota": "Fichero inexistente.",
+      "ok": true,
+      "isError": true,
+      "ms": 183.9,
+      "chars_respuesta": 232,
+      "tokens_respuesta": 61,
+      "respuesta_recorte": "Error executing tool convert_document_into_docling_document: Conversion failed for: no_existe_jamas.pdf with status: failure. Errors: [Errno 2] No such file or directory: 'D:\\\\Work\\\\research\\\\FileX\\\\corpus\\\\pdf\\\\no_existe_jamas.pdf'",
+      "respuesta_completa_en": null
+    },
+    {
+      "id": "err_formato",
+      "tool": "convert_document_into_docling_document",
+      "args": {
+        "source": "D:\\Work\\research\\FileX\\corpus\\video\\patologico_2pistas.mkv"
+      },
+      "nota": "Formato no soportado.",
+      "ok": true,
+      "isError": true,
+      "ms": 183.7,
+      "chars_respuesta": 166,
+      "tokens_respuesta": 37,
+      "respuesta_recorte": "Error executing tool convert_document_into_docling_document: whisper is not installed. Please install it via `pip install openai-whisper` or do `uv sync --extra asr`.",
+      "respuesta_completa_en": null
+    },
+    {
+      "id": "err_clave_mala",
+      "tool": "export_docling_document_to_markdown",
+      "args": {
+        "document_key": "clave-que-no-existe"
+      },
+      "nota": "Asa invalida: que ve el modelo?",
+      "ok": true,
+      "isError": true,
+      "ms": 2.3,
+      "chars_respuesta": 200,
+      "tokens_respuesta": 69,
+      "respuesta_recorte": "Error executing tool export_docling_document_to_markdown: document-key: clave-que-no-existe is not found. Existing document-keys are: 625d787afbe5be78327a19eb04aa375d, 774796ed6faa5995b5b3f4a1ed88cf1a",
+      "respuesta_completa_en": null
+    },
+    {
+      "id": "err_ancla_mala",
+      "tool": "get_text_of_document_item_at_anchor",
+      "args": {
+        "document_key": "774796ed6faa5995b5b3f4a1ed88cf1a",
+        "document_anchor": "#/texts/999999"
+      },
+      "nota": "Ancla fuera de rango.",
+      "ok": true,
+      "isError": true,
+      "ms": 2.5,
+      "chars_respuesta": 81,
+      "tokens_respuesta": 16,
+      "respuesta_recorte": "Error executing tool get_text_of_document_item_at_anchor: list index out of range",
+      "respuesta_completa_en": null
+    },
+    {
+      "id": "ruta_barras",
+      "tool": "convert_document_into_docling_document",
+      "args": {
+        "source": "D:/Work/research/FileX/corpus/pdf/tipico_texto.pdf"
+      },
+      "nota": "Ruta absoluta con barras normales.",
+      "ok": true,
+      "isError": false,
+      "ms": 302.3,
+      "chars_respuesta": 78,
+      "tokens_respuesta": 32,
+      "respuesta_recorte": "{\n  \"from_cache\": true,\n  \"document_key\": \"625d787afbe5be78327a19eb04aa375d\"\n}",
+      "respuesta_completa_en": null,
+      "structuredContent": "{\"from_cache\": true, \"document_key\": \"625d787afbe5be78327a19eb04aa375d\"}",
+      "tokens_structured": 28
+    },
+    {
+      "id": "ruta_relativa",
+      "tool": "convert_document_into_docling_document",
+      "args": {
+        "source": "corpus/pdf/tipico_texto.pdf"
+      },
+      "nota": "Ruta relativa al cwd del servidor.",
+      "ok": true,
+      "isError": false,
+      "ms": 330.1,
+      "chars_respuesta": 78,
+      "tokens_respuesta": 32,
+      "respuesta_recorte": "{\n  \"from_cache\": true,\n  \"document_key\": \"625d787afbe5be78327a19eb04aa375d\"\n}",
+      "respuesta_completa_en": null,
+      "structuredContent": "{\"from_cache\": true, \"document_key\": \"625d787afbe5be78327a19eb04aa375d\"}",
+      "tokens_structured": 28
+    },
+    {
+      "id": "ruta_file_uri",
+      "tool": "convert_document_into_docling_document",
+      "args": {
+        "source": "file:///D:/Work/research/FileX/corpus/pdf/tipico_texto.pdf"
+      },
+      "nota": "URI file://",
+      "ok": true,
+      "isError": true,
+      "ms": 213.1,
+      "chars_respuesta": 203,
+      "tokens_respuesta": 42,
+      "respuesta_recorte": "Error executing tool convert_document_into_docling_document: Conversion failed for: tipico_texto.pdf with status: failure. Errors: Unsupported URL scheme: 'file'. Only http:// and https:// are supported.",
+      "respuesta_completa_en": null
+    },
+    {
+      "id": "travesia_fuera_c",
+      "tool": "convert_document_into_docling_document",
+      "args": {
+        "source": "C:\\Users\\krato\\AppData\\Local\\..\\..\\..\\..\\Windows\\win.ini"
+      },
+      "nota": "Travesia ..\\..\\ que sale del proyecto y llega a C:/Windows/win.ini.",
+      "ok": true,
+      "isError": true,
+      "ms": 391.3,
+      "chars_respuesta": 154,
+      "tokens_respuesta": 30,
+      "respuesta_recorte": "Error executing tool convert_document_into_docling_document: Conversion failed for: win.ini with status: skipped. Errors: File format not allowed: win.ini",
+      "respuesta_completa_en": null
+    },
+    {
+      "id": "fuera_absoluto_md",
+      "tool": "convert_document_into_docling_document",
+      "args": {
+        "source": "D:\\Work\\research\\FileX\\analysis\\00-mcp-patrones.md"
+      },
+      "nota": "Fichero arbitrario del disco (fuera del corpus): se convierte sin restriccion?",
+      "ok": true,
+      "isError": false,
+      "ms": 648.0,
+      "chars_respuesta": 79,
+      "tokens_respuesta": 33,
+      "respuesta_recorte": "{\n  \"from_cache\": false,\n  \"document_key\": \"ee1589e9259bc70c586adff373a4410b\"\n}",
+      "respuesta_completa_en": null,
+      "structuredContent": "{\"from_cache\": false, \"document_key\": \"ee1589e9259bc70c586adff373a4410b\"}",
+      "tokens_structured": 29
+    },
+    {
+      "id": "http_externo",
+      "tool": "convert_document_into_docling_document",
+      "args": {
+        "source": "http://127.0.0.1:9/nada"
+      },
+      "nota": "SSRF/red.",
+      "ok": true,
+      "isError": true,
+      "ms": 161.5,
+      "chars_respuesta": 162,
+      "tokens_respuesta": 40,
+      "respuesta_recorte": "Error executing tool convert_document_into_docling_document: Conversion failed for: nada with status: failure. Errors: URL is not allowed: http://127.0.0.1:9/nada",
+      "respuesta_completa_en": null
+    }
+  ],
+  "arranque_frio_ms": 7368.5,
+  "spawn_proceso_ms": 18.0,
+  "handshake_ms": 7350.5,
+  "server_info": {
+    "name": "docling",
+    "version": "",
+    "protocolVersion": "2025-11-25",
+    "instructions": null
+  },
+  "list_tools_ms": 6.4,
+  "n_herramientas": 19,
+  "herramientas": [
+    {
+      "name": "is_document_in_local_cache",
+      "title": "Is Docling document in cache",
+      "description": "Verify if a Docling document is already converted and in the local cache.",
+      "annotations": {
+        "read_only_hint": true,
+        "destructive_hint": false
+      },
+      "tokens_descripcion": 171,
+      "inputSchema": null,
+      "outputSchema": null
+    },
+    {
+      "name": "convert_document_into_docling_document",
+      "title": "Convert document into Docling document",
+      "description": "Convert a document of any type from a URL or local path and store in local cache.\n\n    This tool takes a document's URL or local file path, converts it using\n    the configured converter (remote API or local), and stores the resulting\n    Docling document in a local cache. It returns an output with a boolean\n    set to False along with the document's unique cache key. If the document\n    was already in the local cache, the conversion is skipped and the output\n    boolean is set to True.",
+      "annotations": {
+        "read_only_hint": false,
+        "destructive_hint": false
+      },
+      "tokens_descripcion": 315,
+      "inputSchema": null,
+      "outputSchema": null
+    },
+    {
+      "name": "convert_directory_files_into_docling_document",
+      "title": "Convert files from directory into Docling document",
+      "description": "Convert all files from a local directory path and store them in local cache.\n\n    This tool takes a local directory path, converts every file in the directory using\n    the configured converter (remote API or local) and stores the resulting Docling\n    documents in a local cache. It returns a list of conversion outputs, where each\n    output consists of a boolean set to False along with a document's unique cache key.\n    If a document was already in the local cache, the conversion is skipped and the\n    output boolean is set to True.",
+      "annotations": {
+        "read_only_hint": false,
+        "destructive_hint": false
+      },
+      "tokens_descripcion": 392,
+      "inputSchema": null,
+      "outputSchema": null
+    },
+    {
+      "name": "create_new_docling_document",
+      "title": "Create new Docling document",
+      "description": "Create a new Docling document from a provided prompt string.\n\n    This function generates a new document in the local document cache with the\n    provided prompt text. The document is assigned a unique key derived from an MD5\n    hash of the prompt text.",
+      "annotations": {
+        "read_only_hint": false,
+        "destructive_hint": false
+      },
+      "tokens_descripcion": 224,
+      "inputSchema": null,
+      "outputSchema": null
+    },
+    {
+      "name": "export_docling_document_to_markdown",
+      "title": "Export Docling document to markdown format",
+      "description": "Export a document from the local document cache to markdown format.\n\n    This tool converts a Docling document that exists in the local cache into\n    a markdown formatted string, which can be used for display or further processing.",
+      "annotations": {
+        "read_only_hint": true,
+        "destructive_hint": false
+      },
+      "tokens_descripcion": 270,
+      "inputSchema": null,
+      "outputSchema": null
+    },
+    {
+      "name": "save_docling_document",
+      "title": "Save Docling document",
+      "description": "Save a document from the local document cache to disk in both markdown and JSON formats.\n\n    This tool takes a document that exists in the local cache and saves it to the specified\n    cache directory with filenames based on the document key. Both markdown and JSON versions\n    of the document are saved.",
+      "annotations": {
+        "read_only_hint": false,
+        "destructive_hint": false
+      },
+      "tokens_descripcion": 234,
+      "inputSchema": null,
+      "outputSchema": null
+    },
+    {
+      "name": "page_thumbnail",
+      "title": "Generate the thumbnail of a page in the Docling document",
+      "description": "Generate a thumbnail image for the requested page.\n\n    This tool takes a document that exists in the local cache and generates a thumbnail image for the requested page.",
+      "annotations": {
+        "read_only_hint": true,
+        "destructive_hint": false
+      },
+      "tokens_descripcion": 211,
+      "inputSchema": null,
+      "outputSchema": null
+    },
+    {
+      "name": "add_title_to_docling_document",
+      "title": "Add or update title to Docling document",
+      "description": "Add or update the title of a document in the local document cache.\n\n    This tool modifies an existing document that has already been processed\n    and stored in the local cache. It requires that the document already exists\n    in the cache before a title can be added.",
+      "annotations": {
+        "read_only_hint": false,
+        "destructive_hint": false
+      },
+      "tokens_descripcion": 248,
+      "inputSchema": null,
+      "outputSchema": null
+    },
+    {
+      "name": "add_section_heading_to_docling_document",
+      "title": "Add section heading to Docling document",
+      "description": "Add a section heading to an existing document in the local document cache.\n\n    This tool inserts a section heading with the specified heading text and level\n    into a document that has already been processed and stored in the local cache.\n    Section levels typically represent heading hierarchy (e.g., 1 for H1, 2 for H2).",
+      "annotations": {
+        "read_only_hint": false,
+        "destructive_hint": false
+      },
+      "tokens_descripcion": 321,
+      "inputSchema": null,
+      "outputSchema": null
+    },
+    {
+      "name": "add_paragraph_to_docling_document",
+      "title": "Add paragraph to Docling document",
+      "description": "Add a paragraph of text to an existing document in the local document cache.\n\n    This tool inserts a new paragraph under the specified section header and level\n    into a document that has already been processed and stored in the cache.",
+      "annotations": {
+        "read_only_hint": false,
+        "destructive_hint": false
+      },
+      "tokens_descripcion": 237,
+      "inputSchema": null,
+      "outputSchema": null
+    },
+    {
+      "name": "open_list_in_docling_document",
+      "title": "Open list in Docling document",
+      "description": "Open a new list group in an existing document in the local document cache.\n\n    This tool creates a new list structure within a document that has already been\n    processed and stored in the local cache. It requires that the document already exists\n    and that there is at least one item in the document's stack cache.",
+      "annotations": {
+        "read_only_hint": false,
+        "destructive_hint": false
+      },
+      "tokens_descripcion": 223,
+      "inputSchema": null,
+      "outputSchema": null
+    },
+    {
+      "name": "close_list_in_docling_document",
+      "title": "Close list in Docling document",
+      "description": "Closes a list group in an existing document in the local document cache.\n\n    This tool closes a previously opened list structure within a document.\n    It requires that the document exists and that there is more than one item\n    in the document's stack cache.",
+      "annotations": {
+        "read_only_hint": false,
+        "destructive_hint": false
+      },
+      "tokens_descripcion": 212,
+      "inputSchema": null,
+      "outputSchema": null
+    },
+    {
+      "name": "add_list_items_to_list_in_docling_document",
+      "title": "Add items to list in Docling document",
+      "description": "Add list items to an open list in an existing document in the local document cache.\n\n    This tool inserts new list items with the specified text and marker into an\n    open list within a document. It requires that the document exists and that\n    there is at least one item in the document's stack cache.",
+      "annotations": {
+        "read_only_hint": false,
+        "destructive_hint": false
+      },
+      "tokens_descripcion": 391,
+      "inputSchema": null,
+      "outputSchema": null
+    },
+    {
+      "name": "add_table_in_html_format_to_docling_document",
+      "title": "Add HTML table to Docling document",
+      "description": "Add an HTML-formatted table to an existing document in the local document cache.\n\n    This tool parses the provided HTML table string, converts it to a structured table\n    representation, and adds it to the specified document. It also supports optional\n    captions and footnotes for the table.",
+      "annotations": {
+        "read_only_hint": false,
+        "destructive_hint": false
+      },
+      "tokens_descripcion": 485,
+      "inputSchema": null,
+      "outputSchema": null
+    },
+    {
+      "name": "get_overview_of_document_anchors",
+      "title": "Get overview of Docling document anchors",
+      "description": "Retrieve a structured overview of a document from the local document cache.\n\n    This tool returns a text representation of the Docling document's structure,\n    showing the hierarchy and types of elements within the document. Each line in the\n    output includes the document anchor reference and item label.",
+      "annotations": {
+        "read_only_hint": true,
+        "destructive_hint": false
+      },
+      "tokens_descripcion": 216,
+      "inputSchema": null,
+      "outputSchema": null
+    },
+    {
+      "name": "search_for_text_in_document_anchors",
+      "title": "Search for text in Docling document anchors",
+      "description": "Search for specific text and keywords within a document's anchors.\n\n    This tool takes a string of text to search for and returns a string of all\n    document anchors that contain the exact text. The search is case-insensitive.\n    If the exact text is not found, the tool will search for individual keywords\n    within the text, splitting it on non-alphanumeric characters. If keywords\n    are found, they are listed alongside their number of occurrences in parentheses.",
+      "annotations": {
+        "read_only_hint": true,
+        "destructive_hint": false
+      },
+      "tokens_descripcion": 290,
+      "inputSchema": null,
+      "outputSchema": null
+    },
+    {
+      "name": "get_text_of_document_item_at_anchor",
+      "title": "Get text of Docling document item at anchor",
+      "description": "Retrieve the text content of a specific document item identified by its anchor.\n\n    This tool extracts the text from a Docling document item at the specified anchor\n    location within a document that exists in the local document cache.",
+      "annotations": {
+        "read_only_hint": true,
+        "destructive_hint": false
+      },
+      "tokens_descripcion": 251,
+      "inputSchema": null,
+      "outputSchema": null
+    },
+    {
+      "name": "update_text_of_document_item_at_anchor",
+      "title": "Update text of Docling document item at anchor",
+      "description": "Update the text content of a specific document item identified by its anchor.\n\n    This tool modifies the text of an existing document item at the specified anchor\n    location within a document that exists in the local document cache. It requires\n    that the document already exists in the cache before a modification can be made.",
+      "annotations": {
+        "read_only_hint": false,
+        "destructive_hint": true
+      },
+      "tokens_descripcion": 307,
+      "inputSchema": null,
+      "outputSchema": null
+    },
+    {
+      "name": "delete_document_items_at_anchors",
+      "title": "Delete Docling document items at anchors",
+      "description": "Delete multiple document items identified by their anchors.\n\n    This tool removes specified items from a Docling document that exists in the local\n    document cache, based on their anchor references. It requires that the document\n    already exists in the cache before performing the deletion.",
+      "annotations": {
+        "read_only_hint": false,
+        "destructive_hint": true
+      },
+      "tokens_descripcion": 280,
+      "inputSchema": null,
+      "outputSchema": null
+    }
+  ],
+  "tokens_catalogo": 5280,
+  "n_prompts": 7,
+  "prompts": [
+    "generate_docling_document_from_pdf",
+    "convert_and_summarize",
+    "convert_directory_and_list",
+    "author_structured_document",
+    "convert_and_rewrite",
+    "review_and_edit_document",
+    "find_and_replace_in_document"
+  ],
+  "n_recursos": 0,
+  "recursos": []
+}

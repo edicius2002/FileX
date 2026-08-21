@@ -1,0 +1,44 @@
+
+### 1. PNG con extension .avif
+    se copia tipico.png a falso.avif sin convertir nada; 42.855 B en vez de los ~1.600 de un AVIF real
+    [proceso    ] veredicto=fallo  atrapado=True   22.39 ms
+        p1 G3      fallo        la firma real no corresponde a la extension pedida (esp=avif obt=png)
+    [subproceso ] veredicto=fallo  atrapado=True   272.52 ms
+        p1 G3      fallo        la firma real no corresponde a la extension pedida (esp=avif obt=png)
+
+### 2. Perdida de una pista de audio
+    'ffmpeg -i in.mkv out.mp4' SIN -map 0 sobre un MKV de 2 pistas de audio con PCM distinto; rc=0, el motor declara exito
+    [proceso    ] veredicto=fallo  atrapado=True   0.99 ms
+        p2 V3      fallo        numero de pistas de audio distinto del esperado (esp=2 obt=1)
+    [subproceso ] veredicto=fallo  atrapado=True   98.81 ms
+        p2 V3      fallo        numero de pistas de audio distinto del esperado (esp=2 obt=1)
+
+### 3. Degradacion de 16 a 8 bits
+    el MISMO fichero de 8 bits del patron oro, pero con un pedido que NO solicitaba reducir la profundidad: PNG admite 16 bits
+    [proceso    ] veredicto=fallo  atrapado=True   0.28 ms
+        p4 I4      fallo        DEGRADACION DE PROFUNDIDAD no pedida ni inevitable (esp=16 obt=8)
+    [subproceso ] veredicto=fallo  atrapado=True   899.25 ms
+        p4 I4      fallo        DEGRADACION DE PROFUNDIDAD no pedida ni inevitable (esp=16 obt=8)
+
+### 4a. Redimensionado no solicitado (con barras)
+    se pidio solo 'format: png'; se entrega 800x600 con el contenido en 800x450 y barras negras de 75 px
+    [proceso    ] veredicto=fallo  atrapado=True   0.43 ms
+        p4 I1/V7   fallo        REDIMENSIONADO NO SOLICITADO: no se pidio cambiar el tamano (esp=1920x1080 obt=800x600)
+        p4 I1      aviso        la relacion de aspecto cambia (indicio de barras anadidas) (esp=1.778 obt=1.333)
+    [subproceso ] veredicto=fallo  atrapado=True   47.01 ms
+        p4 I1/V7   fallo        REDIMENSIONADO NO SOLICITADO: no se pidio cambiar el tamano (esp=1920x1080 obt=800x600)
+        p4 I1      aviso        la relacion de aspecto cambia (indicio de barras anadidas) (esp=1.778 obt=1.333)
+
+### 4b. Control: conversion de formato limpia
+    el mismo JPEG a PNG sin tocar la geometria. NO debe dar fallo.
+    [proceso    ] veredicto=ok     atrapado=False  0.52 ms
+    [subproceso ] veredicto=ok     atrapado=False  113.96 ms
+
+### 5. Fichero de 0 bytes como exito
+    residuo del deadlock de video-audio-mcp: 0 bytes en disco y la herramienta no informa de error
+    [proceso    ] veredicto=fallo  atrapado=True   0.25 ms
+        p1 G1      fallo        fichero de 0 bytes presentado como exito (esp=> 0 bytes obt=0 bytes)
+        p3 G2      fallo        el fichero no se abre sin errores (esp=None obt=fichero de 0 bytes)
+    [subproceso ] veredicto=fallo  atrapado=True   0.27 ms
+        p1 G1      fallo        fichero de 0 bytes presentado como exito (esp=> 0 bytes obt=0 bytes)
+        p3 G2      fallo        el fichero no se abre sin errores (esp=None obt=fichero de 0 bytes)

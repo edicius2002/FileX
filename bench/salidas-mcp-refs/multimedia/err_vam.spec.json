@@ -1,0 +1,42 @@
+{
+ "command": "D:/Work/research/FileX/.venv-mcp-vam/Scripts/python.exe",
+ "args": [
+  "D:/Work/research/FileX/repos/mcp-refs/video-audio-mcp/server.py"
+ ],
+ "cwd": "D:/Work/research/FileX",
+ "env": {},
+ "nombre": "video-audio-mcp ERRORES",
+ "pasos": [
+  {
+   "id": "inexistente",
+   "tool": "convert_audio_format",
+   "args": {
+    "input_audio_path": "D:/Work/research/FileX/corpus/audio/NO_EXISTE_12345.wav",
+    "output_audio_path": "D:/Work/research/FileX/bench/salidas-mcp-refs/multimedia/salidas/err_vam_1.flac",
+    "target_format": "flac"
+   },
+   "timeout": 90
+  },
+  {
+   "id": "formato_imposible",
+   "tool": "convert_audio_format",
+   "args": {
+    "input_audio_path": "D:/Work/research/FileX/corpus/audio/trivial.wav",
+    "output_audio_path": "D:/Work/research/FileX/bench/salidas-mcp-refs/multimedia/salidas/err_vam_2.xyzzy",
+    "target_format": "xyzzy"
+   },
+   "timeout": 90
+  },
+  {
+   "id": "corrupto",
+   "tool": "convert_audio_format",
+   "args": {
+    "input_audio_path": "D:/Work/research/FileX/bench/salidas-mcp-refs/multimedia/corrupto/truncado.mp4",
+    "output_audio_path": "D:/Work/research/FileX/bench/salidas-mcp-refs/multimedia/salidas/err_vam_3.flac",
+    "target_format": "flac"
+   },
+   "timeout": 90
+  }
+ ],
+ "stderr_log": "D:/Work/research/FileX/bench/salidas-mcp-refs/multimedia/err_vam.stderr.log"
+}

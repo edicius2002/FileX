@@ -1,0 +1,149 @@
+############ deskew / escaneado_d3 ############
+Ghostscript 10.6.x contains JPEG encoding errors that may corrupt images. OCRmyPDF will attempt to mitigate, but this version is strongly not recommended. Please upgrade to a newer version. As of 2025-12, 10.6.0 is the latest version of Ghostscript.
+    1 Rasterize with pnggray, rotation 0, mediabox [0.0, 0.0, 465.84, 612.0]
+    1 Running: ['gs', '-dSAFER', '-dBATCH', '-dNOPAUSE', '-dInterpolateControl=-1', '-sDEVICE=pnggray', '-dFirstPage=1', '-dLastPage=1', '-r100.000000x100.000000', '-dPDFSTOPONERROR', '-o', '/tmp/ocrmypdf.io.05yqwxp6/000001_rasterize.png', '-sstdout=%stderr', '-dAutoRotatePages=/None', '-f', '/tmp/ocrmypdf.io.05yqwxp6/origin.pdf']
+    1 Rotating output by 0
+    1 Deskew angle: 0.000
+    1 input dpi = 100 x 100
+    1 rotation = 0°
+    1 read_images() embeds a JPEG
+    1 Text rotation: (text, autorotate, content) -> text misalignment = (0, 0, 0) -> 0
+    1 Page rotation: (content, auto) -> page = (0, 0) -> 0
+Running: ['gs', '-dBATCH', '-dNOPAUSE', '-dSAFER', '-dCompatibilityLevel=1.6', '-sDEVICE=pdfwrite', '-dAutoRotatePages=/None', '-sColorConversionStrategy=LeaveColorUnchanged', '-dPDFSTOPONERROR', '-dAutoFilterColorImages=true', '-dAutoFilterGrayImages=true', '-dJPEGQ=95', '-dSubsetFonts=false', '-dPDFA=2', '-dPDFACompatibilityPolicy=1', '-o', '/tmp/ocrmypdf.io.05yqwxp6/pdfa.pdf', '-sstdout=%stderr', '/tmp/ocrmypdf.io.05yqwxp6/pdfa.ps', '/tmp/ocrmypdf.io.05yqwxp6/fix_docinfo.pdf']
+Optimizable images: JPEGs: 1 PNGs: 0
+xref 11: found image compressed as /FlateDecode /DCTDecode, marked for JPEG optimization
+Optimizable images: JBIG2 groups: 0
+Image optimization ratio: 1.73 savings: 42.3%
+/tmp/ocrmypdf.io.05yqwxp6/optimize.pdf -> /home/edicius/ocrx/diag/deskew_escaneado_d3.pdf
+
+############ deskew / patologico_escaneado ############
+Ghostscript 10.6.x contains JPEG encoding errors that may corrupt images. OCRmyPDF will attempt to mitigate, but this version is strongly not recommended. Please upgrade to a newer version. As of 2025-12, 10.6.0 is the latest version of Ghostscript.
+    1 Rasterize with png16m, rotation 0, mediabox [0.0, 0.0, 465.84, 645.12]
+    1 Running: ['gs', '-dSAFER', '-dBATCH', '-dNOPAUSE', '-dInterpolateControl=-1', '-sDEVICE=png16m', '-dFirstPage=1', '-dLastPage=1', '-r200.000000x200.000000', '-dPDFSTOPONERROR', '-o', '/tmp/ocrmypdf.io.rk2qz3bm/000001_rasterize.png', '-sstdout=%stderr', '-dAutoRotatePages=/None', '-f', '/tmp/ocrmypdf.io.rk2qz3bm/origin.pdf']
+    1 Rotating output by 0
+    1 Deskew angle: 0.000
+    1 input dpi = 200 x 200
+    1 rotation = 0°
+    1 read_images() embeds a PNG
+    1 Text rotation: (text, autorotate, content) -> text misalignment = (0, 0, 0) -> 0
+    1 Page rotation: (content, auto) -> page = (0, 0) -> 0
+Running: ['gs', '-dBATCH', '-dNOPAUSE', '-dSAFER', '-dCompatibilityLevel=1.6', '-sDEVICE=pdfwrite', '-dAutoRotatePages=/None', '-sColorConversionStrategy=LeaveColorUnchanged', '-dPDFSTOPONERROR', '-dAutoFilterColorImages=true', '-dAutoFilterGrayImages=true', '-dJPEGQ=95', '-dSubsetFonts=false', '-dPDFA=2', '-dPDFACompatibilityPolicy=1', '-o', '/tmp/ocrmypdf.io.rk2qz3bm/pdfa.pdf', '-sstdout=%stderr', '/tmp/ocrmypdf.io.rk2qz3bm/pdfa.ps', '/tmp/ocrmypdf.io.rk2qz3bm/fix_docinfo.pdf']
+Optimizable images: JPEGs: 1 PNGs: 0
+xref 19: found image compressed as /FlateDecode /DCTDecode, marked for JPEG optimization
+Optimizable images: JBIG2 groups: 0
+Image optimization ratio: 1.41 savings: 29.3%
+/tmp/ocrmypdf.io.rk2qz3bm/optimize.pdf -> /home/edicius/ocrx/diag/deskew_patologico_escaneado.pdf
+
+############ clean / escaneado_d3 ############
+Running: ['unpaper', '--version']
+Found unpaper 7.0.0
+Ghostscript 10.6.x contains JPEG encoding errors that may corrupt images. OCRmyPDF will attempt to mitigate, but this version is strongly not recommended. Please upgrade to a newer version. As of 2025-12, 10.6.0 is the latest version of Ghostscript.
+    1 Rasterize with pnggray, rotation 0, mediabox [0.0, 0.0, 465.84, 612.0]
+    1 Running: ['gs', '-dSAFER', '-dBATCH', '-dNOPAUSE', '-dInterpolateControl=-1', '-sDEVICE=pnggray', '-dFirstPage=1', '-dLastPage=1', '-r100.000000x100.000000', '-dPDFSTOPONERROR', '-o', '/tmp/ocrmypdf.io.apaj92pm/000001_rasterize.png', '-sstdout=%stderr', '-dAutoRotatePages=/None', '-f', '/tmp/ocrmypdf.io.apaj92pm/origin.pdf']
+    1 Rotating output by 0
+    1 Running: ['unpaper', '-v', '--dpi', '100.0', '--layout', 'none', '--mask-scan-size', '100', '--no-border-align', '--no-mask-center', '--no-grayfilter', '--no-blackfilter', '--no-deskew', '/tmp/ocrmypdf.io.apaj92pm/000001_rasterize.png', '/tmp/tmpj1i2uh7c/output.pnm']
+    1 stdout/stderr = unpaper 7.0.0
+    1 input dpi = 100 x 100
+    1 rotation = 0°
+    1 read_images() embeds a JPEG
+    1 Text rotation: (text, autorotate, content) -> text misalignment = (0, 0, 0) -> 0
+    1 Page rotation: (content, auto) -> page = (0, 0) -> 0
+Running: ['gs', '-dBATCH', '-dNOPAUSE', '-dSAFER', '-dCompatibilityLevel=1.6', '-sDEVICE=pdfwrite', '-dAutoRotatePages=/None', '-sColorConversionStrategy=LeaveColorUnchanged', '-dPDFSTOPONERROR', '-dAutoFilterColorImages=true', '-dAutoFilterGrayImages=true', '-dJPEGQ=95', '-dSubsetFonts=false', '-dPDFA=2', '-dPDFACompatibilityPolicy=1', '-o', '/tmp/ocrmypdf.io.apaj92pm/pdfa.pdf', '-sstdout=%stderr', '/tmp/ocrmypdf.io.apaj92pm/pdfa.ps', '/tmp/ocrmypdf.io.apaj92pm/fix_docinfo.pdf']
+Optimizable images: JPEGs: 1 PNGs: 0
+xref 11: found image compressed as /FlateDecode /DCTDecode, marked for JPEG optimization
+Optimizable images: JBIG2 groups: 0
+Image optimization ratio: 1.73 savings: 42.3%
+/tmp/ocrmypdf.io.apaj92pm/optimize.pdf -> /home/edicius/ocrx/diag/clean_escaneado_d3.pdf
+
+############ clean / patologico_escaneado ############
+Running: ['unpaper', '--version']
+Found unpaper 7.0.0
+Ghostscript 10.6.x contains JPEG encoding errors that may corrupt images. OCRmyPDF will attempt to mitigate, but this version is strongly not recommended. Please upgrade to a newer version. As of 2025-12, 10.6.0 is the latest version of Ghostscript.
+    1 Rasterize with png16m, rotation 0, mediabox [0.0, 0.0, 465.84, 645.12]
+    1 Running: ['gs', '-dSAFER', '-dBATCH', '-dNOPAUSE', '-dInterpolateControl=-1', '-sDEVICE=png16m', '-dFirstPage=1', '-dLastPage=1', '-r200.000000x200.000000', '-dPDFSTOPONERROR', '-o', '/tmp/ocrmypdf.io.em2c25a9/000001_rasterize.png', '-sstdout=%stderr', '-dAutoRotatePages=/None', '-f', '/tmp/ocrmypdf.io.em2c25a9/origin.pdf']
+    1 Rotating output by 0
+    1 Running: ['unpaper', '-v', '--dpi', '200.0', '--layout', 'none', '--mask-scan-size', '100', '--no-border-align', '--no-mask-center', '--no-grayfilter', '--no-blackfilter', '--no-deskew', '/tmp/ocrmypdf.io.em2c25a9/000001_rasterize.png', '/tmp/tmp3y3f5aii/output.pnm']
+    1 stdout/stderr = unpaper 7.0.0
+    1 input dpi = 200 x 200
+    1 rotation = 0°
+    1 read_images() embeds a PNG
+    1 Text rotation: (text, autorotate, content) -> text misalignment = (0, 0, 0) -> 0
+    1 Page rotation: (content, auto) -> page = (0, 0) -> 0
+Running: ['gs', '-dBATCH', '-dNOPAUSE', '-dSAFER', '-dCompatibilityLevel=1.6', '-sDEVICE=pdfwrite', '-dAutoRotatePages=/None', '-sColorConversionStrategy=LeaveColorUnchanged', '-dPDFSTOPONERROR', '-dAutoFilterColorImages=true', '-dAutoFilterGrayImages=true', '-dJPEGQ=95', '-dSubsetFonts=false', '-dPDFA=2', '-dPDFACompatibilityPolicy=1', '-o', '/tmp/ocrmypdf.io.em2c25a9/pdfa.pdf', '-sstdout=%stderr', '/tmp/ocrmypdf.io.em2c25a9/pdfa.ps', '/tmp/ocrmypdf.io.em2c25a9/fix_docinfo.pdf']
+Optimizable images: JPEGs: 1 PNGs: 0
+xref 19: found image compressed as /FlateDecode /DCTDecode, marked for JPEG optimization
+Optimizable images: JBIG2 groups: 0
+Image optimization ratio: 1.52 savings: 34.3%
+/tmp/ocrmypdf.io.em2c25a9/optimize.pdf -> /home/edicius/ocrx/diag/clean_patologico_escaneado.pdf
+
+############ rotate / escaneado_d3 ############
+Ghostscript 10.6.x contains JPEG encoding errors that may corrupt images. OCRmyPDF will attempt to mitigate, but this version is strongly not recommended. Please upgrade to a newer version. As of 2025-12, 10.6.0 is the latest version of Ghostscript.
+    1 Running: ['gs', '-dSAFER', '-dBATCH', '-dNOPAUSE', '-dInterpolateControl=-1', '-sDEVICE=jpeggray', '-dFirstPage=1', '-dLastPage=1', '-r100.000000x100.000000', '-dPDFSTOPONERROR', '-o', '/tmp/ocrmypdf.io.3uzp5ql2/000001_rasterize_preview.jpg', '-sstdout=%stderr', '-dAutoRotatePages=/None', '-f', '/tmp/ocrmypdf.io.3uzp5ql2/origin.pdf']
+    1 Rotating output by 0
+    1 page is facing ⇧, confidence 1.19 - no change
+    1 Rasterize with pnggray, rotation 0, mediabox [0.0, 0.0, 465.84, 612.0]
+    1 Running: ['gs', '-dSAFER', '-dBATCH', '-dNOPAUSE', '-dInterpolateControl=-1', '-sDEVICE=pnggray', '-dFirstPage=1', '-dLastPage=1', '-r100.000000x100.000000', '-dPDFSTOPONERROR', '-o', '/tmp/ocrmypdf.io.3uzp5ql2/000001_rasterize.png', '-sstdout=%stderr', '-dAutoRotatePages=/None', '-f', '/tmp/ocrmypdf.io.3uzp5ql2/origin.pdf']
+    1 input dpi = 100 x 100
+    1 rotation = 0°
+    1 read_images() embeds a JPEG
+    1 Text rotation: (text, autorotate, content) -> text misalignment = (0, 0, 0) -> 0
+    1 Page rotation: (content, auto) -> page = (0, 0) -> 0
+Running: ['gs', '-dBATCH', '-dNOPAUSE', '-dSAFER', '-dCompatibilityLevel=1.6', '-sDEVICE=pdfwrite', '-dAutoRotatePages=/None', '-sColorConversionStrategy=LeaveColorUnchanged', '-dPDFSTOPONERROR', '-dAutoFilterColorImages=true', '-dAutoFilterGrayImages=true', '-dJPEGQ=95', '-dSubsetFonts=false', '-dPDFA=2', '-dPDFACompatibilityPolicy=1', '-o', '/tmp/ocrmypdf.io.3uzp5ql2/pdfa.pdf', '-sstdout=%stderr', '/tmp/ocrmypdf.io.3uzp5ql2/pdfa.ps', '/tmp/ocrmypdf.io.3uzp5ql2/fix_docinfo.pdf']
+Optimizable images: JPEGs: 1 PNGs: 0
+xref 11: found image compressed as /FlateDecode /DCTDecode, marked for JPEG optimization
+Optimizable images: JBIG2 groups: 0
+Image optimization ratio: 1.73 savings: 42.3%
+/tmp/ocrmypdf.io.3uzp5ql2/optimize.pdf -> /home/edicius/ocrx/diag/rotate_escaneado_d3.pdf
+
+############ rotate / patologico_escaneado ############
+Ghostscript 10.6.x contains JPEG encoding errors that may corrupt images. OCRmyPDF will attempt to mitigate, but this version is strongly not recommended. Please upgrade to a newer version. As of 2025-12, 10.6.0 is the latest version of Ghostscript.
+    1 Running: ['gs', '-dSAFER', '-dBATCH', '-dNOPAUSE', '-dInterpolateControl=-1', '-sDEVICE=jpeggray', '-dFirstPage=1', '-dLastPage=1', '-r200.000000x200.000000', '-dPDFSTOPONERROR', '-o', '/tmp/ocrmypdf.io.73odne1y/000001_rasterize_preview.jpg', '-sstdout=%stderr', '-dAutoRotatePages=/None', '-f', '/tmp/ocrmypdf.io.73odne1y/origin.pdf']
+    1 Rotating output by 0
+    1 page is facing ⇧, confidence 2.84 - no change
+    1 Rasterize with png16m, rotation 0, mediabox [0.0, 0.0, 465.84, 645.12]
+    1 Running: ['gs', '-dSAFER', '-dBATCH', '-dNOPAUSE', '-dInterpolateControl=-1', '-sDEVICE=png16m', '-dFirstPage=1', '-dLastPage=1', '-r200.000000x200.000000', '-dPDFSTOPONERROR', '-o', '/tmp/ocrmypdf.io.73odne1y/000001_rasterize.png', '-sstdout=%stderr', '-dAutoRotatePages=/None', '-f', '/tmp/ocrmypdf.io.73odne1y/origin.pdf']
+    1 input dpi = 200 x 200
+    1 rotation = 0°
+    1 read_images() embeds a PNG
+    1 Text rotation: (text, autorotate, content) -> text misalignment = (0, 0, 0) -> 0
+    1 Page rotation: (content, auto) -> page = (0, 0) -> 0
+Running: ['gs', '-dBATCH', '-dNOPAUSE', '-dSAFER', '-dCompatibilityLevel=1.6', '-sDEVICE=pdfwrite', '-dAutoRotatePages=/None', '-sColorConversionStrategy=LeaveColorUnchanged', '-dPDFSTOPONERROR', '-dAutoFilterColorImages=true', '-dAutoFilterGrayImages=true', '-dJPEGQ=95', '-dSubsetFonts=false', '-dPDFA=2', '-dPDFACompatibilityPolicy=1', '-o', '/tmp/ocrmypdf.io.73odne1y/pdfa.pdf', '-sstdout=%stderr', '/tmp/ocrmypdf.io.73odne1y/pdfa.ps', '/tmp/ocrmypdf.io.73odne1y/fix_docinfo.pdf']
+Optimizable images: JPEGs: 1 PNGs: 0
+xref 19: found image compressed as /FlateDecode /DCTDecode, marked for JPEG optimization
+Optimizable images: JBIG2 groups: 0
+Image optimization ratio: 1.41 savings: 29.3%
+/tmp/ocrmypdf.io.73odne1y/optimize.pdf -> /home/edicius/ocrx/diag/rotate_patologico_escaneado.pdf
+
+===== unpaper directo, para ver si el binario funciona =====
+7.0.0
+===== ocrmypdf --help: banderas de preprocesado disponibles =====
+                [--keywords KEYWORDS] [-r] [--remove-background] [-d] [-c]
+                [-i] [--unpaper-args UNPAPER_ARGS] [--oversample DPI]
+                [--remove-vectors] [-f] [-s] [--redo-ocr] [--skip-big MPixels]
+                [--invalidate-digital-signatures] [--pages PAGES]
+--
+                [--rotate-pages-threshold CONFIDENCE]
+                [--fast-web-view MEGABYTES] [--continue-on-soft-render-error]
+                [--plugin PLUGINS] [-k] [--tesseract-config CFG]
+--
+  -r, --rotate-pages    Automatically rotate pages based on detected text
+                        orientation
+  --remove-background   Attempt to remove background from gray or color pages,
+                        setting it to white
+  -d, --deskew          Deskew each page before performing OCR
+  -c, --clean           Clean pages from scanning artifacts before performing
+                        OCR, and send the cleaned page to OCR, but do not
+                        include the cleaned page in the output
+  -i, --clean-final     Clean page as above, and incorporate the cleaned image
+                        in the final PDF. Might remove desired content.
+  --unpaper-args UNPAPER_ARGS
+                        A quoted string of arguments to pass to unpaper.
+                        Requires --clean. Example: --unpaper-args '--layout
+                        double'.
+  --oversample DPI      Oversample images to at least the specified DPI, to
+                        improve OCR results slightly
+  --remove-vectors      EXPERIMENTAL. Mask out any vector objects in the PDF
+--
+  --rotate-pages-threshold CONFIDENCE
+                        Only rotate pages when confidence is above this value
+                        (arbitrary units reported by tesseract)

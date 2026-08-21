@@ -1,0 +1,22 @@
+=== FRIO vs CALIENTE (primera invocacion tras purgar cache de pagina) ===
+(sin sudo: no se pudo purgar cache; el 'frio' sera aproximado)
+frio    (d3, --force-ocr): 2871 ms
+caliente(d3, --force-ocr): 1592 ms
+coste fijo del arranque (--version, sin trabajo):
+  ocrmypdf --version: 434 ms
+
+=== FS NATIVO DE WSL (~/ocrx) ===
+d3 base (--force-ocr)                      mediana:   1480 ms  n=9  rango:1120-1781
+d3 --deskew                                mediana:   1671 ms  n=9  rango:1503-1751
+d3 --clean-final                           mediana:   2095 ms  n=9  rango:1551-2660
+d3 --rotate-pages                          mediana:   4645 ms  n=9  rango:3964-5964
+d3 --oversample 300                        mediana:   8247 ms  n=9  rango:7661-10867
+d3 todo (deskew+clean+rotate)              mediana:   5914 ms  n=9  rango:5423-7376
+patologico base                            mediana:   7150 ms  n=9  rango:5441-7572
+tipico_texto --skip-text                   mediana:    956 ms  n=9  rango:717-10490
+
+=== MISMO TRABAJO SOBRE /mnt/d (la trampa conocida) ===
+d3 base sobre /mnt/d                       mediana:   1299 ms  n=9  rango:1063-1863
+patologico sobre /mnt/d                    mediana:   5708 ms  n=9  rango:5420-7008
+
+[exited with code 0]

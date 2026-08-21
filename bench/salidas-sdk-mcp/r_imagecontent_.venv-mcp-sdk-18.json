@@ -1,0 +1,91 @@
+{
+  "sdk_mcp": "1.8.1",
+  "campo_mime": "mimeType",
+  "construccion": {
+    "base64_puro": {
+      "acepta": true,
+      "tipo_data_resultante": "str",
+      "len": 96,
+      "identico_a_la_entrada": true
+    },
+    "prefijo_data_uri": {
+      "acepta": true,
+      "tipo_data_resultante": "str",
+      "len": 118,
+      "identico_a_la_entrada": true
+    },
+    "no_es_base64": {
+      "acepta": true,
+      "tipo_data_resultante": "str",
+      "len": 27,
+      "identico_a_la_entrada": true
+    },
+    "cadena_vacia": {
+      "acepta": true,
+      "tipo_data_resultante": "str",
+      "len": 0,
+      "identico_a_la_entrada": true
+    },
+    "padding_roto": {
+      "acepta": true,
+      "tipo_data_resultante": "str",
+      "len": 94,
+      "identico_a_la_entrada": true
+    },
+    "con_saltos_de_linea": {
+      "acepta": true,
+      "tipo_data_resultante": "str",
+      "len": 97,
+      "identico_a_la_entrada": true
+    },
+    "bytes_en_vez_de_str": {
+      "acepta": false,
+      "error": "ValidationError",
+      "mensaje": "1 validation error for ImageContent | data |   Input should be a valid string, unable to parse raw data as a unicode string [type=string_unicode, input_value=b'\\x89PNG\\r\\n\\x1a\\n\\x00\\x...0\\x00\\x00IEND\\xaeB`\\x82', input_type=bytes] |     For further information visit https://errors.pydantic.dev/2.13/v/string_unicode"
+    },
+    "int": {
+      "acepta": false,
+      "error": "ValidationError",
+      "mensaje": "1 validation error for ImageContent | data |   Input should be a valid string [type=string_type, input_value=12345, input_type=int] |     For further information visit https://errors.pydantic.dev/2.13/v/string_type"
+    },
+    "none": {
+      "acepta": false,
+      "error": "ValidationError",
+      "mensaje": "1 validation error for ImageContent | data |   Input should be a valid string [type=string_type, input_value=None, input_type=NoneType] |     For further information visit https://errors.pydantic.dev/2.13/v/string_type"
+    }
+  },
+  "ida_y_vuelta_json": {
+    "base64_puro": {
+      "ok": true,
+      "json_recorte": "{\"type\":\"image\",\"data\":\"iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDw",
+      "data_intacta": true
+    },
+    "prefijo_data_uri": {
+      "ok": true,
+      "json_recorte": "{\"type\":\"image\",\"data\":\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJ",
+      "data_intacta": true
+    },
+    "no_es_base64": {
+      "ok": true,
+      "json_recorte": "{\"type\":\"image\",\"data\":\"esto no es base64 !!!! @@@@\",\"mimeType\":\"image/png\"}",
+      "data_intacta": true
+    },
+    "cadena_vacia": {
+      "ok": true,
+      "json_recorte": "{\"type\":\"image\",\"data\":\"\",\"mimeType\":\"image/png\"}",
+      "data_intacta": true
+    },
+    "padding_roto": {
+      "ok": true,
+      "json_recorte": "{\"type\":\"image\",\"data\":\"iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDw",
+      "data_intacta": true
+    },
+    "con_saltos_de_linea": {
+      "ok": true,
+      "json_recorte": "{\"type\":\"image\",\"data\":\"iVBORw0KGgoAAAANSUhE\\nUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQ",
+      "data_intacta": true
+    }
+  },
+  "validadores_del_campo_data": "[]",
+  "mime_obligatorio": true
+}

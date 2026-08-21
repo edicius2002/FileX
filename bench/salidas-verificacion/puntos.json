@@ -1,0 +1,542 @@
+{
+ "proceso": {
+  "flag": "limpia",
+  "n_por_fichero": 15,
+  "categorias": {
+   "audio": {
+    "sonda_salida": {
+     "mediana": 0.2508,
+     "min": 0.1305,
+     "max": 1.1363,
+     "n": 180
+    },
+    "1_firma": {
+     "mediana": 0.0385,
+     "min": 0.0247,
+     "max": 0.3772,
+     "n": 180
+    },
+    "2_flujos": {
+     "mediana": 0.0041,
+     "min": 0.0027,
+     "max": 0.1768,
+     "n": 180
+    },
+    "3_propiedades": {
+     "mediana": 0.0022,
+     "min": 0.0015,
+     "max": 0.0082,
+     "n": 180
+    },
+    "4_pedido": {
+     "mediana": 0.0154,
+     "min": 0.0096,
+     "max": 0.1034,
+     "n": 180
+    },
+    "logica": {
+     "mediana": 0.0603,
+     "min": 0.0394,
+     "max": 0.4032,
+     "n": 180
+    },
+    "total": {
+     "mediana": 0.3152,
+     "min": 0.1707,
+     "max": 1.2398,
+     "n": 180
+    }
+   },
+   "TODAS": {
+    "sonda_salida": {
+     "mediana": 0.2971,
+     "min": 0.1305,
+     "max": 5.9196,
+     "n": 795
+    },
+    "1_firma": {
+     "mediana": 0.0463,
+     "min": 0.0247,
+     "max": 0.9353,
+     "n": 795
+    },
+    "2_flujos": {
+     "mediana": 0.0012,
+     "min": 0.0005,
+     "max": 0.1768,
+     "n": 795
+    },
+    "3_propiedades": {
+     "mediana": 0.0017,
+     "min": 0.0008,
+     "max": 0.0245,
+     "n": 795
+    },
+    "4_pedido": {
+     "mediana": 0.012,
+     "min": 0.0064,
+     "max": 1.029,
+     "n": 795
+    },
+    "logica": {
+     "mediana": 0.0637,
+     "min": 0.0339,
+     "max": 1.0921,
+     "n": 795
+    },
+    "total": {
+     "mediana": 0.372,
+     "min": 0.1707,
+     "max": 6.9701,
+     "n": 795
+    }
+   },
+   "datos": {
+    "sonda_salida": {
+     "mediana": 0.3115,
+     "min": 0.2324,
+     "max": 0.815,
+     "n": 45
+    },
+    "1_firma": {
+     "mediana": 0.05,
+     "min": 0.0321,
+     "max": 0.1638,
+     "n": 45
+    },
+    "2_flujos": {
+     "mediana": 0.001,
+     "min": 0.0006,
+     "max": 0.0054,
+     "n": 45
+    },
+    "3_propiedades": {
+     "mediana": 0.0023,
+     "min": 0.0012,
+     "max": 0.0245,
+     "n": 45
+    },
+    "4_pedido": {
+     "mediana": 0.0101,
+     "min": 0.0071,
+     "max": 0.0344,
+     "n": 45
+    },
+    "logica": {
+     "mediana": 0.0636,
+     "min": 0.041,
+     "max": 0.1785,
+     "n": 45
+    },
+    "total": {
+     "mediana": 0.3837,
+     "min": 0.2987,
+     "max": 0.8924,
+     "n": 45
+    }
+   },
+   "imagen": {
+    "sonda_salida": {
+     "mediana": 0.2768,
+     "min": 0.1328,
+     "max": 3.0033,
+     "n": 285
+    },
+    "1_firma": {
+     "mediana": 0.0473,
+     "min": 0.0254,
+     "max": 0.331,
+     "n": 285
+    },
+    "2_flujos": {
+     "mediana": 0.001,
+     "min": 0.0005,
+     "max": 0.0329,
+     "n": 285
+    },
+    "3_propiedades": {
+     "mediana": 0.0015,
+     "min": 0.0008,
+     "max": 0.0219,
+     "n": 285
+    },
+    "4_pedido": {
+     "mediana": 0.0105,
+     "min": 0.0066,
+     "max": 1.029,
+     "n": 285
+    },
+    "logica": {
+     "mediana": 0.062,
+     "min": 0.0339,
+     "max": 1.0921,
+     "n": 285
+    },
+    "total": {
+     "mediana": 0.3554,
+     "min": 0.1716,
+     "max": 3.0935,
+     "n": 285
+    }
+   },
+   "pdf": {
+    "sonda_salida": {
+     "mediana": 0.2808,
+     "min": 0.1624,
+     "max": 3.0141,
+     "n": 165
+    },
+    "1_firma": {
+     "mediana": 0.0451,
+     "min": 0.03,
+     "max": 0.232,
+     "n": 165
+    },
+    "2_flujos": {
+     "mediana": 0.0009,
+     "min": 0.0006,
+     "max": 0.0245,
+     "n": 165
+    },
+    "3_propiedades": {
+     "mediana": 0.0012,
+     "min": 0.0008,
+     "max": 0.0146,
+     "n": 165
+    },
+    "4_pedido": {
+     "mediana": 0.0113,
+     "min": 0.0064,
+     "max": 0.3002,
+     "n": 165
+    },
+    "logica": {
+     "mediana": 0.0594,
+     "min": 0.0408,
+     "max": 0.3525,
+     "n": 165
+    },
+    "total": {
+     "mediana": 0.3496,
+     "min": 0.2249,
+     "max": 3.1306,
+     "n": 165
+    }
+   },
+   "video": {
+    "sonda_salida": {
+     "mediana": 0.7699,
+     "min": 0.3538,
+     "max": 5.9196,
+     "n": 120
+    },
+    "1_firma": {
+     "mediana": 0.0555,
+     "min": 0.0288,
+     "max": 0.9353,
+     "n": 120
+    },
+    "2_flujos": {
+     "mediana": 0.0046,
+     "min": 0.0008,
+     "max": 0.0875,
+     "n": 120
+    },
+    "3_propiedades": {
+     "mediana": 0.0029,
+     "min": 0.0013,
+     "max": 0.0204,
+     "n": 120
+    },
+    "4_pedido": {
+     "mediana": 0.0163,
+     "min": 0.0088,
+     "max": 0.1007,
+     "n": 120
+    },
+    "logica": {
+     "mediana": 0.0809,
+     "min": 0.0443,
+     "max": 1.0498,
+     "n": 120
+    },
+    "total": {
+     "mediana": 0.899,
+     "min": 0.4141,
+     "max": 6.9701,
+     "n": 120
+    }
+   }
+  }
+ },
+ "subproceso": {
+  "flag": "limpia",
+  "n_por_fichero": 15,
+  "categorias": {
+   "audio": {
+    "sonda_salida": {
+     "mediana": 47.4416,
+     "min": 30.8,
+     "max": 149.5368,
+     "n": 180
+    },
+    "1_firma": {
+     "mediana": 0.1068,
+     "min": 0.0598,
+     "max": 0.355,
+     "n": 180
+    },
+    "2_flujos": {
+     "mediana": 0.0063,
+     "min": 0.0044,
+     "max": 0.0117,
+     "n": 180
+    },
+    "3_propiedades": {
+     "mediana": 0.0033,
+     "min": 0.0024,
+     "max": 0.0206,
+     "n": 180
+    },
+    "4_pedido": {
+     "mediana": 0.0259,
+     "min": 0.0173,
+     "max": 0.0617,
+     "n": 180
+    },
+    "logica": {
+     "mediana": 0.1422,
+     "min": 0.0868,
+     "max": 0.408,
+     "n": 180
+    },
+    "total": {
+     "mediana": 47.5889,
+     "min": 30.9401,
+     "max": 149.6862,
+     "n": 180
+    }
+   },
+   "TODAS": {
+    "sonda_salida": {
+     "mediana": 53.8827,
+     "min": 0.2017,
+     "max": 1013.0056,
+     "n": 795
+    },
+    "1_firma": {
+     "mediana": 0.1085,
+     "min": 0.0295,
+     "max": 1.3664,
+     "n": 795
+    },
+    "2_flujos": {
+     "mediana": 0.0018,
+     "min": 0.0006,
+     "max": 0.0495,
+     "n": 795
+    },
+    "3_propiedades": {
+     "mediana": 0.0024,
+     "min": 0.001,
+     "max": 0.0376,
+     "n": 795
+    },
+    "4_pedido": {
+     "mediana": 0.0201,
+     "min": 0.0069,
+     "max": 0.0823,
+     "n": 795
+    },
+    "logica": {
+     "mediana": 0.1357,
+     "min": 0.0382,
+     "max": 1.3974,
+     "n": 795
+    },
+    "total": {
+     "mediana": 54.0646,
+     "min": 0.2479,
+     "max": 1013.1655,
+     "n": 795
+    }
+   },
+   "datos": {
+    "sonda_salida": {
+     "mediana": 0.261,
+     "min": 0.2017,
+     "max": 0.658,
+     "n": 45
+    },
+    "1_firma": {
+     "mediana": 0.0469,
+     "min": 0.0295,
+     "max": 0.154,
+     "n": 45
+    },
+    "2_flujos": {
+     "mediana": 0.0009,
+     "min": 0.0006,
+     "max": 0.003,
+     "n": 45
+    },
+    "3_propiedades": {
+     "mediana": 0.0019,
+     "min": 0.001,
+     "max": 0.0066,
+     "n": 45
+    },
+    "4_pedido": {
+     "mediana": 0.0091,
+     "min": 0.0069,
+     "max": 0.0527,
+     "n": 45
+    },
+    "logica": {
+     "mediana": 0.059,
+     "min": 0.0382,
+     "max": 0.17,
+     "n": 45
+    },
+    "total": {
+     "mediana": 0.3218,
+     "min": 0.2479,
+     "max": 0.7774,
+     "n": 45
+    }
+   },
+   "imagen": {
+    "sonda_salida": {
+     "mediana": 67.3418,
+     "min": 26.9981,
+     "max": 1013.0056,
+     "n": 285
+    },
+    "1_firma": {
+     "mediana": 0.1166,
+     "min": 0.0651,
+     "max": 1.3664,
+     "n": 285
+    },
+    "2_flujos": {
+     "mediana": 0.0016,
+     "min": 0.0011,
+     "max": 0.0495,
+     "n": 285
+    },
+    "3_propiedades": {
+     "mediana": 0.0023,
+     "min": 0.0016,
+     "max": 0.0376,
+     "n": 285
+    },
+    "4_pedido": {
+     "mediana": 0.019,
+     "min": 0.0132,
+     "max": 0.0823,
+     "n": 285
+    },
+    "logica": {
+     "mediana": 0.14,
+     "min": 0.0848,
+     "max": 1.3974,
+     "n": 285
+    },
+    "total": {
+     "mediana": 67.4762,
+     "min": 27.1265,
+     "max": 1013.1655,
+     "n": 285
+    }
+   },
+   "pdf": {
+    "sonda_salida": {
+     "mediana": 169.2022,
+     "min": 32.671,
+     "max": 207.2627,
+     "n": 165
+    },
+    "1_firma": {
+     "mediana": 0.1019,
+     "min": 0.0654,
+     "max": 0.19,
+     "n": 165
+    },
+    "2_flujos": {
+     "mediana": 0.0015,
+     "min": 0.001,
+     "max": 0.033,
+     "n": 165
+    },
+    "3_propiedades": {
+     "mediana": 0.0021,
+     "min": 0.0015,
+     "max": 0.004,
+     "n": 165
+    },
+    "4_pedido": {
+     "mediana": 0.0191,
+     "min": 0.012,
+     "max": 0.0466,
+     "n": 165
+    },
+    "logica": {
+     "mediana": 0.1248,
+     "min": 0.0835,
+     "max": 0.2444,
+     "n": 165
+    },
+    "total": {
+     "mediana": 169.2979,
+     "min": 32.7806,
+     "max": 207.4107,
+     "n": 165
+    }
+   },
+   "video": {
+    "sonda_salida": {
+     "mediana": 51.3206,
+     "min": 39.2021,
+     "max": 311.9745,
+     "n": 120
+    },
+    "1_firma": {
+     "mediana": 0.1109,
+     "min": 0.0595,
+     "max": 0.1851,
+     "n": 120
+    },
+    "2_flujos": {
+     "mediana": 0.0058,
+     "min": 0.001,
+     "max": 0.011,
+     "n": 120
+    },
+    "3_propiedades": {
+     "mediana": 0.0033,
+     "min": 0.0017,
+     "max": 0.0247,
+     "n": 120
+    },
+    "4_pedido": {
+     "mediana": 0.0199,
+     "min": 0.0142,
+     "max": 0.0588,
+     "n": 120
+    },
+    "logica": {
+     "mediana": 0.1397,
+     "min": 0.0823,
+     "max": 0.234,
+     "n": 120
+    },
+    "total": {
+     "mediana": 51.4428,
+     "min": 39.3511,
+     "max": 312.1277,
+     "n": 120
+    }
+   }
+  }
+ }
+}

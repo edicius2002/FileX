@@ -1,0 +1,196 @@
+{
+  "sdk_mcp": "1.29.0",
+  "protocolo_cliente": "2025-11-25",
+  "argv": [
+    "--raices-servidor",
+    "D:/Work/research/FileX/bench/salidas-sdk-mcp/raiz_srv",
+    "--roots",
+    "D:/Work/research/FileX/bench/salidas-sdk-mcp/raiz_srv/sub;D:/Work/research/FileX/bench/salidas-sdk-mcp/raiz_fuera",
+    "--roots-2",
+    "D:/Work/research/FileX/bench/salidas-sdk-mcp/raiz_srv",
+    "--stderr",
+    "stderr_129_con_roots.txt",
+    "--out",
+    "r_129_con_roots.json"
+  ],
+  "pasos": [
+    {
+      "paso": "t_ping",
+      "ms": 5.0,
+      "isError": false,
+      "contenido": [
+        {
+          "type": "text",
+          "text": "pong"
+        }
+      ]
+    },
+    {
+      "paso": "t_roots_cap",
+      "ms": 3.0,
+      "isError": false,
+      "contenido": [
+        {
+          "type": "text",
+          "text": "{\"roots\": true, \"roots.listChanged\": true, \"capacidades_cliente\": {\"experimental\": null, \"sampling\": null, \"elicitation\": null, \"roots\": {\"listChanged\": true}, \"tasks\": null}}"
+        }
+      ]
+    },
+    {
+      "paso": "t_roots",
+      "ms": 6.0,
+      "isError": false,
+      "contenido": [
+        {
+          "type": "text",
+          "text": "{\"ok\": true, \"roots\": [{\"uri\": \"file:///D:/Work/research/FileX/bench/salidas-sdk-mcp/raiz_srv/sub\", \"name\": \"sub\"}, {\"uri\": \"file:///D:/Work/research/FileX/bench/salidas-sdk-mcp/raiz_fuera\", \"name\": \"raiz_fuera\"}]}"
+        }
+      ]
+    },
+    {
+      "paso": "t_roots_interseca",
+      "ms": 7.5,
+      "isError": false,
+      "contenido": [
+        {
+          "type": "text",
+          "text": "{\"modo\": \"interseccion\", \"servidor\": [\"D:\\\\Work\\\\research\\\\FileX\\\\bench\\\\salidas-sdk-mcp\\\\raiz_srv\"], \"cliente\": [{\"uri\": \"file:///D:/Work/research/FileX/bench/salidas-sdk-mcp/raiz_srv/sub\", \"name\": \"sub\"}, {\"uri\": \"file:///D:/Work/research/FileX/bench/salidas-sdk-mcp/raiz_fuera\", \"name\": \"raiz_fuera\"}], \"efectiva\": [\"D:\\\\Work\\\\research\\\\FileX\\\\bench\\\\salidas-sdk-mcp\\\\raiz_srv\\\\sub\"]}"
+        }
+      ]
+    },
+    {
+      "paso": "t_eventos_tras_list_changed",
+      "ms": 4.5,
+      "isError": false,
+      "contenido": [
+        {
+          "type": "text",
+          "text": "[{\"t\": 0.047, \"evento\": \"roots/list_changed\"}]"
+        }
+      ]
+    },
+    {
+      "paso": "t_roots_tras_cambio",
+      "ms": 6.5,
+      "isError": false,
+      "contenido": [
+        {
+          "type": "text",
+          "text": "{\"ok\": true, \"roots\": [{\"uri\": \"file:///D:/Work/research/FileX/bench/salidas-sdk-mcp/raiz_srv\", \"name\": \"raiz_srv\"}]}"
+        }
+      ]
+    },
+    {
+      "paso": "t_img_puro",
+      "ms": 4.5,
+      "isError": false,
+      "contenido": [
+        {
+          "type": "image",
+          "data": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==",
+          "mimeType": "image/png"
+        }
+      ]
+    },
+    {
+      "paso": "t_img_prefijo",
+      "ms": 3.5,
+      "isError": false,
+      "contenido": [
+        {
+          "type": "image",
+          "data": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==",
+          "mimeType": "image/png"
+        }
+      ]
+    },
+    {
+      "paso": "t_img_basura",
+      "ms": 5.0,
+      "isError": false,
+      "contenido": [
+        {
+          "type": "image",
+          "data": "esto no es base64 !!!! @@@@",
+          "mimeType": "image/png"
+        }
+      ]
+    },
+    {
+      "paso": "t_img_vacio",
+      "ms": 4.0,
+      "isError": false,
+      "contenido": [
+        {
+          "type": "image",
+          "data": "",
+          "mimeType": "image/png"
+        }
+      ]
+    },
+    {
+      "paso": "t_img_nomime",
+      "ms": 4.0,
+      "isError": false,
+      "contenido": [
+        {
+          "type": "image",
+          "data": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==",
+          "mimeType": ""
+        }
+      ]
+    }
+  ],
+  "init": {
+    "protocolo_negociado": "2025-11-25",
+    "servidor": {
+      "name": "filex-probe-1x",
+      "title": null,
+      "version": "0.0.1",
+      "websiteUrl": null,
+      "icons": null
+    },
+    "capacidades_servidor": {
+      "experimental": {},
+      "tools": {
+        "listChanged": false
+      }
+    }
+  },
+  "cliente_declara_roots": true,
+  "herramientas": [
+    "t_ping",
+    "t_roots",
+    "t_roots_cap",
+    "t_roots_interseca",
+    "t_slow",
+    "t_img",
+    "t_eventos"
+  ],
+  "list_changed_enviada": true,
+  "progresos_recibidos": [],
+  "roots_list_pedidos_por_el_servidor": [
+    {
+      "t": 2.585,
+      "devuelve": [
+        "D:/Work/research/FileX/bench/salidas-sdk-mcp/raiz_srv/sub",
+        "D:/Work/research/FileX/bench/salidas-sdk-mcp/raiz_fuera"
+      ]
+    },
+    {
+      "t": 2.592,
+      "devuelve": [
+        "D:/Work/research/FileX/bench/salidas-sdk-mcp/raiz_srv/sub",
+        "D:/Work/research/FileX/bench/salidas-sdk-mcp/raiz_fuera"
+      ]
+    },
+    {
+      "t": 3.01,
+      "devuelve": [
+        "D:/Work/research/FileX/bench/salidas-sdk-mcp/raiz_srv"
+      ]
+    }
+  ],
+  "tasks_en_types": true,
+  "capacidad_tasks_servidor": null
+}

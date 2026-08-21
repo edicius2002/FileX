@@ -1,0 +1,23 @@
+{
+ "command": "D:/Work/research/FileX/.venv-mcp-vam/Scripts/python.exe",
+ "args": [
+  "D:/Work/research/FileX/repos/mcp-refs/video-audio-mcp/server.py"
+ ],
+ "cwd": "D:/Work/research/FileX",
+ "env": {},
+ "nombre": "video-audio-mcp DEADLOCK (mp4->gif, camino de fallback)",
+ "pasos": [
+  {
+   "id": "gif_deadlock",
+   "tool": "convert_video_format",
+   "args": {
+    "input_video_path": "D:/Work/research/FileX/corpus/video/trivial.mp4",
+    "output_video_path": "D:/Work/research/FileX/bench/salidas-mcp-refs/multimedia/salidas/vam_dead.gif",
+    "target_format": "gif"
+   },
+   "timeout": 90,
+   "nota": "copy falla -> fallback -> ffmpeg pide confirmacion en el stdin del MCP"
+  }
+ ],
+ "stderr_log": "D:/Work/research/FileX/bench/salidas-mcp-refs/multimedia/deadlock_vam.stderr.log"
+}

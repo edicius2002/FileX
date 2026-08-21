@@ -1,0 +1,20 @@
+{
+ "nombre": "SMOKE markitdown-mcp",
+ "command": "D:/Work/research/FileX/.venv-mcp-md/Scripts/markitdown-mcp.exe",
+ "args": [],
+ "cwd": "D:/Work/research/FileX",
+ "env": {
+  "MARKITDOWN_ENABLE_PLUGINS": "false"
+ },
+ "pasos": [
+  {
+   "id": "pdf_texto",
+   "tool": "convert_to_markdown",
+   "args": {
+    "uri": "file:///D:/Work/research/FileX/corpus/pdf/tipico_texto.pdf"
+   },
+   "espera": "prosa",
+   "nota": "smoke: verifica que la sonda mide"
+  }
+ ]
+}

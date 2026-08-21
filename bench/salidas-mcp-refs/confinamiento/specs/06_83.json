@@ -1,0 +1,62 @@
+{
+ "nombre": "filesystem-8punto3",
+ "command": "npx.cmd",
+ "args": [
+  "-y",
+  "@modelcontextprotocol/server-filesystem",
+  "C:\\Program Files"
+ ],
+ "cwd": "D:/Work/research/FileX/bench/salidas-mcp-refs/confinamiento",
+ "env": {},
+ "stderr_log": "D:/Work/research/FileX/bench/salidas-mcp-refs/confinamiento/logs/fs_83.stderr.log",
+ "pasos": [
+  {
+   "id": "cat",
+   "tool": "list_allowed_directories",
+   "args": {},
+   "nota": "como queda la raiz declarada",
+   "recorte": 400,
+   "timeout": 60
+  },
+  {
+   "id": "L1_largo",
+   "tool": "list_directory",
+   "args": {
+    "path": "C:\\Program Files"
+   },
+   "nota": "CONTROL: nombre largo",
+   "recorte": 200,
+   "timeout": 60
+  },
+  {
+   "id": "L2_83",
+   "tool": "list_directory",
+   "args": {
+    "path": "C:\\PROGRA~1"
+   },
+   "nota": "nombre corto 8.3 de la MISMA raiz",
+   "recorte": 400,
+   "timeout": 60
+  },
+  {
+   "id": "L3_83_sub",
+   "tool": "list_directory",
+   "args": {
+    "path": "C:\\PROGRA~1\\Common Files"
+   },
+   "nota": "8.3 + subdirectorio",
+   "recorte": 400,
+   "timeout": 60
+  },
+  {
+   "id": "L4_83_fuera",
+   "tool": "list_directory",
+   "args": {
+    "path": "C:\\PROGRA~1\\..\\Windows"
+   },
+   "nota": "8.3 + travesia fuera",
+   "recorte": 400,
+   "timeout": 60
+  }
+ ]
+}

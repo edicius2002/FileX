@@ -1,0 +1,118 @@
+{
+ "nombre": "kordoc-mcp-KORDOC_ROOT",
+ "command": "npx.cmd",
+ "args": [
+  "-y",
+  "-p",
+  "kordoc@4.9.0",
+  "kordoc-mcp"
+ ],
+ "cwd": "D:/Work/research/FileX/bench/salidas-mcp-refs/confinamiento",
+ "env": {
+  "KORDOC_OFFLINE": "1",
+  "KORDOC_ROOT": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\kordoc"
+ },
+ "stderr_log": "D:/Work/research/FileX/bench/salidas-mcp-refs/confinamiento/logs/kordoc_root.stderr.log",
+ "pasos": [
+  {
+   "id": "R_control",
+   "tool": "parse_document",
+   "args": {
+    "file_path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\kordoc\\ok.pdf"
+   },
+   "nota": "(a) CONTROL: existe y dentro de KORDOC_ROOT",
+   "recorte": 1500,
+   "timeout": 180
+  },
+  {
+   "id": "R_noexiste_dentro",
+   "tool": "parse_document",
+   "args": {
+    "file_path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\kordoc\\no_existe.pdf"
+   },
+   "nota": "no existe, dentro de la raiz",
+   "recorte": 1500,
+   "timeout": 180
+  },
+  {
+   "id": "R_existe_fuera",
+   "tool": "parse_document",
+   "args": {
+    "file_path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\prohibido\\secreto.txt"
+   },
+   "nota": "(b) EXISTE pero fuera de KORDOC_ROOT",
+   "recorte": 1500,
+   "timeout": 180
+  },
+  {
+   "id": "R_noexiste_fuera",
+   "tool": "parse_document",
+   "args": {
+    "file_path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\prohibido\\no_existe_jamas.txt"
+   },
+   "nota": "(c) NO existe y fuera de KORDOC_ROOT",
+   "recorte": 1500,
+   "timeout": 180
+  },
+  {
+   "id": "R_existe_fuera_ext_ok",
+   "tool": "parse_document",
+   "args": {
+    "file_path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\permitido\\..\\..\\..\\..\\..\\..\\ok.pdf"
+   },
+   "nota": "travesia fuera con extension permitida",
+   "recorte": 1500,
+   "timeout": 180
+  },
+  {
+   "id": "R_abs_win",
+   "tool": "parse_document",
+   "args": {
+    "file_path": "C:\\Windows\\win.ini"
+   },
+   "nota": "absoluta a win.ini con KORDOC_ROOT puesto",
+   "recorte": 1500,
+   "timeout": 180
+  },
+  {
+   "id": "R_abs_win_pdf",
+   "tool": "parse_document",
+   "args": {
+    "file_path": "C:\\Windows\\no_existe.pdf"
+   },
+   "nota": "absoluta inexistente con extension permitida",
+   "recorte": 1500,
+   "timeout": 180
+  },
+  {
+   "id": "R_travesia",
+   "tool": "parse_document",
+   "args": {
+    "file_path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\kordoc\\..\\prohibido\\secreto.txt"
+   },
+   "nota": "travesia relativa",
+   "recorte": 1500,
+   "timeout": 180
+  },
+  {
+   "id": "R_case",
+   "tool": "parse_document",
+   "args": {
+    "file_path": "d:\\work\\research\\filex\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\kordoc\\ok.pdf"
+   },
+   "nota": "todo en minusculas (case-insensitivity)",
+   "recorte": 1500,
+   "timeout": 180
+  },
+  {
+   "id": "R_symlink",
+   "tool": "parse_document",
+   "args": {
+    "file_path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\kordoc\\link_fuera.pdf"
+   },
+   "nota": "enlace dentro de la raiz apuntando fuera",
+   "recorte": 1500,
+   "timeout": 180
+  }
+ ]
+}

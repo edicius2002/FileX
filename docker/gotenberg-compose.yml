@@ -1,0 +1,48 @@
+# FileX / investigación previa - Gotenberg 8
+#
+# Vía recomendada para ofimática -> PDF sin instalar LibreOffice en Windows:
+# la imagen ya trae Chromium + LibreOffice + fuentes.
+#
+# Arranque:  docker compose -f gotenberg-compose.yml -p filex-gotenberg8 up -d
+# Parada:    docker compose -f gotenberg-compose.yml -p filex-gotenberg8 down
+# Borrado:   docker compose -f gotenberg-compose.yml -p filex-gotenberg8 down -v
+#
+# API: http://localhost:3200      health: http://localhost:3200/health
+# Sin autenticación (basic auth desactivada por defecto).
+# Puerto 3200 en el host: el 3000 lo reserva el contenedor preexistente
+# `filex-gotenberg` (build local `filex/gotenberg:snapshot`) y el 3100 ConvertX.
+#
+# Gotenberg no necesita volumen de datos: es sin estado, recibe el fichero por
+# multipart/form-data y devuelve el PDF en la respuesta.
+
+services:
+  gotenberg:
+    image: gotenberg/gotenberg:8
+    container_name: filex-gotenberg8
+    ports:
+      - "3200:3000"
+    command:
+      - "gotenberg"
+      - "--api-port=3000"
+      - "--api-timeout=180s"
+      # WSL2 arranca LibreOffice/Chromium en frío muy por encima de los 20s
+      # por defecto (medido ~21,5s -> 503 "context deadline exceeded").
+      - "--libreoffice-start-timeout=90s"
+      - "--chromium-start-timeout=90s"
+      # Precalienta LibreOffice al iniciar el contenedor en vez de en la
+      # primera conversión: evita que la primera petición se lleve el arranque.
+      - "--libreoffice-auto-start=true"
+      - "--libreoffice-idle-shutdown-timeout=0"
+      # Sin telemetría del endpoint de salud, para no ensuciar los logs.
+      - "--api-disable-health-check-route-telemetry=true"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "--silent", "--fail", "http://localhost:3000/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 6
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

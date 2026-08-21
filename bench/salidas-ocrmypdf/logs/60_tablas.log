@@ -1,0 +1,67 @@
+### FASE 3 — cadena OCRmyPDF(preproceso) -> motor.  CER %, rasterizado a 200 ppp
+
+-- rapidocr
+receta                patologico_esc    escaneado_d1    escaneado_d2    escaneado_d3
+base                             1.3             0.0            44.3            73.4
+deskew                           1.3             0.0            44.3            73.4
+clean                            1.3             0.0            44.3            73.4
+rotate                           1.3             0.0            44.3            73.4
+todo                             1.3             0.0            44.3            73.4
+os300                            1.3             0.0             1.3            58.2
+os400                            1.3             0.0             1.3            59.5
+deskew_os300                     1.3             0.0             1.3            58.2
+clean_os300                      1.3             0.0             1.3            58.2
+ctrlppp200                       1.3             0.0             1.3            65.8
+ctrlmagickdeskew                 1.3             0.0             0.0            73.4
+
+-- paddleocr
+receta                patologico_esc    escaneado_d1    escaneado_d2    escaneado_d3
+base                             0.0             0.0             0.0            75.9
+deskew                           0.0             0.0             0.0            75.9
+clean                            0.0             0.0             0.0            75.9
+rotate                           0.0             0.0             0.0            75.9
+todo                             0.0             0.0             0.0            75.9
+os300                            0.0             0.0             0.0            75.9
+os400                            0.0             0.0             0.0            75.9
+deskew_os300                     0.0             0.0             0.0            75.9
+clean_os300                      0.0             0.0             0.0            75.9
+ctrlppp200                       0.0             0.0             0.0            75.9
+ctrlmagickdeskew                 0.0             0.0             0.0            20.3
+
+
+### FASE 4 — matriz ppp x deskew sobre el PDF ORIGINAL.  CER % en escaneado_d3
+ppp       rapid sin ds   rapid +ds  paddle sin ds   paddle +ds
+75                75.9        53.2           11.4         10.1
+100               77.2        54.4            2.5          3.8
+125               75.9        77.2            5.1          2.5
+150               75.9        77.2           31.6          5.1
+175               75.9        75.9           75.9          2.5
+200               65.8        73.4           75.9         20.3
+250               70.9        72.2           75.9         55.7
+300               77.2        75.9           75.9         58.2
+nativo            77.2           -            2.5            -
+
+
+### FASE 4 — misma matriz, resto de variantes (CER %, sin deskew)
+ppp             rap patologico        rap escaneado_        rap escaneado_        pad patologico        pad escaneado_        pad escaneado_
+75                         0.0                   1.3                  44.3                   0.0                   0.0                   0.0
+100                        1.3                   0.0                   0.0                   0.0                   0.0                   0.0
+150                        1.3                   0.0                   0.0                   0.0                   0.0                   0.0
+200                        1.3                   0.0                   1.3                   0.0                   0.0                   0.0
+300                        1.3                   0.0                   0.0                   0.0                   0.0                   0.0
+
+
+### VRAM y carga (de los json)
+rapidocr_cuda__cer.json      carga_frio=  52.37s  vram_base=2763  vram_pico=5187  coste=2424
+paddleocr_cuda__cer.json     carga_frio= 168.37s  vram_base=2753  vram_pico=12089  coste=9336
+rapidocr_cuda_m__cer.json    carga_frio=  21.37s  vram_base=1632  vram_pico=4047  coste=2415
+paddleocr_cuda_m__cer.json   carga_frio=  33.64s  vram_base=1640  vram_pico=12025  coste=10385
+
+
+### Texto recuperado en escaneado_d3 (los casos que importan)
+  paddleocr_cuda_m__m_ppp100__escaneado_d3.txt     -> 'DOCUMENTO ESCANEADO Texto que sola existe como pikeles. Debe recuperarse con OCR.'
+  paddleocr_cuda_m__m_ppp200__escaneado_d3.txt     -> 'DOCUMENTO ESCANEADO'
+  paddleocr_cuda_m__m_ppp200_ds__escaneado_d3.txt  -> 'DOCUMENTO ESCANEADO texto que solo existe como uperarse con OCR'
+  paddleocr_cuda_m__nat__escaneado_d3.txt          -> 'DOCUMENTO ESCANEADO Texto que sola existe como pikeles. Debe recuperarse con OCR.'
+  rapidocr_cuda_m__m_ppp75_ds__escaneado_d3.txt    -> 'DOCUMENTO ESCANEADO texo e s sle cao p'
+  rapidocr_cuda_m__m_ppp200__escaneado_d3.txt      -> 'DOCUMENTOESCANEADO oue OOER'

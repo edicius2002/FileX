@@ -1,0 +1,109 @@
+{
+ "nombre": "image-worker-mcp",
+ "command": "npx.cmd",
+ "args": [
+  "-y",
+  "@boomlinkai/image-worker-mcp"
+ ],
+ "cwd": "D:/Work/research/FileX/bench/salidas-confinamiento-mm",
+ "env": {
+  "S3_BUCKET": "dummy-no-se-usa",
+  "UPLOAD_SERVICE": "s3"
+ },
+ "stderr_log": "D:/Work/research/FileX/bench/salidas-confinamiento-mm/logs/image-worker.stderr.log",
+ "pasos": [
+  {
+   "id": "IW_control",
+   "tool": "resize_image",
+   "args": {
+    "imagePath": "D:\\Work\\research\\FileX\\bench\\salidas-confinamiento-mm\\sandbox\\raiz\\entrada.png",
+    "width": 32,
+    "outputPath": "D:\\Work\\research\\FileX\\bench\\salidas-confinamiento-mm\\sandbox\\raiz\\iw_control_out.png"
+   },
+   "nota": "CONTROL: imagen dentro de la raiz -> salida dentro de la raiz",
+   "timeout": 40,
+   "recorte": 1400
+  },
+  {
+   "id": "IW_read_write_fuera",
+   "tool": "resize_image",
+   "args": {
+    "imagePath": "D:\\Work\\research\\FileX\\bench\\salidas-confinamiento-mm\\sandbox\\fuera\\secreto.png",
+    "width": 16,
+    "outputPath": "D:\\Work\\research\\FileX\\bench\\salidas-confinamiento-mm\\sandbox\\fuera\\iw_read_LEAK.png"
+   },
+   "nota": "LECTURA imagen fuera de la raiz + ESCRITURA fuera de la raiz",
+   "timeout": 40,
+   "recorte": 1400
+  },
+  {
+   "id": "IW_read_sys_exists",
+   "tool": "resize_image",
+   "args": {
+    "imagePath": "C:\\Windows\\win.ini",
+    "width": 16
+   },
+   "nota": "LECTURA de win.ini: fs.readFileSync obtiene los bytes; sharp falla despues",
+   "timeout": 40,
+   "recorte": 1400
+  },
+  {
+   "id": "IW_read_noexist",
+   "tool": "resize_image",
+   "args": {
+    "imagePath": "C:\\Windows\\no_existe_jamas.png",
+    "width": 16
+   },
+   "nota": "oraculo: fichero inexistente -> ENOENT en el mensaje",
+   "timeout": 40,
+   "recorte": 1400
+  },
+  {
+   "id": "IW_write_fuera",
+   "tool": "resize_image",
+   "args": {
+    "imagePath": "D:\\Work\\research\\FileX\\bench\\salidas-confinamiento-mm\\sandbox\\raiz\\entrada.png",
+    "width": 24,
+    "outputPath": "D:\\Work\\research\\FileX\\bench\\salidas-confinamiento-mm\\sandbox\\fuera\\iw_write_LEAK.png"
+   },
+   "nota": "ESCRITURA fuera de la raiz: entrada en RAIZ, salida en FUERA",
+   "timeout": 40,
+   "recorte": 1400
+  },
+  {
+   "id": "IW_travesia",
+   "tool": "resize_image",
+   "args": {
+    "imagePath": "D:\\Work\\research\\FileX\\bench\\salidas-confinamiento-mm\\sandbox\\raiz\\..\\fuera\\secreto.png",
+    "width": 16,
+    "outputPath": "D:\\Work\\research\\FileX\\bench\\salidas-confinamiento-mm\\sandbox\\fuera\\iw_trav_LEAK.png"
+   },
+   "nota": "LECTURA+ESCRITURA por travesia RAIZ\\..\\fuera",
+   "timeout": 40,
+   "recorte": 1400
+  },
+  {
+   "id": "IW_ads",
+   "tool": "resize_image",
+   "args": {
+    "imagePath": "D:\\Work\\research\\FileX\\bench\\salidas-confinamiento-mm\\sandbox\\raiz\\entrada.png:oculto",
+    "width": 16
+   },
+   "nota": "ADS como entrada: readFileSync del flujo alternativo",
+   "timeout": 40,
+   "recorte": 1400
+  },
+  {
+   "id": "IW_write_systemp",
+   "tool": "resize_image",
+   "args": {
+    "imagePath": "D:\\Work\\research\\FileX\\bench\\salidas-confinamiento-mm\\sandbox\\raiz\\entrada.png",
+    "width": 16,
+    "outputPath": "C:\\Windows\\Temp\\filex_no_debe_existir_iw.png"
+   },
+   "nota": "escritura arbitraria a C:\\Windows\\Temp (se borra en el arnes)",
+   "timeout": 40,
+   "recorte": 1400
+  }
+ ]
+}

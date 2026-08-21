@@ -1,0 +1,37 @@
+{
+  "servidor": "@modelcontextprotocol/server-filesystem (npx, WSL2)",
+  "raiz_permitida": "/home/edicius/toctou_sandbox/permitido",
+  "fase_pedida": "B2",
+  "rondas": 500,
+  "concurrentes": 96,
+  "fases": {
+    "B2_carrera_ventana_ensanchada": {
+      "descripcion": "Misma carrera con UV_THREADPOOL_SIZE=1 y muchas llamadas en vuelo: la cola del pool de hilos de libuv separa el realpath() de validatePath del readFile() posterior.",
+      "env_extra": {
+        "UV_THREADPOOL_SIZE": "1"
+      },
+      "n_llamadas": 48000,
+      "concurrentes_por_ronda": 96,
+      "segundos": 75.87,
+      "swaps": 141847,
+      "err_symlink": 4512,
+      "err_write": 2,
+      "err_remove": 8482,
+      "ultimo_error_intercambiador": "symlink: [Errno 17] File exists: '/home/edicius/toctou_sandbox/prohibido/secreto.txt' -> '/home/edicius/toctou_sandbox/permitido/race.txt'",
+      "lecturas_benignas": 21224,
+      "denegadas_por_symlink": 8063,
+      "enoent": 13330,
+      "respuestas_vacias": 5381,
+      "otros": 2,
+      "muestras_otros": [
+        "EISDIR: illegal operation on a directory, read",
+        "EISDIR: illegal operation on a directory, read"
+      ],
+      "n_fugas": 0,
+      "TOCTOU_REPRODUCIDO": false,
+      "muestras_de_fuga": [],
+      "vio_enlace_o_denegado": 8063,
+      "duty_cycle_servidor": 0.168
+    }
+  }
+}

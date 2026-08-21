@@ -1,0 +1,27 @@
+{
+ "nombre": "docling-mcp (solo grupo conversion)",
+ "command": "D:\\Work\\research\\FileX\\.venv-ai\\Scripts\\docling-mcp-server.exe",
+ "args": [
+  "--transport",
+  "stdio",
+  "conversion"
+ ],
+ "cwd": "D:\\Work\\research\\FileX",
+ "env": {
+  "DOCLING_MCP_CONVERSION_MODE": "local",
+  "DOCLING_MCP_DO_OCR": "false",
+  "DOCLING_MCP_DO_TABLE_STRUCTURE": "true",
+  "DOCLING_MCP_KEEP_IMAGES": "false"
+ },
+ "stderr_log": "D:/Work/research/FileX/bench/salidas-mcp/stderr_docling_conv.log",
+ "pasos": [
+  {
+   "id": "cache_check",
+   "tool": "is_document_in_local_cache",
+   "args": {
+    "document_key": "nada"
+   },
+   "nota": "llamada trivial, sin GPU"
+  }
+ ]
+}

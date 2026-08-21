@@ -1,0 +1,121 @@
+=== ERROR EXACTO DE --remove-background (d3) ===
+    return fn(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/ocrmypdf/_pipelines/ocr.py", line 78, in _exec_page_sync
+    ocr_image_out, pdf_page_from_image_out, orientation_correction = process_page(
+                                                                     ~~~~~~~~~~~~^
+        page_context
+        ^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/lib/python3/dist-packages/ocrmypdf/_pipelines/_common.py", line 417, in process_page
+    ocr_image, preprocess_out = make_intermediate_images(
+                                ~~~~~~~~~~~~~~~~~~~~~~~~^
+        page_context, orientation_correction
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/lib/python3/dist-packages/ocrmypdf/_pipelines/_common.py", line 361, in make_intermediate_images
+    ocr_image = preprocess_out = preprocess(
+                                 ~~~~~~~~~~^
+        page_context,
+        ^^^^^^^^^^^^^
+    ...<3 lines>...
+        clean=False,
+        ^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/lib/python3/dist-packages/ocrmypdf/_pipelines/_common.py", line 338, in preprocess
+    image = preprocess_remove_background(image, page_context)
+  File "/usr/lib/python3/dist-packages/ocrmypdf/_pipeline.py", line 576, in preprocess_remove_background
+    raise NotImplementedError("--remove-background is temporarily not implemented")
+NotImplementedError: --remove-background is temporarily not implemented
+
+=== SIDECARS DE d3 (OCRmyPDF como motor) ===
+--- base__escaneado_d3.txt
+--- clean__escaneado_d3.txt
+--- clean_os300__escaneado_d3.txt
+    RES
+    
+    E
+    o)
+    
+    14?
+    Y
+    A
+    o
+    | U
+    %
+    4
+    ó
+    ñ
+    e
+    A
+    3
+    
+--- deskew__escaneado_d3.txt
+--- deskew_os300__escaneado_d3.txt
+    RES
+    
+    E
+    o)
+    
+    14?
+    Y
+    A
+    o
+    | U
+    %
+    4
+    ó
+    ñ
+    e
+    A
+    3
+    
+--- os300__escaneado_d3.txt
+    RES
+    
+    E
+    o)
+    
+    14?
+    Y
+    A
+    o
+    | U
+    %
+    4
+    ó
+    ñ
+    e
+    A
+    3
+    
+--- os400__escaneado_d3.txt
+--- rmbg__escaneado_d3.txt
+--- rotate__escaneado_d3.txt
+--- todo__escaneado_d3.txt
+--- todo_rmbg__escaneado_d3.txt
+
+=== SIDECAR base de cada documento ===
+--- base__patologico_escaneado
+    DOCUMENTO ESCANEADO
+    Texto que solo existe como pixeles.
+    
+    Debe recuperarse con OCR.
+--- base__escaneado_d1
+    DOCUMENTO ESCANEADO
+    
+    Texto que solo existe como pixeles.
+    
+    Debe recuperarse con OCR.
+--- base__escaneado_d2
+    DOCUMENTO ESCANEADO
+    
+    que solo existe como pixeles.
+    
+    Ín OCR.
+    
+    Texto
+    
+    Debe recuperarse co!

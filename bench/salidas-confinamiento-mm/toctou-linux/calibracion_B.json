@@ -1,0 +1,32 @@
+{
+  "servidor": "@modelcontextprotocol/server-filesystem (npx, WSL2)",
+  "raiz_permitida": "/home/edicius/toctou_sandbox/permitido",
+  "fase_pedida": "B",
+  "rondas": 200,
+  "concurrentes": 16,
+  "fases": {
+    "B_carrera_normal": {
+      "descripcion": "read_text_file en bucle mientras 3 hilos alternan race.txt entre fichero regular y enlace al secreto. ext4 nativo, config por defecto.",
+      "env_extra": {},
+      "n_llamadas": 3200,
+      "concurrentes_por_ronda": 16,
+      "segundos": 6.2,
+      "swaps": 10502,
+      "err_symlink": 440,
+      "err_write": 0,
+      "err_remove": 796,
+      "ultimo_error_intercambiador": "symlink: [Errno 17] File exists: '/home/edicius/toctou_sandbox/prohibido/secreto.txt' -> '/home/edicius/toctou_sandbox/permitido/race.txt'",
+      "lecturas_benignas": 410,
+      "denegadas_por_symlink": 110,
+      "enoent": 2609,
+      "respuestas_vacias": 71,
+      "otros": 0,
+      "muestras_otros": [],
+      "n_fugas": 0,
+      "TOCTOU_REPRODUCIDO": false,
+      "muestras_de_fuga": [],
+      "vio_enlace_o_denegado": 110,
+      "duty_cycle_servidor": 0.0344
+    }
+  }
+}

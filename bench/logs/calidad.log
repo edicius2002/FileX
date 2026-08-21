@@ -1,0 +1,75 @@
+[lock] adquirido por fase1-calidad
+############ CALIDAD H.264 1080p, mismo bitrate objetivo ############
+H264 CPU  x264 medium  @2M         bitrate_real:  2026088 bps  tam:  5065221 B  VMAF:  89.70  PSNR:38.877286 dB  SSIM:0.985076
+H264 GPU  nvenc p4     @2M         bitrate_real:  2214404 bps  tam:  5536012 B  VMAF:  88.71  PSNR:38.297483 dB  SSIM:0.982444
+H264 GPU  nvenc p7     @2M         bitrate_real:  2160631 bps  tam:  5401579 B  VMAF:  89.22  PSNR:38.542500 dB  SSIM:0.980714
+
+H264 CPU  x264 medium  @5M         bitrate_real:  5047765 bps  tam: 12619413 B  VMAF:  95.71  PSNR:43.739375 dB  SSIM:0.994736
+H264 GPU  nvenc p4     @5M         bitrate_real:  5420719 bps  tam: 13551798 B  VMAF:  95.20  PSNR:42.773855 dB  SSIM:0.993109
+H264 GPU  nvenc p7     @5M         bitrate_real:  5297165 bps  tam: 13242914 B  VMAF:  95.60  PSNR:43.318943 dB  SSIM:0.993069
+
+H264 CPU  x264 medium  @10M        bitrate_real: 10023252 bps  tam: 25058130 B  VMAF:  98.87  PSNR:52.718600 dB  SSIM:0.999111
+H264 GPU  nvenc p4     @10M        bitrate_real: 10785002 bps  tam: 26962505 B  VMAF:  98.55  PSNR:50.287072 dB  SSIM:0.998613
+H264 GPU  nvenc p7     @10M        bitrate_real: 10825533 bps  tam: 27063833 B  VMAF:  98.77  PSNR:51.276932 dB  SSIM:0.998678
+
+############ CALIDAD HEVC 1080p ############
+x265 [info]: HEVC encoder version 4.1+190-8f11c33a
+x265 [info]: build info [Windows][GCC 15.2.0][64 bit] 8bit+10bit+12bit
+x265 [info]: using cpu capabilities: MMX2 SSE2Fast LZCNT SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+x265 [info]: Main profile, Level-4 (Main tier)
+x265 [info]: Thread pool created using 12 threads
+x265 [info]: Slices                              : 1
+x265 [info]: frame threads / pool features       : 3 / wpp(17 rows)
+x265 [info]: Coding QT: max CU size, min CU size : 64 / 8
+x265 [info]: Residual QT: max TU size, max depth : 32 / 1 inter / 1 intra
+x265 [info]: ME / range / subpel / merge         : hex / 57 / 2 / 3
+x265 [info]: Keyframe min / max / scenecut / bias  : 25 / 250 / 40 / 5.00 
+x265 [info]: Lookahead / bframes / badapt        : 20 / 4 / 2
+x265 [info]: b-pyramid / weightp / weightb       : 1 / 1 / 0
+x265 [info]: References / ref-limit  cu / depth  : 3 / off / on
+x265 [info]: AQ: mode / str / qg-size / cu-tree  : 2 / 1.0 / 32 / 1
+x265 [info]: Rate Control / qCompress            : ABR-3000 kbps / 0.60
+x265 [info]: tools: rd=3 psy-rd=2.00 early-skip rskip mode=1 signhide tmvp
+x265 [info]: tools: b-intra strong-intra-smoothing lslices=6 deblock sao
+x265 [info]: frame I:      3, Avg QP:32.11  kb/s: 9321.92 
+x265 [info]: frame P:    164, Avg QP:33.36  kb/s: 6060.23 
+x265 [info]: frame B:    433, Avg QP:37.31  kb/s: 1855.86 
+x265 [info]: Weighted P-Frames: Y:0.0% UV:0.0%
+
+encoded 600 frames in 17.14s (35.00 fps), 3042.38 kb/s, Avg QP:36.21
+HEVC CPU  x265 medium  @3M         bitrate_real:  3047702 bps  tam:  7619256 B  VMAF:  91.56  PSNR:40.209814 dB  SSIM:0.989514
+HEVC GPU  nvenc p4     @3M         bitrate_real:  3308032 bps  tam:  8270080 B  VMAF:  90.96  PSNR:39.787662 dB  SSIM:0.987044
+HEVC GPU  nvenc p7     @3M         bitrate_real:  3285874 bps  tam:  8214686 B  VMAF:  91.65  PSNR:40.068395 dB  SSIM:0.987733
+
+x265 [info]: HEVC encoder version 4.1+190-8f11c33a
+x265 [info]: build info [Windows][GCC 15.2.0][64 bit] 8bit+10bit+12bit
+x265 [info]: using cpu capabilities: MMX2 SSE2Fast LZCNT SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+x265 [info]: Main profile, Level-4 (Main tier)
+x265 [info]: Thread pool created using 12 threads
+x265 [info]: Slices                              : 1
+x265 [info]: frame threads / pool features       : 3 / wpp(17 rows)
+x265 [info]: Coding QT: max CU size, min CU size : 64 / 8
+x265 [info]: Residual QT: max TU size, max depth : 32 / 1 inter / 1 intra
+x265 [info]: ME / range / subpel / merge         : hex / 57 / 2 / 3
+x265 [info]: Keyframe min / max / scenecut / bias  : 25 / 250 / 40 / 5.00 
+x265 [info]: Lookahead / bframes / badapt        : 20 / 4 / 2
+x265 [info]: b-pyramid / weightp / weightb       : 1 / 1 / 0
+x265 [info]: References / ref-limit  cu / depth  : 3 / off / on
+x265 [info]: AQ: mode / str / qg-size / cu-tree  : 2 / 1.0 / 32 / 1
+x265 [info]: Rate Control / qCompress            : ABR-6000 kbps / 0.60
+x265 [info]: tools: rd=3 psy-rd=2.00 early-skip rskip mode=1 signhide tmvp
+x265 [info]: tools: b-intra strong-intra-smoothing lslices=6 deblock sao
+x265 [info]: frame I:      3, Avg QP:27.07  kb/s: 12485.36
+x265 [info]: frame P:    164, Avg QP:28.24  kb/s: 9911.02 
+x265 [info]: frame B:    433, Avg QP:32.14  kb/s: 4578.00 
+x265 [info]: Weighted P-Frames: Y:0.0% UV:0.0%
+
+encoded 600 frames in 27.94s (21.47 fps), 6075.23 kb/s, Avg QP:31.05
+HEVC CPU  x265 medium  @6M         bitrate_real:  6080588 bps  tam: 15201470 B  VMAF:  95.65  PSNR:44.370501 dB  SSIM:0.995439
+HEVC GPU  nvenc p4     @6M         bitrate_real:  6484748 bps  tam: 16211872 B  VMAF:  95.65  PSNR:44.038197 dB  SSIM:0.994937
+HEVC GPU  nvenc p7     @6M         bitrate_real:  6546888 bps  tam: 16367220 B  VMAF:  96.14  PSNR:44.583370 dB  SSIM:0.995593
+
+############ CALIDAD H.264 4K @20M ############
+H264 4K CPU x264 medium @20M       bitrate_real: 20717853 bps  tam: 25897317 B  VMAF:  93.43  PSNR:43.254785 dB  SSIM:0.994176
+H264 4K GPU nvenc p4    @20M       bitrate_real: 22363980 bps  tam: 27954975 B  VMAF:  93.27  PSNR:42.952784 dB  SSIM:0.993738
+=== FIN CALIDAD ===

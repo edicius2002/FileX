@@ -1,0 +1,19 @@
+
+=== motor proceso ===  n=53
+  falsos positivos (fallo sobre salida correcta): 0
+  falsos negativos: 0 []
+  cobertura parcial (no todo evaluable): 0 []
+  avisos: 3
+    tipico_mp4-audio.flac                      [('A6', 'profundidad de bits INFLADA sin informacion nueva')]
+    tipico_jpg-to.pdf                          [('P7', '1 px -> 1 pt: pagina absurda (1920 x 1080 pt = 677 x 381 mm)')]
+    tipico_png-to.pdf                          [('P7', '1 px -> 1 pt: pagina absurda (1920 x 1080 pt = 677 x 381 mm)')]
+
+=== motor subproceso ===  n=53
+  falsos positivos (fallo sobre salida correcta): 0
+  falsos negativos: 0 []
+  cobertura parcial (no todo evaluable): 0 []
+  avisos: 4
+    tipico_mp4-audio.flac                      [('A6', 'profundidad de bits INFLADA sin informacion nueva')]
+    trivial_wav-to.m4a                         [('-', 'bitrate lejos del pedido')]
+    tipico_jpg-to.pdf                          [('P7', '1 px -> 1 pt: pagina absurda (1920 x 1080 pt = 677 x 381 mm)')]
+    tipico_png-to.pdf                          [('P7', '1 px -> 1 pt: pagina absurda (1920 x 1080 pt = 677 x 381 mm)')]

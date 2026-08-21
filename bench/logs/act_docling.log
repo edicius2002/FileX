@@ -1,0 +1,14 @@
+{"evento": "constructor", "dispositivo": "cuda", "segundos": 0.13}
+[32m[INFO] 2026-08-19 15:10:54,666 [RapidOCR] base.py:23: Using engine_name: onnxruntime[0m
+[32m[INFO] 2026-08-19 15:10:54,680 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_det_small.onnx[0m
+[32m[INFO] 2026-08-19 15:10:54,680 [RapidOCR] main.py:63: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_det_small.onnx[0m
+[32m[INFO] 2026-08-19 15:10:54,816 [RapidOCR] base.py:23: Using engine_name: onnxruntime[0m
+[32m[INFO] 2026-08-19 15:10:54,817 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ppocr_mobile_v2.0_cls_mobile.onnx[0m
+[32m[INFO] 2026-08-19 15:10:54,818 [RapidOCR] main.py:63: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ppocr_mobile_v2.0_cls_mobile.onnx[0m
+[32m[INFO] 2026-08-19 15:10:54,960 [RapidOCR] base.py:23: Using engine_name: onnxruntime[0m
+[32m[INFO] 2026-08-19 15:10:54,981 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_rec_small.onnx[0m
+[32m[INFO] 2026-08-19 15:10:54,981 [RapidOCR] main.py:63: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_rec_small.onnx[0m
+Loading weights:   0%|          | 0/770 [00:00<?, ?it/s]Loading weights:  99%|#########9| 766/770 [00:00<00:00, 7618.43it/s]Loading weights: 100%|##########| 770/770 [00:00<00:00, 7658.21it/s]
+{"evento": "convert", "archivo": "tipico_texto.pdf", "segundos": 8.54, "chars": 158, "salida": "D:\\Work\\research\\FileX\\bench\\salidas-fase1\\ia\\docling_cuda_tipico_texto.pdf.md", "ok": true}
+{"evento": "convert", "archivo": "patologico_escaneado.pdf", "segundos": 1.12, "chars": 81, "salida": "D:\\Work\\research\\FileX\\bench\\salidas-fase1\\ia\\docling_cuda_patologico_escaneado.pdf.md", "ok": true}
+{"evento": "convert", "archivo": "trivial.pdf", "segundos": 0.71, "chars": 10, "salida": "D:\\Work\\research\\FileX\\bench\\salidas-fase1\\ia\\docling_cuda_trivial.pdf.md", "ok": true}

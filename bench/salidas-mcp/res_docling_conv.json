@@ -1,0 +1,85 @@
+{
+  "spec": "bench/salidas-mcp/spec_docling_conv.json",
+  "servidor": "docling-mcp (solo grupo conversion)",
+  "llamadas": [
+    {
+      "id": "cache_check",
+      "tool": "is_document_in_local_cache",
+      "args": {
+        "document_key": "nada"
+      },
+      "nota": "llamada trivial, sin GPU",
+      "ok": true,
+      "isError": false,
+      "ms": 56.7,
+      "chars_respuesta": 23,
+      "tokens_respuesta": 9,
+      "respuesta_recorte": "{\n  \"in_cache\": false\n}",
+      "respuesta_completa_en": null,
+      "structuredContent": "{\"in_cache\": false}",
+      "tokens_structured": 6
+    }
+  ],
+  "arranque_frio_ms": 1761.5,
+  "spawn_proceso_ms": 13.2,
+  "handshake_ms": 1748.3,
+  "server_info": {
+    "name": "docling",
+    "version": "",
+    "protocolVersion": "2025-11-25",
+    "instructions": null
+  },
+  "list_tools_ms": 2.4,
+  "n_herramientas": 3,
+  "herramientas": [
+    {
+      "name": "is_document_in_local_cache",
+      "title": "Is Docling document in cache",
+      "description": "Verify if a Docling document is already converted and in the local cache.",
+      "annotations": {
+        "read_only_hint": true,
+        "destructive_hint": false
+      },
+      "tokens_descripcion": 171,
+      "inputSchema": null,
+      "outputSchema": null
+    },
+    {
+      "name": "convert_document_into_docling_document",
+      "title": "Convert document into Docling document",
+      "description": "Convert a document of any type from a URL or local path and store in local cache.\n\n    This tool takes a document's URL or local file path, converts it using\n    the configured converter (remote API or local), and stores the resulting\n    Docling document in a local cache. It returns an output with a boolean\n    set to False along with the document's unique cache key. If the document\n    was already in the local cache, the conversion is skipped and the output\n    boolean is set to True.",
+      "annotations": {
+        "read_only_hint": false,
+        "destructive_hint": false
+      },
+      "tokens_descripcion": 315,
+      "inputSchema": null,
+      "outputSchema": null
+    },
+    {
+      "name": "convert_directory_files_into_docling_document",
+      "title": "Convert files from directory into Docling document",
+      "description": "Convert all files from a local directory path and store them in local cache.\n\n    This tool takes a local directory path, converts every file in the directory using\n    the configured converter (remote API or local) and stores the resulting Docling\n    documents in a local cache. It returns a list of conversion outputs, where each\n    output consists of a boolean set to False along with a document's unique cache key.\n    If a document was already in the local cache, the conversion is skipped and the\n    output boolean is set to True.",
+      "annotations": {
+        "read_only_hint": false,
+        "destructive_hint": false
+      },
+      "tokens_descripcion": 392,
+      "inputSchema": null,
+      "outputSchema": null
+    }
+  ],
+  "tokens_catalogo": 880,
+  "n_prompts": 7,
+  "prompts": [
+    "generate_docling_document_from_pdf",
+    "convert_and_summarize",
+    "convert_directory_and_list",
+    "author_structured_document",
+    "convert_and_rewrite",
+    "review_and_edit_document",
+    "find_and_replace_in_document"
+  ],
+  "n_recursos": 0,
+  "recursos": []
+}

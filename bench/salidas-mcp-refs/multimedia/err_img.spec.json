@@ -1,0 +1,49 @@
+{
+ "command": "C:/Program Files/nodejs/npx.cmd",
+ "args": [
+  "-y",
+  "@boomlinkai/image-worker-mcp"
+ ],
+ "cwd": "D:/Work/research/FileX",
+ "env": {
+  "UPLOAD_SERVICE": "s3",
+  "S3_BUCKET": "filex-dummy-no-existe",
+  "AWS_ACCESS_KEY_ID": "AKIADUMMYNOEXISTE000",
+  "AWS_SECRET_ACCESS_KEY": "dummy-no-existe-secret-key-000000000000",
+  "S3_REGION": "us-east-1"
+ },
+ "nombre": "image-worker-mcp ERRORES",
+ "pasos": [
+  {
+   "id": "inexistente",
+   "tool": "resize_image",
+   "args": {
+    "imagePath": "D:/Work/research/FileX/corpus/imagen/NO_EXISTE_12345.jpg",
+    "format": "png",
+    "outputPath": "D:/Work/research/FileX/bench/salidas-mcp-refs/multimedia/salidas/err_img_1.png"
+   },
+   "timeout": 120
+  },
+  {
+   "id": "formato_imposible",
+   "tool": "resize_image",
+   "args": {
+    "imagePath": "D:/Work/research/FileX/corpus/imagen/tipico.jpg",
+    "format": "xyzzy",
+    "outputPath": "D:/Work/research/FileX/bench/salidas-mcp-refs/multimedia/salidas/err_img_2.xyzzy"
+   },
+   "timeout": 120
+  },
+  {
+   "id": "corrupto",
+   "tool": "resize_image",
+   "args": {
+    "imagePath": "D:/Work/research/FileX/bench/salidas-mcp-refs/multimedia/corrupto/truncado.png",
+    "format": "png",
+    "outputPath": "D:/Work/research/FileX/bench/salidas-mcp-refs/multimedia/salidas/err_img_3.png"
+   },
+   "timeout": 120
+  }
+ ],
+ "stderr_log": "D:/Work/research/FileX/bench/salidas-mcp-refs/multimedia/err_img.stderr.log"
+}

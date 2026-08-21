@@ -1,0 +1,129 @@
+{
+ "nombre": "ffmpeg-mcp-lite",
+ "command": "D:/Work/research/FileX/.venv-mm-ffmpeg/Scripts/python.exe",
+ "args": [
+  "-m",
+  "ffmpeg_mcp_lite"
+ ],
+ "cwd": "D:/Work/research/FileX/repos/mcp-refs/ffmpeg-mcp-lite",
+ "env": {
+  "PYTHONPATH": "D:/Work/research/FileX/repos/mcp-refs/ffmpeg-mcp-lite/src",
+  "FFMPEG_OUTPUT_DIR": "D:/Work/research/FileX/bench/salidas-confinamiento-mm/sandbox/raiz",
+  "FFMPEG_PATH": "ffmpeg",
+  "FFPROBE_PATH": "ffprobe"
+ },
+ "stderr_log": "D:/Work/research/FileX/bench/salidas-confinamiento-mm/logs/ffmpeg.stderr.log",
+ "pasos": [
+  {
+   "id": "FF_control_info",
+   "tool": "ffmpeg_get_info",
+   "args": {
+    "file_path": "D:\\Work\\research\\FileX\\bench\\salidas-confinamiento-mm\\sandbox\\raiz\\video.mp4"
+   },
+   "nota": "CONTROL: inspeccionar un fichero DENTRO de la raiz",
+   "timeout": 45,
+   "recorte": 1400
+  },
+  {
+   "id": "FF_read_fuera_abs",
+   "tool": "ffmpeg_get_info",
+   "args": {
+    "file_path": "D:\\Work\\research\\FileX\\bench\\salidas-confinamiento-mm\\sandbox\\fuera\\video_fuera.mp4"
+   },
+   "nota": "LECTURA fuera de la raiz: ruta absoluta a la hermana prohibida",
+   "timeout": 45,
+   "recorte": 1400
+  },
+  {
+   "id": "FF_read_travesia",
+   "tool": "ffmpeg_get_info",
+   "args": {
+    "file_path": "D:\\Work\\research\\FileX\\bench\\salidas-confinamiento-mm\\sandbox\\raiz\\..\\fuera\\video_fuera.mp4"
+   },
+   "nota": "LECTURA por travesia: RAIZ\\..\\fuera\\...",
+   "timeout": 45,
+   "recorte": 1400
+  },
+  {
+   "id": "FF_read_sys_exists",
+   "tool": "ffmpeg_get_info",
+   "args": {
+    "file_path": "C:\\Windows\\win.ini"
+   },
+   "nota": "LECTURA de fichero real del sistema (existe, no es media): distingue de no-existe",
+   "timeout": 45,
+   "recorte": 1400
+  },
+  {
+   "id": "FF_read_sys_noexist",
+   "tool": "ffmpeg_get_info",
+   "args": {
+    "file_path": "C:\\Windows\\no_existe_jamas.ini"
+   },
+   "nota": "oraculo de existencia: fichero inexistente fuera de la raiz",
+   "timeout": 45,
+   "recorte": 1400
+  },
+  {
+   "id": "FF_read_ads",
+   "tool": "ffmpeg_get_info",
+   "args": {
+    "file_path": "D:\\Work\\research\\FileX\\bench\\salidas-confinamiento-mm\\sandbox\\raiz\\entrada.png:oculto"
+   },
+   "nota": "ADS: flujo alternativo dentro de la raiz",
+   "timeout": 45,
+   "recorte": 1400
+  },
+  {
+   "id": "FF_write_convert_confina",
+   "tool": "ffmpeg_convert",
+   "args": {
+    "file_path": "D:\\Work\\research\\FileX\\bench\\salidas-confinamiento-mm\\sandbox\\raiz\\video.mp4",
+    "output_format": "mp3"
+   },
+   "nota": "convert NO tiene output_path: la salida se confina a FFMPEG_OUTPUT_DIR (RAIZ). Deberia caer en RAIZ pese a no poder elegirla.",
+   "timeout": 60,
+   "recorte": 1400
+  },
+  {
+   "id": "FF_write_merge_fuera",
+   "tool": "ffmpeg_merge",
+   "args": {
+    "file_paths": [
+     "D:\\Work\\research\\FileX\\bench\\salidas-confinamiento-mm\\sandbox\\raiz\\video.mp4",
+     "D:\\Work\\research\\FileX\\bench\\salidas-confinamiento-mm\\sandbox\\raiz\\video2.mp4"
+    ],
+    "output_path": "D:\\Work\\research\\FileX\\bench\\salidas-confinamiento-mm\\sandbox\\fuera\\merged_LEAK.mp4"
+   },
+   "nota": "FUGA declarada merge.py:38-39: output_path arbitrario FUERA de la raiz",
+   "timeout": 60,
+   "recorte": 1400
+  },
+  {
+   "id": "FF_write_subs_fuera",
+   "tool": "ffmpeg_add_subtitles",
+   "args": {
+    "file_path": "D:\\Work\\research\\FileX\\bench\\salidas-confinamiento-mm\\sandbox\\raiz\\video.mp4",
+    "subtitle_path": "D:\\Work\\research\\FileX\\bench\\salidas-confinamiento-mm\\sandbox\\raiz\\subs.srt",
+    "output_path": "D:\\Work\\research\\FileX\\bench\\salidas-confinamiento-mm\\sandbox\\fuera\\subbed_LEAK.mp4"
+   },
+   "nota": "FUGA declarada subtitles.py:72-73: output_path arbitrario FUERA de la raiz",
+   "timeout": 90,
+   "recorte": 1400
+  },
+  {
+   "id": "FF_write_merge_syswin",
+   "tool": "ffmpeg_merge",
+   "args": {
+    "file_paths": [
+     "D:\\Work\\research\\FileX\\bench\\salidas-confinamiento-mm\\sandbox\\raiz\\video.mp4",
+     "D:\\Work\\research\\FileX\\bench\\salidas-confinamiento-mm\\sandbox\\raiz\\video2.mp4"
+    ],
+    "output_path": "C:\\Windows\\Temp\\filex_no_debe_existir_merge.mp4"
+   },
+   "nota": "escritura arbitraria a C:\\Windows\\Temp (deberia poder; NO se limpia por rule: es una carpeta temporal del sistema, se borra en el arnes)",
+   "timeout": 60,
+   "recorte": 1400
+  }
+ ]
+}

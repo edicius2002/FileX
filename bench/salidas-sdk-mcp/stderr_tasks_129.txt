@@ -1,0 +1,11 @@
+D:\Work\research\FileX\bench\salidas-sdk-mcp\srv_tasks_129.py:27: DeprecationWarning: The experimental tasks API is deprecated and will be removed in mcp 2.0: tasks (SEP-1686) were removed from the MCP specification and are expected to return as a separate MCP extension.
+  soporte = server.experimental.enable_tasks()   # store + queue en memoria
+[tsk +  0.008s] arrancando
+[tsk +  0.020s] call_tool convertir_largo secs=20.0 pide_tarea=False
+[tsk +  8.024s] call_tool convertir_largo secs=20.0 pide_tarea=True
+[tsk +  8.025s] run_task devolvio inmediatamente: taskId=a8bb1a2c1aad46dc8c5dfbf2f6dd5f68:941e7322-e443-4277-b225-4c0db283ad6e
+[tsk +  8.025s] trabajo de fondo arrancado
+[tsk + 28.170s] trabajo de fondo terminado
+[tsk + 28.179s] call_tool convertir_largo secs=20.0 pide_tarea=True
+[tsk + 28.179s] run_task devolvio inmediatamente: taskId=a8bb1a2c1aad46dc8c5dfbf2f6dd5f68:92dfc93d-2687-466d-82b9-dcd3e169c8bf
+[tsk + 28.179s] trabajo de fondo arrancado

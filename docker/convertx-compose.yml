@@ -1,0 +1,44 @@
+# FileX / investigación previa - ConvertX
+#
+# Arranque:  docker compose -f convertx-compose.yml -p filex-convertx up -d
+# Parada:    docker compose -f convertx-compose.yml -p filex-convertx down
+# Borrado:   docker compose -f convertx-compose.yml -p filex-convertx down -v
+#
+# UI: http://localhost:3100
+# Puerto 3100 en el host para no chocar con gotenberg (3200) ni con el
+# contenedor `filex-gotenberg` preexistente que reserva el 3000.
+#
+# ConvertX no trae credenciales por defecto: la PRIMERA cuenta que se registre
+# en http://localhost:3100/register es el administrador. Para la evaluación
+# usamos ALLOW_UNAUTHENTICATED=true, que deja usar la API/UI sin login
+# (solo aceptable porque el servicio está en localhost).
+
+services:
+  convertx:
+    image: ghcr.io/c4illin/convertx:latest
+    container_name: filex-convertx
+    ports:
+      - "3100:3000"
+    environment:
+      # Cadena fija para que la sesión sobreviva a reinicios del contenedor.
+      - JWT_SECRET=filex-research-only-not-a-real-secret-0000000000
+      # Acceso por http://localhost sin TLS.
+      - HTTP_ALLOWED=true
+      # Sin login: simplifica la evaluación automatizada. Solo en local.
+      - ALLOW_UNAUTHENTICATED=true
+      - UNAUTHENTICATED_USER_SHARING=true
+      - ACCOUNT_REGISTRATION=true
+      # Que no borre los resultados a mitad de la evaluación.
+      - AUTO_DELETE_EVERY_N_HOURS=0
+      - TZ=Europe/Madrid
+    volumes:
+      - convertx-data:/app/data
+    restart: unless-stopped
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+volumes:
+  convertx-data:

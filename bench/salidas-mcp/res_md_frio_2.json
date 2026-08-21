@@ -1,0 +1,90 @@
+{
+  "spec": "bench/salidas-mcp/spec_markitdown_frio.json",
+  "servidor": "markitdown-mcp arranque en frio",
+  "llamadas": [
+    {
+      "id": "primera_llamada",
+      "tool": "convert_to_markdown",
+      "args": {
+        "uri": "file:///D:/Work/research/FileX/corpus/pdf/tipico_texto.pdf"
+      },
+      "nota": "",
+      "ok": true,
+      "isError": false,
+      "ms": 73.6,
+      "chars_respuesta": 174,
+      "tokens_respuesta": 56,
+      "respuesta_recorte": "FileX - documento de prueba con texto seleccionable\n\nSegunda linea: acentos aeiou n ˆ(cid:145) y simbolos % & @\n\nTabla:  Col A    Col B    Col C\n        1        2        3\n\n",
+      "respuesta_completa_en": null
+    },
+    {
+      "id": "segunda_llamada",
+      "tool": "convert_to_markdown",
+      "args": {
+        "uri": "file:///D:/Work/research/FileX/corpus/pdf/trivial.pdf"
+      },
+      "nota": "",
+      "ok": true,
+      "isError": false,
+      "ms": 53.6,
+      "chars_respuesta": 0,
+      "tokens_respuesta": 0,
+      "respuesta_recorte": "",
+      "respuesta_completa_en": null
+    },
+    {
+      "id": "tercera_llamada",
+      "tool": "convert_to_markdown",
+      "args": {
+        "uri": "file:///D:/Work/research/FileX/corpus/pdf/escaneado_d1.pdf"
+      },
+      "nota": "",
+      "ok": true,
+      "isError": false,
+      "ms": 54.3,
+      "chars_respuesta": 0,
+      "tokens_respuesta": 0,
+      "respuesta_recorte": "",
+      "respuesta_completa_en": null
+    }
+  ],
+  "arranque_frio_ms": 2198.0,
+  "spawn_proceso_ms": 8.8,
+  "handshake_ms": 2189.2,
+  "server_info": {
+    "name": "markitdown",
+    "version": "1.8.1",
+    "protocolVersion": "2024-11-05",
+    "instructions": null
+  },
+  "list_tools_ms": 3.4,
+  "n_herramientas": 1,
+  "herramientas": [
+    {
+      "name": "convert_to_markdown",
+      "title": null,
+      "description": "Convert a resource described by an http:, https:, file: or data: URI to markdown",
+      "annotations": {},
+      "tokens_descripcion": 77,
+      "inputSchema": {
+        "properties": {
+          "uri": {
+            "title": "Uri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "uri"
+        ],
+        "title": "convert_to_markdownArguments",
+        "type": "object"
+      },
+      "outputSchema": null
+    }
+  ],
+  "tokens_catalogo": 79,
+  "n_prompts": 0,
+  "prompts": [],
+  "n_recursos": 0,
+  "recursos": []
+}

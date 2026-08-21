@@ -1,0 +1,822 @@
+{
+  "spec": "bench/salidas-confinamiento-mm/specs/A_ffmpeg.json",
+  "servidor": "ffmpeg-mcp-lite",
+  "llamadas": [
+    {
+      "id": "FF_control_info",
+      "tool": "ffmpeg_get_info",
+      "args": {
+        "file_path": "D:\\Work\\research\\FileX\\bench\\salidas-confinamiento-mm\\sandbox\\raiz\\video.mp4"
+      },
+      "nota": "CONTROL: inspeccionar un fichero DENTRO de la raiz",
+      "espera": null,
+      "ok": true,
+      "isError": false,
+      "ms": 138.6,
+      "patron": "ASA",
+      "n_piezas": 1,
+      "tokens_texto": 213,
+      "tokens_binario_si_se_inyecta": 0,
+      "tokens_total": 213,
+      "bytes_binario": 0,
+      "inviable_para_contexto": false,
+      "piezas": [
+        {
+          "tipo": "text",
+          "clase": "texto",
+          "chars": 598,
+          "tokens": 213
+        }
+      ],
+      "respuesta_recorte": "{\n  \"file\": \"D:\\\\Work\\\\research\\\\FileX\\\\bench\\\\salidas-confinamiento-mm\\\\sandbox\\\\raiz\\\\video.mp4\",\n  \"format\": {\n    \"format_name\": \"mov,mp4,m4a,3gp,3g2,mj2\",\n    \"duration\": \"1.000000\",\n    \"size\": \"13865\",\n    \"bit_rate\": \"110920\"\n  },\n  \"streams\": [\n    {\n      \"index\": 0,\n      \"codec_type\": \"video\",\n      \"codec_name\": \"h264\",\n      \"width\": 128,\n      \"height\": 96,\n      \"fps\": \"10/1\",\n      \"pix_fmt\": \"yuv420p\"\n    },\n    {\n      \"index\": 1,\n      \"codec_type\": \"audio\",\n      \"codec_name\": \"aac\",\n      \"sample_rate\": \"44100\",\n      \"channels\": 1,\n      \"bit_rate\": \"70295\"\n    }\n  ]\n}",
+      "structuredContent": "{\"result\": \"{\\n  \\\"file\\\": \\\"D:\\\\\\\\Work\\\\\\\\research\\\\\\\\FileX\\\\\\\\bench\\\\\\\\salidas-confinamiento-mm\\\\\\\\sandbox\\\\\\\\raiz\\\\\\\\video.mp4\\\",\\n  \\\"format\\\": {\\n    \\\"format_name\\\": \\\"mov,mp4,m4a,3gp,3g2,mj2\\\",\\n    \\\"duration\\\": \\\"1.000000\\\",\\n    \\\"size\\\": \\\"13865\\\",\\n    \\\"bit_rate\\\": \\\"110920\\\"\\n  },\\n  \\\"streams\\\": [\\n    {\\n      \\\"index\\\": 0,\\n      \\\"codec_type\\\": \\\"video\\\",\\n      \\\"codec_name\\\": \\\"h264\\\",\\n      \\\"width\\\": 128,\\n      \\\"height\\\": 96,\\n      \\\"fps\\\": \\\"10/1\\\",\\n      \\\"pix_fmt\\\": \\\"yuv420p\\\"\\n    },\\n    {\\n      \\\"index\\\": 1,\\n      \\\"codec_type\\\": \\\"audio\\\",\\n      \\\"codec_name\\\": \\\"aac\\\",\\n      \\\"sample_rate\\\": \\\"44100\\\",\\n      \\\"channels\\\": 1,\\n      \\\"bit_rate\\\": \\\"70295\\\"\\n    }\\n  ]\\n}\"}",
+      "tokens_structured": 250,
+      "duplica_contenido": true
+    },
+    {
+      "id": "FF_read_fuera_abs",
+      "tool": "ffmpeg_get_info",
+      "args": {
+        "file_path": "D:\\Work\\research\\FileX\\bench\\salidas-confinamiento-mm\\sandbox\\fuera\\video_fuera.mp4"
+      },
+      "nota": "LECTURA fuera de la raiz: ruta absoluta a la hermana prohibida",
+      "espera": null,
+      "ok": true,
+      "isError": false,
+      "ms": 201.7,
+      "patron": "ASA",
+      "n_piezas": 1,
+      "tokens_texto": 163,
+      "tokens_binario_si_se_inyecta": 0,
+      "tokens_total": 163,
+      "bytes_binario": 0,
+      "inviable_para_contexto": false,
+      "piezas": [
+        {
+          "tipo": "text",
+          "clase": "texto",
+          "chars": 438,
+          "tokens": 163
+        }
+      ],
+      "respuesta_recorte": "{\n  \"file\": \"D:\\\\Work\\\\research\\\\FileX\\\\bench\\\\salidas-confinamiento-mm\\\\sandbox\\\\fuera\\\\video_fuera.mp4\",\n  \"format\": {\n    \"format_name\": \"mov,mp4,m4a,3gp,3g2,mj2\",\n    \"duration\": \"1.000000\",\n    \"size\": \"2845\",\n    \"bit_rate\": \"22760\"\n  },\n  \"streams\": [\n    {\n      \"index\": 0,\n      \"codec_type\": \"video\",\n      \"codec_name\": \"h264\",\n      \"width\": 64,\n      \"height\": 48,\n      \"fps\": \"10/1\",\n      \"pix_fmt\": \"yuv420p\"\n    }\n  ]\n}",
+      "structuredContent": "{\"result\": \"{\\n  \\\"file\\\": \\\"D:\\\\\\\\Work\\\\\\\\research\\\\\\\\FileX\\\\\\\\bench\\\\\\\\salidas-confinamiento-mm\\\\\\\\sandbox\\\\\\\\fuera\\\\\\\\video_fuera.mp4\\\",\\n  \\\"format\\\": {\\n    \\\"format_name\\\": \\\"mov,mp4,m4a,3gp,3g2,mj2\\\",\\n    \\\"duration\\\": \\\"1.000000\\\",\\n    \\\"size\\\": \\\"2845\\\",\\n    \\\"bit_rate\\\": \\\"22760\\\"\\n  },\\n  \\\"streams\\\": [\\n    {\\n      \\\"index\\\": 0,\\n      \\\"codec_type\\\": \\\"video\\\",\\n      \\\"codec_name\\\": \\\"h264\\\",\\n      \\\"width\\\": 64,\\n      \\\"height\\\": 48,\\n      \\\"fps\\\": \\\"10/1\\\",\\n      \\\"pix_fmt\\\": \\\"yuv420p\\\"\\n    }\\n  ]\\n}\"}",
+      "tokens_structured": 191,
+      "duplica_contenido": true
+    },
+    {
+      "id": "FF_read_travesia",
+      "tool": "ffmpeg_get_info",
+      "args": {
+        "file_path": "D:\\Work\\research\\FileX\\bench\\salidas-confinamiento-mm\\sandbox\\raiz\\..\\fuera\\video_fuera.mp4"
+      },
+      "nota": "LECTURA por travesia: RAIZ\\..\\fuera\\...",
+      "espera": null,
+      "ok": true,
+      "isError": false,
+      "ms": 135.0,
+      "patron": "ASA",
+      "n_piezas": 1,
+      "tokens_texto": 163,
+      "tokens_binario_si_se_inyecta": 0,
+      "tokens_total": 163,
+      "bytes_binario": 0,
+      "inviable_para_contexto": false,
+      "piezas": [
+        {
+          "tipo": "text",
+          "clase": "texto",
+          "chars": 438,
+          "tokens": 163
+        }
+      ],
+      "respuesta_recorte": "{\n  \"file\": \"D:\\\\Work\\\\research\\\\FileX\\\\bench\\\\salidas-confinamiento-mm\\\\sandbox\\\\fuera\\\\video_fuera.mp4\",\n  \"format\": {\n    \"format_name\": \"mov,mp4,m4a,3gp,3g2,mj2\",\n    \"duration\": \"1.000000\",\n    \"size\": \"2845\",\n    \"bit_rate\": \"22760\"\n  },\n  \"streams\": [\n    {\n      \"index\": 0,\n      \"codec_type\": \"video\",\n      \"codec_name\": \"h264\",\n      \"width\": 64,\n      \"height\": 48,\n      \"fps\": \"10/1\",\n      \"pix_fmt\": \"yuv420p\"\n    }\n  ]\n}",
+      "structuredContent": "{\"result\": \"{\\n  \\\"file\\\": \\\"D:\\\\\\\\Work\\\\\\\\research\\\\\\\\FileX\\\\\\\\bench\\\\\\\\salidas-confinamiento-mm\\\\\\\\sandbox\\\\\\\\fuera\\\\\\\\video_fuera.mp4\\\",\\n  \\\"format\\\": {\\n    \\\"format_name\\\": \\\"mov,mp4,m4a,3gp,3g2,mj2\\\",\\n    \\\"duration\\\": \\\"1.000000\\\",\\n    \\\"size\\\": \\\"2845\\\",\\n    \\\"bit_rate\\\": \\\"22760\\\"\\n  },\\n  \\\"streams\\\": [\\n    {\\n      \\\"index\\\": 0,\\n      \\\"codec_type\\\": \\\"video\\\",\\n      \\\"codec_name\\\": \\\"h264\\\",\\n      \\\"width\\\": 64,\\n      \\\"height\\\": 48,\\n      \\\"fps\\\": \\\"10/1\\\",\\n      \\\"pix_fmt\\\": \\\"yuv420p\\\"\\n    }\\n  ]\\n}\"}",
+      "tokens_structured": 191,
+      "duplica_contenido": true
+    },
+    {
+      "id": "FF_read_sys_exists",
+      "tool": "ffmpeg_get_info",
+      "args": {
+        "file_path": "C:\\Windows\\win.ini"
+      },
+      "nota": "LECTURA de fichero real del sistema (existe, no es media): distingue de no-existe",
+      "espera": null,
+      "ok": true,
+      "isError": true,
+      "ms": 64.8,
+      "patron": "PROSA",
+      "n_piezas": 1,
+      "tokens_texto": 13,
+      "tokens_binario_si_se_inyecta": 0,
+      "tokens_total": 13,
+      "bytes_binario": 0,
+      "inviable_para_contexto": false,
+      "piezas": [
+        {
+          "tipo": "text",
+          "clase": "texto",
+          "chars": 54,
+          "tokens": 13
+        }
+      ],
+      "respuesta_recorte": "Error executing tool ffmpeg_get_info: ffprobe failed: "
+    },
+    {
+      "id": "FF_read_sys_noexist",
+      "tool": "ffmpeg_get_info",
+      "args": {
+        "file_path": "C:\\Windows\\no_existe_jamas.ini"
+      },
+      "nota": "oraculo de existencia: fichero inexistente fuera de la raiz",
+      "espera": null,
+      "ok": true,
+      "isError": true,
+      "ms": 3.2,
+      "patron": "ASA",
+      "n_piezas": 1,
+      "tokens_texto": 22,
+      "tokens_binario_si_se_inyecta": 0,
+      "tokens_total": 22,
+      "bytes_binario": 0,
+      "inviable_para_contexto": false,
+      "piezas": [
+        {
+          "tipo": "text",
+          "clase": "texto",
+          "chars": 84,
+          "tokens": 22
+        }
+      ],
+      "respuesta_recorte": "Error executing tool ffmpeg_get_info: File not found: C:\\Windows\\no_existe_jamas.ini"
+    },
+    {
+      "id": "FF_read_ads",
+      "tool": "ffmpeg_get_info",
+      "args": {
+        "file_path": "D:\\Work\\research\\FileX\\bench\\salidas-confinamiento-mm\\sandbox\\raiz\\entrada.png:oculto"
+      },
+      "nota": "ADS: flujo alternativo dentro de la raiz",
+      "espera": null,
+      "ok": true,
+      "isError": true,
+      "ms": 105.5,
+      "patron": "PROSA",
+      "n_piezas": 1,
+      "tokens_texto": 13,
+      "tokens_binario_si_se_inyecta": 0,
+      "tokens_total": 13,
+      "bytes_binario": 0,
+      "inviable_para_contexto": false,
+      "piezas": [
+        {
+          "tipo": "text",
+          "clase": "texto",
+          "chars": 54,
+          "tokens": 13
+        }
+      ],
+      "respuesta_recorte": "Error executing tool ffmpeg_get_info: ffprobe failed: "
+    },
+    {
+      "id": "FF_write_convert_confina",
+      "tool": "ffmpeg_convert",
+      "args": {
+        "file_path": "D:\\Work\\research\\FileX\\bench\\salidas-confinamiento-mm\\sandbox\\raiz\\video.mp4",
+        "output_format": "mp3"
+      },
+      "nota": "convert NO tiene output_path: la salida se confina a FFMPEG_OUTPUT_DIR (RAIZ). Deberia caer en RAIZ pese a no poder elegirla.",
+      "espera": null,
+      "ok": true,
+      "isError": false,
+      "ms": 296.7,
+      "patron": "ASA",
+      "n_piezas": 1,
+      "tokens_texto": 30,
+      "tokens_binario_si_se_inyecta": 0,
+      "tokens_total": 30,
+      "bytes_binario": 0,
+      "inviable_para_contexto": false,
+      "piezas": [
+        {
+          "tipo": "text",
+          "clase": "texto",
+          "chars": 110,
+          "tokens": 30
+        }
+      ],
+      "respuesta_recorte": "Converted successfully: D:\\Work\\research\\FileX\\bench\\salidas-confinamiento-mm\\sandbox\\raiz\\video_converted.mp3",
+      "structuredContent": "{\"result\": \"Converted successfully: D:\\\\Work\\\\research\\\\FileX\\\\bench\\\\salidas-confinamiento-mm\\\\sandbox\\\\raiz\\\\video_converted.mp3\"}",
+      "tokens_structured": 36,
+      "duplica_contenido": true
+    },
+    {
+      "id": "FF_write_merge_fuera",
+      "tool": "ffmpeg_merge",
+      "args": {
+        "file_paths": [
+          "D:\\Work\\research\\FileX\\bench\\salidas-confinamiento-mm\\sandbox\\raiz\\video.mp4",
+          "D:\\Work\\research\\FileX\\bench\\salidas-confinamiento-mm\\sandbox\\raiz\\video2.mp4"
+        ],
+        "output_path": "D:\\Work\\research\\FileX\\bench\\salidas-confinamiento-mm\\sandbox\\fuera\\merged_LEAK.mp4"
+      },
+      "nota": "FUGA declarada merge.py:38-39: output_path arbitrario FUERA de la raiz",
+      "espera": null,
+      "ok": true,
+      "isError": false,
+      "ms": 191.6,
+      "patron": "ASA",
+      "n_piezas": 1,
+      "tokens_texto": 33,
+      "tokens_binario_si_se_inyecta": 0,
+      "tokens_total": 33,
+      "bytes_binario": 0,
+      "inviable_para_contexto": false,
+      "piezas": [
+        {
+          "tipo": "text",
+          "clase": "texto",
+          "chars": 112,
+          "tokens": 33
+        }
+      ],
+      "respuesta_recorte": "Merged 2 files successfully: D:\\Work\\research\\FileX\\bench\\salidas-confinamiento-mm\\sandbox\\fuera\\merged_LEAK.mp4",
+      "structuredContent": "{\"result\": \"Merged 2 files successfully: D:\\\\Work\\\\research\\\\FileX\\\\bench\\\\salidas-confinamiento-mm\\\\sandbox\\\\fuera\\\\merged_LEAK.mp4\"}",
+      "tokens_structured": 39,
+      "duplica_contenido": true
+    },
+    {
+      "id": "FF_write_subs_fuera",
+      "tool": "ffmpeg_add_subtitles",
+      "args": {
+        "file_path": "D:\\Work\\research\\FileX\\bench\\salidas-confinamiento-mm\\sandbox\\raiz\\video.mp4",
+        "subtitle_path": "D:\\Work\\research\\FileX\\bench\\salidas-confinamiento-mm\\sandbox\\raiz\\subs.srt",
+        "output_path": "D:\\Work\\research\\FileX\\bench\\salidas-confinamiento-mm\\sandbox\\fuera\\subbed_LEAK.mp4"
+      },
+      "nota": "FUGA declarada subtitles.py:72-73: output_path arbitrario FUERA de la raiz",
+      "espera": null,
+      "ok": true,
+      "isError": true,
+      "ms": 99.0,
+      "patron": "ASA",
+      "n_piezas": 1,
+      "tokens_texto": 1372,
+      "tokens_binario_si_se_inyecta": 0,
+      "tokens_total": 1372,
+      "bytes_binario": 0,
+      "inviable_para_contexto": false,
+      "piezas": [
+        {
+          "tipo": "text",
+          "clase": "texto",
+          "chars": 3901,
+          "tokens": 1372
+        }
+      ],
+      "respuesta_recorte": "Error executing tool ffmpeg_add_subtitles: ffmpeg add subtitles failed: ffmpeg version N-121159-g0bd5a7d371-20250921 Copyright (c) 2000-2025 the FFmpeg developers\r\n  built with gcc 15.2.0 (crosstool-NG 1.28.0.1_403899e)\r\n  configuration: --prefix=/ffbuild/prefix --pkg-config-flags=--static --pkg-config=pkg-config --cross-prefix=x86_64-w64-mingw32- --arch=x86_64 --target-os=mingw32 --enable-gpl --enable-version3 --disable-debug --enable-shared --disable-static --disable-w32threads --enable-pthreads --enable-iconv --enable-zlib --enable-libxml2 --enable-libvmaf --enable-fontconfig --enable-libharfbuzz --enable-libfreetype --enable-libfribidi --enable-vulkan --enable-libshaderc --enable-libvorbis --disable-libxcb --disable-xlib --disable-libpulse --enable-opencl --enable-gmp --enable-lzma --enable-amf --enable-libaom --enable-libaribb24 --enable-avisynth --enable-chromaprint --enable-libdav1d --enable-libdavs2 --enable-libdvdread --enable-libdvdnav --disable-libfdk-aac --enable-ffnvcodec --enable-cuda-llvm --enable-frei0r --enable-libgme --enable-libkvazaar --enable-libaribcaption --enable-libass --enable-libbluray --enable-libjxl --enable-libmp3lame --enable-libopus --enable-libplacebo --enable-librist --enable-libssh --enable-libtheora --enable-libvpx --enable-libwebp --enable-libzmq --enable-lv2 --enable-libvpl --enable-openal --enable-liboapv --enable-libopencore-amrnb --enabl"
+    },
+    {
+      "id": "FF_write_merge_syswin",
+      "tool": "ffmpeg_merge",
+      "args": {
+        "file_paths": [
+          "D:\\Work\\research\\FileX\\bench\\salidas-confinamiento-mm\\sandbox\\raiz\\video.mp4",
+          "D:\\Work\\research\\FileX\\bench\\salidas-confinamiento-mm\\sandbox\\raiz\\video2.mp4"
+        ],
+        "output_path": "C:\\Windows\\Temp\\filex_no_debe_existir_merge.mp4"
+      },
+      "nota": "escritura arbitraria a C:\\Windows\\Temp (deberia poder; NO se limpia por rule: es una carpeta temporal del sistema, se borra en el arnes)",
+      "espera": null,
+      "ok": true,
+      "isError": false,
+      "ms": 177.8,
+      "patron": "ASA",
+      "n_piezas": 1,
+      "tokens_texto": 22,
+      "tokens_binario_si_se_inyecta": 0,
+      "tokens_total": 22,
+      "bytes_binario": 0,
+      "inviable_para_contexto": false,
+      "piezas": [
+        {
+          "tipo": "text",
+          "clase": "texto",
+          "chars": 76,
+          "tokens": 22
+        }
+      ],
+      "respuesta_recorte": "Merged 2 files successfully: C:\\Windows\\Temp\\filex_no_debe_existir_merge.mp4",
+      "structuredContent": "{\"result\": \"Merged 2 files successfully: C:\\\\Windows\\\\Temp\\\\filex_no_debe_existir_merge.mp4\"}",
+      "tokens_structured": 27,
+      "duplica_contenido": true
+    }
+  ],
+  "arranque_frio_ms": 1385.2,
+  "spawn_proceso_ms": 12.9,
+  "handshake_ms": 1372.3,
+  "server_info": {
+    "name": "ffmpeg-mcp",
+    "version": "1.29.0",
+    "protocolVersion": "2024-11-05",
+    "instructions": null
+  },
+  "list_tools_ms": 4.7,
+  "n_herramientas": 8,
+  "herramientas": [
+    {
+      "name": "ffmpeg_get_info",
+      "description": "Get video/audio file metadata using ffprobe.\n\n    Args:\n        file_path: Path to the media file\n\n    Returns:\n        JSON string with media metadata including duration, resolution,\n        codecs, bitrate, and stream information",
+      "annotations": {},
+      "tiene_readOnlyHint": false,
+      "tiene_destructiveHint": false,
+      "tokens_declaracion": 159,
+      "inputSchema": {
+        "properties": {
+          "file_path": {
+            "title": "File Path",
+            "type": "string"
+          }
+        },
+        "required": [
+          "file_path"
+        ],
+        "title": "ffmpeg_get_infoArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "properties": {
+          "result": {
+            "title": "Result",
+            "type": "string"
+          }
+        },
+        "required": [
+          "result"
+        ],
+        "title": "ffmpeg_get_infoOutput",
+        "type": "object"
+      }
+    },
+    {
+      "name": "ffmpeg_convert",
+      "description": "Convert video/audio to a different format.\n\n    Args:\n        file_path: Path to the input media file\n        output_format: Target format (e.g., mp4, mkv, webm, mp3, wav)\n        scale: Optional resolution scale (e.g., \"1280:720\", \"1920:-1\" for auto height)\n        video_codec: Optional video codec (e.g., libx264, libx265, libvpx-vp9)\n        audio_codec: Optional audio codec (e.g., aac, mp3, opus)\n\n    Returns:\n        Path to the converted file",
+      "annotations": {},
+      "tiene_readOnlyHint": false,
+      "tiene_destructiveHint": false,
+      "tokens_declaracion": 359,
+      "inputSchema": {
+        "properties": {
+          "file_path": {
+            "title": "File Path",
+            "type": "string"
+          },
+          "output_format": {
+            "title": "Output Format",
+            "type": "string"
+          },
+          "scale": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Scale"
+          },
+          "video_codec": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Video Codec"
+          },
+          "audio_codec": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Audio Codec"
+          }
+        },
+        "required": [
+          "file_path",
+          "output_format"
+        ],
+        "title": "ffmpeg_convertArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "properties": {
+          "result": {
+            "title": "Result",
+            "type": "string"
+          }
+        },
+        "required": [
+          "result"
+        ],
+        "title": "ffmpeg_convertOutput",
+        "type": "object"
+      }
+    },
+    {
+      "name": "ffmpeg_compress",
+      "description": "Compress a video file to reduce file size.\n\n    Args:\n        file_path: Path to the input video file\n        quality: Compression quality level - \"low\" (smallest file), \"medium\", or \"high\" (best quality)\n        scale: Optional resolution scale (e.g., \"1280:720\", \"1920:-1\" for auto height)\n        preset: Encoding speed preset - faster presets = larger files, slower = smaller files\n\n    Returns:\n        Path to the compressed file",
+      "annotations": {},
+      "tiene_readOnlyHint": false,
+      "tiene_destructiveHint": false,
+      "tokens_declaracion": 341,
+      "inputSchema": {
+        "properties": {
+          "file_path": {
+            "title": "File Path",
+            "type": "string"
+          },
+          "quality": {
+            "default": "medium",
+            "enum": [
+              "low",
+              "medium",
+              "high"
+            ],
+            "title": "Quality",
+            "type": "string"
+          },
+          "scale": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Scale"
+          },
+          "preset": {
+            "default": "medium",
+            "enum": [
+              "ultrafast",
+              "superfast",
+              "veryfast",
+              "faster",
+              "fast",
+              "medium",
+              "slow",
+              "slower",
+              "veryslow"
+            ],
+            "title": "Preset",
+            "type": "string"
+          }
+        },
+        "required": [
+          "file_path"
+        ],
+        "title": "ffmpeg_compressArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "properties": {
+          "result": {
+            "title": "Result",
+            "type": "string"
+          }
+        },
+        "required": [
+          "result"
+        ],
+        "title": "ffmpeg_compressOutput",
+        "type": "object"
+      }
+    },
+    {
+      "name": "ffmpeg_trim",
+      "description": "Trim a video to extract a specific segment.\n\n    Args:\n        file_path: Path to the input video file\n        start_time: Start time (e.g., \"00:01:30\" or \"90\" for 90 seconds)\n        end_time: End time (e.g., \"00:02:00\"). Mutually exclusive with duration.\n        duration: Duration of the clip (e.g., \"30\" for 30 seconds). Mutually exclusive with end_time.\n\n    Returns:\n        Path to the trimmed file",
+      "annotations": {},
+      "tiene_readOnlyHint": false,
+      "tiene_destructiveHint": false,
+      "tokens_declaracion": 307,
+      "inputSchema": {
+        "properties": {
+          "file_path": {
+            "title": "File Path",
+            "type": "string"
+          },
+          "start_time": {
+            "title": "Start Time",
+            "type": "string"
+          },
+          "end_time": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "End Time"
+          },
+          "duration": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Duration"
+          }
+        },
+        "required": [
+          "file_path",
+          "start_time"
+        ],
+        "title": "ffmpeg_trimArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "properties": {
+          "result": {
+            "title": "Result",
+            "type": "string"
+          }
+        },
+        "required": [
+          "result"
+        ],
+        "title": "ffmpeg_trimOutput",
+        "type": "object"
+      }
+    },
+    {
+      "name": "ffmpeg_extract_audio",
+      "description": "Extract audio track from a video file.\n\n    Args:\n        file_path: Path to the input video file\n        audio_format: Output audio format (mp3, aac, wav, flac, ogg, opus)\n        bitrate: Audio bitrate (e.g., \"128k\", \"192k\", \"320k\"). If not specified, uses format default.\n\n    Returns:\n        Path to the extracted audio file",
+      "annotations": {},
+      "tiene_readOnlyHint": false,
+      "tiene_destructiveHint": false,
+      "tokens_declaracion": 282,
+      "inputSchema": {
+        "properties": {
+          "file_path": {
+            "title": "File Path",
+            "type": "string"
+          },
+          "audio_format": {
+            "default": "mp3",
+            "enum": [
+              "mp3",
+              "aac",
+              "wav",
+              "flac",
+              "ogg",
+              "opus"
+            ],
+            "title": "Audio Format",
+            "type": "string"
+          },
+          "bitrate": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Bitrate"
+          }
+        },
+        "required": [
+          "file_path"
+        ],
+        "title": "ffmpeg_extract_audioArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "properties": {
+          "result": {
+            "title": "Result",
+            "type": "string"
+          }
+        },
+        "required": [
+          "result"
+        ],
+        "title": "ffmpeg_extract_audioOutput",
+        "type": "object"
+      }
+    },
+    {
+      "name": "ffmpeg_merge",
+      "description": "Concatenate multiple video files into one.\n\n    Args:\n        file_paths: List of paths to video files to merge (in order)\n        output_path: Optional output file path. If not specified, saves to default output directory.\n\n    Returns:\n        Path to the merged file",
+      "annotations": {},
+      "tiene_readOnlyHint": false,
+      "tiene_destructiveHint": false,
+      "tokens_declaracion": 210,
+      "inputSchema": {
+        "properties": {
+          "file_paths": {
+            "items": {
+              "type": "string"
+            },
+            "title": "File Paths",
+            "type": "array"
+          },
+          "output_path": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Output Path"
+          }
+        },
+        "required": [
+          "file_paths"
+        ],
+        "title": "ffmpeg_mergeArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "properties": {
+          "result": {
+            "title": "Result",
+            "type": "string"
+          }
+        },
+        "required": [
+          "result"
+        ],
+        "title": "ffmpeg_mergeOutput",
+        "type": "object"
+      }
+    },
+    {
+      "name": "ffmpeg_extract_frames",
+      "description": "Extract frames from a video as images.\n\n    Args:\n        file_path: Path to the input video file\n        interval: Extract one frame every N seconds (e.g., 1.0 for one frame per second)\n        count: Total number of frames to extract (evenly distributed). Mutually exclusive with interval.\n        format: Output image format (jpg, png, bmp, webp)\n\n    Returns:\n        Path to the directory containing extracted frames",
+      "annotations": {},
+      "tiene_readOnlyHint": false,
+      "tiene_destructiveHint": false,
+      "tokens_declaracion": 308,
+      "inputSchema": {
+        "properties": {
+          "file_path": {
+            "title": "File Path",
+            "type": "string"
+          },
+          "interval": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Interval"
+          },
+          "count": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Count"
+          },
+          "format": {
+            "default": "jpg",
+            "enum": [
+              "jpg",
+              "png",
+              "bmp",
+              "webp"
+            ],
+            "title": "Format",
+            "type": "string"
+          }
+        },
+        "required": [
+          "file_path"
+        ],
+        "title": "ffmpeg_extract_framesArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "properties": {
+          "result": {
+            "title": "Result",
+            "type": "string"
+          }
+        },
+        "required": [
+          "result"
+        ],
+        "title": "ffmpeg_extract_framesOutput",
+        "type": "object"
+      }
+    },
+    {
+      "name": "ffmpeg_add_subtitles",
+      "description": "Add subtitles to a video file (burn-in/hardcode).\n\n    Args:\n        file_path: Path to the input video file\n        subtitle_path: Path to the subtitle file (SRT, ASS, VTT)\n        style: Subtitle style - \"outline\" (default), \"shadow\", \"background\", or \"glow\"\n        font_size: Font size for subtitles (default: 24)\n        output_path: Optional output file path. If not specified, saves to default output directory.\n\n    Returns:\n        Path to the output video with subtitles",
+      "annotations": {},
+      "tiene_readOnlyHint": false,
+      "tiene_destructiveHint": false,
+      "tokens_declaracion": 347,
+      "inputSchema": {
+        "properties": {
+          "file_path": {
+            "title": "File Path",
+            "type": "string"
+          },
+          "subtitle_path": {
+            "title": "Subtitle Path",
+            "type": "string"
+          },
+          "style": {
+            "default": "outline",
+            "enum": [
+              "outline",
+              "shadow",
+              "background",
+              "glow"
+            ],
+            "title": "Style",
+            "type": "string"
+          },
+          "font_size": {
+            "default": 24,
+            "title": "Font Size",
+            "type": "integer"
+          },
+          "output_path": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Output Path"
+          }
+        },
+        "required": [
+          "file_path",
+          "subtitle_path"
+        ],
+        "title": "ffmpeg_add_subtitlesArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "properties": {
+          "result": {
+            "title": "Result",
+            "type": "string"
+          }
+        },
+        "required": [
+          "result"
+        ],
+        "title": "ffmpeg_add_subtitlesOutput",
+        "type": "object"
+      }
+    }
+  ],
+  "tokens_catalogo": 2322,
+  "n_anotadas": 0,
+  "n_prompts": 0,
+  "prompts": [],
+  "n_recursos": 0,
+  "recursos": []
+}

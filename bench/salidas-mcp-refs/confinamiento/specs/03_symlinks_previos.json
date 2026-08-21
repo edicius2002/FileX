@@ -1,0 +1,72 @@
+{
+ "nombre": "filesystem-symlinks-previos",
+ "command": "npx.cmd",
+ "args": [
+  "-y",
+  "@modelcontextprotocol/server-filesystem",
+  "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\permitido"
+ ],
+ "cwd": "D:/Work/research/FileX/bench/salidas-mcp-refs/confinamiento",
+ "env": {},
+ "stderr_log": "D:/Work/research/FileX/bench/salidas-mcp-refs/confinamiento/logs/fs_symlinks_previos.stderr.log",
+ "pasos": [
+  {
+   "id": "cat_allowed",
+   "tool": "list_allowed_directories",
+   "args": {},
+   "nota": "allowlist tras resolver symlinks al arrancar",
+   "recorte": 1200,
+   "timeout": 60
+  },
+  {
+   "id": "S1_control_interno",
+   "tool": "read_text_file",
+   "args": {
+    "path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\permitido\\link_interno.txt"
+   },
+   "nota": "CONTROL: symlink dentro->dentro, debe funcionar",
+   "recorte": 1200,
+   "timeout": 60
+  },
+  {
+   "id": "S2_link_fuera",
+   "tool": "read_text_file",
+   "args": {
+    "path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\permitido\\link_fuera.txt"
+   },
+   "nota": "symlink dentro->fuera (creado ANTES de arrancar)",
+   "recorte": 1200,
+   "timeout": 60
+  },
+  {
+   "id": "S3_junc_fuera",
+   "tool": "read_text_file",
+   "args": {
+    "path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\permitido\\junc_fuera\\secreto.txt"
+   },
+   "nota": "junction de directorio dentro->fuera (creada ANTES)",
+   "recorte": 1200,
+   "timeout": 60
+  },
+  {
+   "id": "S4_link_win",
+   "tool": "read_text_file",
+   "args": {
+    "path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\permitido\\link_win.txt"
+   },
+   "nota": "symlink dentro->C:\\Windows\\win.ini",
+   "recorte": 1200,
+   "timeout": 60
+  },
+  {
+   "id": "S5_ls",
+   "tool": "list_directory",
+   "args": {
+    "path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\permitido"
+   },
+   "nota": "que ve el servidor en la raiz",
+   "recorte": 1200,
+   "timeout": 60
+  }
+ ]
+}

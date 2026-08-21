@@ -1,0 +1,778 @@
+<title>Ecosistema de conversión de archivos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+
+<style>
+:root{
+  --ground:#F0F3F6;
+  --surface:#FFFFFF;
+  --surface-2:#E7ECF1;
+  --ink:#141C25;
+  --ink-2:#3C4A57;
+  --ink-3:#6B7A88;
+  --rule:#CBD5DE;
+  --rule-strong:#9FAEBC;
+  --accent:#9E4E1B;
+  --accent-soft:#F3E3D6;
+  --ok:#2A6B4F;
+  --no:#9A2F26;
+  --warn:#8A5D0F;
+  --code-bg:#E7ECF1;
+  --shadow:0 1px 2px rgba(20,28,37,.06),0 8px 24px -12px rgba(20,28,37,.18);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#10151B;
+    --surface:#171E26;
+    --surface-2:#1E2731;
+    --ink:#E3E9EF;
+    --ink-2:#B3BEC9;
+    --ink-3:#7F8D9B;
+    --rule:#2A3542;
+    --rule-strong:#3E4C5B;
+    --accent:#E08A47;
+    --accent-soft:#2E2318;
+    --ok:#5FB98C;
+    --no:#E0776B;
+    --warn:#D6A344;
+    --code-bg:#1E2731;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px -12px rgba(0,0,0,.6);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#10151B;
+  --surface:#171E26;
+  --surface-2:#1E2731;
+  --ink:#E3E9EF;
+  --ink-2:#B3BEC9;
+  --ink-3:#7F8D9B;
+  --rule:#2A3542;
+  --rule-strong:#3E4C5B;
+  --accent:#E08A47;
+  --accent-soft:#2E2318;
+  --ok:#5FB98C;
+  --no:#E0776B;
+  --warn:#D6A344;
+  --code-bg:#1E2731;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px -12px rgba(0,0,0,.6);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--ground);
+  color:var(--ink);
+  font-family:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
+  font-size:16.5px;
+  line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{
+  font-family:"IBM Plex Sans Condensed","IBM Plex Sans",system-ui,sans-serif;
+  font-weight:700;
+  text-wrap:balance;
+  line-height:1.15;
+  margin:0;
+  letter-spacing:-.005em;
+}
+p{margin:0}
+a{color:var(--accent);text-underline-offset:3px}
+code,kbd{font-family:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+
+/* ---------- shell ---------- */
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(18px,4vw,40px)}
+.col{max-width:70ch}
+
+/* ---------- masthead ---------- */
+.masthead{border-bottom:2px solid var(--ink);padding-top:clamp(32px,6vw,64px);padding-bottom:22px}
+.eyebrow{
+  font-family:"IBM Plex Mono",monospace;font-size:11.5px;font-weight:500;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);
+  display:flex;flex-wrap:wrap;gap:6px 18px;margin-bottom:20px;
+}
+.eyebrow b{color:var(--accent);font-weight:500}
+h1{font-size:clamp(34px,6.4vw,62px);letter-spacing:-.02em}
+.standfirst{
+  margin-top:18px;max-width:62ch;font-size:clamp(17px,2.1vw,20px);
+  color:var(--ink-2);line-height:1.5;
+}
+.standfirst strong{color:var(--ink);font-weight:600}
+
+/* ---------- stat strip ---------- */
+.stats{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  border-bottom:1px solid var(--rule);
+}
+.stat{padding:20px 22px 20px 0;border-right:1px solid var(--rule)}
+.stat:last-child{border-right:0}
+.stat .n{
+  font-family:"IBM Plex Sans Condensed",sans-serif;font-weight:700;
+  font-size:clamp(28px,4vw,40px);line-height:1;letter-spacing:-.02em;
+  font-variant-numeric:tabular-nums;display:block;
+}
+.stat .n em{font-style:normal;color:var(--accent)}
+.stat .l{
+  font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--ink-3);margin-top:9px;display:block;line-height:1.4;
+}
+
+/* ---------- sections ---------- */
+section{padding:clamp(44px,7vw,76px) 0;border-bottom:1px solid var(--rule)}
+section:last-of-type{border-bottom:0}
+.sec-head{display:flex;gap:16px;align-items:baseline;margin-bottom:14px}
+.sec-num{
+  font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:500;
+  color:var(--accent);letter-spacing:.1em;flex:none;padding-top:6px;
+}
+h2{font-size:clamp(25px,3.9vw,38px)}
+h3{font-size:clamp(18px,2.4vw,22px);margin-top:38px;margin-bottom:10px}
+h4{font-size:15.5px;margin-top:26px;margin-bottom:6px;font-family:"IBM Plex Sans",sans-serif;font-weight:600}
+.lede{color:var(--ink-2);font-size:17.5px;margin-top:8px}
+section p+p{margin-top:15px}
+section h3+p,section h4+p{margin-top:0}
+
+/* ---------- provenance ---------- */
+.prov{
+  font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-3);
+  border-left:2px solid var(--rule-strong);padding:3px 0 3px 12px;margin-top:14px;
+  line-height:1.55;overflow-x:auto;
+}
+.prov b{color:var(--ink-2);font-weight:500}
+
+/* ---------- finding cards ---------- */
+.findings{display:grid;gap:20px;margin-top:26px}
+@media(min-width:860px){.findings.two{grid-template-columns:1fr 1fr}}
+.finding{
+  background:var(--surface);border:1px solid var(--rule);border-radius:3px;
+  padding:24px 24px 22px;box-shadow:var(--shadow);
+}
+.finding .tag{
+  font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--accent);display:block;margin-bottom:9px;
+}
+.finding h3{margin:0 0 8px;font-size:19px}
+.finding p{font-size:15.5px;color:var(--ink-2)}
+.finding p strong{color:var(--ink)}
+
+/* ---------- code ---------- */
+pre{
+  background:var(--code-bg);border:1px solid var(--rule);border-radius:3px;
+  padding:15px 17px;overflow-x:auto;margin:16px 0 0;
+  font-size:13px;line-height:1.65;
+}
+pre code{color:var(--ink-2)}
+pre .hl{color:var(--accent);font-weight:500}
+pre .cm{color:var(--ink-3);font-style:italic}
+p code,li code,td code,th code{
+  background:var(--code-bg);padding:.1em .38em;border-radius:2px;font-size:.87em;
+}
+
+/* ---------- tables ---------- */
+.tscroll{overflow-x:auto;margin-top:22px;border:1px solid var(--rule);border-radius:3px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14.5px;min-width:520px}
+th,td{padding:11px 14px;text-align:left;border-bottom:1px solid var(--rule);vertical-align:top}
+thead th{
+  font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-3);font-weight:500;
+  border-bottom:1px solid var(--rule-strong);white-space:nowrap;
+}
+tbody tr:last-child td{border-bottom:0}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;font-family:"IBM Plex Mono",monospace}
+td.nm{font-family:"IBM Plex Mono",monospace;font-size:13.5px;white-space:nowrap}
+tr.hi td{background:var(--accent-soft)}
+.yes{color:var(--ok);font-weight:600}
+.no{color:var(--no);font-weight:600}
+.wa{color:var(--warn);font-weight:600}
+
+/* ---------- pills ---------- */
+.pill{
+  display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:10.5px;
+  letter-spacing:.06em;padding:2px 7px;border-radius:2px;border:1px solid currentColor;
+  white-space:nowrap;
+}
+.pill.ok{color:var(--ok)}
+.pill.no{color:var(--no)}
+.pill.wa{color:var(--warn)}
+
+/* ---------- gap ledger ---------- */
+.gaps{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:3px;margin-top:26px;overflow:hidden}
+.gap{background:var(--surface);padding:22px 24px;display:grid;gap:10px}
+@media(min-width:800px){.gap{grid-template-columns:44px 1fr 200px;align-items:start;gap:22px}}
+.gap .rank{
+  font-family:"IBM Plex Sans Condensed",sans-serif;font-weight:700;font-size:30px;
+  color:var(--accent);line-height:1;font-variant-numeric:tabular-nums;
+}
+.gap h3{margin:0 0 5px;font-size:19px}
+.gap p{font-size:15px;color:var(--ink-2)}
+.gap .cost{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-3);line-height:1.6}
+.gap .cost b{display:block;color:var(--ink);font-weight:500;font-size:12.5px;margin-bottom:2px}
+
+/* ---------- callout ---------- */
+.callout{
+  border-left:3px solid var(--accent);background:var(--surface);
+  padding:20px 24px;margin-top:26px;border-radius:0 3px 3px 0;box-shadow:var(--shadow);
+}
+.callout .k{
+  font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--accent);display:block;margin-bottom:8px;
+}
+.callout p{font-size:16px}
+
+/* ---------- bars ---------- */
+.bars{margin-top:24px;display:grid;gap:14px}
+.bar-row{display:grid;grid-template-columns:minmax(120px,190px) 1fr auto;gap:14px;align-items:center;font-size:14px}
+.bar-row .lab{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink-2)}
+.bar-track{background:var(--surface-2);height:22px;border-radius:2px;overflow:hidden}
+.bar-fill{height:100%;background:var(--rule-strong);border-radius:2px}
+.bar-fill.acc{background:var(--accent)}
+.bar-row .val{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;font-size:13px;color:var(--ink);white-space:nowrap}
+
+/* ---------- stack diagram ---------- */
+.stack{margin-top:26px;display:grid;gap:10px;font-family:"IBM Plex Mono",monospace;font-size:13px}
+.layer{border:1px solid var(--rule);background:var(--surface);border-radius:3px;padding:14px 18px}
+.layer.core{border-color:var(--accent);border-width:1.5px}
+.layer .t{color:var(--ink);font-weight:500;font-size:13.5px}
+.layer .d{color:var(--ink-3);font-size:12px;margin-top:5px;line-height:1.6}
+.layer.indent{margin-left:clamp(0px,4vw,42px)}
+
+/* ---------- steps ---------- */
+ol.steps{margin:24px 0 0;padding:0;list-style:none;counter-reset:s;display:grid;gap:2px}
+ol.steps li{
+  counter-increment:s;position:relative;padding:13px 0 13px 46px;
+  border-bottom:1px solid var(--rule);font-size:15.5px;color:var(--ink-2);
+}
+ol.steps li:last-child{border-bottom:0}
+ol.steps li::before{
+  content:counter(s);position:absolute;left:0;top:13px;
+  font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--accent);
+  border:1px solid var(--rule-strong);border-radius:2px;width:24px;height:24px;
+  display:grid;place-items:center;
+}
+ol.steps li strong{color:var(--ink);font-weight:600}
+
+ul.plain{margin:14px 0 0;padding-left:20px;color:var(--ink-2);font-size:15.5px}
+ul.plain li{margin-bottom:7px}
+ul.plain li strong{color:var(--ink)}
+
+/* ---------- footer ---------- */
+footer{padding:40px 0 60px;color:var(--ink-3);font-family:"IBM Plex Mono",monospace;font-size:12px;line-height:1.8}
+footer b{color:var(--ink-2);font-weight:500}
+
+@media (prefers-reduced-motion:no-preference){
+  .bar-fill{animation:grow .7s cubic-bezier(.2,.7,.3,1) both}
+  @keyframes grow{from{transform:scaleX(0);transform-origin:left}to{transform:scaleX(1)}}
+}
+</style>
+
+<div class="wrap">
+
+<header class="masthead">
+  <div class="eyebrow">
+    <span>Investigación previa · FileX</span>
+    <span><b>22</b> repositorios clonados y auditados</span>
+    <span>19 ago 2026</span>
+  </div>
+  <h1>El ecosistema de conversión<br>está partido en dos mitades</h1>
+  <p class="standfirst">Los conversores universales con tracción <strong>ignoran por completo la GPU y el protocolo MCP</strong>. Los motores que sí usan GPU no convierten nada fuera de documentos. Nadie ha unido las dos mitades, y nadie encadena conversiones. Ahí está FileX.</p>
+</header>
+
+<div class="stats">
+  <div class="stat"><span class="n"><em>0</em>/7</span><span class="l">orquestadores con búsqueda de camino</span></div>
+  <div class="stat"><span class="n"><em>86</em></span><span class="l">estrellas del MCP de conversión más popular</span></div>
+  <div class="stat"><span class="n"><em>2,93</em>×</span><span class="l">más cobertura con los mismos motores</span></div>
+  <div class="stat"><span class="n"><em>8,4</em>×</span><span class="l">HEVC por NVENC en tu RTX 3060</span></div>
+</div>
+
+<!-- ================= 01 ================= -->
+<section>
+  <div class="sec-head"><span class="sec-num">01</span><div>
+    <h2>La fractura</h2>
+    <p class="lede col">Se auditó el código fuente de 22 repositorios, no sus README. El patrón aparece de inmediato.</p>
+  </div></div>
+
+  <div class="tscroll">
+    <table>
+      <thead><tr>
+        <th>Proyecto</th><th class="num">Estrellas</th><th>Licencia</th>
+        <th>GPU</th><th>MCP</th><th>Multi-salto</th><th class="num">Commits/30d</th>
+      </tr></thead>
+      <tbody>
+        <tr><td class="nm">Stirling-PDF</td><td class="num">89 900</td><td>MIT con excepciones</td><td class="no">no</td><td class="wa">de pago</td><td class="no">no</td><td class="num">100+</td></tr>
+        <tr><td class="nm">ConvertX</td><td class="num">18 517</td><td>AGPL-3.0</td><td class="no">no</td><td class="no">no</td><td class="no">no</td><td class="num">8</td></tr>
+        <tr><td class="nm">VERT</td><td class="num">15 380</td><td>AGPL-3.0</td><td class="no">imposible</td><td class="no">no</td><td class="no">no</td><td class="num">1</td></tr>
+        <tr class="hi"><td class="nm">SnapOtter</td><td class="num">2 226</td><td>AGPL + comercial</td><td class="yes">parcial</td><td class="no">no</td><td class="no">no</td><td class="num">100+</td></tr>
+        <tr><td class="nm">transmute</td><td class="num">1 298</td><td class="yes">MIT</td><td class="no">no</td><td class="no">no</td><td class="no">no</td><td class="num">15</td></tr>
+        <tr><td class="nm">gotenberg</td><td class="num">12 886</td><td class="yes">MIT</td><td class="no">no</td><td class="no">no</td><td class="no">no</td><td class="num">—</td></tr>
+        <tr><td class="nm">morphos</td><td class="num">1 300</td><td class="yes">MIT</td><td class="no">no</td><td class="no">no</td><td class="no">no</td><td class="num">0</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="prov"><b>Procedencia:</b> métricas por <code>gh api</code> sobre cada repo · columnas GPU/MCP/multi-salto por barrido de <code>grep</code> sobre el código clonado, excluyendo tests, <code>node_modules</code> y falsos positivos.</p>
+
+  <div class="findings two">
+    <div class="finding">
+      <span class="tag">La mitad que no acelera</span>
+      <h3>571 000 líneas de Java sin una sola llamada a CUDA</h3>
+      <p>Stirling-PDF, ConvertX, VERT, transmute, gotenberg y morphos suman <strong>cero</strong> ficheros con CUDA o NVENC. Convierten vídeo con FFmpeg ya integrado y no piden la GPU ni una vez.</p>
+    </div>
+    <div class="finding">
+      <span class="tag">La mitad que sí acelera</span>
+      <h3>Docling, Surya, Marker, MinerU y faster-whisper viven en la GPU</h3>
+      <p>Entre 5 y 37 ficheros con CUDA cada uno, selección de dispositivo, control de precisión y tamaños de lote. Pero <strong>ninguno convierte un MP4 ni redimensiona un PNG</strong>: solo hacen documento a texto.</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <span class="k">Único cruce, y a medias</span>
+    <p>SnapOtter (creado hace cinco meses, 100+ commits al mes) es el único proyecto que cruza la línea: acelera eliminación de fondo, upscaling y transcripción. Pero su OCR está <strong>bloqueado en CPU por diseño</strong>, no tiene MCP ni CLI, y su núcleo comercial exige licencia de pago.</p>
+  </div>
+</section>
+
+<!-- ================= 02 ================= -->
+<section>
+  <div class="sec-head"><span class="sec-num">02</span><div>
+    <h2>Tres hallazgos que solo aparecen leyendo el código</h2>
+    <p class="lede col">Los metadatos de GitHub y los README dicen otra cosa en los tres casos.</p>
+  </div></div>
+
+  <h3>ConvertX elige siempre el conversor equivocado</h3>
+  <p>Su despachador recorre 20 motores buscando cuál soporta el par origen–destino. El <code>break</code> rompe el bucle interno, nunca el externo:</p>
+<pre><code>for (converterName in properties) {          <span class="cm">// bucle EXTERNO</span>
+  for (const key in converterObj.properties.from) {
+    if (from.includes(fileType) &amp;&amp; to.includes(convertTo)) {
+      converterFunc = converterObj.converter;
+      <span class="hl">break;</span>                                <span class="cm">// rompe SOLO el interno</span>
+    }
+  }
+}                                            <span class="cm">// el externo sigue: gana el ÚLTIMO</span></code></pre>
+  <p style="margin-top:15px">El orden del registro es prioridad declarada —el código lleva un comentario «Prioritize Inkscape for EMF files»— pero funciona como <strong>prioridad inversa</strong>. Para <code>png→jpg</code> coinciden vips, ImageMagick, GraphicsMagick y FFmpeg; <strong>gana FFmpeg</strong>, el peor de los cuatro para imagen fija. Y como <code>converterName</code> es la variable del bucle, al terminar vale la última clave del registro: el log dice casi siempre <code>markitDown</code>, sea cual sea el motor real.</p>
+  <p class="prov"><b>Verificado en:</b> <code>ConvertX/src/converters/main.ts:213-229</code> · orden del registro en <code>main.ts:56-200</code></p>
+
+  <h3>SnapOtter rechaza activamente su propio OCR en GPU</h3>
+  <p>No es un valor por defecto conservador: es una validación que <strong>lanza excepción</strong> si el runtime reporta cualquier dispositivo que no sea CPU.</p>
+<pre><code>function validateReadinessResult(result, runtime) {
+  if (
+    ...
+    <span class="hl">result.device !== "cpu" ||</span>            <span class="cm">// rechaza cualquier resultado en GPU</span>
+    ...
+  ) throw new Error("Accurate OCR runtime returned a malformed readiness result");
+}</code></pre>
+  <p style="margin-top:15px">Su README lo confirma: «OCR deliberately uses the same portable CPU runtime on CPU-only and NVIDIA hosts». Priorizan reproducibilidad sobre velocidad. Su transcripción, además, empaqueta solo <code>faster-whisper-small</code> para no inflar la imagen Docker.</p>
+  <p class="prov"><b>Verificado en:</b> <code>SnapOtter/packages/ai/src/ocr-runtime-dispatcher.ts:1028-1040</code> · <code>packages/ai/python/transcribe.py:36</code></p>
+
+  <h3>El líder del mercado ya construyó MCP — y lo puso detrás de una suscripción</h3>
+  <p>La API de GitHub reporta que Stirling-PDF no tiene MCP. El repositorio dice lo contrario: hay un servidor MCP completo con catálogo de herramientas, ejecutor, filtro de clave de API y configuración de seguridad. Vive en <code>app/proprietary/</code>, uno de los <strong>diez directorios excluidos</strong> del MIT del repositorio, bajo una licencia que exige suscripción para uso en producción.</p>
+  <p style="margin-top:15px">Esto reencuadra el hueco: no es que nadie lo haya pensado, es que <strong>quien lo pensó lo está monetizando</strong>. Valida que el ángulo vale dinero y advierte de que la ventana no es infinita.</p>
+  <p class="prov"><b>Verificado en:</b> <code>Stirling-PDF/LICENSE</code> (10 exclusiones) · <code>app/proprietary/LICENSE</code> · <code>app/proprietary/src/main/java/stirling/software/proprietary/mcp/</code></p>
+
+  <div class="callout">
+    <span class="k">La idea que sí merece copiarse</span>
+    <p>Su <code>McpToolCatalog</code> no declara herramientas a mano: escanea los endpoints REST existentes y los publica como herramientas MCP, excluyendo los verbos destructivos. <strong>En FileX, el catálogo MCP debe generarse desde el registro de conversores</strong>: un motor nuevo aparece como herramienta sin tocar la capa MCP.</p>
+  </div>
+</section>
+
+<!-- ================= 03 ================= -->
+<section>
+  <div class="sec-head"><span class="sec-num">03</span><div>
+    <h2>El grafo: 2,93× de cobertura sin añadir un solo motor</h2>
+    <p class="lede col">Todo el ecosistema hace lo mismo: buscar un motor que convierta A en B directamente. Si no existe, la conversión no existe.</p>
+  </div></div>
+
+  <p>Se extrajeron por parseo las tablas <code>from</code>/<code>to</code> de los 20 adaptadores de ConvertX —las que el código consulta en ejecución— y se comparó el despacho de un salto contra un grafo dirigido recorrido hasta tres saltos.</p>
+
+  <div class="tscroll">
+    <table>
+      <thead><tr><th>Estrategia</th><th class="num">Pares (origen, destino) alcanzables</th></tr></thead>
+      <tbody>
+        <tr><td>Un salto — ConvertX, transmute, SnapOtter, todos</td><td class="num">152 584</td></tr>
+        <tr class="hi"><td>Grafo dirigido, hasta 3 saltos</td><td class="num">447 398</td></tr>
+        <tr><td>Conversiones nuevas que hoy no puede hacer nadie</td><td class="num">294 814</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tscroll">
+    <table>
+      <thead><tr><th>Conversión</th><th>Hoy</th><th>Con grafo</th></tr></thead>
+      <tbody>
+        <tr><td class="nm">epub → png</td><td class="no">imposible</td><td class="yes">2 saltos</td></tr>
+        <tr><td class="nm">docx → webp</td><td class="no">imposible</td><td class="yes">2 saltos</td></tr>
+        <tr><td class="nm">tex → docx</td><td class="no">imposible</td><td class="yes">2 saltos</td></tr>
+        <tr><td class="nm">cbz → pdf</td><td class="yes">ya directo</td><td>igual</td></tr>
+        <tr><td class="nm">heic → avif</td><td class="yes">ya directo</td><td>igual</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout">
+    <span class="k">Salvedad honesta</span>
+    <p>447 398 es un <strong>límite superior de alcanzabilidad, no una promesa de fidelidad</strong>. Encadenar degrada: pasar por un formato rasterizado destruye el texto seleccionable, y algunos pares declarados son nominales. Por eso el grafo necesita <strong>coste por arista</strong> —velocidad, pérdida de calidad, si preserva texto— y no solo conectividad. Aun descontando agresivamente, el margen sobre 152 584 es enorme, y es puramente algorítmico: no requiere ni un motor más.</p>
+  </div>
+
+  <h3>Dónde está realmente la cobertura</h3>
+  <p><strong>FFmpeg e ImageMagick juntos cubren 675 de los 896 formatos de entrada: el 75 %.</strong> El «1000+ formatos» del marketing son, en esencia, dos binarios. Los demás motores importan por sus formatos exclusivos, no por su volumen.</p>
+
+  <div class="tscroll">
+    <table>
+      <thead><tr><th>Motor</th><th class="num">Entradas</th><th class="num">Salidas</th><th class="num">Exclusivas</th><th>Sin él se pierde</th></tr></thead>
+      <tbody>
+        <tr><td class="nm">ffmpeg</td><td class="num">473</td><td class="num">202</td><td class="num">422</td><td>todo el audio y el vídeo</td></tr>
+        <tr><td class="nm">imagemagick</td><td class="num">245</td><td class="num">183</td><td class="num">78</td><td>formatos de imagen heredados</td></tr>
+        <tr><td class="nm">graphicsmagick</td><td class="num">167</td><td class="num">130</td><td class="num">29</td><td>metadatos y variantes TIFF</td></tr>
+        <tr><td class="nm">pandoc</td><td class="num">40</td><td class="num">58</td><td class="num">31</td><td>markup académico y bibliografías</td></tr>
+        <tr><td class="nm">libreoffice</td><td class="num">41</td><td class="num">22</td><td class="num">29</td><td>ofimática heredada (doc, abw, cwk)</td></tr>
+        <tr><td class="nm">vips</td><td class="num">45</td><td class="num">23</td><td class="num">17</td><td>imagen científica y microscopía</td></tr>
+        <tr><td class="nm">calibre</td><td class="num">26</td><td class="num">20</td><td class="num">16</td><td>ebooks y cómic (azw4, cbr, djvu)</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="prov"><b>Método:</b> parseo de <code>export const properties</code> en <code>ConvertX/src/converters/*.ts</code> · 896 formatos de entrada únicos, 503 de salida · BFS a profundidad 3 sobre el grafo resultante · cifras confirmadas por una segunda extracción independiente vía AST.</p>
+
+  <h3>El agujero que nadie menciona: ConvertX no convierte hojas de cálculo</h3>
+  <p>Búsqueda de <code>xlsx</code>, <code>xls</code> y <code>ods</code> en sus 20 adaptadores: <strong>cero apariciones</strong>, ni como entrada ni como salida. Tampoco <code>ppt</code> ni <code>odp</code>. La causa está en <code>libreoffice.ts</code>, que registra <strong>únicamente la familia <code>text:</code></strong> pese a que el binario <code>soffice</code> al que llama convierte hojas de cálculo y presentaciones sin problema.</p>
+  <p style="margin-top:15px"><strong>Corrección tras la prueba en ejecución:</strong> el motor <em>sí sabe</em> hacerlo. Forzando la conversión por API, ConvertX usa <code>calc_pdf_Export</code> y produce un PDF con texto seleccionable correcto. Lo que falla es el catálogo: como la tabla no declara <code>xlsx</code>, <strong>su interfaz web nunca ofrece esa opción</strong>. Un proyecto de 18 500 estrellas esconde una función que ya tiene.</p>
+  <p style="margin-top:15px">Sigue siendo la mejor ilustración de por qué aquí todo se extrajo del código y después se ejecutó: <strong>las cifras de cobertura del sector describen tablas declaradas, y esas tablas se equivocan en las dos direcciones</strong> — prometen formatos que no funcionan y ocultan otros que sí.</p>
+  <p class="prov"><b>Verificado en:</b> <code>ConvertX/src/converters/libreoffice.ts:6,51</code> — únicas familias declaradas · <code>grep</code> de <code>xlsx|xls|ods|ppt|odp</code> sobre <code>src/converters/*.ts</code></p>
+</section>
+
+<!-- ================= 04 ================= -->
+<section>
+  <div class="sec-head"><span class="sec-num">04</span><div>
+    <h2>Medido en tu máquina</h2>
+    <p class="lede col">RTX 3060 12 GB, compute capability 8.6, driver 572.61 · Windows 10 · Docker 29.4.3 · Python 3.11.9 · Node 22 · Go 1.22.5</p>
+  </div></div>
+
+  <h3>NVENC: qué acelera y qué no</h3>
+  <p>Medianas de 9 ejecuciones en entorno tranquilo. <code>h264_nvenc</code> y <code>hevc_nvenc</code> funcionan; <code>av1_nvenc</code> <strong>falla con <code>No capable devices found</code></strong> pese a aparecer en <code>ffmpeg -encoders</code>, porque Ampere tiene decodificador AV1 pero no codificador.</p>
+
+  <div class="tscroll">
+    <table>
+      <thead><tr><th>Caso</th><th class="num">CPU</th><th class="num">GPU</th><th class="num">Aceleración</th></tr></thead>
+      <tbody>
+        <tr class="hi"><td>1080p <strong>HEVC</strong> <code>medium</code> vs <code>p4</code></td><td class="num">16 598 ms</td><td class="num">1 978 ms</td><td class="num"><strong>8,39×</strong></td></tr>
+        <tr><td>1080p H.264, transcode real vídeo+audio</td><td class="num">5 248 ms</td><td class="num">1 762 ms</td><td class="num">2,98×</td></tr>
+        <tr><td>1080p H.264 <code>medium</code> vs <code>p4</code></td><td class="num">5 407 ms</td><td class="num">1 973 ms</td><td class="num">2,74×</td></tr>
+        <tr><td>4K H.264 <code>medium</code> vs <code>p4</code></td><td class="num">11 427 ms</td><td class="num">4 286 ms</td><td class="num">2,67×</td></tr>
+        <tr><td>720p patológico, 2 pistas de audio</td><td class="num">1 358 ms</td><td class="num">628 ms</td><td class="num">2,16×</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout">
+    <span class="k">Corrección sobre la primera versión de este informe</span>
+    <p>Publicó <strong>3,3× para H.264</strong> a partir de una única ejecución sin calentamiento. Con n=9 la cifra real es <strong>2,7–3,0×</strong>. El hallazgo grande estaba en otro sitio: <strong>HEVC rinde 8,4×</strong>, porque <code>hevc_nvenc</code> cuesta lo mismo que <code>h264_nvenc</code> mientras <code>libx265</code> es 3× más lento que <code>libx264</code>. <strong>Para FileX, HEVC es la salida donde la GPU se paga sola.</strong></p>
+  </div>
+
+  <h4>El coste que casi nadie mide: NVENC se pasa de bitrate</h4>
+  <p>La pérdida de calidad a igual bitrate es pequeña, pero <strong>NVENC no respeta el bitrate objetivo</strong>. A 2 Mbps entrega 2 214 kbps (+10,7 %) frente a los 2 026 de x264 (+1,3 %). El patrón se repite en los tres puntos medidos.</p>
+
+  <div class="tscroll">
+    <table>
+      <thead><tr><th>Codificador</th><th class="num">Objetivo</th><th class="num">Bitrate real</th><th class="num">Desvío</th><th class="num">VMAF</th></tr></thead>
+      <tbody>
+        <tr><td class="nm">libx264 medium</td><td class="num">2M</td><td class="num">2 026</td><td class="num yes">+1,3 %</td><td class="num">89,70</td></tr>
+        <tr><td class="nm">h264_nvenc p4</td><td class="num">2M</td><td class="num">2 214</td><td class="num no">+10,7 %</td><td class="num">88,71</td></tr>
+        <tr><td class="nm">h264_nvenc p7</td><td class="num">2M</td><td class="num">2 161</td><td class="num wa">+8,0 %</td><td class="num">89,22</td></tr>
+        <tr><td class="nm">libx264 medium</td><td class="num">10M</td><td class="num">10 023</td><td class="num yes">+0,2 %</td><td class="num">98,87</td></tr>
+        <tr><td class="nm">h264_nvenc p4</td><td class="num">10M</td><td class="num">10 785</td><td class="num no">+7,9 %</td><td class="num">98,55</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="margin-top:15px">Traducción para FileX: si el usuario pide «comprime este vídeo a 2 Mbps», NVENC devuelve un fichero un 10 % más grande de lo pedido. <strong>El grafo debe contabilizarlo como coste de la arista</strong>, no tratar CPU y GPU como equivalentes.</p>
+
+  <h4>La tubería GPU completa no sirve</h4>
+  <p>Decodificar también en GPU con <code>-hwaccel cuda -hwaccel_output_format cuda</code> para evitar la copia de memoria <strong>no aporta nada</strong>: entre −13 % y +3 %, dentro del ruido. Y <strong>con escalado es un 34 % peor</strong> que decodificar en CPU.</p>
+  <p class="prov"><b>Corrección:</b> la primera versión de este informe afirmaba que «con decodificación también en GPU la ventaja crece». Era una suposición, no una medición, y es falsa.</p>
+
+  <div class="callout">
+    <span class="k">Regla de diseño derivada</span>
+    <p>Las capacidades se <strong>sondean en ejecución y se cachean</strong>, nunca se deducen de la lista de codificadores del binario. Un <code>av1_nvenc</code> fallido debe degradar solo a <code>libsvtav1</code> en CPU.</p>
+  </div>
+
+  <h3>Arranque en frío: la medición que cambia la elección de lenguaje</h3>
+  <p>Media de 25 ejecuciones tras calentamiento. El calentamiento importa: sin él, Windows Defender inflaba el binario Go recién compilado de 41 ms a 110 ms.</p>
+
+  <div class="bars">
+    <div class="bar-row"><span class="lab">Go compilado</span><span class="bar-track"><span class="bar-fill" style="width:48%"></span></span><span class="val">41 ms</span></div>
+    <div class="bar-row"><span class="lab">cmd /c exit (suelo)</span><span class="bar-track"><span class="bar-fill" style="width:58%"></span></span><span class="val">49 ms</span></div>
+    <div class="bar-row"><span class="lab">Python desnudo</span><span class="bar-track"><span class="bar-fill" style="width:71%"></span></span><span class="val">60 ms</span></div>
+    <div class="bar-row"><span class="lab">ffmpeg -version</span><span class="bar-track acc"><span class="bar-fill acc" style="width:72%"></span></span><span class="val">61 ms</span></div>
+    <div class="bar-row"><span class="lab">magick (PNG 64×64)</span><span class="bar-track"><span class="bar-fill acc" style="width:86%"></span></span><span class="val">73 ms</span></div>
+    <div class="bar-row"><span class="lab">Node.js</span><span class="bar-track"><span class="bar-fill" style="width:87%"></span></span><span class="val">74 ms</span></div>
+    <div class="bar-row"><span class="lab">Python + stdlib</span><span class="bar-track"><span class="bar-fill" style="width:100%"></span></span><span class="val">85 ms</span></div>
+  </div>
+
+  <ul class="plain" style="margin-top:24px">
+    <li>En Windows, <strong>crear un proceso cuesta ~49 ms haga lo que haga</strong>. Es el suelo, y no depende del lenguaje.</li>
+    <li>Elegir Go en vez de Python ahorra <strong>~44 ms</strong> por invocación. Real, pero modesto.</li>
+    <li>Cualquier conversión arranca además un motor externo: <strong>FFmpeg cuesta 61 ms solo en existir</strong>; ImageMagick 73 ms para un PNG de 64×64, de los cuales apenas 30 ms son trabajo útil.</li>
+    <li>Para el servidor MCP el arranque en frío es <strong>irrelevante</strong>: el proceso arranca una vez y permanece vivo.</li>
+  </ul>
+
+  <div class="callout">
+    <span class="k">Conclusión</span>
+    <p>El lenguaje del núcleo controla ~40 ms de una invocación de 100–160 ms, y solo en la CLI. <strong>El argumento «Rust por el arranque» queda muy debilitado.</strong> La palanca real no es el lenguaje: es evitar procesos, manteniendo vivos el sidecar de IA y los motores caros.</p>
+  </div>
+
+  <h3>Presupuesto de VRAM: qué cabe de verdad en la 3060</h3>
+  <p>Medido con los modelos residentes y con inferencia activa. El dato que importa no es cuánto ocupa un modelo cargado, sino <strong>su pico durante la inferencia</strong>.</p>
+
+  <div class="tscroll">
+    <table>
+      <thead><tr><th>Componente</th><th class="num">Pico de inferencia</th><th>Estado</th></tr></thead>
+      <tbody>
+        <tr><td class="nm">faster-whisper large-v3 (fp16)</td><td class="num">4 525 MiB</td><td class="yes">verificado, transcripción sin errores</td></tr>
+        <tr><td class="nm">faster-whisper distil-large-v3</td><td class="num">1 847 MiB</td><td class="yes">alternativa ligera</td></tr>
+        <tr><td class="nm">docling (maquetación y tablas)</td><td class="num">910 MiB</td><td class="yes">verificado</td></tr>
+        <tr><td class="nm">NVENC 4K</td><td class="num">743 MiB</td><td class="yes">verificado</td></tr>
+        <tr><td class="nm">NVENC 1080p</td><td class="num">209 MiB</td><td class="yes">verificado</td></tr>
+        <tr><td class="nm">surya</td><td class="num">sin dato</td><td class="no">no arrancó</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p style="margin-top:18px">Con los tres residentes más un encode 4K simultáneo: <strong>8 557 MiB de pico y 3 731 libres</strong>. <strong>Disponible para FileX: ~8,7 GB.</strong> Cabe <code>large-v3</code> + docling + NVENC (6,2 GB) holgadamente; <strong>no caben dos <code>large-v3</code></strong> (9,1 GB). Con inferencia concurrente, whisper baja de 2,8× a 2,3× tiempo real: degrada, no falla.</p>
+
+  <div class="findings two">
+    <div class="finding">
+      <span class="tag">Trampa 1 · silenciosa</span>
+      <h3><code>pip install surya-ocr</code> destruyó la instalación CUDA</h3>
+      <p>Degradó torch de <code>2.6.0+cu124</code> a <code>2.13.0+cpu</code> <strong>sin un solo error</strong>. Todo habría seguido corriendo, en CPU, sin que nada lo delatara. <strong>FileX debe verificar <code>torch.cuda.is_available()</code> en cada arranque del sidecar</strong> y negarse a anunciar aceleración que no tiene.</p>
+    </div>
+    <div class="finding">
+      <span class="tag">Trampa 2 · genera contenido falso</span>
+      <h3>Whisper alucina sobre audio sin voz</h3>
+      <p>Sobre un tono puro devolvió <code>Thanks for watching!</code>. El delator es <code>language_probability</code>: <strong>0,35–0,37 en audio no hablado frente a 0,91–0,97 en voz real</strong>. Sin ese filtro, FileX generaría subtítulos inventados y los presentaría como transcripción.</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <span class="k">Verificación funcional, no solo «no falló»</span>
+    <p>Docling recuperó el PDF escaneado del corpus —sin capa de texto, inclinado 1,7°, con ruido— con las <strong>3 de 3 frases exactas y distancia de edición 0</strong>. De hecho lo resolvían los <strong>seis</strong> motores probados, así que hubo que fabricar variantes más duras para que la prueba discriminara: 150 y 100 ppp, inclinación de 3-5°, contraste comprimido y JPEG de q60 a q25.</p>
+  </div>
+
+  <h3>OCR en GPU: los tres candidatos, medidos</h3>
+  <p>Precisión sobre las variantes degradadas del mismo texto conocido, medida como tasa de error por carácter (CER). Medianas de 9 ejecuciones.</p>
+
+  <div class="tscroll">
+    <table>
+      <thead><tr><th>Motor</th><th class="num">Aceleración GPU</th><th class="num">VRAM</th><th class="num">CER dificultad 2</th><th class="num">CER dificultad 3</th></tr></thead>
+      <tbody>
+        <tr class="hi"><td class="nm">RapidOCR <code>backend=torch</code></td><td class="num">3,5–4,2×</td><td class="num">+1 344 MiB</td><td class="num">1,3 %</td><td class="num">65,8 %</td></tr>
+        <tr><td class="nm">PaddleOCR</td><td class="num">8,9–11,7×</td><td class="num">+1 486 MiB</td><td class="num yes"><strong>0,0 %</strong></td><td class="num">75,9 %</td></tr>
+        <tr><td class="nm">EasyOCR</td><td class="num">12,4–17,0×</td><td class="num">+2 079 MiB</td><td class="num no">43,0 %</td><td class="num">57,0 %</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout">
+    <span class="k">Cómo leer esas aceleraciones</span>
+    <p>Los múltiplos grandes engañan. RapidOCR «solo» gana 3,5–4,2× porque <strong>su ruta en CPU ya es la más rápida</strong> (763 ms frente a los 6 660 ms de EasyOCR). Comparando el mejor CPU contra el mejor GPU, la ganancia real del ecosistema es <strong>3,9×</strong>, no 17×. Un motor lento que se acelera mucho sigue siendo un motor lento.</p>
+  </div>
+
+  <p style="margin-top:20px"><strong>La elección es RapidOCR con <code>backend="torch"</code></strong>: reutiliza el torch ya instalado, así que su coste de infraestructura GPU es <strong>cero</strong> —ni <code>onnxruntime-gpu</code>, ni <code>paddlepaddle-gpu</code>, ni ruedas de runtime CUDA— y su salida es idéntica carácter a carácter a la de CPU. PaddleOCR es más preciso (0,0 % de CER) pero cuesta 3,73 GB, un segundo entorno virtual aislado y 24,8 s de carga: queda como ruta opcional de máxima precisión. EasyOCR se descarta: peor precisión y <strong>resultados no deterministas entre CPU y GPU</strong> en entradas degradadas.</p>
+  <p style="margin-top:15px">En la dificultad 3 <strong>fallan los tres</strong> (57–76 % de CER). Es un límite honesto: el OCR acelerado resuelve documentos degradados, no documentos destruidos.</p>
+
+  <div class="findings two">
+    <div class="finding">
+      <span class="tag">Trampa 3 · la peor de las tres</span>
+      <h3><code>onnxruntime-gpu</code> dice que usa la GPU cuando no la usa</h3>
+      <p><code>get_device()</code> devuelve <code>'GPU'</code> y <code>get_available_providers()</code> lista <code>CUDAExecutionProvider</code>… y todas las sesiones corren en CPU, porque la versión 1.29.0 exige CUDA 13 y falta <code>cublasLt64_13.dll</code>. <strong>La única comprobación válida es <code>session.get_providers()</code> sobre una sesión ya creada.</strong> Con la 1.22.0, compilada contra CUDA 12, funciona: 174,5 → 15,0 ms, <strong>11,6×</strong>.</p>
+    </div>
+    <div class="finding">
+      <span class="tag">Bug ajeno · docling 2.120.3</span>
+      <h3>Rellena dos de los tres <code>use_cuda</code></h3>
+      <p>Configura <code>EngineConfig.paddle.use_cuda</code> y <code>EngineConfig.torch.use_cuda</code> pero <strong>olvida <code>EngineConfig.onnxruntime.use_cuda</code></strong>, que es justo el backend por defecto. Aun con la CUDA EP funcional, Docling seguía haciendo OCR en CPU. Se sortea con <code>rapidocr_params</code>, pero es un motivo más para preferir el backend <code>torch</code>.</p>
+    </div>
+  </div>
+
+  <h3>Whisper: dónde está el umbral entre los dos modelos</h3>
+  <p><code>distil-large-v3</code> <strong>empata con <code>large-v3</code> (WER 0,00 %)</strong> en clips de 11 segundos, incluso con ruido blanco añadido y en banda telefónica de 8 kHz. Pero en un audio de 308 segundos produce <strong>4,4–4,6 % de WER</strong>: duplica y se salta fragmentos en las costuras de las ventanas de 30 s, y devuelve 29 arranques de frase donde había 28. <code>large-v3</code> clava 28 de 28 en ambas condiciones.</p>
+  <p style="margin-top:15px"><strong>Regla para FileX: <code>distil-large-v3</code> hasta 30 segundos, <code>large-v3</code> por encima.</strong> Ahorra 2 678 MiB de VRAM en el caso corto sin perder nada.</p>
+
+  <div class="callout">
+    <span class="k">Corrección interna entre fases</span>
+    <p>La fase 1 midió Docling <strong>en frío</strong> y concluyó que la GPU aportaba poco, recomendando enrutar los PDF pequeños a CPU. En caliente, la GPU aporta <strong>5,6–6,4× en maquetación</strong>. Esa recomendación se contradecía consigo misma —el sidecar residente que la propia fase 1 propone mantiene los modelos calientes— y queda anulada: <strong>todo va a GPU</strong>.</p>
+  </div>
+
+  <p style="margin-top:22px">Perfil completo conviviendo —whisper <code>large-v3</code> residente, Docling con OCR en GPU y NVENC simultáneos—: <strong>pico de 7 702 MiB con 4 586 libres</strong>, sin degradación del OCR. Cabe entero en la 3060 con margen.</p>
+</section>
+
+<!-- ================= 05 ================= -->
+<section>
+  <div class="sec-head"><span class="sec-num">05</span><div>
+    <h2>Los cuatro huecos</h2>
+    <p class="lede col">Ordenados por relación valor/coste, con la evidencia que los sostiene.</p>
+  </div></div>
+
+  <div class="gaps">
+    <div class="gap">
+      <span class="rank">1</span>
+      <div>
+        <h3>Grafo de conversión multi-salto</h3>
+        <p>Cero de siete orquestadores implementan búsqueda de camino. El único indicio de que la necesidad existe está resuelto a mano dentro de un adaptador de transmute.</p>
+      </div>
+      <div class="cost"><b>Coste: bajo</b>Puramente algorítmico. No añade dependencias ni motores. Resuelve de paso el bug de prioridad de ConvertX.</div>
+    </div>
+    <div class="gap">
+      <span class="rank">2</span>
+      <div>
+        <h3>NVENC en conversión de vídeo</h3>
+        <p>Ningún orquestador lo usa, ni siquiera los que ya integran FFmpeg. 3,3× medido en tu tarjeta.</p>
+      </div>
+      <div class="cost"><b>Coste: muy bajo</b>Parámetros de invocación más sondeo de capacidades y degradación a CPU.</div>
+    </div>
+    <div class="gap">
+      <span class="rank">3</span>
+      <div>
+        <h3>MCP pensado para agentes</h3>
+        <p>El MCP de conversión más popular del mundo tiene 86 estrellas y 162 líneas: envuelve MarkItDown y devuelve el documento entero al contexto del modelo. Ninguno de los cuatro existentes usa GPU.</p>
+      </div>
+      <div class="cost"><b>Coste: medio</b>Comparable a la CLI: esquemas descritos para un modelo, saneado de rutas y clasificación de errores.</div>
+    </div>
+    <div class="gap">
+      <span class="rank">4</span>
+      <div>
+        <h3>OCR acelerado por GPU <span class="pill ok">resuelto y medido</span></h3>
+        <p>El hueco es real: SnapOtter lo bloquea en CPU por diseño, OCRmyPDF depende de Tesseract, y la OCR de Docling venía también en CPU. Surya 0.22.1 quedó descartada —ya no es un modelo en proceso, lanza un contenedor <code>vllm/vllm-openai</code> que reserva 10,4 GB de los 9,7 libres y no arranca; Marker hereda el bloqueo. <strong>Pero se encontró un camino sin coste de infraestructura</strong>: Docling con RapidOCR y <code>backend="torch"</code> hace OCR en GPU reutilizando el torch ya instalado.</p>
+      </div>
+      <div class="cost"><b>Coste: bajo</b>Cero infraestructura GPU nueva. +1 555 MiB de VRAM, 3,1× frente a todo-CPU, salida idéntica carácter a carácter.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 06 ================= -->
+<section>
+  <div class="sec-head"><span class="sec-num">06</span><div>
+    <h2>Licencias: por qué transmute es la única base viable</h2>
+    <p class="lede col">Casi todo el terreno con tracción es AGPL. La decisión conviene tomarla ahora, porque no cuesta más trabajo.</p>
+  </div></div>
+
+  <p><strong>Invocar un binario como proceso separado no contamina.</strong> Enlazar una librería GPL dentro de tu programa obliga a publicar tu programa como GPL; ejecutar <code>ffmpeg entrada.mp4 salida.webm</code> como proceso externo, no. Por eso todos los conversores serios son orquestadores de procesos —ConvertX usa <code>execFile</code> sin shell en todos sus adaptadores— y por eso FileX debe serlo también: preserva todas las opciones de negocio sin coste técnico, y además es inmune a inyección de shell.</p>
+
+  <div class="tscroll">
+    <table>
+      <thead><tr><th>Repositorio</th><th>Licencia</th><th>¿Copiar su código?</th></tr></thead>
+      <tbody>
+        <tr class="hi"><td class="nm">transmute</td><td>MIT</td><td><span class="pill ok">sin restricciones</span> la única base completa y permisiva</td></tr>
+        <tr><td class="nm">docling · markitdown · faster-whisper · gotenberg · kordoc</td><td>MIT</td><td><span class="pill ok">sin restricciones</span></td></tr>
+        <tr><td class="nm">marker · surya</td><td>Apache-2.0</td><td><span class="pill ok">con atribución</span> verificar aparte la licencia de los pesos</td></tr>
+        <tr><td class="nm">MinerU</td><td>Apache-2.0 + términos</td><td><span class="pill ok">utilizable</span> umbrales de 100 M usuarios / 20 M USD, irrelevantes</td></tr>
+        <tr><td class="nm">OCRmyPDF</td><td>MPL-2.0</td><td><span class="pill wa">copyleft por fichero</span></td></tr>
+        <tr><td class="nm">ConvertX · VERT</td><td>AGPL-3.0</td><td><span class="pill no">contamina incluso por red</span></td></tr>
+        <tr><td class="nm">SnapOtter</td><td>AGPL + comercial + CLA</td><td><span class="pill no">no</span> y alimentaría a un competidor comercial</td></tr>
+        <tr><td class="nm">Stirling-PDF</td><td>MIT con 10 exclusiones</td><td><span class="pill wa">el núcleo sí</span> su MCP requiere suscripción</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="prov"><b>Nota verificada:</b> tu FFmpeg está compilado con <code>--enable-gpl --enable-libx264 --enable-libx265</code>: es un binario GPL. Basta con no empotrarlo ni redistribuirlo como parte de FileX. <b>Ghostscript</b> (AGPL) es el motor más agresivo del conjunto: seguro como proceso, pero conviene no redistribuirlo.</p>
+</section>
+
+<!-- ================= cara a cara ================= -->
+<section>
+  <div class="sec-head"><span class="sec-num">07</span><div>
+    <h2>El cara a cara: 96 conversiones reales</h2>
+    <p class="lede col">Corpus completo a través de SnapOtter y ConvertX, en serie, con la referencia nativa como patrón oro.</p>
+  </div></div>
+
+  <div class="callout">
+    <span class="k">El hallazgo que justifica toda la arquitectura de FileX</span>
+    <p><strong>ConvertX entrega ficheros falsos con estado «Done».</strong> Su <code>png→avif</code> reporta éxito y produce un fichero <code>.avif</code> que en realidad <strong>es un PNG</strong>: bytes mágicos <code>89 50 4E 47</code>, 42 855 B frente a los 3 137 B del AVIF real de SnapOtter. El error de ImageMagick (<code>no encode delegate for AVIF</code>) es un <em>warning</em> con código de salida 0, y el motor cae de vuelta al formato origen sin avisar a nadie.</p>
+  </div>
+
+  <div class="tscroll">
+    <table>
+      <thead><tr><th>Prueba</th><th>SnapOtter</th><th>ConvertX</th></tr></thead>
+      <tbody>
+        <tr><td>Cobertura de la matriz</td><td class="yes">18/19</td><td class="wa">15/19</td></tr>
+        <tr><td><code>png→avif</code></td><td class="yes">AVIF real, 3 137 B</td><td class="no">PNG renombrado, 42 855 B</td></tr>
+        <tr><td>MKV con 2 pistas de audio</td><td class="no">pierde una, en silencio</td><td class="no">pierde una, en silencio</td></tr>
+        <tr><td>TIFF 16 bits, 72 MB</td><td class="no">degrada a 8 bits sin avisar</td><td class="yes">conserva los 16 bits</td></tr>
+        <tr><td>CSV con BOM y comillas</td><td class="yes">impecable, consume el BOM</td><td class="no">imposible: <code>dasel</code> roto</td></tr>
+        <tr><td>Hojas de cálculo</td><td class="yes">sí</td><td class="wa">funciona, pero no lo ofrece</td></tr>
+        <tr><td>PDF→imagen</td><td class="yes">150 ppp</td><td class="wa">72 ppp fijos</td></tr>
+        <tr><td>Audio a 192 kbps</td><td class="yes">respeta lo pedido</td><td class="no">entrega 64 kbps</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>La pista de audio: predicho y confirmado</h3>
+  <p>La referencia nativa había establecido que <code>ffmpeg -i entrada.mkv salida.mp4</code> <strong>descarta la segunda pista de audio en silencio</strong> por selección de flujos por defecto, y que con <code>-map 0</code> se conservan ambas. MP4 admite varias pistas: es fallo de uso, no del formato.</p>
+  <p style="margin-top:15px"><strong>Los dos competidores caen exactamente en ese fallo</strong>, y los dos reportan éxito. Envuelven FFmpeg sin <code>-map 0</code>. Es el hueco más claro que comparten.</p>
+
+  <h3>Y el <code>dasel</code> de ConvertX está roto</h3>
+  <p>Se invoca con sintaxis de la versión 1 (<code>--file</code>) contra un binario de la versión 2. <strong>Todas sus conversiones de datos son inalcanzables</strong>, no solo el CSV del corpus. Un adaptador declarado, contado en la matriz de formatos, y muerto en ejecución.</p>
+
+  <div class="callout">
+    <span class="k">La regla de diseño que sale de aquí</span>
+    <p>FileX necesita un <strong>contrato de verificación obligatorio después de cada conversión</strong>: firma real del fichero, flujos esperados frente a obtenidos, y propiedades declaradas frente a medidas. Los tres fallos más graves de esta comparativa —el AVIF que era PNG, la pista perdida y las degradaciones de bits, ppp y bitrate— los habría atrapado los tres.</p>
+    <p style="margin-top:12px">Con su corolario, que es menos obvio: <strong>un recurso alternativo sin verificación es peor que no tenerlo</strong>, porque convierte un fallo honesto en uno silencioso. Es literalmente lo que le pasa a ImageMagick dentro de ConvertX.</p>
+  </div>
+
+  <p class="prov"><b>Método:</b> 96 invocaciones reales, todas en serie sobre una VM de 2 vCPU · los tiempos solo comparan un competidor con el otro, nunca con los nativos · la dispersión llega a 9,2× en la misma conversión, así que toda diferencia menor de ~2× es ruido · el arranque en frío domina hasta 53× entre la primera llamada y la segunda.</p>
+</section>
+
+
+<!-- ================= 08 ================= -->
+<section>
+  <div class="sec-head"><span class="sec-num">08</span><div>
+    <h2>La decisión</h2>
+    <p class="lede col">Híbrido asimétrico: desde cero el núcleo, reutilizando todo lo demás.</p>
+  </div></div>
+
+  <p>Ningún candidato sirve como base tal cual. SnapOtter es AGPL con CLA y avanza a 100 commits al mes: un fork en solitario es insostenible. ConvertX es AGPL y su despacho es justo lo que hay que rehacer. Stirling-PDF es solo PDF, en Java, con el MCP de pago. VERT y morphos están parados. Gotenberg no es un conversor universal, es una dependencia excelente.</p>
+  <p>Queda <strong>transmute</strong>, MIT y bien estructurado — pero es una API web sin CLI, sin MCP, sin watcher y sin GPU. Adoptarlo entero obligaría a arrastrar su frontend y su capa k8s cuando FileX es local-first. <strong>Lo que sí se toma es su núcleo conceptual</strong>, probado y permisivo: el registro por reflexión con <code>can_register()</code>, la <code>ConverterInterface</code>, y adaptadores de nicho que nadie más tiene (fuentes tipográficas, subtítulos, datos tabulares, correo).</p>
+  <p>Lo que hay que escribir de cero es exactamente lo que <strong>nadie tiene</strong>.</p>
+
+  <h3>Lenguaje: Python primero, con la frontera de proceso correcta desde el día 1</h3>
+
+  <div class="stack">
+    <div class="layer core">
+      <div class="t">filex — CLI · MCP · watcher · API local</div>
+      <div class="d">Proceso único y persistente. El MCP arranca una vez, así que los 44 ms que ahorraría Go no se cobran donde importa.</div>
+    </div>
+    <div class="layer indent">
+      <div class="t">registro + grafo de conversión</div>
+      <div class="d">Nodos = formatos · aristas = (motor, coste) · Dijkstra elige el camino. Auto-descubrimiento con can_register(): en tu máquina hay 4 de los ~12 motores, así que arrancar con capacidades reducidas es requisito, no detalle.</div>
+    </div>
+    <div class="layer indent">
+      <div class="t">motores externos — execFile, sin shell</div>
+      <div class="d">ffmpeg · magick · soffice · pandoc · calibre · vips · qpdf. Frontera de proceso: sin contaminación GPL, sin inyección, fallos aislados.</div>
+    </div>
+    <div class="layer indent">
+      <div class="t">sidecar IA — proceso Python aparte</div>
+      <div class="d">docling · surya · faster-whisper large-v3. Modelos residentes en VRAM con descarga por inactividad. Separado porque torch y CUDA reservan enormes cantidades de espacio virtual: el mismo motivo que llevó a SnapOtter a aislarlo.</div>
+    </div>
+  </div>
+
+  <h4>Por qué Python y no Go o Rust</h4>
+  <ul class="plain">
+    <li><strong>El ecosistema que importa es Python.</strong> Docling, Marker, Surya, faster-whisper, PyMuPDF, Pillow, DuckDB. El cuarto diferenciador entero vive ahí; desde Go o Rust se accede por IPC, con coste y sin ganancia.</li>
+    <li><strong>La base reutilizable ya es Python</strong> y es MIT.</li>
+    <li><strong>El sidecar separado no es opcional en ningún lenguaje.</strong> Ese problema existe igual con un núcleo en Go.</li>
+    <li><strong>La deuda es acotada.</strong> Si algún día molesta el arranque de la CLI, se reescribe el despachador —unos cientos de líneas— en Go, dejando intactos el sidecar y los adaptadores.</li>
+  </ul>
+  <p style="margin-top:15px">Go sigue siendo defendible si la prioridad real fuese distribuir un binario único sin dependencias. Pero eso choca con el sidecar Python, que hay que instalar de todos modos para OCR y transcripción.</p>
+
+  <h3>Orden de construcción</h3>
+  <ol class="steps">
+    <li><strong>Registro, grafo y CLI</strong> con FFmpeg e ImageMagick — 76 % de la cobertura de formatos con dos motores.</li>
+    <li><strong>NVENC</strong> con sondeo de capacidades y degradación a CPU. 3,3× medido, coste casi nulo.</li>
+    <li><strong>Capa MCP generada desde el registro</strong>, devolviendo ruta y metadatos —nunca contenido—, con <code>readOnlyHint</code>/<code>destructiveHint</code> y caché idempotente por hash.</li>
+    <li><strong>Gotenberg en Docker</strong> para ofimática a PDF, evitando instalar LibreOffice en Windows.</li>
+    <li><strong>Sidecar IA</strong>: faster-whisper (<code>distil-large-v3</code> hasta 30 s, <code>large-v3</code> por encima) y Docling con RapidOCR en <code>backend="torch"</code>, que da OCR en GPU sin infraestructura añadida. PaddleOCR queda como ruta de máxima precisión, en su propio venv.</li>
+    <li><strong>Watcher y API HTTP local</strong>, que a esas alturas son superficies delgadas sobre el mismo núcleo.</li>
+  </ol>
+  <p style="margin-top:20px">Los pasos 1 y 2 ya superan en cobertura y velocidad a todo lo analizado, salvo en OCR y ofimática.</p>
+</section>
+
+<footer>
+  <p><b>Material de respaldo</b> — <code>repos/</code> 22 repositorios clonados (2,2 GB) · <code>analysis/</code> 20 documentos, uno por repositorio más cinco transversales · <code>corpus/</code> 17 ficheros de prueba con casos patológicos · <code>bench/results.md</code> mediciones reproducibles.</p>
+  <p style="margin-top:14px">Todas las cifras de este informe proceden de código clonado o de comandos ejecutados en la máquina, no de README ni de metadatos de GitHub. Donde ambos discrepaban, se indica.</p>
+</footer>
+
+</div>

@@ -1,0 +1,490 @@
+{
+ "nombre": "filesystem-confinamiento",
+ "command": "npx.cmd",
+ "args": [
+  "-y",
+  "@modelcontextprotocol/server-filesystem",
+  "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\permitido"
+ ],
+ "cwd": "D:/Work/research/FileX/bench/salidas-mcp-refs/confinamiento",
+ "env": {},
+ "stderr_log": "D:/Work/research/FileX/bench/salidas-mcp-refs/confinamiento/logs/fs_ataques.stderr.log",
+ "pasos": [
+  {
+   "id": "cat_allowed",
+   "tool": "list_allowed_directories",
+   "args": {},
+   "nota": "que publica el servidor sobre su propia allowlist",
+   "recorte": 1200,
+   "timeout": 60
+  },
+  {
+   "id": "A_control_dentro",
+   "tool": "read_text_file",
+   "args": {
+    "path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\permitido\\dentro.txt"
+   },
+   "nota": "(a) CONTROL: existe y esta dentro",
+   "recorte": 1200,
+   "timeout": 60
+  },
+  {
+   "id": "A_control_sub",
+   "tool": "read_text_file",
+   "args": {
+    "path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\permitido\\sub\\anidado.txt"
+   },
+   "nota": "control: subcarpeta permitida",
+   "recorte": 1200,
+   "timeout": 60
+  },
+  {
+   "id": "A_noexiste_dentro",
+   "tool": "read_text_file",
+   "args": {
+    "path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\permitido\\no_existe.txt"
+   },
+   "nota": "existe=NO, dentro de la raiz",
+   "recorte": 1200,
+   "timeout": 60
+  },
+  {
+   "id": "A_noexiste_dir_dentro",
+   "tool": "read_text_file",
+   "args": {
+    "path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\permitido\\no_existe_dir\\x.txt"
+   },
+   "nota": "padre inexistente dentro de la raiz",
+   "recorte": 1200,
+   "timeout": 60
+  },
+  {
+   "id": "B_existe_fuera",
+   "tool": "read_text_file",
+   "args": {
+    "path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\prohibido\\secreto.txt"
+   },
+   "nota": "(b) existe pero FUERA de la raiz",
+   "recorte": 1200,
+   "timeout": 60
+  },
+  {
+   "id": "C_noexiste_fuera",
+   "tool": "read_text_file",
+   "args": {
+    "path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\prohibido\\no_existe_jamas.txt"
+   },
+   "nota": "(c) NO existe y FUERA de la raiz",
+   "recorte": 1200,
+   "timeout": 60
+  },
+  {
+   "id": "C2_noexiste_fuera_dir",
+   "tool": "read_text_file",
+   "args": {
+    "path": "D:\\no_existe_esta_unidad_dir\\x.txt"
+   },
+   "nota": "(c') ni el directorio existe",
+   "recorte": 1200,
+   "timeout": 60
+  },
+  {
+   "id": "T1_rel_simple",
+   "tool": "read_text_file",
+   "args": {
+    "path": "..\\prohibido\\secreto.txt"
+   },
+   "nota": "travesia relativa con backslash",
+   "recorte": 1200,
+   "timeout": 60
+  },
+  {
+   "id": "T2_rel_slash",
+   "tool": "read_text_file",
+   "args": {
+    "path": "../prohibido/secreto.txt"
+   },
+   "nota": "travesia relativa con slash",
+   "recorte": 1200,
+   "timeout": 60
+  },
+  {
+   "id": "T3_abs_dotdot",
+   "tool": "read_text_file",
+   "args": {
+    "path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\permitido\\..\\prohibido\\secreto.txt"
+   },
+   "nota": "absoluta con .. intercalado",
+   "recorte": 1200,
+   "timeout": 60
+  },
+  {
+   "id": "T4_rel_larga",
+   "tool": "read_text_file",
+   "args": {
+    "path": "..\\..\\..\\..\\..\\..\\..\\..\\Windows\\win.ini"
+   },
+   "nota": "cadena larga relativa a win.ini",
+   "recorte": 1200,
+   "timeout": 60
+  },
+  {
+   "id": "T5_abs_dotdot_larga",
+   "tool": "read_text_file",
+   "args": {
+    "path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\permitido\\..\\..\\..\\..\\..\\..\\..\\..\\Windows\\win.ini"
+   },
+   "nota": "cadena larga absoluta a win.ini",
+   "recorte": 1200,
+   "timeout": 60
+  },
+  {
+   "id": "T6_rel_senuelo",
+   "tool": "read_text_file",
+   "args": {
+    "path": "..\\..\\senuelo_fuera.txt"
+   },
+   "nota": "senuelo fuera del sandbox",
+   "recorte": 1200,
+   "timeout": 60
+  },
+  {
+   "id": "R1_abs_cwin",
+   "tool": "read_text_file",
+   "args": {
+    "path": "C:\\Windows\\win.ini"
+   },
+   "nota": "absoluta a fichero real del sistema",
+   "recorte": 1200,
+   "timeout": 60
+  },
+  {
+   "id": "R2_abs_dwin",
+   "tool": "read_text_file",
+   "args": {
+    "path": "D:\\Windows\\win.ini"
+   },
+   "nota": "absoluta a unidad D (no existe D:\\Windows)",
+   "recorte": 1200,
+   "timeout": 60
+  },
+  {
+   "id": "R3_abs_senuelo",
+   "tool": "read_text_file",
+   "args": {
+    "path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\senuelo_fuera.txt"
+   },
+   "nota": "absoluta al senuelo",
+   "recorte": 1200,
+   "timeout": 60
+  },
+  {
+   "id": "P1_prefijo",
+   "tool": "read_text_file",
+   "args": {
+    "path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\permitido_secreto\\trampa.txt"
+   },
+   "nota": "hermano con prefijo comun",
+   "recorte": 1200,
+   "timeout": 60
+  },
+  {
+   "id": "P2_prefijo_ls",
+   "tool": "list_directory",
+   "args": {
+    "path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\permitido_secreto"
+   },
+   "nota": "listar el hermano con prefijo comun",
+   "recorte": 1200,
+   "timeout": 60
+  },
+  {
+   "id": "P3_prefijo_concat",
+   "tool": "read_text_file",
+   "args": {
+    "path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\permitido_secreto\\trampa.txt"
+   },
+   "nota": "misma ruta escrita por concatenacion",
+   "recorte": 1200,
+   "timeout": 60
+  },
+  {
+   "id": "W1_case_min",
+   "tool": "read_text_file",
+   "args": {
+    "path": "d:\\work\\research\\filex\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\permitido\\dentro.txt"
+   },
+   "nota": "todo en minusculas: d:\\work\\...",
+   "recorte": 1200,
+   "timeout": 60
+  },
+  {
+   "id": "W2_case_unidad",
+   "tool": "read_text_file",
+   "args": {
+    "path": "d:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\permitido\\dentro.txt"
+   },
+   "nota": "solo la unidad en minuscula",
+   "recorte": 1200,
+   "timeout": 60
+  },
+  {
+   "id": "W3_slash",
+   "tool": "read_text_file",
+   "args": {
+    "path": "D:/Work/research/FileX/bench/salidas-mcp-refs/confinamiento/sandbox/permitido/dentro.txt"
+   },
+   "nota": "barras normales en vez de invertidas",
+   "recorte": 1200,
+   "timeout": 60
+  },
+  {
+   "id": "W4_slash_fuera",
+   "tool": "read_text_file",
+   "args": {
+    "path": "D:/Work/research/FileX/bench/salidas-mcp-refs/confinamiento/sandbox/prohibido/secreto.txt"
+   },
+   "nota": "barras normales, fuera de la raiz",
+   "recorte": 1200,
+   "timeout": 60
+  },
+  {
+   "id": "W5_unc_q_dentro",
+   "tool": "read_text_file",
+   "args": {
+    "path": "\\\\?\\D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\permitido\\dentro.txt"
+   },
+   "nota": "prefijo \\\\?\\ dentro de la raiz",
+   "recorte": 1200,
+   "timeout": 60
+  },
+  {
+   "id": "W6_unc_q_fuera",
+   "tool": "read_text_file",
+   "args": {
+    "path": "\\\\?\\D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\prohibido\\secreto.txt"
+   },
+   "nota": "prefijo \\\\?\\ fuera de la raiz",
+   "recorte": 1200,
+   "timeout": 60
+  },
+  {
+   "id": "W7_unc_q_dotdot",
+   "tool": "read_text_file",
+   "args": {
+    "path": "\\\\?\\D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\permitido\\..\\prohibido\\secreto.txt"
+   },
+   "nota": "prefijo \\\\?\\ + .. (Win32 no normaliza .. tras \\\\?\\)",
+   "recorte": 1200,
+   "timeout": 60
+  },
+  {
+   "id": "W8_dev_ns",
+   "tool": "read_text_file",
+   "args": {
+    "path": "\\\\.\\D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\prohibido\\secreto.txt"
+   },
+   "nota": "espacio de dispositivos \\\\.\\",
+   "recorte": 1200,
+   "timeout": 60
+  },
+  {
+   "id": "W9_ads",
+   "tool": "read_text_file",
+   "args": {
+    "path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\permitido\\dentro.txt:oculto"
+   },
+   "nota": "flujo de datos alternativo (ADS)",
+   "recorte": 1200,
+   "timeout": 60
+  },
+  {
+   "id": "W10_ads_fuera",
+   "tool": "read_text_file",
+   "args": {
+    "path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\prohibido\\secreto.txt:oculto"
+   },
+   "nota": "ADS sobre fichero prohibido",
+   "recorte": 1200,
+   "timeout": 60
+  },
+  {
+   "id": "W11_punto_final",
+   "tool": "read_text_file",
+   "args": {
+    "path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\permitido\\dentro.txt."
+   },
+   "nota": "punto final (Win32 lo recorta)",
+   "recorte": 1200,
+   "timeout": 60
+  },
+  {
+   "id": "W12_espacio_final",
+   "tool": "read_text_file",
+   "args": {
+    "path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\permitido\\dentro.txt "
+   },
+   "nota": "espacio final (Win32 lo recorta)",
+   "recorte": 1200,
+   "timeout": 60
+  },
+  {
+   "id": "W13_nul_dispositivo",
+   "tool": "read_text_file",
+   "args": {
+    "path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\permitido\\NUL"
+   },
+   "nota": "nombre reservado NUL dentro de la raiz",
+   "recorte": 1200,
+   "timeout": 60
+  },
+  {
+   "id": "W14_con_dispositivo",
+   "tool": "read_text_file",
+   "args": {
+    "path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\permitido\\CON"
+   },
+   "nota": "nombre reservado CON dentro de la raiz",
+   "recorte": 1200,
+   "timeout": 60
+  },
+  {
+   "id": "W15_byte_nulo",
+   "tool": "read_text_file",
+   "args": {
+    "path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\permitido\\dentro.txt\u0000.png"
+   },
+   "nota": "byte nulo (truncamiento)",
+   "recorte": 1200,
+   "timeout": 60
+  },
+  {
+   "id": "W16_unidad_relativa",
+   "tool": "read_text_file",
+   "args": {
+    "path": "D:..\\prohibido\\secreto.txt"
+   },
+   "nota": "ruta relativa a la unidad D:",
+   "recorte": 1200,
+   "timeout": 60
+  },
+  {
+   "id": "W17_comillas",
+   "tool": "read_text_file",
+   "args": {
+    "path": "\"D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\prohibido\\secreto.txt\""
+   },
+   "nota": "ruta entre comillas (normalizePath las quita)",
+   "recorte": 1200,
+   "timeout": 60
+  },
+  {
+   "id": "W18_espacio_inicial",
+   "tool": "read_text_file",
+   "args": {
+    "path": " D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\prohibido\\secreto.txt"
+   },
+   "nota": "espacio inicial (isAbsolute falla antes del trim)",
+   "recorte": 1200,
+   "timeout": 60
+  },
+  {
+   "id": "W19_gitbash",
+   "tool": "read_text_file",
+   "args": {
+    "path": "/d/Work/research/FileX/bench/salidas-mcp-refs/confinamiento/sandbox/permitido/dentro.txt"
+   },
+   "nota": "estilo /d/Work/... (convertToWindowsPath)",
+   "recorte": 1200,
+   "timeout": 60
+  },
+  {
+   "id": "W20_gitbash_fuera",
+   "tool": "read_text_file",
+   "args": {
+    "path": "/d/Work/research/FileX/bench/salidas-mcp-refs/confinamiento/sandbox/prohibido/secreto.txt"
+   },
+   "nota": "estilo /d/... fuera de la raiz",
+   "recorte": 1200,
+   "timeout": 60
+  },
+  {
+   "id": "W21_wsl",
+   "tool": "read_text_file",
+   "args": {
+    "path": "/mnt/d/Work/research/FileX/bench/salidas-mcp-refs/confinamiento/sandbox/prohibido/secreto.txt"
+   },
+   "nota": "estilo WSL /mnt/d/...",
+   "recorte": 1200,
+   "timeout": 60
+  },
+  {
+   "id": "W22_barra_final",
+   "tool": "read_text_file",
+   "args": {
+    "path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\permitido\\sub\\"
+   },
+   "nota": "barra final en directorio",
+   "recorte": 1200,
+   "timeout": 60
+  },
+  {
+   "id": "X1_multi",
+   "tool": "read_multiple_files",
+   "args": {
+    "paths": [
+     "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\permitido\\dentro.txt",
+     "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\prohibido\\secreto.txt",
+     "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\prohibido\\no_existe_jamas.txt",
+     "C:\\Windows\\win.ini",
+     "C:\\Windows\\no_existe_jamas.ini",
+     "C:\\Users\\krato\\NTUSER.DAT"
+    ]
+   },
+   "nota": "un solo tools/call = 6 respuestas del oraculo",
+   "recorte": 3000,
+   "timeout": 60
+  },
+  {
+   "id": "X2_get_info_fuera",
+   "tool": "get_file_info",
+   "args": {
+    "path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\prohibido\\secreto.txt"
+   },
+   "nota": "get_file_info fuera de la raiz",
+   "recorte": 1200,
+   "timeout": 60
+  },
+  {
+   "id": "X3_tree_fuera",
+   "tool": "directory_tree",
+   "args": {
+    "path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox"
+   },
+   "nota": "directory_tree sobre el padre de la raiz",
+   "recorte": 1200,
+   "timeout": 60
+  },
+  {
+   "id": "X4_search",
+   "tool": "search_files",
+   "args": {
+    "path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\permitido",
+    "pattern": "*.txt"
+   },
+   "nota": "search dentro de la raiz",
+   "recorte": 1200,
+   "timeout": 60
+  },
+  {
+   "id": "X5_media_fuera",
+   "tool": "read_media_file",
+   "args": {
+    "path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\prohibido\\secreto.txt"
+   },
+   "nota": "read_media_file fuera de la raiz",
+   "recorte": 1200,
+   "timeout": 60
+  }
+ ]
+}

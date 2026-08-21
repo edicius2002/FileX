@@ -1,0 +1,60 @@
+=== (a) implementacion de deskew en ocrmypdf 16.13 ===
+484:    # Produce the page image with square resolution or else deskew and OCR
+584:def preprocess_deskew(input_file: Path, page_context: PageContext) -> Path:
+588:        input_file: The input image file to deskew.
+592:        Path: The path to the deskewed image file.
+594:    output_file = page_context.get_path('pp_deskew.png')
+598:    deskew_angle_degrees = ocr_engine.get_deskew(input_file, page_context.options)
+603:        deskewed = im.rotate(
+604:            deskew_angle_degrees,
+608:        deskewed.save(output_file, dpi=dpi)
+713:        # At this point the image should be a .png, but deskew, unpaper
+--- funcion preprocess_deskew ---
+def preprocess_deskew(input_file: Path, page_context: PageContext) -> Path:
+    """Deskews the input image using the OCR engine and saves the output to a file.
+
+    Args:
+        input_file: The input image file to deskew.
+        page_context: The context of the page being processed.
+
+    Returns:
+        Path: The path to the deskewed image file.
+    """
+    output_file = page_context.get_path('pp_deskew.png')
+    dpi = get_page_square_dpi(page_context, calculate_image_dpi(page_context))
+
+    ocr_engine = page_context.plugin_manager.hook.get_ocr_engine()
+    deskew_angle_degrees = ocr_engine.get_deskew(input_file, page_context.options)
+
+    with Image.open(input_file) as im:
+        # According to Pillow docs, .rotate() will automatically use Image.NEAREST
+        # resampling if image is mode '1' or 'P'
+        deskewed = im.rotate(
+            deskew_angle_degrees,
+            resample=Image.Resampling.BICUBIC,
+            fillcolor=ImageColor.getcolor('white', mode=im.mode),  # type: ignore
+        )
+        deskewed.save(output_file, dpi=dpi)
+
+    return output_file
+
+
+def preprocess_clean(input_file: Path, page_context: PageContext) -> Path:
+--- de donde sale get_deskew ---
+/usr/lib/python3/dist-packages/ocrmypdf/builtin_plugins/tesseract_ocr.py:81:            "deskewing and orientation, the timeout is controlled by "
+/usr/lib/python3/dist-packages/ocrmypdf/builtin_plugins/tesseract_ocr.py:91:            "Give up on non-OCR operations such as deskewing and orientation "
+/usr/lib/python3/dist-packages/ocrmypdf/builtin_plugins/tesseract_ocr.py:258:    def get_deskew(input_file, options) -> float:
+/usr/lib/python3/dist-packages/ocrmypdf/builtin_plugins/tesseract_ocr.py:259:        return tesseract.get_deskew(
+
+=== (b) prueba de control: imagen NITIDA e inclinada 5 grados ===
+generado /tmp/skew5.png
+    1 Rotating output by 0
+    1 input dpi = 96 x 96
+texto -> 
+
+=== (c) unpaper con filtros reales, sobre d3 y d2 ===
+agresivo     escaneado_d3     rc=0 chars=0
+deskewup     escaneado_d3     rc=0 chars=0
+agresivo     escaneado_d2     rc=0 chars=0
+deskewup     escaneado_d2     rc=0 chars=0
+listo

@@ -1,0 +1,561 @@
+{
+ "por_categoria": [
+  {
+   "etiqueta": "sonda_salida[proceso/audio]",
+   "n": 11,
+   "mediana_ms": 8.131,
+   "min_ms": 4.211,
+   "max_ms": 59.288,
+   "flag": "limpia",
+   "testigo_ms": [
+    32.92,
+    36.92
+   ],
+   "por_fichero_ms": 0.678,
+   "n_ficheros": 12,
+   "tipo": "sonda",
+   "motor": "proceso",
+   "cat": "audio"
+  },
+  {
+   "etiqueta": "sonda_salida[proceso/datos]",
+   "n": 11,
+   "mediana_ms": 1.269,
+   "min_ms": 0.77,
+   "max_ms": 8.062,
+   "flag": "SUCIA(testigo +28%)",
+   "testigo_ms": [
+    33.94,
+    43.5
+   ],
+   "por_fichero_ms": 0.423,
+   "n_ficheros": 3,
+   "tipo": "sonda",
+   "motor": "proceso",
+   "cat": "datos"
+  },
+  {
+   "etiqueta": "sonda_salida[proceso/imagen]",
+   "n": 11,
+   "mediana_ms": 11.318,
+   "min_ms": 8.154,
+   "max_ms": 46.001,
+   "flag": "SUCIA(testigo +21%)",
+   "testigo_ms": [
+    42.75,
+    33.84
+   ],
+   "por_fichero_ms": 0.596,
+   "n_ficheros": 19,
+   "tipo": "sonda",
+   "motor": "proceso",
+   "cat": "imagen"
+  },
+  {
+   "etiqueta": "sonda_salida[proceso/pdf]",
+   "n": 11,
+   "mediana_ms": 4.215,
+   "min_ms": 2.821,
+   "max_ms": 8.018,
+   "flag": "limpia",
+   "testigo_ms": [
+    40.46,
+    36.62
+   ],
+   "por_fichero_ms": 0.383,
+   "n_ficheros": 11,
+   "tipo": "sonda",
+   "motor": "proceso",
+   "cat": "pdf"
+  },
+  {
+   "etiqueta": "sonda_salida[proceso/video]",
+   "n": 11,
+   "mediana_ms": 9.399,
+   "min_ms": 6.451,
+   "max_ms": 22.108,
+   "flag": "SUCIA(testigo +24%)",
+   "testigo_ms": [
+    45.43,
+    34.35
+   ],
+   "por_fichero_ms": 1.175,
+   "n_ficheros": 8,
+   "tipo": "sonda",
+   "motor": "proceso",
+   "cat": "video"
+  },
+  {
+   "etiqueta": "verificacion_total[proceso/audio]",
+   "n": 11,
+   "mediana_ms": 8.669,
+   "min_ms": 5.108,
+   "max_ms": 18.495,
+   "flag": "limpia",
+   "testigo_ms": [
+    31.69,
+    33.54
+   ],
+   "por_fichero_ms": 0.722,
+   "n_ficheros": 12,
+   "tipo": "total",
+   "motor": "proceso",
+   "cat": "audio"
+  },
+  {
+   "etiqueta": "verificacion_total[proceso/datos]",
+   "n": 11,
+   "mediana_ms": 1.993,
+   "min_ms": 1.054,
+   "max_ms": 2.629,
+   "flag": "limpia",
+   "testigo_ms": [
+    28.01,
+    27.57
+   ],
+   "por_fichero_ms": 0.664,
+   "n_ficheros": 3,
+   "tipo": "total",
+   "motor": "proceso",
+   "cat": "datos"
+  },
+  {
+   "etiqueta": "verificacion_total[proceso/imagen]",
+   "n": 11,
+   "mediana_ms": 12.58,
+   "min_ms": 7.02,
+   "max_ms": 23.377,
+   "flag": "limpia",
+   "testigo_ms": [
+    36.32,
+    34.71
+   ],
+   "por_fichero_ms": 0.662,
+   "n_ficheros": 19,
+   "tipo": "total",
+   "motor": "proceso",
+   "cat": "imagen"
+  },
+  {
+   "etiqueta": "verificacion_total[proceso/pdf]",
+   "n": 11,
+   "mediana_ms": 7.507,
+   "min_ms": 4.266,
+   "max_ms": 17.552,
+   "flag": "SUCIA(testigo +28%)",
+   "testigo_ms": [
+    32.56,
+    41.69
+   ],
+   "por_fichero_ms": 0.682,
+   "n_ficheros": 11,
+   "tipo": "total",
+   "motor": "proceso",
+   "cat": "pdf"
+  },
+  {
+   "etiqueta": "verificacion_total[proceso/video]",
+   "n": 11,
+   "mediana_ms": 13.043,
+   "min_ms": 10.031,
+   "max_ms": 15.452,
+   "flag": "limpia",
+   "testigo_ms": [
+    32.77,
+    34.86
+   ],
+   "por_fichero_ms": 1.63,
+   "n_ficheros": 8,
+   "tipo": "total",
+   "motor": "proceso",
+   "cat": "video"
+  },
+  {
+   "etiqueta": "sonda_salida[subproceso/audio]",
+   "n": 11,
+   "mediana_ms": 654.231,
+   "min_ms": 560.525,
+   "max_ms": 1020.052,
+   "flag": "limpia",
+   "testigo_ms": [
+    26.39,
+    22.95
+   ],
+   "por_fichero_ms": 54.519,
+   "n_ficheros": 12,
+   "tipo": "sonda",
+   "motor": "subproceso",
+   "cat": "audio"
+  },
+  {
+   "etiqueta": "sonda_salida[subproceso/datos]",
+   "n": 11,
+   "mediana_ms": 0.954,
+   "min_ms": 0.741,
+   "max_ms": 1.868,
+   "flag": "limpia",
+   "testigo_ms": [
+    24.21,
+    23.34
+   ],
+   "por_fichero_ms": 0.318,
+   "n_ficheros": 3,
+   "tipo": "sonda",
+   "motor": "subproceso",
+   "cat": "datos"
+  },
+  {
+   "etiqueta": "sonda_salida[subproceso/imagen]",
+   "n": 11,
+   "mediana_ms": 3938.752,
+   "min_ms": 2794.631,
+   "max_ms": 54222.183,
+   "flag": "SUCIA(testigo +36%)",
+   "testigo_ms": [
+    29.95,
+    19.22
+   ],
+   "por_fichero_ms": 207.303,
+   "n_ficheros": 19,
+   "tipo": "sonda",
+   "motor": "subproceso",
+   "cat": "imagen"
+  },
+  {
+   "etiqueta": "sonda_salida[subproceso/pdf]",
+   "n": 11,
+   "mediana_ms": 1779.921,
+   "min_ms": 1467.817,
+   "max_ms": 2258.809,
+   "flag": "SUCIA(testigo +31%)",
+   "testigo_ms": [
+    35.52,
+    24.68
+   ],
+   "por_fichero_ms": 161.811,
+   "n_ficheros": 11,
+   "tipo": "sonda",
+   "motor": "subproceso",
+   "cat": "pdf"
+  },
+  {
+   "etiqueta": "sonda_salida[subproceso/video]",
+   "n": 11,
+   "mediana_ms": 613.4,
+   "min_ms": 510.126,
+   "max_ms": 843.587,
+   "flag": "limpia",
+   "testigo_ms": [
+    23.38,
+    19.5
+   ],
+   "por_fichero_ms": 76.675,
+   "n_ficheros": 8,
+   "tipo": "sonda",
+   "motor": "subproceso",
+   "cat": "video"
+  },
+  {
+   "etiqueta": "verificacion_total[subproceso/audio]",
+   "n": 11,
+   "mediana_ms": 625.048,
+   "min_ms": 456.923,
+   "max_ms": 1207.228,
+   "flag": "SUCIA(testigo +50%)",
+   "testigo_ms": [
+    44.94,
+    22.54
+   ],
+   "por_fichero_ms": 52.087,
+   "n_ficheros": 12,
+   "tipo": "total",
+   "motor": "subproceso",
+   "cat": "audio"
+  },
+  {
+   "etiqueta": "verificacion_total[subproceso/datos]",
+   "n": 11,
+   "mediana_ms": 1.342,
+   "min_ms": 0.944,
+   "max_ms": 4.049,
+   "flag": "limpia",
+   "testigo_ms": [
+    22.06,
+    20.86
+   ],
+   "por_fichero_ms": 0.447,
+   "n_ficheros": 3,
+   "tipo": "total",
+   "motor": "subproceso",
+   "cat": "datos"
+  },
+  {
+   "etiqueta": "verificacion_total[subproceso/imagen]",
+   "n": 11,
+   "mediana_ms": 7213.48,
+   "min_ms": 4772.06,
+   "max_ms": 9542.198,
+   "flag": "SUCIA(testigo +32%)",
+   "testigo_ms": [
+    20.54,
+    27.15
+   ],
+   "por_fichero_ms": 379.657,
+   "n_ficheros": 19,
+   "tipo": "total",
+   "motor": "subproceso",
+   "cat": "imagen"
+  },
+  {
+   "etiqueta": "verificacion_total[subproceso/pdf]",
+   "n": 11,
+   "mediana_ms": 4161.543,
+   "min_ms": 3768.842,
+   "max_ms": 6215.144,
+   "flag": "limpia",
+   "testigo_ms": [
+    25.53,
+    24.26
+   ],
+   "por_fichero_ms": 378.322,
+   "n_ficheros": 11,
+   "tipo": "total",
+   "motor": "subproceso",
+   "cat": "pdf"
+  },
+  {
+   "etiqueta": "verificacion_total[subproceso/video]",
+   "n": 11,
+   "mediana_ms": 924.361,
+   "min_ms": 861.062,
+   "max_ms": 1419.53,
+   "flag": "limpia",
+   "testigo_ms": [
+    26.35,
+    26.74
+   ],
+   "por_fichero_ms": 115.545,
+   "n_ficheros": 8,
+   "tipo": "total",
+   "motor": "subproceso",
+   "cat": "video"
+  }
+ ],
+ "desglose_puntos": {
+  "proceso": {
+   "audio": {
+    "sonda_salida": 0.3097,
+    "sonda_entrada": 0.0003,
+    "1_firma": 0.0433,
+    "2_flujos": 0.0043,
+    "3_propiedades": 0.0026,
+    "4_pedido": 0.0175,
+    "total": 0.3824,
+    "logica": 0.0693
+   },
+   "datos": {
+    "sonda_salida": 2.0344,
+    "sonda_entrada": 0.0004,
+    "1_firma": 0.1066,
+    "2_flujos": 0.0016,
+    "3_propiedades": 0.0047,
+    "4_pedido": 0.0563,
+    "total": 2.1637,
+    "logica": 0.1613
+   },
+   "imagen": {
+    "sonda_salida": 0.2963,
+    "sonda_entrada": 0.0003,
+    "1_firma": 0.0437,
+    "2_flujos": 0.0009,
+    "3_propiedades": 0.0015,
+    "4_pedido": 0.0122,
+    "total": 0.361,
+    "logica": 0.0582
+   },
+   "pdf": {
+    "sonda_salida": 0.3573,
+    "sonda_entrada": 0.0003,
+    "1_firma": 0.0478,
+    "2_flujos": 0.001,
+    "3_propiedades": 0.0015,
+    "4_pedido": 0.0123,
+    "total": 0.4271,
+    "logica": 0.0634
+   },
+   "video": {
+    "sonda_salida": 1.0972,
+    "sonda_entrada": 0.0004,
+    "1_firma": 0.1169,
+    "2_flujos": 0.0061,
+    "3_propiedades": 0.0037,
+    "4_pedido": 0.023,
+    "total": 1.2837,
+    "logica": 0.1862
+   }
+  },
+  "subproceso": {
+   "audio": {
+    "sonda_salida": 82.3769,
+    "sonda_entrada": 0.0004,
+    "1_firma": 0.0991,
+    "2_flujos": 0.007,
+    "3_propiedades": 0.0034,
+    "4_pedido": 0.0275,
+    "total": 82.5232,
+    "logica": 0.1371
+   },
+   "datos": {
+    "sonda_salida": 0.2676,
+    "sonda_entrada": 0.0003,
+    "1_firma": 0.0483,
+    "2_flujos": 0.0009,
+    "3_propiedades": 0.0025,
+    "4_pedido": 0.0094,
+    "total": 0.3294,
+    "logica": 0.0615
+   },
+   "imagen": {
+    "sonda_salida": 126.642,
+    "sonda_entrada": 0.0005,
+    "1_firma": 0.1297,
+    "2_flujos": 0.0016,
+    "3_propiedades": 0.0027,
+    "4_pedido": 0.0242,
+    "total": 126.7522,
+    "logica": 0.1543
+   },
+   "pdf": {
+    "sonda_salida": 213.5905,
+    "sonda_entrada": 0.0005,
+    "1_firma": 0.0968,
+    "2_flujos": 0.0015,
+    "3_propiedades": 0.0028,
+    "4_pedido": 0.0215,
+    "total": 213.7526,
+    "logica": 0.1209
+   },
+   "video": {
+    "sonda_salida": 143.3676,
+    "sonda_entrada": 0.0003,
+    "1_firma": 0.1054,
+    "2_flujos": 0.0073,
+    "3_propiedades": 0.0042,
+    "4_pedido": 0.0212,
+    "total": 143.4929,
+    "logica": 0.1348
+   }
+  }
+ },
+ "suelo_proceso": [
+  {
+   "etiqueta": "ffprobe -version",
+   "n": 11,
+   "mediana_ms": 57.066,
+   "min_ms": 45.129,
+   "max_ms": 69.913,
+   "flag": "limpia",
+   "testigo_ms": [
+    26.47,
+    26.64
+   ]
+  },
+  {
+   "etiqueta": "magick -version",
+   "n": 11,
+   "mediana_ms": 24.153,
+   "min_ms": 20.871,
+   "max_ms": 140.261,
+   "flag": "limpia",
+   "testigo_ms": [
+    27.51,
+    24.66
+   ]
+  },
+  {
+   "etiqueta": "ffprobe salida tipica (mp3)",
+   "n": 11,
+   "mediana_ms": 50.99,
+   "min_ms": 46.651,
+   "max_ms": 95.173,
+   "flag": "limpia",
+   "testigo_ms": [
+    25.7,
+    25.97
+   ]
+  },
+  {
+   "etiqueta": "magick identify (png 1920x1080)",
+   "n": 11,
+   "mediana_ms": 205.447,
+   "min_ms": 185.374,
+   "max_ms": 285.123,
+   "flag": "limpia",
+   "testigo_ms": [
+    27.01,
+    25.84
+   ]
+  },
+  {
+   "etiqueta": "magick alfa minima (png 1920x1080)",
+   "n": 11,
+   "mediana_ms": 734.602,
+   "min_ms": 612.287,
+   "max_ms": 827.483,
+   "flag": "limpia",
+   "testigo_ms": [
+    27.0,
+    24.61
+   ]
+  },
+  {
+   "etiqueta": "ffprobe mkv 4 MB (2 pistas)",
+   "n": 11,
+   "mediana_ms": 83.51,
+   "min_ms": 67.894,
+   "max_ms": 108.85,
+   "flag": "limpia",
+   "testigo_ms": [
+    29.73,
+    24.66
+   ]
+  },
+  {
+   "etiqueta": "ffprobe mp4 16 MB",
+   "n": 11,
+   "mediana_ms": 64.17,
+   "min_ms": 56.659,
+   "max_ms": 73.956,
+   "flag": "limpia",
+   "testigo_ms": [
+    22.26,
+    24.63
+   ]
+  },
+  {
+   "etiqueta": "magick identify tif 72 MB 16 bits",
+   "n": 11,
+   "mediana_ms": 217.622,
+   "min_ms": 199.023,
+   "max_ms": 320.168,
+   "flag": "limpia",
+   "testigo_ms": [
+    25.6,
+    23.86
+   ]
+  }
+ ],
+ "firma": {
+  "etiqueta": "punto1_firma_53_ficheros",
+  "n": 11,
+  "mediana_ms": 5.133,
+  "min_ms": 3.853,
+  "max_ms": 7.492,
+  "flag": "limpia",
+  "testigo_ms": [
+   24.83,
+   28.36
+  ],
+  "por_fichero_ms": 0.0968
+ }
+}

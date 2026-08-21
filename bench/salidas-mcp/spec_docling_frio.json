@@ -1,0 +1,42 @@
+{
+ "nombre": "docling-mcp arranque en frio",
+ "command": "D:\\Work\\research\\FileX\\.venv-ai\\Scripts\\docling-mcp-server.exe",
+ "args": [
+  "--transport",
+  "stdio"
+ ],
+ "cwd": "D:\\Work\\research\\FileX",
+ "env": {
+  "DOCLING_MCP_CONVERSION_MODE": "local",
+  "DOCLING_MCP_DO_OCR": "false",
+  "DOCLING_MCP_DO_TABLE_STRUCTURE": "true",
+  "DOCLING_MCP_KEEP_IMAGES": "false"
+ },
+ "stderr_log": "D:/Work/research/FileX/bench/salidas-mcp/stderr_docling_frio.log",
+ "pasos": [
+  {
+   "id": "primera_llamada",
+   "tool": "convert_document_into_docling_document",
+   "args": {
+    "source": "D:/Work/research/FileX/corpus/pdf/tipico_texto.pdf"
+   },
+   "timeout": 900
+  },
+  {
+   "id": "segunda_llamada",
+   "tool": "convert_document_into_docling_document",
+   "args": {
+    "source": "D:/Work/research/FileX/corpus/pdf/trivial.pdf"
+   },
+   "timeout": 900
+  },
+  {
+   "id": "tercera_llamada",
+   "tool": "convert_document_into_docling_document",
+   "args": {
+    "source": "D:/Work/research/FileX/corpus/pdf/escaneado_d1.pdf"
+   },
+   "timeout": 900
+  }
+ ]
+}

@@ -1,0 +1,148 @@
+{
+  "sdk_mcp": "1.29.0",
+  "protocolo_cliente": "2025-11-25",
+  "argv": [
+    "--raices-servidor",
+    "D:/Work/research/FileX/bench/salidas-sdk-mcp/raiz_srv",
+    "--stderr",
+    "stderr_129_sin_roots.txt",
+    "--out",
+    "r_129_sin_roots.json"
+  ],
+  "pasos": [
+    {
+      "paso": "t_ping",
+      "ms": 4.0,
+      "isError": false,
+      "contenido": [
+        {
+          "type": "text",
+          "text": "pong"
+        }
+      ]
+    },
+    {
+      "paso": "t_roots_cap",
+      "ms": 5.0,
+      "isError": false,
+      "contenido": [
+        {
+          "type": "text",
+          "text": "{\"roots\": false, \"roots.listChanged\": false, \"capacidades_cliente\": {\"experimental\": null, \"sampling\": null, \"elicitation\": null, \"roots\": null, \"tasks\": null}}"
+        }
+      ]
+    },
+    {
+      "paso": "t_roots",
+      "ms": 5.0,
+      "isError": false,
+      "contenido": [
+        {
+          "type": "text",
+          "text": "{\"ok\": false, \"excepcion\": \"mcp.shared.exceptions.McpError\", \"repr\": \"McpError('List roots not supported')\", \"str\": \"List roots not supported\", \"code\": -32600, \"message\": \"List roots not supported\"}"
+        }
+      ]
+    },
+    {
+      "paso": "t_roots_interseca",
+      "ms": 6.3,
+      "isError": false,
+      "contenido": [
+        {
+          "type": "text",
+          "text": "{\"modo\": \"fallback_lista_servidor\", \"servidor\": [\"D:\\\\Work\\\\research\\\\FileX\\\\bench\\\\salidas-sdk-mcp\\\\raiz_srv\"], \"cliente\": [], \"efectiva\": [\"D:\\\\Work\\\\research\\\\FileX\\\\bench\\\\salidas-sdk-mcp\\\\raiz_srv\"]}"
+        }
+      ]
+    },
+    {
+      "paso": "t_img_puro",
+      "ms": 4.0,
+      "isError": false,
+      "contenido": [
+        {
+          "type": "image",
+          "data": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==",
+          "mimeType": "image/png"
+        }
+      ]
+    },
+    {
+      "paso": "t_img_prefijo",
+      "ms": 3.0,
+      "isError": false,
+      "contenido": [
+        {
+          "type": "image",
+          "data": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==",
+          "mimeType": "image/png"
+        }
+      ]
+    },
+    {
+      "paso": "t_img_basura",
+      "ms": 3.1,
+      "isError": false,
+      "contenido": [
+        {
+          "type": "image",
+          "data": "esto no es base64 !!!! @@@@",
+          "mimeType": "image/png"
+        }
+      ]
+    },
+    {
+      "paso": "t_img_vacio",
+      "ms": 3.0,
+      "isError": false,
+      "contenido": [
+        {
+          "type": "image",
+          "data": "",
+          "mimeType": "image/png"
+        }
+      ]
+    },
+    {
+      "paso": "t_img_nomime",
+      "ms": 4.0,
+      "isError": false,
+      "contenido": [
+        {
+          "type": "image",
+          "data": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==",
+          "mimeType": ""
+        }
+      ]
+    }
+  ],
+  "init": {
+    "protocolo_negociado": "2025-11-25",
+    "servidor": {
+      "name": "filex-probe-1x",
+      "title": null,
+      "version": "0.0.1",
+      "websiteUrl": null,
+      "icons": null
+    },
+    "capacidades_servidor": {
+      "experimental": {},
+      "tools": {
+        "listChanged": false
+      }
+    }
+  },
+  "cliente_declara_roots": false,
+  "herramientas": [
+    "t_ping",
+    "t_roots",
+    "t_roots_cap",
+    "t_roots_interseca",
+    "t_slow",
+    "t_img",
+    "t_eventos"
+  ],
+  "progresos_recibidos": [],
+  "roots_list_pedidos_por_el_servidor": [],
+  "tasks_en_types": true,
+  "capacidad_tasks_servidor": null
+}

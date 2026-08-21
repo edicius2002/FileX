@@ -1,0 +1,193 @@
+{
+  "sdk_mcp": "1.8.1",
+  "protocolo_cliente": "2024-11-05",
+  "argv": [
+    "--raices-servidor",
+    "D:/Work/research/FileX/bench/salidas-sdk-mcp/raiz_srv",
+    "--slow",
+    "12",
+    "--slow-timeout",
+    "20",
+    "--stderr",
+    "stderr_181_slow.txt",
+    "--out",
+    "r_181_slow.json"
+  ],
+  "pasos": [
+    {
+      "paso": "t_ping",
+      "ms": 3.2,
+      "isError": false,
+      "contenido": [
+        {
+          "type": "text",
+          "text": "pong"
+        }
+      ]
+    },
+    {
+      "paso": "t_roots_cap",
+      "ms": 2.8,
+      "isError": false,
+      "contenido": [
+        {
+          "type": "text",
+          "text": "{\"roots\": true, \"roots.listChanged\": true, \"capacidades_cliente\": {\"experimental\": null, \"sampling\": {}, \"roots\": {\"listChanged\": true}}}"
+        }
+      ]
+    },
+    {
+      "paso": "t_roots",
+      "ms": 3.0,
+      "isError": false,
+      "contenido": [
+        {
+          "type": "text",
+          "text": "{\"ok\": false, \"excepcion\": \"mcp.shared.exceptions.McpError\", \"repr\": \"McpError('List roots not supported')\", \"str\": \"List roots not supported\", \"code\": -32600, \"message\": \"List roots not supported\"}"
+        }
+      ]
+    },
+    {
+      "paso": "t_roots_interseca",
+      "ms": 4.0,
+      "isError": false,
+      "contenido": [
+        {
+          "type": "text",
+          "text": "{\"modo\": \"fallback_lista_servidor\", \"servidor\": [\"D:\\\\Work\\\\research\\\\FileX\\\\bench\\\\salidas-sdk-mcp\\\\raiz_srv\"], \"cliente\": [], \"efectiva\": [\"D:\\\\Work\\\\research\\\\FileX\\\\bench\\\\salidas-sdk-mcp\\\\raiz_srv\"]}"
+        }
+      ]
+    },
+    {
+      "paso": "t_img_puro",
+      "ms": 2.0,
+      "isError": false,
+      "contenido": [
+        {
+          "type": "image",
+          "data": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==",
+          "mimeType": "image/png"
+        }
+      ]
+    },
+    {
+      "paso": "t_img_prefijo",
+      "ms": 1.0,
+      "isError": false,
+      "contenido": [
+        {
+          "type": "image",
+          "data": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==",
+          "mimeType": "image/png"
+        }
+      ]
+    },
+    {
+      "paso": "t_img_basura",
+      "ms": 2.0,
+      "isError": false,
+      "contenido": [
+        {
+          "type": "image",
+          "data": "esto no es base64 !!!! @@@@",
+          "mimeType": "image/png"
+        }
+      ]
+    },
+    {
+      "paso": "t_img_vacio",
+      "ms": 2.0,
+      "isError": false,
+      "contenido": [
+        {
+          "type": "image",
+          "data": "",
+          "mimeType": "image/png"
+        }
+      ]
+    },
+    {
+      "paso": "t_img_nomime",
+      "ms": 1.0,
+      "isError": false,
+      "contenido": [
+        {
+          "type": "image",
+          "data": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==",
+          "mimeType": ""
+        }
+      ]
+    },
+    {
+      "paso": "t_slow_sin_progreso",
+      "ms": 12172.9,
+      "isError": false,
+      "contenido": [
+        {
+          "type": "text",
+          "text": "{\"dormido_s\": 12.0, \"progressToken\": \"None\", \"pasos\": 12}"
+        }
+      ]
+    },
+    {
+      "paso": "t_slow_timeout_corto",
+      "ms": 4011.5,
+      "EXCEPCION": "mcp.shared.exceptions.McpError",
+      "repr": "McpError('Timed out while waiting for response to ClientRequest. Waited 4.0 seconds.')"
+    },
+    {
+      "paso": "t_ping_tras_timeout",
+      "ms": 2.0,
+      "isError": false,
+      "contenido": [
+        {
+          "type": "text",
+          "text": "pong"
+        }
+      ]
+    },
+    {
+      "paso": "t_ping_tras_esperar_a_que_acabe",
+      "ms": 2.0,
+      "isError": false,
+      "contenido": [
+        {
+          "type": "text",
+          "text": "pong"
+        }
+      ]
+    }
+  ],
+  "init": {
+    "protocolo_negociado": "2024-11-05",
+    "servidor": {
+      "name": "filex-probe-1x",
+      "version": "0.0.1"
+    },
+    "capacidades_servidor": {
+      "experimental": {},
+      "tools": {
+        "listChanged": false
+      }
+    }
+  },
+  "cliente_declara_roots": false,
+  "herramientas": [
+    "t_ping",
+    "t_roots",
+    "t_roots_cap",
+    "t_roots_interseca",
+    "t_slow",
+    "t_img",
+    "t_eventos"
+  ],
+  "progress_callback_soportado": false,
+  "progress_callback_error": "TypeError(\"ClientSession.call_tool() got an unexpected keyword argument 'progress_callback'\")",
+  "progresos_fase1": [],
+  "timeout_corto_s": 4.0,
+  "progresos_fase2_tras_timeout": [],
+  "progresos_recibidos": [],
+  "roots_list_pedidos_por_el_servidor": [],
+  "tasks_en_types": false,
+  "capacidad_tasks_servidor": "<sin campo>"
+}

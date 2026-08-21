@@ -1,0 +1,217 @@
+{
+  "sdk_mcp": "2.0.0",
+  "protocolo_cliente": "2026-07-28",
+  "modo": "legacy",
+  "argv": [
+    "--modo",
+    "legacy",
+    "--raices-servidor",
+    "D:/Work/research/FileX/bench/salidas-sdk-mcp/raiz_srv",
+    "--roots",
+    "D:/Work/research/FileX/bench/salidas-sdk-mcp/raiz_srv/sub;D:/Work/research/FileX/bench/salidas-sdk-mcp/raiz_fuera",
+    "--roots-2",
+    "D:/Work/research/FileX/bench/salidas-sdk-mcp/raiz_srv",
+    "--slow",
+    "5",
+    "--stderr",
+    "stderr_200_legacy.txt",
+    "--out",
+    "r_200_legacy.json"
+  ],
+  "pasos": [
+    {
+      "paso": "t_ping",
+      "ms": 3.0,
+      "isError": false,
+      "contenido": [
+        {
+          "type": "text",
+          "text": "pong"
+        }
+      ]
+    },
+    {
+      "paso": "t_roots_cap",
+      "ms": 3.0,
+      "isError": false,
+      "contenido": [
+        {
+          "type": "text",
+          "text": "{\"check_client_capability\": true, \"capacidades_cliente\": {\"experimental\": null, \"sampling\": null, \"elicitation\": null, \"roots\": {\"list_changed\": true}, \"extensions\": null, \"tasks\": null}, \"protocolo\": \"2025-11-25\", \"avisos\": [\"MCPDeprecationWarning: The roots capability is deprecated as of 2026-07-28 (SEP-2577).\"]}"
+        }
+      ]
+    },
+    {
+      "paso": "t_roots",
+      "ms": 5.5,
+      "isError": false,
+      "contenido": [
+        {
+          "type": "text",
+          "text": "{\"ok\": true, \"roots\": [{\"uri\": \"file:///D:/Work/research/FileX/bench/salidas-sdk-mcp/raiz_srv/sub\", \"name\": \"sub\"}, {\"uri\": \"file:///D:/Work/research/FileX/bench/salidas-sdk-mcp/raiz_fuera\", \"name\": \"raiz_fuera\"}], \"avisos\": [\"MCPDeprecationWarning: The roots capability is deprecated as of 2026-07-28 (SEP-2577).\", \"MCPDeprecationWarning: The roots capability is deprecated as of 2026-07-28 (SEP-2577).\"]}"
+        }
+      ]
+    },
+    {
+      "paso": "t_roots_interseca",
+      "ms": 4.5,
+      "isError": false,
+      "contenido": [
+        {
+          "type": "text",
+          "text": "{\"modo\": \"interseccion\", \"servidor\": [\"D:\\\\Work\\\\research\\\\FileX\\\\bench\\\\salidas-sdk-mcp\\\\raiz_srv\"], \"cliente\": [{\"uri\": \"file:///D:/Work/research/FileX/bench/salidas-sdk-mcp/raiz_srv/sub\", \"name\": \"sub\"}, {\"uri\": \"file:///D:/Work/research/FileX/bench/salidas-sdk-mcp/raiz_fuera\", \"name\": \"raiz_fuera\"}], \"efectiva\": [\"D:\\\\Work\\\\research\\\\FileX\\\\bench\\\\salidas-sdk-mcp\\\\raiz_srv\\\\sub\"]}"
+        }
+      ]
+    },
+    {
+      "paso": "t_eventos_tras_list_changed",
+      "ms": 2.0,
+      "isError": false,
+      "contenido": [
+        {
+          "type": "text",
+          "text": "{\"eventos\": [{\"t\": 0.328, \"evento\": \"roots/list_changed\"}], \"avisos\": [\"MCPDeprecationWarning: The roots capability is deprecated as of 2026-07-28 (SEP-2577).\", \"MCPDeprecationWarning: The roots capability is deprecated as of 2026-07-28 (SEP-2577).\", \"MCPDeprecationWarning: The roots capability is deprecated as of 2026-07-28 (SEP-2577).\"]}"
+        }
+      ]
+    },
+    {
+      "paso": "t_roots_tras_cambio",
+      "ms": 5.0,
+      "isError": false,
+      "contenido": [
+        {
+          "type": "text",
+          "text": "{\"ok\": true, \"roots\": [{\"uri\": \"file:///D:/Work/research/FileX/bench/salidas-sdk-mcp/raiz_srv\", \"name\": \"raiz_srv\"}], \"avisos\": [\"MCPDeprecationWarning: The roots capability is deprecated as of 2026-07-28 (SEP-2577).\", \"MCPDeprecationWarning: The roots capability is deprecated as of 2026-07-28 (SEP-2577).\", \"MCPDeprecationWarning: The roots capability is deprecated as of 2026-07-28 (SEP-2577).\", \"MCPDeprecationWarning: The roots capability is deprecated as of 2026-07-28 (SEP-2577).\"]}"
+        }
+      ]
+    },
+    {
+      "paso": "t_img_puro",
+      "ms": 2.0,
+      "isError": false,
+      "contenido": [
+        {
+          "type": "image",
+          "data": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==",
+          "mime_type": "image/png"
+        }
+      ]
+    },
+    {
+      "paso": "t_img_prefijo",
+      "ms": 2.0,
+      "isError": false,
+      "contenido": [
+        {
+          "type": "image",
+          "data": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==",
+          "mime_type": "image/png"
+        }
+      ]
+    },
+    {
+      "paso": "t_img_basura",
+      "ms": 2.0,
+      "isError": false,
+      "contenido": [
+        {
+          "type": "image",
+          "data": "esto no es base64 !!!! @@@@",
+          "mime_type": "image/png"
+        }
+      ]
+    },
+    {
+      "paso": "t_img_vacio",
+      "ms": 2.0,
+      "isError": false,
+      "contenido": [
+        {
+          "type": "image",
+          "data": "",
+          "mime_type": "image/png"
+        }
+      ]
+    },
+    {
+      "paso": "t_img_nomime",
+      "ms": 2.0,
+      "isError": false,
+      "contenido": [
+        {
+          "type": "image",
+          "data": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==",
+          "mime_type": ""
+        }
+      ]
+    },
+    {
+      "paso": "t_slow",
+      "ms": 5204.9,
+      "isError": false,
+      "contenido": [
+        {
+          "type": "text",
+          "text": "{\"dormido_s\": 5.0, \"progress_token\": \"None\", \"pasos\": 5, \"fallos_progreso\": []}"
+        }
+      ]
+    }
+  ],
+  "init": {
+    "protocolo_negociado": "2025-11-25",
+    "servidor": {
+      "name": "filex-probe-2x",
+      "title": null,
+      "version": "0.0.1",
+      "description": null,
+      "website_url": null,
+      "icons": null
+    },
+    "capacidades_servidor": {
+      "experimental": {},
+      "tools": {
+        "list_changed": false
+      }
+    }
+  },
+  "cliente_declara_roots": true,
+  "tipo_list_tools": "ListToolsResult",
+  "herramientas": [
+    "t_ping",
+    "t_roots",
+    "t_roots_cap",
+    "t_roots_interseca",
+    "t_slow",
+    "t_img",
+    "t_eventos"
+  ],
+  "list_changed_enviada": true,
+  "roots_list_pedidos_por_el_servidor": [
+    {
+      "t": 21.723,
+      "devuelve": [
+        "D:/Work/research/FileX/bench/salidas-sdk-mcp/raiz_srv/sub",
+        "D:/Work/research/FileX/bench/salidas-sdk-mcp/raiz_fuera"
+      ]
+    },
+    {
+      "t": 21.728,
+      "devuelve": [
+        "D:/Work/research/FileX/bench/salidas-sdk-mcp/raiz_srv/sub",
+        "D:/Work/research/FileX/bench/salidas-sdk-mcp/raiz_fuera"
+      ]
+    },
+    {
+      "t": 22.15,
+      "devuelve": [
+        "D:/Work/research/FileX/bench/salidas-sdk-mcp/raiz_srv"
+      ]
+    }
+  ],
+  "tasks_en_types": true,
+  "capacidad_tasks_servidor": null,
+  "avisos_cliente": [
+    "MCPDeprecationWarning: The roots capability is deprecated as of 2026-07-28 (SEP-2577).",
+    "MCPDeprecationWarning: The roots capability is deprecated as of 2026-07-28 (SEP-2577)."
+  ]
+}

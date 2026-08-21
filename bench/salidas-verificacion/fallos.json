@@ -1,0 +1,256 @@
+[
+ {
+  "caso": "1. PNG con extension .avif",
+  "descripcion": "se copia tipico.png a falso.avif sin convertir nada; 42.855 B en vez de los ~1.600 de un AVIF real",
+  "fuente": "ConvertX (HUECOS.md §1)",
+  "regla_esperada": "G3 (punto 1: firma)",
+  "resultados": [
+   {
+    "motor": "proceso",
+    "veredicto": "fallo",
+    "atrapado": true,
+    "ms_total": 22.393,
+    "hallazgos": [
+     [
+      1,
+      "G3",
+      "fallo",
+      "la firma real no corresponde a la extension pedida",
+      "avif",
+      "png"
+     ]
+    ]
+   },
+   {
+    "motor": "subproceso",
+    "veredicto": "fallo",
+    "atrapado": true,
+    "ms_total": 272.523,
+    "hallazgos": [
+     [
+      1,
+      "G3",
+      "fallo",
+      "la firma real no corresponde a la extension pedida",
+      "avif",
+      "png"
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "caso": "2. Perdida de una pista de audio",
+  "descripcion": "'ffmpeg -i in.mkv out.mp4' SIN -map 0 sobre un MKV de 2 pistas de audio con PCM distinto; rc=0, el motor declara exito",
+  "fuente": "ConvertX y SnapOtter (HUECOS.md §1)",
+  "regla_esperada": "V3 (punto 2: flujos)",
+  "resultados": [
+   {
+    "motor": "proceso",
+    "veredicto": "fallo",
+    "atrapado": true,
+    "ms_total": 0.992,
+    "hallazgos": [
+     [
+      2,
+      "V3",
+      "fallo",
+      "numero de pistas de audio distinto del esperado",
+      2,
+      1
+     ]
+    ]
+   },
+   {
+    "motor": "subproceso",
+    "veredicto": "fallo",
+    "atrapado": true,
+    "ms_total": 98.811,
+    "hallazgos": [
+     [
+      2,
+      "V3",
+      "fallo",
+      "numero de pistas de audio distinto del esperado",
+      2,
+      1
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "caso": "3. Degradacion de 16 a 8 bits",
+  "descripcion": "el MISMO fichero de 8 bits del patron oro, pero con un pedido que NO solicitaba reducir la profundidad: PNG admite 16 bits",
+  "fuente": "SnapOtter (HUECOS.md §1)",
+  "regla_esperada": "I4 (punto 4: pedido)",
+  "resultados": [
+   {
+    "motor": "proceso",
+    "veredicto": "fallo",
+    "atrapado": true,
+    "ms_total": 0.28,
+    "hallazgos": [
+     [
+      4,
+      "I4",
+      "fallo",
+      "DEGRADACION DE PROFUNDIDAD no pedida ni inevitable",
+      16,
+      8
+     ]
+    ]
+   },
+   {
+    "motor": "subproceso",
+    "veredicto": "fallo",
+    "atrapado": true,
+    "ms_total": 899.251,
+    "hallazgos": [
+     [
+      4,
+      "I4",
+      "fallo",
+      "DEGRADACION DE PROFUNDIDAD no pedida ni inevitable",
+      16,
+      8
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "caso": "4a. Redimensionado no solicitado (con barras)",
+  "descripcion": "se pidio solo 'format: png'; se entrega 800x600 con el contenido en 800x450 y barras negras de 75 px",
+  "fuente": "image-worker-mcp (bench/mcp-refs-multimedia.md §6.2)",
+  "regla_esperada": "I1/V7 (punto 4: pedido)",
+  "resultados": [
+   {
+    "motor": "proceso",
+    "veredicto": "fallo",
+    "atrapado": true,
+    "ms_total": 0.43,
+    "hallazgos": [
+     [
+      4,
+      "I1/V7",
+      "fallo",
+      "REDIMENSIONADO NO SOLICITADO: no se pidio cambiar el tamano",
+      "1920x1080",
+      "800x600"
+     ],
+     [
+      4,
+      "I1",
+      "aviso",
+      "la relacion de aspecto cambia (indicio de barras anadidas)",
+      1.778,
+      1.333
+     ]
+    ]
+   },
+   {
+    "motor": "subproceso",
+    "veredicto": "fallo",
+    "atrapado": true,
+    "ms_total": 47.008,
+    "hallazgos": [
+     [
+      4,
+      "I1/V7",
+      "fallo",
+      "REDIMENSIONADO NO SOLICITADO: no se pidio cambiar el tamano",
+      "1920x1080",
+      "800x600"
+     ],
+     [
+      4,
+      "I1",
+      "aviso",
+      "la relacion de aspecto cambia (indicio de barras anadidas)",
+      1.778,
+      1.333
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "caso": "4b. Control: conversion de formato limpia",
+  "descripcion": "el mismo JPEG a PNG sin tocar la geometria. NO debe dar fallo.",
+  "fuente": "control negativo",
+  "regla_esperada": "ninguna (debe salir OK)",
+  "resultados": [
+   {
+    "motor": "proceso",
+    "veredicto": "ok",
+    "atrapado": false,
+    "ms_total": 0.52,
+    "hallazgos": []
+   },
+   {
+    "motor": "subproceso",
+    "veredicto": "ok",
+    "atrapado": false,
+    "ms_total": 113.96,
+    "hallazgos": []
+   }
+  ]
+ },
+ {
+  "caso": "5. Fichero de 0 bytes como exito",
+  "descripcion": "residuo del deadlock de video-audio-mcp: 0 bytes en disco y la herramienta no informa de error",
+  "fuente": "video-audio-mcp (bench/mcp-refs-multimedia.md §6)",
+  "regla_esperada": "G1 (punto 1: firma)",
+  "resultados": [
+   {
+    "motor": "proceso",
+    "veredicto": "fallo",
+    "atrapado": true,
+    "ms_total": 0.254,
+    "hallazgos": [
+     [
+      1,
+      "G1",
+      "fallo",
+      "fichero de 0 bytes presentado como exito",
+      "> 0 bytes",
+      "0 bytes"
+     ],
+     [
+      3,
+      "G2",
+      "fallo",
+      "el fichero no se abre sin errores",
+      null,
+      "fichero de 0 bytes"
+     ]
+    ]
+   },
+   {
+    "motor": "subproceso",
+    "veredicto": "fallo",
+    "atrapado": true,
+    "ms_total": 0.27,
+    "hallazgos": [
+     [
+      1,
+      "G1",
+      "fallo",
+      "fichero de 0 bytes presentado como exito",
+      "> 0 bytes",
+      "0 bytes"
+     ],
+     [
+      3,
+      "G2",
+      "fallo",
+      "el fichero no se abre sin errores",
+      null,
+      "fichero de 0 bytes"
+     ]
+    ]
+   }
+  ]
+ }
+]

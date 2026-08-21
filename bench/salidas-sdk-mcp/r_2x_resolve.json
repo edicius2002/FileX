@@ -1,0 +1,103 @@
+{
+  "sdk_mcp": "2.0.0",
+  "resultados": [
+    {
+      "modo": "auto",
+      "pasos": [
+        {
+          "paso": "t_ping",
+          "ms": 290.1,
+          "isError": false,
+          "contenido": [
+            {
+              "type": "text",
+              "text": "pong"
+            }
+          ]
+        },
+        {
+          "paso": "t_roots_resolve",
+          "ms": 14.0,
+          "isError": false,
+          "contenido": [
+            {
+              "type": "text",
+              "text": "{\"protocolo\": \"2026-07-28\", \"roots\": [{\"uri\": \"file:///D:/Work/research/FileX/bench/salidas-sdk-mcp/raiz_srv/sub\", \"name\": \"sub\"}, {\"uri\": \"file:///D:/Work/research/FileX/bench/salidas-sdk-mcp/raiz_fuera\", \"name\": \"raiz_fuera\"}]}"
+            }
+          ]
+        },
+        {
+          "paso": "t_interseca_resolve",
+          "ms": 9.0,
+          "isError": false,
+          "contenido": [
+            {
+              "type": "text",
+              "text": "{\"protocolo\": \"2026-07-28\", \"servidor\": [\"D:\\\\Work\\\\research\\\\FileX\\\\bench\\\\salidas-sdk-mcp\\\\raiz_srv\"], \"cliente\": [\"file:///D:/Work/research/FileX/bench/salidas-sdk-mcp/raiz_srv/sub\", \"file:///D:/Work/research/FileX/bench/salidas-sdk-mcp/raiz_fuera\"], \"efectiva\": [\"D:\\\\Work\\\\research\\\\FileX\\\\bench\\\\salidas-sdk-mcp\\\\raiz_srv\\\\sub\"]}"
+            }
+          ]
+        }
+      ],
+      "protocolo_negociado": "2026-07-28",
+      "veces_que_el_cliente_respondio_roots": [
+        {
+          "t": 3.482,
+          "n": 2
+        },
+        {
+          "t": 3.494,
+          "n": 2
+        }
+      ]
+    },
+    {
+      "modo": "legacy",
+      "pasos": [
+        {
+          "paso": "t_ping",
+          "ms": 7.5,
+          "isError": false,
+          "contenido": [
+            {
+              "type": "text",
+              "text": "pong"
+            }
+          ]
+        },
+        {
+          "paso": "t_roots_resolve",
+          "ms": 12.0,
+          "isError": false,
+          "contenido": [
+            {
+              "type": "text",
+              "text": "{\"protocolo\": \"2025-11-25\", \"roots\": [{\"uri\": \"file:///D:/Work/research/FileX/bench/salidas-sdk-mcp/raiz_srv/sub\", \"name\": \"sub\"}, {\"uri\": \"file:///D:/Work/research/FileX/bench/salidas-sdk-mcp/raiz_fuera\", \"name\": \"raiz_fuera\"}]}"
+            }
+          ]
+        },
+        {
+          "paso": "t_interseca_resolve",
+          "ms": 8.0,
+          "isError": false,
+          "contenido": [
+            {
+              "type": "text",
+              "text": "{\"protocolo\": \"2025-11-25\", \"servidor\": [\"D:\\\\Work\\\\research\\\\FileX\\\\bench\\\\salidas-sdk-mcp\\\\raiz_srv\"], \"cliente\": [\"file:///D:/Work/research/FileX/bench/salidas-sdk-mcp/raiz_srv/sub\", \"file:///D:/Work/research/FileX/bench/salidas-sdk-mcp/raiz_fuera\"], \"efectiva\": [\"D:\\\\Work\\\\research\\\\FileX\\\\bench\\\\salidas-sdk-mcp\\\\raiz_srv\\\\sub\"]}"
+            }
+          ]
+        }
+      ],
+      "protocolo_negociado": "2025-11-25",
+      "veces_que_el_cliente_respondio_roots": [
+        {
+          "t": 2.795,
+          "n": 2
+        },
+        {
+          "t": 2.807,
+          "n": 2
+        }
+      ]
+    }
+  ]
+}

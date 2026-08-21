@@ -1,0 +1,45 @@
+receta           documento                estado       ms      chars
+base             patologico_escaneado     ok         7562         70
+base             escaneado_d1             ok         2722         70
+base             escaneado_d2             ok         1474         73
+base             escaneado_d3             ok         1243          0
+deskew           patologico_escaneado     ok         7364         70
+deskew           escaneado_d1             ok         2440         70
+deskew           escaneado_d2             ok         1620         73
+deskew           escaneado_d3             ok         1465          0
+clean            patologico_escaneado     ok         5576         70
+clean            escaneado_d1             ok         2635         70
+clean            escaneado_d2             ok         1543         73
+clean            escaneado_d3             ok         2388          0
+rmbg             patologico_escaneado     ERR15      3234          -  Ghostscript 10.6.x contains JPEG encoding errors that may corrupt images. OCRmyPDF will attempt to mitigate, b
+rmbg             escaneado_d1             ERR15      1601          -  Ghostscript 10.6.x contains JPEG encoding errors that may corrupt images. OCRmyPDF will attempt to mitigate, b
+rmbg             escaneado_d2             ERR15       805          -  Ghostscript 10.6.x contains JPEG encoding errors that may corrupt images. OCRmyPDF will attempt to mitigate, b
+rmbg             escaneado_d3             ERR15       778          -  Ghostscript 10.6.x contains JPEG encoding errors that may corrupt images. OCRmyPDF will attempt to mitigate, b
+rotate           patologico_escaneado     ok         8521         70
+rotate           escaneado_d1             ok         3390         70
+rotate           escaneado_d2             ok         2314         73
+rotate           escaneado_d3             ok         3700          0
+todo             patologico_escaneado     ok        12433         70
+todo             escaneado_d1             ok         4087         70
+todo             escaneado_d2             ok         2307         73
+todo             escaneado_d3             ok         3579          0
+todo_rmbg        patologico_escaneado     ERR15      4095          -  Ghostscript 10.6.x contains JPEG encoding errors that may corrupt images. OCRmyPDF will attempt to mitigate, b
+todo_rmbg        escaneado_d1             ERR15      2527          -  Ghostscript 10.6.x contains JPEG encoding errors that may corrupt images. OCRmyPDF will attempt to mitigate, b
+todo_rmbg        escaneado_d2             ERR15      1114          -  Ghostscript 10.6.x contains JPEG encoding errors that may corrupt images. OCRmyPDF will attempt to mitigate, b
+todo_rmbg        escaneado_d3             ERR15      1872          -  Ghostscript 10.6.x contains JPEG encoding errors that may corrupt images. OCRmyPDF will attempt to mitigate, b
+os300            patologico_escaneado     ok        15065         70
+os300            escaneado_d1             ok         4771         70
+os300            escaneado_d2             ok         5356         70
+os300            escaneado_d3             ok         6445         23
+os400            patologico_escaneado     ok        25593         70
+os400            escaneado_d1             ok         7371         70
+os400            escaneado_d2             ok         5516         70
+os400            escaneado_d3             ok         8686          0
+deskew_os300     patologico_escaneado     ok        31622         70
+deskew_os300     escaneado_d1             ok        15071         70
+deskew_os300     escaneado_d2             ok        94167         70
+deskew_os300     escaneado_d3             ok        99318         23
+clean_os300      patologico_escaneado     ok        60219         70
+clean_os300      escaneado_d1             ok        19778         70
+clean_os300      escaneado_d2             ok        19671         70
+clean_os300      escaneado_d3             ok        19425         23

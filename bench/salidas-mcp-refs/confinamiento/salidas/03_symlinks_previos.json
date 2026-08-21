@@ -1,0 +1,848 @@
+{
+  "spec": "specs/03_symlinks_previos.json",
+  "servidor": "filesystem-symlinks-previos",
+  "llamadas": [
+    {
+      "id": "cat_allowed",
+      "tool": "list_allowed_directories",
+      "args": {},
+      "nota": "allowlist tras resolver symlinks al arrancar",
+      "espera": null,
+      "ok": true,
+      "isError": false,
+      "ms": 4.0,
+      "patron": "ASA",
+      "n_piezas": 1,
+      "tokens_texto": 28,
+      "tokens_binario_si_se_inyecta": 0,
+      "tokens_total": 28,
+      "bytes_binario": 0,
+      "inviable_para_contexto": false,
+      "piezas": [
+        {
+          "tipo": "text",
+          "clase": "texto",
+          "chars": 98,
+          "tokens": 28
+        }
+      ],
+      "respuesta_recorte": "Allowed directories:\nD:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\permitido",
+      "structuredContent": "{\"content\": \"Allowed directories:\\nD:\\\\Work\\\\research\\\\FileX\\\\bench\\\\salidas-mcp-refs\\\\confinamiento\\\\sandbox\\\\permitido\"}",
+      "tokens_structured": 35,
+      "duplica_contenido": true
+    },
+    {
+      "id": "S1_control_interno",
+      "tool": "read_text_file",
+      "args": {
+        "path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\permitido\\link_interno.txt"
+      },
+      "nota": "CONTROL: symlink dentro->dentro, debe funcionar",
+      "espera": null,
+      "ok": true,
+      "isError": false,
+      "ms": 3.5,
+      "patron": "PROSA",
+      "n_piezas": 1,
+      "tokens_texto": 9,
+      "tokens_binario_si_se_inyecta": 0,
+      "tokens_total": 9,
+      "bytes_binario": 0,
+      "inviable_para_contexto": false,
+      "piezas": [
+        {
+          "tipo": "text",
+          "clase": "texto",
+          "chars": 24,
+          "tokens": 9
+        }
+      ],
+      "respuesta_recorte": "SUBCARPETA PERMITIDA OK\n",
+      "structuredContent": "{\"content\": \"SUBCARPETA PERMITIDA OK\\n\"}",
+      "tokens_structured": 14,
+      "duplica_contenido": true
+    },
+    {
+      "id": "S2_link_fuera",
+      "tool": "read_text_file",
+      "args": {
+        "path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\permitido\\link_fuera.txt"
+      },
+      "nota": "symlink dentro->fuera (creado ANTES de arrancar)",
+      "espera": null,
+      "ok": true,
+      "isError": true,
+      "ms": 2.7,
+      "patron": "ASA",
+      "n_piezas": 1,
+      "tokens_texto": 67,
+      "tokens_binario_si_se_inyecta": 0,
+      "tokens_total": 67,
+      "bytes_binario": 0,
+      "inviable_para_contexto": false,
+      "piezas": [
+        {
+          "tipo": "text",
+          "clase": "texto",
+          "chars": 234,
+          "tokens": 67
+        }
+      ],
+      "respuesta_recorte": "Access denied - symlink target outside allowed directories: D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\prohibido\\secreto.txt not in D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\permitido"
+    },
+    {
+      "id": "S3_junc_fuera",
+      "tool": "read_text_file",
+      "args": {
+        "path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\permitido\\junc_fuera\\secreto.txt"
+      },
+      "nota": "junction de directorio dentro->fuera (creada ANTES)",
+      "espera": null,
+      "ok": true,
+      "isError": true,
+      "ms": 1.7,
+      "patron": "ASA",
+      "n_piezas": 1,
+      "tokens_texto": 67,
+      "tokens_binario_si_se_inyecta": 0,
+      "tokens_total": 67,
+      "bytes_binario": 0,
+      "inviable_para_contexto": false,
+      "piezas": [
+        {
+          "tipo": "text",
+          "clase": "texto",
+          "chars": 234,
+          "tokens": 67
+        }
+      ],
+      "respuesta_recorte": "Access denied - symlink target outside allowed directories: D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\prohibido\\secreto.txt not in D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\permitido"
+    },
+    {
+      "id": "S4_link_win",
+      "tool": "read_text_file",
+      "args": {
+        "path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\permitido\\link_win.txt"
+      },
+      "nota": "symlink dentro->C:\\Windows\\win.ini",
+      "espera": null,
+      "ok": true,
+      "isError": true,
+      "ms": 1.8,
+      "patron": "ASA",
+      "n_piezas": 1,
+      "tokens_texto": 43,
+      "tokens_binario_si_se_inyecta": 0,
+      "tokens_total": 43,
+      "bytes_binario": 0,
+      "inviable_para_contexto": false,
+      "piezas": [
+        {
+          "tipo": "text",
+          "clase": "texto",
+          "chars": 163,
+          "tokens": 43
+        }
+      ],
+      "respuesta_recorte": "Access denied - symlink target outside allowed directories: C:\\Windows\\win.ini not in D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\permitido"
+    },
+    {
+      "id": "S5_ls",
+      "tool": "list_directory",
+      "args": {
+        "path": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\permitido"
+      },
+      "nota": "que ve el servidor en la raiz",
+      "espera": null,
+      "ok": true,
+      "isError": false,
+      "ms": 2.0,
+      "patron": "PROSA",
+      "n_piezas": 1,
+      "tokens_texto": 51,
+      "tokens_binario_si_se_inyecta": 0,
+      "tokens_total": 51,
+      "bytes_binario": 0,
+      "inviable_para_contexto": false,
+      "piezas": [
+        {
+          "tipo": "text",
+          "clase": "texto",
+          "chars": 136,
+          "tokens": 51
+        }
+      ],
+      "respuesta_recorte": "[FILE] dentro.txt\n[FILE] dentro.txtoculto\n[FILE] junc_fuera\n[FILE] link_fuera.txt\n[FILE] link_interno.txt\n[FILE] link_win.txt\n[DIR] sub",
+      "structuredContent": "{\"content\": \"[FILE] dentro.txt\\n[FILE] dentro.txtoculto\\n[FILE] junc_fuera\\n[FILE] link_fuera.txt\\n[FILE] link_interno.txt\\n[FILE] link_win.txt\\n[DIR] sub\"}",
+      "tokens_structured": 55,
+      "duplica_contenido": true
+    }
+  ],
+  "arranque_frio_ms": 2921.9,
+  "spawn_proceso_ms": 14.7,
+  "handshake_ms": 2907.2,
+  "server_info": {
+    "name": "secure-filesystem-server",
+    "version": "0.2.0",
+    "protocolVersion": "2024-11-05",
+    "instructions": null
+  },
+  "list_tools_ms": 10.6,
+  "n_herramientas": 14,
+  "herramientas": [
+    {
+      "name": "read_file",
+      "description": "Read the complete contents of a file as text. DEPRECATED: Use read_text_file instead.",
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false
+      },
+      "tiene_readOnlyHint": true,
+      "tiene_destructiveHint": false,
+      "tokens_declaracion": 216,
+      "inputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "tail": {
+            "description": "If provided, returns only the last N lines of the file",
+            "type": "number"
+          },
+          "head": {
+            "description": "If provided, returns only the first N lines of the file",
+            "type": "number"
+          }
+        },
+        "required": [
+          "path"
+        ]
+      },
+      "outputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "content"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "read_text_file",
+      "description": "Read the complete contents of a file from the file system as text. Handles various text encodings and provides detailed error messages if the file cannot be read. Use this tool when you need to examine the contents of a single file. Use the 'head' parameter to read only the first N lines of a file, or the 'tail' parameter to read only the last N lines of a file. Operates on the file as text regardless of extension. Only works within allowed directories.",
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false
+      },
+      "tiene_readOnlyHint": true,
+      "tiene_destructiveHint": false,
+      "tokens_declaracion": 294,
+      "inputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "tail": {
+            "description": "If provided, returns only the last N lines of the file",
+            "type": "number"
+          },
+          "head": {
+            "description": "If provided, returns only the first N lines of the file",
+            "type": "number"
+          }
+        },
+        "required": [
+          "path"
+        ]
+      },
+      "outputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "content"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "read_media_file",
+      "description": "Read a file and return it as a base64-encoded content block with its MIME type. Image and audio files are returned as image/audio content; any other file type is returned as an embedded resource. Only works within allowed directories.",
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false
+      },
+      "tiene_readOnlyHint": true,
+      "tiene_destructiveHint": false,
+      "tokens_declaracion": 362,
+      "inputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "path"
+        ]
+      },
+      "outputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "image",
+                        "audio"
+                      ]
+                    },
+                    "data": {
+                      "type": "string"
+                    },
+                    "mimeType": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "data",
+                    "mimeType"
+                  ],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string",
+                      "const": "resource"
+                    },
+                    "resource": {
+                      "type": "object",
+                      "properties": {
+                        "uri": {
+                          "type": "string"
+                        },
+                        "mimeType": {
+                          "type": "string"
+                        },
+                        "blob": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "uri",
+                        "blob"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "resource"
+                  ],
+                  "additionalProperties": false
+                }
+              ]
+            }
+          }
+        },
+        "required": [
+          "content"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "read_multiple_files",
+      "description": "Read the contents of multiple files simultaneously. This is more efficient than reading files one by one when you need to analyze or compare multiple files. Each file's content is returned with its path as a reference. Failed reads for individual files won't stop the entire operation. Only works within allowed directories.",
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false
+      },
+      "tiene_readOnlyHint": true,
+      "tiene_destructiveHint": false,
+      "tokens_declaracion": 245,
+      "inputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "paths": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Array of file paths to read. Each path must be a string pointing to a valid file within allowed directories."
+          }
+        },
+        "required": [
+          "paths"
+        ]
+      },
+      "outputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "content"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "write_file",
+      "description": "Create a new file or completely overwrite an existing file with new content. Use with caution as it will overwrite existing files without warning. Handles text content with proper encoding. Only works within allowed directories.",
+      "annotations": {
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": false
+      },
+      "tiene_readOnlyHint": true,
+      "tiene_destructiveHint": true,
+      "tokens_declaracion": 209,
+      "inputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "content": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "path",
+          "content"
+        ]
+      },
+      "outputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "content"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "edit_file",
+      "description": "Make line-based edits to a text file. Each edit replaces exact line sequences with new content. Returns a git-style diff showing the changes made. Only works within allowed directories.",
+      "annotations": {
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": false
+      },
+      "tiene_readOnlyHint": true,
+      "tiene_destructiveHint": true,
+      "tokens_declaracion": 301,
+      "inputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "edits": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "oldText": {
+                  "type": "string",
+                  "description": "Text to search for - must match exactly"
+                },
+                "newText": {
+                  "type": "string",
+                  "description": "Text to replace with"
+                }
+              },
+              "required": [
+                "oldText",
+                "newText"
+              ]
+            }
+          },
+          "dryRun": {
+            "default": false,
+            "description": "Preview changes using git-style diff format",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "path",
+          "edits"
+        ]
+      },
+      "outputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "content"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "create_directory",
+      "description": "Create a new directory or ensure a directory exists. Can create multiple nested directories in one operation. If the directory already exists, this operation will succeed silently. Perfect for setting up directory structures for projects or ensuring required paths exist. Only works within allowed directories.",
+      "annotations": {
+        "readOnlyHint": false,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      },
+      "tiene_readOnlyHint": true,
+      "tiene_destructiveHint": true,
+      "tokens_declaracion": 209,
+      "inputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "path"
+        ]
+      },
+      "outputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "content"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "list_directory",
+      "description": "Get a detailed listing of all files and directories in a specified path. Results clearly distinguish between files and directories with [FILE] and [DIR] prefixes. This tool is essential for understanding directory structure and finding specific files within a directory. Only works within allowed directories.",
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false
+      },
+      "tiene_readOnlyHint": true,
+      "tiene_destructiveHint": false,
+      "tokens_declaracion": 196,
+      "inputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "path"
+        ]
+      },
+      "outputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "content"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "list_directory_with_sizes",
+      "description": "Get a detailed listing of all files and directories in a specified path, including sizes. Results clearly distinguish between files and directories with [FILE] and [DIR] prefixes. This tool is useful for understanding directory structure and finding specific files within a directory. Only works within allowed directories.",
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false
+      },
+      "tiene_readOnlyHint": true,
+      "tiene_destructiveHint": false,
+      "tokens_declaracion": 239,
+      "inputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "sortBy": {
+            "default": "name",
+            "description": "Sort entries by name or size",
+            "type": "string",
+            "enum": [
+              "name",
+              "size"
+            ]
+          }
+        },
+        "required": [
+          "path"
+        ]
+      },
+      "outputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "content"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "directory_tree",
+      "description": "Get a recursive tree view of files and directories as a JSON structure. Each entry includes 'name', 'type' (file/directory), and 'children' for directories. Files have no children array, while directories always have a children array (which may be empty). The output is formatted with 2-space indentation for readability. Only works within allowed directories.",
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false
+      },
+      "tiene_readOnlyHint": true,
+      "tiene_destructiveHint": false,
+      "tokens_declaracion": 238,
+      "inputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "excludePatterns": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "path"
+        ]
+      },
+      "outputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "content"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "move_file",
+      "description": "Move or rename files and directories. Can move files between directories and rename them in a single operation. If the destination exists, the operation will fail. Works across different directories and can be used for simple renaming within the same directory. Both source and destination must be within allowed directories.",
+      "annotations": {
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": false
+      },
+      "tiene_readOnlyHint": true,
+      "tiene_destructiveHint": true,
+      "tokens_declaracion": 227,
+      "inputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "source": {
+            "type": "string"
+          },
+          "destination": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "source",
+          "destination"
+        ]
+      },
+      "outputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "content"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "search_files",
+      "description": "Recursively search for files and directories matching a pattern. The patterns should be glob-style patterns that match paths relative to the working directory. Use pattern like '*.ext' to match files in current directory, and '**/*.ext' to match files in all subdirectories. Returns full paths to all matching items. Great for finding files when you don't know their exact location. Only searches within allowed directories.",
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false
+      },
+      "tiene_readOnlyHint": true,
+      "tiene_destructiveHint": false,
+      "tokens_declaracion": 257,
+      "inputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "pattern": {
+            "type": "string"
+          },
+          "excludePatterns": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "path",
+          "pattern"
+        ]
+      },
+      "outputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "content"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "get_file_info",
+      "description": "Retrieve detailed metadata about a file or directory. Returns comprehensive information including size, creation time, last modified time, permissions, and type. This tool is perfect for understanding file characteristics without reading the actual content. Only works within allowed directories.",
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false
+      },
+      "tiene_readOnlyHint": true,
+      "tiene_destructiveHint": false,
+      "tokens_declaracion": 192,
+      "inputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "path"
+        ]
+      },
+      "outputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "content"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "list_allowed_directories",
+      "description": "Returns the list of directories that this server is allowed to access. Subdirectories within these allowed directories are also accessible. Use this to understand which directories and their nested paths are available before trying to access files.",
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false
+      },
+      "tiene_readOnlyHint": true,
+      "tiene_destructiveHint": false,
+      "tokens_declaracion": 173,
+      "inputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {}
+      },
+      "outputSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "content"
+        ],
+        "additionalProperties": false
+      }
+    }
+  ],
+  "tokens_catalogo": 3360,
+  "n_anotadas": 14,
+  "n_prompts": null,
+  "prompts": "McpError: Method not found",
+  "n_recursos": null,
+  "recursos": "McpError: Method not found"
+}

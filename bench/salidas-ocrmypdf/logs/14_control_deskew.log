@@ -1,0 +1,20 @@
+ok
+--- tesseract directo sobre el PNG inclinado (control de cordura) ---
+Debe recuperarse con OCR. 
+--- tesseract --psm 0 (deteccion de orientacion/skew) ---
+Page number: 0
+Orientation in degrees: 0
+Rotate: 0
+Orientation confidence: 3.45
+Script: Latin
+Script confidence: 7.22
+===== ocrmypdf --deskew sobre skew0 =====
+    1 Rotating output by 0
+    1 Deskew angle: 0.000
+    1 input dpi = 300 x 300
+  texto: DOCUMENTO ESCANEADO  Texto que solo existe como pixeles.  Debe recuperarse con OCR. 
+===== ocrmypdf --deskew sobre skew5 =====
+    1 Rotating output by 0
+    1 Deskew angle: 0.000
+    1 input dpi = 300 x 300
+  texto: Debe recuperarse con OCR. 

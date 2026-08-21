@@ -1,0 +1,285 @@
+{
+  "spec": "bench/salidas-mcp/spec_markitdown.json",
+  "servidor": "markitdown-mcp",
+  "llamadas": [
+    {
+      "id": "peq_1_frio",
+      "tool": "convert_to_markdown",
+      "args": {
+        "uri": "file:///D:/Work/research/FileX/corpus/pdf/tipico_texto.pdf"
+      },
+      "nota": "PDF pequeno (1 pag, 137 chars). Primera llamada del proceso.",
+      "ok": true,
+      "isError": false,
+      "ms": 117.2,
+      "chars_respuesta": 174,
+      "tokens_respuesta": 56,
+      "respuesta_recorte": "FileX - documento de prueba con texto seleccionable\n\nSegunda linea: acentos aeiou n ˆ(cid:145) y simbolos % & @\n\nTabla:  Col A    Col B    Col C\n        1        2        3\n\n",
+      "respuesta_completa_en": "bench/salidas-mcp\\md_peq.md"
+    },
+    {
+      "id": "peq_2_caliente",
+      "tool": "convert_to_markdown",
+      "args": {
+        "uri": "file:///D:/Work/research/FileX/corpus/pdf/tipico_texto.pdf"
+      },
+      "nota": "Mismo PDF, segunda llamada.",
+      "ok": true,
+      "isError": false,
+      "ms": 65.4,
+      "chars_respuesta": 174,
+      "tokens_respuesta": 56,
+      "respuesta_recorte": "FileX - documento de prueba con texto seleccionable\n\nSegunda linea: acentos aeiou n ˆ(cid:145) y simbolos % & @\n\nTabla:  Col A    Col B    Col C\n        1        2        3\n\n",
+      "respuesta_completa_en": null
+    },
+    {
+      "id": "peq_3_caliente",
+      "tool": "convert_to_markdown",
+      "args": {
+        "uri": "file:///D:/Work/research/FileX/corpus/pdf/tipico_texto.pdf"
+      },
+      "nota": "Mismo PDF, tercera llamada.",
+      "ok": true,
+      "isError": false,
+      "ms": 71.1,
+      "chars_respuesta": 174,
+      "tokens_respuesta": 56,
+      "respuesta_recorte": "FileX - documento de prueba con texto seleccionable\n\nSegunda linea: acentos aeiou n ˆ(cid:145) y simbolos % & @\n\nTabla:  Col A    Col B    Col C\n        1        2        3\n\n",
+      "respuesta_completa_en": null
+    },
+    {
+      "id": "grande_1",
+      "tool": "convert_to_markdown",
+      "args": {
+        "uri": "file:///D:/Work/research/FileX/bench/salidas-mcp/grande_60p.pdf"
+      },
+      "nota": "PDF 60 paginas densas, 409.620 chars de texto.",
+      "ok": true,
+      "isError": false,
+      "ms": 18698.1,
+      "chars_respuesta": 409859,
+      "tokens_respuesta": 85259,
+      "respuesta_recorte": "FileX - documento sintetico de volumen (pagina densa)\n\n01  La conversion universal de archivos plantea un problema de contexto: cuando una herramienta MCP devuelve el\n02  documento completo como cadena, cada pagina convertida se convierte en tokens que el modelo debe pagar\n03  aunque no vaya a usarlos. Este parrafo existe unicamente para ocupar espacio de forma realista, con una\n04  densidad tipografica comparable a la de un informe tecnico corriente. La conversion universal de archivos\n05  plantea un problema de contexto: cuando una herramienta MCP devuelve el documento completo como cadena, cada\n06  pagina convertida se convierte en tokens que el modelo debe pagar aunque no vaya a usarlos. Este parrafo\n07  existe unicamente para ocupar espacio de forma realista, con una densidad tipografica comparable a la de un\n08  informe tecnico corriente. La conversion universal de archivos plantea un problema de contexto: cuando una\n09  herramienta MCP devuelve el documento completo como cadena, cada pagina convertida se convierte en tokens\n10  que el modelo debe pagar aunque no vaya a usarlos. Este parrafo existe unicamente para ocupar espacio de\n11  forma realista, con una densidad tipogra",
+      "respuesta_completa_en": "bench/salidas-mcp\\md_grande.md"
+    },
+    {
+      "id": "grande_2",
+      "tool": "convert_to_markdown",
+      "args": {
+        "uri": "file:///D:/Work/research/FileX/bench/salidas-mcp/grande_60p.pdf"
+      },
+      "nota": "Repeticion: comprobar si hay cache.",
+      "ok": true,
+      "isError": false,
+      "ms": 18184.3,
+      "chars_respuesta": 409859,
+      "tokens_respuesta": 85259,
+      "respuesta_recorte": "FileX - documento sintetico de volumen (pagina densa)\n\n01  La conversion universal de archivos plantea un problema de contexto: cuando una herramienta MCP devuelve el\n02  documento completo como cadena, cada pagina convertida se convierte en tokens que el modelo debe pagar\n03  aunque no vaya a usarlos. Este parrafo existe unicamente para ocupar espacio de forma realista, con una\n04  densidad tipografica comparable a la de un informe tecnico corriente. La conversion universal de archivos\n05  plantea un problema de contexto: cuando una herramienta MCP devuelve el documento completo como cadena, cada\n06  pagina convertida se convierte en tokens que el modelo debe pagar aunque no vaya a usarlos. Este parrafo\n07  existe unicamente para ocupar espacio de forma realista, con una densidad tipografica comparable a la de un\n08  informe tecnico corriente. La conversion universal de archivos plantea un problema de contexto: cuando una\n09  herramienta MCP devuelve el documento completo como cadena, cada pagina convertida se convierte en tokens\n10  que el modelo debe pagar aunque no vaya a usarlos. Este parrafo existe unicamente para ocupar espacio de\n11  forma realista, con una densidad tipogra",
+      "respuesta_completa_en": null
+    },
+    {
+      "id": "err_inexistente",
+      "tool": "convert_to_markdown",
+      "args": {
+        "uri": "file:///D:/Work/research/FileX/corpus/pdf/no_existe_jamas.pdf"
+      },
+      "nota": "Fichero inexistente.",
+      "ok": true,
+      "isError": true,
+      "ms": 47.3,
+      "chars_respuesta": 140,
+      "tokens_respuesta": 42,
+      "respuesta_recorte": "Error executing tool convert_to_markdown: [Errno 2] No such file or directory: 'D:\\\\Work\\\\research\\\\FileX\\\\corpus\\\\pdf\\\\no_existe_jamas.pdf'",
+      "respuesta_completa_en": null
+    },
+    {
+      "id": "err_formato",
+      "tool": "convert_to_markdown",
+      "args": {
+        "uri": "file:///D:/Work/research/FileX/corpus/video/patologico_2pistas.mkv"
+      },
+      "nota": "Formato no soportado (Matroska).",
+      "ok": true,
+      "isError": true,
+      "ms": 43.4,
+      "chars_respuesta": 170,
+      "tokens_respuesta": 31,
+      "respuesta_recorte": "Error executing tool convert_to_markdown: Could not convert stream to Markdown. No converter attempted a conversion, suggesting that the filetype is simply not supported.",
+      "respuesta_completa_en": null
+    },
+    {
+      "id": "err_pdf_sin_texto",
+      "tool": "convert_to_markdown",
+      "args": {
+        "uri": "file:///D:/Work/research/FileX/corpus/pdf/patologico_escaneado.pdf"
+      },
+      "nota": "PDF escaneado sin capa de texto: exito vacio o error?",
+      "ok": true,
+      "isError": false,
+      "ms": 66.7,
+      "chars_respuesta": 0,
+      "tokens_respuesta": 0,
+      "respuesta_recorte": "",
+      "respuesta_completa_en": null
+    },
+    {
+      "id": "ruta_abs_windows",
+      "tool": "convert_to_markdown",
+      "args": {
+        "uri": "D:\\Work\\research\\FileX\\corpus\\pdf\\tipico_texto.pdf"
+      },
+      "nota": "Ruta absoluta Windows sin esquema.",
+      "ok": true,
+      "isError": true,
+      "ms": 42.3,
+      "chars_respuesta": 119,
+      "tokens_respuesta": 26,
+      "respuesta_recorte": "Error executing tool convert_to_markdown: Unsupported URI scheme: D. Supported schemes are: file:, data:, http:, https:",
+      "respuesta_completa_en": null
+    },
+    {
+      "id": "ruta_abs_barras",
+      "tool": "convert_to_markdown",
+      "args": {
+        "uri": "D:/Work/research/FileX/corpus/pdf/tipico_texto.pdf"
+      },
+      "nota": "Ruta absoluta con barras normales, sin esquema.",
+      "ok": true,
+      "isError": true,
+      "ms": 39.1,
+      "chars_respuesta": 119,
+      "tokens_respuesta": 26,
+      "respuesta_recorte": "Error executing tool convert_to_markdown: Unsupported URI scheme: D. Supported schemes are: file:, data:, http:, https:",
+      "respuesta_completa_en": null
+    },
+    {
+      "id": "ruta_relativa",
+      "tool": "convert_to_markdown",
+      "args": {
+        "uri": "corpus/pdf/tipico_texto.pdf"
+      },
+      "nota": "Ruta relativa al cwd del servidor.",
+      "ok": true,
+      "isError": true,
+      "ms": 38.8,
+      "chars_respuesta": 145,
+      "tokens_respuesta": 33,
+      "respuesta_recorte": "Error executing tool convert_to_markdown: Unsupported URI scheme: corpus/pdf/tipico_texto.pdf. Supported schemes are: file:, data:, http:, https:",
+      "respuesta_completa_en": null
+    },
+    {
+      "id": "ruta_file_relativa",
+      "tool": "convert_to_markdown",
+      "args": {
+        "uri": "file:corpus/pdf/tipico_texto.pdf"
+      },
+      "nota": "URI file: con ruta relativa.",
+      "ok": true,
+      "isError": false,
+      "ms": 71.7,
+      "chars_respuesta": 174,
+      "tokens_respuesta": 56,
+      "respuesta_recorte": "FileX - documento de prueba con texto seleccionable\n\nSegunda linea: acentos aeiou n ˆ(cid:145) y simbolos % & @\n\nTabla:  Col A    Col B    Col C\n        1        2        3\n\n",
+      "respuesta_completa_en": null
+    },
+    {
+      "id": "travesia_fuera",
+      "tool": "convert_to_markdown",
+      "args": {
+        "uri": "file:///D:/Work/research/FileX/corpus/pdf/../../../../../Windows/win.ini"
+      },
+      "nota": "Travesia ..\\..\\ que sale del proyecto (D:/Windows/win.ini, no existe).",
+      "ok": true,
+      "isError": true,
+      "ms": 38.9,
+      "chars_respuesta": 101,
+      "tokens_respuesta": 28,
+      "respuesta_recorte": "Error executing tool convert_to_markdown: [Errno 2] No such file or directory: 'D:\\\\Windows\\\\win.ini'",
+      "respuesta_completa_en": null
+    },
+    {
+      "id": "travesia_fuera_c",
+      "tool": "convert_to_markdown",
+      "args": {
+        "uri": "file:///C:/Users/krato/AppData/Local/../../../../Windows/win.ini"
+      },
+      "nota": "Travesia que resuelve a C:/Windows/win.ini (existe, fuera del proyecto).",
+      "ok": true,
+      "isError": false,
+      "ms": 54.5,
+      "chars_respuesta": 85,
+      "tokens_respuesta": 29,
+      "respuesta_recorte": "; for 16-bit app support\n[fonts]\n[extensions]\n[mci extensions]\n[files]\n[Mail]\nMAPI=1\n",
+      "respuesta_completa_en": null
+    },
+    {
+      "id": "fuera_absoluto",
+      "tool": "convert_to_markdown",
+      "args": {
+        "uri": "file:///C:/Windows/win.ini"
+      },
+      "nota": "Ruta absoluta fuera del proyecto, sin travesia.",
+      "ok": true,
+      "isError": false,
+      "ms": 47.4,
+      "chars_respuesta": 85,
+      "tokens_respuesta": 29,
+      "respuesta_recorte": "; for 16-bit app support\n[fonts]\n[extensions]\n[mci extensions]\n[files]\n[Mail]\nMAPI=1\n",
+      "respuesta_completa_en": null
+    },
+    {
+      "id": "http_externo",
+      "tool": "convert_to_markdown",
+      "args": {
+        "uri": "http://127.0.0.1:9/nada"
+      },
+      "nota": "SSRF/red: el servidor acepta http: sin restriccion?",
+      "ok": true,
+      "isError": true,
+      "ms": 2063.7,
+      "chars_respuesta": 354,
+      "tokens_respuesta": 92,
+      "respuesta_recorte": "Error executing tool convert_to_markdown: HTTPConnectionPool(host='127.0.0.1', port=9): Max retries exceeded with url: /nada (Caused by NewConnectionError(\"HTTPConnection(host='127.0.0.1', port=9): Failed to establish a new connection: [WinError 10061] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión\"))",
+      "respuesta_completa_en": null
+    }
+  ],
+  "arranque_frio_ms": 3459.0,
+  "spawn_proceso_ms": 765.1,
+  "handshake_ms": 2693.9,
+  "server_info": {
+    "name": "markitdown",
+    "version": "1.8.1",
+    "protocolVersion": "2024-11-05",
+    "instructions": null
+  },
+  "list_tools_ms": 2.3,
+  "n_herramientas": 1,
+  "herramientas": [
+    {
+      "name": "convert_to_markdown",
+      "title": null,
+      "description": "Convert a resource described by an http:, https:, file: or data: URI to markdown",
+      "annotations": {},
+      "tokens_descripcion": 77,
+      "inputSchema": {
+        "properties": {
+          "uri": {
+            "title": "Uri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "uri"
+        ],
+        "title": "convert_to_markdownArguments",
+        "type": "object"
+      },
+      "outputSchema": null
+    }
+  ],
+  "tokens_catalogo": 79,
+  "n_prompts": 0,
+  "prompts": [],
+  "n_recursos": 0,
+  "recursos": []
+}

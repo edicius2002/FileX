@@ -1,0 +1,39 @@
+{
+  "servidor": "@modelcontextprotocol/server-filesystem (npx, WSL2)",
+  "raiz_permitida": "/home/edicius/toctou_sandbox/permitido",
+  "fase_pedida": "B",
+  "rondas": 3200,
+  "concurrentes": 16,
+  "fases": {
+    "B_carrera_normal": {
+      "descripcion": "read_text_file en bucle mientras 3 hilos alternan race.txt entre fichero regular y enlace al secreto. ext4 nativo, config por defecto.",
+      "env_extra": {},
+      "n_llamadas": 51200,
+      "concurrentes_por_ronda": 16,
+      "segundos": 108.28,
+      "swaps": 234868,
+      "err_symlink": 4699,
+      "err_write": 1,
+      "err_remove": 8613,
+      "ultimo_error_intercambiador": "symlink: [Errno 17] File exists: '/home/edicius/toctou_sandbox/prohibido/secreto.txt' -> '/home/edicius/toctou_sandbox/permitido/race.txt'",
+      "lecturas_benignas": 20195,
+      "denegadas_por_symlink": 7531,
+      "enoent": 16558,
+      "respuestas_vacias": 6910,
+      "otros": 6,
+      "muestras_otros": [
+        "EISDIR: illegal operation on a directory, read",
+        "EISDIR: illegal operation on a directory, read",
+        "EISDIR: illegal operation on a directory, read",
+        "EISDIR: illegal operation on a directory, read",
+        "EISDIR: illegal operation on a directory, read",
+        "EISDIR: illegal operation on a directory, read"
+      ],
+      "n_fugas": 0,
+      "TOCTOU_REPRODUCIDO": false,
+      "muestras_de_fuga": [],
+      "vio_enlace_o_denegado": 7531,
+      "duty_cycle_servidor": 0.1471
+    }
+  }
+}

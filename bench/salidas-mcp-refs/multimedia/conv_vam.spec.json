@@ -1,0 +1,75 @@
+{
+ "command": "D:/Work/research/FileX/.venv-mcp-vam/Scripts/python.exe",
+ "args": [
+  "D:/Work/research/FileX/repos/mcp-refs/video-audio-mcp/server.py"
+ ],
+ "cwd": "D:/Work/research/FileX",
+ "env": {},
+ "nombre": "video-audio-mcp CONVERSION (rutas sin fallback)",
+ "pasos": [
+  {
+   "id": "salud",
+   "tool": "health_check",
+   "args": {},
+   "timeout": 60
+  },
+  {
+   "id": "trivial_mp4_a_mp3",
+   "tool": "extract_audio_from_video",
+   "args": {
+    "video_path": "D:/Work/research/FileX/corpus/video/trivial.mp4",
+    "output_audio_path": "D:/Work/research/FileX/bench/salidas-mcp-refs/multimedia/salidas/vam_trivial.mp3",
+    "audio_codec": "libmp3lame"
+   },
+   "espera": "asa",
+   "timeout": 180
+  },
+  {
+   "id": "trivial_mp4_a_mkv",
+   "tool": "convert_video_format",
+   "args": {
+    "input_video_path": "D:/Work/research/FileX/corpus/video/trivial.mp4",
+    "output_video_path": "D:/Work/research/FileX/bench/salidas-mcp-refs/multimedia/salidas/vam_trivial.mkv",
+    "target_format": "matroska"
+   },
+   "espera": "asa",
+   "timeout": 180,
+   "nota": "copy funciona -> NO entra en fallback -> no hay deadlock"
+  },
+  {
+   "id": "tipico_mp4_a_mp3",
+   "tool": "extract_audio_from_video",
+   "args": {
+    "video_path": "D:/Work/research/FileX/corpus/video/tipico.mp4",
+    "output_audio_path": "D:/Work/research/FileX/bench/salidas-mcp-refs/multimedia/salidas/vam_tipico.mp3",
+    "audio_codec": "libmp3lame"
+   },
+   "espera": "asa",
+   "timeout": 420,
+   "nota": "15,5 MB: cambia el patron con el tamano?"
+  },
+  {
+   "id": "trivial_wav_a_flac",
+   "tool": "convert_audio_format",
+   "args": {
+    "input_audio_path": "D:/Work/research/FileX/corpus/audio/trivial.wav",
+    "output_audio_path": "D:/Work/research/FileX/bench/salidas-mcp-refs/multimedia/salidas/vam_trivial.flac",
+    "target_format": "flac"
+   },
+   "espera": "asa",
+   "timeout": 180
+  },
+  {
+   "id": "trivial_wav_a_mp3",
+   "tool": "convert_audio_format",
+   "args": {
+    "input_audio_path": "D:/Work/research/FileX/corpus/audio/trivial.wav",
+    "output_audio_path": "D:/Work/research/FileX/bench/salidas-mcp-refs/multimedia/salidas/vam_wav.mp3",
+    "target_format": "mp3"
+   },
+   "espera": "asa",
+   "timeout": 180
+  }
+ ],
+ "stderr_log": "D:/Work/research/FileX/bench/salidas-mcp-refs/multimedia/conv_vam.stderr.log"
+}

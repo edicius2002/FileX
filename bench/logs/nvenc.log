@@ -1,0 +1,32 @@
+[lock] adquirido por fase1-nvenc
+############ CONTEXTO ############
+gpu_state (used,total,util,temp): 2508,12288,11,59
+NVIDIA GeForce RTX 3060, 572.61
+
+############ 1) libx264 medium vs h264_nvenc p4 ############
+1080p CPU  libx264 -preset medium      mediana:  5430 ms  n=7    rango:5015-8184  [SUCIA(pico 27%)]  gpu_antes:2523,12288,10,58  gpu_despues:2474,12288,11,59
+1080p GPU  h264_nvenc -preset p4       mediana: 14513 ms  n=7    rango:2100-22061  [SUCIA(pico 47%)]  gpu_antes:2473,12288,6,61  gpu_despues:2552,12288,6,54
+4K    CPU  libx264 -preset medium      mediana: 24953 ms  n=7    rango:16524-62215  [limpia]  gpu_antes:2552,12288,10,52  gpu_despues:2490,12288,33,56
+4K    GPU  h264_nvenc -preset p4       mediana:  3749 ms  n=7    rango:3370-11334  [SUCIA(pico 35%)]  gpu_antes:2486,12288,35,56  gpu_despues:2540,12288,16,63
+
+############ 2) libx265 vs hevc_nvenc (1080p) ############
+1080p CPU  libx265 -preset medium      mediana: 17823 ms  n=7    rango:13874-53215  [limpia]  gpu_antes:2539,12288,3,60  gpu_despues:2572,12288,17,58
+1080p GPU  hevc_nvenc -preset p4       mediana:  2156 ms  n=7    rango:1930-6453  [SUCIA(pico 17%)]  gpu_antes:2574,12288,3,58  gpu_despues:2607,12288,17,63
+
+############ 3) tuberia GPU completa vs decode CPU + encode GPU ############
+1080p decCPU+encGPU                    mediana:  1928 ms  n=7    rango:1791-5944  [SUCIA(pico 16%)]  gpu_antes:2607,12288,6,60  gpu_despues:2612,12288,15,62
+1080p decGPU+encGPU (hwaccel cuda)     mediana:  1756 ms  n=7    rango:1736-4538  [SUCIA(pico 15%)]  gpu_antes:2613,12288,5,58  gpu_despues:2613,12288,9,59
+4K    decCPU+encGPU                    mediana:  3766 ms  n=7    rango:3376-6904  [SUCIA(pico 10%)]  gpu_antes:2605,12288,1,56  gpu_despues:2595,12288,5,54
+4K    decGPU+encGPU (hwaccel cuda)     mediana:  3248 ms  n=7    rango:3224-14623  [SUCIA(pico 19%)]  gpu_antes:2595,12288,19,49  gpu_despues:2589,12288,20,54
+4K->1080p decCPU+scaleCPU+encGPU       mediana:  1756 ms  n=7    rango:1634-9889  [SUCIA(pico 26%)]  gpu_antes:2589,12288,24,54  gpu_despues:2585,12288,15,58
+4K->1080p todo GPU (scale_cuda)        mediana:  2415 ms  n=7    rango:2037-25289  [SUCIA(pico 15%)]  gpu_antes:2585,12288,3,55  gpu_despues:2585,12288,1,61
+
+############ 5) VRAM durante transcodificacion ############
+linea base (idle): 2585,12288,1,60
+1080p h264_nvenc      : pico_vram_total_MiB=2794 rc=0
+1080p hevc_nvenc      : pico_vram_total_MiB=2789 rc=0
+4K    h264_nvenc      : pico_vram_total_MiB=3049 rc=0
+4K    tuberia GPU full: pico_vram_total_MiB=3328 rc=0
+4K    2 nvenc en par. : pico_vram_total_MiB=3847 rc=0
+estado final: 2360,12288,1,63
+=== FIN BENCH NVENC ===

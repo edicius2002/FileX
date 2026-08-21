@@ -1,0 +1,18 @@
+=================== docling_cuda_torch ===================
+gpu_antes: 2262,12288,24,56  quiet_peak: 24%
+pico_vram_total_MiB=3817 rc=0
+gpu_despues: 2262,12288,7,60
+   patologico_escaneado.pdf 0.83 s  rango [0.8, 9.03]  chars 81 
+   escaneado_d1.pdf 0.66 s  rango [0.62, 0.68]  chars 85 
+   escaneado_d2.pdf 0.63 s  rango [0.58, 0.68]  chars 85 
+   escaneado_d3.pdf 0.59 s  rango [0.54, 0.61]  chars 38 
+  torch_pico: 1418.0 MiB
+=================== docling_cpu_torch ===================
+gpu_antes: 2262,12288,7,60  quiet_peak: 21%
+pico_vram_total_MiB=2257 rc=0
+gpu_despues: 2256,12288,27,58
+   patologico_escaneado.pdf 2.35 s  rango [2.27, 7.66]  chars 81 
+   escaneado_d1.pdf 2.22 s  rango [2.09, 2.34]  chars 85 
+   escaneado_d2.pdf 2.13 s  rango [2.06, 2.4]  chars 85 
+   escaneado_d3.pdf 2.12 s  rango [2.04, 2.27]  chars 38 
+  torch_pico: 0.0 MiB

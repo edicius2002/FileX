@@ -1,0 +1,1465 @@
+{
+ "proceso": [
+  {
+   "salida": "tipico_flac-to.mp3",
+   "cat": "audio",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "tipico_flac-to.opus",
+   "cat": "audio",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "tipico_flac-to.wav",
+   "cat": "audio",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "tipico_mp3-to.flac",
+   "cat": "audio",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "tipico_mp3-to.wav",
+   "cat": "audio",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "tipico_mp4-audio-copy.m4a",
+   "cat": "audio",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "tipico_mp4-audio.flac",
+   "cat": "audio",
+   "esperado": "ok",
+   "veredicto": "aviso",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": [
+    {
+     "punto": 4,
+     "regla": "A6",
+     "severidad": "aviso",
+     "mensaje": "profundidad de bits INFLADA sin informacion nueva",
+     "esperado": 16,
+     "obtenido": 24
+    }
+   ]
+  },
+  {
+   "salida": "tipico_mp4-audio.mp3",
+   "cat": "audio",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "trivial_wav-to.flac",
+   "cat": "audio",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "trivial_wav-to.m4a",
+   "cat": "audio",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "trivial_wav-to.mp3",
+   "cat": "audio",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "trivial_wav-to.opus",
+   "cat": "audio",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "patologico_bom_csv-to-normalizado.csv",
+   "cat": "datos",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "patologico_bom_csv-to.json",
+   "cat": "datos",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "tipico_json-to.csv",
+   "cat": "datos",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "16bit_tif-to-d16.png",
+   "cat": "imagen",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "16bit_tif-to-d8.png",
+   "cat": "imagen",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "16bit_tif-to-default.png",
+   "cat": "imagen",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "16bit_tif-to.jpg",
+   "cat": "imagen",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "16bit_tif-to.webp",
+   "cat": "imagen",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "alpha_png-to-flat.jpg",
+   "cat": "imagen",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "alpha_png-to.avif",
+   "cat": "imagen",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "alpha_png-to.jpg",
+   "cat": "imagen",
+   "esperado": "aviso",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "alpha_png-to.png8.png",
+   "cat": "imagen",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "alpha_png-to.webp",
+   "cat": "imagen",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "tipico_jpg-to.png",
+   "cat": "imagen",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "tipico_png-to.avif",
+   "cat": "imagen",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "tipico_png-to.jpg",
+   "cat": "imagen",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "tipico_png-to.webp",
+   "cat": "imagen",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "tipico_webp-to.jpg",
+   "cat": "imagen",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "tipico_webp-to.png",
+   "cat": "imagen",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "trivial_png-to-lossless.webp",
+   "cat": "imagen",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "trivial_png-to.jpg",
+   "cat": "imagen",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "trivial_png-to.webp",
+   "cat": "imagen",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "alpha_png-to.pdf",
+   "cat": "pdf",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "patologico_escaneado_pdf-to-p1.png",
+   "cat": "pdf",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "tipico_jpg-to.pdf",
+   "cat": "pdf",
+   "esperado": "aviso",
+   "veredicto": "aviso",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": [
+    {
+     "punto": 4,
+     "regla": "P7",
+     "severidad": "aviso",
+     "mensaje": "1 px -> 1 pt: pagina absurda (1920 x 1080 pt = 677 x 381 mm)",
+     "esperado": "densidad declarada",
+     "obtenido": "1:1"
+    }
+   ]
+  },
+  {
+   "salida": "tipico_png-to-150dpi.pdf",
+   "cat": "pdf",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "tipico_png-to.pdf",
+   "cat": "pdf",
+   "esperado": "aviso",
+   "veredicto": "aviso",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": [
+    {
+     "punto": 4,
+     "regla": "P7",
+     "severidad": "aviso",
+     "mensaje": "1 px -> 1 pt: pagina absurda (1920 x 1080 pt = 677 x 381 mm)",
+     "esperado": "densidad declarada",
+     "obtenido": "1:1"
+    }
+   ]
+  },
+  {
+   "salida": "tipico_texto_pdf-to-gs.pdf",
+   "cat": "pdf",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "tipico_texto_pdf-to-p1.jpg",
+   "cat": "pdf",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "tipico_texto_pdf-to-p1.png",
+   "cat": "pdf",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "tipico_texto_pdf-to.tif",
+   "cat": "pdf",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "tipico_texto_rasterizado.pdf",
+   "cat": "pdf",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "trivial_pdf-to-p1.png",
+   "cat": "pdf",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "2pistas_mkv-to-COPY.mp4",
+   "cat": "video",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "2pistas_mkv-to-DEFAULT.mp4",
+   "cat": "video",
+   "esperado": "fallo",
+   "veredicto": "fallo",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": [
+    {
+     "punto": 2,
+     "regla": "V3",
+     "severidad": "fallo",
+     "mensaje": "numero de pistas de audio distinto del esperado",
+     "esperado": 2,
+     "obtenido": 1
+    }
+   ]
+  },
+  {
+   "salida": "2pistas_mkv-to-MAP0.mp4",
+   "cat": "video",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "tipico_mp4-to.mkv",
+   "cat": "video",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "tipico_mp4-to.webm",
+   "cat": "video",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "trivial_mp4-to-naive.gif",
+   "cat": "video",
+   "esperado": "aviso",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "trivial_mp4-to-palette.gif",
+   "cat": "video",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "trivial_mp4-to.webm",
+   "cat": "video",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  }
+ ],
+ "subproceso": [
+  {
+   "salida": "tipico_flac-to.mp3",
+   "cat": "audio",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "tipico_flac-to.opus",
+   "cat": "audio",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "tipico_flac-to.wav",
+   "cat": "audio",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "tipico_mp3-to.flac",
+   "cat": "audio",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "tipico_mp3-to.wav",
+   "cat": "audio",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "tipico_mp4-audio-copy.m4a",
+   "cat": "audio",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "tipico_mp4-audio.flac",
+   "cat": "audio",
+   "esperado": "ok",
+   "veredicto": "aviso",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": [
+    {
+     "punto": 4,
+     "regla": "A6",
+     "severidad": "aviso",
+     "mensaje": "profundidad de bits INFLADA sin informacion nueva",
+     "esperado": 8,
+     "obtenido": 24
+    }
+   ]
+  },
+  {
+   "salida": "tipico_mp4-audio.mp3",
+   "cat": "audio",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "trivial_wav-to.flac",
+   "cat": "audio",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "trivial_wav-to.m4a",
+   "cat": "audio",
+   "esperado": "ok",
+   "veredicto": "aviso",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": [
+    {
+     "punto": 4,
+     "regla": "-",
+     "severidad": "aviso",
+     "mensaje": "bitrate lejos del pedido",
+     "esperado": 192000,
+     "obtenido": 128833
+    }
+   ]
+  },
+  {
+   "salida": "trivial_wav-to.mp3",
+   "cat": "audio",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "trivial_wav-to.opus",
+   "cat": "audio",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "patologico_bom_csv-to-normalizado.csv",
+   "cat": "datos",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "patologico_bom_csv-to.json",
+   "cat": "datos",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "tipico_json-to.csv",
+   "cat": "datos",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "16bit_tif-to-d16.png",
+   "cat": "imagen",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "16bit_tif-to-d8.png",
+   "cat": "imagen",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "16bit_tif-to-default.png",
+   "cat": "imagen",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "16bit_tif-to.jpg",
+   "cat": "imagen",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "16bit_tif-to.webp",
+   "cat": "imagen",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "alpha_png-to-flat.jpg",
+   "cat": "imagen",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "alpha_png-to.avif",
+   "cat": "imagen",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "alpha_png-to.jpg",
+   "cat": "imagen",
+   "esperado": "aviso",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "alpha_png-to.png8.png",
+   "cat": "imagen",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "alpha_png-to.webp",
+   "cat": "imagen",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "tipico_jpg-to.png",
+   "cat": "imagen",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "tipico_png-to.avif",
+   "cat": "imagen",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "tipico_png-to.jpg",
+   "cat": "imagen",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "tipico_png-to.webp",
+   "cat": "imagen",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "tipico_webp-to.jpg",
+   "cat": "imagen",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "tipico_webp-to.png",
+   "cat": "imagen",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "trivial_png-to-lossless.webp",
+   "cat": "imagen",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "trivial_png-to.jpg",
+   "cat": "imagen",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "trivial_png-to.webp",
+   "cat": "imagen",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "alpha_png-to.pdf",
+   "cat": "pdf",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "patologico_escaneado_pdf-to-p1.png",
+   "cat": "pdf",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "tipico_jpg-to.pdf",
+   "cat": "pdf",
+   "esperado": "aviso",
+   "veredicto": "aviso",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": [
+    {
+     "punto": 4,
+     "regla": "P7",
+     "severidad": "aviso",
+     "mensaje": "1 px -> 1 pt: pagina absurda (1920 x 1080 pt = 677 x 381 mm)",
+     "esperado": "densidad declarada",
+     "obtenido": "1:1"
+    }
+   ]
+  },
+  {
+   "salida": "tipico_png-to-150dpi.pdf",
+   "cat": "pdf",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "tipico_png-to.pdf",
+   "cat": "pdf",
+   "esperado": "aviso",
+   "veredicto": "aviso",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": [
+    {
+     "punto": 4,
+     "regla": "P7",
+     "severidad": "aviso",
+     "mensaje": "1 px -> 1 pt: pagina absurda (1920 x 1080 pt = 677 x 381 mm)",
+     "esperado": "densidad declarada",
+     "obtenido": "1:1"
+    }
+   ]
+  },
+  {
+   "salida": "tipico_texto_pdf-to-gs.pdf",
+   "cat": "pdf",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "tipico_texto_pdf-to-p1.jpg",
+   "cat": "pdf",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "tipico_texto_pdf-to-p1.png",
+   "cat": "pdf",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "tipico_texto_pdf-to.tif",
+   "cat": "pdf",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "tipico_texto_rasterizado.pdf",
+   "cat": "pdf",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "trivial_pdf-to-p1.png",
+   "cat": "pdf",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "2pistas_mkv-to-COPY.mp4",
+   "cat": "video",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "2pistas_mkv-to-DEFAULT.mp4",
+   "cat": "video",
+   "esperado": "fallo",
+   "veredicto": "fallo",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": [
+    {
+     "punto": 2,
+     "regla": "V3",
+     "severidad": "fallo",
+     "mensaje": "numero de pistas de audio distinto del esperado",
+     "esperado": 2,
+     "obtenido": 1
+    }
+   ]
+  },
+  {
+   "salida": "2pistas_mkv-to-MAP0.mp4",
+   "cat": "video",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "tipico_mp4-to.mkv",
+   "cat": "video",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "tipico_mp4-to.webm",
+   "cat": "video",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "trivial_mp4-to-naive.gif",
+   "cat": "video",
+   "esperado": "aviso",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "trivial_mp4-to-palette.gif",
+   "cat": "video",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "trivial_mp4-to.webm",
+   "cat": "video",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true
+   },
+   "hallazgos": []
+  }
+ ]
+}

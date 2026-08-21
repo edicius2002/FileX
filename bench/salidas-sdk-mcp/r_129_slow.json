@@ -1,0 +1,801 @@
+{
+  "sdk_mcp": "1.29.0",
+  "protocolo_cliente": "2025-11-25",
+  "argv": [
+    "--raices-servidor",
+    "D:/Work/research/FileX/bench/salidas-sdk-mcp/raiz_srv",
+    "--roots",
+    "D:/Work/research/FileX/bench/salidas-sdk-mcp/raiz_srv",
+    "--slow",
+    "60",
+    "--slow-timeout",
+    "90",
+    "--stderr",
+    "stderr_129_slow.txt",
+    "--out",
+    "r_129_slow.json"
+  ],
+  "pasos": [
+    {
+      "paso": "t_ping",
+      "ms": 5.0,
+      "isError": false,
+      "contenido": [
+        {
+          "type": "text",
+          "text": "pong"
+        }
+      ]
+    },
+    {
+      "paso": "t_roots_cap",
+      "ms": 2.0,
+      "isError": false,
+      "contenido": [
+        {
+          "type": "text",
+          "text": "{\"roots\": true, \"roots.listChanged\": true, \"capacidades_cliente\": {\"experimental\": null, \"sampling\": null, \"elicitation\": null, \"roots\": {\"listChanged\": true}, \"tasks\": null}}"
+        }
+      ]
+    },
+    {
+      "paso": "t_roots",
+      "ms": 6.0,
+      "isError": false,
+      "contenido": [
+        {
+          "type": "text",
+          "text": "{\"ok\": true, \"roots\": [{\"uri\": \"file:///D:/Work/research/FileX/bench/salidas-sdk-mcp/raiz_srv\", \"name\": \"raiz_srv\"}]}"
+        }
+      ]
+    },
+    {
+      "paso": "t_roots_interseca",
+      "ms": 6.0,
+      "isError": false,
+      "contenido": [
+        {
+          "type": "text",
+          "text": "{\"modo\": \"interseccion\", \"servidor\": [\"D:\\\\Work\\\\research\\\\FileX\\\\bench\\\\salidas-sdk-mcp\\\\raiz_srv\"], \"cliente\": [{\"uri\": \"file:///D:/Work/research/FileX/bench/salidas-sdk-mcp/raiz_srv\", \"name\": \"raiz_srv\"}], \"efectiva\": [\"D:\\\\Work\\\\research\\\\FileX\\\\bench\\\\salidas-sdk-mcp\\\\raiz_srv\"]}"
+        }
+      ]
+    },
+    {
+      "paso": "t_img_puro",
+      "ms": 4.0,
+      "isError": false,
+      "contenido": [
+        {
+          "type": "image",
+          "data": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==",
+          "mimeType": "image/png"
+        }
+      ]
+    },
+    {
+      "paso": "t_img_prefijo",
+      "ms": 6.0,
+      "isError": false,
+      "contenido": [
+        {
+          "type": "image",
+          "data": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==",
+          "mimeType": "image/png"
+        }
+      ]
+    },
+    {
+      "paso": "t_img_basura",
+      "ms": 6.0,
+      "isError": false,
+      "contenido": [
+        {
+          "type": "image",
+          "data": "esto no es base64 !!!! @@@@",
+          "mimeType": "image/png"
+        }
+      ]
+    },
+    {
+      "paso": "t_img_vacio",
+      "ms": 3.0,
+      "isError": false,
+      "contenido": [
+        {
+          "type": "image",
+          "data": "",
+          "mimeType": "image/png"
+        }
+      ]
+    },
+    {
+      "paso": "t_img_nomime",
+      "ms": 4.5,
+      "isError": false,
+      "contenido": [
+        {
+          "type": "image",
+          "data": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==",
+          "mimeType": ""
+        }
+      ]
+    },
+    {
+      "paso": "t_slow_con_progreso",
+      "ms": 60666.0,
+      "isError": false,
+      "contenido": [
+        {
+          "type": "text",
+          "text": "{\"dormido_s\": 60.0, \"progressToken\": \"11\", \"pasos\": 60}"
+        }
+      ]
+    },
+    {
+      "paso": "t_slow_timeout_corto",
+      "ms": 20027.9,
+      "EXCEPCION": "mcp.shared.exceptions.McpError",
+      "repr": "McpError('Timed out while waiting for response to ClientRequest. Waited 20.0 seconds.')"
+    },
+    {
+      "paso": "t_ping_tras_timeout",
+      "ms": 3.5,
+      "isError": false,
+      "contenido": [
+        {
+          "type": "text",
+          "text": "pong"
+        }
+      ]
+    },
+    {
+      "paso": "t_ping_tras_esperar_a_que_acabe",
+      "ms": 51.2,
+      "isError": false,
+      "contenido": [
+        {
+          "type": "text",
+          "text": "pong"
+        }
+      ]
+    }
+  ],
+  "init": {
+    "protocolo_negociado": "2025-11-25",
+    "servidor": {
+      "name": "filex-probe-1x",
+      "title": null,
+      "version": "0.0.1",
+      "websiteUrl": null,
+      "icons": null
+    },
+    "capacidades_servidor": {
+      "experimental": {},
+      "tools": {
+        "listChanged": false
+      }
+    }
+  },
+  "cliente_declara_roots": true,
+  "herramientas": [
+    "t_ping",
+    "t_roots",
+    "t_roots_cap",
+    "t_roots_interseca",
+    "t_slow",
+    "t_img",
+    "t_eventos"
+  ],
+  "progress_callback_soportado": true,
+  "progresos_fase1": [
+    {
+      "t": 20.77,
+      "progress": 1.0,
+      "total": 60.0,
+      "message": "paso 1/60"
+    },
+    {
+      "t": 21.772,
+      "progress": 2.0,
+      "total": 60.0,
+      "message": "paso 2/60"
+    },
+    {
+      "t": 22.81,
+      "progress": 3.0,
+      "total": 60.0,
+      "message": "paso 3/60"
+    },
+    {
+      "t": 23.814,
+      "progress": 4.0,
+      "total": 60.0,
+      "message": "paso 4/60"
+    },
+    {
+      "t": 24.832,
+      "progress": 5.0,
+      "total": 60.0,
+      "message": "paso 5/60"
+    },
+    {
+      "t": 25.838,
+      "progress": 6.0,
+      "total": 60.0,
+      "message": "paso 6/60"
+    },
+    {
+      "t": 26.858,
+      "progress": 7.0,
+      "total": 60.0,
+      "message": "paso 7/60"
+    },
+    {
+      "t": 27.858,
+      "progress": 8.0,
+      "total": 60.0,
+      "message": "paso 8/60"
+    },
+    {
+      "t": 28.867,
+      "progress": 9.0,
+      "total": 60.0,
+      "message": "paso 9/60"
+    },
+    {
+      "t": 29.878,
+      "progress": 10.0,
+      "total": 60.0,
+      "message": "paso 10/60"
+    },
+    {
+      "t": 30.892,
+      "progress": 11.0,
+      "total": 60.0,
+      "message": "paso 11/60"
+    },
+    {
+      "t": 31.909,
+      "progress": 12.0,
+      "total": 60.0,
+      "message": "paso 12/60"
+    },
+    {
+      "t": 32.922,
+      "progress": 13.0,
+      "total": 60.0,
+      "message": "paso 13/60"
+    },
+    {
+      "t": 33.926,
+      "progress": 14.0,
+      "total": 60.0,
+      "message": "paso 14/60"
+    },
+    {
+      "t": 34.934,
+      "progress": 15.0,
+      "total": 60.0,
+      "message": "paso 15/60"
+    },
+    {
+      "t": 35.949,
+      "progress": 16.0,
+      "total": 60.0,
+      "message": "paso 16/60"
+    },
+    {
+      "t": 36.953,
+      "progress": 17.0,
+      "total": 60.0,
+      "message": "paso 17/60"
+    },
+    {
+      "t": 37.97,
+      "progress": 18.0,
+      "total": 60.0,
+      "message": "paso 18/60"
+    },
+    {
+      "t": 38.985,
+      "progress": 19.0,
+      "total": 60.0,
+      "message": "paso 19/60"
+    },
+    {
+      "t": 39.993,
+      "progress": 20.0,
+      "total": 60.0,
+      "message": "paso 20/60"
+    },
+    {
+      "t": 41.008,
+      "progress": 21.0,
+      "total": 60.0,
+      "message": "paso 21/60"
+    },
+    {
+      "t": 42.019,
+      "progress": 22.0,
+      "total": 60.0,
+      "message": "paso 22/60"
+    },
+    {
+      "t": 43.032,
+      "progress": 23.0,
+      "total": 60.0,
+      "message": "paso 23/60"
+    },
+    {
+      "t": 44.049,
+      "progress": 24.0,
+      "total": 60.0,
+      "message": "paso 24/60"
+    },
+    {
+      "t": 45.06,
+      "progress": 25.0,
+      "total": 60.0,
+      "message": "paso 25/60"
+    },
+    {
+      "t": 46.059,
+      "progress": 26.0,
+      "total": 60.0,
+      "message": "paso 26/60"
+    },
+    {
+      "t": 47.069,
+      "progress": 27.0,
+      "total": 60.0,
+      "message": "paso 27/60"
+    },
+    {
+      "t": 48.08,
+      "progress": 28.0,
+      "total": 60.0,
+      "message": "paso 28/60"
+    },
+    {
+      "t": 49.091,
+      "progress": 29.0,
+      "total": 60.0,
+      "message": "paso 29/60"
+    },
+    {
+      "t": 50.082,
+      "progress": 30.0,
+      "total": 60.0,
+      "message": "paso 30/60"
+    },
+    {
+      "t": 51.096,
+      "progress": 31.0,
+      "total": 60.0,
+      "message": "paso 31/60"
+    },
+    {
+      "t": 52.104,
+      "progress": 32.0,
+      "total": 60.0,
+      "message": "paso 32/60"
+    },
+    {
+      "t": 53.113,
+      "progress": 33.0,
+      "total": 60.0,
+      "message": "paso 33/60"
+    },
+    {
+      "t": 54.118,
+      "progress": 34.0,
+      "total": 60.0,
+      "message": "paso 34/60"
+    },
+    {
+      "t": 55.129,
+      "progress": 35.0,
+      "total": 60.0,
+      "message": "paso 35/60"
+    },
+    {
+      "t": 56.143,
+      "progress": 36.0,
+      "total": 60.0,
+      "message": "paso 36/60"
+    },
+    {
+      "t": 57.157,
+      "progress": 37.0,
+      "total": 60.0,
+      "message": "paso 37/60"
+    },
+    {
+      "t": 58.17,
+      "progress": 38.0,
+      "total": 60.0,
+      "message": "paso 38/60"
+    },
+    {
+      "t": 59.182,
+      "progress": 39.0,
+      "total": 60.0,
+      "message": "paso 39/60"
+    },
+    {
+      "t": 60.196,
+      "progress": 40.0,
+      "total": 60.0,
+      "message": "paso 40/60"
+    },
+    {
+      "t": 61.212,
+      "progress": 41.0,
+      "total": 60.0,
+      "message": "paso 41/60"
+    },
+    {
+      "t": 62.225,
+      "progress": 42.0,
+      "total": 60.0,
+      "message": "paso 42/60"
+    },
+    {
+      "t": 63.239,
+      "progress": 43.0,
+      "total": 60.0,
+      "message": "paso 43/60"
+    },
+    {
+      "t": 64.251,
+      "progress": 44.0,
+      "total": 60.0,
+      "message": "paso 44/60"
+    },
+    {
+      "t": 65.259,
+      "progress": 45.0,
+      "total": 60.0,
+      "message": "paso 45/60"
+    },
+    {
+      "t": 66.277,
+      "progress": 46.0,
+      "total": 60.0,
+      "message": "paso 46/60"
+    },
+    {
+      "t": 67.274,
+      "progress": 47.0,
+      "total": 60.0,
+      "message": "paso 47/60"
+    },
+    {
+      "t": 68.278,
+      "progress": 48.0,
+      "total": 60.0,
+      "message": "paso 48/60"
+    },
+    {
+      "t": 69.296,
+      "progress": 49.0,
+      "total": 60.0,
+      "message": "paso 49/60"
+    },
+    {
+      "t": 70.296,
+      "progress": 50.0,
+      "total": 60.0,
+      "message": "paso 50/60"
+    },
+    {
+      "t": 71.294,
+      "progress": 51.0,
+      "total": 60.0,
+      "message": "paso 51/60"
+    },
+    {
+      "t": 72.304,
+      "progress": 52.0,
+      "total": 60.0,
+      "message": "paso 52/60"
+    },
+    {
+      "t": 73.315,
+      "progress": 53.0,
+      "total": 60.0,
+      "message": "paso 53/60"
+    },
+    {
+      "t": 74.331,
+      "progress": 54.0,
+      "total": 60.0,
+      "message": "paso 54/60"
+    },
+    {
+      "t": 75.344,
+      "progress": 55.0,
+      "total": 60.0,
+      "message": "paso 55/60"
+    },
+    {
+      "t": 76.356,
+      "progress": 56.0,
+      "total": 60.0,
+      "message": "paso 56/60"
+    },
+    {
+      "t": 77.368,
+      "progress": 57.0,
+      "total": 60.0,
+      "message": "paso 57/60"
+    },
+    {
+      "t": 78.379,
+      "progress": 58.0,
+      "total": 60.0,
+      "message": "paso 58/60"
+    },
+    {
+      "t": 79.393,
+      "progress": 59.0,
+      "total": 60.0,
+      "message": "paso 59/60"
+    },
+    {
+      "t": 80.406,
+      "progress": 60.0,
+      "total": 60.0,
+      "message": "paso 60/60"
+    }
+  ],
+  "timeout_corto_s": 20.0,
+  "progresos_fase2_tras_timeout": [
+    {
+      "t": 81.423,
+      "progress": 1.0,
+      "total": 60.0,
+      "message": "paso 1/60"
+    },
+    {
+      "t": 82.43,
+      "progress": 2.0,
+      "total": 60.0,
+      "message": "paso 2/60"
+    },
+    {
+      "t": 83.444,
+      "progress": 3.0,
+      "total": 60.0,
+      "message": "paso 3/60"
+    },
+    {
+      "t": 84.456,
+      "progress": 4.0,
+      "total": 60.0,
+      "message": "paso 4/60"
+    },
+    {
+      "t": 85.468,
+      "progress": 5.0,
+      "total": 60.0,
+      "message": "paso 5/60"
+    },
+    {
+      "t": 86.477,
+      "progress": 6.0,
+      "total": 60.0,
+      "message": "paso 6/60"
+    },
+    {
+      "t": 87.491,
+      "progress": 7.0,
+      "total": 60.0,
+      "message": "paso 7/60"
+    },
+    {
+      "t": 88.495,
+      "progress": 8.0,
+      "total": 60.0,
+      "message": "paso 8/60"
+    },
+    {
+      "t": 89.509,
+      "progress": 9.0,
+      "total": 60.0,
+      "message": "paso 9/60"
+    },
+    {
+      "t": 90.515,
+      "progress": 10.0,
+      "total": 60.0,
+      "message": "paso 10/60"
+    },
+    {
+      "t": 91.517,
+      "progress": 11.0,
+      "total": 60.0,
+      "message": "paso 11/60"
+    },
+    {
+      "t": 92.532,
+      "progress": 12.0,
+      "total": 60.0,
+      "message": "paso 12/60"
+    },
+    {
+      "t": 93.54,
+      "progress": 13.0,
+      "total": 60.0,
+      "message": "paso 13/60"
+    },
+    {
+      "t": 94.551,
+      "progress": 14.0,
+      "total": 60.0,
+      "message": "paso 14/60"
+    },
+    {
+      "t": 95.559,
+      "progress": 15.0,
+      "total": 60.0,
+      "message": "paso 15/60"
+    },
+    {
+      "t": 96.566,
+      "progress": 16.0,
+      "total": 60.0,
+      "message": "paso 16/60"
+    },
+    {
+      "t": 97.576,
+      "progress": 17.0,
+      "total": 60.0,
+      "message": "paso 17/60"
+    },
+    {
+      "t": 98.575,
+      "progress": 18.0,
+      "total": 60.0,
+      "message": "paso 18/60"
+    },
+    {
+      "t": 99.575,
+      "progress": 19.0,
+      "total": 60.0,
+      "message": "paso 19/60"
+    }
+  ],
+  "progresos_recibidos": [
+    {
+      "t": 81.423,
+      "progress": 1.0,
+      "total": 60.0,
+      "message": "paso 1/60"
+    },
+    {
+      "t": 82.43,
+      "progress": 2.0,
+      "total": 60.0,
+      "message": "paso 2/60"
+    },
+    {
+      "t": 83.444,
+      "progress": 3.0,
+      "total": 60.0,
+      "message": "paso 3/60"
+    },
+    {
+      "t": 84.456,
+      "progress": 4.0,
+      "total": 60.0,
+      "message": "paso 4/60"
+    },
+    {
+      "t": 85.468,
+      "progress": 5.0,
+      "total": 60.0,
+      "message": "paso 5/60"
+    },
+    {
+      "t": 86.477,
+      "progress": 6.0,
+      "total": 60.0,
+      "message": "paso 6/60"
+    },
+    {
+      "t": 87.491,
+      "progress": 7.0,
+      "total": 60.0,
+      "message": "paso 7/60"
+    },
+    {
+      "t": 88.495,
+      "progress": 8.0,
+      "total": 60.0,
+      "message": "paso 8/60"
+    },
+    {
+      "t": 89.509,
+      "progress": 9.0,
+      "total": 60.0,
+      "message": "paso 9/60"
+    },
+    {
+      "t": 90.515,
+      "progress": 10.0,
+      "total": 60.0,
+      "message": "paso 10/60"
+    },
+    {
+      "t": 91.517,
+      "progress": 11.0,
+      "total": 60.0,
+      "message": "paso 11/60"
+    },
+    {
+      "t": 92.532,
+      "progress": 12.0,
+      "total": 60.0,
+      "message": "paso 12/60"
+    },
+    {
+      "t": 93.54,
+      "progress": 13.0,
+      "total": 60.0,
+      "message": "paso 13/60"
+    },
+    {
+      "t": 94.551,
+      "progress": 14.0,
+      "total": 60.0,
+      "message": "paso 14/60"
+    },
+    {
+      "t": 95.559,
+      "progress": 15.0,
+      "total": 60.0,
+      "message": "paso 15/60"
+    },
+    {
+      "t": 96.566,
+      "progress": 16.0,
+      "total": 60.0,
+      "message": "paso 16/60"
+    },
+    {
+      "t": 97.576,
+      "progress": 17.0,
+      "total": 60.0,
+      "message": "paso 17/60"
+    },
+    {
+      "t": 98.575,
+      "progress": 18.0,
+      "total": 60.0,
+      "message": "paso 18/60"
+    },
+    {
+      "t": 99.575,
+      "progress": 19.0,
+      "total": 60.0,
+      "message": "paso 19/60"
+    }
+  ],
+  "roots_list_pedidos_por_el_servidor": [
+    {
+      "t": 19.709,
+      "devuelve": [
+        "D:/Work/research/FileX/bench/salidas-sdk-mcp/raiz_srv"
+      ]
+    },
+    {
+      "t": 19.715,
+      "devuelve": [
+        "D:/Work/research/FileX/bench/salidas-sdk-mcp/raiz_srv"
+      ]
+    }
+  ],
+  "tasks_en_types": true,
+  "capacidad_tasks_servidor": null
+}

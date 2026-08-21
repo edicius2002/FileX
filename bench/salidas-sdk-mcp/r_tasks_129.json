@@ -1,0 +1,100 @@
+{
+  "sdk_mcp": "1.29.0",
+  "dur": 20.0,
+  "timeout_cliente_s": 8.0,
+  "pasos": [
+    {
+      "paso": "bloqueante_timeout_corto",
+      "EXCEPCION": "McpError",
+      "repr": "McpError('Timed out while waiting for response to ClientRequest. Waited 8.0 seconds.')",
+      "ms": 8002.5
+    },
+    {
+      "paso": "como_tarea_mismo_timeout_corto",
+      "ms_hasta_el_asa": 5.1,
+      "taskId": "a8bb1a2c1aad46dc8c5dfbf2f6dd5f68:941e7322-e443-4277-b225-4c0db283ad6e",
+      "status_inicial": "working",
+      "pollInterval": 500
+    },
+    {
+      "paso": "tasks_result",
+      "isError": false,
+      "contenido": [
+        {
+          "type": "text",
+          "text": "convertido en 20.0s"
+        }
+      ]
+    },
+    {
+      "paso": "tasks_cancel",
+      "taskId": "a8bb1a2c1aad46dc8c5dfbf2f6dd5f68:92dfc93d-2687-466d-82b9-dcd3e169c8bf",
+      "status_tras_cancelar": "cancelled"
+    }
+  ],
+  "protocolo_negociado": "2025-11-25",
+  "capacidad_tasks_servidor": {
+    "list": {},
+    "cancel": {},
+    "requests": {
+      "tools": {
+        "call": {}
+      }
+    }
+  },
+  "herramientas": [
+    {
+      "name": "convertir_largo",
+      "execution": {
+        "taskSupport": "optional"
+      }
+    }
+  ],
+  "estados_sondeados": [
+    {
+      "t": 9.01,
+      "status": "working",
+      "msg": null
+    },
+    {
+      "t": 11.02,
+      "status": "working",
+      "msg": "paso 2/20"
+    },
+    {
+      "t": 13.03,
+      "status": "working",
+      "msg": "paso 4/20"
+    },
+    {
+      "t": 15.04,
+      "status": "working",
+      "msg": "paso 6/20"
+    },
+    "...",
+    {
+      "t": 27.14,
+      "status": "working",
+      "msg": "paso 18/20"
+    },
+    {
+      "t": 29.15,
+      "status": "completed",
+      "msg": "paso 20/20"
+    }
+  ],
+  "n_sondeos": 11,
+  "tasks_list": [
+    {
+      "taskId": "a8bb1a2c1aad46dc8c5dfbf2f6dd5f68:941e7322-e443-4277-b225-4c0db283ad6e",
+      "status": "completed"
+    },
+    {
+      "taskId": "a8bb1a2c1aad46dc8c5dfbf2f6dd5f68:92dfc93d-2687-466d-82b9-dcd3e169c8bf",
+      "status": "cancelled"
+    }
+  ],
+  "avisos": [
+    "DeprecationWarning: The experimental tasks API is deprecated and will be removed in mcp 2.0: tasks (SEP-1686) were removed from the MCP specification and are expected to return as a separate MCP extension."
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "servidor": "@modelcontextprotocol/server-filesystem 2026.7.10 (npx)",
+  "raiz_permitida": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\permitido",
+  "fases": {
+    "A_post_arranque": {
+      "descripcion": "enlace hacia fuera creado DESPUES del arranque",
+      "control_antes": {
+        "ok": true,
+        "isError": false,
+        "texto": "FICHERO REGULAR BENIGNO\r\n",
+        "ms": 10.78
+      },
+      "enlace_fichero_creado": true,
+      "lectura_enlace_fichero": {
+        "ok": true,
+        "isError": true,
+        "texto": "Access denied - symlink target outside allowed directories: D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\prohibido\\secreto.txt not in D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\permitido",
+        "ms": 1.56
+      },
+      "fugo_el_secreto": false,
+      "enlace_directorio_creado": true,
+      "lectura_por_enlace_directorio": {
+        "ok": true,
+        "isError": true,
+        "texto": "Access denied - symlink target outside allowed directories: D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\prohibido\\secreto.txt not in D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\permitido",
+        "ms": 1.89
+      },
+      "fugo_por_directorio": false,
+      "listado_de_la_raiz": {
+        "ok": true,
+        "isError": false,
+        "texto": "[DIR] d1\n[FILE] dentro.txt\n[FILE] dentro.txtoculto\n[FILE] dlink_post\n[FILE] junc_fuera\n[FILE] link_fuera.txt\n[FILE] link_interno.txt\n[FILE] link_post.txt\n[FILE] link_win.txt\n[FILE] race.txt\n[DIR] sub",
+        "ms": 2.42
+      }
+    },
+    "C_padre_enlazado": {
+      "descripcion": "el directorio padre d1 se sustituye por un enlace a prohibido DESPUES de una lectura valida",
+      "control_antes": {
+        "ok": true,
+        "isError": false,
+        "texto": "FICHERO REGULAR EN d1\r\n",
+        "ms": 2.56
+      },
+      "enlace_creado": true,
+      "lectura_tras_swap": {
+        "ok": true,
+        "isError": true,
+        "texto": "Access denied - symlink target outside allowed directories: D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\prohibido\\secreto.txt not in D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\permitido",
+        "ms": 2.14
+      },
+      "fugo_el_secreto": false,
+      "lectura_ruta_ya_validada": {
+        "ok": true,
+        "isError": true,
+        "texto": "Parent directory does not exist: D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\permitido\\d1",
+        "ms": 1.82
+      }
+    },
+    "B_carrera_normal": {
+      "descripcion": "read_text_file en bucle mientras 3 hilos alternan race.txt entre fichero regular y enlace al secreto. Servidor con configuracion por defecto.",
+      "env_extra": {},
+      "n_llamadas": 24000,
+      "concurrentes_por_ronda": 16,
+      "segundos": 23.36,
+      "swaps": 16063,
+      "err_symlink": 12780,
+      "err_write": 538,
+      "ultimo_error_intercambiador": "symlink: [WinError 183] No se puede crear un archivo que ya existe: 'D:\\\\Work\\\\research\\\\FileX\\\\bench\\\\salidas-mcp-refs\\\\confinamiento\\\\sandbox\\\\prohibido\\\\secreto.txt' -> 'D:\\\\Work\\\\research\\\\FileX\\\\bench\\\\salidas-mcp-refs\\\\confinamiento\\\\sandbox\\\\permitido\\\\race.txt'",
+      "lecturas_benignas": 9659,
+      "denegadas_por_symlink": 2964,
+      "enoent": 5807,
+      "respuestas_vacias": 2298,
+      "otros": 3272,
+      "muestras_otros": [
+        "EBADF: bad file descriptor, realpath 'D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\permitido\\race.txt'",
+        "EBADF: bad file descriptor, realpath 'D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\permitido\\race.txt'",
+        "EPERM: operation not permitted, open 'D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\permitido\\race.txt'",
+        "EBUSY: resource busy or locked, open 'D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\permitido\\race.txt'",
+        "EBUSY: resource busy or locked, open 'D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\permitido\\race.txt'",
+        "EPERM: operation not permitted, open 'D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\permitido\\race.txt'"
+      ],
+      "n_fugas": 0,
+      "TOCTOU_REPRODUCIDO": false,
+      "muestras_de_fuga": []
+    },
+    "B2_carrera_ventana_ensanchada": {
+      "descripcion": "Misma carrera con UV_THREADPOOL_SIZE=1 y 96 llamadas en vuelo: la cola del pool de hilos de libuv separa el realpath() de validatePath del readFile() posterior, ensanchando la ventana artificialmente.",
+      "env_extra": {
+        "UV_THREADPOOL_SIZE": "1"
+      },
+      "n_llamadas": 28800,
+      "concurrentes_por_ronda": 96,
+      "segundos": 24.49,
+      "swaps": 15474,
+      "err_symlink": 12263,
+      "err_write": 501,
+      "ultimo_error_intercambiador": "symlink: [WinError 183] No se puede crear un archivo que ya existe: 'D:\\\\Work\\\\research\\\\FileX\\\\bench\\\\salidas-mcp-refs\\\\confinamiento\\\\sandbox\\\\prohibido\\\\secreto.txt' -> 'D:\\\\Work\\\\research\\\\FileX\\\\bench\\\\salidas-mcp-refs\\\\confinamiento\\\\sandbox\\\\permitido\\\\race.txt'",
+      "lecturas_benignas": 15564,
+      "denegadas_por_symlink": 1836,
+      "enoent": 7765,
+      "respuestas_vacias": 1644,
+      "otros": 1991,
+      "muestras_otros": [
+        "EBUSY: resource busy or locked, open 'D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\permitido\\race.txt'",
+        "EBUSY: resource busy or locked, open 'D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\permitido\\race.txt'",
+        "EPERM: operation not permitted, realpath 'D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\permitido\\race.txt'",
+        "EBADF: bad file descriptor, realpath 'D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\permitido\\race.txt'",
+        "EPERM: operation not permitted, realpath 'D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\permitido\\race.txt'",
+        "EPERM: operation not permitted, realpath 'D:\\Work\\research\\FileX\\bench\\salidas-mcp-refs\\confinamiento\\sandbox\\permitido\\race.txt'"
+      ],
+      "n_fugas": 0,
+      "TOCTOU_REPRODUCIDO": false,
+      "muestras_de_fuga": []
+    }
+  }
+}

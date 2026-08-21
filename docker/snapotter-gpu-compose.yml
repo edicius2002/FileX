@@ -1,0 +1,103 @@
+# FileX / investigación previa - SnapOtter (variante GPU / NVIDIA CUDA)
+#
+# ############################################################################
+# ##  PREPARADO PERO NO ARRANCADO.                                          ##
+# ##  El carril de medición GPU es exclusivo de otro agente. No ejecutar     ##
+# ##  este fichero sin coordinarlo: la RTX 3060 tiene 12 GB y ~3,3 GB ya     ##
+# ##  están ocupados por aplicaciones de escritorio.                         ##
+# ############################################################################
+#
+# IMPORTANTE: SnapOtter distribuye UNA SOLA imagen. No existe tag `:cuda`,
+# `:gpu` ni `:latest-cuda` (comprobado con `docker manifest inspect`; el tag
+# `:cuda` histórico fue unificado en `:latest`). La diferencia CPU/GPU es
+# exclusivamente en tiempo de ejecución: reservar el dispositivo NVIDIA.
+# La imagen autodetecta CUDA al arrancar; sin dispositivo, cae a CPU.
+#
+# Requisito previo: NVIDIA Container Toolkit disponible en el backend WSL2
+# de Docker Desktop (Settings > Resources > WSL Integration, driver NVIDIA
+# de Windows con soporte WSL). Verificar ANTES con:
+#   docker run --rm --gpus all nvidia/cuda:12.4.0-base-ubuntu22.04 nvidia-smi
+#
+# Arranque (cuando el carril GPU lo autorice):
+#   docker compose -f snapotter-gpu-compose.yml -p filex-snapotter-gpu up -d
+# Parada:
+#   docker compose -f snapotter-gpu-compose.yml -p filex-snapotter-gpu down
+# Borrado total:
+#   docker compose -f snapotter-gpu-compose.yml -p filex-snapotter-gpu down -v
+#
+# Comprobación de que CUDA está realmente activo (tras la primera petición IA):
+#   curl http://localhost:1350/api/v1/admin/health   ->  {"ai": {"gpu": true}}
+#
+# UI: http://localhost:1350   credenciales iniciales: admin / admin
+# Puerto 1350 (no 1349) para poder convivir con la variante CPU si hiciera falta.
+
+services:
+  snapotter:
+    image: snapotter/snapotter:latest
+    container_name: filex-snapotter-gpu
+    ports:
+      - "1350:1349"
+    environment:
+      DATABASE_URL: postgres://snapotter:snapotter@postgres:5432/snapotter
+      REDIS_URL: redis://redis:6379
+    volumes:
+      - SnapOtter-gpu-data:/data
+      - SnapOtter-gpu-workspace:/tmp/workspace
+      - type: bind
+        source: ../corpus
+        target: /corpus
+        read_only: true
+    # ---- Reserva de GPU: equivalente en Compose a `docker run --gpus all` ----
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  postgres:
+    image: postgres:17-alpine
+    container_name: filex-snapotter-gpu-pg
+    environment:
+      POSTGRES_USER: snapotter
+      POSTGRES_PASSWORD: snapotter   # solo local
+      POSTGRES_DB: snapotter
+    volumes:
+      - SnapOtter-gpu-pgdata:/var/lib/postgresql/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U snapotter -d snapotter"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+
+  redis:
+    image: redis:8-alpine
+    container_name: filex-snapotter-gpu-redis
+    command: ["redis-server", "--maxmemory-policy", "noeviction", "--appendonly", "yes"]
+    volumes:
+      - SnapOtter-gpu-redisdata:/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+
+volumes:
+  SnapOtter-gpu-data:
+  SnapOtter-gpu-workspace:
+  SnapOtter-gpu-pgdata:
+  SnapOtter-gpu-redisdata:

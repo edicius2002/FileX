@@ -1,0 +1,91 @@
+{
+  "sdk_mcp": "2.0.0",
+  "modo": "auto",
+  "dur": 30.0,
+  "fases": [
+    {
+      "fase": "A_timeout_largo",
+      "timeout_s": 45.0,
+      "ms": 30291.7,
+      "resultado": [
+        {
+          "type": "text",
+          "text": "{\"dormido_s\": 30.0, \"progress_token\": \"None\", \"pasos\": 30, \"fallos_progreso\": []}"
+        }
+      ],
+      "n_progresos": 30,
+      "primeros": [
+        {
+          "t": 3.448,
+          "progress": 1.0,
+          "total": 30.0,
+          "message": "paso 1/30"
+        },
+        {
+          "t": 4.459,
+          "progress": 2.0,
+          "total": 30.0,
+          "message": "paso 2/30"
+        }
+      ],
+      "ultimos": [
+        {
+          "t": 31.707,
+          "progress": 29.0,
+          "total": 30.0,
+          "message": "paso 29/30"
+        },
+        {
+          "t": 32.717,
+          "progress": 30.0,
+          "total": 30.0,
+          "message": "paso 30/30"
+        }
+      ]
+    },
+    {
+      "fase": "B_timeout_corto",
+      "timeout_s": 10.0,
+      "ms": 10013.9,
+      "EXCEPCION": "mcp.shared.exceptions.MCPError",
+      "repr": "MCPError(-32001, \"Request 'tools/call' timed out\", None)",
+      "n_progresos": 9,
+      "primeros": [
+        {
+          "t": 33.734,
+          "progress": 1.0,
+          "total": 30.0,
+          "message": "paso 1/30"
+        },
+        {
+          "t": 34.741,
+          "progress": 2.0,
+          "total": 30.0,
+          "message": "paso 2/30"
+        }
+      ],
+      "ultimos": [
+        {
+          "t": 40.761,
+          "progress": 8.0,
+          "total": 30.0,
+          "message": "paso 8/30"
+        },
+        {
+          "t": 41.789,
+          "progress": 9.0,
+          "total": 30.0,
+          "message": "paso 9/30"
+        }
+      ]
+    },
+    {
+      "fase": "C_ping_tras_timeout",
+      "ok": true,
+      "ms": 5.0
+    }
+  ],
+  "protocolo_negociado": "2026-07-28",
+  "hay_api_para_recuperar_el_resultado_abandonado": false,
+  "metodos_client_con_task_o_resume": []
+}

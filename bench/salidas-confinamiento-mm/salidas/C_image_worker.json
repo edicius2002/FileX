@@ -1,0 +1,476 @@
+{
+  "spec": "bench/salidas-confinamiento-mm/specs/C_image_worker.json",
+  "servidor": "image-worker-mcp",
+  "llamadas": [
+    {
+      "id": "IW_control",
+      "tool": "resize_image",
+      "args": {
+        "imagePath": "D:\\Work\\research\\FileX\\bench\\salidas-confinamiento-mm\\sandbox\\raiz\\entrada.png",
+        "width": 32,
+        "outputPath": "D:\\Work\\research\\FileX\\bench\\salidas-confinamiento-mm\\sandbox\\raiz\\iw_control_out.png"
+      },
+      "nota": "CONTROL: imagen dentro de la raiz -> salida dentro de la raiz",
+      "espera": null,
+      "ok": true,
+      "isError": false,
+      "ms": 170.7,
+      "patron": "ASA",
+      "n_piezas": 1,
+      "tokens_texto": 71,
+      "tokens_binario_si_se_inyecta": 0,
+      "tokens_total": 71,
+      "bytes_binario": 0,
+      "inviable_para_contexto": false,
+      "piezas": [
+        {
+          "tipo": "text",
+          "clase": "texto",
+          "chars": 197,
+          "tokens": 71
+        }
+      ],
+      "respuesta_recorte": "{\n  \"format\": \"png\",\n  \"width\": 32,\n  \"height\": 32,\n  \"size\": 982,\n  \"savedTo\": \"D:\\\\Work\\\\research\\\\FileX\\\\bench\\\\salidas-confinamiento-mm\\\\sandbox\\\\raiz\\\\iw_control_out.png\",\n  \"source\": \"file\"\n}"
+    },
+    {
+      "id": "IW_read_write_fuera",
+      "tool": "resize_image",
+      "args": {
+        "imagePath": "D:\\Work\\research\\FileX\\bench\\salidas-confinamiento-mm\\sandbox\\fuera\\secreto.png",
+        "width": 16,
+        "outputPath": "D:\\Work\\research\\FileX\\bench\\salidas-confinamiento-mm\\sandbox\\fuera\\iw_read_LEAK.png"
+      },
+      "nota": "LECTURA imagen fuera de la raiz + ESCRITURA fuera de la raiz",
+      "espera": null,
+      "ok": true,
+      "isError": false,
+      "ms": 95.1,
+      "patron": "ASA",
+      "n_piezas": 1,
+      "tokens_texto": 72,
+      "tokens_binario_si_se_inyecta": 0,
+      "tokens_total": 72,
+      "bytes_binario": 0,
+      "inviable_para_contexto": false,
+      "piezas": [
+        {
+          "tipo": "text",
+          "clase": "texto",
+          "chars": 196,
+          "tokens": 72
+        }
+      ],
+      "respuesta_recorte": "{\n  \"format\": \"png\",\n  \"width\": 16,\n  \"height\": 16,\n  \"size\": 566,\n  \"savedTo\": \"D:\\\\Work\\\\research\\\\FileX\\\\bench\\\\salidas-confinamiento-mm\\\\sandbox\\\\fuera\\\\iw_read_LEAK.png\",\n  \"source\": \"file\"\n}"
+    },
+    {
+      "id": "IW_read_sys_exists",
+      "tool": "resize_image",
+      "args": {
+        "imagePath": "C:\\Windows\\win.ini",
+        "width": 16
+      },
+      "nota": "LECTURA de win.ini: fs.readFileSync obtiene los bytes; sharp falla despues",
+      "espera": null,
+      "ok": true,
+      "isError": true,
+      "ms": 24.0,
+      "patron": "PROSA",
+      "n_piezas": 1,
+      "tokens_texto": 10,
+      "tokens_binario_si_se_inyecta": 0,
+      "tokens_total": 10,
+      "bytes_binario": 0,
+      "inviable_para_contexto": false,
+      "piezas": [
+        {
+          "tipo": "text",
+          "clase": "texto",
+          "chars": 70,
+          "tokens": 10
+        }
+      ],
+      "respuesta_recorte": "Error processing image: Input buffer contains unsupported image format"
+    },
+    {
+      "id": "IW_read_noexist",
+      "tool": "resize_image",
+      "args": {
+        "imagePath": "C:\\Windows\\no_existe_jamas.png",
+        "width": 16
+      },
+      "nota": "oraculo: fichero inexistente -> ENOENT en el mensaje",
+      "espera": null,
+      "ok": true,
+      "isError": true,
+      "ms": 2.9,
+      "patron": "ASA",
+      "n_piezas": 1,
+      "tokens_texto": 48,
+      "tokens_binario_si_se_inyecta": 0,
+      "tokens_total": 48,
+      "bytes_binario": 0,
+      "inviable_para_contexto": false,
+      "piezas": [
+        {
+          "tipo": "text",
+          "clase": "texto",
+          "chars": 154,
+          "tokens": 48
+        }
+      ],
+      "respuesta_recorte": "MCP error -32602: Failed to read image from path: C:\\Windows\\no_existe_jamas.png. ENOENT: no such file or directory, open 'C:\\Windows\\no_existe_jamas.png'"
+    },
+    {
+      "id": "IW_write_fuera",
+      "tool": "resize_image",
+      "args": {
+        "imagePath": "D:\\Work\\research\\FileX\\bench\\salidas-confinamiento-mm\\sandbox\\raiz\\entrada.png",
+        "width": 24,
+        "outputPath": "D:\\Work\\research\\FileX\\bench\\salidas-confinamiento-mm\\sandbox\\fuera\\iw_write_LEAK.png"
+      },
+      "nota": "ESCRITURA fuera de la raiz: entrada en RAIZ, salida en FUERA",
+      "espera": null,
+      "ok": true,
+      "isError": false,
+      "ms": 20.6,
+      "patron": "ASA",
+      "n_piezas": 1,
+      "tokens_texto": 72,
+      "tokens_binario_si_se_inyecta": 0,
+      "tokens_total": 72,
+      "bytes_binario": 0,
+      "inviable_para_contexto": false,
+      "piezas": [
+        {
+          "tipo": "text",
+          "clase": "texto",
+          "chars": 197,
+          "tokens": 72
+        }
+      ],
+      "respuesta_recorte": "{\n  \"format\": \"png\",\n  \"width\": 24,\n  \"height\": 24,\n  \"size\": 833,\n  \"savedTo\": \"D:\\\\Work\\\\research\\\\FileX\\\\bench\\\\salidas-confinamiento-mm\\\\sandbox\\\\fuera\\\\iw_write_LEAK.png\",\n  \"source\": \"file\"\n}"
+    },
+    {
+      "id": "IW_travesia",
+      "tool": "resize_image",
+      "args": {
+        "imagePath": "D:\\Work\\research\\FileX\\bench\\salidas-confinamiento-mm\\sandbox\\raiz\\..\\fuera\\secreto.png",
+        "width": 16,
+        "outputPath": "D:\\Work\\research\\FileX\\bench\\salidas-confinamiento-mm\\sandbox\\fuera\\iw_trav_LEAK.png"
+      },
+      "nota": "LECTURA+ESCRITURA por travesia RAIZ\\..\\fuera",
+      "espera": null,
+      "ok": true,
+      "isError": false,
+      "ms": 12.1,
+      "patron": "ASA",
+      "n_piezas": 1,
+      "tokens_texto": 73,
+      "tokens_binario_si_se_inyecta": 0,
+      "tokens_total": 73,
+      "bytes_binario": 0,
+      "inviable_para_contexto": false,
+      "piezas": [
+        {
+          "tipo": "text",
+          "clase": "texto",
+          "chars": 196,
+          "tokens": 73
+        }
+      ],
+      "respuesta_recorte": "{\n  \"format\": \"png\",\n  \"width\": 16,\n  \"height\": 16,\n  \"size\": 566,\n  \"savedTo\": \"D:\\\\Work\\\\research\\\\FileX\\\\bench\\\\salidas-confinamiento-mm\\\\sandbox\\\\fuera\\\\iw_trav_LEAK.png\",\n  \"source\": \"file\"\n}"
+    },
+    {
+      "id": "IW_ads",
+      "tool": "resize_image",
+      "args": {
+        "imagePath": "D:\\Work\\research\\FileX\\bench\\salidas-confinamiento-mm\\sandbox\\raiz\\entrada.png:oculto",
+        "width": 16
+      },
+      "nota": "ADS como entrada: readFileSync del flujo alternativo",
+      "espera": null,
+      "ok": true,
+      "isError": true,
+      "ms": 2.1,
+      "patron": "PROSA",
+      "n_piezas": 1,
+      "tokens_texto": 10,
+      "tokens_binario_si_se_inyecta": 0,
+      "tokens_total": 10,
+      "bytes_binario": 0,
+      "inviable_para_contexto": false,
+      "piezas": [
+        {
+          "tipo": "text",
+          "clase": "texto",
+          "chars": 70,
+          "tokens": 10
+        }
+      ],
+      "respuesta_recorte": "Error processing image: Input buffer contains unsupported image format"
+    },
+    {
+      "id": "IW_write_systemp",
+      "tool": "resize_image",
+      "args": {
+        "imagePath": "D:\\Work\\research\\FileX\\bench\\salidas-confinamiento-mm\\sandbox\\raiz\\entrada.png",
+        "width": 16,
+        "outputPath": "C:\\Windows\\Temp\\filex_no_debe_existir_iw.png"
+      },
+      "nota": "escritura arbitraria a C:\\Windows\\Temp (se borra en el arnes)",
+      "espera": null,
+      "ok": true,
+      "isError": false,
+      "ms": 10.9,
+      "patron": "ASA",
+      "n_piezas": 1,
+      "tokens_texto": 60,
+      "tokens_binario_si_se_inyecta": 0,
+      "tokens_total": 60,
+      "bytes_binario": 0,
+      "inviable_para_contexto": false,
+      "piezas": [
+        {
+          "tipo": "text",
+          "clase": "texto",
+          "chars": 151,
+          "tokens": 60
+        }
+      ],
+      "respuesta_recorte": "{\n  \"format\": \"png\",\n  \"width\": 16,\n  \"height\": 16,\n  \"size\": 567,\n  \"savedTo\": \"C:\\\\Windows\\\\Temp\\\\filex_no_debe_existir_iw.png\",\n  \"source\": \"file\"\n}"
+    }
+  ],
+  "arranque_frio_ms": 15404.3,
+  "spawn_proceso_ms": 345.7,
+  "handshake_ms": 15058.6,
+  "server_info": {
+    "name": "image-worker-mcp-server",
+    "version": "0.0.6",
+    "protocolVersion": "2024-11-05",
+    "instructions": null
+  },
+  "list_tools_ms": 9.0,
+  "n_herramientas": 2,
+  "herramientas": [
+    {
+      "name": "resize_image",
+      "description": "Resize and transform images",
+      "annotations": {},
+      "tiene_readOnlyHint": false,
+      "tiene_destructiveHint": false,
+      "tokens_declaracion": 875,
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "imagePath": {
+            "type": "string",
+            "description": "Path to image"
+          },
+          "imageUrl": {
+            "type": "string",
+            "description": "URL to image"
+          },
+          "base64Image": {
+            "type": "string",
+            "description": "Base64-encoded image data (with or without data URL prefix)"
+          },
+          "format": {
+            "type": "string",
+            "enum": [
+              "jpeg",
+              "png",
+              "webp",
+              "avif"
+            ],
+            "description": "Output image format"
+          },
+          "width": {
+            "type": "number",
+            "minimum": 1,
+            "maximum": 10000,
+            "description": "Width of the resized image in pixels"
+          },
+          "height": {
+            "type": "number",
+            "minimum": 1,
+            "maximum": 10000,
+            "description": "Height of the resized image in pixels"
+          },
+          "quality": {
+            "type": "number",
+            "minimum": 1,
+            "maximum": 100,
+            "description": "Quality of the output image (1-100)"
+          },
+          "fit": {
+            "type": "string",
+            "enum": [
+              "cover",
+              "contain",
+              "fill",
+              "inside",
+              "outside"
+            ],
+            "description": "How the image should be resized to fit both provided dimensions"
+          },
+          "position": {
+            "type": "string",
+            "enum": [
+              "top",
+              "right top",
+              "right",
+              "right bottom",
+              "bottom",
+              "left bottom",
+              "left",
+              "left top"
+            ],
+            "description": "Position when using fit 'cover' or 'contain'"
+          },
+          "background": {
+            "type": "string",
+            "description": "Background color when using fit 'contain' or 'cover', or when extending. Accepts hex, rgb, rgba, or CSS color names"
+          },
+          "withoutEnlargement": {
+            "type": "boolean",
+            "description": "Do not enlarge if the width or height are already less than the specified dimensions"
+          },
+          "withoutReduction": {
+            "type": "boolean",
+            "description": "Do not reduce if the width or height are already greater than the specified dimensions"
+          },
+          "rotate": {
+            "type": "number",
+            "description": "Angle of rotation (positive for clockwise, negative for counter-clockwise)"
+          },
+          "flip": {
+            "type": "boolean",
+            "description": "Flip the image vertically"
+          },
+          "flop": {
+            "type": "boolean",
+            "description": "Flop the image horizontally"
+          },
+          "grayscale": {
+            "type": "boolean",
+            "description": "Convert the image to grayscale"
+          },
+          "blur": {
+            "type": "number",
+            "minimum": 0.3,
+            "maximum": 1000,
+            "description": "Apply a Gaussian blur. Value is the sigma of the Gaussian kernel (0.3-1000)"
+          },
+          "sharpen": {
+            "type": "number",
+            "minimum": 0.3,
+            "maximum": 1000,
+            "description": "Apply a sharpening. Value is the sigma of the Gaussian kernel (0.3-1000)"
+          },
+          "gamma": {
+            "type": "number",
+            "minimum": 1,
+            "maximum": 3,
+            "description": "Apply gamma correction (1.0-3.0)"
+          },
+          "negate": {
+            "type": "boolean",
+            "description": "Produce a negative of the image"
+          },
+          "normalize": {
+            "type": "boolean",
+            "description": "Enhance image contrast by stretching its intensity levels"
+          },
+          "threshold": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 255,
+            "description": "Apply a threshold to the image, turning pixels above the threshold white and below black (0-255)"
+          },
+          "trim": {
+            "type": "boolean",
+            "description": "Trim 'boring' pixels from all edges that contain values similar to the top-left pixel"
+          },
+          "outputImage": {
+            "type": "boolean",
+            "default": false,
+            "description": "Whether to include the base64-encoded image in the output response"
+          },
+          "outputPath": {
+            "type": "string",
+            "description": "Path to save the resized image (if not provided, image will only be returned as base64)"
+          }
+        },
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null
+    },
+    {
+      "name": "upload_image",
+      "description": "Upload images to cloud storage services",
+      "annotations": {},
+      "tiene_readOnlyHint": false,
+      "tiene_destructiveHint": false,
+      "tokens_declaracion": 299,
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "imagePath": {
+            "type": "string",
+            "description": "Path to image file to upload"
+          },
+          "imageUrl": {
+            "type": "string",
+            "description": "URL to image to download and upload"
+          },
+          "base64Image": {
+            "type": "string",
+            "description": "Base64-encoded image data (with or without data URL prefix)"
+          },
+          "filename": {
+            "type": "string",
+            "description": "Custom filename for the uploaded image (without extension)"
+          },
+          "folder": {
+            "type": "string",
+            "description": "Folder/directory to upload to (service-specific)"
+          },
+          "public": {
+            "type": "boolean",
+            "default": true,
+            "description": "Whether the uploaded image should be publicly accessible"
+          },
+          "overwrite": {
+            "type": "boolean",
+            "default": false,
+            "description": "Whether to overwrite existing files with the same name"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Tags to associate with the uploaded image (service-specific)"
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "Additional metadata to store with the image (service-specific)"
+          }
+        },
+        "additionalProperties": false,
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "outputSchema": null
+    }
+  ],
+  "tokens_catalogo": 1177,
+  "n_anotadas": 0,
+  "n_prompts": null,
+  "prompts": "McpError: Method not found",
+  "n_recursos": null,
+  "recursos": "McpError: Method not found"
+}

@@ -1,0 +1,75 @@
+{
+ "nombre": "video-audio-mcp",
+ "command": "D:/Work/research/FileX/.venv-mm-vamcp/Scripts/python.exe",
+ "args": [
+  "server.py"
+ ],
+ "cwd": "D:/Work/research/FileX/repos/mcp-refs/video-audio-mcp",
+ "env": {},
+ "stderr_log": "D:/Work/research/FileX/bench/salidas-confinamiento-mm/logs/video-audio.stderr.log",
+ "pasos": [
+  {
+   "id": "VA_health",
+   "tool": "health_check",
+   "args": {},
+   "nota": "CONTROL: sin ruta",
+   "timeout": 20,
+   "recorte": 1400
+  },
+  {
+   "id": "VA_read_sys_exists",
+   "tool": "extract_audio_from_video",
+   "args": {
+    "video_path": "C:\\Windows\\win.ini",
+    "output_audio_path": "D:\\Work\\research\\FileX\\bench\\salidas-confinamiento-mm\\sandbox\\fuera\\va_sys_out.mp3"
+   },
+   "nota": "LECTURA de win.ini (existe, no-media): ffmpeg lo abre y falla -> sin confinamiento",
+   "timeout": 30,
+   "recorte": 1400
+  },
+  {
+   "id": "VA_read_noexist",
+   "tool": "extract_audio_from_video",
+   "args": {
+    "video_path": "C:\\no_existe_jamas_xyz.mp4",
+    "output_audio_path": "D:\\Work\\research\\FileX\\bench\\salidas-confinamiento-mm\\sandbox\\fuera\\va_noexist_out.mp3"
+   },
+   "nota": "entrada inexistente: distingue no-existe de existe-pero-no-media",
+   "timeout": 30,
+   "recorte": 1400
+  },
+  {
+   "id": "VA_read_travesia",
+   "tool": "extract_audio_from_video",
+   "args": {
+    "video_path": "D:\\Work\\research\\FileX\\bench\\salidas-confinamiento-mm\\sandbox\\raiz\\..\\fuera\\video_fuera.mp4",
+    "output_audio_path": "D:\\Work\\research\\FileX\\bench\\salidas-confinamiento-mm\\sandbox\\fuera\\va_trav_out.mp3"
+   },
+   "nota": "LECTURA por travesia RAIZ\\..\\fuera + ESCRITURA fuera (destino fresco)",
+   "timeout": 40,
+   "recorte": 1400
+  },
+  {
+   "id": "VA_write_fuera",
+   "tool": "extract_audio_from_video",
+   "args": {
+    "video_path": "D:\\Work\\research\\FileX\\bench\\salidas-confinamiento-mm\\sandbox\\raiz\\video.mp4",
+    "output_audio_path": "D:\\Work\\research\\FileX\\bench\\salidas-confinamiento-mm\\sandbox\\fuera\\va_write_LEAK.mp3"
+   },
+   "nota": "ESCRITURA fuera de la raiz: mp3 en FUERA (destino fresco, no cuelga)",
+   "timeout": 40,
+   "recorte": 1400
+  },
+  {
+   "id": "VA_ads",
+   "tool": "extract_audio_from_video",
+   "args": {
+    "video_path": "D:\\Work\\research\\FileX\\bench\\salidas-confinamiento-mm\\sandbox\\raiz\\entrada.png:oculto",
+    "output_audio_path": "D:\\Work\\research\\FileX\\bench\\salidas-confinamiento-mm\\sandbox\\fuera\\va_ads_out.mp3"
+   },
+   "nota": "ADS como entrada",
+   "timeout": 30,
+   "recorte": 1400
+  }
+ ]
+}

@@ -1,0 +1,2871 @@
+{
+  "meta": {
+    "titulo": "Verdad de referencia de FileX generada con motores nativos",
+    "generado": "2026-08-19",
+    "proposito": "Patron oro contra el que medir la salida de SnapOtter, ConvertX y del propio FileX.",
+    "motores": {
+      "ffmpeg": "N-121159-g0bd5a7d371-20250921 (libx264, libx265, libvpx-vp9, libopus, libmp3lame, libwebp, libaom, libsvtav1)",
+      "ffprobe": "N-121159-g0bd5a7d371-20250921",
+      "ImageMagick": "7.1.2-21 Q16-HDRI x64 (libwebp 1.6.0, libheif 1.21.2 para AVIF/HEIC)",
+      "Ghostscript": "10.07.0",
+      "python": "3.11.9 (solo como instrumento de medida para CSV/JSON, no como motor de conversion)"
+    },
+    "ausentes": [
+      "vips",
+      "LibreOffice",
+      "Pandoc",
+      "Tesseract",
+      "qpdf",
+      "Calibre",
+      "Inkscape"
+    ],
+    "restricciones": "solo CPU, maximo 4 hilos (-threads 4 / -limit thread 4), sin uso de GPU ni de codificadores NVENC",
+    "sobre_los_tiempos": "NO se han tomado mediciones de tiempo. La maquina compartia carga con otros agentes; cualquier duracion seria ruido. Este documento es exclusivamente de calidad, que es determinista.",
+    "alcance": "20 piezas del corpus. Quedan fuera fuente_4k.mp4, habla_jfk.flac y habla_largo.flac (activos de otras tareas)."
+  },
+  "ordenes": [
+    {
+      "id": "img.png2webp",
+      "entrada": "corpus/imagen/tipico.png",
+      "salida": "imagen/tipico_png-to.webp",
+      "orden": "magick -limit thread 4 tipico.png -quality 80 tipico_png-to.webp",
+      "motor": "ImageMagick 7.1.2-21"
+    },
+    {
+      "id": "img.png2avif",
+      "entrada": "corpus/imagen/tipico.png",
+      "salida": "imagen/tipico_png-to.avif",
+      "orden": "magick -limit thread 4 tipico.png -quality 50 tipico_png-to.avif",
+      "motor": "ImageMagick 7.1.2-21 (libheif 1.21.2)"
+    },
+    {
+      "id": "img.png2jpg",
+      "entrada": "corpus/imagen/tipico.png",
+      "salida": "imagen/tipico_png-to.jpg",
+      "orden": "magick -limit thread 4 tipico.png -quality 85 tipico_png-to.jpg",
+      "motor": "ImageMagick 7.1.2-21"
+    },
+    {
+      "id": "img.alpha2webp",
+      "entrada": "corpus/imagen/alpha.png",
+      "salida": "imagen/alpha_png-to.webp",
+      "orden": "magick -limit thread 4 alpha.png -quality 80 alpha_png-to.webp",
+      "motor": "ImageMagick 7.1.2-21 (libwebp 1.6.0)"
+    },
+    {
+      "id": "img.alpha2avif",
+      "entrada": "corpus/imagen/alpha.png",
+      "salida": "imagen/alpha_png-to.avif",
+      "orden": "magick -limit thread 4 alpha.png -quality 50 alpha_png-to.avif",
+      "motor": "ImageMagick 7.1.2-21"
+    },
+    {
+      "id": "img.alpha2jpg.negro",
+      "entrada": "corpus/imagen/alpha.png",
+      "salida": "imagen/alpha_png-to.jpg",
+      "orden": "magick -limit thread 4 alpha.png -quality 85 alpha_png-to.jpg",
+      "motor": "ImageMagick 7.1.2-21",
+      "nota": "aplana sobre NEGRO por defecto"
+    },
+    {
+      "id": "img.alpha2jpg.blanco",
+      "entrada": "corpus/imagen/alpha.png",
+      "salida": "imagen/alpha_png-to-flat.jpg",
+      "orden": "magick -limit thread 4 alpha.png -background white -alpha remove -alpha off -quality 85 alpha_png-to-flat.jpg",
+      "motor": "ImageMagick 7.1.2-21",
+      "nota": "variante recomendada: fondo blanco explicito"
+    },
+    {
+      "id": "img.tif16_2png",
+      "entrada": "corpus/imagen/patologico_16bit.tif",
+      "salida": "imagen/16bit_tif-to-default.png",
+      "orden": "magick -limit thread 4 patologico_16bit.tif 16bit_tif-to-default.png",
+      "motor": "ImageMagick 7.1.2-21"
+    },
+    {
+      "id": "img.tif16_2png8",
+      "entrada": "corpus/imagen/patologico_16bit.tif",
+      "salida": "imagen/16bit_tif-to-d8.png",
+      "orden": "magick -limit thread 4 patologico_16bit.tif -depth 8 16bit_tif-to-d8.png",
+      "motor": "ImageMagick 7.1.2-21",
+      "nota": "degradacion deliberada, para medir el coste de perder los 16 bits"
+    },
+    {
+      "id": "img.trivial2webp.lossy",
+      "entrada": "corpus/imagen/trivial.png",
+      "salida": "imagen/trivial_png-to.webp",
+      "orden": "magick -limit thread 4 trivial.png -quality 80 trivial_png-to.webp",
+      "motor": "ImageMagick 7.1.2-21"
+    },
+    {
+      "id": "img.trivial2webp.lossless",
+      "entrada": "corpus/imagen/trivial.png",
+      "salida": "imagen/trivial_png-to-lossless.webp",
+      "orden": "magick -limit thread 4 trivial.png -define webp:lossless=true trivial_png-to-lossless.webp",
+      "motor": "ImageMagick 7.1.2-21",
+      "nota": "variante recomendada para grafismo/paleta"
+    },
+    {
+      "id": "img.png2pdf.72",
+      "entrada": "corpus/imagen/tipico.png",
+      "salida": "pdf/tipico_png-to.pdf",
+      "orden": "magick -limit thread 4 tipico.png tipico_png-to.pdf",
+      "motor": "ImageMagick 7.1.2-21",
+      "nota": "MediaBox = 1920x1080 pt (1 px -> 1 pt); pagina de 677x381 mm"
+    },
+    {
+      "id": "img.png2pdf.150",
+      "entrada": "corpus/imagen/tipico.png",
+      "salida": "pdf/tipico_png-to-150dpi.pdf",
+      "orden": "magick -limit thread 4 tipico.png -density 150 -units PixelsPerInch tipico_png-to-150dpi.pdf",
+      "motor": "ImageMagick 7.1.2-21",
+      "nota": "MediaBox = 922x518 pt"
+    },
+    {
+      "id": "pdf.2png",
+      "entrada": "corpus/pdf/tipico_texto.pdf",
+      "salida": "pdf/tipico_texto_pdf-to-p1.png",
+      "orden": "gswin64c -q -dNOPAUSE -dBATCH -dSAFER -sDEVICE=png16m -r150 -dNumRenderingThreads=4 -sOutputFile=%d.png tipico_texto.pdf",
+      "motor": "Ghostscript 10.07.0"
+    },
+    {
+      "id": "pdf.2jpg",
+      "entrada": "corpus/pdf/tipico_texto.pdf",
+      "salida": "pdf/tipico_texto_pdf-to-p1.jpg",
+      "orden": "gswin64c -q -dNOPAUSE -dBATCH -dSAFER -sDEVICE=jpeg -dJPEGQ=85 -r150 -sOutputFile=%d.jpg tipico_texto.pdf",
+      "motor": "Ghostscript 10.07.0"
+    },
+    {
+      "id": "pdf.2tif",
+      "entrada": "corpus/pdf/tipico_texto.pdf",
+      "salida": "pdf/tipico_texto_pdf-to.tif",
+      "orden": "gswin64c -q -dNOPAUSE -dBATCH -dSAFER -sDEVICE=tiff24nc -r150 -sOutputFile=out.tif tipico_texto.pdf",
+      "motor": "Ghostscript 10.07.0",
+      "nota": "TIFF sin comprimir: 6.5 MB frente a 15 KB del PNG equivalente"
+    },
+    {
+      "id": "pdf.2pdf",
+      "entrada": "corpus/pdf/tipico_texto.pdf",
+      "salida": "pdf/tipico_texto_pdf-to-gs.pdf",
+      "orden": "gswin64c -q -dNOPAUSE -dBATCH -dSAFER -sDEVICE=pdfwrite -sOutputFile=out.pdf tipico_texto.pdf",
+      "motor": "Ghostscript 10.07.0",
+      "nota": "conserva el texto: sha256 del txtwrite identico al original"
+    },
+    {
+      "id": "pdf.rasterizado",
+      "entrada": "salidas/pdf/tipico_texto_pdf-to-p1.png",
+      "salida": "pdf/tipico_texto_rasterizado.pdf",
+      "orden": "magick -limit thread 4 tipico_texto_pdf-to-p1.png tipico_texto_rasterizado.pdf",
+      "motor": "ImageMagick 7.1.2-21",
+      "nota": "ida y vuelta PDF->PNG->PDF: destruye la capa de texto (referencia negativa)"
+    },
+    {
+      "id": "vid.mkv2mp4.default",
+      "entrada": "corpus/video/patologico_2pistas.mkv",
+      "salida": "video/2pistas_mkv-to-DEFAULT.mp4",
+      "orden": "ffmpeg -threads 4 -i patologico_2pistas.mkv -c:v libx264 -crf 23 -preset medium -c:a aac -b:a 128k out.mp4",
+      "motor": "ffmpeg N-121159",
+      "nota": "COMPORTAMIENTO POR DEFECTO: pierde la segunda pista de audio"
+    },
+    {
+      "id": "vid.mkv2mp4.map0",
+      "entrada": "corpus/video/patologico_2pistas.mkv",
+      "salida": "video/2pistas_mkv-to-MAP0.mp4",
+      "orden": "ffmpeg -threads 4 -i patologico_2pistas.mkv -map 0 -c:v libx264 -crf 23 -preset medium -c:a aac -b:a 128k out.mp4",
+      "motor": "ffmpeg N-121159",
+      "nota": "REFERENCIA CORRECTA: conserva las 2 pistas"
+    },
+    {
+      "id": "vid.mkv2mp4.copy",
+      "entrada": "corpus/video/patologico_2pistas.mkv",
+      "salida": "video/2pistas_mkv-to-COPY.mp4",
+      "orden": "ffmpeg -threads 4 -i patologico_2pistas.mkv -map 0 -c copy out.mp4",
+      "motor": "ffmpeg N-121159",
+      "nota": "OPTIMO: remux sin recodificar, pixeles bit a bit identicos"
+    },
+    {
+      "id": "vid.mp42webm",
+      "entrada": "corpus/video/tipico.mp4",
+      "salida": "video/tipico_mp4-to.webm",
+      "orden": "ffmpeg -threads 4 -i tipico.mp4 -c:v libvpx-vp9 -crf 33 -b:v 0 -row-mt 1 -deadline good -cpu-used 4 -c:a libopus -b:a 96k out.webm",
+      "motor": "ffmpeg N-121159 (libvpx-vp9, libopus)"
+    },
+    {
+      "id": "vid.mp42mkv",
+      "entrada": "corpus/video/tipico.mp4",
+      "salida": "video/tipico_mp4-to.mkv",
+      "orden": "ffmpeg -threads 4 -i tipico.mp4 -map 0 -c copy out.mkv",
+      "motor": "ffmpeg N-121159"
+    },
+    {
+      "id": "vid.2gif.paleta",
+      "entrada": "corpus/video/trivial.mp4",
+      "salida": "video/trivial_mp4-to-palette.gif",
+      "orden": "ffmpeg -threads 4 -i trivial.mp4 -vf \"fps=12,scale=320:-1:flags=lanczos,split[a][b];[a]palettegen=max_colors=256[p];[b][p]paletteuse=dither=bayer\" -loop 0 out.gif",
+      "motor": "ffmpeg N-121159",
+      "nota": "REFERENCIA CORRECTA: paleta adaptada por clip"
+    },
+    {
+      "id": "vid.2gif.naive",
+      "entrada": "corpus/video/trivial.mp4",
+      "salida": "video/trivial_mp4-to-naive.gif",
+      "orden": "ffmpeg -threads 4 -i trivial.mp4 -vf \"fps=12,scale=320:-1\" -loop 0 out.gif",
+      "motor": "ffmpeg N-121159",
+      "nota": "referencia negativa: paleta generica"
+    },
+    {
+      "id": "vid.extraer.mp3",
+      "entrada": "corpus/video/tipico.mp4",
+      "salida": "audio/tipico_mp4-audio.mp3",
+      "orden": "ffmpeg -threads 4 -i tipico.mp4 -vn -c:a libmp3lame -b:a 192k out.mp3",
+      "motor": "ffmpeg N-121159"
+    },
+    {
+      "id": "vid.extraer.copy",
+      "entrada": "corpus/video/tipico.mp4",
+      "salida": "audio/tipico_mp4-audio-copy.m4a",
+      "orden": "ffmpeg -threads 4 -i tipico.mp4 -vn -c:a copy out.m4a",
+      "motor": "ffmpeg N-121159",
+      "nota": "OPTIMO: extrae el AAC original sin recodificar; md5 del PCM identico al de la pista dentro del mp4"
+    },
+    {
+      "id": "aud.wav2mp3",
+      "entrada": "corpus/audio/trivial.wav",
+      "salida": "audio/trivial_wav-to.mp3",
+      "orden": "ffmpeg -threads 4 -i trivial.wav -c:a libmp3lame -b:a 192k out.mp3",
+      "motor": "ffmpeg N-121159"
+    },
+    {
+      "id": "aud.wav2flac",
+      "entrada": "corpus/audio/trivial.wav",
+      "salida": "audio/trivial_wav-to.flac",
+      "orden": "ffmpeg -threads 4 -i trivial.wav -c:a flac out.flac",
+      "motor": "ffmpeg N-121159",
+      "nota": "sin perdida: md5 del PCM identico al del wav de origen"
+    },
+    {
+      "id": "aud.wav2opus",
+      "entrada": "corpus/audio/trivial.wav",
+      "salida": "audio/trivial_wav-to.opus",
+      "orden": "ffmpeg -threads 4 -i trivial.wav -c:a libopus -b:a 96k out.opus",
+      "motor": "ffmpeg N-121159",
+      "nota": "Opus remuestrea SIEMPRE a 48 kHz y anade pre-skip: duracion 8.0065 s"
+    },
+    {
+      "id": "aud.wav2aac",
+      "entrada": "corpus/audio/trivial.wav",
+      "salida": "audio/trivial_wav-to.m4a",
+      "orden": "ffmpeg -threads 4 -i trivial.wav -c:a aac -b:a 192k out.m4a",
+      "motor": "ffmpeg N-121159"
+    },
+    {
+      "id": "aud.flac2wav",
+      "entrada": "corpus/audio/tipico.flac",
+      "salida": "audio/tipico_flac-to.wav",
+      "orden": "ffmpeg -threads 4 -i tipico.flac -c:a pcm_s16le out.wav",
+      "motor": "ffmpeg N-121159",
+      "nota": "sin perdida: md5 del PCM = b1cdfb164f2319cd862dbf24a43679e5"
+    },
+    {
+      "id": "aud.flac2mp3",
+      "entrada": "corpus/audio/tipico.flac",
+      "salida": "audio/tipico_flac-to.mp3",
+      "orden": "ffmpeg -threads 4 -i tipico.flac -c:a libmp3lame -b:a 192k out.mp3",
+      "motor": "ffmpeg N-121159"
+    },
+    {
+      "id": "aud.flac2opus",
+      "entrada": "corpus/audio/tipico.flac",
+      "salida": "audio/tipico_flac-to.opus",
+      "orden": "ffmpeg -threads 4 -i tipico.flac -c:a libopus -b:a 96k out.opus",
+      "motor": "ffmpeg N-121159"
+    },
+    {
+      "id": "aud.mp32wav",
+      "entrada": "corpus/audio/tipico.mp3",
+      "salida": "audio/tipico_mp3-to.wav",
+      "orden": "ffmpeg -threads 4 -i tipico.mp3 -c:a pcm_s16le out.wav",
+      "motor": "ffmpeg N-121159"
+    },
+    {
+      "id": "aud.mp32flac",
+      "entrada": "corpus/audio/tipico.mp3",
+      "salida": "audio/tipico_mp3-to.flac",
+      "orden": "ffmpeg -threads 4 -i tipico.mp3 -c:a flac out.flac",
+      "motor": "ffmpeg N-121159",
+      "nota": "ffmpeg elige s32/24 bits: 398 KB frente a los 104 KB del flac de 16 bits equivalente, sin informacion añadida"
+    },
+    {
+      "id": "dat.csv2json",
+      "entrada": "corpus/datos/patologico_bom.csv",
+      "salida": "datos/patologico_bom_csv-to.json",
+      "orden": "python -c \"csv.reader sobre utf-8-sig; json.dump(ensure_ascii=False)\"",
+      "motor": "biblioteca estandar de Python 3.11 (csv, RFC 4180)",
+      "nota": "no hay motor nativo de datos entre los instalados; se usa la stdlib solo como INSTRUMENTO de medida"
+    },
+    {
+      "id": "dat.csv2csv",
+      "entrada": "corpus/datos/patologico_bom.csv",
+      "salida": "datos/patologico_bom_csv-to-normalizado.csv",
+      "orden": "csv.reader + csv.writer(lineterminator='\\n'), salida UTF-8 sin BOM",
+      "motor": "biblioteca estandar de Python 3.11"
+    },
+    {
+      "id": "dat.json2csv",
+      "entrada": "corpus/datos/tipico.json",
+      "salida": "datos/tipico_json-to.csv",
+      "orden": "json.load + csv.writer sobre items[]",
+      "motor": "biblioteca estandar de Python 3.11"
+    }
+  ],
+  "corpus": [
+    {
+      "ruta": "D:\\Work\\research\\FileX\\corpus\\audio\\tipico.flac",
+      "nombre": "tipico.flac",
+      "bytes": 104318,
+      "sha256": "b4950a7155d749deb68c894e96143194e1b6767895549ad33a9c3ec05717e684",
+      "extension": ".flac",
+      "categoria": "av",
+      "formato": "flac",
+      "duracion_s": 8.0,
+      "bitrate_bps": 104318,
+      "n_pistas": 1,
+      "pistas": [
+        {
+          "index": 0,
+          "tipo": "audio",
+          "codec": "flac",
+          "duracion_s": 8.0,
+          "bitrate_bps": null,
+          "idioma": null,
+          "titulo": null,
+          "canales": 1,
+          "layout": "mono",
+          "sample_rate": "44100",
+          "sample_fmt": "s16",
+          "profundidad_bits": "16",
+          "md5_pcm_s16le": "b1cdfb164f2319cd862dbf24a43679e5"
+        }
+      ],
+      "n_video": 0,
+      "n_audio": 1,
+      "n_subtitulo": 0
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\corpus\\audio\\tipico.mp3",
+      "nombre": "tipico.mp3",
+      "bytes": 64591,
+      "sha256": "04b12a569ebe74fbda11b5e8b72e8e848fd6ae0eaec8ad4633d0bb902d087549",
+      "extension": ".mp3",
+      "categoria": "av",
+      "formato": "mp3",
+      "duracion_s": 8.0,
+      "bitrate_bps": 64591,
+      "n_pistas": 1,
+      "pistas": [
+        {
+          "index": 0,
+          "tipo": "audio",
+          "codec": "mp3",
+          "duracion_s": 8.0,
+          "bitrate_bps": 64000,
+          "idioma": null,
+          "titulo": null,
+          "canales": 1,
+          "layout": "mono",
+          "sample_rate": "44100",
+          "sample_fmt": "fltp",
+          "profundidad_bits": null,
+          "md5_pcm_s16le": "f5ddaa6410d81575bcdcc6b5b3a8f59b"
+        }
+      ],
+      "n_video": 0,
+      "n_audio": 1,
+      "n_subtitulo": 0
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\corpus\\audio\\trivial.wav",
+      "nombre": "trivial.wav",
+      "bytes": 705678,
+      "sha256": "b5fb614afefa1581dd00e2e417ba2578081ca7b512ed375d478890fbd86d2123",
+      "extension": ".wav",
+      "categoria": "av",
+      "formato": "wav",
+      "duracion_s": 8.0,
+      "bitrate_bps": 705678,
+      "n_pistas": 1,
+      "pistas": [
+        {
+          "index": 0,
+          "tipo": "audio",
+          "codec": "pcm_s16le",
+          "duracion_s": 8.0,
+          "bitrate_bps": 705600,
+          "idioma": null,
+          "titulo": null,
+          "canales": 1,
+          "layout": null,
+          "sample_rate": "44100",
+          "sample_fmt": "s16",
+          "profundidad_bits": null,
+          "md5_pcm_s16le": "b1cdfb164f2319cd862dbf24a43679e5"
+        }
+      ],
+      "n_video": 0,
+      "n_audio": 1,
+      "n_subtitulo": 0
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\corpus\\datos\\patologico_bom.csv",
+      "nombre": "patologico_bom.csv",
+      "bytes": 88,
+      "sha256": "e1493e4ff2ffd3cd400b6e0776c6a491b856fa957e5a9fefc3337cabbe35bff7",
+      "extension": ".csv",
+      "categoria": "datos",
+      "bom_utf8": true,
+      "crlf": false,
+      "no_ascii": true,
+      "utf8_valido": true,
+      "n_lineas_fisicas": 4,
+      "csv_n_filas": 3,
+      "csv_n_campos_por_fila": [
+        3,
+        3,
+        3
+      ],
+      "csv_cabecera": [
+        "id",
+        "nombre",
+        "notas"
+      ],
+      "csv_filas": [
+        [
+          "id",
+          "nombre",
+          "notas"
+        ],
+        [
+          "1",
+          "Pérez, Juan",
+          "dijo \"hola\" y se fue"
+        ],
+        [
+          "2",
+          "Ñandú",
+          "salto\nde linea"
+        ]
+      ],
+      "csv_sha256_valores": "cf4cc37f35c9c045ed292ddba84fe355bdc341713bbf1be157b46d3c90532460"
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\corpus\\datos\\tipico.json",
+      "nombre": "tipico.json",
+      "bytes": 46,
+      "sha256": "d0c31e1802c7000d6e51c9965ff3159094d3f76c41b9b031fd174fc555b6f01e",
+      "extension": ".json",
+      "categoria": "datos",
+      "bom_utf8": false,
+      "crlf": false,
+      "no_ascii": true,
+      "utf8_valido": true,
+      "n_lineas_fisicas": 1,
+      "json_valido": true,
+      "json_sha256_canonico": "d0c31e1802c7000d6e51c9965ff3159094d3f76c41b9b031fd174fc555b6f01e"
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\corpus\\imagen\\alpha.png",
+      "nombre": "alpha.png",
+      "bytes": 2780,
+      "sha256": "1e0ea1fb03488afd1dd3e5335fdc27ebfafdceca4f74a242110967269235dc81",
+      "extension": ".png",
+      "categoria": "imagen",
+      "formato": "PNG",
+      "ancho": 200,
+      "alto": 200,
+      "profundidad_bits": 8,
+      "espacio_color": "sRGB",
+      "alfa_flag": "Blend",
+      "canales": "srgba 5.0",
+      "tipo": "PaletteAlpha",
+      "compresion": "Zip",
+      "n_imagenes": 1,
+      "tiene_alfa": true,
+      "alfa_min_max": "0|1",
+      "alfa_no_trivial": true,
+      "colores_unicos": 210
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\corpus\\imagen\\patologico_16bit.tif",
+      "nombre": "patologico_16bit.tif",
+      "bytes": 72001016,
+      "sha256": "0b2af27d843cff65e12f492f6f0a67f7bc965fde2caa05627edea280d1303021",
+      "extension": ".tif",
+      "categoria": "imagen",
+      "formato": "TIFF",
+      "ancho": 4000,
+      "alto": 3000,
+      "profundidad_bits": 16,
+      "espacio_color": "sRGB",
+      "alfa_flag": "Undefined",
+      "canales": "srgb  3.0",
+      "tipo": "TrueColor",
+      "compresion": "None",
+      "n_imagenes": 1,
+      "tiene_alfa": false,
+      "alfa_min_max": null,
+      "alfa_no_trivial": false,
+      "colores_unicos": 11935622
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\corpus\\imagen\\tipico.jpg",
+      "nombre": "tipico.jpg",
+      "bytes": 87954,
+      "sha256": "920a3d6f7e0a10e580e699225611f33dc203bf3d2bb993455b5e0fc7cb711cc0",
+      "extension": ".jpg",
+      "categoria": "imagen",
+      "formato": "JPEG",
+      "ancho": 1920,
+      "alto": 1080,
+      "profundidad_bits": 8,
+      "espacio_color": "sRGB",
+      "alfa_flag": "Undefined",
+      "canales": "srgb  3.0",
+      "tipo": "TrueColor",
+      "compresion": "JPEG",
+      "n_imagenes": 1,
+      "tiene_alfa": false,
+      "alfa_min_max": null,
+      "alfa_no_trivial": false,
+      "colores_unicos": 1605
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\corpus\\imagen\\tipico.png",
+      "nombre": "tipico.png",
+      "bytes": 42855,
+      "sha256": "e645f85a6eec4e4d50f29f6b5336cf4916f2ed196e43913f04ca80e9bc1d0953",
+      "extension": ".png",
+      "categoria": "imagen",
+      "formato": "PNG",
+      "ancho": 1920,
+      "alto": 1080,
+      "profundidad_bits": 16,
+      "espacio_color": "sRGB",
+      "alfa_flag": "Blend",
+      "canales": "srgba 4.0",
+      "tipo": "TrueColorAlpha",
+      "compresion": "Zip",
+      "n_imagenes": 1,
+      "tiene_alfa": true,
+      "alfa_min_max": "1|1",
+      "alfa_no_trivial": false,
+      "colores_unicos": 2405
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\corpus\\imagen\\tipico.webp",
+      "nombre": "tipico.webp",
+      "bytes": 12796,
+      "sha256": "d2b9dbd6f068e14cec6772509bf9c1372020a97104d5d091fdacabe4c22f92cd",
+      "extension": ".webp",
+      "categoria": "imagen",
+      "formato": "WEBP",
+      "ancho": 1920,
+      "alto": 1080,
+      "profundidad_bits": 8,
+      "espacio_color": "sRGB",
+      "alfa_flag": "Undefined",
+      "canales": "srgb  3.0",
+      "tipo": "TrueColor",
+      "compresion": "Undefined",
+      "n_imagenes": 1,
+      "tiene_alfa": false,
+      "alfa_min_max": null,
+      "alfa_no_trivial": false,
+      "colores_unicos": 2318
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\corpus\\imagen\\trivial.png",
+      "nombre": "trivial.png",
+      "bytes": 316,
+      "sha256": "446bccc44ead0348974e89abe47a8bcb6cf112d3f276dc6861e5b1a7d13f9536",
+      "extension": ".png",
+      "categoria": "imagen",
+      "formato": "PNG",
+      "ancho": 64,
+      "alto": 64,
+      "profundidad_bits": 1,
+      "espacio_color": "sRGB",
+      "alfa_flag": "Undefined",
+      "canales": "srgb  4.0",
+      "tipo": "Palette",
+      "compresion": "Zip",
+      "n_imagenes": 1,
+      "tiene_alfa": false,
+      "alfa_min_max": null,
+      "alfa_no_trivial": false,
+      "colores_unicos": 1
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\corpus\\pdf\\escaneado_d1.pdf",
+      "nombre": "escaneado_d1.pdf",
+      "bytes": 84653,
+      "sha256": "ead0130810584f20f467c24fcbddb2dd05d63322cc3e129e1dcf4571b5abf401",
+      "extension": ".pdf",
+      "categoria": "pdf",
+      "texto_extraible": false,
+      "texto_n_chars": 0,
+      "texto_muestra": "",
+      "texto_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "n_paginas": 1,
+      "pagina1_pt": "466x624",
+      "render_profundidad": 16,
+      "render_espacio_color": "sRGB",
+      "render_tipo": "GrayscaleAlpha"
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\corpus\\pdf\\escaneado_d2.pdf",
+      "nombre": "escaneado_d2.pdf",
+      "bytes": 41904,
+      "sha256": "ea81dbb5596fe26ae123bc9f456179d785af316d733d68e1bcb5421dc9a16667",
+      "extension": ".pdf",
+      "categoria": "pdf",
+      "texto_extraible": false,
+      "texto_n_chars": 0,
+      "texto_muestra": "",
+      "texto_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "n_paginas": 1,
+      "pagina1_pt": "466x612",
+      "render_profundidad": 16,
+      "render_espacio_color": "sRGB",
+      "render_tipo": "GrayscaleAlpha"
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\corpus\\pdf\\escaneado_d3.pdf",
+      "nombre": "escaneado_d3.pdf",
+      "bytes": 40824,
+      "sha256": "795aa6cc42559ea552eae11978b9d8fe17f511ae9f3ab58eaf2fe21cc71b582e",
+      "extension": ".pdf",
+      "categoria": "pdf",
+      "texto_extraible": false,
+      "texto_n_chars": 0,
+      "texto_muestra": "",
+      "texto_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "n_paginas": 1,
+      "pagina1_pt": "466x612",
+      "render_profundidad": 16,
+      "render_espacio_color": "sRGB",
+      "render_tipo": "GrayscaleAlpha"
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\corpus\\pdf\\patologico_escaneado.pdf",
+      "nombre": "patologico_escaneado.pdf",
+      "bytes": 8555521,
+      "sha256": "8683cd2a00df7f659f287735719365bad14b5132b82bf86c7c16cec72a1c7d8c",
+      "extension": ".pdf",
+      "categoria": "pdf",
+      "texto_extraible": false,
+      "texto_n_chars": 0,
+      "texto_muestra": "",
+      "texto_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "n_paginas": 1,
+      "pagina1_pt": "466x645",
+      "render_profundidad": 16,
+      "render_espacio_color": "sRGB",
+      "render_tipo": "TrueColorAlpha"
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\corpus\\pdf\\tipico_texto.pdf",
+      "nombre": "tipico_texto.pdf",
+      "bytes": 3219,
+      "sha256": "a99692f0985e6f8ae9ed0d3b1bccbc996791a574839d3ec6840913ec658b313d",
+      "extension": ".pdf",
+      "categoria": "pdf",
+      "texto_extraible": true,
+      "texto_n_chars": 180,
+      "texto_muestra": "FileX - documento de prueba con texto seleccionable\r\n     Segunda linea: acentos aeiou n ˆ y simbolos % & @\r\n     Tabla:  Col A    Col B    Col C\r\n             1        2        3",
+      "texto_sha256": "be5a29a812723da83bf2290039328e9f9dd78b9bfc0cd115f10850c25e432041",
+      "n_paginas": 1,
+      "pagina1_pt": "595x842",
+      "render_profundidad": 16,
+      "render_espacio_color": "sRGB",
+      "render_tipo": "Bilevel"
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\corpus\\pdf\\trivial.pdf",
+      "nombre": "trivial.pdf",
+      "bytes": 6356,
+      "sha256": "5f51f999be1994a085fa295dc93bd8420e4ca3d93a65f037b8ffd0573caa13f0",
+      "extension": ".pdf",
+      "categoria": "pdf",
+      "texto_extraible": false,
+      "texto_n_chars": 0,
+      "texto_muestra": "",
+      "texto_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "n_paginas": 1,
+      "pagina1_pt": "400x300",
+      "render_profundidad": 16,
+      "render_espacio_color": "sRGB",
+      "render_tipo": "GrayscaleAlpha"
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\corpus\\video\\patologico_2pistas.mkv",
+      "nombre": "patologico_2pistas.mkv",
+      "bytes": 4079196,
+      "sha256": "e333ad7f6d175d8a3b9e41d3a749165394a3469e12665b126bba7c7f4f3407bd",
+      "extension": ".mkv",
+      "categoria": "av",
+      "formato": "matroska,webm",
+      "duracion_s": 10.023,
+      "bitrate_bps": 3255868,
+      "n_pistas": 3,
+      "pistas": [
+        {
+          "index": 0,
+          "tipo": "video",
+          "codec": "h264",
+          "duracion_s": null,
+          "bitrate_bps": null,
+          "idioma": null,
+          "titulo": null,
+          "ancho": 1280,
+          "alto": 720,
+          "pix_fmt": "yuv420p",
+          "fps": "30/1",
+          "profundidad_bits": "8"
+        },
+        {
+          "index": 1,
+          "tipo": "audio",
+          "codec": "aac",
+          "duracion_s": null,
+          "bitrate_bps": null,
+          "idioma": null,
+          "titulo": null,
+          "canales": 1,
+          "layout": "mono",
+          "sample_rate": "44100",
+          "sample_fmt": "fltp",
+          "profundidad_bits": null,
+          "md5_pcm_s16le": "11388652f7b64fb7dd1d4f1997c8f421"
+        },
+        {
+          "index": 2,
+          "tipo": "audio",
+          "codec": "aac",
+          "duracion_s": null,
+          "bitrate_bps": null,
+          "idioma": null,
+          "titulo": null,
+          "canales": 1,
+          "layout": "mono",
+          "sample_rate": "44100",
+          "sample_fmt": "fltp",
+          "profundidad_bits": null,
+          "md5_pcm_s16le": "538142b9d6916d3db8ce4ba9e48cfd9f"
+        }
+      ],
+      "n_video": 1,
+      "n_audio": 2,
+      "n_subtitulo": 0,
+      "fotogramas_video": 300
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\corpus\\video\\tipico.mp4",
+      "nombre": "tipico.mp4",
+      "bytes": 16246490,
+      "sha256": "8ea345d3dc3f60dfae282de51735dc81a1516138733e9ec9643b5ff9ce657e76",
+      "extension": ".mp4",
+      "categoria": "av",
+      "formato": "mov,mp4,m4a,3gp,3g2,mj2",
+      "duracion_s": 20.0,
+      "bitrate_bps": 6498596,
+      "n_pistas": 2,
+      "pistas": [
+        {
+          "index": 0,
+          "tipo": "video",
+          "codec": "h264",
+          "duracion_s": 20.0,
+          "bitrate_bps": 6420260,
+          "idioma": "und",
+          "titulo": null,
+          "ancho": 1920,
+          "alto": 1080,
+          "pix_fmt": "yuv420p",
+          "fps": "30/1",
+          "profundidad_bits": "8"
+        },
+        {
+          "index": 1,
+          "tipo": "audio",
+          "codec": "aac",
+          "duracion_s": 20.0,
+          "bitrate_bps": 69187,
+          "idioma": "und",
+          "titulo": null,
+          "canales": 1,
+          "layout": "mono",
+          "sample_rate": "44100",
+          "sample_fmt": "fltp",
+          "profundidad_bits": null,
+          "md5_pcm_s16le": "d0bd638ebac71997b3043a458f350ea6"
+        }
+      ],
+      "n_video": 1,
+      "n_audio": 1,
+      "n_subtitulo": 0,
+      "fotogramas_video": 600
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\corpus\\video\\trivial.mp4",
+      "nombre": "trivial.mp4",
+      "bytes": 552638,
+      "sha256": "6a30a41ffa671bf98ad33e9fb84eb3a5f41579bc9f805e3106fcfed449c33193",
+      "extension": ".mp4",
+      "categoria": "av",
+      "formato": "mov,mp4,m4a,3gp,3g2,mj2",
+      "duracion_s": 5.0,
+      "bitrate_bps": 884220,
+      "n_pistas": 1,
+      "pistas": [
+        {
+          "index": 0,
+          "tipo": "video",
+          "codec": "h264",
+          "duracion_s": 5.0,
+          "bitrate_bps": 880723,
+          "idioma": "und",
+          "titulo": null,
+          "ancho": 640,
+          "alto": 480,
+          "pix_fmt": "yuv420p",
+          "fps": "24/1",
+          "profundidad_bits": "8"
+        }
+      ],
+      "n_video": 1,
+      "n_audio": 0,
+      "n_subtitulo": 0,
+      "fotogramas_video": 120
+    }
+  ],
+  "salidas": [
+    {
+      "ruta": "D:\\Work\\research\\FileX\\bench\\salidas-referencia\\audio\\tipico_flac-to.mp3",
+      "nombre": "tipico_flac-to.mp3",
+      "bytes": 193767,
+      "sha256": "1b743f57aa2227a0482a9fe68be361166ada39e2ab0325998a2b561640e8fd83",
+      "extension": ".mp3",
+      "categoria": "av",
+      "formato": "mp3",
+      "duracion_s": 8.0,
+      "bitrate_bps": 193767,
+      "n_pistas": 1,
+      "pistas": [
+        {
+          "index": 0,
+          "tipo": "audio",
+          "codec": "mp3",
+          "duracion_s": 8.0,
+          "bitrate_bps": 192000,
+          "idioma": null,
+          "titulo": null,
+          "canales": 1,
+          "layout": "mono",
+          "sample_rate": "44100",
+          "sample_fmt": "fltp",
+          "profundidad_bits": null,
+          "md5_pcm_s16le": "18272a43dc9f1f013329a49d234c64dc"
+        }
+      ],
+      "n_video": 0,
+      "n_audio": 1,
+      "n_subtitulo": 0
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\bench\\salidas-referencia\\audio\\tipico_flac-to.opus",
+      "nombre": "tipico_flac-to.opus",
+      "bytes": 116918,
+      "sha256": "60d52cbda381137f0aa029e3089f3a92114c90242c9cfcdc48221e8b68458ba5",
+      "extension": ".opus",
+      "categoria": "av",
+      "formato": "ogg",
+      "duracion_s": 8.0065,
+      "bitrate_bps": 116823,
+      "n_pistas": 1,
+      "pistas": [
+        {
+          "index": 0,
+          "tipo": "audio",
+          "codec": "opus",
+          "duracion_s": 8.0065,
+          "bitrate_bps": null,
+          "idioma": null,
+          "titulo": null,
+          "canales": 1,
+          "layout": "mono",
+          "sample_rate": "48000",
+          "sample_fmt": "fltp",
+          "profundidad_bits": null,
+          "md5_pcm_s16le": "45bb8b2dc681adecd699eb431289ab70"
+        }
+      ],
+      "n_video": 0,
+      "n_audio": 1,
+      "n_subtitulo": 0
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\bench\\salidas-referencia\\audio\\tipico_flac-to.wav",
+      "nombre": "tipico_flac-to.wav",
+      "bytes": 705678,
+      "sha256": "b5fb614afefa1581dd00e2e417ba2578081ca7b512ed375d478890fbd86d2123",
+      "extension": ".wav",
+      "categoria": "av",
+      "formato": "wav",
+      "duracion_s": 8.0,
+      "bitrate_bps": 705678,
+      "n_pistas": 1,
+      "pistas": [
+        {
+          "index": 0,
+          "tipo": "audio",
+          "codec": "pcm_s16le",
+          "duracion_s": 8.0,
+          "bitrate_bps": 705600,
+          "idioma": null,
+          "titulo": null,
+          "canales": 1,
+          "layout": null,
+          "sample_rate": "44100",
+          "sample_fmt": "s16",
+          "profundidad_bits": null,
+          "md5_pcm_s16le": "b1cdfb164f2319cd862dbf24a43679e5"
+        }
+      ],
+      "n_video": 0,
+      "n_audio": 1,
+      "n_subtitulo": 0
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\bench\\salidas-referencia\\audio\\tipico_mp3-to.flac",
+      "nombre": "tipico_mp3-to.flac",
+      "bytes": 398105,
+      "sha256": "bd935c4b049cf2f06297c69296d94e2a44d5a5da94599a0651df3e0ad531fd09",
+      "extension": ".flac",
+      "categoria": "av",
+      "formato": "flac",
+      "duracion_s": 8.0,
+      "bitrate_bps": 398105,
+      "n_pistas": 1,
+      "pistas": [
+        {
+          "index": 0,
+          "tipo": "audio",
+          "codec": "flac",
+          "duracion_s": 8.0,
+          "bitrate_bps": null,
+          "idioma": null,
+          "titulo": null,
+          "canales": 1,
+          "layout": "mono",
+          "sample_rate": "44100",
+          "sample_fmt": "s32",
+          "profundidad_bits": "24",
+          "md5_pcm_s16le": "984b4619d1c3034c7bafc37264dac0ec"
+        }
+      ],
+      "n_video": 0,
+      "n_audio": 1,
+      "n_subtitulo": 0
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\bench\\salidas-referencia\\audio\\tipico_mp3-to.wav",
+      "nombre": "tipico_mp3-to.wav",
+      "bytes": 705678,
+      "sha256": "bde5ea216c1ca309bef7b1fd4cec8d9b505db2a6cfec5d6c26ff85156b374ba4",
+      "extension": ".wav",
+      "categoria": "av",
+      "formato": "wav",
+      "duracion_s": 8.0,
+      "bitrate_bps": 705678,
+      "n_pistas": 1,
+      "pistas": [
+        {
+          "index": 0,
+          "tipo": "audio",
+          "codec": "pcm_s16le",
+          "duracion_s": 8.0,
+          "bitrate_bps": 705600,
+          "idioma": null,
+          "titulo": null,
+          "canales": 1,
+          "layout": null,
+          "sample_rate": "44100",
+          "sample_fmt": "s16",
+          "profundidad_bits": null,
+          "md5_pcm_s16le": "f5ddaa6410d81575bcdcc6b5b3a8f59b"
+        }
+      ],
+      "n_video": 0,
+      "n_audio": 1,
+      "n_subtitulo": 0
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\bench\\salidas-referencia\\audio\\tipico_mp4-audio-copy.m4a",
+      "nombre": "tipico_mp4-audio-copy.m4a",
+      "bytes": 177427,
+      "sha256": "f85a0281402635688f44e42d98d83e5cce52030e58f9fcc3fadc64c0e93e225d",
+      "extension": ".m4a",
+      "categoria": "av",
+      "formato": "mov,mp4,m4a,3gp,3g2,mj2",
+      "duracion_s": 20.0,
+      "bitrate_bps": 70970,
+      "n_pistas": 1,
+      "pistas": [
+        {
+          "index": 0,
+          "tipo": "audio",
+          "codec": "aac",
+          "duracion_s": 20.0,
+          "bitrate_bps": 69187,
+          "idioma": "und",
+          "titulo": null,
+          "canales": 1,
+          "layout": "mono",
+          "sample_rate": "44100",
+          "sample_fmt": "fltp",
+          "profundidad_bits": null,
+          "md5_pcm_s16le": "d0bd638ebac71997b3043a458f350ea6"
+        }
+      ],
+      "n_video": 0,
+      "n_audio": 1,
+      "n_subtitulo": 0
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\bench\\salidas-referencia\\audio\\tipico_mp4-audio.flac",
+      "nombre": "tipico_mp4-audio.flac",
+      "bytes": 1004509,
+      "sha256": "2c3c9031c3a18f898b7ba456a2ff159d67473255089f61f45448897356c764d6",
+      "extension": ".flac",
+      "categoria": "av",
+      "formato": "flac",
+      "duracion_s": 20.015601,
+      "bitrate_bps": 401490,
+      "n_pistas": 1,
+      "pistas": [
+        {
+          "index": 0,
+          "tipo": "audio",
+          "codec": "flac",
+          "duracion_s": 20.015601,
+          "bitrate_bps": null,
+          "idioma": null,
+          "titulo": null,
+          "canales": 1,
+          "layout": "mono",
+          "sample_rate": "44100",
+          "sample_fmt": "s32",
+          "profundidad_bits": "24",
+          "md5_pcm_s16le": "14a16866cc07029dab371161c0b9a773"
+        }
+      ],
+      "n_video": 0,
+      "n_audio": 1,
+      "n_subtitulo": 0
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\bench\\salidas-referencia\\audio\\tipico_mp4-audio.mp3",
+      "nombre": "tipico_mp4-audio.mp3",
+      "bytes": 482262,
+      "sha256": "94018a38d384d3675fd35a9e82dfbd1043996eb2e44d98ceb461683453c800df",
+      "extension": ".mp3",
+      "categoria": "av",
+      "formato": "mp3",
+      "duracion_s": 20.015601,
+      "bitrate_bps": 192754,
+      "n_pistas": 1,
+      "pistas": [
+        {
+          "index": 0,
+          "tipo": "audio",
+          "codec": "mp3",
+          "duracion_s": 20.015601,
+          "bitrate_bps": 192000,
+          "idioma": null,
+          "titulo": null,
+          "canales": 1,
+          "layout": "mono",
+          "sample_rate": "44100",
+          "sample_fmt": "fltp",
+          "profundidad_bits": null,
+          "md5_pcm_s16le": "7e78a82b153c6f3e9822a851d063b9cc"
+        }
+      ],
+      "n_video": 0,
+      "n_audio": 1,
+      "n_subtitulo": 0
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\bench\\salidas-referencia\\audio\\trivial_wav-to.flac",
+      "nombre": "trivial_wav-to.flac",
+      "bytes": 104318,
+      "sha256": "b4950a7155d749deb68c894e96143194e1b6767895549ad33a9c3ec05717e684",
+      "extension": ".flac",
+      "categoria": "av",
+      "formato": "flac",
+      "duracion_s": 8.0,
+      "bitrate_bps": 104318,
+      "n_pistas": 1,
+      "pistas": [
+        {
+          "index": 0,
+          "tipo": "audio",
+          "codec": "flac",
+          "duracion_s": 8.0,
+          "bitrate_bps": null,
+          "idioma": null,
+          "titulo": null,
+          "canales": 1,
+          "layout": "mono",
+          "sample_rate": "44100",
+          "sample_fmt": "s16",
+          "profundidad_bits": "16",
+          "md5_pcm_s16le": "b1cdfb164f2319cd862dbf24a43679e5"
+        }
+      ],
+      "n_video": 0,
+      "n_audio": 1,
+      "n_subtitulo": 0
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\bench\\salidas-referencia\\audio\\trivial_wav-to.m4a",
+      "nombre": "trivial_wav-to.m4a",
+      "bytes": 131397,
+      "sha256": "965d6ebd2d6710a8cc9ded38e354ed1b9ec789cf6ca140fd94de4c8bde96ec18",
+      "extension": ".m4a",
+      "categoria": "av",
+      "formato": "mov,mp4,m4a,3gp,3g2,mj2",
+      "duracion_s": 8.0,
+      "bitrate_bps": 131397,
+      "n_pistas": 1,
+      "pistas": [
+        {
+          "index": 0,
+          "tipo": "audio",
+          "codec": "aac",
+          "duracion_s": 8.0,
+          "bitrate_bps": 128833,
+          "idioma": "und",
+          "titulo": null,
+          "canales": 1,
+          "layout": "mono",
+          "sample_rate": "44100",
+          "sample_fmt": "fltp",
+          "profundidad_bits": null,
+          "md5_pcm_s16le": "f5808b8f95058bfc4e58046dbe56c5fa"
+        }
+      ],
+      "n_video": 0,
+      "n_audio": 1,
+      "n_subtitulo": 0
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\bench\\salidas-referencia\\audio\\trivial_wav-to.mp3",
+      "nombre": "trivial_wav-to.mp3",
+      "bytes": 193767,
+      "sha256": "1b743f57aa2227a0482a9fe68be361166ada39e2ab0325998a2b561640e8fd83",
+      "extension": ".mp3",
+      "categoria": "av",
+      "formato": "mp3",
+      "duracion_s": 8.0,
+      "bitrate_bps": 193767,
+      "n_pistas": 1,
+      "pistas": [
+        {
+          "index": 0,
+          "tipo": "audio",
+          "codec": "mp3",
+          "duracion_s": 8.0,
+          "bitrate_bps": 192000,
+          "idioma": null,
+          "titulo": null,
+          "canales": 1,
+          "layout": "mono",
+          "sample_rate": "44100",
+          "sample_fmt": "fltp",
+          "profundidad_bits": null,
+          "md5_pcm_s16le": "18272a43dc9f1f013329a49d234c64dc"
+        }
+      ],
+      "n_video": 0,
+      "n_audio": 1,
+      "n_subtitulo": 0
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\bench\\salidas-referencia\\audio\\trivial_wav-to.opus",
+      "nombre": "trivial_wav-to.opus",
+      "bytes": 116918,
+      "sha256": "864a9e69841216a4b84f9bd186d0f01fdacb5bda00231888ffefdf1bb5fbe44c",
+      "extension": ".opus",
+      "categoria": "av",
+      "formato": "ogg",
+      "duracion_s": 8.0065,
+      "bitrate_bps": 116823,
+      "n_pistas": 1,
+      "pistas": [
+        {
+          "index": 0,
+          "tipo": "audio",
+          "codec": "opus",
+          "duracion_s": 8.0065,
+          "bitrate_bps": null,
+          "idioma": null,
+          "titulo": null,
+          "canales": 1,
+          "layout": "mono",
+          "sample_rate": "48000",
+          "sample_fmt": "fltp",
+          "profundidad_bits": null,
+          "md5_pcm_s16le": "45bb8b2dc681adecd699eb431289ab70"
+        }
+      ],
+      "n_video": 0,
+      "n_audio": 1,
+      "n_subtitulo": 0
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\bench\\salidas-referencia\\datos\\patologico_bom_csv-to-normalizado.csv",
+      "nombre": "patologico_bom_csv-to-normalizado.csv",
+      "bytes": 85,
+      "sha256": "6d2c9d92a3aed95c5e46b119e0ff4bca0f66e986e0d1be754fd53028095a5cc7",
+      "extension": ".csv",
+      "categoria": "datos",
+      "bom_utf8": false,
+      "crlf": false,
+      "no_ascii": true,
+      "utf8_valido": true,
+      "n_lineas_fisicas": 4,
+      "csv_n_filas": 3,
+      "csv_n_campos_por_fila": [
+        3,
+        3,
+        3
+      ],
+      "csv_cabecera": [
+        "id",
+        "nombre",
+        "notas"
+      ],
+      "csv_filas": [
+        [
+          "id",
+          "nombre",
+          "notas"
+        ],
+        [
+          "1",
+          "Pérez, Juan",
+          "dijo \"hola\" y se fue"
+        ],
+        [
+          "2",
+          "Ñandú",
+          "salto\nde linea"
+        ]
+      ],
+      "csv_sha256_valores": "cf4cc37f35c9c045ed292ddba84fe355bdc341713bbf1be157b46d3c90532460"
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\bench\\salidas-referencia\\datos\\patologico_bom_csv-to.json",
+      "nombre": "patologico_bom_csv-to.json",
+      "bytes": 174,
+      "sha256": "92f70fbbb23f82814f006420b9064887ed9f1cdf17e7bf6f9077db42bda628b0",
+      "extension": ".json",
+      "categoria": "datos",
+      "bom_utf8": false,
+      "crlf": false,
+      "no_ascii": true,
+      "utf8_valido": true,
+      "n_lineas_fisicas": 12,
+      "json_valido": true,
+      "json_sha256_canonico": "d12fe2bd6be14ef3cfa383149a5f1c93f5dc5f7a5fbefabcdf828bdd659692a4"
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\bench\\salidas-referencia\\datos\\tipico_json-to.csv",
+      "nombre": "tipico_json-to.csv",
+      "bytes": 14,
+      "sha256": "c2167db376424bd5e7461a5bb19ec4fbb2ebc2ac36061f08cf92ffbd25bea3b6",
+      "extension": ".csv",
+      "categoria": "datos",
+      "bom_utf8": false,
+      "crlf": false,
+      "no_ascii": true,
+      "utf8_valido": true,
+      "n_lineas_fisicas": 3,
+      "csv_n_filas": 3,
+      "csv_n_campos_por_fila": [
+        2,
+        2,
+        2
+      ],
+      "csv_cabecera": [
+        "id",
+        "n"
+      ],
+      "csv_filas": [
+        [
+          "id",
+          "n"
+        ],
+        [
+          "1",
+          "a"
+        ],
+        [
+          "2",
+          "ñ"
+        ]
+      ],
+      "csv_sha256_valores": "9557e2309839572bd7823121e62e80d6e8c2a253040c8dde70556ac995b15b27"
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\bench\\salidas-referencia\\imagen\\16bit_tif-to-d16.png",
+      "nombre": "16bit_tif-to-d16.png",
+      "bytes": 61849791,
+      "sha256": "c376b971bc9ed7145ce813cb2df4907db818a8eef3e9f0e54598952541f8795f",
+      "extension": ".png",
+      "categoria": "imagen",
+      "formato": "PNG",
+      "ancho": 4000,
+      "alto": 3000,
+      "profundidad_bits": 16,
+      "espacio_color": "sRGB",
+      "alfa_flag": "Undefined",
+      "canales": "srgb  3.0",
+      "tipo": "TrueColor",
+      "compresion": "Zip",
+      "n_imagenes": 1,
+      "tiene_alfa": false,
+      "alfa_min_max": null,
+      "alfa_no_trivial": false,
+      "colores_unicos": 11935622
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\bench\\salidas-referencia\\imagen\\16bit_tif-to-d8.png",
+      "nombre": "16bit_tif-to-d8.png",
+      "bytes": 18943503,
+      "sha256": "30535107fa4f21196581eb744c2e23bd96ab54f03a5edfbd3dce54c429cf89cb",
+      "extension": ".png",
+      "categoria": "imagen",
+      "formato": "PNG",
+      "ancho": 4000,
+      "alto": 3000,
+      "profundidad_bits": 8,
+      "espacio_color": "sRGB",
+      "alfa_flag": "Undefined",
+      "canales": "srgb  3.0",
+      "tipo": "TrueColor",
+      "compresion": "Zip",
+      "n_imagenes": 1,
+      "tiene_alfa": false,
+      "alfa_min_max": null,
+      "alfa_no_trivial": false,
+      "colores_unicos": 2116571,
+      "fidelidad": {
+        "psnr_rgb_db": 59.02,
+        "rmse_norm": 0.00112
+      }
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\bench\\salidas-referencia\\imagen\\16bit_tif-to-default.png",
+      "nombre": "16bit_tif-to-default.png",
+      "bytes": 61849791,
+      "sha256": "232d78e04e15135dc6f7861f8c95cf47d6c8b8d4b5476679b6148fcbad33ade0",
+      "extension": ".png",
+      "categoria": "imagen",
+      "formato": "PNG",
+      "ancho": 4000,
+      "alto": 3000,
+      "profundidad_bits": 16,
+      "espacio_color": "sRGB",
+      "alfa_flag": "Undefined",
+      "canales": "srgb  3.0",
+      "tipo": "TrueColor",
+      "compresion": "Zip",
+      "n_imagenes": 1,
+      "tiene_alfa": false,
+      "alfa_min_max": null,
+      "alfa_no_trivial": false,
+      "colores_unicos": 11935622,
+      "fidelidad": {
+        "identico": true
+      }
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\bench\\salidas-referencia\\imagen\\16bit_tif-to.jpg",
+      "nombre": "16bit_tif-to.jpg",
+      "bytes": 1571956,
+      "sha256": "0b1196c9326cc16e685200841f50e43f534f9ea146217fa4ca250fbe6a0d8cb8",
+      "extension": ".jpg",
+      "categoria": "imagen",
+      "formato": "JPEG",
+      "ancho": 4000,
+      "alto": 3000,
+      "profundidad_bits": 8,
+      "espacio_color": "sRGB",
+      "alfa_flag": "Undefined",
+      "canales": "srgb  3.0",
+      "tipo": "TrueColor",
+      "compresion": "JPEG",
+      "n_imagenes": 1,
+      "tiene_alfa": false,
+      "alfa_min_max": null,
+      "alfa_no_trivial": false,
+      "colores_unicos": 612123,
+      "fidelidad": {
+        "psnr_rgb_db": 35.28,
+        "rmse_norm": 0.017211
+      }
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\bench\\salidas-referencia\\imagen\\16bit_tif-to.webp",
+      "nombre": "16bit_tif-to.webp",
+      "bytes": 647580,
+      "sha256": "dc117310b229bc4cb83c484225906fa97e4abc97d177f83f89707b2d94e66492",
+      "extension": ".webp",
+      "categoria": "imagen",
+      "formato": "WEBP",
+      "ancho": 4000,
+      "alto": 3000,
+      "profundidad_bits": 8,
+      "espacio_color": "sRGB",
+      "alfa_flag": "Undefined",
+      "canales": "srgb  3.0",
+      "tipo": "TrueColor",
+      "compresion": "Undefined",
+      "n_imagenes": 1,
+      "tiene_alfa": false,
+      "alfa_min_max": null,
+      "alfa_no_trivial": false,
+      "colores_unicos": 386041,
+      "fidelidad": {
+        "psnr_rgb_db": 34.76,
+        "rmse_norm": 0.018288
+      }
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\bench\\salidas-referencia\\imagen\\alpha_png-to-flat.jpg",
+      "nombre": "alpha_png-to-flat.jpg",
+      "bytes": 4389,
+      "sha256": "31873cfcf4a8391a07f32d1b4d55d2cb6b19e8fc56f6996c274d0e72cedce2ad",
+      "extension": ".jpg",
+      "categoria": "imagen",
+      "formato": "JPEG",
+      "ancho": 200,
+      "alto": 200,
+      "profundidad_bits": 8,
+      "espacio_color": "sRGB",
+      "alfa_flag": "Undefined",
+      "canales": "srgb  3.0",
+      "tipo": "TrueColor",
+      "compresion": "JPEG",
+      "n_imagenes": 1,
+      "tiene_alfa": false,
+      "alfa_min_max": null,
+      "alfa_no_trivial": false,
+      "colores_unicos": 3067
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\bench\\salidas-referencia\\imagen\\alpha_png-to.avif",
+      "nombre": "alpha_png-to.avif",
+      "bytes": 1670,
+      "sha256": "d4f22409580573a2eec42474d7862a6fb405edde7b42948198fc6c94f832d9fa",
+      "extension": ".avif",
+      "categoria": "imagen",
+      "formato": "AVIF",
+      "ancho": 200,
+      "alto": 200,
+      "profundidad_bits": 8,
+      "espacio_color": "sRGB",
+      "alfa_flag": "Blend",
+      "canales": "srgba 4.0",
+      "tipo": "TrueColorAlpha",
+      "compresion": "Undefined",
+      "n_imagenes": 1,
+      "tiene_alfa": true,
+      "alfa_min_max": "0|1",
+      "alfa_no_trivial": true,
+      "colores_unicos": 815,
+      "fidelidad": {
+        "psnr_rgb_sobre_blanco_db": 38.78,
+        "psnr_alfa_db": 45.99,
+        "alfa_exacto": false
+      }
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\bench\\salidas-referencia\\imagen\\alpha_png-to.jpg",
+      "nombre": "alpha_png-to.jpg",
+      "bytes": 4643,
+      "sha256": "87ff6e3b3287c5796fd14c1331862b13b4f744b151c7ff16ebf9276a173129b7",
+      "extension": ".jpg",
+      "categoria": "imagen",
+      "formato": "JPEG",
+      "ancho": 200,
+      "alto": 200,
+      "profundidad_bits": 8,
+      "espacio_color": "sRGB",
+      "alfa_flag": "Undefined",
+      "canales": "srgb  3.0",
+      "tipo": "TrueColor",
+      "compresion": "JPEG",
+      "n_imagenes": 1,
+      "tiene_alfa": false,
+      "alfa_min_max": null,
+      "alfa_no_trivial": false,
+      "colores_unicos": 3135
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\bench\\salidas-referencia\\imagen\\alpha_png-to.png8.png",
+      "nombre": "alpha_png-to.png8.png",
+      "bytes": 2780,
+      "sha256": "130973e73fe6d66e9a33ecb37e109a37aa59e1f95b79549c8fab960011e29bb6",
+      "extension": ".png",
+      "categoria": "imagen",
+      "formato": "PNG",
+      "ancho": 200,
+      "alto": 200,
+      "profundidad_bits": 8,
+      "espacio_color": "sRGB",
+      "alfa_flag": "Blend",
+      "canales": "srgba 5.0",
+      "tipo": "PaletteAlpha",
+      "compresion": "Zip",
+      "n_imagenes": 1,
+      "tiene_alfa": true,
+      "alfa_min_max": "0|1",
+      "alfa_no_trivial": true,
+      "colores_unicos": 210,
+      "fidelidad": {
+        "psnr_rgb_sobre_blanco_db": null,
+        "alfa_exacto": true,
+        "identico": true
+      }
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\bench\\salidas-referencia\\imagen\\alpha_png-to.webp",
+      "nombre": "alpha_png-to.webp",
+      "bytes": 2496,
+      "sha256": "e6678b82dd9cf4053eac7630b5ce7b421fbcab00c774af14e1c6e145ef5ffe6f",
+      "extension": ".webp",
+      "categoria": "imagen",
+      "formato": "WEBP",
+      "ancho": 200,
+      "alto": 200,
+      "profundidad_bits": 8,
+      "espacio_color": "sRGB",
+      "alfa_flag": "Blend",
+      "canales": "srgba 4.0",
+      "tipo": "TrueColorAlpha",
+      "compresion": "Undefined",
+      "n_imagenes": 1,
+      "tiene_alfa": true,
+      "alfa_min_max": "0|1",
+      "alfa_no_trivial": true,
+      "colores_unicos": 1447,
+      "fidelidad": {
+        "psnr_rgb_sobre_blanco_db": 43.87,
+        "psnr_alfa_db": "inf",
+        "alfa_exacto": true
+      }
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\bench\\salidas-referencia\\imagen\\tipico_jpg-to.png",
+      "nombre": "tipico_jpg-to.png",
+      "bytes": 32622,
+      "sha256": "9de22a8b38c55c7f1c288bef9c410846ba53eaf1acdb3324c964c66fc0c5b780",
+      "extension": ".png",
+      "categoria": "imagen",
+      "formato": "PNG",
+      "ancho": 1920,
+      "alto": 1080,
+      "profundidad_bits": 8,
+      "espacio_color": "sRGB",
+      "alfa_flag": "Undefined",
+      "canales": "srgb  3.0",
+      "tipo": "TrueColor",
+      "compresion": "Zip",
+      "n_imagenes": 1,
+      "tiene_alfa": false,
+      "alfa_min_max": null,
+      "alfa_no_trivial": false,
+      "colores_unicos": 1605,
+      "fidelidad": {
+        "identico": true
+      }
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\bench\\salidas-referencia\\imagen\\tipico_png-to.avif",
+      "nombre": "tipico_png-to.avif",
+      "bytes": 1595,
+      "sha256": "04eb85707ee966c6ee016d4ed3ee54ccfd198f9c6b847f10c1721d223b0f5980",
+      "extension": ".avif",
+      "categoria": "imagen",
+      "formato": "AVIF",
+      "ancho": 1920,
+      "alto": 1080,
+      "profundidad_bits": 12,
+      "espacio_color": "sRGB",
+      "alfa_flag": "Blend",
+      "canales": "srgba 4.0",
+      "tipo": "TrueColorAlpha",
+      "compresion": "Undefined",
+      "n_imagenes": 1,
+      "tiene_alfa": true,
+      "alfa_min_max": "0.993912|0.999771",
+      "alfa_no_trivial": true,
+      "colores_unicos": 5510,
+      "fidelidad": {
+        "psnr_rgb_db": 46.72,
+        "rmse_norm": 0.004611,
+        "psnr_alfa_db": 71.37
+      }
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\bench\\salidas-referencia\\imagen\\tipico_png-to.jpg",
+      "nombre": "tipico_png-to.jpg",
+      "bytes": 40963,
+      "sha256": "ca6b1787a029338d5571acf6e9d9e1b912dae9c45642feccc3e08f081e4d7b89",
+      "extension": ".jpg",
+      "categoria": "imagen",
+      "formato": "JPEG",
+      "ancho": 1920,
+      "alto": 1080,
+      "profundidad_bits": 8,
+      "espacio_color": "sRGB",
+      "alfa_flag": "Undefined",
+      "canales": "srgb  3.0",
+      "tipo": "TrueColor",
+      "compresion": "JPEG",
+      "n_imagenes": 1,
+      "tiene_alfa": false,
+      "alfa_min_max": null,
+      "alfa_no_trivial": false,
+      "colores_unicos": 2024,
+      "fidelidad": {
+        "psnr_rgb_db": 48.7,
+        "rmse_norm": 0.003671
+      }
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\bench\\salidas-referencia\\imagen\\tipico_png-to.webp",
+      "nombre": "tipico_png-to.webp",
+      "bytes": 13516,
+      "sha256": "fc2234fdc39cb98725941b05fab8020ad06d22d89b26bdba956863d53cf014aa",
+      "extension": ".webp",
+      "categoria": "imagen",
+      "formato": "WEBP",
+      "ancho": 1920,
+      "alto": 1080,
+      "profundidad_bits": 8,
+      "espacio_color": "sRGB",
+      "alfa_flag": "Undefined",
+      "canales": "srgb  3.0",
+      "tipo": "TrueColor",
+      "compresion": "Undefined",
+      "n_imagenes": 1,
+      "tiene_alfa": false,
+      "alfa_min_max": null,
+      "alfa_no_trivial": false,
+      "colores_unicos": 2130,
+      "fidelidad": {
+        "psnr_rgb_db": 48.69,
+        "rmse_norm": 0.003678
+      }
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\bench\\salidas-referencia\\imagen\\tipico_webp-to.jpg",
+      "nombre": "tipico_webp-to.jpg",
+      "bytes": 42748,
+      "sha256": "1cae02e76a3924a9bb695bf1158e9571af247f3919558071c96425309b5c4e7a",
+      "extension": ".jpg",
+      "categoria": "imagen",
+      "formato": "JPEG",
+      "ancho": 1920,
+      "alto": 1080,
+      "profundidad_bits": 8,
+      "espacio_color": "sRGB",
+      "alfa_flag": "Undefined",
+      "canales": "srgb  3.0",
+      "tipo": "TrueColor",
+      "compresion": "JPEG",
+      "n_imagenes": 1,
+      "tiene_alfa": false,
+      "alfa_min_max": null,
+      "alfa_no_trivial": false,
+      "colores_unicos": 3491,
+      "fidelidad": {
+        "psnr_rgb_db": 48.42,
+        "rmse_norm": 0.003794
+      }
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\bench\\salidas-referencia\\imagen\\tipico_webp-to.png",
+      "nombre": "tipico_webp-to.png",
+      "bytes": 64232,
+      "sha256": "f5333823dfcee3cfbbbe5ca4fc31d5bc1701449f3efca8602dedc9ac58476384",
+      "extension": ".png",
+      "categoria": "imagen",
+      "formato": "PNG",
+      "ancho": 1920,
+      "alto": 1080,
+      "profundidad_bits": 8,
+      "espacio_color": "sRGB",
+      "alfa_flag": "Undefined",
+      "canales": "srgb  3.0",
+      "tipo": "TrueColor",
+      "compresion": "Zip",
+      "n_imagenes": 1,
+      "tiene_alfa": false,
+      "alfa_min_max": null,
+      "alfa_no_trivial": false,
+      "colores_unicos": 2318,
+      "fidelidad": {
+        "identico": true
+      }
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\bench\\salidas-referencia\\imagen\\trivial_png-to-lossless.webp",
+      "nombre": "trivial_png-to-lossless.webp",
+      "bytes": 42,
+      "sha256": "b36f1c8f1f13a093f8e736728a7d53b681bb9906c8f53626b928bde35f0a1b1d",
+      "extension": ".webp",
+      "categoria": "imagen",
+      "formato": "WEBP",
+      "ancho": 64,
+      "alto": 64,
+      "profundidad_bits": 8,
+      "espacio_color": "sRGB",
+      "alfa_flag": "Undefined",
+      "canales": "srgb  3.0",
+      "tipo": "Palette",
+      "compresion": "Undefined",
+      "n_imagenes": 1,
+      "tiene_alfa": false,
+      "alfa_min_max": null,
+      "alfa_no_trivial": false,
+      "colores_unicos": 1,
+      "fidelidad": {
+        "identico": true
+      }
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\bench\\salidas-referencia\\imagen\\trivial_png-to.jpg",
+      "nombre": "trivial_png-to.jpg",
+      "bytes": 312,
+      "sha256": "97dc772e4447f32674ca2ac748a1b8491efc7d1ddae9f612d59e3ce39aa35d08",
+      "extension": ".jpg",
+      "categoria": "imagen",
+      "formato": "JPEG",
+      "ancho": 64,
+      "alto": 64,
+      "profundidad_bits": 8,
+      "espacio_color": "sRGB",
+      "alfa_flag": "Undefined",
+      "canales": "srgb  3.0",
+      "tipo": "Palette",
+      "compresion": "JPEG",
+      "n_imagenes": 1,
+      "tiene_alfa": false,
+      "alfa_min_max": null,
+      "alfa_no_trivial": false,
+      "colores_unicos": 1
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\bench\\salidas-referencia\\imagen\\trivial_png-to.webp",
+      "nombre": "trivial_png-to.webp",
+      "bytes": 94,
+      "sha256": "c7f5def4b9ff7e5a2abd4979f8f60e7cffd2a5c374f855fa7bab08f3cba42090",
+      "extension": ".webp",
+      "categoria": "imagen",
+      "formato": "WEBP",
+      "ancho": 64,
+      "alto": 64,
+      "profundidad_bits": 8,
+      "espacio_color": "sRGB",
+      "alfa_flag": "Undefined",
+      "canales": "srgb  3.0",
+      "tipo": "Palette",
+      "compresion": "Undefined",
+      "n_imagenes": 1,
+      "tiene_alfa": false,
+      "alfa_min_max": null,
+      "alfa_no_trivial": false,
+      "colores_unicos": 2,
+      "fidelidad": {
+        "psnr_rgb_db": 51.95,
+        "rmse_norm": 0.002527
+      }
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\bench\\salidas-referencia\\pdf\\alpha_png-to.pdf",
+      "nombre": "alpha_png-to.pdf",
+      "bytes": 6111,
+      "sha256": "49bf643acb0180af5d6ef59638058301c64aba3e100b5ab1614487cf7dbb296a",
+      "extension": ".pdf",
+      "categoria": "pdf",
+      "texto_extraible": true,
+      "texto_n_chars": 2,
+      "texto_muestra": "FX",
+      "texto_sha256": "ba83087dc7793252b57c5bc8c5405966d13cbed25dab128b60ef3d5624edfba1",
+      "n_paginas": 1,
+      "pagina1_pt": "200x200",
+      "render_profundidad": 16,
+      "render_espacio_color": "sRGB",
+      "render_tipo": "PaletteAlpha"
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\bench\\salidas-referencia\\pdf\\patologico_escaneado_pdf-to-p1.png",
+      "nombre": "patologico_escaneado_pdf-to-p1.png",
+      "bytes": 1908177,
+      "sha256": "0d87f526c39ea246d8c7a22c84ead57400d3532cf69ffb2351bf6c534c508226",
+      "extension": ".png",
+      "categoria": "imagen",
+      "formato": "PNG",
+      "ancho": 970,
+      "alto": 1344,
+      "profundidad_bits": 8,
+      "espacio_color": "sRGB",
+      "alfa_flag": "Undefined",
+      "canales": "srgb  3.0",
+      "tipo": "TrueColor",
+      "compresion": "Zip",
+      "n_imagenes": 1,
+      "tiene_alfa": false,
+      "alfa_min_max": null,
+      "alfa_no_trivial": false,
+      "colores_unicos": 17237
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\bench\\salidas-referencia\\pdf\\tipico_jpg-to.pdf",
+      "nombre": "tipico_jpg-to.pdf",
+      "bytes": 89885,
+      "sha256": "746ec4cd6080828beb4dfdae547b267be1e049ab4b2371e0736be3fd221dd51b",
+      "extension": ".pdf",
+      "categoria": "pdf",
+      "texto_extraible": false,
+      "texto_n_chars": 0,
+      "texto_muestra": "",
+      "texto_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "n_paginas": 1,
+      "pagina1_pt": "1920x1080",
+      "render_profundidad": 16,
+      "render_espacio_color": "sRGB",
+      "render_tipo": "TrueColorAlpha"
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\bench\\salidas-referencia\\pdf\\tipico_png-to-150dpi.pdf",
+      "nombre": "tipico_png-to-150dpi.pdf",
+      "bytes": 17187,
+      "sha256": "bfb16262adc54606b9fde00a638de4e16c9ba0850539e376b609c9e29cf21ee5",
+      "extension": ".pdf",
+      "categoria": "pdf",
+      "texto_extraible": false,
+      "texto_n_chars": 0,
+      "texto_muestra": "",
+      "texto_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "n_paginas": 1,
+      "pagina1_pt": "922x518",
+      "render_profundidad": 16,
+      "render_espacio_color": "sRGB",
+      "render_tipo": "TrueColorAlpha"
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\bench\\salidas-referencia\\pdf\\tipico_png-to.pdf",
+      "nombre": "tipico_png-to.pdf",
+      "bytes": 17153,
+      "sha256": "f97ebf482eadbea5d185204e7851992d8c00dcf3d81300bc5aa4b110573eaa52",
+      "extension": ".pdf",
+      "categoria": "pdf",
+      "texto_extraible": false,
+      "texto_n_chars": 0,
+      "texto_muestra": "",
+      "texto_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "n_paginas": 1,
+      "pagina1_pt": "1920x1080",
+      "render_profundidad": 16,
+      "render_espacio_color": "sRGB",
+      "render_tipo": "TrueColorAlpha"
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\bench\\salidas-referencia\\pdf\\tipico_texto_pdf-to-gs.pdf",
+      "nombre": "tipico_texto_pdf-to-gs.pdf",
+      "bytes": 3291,
+      "sha256": "cc1acd3d28a6020214b826528e4ca71c5fd908dd0c561e3e601c9ccc72465bbe",
+      "extension": ".pdf",
+      "categoria": "pdf",
+      "texto_extraible": true,
+      "texto_n_chars": 180,
+      "texto_muestra": "FileX - documento de prueba con texto seleccionable\r\n     Segunda linea: acentos aeiou n ˆ y simbolos % & @\r\n     Tabla:  Col A    Col B    Col C\r\n             1        2        3",
+      "texto_sha256": "be5a29a812723da83bf2290039328e9f9dd78b9bfc0cd115f10850c25e432041",
+      "n_paginas": 1,
+      "pagina1_pt": "595x842",
+      "render_profundidad": 16,
+      "render_espacio_color": "sRGB",
+      "render_tipo": "Bilevel"
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\bench\\salidas-referencia\\pdf\\tipico_texto_pdf-to-p1.jpg",
+      "nombre": "tipico_texto_pdf-to-p1.jpg",
+      "bytes": 71269,
+      "sha256": "24720561a8e104bb85f6b63f24cb458db887e3645f63a7a37b77af2351c804b3",
+      "extension": ".jpg",
+      "categoria": "imagen",
+      "formato": "JPEG",
+      "ancho": 1240,
+      "alto": 1754,
+      "profundidad_bits": 8,
+      "espacio_color": "sRGB",
+      "alfa_flag": "Undefined",
+      "canales": "srgb  3.0",
+      "tipo": "Grayscale",
+      "compresion": "JPEG",
+      "n_imagenes": 1,
+      "tiene_alfa": false,
+      "alfa_min_max": null,
+      "alfa_no_trivial": false,
+      "colores_unicos": 46
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\bench\\salidas-referencia\\pdf\\tipico_texto_pdf-to-p1.png",
+      "nombre": "tipico_texto_pdf-to-p1.png",
+      "bytes": 15804,
+      "sha256": "cfb4324c638d613028a0878e4a347d2e1cee7a8b1217d2ac603b7d2b315e9290",
+      "extension": ".png",
+      "categoria": "imagen",
+      "formato": "PNG",
+      "ancho": 1240,
+      "alto": 1754,
+      "profundidad_bits": 8,
+      "espacio_color": "sRGB",
+      "alfa_flag": "Undefined",
+      "canales": "srgb  3.0",
+      "tipo": "Bilevel",
+      "compresion": "Zip",
+      "n_imagenes": 1,
+      "tiene_alfa": false,
+      "alfa_min_max": null,
+      "alfa_no_trivial": false,
+      "colores_unicos": 2
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\bench\\salidas-referencia\\pdf\\tipico_texto_pdf-to.tif",
+      "nombre": "tipico_texto_pdf-to.tif",
+      "bytes": 6533038,
+      "sha256": "da93463e7029a1da49af70b41c7095098fa81fe029a01e694b1461bd2c0b74ad",
+      "extension": ".tif",
+      "categoria": "imagen",
+      "formato": "TIFF",
+      "ancho": 1240,
+      "alto": 1754,
+      "profundidad_bits": 8,
+      "espacio_color": "sRGB",
+      "alfa_flag": "Undefined",
+      "canales": "srgb  3.0",
+      "tipo": "Bilevel",
+      "compresion": "None",
+      "n_imagenes": 1,
+      "tiene_alfa": false,
+      "alfa_min_max": null,
+      "alfa_no_trivial": false,
+      "colores_unicos": 2
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\bench\\salidas-referencia\\pdf\\tipico_texto_rasterizado.pdf",
+      "nombre": "tipico_texto_rasterizado.pdf",
+      "bytes": 8689,
+      "sha256": "4b8464c1f6fc81c4d7a8c3eae76009ba245e8b21dec36e2c3b3274e8b4471920",
+      "extension": ".pdf",
+      "categoria": "pdf",
+      "texto_extraible": false,
+      "texto_n_chars": 0,
+      "texto_muestra": "",
+      "texto_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "n_paginas": 1,
+      "pagina1_pt": "595x842",
+      "render_profundidad": 16,
+      "render_espacio_color": "sRGB",
+      "render_tipo": "Bilevel"
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\bench\\salidas-referencia\\pdf\\trivial_pdf-to-p1.png",
+      "nombre": "trivial_pdf-to-p1.png",
+      "bytes": 4359,
+      "sha256": "04e914f763f43612735bde787f85deeb80b97eceee75ad28f543563efc8f0e50",
+      "extension": ".png",
+      "categoria": "imagen",
+      "formato": "PNG",
+      "ancho": 833,
+      "alto": 625,
+      "profundidad_bits": 8,
+      "espacio_color": "sRGB",
+      "alfa_flag": "Undefined",
+      "canales": "srgb  3.0",
+      "tipo": "Grayscale",
+      "compresion": "Zip",
+      "n_imagenes": 1,
+      "tiene_alfa": false,
+      "alfa_min_max": null,
+      "alfa_no_trivial": false,
+      "colores_unicos": 121
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\bench\\salidas-referencia\\video\\2pistas_mkv-to-COPY.mp4",
+      "nombre": "2pistas_mkv-to-COPY.mp4",
+      "bytes": 4085275,
+      "sha256": "126b8cfa3342d98be3126aa8f754f05a87a631528dabd0783fd77d814df05ab4",
+      "extension": ".mp4",
+      "categoria": "av",
+      "formato": "mov,mp4,m4a,3gp,3g2,mj2",
+      "duracion_s": 10.03059,
+      "bitrate_bps": 3258253,
+      "n_pistas": 3,
+      "pistas": [
+        {
+          "index": 0,
+          "tipo": "video",
+          "codec": "h264",
+          "duracion_s": 10.0,
+          "bitrate_bps": 3117444,
+          "idioma": "und",
+          "titulo": null,
+          "ancho": 1280,
+          "alto": 720,
+          "pix_fmt": "yuv420p",
+          "fps": "30/1",
+          "profundidad_bits": "8"
+        },
+        {
+          "index": 1,
+          "tipo": "audio",
+          "codec": "aac",
+          "duracion_s": 10.03059,
+          "bitrate_bps": 69203,
+          "idioma": "und",
+          "titulo": null,
+          "canales": 1,
+          "layout": "mono",
+          "sample_rate": "44100",
+          "sample_fmt": "fltp",
+          "profundidad_bits": null,
+          "md5_pcm_s16le": "11388652f7b64fb7dd1d4f1997c8f421"
+        },
+        {
+          "index": 2,
+          "tipo": "audio",
+          "codec": "aac",
+          "duracion_s": 10.03059,
+          "bitrate_bps": 68917,
+          "idioma": "und",
+          "titulo": null,
+          "canales": 1,
+          "layout": "mono",
+          "sample_rate": "44100",
+          "sample_fmt": "fltp",
+          "profundidad_bits": null,
+          "md5_pcm_s16le": "538142b9d6916d3db8ce4ba9e48cfd9f"
+        }
+      ],
+      "n_video": 1,
+      "n_audio": 2,
+      "n_subtitulo": 0,
+      "fotogramas_video": 300,
+      "fidelidad": {
+        "psnr_y_db": "inf",
+        "psnr_medio_db": "inf",
+        "framemd5_pixeles_identico": true
+      }
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\bench\\salidas-referencia\\video\\2pistas_mkv-to-DEFAULT.mp4",
+      "nombre": "2pistas_mkv-to-DEFAULT.mp4",
+      "bytes": 3859442,
+      "sha256": "d3b8772a5689521055ad8d0437da43bcaf180dbe92194d8182cfe821707650e6",
+      "extension": ".mp4",
+      "categoria": "av",
+      "formato": "mov,mp4,m4a,3gp,3g2,mj2",
+      "duracion_s": 10.033008,
+      "bitrate_bps": 3077395,
+      "n_pistas": 2,
+      "pistas": [
+        {
+          "index": 0,
+          "tipo": "video",
+          "codec": "h264",
+          "duracion_s": 10.0,
+          "bitrate_bps": 2979620,
+          "idioma": "und",
+          "titulo": null,
+          "ancho": 1280,
+          "alto": 720,
+          "pix_fmt": "yuv420p",
+          "fps": "30/1",
+          "profundidad_bits": "8"
+        },
+        {
+          "index": 1,
+          "tipo": "audio",
+          "codec": "aac",
+          "duracion_s": 10.030998,
+          "bitrate_bps": 97896,
+          "idioma": "und",
+          "titulo": null,
+          "canales": 1,
+          "layout": "mono",
+          "sample_rate": "44100",
+          "sample_fmt": "fltp",
+          "profundidad_bits": null,
+          "md5_pcm_s16le": "1f3967eef23f720317be313c4db3bd22"
+        }
+      ],
+      "n_video": 1,
+      "n_audio": 1,
+      "n_subtitulo": 0,
+      "fotogramas_video": 300
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\bench\\salidas-referencia\\video\\2pistas_mkv-to-MAP0.mp4",
+      "nombre": "2pistas_mkv-to-MAP0.mp4",
+      "bytes": 3966842,
+      "sha256": "7105da74af1d5d4a04873604f9d4919db4c39189c4ba4b77242f740918c0f85d",
+      "extension": ".mp4",
+      "categoria": "av",
+      "formato": "mov,mp4,m4a,3gp,3g2,mj2",
+      "duracion_s": 10.033008,
+      "bitrate_bps": 3163033,
+      "n_pistas": 3,
+      "pistas": [
+        {
+          "index": 0,
+          "tipo": "video",
+          "codec": "h264",
+          "duracion_s": 10.0,
+          "bitrate_bps": 2979620,
+          "idioma": "und",
+          "titulo": null,
+          "ancho": 1280,
+          "alto": 720,
+          "pix_fmt": "yuv420p",
+          "fps": "30/1",
+          "profundidad_bits": "8"
+        },
+        {
+          "index": 1,
+          "tipo": "audio",
+          "codec": "aac",
+          "duracion_s": 10.030998,
+          "bitrate_bps": 97896,
+          "idioma": "und",
+          "titulo": null,
+          "canales": 1,
+          "layout": "mono",
+          "sample_rate": "44100",
+          "sample_fmt": "fltp",
+          "profundidad_bits": null,
+          "md5_pcm_s16le": "1f3967eef23f720317be313c4db3bd22"
+        },
+        {
+          "index": 2,
+          "tipo": "audio",
+          "codec": "aac",
+          "duracion_s": 10.030998,
+          "bitrate_bps": 84302,
+          "idioma": "und",
+          "titulo": null,
+          "canales": 1,
+          "layout": "mono",
+          "sample_rate": "44100",
+          "sample_fmt": "fltp",
+          "profundidad_bits": null,
+          "md5_pcm_s16le": "0b086770279e574047f217205dd68843"
+        }
+      ],
+      "n_video": 1,
+      "n_audio": 2,
+      "n_subtitulo": 0,
+      "fotogramas_video": 300,
+      "fidelidad": {
+        "psnr_y_db": 45.58,
+        "psnr_medio_db": 45.75
+      }
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\bench\\salidas-referencia\\video\\tipico_mp4-to.mkv",
+      "nombre": "tipico_mp4-to.mkv",
+      "bytes": 16235751,
+      "sha256": "f4952a22a72894a650c8ac01da9a52e1a8e675fe5c9525dcf0cdbfc9747164ae",
+      "extension": ".mkv",
+      "categoria": "av",
+      "formato": "matroska,webm",
+      "duracion_s": 20.023,
+      "bitrate_bps": 6486840,
+      "n_pistas": 2,
+      "pistas": [
+        {
+          "index": 0,
+          "tipo": "video",
+          "codec": "h264",
+          "duracion_s": null,
+          "bitrate_bps": null,
+          "idioma": null,
+          "titulo": null,
+          "ancho": 1920,
+          "alto": 1080,
+          "pix_fmt": "yuv420p",
+          "fps": "30/1",
+          "profundidad_bits": "8"
+        },
+        {
+          "index": 1,
+          "tipo": "audio",
+          "codec": "aac",
+          "duracion_s": null,
+          "bitrate_bps": null,
+          "idioma": null,
+          "titulo": null,
+          "canales": 1,
+          "layout": "mono",
+          "sample_rate": "44100",
+          "sample_fmt": "fltp",
+          "profundidad_bits": null,
+          "md5_pcm_s16le": "cdf200c9b979da6887ad254cfb8a6dbd"
+        }
+      ],
+      "n_video": 1,
+      "n_audio": 1,
+      "n_subtitulo": 0,
+      "fotogramas_video": 600,
+      "fidelidad": {
+        "psnr_y_db": "inf",
+        "psnr_medio_db": "inf",
+        "framemd5_pixeles_identico": true,
+        "framemd5_con_pts_identico": false
+      }
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\bench\\salidas-referencia\\video\\tipico_mp4-to.webm",
+      "nombre": "tipico_mp4-to.webm",
+      "bytes": 17014670,
+      "sha256": "53bf36f083609323de3753343746c4957f89dfa652ece72602ae8ffc38dc1e19",
+      "extension": ".webm",
+      "categoria": "av",
+      "formato": "matroska,webm",
+      "duracion_s": 20.023,
+      "bitrate_bps": 6798050,
+      "n_pistas": 2,
+      "pistas": [
+        {
+          "index": 0,
+          "tipo": "video",
+          "codec": "vp9",
+          "duracion_s": null,
+          "bitrate_bps": null,
+          "idioma": null,
+          "titulo": null,
+          "ancho": 1920,
+          "alto": 1080,
+          "pix_fmt": "yuv420p",
+          "fps": "30/1",
+          "profundidad_bits": null
+        },
+        {
+          "index": 1,
+          "tipo": "audio",
+          "codec": "opus",
+          "duracion_s": null,
+          "bitrate_bps": null,
+          "idioma": null,
+          "titulo": null,
+          "canales": 1,
+          "layout": "mono",
+          "sample_rate": "48000",
+          "sample_fmt": "fltp",
+          "profundidad_bits": null,
+          "md5_pcm_s16le": "3cf6050d46bb1dd674a94391eee40569"
+        }
+      ],
+      "n_video": 1,
+      "n_audio": 1,
+      "n_subtitulo": 0,
+      "fotogramas_video": 600,
+      "fidelidad": {
+        "psnr_y_db": 46.15,
+        "psnr_medio_db": 45.9
+      }
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\bench\\salidas-referencia\\video\\trivial_mp4-to-naive.gif",
+      "nombre": "trivial_mp4-to-naive.gif",
+      "bytes": 394712,
+      "sha256": "42b2453556472ba5751903d62adfb6af8da43ed83d6f19f97aad397082be9c76",
+      "extension": ".gif",
+      "categoria": "av",
+      "formato": "gif",
+      "duracion_s": 5.0,
+      "bitrate_bps": 631539,
+      "n_pistas": 1,
+      "pistas": [
+        {
+          "index": 0,
+          "tipo": "video",
+          "codec": "gif",
+          "duracion_s": 5.0,
+          "bitrate_bps": null,
+          "idioma": null,
+          "titulo": null,
+          "ancho": 320,
+          "alto": 240,
+          "pix_fmt": "bgra",
+          "fps": "12/1",
+          "profundidad_bits": null
+        }
+      ],
+      "n_video": 1,
+      "n_audio": 0,
+      "n_subtitulo": 0,
+      "fotogramas_video": 60
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\bench\\salidas-referencia\\video\\trivial_mp4-to-palette.gif",
+      "nombre": "trivial_mp4-to-palette.gif",
+      "bytes": 609893,
+      "sha256": "5d02db023b9ae041444230fa5c1c7410defcb00a032c44b42c38f094151ae267",
+      "extension": ".gif",
+      "categoria": "av",
+      "formato": "gif",
+      "duracion_s": 5.0,
+      "bitrate_bps": 975828,
+      "n_pistas": 1,
+      "pistas": [
+        {
+          "index": 0,
+          "tipo": "video",
+          "codec": "gif",
+          "duracion_s": 5.0,
+          "bitrate_bps": null,
+          "idioma": null,
+          "titulo": null,
+          "ancho": 320,
+          "alto": 240,
+          "pix_fmt": "bgra",
+          "fps": "12/1",
+          "profundidad_bits": null
+        }
+      ],
+      "n_video": 1,
+      "n_audio": 0,
+      "n_subtitulo": 0,
+      "fotogramas_video": 60
+    },
+    {
+      "ruta": "D:\\Work\\research\\FileX\\bench\\salidas-referencia\\video\\trivial_mp4-to.webm",
+      "nombre": "trivial_mp4-to.webm",
+      "bytes": 635908,
+      "sha256": "0ffb18dc38f1c854f189066a746c287b96b7cfc2959399527f92f37337417d45",
+      "extension": ".webm",
+      "categoria": "av",
+      "formato": "matroska,webm",
+      "duracion_s": 5.0,
+      "bitrate_bps": 1017452,
+      "n_pistas": 1,
+      "pistas": [
+        {
+          "index": 0,
+          "tipo": "video",
+          "codec": "vp9",
+          "duracion_s": null,
+          "bitrate_bps": null,
+          "idioma": null,
+          "titulo": null,
+          "ancho": 640,
+          "alto": 480,
+          "pix_fmt": "yuv420p",
+          "fps": "24/1",
+          "profundidad_bits": null
+        }
+      ],
+      "n_video": 1,
+      "n_audio": 0,
+      "n_subtitulo": 0,
+      "fotogramas_video": 120,
+      "fidelidad": {
+        "psnr_y_db": 29.63,
+        "psnr_medio_db": 28.01
+      }
+    }
+  ],
+  "hash_fotogramas_video": {
+    "corpus/video/tipico.mp4": "6b48c50b0440bb586707990b8c81c199",
+    "salidas/video/tipico_mp4-to.mkv": "6b48c50b0440bb586707990b8c81c199",
+    "corpus/video/patologico_2pistas.mkv": "acb2518c6349917fa87facf3a0ad430d",
+    "salidas/video/2pistas_mkv-to-COPY.mp4": "acb2518c6349917fa87facf3a0ad430d",
+    "salidas/video/2pistas_mkv-to-MAP0.mp4": "883fd8c87f7db24431d3381e6dd66ae8",
+    "_nota": "md5 de la ultima columna de 'ffmpeg -f framemd5' (hash por fotograma, sin marcas de tiempo)"
+  },
+  "reglas_regresion": {
+    "generales": [
+      {
+        "id": "G1",
+        "regla": "El fichero de salida existe, tiene tamano > 0 y el motor devuelve codigo 0.",
+        "comprobacion": "os.path.getsize(salida) > 0 and rc == 0",
+        "severidad": "fallo"
+      },
+      {
+        "id": "G2",
+        "regla": "El fichero de salida se abre sin errores con la sonda de su categoria.",
+        "comprobacion": "ffprobe -v error / magick identify / gswin64c devuelven sin escribir en stderr",
+        "severidad": "fallo"
+      },
+      {
+        "id": "G3",
+        "regla": "El formato real coincide con la extension pedida (no basta con renombrar).",
+        "comprobacion": "magick identify %m  o  ffprobe format_name contiene el contenedor esperado",
+        "severidad": "fallo"
+      },
+      {
+        "id": "G4",
+        "regla": "La salida no es una pagina de error ni un marcador de posicion (dimensiones o duracion plausibles).",
+        "comprobacion": "no es un lienzo en blanco: %k (colores unicos) > 1 salvo que la entrada tambien lo sea",
+        "severidad": "fallo"
+      }
+    ],
+    "imagen": [
+      {
+        "id": "I1",
+        "regla": "Se conservan ancho y alto exactos salvo redimension pedida.",
+        "comprobacion": "identify %w,%h  ==  entrada.%w,%h",
+        "severidad": "fallo"
+      },
+      {
+        "id": "I2",
+        "regla": "Si la entrada tiene alfa NO TRIVIAL (min(alfa) < 1.0) y el formato de destino lo soporta (PNG, WebP, AVIF, TIFF), la salida debe conservar el canal alfa.",
+        "comprobacion": "identify %[channels] contiene 'a'  AND  min del canal alfa < 0.999",
+        "severidad": "fallo",
+        "nota": "un alfa completamente opaco puede descartarse sin penalizacion"
+      },
+      {
+        "id": "I3",
+        "regla": "Si el destino NO soporta alfa (JPEG), el aplanado debe hacerse sobre BLANCO, no sobre negro.",
+        "comprobacion": "pixel de una zona 100% transparente en la entrada == srgb(255,255,255) +-2",
+        "severidad": "aviso",
+        "nota": "ImageMagick aplana sobre negro por defecto: es una decision del motor, no una limitacion del formato"
+      },
+      {
+        "id": "I4",
+        "regla": "No se pierde profundidad de bits si el destino la soporta: entrada de 16 bits -> PNG/TIFF de 16 bits.",
+        "comprobacion": "identify %z == entrada.%z  cuando destino in {PNG, TIFF}",
+        "severidad": "fallo"
+      },
+      {
+        "id": "I5",
+        "regla": "Entrada de 16 bits -> destinos de 8 bits (JPEG, WebP lossy, AVIF de 8 bits) reduce la profundidad: es PERDIDA INEVITABLE, no un fallo.",
+        "comprobacion": "identify %z == 8  se acepta cuando destino in {JPEG, WEBP}",
+        "severidad": "informativo"
+      },
+      {
+        "id": "I6",
+        "regla": "Conversion sin perdida declarada (PNG->PNG, JPEG->PNG, WebP lossless->PNG, TIFF16->PNG16): pixeles identicos.",
+        "comprobacion": "magick compare -metric RMSE == 0  (equivalente: PSNR == 120 en IM7)",
+        "severidad": "fallo"
+      },
+      {
+        "id": "I7",
+        "regla": "Conversion con perdida a calidad 80-85: PSNR RGB >= 40 dB frente al original para fotografia.",
+        "comprobacion": "magick compare -metric PSNR >= 40",
+        "severidad": "aviso",
+        "nota": "referencias medidas: PNG->WebP q80 48.7 dB, PNG->JPEG q85 48.7 dB, PNG->AVIF q50 46.7 dB"
+      },
+      {
+        "id": "I8",
+        "regla": "Una imagen de paleta o grafismo (pocos colores unicos) debe ir a WebP/AVIF SIN PERDIDA; si no, se introducen colores nuevos y el fichero puede crecer.",
+        "comprobacion": "si entrada.%k <= 256 entonces salida.%k <= entrada.%k",
+        "severidad": "aviso",
+        "nota": "trivial.png (1 color): lossless 42 B y 1 color; lossy q80 94 B y 2 colores"
+      },
+      {
+        "id": "I9",
+        "regla": "El espacio de color declarado se conserva (sRGB -> sRGB); no aparecen saltos a CMYK ni a Gray.",
+        "comprobacion": "identify %[colorspace] == entrada.%[colorspace]",
+        "severidad": "fallo"
+      },
+      {
+        "id": "I10",
+        "regla": "El numero de imagenes del fichero (fotogramas / paginas) se conserva.",
+        "comprobacion": "len(identify) == len(identify entrada)",
+        "severidad": "fallo"
+      }
+    ],
+    "pdf": [
+      {
+        "id": "P1",
+        "regla": "El numero de paginas se conserva exactamente.",
+        "comprobacion": "gswin64c -dNODISPLAY ... pdfpagecount  ==  entrada",
+        "severidad": "fallo"
+      },
+      {
+        "id": "P2",
+        "regla": "PDF -> PDF (recompresion, union, optimizacion): si la entrada tiene capa de texto, la salida debe conservarla con el mismo contenido.",
+        "comprobacion": "sha256(gswin64c -sDEVICE=txtwrite salida) == sha256(... entrada)",
+        "severidad": "fallo",
+        "nota": "referencia: gs pdfwrite lo cumple; sha256 be5a29a812723da8..."
+      },
+      {
+        "id": "P3",
+        "regla": "PDF -> imagen rasteriza y por tanto DESTRUYE el texto: perdida inevitable.",
+        "comprobacion": "texto_extraible(salida) == False se acepta cuando destino in {PNG, JPEG, TIFF}",
+        "severidad": "informativo"
+      },
+      {
+        "id": "P4",
+        "regla": "PDF -> imagen: la resolucion de salida debe corresponder al DPI pedido. px = pt * dpi / 72.",
+        "comprobacion": "abs(ancho_px - ancho_pt*dpi/72) <= 1",
+        "severidad": "fallo",
+        "nota": "referencia: 595x842 pt a 150 dpi -> 1240x1754 px"
+      },
+      {
+        "id": "P5",
+        "regla": "Un PDF escaneado (sin capa de texto) sigue sin tenerla tras convertir: no es un fallo salvo que se pidiera OCR.",
+        "comprobacion": "texto_extraible(entrada) == False -> no se exige texto en la salida",
+        "severidad": "informativo"
+      },
+      {
+        "id": "P6",
+        "regla": "El umbral de 'tiene texto' debe ser >= 10 caracteres imprimibles: txtwrite emite basura de 1-3 caracteres en PDF puramente rasterizados.",
+        "comprobacion": "len(texto.strip()) >= 10",
+        "severidad": "informativo",
+        "nota": "alpha_png-to.pdf devuelve 'FX' (2 chars) sin tener texto real"
+      },
+      {
+        "id": "P7",
+        "regla": "Imagen -> PDF: el MediaBox debe corresponder a una densidad declarada; 1 px -> 1 pt produce paginas absurdas.",
+        "comprobacion": "MediaBox_pt == ancho_px * 72 / densidad_declarada",
+        "severidad": "aviso",
+        "nota": "1920x1080 px sin densidad -> 1920x1080 pt = 677x381 mm; a 150 dpi -> 922x518 pt"
+      },
+      {
+        "id": "P8",
+        "regla": "PDF -> TIFF debe usar compresion (LZW/ZIP); sin comprimir el fichero se multiplica por ~400.",
+        "comprobacion": "identify %[compression] != 'None'",
+        "severidad": "aviso",
+        "nota": "gs tiff24nc: 6.5 MB frente a 15 KB del PNG equivalente"
+      }
+    ],
+    "video": [
+      {
+        "id": "V1",
+        "regla": "La duracion del contenedor se conserva dentro de +-1 fotograma (o +-50 ms si no se conoce el fps).",
+        "comprobacion": "abs(dur_salida - dur_entrada) <= max(1/fps, 0.05)",
+        "severidad": "fallo"
+      },
+      {
+        "id": "V2",
+        "regla": "El numero de fotogramas de video se conserva exactamente si no se cambia el fps.",
+        "comprobacion": "ffprobe -count_frames -select_streams v:0 nb_read_frames  ==  entrada",
+        "severidad": "fallo",
+        "nota": "usar -count_frames: en MKV/WebM nb_frames viene vacio y ffprobe no lo estima"
+      },
+      {
+        "id": "V3",
+        "regla": "TODAS las pistas de audio se conservan. Numero y orden.",
+        "comprobacion": "count(streams tipo audio) == entrada  AND  md5 del PCM de cada pista es distinto entre si igual que en la entrada",
+        "severidad": "fallo",
+        "nota": "'ffmpeg -i in.mkv out.mp4' sin -map SOLO conserva una: es el fallo mas frecuente de los conversores generalistas"
+      },
+      {
+        "id": "V4",
+        "regla": "Las pistas de subtitulos se conservan si el contenedor de destino las admite (MKV, MP4 con mov_text).",
+        "comprobacion": "count(streams tipo subtitle) == entrada",
+        "severidad": "fallo",
+        "nota": "no ejercitado: ninguna pieza del corpus lleva subtitulos"
+      },
+      {
+        "id": "V5",
+        "regla": "Las etiquetas de idioma y titulo de cada pista se conservan cuando el contenedor las admite.",
+        "comprobacion": "stream_tags=language,title  ==  entrada",
+        "severidad": "aviso",
+        "nota": "patologico_2pistas.mkv NO trae etiquetas de idioma; no discrimina"
+      },
+      {
+        "id": "V6",
+        "regla": "Remux sin recodificar: el hash por fotograma (sin marcas de tiempo) es identico al del origen.",
+        "comprobacion": "md5(ultima columna de 'ffmpeg -f framemd5')  ==  la del origen",
+        "severidad": "fallo",
+        "nota": "el framemd5 COMPLETO si cambia: la base de tiempos pasa de 1/15360 a 1/1000 al remuxar a MKV"
+      },
+      {
+        "id": "V7",
+        "regla": "Las dimensiones y el fps de video se conservan si no se pide reescalado.",
+        "comprobacion": "width,height,r_frame_rate  ==  entrada",
+        "severidad": "fallo"
+      },
+      {
+        "id": "V8",
+        "regla": "Recodificacion generalista a calidad por defecto: PSNR de luminancia >= 40 dB para contenido fotografico.",
+        "comprobacion": "ffmpeg -lavfi psnr  ->  y >= 40",
+        "severidad": "aviso",
+        "nota": "referencias: mp4->webm VP9 crf33 46.2 dB; mkv->mp4 x264 crf23 45.6 dB. El sintetico trivial.mp4 cae a 29.6 dB: los bordes duros castigan a VP9"
+      },
+      {
+        "id": "V9",
+        "regla": "video -> GIF: la paleta debe calcularse a partir del clip (palettegen/paletteuse), no heredarse de una generica.",
+        "comprobacion": "comparacion visual o PSNR frente al fotograma de origen",
+        "severidad": "aviso",
+        "nota": "el GIF ingenuo pesa MENOS (395 KB frente a 610 KB) precisamente porque descarta color: menor tamano no implica mejor conversion"
+      }
+    ],
+    "audio": [
+      {
+        "id": "A1",
+        "regla": "La duracion se conserva dentro de +-10 ms.",
+        "comprobacion": "abs(dur_salida - dur_entrada) <= 0.010",
+        "severidad": "fallo",
+        "nota": "Opus necesita esta tolerancia: anade pre-skip y da 8.0065 s para una entrada de 8.000 s"
+      },
+      {
+        "id": "A2",
+        "regla": "El numero de canales y la disposicion se conservan.",
+        "comprobacion": "streams.channels == entrada.channels",
+        "severidad": "fallo"
+      },
+      {
+        "id": "A3",
+        "regla": "La frecuencia de muestreo se conserva, salvo con Opus, que exige 48 kHz.",
+        "comprobacion": "sample_rate == entrada  OR  (codec == 'opus' AND sample_rate == 48000)",
+        "severidad": "fallo"
+      },
+      {
+        "id": "A4",
+        "regla": "Cadena sin perdida (WAV<->FLAC<->ALAC): el PCM decodificado es identico bit a bit.",
+        "comprobacion": "ffmpeg -i X -f md5 -c:a pcm_s16le -  ==  el de la entrada",
+        "severidad": "fallo",
+        "nota": "referencia: trivial.wav y tipico.flac comparten md5 b1cdfb164f2319cd862dbf24a43679e5"
+      },
+      {
+        "id": "A5",
+        "regla": "Extraer audio de un video sin recodificar (-c:a copy) da un PCM identico al de la pista embebida.",
+        "comprobacion": "md5(PCM de out.m4a) == md5(PCM de 0:a:0 del mp4)",
+        "severidad": "aviso",
+        "nota": "referencia: d0bd638ebac7...; recodificar a mp3 lo cambia por necesidad"
+      },
+      {
+        "id": "A6",
+        "regla": "La profundidad de bits no debe INFLARSE. Un origen con perdida (MP3, AAC) convertido a FLAC no debe salir a 24 bits.",
+        "comprobacion": "bits_per_raw_sample de la salida <= profundidad efectiva del origen (16 si el origen es con perdida)",
+        "severidad": "aviso",
+        "nota": "ffmpeg elige s32/24 bits para mp3->flac: 398 KB en vez de ~104 KB, sin ninguna informacion adicional"
+      },
+      {
+        "id": "A7",
+        "regla": "Con perdida -> sin perdida NO recupera calidad: es una conversion valida pero de coste alto y ganancia nula.",
+        "comprobacion": "n/a - regla de coste para el grafo, no de correccion",
+        "severidad": "informativo"
+      }
+    ],
+    "datos": [
+      {
+        "id": "D1",
+        "regla": "El numero de filas logicas se conserva (los saltos de linea dentro de campos entrecomillados NO cuentan como filas).",
+        "comprobacion": "len(list(csv.reader(...)))  ==  3 para patologico_bom.csv",
+        "severidad": "fallo",
+        "nota": "el fichero tiene 4 saltos de linea fisicos pero 3 filas logicas"
+      },
+      {
+        "id": "D2",
+        "regla": "El numero de campos por fila es constante y coincide con el original.",
+        "comprobacion": "[len(f) for f in filas] == [3,3,3]",
+        "severidad": "fallo",
+        "nota": "partir por ',' sin respetar comillas da [3,4,3]: fallo tipico"
+      },
+      {
+        "id": "D3",
+        "regla": "El contenido de los campos se conserva integro, incluidos los caracteres no ASCII.",
+        "comprobacion": "sha256(json.dumps(filas, ensure_ascii=False, sort_keys=True)) == cf4cc37f35c9c045...",
+        "severidad": "fallo",
+        "nota": "valores exactos: 'Perez, Juan' con e acentuada, 'Ñandú', 'dijo \"hola\" y se fue', 'salto\\nde linea'"
+      },
+      {
+        "id": "D4",
+        "regla": "El BOM UTF-8 de entrada NO debe aparecer dentro del primer nombre de campo.",
+        "comprobacion": "cabecera[0] == 'id'  (no '\\ufeffid')",
+        "severidad": "fallo",
+        "nota": "leer con utf-8 en vez de utf-8-sig produce la clave '\\ufeffid' en el JSON de salida"
+      },
+      {
+        "id": "D5",
+        "regla": "La salida es UTF-8 valido y no reemplaza caracteres por '?' ni por U+FFFD.",
+        "comprobacion": "bytes.decode('utf-8') sin excepcion  AND  '\\ufffd' not in texto  AND  '?' no sustituye a un no-ASCII del origen",
+        "severidad": "fallo"
+      },
+      {
+        "id": "D6",
+        "regla": "Las comillas dobles escapadas ('' RFC 4180) se decodifican a una comilla simple en el valor y se vuelven a escapar al reescribir CSV.",
+        "comprobacion": "valor == 'dijo \"hola\" y se fue'  y el CSV reescrito contiene '\"\"hola\"\"'",
+        "severidad": "fallo"
+      },
+      {
+        "id": "D7",
+        "regla": "El salto de linea embebido dentro de un campo se conserva como '\\n' del valor.",
+        "comprobacion": "valor == 'salto\\nde linea'  (JSON: \"salto\\\\nde linea\")",
+        "severidad": "fallo"
+      },
+      {
+        "id": "D8",
+        "regla": "JSON -> CSV / CSV -> JSON: el JSON resultante es sintacticamente valido y sin perdida de claves.",
+        "comprobacion": "json.loads sin excepcion  AND  set(claves) == set(cabecera)",
+        "severidad": "fallo"
+      }
+    ]
+  },
+  "perdidas": [
+    {
+      "conversion": "* -> JPEG",
+      "se_pierde": "canal alfa",
+      "inevitable": true,
+      "detalle": "JPEG no tiene canal alfa. Lo que SI es una decision del motor es el color de fondo del aplanado (ImageMagick usa negro; lo esperable es blanco)."
+    },
+    {
+      "conversion": "* -> JPEG",
+      "se_pierde": "profundidad > 8 bits",
+      "inevitable": true,
+      "detalle": "JPEG base es de 8 bits por canal."
+    },
+    {
+      "conversion": "16 bits -> WebP",
+      "se_pierde": "profundidad > 8 bits",
+      "inevitable": true,
+      "detalle": "WebP es de 8 bits por canal. Medido: el TIFF de 16 bits pasa de 11.935.622 colores unicos a 386.041."
+    },
+    {
+      "conversion": "16 bits -> PNG",
+      "se_pierde": "NADA",
+      "inevitable": false,
+      "detalle": "PNG admite 16 bits por canal y ImageMagick los conserva por defecto (RMSE 0 frente al TIFF). Si un conversor entrega PNG de 8 bits, es un FALLO del motor, no una limitacion del formato. El coste medido de esa degradacion: PSNR 59.0 dB, 2.116.571 colores unicos en vez de 11.935.622."
+    },
+    {
+      "conversion": "PNG/TIFF -> AVIF con perdida",
+      "se_pierde": "exactitud del canal alfa",
+      "inevitable": true,
+      "detalle": "AVIF comprime el plano alfa con perdida. Medido: alfa a PSNR 46.0 dB en alpha.png; incluso un alfa 100% opaco se degrada a 71.4 dB y deja de ser exactamente 1.0 (min 0.9939). WebP con perdida, en cambio, conserva el alfa EXACTO."
+    },
+    {
+      "conversion": "paleta / 1 bit -> WebP o JPEG con perdida",
+      "se_pierde": "exactitud de los colores planos",
+      "inevitable": false,
+      "detalle": "Con -define webp:lossless=true la conversion es exacta Y mas pequena (42 B contra 94 B). Usar codificacion con perdida sobre grafismo es una eleccion mala del motor."
+    },
+    {
+      "conversion": "PDF -> PNG/JPEG/TIFF",
+      "se_pierde": "capa de texto, vectores, marcadores, enlaces, metadatos, capas",
+      "inevitable": true,
+      "detalle": "Rasterizar es una proyeccion. Ademas fija una resolucion: a partir de ahi el zoom degrada."
+    },
+    {
+      "conversion": "PDF -> PDF (Ghostscript pdfwrite)",
+      "se_pierde": "NADA del texto",
+      "inevitable": false,
+      "detalle": "El sha256 del texto extraido es identico al del original. Si un conversor pierde el texto en un PDF->PDF, es un FALLO."
+    },
+    {
+      "conversion": "imagen -> PDF",
+      "se_pierde": "nada del pixel; se GANA una caja de pagina arbitraria",
+      "inevitable": false,
+      "detalle": "Sin densidad declarada, ImageMagick mapea 1 px -> 1 pt y produce una pagina de 677x381 mm. Es corregible declarando la densidad."
+    },
+    {
+      "conversion": "video -> GIF",
+      "se_pierde": "audio, color de 24 bits (queda en <=256 por fotograma), suavidad temporal",
+      "inevitable": true,
+      "detalle": "GIF no lleva audio y esta limitado a paleta indexada. Lo que SI depende del motor es si la paleta se calcula sobre el clip (palettegen) o se usa una generica."
+    },
+    {
+      "conversion": "MKV -> MP4 recodificando",
+      "se_pierde": "fidelidad de pixel",
+      "inevitable": true,
+      "detalle": "Medido: PSNR 45.7 dB con libx264 crf 23. Evitable por completo con -c copy cuando los codecs ya son compatibles con MP4 (PSNR infinito, framemd5 identico)."
+    },
+    {
+      "conversion": "MKV -> MP4 sin -map 0",
+      "se_pierde": "todas las pistas de audio salvo la primera",
+      "inevitable": false,
+      "detalle": "FALLO DE USO DEL MOTOR, no del formato: MP4 admite varias pistas de audio. Verificado: la salida por defecto tiene 1 pista y la de -map 0 tiene 2, con PCM distinto entre si (11388652... y 538142b9...)."
+    },
+    {
+      "conversion": "* -> Opus",
+      "se_pierde": "frecuencia de muestreo original y alineacion exacta",
+      "inevitable": true,
+      "detalle": "Opus solo opera a 48 kHz y anade pre-skip. Medido: 44100 Hz -> 48000 Hz y 8.000 s -> 8.0065 s."
+    },
+    {
+      "conversion": "con perdida -> sin perdida (MP3 -> FLAC/WAV)",
+      "se_pierde": "nada mas, pero no se recupera nada",
+      "inevitable": true,
+      "detalle": "El PCM decodificado se conserva exacto (md5 f5ddaa64... en mp3->wav). El coste es de tamano: 64 KB -> 706 KB. Ademas ffmpeg escala a 24 bits en mp3->flac (398 KB), lo que multiplica el desperdicio."
+    },
+    {
+      "conversion": "remux de contenedor (MP4 -> MKV, MKV -> MP4 con copy)",
+      "se_pierde": "NADA del pixel; cambian las marcas de tiempo",
+      "inevitable": false,
+      "detalle": "framemd5 con marcas de tiempo difiere (base de tiempos 1/15360 -> 1/1000) pero el hash por fotograma es identico. Las pruebas de regresion deben comparar solo la columna de hash."
+    },
+    {
+      "conversion": "CSV -> JSON",
+      "se_pierde": "los tipos: todo queda como cadena",
+      "inevitable": true,
+      "detalle": "El CSV no lleva tipos. Que 'id' salga como \"1\" y no como 1 es correcto salvo que se pida inferencia de tipos."
+    },
+    {
+      "conversion": "CSV con BOM -> lo que sea",
+      "se_pierde": "nada si se lee con utf-8-sig",
+      "inevitable": false,
+      "detalle": "Leer con utf-8 a secas deja el BOM pegado al primer nombre de campo ('\\ufeffid'). Es un FALLO."
+    }
+  ],
+  "no_evaluable": [
+    {
+      "conversion": "DOCX/XLSX/PPTX/ODT <-> PDF",
+      "motor_necesario": "LibreOffice (soffice)",
+      "estado": "no evaluable con los motores presentes"
+    },
+    {
+      "conversion": "Markdown/HTML/DOCX <-> otros formatos de documento",
+      "motor_necesario": "Pandoc",
+      "estado": "no evaluable con los motores presentes"
+    },
+    {
+      "conversion": "EPUB/MOBI/AZW3 <-> otros",
+      "motor_necesario": "Calibre (ebook-convert)",
+      "estado": "no evaluable con los motores presentes"
+    },
+    {
+      "conversion": "SVG -> PNG/PDF con fidelidad tipografica",
+      "motor_necesario": "Inkscape o resvg (ImageMagick delega en su rasterizador interno, de menor fidelidad)",
+      "estado": "no evaluable con los motores presentes"
+    },
+    {
+      "conversion": "PDF escaneado -> PDF con capa de texto (OCR)",
+      "motor_necesario": "Tesseract u ocrmypdf",
+      "estado": "no evaluable con los motores presentes",
+      "nota": "patologico_escaneado.pdf y escaneado_d1/d2/d3.pdf existen justamente para esto; aqui solo se deja constancia de que NO tienen texto extraible (0 caracteres)"
+    },
+    {
+      "conversion": "PDF -> PDF linealizado / reparado / cifrado",
+      "motor_necesario": "qpdf",
+      "estado": "no evaluable con los motores presentes",
+      "nota": "Ghostscript pdfwrite cubre parcialmente la recompresion, pero no la linealizacion ni el cifrado"
+    },
+    {
+      "conversion": "imagen -> imagen con libvips",
+      "motor_necesario": "vips",
+      "estado": "no evaluable con los motores presentes"
+    }
+  ]
+}

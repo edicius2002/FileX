@@ -1,0 +1,135 @@
+[srv +  0.000s] handler de roots/list_changed registrado a mano (no hay decorador)
+[srv +  0.008s] arrancando. raices_servidor=['D:\\Work\\research\\FileX\\bench\\salidas-sdk-mcp\\raiz_srv'] pedir_al_arrancar=False
+  + Exception Group Traceback (most recent call last):
+  |   File "D:\Work\research\FileX\bench\salidas-sdk-mcp\srv_1x.py", line 226, in <module>
+  |     anyio.run(main)
+  |   File "D:\Work\research\FileX\.venv-mcp-sdk-18\Lib\site-packages\anyio\_core\_eventloop.py", line 83, in run
+  |     return async_backend.run(func, args, {}, backend_options)
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "D:\Work\research\FileX\.venv-mcp-sdk-18\Lib\site-packages\anyio\_backends\_asyncio.py", line 2481, in run
+  |     return runner.run(wrapper())
+  |            ^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\krato\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+  |     return self._loop.run_until_complete(task)
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\krato\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 654, in run_until_complete
+  |     return future.result()
+  |            ^^^^^^^^^^^^^^^
+  |   File "D:\Work\research\FileX\.venv-mcp-sdk-18\Lib\site-packages\anyio\_backends\_asyncio.py", line 2464, in wrapper
+  |     return await func(*args)
+  |            ^^^^^^^^^^^^^^^^^
+  |   File "D:\Work\research\FileX\bench\salidas-sdk-mcp\srv_1x.py", line 210, in main
+  |     async with mcp.server.stdio.stdio_server() as (r, w):
+  |   File "C:\Users\krato\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 231, in __aexit__
+  |     await self.gen.athrow(typ, value, traceback)
+  |   File "D:\Work\research\FileX\.venv-mcp-sdk-18\Lib\site-packages\mcp\server\stdio.py", line 87, in stdio_server
+  |     async with anyio.create_task_group() as tg:
+  |   File "D:\Work\research\FileX\.venv-mcp-sdk-18\Lib\site-packages\anyio\_backends\_asyncio.py", line 815, in __aexit__
+  |     raise BaseExceptionGroup(
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Exception Group Traceback (most recent call last):
+    |   File "D:\Work\research\FileX\.venv-mcp-sdk-18\Lib\site-packages\mcp\server\stdio.py", line 90, in stdio_server
+    |     yield read_stream, write_stream
+    |   File "D:\Work\research\FileX\bench\salidas-sdk-mcp\srv_1x.py", line 222, in main
+    |     await server.run(r, w, opts, raise_exceptions=False)
+    |   File "D:\Work\research\FileX\.venv-mcp-sdk-18\Lib\site-packages\mcp\server\lowlevel\server.py", line 489, in run
+    |     async with AsyncExitStack() as stack:
+    |   File "C:\Users\krato\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 745, in __aexit__
+    |     raise exc_details[1]
+    |   File "C:\Users\krato\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 728, in __aexit__
+    |     cb_suppress = await cb(*exc_details)
+    |                   ^^^^^^^^^^^^^^^^^^^^^^
+    |   File "D:\Work\research\FileX\.venv-mcp-sdk-18\Lib\site-packages\mcp\shared\session.py", line 209, in __aexit__
+    |     return await self._task_group.__aexit__(exc_type, exc_val, exc_tb)
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "D:\Work\research\FileX\.venv-mcp-sdk-18\Lib\site-packages\anyio\_backends\_asyncio.py", line 815, in __aexit__
+    |     raise BaseExceptionGroup(
+    | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+    +-+---------------- 1 ----------------
+      | Traceback (most recent call last):
+      |   File "D:\Work\research\FileX\.venv-mcp-sdk-18\Lib\site-packages\anyio\_core\_tasks.py", line 275, in _run_coro
+      |     retval = await self._coro
+      |              ^^^^^^^^^^^^^^^^
+      |   File "D:\Work\research\FileX\.venv-mcp-sdk-18\Lib\site-packages\mcp\server\session.py", line 146, in _receive_loop
+      |     await super()._receive_loop()
+      |   File "D:\Work\research\FileX\.venv-mcp-sdk-18\Lib\site-packages\mcp\shared\session.py", line 331, in _receive_loop
+      |     validated_request = self._receive_request_type.model_validate(
+      |                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      |   File "D:\Work\research\FileX\.venv-mcp-sdk-18\Lib\site-packages\pydantic\main.py", line 732, in model_validate
+      |     return cls.__pydantic_validator__.validate_python(
+      |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      | pydantic_core._pydantic_core.ValidationError: 24 validation errors for ClientRequest
+PingRequest.method
+  Input should be 'ping' [type=literal_error, input_value='server/discover', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/literal_error
+InitializeRequest.method
+  Input should be 'initialize' [type=literal_error, input_value='server/discover', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/literal_error
+InitializeRequest.params.protocolVersion
+  Field required [type=missing, input_value={'_meta': {'io.modelconte...{'listChanged': True}}}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+InitializeRequest.params.capabilities
+  Field required [type=missing, input_value={'_meta': {'io.modelconte...{'listChanged': True}}}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+InitializeRequest.params.clientInfo
+  Field required [type=missing, input_value={'_meta': {'io.modelconte...{'listChanged': True}}}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+CompleteRequest.method
+  Input should be 'completion/complete' [type=literal_error, input_value='server/discover', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/literal_error
+CompleteRequest.params.ref
+  Field required [type=missing, input_value={'_meta': {'io.modelconte...{'listChanged': True}}}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+CompleteRequest.params.argument
+  Field required [type=missing, input_value={'_meta': {'io.modelconte...{'listChanged': True}}}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+SetLevelRequest.method
+  Input should be 'logging/setLevel' [type=literal_error, input_value='server/discover', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/literal_error
+SetLevelRequest.params.level
+  Field required [type=missing, input_value={'_meta': {'io.modelconte...{'listChanged': True}}}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+GetPromptRequest.method
+  Input should be 'prompts/get' [type=literal_error, input_value='server/discover', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/literal_error
+GetPromptRequest.params.name
+  Field required [type=missing, input_value={'_meta': {'io.modelconte...{'listChanged': True}}}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+ListPromptsRequest.method
+  Input should be 'prompts/list' [type=literal_error, input_value='server/discover', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/literal_error
+ListResourcesRequest.method
+  Input should be 'resources/list' [type=literal_error, input_value='server/discover', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/literal_error
+ListResourceTemplatesRequest.method
+  Input should be 'resources/templates/list' [type=literal_error, input_value='server/discover', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/literal_error
+ReadResourceRequest.method
+  Input should be 'resources/read' [type=literal_error, input_value='server/discover', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/literal_error
+ReadResourceRequest.params.uri
+  Field required [type=missing, input_value={'_meta': {'io.modelconte...{'listChanged': True}}}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+SubscribeRequest.method
+  Input should be 'resources/subscribe' [type=literal_error, input_value='server/discover', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/literal_error
+SubscribeRequest.params.uri
+  Field required [type=missing, input_value={'_meta': {'io.modelconte...{'listChanged': True}}}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+UnsubscribeRequest.method
+  Input should be 'resources/unsubscribe' [type=literal_error, input_value='server/discover', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/literal_error
+UnsubscribeRequest.params.uri
+  Field required [type=missing, input_value={'_meta': {'io.modelconte...{'listChanged': True}}}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+CallToolRequest.method
+  Input should be 'tools/call' [type=literal_error, input_value='server/discover', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/literal_error
+CallToolRequest.params.name
+  Field required [type=missing, input_value={'_meta': {'io.modelconte...{'listChanged': True}}}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+ListToolsRequest.method
+  Input should be 'tools/list' [type=literal_error, input_value='server/discover', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/literal_error
+      +------------------------------------

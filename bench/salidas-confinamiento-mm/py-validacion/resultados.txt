@@ -1,0 +1,237 @@
+==============================================================================
+PARTE 1 - Coste por operacion vs numero de componentes (MEDIDO)
+==============================================================================
+Python 3.11.9 | Windows-10-10.0.19045-SP0
+Todas las celdas = tiempo MEDIANO por llamada.
+
+--- Variante: simple -> C:/comp/comp/... (N componentes, sin '..')
+| N comp | len(chars) | normcase   | normpath   | abspath    | realpath  | PurePath.is_relative_to | startswith |
+|--------|------------|------------|------------|------------|-----------|-------------------------|------------|
+| 10     | 52         | 1.262 us   | 0.775 us   | 1.935 us   | 1.348 ms  | 23.799 us               | 0.246 us   |
+| 100    | 502        | 6.183 us   | 3.429 us   | 8.165 us   | 53.048 ms | 73.995 us               | 0.263 us   |
+| 1000   | 5002       | 41.132 us  | 28.148 us  | 79.948 us  | 1.266 s   | 362.707 us              | 0.313 us   |
+| 10000  | 50002      | 648.599 us | 328.702 us | 734.783 us | 1.210 ms  | 3.700 ms                | 0.337 us   |
+
+Escalado (tiempo(N) / tiempo(N/10), ideal lineal = 10x):
+| N comp | normcase | normpath | abspath | realpath | PurePath.is_relative_to | startswith |
+|--------|----------|----------|---------|----------|-------------------------|------------|
+| 100    | 4.90x    | 4.43x    | 4.22x   | 39.36x   | 3.11x                   | 1.07x      |
+| 1000   | 6.65x    | 8.21x    | 9.79x   | 23.87x   | 4.90x                   | 1.19x      |
+| 10000  | 15.77x   | 11.68x   | 9.19x   | 0.00x    | 10.20x                  | 1.08x      |
+
+--- Variante: con-dotdot -> C:/base/a/../a/../... (N pares 'a','..' = 2N componentes)
+| N comp | len(chars) | normcase   | normpath   | abspath    | realpath   | PurePath.is_relative_to | startswith |
+|--------|------------|------------|------------|------------|------------|-------------------------|------------|
+| 10     | 57         | 1.444 us   | 0.769 us   | 1.560 us   | 390.106 us | 21.195 us               | 0.252 us   |
+| 100    | 507        | 6.050 us   | 3.847 us   | 3.583 us   | 316.940 us | 93.424 us               | 0.268 us   |
+| 1000   | 5007       | 45.681 us  | 34.932 us  | 28.123 us  | 394.782 us | 594.476 us              | 0.318 us   |
+| 10000  | 50007      | 534.086 us | 308.460 us | 247.192 us | 740.042 us | 5.928 ms                | 0.296 us   |
+
+Escalado (tiempo(N) / tiempo(N/10), ideal lineal = 10x):
+| N comp | normcase | normpath | abspath | realpath | PurePath.is_relative_to | startswith |
+|--------|----------|----------|---------|----------|-------------------------|------------|
+| 100    | 4.19x    | 5.00x    | 2.30x   | 0.81x    | 4.41x                   | 1.06x      |
+| 1000   | 7.55x    | 9.08x    | 7.85x   | 1.25x    | 6.36x                   | 1.19x      |
+| 10000  | 11.69x   | 8.83x    | 8.79x   | 1.87x    | 9.97x                   | 0.93x      |
+
+==============================================================================
+PARTE 2 - Rutas con MUCHOS '..' seguidos: normpath (MEDIDO)
+==============================================================================
+| N '..' | len(chars) | normpath   | realpath   | normpath(p) -> |
+|--------|------------|------------|------------|----------------|
+| 10     | 37         | 0.702 us   | 283.069 us | C:\            |
+| 100    | 307        | 2.572 us   | 174.886 us | C:\            |
+| 1000   | 3007       | 22.155 us  | 218.975 us | C:\            |
+| 10000  | 30007      | 195.401 us | 371.262 us | C:\            |
+| 100000 | 300007     | 2.201 ms   | 2.714 ms   | C:\            |
+
+Escalado normpath (t(N)/t(N/10), ideal lineal = 10x):
+| N '..' | factor |
+|--------|--------|
+| 100    | 3.66x  |
+| 1000   | 8.61x  |
+| 10000  | 8.82x  |
+| 100000 | 11.26x |
+
+==============================================================================
+PARTE 3 - Cadena de enlaces simbolicos encadenados (MEDIDO)
+==============================================================================
+os.symlink disponible. Construyendo cadena l_1 -> l_2 -> ... -> objetivo_real.txt
+realpath(l_k) debe atravesar k enlaces.
+
+| K enlaces | realpath(l_K) | resuelve OK | realpath(strict=True)          | open()                         |
+|-----------|---------------|-------------|--------------------------------|--------------------------------|
+| 1         | 324.076 us    | SI          | ok                             | ok                             |
+| 2         | 339.223 us    | SI          | ok                             | ok                             |
+| 3         | 284.991 us    | SI          | ok                             | ok                             |
+| 5         | 346.649 us    | SI          | ok                             | ok                             |
+| 8         | 648.748 us    | SI          | ok                             | ok                             |
+| 10        | 878.640 us    | SI          | ok                             | ok                             |
+| 15        | 779.172 us    | SI          | ok                             | ok                             |
+| 20        | 943.516 us    | SI          | ok                             | ok                             |
+| 25        | 618.060 us    | SI          | ok                             | ok                             |
+| 30        | 1.326 ms      | SI          | ok                             | ok                             |
+| 40        | 4.334 ms      | SI          | OSError errno=22 winerror=1921 | OSError errno=22 winerror=None |
+| 50        | 6.165 ms      | SI          | OSError errno=22 winerror=1921 | OSError errno=22 winerror=None |
+| 55        | 4.934 ms      | SI          | OSError errno=22 winerror=1921 | OSError errno=22 winerror=None |
+| 56        | 4.301 ms      | SI          | OSError errno=22 winerror=1921 | OSError errno=22 winerror=None |
+| 57        | 5.024 ms      | SI          | OSError errno=22 winerror=1921 | OSError errno=22 winerror=None |
+| 58        | 4.852 ms      | SI          | OSError errno=22 winerror=1921 | OSError errno=22 winerror=None |
+| 59        | 4.817 ms      | SI          | OSError errno=22 winerror=1921 | OSError errno=22 winerror=None |
+| 60        | 4.569 ms      | SI          | OSError errno=22 winerror=1921 | OSError errno=22 winerror=None |
+| 61        | 5.099 ms      | SI          | OSError errno=22 winerror=1921 | OSError errno=22 winerror=None |
+| 62        | 4.870 ms      | SI          | OSError errno=22 winerror=1921 | OSError errno=22 winerror=None |
+| 63        | 5.722 ms      | SI          | OSError errno=22 winerror=1921 | OSError errno=22 winerror=None |
+| 64        | 3.852 ms      | SI          | OSError errno=22 winerror=1921 | OSError errno=22 winerror=None |
+| 65        | 5.261 ms      | SI          | OSError errno=22 winerror=1921 | OSError errno=22 winerror=None |
+| 66        | 5.301 ms      | SI          | OSError errno=22 winerror=1921 | OSError errno=22 winerror=None |
+| 67        | 7.496 ms      | SI          | OSError errno=22 winerror=1921 | OSError errno=22 winerror=None |
+| 68        | 4.928 ms      | SI          | OSError errno=22 winerror=1921 | OSError errno=22 winerror=None |
+| 69        | 7.042 ms      | SI          | OSError errno=22 winerror=1921 | OSError errno=22 winerror=None |
+| 70        | 6.568 ms      | SI          | OSError errno=22 winerror=1921 | OSError errno=22 winerror=None |
+| 71        | 6.793 ms      | SI          | OSError errno=22 winerror=1921 | OSError errno=22 winerror=None |
+| 80        | 9.707 ms      | SI          | OSError errno=22 winerror=1921 | OSError errno=22 winerror=None |
+| 100       | 8.211 ms      | SI          | OSError errno=22 winerror=1921 | OSError errno=22 winerror=None |
+| 120       | 12.097 ms     | SI          | OSError errno=22 winerror=1921 | OSError errno=22 winerror=None |
+| 150       | 20.621 ms     | SI          | OSError errno=22 winerror=1921 | OSError errno=22 winerror=None |
+| 200       | 11.372 ms     | SI          | OSError errno=22 winerror=1921 | OSError errno=22 winerror=None |
+| 250       | 17.761 ms     | SI          | OSError errno=22 winerror=1921 | OSError errno=22 winerror=None |
+| 300       | 17.121 ms     | SI          | OSError errno=22 winerror=1921 | OSError errno=22 winerror=None |
+
+Enlaces creados con exito: 300
+Primer K en que realpath(strict=True) falla: 40
+Primer K en que open() falla:                40
+Primer K en que realpath(strict=False) devuelve algo distinto del objetivo real: None
+
+Coste marginal MEDIDO por enlace adicional (tramo K=1..30): 34.565 us por enlace
+
+==============================================================================
+PARTE 4 - Coste por LONGITUD pura (1 sola componente) (MEDIDO)
+==============================================================================
+| chars de la componente | len total | normcase   | normpath   | abspath    | realpath   | PurePath.is_relative_to | startswith |
+|------------------------|-----------|------------|------------|------------|------------|-------------------------|------------|
+| 100                    | 108       | 2.069 us   | 1.045 us   | 3.314 us   | 823.475 us | 19.864 us               | 0.342 us   |
+| 1000                   | 1008      | 15.136 us  | 6.109 us   | 19.464 us  | 1.345 ms   | 20.817 us               | 0.238 us   |
+| 10000                  | 10008     | 71.069 us  | 46.751 us  | 136.615 us | 4.600 ms   | 46.287 us               | 0.290 us   |
+| 100000                 | 100008    | 859.529 us | 482.922 us | 1.598 ms   | 2.868 ms   | 230.517 us              | 0.359 us   |
+| 1000000                | 1000008   | 9.116 ms   | 5.295 ms   | 11.537 ms  | 25.170 ms  | 4.530 ms                | 0.263 us   |
+
+Comparativa a IGUAL longitud total (~50.000 chars): muchas componentes vs una sola
+| reparto            | len total | normcase   | normpath   | abspath    | realpath   |
+|--------------------|-----------|------------|------------|------------|------------|
+| 10.000 componentes | 50002     | 501.775 us | 392.058 us | 561.763 us | 1.126 ms   |
+| 1 componente       | 50002     | 421.422 us | 253.323 us | 618.143 us | 896.433 us |
+
+==============================================================================
+PARTE 5 - Verificacion detallada de la cadena de enlaces (MEDIDO)
+==============================================================================
+objetivo real resuelto: D:\Work\research\FileX\bench\salidas-confinamiento-mm\py-validacion\linktmp\objetivo_real.txt
+LINEA BASE realpath sobre fichero real existente (8 componentes): 201.883 us
+LINEA BASE realpath sobre directorio real existente:              186.634 us
+
+| K   | basename(realpath(l_K)) | == objetivo real | strict=True   | open()   | readlink() |
+|-----|-------------------------|------------------|---------------|----------|------------|
+| 1   | objetivo_real.txt       | SI               | ok            | ok       | ok         |
+| 2   | objetivo_real.txt       | SI               | ok            | ok       | ok         |
+| 3   | objetivo_real.txt       | SI               | ok            | ok       | ok         |
+| 4   | objetivo_real.txt       | SI               | ok            | ok       | ok         |
+| 5   | objetivo_real.txt       | SI               | ok            | ok       | ok         |
+| 6   | objetivo_real.txt       | SI               | ok            | ok       | ok         |
+| 7   | objetivo_real.txt       | SI               | ok            | ok       | ok         |
+| 8   | objetivo_real.txt       | SI               | ok            | ok       | ok         |
+| 9   | objetivo_real.txt       | SI               | ok            | ok       | ok         |
+| 10  | objetivo_real.txt       | SI               | ok            | ok       | ok         |
+| 11  | objetivo_real.txt       | SI               | ok            | ok       | ok         |
+| 12  | objetivo_real.txt       | SI               | ok            | ok       | ok         |
+| 13  | objetivo_real.txt       | SI               | ok            | ok       | ok         |
+| 14  | objetivo_real.txt       | SI               | ok            | ok       | ok         |
+| 15  | objetivo_real.txt       | SI               | ok            | ok       | ok         |
+| 16  | objetivo_real.txt       | SI               | ok            | ok       | ok         |
+| 17  | objetivo_real.txt       | SI               | ok            | ok       | ok         |
+| 18  | objetivo_real.txt       | SI               | ok            | ok       | ok         |
+| 19  | objetivo_real.txt       | SI               | ok            | ok       | ok         |
+| 20  | objetivo_real.txt       | SI               | ok            | ok       | ok         |
+| 21  | objetivo_real.txt       | SI               | ok            | ok       | ok         |
+| 22  | objetivo_real.txt       | SI               | ok            | ok       | ok         |
+| 23  | objetivo_real.txt       | SI               | ok            | ok       | ok         |
+| 24  | objetivo_real.txt       | SI               | ok            | ok       | ok         |
+| 25  | objetivo_real.txt       | SI               | ok            | ok       | ok         |
+| 26  | objetivo_real.txt       | SI               | ok            | ok       | ok         |
+| 27  | objetivo_real.txt       | SI               | ok            | ok       | ok         |
+| 28  | objetivo_real.txt       | SI               | ok            | ok       | ok         |
+| 29  | objetivo_real.txt       | SI               | ok            | ok       | ok         |
+| 30  | objetivo_real.txt       | SI               | ok            | ok       | ok         |
+| 31  | objetivo_real.txt       | SI               | ok            | ok       | ok         |
+| 32  | objetivo_real.txt       | SI               | winerror=1921 | errno=22 | ok         |
+| 33  | objetivo_real.txt       | SI               | winerror=1921 | errno=22 | ok         |
+| 34  | objetivo_real.txt       | SI               | winerror=1921 | errno=22 | ok         |
+| 35  | objetivo_real.txt       | SI               | winerror=1921 | errno=22 | ok         |
+| 36  | objetivo_real.txt       | SI               | winerror=1921 | errno=22 | ok         |
+| 37  | objetivo_real.txt       | SI               | winerror=1921 | errno=22 | ok         |
+| 38  | objetivo_real.txt       | SI               | winerror=1921 | errno=22 | ok         |
+| 39  | objetivo_real.txt       | SI               | winerror=1921 | errno=22 | ok         |
+| 40  | objetivo_real.txt       | SI               | winerror=1921 | errno=22 | ok         |
+| 41  | objetivo_real.txt       | SI               | winerror=1921 | errno=22 | ok         |
+| 42  | objetivo_real.txt       | SI               | winerror=1921 | errno=22 | ok         |
+| 43  | objetivo_real.txt       | SI               | winerror=1921 | errno=22 | ok         |
+| 44  | objetivo_real.txt       | SI               | winerror=1921 | errno=22 | ok         |
+| 45  | objetivo_real.txt       | SI               | winerror=1921 | errno=22 | ok         |
+| 50  | objetivo_real.txt       | SI               | winerror=1921 | errno=22 | ok         |
+| 62  | objetivo_real.txt       | SI               | winerror=1921 | errno=22 | ok         |
+| 63  | objetivo_real.txt       | SI               | winerror=1921 | errno=22 | ok         |
+| 64  | objetivo_real.txt       | SI               | winerror=1921 | errno=22 | ok         |
+| 80  | objetivo_real.txt       | SI               | winerror=1921 | errno=22 | ok         |
+| 120 | objetivo_real.txt       | SI               | winerror=1921 | errno=22 | ok         |
+
+==============================================================================
+PARTE 6 - Barrido fino de os.path.realpath vs nº de componentes (MEDIDO)
+==============================================================================
+Mecanismo: en Windows ntpath.realpath llama a _getfinalpathname(ruta);
+si falla (ruta inexistente) entra en _getfinalpathname_nonstrict, que
+va PARTIENDO la ruta componente a componente y hace UNA SYSCALL POR
+COMPONENTE. Coste = O(nº de componentes) en llamadas al sistema.
+
+| N comp | len(chars) | realpath bajo C:/ | realpath bajo dir existente | us/componente | nota                                             |
+|--------|------------|-------------------|-----------------------------|---------------|--------------------------------------------------|
+| 1      | 7          | 244.033 us        | 228.733 us                  | 244.03        |                                                  |
+| 2      | 12         | 293.074 us        | 261.371 us                  | 146.54        |                                                  |
+| 5      | 27         | 1.253 ms          | 903.481 us                  | 250.53        |                                                  |
+| 10     | 52         | 1.542 ms          | 1.399 ms                    | 154.21        |                                                  |
+| 20     | 102        | 2.087 ms          | 3.374 ms                    | 104.35        |                                                  |
+| 50     | 252        | 6.213 ms          | 8.820 ms                    | 124.26        |                                                  |
+| 100    | 502        | 31.326 ms         | 35.561 ms                   | 313.26        |                                                  |
+| 200    | 1002       | 93.069 ms         | 43.002 ms                   | 465.34        |                                                  |
+| 500    | 2502       | 159.343 ms        | 137.128 ms                  | 318.69        |                                                  |
+| 1000   | 5002       | 252.460 ms        | 327.395 ms                  | 252.46        |                                                  |
+| 2000   | 10002      | 949.484 ms        | 829.077 ms                  | 474.74        |                                                  |
+| 4000   | 20002      | 3.608 s           | 3.997 s                     | 902.00        |                                                  |
+| 6000   | 30002      | 7.636 s           | 5.092 s                     | 1272.70       |                                                  |
+| 8000   | 40002      | 925.867 us        | 978.414 us                  | 0.12          | SI (ruta demasiado larga, devuelta sin resolver) |
+| 10000  | 50002      | 1.279 ms          | 1.067 ms                    | 0.13          | SI (ruta demasiado larga, devuelta sin resolver) |
+
+Umbral de longitud de Windows (por que N=10000 'se abarata'):
+| len ruta (chars) | realpath   | resultado             |
+|------------------|------------|-----------------------|
+| 1000             | 829.558 us | devuelta sin resolver |
+| 8000             | 2.168 ms   | devuelta sin resolver |
+| 16000            | 3.598 ms   | devuelta sin resolver |
+| 32000            | 6.513 ms   | devuelta sin resolver |
+| 32760            | 5.257 ms   | devuelta sin resolver |
+| 32768            | 440.967 us | devuelta sin resolver |
+| 40000            | 596.358 us | devuelta sin resolver |
+| 60000            | 911.653 us | devuelta sin resolver |
+
+==============================================================================
+PARTE 7 - Coste del GUARDIAN previo propuesto (MEDIDO)
+==============================================================================
+guardian(): len(p) <= 4096 chars y separadores <= 128, antes de tocar disco.
+
+| caso                            | len(chars) | coste guardian | veredicto |
+|---------------------------------|------------|----------------|-----------|
+| ruta normal (8 comps, 60 chars) | 83         | 0.608 us       | ACEPTA    |
+| hostil: 10.000 componentes      | 50002      | 0.159 us       | RECHAZA   |
+| hostil: 10.000 '..'             | 30007      | 0.168 us       | RECHAZA   |
+| hostil: 1.000.000 chars, 1 comp | 1000008    | 0.151 us       | RECHAZA   |
+
+linktmp limpiado: True
+Duracion total del banco: 118.2 s

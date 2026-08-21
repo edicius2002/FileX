@@ -1,0 +1,150 @@
+[aist#0:0/pcm_s16le @ 000001d17afc8040] Guessed Channel Layout: mono
+Input #0, wav, from 'D:/Work/research/FileX/corpus/audio/trivial.wav':
+  Metadata:
+    encoder         : Lavf62.6.100
+  Duration: 00:00:08.00, bitrate: 705 kb/s
+  Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 44100 Hz, mono, s16, 705 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (pcm_s16le (native) -> mp3 (libmp3lame))
+Press [q] to stop, [?] for help
+Output #0, mp3, to 'D:/Work/research/FileX/bench/salidas-referencia/audio/trivial_wav-to.mp3':
+  Metadata:
+    TSSE            : Lavf62.6.100
+  Stream #0:0: Audio: mp3, 44100 Hz, mono, s16p, 192 kb/s
+    Metadata:
+      encoder         : Lavc62.15.100 libmp3lame
+[out#0/mp3 @ 000001d17af4ac80] video:0KiB audio:189KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.346976%
+size=     189KiB time=00:00:08.00 bitrate= 193.8kbits/s speed= 117x elapsed=0:00:00.06    
+[aist#0:0/pcm_s16le @ 0000018a0757e740] Guessed Channel Layout: mono
+Input #0, wav, from 'D:/Work/research/FileX/corpus/audio/trivial.wav':
+  Metadata:
+    encoder         : Lavf62.6.100
+  Duration: 00:00:08.00, bitrate: 705 kb/s
+  Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 44100 Hz, mono, s16, 705 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (pcm_s16le (native) -> flac (native))
+Press [q] to stop, [?] for help
+Output #0, flac, to 'D:/Work/research/FileX/bench/salidas-referencia/audio/trivial_wav-to.flac':
+  Metadata:
+    encoder         : Lavf62.6.100
+  Stream #0:0: Audio: flac, 44100 Hz, mono, s16, 128 kb/s
+    Metadata:
+      encoder         : Lavc62.15.100 flac
+[out#0/flac @ 0000018a075ccb40] video:0KiB audio:94KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 8.628374%
+size=     102KiB time=00:00:08.00 bitrate= 104.3kbits/s speed= 740x elapsed=0:00:00.01    
+[aist#0:0/pcm_s16le @ 0000019ef489ea00] Guessed Channel Layout: mono
+Input #0, wav, from 'D:/Work/research/FileX/corpus/audio/trivial.wav':
+  Metadata:
+    encoder         : Lavf62.6.100
+  Duration: 00:00:08.00, bitrate: 705 kb/s
+  Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 44100 Hz, mono, s16, 705 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (pcm_s16le (native) -> opus (libopus))
+Press [q] to stop, [?] for help
+Output #0, opus, to 'D:/Work/research/FileX/bench/salidas-referencia/audio/trivial_wav-to.opus':
+  Metadata:
+    encoder         : Lavf62.6.100
+  Stream #0:0: Audio: opus, 48000 Hz, mono, s16, 96 kb/s
+    Metadata:
+      encoder         : Lavc62.15.100 libopus
+[out#0/opus @ 0000019ef481fa00] video:0KiB audio:113KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 1.020417%
+size=     114KiB time=00:00:08.00 bitrate= 116.9kbits/s speed= 135x elapsed=0:00:00.05    
+[aist#0:0/pcm_s16le @ 0000016af91b96c0] Guessed Channel Layout: mono
+Input #0, wav, from 'D:/Work/research/FileX/corpus/audio/trivial.wav':
+  Metadata:
+    encoder         : Lavf62.6.100
+  Duration: 00:00:08.00, bitrate: 705 kb/s
+  Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 44100 Hz, mono, s16, 705 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (pcm_s16le (native) -> aac (native))
+Press [q] to stop, [?] for help
+Output #0, ipod, to 'D:/Work/research/FileX/bench/salidas-referencia/audio/trivial_wav-to.m4a':
+  Metadata:
+    encoder         : Lavf62.6.100
+  Stream #0:0: Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, mono, fltp, 192 kb/s
+    Metadata:
+      encoder         : Lavc62.15.100 aac
+size=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.51    [out#0/ipod @ 0000016af913f3c0] video:0KiB audio:126KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 1.694955%
+size=     128KiB time=00:00:08.00 bitrate= 131.4kbits/s speed=15.1x elapsed=0:00:00.52    
+[aac @ 0000016afad89a40] Qavg: 64513.625
+Input #0, flac, from 'D:/Work/research/FileX/corpus/audio/tipico.flac':
+  Metadata:
+    encoder         : Lavf62.6.100
+  Duration: 00:00:08.00, start: 0.000000, bitrate: 104 kb/s
+  Stream #0:0: Audio: flac, 44100 Hz, mono, s16
+Stream mapping:
+  Stream #0:0 -> #0:0 (flac (native) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, wav, to 'D:/Work/research/FileX/bench/salidas-referencia/audio/tipico_flac-to.wav':
+  Metadata:
+    ISFT            : Lavf62.6.100
+  Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 44100 Hz, mono, s16, 705 kb/s
+    Metadata:
+      encoder         : Lavc62.15.100 pcm_s16le
+[out#0/wav @ 00000190cd1ffd80] video:0KiB audio:689KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.011054%
+size=     689KiB time=00:00:08.00 bitrate= 705.7kbits/s speed= 210x elapsed=0:00:00.03    
+Input #0, flac, from 'D:/Work/research/FileX/corpus/audio/tipico.flac':
+  Metadata:
+    encoder         : Lavf62.6.100
+  Duration: 00:00:08.00, start: 0.000000, bitrate: 104 kb/s
+  Stream #0:0: Audio: flac, 44100 Hz, mono, s16
+Stream mapping:
+  Stream #0:0 -> #0:0 (flac (native) -> mp3 (libmp3lame))
+Press [q] to stop, [?] for help
+Output #0, mp3, to 'D:/Work/research/FileX/bench/salidas-referencia/audio/tipico_flac-to.mp3':
+  Metadata:
+    TSSE            : Lavf62.6.100
+  Stream #0:0: Audio: mp3, 44100 Hz, mono, s16p, 192 kb/s
+    Metadata:
+      encoder         : Lavc62.15.100 libmp3lame
+[out#0/mp3 @ 000002b5bf50aa40] video:0KiB audio:189KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.346976%
+size=     189KiB time=00:00:08.00 bitrate= 193.8kbits/s speed= 165x elapsed=0:00:00.04    
+Input #0, flac, from 'D:/Work/research/FileX/corpus/audio/tipico.flac':
+  Metadata:
+    encoder         : Lavf62.6.100
+  Duration: 00:00:08.00, start: 0.000000, bitrate: 104 kb/s
+  Stream #0:0: Audio: flac, 44100 Hz, mono, s16
+Stream mapping:
+  Stream #0:0 -> #0:0 (flac (native) -> opus (libopus))
+Press [q] to stop, [?] for help
+Output #0, opus, to 'D:/Work/research/FileX/bench/salidas-referencia/audio/tipico_flac-to.opus':
+  Metadata:
+    encoder         : Lavf62.6.100
+  Stream #0:0: Audio: opus, 48000 Hz, mono, s16, 96 kb/s
+    Metadata:
+      encoder         : Lavc62.15.100 libopus
+[out#0/opus @ 000001a5d07db500] video:0KiB audio:113KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 1.020417%
+size=     114KiB time=00:00:08.00 bitrate= 116.9kbits/s speed= 159x elapsed=0:00:00.05    
+Input #0, mp3, from 'D:/Work/research/FileX/corpus/audio/tipico.mp3':
+  Metadata:
+    encoder         : Lavf62.6.100
+  Duration: 00:00:08.00, start: 0.025057, bitrate: 64 kb/s
+  Stream #0:0: Audio: mp3 (mp3float), 44100 Hz, mono, fltp, 64 kb/s, start 0.025057
+Stream mapping:
+  Stream #0:0 -> #0:0 (mp3 (mp3float) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, wav, to 'D:/Work/research/FileX/bench/salidas-referencia/audio/tipico_mp3-to.wav':
+  Metadata:
+    ISFT            : Lavf62.6.100
+  Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 44100 Hz, mono, s16, 705 kb/s
+    Metadata:
+      encoder         : Lavc62.15.100 pcm_s16le
+[out#0/wav @ 000002097265bb80] video:0KiB audio:689KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.011054%
+size=     689KiB time=00:00:08.00 bitrate= 705.7kbits/s speed= 306x elapsed=0:00:00.02    
+Input #0, mp3, from 'D:/Work/research/FileX/corpus/audio/tipico.mp3':
+  Metadata:
+    encoder         : Lavf62.6.100
+  Duration: 00:00:08.00, start: 0.025057, bitrate: 64 kb/s
+  Stream #0:0: Audio: mp3 (mp3float), 44100 Hz, mono, fltp, 64 kb/s, start 0.025057
+Stream mapping:
+  Stream #0:0 -> #0:0 (mp3 (mp3float) -> flac (native))
+Press [q] to stop, [?] for help
+[flac @ 000001ce205b22c0] encoding as 24 bits-per-sample, more is considered experimental. Add -strict experimental if you want to encode more than 24 bits-per-sample
+Output #0, flac, to 'D:/Work/research/FileX/bench/salidas-referencia/audio/tipico_mp3-to.flac':
+  Metadata:
+    encoder         : Lavf62.6.100
+  Stream #0:0: Audio: flac, 44100 Hz, mono, s32 (24 bit), 128 kb/s
+    Metadata:
+      encoder         : Lavc62.15.100 flac
+[out#0/flac @ 000001ce2052db80] video:0KiB audio:381KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 2.125602%
+size=     389KiB time=00:00:08.00 bitrate= 398.1kbits/s speed= 158x elapsed=0:00:00.05    

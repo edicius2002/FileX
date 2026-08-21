@@ -1,0 +1,87 @@
+# FileX / investigación previa - SnapOtter (variante CPU)
+#
+# Stack de producción documentado por SnapOtter: app + PostgreSQL 17 + Redis 8.
+# Esta variante NO reserva GPU. Para CUDA usar snapotter-gpu-compose.yml.
+#
+# Arranque:   docker compose -f snapotter-compose.yml -p filex-snapotter up -d
+# Parada:     docker compose -f snapotter-compose.yml -p filex-snapotter down
+# Borrado:    docker compose -f snapotter-compose.yml -p filex-snapotter down -v
+#
+# UI:  http://localhost:1349     credenciales iniciales: admin / admin
+# API: http://localhost:1349/api/docs
+#
+# AVISO (visto en Windows/WSL2, 2026-08-19): si el contenedor de Postgres se
+# interrumpe durante su primer `initdb`, crea el ROL `snapotter` pero NO la
+# BASE DE DATOS `snapotter`, y SnapOtter entra en bucle de reinicio con
+# `FATAL: database "snapotter" does not exist`. El healthcheck `pg_isready`
+# NO lo detecta (solo comprueba que el servidor acepta conexiones).
+# Arreglo en caliente:
+#   docker exec filex-snapotter-pg psql -U snapotter -d postgres \
+#     -c 'CREATE DATABASE snapotter OWNER snapotter;'
+#   docker restart filex-snapotter
+# Alternativa limpia: `down -v` y volver a levantar sin interrumpir el arranque.
+
+services:
+  snapotter:
+    image: snapotter/snapotter:latest
+    container_name: filex-snapotter
+    ports:
+      - "1349:1349"
+    environment:
+      DATABASE_URL: postgres://snapotter:snapotter@postgres:5432/snapotter
+      REDIS_URL: redis://redis:6379
+    volumes:
+      - SnapOtter-data:/data
+      - SnapOtter-workspace:/tmp/workspace
+      # Corpus de pruebas montado en solo lectura (para subir ficheros desde el host
+      # si hiciera falta; la UI sube por HTTP, esto es solo comodidad).
+      - type: bind
+        source: ../corpus
+        target: /corpus
+        read_only: true
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  postgres:
+    image: postgres:17-alpine
+    container_name: filex-snapotter-pg
+    environment:
+      POSTGRES_USER: snapotter
+      POSTGRES_PASSWORD: snapotter   # solo local; cambiar en cualquier despliegue real
+      POSTGRES_DB: snapotter
+    volumes:
+      - SnapOtter-pgdata:/var/lib/postgresql/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U snapotter -d snapotter"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+
+  redis:
+    image: redis:8-alpine
+    container_name: filex-snapotter-redis
+    command: ["redis-server", "--maxmemory-policy", "noeviction", "--appendonly", "yes"]
+    volumes:
+      - SnapOtter-redisdata:/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+
+volumes:
+  SnapOtter-data:
+  SnapOtter-workspace:
+  SnapOtter-pgdata:
+  SnapOtter-redisdata:

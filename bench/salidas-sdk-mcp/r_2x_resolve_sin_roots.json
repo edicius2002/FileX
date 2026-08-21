@@ -1,0 +1,65 @@
+{
+  "sdk_mcp": "2.0.0",
+  "resultados": [
+    {
+      "modo": "auto",
+      "pasos": [
+        {
+          "paso": "t_ping",
+          "ms": 101.4,
+          "isError": false,
+          "contenido": [
+            {
+              "type": "text",
+              "text": "pong"
+            }
+          ]
+        },
+        {
+          "paso": "t_roots_resolve",
+          "ms": 3.7,
+          "EXCEPCION": "mcp.shared.exceptions.MCPError",
+          "repr": "MCPError(-32021, \"Client did not declare the roots capability required by resolver '__main__:pedir_roots'\", {'requiredCapabilities': {'roots': {}}})"
+        },
+        {
+          "paso": "t_interseca_resolve",
+          "ms": 53.7,
+          "EXCEPCION": "mcp.shared.exceptions.MCPError",
+          "repr": "MCPError(-32021, \"Client did not declare the roots capability required by resolver '__main__:pedir_roots'\", {'requiredCapabilities': {'roots': {}}})"
+        }
+      ],
+      "protocolo_negociado": "2026-07-28",
+      "veces_que_el_cliente_respondio_roots": []
+    },
+    {
+      "modo": "legacy",
+      "pasos": [
+        {
+          "paso": "t_ping",
+          "ms": 7.0,
+          "isError": false,
+          "contenido": [
+            {
+              "type": "text",
+              "text": "pong"
+            }
+          ]
+        },
+        {
+          "paso": "t_roots_resolve",
+          "ms": 3.0,
+          "EXCEPCION": "mcp.shared.exceptions.MCPError",
+          "repr": "MCPError(-32021, \"Client did not declare the roots capability required by resolver '__main__:pedir_roots'\", {'requiredCapabilities': {'roots': {}}})"
+        },
+        {
+          "paso": "t_interseca_resolve",
+          "ms": 2.0,
+          "EXCEPCION": "mcp.shared.exceptions.MCPError",
+          "repr": "MCPError(-32021, \"Client did not declare the roots capability required by resolver '__main__:pedir_roots'\", {'requiredCapabilities': {'roots': {}}})"
+        }
+      ],
+      "protocolo_negociado": "2025-11-25",
+      "veces_que_el_cliente_respondio_roots": []
+    }
+  ]
+}

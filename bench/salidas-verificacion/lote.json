@@ -1,0 +1,359 @@
+[
+ {
+  "etiqueta": "suelo: cmd /c exit",
+  "n": 25,
+  "mediana_ms": 13.994,
+  "min_ms": 12.517,
+  "max_ms": 18.388,
+  "flag": "limpia",
+  "testigo_ms": [
+   22.69,
+   23.7
+  ],
+  "modo": "suelo",
+  "motor": "-",
+  "lote": "1 proceso",
+  "hilos": 1,
+  "n_ficheros": 1
+ },
+ {
+  "etiqueta": "serie[proceso] 53 salidas patron oro",
+  "n": 5,
+  "mediana_ms": 26.078,
+  "min_ms": 22.001,
+  "max_ms": 27.232,
+  "flag": "limpia",
+  "testigo_ms": [
+   27.82,
+   25.76
+  ],
+  "modo": "serie",
+  "motor": "proceso",
+  "lote": "53 salidas patron oro",
+  "hilos": 1,
+  "n_ficheros": 53
+ },
+ {
+  "etiqueta": "hilos4[proceso] 53 salidas patron oro",
+  "n": 5,
+  "mediana_ms": 24.427,
+  "min_ms": 23.698,
+  "max_ms": 28.932,
+  "flag": "limpia",
+  "testigo_ms": [
+   21.2,
+   22.69
+  ],
+  "modo": "hilos",
+  "motor": "proceso",
+  "lote": "53 salidas patron oro",
+  "hilos": 4,
+  "n_ficheros": 53
+ },
+ {
+  "etiqueta": "hilos12[proceso] 53 salidas patron oro",
+  "n": 5,
+  "mediana_ms": 26.839,
+  "min_ms": 24.249,
+  "max_ms": 27.859,
+  "flag": "limpia",
+  "testigo_ms": [
+   21.39,
+   21.38
+  ],
+  "modo": "hilos",
+  "motor": "proceso",
+  "lote": "53 salidas patron oro",
+  "hilos": 12,
+  "n_ficheros": 53
+ },
+ {
+  "etiqueta": "hilos24[proceso] 53 salidas patron oro",
+  "n": 5,
+  "mediana_ms": 32.125,
+  "min_ms": 28.281,
+  "max_ms": 35.286,
+  "flag": "limpia",
+  "testigo_ms": [
+   22.84,
+   23.5
+  ],
+  "modo": "hilos",
+  "motor": "proceso",
+  "lote": "53 salidas patron oro",
+  "hilos": 24,
+  "n_ficheros": 53
+ },
+ {
+  "etiqueta": "serie[proceso] 24 videos grandes",
+  "n": 5,
+  "mediana_ms": 11.213,
+  "min_ms": 10.873,
+  "max_ms": 14.08,
+  "flag": "limpia",
+  "testigo_ms": [
+   23.64,
+   24.82
+  ],
+  "modo": "serie",
+  "motor": "proceso",
+  "lote": "24 videos grandes",
+  "hilos": 1,
+  "n_ficheros": 24
+ },
+ {
+  "etiqueta": "hilos4[proceso] 24 videos grandes",
+  "n": 5,
+  "mediana_ms": 28.406,
+  "min_ms": 25.558,
+  "max_ms": 31.464,
+  "flag": "limpia",
+  "testigo_ms": [
+   24.92,
+   22.01
+  ],
+  "modo": "hilos",
+  "motor": "proceso",
+  "lote": "24 videos grandes",
+  "hilos": 4,
+  "n_ficheros": 24
+ },
+ {
+  "etiqueta": "hilos12[proceso] 24 videos grandes",
+  "n": 5,
+  "mediana_ms": 33.129,
+  "min_ms": 30.139,
+  "max_ms": 35.818,
+  "flag": "limpia",
+  "testigo_ms": [
+   22.79,
+   27.16
+  ],
+  "modo": "hilos",
+  "motor": "proceso",
+  "lote": "24 videos grandes",
+  "hilos": 12,
+  "n_ficheros": 24
+ },
+ {
+  "etiqueta": "hilos24[proceso] 24 videos grandes",
+  "n": 5,
+  "mediana_ms": 35.09,
+  "min_ms": 33.507,
+  "max_ms": 36.653,
+  "flag": "limpia",
+  "testigo_ms": [
+   25.37,
+   22.49
+  ],
+  "modo": "hilos",
+  "motor": "proceso",
+  "lote": "24 videos grandes",
+  "hilos": 24,
+  "n_ficheros": 24
+ },
+ {
+  "etiqueta": "serie[subproceso] 53 salidas patron oro",
+  "n": 5,
+  "mediana_ms": 6740.402,
+  "min_ms": 5990.078,
+  "max_ms": 10581.07,
+  "flag": "SUCIA(testigo +32%)",
+  "testigo_ms": [
+   18.38,
+   24.34
+  ],
+  "modo": "serie",
+  "motor": "subproceso",
+  "lote": "53 salidas patron oro",
+  "hilos": 1,
+  "n_ficheros": 53
+ },
+ {
+  "etiqueta": "hilos4[subproceso] 53 salidas patron oro",
+  "n": 5,
+  "mediana_ms": 5586.217,
+  "min_ms": 3303.491,
+  "max_ms": 6792.632,
+  "flag": "SUCIA(testigo +34%)",
+  "testigo_ms": [
+   42.96,
+   28.39
+  ],
+  "modo": "hilos",
+  "motor": "subproceso",
+  "lote": "53 salidas patron oro",
+  "hilos": 4,
+  "n_ficheros": 53
+ },
+ {
+  "etiqueta": "hilos12[subproceso] 53 salidas patron oro",
+  "n": 5,
+  "mediana_ms": 3928.451,
+  "min_ms": 3113.735,
+  "max_ms": 4871.698,
+  "flag": "limpia",
+  "testigo_ms": [
+   28.95,
+   26.07
+  ],
+  "modo": "hilos",
+  "motor": "subproceso",
+  "lote": "53 salidas patron oro",
+  "hilos": 12,
+  "n_ficheros": 53
+ },
+ {
+  "etiqueta": "hilos24[subproceso] 53 salidas patron oro",
+  "n": 5,
+  "mediana_ms": 3774.366,
+  "min_ms": 3038.069,
+  "max_ms": 5479.857,
+  "flag": "limpia",
+  "testigo_ms": [
+   28.26,
+   25.58
+  ],
+  "modo": "hilos",
+  "motor": "subproceso",
+  "lote": "53 salidas patron oro",
+  "hilos": 24,
+  "n_ficheros": 53
+ },
+ {
+  "etiqueta": "serie[subproceso] 24 videos grandes",
+  "n": 5,
+  "mediana_ms": 1982.347,
+  "min_ms": 1682.495,
+  "max_ms": 2186.874,
+  "flag": "SUCIA(testigo +22%)",
+  "testigo_ms": [
+   32.82,
+   25.73
+  ],
+  "modo": "serie",
+  "motor": "subproceso",
+  "lote": "24 videos grandes",
+  "hilos": 1,
+  "n_ficheros": 24
+ },
+ {
+  "etiqueta": "hilos4[subproceso] 24 videos grandes",
+  "n": 5,
+  "mediana_ms": 573.859,
+  "min_ms": 453.962,
+  "max_ms": 677.56,
+  "flag": "SUCIA(testigo +30%)",
+  "testigo_ms": [
+   23.4,
+   30.47
+  ],
+  "modo": "hilos",
+  "motor": "subproceso",
+  "lote": "24 videos grandes",
+  "hilos": 4,
+  "n_ficheros": 24
+ },
+ {
+  "etiqueta": "hilos12[subproceso] 24 videos grandes",
+  "n": 5,
+  "mediana_ms": 534.526,
+  "min_ms": 411.482,
+  "max_ms": 853.038,
+  "flag": "limpia",
+  "testigo_ms": [
+   25.03,
+   26.29
+  ],
+  "modo": "hilos",
+  "motor": "subproceso",
+  "lote": "24 videos grandes",
+  "hilos": 12,
+  "n_ficheros": 24
+ },
+ {
+  "etiqueta": "hilos24[subproceso] 24 videos grandes",
+  "n": 5,
+  "mediana_ms": 502.118,
+  "min_ms": 379.698,
+  "max_ms": 1000.96,
+  "flag": "SUCIA(testigo +25%)",
+  "testigo_ms": [
+   28.94,
+   36.06
+  ],
+  "modo": "hilos",
+  "motor": "subproceso",
+  "lote": "24 videos grandes",
+  "hilos": 24,
+  "n_ficheros": 24
+ },
+ {
+  "etiqueta": "procesos4[proceso] 53 salidas patron oro",
+  "n": 5,
+  "mediana_ms": 15.576,
+  "min_ms": 14.12,
+  "max_ms": 16.811,
+  "flag": "SUCIA(testigo +32%)",
+  "testigo_ms": [
+   28.91,
+   38.1
+  ],
+  "modo": "procesos",
+  "motor": "proceso",
+  "lote": "53 salidas patron oro",
+  "hilos": 4,
+  "n_ficheros": 53
+ },
+ {
+  "etiqueta": "procesos12[proceso] 53 salidas patron oro",
+  "n": 5,
+  "mediana_ms": 42.757,
+  "min_ms": 20.556,
+  "max_ms": 147.502,
+  "flag": "limpia",
+  "testigo_ms": [
+   27.89,
+   25.01
+  ],
+  "modo": "procesos",
+  "motor": "proceso",
+  "lote": "53 salidas patron oro",
+  "hilos": 12,
+  "n_ficheros": 53
+ },
+ {
+  "etiqueta": "procesos4[proceso] 24 videos grandes",
+  "n": 5,
+  "mediana_ms": 11.277,
+  "min_ms": 9.562,
+  "max_ms": 22.041,
+  "flag": "limpia",
+  "testigo_ms": [
+   27.89,
+   29.7
+  ],
+  "modo": "procesos",
+  "motor": "proceso",
+  "lote": "24 videos grandes",
+  "hilos": 4,
+  "n_ficheros": 24
+ },
+ {
+  "etiqueta": "procesos12[proceso] 24 videos grandes",
+  "n": 5,
+  "mediana_ms": 38.811,
+  "min_ms": 21.964,
+  "max_ms": 44.685,
+  "flag": "limpia",
+  "testigo_ms": [
+   26.91,
+   26.16
+  ],
+  "modo": "procesos",
+  "motor": "proceso",
+  "lote": "24 videos grandes",
+  "hilos": 12,
+  "n_ficheros": 24
+ }
+]

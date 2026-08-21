@@ -1,0 +1,29 @@
+=== 1. COSTE EN DISCO: cierre de dependencias de apt ===
+paquetes en el cierre: 302  (sin datos dpkg: 31)
+tamano instalado del cierre COMPLETO: 514429 KB = 502 MB
+--- solo lo que apt instalaria de nuevo en un Ubuntu limpio (simulacion) ---
+pngquant is already the newest version (2.18.0-1build3).
+Solving dependencies...
+0 upgraded, 0 newly installed, 0 to remove and 39 not upgraded.
+--- tamano de los binarios/datos clave ---
+17M	/usr/share/tesseract-ocr
+1.4M	/usr/lib/python3/dist-packages/ocrmypdf
+80K	/usr/bin/unpaper
+
+=== 2. SOBRECOSTE DE INVOCAR WSL DESDE WINDOWS (lo que pagaria FileX) ===
+wsl: ocrmypdf --version                mediana:   625 ms  n=9    rango:475-662  [SUCIA(pico 44%)]  gpu_antes:1350,12288,23,58  gpu_despues:1391,12288,27,58
+wsl: ocrmypdf d3 (/mnt/d)              mediana:   666 ms  n=9    rango:604-727  [SUCIA(pico 39%)]  gpu_antes:1350,12288,22,58  gpu_despues:1350,12288,27,58
+nativo win: magick d3 -density 100     mediana:   544 ms  n=9    rango:461-569  [SUCIA(pico 26%)]  gpu_antes:1378,12288,30,58  gpu_despues:1351,12288,28,58
+nativo win: magick d3 -density 100 -deskew mediana:  1635 ms  n=9    rango:1519-2287  [SUCIA(pico 28%)]  gpu_antes:1434,12288,45,58  gpu_despues:1423,12288,29,58
+
+=== 3. VERIFICACION DE .venv-ai (regla 3) ===
+torch 2.6.0+cu124
+cuda_disponible True
+dispositivo NVIDIA GeForce RTX 3060
+--- .venv-paddle ---
+paddle 3.2.0
+compilado_con_cuda True
+gpus 1
+--- lock de GPU ---
+lock liberado (correcto)
+wsl: ocrmypdf d3 (~ nativo)            mediana:  1832 ms  n=9    rango:1667-2294  [SUCIA(pico 27%)]  gpu_antes:1407,12288,27,59  gpu_despues:1551,12288,40,60

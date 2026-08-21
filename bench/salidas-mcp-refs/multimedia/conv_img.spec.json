@@ -1,0 +1,103 @@
+{
+ "command": "C:/Program Files/nodejs/npx.cmd",
+ "args": [
+  "-y",
+  "@boomlinkai/image-worker-mcp"
+ ],
+ "cwd": "D:/Work/research/FileX",
+ "env": {
+  "UPLOAD_SERVICE": "s3",
+  "S3_BUCKET": "filex-dummy-no-existe",
+  "AWS_ACCESS_KEY_ID": "AKIADUMMYNOEXISTE000",
+  "AWS_SECRET_ACCESS_KEY": "dummy-no-existe-secret-key-000000000000",
+  "S3_REGION": "us-east-1"
+ },
+ "nombre": "image-worker-mcp CONVERSION",
+ "pasos": [
+  {
+   "id": "jpg_a_png_defecto",
+   "tool": "resize_image",
+   "args": {
+    "imagePath": "D:/Work/research/FileX/corpus/imagen/tipico.jpg",
+    "format": "png",
+    "outputPath": "D:/Work/research/FileX/bench/salidas-mcp-refs/multimedia/salidas/img_tipico.png"
+   },
+   "espera": "asa",
+   "timeout": 180
+  },
+  {
+   "id": "jpg_a_webp_defecto",
+   "tool": "resize_image",
+   "args": {
+    "imagePath": "D:/Work/research/FileX/corpus/imagen/tipico.jpg",
+    "format": "webp",
+    "outputPath": "D:/Work/research/FileX/bench/salidas-mcp-refs/multimedia/salidas/img_tipico.webp"
+   },
+   "espera": "asa",
+   "timeout": 180
+  },
+  {
+   "id": "trivial_png_a_webp_defecto",
+   "tool": "resize_image",
+   "args": {
+    "imagePath": "D:/Work/research/FileX/corpus/imagen/trivial.png",
+    "format": "webp",
+    "outputPath": "D:/Work/research/FileX/bench/salidas-mcp-refs/multimedia/salidas/img_trivial.webp"
+   },
+   "espera": "asa",
+   "timeout": 180,
+   "nota": "316 bytes de entrada: devuelve el binario si es diminuto?"
+  },
+  {
+   "id": "trivial_png_a_webp_CONTENIDO",
+   "tool": "resize_image",
+   "args": {
+    "imagePath": "D:/Work/research/FileX/corpus/imagen/trivial.png",
+    "format": "webp",
+    "outputImage": true,
+    "outputPath": "D:/Work/research/FileX/bench/salidas-mcp-refs/multimedia/salidas/img_trivial_c.webp"
+   },
+   "espera": "contenido",
+   "timeout": 180,
+   "nota": "EL CASO DECISIVO minimo"
+  },
+  {
+   "id": "jpg_a_png_CONTENIDO",
+   "tool": "resize_image",
+   "args": {
+    "imagePath": "D:/Work/research/FileX/corpus/imagen/tipico.jpg",
+    "format": "png",
+    "outputImage": true,
+    "outputPath": "D:/Work/research/FileX/bench/salidas-mcp-refs/multimedia/salidas/img_tipico_c.png"
+   },
+   "espera": "contenido",
+   "timeout": 180,
+   "nota": "EL CASO DECISIVO: imagen tipica de 88 KB"
+  },
+  {
+   "id": "jpg_a_webp_CONTENIDO",
+   "tool": "resize_image",
+   "args": {
+    "imagePath": "D:/Work/research/FileX/corpus/imagen/tipico.jpg",
+    "format": "webp",
+    "outputImage": true,
+    "outputPath": "D:/Work/research/FileX/bench/salidas-mcp-refs/multimedia/salidas/img_tipico_c.webp"
+   },
+   "espera": "contenido",
+   "timeout": 180
+  },
+  {
+   "id": "sin_outputPath",
+   "tool": "resize_image",
+   "args": {
+    "imagePath": "D:/Work/research/FileX/corpus/imagen/trivial.png",
+    "format": "webp",
+    "outputImage": true
+   },
+   "espera": "contenido",
+   "timeout": 180,
+   "nota": "sin ruta de salida: el binario es la UNICA salida"
+  }
+ ],
+ "stderr_log": "D:/Work/research/FileX/bench/salidas-mcp-refs/multimedia/conv_img.stderr.log"
+}

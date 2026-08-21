@@ -1,0 +1,76 @@
+{
+  "spec": "bench/salidas-mcp-refs/_smoke_spec.json",
+  "servidor": "SMOKE markitdown-mcp",
+  "llamadas": [
+    {
+      "id": "pdf_texto",
+      "tool": "convert_to_markdown",
+      "args": {
+        "uri": "file:///D:/Work/research/FileX/corpus/pdf/tipico_texto.pdf"
+      },
+      "nota": "smoke: verifica que la sonda mide",
+      "espera": "prosa",
+      "ok": true,
+      "isError": false,
+      "ms": 3717.3,
+      "patron": "PROSA",
+      "n_piezas": 1,
+      "tokens_texto": 56,
+      "tokens_binario_si_se_inyecta": 0,
+      "tokens_total": 56,
+      "bytes_binario": 0,
+      "inviable_para_contexto": false,
+      "piezas": [
+        {
+          "tipo": "text",
+          "clase": "texto",
+          "chars": 174,
+          "tokens": 56
+        }
+      ],
+      "respuesta_recorte": "FileX - documento de prueba con texto seleccionable\n\nSegunda linea: acentos aeiou n ˆ(cid:145) y simbolos % & @\n\nTabla:  Col A    Col B    Col C\n        1        2        3\n\n",
+      "coincide_con_lo_esperado": true
+    }
+  ],
+  "arranque_frio_ms": 24373.9,
+  "spawn_proceso_ms": 22.9,
+  "handshake_ms": 24351.0,
+  "server_info": {
+    "name": "markitdown",
+    "version": "1.8.1",
+    "protocolVersion": "2024-11-05",
+    "instructions": null
+  },
+  "list_tools_ms": 4.2,
+  "n_herramientas": 1,
+  "herramientas": [
+    {
+      "name": "convert_to_markdown",
+      "description": "Convert a resource described by an http:, https:, file: or data: URI to markdown",
+      "annotations": {},
+      "tiene_readOnlyHint": false,
+      "tiene_destructiveHint": false,
+      "tokens_declaracion": 77,
+      "inputSchema": {
+        "properties": {
+          "uri": {
+            "title": "Uri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "uri"
+        ],
+        "title": "convert_to_markdownArguments",
+        "type": "object"
+      },
+      "outputSchema": null
+    }
+  ],
+  "tokens_catalogo": 79,
+  "n_anotadas": 0,
+  "n_prompts": 0,
+  "prompts": [],
+  "n_recursos": 0,
+  "recursos": []
+}
