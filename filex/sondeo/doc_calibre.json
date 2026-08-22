@@ -1,0 +1,57 @@
+{
+ "motor": "doc_calibre",
+ "build": "doc_calibre 29.4.3 · filex-c13@6d359bad483e",
+ "fecha": "2026-08-22",
+ "informe": "bench/sondeo-documental.md",
+ "nota": "n=1 por arista, tanda SUCIA (sesión remota activa) y con dos agentes más trabajando: los ms desempatan dentro de este informe, NO se comparan con los de otro. El `build` lleva el ID de la imagen: en otra máquina esto no se aplica.",
+ "aristas": {
+  "azw3>epub": {
+   "estado": "real",
+   "ms": 5227.2,
+   "motivo": "18602 B, 564 caracteres, contrato ok_parcial",
+   "caso": "S17"
+  },
+  "azw3>pdf": {
+   "estado": "real",
+   "ms": 20208.5,
+   "motivo": "27387 B, 456 caracteres, contrato ok",
+   "caso": "S19"
+  },
+  "epub>epub": {
+   "estado": "real",
+   "ms": 9636.6,
+   "motivo": "20209 B, 564 caracteres, contrato ok_parcial",
+   "caso": "S22"
+  },
+  "md>epub": {
+   "estado": "real",
+   "ms": 40279.3,
+   "motivo": "11851 B, 558 caracteres, contrato ok_parcial",
+   "caso": "S21"
+  },
+  "mobi>azw3": {
+   "estado": "real",
+   "ms": 4948.7,
+   "motivo": "12614 B, 12603 caracteres, contrato ok_parcial; sonda de texto CIEGA (comprime el texto), verificado por ida y vuelta a epub en d2.json §C",
+   "caso": "S23"
+  },
+  "mobi>epub": {
+   "estado": "real",
+   "ms": 6769.7,
+   "motivo": "18336 B, 610 caracteres, contrato ok_parcial",
+   "caso": "S16"
+  },
+  "mobi>pdf": {
+   "estado": "real",
+   "ms": 14487.2,
+   "motivo": "31178 B, 488 caracteres, contrato ok",
+   "caso": "S18"
+  },
+  "txt>epub": {
+   "estado": "real",
+   "ms": 36783.9,
+   "motivo": "26406 B, 484 caracteres, contrato ok_parcial",
+   "caso": "S20"
+  }
+ }
+}

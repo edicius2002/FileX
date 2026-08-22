@@ -1,0 +1,295 @@
+{
+ "motor": "ffmpeg",
+ "build": "ffmpeg N-121159-g0bd5a7d371-20250921",
+ "fecha": "2026-08-22",
+ "informe": "bench/sondeo-ffmpeg.md",
+ "aristas": {
+  "avi>flac": {
+   "estado": "real",
+   "ms": 57.0
+  },
+  "avi>m4a": {
+   "estado": "real",
+   "ms": 852.2
+  },
+  "avi>mkv": {
+   "estado": "real",
+   "ms": 3143.8
+  },
+  "avi>mp3": {
+   "estado": "real",
+   "ms": 126.2
+  },
+  "avi>mp4": {
+   "estado": "real",
+   "ms": 3318.7
+  },
+  "avi>ogg": {
+   "estado": "real",
+   "ms": 177.7
+  },
+  "avi>opus": {
+   "estado": "real",
+   "ms": 138.7
+  },
+  "avi>wav": {
+   "estado": "real",
+   "ms": 59.2
+  },
+  "avi>webm": {
+   "estado": "real",
+   "ms": 11270.5
+  },
+  "flac>m4a": {
+   "estado": "real",
+   "ms": 642.1
+  },
+  "m4a>flac": {
+   "estado": "real",
+   "ms": 59.6
+  },
+  "m4a>mp3": {
+   "estado": "real",
+   "ms": 111.9
+  },
+  "m4a>opus": {
+   "estado": "real",
+   "ms": 108.6
+  },
+  "m4a>wav": {
+   "estado": "real",
+   "ms": 63.6
+  },
+  "mkv>avi": {
+   "estado": "real",
+   "ms": 2153.7
+  },
+  "mkv>flac": {
+   "estado": "real",
+   "ms": 79.9
+  },
+  "mkv>mp3": {
+   "estado": "real",
+   "ms": 143.3
+  },
+  "mkv>opus": {
+   "estado": "real",
+   "ms": 173.6
+  },
+  "mkv>wav": {
+   "estado": "real",
+   "ms": 85.9
+  },
+  "mkv>webm": {
+   "estado": "real",
+   "ms": 8917.6
+  },
+  "mov>avi": {
+   "estado": "real",
+   "ms": 2233.4
+  },
+  "mov>flac": {
+   "estado": "real",
+   "ms": 113.1
+  },
+  "mov>m4a": {
+   "estado": "real",
+   "ms": 1923.6
+  },
+  "mov>mkv": {
+   "estado": "real",
+   "ms": 2342.8
+  },
+  "mov>mp3": {
+   "estado": "real",
+   "ms": 150.5
+  },
+  "mov>mp4": {
+   "estado": "real",
+   "ms": 2134.1
+  },
+  "mov>opus": {
+   "estado": "real",
+   "ms": 169.4
+  },
+  "mov>wav": {
+   "estado": "real",
+   "ms": 92.3
+  },
+  "mov>webm": {
+   "estado": "real",
+   "ms": 9556.9
+  },
+  "mp3>m4a": {
+   "estado": "real",
+   "ms": 588.2
+  },
+  "mp3>opus": {
+   "estado": "real",
+   "ms": 109.4
+  },
+  "mp4>avi": {
+   "estado": "real",
+   "ms": 2231.6
+  },
+  "mp4>flac": {
+   "estado": "real",
+   "ms": 75.4
+  },
+  "mp4>opus": {
+   "estado": "real",
+   "ms": 140.4
+  },
+  "mp4>wav": {
+   "estado": "real",
+   "ms": 71.0
+  },
+  "opus>flac": {
+   "estado": "real",
+   "ms": 91.4
+  },
+  "opus>m4a": {
+   "estado": "real",
+   "ms": 688.1
+  },
+  "opus>mp3": {
+   "estado": "real",
+   "ms": 113.7
+  },
+  "opus>ogg": {
+   "estado": "real",
+   "ms": 146.9
+  },
+  "opus>wav": {
+   "estado": "real",
+   "ms": 70.1
+  },
+  "webm>avi": {
+   "estado": "real",
+   "ms": 2075.1
+  },
+  "webm>flac": {
+   "estado": "real",
+   "ms": 86.3
+  },
+  "webm>m4a": {
+   "estado": "real",
+   "ms": 1097.4
+  },
+  "webm>mkv": {
+   "estado": "real",
+   "ms": 2288.2
+  },
+  "webm>mp3": {
+   "estado": "real",
+   "ms": 177.8
+  },
+  "webm>mp4": {
+   "estado": "real",
+   "ms": 2490.0
+  },
+  "webm>ogg": {
+   "estado": "real",
+   "ms": 295.8
+  },
+  "webm>opus": {
+   "estado": "real",
+   "ms": 153.0
+  },
+  "webm>wav": {
+   "estado": "real",
+   "ms": 90.5
+  },
+  "avi>gif": {
+   "estado": "real",
+   "ms": 3830.5
+  },
+  "mkv>gif": {
+   "estado": "real",
+   "ms": 1431.8
+  },
+  "mov>gif": {
+   "estado": "nominal",
+   "motivo": "no se pudo preparar una fuente .mov",
+   "causa": "arnes"
+  },
+  "mp4>gif": {
+   "estado": "real",
+   "ms": 3441.5
+  },
+  "webm>gif": {
+   "estado": "real",
+   "ms": 4028.2
+  },
+  "avi>mov": {
+   "estado": "real",
+   "ms": 11514.3
+  },
+  "flac>ogg": {
+   "estado": "real",
+   "ms": 172.1
+  },
+  "m4a>ogg": {
+   "estado": "real",
+   "ms": 158.6
+  },
+  "mkv>m4a": {
+   "estado": "nominal",
+   "motivo": "rc=-2 del propio ffmpeg con una entrada de DOS pistas de audio; no es tolerancia del contrato. Reclasificada el 22/08 al resondear: bench/sondeo-ffmpeg.md la atribuia al priming del AAC, y con el codigo corregido el fallo es del motor. El grafo la esquiva por mkv->wav->m4a, que da contrato 6/6",
+   "causa": "motor"
+  },
+  "mkv>mov": {
+   "estado": "real",
+   "ms": 2651.9
+  },
+  "mkv>ogg": {
+   "estado": "real",
+   "ms": 217.5
+  },
+  "mov>ogg": {
+   "estado": "real",
+   "ms": 307.6
+  },
+  "mp3>ogg": {
+   "estado": "real",
+   "ms": 140.0
+  },
+  "mp4>mov": {
+   "estado": "real",
+   "ms": 7928.8
+  },
+  "mp4>ogg": {
+   "estado": "real",
+   "ms": 275.8
+  },
+  "ogg>flac": {
+   "estado": "real",
+   "ms": 89.4
+  },
+  "ogg>m4a": {
+   "estado": "real",
+   "ms": 626.0
+  },
+  "ogg>mp3": {
+   "estado": "real",
+   "ms": 133.3
+  },
+  "ogg>opus": {
+   "estado": "real",
+   "ms": 141.1
+  },
+  "ogg>wav": {
+   "estado": "real",
+   "ms": 91.2
+  },
+  "wav>ogg": {
+   "estado": "real",
+   "ms": 164.0
+  },
+  "webm>mov": {
+   "estado": "real",
+   "ms": 11498.6
+  }
+ },
+ "nota_resondeo": "Las cinco aristas *->gif se resondearon el 22/08 tras aplicar el arreglo `-map 0:v:0` + declaracion de la escala que pidio bench/sondeo-ffmpeg.md 6.4: el sondeo de S2 las midio con el codigo ANTERIOR."
+}

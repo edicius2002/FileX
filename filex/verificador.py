@@ -911,8 +911,14 @@ def _isobmff(fh, tam_fichero: str) -> dict:
                     estado.setdefault("pista", {})["duracion_s"] = round(dur / ts, 4)
                     estado["pista"]["sample_rate_mdhd"] = ts
             elif tipo == b"hdlr":
-                fh.seek(di + 8)
-                estado["handler"] = fh.read(4)
+                # QuickTime pone un SEGUNDO `hdlr` dentro de `minf` con el
+                # manejador de DATOS ('url ', 'alis'). Quedarse con el ULTIMO
+                # clasifica las tres pistas de un .mov como "otro" y el fichero
+                # entero como "0 pistas". MP4 no trae el segundo; MOV si.
+                # MEDIDO: bench/sondeo-ffmpeg.md 4.1.
+                if estado.get("handler") is None:
+                    fh.seek(di + 8)
+                    estado["handler"] = fh.read(4)
             elif tipo == b"stsd":
                 fh.seek(di + 8)
                 c = fh.read(min(df - di - 8, 200))
@@ -1113,7 +1119,12 @@ def _ogg(fh, ruta) -> dict:
     pos = cola.rfind(b"OggS")
     if pos >= 0:
         gran = struct.unpack_from("<q", cola, pos + 6)[0]
-        d["duracion_s"] = round(max(0, gran - preskip) / 48000.0, 4)
+        # El granulo de Opus SIEMPRE va a 48 kHz; el de Vorbis va a la
+        # frecuencia del PROPIO FLUJO. Dividir siempre por 48000 deja un Vorbis
+        # de 8,000 s a 44,1 kHz en 7,350 (x0,91875) y dispara A1/V1 fallo en 12
+        # aristas. MEDIDO: bench/sondeo-ffmpeg.md 4.3.
+        _base = p.get("sample_rate") if p.get("codec") == "vorbis" else 48000
+        d["duracion_s"] = round(max(0, gran - preskip) / float(_base or 48000), 4)
     d["pistas"] = [p]
     d["n_audio"] = 1
     d["n_pistas"] = 1

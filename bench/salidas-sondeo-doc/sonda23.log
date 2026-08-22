@@ -1,0 +1,41 @@
+contenedores vivos ANTES: 5
+    19a7a940a15d|filex-convertx|ghcr.io/c4illin/convertx:latest|Up 2 hours
+    e446d1d7ad78|filex-snapotter|snapotter/snapotter:latest|Up 2 hours (healthy)
+    851f149b14b4|filex-snapotter-pg|postgres:17-alpine|Up 2 hours (healthy)
+    c0a97b977b80|filex-snapotter-redis|redis:8-alpine|Up 2 hours (healthy)
+    6efb0c4e8fac|filex-gotenberg8|gotenberg/gotenberg:8|Up 2 hours (healthy)
+builds: {'doc_libreoffice': 'doc_libreoffice 29.4.3 · filex-c13@6d359bad483e', 'doc_pandoc': 'doc_pandoc 29.4.3 · filex-c13@6d359bad483e', 'doc_calibre': 'doc_calibre 29.4.3 · filex-c13@6d359bad483e'}
+semilla epub→mobi: ok=True ok_parcial 10196 B
+semilla epub→azw3: ok=True ok_parcial 11692 B
+S01  doc_libreoffice    rtf→odt   rc=0     5418 ms     14176 B  car=  1769 cent=S contrato=ok_parcial sobra=0
+S02  doc_libreoffice    rtf→docx  rc=0     3468 ms      5293 B  car=   542 cent=S contrato=ok_parcial sobra=0
+S03  doc_libreoffice   html→odt   rc=0     2381 ms      8125 B  car=  1194 cent=S contrato=ok_parcial sobra=0
+S04  doc_libreoffice    txt→odt   rc=0     4018 ms     12125 B  car=  1110 cent=S contrato=ok_parcial sobra=0
+S05  doc_libreoffice    odt→html  rc=0    10443 ms      2476 B  car=   895 cent=S contrato=ok         sobra=0
+S06  doc_libreoffice   docx→rtf   rc=0     4956 ms      8213 B  car=  8213 cent=S contrato=ok         sobra=0
+S07  doc_pandoc        html→epub  rc=0     5869 ms      5286 B  car=   554 cent=S contrato=ok_parcial sobra=0
+S08  doc_pandoc        html→odt   rc=0     1150 ms      7286 B  car=   543 cent=S contrato=ok_parcial sobra=0
+S09  doc_pandoc        html→rtf   rc=0     1044 ms      1756 B  car=  1754 cent=S contrato=ok         sobra=0
+S10  doc_pandoc        docx→odt   rc=0     3454 ms      7203 B  car=   515 cent=S contrato=ok_parcial sobra=0
+S11  doc_pandoc        epub→docx  rc=0     1680 ms     10993 B  car=   635 cent=S contrato=ok_parcial sobra=0
+S12  doc_pandoc        epub→txt   rc=0      938 ms       566 B  car=   514 cent=S contrato=fallo      sobra=0
+S13  doc_pandoc         rtf→md    rc=0      878 ms       471 B  car=   466 cent=S contrato=fallo      sobra=0
+S14  doc_pandoc         rtf→html  rc=0     2663 ms      4324 B  car=  3133 cent=S contrato=ok         sobra=0
+S15  doc_pandoc          md→rtf   rc=0      990 ms      1700 B  car=  1698 cent=S contrato=ok         sobra=0
+S16  doc_calibre       mobi→epub  rc=0     6770 ms     18336 B  car=   610 cent=S contrato=ok_parcial sobra=0
+S17  doc_calibre       azw3→epub  rc=0     5227 ms     18602 B  car=   564 cent=S contrato=ok_parcial sobra=0
+S18  doc_calibre       mobi→pdf   rc=0    14487 ms     31178 B  car=   488 cent=S contrato=ok         sobra=0
+S19  doc_calibre       azw3→pdf   rc=0    20208 ms     27387 B  car=   456 cent=S contrato=ok         sobra=0
+S20  doc_calibre        txt→epub  rc=0    36784 ms     26406 B  car=   484 cent=S contrato=ok_parcial sobra=0
+S21  doc_calibre         md→epub  rc=0    40279 ms     11851 B  car=   558 cent=S contrato=ok_parcial sobra=0
+S22  doc_calibre       epub→epub  rc=0     9637 ms     20209 B  car=   564 cent=S contrato=ok_parcial sobra=0
+S23  doc_calibre       mobi→azw3  rc=0     4949 ms     12614 B  car= 12603 cent=n contrato=ok_parcial sobra=0
+
+total 190.2 s
+contenedores vivos DESPUÉS: 5
+    19a7a940a15d|filex-convertx|ghcr.io/c4illin/convertx:latest|Up 2 hours
+    e446d1d7ad78|filex-snapotter|snapotter/snapotter:latest|Up 2 hours (healthy)
+    851f149b14b4|filex-snapotter-pg|postgres:17-alpine|Up 2 hours (healthy)
+    c0a97b977b80|filex-snapotter-redis|redis:8-alpine|Up 2 hours (healthy)
+    6efb0c4e8fac|filex-gotenberg8|gotenberg/gotenberg:8|Up 2 hours (healthy)
+contenedores NUEVOS vivos: 0

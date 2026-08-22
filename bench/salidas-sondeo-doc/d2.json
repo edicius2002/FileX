@@ -1,0 +1,531 @@
+{
+ "A_ficheros_a_mano": [
+  {
+   "fichero": "prosa_con_comas.txt",
+   "bytes": 66,
+   "veredicto": "fallo",
+   "hallazgos": [
+    "D2/fallo: numero de campos no constante",
+    "-/informativo: sin entrada de referencia: el punto 4 no es evaluable",
+    "N9/informativo: el fichero declarado lleva el 100.0 % de los bytes escritos (66 de 66 B)"
+   ]
+  },
+  {
+   "fichero": "prosa_sin_comas.txt",
+   "bytes": 52,
+   "veredicto": "ok_parcial",
+   "hallazgos": [
+    "-/informativo: sin entrada de referencia: el punto 4 no es evaluable",
+    "N9/informativo: el fichero declarado lleva el 100.0 % de los bytes escritos (52 de 52 B)"
+   ]
+  },
+  {
+   "fichero": "tabla_markdown.md",
+   "bytes": 58,
+   "veredicto": "ok_parcial",
+   "hallazgos": [
+    "-/informativo: sin entrada de referencia: el punto 4 no es evaluable",
+    "N9/informativo: el fichero declarado lleva el 100.0 % de los bytes escritos (58 de 58 B)"
+   ]
+  }
+ ],
+ "B_aristas_REAL_hacia_texto": [
+  {
+   "id": "R",
+   "motor": "doc_libreoffice",
+   "origen": "odt",
+   "destino": "txt",
+   "ok": false,
+   "veredicto": "fallo",
+   "motivo": "fallo · D2: numero de campos no constante",
+   "rc": 0,
+   "ms": 6182.9,
+   "contrato": "fallo",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "fallo · D2: numero de campos no constante",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "D2",
+     "sev": "fallo",
+     "msg": "numero de campos no constante"
+    },
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (458 de 458 B)"
+    }
+   ],
+   "recogida": false,
+   "bytes": 458,
+   "sha256": "80d4fe7cad8d9eb77c3e759183640ca4dd2c874c9ffef806f285ece04a90c475",
+   "caracteres": 456,
+   "centinela": true,
+   "tabla_ax1": true,
+   "sonda_texto_ciega": false,
+   "espia": {
+    "salida.txt": 458
+   },
+   "estado_declarado_en_el_codigo": "REAL"
+  },
+  {
+   "id": "R",
+   "motor": "doc_pandoc",
+   "origen": "md",
+   "destino": "txt",
+   "ok": false,
+   "veredicto": "fallo",
+   "motivo": "fallo · D2: numero de campos no constante",
+   "rc": 0,
+   "ms": 1283.8,
+   "contrato": "fallo",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "fallo · D2: numero de campos no constante",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "D2",
+     "sev": "fallo",
+     "msg": "numero de campos no constante"
+    },
+    {
+     "regla": "D1",
+     "sev": "fallo",
+     "msg": "cambia el numero de filas logicas"
+    },
+    {
+     "regla": "D4",
+     "sev": "fallo",
+     "msg": "cambia la cabecera (BOM o clave perdida)"
+    },
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (535 de 535 B)"
+    }
+   ],
+   "recogida": false,
+   "bytes": 535,
+   "sha256": "e936439bd27a42ce93077fdd360f535ad151e6af771cdb9dbb791e21526b8edc",
+   "caracteres": 485,
+   "centinela": true,
+   "tabla_ax1": true,
+   "sonda_texto_ciega": false,
+   "espia": {
+    "salida.txt": 535
+   },
+   "estado_declarado_en_el_codigo": "REAL"
+  },
+  {
+   "id": "R",
+   "motor": "doc_pandoc",
+   "origen": "docx",
+   "destino": "md",
+   "ok": false,
+   "veredicto": "fallo",
+   "motivo": "fallo · D2: numero de campos no constante",
+   "rc": 0,
+   "ms": 1432.9,
+   "contrato": "fallo",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "fallo · D2: numero de campos no constante",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "D2",
+     "sev": "fallo",
+     "msg": "numero de campos no constante"
+    },
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (566 de 566 B)"
+    }
+   ],
+   "recogida": false,
+   "bytes": 566,
+   "sha256": "9b4bb779f5b8e7c658683b525a6917a31d74d6a0ae2a1b667fd3bccdc560c2ac",
+   "caracteres": 514,
+   "centinela": true,
+   "tabla_ax1": true,
+   "sonda_texto_ciega": false,
+   "espia": {
+    "salida.md": 566
+   },
+   "estado_declarado_en_el_codigo": "REAL"
+  },
+  {
+   "id": "R",
+   "motor": "doc_pandoc",
+   "origen": "epub",
+   "destino": "md",
+   "ok": false,
+   "veredicto": "fallo",
+   "motivo": "fallo · D2: numero de campos no constante",
+   "rc": 0,
+   "ms": 3654.2,
+   "contrato": "fallo",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "fallo · D2: numero de campos no constante",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "D2",
+     "sev": "fallo",
+     "msg": "numero de campos no constante"
+    },
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (585 de 585 B)"
+    }
+   ],
+   "recogida": false,
+   "bytes": 585,
+   "sha256": "b1d024c7b12e2b8011da278df79bd970affa890f3c3b2da1bce74cf6aebb602e",
+   "caracteres": 532,
+   "centinela": true,
+   "tabla_ax1": true,
+   "sonda_texto_ciega": false,
+   "espia": {
+    "salida.md": 585
+   },
+   "estado_declarado_en_el_codigo": "REAL"
+  },
+  {
+   "id": "R",
+   "motor": "doc_pandoc",
+   "origen": "html",
+   "destino": "md",
+   "ok": false,
+   "veredicto": "fallo",
+   "motivo": "fallo · D2: numero de campos no constante",
+   "rc": 0,
+   "ms": 2228.3,
+   "contrato": "fallo",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "fallo · D2: numero de campos no constante",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "D2",
+     "sev": "fallo",
+     "msg": "numero de campos no constante"
+    },
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (568 de 568 B)"
+    }
+   ],
+   "recogida": false,
+   "bytes": 568,
+   "sha256": "54f71421a0895bbe9776e905d72951832d59912ba5a9a54fa8081efc9bd6525f",
+   "caracteres": 516,
+   "centinela": true,
+   "tabla_ax1": true,
+   "sonda_texto_ciega": false,
+   "espia": {
+    "salida.md": 568
+   },
+   "estado_declarado_en_el_codigo": "REAL"
+  },
+  {
+   "id": "R",
+   "motor": "doc_calibre",
+   "origen": "epub",
+   "destino": "txt",
+   "ok": false,
+   "veredicto": "fallo",
+   "motivo": "fallo · D2: numero de campos no constante",
+   "rc": 0,
+   "ms": 5532.0,
+   "contrato": "fallo",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "fallo · D2: numero de campos no constante",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "D2",
+     "sev": "fallo",
+     "msg": "numero de campos no constante"
+    },
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (468 de 468 B)"
+    }
+   ],
+   "recogida": false,
+   "bytes": 468,
+   "sha256": "1f1069a7421942ba65474c77fe9293f990a98c5398316217707af001790f5dbf",
+   "caracteres": 456,
+   "centinela": true,
+   "tabla_ax1": true,
+   "sonda_texto_ciega": false,
+   "espia": {
+    "salida.txt": 468
+   },
+   "estado_declarado_en_el_codigo": "REAL"
+  },
+  {
+   "id": "R",
+   "motor": "doc_pandoc",
+   "origen": "md",
+   "destino": "pdf",
+   "ok": false,
+   "veredicto": "fallo",
+   "motivo": "fallo · P1: el PDF no declara ninguna pagina",
+   "rc": 0,
+   "ms": 9168.9,
+   "contrato": "fallo",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "fallo · P1: el PDF no declara ninguna pagina",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "P1",
+     "sev": "fallo",
+     "msg": "el PDF no declara ninguna pagina"
+    },
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (10370 de 10370 B)"
+    }
+   ],
+   "recogida": false,
+   "bytes": 10370,
+   "sha256": "4871b60d438bd95f15ce1a57a22a193622d11701954bb36e6e645e9ca62a294e",
+   "caracteres": 456,
+   "centinela": true,
+   "tabla_ax1": true,
+   "sonda_texto_ciega": false,
+   "espia": {
+    "salida.pdf": 10370
+   },
+   "estado_declarado_en_el_codigo": "REAL",
+   "n_paginas_sondeadas": 0,
+   "paginas_por_flujo_comprimido": true,
+   "indicio_texto": false
+  },
+  {
+   "id": "R",
+   "motor": "doc_pandoc",
+   "origen": "docx",
+   "destino": "pdf",
+   "ok": false,
+   "veredicto": "fallo",
+   "motivo": "fallo · P1: el PDF no declara ninguna pagina",
+   "rc": 0,
+   "ms": 8766.7,
+   "contrato": "fallo",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "fallo · P1: el PDF no declara ninguna pagina",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "P1",
+     "sev": "fallo",
+     "msg": "el PDF no declara ninguna pagina"
+    },
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (8163 de 8163 B)"
+    }
+   ],
+   "recogida": false,
+   "bytes": 8163,
+   "sha256": "1636913b7d49a89cb6c973ab75402d5cb1523e3622760420f7662d6c4053e007",
+   "caracteres": 456,
+   "centinela": true,
+   "tabla_ax1": true,
+   "sonda_texto_ciega": false,
+   "espia": {
+    "salida.pdf": 8163
+   },
+   "estado_declarado_en_el_codigo": "REAL",
+   "n_paginas_sondeadas": 0,
+   "paginas_por_flujo_comprimido": true,
+   "indicio_texto": false
+  },
+  {
+   "id": "R",
+   "motor": "doc_libreoffice",
+   "origen": "docx",
+   "destino": "pdf",
+   "ok": true,
+   "veredicto": "ok",
+   "motivo": "",
+   "rc": 0,
+   "ms": 4382.5,
+   "contrato": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (22820 de 22820 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 22820,
+   "sha256": "242ea9610ca6887b29325a344fa1a4532e2c3ce9c94d1badff2e78c45544ee09",
+   "caracteres": 456,
+   "centinela": true,
+   "tabla_ax1": true,
+   "sonda_texto_ciega": false,
+   "espia": {},
+   "estado_declarado_en_el_codigo": "REAL",
+   "n_paginas_sondeadas": 1,
+   "paginas_por_flujo_comprimido": null,
+   "indicio_texto": true
+  },
+  {
+   "id": "R",
+   "motor": "doc_libreoffice",
+   "origen": "docx",
+   "destino": "html",
+   "ok": true,
+   "veredicto": "ok",
+   "motivo": "",
+   "rc": 0,
+   "ms": 8007.0,
+   "contrato": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (2399 de 2399 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 2399,
+   "sha256": "b2b2b31ae926929df1e620001124e3f784306cb371ba44fef7e4abaa02eff8f8",
+   "caracteres": 571,
+   "centinela": true,
+   "tabla_ax1": true,
+   "sonda_texto_ciega": false,
+   "espia": {},
+   "estado_declarado_en_el_codigo": "REAL"
+  }
+ ],
+ "C_ida_y_vuelta_mobi_azw3": [
+  {
+   "caso": "S23_azw3_de_mobi",
+   "origen": "D:\\Work\\research\\FileX\\bench\\salidas-sondeo-doc\\out\\S23_calibre_mobi2azw3.azw3",
+   "ok": true,
+   "contrato": "ok_parcial",
+   "bytes": 17360,
+   "caracteres": 610,
+   "centinela_recuperado": true,
+   "tabla_ax1": true
+  },
+  {
+   "caso": "semilla_mobi",
+   "origen": "D:\\Work\\research\\FileX\\bench\\salidas-sondeo-doc\\entradas\\entrada.mobi",
+   "ok": true,
+   "contrato": "ok_parcial",
+   "bytes": 24271,
+   "caracteres": 610,
+   "centinela_recuperado": true,
+   "tabla_ax1": true
+  },
+  {
+   "caso": "semilla_azw3",
+   "origen": "D:\\Work\\research\\FileX\\bench\\salidas-sondeo-doc\\entradas\\entrada.azw3",
+   "ok": true,
+   "contrato": "ok_parcial",
+   "bytes": 21258,
+   "caracteres": 564,
+   "centinela_recuperado": true,
+   "tabla_ax1": true
+  }
+ ]
+}

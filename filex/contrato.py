@@ -57,6 +57,22 @@ def verificar(salida: str, entrada: str | None, pedido: dict, censo: dict | None
     verificar a posteriori, y darlo por bueno porque nadie miró es exactamente el
     fallo que el contrato existe para no cometer.
     """
+    # EL ESPEJO DEL PEDIDO, y es un arreglo de un fallo grave — MEDIDO
+    # (`bench/sondeo-imagemagick.md` §6.1). El motor lee el pedido PLANO
+    # (`pedido["ancho"]`) y el verificador lo lee bajo `params`
+    # (`pedido["params"]["ancho"]`). **Nadie traducía**, así que
+    # `filex convertir a.png b.tif --params '{"ancho":800}'` redimensionaba
+    # correctamente a 800×450 y el contrato lo declaraba
+    # `fallo I1/V7 — REDIMENSIONADO NO SOLICITADO`, tirando la salida buena.
+    #
+    # Se arregla aquí y no en el verificador porque este módulo ES la frontera
+    # entre las dos formas, y porque el verificador ya acepta la forma plana en
+    # dos sitios (`solo_audio`, `ocr`): era una inconsistencia interna, no un
+    # contrato deliberado.
+    plano = {k: v for k, v in (pedido or {}).items() if k != "params"}
+    pedido = dict(pedido or {},
+                  params={**plano, **((pedido or {}).get("params") or {})})
+
     v = verificador()
     if v is None:  # pragma: no cover - hoy imposible; ver docstring de verificador()
         return {

@@ -1,0 +1,105 @@
+{
+ "motor": "doc_libreoffice",
+ "build": "doc_libreoffice 29.4.3 · filex-c13@6d359bad483e",
+ "fecha": "2026-08-22",
+ "informe": "bench/sondeo-documental.md",
+ "nota": "n=1 por arista, tanda SUCIA (sesión remota activa) y con dos agentes más trabajando: los ms desempatan dentro de este informe, NO se comparan con los de otro. El `build` lleva el ID de la imagen: en otra máquina esto no se aplica.",
+ "aristas": {
+  "csv>pdf": {
+   "estado": "real",
+   "ms": 19663.2,
+   "motivo": "20944 B, 119 caracteres, contrato ok",
+   "caso": "Q06"
+  },
+  "csv>xlsx": {
+   "estado": "real",
+   "ms": 6935.6,
+   "motivo": "5790 B, 338 caracteres, contrato ok_parcial",
+   "caso": "Q01"
+  },
+  "docx>rtf": {
+   "estado": "real",
+   "ms": 4955.7,
+   "motivo": "8213 B, 8213 caracteres, contrato ok",
+   "caso": "S06"
+  },
+  "html>odt": {
+   "estado": "real",
+   "ms": 2380.6,
+   "motivo": "8125 B, 1194 caracteres, contrato ok_parcial",
+   "caso": "S03"
+  },
+  "odt>html": {
+   "estado": "real",
+   "ms": 10443.4,
+   "motivo": "2476 B, 895 caracteres, contrato ok",
+   "caso": "S05"
+  },
+  "pptx>odp": {
+   "estado": "real",
+   "ms": 9103.9,
+   "motivo": "32669 B, 2825 caracteres, contrato ok_parcial",
+   "caso": "Q08"
+  },
+  "pptx>pdf": {
+   "estado": "real",
+   "ms": 6259.4,
+   "motivo": "24534 B, 456 caracteres, contrato ok",
+   "caso": "Q07"
+  },
+  "pptx>png": {
+   "estado": "real",
+   "ms": 4446.0,
+   "motivo": "50462 B, 0 caracteres, contrato ok; RASTERIZA: 0 caracteres, es el precio del destino, no un fallo",
+   "caso": "Q09"
+  },
+  "rtf>docx": {
+   "estado": "real",
+   "ms": 3467.8,
+   "motivo": "5293 B, 542 caracteres, contrato ok_parcial",
+   "caso": "S02"
+  },
+  "rtf>odt": {
+   "estado": "real",
+   "ms": 5417.9,
+   "motivo": "14176 B, 1769 caracteres, contrato ok_parcial",
+   "caso": "S01"
+  },
+  "svg>pdf": {
+   "estado": "real",
+   "ms": 3260.7,
+   "motivo": "12500 B, 44 caracteres, contrato ok",
+   "caso": "Q10"
+  },
+  "svg>png": {
+   "estado": "real",
+   "ms": 4164.8,
+   "motivo": "9081 B, 0 caracteres, contrato ok; RASTERIZA: 0 caracteres, es el precio del destino, no un fallo",
+   "caso": "Q11"
+  },
+  "txt>odt": {
+   "estado": "real",
+   "ms": 4017.8,
+   "motivo": "12125 B, 1110 caracteres, contrato ok_parcial",
+   "caso": "S04"
+  },
+  "xlsx>csv": {
+   "estado": "real",
+   "ms": 6214.6,
+   "motivo": "109 B, 108 caracteres, contrato ok",
+   "caso": "Q04"
+  },
+  "xlsx>html": {
+   "estado": "real",
+   "ms": 5667.0,
+   "motivo": "2902 B, 464 caracteres, contrato ok",
+   "caso": "Q05"
+  },
+  "xlsx>pdf": {
+   "estado": "real",
+   "ms": 5005.8,
+   "motivo": "27403 B, 119 caracteres, contrato ok",
+   "caso": "Q03"
+  }
+ }
+}

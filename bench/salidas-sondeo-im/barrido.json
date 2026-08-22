@@ -1,0 +1,5048 @@
+{
+ "build": "imagemagick 7.1.2-21",
+ "fecha": "2026-08-22",
+ "segundos_totales": 97.9,
+ "testigos": {
+  "deriva_ms": [
+   26.6,
+   26.5
+  ],
+  "deriva_ratio": 0.997,
+  "nivel_ms": [
+   20.9,
+   17.2
+  ],
+  "nivel_en_tope": [
+   false,
+   false
+  ]
+ },
+ "filas": [
+  {
+   "origen": "avif",
+   "destino": "bmp",
+   "semilla": "A",
+   "src": "A.avif",
+   "rc": 0,
+   "ms": 179.7,
+   "n": 3,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (8294538 de 8294538 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": false,
+    "4_pedido": false,
+    "4_alfa": false,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 8294538,
+    "formato_real": "BMP",
+    "w": "1920",
+    "h": "1080",
+    "profundidad": "8",
+    "canales": "srgba 4.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.000993793
+  },
+  {
+   "origen": "avif",
+   "destino": "bmp",
+   "semilla": "B",
+   "src": "B.avif",
+   "rc": 0,
+   "ms": 140.8,
+   "n": 1,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (160138 de 160138 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": false,
+    "4_pedido": false,
+    "4_alfa": false,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 160138,
+    "formato_real": "BMP",
+    "w": "200",
+    "h": "200",
+    "profundidad": "8",
+    "canales": "srgba 4.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0
+  },
+  {
+   "origen": "avif",
+   "destino": "gif",
+   "semilla": "A",
+   "src": "A.avif",
+   "rc": 0,
+   "ms": 1922.7,
+   "n": 3,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "I5",
+     "sev": "informativo",
+     "msg": "reduccion de profundidad inevitable en gif (techo 8 bits)"
+    },
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (111380 de 111380 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": false,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 111380,
+    "formato_real": "GIF",
+    "w": "1920",
+    "h": "1080",
+    "profundidad": "8",
+    "canales": "srgb  4.0",
+    "alfa": "Undefined",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.00510169
+  },
+  {
+   "origen": "avif",
+   "destino": "gif",
+   "semilla": "B",
+   "src": "B.avif",
+   "rc": 0,
+   "ms": 91.9,
+   "n": 1,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (2361 de 2361 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": false,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 2361,
+    "formato_real": "GIF",
+    "w": "200",
+    "h": "200",
+    "profundidad": "8",
+    "canales": "srgba 5.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0299374
+  },
+  {
+   "origen": "avif",
+   "destino": "ico",
+   "semilla": "A",
+   "src": "A.avif",
+   "rc": 1,
+   "ms": 144.2,
+   "n": 3,
+   "ok": false,
+   "veredicto": "fallo",
+   "veredicto_salto": "",
+   "hallazgos": [],
+   "cobertura": {},
+   "sobrantes": {},
+   "motivo": "rc=1: width or height exceeds limit",
+   "salida": {
+    "existe": false
+   }
+  },
+  {
+   "origen": "avif",
+   "destino": "ico",
+   "semilla": "B",
+   "src": "B.avif",
+   "rc": 0,
+   "ms": 39.7,
+   "n": 1,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (165662 de 165662 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": false,
+    "4_pedido": false,
+    "4_alfa": false,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 165662,
+    "formato_real": "ICO",
+    "w": "200",
+    "h": "200",
+    "profundidad": "8",
+    "canales": "srgba 4.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0
+  },
+  {
+   "origen": "avif",
+   "destino": "jpg",
+   "semilla": "A",
+   "src": "A.avif",
+   "rc": 0,
+   "ms": 270.2,
+   "n": 3,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "I5",
+     "sev": "informativo",
+     "msg": "reduccion de profundidad inevitable en jpg (techo 8 bits)"
+    },
+    {
+     "regla": "I2",
+     "sev": "informativo",
+     "msg": "se descarta el canal alfa y min(alfa) de la entrada no esta calculado: la regla I2 no es evaluable"
+    },
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (36149 de 36149 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": false,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 36149,
+    "formato_real": "JPEG",
+    "w": "1920",
+    "h": "1080",
+    "profundidad": "8",
+    "canales": "srgb  3.0",
+    "alfa": "Undefined",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0028995
+  },
+  {
+   "origen": "avif",
+   "destino": "jpg",
+   "semilla": "B",
+   "src": "B.avif",
+   "rc": 0,
+   "ms": 40.4,
+   "n": 1,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "I2",
+     "sev": "informativo",
+     "msg": "se descarta el canal alfa y min(alfa) de la entrada no esta calculado: la regla I2 no es evaluable"
+    },
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (4456 de 4456 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": false,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 4456,
+    "formato_real": "JPEG",
+    "w": "200",
+    "h": "200",
+    "profundidad": "8",
+    "canales": "srgb  3.0",
+    "alfa": "Undefined",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.801774
+  },
+  {
+   "origen": "avif",
+   "destino": "pdf",
+   "semilla": "A",
+   "src": "A.avif",
+   "rc": 0,
+   "ms": 340.5,
+   "n": 3,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (6304534 de 6304534 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": false,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 6304534,
+    "formato_real": "PDF",
+    "w": "922",
+    "h": "518",
+    "profundidad": "8",
+    "canales": "srgba 4.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.259232
+  },
+  {
+   "origen": "avif",
+   "destino": "pdf",
+   "semilla": "B",
+   "src": "B.avif",
+   "rc": 0,
+   "ms": 45.4,
+   "n": 1,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (50833 de 50833 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": false,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 50833,
+    "formato_real": "PDF",
+    "w": "96",
+    "h": "96",
+    "profundidad": "8",
+    "canales": "srgba 4.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.292984
+  },
+  {
+   "origen": "avif",
+   "destino": "png",
+   "semilla": "A",
+   "src": "A.avif",
+   "rc": 0,
+   "ms": 485.8,
+   "n": 3,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (47966 de 47966 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": false,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 47966,
+    "formato_real": "PNG",
+    "w": "1920",
+    "h": "1080",
+    "profundidad": "16",
+    "canales": "srgba 4.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0
+  },
+  {
+   "origen": "avif",
+   "destino": "png",
+   "semilla": "B",
+   "src": "B.avif",
+   "rc": 0,
+   "ms": 59.4,
+   "n": 1,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (6077 de 6077 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": false,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 6077,
+    "formato_real": "PNG",
+    "w": "200",
+    "h": "200",
+    "profundidad": "8",
+    "canales": "srgba 4.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0
+  },
+  {
+   "origen": "avif",
+   "destino": "tif",
+   "semilla": "A",
+   "src": "A.avif",
+   "rc": 0,
+   "ms": 270.9,
+   "n": 3,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (12441990 de 12441990 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": false,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 12441990,
+    "formato_real": "TIFF",
+    "w": "1920",
+    "h": "1080",
+    "profundidad": "12",
+    "canales": "srgba 4.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 6.57063e-05
+  },
+  {
+   "origen": "avif",
+   "destino": "tif",
+   "semilla": "B",
+   "src": "B.avif",
+   "rc": 0,
+   "ms": 138.3,
+   "n": 1,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (160278 de 160278 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": false,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 160278,
+    "formato_real": "TIFF",
+    "w": "200",
+    "h": "200",
+    "profundidad": "8",
+    "canales": "srgba 4.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0
+  },
+  {
+   "origen": "avif",
+   "destino": "webp",
+   "semilla": "A",
+   "src": "A.avif",
+   "rc": 0,
+   "ms": 310.0,
+   "n": 3,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "I5",
+     "sev": "informativo",
+     "msg": "reduccion de profundidad inevitable en webp (techo 8 bits)"
+    },
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (14304 de 14304 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": false,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 14304,
+    "formato_real": "WEBP",
+    "w": "1920",
+    "h": "1080",
+    "profundidad": "8",
+    "canales": "srgba 4.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.00367477
+  },
+  {
+   "origen": "avif",
+   "destino": "webp",
+   "semilla": "B",
+   "src": "B.avif",
+   "rc": 0,
+   "ms": 43.6,
+   "n": 1,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (3278 de 3278 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": false,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 3278,
+    "formato_real": "WEBP",
+    "w": "200",
+    "h": "200",
+    "profundidad": "8",
+    "canales": "srgba 4.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.00822509
+  },
+  {
+   "origen": "bmp",
+   "destino": "avif",
+   "semilla": "A",
+   "src": "A.bmp",
+   "rc": 0,
+   "ms": 700.8,
+   "n": 3,
+   "ok": true,
+   "veredicto": "ok",
+   "veredicto_salto": "ok",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (2062 de 2062 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 2062,
+    "formato_real": "AVIF",
+    "w": "1920",
+    "h": "1080",
+    "profundidad": "8",
+    "canales": "srgba 4.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.00456189
+  },
+  {
+   "origen": "bmp",
+   "destino": "avif",
+   "semilla": "B",
+   "src": "B.bmp",
+   "rc": 0,
+   "ms": 125.4,
+   "n": 1,
+   "ok": true,
+   "veredicto": "ok",
+   "veredicto_salto": "ok",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (1670 de 1670 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 1670,
+    "formato_real": "AVIF",
+    "w": "200",
+    "h": "200",
+    "profundidad": "8",
+    "canales": "srgba 4.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0102382
+  },
+  {
+   "origen": "bmp",
+   "destino": "gif",
+   "semilla": "A",
+   "src": "A.bmp",
+   "rc": 0,
+   "ms": 815.3,
+   "n": 3,
+   "ok": true,
+   "veredicto": "ok",
+   "veredicto_salto": "ok",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (86736 de 86736 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 86736,
+    "formato_real": "GIF",
+    "w": "1920",
+    "h": "1080",
+    "profundidad": "8",
+    "canales": "srgb  4.0",
+    "alfa": "Undefined",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.00849796
+  },
+  {
+   "origen": "bmp",
+   "destino": "gif",
+   "semilla": "B",
+   "src": "B.bmp",
+   "rc": 0,
+   "ms": 78.4,
+   "n": 1,
+   "ok": true,
+   "veredicto": "ok",
+   "veredicto_salto": "ok",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (895 de 895 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 895,
+    "formato_real": "GIF",
+    "w": "200",
+    "h": "200",
+    "profundidad": "8",
+    "canales": "srgba 5.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0312498
+  },
+  {
+   "origen": "bmp",
+   "destino": "ico",
+   "semilla": "A",
+   "src": "A.bmp",
+   "rc": 1,
+   "ms": 103.4,
+   "n": 3,
+   "ok": false,
+   "veredicto": "fallo",
+   "veredicto_salto": "",
+   "hallazgos": [],
+   "cobertura": {},
+   "sobrantes": {},
+   "motivo": "rc=1: width or height exceeds limit",
+   "salida": {
+    "existe": false
+   }
+  },
+  {
+   "origen": "bmp",
+   "destino": "ico",
+   "semilla": "B",
+   "src": "B.bmp",
+   "rc": 0,
+   "ms": 37.1,
+   "n": 1,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (165662 de 165662 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": false,
+    "4_pedido": false,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 165662,
+    "formato_real": "ICO",
+    "w": "200",
+    "h": "200",
+    "profundidad": "8",
+    "canales": "srgba 4.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0
+  },
+  {
+   "origen": "bmp",
+   "destino": "jpg",
+   "semilla": "A",
+   "src": "A.bmp",
+   "rc": 0,
+   "ms": 229.3,
+   "n": 3,
+   "ok": true,
+   "veredicto": "ok",
+   "veredicto_salto": "ok",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (40963 de 40963 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 40963,
+    "formato_real": "JPEG",
+    "w": "1920",
+    "h": "1080",
+    "profundidad": "8",
+    "canales": "srgb  3.0",
+    "alfa": "Undefined",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.00326204
+  },
+  {
+   "origen": "bmp",
+   "destino": "jpg",
+   "semilla": "B",
+   "src": "B.bmp",
+   "rc": 0,
+   "ms": 53.0,
+   "n": 1,
+   "ok": true,
+   "veredicto": "ok",
+   "veredicto_salto": "ok",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (4389 de 4389 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 4389,
+    "formato_real": "JPEG",
+    "w": "200",
+    "h": "200",
+    "profundidad": "8",
+    "canales": "srgb  3.0",
+    "alfa": "Undefined",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.801747
+  },
+  {
+   "origen": "bmp",
+   "destino": "pdf",
+   "semilla": "A",
+   "src": "A.bmp",
+   "rc": 0,
+   "ms": 355.2,
+   "n": 3,
+   "ok": true,
+   "veredicto": "ok",
+   "veredicto_salto": "ok",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (6293549 de 6293549 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 6293549,
+    "formato_real": "PDF",
+    "w": "363",
+    "h": "204",
+    "profundidad": "8",
+    "canales": "srgba 4.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.406027
+  },
+  {
+   "origen": "bmp",
+   "destino": "pdf",
+   "semilla": "B",
+   "src": "B.bmp",
+   "rc": 0,
+   "ms": 97.2,
+   "n": 1,
+   "ok": true,
+   "veredicto": "ok",
+   "veredicto_salto": "ok",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (24555 de 24555 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 24555,
+    "formato_real": "PDF",
+    "w": "38",
+    "h": "38",
+    "profundidad": "8",
+    "canales": "srgba 4.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.277993
+  },
+  {
+   "origen": "bmp",
+   "destino": "png",
+   "semilla": "A",
+   "src": "A.bmp",
+   "rc": 0,
+   "ms": 389.4,
+   "n": 3,
+   "ok": true,
+   "veredicto": "ok",
+   "veredicto_salto": "ok",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (19814 de 19814 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 19814,
+    "formato_real": "PNG",
+    "w": "1920",
+    "h": "1080",
+    "profundidad": "8",
+    "canales": "srgba 4.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0
+  },
+  {
+   "origen": "bmp",
+   "destino": "png",
+   "semilla": "B",
+   "src": "B.bmp",
+   "rc": 0,
+   "ms": 35.4,
+   "n": 1,
+   "ok": true,
+   "veredicto": "ok",
+   "veredicto_salto": "ok",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (2760 de 2760 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 2760,
+    "formato_real": "PNG",
+    "w": "200",
+    "h": "200",
+    "profundidad": "8",
+    "canales": "srgba 5.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0
+  },
+  {
+   "origen": "bmp",
+   "destino": "tif",
+   "semilla": "A",
+   "src": "A.bmp",
+   "rc": 0,
+   "ms": 123.7,
+   "n": 3,
+   "ok": true,
+   "veredicto": "ok",
+   "veredicto_salto": "ok",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (8294750 de 8294750 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 8294750,
+    "formato_real": "TIFF",
+    "w": "1920",
+    "h": "1080",
+    "profundidad": "8",
+    "canales": "srgba 4.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0
+  },
+  {
+   "origen": "bmp",
+   "destino": "tif",
+   "semilla": "B",
+   "src": "B.bmp",
+   "rc": 0,
+   "ms": 44.3,
+   "n": 1,
+   "ok": true,
+   "veredicto": "ok",
+   "veredicto_salto": "ok",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (160278 de 160278 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 160278,
+    "formato_real": "TIFF",
+    "w": "200",
+    "h": "200",
+    "profundidad": "8",
+    "canales": "srgba 4.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0
+  },
+  {
+   "origen": "bmp",
+   "destino": "webp",
+   "semilla": "A",
+   "src": "A.bmp",
+   "rc": 0,
+   "ms": 278.8,
+   "n": 3,
+   "ok": true,
+   "veredicto": "ok",
+   "veredicto_salto": "ok",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (13516 de 13516 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 13516,
+    "formato_real": "WEBP",
+    "w": "1920",
+    "h": "1080",
+    "profundidad": "8",
+    "canales": "srgb  3.0",
+    "alfa": "Undefined",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.00331636
+  },
+  {
+   "origen": "bmp",
+   "destino": "webp",
+   "semilla": "B",
+   "src": "B.bmp",
+   "rc": 0,
+   "ms": 37.3,
+   "n": 1,
+   "ok": true,
+   "veredicto": "ok",
+   "veredicto_salto": "ok",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (2496 de 2496 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 2496,
+    "formato_real": "WEBP",
+    "w": "200",
+    "h": "200",
+    "profundidad": "8",
+    "canales": "srgba 4.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.00554148
+  },
+  {
+   "origen": "gif",
+   "destino": "avif",
+   "semilla": "A",
+   "src": "A.gif",
+   "rc": 0,
+   "ms": 1075.3,
+   "n": 3,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "I2",
+     "sev": "informativo",
+     "msg": "se descarta el canal alfa y min(alfa) de la entrada no esta calculado: la regla I2 no es evaluable"
+    },
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (1781 de 1781 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": false,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 1781,
+    "formato_real": "AVIF",
+    "w": "1920",
+    "h": "1080",
+    "profundidad": "8",
+    "canales": "srgb  3.0",
+    "alfa": "Undefined",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0099418
+  },
+  {
+   "origen": "gif",
+   "destino": "avif",
+   "semilla": "B",
+   "src": "B.gif",
+   "rc": 0,
+   "ms": 121.6,
+   "n": 1,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (1267 de 1267 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": false,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 1267,
+    "formato_real": "AVIF",
+    "w": "200",
+    "h": "200",
+    "profundidad": "8",
+    "canales": "srgba 4.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0161448
+  },
+  {
+   "origen": "gif",
+   "destino": "bmp",
+   "semilla": "A",
+   "src": "A.gif",
+   "rc": 0,
+   "ms": 77.9,
+   "n": 3,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (347542 de 347542 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": false,
+    "4_pedido": false,
+    "4_alfa": false,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 347542,
+    "formato_real": "BMP",
+    "w": "1920",
+    "h": "1080",
+    "profundidad": "8",
+    "canales": "srgb  4.0",
+    "alfa": "Undefined",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0
+  },
+  {
+   "origen": "gif",
+   "destino": "bmp",
+   "semilla": "B",
+   "src": "B.gif",
+   "rc": 0,
+   "ms": 39.0,
+   "n": 1,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (160138 de 160138 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": false,
+    "4_pedido": false,
+    "4_alfa": false,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 160138,
+    "formato_real": "BMP",
+    "w": "200",
+    "h": "200",
+    "profundidad": "8",
+    "canales": "srgba 4.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0
+  },
+  {
+   "origen": "gif",
+   "destino": "ico",
+   "semilla": "A",
+   "src": "A.gif",
+   "rc": 1,
+   "ms": 90.3,
+   "n": 3,
+   "ok": false,
+   "veredicto": "fallo",
+   "veredicto_salto": "",
+   "hallazgos": [],
+   "cobertura": {},
+   "sobrantes": {},
+   "motivo": "rc=1: width or height exceeds limit",
+   "salida": {
+    "existe": false
+   }
+  },
+  {
+   "origen": "gif",
+   "destino": "ico",
+   "semilla": "B",
+   "src": "B.gif",
+   "rc": 0,
+   "ms": 30.7,
+   "n": 1,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (46686 de 46686 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": false,
+    "4_pedido": false,
+    "4_alfa": false,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 46686,
+    "formato_real": "ICO",
+    "w": "200",
+    "h": "200",
+    "profundidad": "8",
+    "canales": "srgba 4.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0
+  },
+  {
+   "origen": "gif",
+   "destino": "jpg",
+   "semilla": "A",
+   "src": "A.gif",
+   "rc": 0,
+   "ms": 233.4,
+   "n": 3,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "I2",
+     "sev": "informativo",
+     "msg": "se descarta el canal alfa y min(alfa) de la entrada no esta calculado: la regla I2 no es evaluable"
+    },
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (110519 de 110519 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": false,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 110519,
+    "formato_real": "JPEG",
+    "w": "1920",
+    "h": "1080",
+    "profundidad": "8",
+    "canales": "srgb  3.0",
+    "alfa": "Undefined",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.00948424
+  },
+  {
+   "origen": "gif",
+   "destino": "jpg",
+   "semilla": "B",
+   "src": "B.gif",
+   "rc": 0,
+   "ms": 49.9,
+   "n": 1,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "I2",
+     "sev": "informativo",
+     "msg": "se descarta el canal alfa y min(alfa) de la entrada no esta calculado: la regla I2 no es evaluable"
+    },
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (4736 de 4736 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": false,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 4736,
+    "formato_real": "JPEG",
+    "w": "200",
+    "h": "200",
+    "profundidad": "8",
+    "canales": "srgb  3.0",
+    "alfa": "Undefined",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.798614
+  },
+  {
+   "origen": "gif",
+   "destino": "pdf",
+   "semilla": "A",
+   "src": "A.gif",
+   "rc": 0,
+   "ms": 275.5,
+   "n": 3,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (101382 de 101382 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": false,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 101382,
+    "formato_real": "PDF",
+    "w": "922",
+    "h": "518",
+    "profundidad": "8",
+    "canales": "srgba 4.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.294523
+  },
+  {
+   "origen": "gif",
+   "destino": "pdf",
+   "semilla": "B",
+   "src": "B.gif",
+   "rc": 0,
+   "ms": 36.0,
+   "n": 1,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (5546 de 5546 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": false,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 5546,
+    "formato_real": "PDF",
+    "w": "96",
+    "h": "96",
+    "profundidad": "8",
+    "canales": "srgba 4.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.308372
+  },
+  {
+   "origen": "gif",
+   "destino": "png",
+   "semilla": "A",
+   "src": "A.gif",
+   "rc": 0,
+   "ms": 538.6,
+   "n": 3,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "I2",
+     "sev": "informativo",
+     "msg": "se descarta el canal alfa y min(alfa) de la entrada no esta calculado: la regla I2 no es evaluable"
+    },
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (23089 de 23089 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": false,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 23089,
+    "formato_real": "PNG",
+    "w": "1920",
+    "h": "1080",
+    "profundidad": "8",
+    "canales": "srgb  4.0",
+    "alfa": "Undefined",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0
+  },
+  {
+   "origen": "gif",
+   "destino": "png",
+   "semilla": "B",
+   "src": "B.gif",
+   "rc": 0,
+   "ms": 32.7,
+   "n": 1,
+   "ok": false,
+   "veredicto": "fallo",
+   "veredicto_salto": "fallo",
+   "hallazgos": [
+    {
+     "regla": "I4",
+     "sev": "fallo",
+     "msg": "DEGRADACION DE PROFUNDIDAD no pedida ni inevitable"
+    },
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (823 de 823 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": false,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: fallo · I4: DEGRADACION DE PROFUNDIDAD no pedida ni inevitable",
+   "salida": {
+    "existe": false
+   }
+  },
+  {
+   "origen": "gif",
+   "destino": "tif",
+   "semilla": "A",
+   "src": "A.gif",
+   "rc": 0,
+   "ms": 175.0,
+   "n": 3,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "I2",
+     "sev": "informativo",
+     "msg": "se descarta el canal alfa y min(alfa) de la entrada no esta calculado: la regla I2 no es evaluable"
+    },
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (2075422 de 2075422 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": false,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 2075422,
+    "formato_real": "TIFF",
+    "w": "1920",
+    "h": "1080",
+    "profundidad": "8",
+    "canales": "srgb  4.0",
+    "alfa": "Undefined",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0
+  },
+  {
+   "origen": "gif",
+   "destino": "tif",
+   "semilla": "B",
+   "src": "B.gif",
+   "rc": 0,
+   "ms": 41.8,
+   "n": 1,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (160278 de 160278 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": false,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 160278,
+    "formato_real": "TIFF",
+    "w": "200",
+    "h": "200",
+    "profundidad": "8",
+    "canales": "srgba 4.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0
+  },
+  {
+   "origen": "gif",
+   "destino": "webp",
+   "semilla": "A",
+   "src": "A.gif",
+   "rc": 0,
+   "ms": 271.3,
+   "n": 3,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "I2",
+     "sev": "informativo",
+     "msg": "se descarta el canal alfa y min(alfa) de la entrada no esta calculado: la regla I2 no es evaluable"
+    },
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (39710 de 39710 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": false,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 39710,
+    "formato_real": "WEBP",
+    "w": "1920",
+    "h": "1080",
+    "profundidad": "8",
+    "canales": "srgb  3.0",
+    "alfa": "Undefined",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0091238
+  },
+  {
+   "origen": "gif",
+   "destino": "webp",
+   "semilla": "B",
+   "src": "B.gif",
+   "rc": 0,
+   "ms": 35.0,
+   "n": 1,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (1668 de 1668 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": false,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 1668,
+    "formato_real": "WEBP",
+    "w": "200",
+    "h": "200",
+    "profundidad": "8",
+    "canales": "srgba 4.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.00746465
+  },
+  {
+   "origen": "ico",
+   "destino": "avif",
+   "semilla": "A",
+   "src": "C.ico",
+   "rc": 0,
+   "ms": 77.6,
+   "n": 3,
+   "ok": true,
+   "veredicto": "ok",
+   "veredicto_salto": "ok",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (686 de 686 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 686,
+    "formato_real": "AVIF",
+    "w": "256",
+    "h": "144",
+    "profundidad": "8",
+    "canales": "srgba 4.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.00652262
+  },
+  {
+   "origen": "ico",
+   "destino": "avif",
+   "semilla": "B",
+   "src": "B.ico",
+   "rc": 0,
+   "ms": 132.1,
+   "n": 1,
+   "ok": true,
+   "veredicto": "ok",
+   "veredicto_salto": "ok",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (1267 de 1267 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 1267,
+    "formato_real": "AVIF",
+    "w": "200",
+    "h": "200",
+    "profundidad": "8",
+    "canales": "srgba 4.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0161448
+  },
+  {
+   "origen": "ico",
+   "destino": "bmp",
+   "semilla": "A",
+   "src": "C.ico",
+   "rc": 0,
+   "ms": 32.1,
+   "n": 3,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (147594 de 147594 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": false,
+    "4_pedido": false,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 147594,
+    "formato_real": "BMP",
+    "w": "256",
+    "h": "144",
+    "profundidad": "8",
+    "canales": "srgba 4.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0
+  },
+  {
+   "origen": "ico",
+   "destino": "bmp",
+   "semilla": "B",
+   "src": "B.ico",
+   "rc": 0,
+   "ms": 33.6,
+   "n": 1,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (160138 de 160138 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": false,
+    "4_pedido": false,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 160138,
+    "formato_real": "BMP",
+    "w": "200",
+    "h": "200",
+    "profundidad": "8",
+    "canales": "srgba 4.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0
+  },
+  {
+   "origen": "ico",
+   "destino": "gif",
+   "semilla": "A",
+   "src": "C.ico",
+   "rc": 0,
+   "ms": 81.4,
+   "n": 3,
+   "ok": true,
+   "veredicto": "ok",
+   "veredicto_salto": "ok",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (4252 de 4252 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 4252,
+    "formato_real": "GIF",
+    "w": "256",
+    "h": "144",
+    "profundidad": "8",
+    "canales": "srgb  4.0",
+    "alfa": "Undefined",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.00806506
+  },
+  {
+   "origen": "ico",
+   "destino": "gif",
+   "semilla": "B",
+   "src": "B.ico",
+   "rc": 0,
+   "ms": 122.3,
+   "n": 1,
+   "ok": true,
+   "veredicto": "ok",
+   "veredicto_salto": "ok",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (896 de 896 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 896,
+    "formato_real": "GIF",
+    "w": "200",
+    "h": "200",
+    "profundidad": "8",
+    "canales": "srgba 5.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0
+  },
+  {
+   "origen": "ico",
+   "destino": "jpg",
+   "semilla": "A",
+   "src": "C.ico",
+   "rc": 0,
+   "ms": 39.9,
+   "n": 3,
+   "ok": true,
+   "veredicto": "ok",
+   "veredicto_salto": "ok",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (1873 de 1873 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 1873,
+    "formato_real": "JPEG",
+    "w": "256",
+    "h": "144",
+    "profundidad": "8",
+    "canales": "srgb  3.0",
+    "alfa": "Undefined",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.00494395
+  },
+  {
+   "origen": "ico",
+   "destino": "jpg",
+   "semilla": "B",
+   "src": "B.ico",
+   "rc": 0,
+   "ms": 36.7,
+   "n": 1,
+   "ok": true,
+   "veredicto": "ok",
+   "veredicto_salto": "ok",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (4736 de 4736 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 4736,
+    "formato_real": "JPEG",
+    "w": "200",
+    "h": "200",
+    "profundidad": "8",
+    "canales": "srgb  3.0",
+    "alfa": "Undefined",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.798614
+  },
+  {
+   "origen": "ico",
+   "destino": "pdf",
+   "semilla": "A",
+   "src": "C.ico",
+   "rc": 0,
+   "ms": 38.3,
+   "n": 3,
+   "ok": true,
+   "veredicto": "ok",
+   "veredicto_salto": "ok",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (114072 de 114072 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 114072,
+    "formato_real": "PDF",
+    "w": "123",
+    "h": "69",
+    "profundidad": "8",
+    "canales": "srgba 4.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.257549
+  },
+  {
+   "origen": "ico",
+   "destino": "pdf",
+   "semilla": "B",
+   "src": "B.ico",
+   "rc": 0,
+   "ms": 29.5,
+   "n": 1,
+   "ok": true,
+   "veredicto": "ok",
+   "veredicto_salto": "ok",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (23184 de 23184 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 23184,
+    "formato_real": "PDF",
+    "w": "96",
+    "h": "96",
+    "profundidad": "8",
+    "canales": "srgba 4.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.308372
+  },
+  {
+   "origen": "ico",
+   "destino": "png",
+   "semilla": "A",
+   "src": "C.ico",
+   "rc": 0,
+   "ms": 33.6,
+   "n": 3,
+   "ok": true,
+   "veredicto": "ok",
+   "veredicto_salto": "ok",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (2058 de 2058 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 2058,
+    "formato_real": "PNG",
+    "w": "256",
+    "h": "144",
+    "profundidad": "8",
+    "canales": "srgba 4.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0
+  },
+  {
+   "origen": "ico",
+   "destino": "png",
+   "semilla": "B",
+   "src": "B.ico",
+   "rc": 0,
+   "ms": 53.1,
+   "n": 1,
+   "ok": true,
+   "veredicto": "ok",
+   "veredicto_salto": "ok",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (823 de 823 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 823,
+    "formato_real": "PNG",
+    "w": "200",
+    "h": "200",
+    "profundidad": "8",
+    "canales": "srgba 5.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0
+  },
+  {
+   "origen": "ico",
+   "destino": "tif",
+   "semilla": "A",
+   "src": "C.ico",
+   "rc": 0,
+   "ms": 30.4,
+   "n": 3,
+   "ok": true,
+   "veredicto": "ok",
+   "veredicto_salto": "ok",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (147734 de 147734 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 147734,
+    "formato_real": "TIFF",
+    "w": "256",
+    "h": "144",
+    "profundidad": "8",
+    "canales": "srgba 4.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0
+  },
+  {
+   "origen": "ico",
+   "destino": "tif",
+   "semilla": "B",
+   "src": "B.ico",
+   "rc": 0,
+   "ms": 31.0,
+   "n": 1,
+   "ok": true,
+   "veredicto": "ok",
+   "veredicto_salto": "ok",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (160278 de 160278 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 160278,
+    "formato_real": "TIFF",
+    "w": "200",
+    "h": "200",
+    "profundidad": "8",
+    "canales": "srgba 4.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0
+  },
+  {
+   "origen": "ico",
+   "destino": "webp",
+   "semilla": "A",
+   "src": "C.ico",
+   "rc": 0,
+   "ms": 31.4,
+   "n": 3,
+   "ok": true,
+   "veredicto": "ok",
+   "veredicto_salto": "ok",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (616 de 616 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 616,
+    "formato_real": "WEBP",
+    "w": "256",
+    "h": "144",
+    "profundidad": "8",
+    "canales": "srgb  3.0",
+    "alfa": "Undefined",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.00537916
+  },
+  {
+   "origen": "ico",
+   "destino": "webp",
+   "semilla": "B",
+   "src": "B.ico",
+   "rc": 0,
+   "ms": 33.4,
+   "n": 1,
+   "ok": true,
+   "veredicto": "ok",
+   "veredicto_salto": "ok",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (1668 de 1668 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 1668,
+    "formato_real": "WEBP",
+    "w": "200",
+    "h": "200",
+    "profundidad": "8",
+    "canales": "srgba 4.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.00746465
+  },
+  {
+   "origen": "jpg",
+   "destino": "avif",
+   "semilla": "A",
+   "src": "A.jpg",
+   "rc": 0,
+   "ms": 516.2,
+   "n": 3,
+   "ok": true,
+   "veredicto": "ok",
+   "veredicto_salto": "ok",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (1619 de 1619 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 1619,
+    "formato_real": "AVIF",
+    "w": "1920",
+    "h": "1080",
+    "profundidad": "8",
+    "canales": "srgb  3.0",
+    "alfa": "Undefined",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.00533736
+  },
+  {
+   "origen": "jpg",
+   "destino": "avif",
+   "semilla": "B",
+   "src": "B.jpg",
+   "rc": 0,
+   "ms": 78.1,
+   "n": 1,
+   "ok": true,
+   "veredicto": "ok",
+   "veredicto_salto": "ok",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (1000 de 1000 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 1000,
+    "formato_real": "AVIF",
+    "w": "200",
+    "h": "200",
+    "profundidad": "8",
+    "canales": "srgb  3.0",
+    "alfa": "Undefined",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.015857
+  },
+  {
+   "origen": "jpg",
+   "destino": "bmp",
+   "semilla": "A",
+   "src": "A.jpg",
+   "rc": 0,
+   "ms": 86.1,
+   "n": 3,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (6220938 de 6220938 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": false,
+    "4_pedido": false,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 6220938,
+    "formato_real": "BMP",
+    "w": "1920",
+    "h": "1080",
+    "profundidad": "8",
+    "canales": "srgb  3.0",
+    "alfa": "Undefined",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0
+  },
+  {
+   "origen": "jpg",
+   "destino": "bmp",
+   "semilla": "B",
+   "src": "B.jpg",
+   "rc": 0,
+   "ms": 26.7,
+   "n": 1,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (120138 de 120138 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": false,
+    "4_pedido": false,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 120138,
+    "formato_real": "BMP",
+    "w": "200",
+    "h": "200",
+    "profundidad": "8",
+    "canales": "srgb  3.0",
+    "alfa": "Undefined",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0
+  },
+  {
+   "origen": "jpg",
+   "destino": "gif",
+   "semilla": "A",
+   "src": "A.jpg",
+   "rc": 0,
+   "ms": 741.9,
+   "n": 3,
+   "ok": true,
+   "veredicto": "ok",
+   "veredicto_salto": "ok",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (121532 de 121532 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 121532,
+    "formato_real": "GIF",
+    "w": "1920",
+    "h": "1080",
+    "profundidad": "8",
+    "canales": "srgb  4.0",
+    "alfa": "Undefined",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.00647195
+  },
+  {
+   "origen": "jpg",
+   "destino": "gif",
+   "semilla": "B",
+   "src": "B.jpg",
+   "rc": 0,
+   "ms": 74.6,
+   "n": 1,
+   "ok": true,
+   "veredicto": "ok",
+   "veredicto_salto": "ok",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (8571 de 8571 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 8571,
+    "formato_real": "GIF",
+    "w": "200",
+    "h": "200",
+    "profundidad": "8",
+    "canales": "srgb  4.0",
+    "alfa": "Undefined",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0038452
+  },
+  {
+   "origen": "jpg",
+   "destino": "ico",
+   "semilla": "A",
+   "src": "A.jpg",
+   "rc": 1,
+   "ms": 63.8,
+   "n": 3,
+   "ok": false,
+   "veredicto": "fallo",
+   "veredicto_salto": "",
+   "hallazgos": [],
+   "cobertura": {},
+   "sobrantes": {},
+   "motivo": "rc=1: width or height exceeds limit",
+   "salida": {
+    "existe": false
+   }
+  },
+  {
+   "origen": "jpg",
+   "destino": "ico",
+   "semilla": "B",
+   "src": "B.jpg",
+   "rc": 0,
+   "ms": 28.1,
+   "n": 1,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (165662 de 165662 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": false,
+    "4_pedido": false,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 165662,
+    "formato_real": "ICO",
+    "w": "200",
+    "h": "200",
+    "profundidad": "8",
+    "canales": "srgba 4.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0
+  },
+  {
+   "origen": "jpg",
+   "destino": "pdf",
+   "semilla": "A",
+   "src": "A.jpg",
+   "rc": 0,
+   "ms": 215.0,
+   "n": 3,
+   "ok": true,
+   "veredicto": "ok",
+   "veredicto_salto": "ok",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (89863 de 89863 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 89863,
+    "formato_real": "PDF",
+    "w": "922",
+    "h": "518",
+    "profundidad": "8",
+    "canales": "srgba 4.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.300518
+  },
+  {
+   "origen": "jpg",
+   "destino": "pdf",
+   "semilla": "B",
+   "src": "B.jpg",
+   "rc": 0,
+   "ms": 51.4,
+   "n": 1,
+   "ok": true,
+   "veredicto": "ok",
+   "veredicto_salto": "ok",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (6553 de 6553 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 6553,
+    "formato_real": "PDF",
+    "w": "96",
+    "h": "96",
+    "profundidad": "8",
+    "canales": "srgba 4.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.204996
+  },
+  {
+   "origen": "jpg",
+   "destino": "png",
+   "semilla": "A",
+   "src": "A.jpg",
+   "rc": 0,
+   "ms": 336.4,
+   "n": 3,
+   "ok": true,
+   "veredicto": "ok",
+   "veredicto_salto": "ok",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (32622 de 32622 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 32622,
+    "formato_real": "PNG",
+    "w": "1920",
+    "h": "1080",
+    "profundidad": "8",
+    "canales": "srgb  3.0",
+    "alfa": "Undefined",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0
+  },
+  {
+   "origen": "jpg",
+   "destino": "png",
+   "semilla": "B",
+   "src": "B.jpg",
+   "rc": 0,
+   "ms": 35.0,
+   "n": 1,
+   "ok": true,
+   "veredicto": "ok",
+   "veredicto_salto": "ok",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (18427 de 18427 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 18427,
+    "formato_real": "PNG",
+    "w": "200",
+    "h": "200",
+    "profundidad": "8",
+    "canales": "srgb  3.0",
+    "alfa": "Undefined",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0
+  },
+  {
+   "origen": "jpg",
+   "destino": "tif",
+   "semilla": "A",
+   "src": "A.jpg",
+   "rc": 0,
+   "ms": 83.4,
+   "n": 3,
+   "ok": true,
+   "veredicto": "ok",
+   "veredicto_salto": "ok",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (6221120 de 6221120 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 6221120,
+    "formato_real": "TIFF",
+    "w": "1920",
+    "h": "1080",
+    "profundidad": "8",
+    "canales": "srgb  3.0",
+    "alfa": "Undefined",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0
+  },
+  {
+   "origen": "jpg",
+   "destino": "tif",
+   "semilla": "B",
+   "src": "B.jpg",
+   "rc": 0,
+   "ms": 29.7,
+   "n": 1,
+   "ok": true,
+   "veredicto": "ok",
+   "veredicto_salto": "ok",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (120264 de 120264 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 120264,
+    "formato_real": "TIFF",
+    "w": "200",
+    "h": "200",
+    "profundidad": "8",
+    "canales": "srgb  3.0",
+    "alfa": "Undefined",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0
+  },
+  {
+   "origen": "jpg",
+   "destino": "webp",
+   "semilla": "A",
+   "src": "A.jpg",
+   "rc": 0,
+   "ms": 208.1,
+   "n": 3,
+   "ok": true,
+   "veredicto": "ok",
+   "veredicto_salto": "ok",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (14402 de 14402 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 14402,
+    "formato_real": "WEBP",
+    "w": "1920",
+    "h": "1080",
+    "profundidad": "8",
+    "canales": "srgb  3.0",
+    "alfa": "Undefined",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.00413099
+  },
+  {
+   "origen": "jpg",
+   "destino": "webp",
+   "semilla": "B",
+   "src": "B.jpg",
+   "rc": 0,
+   "ms": 142.3,
+   "n": 1,
+   "ok": true,
+   "veredicto": "ok",
+   "veredicto_salto": "ok",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (1886 de 1886 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 1886,
+    "formato_real": "WEBP",
+    "w": "200",
+    "h": "200",
+    "profundidad": "8",
+    "canales": "srgb  3.0",
+    "alfa": "Undefined",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0111387
+  },
+  {
+   "origen": "png",
+   "destino": "bmp",
+   "semilla": "A",
+   "src": "A.png",
+   "rc": 0,
+   "ms": 194.8,
+   "n": 3,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (8294538 de 8294538 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": false,
+    "4_pedido": false,
+    "4_alfa": false,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 8294538,
+    "formato_real": "BMP",
+    "w": "1920",
+    "h": "1080",
+    "profundidad": "8",
+    "canales": "srgba 4.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.000979016
+  },
+  {
+   "origen": "png",
+   "destino": "bmp",
+   "semilla": "B",
+   "src": "B.png",
+   "rc": 0,
+   "ms": 31.9,
+   "n": 1,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (160138 de 160138 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": false,
+    "4_pedido": false,
+    "4_alfa": false,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 160138,
+    "formato_real": "BMP",
+    "w": "200",
+    "h": "200",
+    "profundidad": "8",
+    "canales": "srgba 4.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0
+  },
+  {
+   "origen": "png",
+   "destino": "gif",
+   "semilla": "A",
+   "src": "A.png",
+   "rc": 0,
+   "ms": 888.4,
+   "n": 3,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "I5",
+     "sev": "informativo",
+     "msg": "reduccion de profundidad inevitable en gif (techo 8 bits)"
+    },
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (99945 de 99945 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": false,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 99945,
+    "formato_real": "GIF",
+    "w": "1920",
+    "h": "1080",
+    "profundidad": "8",
+    "canales": "srgb  4.0",
+    "alfa": "Undefined",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.00887602
+  },
+  {
+   "origen": "png",
+   "destino": "gif",
+   "semilla": "B",
+   "src": "B.png",
+   "rc": 0,
+   "ms": 26.8,
+   "n": 1,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (2598 de 2598 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": false,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 2598,
+    "formato_real": "GIF",
+    "w": "200",
+    "h": "200",
+    "profundidad": "8",
+    "canales": "srgba 5.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0600366
+  },
+  {
+   "origen": "png",
+   "destino": "ico",
+   "semilla": "A",
+   "src": "A.png",
+   "rc": 1,
+   "ms": 163.2,
+   "n": 3,
+   "ok": false,
+   "veredicto": "fallo",
+   "veredicto_salto": "",
+   "hallazgos": [],
+   "cobertura": {},
+   "sobrantes": {},
+   "motivo": "rc=1: width or height exceeds limit",
+   "salida": {
+    "existe": false
+   }
+  },
+  {
+   "origen": "png",
+   "destino": "ico",
+   "semilla": "B",
+   "src": "B.png",
+   "rc": 0,
+   "ms": 29.1,
+   "n": 1,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (46686 de 46686 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": false,
+    "4_pedido": false,
+    "4_alfa": false,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 46686,
+    "formato_real": "ICO",
+    "w": "200",
+    "h": "200",
+    "profundidad": "8",
+    "canales": "srgba 4.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0600366
+  },
+  {
+   "origen": "png",
+   "destino": "tif",
+   "semilla": "A",
+   "src": "A.png",
+   "rc": 0,
+   "ms": 193.5,
+   "n": 3,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (16589214 de 16589214 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": false,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 16589214,
+    "formato_real": "TIFF",
+    "w": "1920",
+    "h": "1080",
+    "profundidad": "16",
+    "canales": "srgba 4.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0
+  },
+  {
+   "origen": "png",
+   "destino": "tif",
+   "semilla": "B",
+   "src": "B.png",
+   "rc": 0,
+   "ms": 33.9,
+   "n": 1,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (160290 de 160290 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": false,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 160290,
+    "formato_real": "TIFF",
+    "w": "200",
+    "h": "200",
+    "profundidad": "8",
+    "canales": "srgba 4.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0
+  },
+  {
+   "origen": "svg",
+   "destino": "jpg",
+   "semilla": "A",
+   "src": "svg_A.svg",
+   "rc": 0,
+   "ms": 82.9,
+   "n": 3,
+   "ok": true,
+   "veredicto": "ok",
+   "veredicto_salto": "ok",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (12301 de 12301 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 12301,
+    "formato_real": "JPEG",
+    "w": "480",
+    "h": "240",
+    "profundidad": "8",
+    "canales": "srgb  3.0",
+    "alfa": "Undefined",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0218726
+  },
+  {
+   "origen": "svg",
+   "destino": "jpg",
+   "semilla": "B",
+   "src": "svg_B.svg",
+   "rc": 0,
+   "ms": 71.0,
+   "n": 1,
+   "ok": true,
+   "veredicto": "ok",
+   "veredicto_salto": "ok",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (3843 de 3843 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 3843,
+    "formato_real": "JPEG",
+    "w": "200",
+    "h": "200",
+    "profundidad": "8",
+    "canales": "srgb  3.0",
+    "alfa": "Undefined",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0129682
+  },
+  {
+   "origen": "svg",
+   "destino": "png",
+   "semilla": "A",
+   "src": "svg_A.svg",
+   "rc": 0,
+   "ms": 92.2,
+   "n": 3,
+   "ok": true,
+   "veredicto": "ok",
+   "veredicto_salto": "ok",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (4307 de 4307 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 4307,
+    "formato_real": "PNG",
+    "w": "480",
+    "h": "240",
+    "profundidad": "8",
+    "canales": "srgb  4.0",
+    "alfa": "Undefined",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0
+  },
+  {
+   "origen": "svg",
+   "destino": "png",
+   "semilla": "B",
+   "src": "svg_B.svg",
+   "rc": 0,
+   "ms": 81.2,
+   "n": 1,
+   "ok": true,
+   "veredicto": "ok",
+   "veredicto_salto": "ok",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (2524 de 2524 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 2524,
+    "formato_real": "PNG",
+    "w": "200",
+    "h": "200",
+    "profundidad": "8",
+    "canales": "srgb  4.0",
+    "alfa": "Undefined",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0
+  },
+  {
+   "origen": "svg",
+   "destino": "webp",
+   "semilla": "A",
+   "src": "svg_A.svg",
+   "rc": 0,
+   "ms": 87.7,
+   "n": 3,
+   "ok": true,
+   "veredicto": "ok",
+   "veredicto_salto": "ok",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (6746 de 6746 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 6746,
+    "formato_real": "WEBP",
+    "w": "480",
+    "h": "240",
+    "profundidad": "8",
+    "canales": "srgb  3.0",
+    "alfa": "Undefined",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0209199
+  },
+  {
+   "origen": "svg",
+   "destino": "webp",
+   "semilla": "B",
+   "src": "svg_B.svg",
+   "rc": 0,
+   "ms": 69.6,
+   "n": 1,
+   "ok": true,
+   "veredicto": "ok",
+   "veredicto_salto": "ok",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (1724 de 1724 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 1724,
+    "formato_real": "WEBP",
+    "w": "200",
+    "h": "200",
+    "profundidad": "8",
+    "canales": "srgb  3.0",
+    "alfa": "Undefined",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.011998
+  },
+  {
+   "origen": "tif",
+   "destino": "avif",
+   "semilla": "A",
+   "src": "A.tif",
+   "rc": 0,
+   "ms": 939.2,
+   "n": 3,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "I5",
+     "sev": "informativo",
+     "msg": "reduccion de profundidad inevitable en avif (techo 12 bits)"
+    },
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (1595 de 1595 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": false,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 1595,
+    "formato_real": "AVIF",
+    "w": "1920",
+    "h": "1080",
+    "profundidad": "16",
+    "canales": "srgba 4.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.00400776
+  },
+  {
+   "origen": "tif",
+   "destino": "avif",
+   "semilla": "B",
+   "src": "B.tif",
+   "rc": 0,
+   "ms": 134.0,
+   "n": 1,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (1670 de 1670 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": false,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 1670,
+    "formato_real": "AVIF",
+    "w": "200",
+    "h": "200",
+    "profundidad": "8",
+    "canales": "srgba 4.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0102382
+  },
+  {
+   "origen": "tif",
+   "destino": "bmp",
+   "semilla": "A",
+   "src": "A.tif",
+   "rc": 0,
+   "ms": 292.2,
+   "n": 3,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (8294538 de 8294538 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": false,
+    "4_pedido": false,
+    "4_alfa": false,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 8294538,
+    "formato_real": "BMP",
+    "w": "1920",
+    "h": "1080",
+    "profundidad": "8",
+    "canales": "srgba 4.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.000979016
+  },
+  {
+   "origen": "tif",
+   "destino": "bmp",
+   "semilla": "B",
+   "src": "B.tif",
+   "rc": 0,
+   "ms": 193.6,
+   "n": 1,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (160138 de 160138 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": false,
+    "4_pedido": false,
+    "4_alfa": false,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 160138,
+    "formato_real": "BMP",
+    "w": "200",
+    "h": "200",
+    "profundidad": "8",
+    "canales": "srgba 4.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0
+  },
+  {
+   "origen": "tif",
+   "destino": "gif",
+   "semilla": "A",
+   "src": "A.tif",
+   "rc": 0,
+   "ms": 877.8,
+   "n": 3,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "I5",
+     "sev": "informativo",
+     "msg": "reduccion de profundidad inevitable en gif (techo 8 bits)"
+    },
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (99945 de 99945 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": false,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 99945,
+    "formato_real": "GIF",
+    "w": "1920",
+    "h": "1080",
+    "profundidad": "8",
+    "canales": "srgb  4.0",
+    "alfa": "Undefined",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.00887602
+  },
+  {
+   "origen": "tif",
+   "destino": "gif",
+   "semilla": "B",
+   "src": "B.tif",
+   "rc": 0,
+   "ms": 183.7,
+   "n": 1,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (895 de 895 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": false,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 895,
+    "formato_real": "GIF",
+    "w": "200",
+    "h": "200",
+    "profundidad": "8",
+    "canales": "srgba 5.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0312498
+  },
+  {
+   "origen": "tif",
+   "destino": "ico",
+   "semilla": "A",
+   "src": "A.tif",
+   "rc": 1,
+   "ms": 137.5,
+   "n": 3,
+   "ok": false,
+   "veredicto": "fallo",
+   "veredicto_salto": "",
+   "hallazgos": [],
+   "cobertura": {},
+   "sobrantes": {},
+   "motivo": "rc=1: width or height exceeds limit",
+   "salida": {
+    "existe": false
+   }
+  },
+  {
+   "origen": "tif",
+   "destino": "ico",
+   "semilla": "B",
+   "src": "B.tif",
+   "rc": 0,
+   "ms": 32.3,
+   "n": 1,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (165662 de 165662 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": false,
+    "4_pedido": false,
+    "4_alfa": false,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 165662,
+    "formato_real": "ICO",
+    "w": "200",
+    "h": "200",
+    "profundidad": "8",
+    "canales": "srgba 4.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0
+  },
+  {
+   "origen": "tif",
+   "destino": "jpg",
+   "semilla": "A",
+   "src": "A.tif",
+   "rc": 0,
+   "ms": 236.6,
+   "n": 3,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "I5",
+     "sev": "informativo",
+     "msg": "reduccion de profundidad inevitable en jpg (techo 8 bits)"
+    },
+    {
+     "regla": "I2",
+     "sev": "informativo",
+     "msg": "se descarta el canal alfa y min(alfa) de la entrada no esta calculado: la regla I2 no es evaluable"
+    },
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (40963 de 40963 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": false,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 40963,
+    "formato_real": "JPEG",
+    "w": "1920",
+    "h": "1080",
+    "profundidad": "8",
+    "canales": "srgb  3.0",
+    "alfa": "Undefined",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.00317907
+  },
+  {
+   "origen": "tif",
+   "destino": "jpg",
+   "semilla": "B",
+   "src": "B.tif",
+   "rc": 0,
+   "ms": 34.8,
+   "n": 1,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "I2",
+     "sev": "informativo",
+     "msg": "se descarta el canal alfa y min(alfa) de la entrada no esta calculado: la regla I2 no es evaluable"
+    },
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (4389 de 4389 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": false,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 4389,
+    "formato_real": "JPEG",
+    "w": "200",
+    "h": "200",
+    "profundidad": "8",
+    "canales": "srgb  3.0",
+    "alfa": "Undefined",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.801747
+  },
+  {
+   "origen": "tif",
+   "destino": "pdf",
+   "semilla": "A",
+   "src": "A.tif",
+   "rc": 0,
+   "ms": 209.6,
+   "n": 3,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (17131 de 17131 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": false,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 17131,
+    "formato_real": "PDF",
+    "w": "922",
+    "h": "518",
+    "profundidad": "8",
+    "canales": "srgba 4.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.260906
+  },
+  {
+   "origen": "tif",
+   "destino": "pdf",
+   "semilla": "B",
+   "src": "B.tif",
+   "rc": 0,
+   "ms": 34.3,
+   "n": 1,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (4699 de 4699 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": false,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 4699,
+    "formato_real": "PDF",
+    "w": "96",
+    "h": "96",
+    "profundidad": "8",
+    "canales": "srgba 4.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.293387
+  },
+  {
+   "origen": "tif",
+   "destino": "webp",
+   "semilla": "A",
+   "src": "A.tif",
+   "rc": 0,
+   "ms": 306.8,
+   "n": 3,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "I5",
+     "sev": "informativo",
+     "msg": "reduccion de profundidad inevitable en webp (techo 8 bits)"
+    },
+    {
+     "regla": "I2",
+     "sev": "informativo",
+     "msg": "se descarta el canal alfa y min(alfa) de la entrada no esta calculado: la regla I2 no es evaluable"
+    },
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (13516 de 13516 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": false,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 13516,
+    "formato_real": "WEBP",
+    "w": "1920",
+    "h": "1080",
+    "profundidad": "8",
+    "canales": "srgb  3.0",
+    "alfa": "Undefined",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.00318533
+  },
+  {
+   "origen": "tif",
+   "destino": "webp",
+   "semilla": "B",
+   "src": "B.tif",
+   "rc": 0,
+   "ms": 37.4,
+   "n": 1,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (2496 de 2496 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": false,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 2496,
+    "formato_real": "WEBP",
+    "w": "200",
+    "h": "200",
+    "profundidad": "8",
+    "canales": "srgba 4.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.00554148
+  },
+  {
+   "origen": "webp",
+   "destino": "avif",
+   "semilla": "A",
+   "src": "A.webp",
+   "rc": 0,
+   "ms": 579.1,
+   "n": 3,
+   "ok": true,
+   "veredicto": "ok",
+   "veredicto_salto": "ok",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (1656 de 1656 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 1656,
+    "formato_real": "AVIF",
+    "w": "1920",
+    "h": "1080",
+    "profundidad": "8",
+    "canales": "srgb  3.0",
+    "alfa": "Undefined",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.00557427
+  },
+  {
+   "origen": "webp",
+   "destino": "avif",
+   "semilla": "B",
+   "src": "B.webp",
+   "rc": 0,
+   "ms": 123.9,
+   "n": 1,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (1670 de 1670 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": false,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 1670,
+    "formato_real": "AVIF",
+    "w": "200",
+    "h": "200",
+    "profundidad": "8",
+    "canales": "srgba 4.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0102382
+  },
+  {
+   "origen": "webp",
+   "destino": "bmp",
+   "semilla": "A",
+   "src": "A.webp",
+   "rc": 0,
+   "ms": 87.6,
+   "n": 3,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (6220938 de 6220938 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": false,
+    "4_pedido": false,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 6220938,
+    "formato_real": "BMP",
+    "w": "1920",
+    "h": "1080",
+    "profundidad": "8",
+    "canales": "srgb  3.0",
+    "alfa": "Undefined",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0
+  },
+  {
+   "origen": "webp",
+   "destino": "bmp",
+   "semilla": "B",
+   "src": "B.webp",
+   "rc": 0,
+   "ms": 140.3,
+   "n": 1,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (160138 de 160138 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": false,
+    "4_pedido": false,
+    "4_alfa": false,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 160138,
+    "formato_real": "BMP",
+    "w": "200",
+    "h": "200",
+    "profundidad": "8",
+    "canales": "srgba 4.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0
+  },
+  {
+   "origen": "webp",
+   "destino": "gif",
+   "semilla": "A",
+   "src": "A.webp",
+   "rc": 0,
+   "ms": 771.3,
+   "n": 3,
+   "ok": true,
+   "veredicto": "ok",
+   "veredicto_salto": "ok",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (159516 de 159516 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 159516,
+    "formato_real": "GIF",
+    "w": "1920",
+    "h": "1080",
+    "profundidad": "8",
+    "canales": "srgb  4.0",
+    "alfa": "Undefined",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.00622871
+  },
+  {
+   "origen": "webp",
+   "destino": "gif",
+   "semilla": "B",
+   "src": "B.webp",
+   "rc": 0,
+   "ms": 74.2,
+   "n": 1,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (895 de 895 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": false,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 895,
+    "formato_real": "GIF",
+    "w": "200",
+    "h": "200",
+    "profundidad": "8",
+    "canales": "srgba 5.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0312498
+  },
+  {
+   "origen": "webp",
+   "destino": "ico",
+   "semilla": "A",
+   "src": "A.webp",
+   "rc": 1,
+   "ms": 69.4,
+   "n": 3,
+   "ok": false,
+   "veredicto": "fallo",
+   "veredicto_salto": "",
+   "hallazgos": [],
+   "cobertura": {},
+   "sobrantes": {},
+   "motivo": "rc=1: width or height exceeds limit",
+   "salida": {
+    "existe": false
+   }
+  },
+  {
+   "origen": "webp",
+   "destino": "ico",
+   "semilla": "B",
+   "src": "B.webp",
+   "rc": 0,
+   "ms": 27.1,
+   "n": 1,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (165662 de 165662 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": false,
+    "4_pedido": false,
+    "4_alfa": false,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 165662,
+    "formato_real": "ICO",
+    "w": "200",
+    "h": "200",
+    "profundidad": "8",
+    "canales": "srgba 4.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0
+  },
+  {
+   "origen": "webp",
+   "destino": "jpg",
+   "semilla": "A",
+   "src": "A.webp",
+   "rc": 0,
+   "ms": 177.8,
+   "n": 3,
+   "ok": true,
+   "veredicto": "ok",
+   "veredicto_salto": "ok",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (42748 de 42748 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 42748,
+    "formato_real": "JPEG",
+    "w": "1920",
+    "h": "1080",
+    "profundidad": "8",
+    "canales": "srgb  3.0",
+    "alfa": "Undefined",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.00379432
+  },
+  {
+   "origen": "webp",
+   "destino": "jpg",
+   "semilla": "B",
+   "src": "B.webp",
+   "rc": 0,
+   "ms": 32.4,
+   "n": 1,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "I2",
+     "sev": "informativo",
+     "msg": "se descarta el canal alfa y min(alfa) de la entrada no esta calculado: la regla I2 no es evaluable"
+    },
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (4389 de 4389 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": false,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 4389,
+    "formato_real": "JPEG",
+    "w": "200",
+    "h": "200",
+    "profundidad": "8",
+    "canales": "srgb  3.0",
+    "alfa": "Undefined",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.801747
+  },
+  {
+   "origen": "webp",
+   "destino": "pdf",
+   "semilla": "A",
+   "src": "A.webp",
+   "rc": 0,
+   "ms": 220.3,
+   "n": 3,
+   "ok": true,
+   "veredicto": "ok",
+   "veredicto_salto": "ok",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (6254719 de 6254719 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 6254719,
+    "formato_real": "PDF",
+    "w": "922",
+    "h": "518",
+    "profundidad": "8",
+    "canales": "srgba 4.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.301063
+  },
+  {
+   "origen": "webp",
+   "destino": "pdf",
+   "semilla": "B",
+   "src": "B.webp",
+   "rc": 0,
+   "ms": 29.8,
+   "n": 1,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (24525 de 24525 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": false,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 24525,
+    "formato_real": "PDF",
+    "w": "96",
+    "h": "96",
+    "profundidad": "8",
+    "canales": "srgba 4.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.293387
+  },
+  {
+   "origen": "webp",
+   "destino": "png",
+   "semilla": "A",
+   "src": "A.webp",
+   "rc": 0,
+   "ms": 331.4,
+   "n": 3,
+   "ok": true,
+   "veredicto": "ok",
+   "veredicto_salto": "ok",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (64232 de 64232 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 64232,
+    "formato_real": "PNG",
+    "w": "1920",
+    "h": "1080",
+    "profundidad": "8",
+    "canales": "srgb  3.0",
+    "alfa": "Undefined",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0
+  },
+  {
+   "origen": "webp",
+   "destino": "png",
+   "semilla": "B",
+   "src": "B.webp",
+   "rc": 0,
+   "ms": 32.3,
+   "n": 1,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (2760 de 2760 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": false,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 2760,
+    "formato_real": "PNG",
+    "w": "200",
+    "h": "200",
+    "profundidad": "8",
+    "canales": "srgba 5.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0
+  },
+  {
+   "origen": "webp",
+   "destino": "tif",
+   "semilla": "A",
+   "src": "A.webp",
+   "rc": 0,
+   "ms": 100.7,
+   "n": 3,
+   "ok": true,
+   "veredicto": "ok",
+   "veredicto_salto": "ok",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (6221120 de 6221120 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 6221120,
+    "formato_real": "TIFF",
+    "w": "1920",
+    "h": "1080",
+    "profundidad": "8",
+    "canales": "srgb  3.0",
+    "alfa": "Undefined",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0
+  },
+  {
+   "origen": "webp",
+   "destino": "tif",
+   "semilla": "B",
+   "src": "B.webp",
+   "rc": 0,
+   "ms": 30.7,
+   "n": 1,
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "veredicto_salto": "ok_parcial",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (160278 de 160278 B)"
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": false,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo": "rc=0: ",
+   "salida": {
+    "existe": true,
+    "bytes": 160278,
+    "formato_real": "TIFF",
+    "w": "200",
+    "h": "200",
+    "profundidad": "8",
+    "canales": "srgba 4.0",
+    "alfa": "Blend",
+    "fotogramas": 1
+   },
+   "rmse_vs_origen": 0.0
+  }
+ ]
+}

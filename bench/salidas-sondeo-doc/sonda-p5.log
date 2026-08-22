@@ -1,0 +1,19 @@
+Q01  doc_libreoffice    csv→xlsx  rc=0    14909 ms      5790 B car=     0 cent=n contrato=ok_parcial sobra=0
+Q02  doc_pandoc          md→pptx  rc=0     8589 ms     28170 B car=     0 cent=n contrato=ok_parcial sobra=0
+Q03  doc_libreoffice   xlsx→pdf   rc=0     5006 ms     27403 B car=   119 cent=S contrato=ok         sobra=0
+Q04  doc_libreoffice   xlsx→csv   rc=0     6215 ms       109 B car=   108 cent=S contrato=ok         sobra=0
+Q05  doc_libreoffice   xlsx→html  rc=0     5667 ms      2902 B car=   464 cent=S contrato=ok         sobra=0
+Q06  doc_libreoffice    csv→pdf   rc=0    19663 ms     20944 B car=   119 cent=S contrato=ok         sobra=0
+Q07  doc_libreoffice   pptx→pdf   rc=0     6259 ms     24534 B car=   456 cent=S contrato=ok         sobra=0
+Q08  doc_libreoffice   pptx→odp   rc=0     8126 ms     32669 B car=     0 cent=n contrato=ok_parcial sobra=0
+Q09  doc_libreoffice   pptx→png   rc=0     4446 ms     50462 B car=     0 cent=n contrato=ok         sobra=0
+Q10  doc_libreoffice    svg→pdf   rc=0     3261 ms     12500 B car=    44 cent=S contrato=ok         sobra=0
+Q11  doc_libreoffice    svg→png   rc=0     4165 ms      9081 B car=     0 cent=n contrato=ok         sobra=0
+Q12  doc_pandoc          md→tex   rc=0     1989 ms      2748 B car=  2699 cent=S contrato=fallo      sobra=0
+Q13  doc_pandoc        docx→tex   rc=0     1710 ms      2698 B car=  2649 cent=S contrato=fallo      sobra=0
+Q14  doc_pandoc         tex→docx  rc=0     3868 ms     10771 B car=   394 cent=S contrato=ok_parcial sobra=0
+Q15  doc_pandoc         tex→html  rc=0     4794 ms      4651 B car=  2939 cent=S contrato=ok         sobra=0
+Q16  doc_pandoc         tex→pdf   rc=0    44598 ms      9754 B car=   268 cent=S contrato=fallo      sobra=0
+Q17  doc_pandoc        pptx→md    rc=0     3357 ms       549 B car=   499 cent=S contrato=fallo      sobra=0
+
+total 148.8 s

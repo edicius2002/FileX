@@ -286,9 +286,11 @@ class FFmpeg(Motor):
         return out
 
     def orden(self, entrada: str, salida: str, pedido: dict,
-              *, timeout: float | None = None) -> list[str]:
+              *, timeout: float | None = None):
         d = formatos.normaliza(os.path.splitext(salida)[1])
         fo = formatos.formato(d)
+        #: Lo que este motor decide por su cuenta y el contrato tiene que saber.
+        decidido: dict = {}
         # `-y` y `-nostdin` son HIGIENE. La defensa es `stdin=DEVNULL`, en
         # `invocacion.py`: MEDIDO que `-y` es necesario y NO suficiente.
         argv = [self.binario, "-hide_banner", "-nostdin", "-y",
@@ -297,6 +299,13 @@ class FFmpeg(Motor):
         solo_audio = fo is not None and fo.categoria == "audio"
         if solo_audio:
             argv.append("-vn")
+        elif d == "gif":
+            # `-map 0` y el muxer `gif` se destruyen mutuamente: `gif` no tiene
+            # códec de audio y arrastrar las pistas de la entrada aborta con
+            # AVERROR_ENCODER_NOT_FOUND. MEDIDO: 5 de 5 aristas vídeo→gif rotas,
+            # **`mp4→gif` incluida** — que el patrón oro daba por buena **solo
+            # porque `trivial.mp4` no tiene audio** (`bench/sondeo-ffmpeg.md` §5).
+            argv += ["-map", "0:v:0"]
         else:
             # -map 0 EXPLÍCITO. Sin esto ffmpeg descarta la segunda pista de
             # audio en silencio, y el contrato lo detecta después: mejor no
@@ -310,6 +319,11 @@ class FFmpeg(Motor):
             # MENOS que el bueno, así que «más pequeño» no sirve de criterio.
             fps = pedido.get("fps", 12)
             ancho = pedido.get("ancho", 320)
+            # El motor ESCALA por su cuenta y tiene que decirlo, o el punto 4 lo
+            # llama «redimensionado no solicitado» — y con razón, porque nadie
+            # lo pidió. MEDIDO (`bench/sondeo-ffmpeg.md` §5): con `-map 0:v:0`
+            # se recuperan 2 de 5 aristas; **declarar la escala recupera las 5**.
+            decidido["ancho"] = ancho
             argv += ["-vf",
                      f"fps={fps},scale={ancho}:-1:flags=lanczos,split[a][b];"
                      f"[a]palettegen=max_colors=256[p];[b][p]paletteuse=dither=bayer",
@@ -338,7 +352,7 @@ class FFmpeg(Motor):
             argv += ["-f", muxer]
 
         argv.append(salida)
-        return argv
+        return (argv, decidido) if decidido else argv
 
 
 # ----------------------------------------------------------------- registro

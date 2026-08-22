@@ -24,6 +24,22 @@ from .grafo import Arista, Camino, Decision, Grafo
 from .trabajo import DirectorioDeTrabajo
 
 
+#: Las claves del pedido que deciden PÍXELES, y por tanto tienen que actuar en
+#: el salto que los crea, no en el último — MEDIDO (`bench/sondeo-imagemagick.md`
+#: §6.1): `--params '{"dpi":400}'` sobre `svg→pdf` daba una página de 3,0×1,5 cm
+#: con los mismos 480×240 píxeles **y contrato 6/6 en los dos saltos**, porque el
+#: `dpi` llegaba al `png→pdf` cuando el rasterizado ya había ocurrido.
+#:
+#: Lo que NO se propaga son las decisiones de CODIFICACIÓN —calidad, códec,
+#: bitrate, sin_perdida—: esas pertenecen al fichero final, y aplicarlas a un
+#: intermedio es recodificar dos veces.
+CLAVES_DE_PIXEL = ("dpi", "ancho", "alto", "profundidad_bits", "fondo")
+
+
+def _pedido_intermedio(pedido: dict) -> dict:
+    return {k: v for k, v in (pedido or {}).items() if k in CLAVES_DE_PIXEL}
+
+
 @dataclass
 class Salto:
     arista: Arista
@@ -198,8 +214,18 @@ class FileX:
         try:
             # El motor recibe el tope de QUIEN LLAMA: el de aquí solo alcanza
             # al cliente, y hay motores cuyo trabajo real vive en otro proceso.
-            argv = motor.orden(entrada, dentro, pedido if ultimo else {},
+            argv = motor.orden(entrada, dentro,
+                               pedido if ultimo else _pedido_intermedio(pedido),
                                timeout=timeout)
+            # `orden()` puede devolver `(argv, decidido)`: lo que el motor eligio
+            # por su cuenta y el contrato tiene que saber. Es aditivo — quien
+            # devuelva solo `argv` sigue funcionando — y evita la unica
+            # alternativa, que era duplicar la logica de decision en un segundo
+            # metodo y verla divergir.
+            declarado = {}
+            if isinstance(argv, tuple):
+                argv, declarado = argv
+                declarado = dict(declarado or {})
         except Exception as e:
             s.motivo = f"no se pudo construir la orden: {e}"
             return s
@@ -224,8 +250,24 @@ class FileX:
         censo = t.censo()
         s.sobrantes = t.sobrantes([nombre])
 
-        res = contrato.verificar(dentro, entrada, dict(pedido, destino=arista.destino),
-                                 censo)
+        # Lo que el MOTOR decide y nadie pidio tiene que llegar al contrato, o
+        # el punto 4 —escrito para atrapar a `image-worker-mcp`— atrapa a FileX.
+        # Tres agentes dieron con la misma forma el mismo dia: el motor y el
+        # contrato no compartian el `pedido`.
+        ped = dict(pedido, destino=arista.destino)
+        _f = formatos.formato(arista.destino)
+        if _f is not None and _f.categoria == "audio" and not ped.get("solo_audio"):
+            # `orden()` pone `-vn` por la categoria del destino, y el contrato
+            # exigia que un .wav extraido de un .mp4 conservara el video. MEDIDO
+            # (`bench/sondeo-ffmpeg.md` 3): 13 aristas video->audio pasaban a
+            # `V7 fallo` por no declararlo. Los DOS sitios hacen falta: el punto
+            # 2 mira `solo_audio` o `params.solo_audio`, y el punto 4 solo mira
+            # `params`.
+            ped["solo_audio"] = True
+            ped["params"] = dict(ped.get("params") or {}, solo_audio=True)
+        ped["params"] = dict(ped.get("params") or {}, **declarado)
+        ped.update(declarado)
+        res = contrato.verificar(dentro, entrada, ped, censo)
         s.veredicto = res.get("veredicto", "?")
         s.hallazgos = res.get("hallazgos", [])
         s.cobertura = res.get("cobertura", {})

@@ -1,0 +1,936 @@
+{
+ "casos": [
+  {
+   "id": "S01",
+   "motor": "doc_libreoffice",
+   "origen": "rtf",
+   "destino": "odt",
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "motivo": "",
+   "rc": 0,
+   "ms": 5417.9,
+   "contrato": "ok_parcial",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": false,
+    "4_pedido": false,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (14176 de 14176 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 14176,
+   "sha256": "a27bee30320014e9a12de597781226adf05bdc239bc6984724e2e6ec8e9ec453",
+   "caracteres": 1769,
+   "centinela": true,
+   "tabla_ax1": true,
+   "sonda_texto_ciega": false,
+   "espia": {},
+   "build": "doc_libreoffice 29.4.3 · filex-c13@6d359bad483e"
+  },
+  {
+   "id": "S02",
+   "motor": "doc_libreoffice",
+   "origen": "rtf",
+   "destino": "docx",
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "motivo": "",
+   "rc": 0,
+   "ms": 3467.8,
+   "contrato": "ok_parcial",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": false,
+    "4_pedido": false,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (5293 de 5293 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 5293,
+   "sha256": "7a1e4a2fc7fc4808e3205ba1ec91f08d616be64e8ffde82c0c09ded3974aaac0",
+   "caracteres": 542,
+   "centinela": true,
+   "tabla_ax1": true,
+   "sonda_texto_ciega": false,
+   "espia": {},
+   "build": "doc_libreoffice 29.4.3 · filex-c13@6d359bad483e"
+  },
+  {
+   "id": "S03",
+   "motor": "doc_libreoffice",
+   "origen": "html",
+   "destino": "odt",
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "motivo": "",
+   "rc": 0,
+   "ms": 2380.6,
+   "contrato": "ok_parcial",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": false,
+    "4_pedido": false,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (8125 de 8125 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 8125,
+   "sha256": "0f1e293b951d89df6a438e2f2196fbbb0742e5e7e29d992aa5b0b2711f3bd4ab",
+   "caracteres": 1194,
+   "centinela": true,
+   "tabla_ax1": true,
+   "sonda_texto_ciega": false,
+   "espia": {},
+   "build": "doc_libreoffice 29.4.3 · filex-c13@6d359bad483e"
+  },
+  {
+   "id": "S04",
+   "motor": "doc_libreoffice",
+   "origen": "txt",
+   "destino": "odt",
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "motivo": "",
+   "rc": 0,
+   "ms": 4017.8,
+   "contrato": "ok_parcial",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": false,
+    "4_pedido": false,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (12125 de 12125 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 12125,
+   "sha256": "9afa110b714df6d26aa31a7ca153823c90473deb574d7eea2ceaf9dbcc2716b2",
+   "caracteres": 1110,
+   "centinela": true,
+   "tabla_ax1": false,
+   "sonda_texto_ciega": false,
+   "espia": {},
+   "build": "doc_libreoffice 29.4.3 · filex-c13@6d359bad483e"
+  },
+  {
+   "id": "S05",
+   "motor": "doc_libreoffice",
+   "origen": "odt",
+   "destino": "html",
+   "ok": true,
+   "veredicto": "ok",
+   "motivo": "",
+   "rc": 0,
+   "ms": 10443.4,
+   "contrato": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (2476 de 2476 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 2476,
+   "sha256": "a9e64ee428e3c21e6898265973189aca6425c499a121d1020588cc3336d255c2",
+   "caracteres": 895,
+   "centinela": true,
+   "tabla_ax1": true,
+   "sonda_texto_ciega": false,
+   "espia": {},
+   "build": "doc_libreoffice 29.4.3 · filex-c13@6d359bad483e"
+  },
+  {
+   "id": "S06",
+   "motor": "doc_libreoffice",
+   "origen": "docx",
+   "destino": "rtf",
+   "ok": true,
+   "veredicto": "ok",
+   "motivo": "",
+   "rc": 0,
+   "ms": 4955.7,
+   "contrato": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (8213 de 8213 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 8213,
+   "sha256": "6625c6c16010f425ff6637d21546065081f39643392f697b57d1555a54190f79",
+   "caracteres": 8213,
+   "centinela": true,
+   "tabla_ax1": true,
+   "sonda_texto_ciega": false,
+   "espia": {},
+   "build": "doc_libreoffice 29.4.3 · filex-c13@6d359bad483e"
+  },
+  {
+   "id": "S07",
+   "motor": "doc_pandoc",
+   "origen": "html",
+   "destino": "epub",
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "motivo": "",
+   "rc": 0,
+   "ms": 5869.1,
+   "contrato": "ok_parcial",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": false,
+    "4_pedido": false,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (5286 de 5286 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 5286,
+   "sha256": "b75ab90bc831e8907b4670873998ba7b597fe9f749e9a324863eee0b84ec5d2d",
+   "caracteres": 554,
+   "centinela": true,
+   "tabla_ax1": true,
+   "sonda_texto_ciega": false,
+   "espia": {},
+   "build": "doc_pandoc 29.4.3 · filex-c13@6d359bad483e"
+  },
+  {
+   "id": "S08",
+   "motor": "doc_pandoc",
+   "origen": "html",
+   "destino": "odt",
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "motivo": "",
+   "rc": 0,
+   "ms": 1149.9,
+   "contrato": "ok_parcial",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": false,
+    "4_pedido": false,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (7286 de 7286 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 7286,
+   "sha256": "727c7a05f6b8edd6c4f7a16ef136e695450f930f849519dd30f0087915c15256",
+   "caracteres": 543,
+   "centinela": true,
+   "tabla_ax1": true,
+   "sonda_texto_ciega": false,
+   "espia": {},
+   "build": "doc_pandoc 29.4.3 · filex-c13@6d359bad483e"
+  },
+  {
+   "id": "S09",
+   "motor": "doc_pandoc",
+   "origen": "html",
+   "destino": "rtf",
+   "ok": true,
+   "veredicto": "ok",
+   "motivo": "",
+   "rc": 0,
+   "ms": 1044.4,
+   "contrato": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (1756 de 1756 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 1756,
+   "sha256": "a89e37f5d3731e7d1197188a1141d5606d2c4bda8b5dbec7a78a59edb7a5df8c",
+   "caracteres": 1754,
+   "centinela": true,
+   "tabla_ax1": true,
+   "sonda_texto_ciega": false,
+   "espia": {},
+   "build": "doc_pandoc 29.4.3 · filex-c13@6d359bad483e"
+  },
+  {
+   "id": "S10",
+   "motor": "doc_pandoc",
+   "origen": "docx",
+   "destino": "odt",
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "motivo": "",
+   "rc": 0,
+   "ms": 3453.7,
+   "contrato": "ok_parcial",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": false,
+    "4_pedido": false,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (7203 de 7203 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 7203,
+   "sha256": "907591cc1fed3358bacc41aaa6b1c5ef3fb4cdd57a9156c1204dd2632661c7e8",
+   "caracteres": 515,
+   "centinela": true,
+   "tabla_ax1": true,
+   "sonda_texto_ciega": false,
+   "espia": {},
+   "build": "doc_pandoc 29.4.3 · filex-c13@6d359bad483e"
+  },
+  {
+   "id": "S11",
+   "motor": "doc_pandoc",
+   "origen": "epub",
+   "destino": "docx",
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "motivo": "",
+   "rc": 0,
+   "ms": 1680.2,
+   "contrato": "ok_parcial",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": false,
+    "4_pedido": false,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (10993 de 10993 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 10993,
+   "sha256": "8e41d4fcd143c1f4444ccd434f64fabff9325dbc163fdd4c136bca489d393fad",
+   "caracteres": 635,
+   "centinela": true,
+   "tabla_ax1": true,
+   "sonda_texto_ciega": false,
+   "espia": {},
+   "build": "doc_pandoc 29.4.3 · filex-c13@6d359bad483e"
+  },
+  {
+   "id": "S12",
+   "motor": "doc_pandoc",
+   "origen": "epub",
+   "destino": "txt",
+   "ok": false,
+   "veredicto": "fallo",
+   "motivo": "fallo · D2: numero de campos no constante",
+   "rc": 0,
+   "ms": 938.2,
+   "contrato": "fallo",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "fallo · D2: numero de campos no constante",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "D2",
+     "sev": "fallo",
+     "msg": "numero de campos no constante"
+    },
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (566 de 566 B)"
+    }
+   ],
+   "recogida": false,
+   "bytes": 566,
+   "sha256": "9b4bb779f5b8e7c658683b525a6917a31d74d6a0ae2a1b667fd3bccdc560c2ac",
+   "caracteres": 514,
+   "centinela": true,
+   "tabla_ax1": true,
+   "sonda_texto_ciega": false,
+   "espia": {
+    "salida.txt": 566
+   },
+   "build": "doc_pandoc 29.4.3 · filex-c13@6d359bad483e"
+  },
+  {
+   "id": "S13",
+   "motor": "doc_pandoc",
+   "origen": "rtf",
+   "destino": "md",
+   "ok": false,
+   "veredicto": "fallo",
+   "motivo": "fallo · D2: numero de campos no constante",
+   "rc": 0,
+   "ms": 877.7,
+   "contrato": "fallo",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "fallo · D2: numero de campos no constante",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "D2",
+     "sev": "fallo",
+     "msg": "numero de campos no constante"
+    },
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (471 de 471 B)"
+    }
+   ],
+   "recogida": false,
+   "bytes": 471,
+   "sha256": "b7f1b3f7c07d311650cf613a2f6af4eb081dfbcfe1b3bd3e8bf41ac25633364e",
+   "caracteres": 466,
+   "centinela": true,
+   "tabla_ax1": true,
+   "sonda_texto_ciega": false,
+   "espia": {
+    "salida.md": 471
+   },
+   "build": "doc_pandoc 29.4.3 · filex-c13@6d359bad483e"
+  },
+  {
+   "id": "S14",
+   "motor": "doc_pandoc",
+   "origen": "rtf",
+   "destino": "html",
+   "ok": true,
+   "veredicto": "ok",
+   "motivo": "",
+   "rc": 0,
+   "ms": 2663.2,
+   "contrato": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (4324 de 4324 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 4324,
+   "sha256": "d190a684c87c1fafcfb383fcb03da86b05eb6a5709e2206d913affc5eb9da9b0",
+   "caracteres": 3133,
+   "centinela": true,
+   "tabla_ax1": true,
+   "sonda_texto_ciega": false,
+   "espia": {},
+   "build": "doc_pandoc 29.4.3 · filex-c13@6d359bad483e"
+  },
+  {
+   "id": "S15",
+   "motor": "doc_pandoc",
+   "origen": "md",
+   "destino": "rtf",
+   "ok": true,
+   "veredicto": "ok",
+   "motivo": "",
+   "rc": 0,
+   "ms": 989.5,
+   "contrato": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (1700 de 1700 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 1700,
+   "sha256": "a70efd2528eca365c6b05c2343be95dcc4eac7c70b72880b7122fdba0acddaf9",
+   "caracteres": 1698,
+   "centinela": true,
+   "tabla_ax1": true,
+   "sonda_texto_ciega": false,
+   "espia": {},
+   "build": "doc_pandoc 29.4.3 · filex-c13@6d359bad483e"
+  },
+  {
+   "id": "S16",
+   "motor": "doc_calibre",
+   "origen": "mobi",
+   "destino": "epub",
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "motivo": "",
+   "rc": 0,
+   "ms": 6769.7,
+   "contrato": "ok_parcial",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": false,
+    "4_pedido": false,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (18336 de 18336 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 18336,
+   "sha256": "b571c7ef0d33b1211fabb3cccc8624f89f3a25504e6a1c926d914d7c75bae075",
+   "caracteres": 610,
+   "centinela": true,
+   "tabla_ax1": true,
+   "sonda_texto_ciega": false,
+   "espia": {},
+   "build": "doc_calibre 29.4.3 · filex-c13@6d359bad483e"
+  },
+  {
+   "id": "S17",
+   "motor": "doc_calibre",
+   "origen": "azw3",
+   "destino": "epub",
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "motivo": "",
+   "rc": 0,
+   "ms": 5227.2,
+   "contrato": "ok_parcial",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": false,
+    "4_pedido": false,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (18602 de 18602 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 18602,
+   "sha256": "e0d59246990aacfc1d0faf20d50f9cd001577a4015a3f89a2c18d6c6d31df91d",
+   "caracteres": 564,
+   "centinela": true,
+   "tabla_ax1": true,
+   "sonda_texto_ciega": false,
+   "espia": {},
+   "build": "doc_calibre 29.4.3 · filex-c13@6d359bad483e"
+  },
+  {
+   "id": "S18",
+   "motor": "doc_calibre",
+   "origen": "mobi",
+   "destino": "pdf",
+   "ok": true,
+   "veredicto": "ok",
+   "motivo": "",
+   "rc": 0,
+   "ms": 14487.2,
+   "contrato": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "ialize Vulkan\nUnable to detect GPU vendor.\n[10:18:0822/152810.356724:ERROR:bus.cc(408)] Failed to connect to the bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (31178 de 31178 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 31178,
+   "sha256": "c7c351c96205ca6469579d17f8e9fedde8062b3151ebdf3e53217e418a53fc9e",
+   "caracteres": 488,
+   "centinela": true,
+   "tabla_ax1": true,
+   "sonda_texto_ciega": false,
+   "espia": {},
+   "build": "doc_calibre 29.4.3 · filex-c13@6d359bad483e"
+  },
+  {
+   "id": "S19",
+   "motor": "doc_calibre",
+   "origen": "azw3",
+   "destino": "pdf",
+   "ok": true,
+   "veredicto": "ok",
+   "motivo": "",
+   "rc": 0,
+   "ms": 20208.5,
+   "contrato": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "tialize Vulkan\nUnable to detect GPU vendor.\n[8:16:0822/152826.346349:ERROR:bus.cc(408)] Failed to connect to the bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (27387 de 27387 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 27387,
+   "sha256": "40994d9aa95c63d0feaf8151e097c6c82669fb6b5709ab1d7e69716f97a4f57f",
+   "caracteres": 456,
+   "centinela": true,
+   "tabla_ax1": true,
+   "sonda_texto_ciega": false,
+   "espia": {},
+   "build": "doc_calibre 29.4.3 · filex-c13@6d359bad483e"
+  },
+  {
+   "id": "S20",
+   "motor": "doc_calibre",
+   "origen": "txt",
+   "destino": "epub",
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "motivo": "",
+   "rc": 0,
+   "ms": 36783.9,
+   "contrato": "ok_parcial",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": false,
+    "4_pedido": false,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (26406 de 26406 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 26406,
+   "sha256": "5d5449b5eb4fe6fc2377df4d13313158619922593b0430035917232826a97fdd",
+   "caracteres": 484,
+   "centinela": true,
+   "tabla_ax1": false,
+   "sonda_texto_ciega": false,
+   "espia": {},
+   "build": "doc_calibre 29.4.3 · filex-c13@6d359bad483e"
+  },
+  {
+   "id": "S21",
+   "motor": "doc_calibre",
+   "origen": "md",
+   "destino": "epub",
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "motivo": "",
+   "rc": 0,
+   "ms": 40279.3,
+   "contrato": "ok_parcial",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": false,
+    "4_pedido": false,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (11851 de 11851 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 11851,
+   "sha256": "132b5038bbe37076b8ae10c34bae088e12fad1494957b8085dfa7e0a1672c5f3",
+   "caracteres": 558,
+   "centinela": true,
+   "tabla_ax1": true,
+   "sonda_texto_ciega": false,
+   "espia": {},
+   "build": "doc_calibre 29.4.3 · filex-c13@6d359bad483e"
+  },
+  {
+   "id": "S22",
+   "motor": "doc_calibre",
+   "origen": "epub",
+   "destino": "epub",
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "motivo": "",
+   "rc": 0,
+   "ms": 9636.6,
+   "contrato": "ok_parcial",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": false,
+    "4_pedido": false,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (20209 de 20209 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 20209,
+   "sha256": "fcf1abfd73c54198149fa473926ccd81b67ea290c374e38b259a333a1621a67f",
+   "caracteres": 564,
+   "centinela": true,
+   "tabla_ax1": true,
+   "sonda_texto_ciega": false,
+   "espia": {},
+   "build": "doc_calibre 29.4.3 · filex-c13@6d359bad483e"
+  },
+  {
+   "id": "S23",
+   "motor": "doc_calibre",
+   "origen": "mobi",
+   "destino": "azw3",
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "motivo": "",
+   "rc": 0,
+   "ms": 4948.7,
+   "contrato": "ok_parcial",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": false,
+    "4_pedido": false,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (12614 de 12614 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 12614,
+   "sha256": "ec137a87ba799b5b447128fc7aed4b7965648d60e9ff3f7bc72c6c692174cd60",
+   "caracteres": 12603,
+   "centinela": false,
+   "tabla_ax1": true,
+   "sonda_texto_ciega": true,
+   "espia": {},
+   "build": "doc_calibre 29.4.3 · filex-c13@6d359bad483e"
+  }
+ ],
+ "contenedores_antes": [
+  "19a7a940a15d|filex-convertx|ghcr.io/c4illin/convertx:latest|Up 2 hours",
+  "e446d1d7ad78|filex-snapotter|snapotter/snapotter:latest|Up 2 hours (healthy)",
+  "851f149b14b4|filex-snapotter-pg|postgres:17-alpine|Up 2 hours (healthy)",
+  "c0a97b977b80|filex-snapotter-redis|redis:8-alpine|Up 2 hours (healthy)",
+  "6efb0c4e8fac|filex-gotenberg8|gotenberg/gotenberg:8|Up 2 hours (healthy)"
+ ],
+ "contenedores_despues": [
+  "19a7a940a15d|filex-convertx|ghcr.io/c4illin/convertx:latest|Up 2 hours",
+  "e446d1d7ad78|filex-snapotter|snapotter/snapotter:latest|Up 2 hours (healthy)",
+  "851f149b14b4|filex-snapotter-pg|postgres:17-alpine|Up 2 hours (healthy)",
+  "c0a97b977b80|filex-snapotter-redis|redis:8-alpine|Up 2 hours (healthy)",
+  "6efb0c4e8fac|filex-gotenberg8|gotenberg/gotenberg:8|Up 2 hours (healthy)"
+ ],
+ "contenedores_nuevos_vivos": [],
+ "builds": {
+  "doc_libreoffice": "doc_libreoffice 29.4.3 · filex-c13@6d359bad483e",
+  "doc_pandoc": "doc_pandoc 29.4.3 · filex-c13@6d359bad483e",
+  "doc_calibre": "doc_calibre 29.4.3 · filex-c13@6d359bad483e"
+ },
+ "timeout_fuera_s": 100.0
+}

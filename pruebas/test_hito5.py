@@ -403,7 +403,18 @@ class Integracion(unittest.TestCase):
             mc.TIMEOUT_DENTRO = guardado
             t.cerrar()
         self.assertFalse(r.agotado, "lo mató el tope de FUERA, no el de dentro")
-        self.assertEqual(r.rc, 124)
+        # 124 y 137 son AMBOS «disparó el tope de dentro», y cuál sale no es
+        # aleatorio: `timeout -k 5 N` devuelve **124** si el proceso obedece el
+        # TERM, y **137** (128+9) si hubo que matarlo con KILL cinco segundos
+        # después. `CLAUDE.md` ya dice que **LibreOffice colgado ignora el
+        # TERM**, y bajo carga tarda más en morir, así que cae en el 137.
+        #
+        # Exigir 124 hacía fallar esta prueba en la suite completa y pasar en
+        # aislamiento — y una prueba que depende de la carga de la máquina no
+        # prueba nada. Lo que se comprueba de verdad es la tercera línea: **cero
+        # contenedores vivos**, que es el hallazgo (matar el `docker run` NO
+        # mata el contenedor: tres `soffice` sobrevivieron 37 minutos).
+        self.assertIn(r.rc, (124, 137), "no lo mató el tope de dentro")
         self.assertEqual(vivos() - antes, set(), "quedó un contenedor vivo")
 
     def test_si_falta_el_entorno_el_motor_se_auto_excluye_INFORMANDO(self):
