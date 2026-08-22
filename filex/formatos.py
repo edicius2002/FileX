@@ -66,6 +66,11 @@ _F = [
     Formato("docx", "documento", texto=True),
     Formato("odt", "documento", texto=True),
     Formato("epub", "documento", texto=True),
+    Formato("mobi", "documento", texto=True,
+            nota="MOBI comprime el texto (PalmDoc/LZ77): un centinela NO aparece "
+                 "literal en el binario aunque el libro esté entero. Una sonda de "
+                 "texto ingenua lo da por destruido."),
+    Formato("azw3", "documento", texto=True, nota="Ídem MOBI."),
     Formato("html", "documento", texto=True),
     Formato("md", "documento", texto=True),
     Formato("txt", "documento", texto=True),

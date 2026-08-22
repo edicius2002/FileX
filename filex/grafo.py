@@ -182,6 +182,13 @@ class Grafo:
         que es justo la mitad del criterio de aceptación del hito 1.
         """
         mejores: list[tuple[float, int, Camino]] = []   # montículo-máximo por coste
+        # Un camino que rasteriza cuesta +1000: NUNCA entra en los ocho más
+        # baratos. Y es justo el rechazo que hay que EXPLICAR. MEDIDO
+        # (`bench/hito5-documental.md` §5.3): en cuanto entró el motor
+        # documental, ya había SIETE caminos `docx→pdf` que conservan el texto,
+        # y el octavo tapaba al que rasteriza. El criterio de aceptación se
+        # cumplía y el grafo no sabía decirlo.
+        mejor_raster: Camino | None = None
         gasto = 0
         contador = 0
         pila: list[tuple[str, Camino, float]] = [(o, Camino(), 0.0)]
@@ -191,6 +198,9 @@ class Grafo:
             if actual == d:
                 contador += 1
                 camino.coste = coste + _penalizacion_perdida(camino)
+                if camino.rasteriza and (mejor_raster is None
+                                         or camino.coste < mejor_raster.coste):
+                    mejor_raster = camino
                 heapq.heappush(mejores, (-camino.coste, contador, camino))
                 if len(mejores) > self.TOPE_CANDIDATOS:
                     heapq.heappop(mejores)          # fuera el más caro
@@ -212,7 +222,10 @@ class Grafo:
                 nuevo.coste = coste + paso
                 pila.append((a.destino, nuevo, nuevo.coste))
 
-        return sorted((c for _, _, c in mejores), key=lambda c: (c.coste, c.saltos))
+        salida = [c for _, _, c in mejores]
+        if mejor_raster is not None and mejor_raster not in salida:
+            salida.append(mejor_raster)   # se explica, no se elige: cuesta +1000
+        return sorted(salida, key=lambda c: (c.coste, c.saltos))
 
     def camino(self, origen: str, destino: str, *, max_saltos: int = 4) -> Decision:
         """Dijkstra sobre formatos, con el coste que penaliza perder información.
@@ -262,7 +275,14 @@ class Grafo:
                     f"tendría la geometría correcta y ni una letra seleccionable",
                 ))
             elif c.saltos < elegido.saltos:
-                rechazados.append((c, "más corto, pero pierde más información"))
+                # Antes decía «pierde más información», y **el grafo nunca midió
+                # eso**: solo sabe su propio coste. Se nombra lo que de verdad
+                # lo encareció, o se dice que es el coste y ya (K1, §7.5).
+                extra = _penalizacion_perdida(c) - _penalizacion_perdida(elegido)
+                rechazados.append((c, (
+                    f"más corto, pero encadena {int(extra / PENALIZACION_PERDIDA)} "
+                    f"codificación(es) con pérdida de más")
+                    if extra > 0 else "más corto, pero más caro"))
             else:
                 rechazados.append((c, "válido, pero más caro"))
         return Decision(camino=elegido, rechazados=rechazados, aviso=aviso)

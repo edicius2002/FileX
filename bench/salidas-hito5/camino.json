@@ -1,0 +1,126 @@
+{
+ "entrada": "D:\\Work\\research\\FileX\\bench\\salidas-hito5\\entradas\\entrada.docx",
+ "sha256_entrada": "d74e7fceff4a80cb9aee6cd3611cb71207241ffd55a441c57e21e5fc2b72309d",
+ "caminos": [
+  {
+   "nombre": "A · docx→pdf (LibreOffice)",
+   "ok": true,
+   "veredicto": "ok",
+   "ms": 8812.5,
+   "bytes": 22820,
+   "sha256": "72b82e6852ffd443a78df7d108988c3314450b562b597ac670bedcabcc34b259",
+   "caracteres": 456,
+   "centinela": true,
+   "tabla_ax1": true,
+   "contrato": [
+    {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_pedido": true,
+     "4_alfa": true,
+     "5_escritura": true
+    }
+   ]
+  },
+  {
+   "nombre": "B · docx→png→pdf (LibreOffice + ImageMagick)",
+   "ok": true,
+   "veredicto": "ok",
+   "ms": 8030.3,
+   "bytes": 14851,
+   "sha256": "6db53c7063b69f6db63f4ae4eee444548ac465546b4a4a3e4faacd742bebb999",
+   "caracteres": 0,
+   "centinela": false,
+   "tabla_ax1": false,
+   "texto_literal": "",
+   "contrato": [
+    {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_pedido": true,
+     "4_alfa": true,
+     "5_escritura": true
+    }
+   ]
+  }
+ ],
+ "elegido_por_el_grafo": {
+  "camino": [
+   "docx",
+   "pdf"
+  ],
+  "motor": [
+   "doc_libreoffice"
+  ],
+  "submotor": [
+   "soffice"
+  ],
+  "coste": 1.065,
+  "rasteriza": false,
+  "rechazados": [
+   {
+    "camino": [
+     "docx",
+     "pdf"
+    ],
+    "coste": 1.072,
+    "motivo": "válido, pero más caro"
+   },
+   {
+    "camino": [
+     "docx",
+     "pdf"
+    ],
+    "coste": 1.102,
+    "motivo": "válido, pero más caro"
+   },
+   {
+    "camino": [
+     "docx",
+     "html",
+     "pdf"
+    ],
+    "coste": 2.032,
+    "motivo": "válido, pero más caro"
+   },
+   {
+    "camino": [
+     "docx",
+     "rtf",
+     "pdf"
+    ],
+    "coste": 2.034,
+    "motivo": "válido, pero más caro"
+   },
+   {
+    "camino": [
+     "docx",
+     "html",
+     "pdf"
+    ],
+    "coste": 2.067,
+    "motivo": "válido, pero más caro"
+   },
+   {
+    "camino": [
+     "docx",
+     "odt",
+     "pdf"
+    ],
+    "coste": 2.08,
+    "motivo": "válido, pero más caro"
+   },
+   {
+    "camino": [
+     "docx",
+     "md",
+     "pdf"
+    ],
+    "coste": 2.134,
+    "motivo": "válido, pero más caro"
+   }
+  ]
+ }
+}

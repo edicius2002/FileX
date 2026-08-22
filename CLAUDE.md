@@ -36,7 +36,7 @@ RTX 3060 12 288 MiB (compute 8.6, driver 572.61) · 12 núcleos · Windows 10 ·
 
 **Contenedores:** SnapOtter `:1349` (`admin` / `<CONTRASENA-REDACTADA>`), ConvertX `:3100`, Gotenberg `:3200`.
 
-**Lo que NO hay en Windows sí está en la imagen `filex-convertx`** (Debian forky/sid) — comprobado con `command -v`: `soffice`, `libreoffice`, `pandoc`, `ebook-convert` (Calibre), `vips`, `inkscape`, `resvg`, `magick`, `ffmpeg`, `gs`, `assimp`, `dasel`, `potrace`, `vtracer`, `dvisvgm`, `xelatex`, `msgconvert`, `cjxl`, `djxl`, `heif-enc`, `python3`. **Ausentes: `qpdf` y `tesseract`** — son los dos únicos motores que habría que añadir a una imagen, **y ya está medido lo que cuesta: 8 líneas, 28,1 s, +50 MB** (imagen `filex-c13`, `bench/salidas-invocacion/Dockerfile.c13`).
+**Lo que NO hay en Windows sí está en `filex-convertx`** — que **NO es una imagen, es un CONTENEDOR** (`docker image inspect filex-convertx` → *No such image*). La imagen es **`ghcr.io/c4illin/convertx:latest`**, y `filex-c13` es esa misma con `qpdf` y `tesseract` añadidos. Corregido el 22/08 por `bench/hito5-documental.md`; Debian forky/sid — comprobado con `command -v`: `soffice`, `libreoffice`, `pandoc`, `ebook-convert` (Calibre), `vips`, `inkscape`, `resvg`, `magick`, `ffmpeg`, `gs`, `assimp`, `dasel`, `potrace`, `vtracer`, `dvisvgm`, `xelatex`, `msgconvert`, `cjxl`, `djxl`, `heif-enc`, `python3`. **Ausentes: `qpdf` y `tesseract`** — son los dos únicos motores que habría que añadir a una imagen, **y ya está medido lo que cuesta: 8 líneas, 28,1 s, +50 MB** (imagen `filex-c13`, `bench/salidas-invocacion/Dockerfile.c13`).
 
 ## 3. Cómo se mide aquí
 
@@ -49,6 +49,7 @@ RTX 3060 12 288 MiB (compute 8.6, driver 572.61) · 12 núcleos · Windows 10 ·
 - **Y hay un TERCER sesgo, que no es de ruido sino de SEMILLA.** Con dos semillas de markdown que empezaban por un título, **42 formatos de pandoc parecían tener marcador**; con una tercera que empieza por prosa, **ninguno lo tiene** (`bench/firmas-contrato.md` §2.3). Los dos testigos de ruido no lo habrían visto nunca. **Cuando midas una propiedad del FORMATO, varía la entrada; si no, estás midiendo tu entrada.**
 - **Timeouts explícitos en todo.** No dejes procesos colgados: estos motores dejan huérfanos vivos 13 minutos.
 - **Dos intentos por problema**, luego documenta el error exacto y sigue. **Nada de bucles de reintento.**
+- **Matar el `docker run` NO mata el contenedor, y `--rm` tampoco — MEDIDO** (`bench/hito5-documental.md` §1). Tres `soffice` colgados **sobrevivieron 37 minutos** al `taskkill /F /T` del proceso padre. Y hubo un agravante: el directorio desechable de R18 les había borrado por debajo el origen del *bind mount*, y **`docker rm -f` respondió «did not receive an exit event»**. **El tope tiene que estar DENTRO del contenedor** (`--entrypoint timeout -k 5 …`): un tope que solo mata al cliente de Docker no es un tope.
 
 **Marca cada afirmación MEDIDO o PENDIENTE.** No es opcional: es lo que hace útil este repositorio.
 
