@@ -282,7 +282,8 @@ class Grafo:
                 rechazados.append((c, (
                     f"más corto, pero encadena {int(extra / PENALIZACION_PERDIDA)} "
                     f"codificación(es) con pérdida de más")
-                    if extra > 0 else "más corto, pero más caro"))
+                    if extra > 0 else
+                    "más corto, pero más caro en el coste medido de sus aristas"))
             else:
                 rechazados.append((c, "válido, pero más caro"))
         return Decision(camino=elegido, rechazados=rechazados, aviso=aviso)

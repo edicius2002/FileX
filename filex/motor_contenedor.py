@@ -131,9 +131,17 @@ TIMEOUT_SONDA_IMAGEN = 120.0
 #: 110 s está **por debajo** de `invocacion.TIMEOUT_POR_DEFECTO` (120) a
 #: propósito: el de dentro tiene que disparar primero. La arista documental más
 #: lenta medida es Calibre `epub→pdf` con 20,6 s, así que el margen es de ×5.
-#: **Cambio que pido al núcleo** (§7.6 del informe): que `Motor.orden()` reciba
-#: el timeout del que convierte, para no tener que adivinarlo aquí.
+#: ~~**Cambio que pido al núcleo** (§7.6 del informe): que `Motor.orden()` reciba
+#: el timeout del que convierte, para no tener que adivinarlo aquí.~~
+#: **APLICADO el 22/08:** `orden()` recibe el `timeout` de quien convierte y el
+#: tope de dentro se DERIVA de él (`_tope_dentro`). Esta constante queda solo
+#: como valor por defecto para cuando nadie pasa uno.
 TIMEOUT_DENTRO = 110
+
+#: Cuánto se le resta al tope de fuera para fijar el de dentro. El de dentro
+#: tiene que disparar PRIMERO: si dispara el de fuera, se mata al cliente de
+#: Docker y el contenedor sigue vivo — MEDIDO, 37 minutos.
+MARGEN_TOPE = 10
 
 
 # --------------------------------------------------------------- caché de sonda
@@ -309,7 +317,6 @@ class _EnContenedor:
             self.ruta = None
             self.motivo_ausencia = e["motivo"] or (
                 f"la imagen '{e['imagen']}' no trae '{self.dentro}'")
-            self._marcar_binario()
             return
         self.ruta = invocacion.disponible("docker")
         self.imagen = e["imagen"]
@@ -318,19 +325,6 @@ class _EnContenedor:
         # `magick` es real en Windows y NOMINAL en este mismo Debian.
         self.version = f"{e['servidor']} · {e['imagen']}@{e['imagen_id'][7:19]}"
         self.aristas = self._aristas()
-
-    def _marcar_binario(self) -> None:
-        """Que el mensaje de la CLI no mienta mientras el núcleo no sepa más.
-
-        `cli.py` imprime «falta el ejecutable '{m.binario}'» para todo motor
-        ausente, y aquí lo que falta puede ser el demonio, la imagen o un
-        binario dentro de ella. **Cambio que pido al núcleo**, con su diff en
-        `bench/hito5-documental.md` §7: que `Motor` tenga `motivo_ausencia` y
-        que la CLI lo prefiera. Hasta entonces se sustituye el nombre del
-        binario por la capacidad que falta, que es lo que R14 pide decir.
-        """
-        if getattr(self, "motivo_ausencia", ""):
-            self.binario = f"docker — {self.motivo_ausencia}"
 
     # --------------------------------------------------------------- aristas
 
@@ -362,7 +356,8 @@ class _EnContenedor:
     def _cmd(self, dentro_ent: str, dentro_sal: str, d: str, pedido: dict) -> list[str]:
         raise NotImplementedError
 
-    def orden(self, entrada: str, salida: str, pedido: dict) -> list[str]:
+    def orden(self, entrada: str, salida: str, pedido: dict,
+              *, timeout: float | None = None) -> list[str]:
         o = formatos.normaliza(os.path.splitext(entrada)[1])
         d = formatos.normaliza(os.path.splitext(salida)[1])
         if (o, d) in self._MUERTAS:
@@ -376,10 +371,23 @@ class _EnContenedor:
         base = os.path.splitext(os.path.basename(salida))[0]
         nombre_dentro = f"{base}.{o}"
         cmd = self._cmd(f"/ent/{nombre_dentro}", f"/trabajo/{base}.{d}", d, pedido)
-        return self._argv_docker(ent_abs, trabajo, nombre_dentro, cmd)
+        # El tope de DENTRO se deriva del de quien llama y queda SIEMPRE por
+        # debajo: el de dentro tiene que disparar primero, porque el de fuera
+        # solo mata al cliente de Docker y deja el contenedor vivo. Suelo de 5 s
+        # para que un tope absurdamente corto no produzca un `timeout 0`, que
+        # mataría al arrancar.
+        #
+        # Va como PARÁMETRO y no como atributo de instancia a propósito: lo
+        # tuve un rato guardado en `self._tope_dentro` desde `orden()` y
+        # `_argv_docker` leía un valor rancio si alguien lo llamaba sin pasar
+        # por `orden()` — que es justo lo que hace la prueba del tope. Un valor
+        # que hay que acordarse de fijar antes no es una defensa; es la misma
+        # forma de fallo que `nombre_seguro` sin llamar.
+        tope = max(5, int(timeout - MARGEN_TOPE)) if timeout else None
+        return self._argv_docker(ent_abs, trabajo, nombre_dentro, cmd, tope)
 
     def _argv_docker(self, entrada: str, trabajo: str, nombre_dentro: str,
-                     cmd: list[str]) -> list[str]:
+                     cmd: list[str], tope: int | None = None) -> list[str]:
         """Ver el encabezado del módulo para el porqué de las cuatro decisiones.
 
         Lo que hay que mirar aquí es que **no hay shell y no hay concatenación**:
@@ -407,7 +415,10 @@ class _EnContenedor:
             self.imagen,
             # `-k 5`: si el motor ignora el TERM, cinco segundos después va un
             # KILL. LibreOffice colgado ignora el TERM — MEDIDO.
-            "-k", "5", str(TIMEOUT_DENTRO),
+            # El tope de DENTRO se deriva del de quien llama, no se adivina:
+            # con una constante, `convertir(..., timeout=30)` no dispararía
+            # nunca el de dentro y volveríamos al contenedor huérfano.
+            "-k", "5", str(TIMEOUT_DENTRO if tope is None else tope),
         ] + cmd
 
 

@@ -420,7 +420,14 @@ class Integracion(unittest.TestCase):
             mc._ENTORNO = guardado
         self.assertIsNone(m.ruta)
         self.assertEqual(m.aristas, [])
-        self.assertIn("demonio parado", m.binario)   # la CLI lo imprime
+        # Hasta el 22/08 esto se comprobaba sobre `m.binario`, porque el
+        # motor sustituía ahí el nombre del ejecutable por el motivo: un
+        # apaño declarado, a la espera de que el núcleo tuviera dónde
+        # ponerlo. Ya lo tiene — `Motor.motivo_ausencia` — y la CLI lo
+        # prefiere, así que el apaño se retiró y la prueba mira el sitio
+        # bueno. `binario` vuelve a ser el nombre del ejecutable.
+        self.assertIn("demonio parado", m.motivo_ausencia)
+        self.assertEqual(m.binario, "docker")
 
 
 if __name__ == "__main__":

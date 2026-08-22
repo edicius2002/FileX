@@ -196,7 +196,10 @@ class FileX:
         dentro = t.destino(nombre)
 
         try:
-            argv = motor.orden(entrada, dentro, pedido if ultimo else {})
+            # El motor recibe el tope de QUIEN LLAMA: el de aquí solo alcanza
+            # al cliente, y hay motores cuyo trabajo real vive en otro proceso.
+            argv = motor.orden(entrada, dentro, pedido if ultimo else {},
+                               timeout=timeout)
         except Exception as e:
             s.motivo = f"no se pudo construir la orden: {e}"
             return s
@@ -205,6 +208,13 @@ class FileX:
         # NO basta: hay motores que escriben en el `cwd`.
         r = invocacion.ejecutar(argv, timeout=timeout, cwd=t.ruta)
         s.rc, s.ms, s.err = r.rc, r.ms, r.err
+        if r.agotado:
+            # ANTES de que el `finally` borre el desechable. Borrar el origen de
+            # un bind mount vivo deja al contenedor atascado — MEDIDO.
+            try:
+                motor.parar()
+            except Exception:
+                pass
         if not r.ok:
             s.motivo = r.motivo
             s.ruta = dentro

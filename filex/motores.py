@@ -45,6 +45,11 @@ class Motor:
     version: str = ""
     ruta: str | None = None
     aristas: list[Arista] = field(default_factory=list)
+    #: Por qué NO está disponible, cuando no lo está. «Falta el ejecutable X»
+    #: no siempre es verdad: puede faltar el demonio de Docker, la imagen, o un
+    #: binario DENTRO de ella — cuatro cosas distintas. R14: se nombra la
+    #: CAPACIDAD que falta, nunca el comando que la instala.
+    motivo_ausencia: str = ""
 
     @property
     def disponible(self) -> bool:
@@ -63,8 +68,27 @@ class Motor:
     def _aristas(self) -> list[Arista]:
         return []
 
-    def orden(self, entrada: str, salida: str, pedido: dict) -> list[str]:
+    def orden(self, entrada: str, salida: str, pedido: dict,
+              *, timeout: float | None = None) -> list[str]:
+        """`timeout` es el tope de QUIEN LLAMA, y algunos motores lo necesitan.
+
+        MEDIDO (`bench/hito5-documental.md` §1): **matar el `docker run` no mata
+        el contenedor** —tres `soffice` sobrevivieron 37 minutos al
+        `taskkill /F /T`, y `--rm` tampoco—, así que un motor que delega en un
+        proceso remoto tiene que poner **su propio tope por dentro**. Adivinarlo
+        con una constante deja de funcionar en cuanto alguien pide otro.
+        """
         raise NotImplementedError
+
+    def parar(self) -> None:
+        """Garantizar que el motor ha parado. Se llama ANTES de borrar el
+        desechable cuando la invocación se agotó.
+
+        Con motores nativos no hace falta: `_matar_arbol` sí los mata. Con un
+        contenedor sí, y el precio de no hacerlo está medido: borrar el origen
+        de un *bind mount* vivo dejó a `docker rm -f` respondiendo «did not
+        receive an exit event»."""
+        return None
 
     @property
     def build(self) -> str:
@@ -129,7 +153,8 @@ class ImageMagick(Motor):
                               evidencia="bench/aristas-nominales.md §8.2"))
         return out
 
-    def orden(self, entrada: str, salida: str, pedido: dict) -> list[str]:
+    def orden(self, entrada: str, salida: str, pedido: dict,
+              *, timeout: float | None = None) -> list[str]:
         d = formatos.normaliza(os.path.splitext(salida)[1])
         argv = [self.binario, "-limit", "thread", HILOS, entrada]
 
@@ -188,7 +213,8 @@ class Ghostscript(Motor):
                           evidencia="referencia.json:pdf.2pdf"))
         return out
 
-    def orden(self, entrada: str, salida: str, pedido: dict) -> list[str]:
+    def orden(self, entrada: str, salida: str, pedido: dict,
+              *, timeout: float | None = None) -> list[str]:
         d = formatos.normaliza(os.path.splitext(salida)[1])
         dev = self._DEVICE.get(d)
         if dev is None:
@@ -252,7 +278,8 @@ class FFmpeg(Motor):
                               evidencia=f"referencia.json:{ev}" if ev else ""))
         return out
 
-    def orden(self, entrada: str, salida: str, pedido: dict) -> list[str]:
+    def orden(self, entrada: str, salida: str, pedido: dict,
+              *, timeout: float | None = None) -> list[str]:
         d = formatos.normaliza(os.path.splitext(salida)[1])
         fo = formatos.formato(d)
         # `-y` y `-nostdin` son HIGIENE. La defensa es `stdin=DEVNULL`, en

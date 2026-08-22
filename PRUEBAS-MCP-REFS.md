@@ -1,5 +1,19 @@
 # FileX — Pruebas pendientes sobre `repos/mcp-refs/`
 
+> # ⛔ SUPERSEDIDO — no reasignar como trabajo pendiente
+>
+> **Sus seis preguntas están las seis CERRADAS**, y las contesta `RESULTADOS-MCP.md`
+> —que lo dice ya en su línea 6—, completado por `bench/mcp-cabos-sueltos.md`,
+> `bench/mcp-cabos-2.md` y `bench/hito4-mcp.md`. La capa MCP existe desde el
+> 22/08/2026 en `filex/mcp.py`.
+>
+> **Se conserva por dos motivos, no por vigencia:** es el único fichero de texto que
+> solo existía en las ramas `ccb/w1..w3` —se rescató el 22/08 antes de borrarlas— y
+> documenta **qué se preguntó antes de medir**, que es lo que permite ver cuánto de
+> lo que parecía trabajo resultó estar ya contestado.
+>
+> **Léelo como historia, no como lista de tareas.**
+
 **Documento de traspaso.** Fecha: 19 de agosto de 2026.
 
 > **Objetivo:** determinar **qué componente de qué repositorio es aprovechable** para la capa MCP de FileX. No se trata de puntuar proyectos, sino de identificar piezas concretas y reutilizables.

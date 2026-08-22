@@ -31,8 +31,8 @@ def _inventario(fx: FileX, args) -> int:
         # «Un motor cuyo binario falta se auto-excluye y la CLI lo INFORMA».
         # Y el mensaje nombra la CAPACIDAD que falta, no el comando que la
         # instala (R14): kordoc responde con su propia CLI, docling con `pip`.
-        print(f"  ✗ {m.nombre:<14} no disponible — falta el ejecutable "
-              f"'{m.binario}'")
+        print(f"  ✗ {m.nombre:<14} no disponible — "
+              + (m.motivo_ausencia or f"falta el ejecutable '{m.binario}'"))
     total = len(fx.grafo.aristas)
     reales = len([a for a in fx.grafo.aristas if a.estado == "real"])
     print(f"\nGRAFO: {total} aristas, {reales} respaldadas por una medición "
