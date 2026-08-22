@@ -20,6 +20,7 @@ from __future__ import annotations
 import os
 import sys
 import tempfile
+import time
 import unittest
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -415,7 +416,19 @@ class Integracion(unittest.TestCase):
         # contenedores vivos**, que es el hallazgo (matar el `docker run` NO
         # mata el contenedor: tres `soffice` sobrevivieron 37 minutos).
         self.assertIn(r.rc, (124, 137), "no lo mató el tope de dentro")
-        self.assertEqual(vivos() - antes, set(), "quedó un contenedor vivo")
+        # Y la tercera es la que importa — pero con espera, porque **el borrado
+        # de `--rm` lo hace el demonio de forma ASÍNCRONA**: leer `docker ps`
+        # justo después de que `docker run` retorne es una carrera. Diagnóstico
+        # de S3 (`bench/sondeo-documental.md`), y mejor que el mío: falló en 2 de
+        # 5 pasadas completas y **0 de 4 aisladas**, y en los fallos `docker ps -a`
+        # solo listaba los 5 contenedores del proyecto — el contenedor NO quedaba.
+        # Una prueba que compite con el demonio no mide lo que dice medir.
+        for _ in range(20):
+            sobra = vivos() - antes
+            if not sobra:
+                break
+            time.sleep(0.5)
+        self.assertEqual(sobra, set(), "quedó un contenedor vivo")
 
     def test_si_falta_el_entorno_el_motor_se_auto_excluye_INFORMANDO(self):
         """Criterio de aceptación del hito 1, aquí con tres fallos distintos."""

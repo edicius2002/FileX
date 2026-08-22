@@ -1289,11 +1289,21 @@ def _pdf(fh, ruta) -> dict:
             pass
     # Indicio barato de capa de texto: operadores de texto en flujos sin comprimir
     d["indicio_texto"] = b"/Font" in datos
+    # Marca EXACTA y gratuita: el diccionario de un flujo de objetos NO esta
+    # comprimido, asi que `/ObjStm` se lee en los bytes crudos. MEDIDO sobre 8
+    # PDF de 3 motores: esta en 1 de 8, y es exactamente el unico cuyo contador
+    # de `/Type /Page` da 0. xelatex mete los objetos de pagina ahi dentro.
+    d["objetos_en_flujo_comprimido"] = b"/ObjStm" in datos
     d["version"] = datos[5:8].decode("latin-1", "replace")
     return d
 
 
 # ---- DATOS TABULARES ------------------------------------------------------
+
+#: Extensiones que SI son datos tabulares. Lo demas con firma `texto` es un
+#: documento de texto plano, no una tabla sin cabecera.
+EXT_TABULARES = {".csv", ".tsv", ".psv", ".json", ".ndjson", ".jsonl"}
+
 
 def _datos(ruta: str) -> dict:
     with open(ruta, "rb") as fh:
@@ -1330,6 +1340,18 @@ def _datos(ruta: str) -> dict:
             d["json_valido"] = False
             d["error"] = str(e)
     else:
+        # Un .md, un .txt o un .tex NO son datos tabulares. Declararlos `csv`
+        # hace que `csv.reader` cuente campos por COMA, y cualquier prosa con un
+        # numero variable de comas dispara `D1`/`D2`. MEDIDO
+        # (`bench/sondeo-documental.md` 2.3): tumbaba 8 aristas que
+        # `motor_contenedor.py` declara REAL, con el documento entero y el
+        # centinela intacto, **y la salida no llegaba a su destino**.
+        # Se separa el FORMATO y no la CATEGORIA, para que las comprobaciones de
+        # codificacion (D5, U+FFFD) sigan aplicando a un .txt.
+        ext = os.path.splitext(ruta)[1].lower()
+        if ext not in EXT_TABULARES:
+            d["formato"] = "texto_plano"
+            return d
         d["formato"] = "csv"
         # FALLO DEL PROPIO VERIFICADOR, encontrado por F1 al reejecutar la muestra
         # de E1 y corregido aqui: `csv.reader` lanza `_csv.Error: field larger than
@@ -3334,7 +3356,18 @@ def punto3_propiedades(sonda: dict, sonda_ent: dict | None, pedido: dict) -> lis
             h.append(_hallazgo(3, "G4", "aviso", "bitrate no positivo", ">0", br))
     elif cat == "pdf":
         n = sonda.get("n_paginas")
-        if not n:
+        if not n and sonda.get("objetos_en_flujo_comprimido"):
+            # xelatex mete los objetos de pagina en flujos comprimidos: el
+            # contador por bytes crudos da 0 sobre un PDF valido y con texto
+            # seleccionable. **No se puede saber sin descomprimir: es NO
+            # VERIFICABLE, no un fallo.** MEDIDO (`bench/sondeo-documental.md`
+            # 2.2): tumbaba `md->pdf` y `docx->pdf` de pandoc, las dos con el
+            # centinela intacto. `/ObjStm` distingue el caso en 8 de 8 PDF.
+            h.append(_hallazgo(3, "P1", "aviso",
+                               "el numero de paginas vive en un flujo comprimido "
+                               "y no se puede contar sin descomprimirlo",
+                               ">=1", n))
+        elif not n:
             h.append(_hallazgo(3, "P1", "fallo", "el PDF no declara ninguna pagina", ">=1", n))
     elif cat == "datos":
         if not sonda.get("utf8_valido"):
