@@ -1,0 +1,237 @@
+[lock] adquirido por g1-ocr-ppp
+########## 02:10:52  RapidOCR (PP-OCRv5 mobile, ONNX) / CUDA ##########
+[32m[INFO] 2026-08-21 02:11:01,643 [RapidOCR] main.py:63: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_PP-OCRv5_det_mobile.onnx[0m
+[32m[INFO] 2026-08-21 02:11:01,906 [RapidOCR] main.py:63: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ppocr_mobile_v2.0_cls_mobile.onnx[0m
+[32m[INFO] 2026-08-21 02:11:01,970 [RapidOCR] main.py:63: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_PP-OCRv5_rec_mobile.onnx[0m
+{"etiqueta": "rapidocr_cuda", "motor": "rapidocr", "dispositivo": "cuda", "carga_frio_s": 4.46, "vram_base_MiB": 2067, "vram_tras_carga_MiB": 2243, "quietud_pct": 12, "flag": "SUCIA(pico 12%)", "modelos": {"text_det": "el.ttf', 'SHA256': '892e6c81071fc85923f8d0ff925edab6049dd4495a2fdedffddc04753bf348b3'}}}", "text_cls": "el.ttf', 'SHA256': '892e6c81071fc85923f8d0ff925edab6049dd4495a2fdedffddc04753bf348b3'}}}", "text_rec": "el.ttf', 'SHA256': '892e6c81071fc85923f8d0ff925edab6049dd4495a2fdedffddc04753bf348b3'}}}", "params_forzados": "PPOCRV5/MOBILE/ONNXRUNTIME (igual que bench/scripts/ocr_motor.py)"}, "reps": 9}
+ext__escaneado_d1                    CER=   0.0%  dist=   0  frases=3/3    150.5 ms  det=si
+ext__escaneado_d2                    CER=   0.0%  dist=   0  frases=3/3     96.6 ms  det=si
+ext__escaneado_d3                    CER=  77.2%  dist=  61  frases=0/3    109.7 ms  det=si
+ext__patologico_escaneado            CER=   0.0%  dist=   0  frases=3/3    330.5 ms  det=si
+extg__escaneado_d1                   CER=   0.0%  dist=   0  frases=3/3    169.7 ms  det=si
+extg__escaneado_d2                   CER=   0.0%  dist=   0  frases=3/3    125.1 ms  det=si
+extg__escaneado_d3                   CER=  77.2%  dist=  61  frases=0/3    125.4 ms  det=si
+extg__patologico_escaneado           CER=   1.3%  dist=   1  frases=2/3    323.0 ms  det=si
+ppp100__escaneado_d1                 CER=   0.0%  dist=   0  frases=3/3    116.4 ms  det=si
+ppp100__escaneado_d2                 CER=   0.0%  dist=   0  frases=3/3    139.3 ms  det=si
+ppp100__escaneado_d3                 CER=  77.2%  dist=  61  frases=0/3     93.2 ms  det=si
+ppp100__patologico_escaneado         CER=   1.3%  dist=   1  frases=2/3    269.3 ms  det=si
+ppp125__escaneado_d1                 CER=   0.0%  dist=   0  frases=3/3    148.2 ms  det=si
+ppp125__escaneado_d2                 CER=   0.0%  dist=   0  frases=3/3    144.5 ms  det=si
+ppp125__escaneado_d3                 CER=  75.9%  dist=  60  frases=1/3    116.1 ms  det=si
+ppp125__patologico_escaneado         CER=   1.3%  dist=   1  frases=2/3    299.5 ms  det=si
+ppp150__escaneado_d1                 CER=   0.0%  dist=   0  frases=3/3    243.0 ms  det=si
+ppp150__escaneado_d2                 CER=   0.0%  dist=   0  frases=3/3    133.3 ms  det=si
+ppp150__escaneado_d3                 CER=  75.9%  dist=  60  frases=1/3    164.2 ms  det=si
+ppp150__patologico_escaneado         CER=   1.3%  dist=   1  frases=2/3    338.9 ms  det=si
+ppp175__escaneado_d1                 CER=   0.0%  dist=   0  frases=3/3    252.7 ms  det=si
+ppp175__escaneado_d2                 CER=   1.3%  dist=   1  frases=2/3    233.8 ms  det=si
+ppp175__escaneado_d3                 CER=  75.9%  dist=  60  frases=1/3    188.5 ms  det=si
+ppp175__patologico_escaneado         CER=   1.3%  dist=   1  frases=2/3    570.2 ms  det=si
+ppp200__escaneado_d1                 CER=   0.0%  dist=   0  frases=3/3    259.2 ms  det=si
+ppp200__escaneado_d2                 CER=   1.3%  dist=   1  frases=2/3    281.0 ms  det=si
+ppp200__escaneado_d3                 CER=  65.8%  dist=  52  frases=0/3    274.6 ms  det=si
+ppp200__patologico_escaneado         CER=   1.3%  dist=   1  frases=2/3    559.3 ms  det=si
+ppp250__escaneado_d1                 CER=   0.0%  dist=   0  frases=3/3    334.8 ms  det=si
+ppp250__escaneado_d2                 CER=   0.0%  dist=   0  frases=3/3    298.2 ms  det=si
+ppp250__escaneado_d3                 CER=  70.9%  dist=  56  frases=1/3    329.8 ms  det=si
+ppp250__patologico_escaneado         CER=   0.0%  dist=   0  frases=3/3    916.9 ms  det=si
+ppp300__escaneado_d1                 CER=   0.0%  dist=   0  frases=3/3    402.4 ms  det=si
+ppp300__escaneado_d2                 CER=   0.0%  dist=   0  frases=3/3    305.8 ms  det=si
+ppp300__escaneado_d3                 CER=  77.2%  dist=  61  frases=0/3    312.8 ms  det=si
+ppp300__patologico_escaneado         CER=   1.3%  dist=   1  frases=2/3   1546.2 ms  det=si
+ppp75__escaneado_d1                  CER=   1.3%  dist=   1  frases=2/3    138.1 ms  det=si
+ppp75__escaneado_d2                  CER=  44.3%  dist=  35  frases=2/3    139.4 ms  det=si
+ppp75__escaneado_d3                  CER=  75.9%  dist=  60  frases=1/3    132.1 ms  det=si
+ppp75__patologico_escaneado          CER=   0.0%  dist=   0  frases=3/3    275.1 ms  det=si
+{"evento": "fin", "vram_pico_MiB": 3424, "vram_base_MiB": 2067, "coste_propio_MiB": 1357, "pico_util_pct": 72}
+########## 02:13:06  PaddleOCR (PP-OCRv6 medium, es) / CUDA ##########
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+W0821 02:13:19.586827 119080 gpu_resources.cc:114] Please NOTE: device: 0, GPU Compute Capability: 8.6, Driver API Version: 12.8, Runtime API Version: 12.6
+{"etiqueta": "paddleocr_cuda", "motor": "paddleocr", "dispositivo": "cuda", "carga_frio_s": 17.31, "vram_base_MiB": 2071, "vram_tras_carga_MiB": 2340, "quietud_pct": 45, "flag": "SUCIA(pico 45%)", "modelos": {"paddle": "3.2.0", "paddle_cudnn_aviso": "compilado con cuDNN 9.9, maquina 9.5 (aviso de paddle)", "nombres_modelo": "ERROR TypeError: PaddleOCR._get_ocr_model_names() missing 2 required positional arguments: 'lang' and 'ppocr_version'", "params": {"doc_orientation_classify_model_name": "None", "doc_orientation_classify_model_dir": "None", "doc_unwarping_model_name": "None", "doc_unwarping_model_dir": "None", "text_detection_model_name": "PP-OCRv6_medium_det", "text_detection_model_dir": "None", "textline_orientation_model_name": "None", "textline_orientation_model_dir": "None", "text_recognition_model_name": "PP-OCRv6_medium_rec", "text_recognition_model_dir": "None"}}, "reps": 9}
+W0821 02:13:29.793872 119080 gpu_resources.cc:243] WARNING: device: 0. The installed Paddle is compiled with CUDNN 9.9, but CUDNN version in your machine is 9.5, which may cause serious incompatible bug. Please recompile or reinstall Paddle with compatible CUDNN version.
+ext__escaneado_d1                    CER=   0.0%  dist=   0  frases=3/3    183.8 ms  det=si
+ext__escaneado_d2                    CER=   0.0%  dist=   0  frases=3/3    111.3 ms  det=si
+ext__escaneado_d3                    CER=   2.5%  dist=   2  frases=2/3    114.3 ms  det=si
+ext__patologico_escaneado            CER=   0.0%  dist=   0  frases=3/3    357.1 ms  det=si
+extg__escaneado_d1                   CER=   0.0%  dist=   0  frases=3/3    186.8 ms  det=si
+extg__escaneado_d2                   CER=   0.0%  dist=   0  frases=3/3    131.3 ms  det=si
+extg__escaneado_d3                   CER=   2.5%  dist=   2  frases=2/3    107.1 ms  det=si
+extg__patologico_escaneado           CER=   0.0%  dist=   0  frases=3/3    326.4 ms  det=si
+ppp100__escaneado_d1                 CER=   0.0%  dist=   0  frases=3/3    152.0 ms  det=si
+ppp100__escaneado_d2                 CER=   0.0%  dist=   0  frases=3/3    135.5 ms  det=si
+ppp100__escaneado_d3                 CER=   2.5%  dist=   2  frases=2/3    107.1 ms  det=si
+ppp100__patologico_escaneado         CER=   0.0%  dist=   0  frases=3/3    110.1 ms  det=si
+ppp125__escaneado_d1                 CER=   0.0%  dist=   0  frases=3/3    128.3 ms  det=si
+ppp125__escaneado_d2                 CER=   0.0%  dist=   0  frases=3/3    147.0 ms  det=si
+ppp125__escaneado_d3                 CER=   5.1%  dist=   4  frases=2/3    132.7 ms  det=si
+ppp125__patologico_escaneado         CER=   0.0%  dist=   0  frases=3/3    162.5 ms  det=si
+ppp150__escaneado_d1                 CER=   0.0%  dist=   0  frases=3/3    205.0 ms  det=si
+ppp150__escaneado_d2                 CER=   0.0%  dist=   0  frases=3/3    183.2 ms  det=si
+ppp150__escaneado_d3                 CER=  31.6%  dist=  25  frases=2/3    167.7 ms  det=si
+ppp150__patologico_escaneado         CER=   0.0%  dist=   0  frases=3/3    211.0 ms  det=si
+ppp175__escaneado_d1                 CER=   0.0%  dist=   0  frases=3/3    235.1 ms  det=si
+ppp175__escaneado_d2                 CER=   0.0%  dist=   0  frases=3/3    237.4 ms  det=si
+ppp175__escaneado_d3                 CER=  75.9%  dist=  60  frases=1/3    197.9 ms  det=si
+ppp175__patologico_escaneado         CER=   0.0%  dist=   0  frases=3/3    310.4 ms  det=si
+ppp200__escaneado_d1                 CER=   0.0%  dist=   0  frases=3/3    437.0 ms  det=si
+ppp200__escaneado_d2                 CER=   0.0%  dist=   0  frases=3/3    312.4 ms  det=si
+ppp200__escaneado_d3                 CER=  75.9%  dist=  60  frases=1/3    323.9 ms  det=si
+ppp200__patologico_escaneado         CER=   0.0%  dist=   0  frases=3/3    439.3 ms  det=si
+ppp250__escaneado_d1                 CER=   0.0%  dist=   0  frases=3/3    478.5 ms  det=si
+ppp250__escaneado_d2                 CER=   0.0%  dist=   0  frases=3/3    455.3 ms  det=si
+ppp250__escaneado_d3                 CER=  75.9%  dist=  60  frases=1/3    471.7 ms  det=si
+ppp250__patologico_escaneado         CER=   0.0%  dist=   0  frases=3/3    608.7 ms  det=si
+ppp300__escaneado_d1                 CER=   0.0%  dist=   0  frases=3/3    688.8 ms  det=si
+ppp300__escaneado_d2                 CER=   0.0%  dist=   0  frases=3/3    610.9 ms  det=si
+ppp300__escaneado_d3                 CER=  75.9%  dist=  60  frases=1/3    604.2 ms  det=si
+ppp300__patologico_escaneado         CER=   0.0%  dist=   0  frases=3/3    729.8 ms  det=si
+ppp75__escaneado_d1                  CER=   0.0%  dist=   0  frases=3/3    103.2 ms  det=si
+ppp75__escaneado_d2                  CER=   0.0%  dist=   0  frases=3/3    114.8 ms  det=si
+ppp75__escaneado_d3                  CER=  11.4%  dist=   9  frases=1/3    102.3 ms  det=si
+ppp75__patologico_escaneado          CER=   0.0%  dist=   0  frases=3/3     95.8 ms  det=si
+{"evento": "fin", "vram_pico_MiB": 7442, "vram_base_MiB": 2071, "coste_propio_MiB": 5371, "pico_util_pct": 100}
+########## 02:15:25  EasyOCR (CRAFT + latin_g2) / CUDA ##########
+{"etiqueta": "easyocr_cuda", "motor": "easyocr", "dispositivo": "cuda", "carga_frio_s": 13.77, "vram_base_MiB": 2066, "vram_tras_carga_MiB": 2313, "quietud_pct": 5, "flag": "limpia", "modelos": {"torch": "2.6.0+cu124", "torch_cuda": "True"}, "reps": 9}
+ext__escaneado_d1                    CER=   0.0%  dist=   0  frases=3/3    370.0 ms  det=si
+ext__escaneado_d2                    CER=  43.0%  dist=  34  frases=1/3    305.1 ms  det=si
+ext__escaneado_d3                    CER=  54.4%  dist=  43  frases=1/3    477.5 ms  det=si
+ext__patologico_escaneado            CER=   0.0%  dist=   0  frases=3/3    515.0 ms  det=si
+extg__escaneado_d1                   CER=   0.0%  dist=   0  frases=3/3    381.8 ms  det=si
+extg__escaneado_d2                   CER=  43.0%  dist=  34  frases=1/3    278.9 ms  det=si
+extg__escaneado_d3                   CER=  54.4%  dist=  43  frases=1/3    700.1 ms  det=si
+extg__patologico_escaneado           CER=   0.0%  dist=   0  frases=3/3    664.8 ms  det=si
+ppp100__escaneado_d1                 CER=  15.2%  dist=  12  frases=2/3    296.5 ms  det=si
+ppp100__escaneado_d2                 CER=  43.0%  dist=  34  frases=1/3    222.3 ms  det=si
+ppp100__escaneado_d3                 CER=  54.4%  dist=  43  frases=1/3    590.9 ms  det=si
+ppp100__patologico_escaneado         CER=   0.0%  dist=   0  frases=3/3    384.9 ms  det=si
+ppp125__escaneado_d1                 CER=   0.0%  dist=   0  frases=3/3    306.5 ms  det=si
+ppp125__escaneado_d2                 CER=  40.5%  dist=  32  frases=1/3    398.2 ms  det=si
+ppp125__escaneado_d3                 CER=  50.6%  dist=  40  frases=1/3    437.1 ms  det=si
+ppp125__patologico_escaneado         CER=   0.0%  dist=   0  frases=3/3    402.2 ms  det=si
+ppp150__escaneado_d1                 CER=   0.0%  dist=   0  frases=3/3    352.2 ms  det=si
+ppp150__escaneado_d2                 CER=  39.2%  dist=  31  frases=1/3    423.3 ms  det=si
+ppp150__escaneado_d3                 CER=  54.4%  dist=  43  frases=1/3    528.9 ms  det=si
+ppp150__patologico_escaneado         CER=   0.0%  dist=   0  frases=3/3    591.6 ms  det=si
+ppp175__escaneado_d1                 CER=   0.0%  dist=   0  frases=3/3    479.4 ms  det=si
+ppp175__escaneado_d2                 CER=  44.3%  dist=  35  frases=1/3    603.1 ms  det=si
+ppp175__escaneado_d3                 CER=  54.4%  dist=  43  frases=1/3    629.7 ms  det=si
+ppp175__patologico_escaneado         CER=   0.0%  dist=   0  frases=3/3    704.7 ms  det=si
+ppp200__escaneado_d1                 CER=   0.0%  dist=   0  frases=3/3    600.3 ms  det=si
+ppp200__escaneado_d2                 CER=  43.0%  dist=  34  frases=1/3    684.4 ms  det=si
+ppp200__escaneado_d3                 CER=  59.5%  dist=  47  frases=1/3    933.3 ms  det=si
+ppp200__patologico_escaneado         CER=   0.0%  dist=   0  frases=3/3   1117.3 ms  det=si
+ppp250__escaneado_d1                 CER=   0.0%  dist=   0  frases=3/3    918.1 ms  det=si
+ppp250__escaneado_d2                 CER=  34.2%  dist=  27  frases=1/3    879.9 ms  det=si
+ppp250__escaneado_d3                 CER=  51.9%  dist=  41  frases=1/3   1009.5 ms  det=si
+ppp250__patologico_escaneado         CER=   0.0%  dist=   0  frases=3/3   1220.6 ms  det=si
+ppp300__escaneado_d1                 CER=   0.0%  dist=   0  frases=3/3   2379.0 ms  det=si
+ppp300__escaneado_d2                 CER=  40.5%  dist=  32  frases=1/3   3231.8 ms  det=si
+ppp300__escaneado_d3                 CER=  53.2%  dist=  42  frases=1/3   3289.9 ms  det=si
+ppp300__patologico_escaneado         CER=   0.0%  dist=   0  frases=3/3   2531.7 ms  det=si
+ppp75__escaneado_d1                  CER=  12.7%  dist=  10  frases=2/3    164.2 ms  det=si
+ppp75__escaneado_d2                  CER=  43.0%  dist=  34  frases=1/3    173.0 ms  det=si
+ppp75__escaneado_d3                  CER=  58.2%  dist=  46  frases=1/3    240.5 ms  det=si
+ppp75__patologico_escaneado          CER=   0.0%  dist=   0  frases=3/3    165.6 ms  det=si
+{"evento": "fin", "vram_pico_MiB": 11877, "vram_base_MiB": 2066, "coste_propio_MiB": 9811, "pico_util_pct": 100}
+########## 02:21:21  docling + RapidOCR backend=torch / CUDA ##########
+{"dispositivo": "cuda", "backend": "torch", "docs": ["patologico_escaneado", "escaneado_d1", "escaneado_d2", "escaneado_d3"], "ppp": "75,100,125,150,175,200,250,300", "reps": 9, "vram_base_MiB": 835, "quietud_pct": 26, "flag": "SUCIA(pico 26%)", "torch": "2.6.0+cu124", "torch_cuda": true, "modelo": {"lang_pedido": "english", "lang_resuelto": "en", "ppocr_version": "PP-OCRv6", "model_type_v6": "small", "model_type_v4v5": "mobile"}}
+[32m[INFO] 2026-08-21 02:21:52,898 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 02:21:52,991 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_det_small.pth[0m
+[32m[INFO] 2026-08-21 02:21:53,359 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 02:21:53,368 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-08-21 02:21:53,495 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 02:21:53,654 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_rec_small.pth[0m
+D:\Work\research\FileX\.venv-ai\Lib\site-packages\torch\nn\modules\conv.py:549: UserWarning: Using padding='same' with even kernel lengths and odd dilation may require a zero-padded copy of the input be created (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\aten\src\ATen\native\Convolution.cpp:1037.)
+  return F.conv2d(
+ppp75__patologico_escaneado        escala=1.042 (~75ppp) px_motor=(485, 672)  CER=   0.0%  dist=   0     479.7 ms
+ppp75__escaneado_d1                escala=1.042 (~75ppp) px_motor=(485, 650)  CER=   0.0%  dist=   0     425.3 ms
+ppp75__escaneado_d2                escala=1.042 (~75ppp) px_motor=(485, 638)  CER=   0.0%  dist=   0     388.9 ms
+ppp75__escaneado_d3                escala=1.042 (~75ppp) px_motor=(485, 638)  CER=  75.9%  dist=  60     364.5 ms
+[32m[INFO] 2026-08-21 02:22:54,319 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 02:22:54,329 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_det_small.pth[0m
+[32m[INFO] 2026-08-21 02:22:54,530 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 02:22:54,532 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-08-21 02:22:54,681 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 02:22:54,700 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_rec_small.pth[0m
+ppp100__patologico_escaneado       escala=1.389 (~100ppp) px_motor=(647, 896)  CER=   0.0%  dist=   0     543.4 ms
+ppp100__escaneado_d1               escala=1.389 (~100ppp) px_motor=(647, 867)  CER=   0.0%  dist=   0     450.6 ms
+ppp100__escaneado_d2               escala=1.389 (~100ppp) px_motor=(647, 850)  CER=   0.0%  dist=   0     425.8 ms
+ppp100__escaneado_d3               escala=1.389 (~100ppp) px_motor=(647, 850)  CER=  75.9%  dist=  60     417.4 ms
+[32m[INFO] 2026-08-21 02:23:14,596 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 02:23:14,605 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_det_small.pth[0m
+[32m[INFO] 2026-08-21 02:23:14,827 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 02:23:14,828 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-08-21 02:23:14,976 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 02:23:14,995 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_rec_small.pth[0m
+ppp125__patologico_escaneado       escala=1.736 (~125ppp) px_motor=(809, 1120)  CER=   0.0%  dist=   0     569.7 ms
+ppp125__escaneado_d1               escala=1.736 (~125ppp) px_motor=(808, 1083)  CER=   0.0%  dist=   0     460.7 ms
+ppp125__escaneado_d2               escala=1.736 (~125ppp) px_motor=(809, 1062)  CER=   0.0%  dist=   0     424.1 ms
+ppp125__escaneado_d3               escala=1.736 (~125ppp) px_motor=(809, 1062)  CER=  75.9%  dist=  60     402.2 ms
+[32m[INFO] 2026-08-21 02:23:35,467 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 02:23:35,476 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_det_small.pth[0m
+[32m[INFO] 2026-08-21 02:23:35,673 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 02:23:35,674 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-08-21 02:23:35,802 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 02:23:35,820 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_rec_small.pth[0m
+ppp150__patologico_escaneado       escala=2.083 (~150ppp) px_motor=(970, 1344)  CER=   0.0%  dist=   0     698.1 ms
+ppp150__escaneado_d1               escala=2.083 (~150ppp) px_motor=(970, 1300)  CER=   0.0%  dist=   0     540.3 ms
+ppp150__escaneado_d2               escala=2.083 (~150ppp) px_motor=(970, 1275)  CER=   0.0%  dist=   0     501.8 ms
+ppp150__escaneado_d3               escala=2.083 (~150ppp) px_motor=(970, 1275)  CER=  65.8%  dist=  52     554.4 ms
+[32m[INFO] 2026-08-21 02:24:00,886 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 02:24:00,896 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_det_small.pth[0m
+[32m[INFO] 2026-08-21 02:24:01,142 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 02:24:01,145 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-08-21 02:24:01,297 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 02:24:01,317 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_rec_small.pth[0m
+ppp175__patologico_escaneado       escala=2.431 (~175ppp) px_motor=(1132, 1568)  CER=   0.0%  dist=   0     786.4 ms
+ppp175__escaneado_d1               escala=2.431 (~175ppp) px_motor=(1132, 1517)  CER=   0.0%  dist=   0     643.3 ms
+ppp175__escaneado_d2               escala=2.431 (~175ppp) px_motor=(1132, 1487)  CER=   0.0%  dist=   0     608.0 ms
+ppp175__escaneado_d3               escala=2.431 (~175ppp) px_motor=(1132, 1487)  CER=  39.2%  dist=  31     586.5 ms
+[32m[INFO] 2026-08-21 02:24:29,671 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 02:24:29,682 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_det_small.pth[0m
+[32m[INFO] 2026-08-21 02:24:29,911 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 02:24:29,913 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-08-21 02:24:30,067 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 02:24:30,090 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_rec_small.pth[0m
+ppp200__patologico_escaneado       escala=2.778 (~200ppp) px_motor=(1294, 1792)  CER=   0.0%  dist=   0    1175.7 ms
+ppp200__escaneado_d1               escala=2.778 (~200ppp) px_motor=(1293, 1733)  CER=   0.0%  dist=   0     629.0 ms
+ppp200__escaneado_d2               escala=2.778 (~200ppp) px_motor=(1294, 1700)  CER=   0.0%  dist=   0     590.4 ms
+ppp200__escaneado_d3               escala=2.778 (~200ppp) px_motor=(1294, 1700)  CER=  58.2%  dist=  46     609.0 ms
+[32m[INFO] 2026-08-21 02:25:04,225 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 02:25:04,234 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_det_small.pth[0m
+[32m[INFO] 2026-08-21 02:25:04,433 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 02:25:04,435 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-08-21 02:25:04,580 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 02:25:04,597 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_rec_small.pth[0m
+ppp250__patologico_escaneado       escala=3.472 (~250ppp) px_motor=(1617, 2240)  CER=   0.0%  dist=   0     954.9 ms
+ppp250__escaneado_d1               escala=3.472 (~250ppp) px_motor=(1617, 2167)  CER=   0.0%  dist=   0     754.3 ms
+ppp250__escaneado_d2               escala=3.472 (~250ppp) px_motor=(1617, 2125)  CER=   0.0%  dist=   0     698.2 ms
+ppp250__escaneado_d3               escala=3.472 (~250ppp) px_motor=(1617, 2125)  CER=  51.9%  dist=  41     687.4 ms
+[32m[INFO] 2026-08-21 02:25:37,182 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 02:25:37,193 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_det_small.pth[0m
+[32m[INFO] 2026-08-21 02:25:37,406 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 02:25:37,407 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-08-21 02:25:37,563 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 02:25:37,581 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_rec_small.pth[0m
+ppp300__patologico_escaneado       escala=4.167 (~300ppp) px_motor=(1941, 2688)  CER=   0.0%  dist=   0    1174.8 ms
+ppp300__escaneado_d1               escala=4.167 (~300ppp) px_motor=(1940, 2600)  CER=   0.0%  dist=   0     935.5 ms
+ppp300__escaneado_d2               escala=4.167 (~300ppp) px_motor=(1941, 2550)  CER=   0.0%  dist=   0     955.2 ms
+ppp300__escaneado_d3               escala=4.167 (~300ppp) px_motor=(1941, 2550)  CER=  48.1%  dist=  38     777.4 ms
+{"evento": "fin", "vram_pico_MiB": 2820, "vram_base_MiB": 835, "coste_propio_MiB": 1985, "pico_util_pct": 100, "sonda_activa": true}
+########## 02:26:19  docling backend=torch / escala POR DEFECTO (216 ppp) ##########
+{"dispositivo": "cuda", "backend": "torch", "docs": ["patologico_escaneado", "escaneado_d1", "escaneado_d2", "escaneado_d3"], "ppp": "defecto", "reps": 9, "vram_base_MiB": 835, "quietud_pct": 17, "flag": "SUCIA(pico 17%)", "torch": "2.6.0+cu124", "torch_cuda": true, "modelo": {"lang_pedido": "english", "lang_resuelto": "en", "ppocr_version": "PP-OCRv6", "model_type_v6": "small", "model_type_v4v5": "mobile"}}
+[32m[INFO] 2026-08-21 02:26:30,743 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 02:26:30,753 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_det_small.pth[0m
+[32m[INFO] 2026-08-21 02:26:31,059 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 02:26:31,060 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-08-21 02:26:31,180 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 02:26:31,197 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_rec_small.pth[0m
+D:\Work\research\FileX\.venv-ai\Lib\site-packages\torch\nn\modules\conv.py:549: UserWarning: Using padding='same' with even kernel lengths and odd dilation may require a zero-padded copy of the input be created (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\aten\src\ATen\native\Convolution.cpp:1037.)
+  return F.conv2d(
+pppdefecto__patologico_escaneado   escala=3.000 (~216ppp) px_motor=(1398, 1935)  CER=   0.0%  dist=   0     823.9 ms
+pppdefecto__escaneado_d1           escala=3.000 (~216ppp) px_motor=(1397, 1872)  CER=   0.0%  dist=   0     643.5 ms
+pppdefecto__escaneado_d2           escala=3.000 (~216ppp) px_motor=(1398, 1836)  CER=   0.0%  dist=   0     595.3 ms
+pppdefecto__escaneado_d3           escala=3.000 (~216ppp) px_motor=(1398, 1836)  CER=  58.2%  dist=  46     605.5 ms
+{"evento": "fin", "vram_pico_MiB": 2034, "vram_base_MiB": 835, "coste_propio_MiB": 1199, "pico_util_pct": 64, "sonda_activa": true}
+[lock] liberado  02:27:04

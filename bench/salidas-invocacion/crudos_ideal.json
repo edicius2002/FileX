@@ -1,0 +1,50 @@
+{
+ "gray": {
+  "rmse_color": 0.353895,
+  "rmse_vs_ideal": 0.0,
+  "ideal_ops": [
+   "-colorspace",
+   "Gray"
+  ],
+  "veredicto": "INTEGRO"
+ },
+ "graya": {
+  "rmse_color": 0.353895,
+  "rmse_vs_ideal": 0.0,
+  "ideal_ops": [
+   "-colorspace",
+   "Gray"
+  ],
+  "veredicto": "INTEGRO"
+ },
+ "mono": {
+  "rmse_color": 0.422631,
+  "rmse_vs_ideal": 0.0,
+  "ideal_ops": [
+   "-monochrome"
+  ],
+  "veredicto": "INTEGRO"
+ },
+ "bayer": {
+  "rmse_color": 0.0719435,
+  "ideal": null,
+  "veredicto": "PENDIENTE",
+  "nota": "sin referencia ideal trivial para este formato"
+ },
+ "bayera": {
+  "rmse_color": 0.0719435,
+  "ideal": null,
+  "veredicto": "PENDIENTE",
+  "nota": "sin referencia ideal trivial para este formato"
+ },
+ "map": {
+  "estado": "muerta",
+  "nota": "no llego a producir salida"
+ },
+ "ftxt": {
+  "rmse_color": 0.652292,
+  "rmse_vs_ideal": 0.652292,
+  "ideal_ops": [],
+  "veredicto": "DESTRUIDO"
+ }
+}

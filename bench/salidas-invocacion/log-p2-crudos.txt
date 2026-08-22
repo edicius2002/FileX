@@ -1,0 +1,30 @@
+CRUDOS SIN CABECERA - IMAGEMAGICK (20 formatos)
+
+  bayer    bpp=2.0    bits/canal=16.0  base=muerta -> PERDIDA INEVITABLE rmse=0.07194  (depth=16)
+  bayera   bpp=2.0    bits/canal=8.0   base=muerta -> PERDIDA INEVITABLE rmse=0.07194  (depth=16)
+  bgr      bpp=6.0    bits/canal=16.0  base=muerta -> INTEGRO            rmse=0.0      (depth=16)
+  bgra     bpp=8.0    bits/canal=16.0  base=muerta -> INTEGRO            rmse=0.0      (depth=16)
+  bgro     bpp=6.0    bits/canal=12.0  base=muerta -> FALLO              rmse=-        (-)
+  cmyk     bpp=8.0    bits/canal=16.0  base=muerta -> INTEGRO            rmse=0.0      (depth=16)
+  cmyka    bpp=10.0   bits/canal=16.0  base=muerta -> INTEGRO            rmse=0.0      (depth=16)
+  ftxt     bpp=20.165 bits/canal=161.3 base=muerta -> PERDIDA INEVITABLE rmse=0.65229  (depth=16)
+  gray     bpp=2.0    bits/canal=16.0  base=muerta -> PERDIDA INEVITABLE rmse=0.3539   (depth=16)
+  graya    bpp=4.0    bits/canal=16.0  base=muerta -> PERDIDA INEVITABLE rmse=0.3539   (depth=16)
+  map      bpp=1.048  bits/canal=8.4   base=muerta -> FALLO              rmse=-        (-)
+  mono     bpp=0.125  bits/canal=1.0   base=muerta -> PERDIDA INEVITABLE rmse=0.42263  (depth=1)
+  pal      bpp=2.0    bits/canal=16.0  base=muerta -> INTEGRO            rmse=0.01415  (depth=16)
+  rgb      bpp=6.0    bits/canal=16.0  base=muerta -> INTEGRO            rmse=0.0      (depth=16)
+  rgba     bpp=8.0    bits/canal=16.0  base=muerta -> INTEGRO            rmse=0.0      (depth=16)
+  rgbo     bpp=8.0    bits/canal=16.0  base=muerta -> INTEGRO            rmse=0.0      (depth=16)
+  uyvy     bpp=2.0    bits/canal=8.0   base=muerta -> INTEGRO            rmse=0.01415  (depth=8)
+  ycbcr    bpp=6.0    bits/canal=16.0  base=muerta -> INTEGRO            rmse=0.00017  (depth=16)
+  ycbcra   bpp=8.0    bits/canal=16.0  base=muerta -> INTEGRO            rmse=0.00017  (depth=16)
+  yuv      bpp=3.0    bits/canal=8.0   base=muerta -> DEGRADADO          rmse=0.02331  (depth=16)
+
+CRUDOS SIN CABECERA - FFMPEG
+
+  rgb      bpp=7.5    base=muerta P2=VIVA
+  yuv      bpp=7.5    base=muerta P2=VIVA
+
+ {'PERDIDA INEVITABLE': 6, 'INTEGRO': 13, 'FALLO': 2, 'DEGRADADO': 1}
+crudos revividos con fidelidad comprobada: 20 de 22

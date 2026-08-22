@@ -1,0 +1,13 @@
+PNG 1920x1080 RGBA16 OPACO (peor caso)               proc=   65.36 ms  corte=   66.03 ms  magick=  376.34 ms  x5.8
+PNG 200x200 paleta+tRNS con alfa real (mejor caso)   proc=    0.21 ms  corte=    0.23 ms  magick=   47.48 ms  x226.1
+PNG 4000x3000 RGB16 sin alfa                         proc=    0.09 ms  corte=    0.09 ms  magick= 1194.11 ms  x13569.4
+PNG 64x64 paleta 1 bit sin alfa                      proc=    0.14 ms  corte=    0.15 ms  magick=   39.08 ms  x289.5
+PNG 200x200 paleta+tRNS (salida)                     proc=    0.23 ms  corte=    0.21 ms  magick=   48.01 ms  x211.5
+WebP con perdida sin alfa                            proc=    0.11 ms  corte=    0.10 ms  magick=  208.08 ms  x1944.7
+WebP con perdida + ALPH sin perdida (VP8L)           proc=    8.18 ms  corte=    8.01 ms  magick=   44.30 ms  x5.4
+WebP sin perdida (VP8L) sin alfa                     proc=    0.11 ms  corte=    0.13 ms  magick=   36.13 ms  x340.9
+JPEG (el formato no admite alfa)                     proc=    0.04 ms  corte=    0.07 ms  magick=  194.44 ms  x4860.9
+AVIF con alfa (no evaluable en proceso)              proc=    0.09 ms  corte=    0.05 ms  magick=   53.38 ms  x620.7
+TIFF 16 bits sin alfa                                proc=    0.13 ms  corte=    0.17 ms  magick=  797.83 ms  x6282.1
+GIF con transparencia declarada                      proc=    0.08 ms  corte=    0.08 ms  magick= 1772.78 ms  x23326.0
+-> D:\Work\research\FileX\bench\salidas-verificacion-fidelidad\alfa.json

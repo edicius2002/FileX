@@ -1,8 +1,24 @@
 # FileX — Especificaciones de agentes para los motores pendientes
 
+> # ⛔ DOCUMENTO SUPERADO — 21 de agosto de 2026, 03:30
+>
+> **Lo sustituye `ESTADO-Y-REPARTO.md`.** No copies los prompts de este fichero: su contexto compartido (§2) y sus «marcas a batir» **están invalidados**, y la justificación de los cuatro agentes **es falsa**. Se conserva sin reescribir, como historia intelectual de qué se creyó y por qué cambió.
+>
+> **Las tres cosas que hay que saber antes de leer una línea más:**
+>
+> 1. **La justificación entera se cayó.** §1 dice: *«en la variante de dificultad 3 del corpus **fallaron los tres motores de OCR probados** — RapidOCR 65,8 %, PaddleOCR 75,9 %, EasyOCR 57,0 %»*. **Es FALSO — MEDIDO.** Era un **×2 de interpolación del arnés**: `escaneado_d2/d3.pdf` llevan una imagen incrustada a **100 ppp nativos** y el arnés de la fase 2 rasterizaba todo a 200. **A ppp nativos, PaddleOCR resuelve d3 con 2,5 % de CER** — 2 caracteres sobre 79. Evidencia: `bench/ocrmypdf.md` §3.4 y `bench/ocr-ppp-nativos.md` §3.
+> 2. **Las marcas que este documento manda batir no existen.** La tabla vigente es la **canónica** de `bench/ocr-ppp-nativos.md` §3, reproducida en `HUECOS.md` §5 y `ANALISIS-COMPLETO.md` §5.5. *(Y el 57,0 % de EasyOCR que cita §1 era su lectura de **CPU**: en GPU dio 59,5 %. **EasyOCR no es determinista entre CPU y GPU** sobre d3.)*
+> 3. **Los tres motores pendientes bajan de prioridad, no suben.** Ya no se evalúan como candidatos a resolver un caso que nadie resuelve —porque hay quien lo resuelve— sino por **coste de integración** y por si aportan algo que la ruta actual (Docling + RapidOCR `backend="torch"`, **0,0 % de CER en el patológico, d1 y d2**) no dé. Lo que **sube** de prioridad es **construir un caso difícil que sí discrimine** (`escaneado_d4`), porque el corpus actual **ya no mide dificultad: mide selección de motor** (`bench/ocr-ppp-nativos.md` §8).
+>
+> **Su §2 (contexto compartido) está sustituido por `ESTADO-Y-REPARTO.md` §5**, que lleva el entorno verificado al 21/08, la tabla canónica de OCR, la regla de ppp con techo y suelo, y la VRAM por motor **y por resolución**. **Los agentes vigentes, con su reparto y sus prompts, están en `ESTADO-Y-REPARTO.md` §4 y §7** (los tres motores de este documento son ahora **B3, B4 y B5**, agrupados en un solo agente **G2** porque comparten el lock de GPU).
+>
+> **Lo que de este documento sigue siendo útil:** las fichas técnicas de cada motor (§3-§6) —qué hay instalado, qué falló y por qué— y el diagnóstico erróneo de marker, que sigue siendo un buen ejemplo de por qué no se descarta un motor sin intentarlo.
+
 **Documento de traspaso.** Cuatro agentes, uno por motor no probado. Escrito para lanzarlos en otra sesión copiando los prompts tal cual. Fecha: 19 de agosto de 2026.
 
 > **Uso rápido:** lee §1 y §2, decide el orden en §7, y copia el prompt del agente que quieras lanzar. Los prompts ya incluyen el contexto que cada agente necesita — no hace falta explicarles nada más.
+>
+> ⛔ **Obsoleto: ver el aviso de arriba. Usa `ESTADO-Y-REPARTO.md`.**
 
 ---
 
@@ -17,7 +33,9 @@ De los 9 motores de IA clonados, **6 se ejecutaron y 3 no**. Estos agentes cierr
 | **surya** | ❌ instalado, no arranca | Solo se probó su backend por defecto (vLLM). **Tiene cuatro** |
 | **MinerU** | ❌ nunca se intentó | Aplazado por peso; su licencia sí se resolvió (es utilizable) |
 
-**El agujero que justifica todo esto:** en la variante de dificultad 3 del corpus **fallaron los tres motores de OCR probados** — RapidOCR 65,8 %, PaddleOCR 75,9 %, EasyOCR 57,0 % de error por carácter. Ninguno resolvió el documento muy degradado. Los motores pendientes son los candidatos que quedan.
+~~**El agujero que justifica todo esto:** en la variante de dificultad 3 del corpus **fallaron los tres motores de OCR probados** — RapidOCR 65,8 %, PaddleOCR 75,9 %, EasyOCR 57,0 % de error por carácter. Ninguno resolvió el documento muy degradado. Los motores pendientes son los candidatos que quedan.~~
+
+> ⛔ **FALSO — MEDIDO el 20 y el 21/08/2026.** Era un artefacto de rasterización (×2 de interpolación sobre imágenes de 100 ppp nativos). **PaddleOCR resuelve d3 con 2,5 % de CER.** Ver el aviso de cabecera y `bench/ocr-ppp-nativos.md` §3. **Este párrafo era la justificación entera del documento.**
 
 ---
 

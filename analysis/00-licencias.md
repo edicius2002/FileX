@@ -16,6 +16,7 @@ Confirmado en el código: ConvertX usa `execFile` de `node:child_process` en tod
 | **docling** / `-mcp` / `-serve` | MIT | ✅ Sin restricciones |
 | **faster-whisper** | MIT | ✅ Sin restricciones |
 | **kordoc** | MIT | ✅ Sin restricciones |
+| **modelcontextprotocol/servers** | **MIT/Apache-2.0 (transición)** | ✅ Sin restricciones de fondo, **con obligaciones de Apache-2.0** — ver nota |
 | **marker**, **surya** | Apache-2.0 | ✅ Con aviso de patentes y atribución |
 | **MinerU** | Apache-2.0 + términos | ✅ Atribuir si es servicio online |
 | **OCRmyPDF** | MPL-2.0 | ⚠️ Copyleft por fichero: publicar los ficheros MPL modificados |
@@ -23,6 +24,28 @@ Confirmado en el código: ConvertX usa `execFile` de `node:child_process` en tod
 | **VERT** | AGPL-3.0 | ❌ Igual |
 | **SnapOtter** | AGPL-3.0 + `packages/enterprise` propietario + CLA | ❌ Igual, y alimenta a un competidor comercial |
 | **Stirling-PDF** | MIT **con 10 directorios excluidos** | ⚠️ El núcleo sí; `app/proprietary/` (donde vive su MCP) requiere suscripción de pago |
+
+### Nota sobre `modelcontextprotocol/servers` — corrección **MEDIDA** (20/08/2026)
+
+**Se creía MIT.** Todo el proyecto lo daba por MIT, y es el repo del que más piezas se propone copiar
+(el confinamiento completo de `src/filesystem`, ~1.000 líneas de tests). **Su `LICENSE` dice otra cosa**
+(`repos/mcp-refs/servers/LICENSE:1-5`, verificado):
+
+> *«The MCP project is undergoing a licensing transition from the MIT License to the Apache License,
+> Version 2.0»* — el código nuevo es Apache-2.0; **las contribuciones cuyo autor no consintió el
+> relicenciamiento siguen bajo MIT**; la documentación (no especificaciones) es CC-BY-4.0.
+
+Sus `package.json` no declaran licencia: `"license": "SEE LICENSE IN LICENSE"`.
+
+**Qué cambia y qué no:**
+
+- **No invalida ningún veredicto de reutilización.** Apache-2.0 es permisiva y sirve igual que MIT.
+- **Sí cambia las obligaciones.** Apache-2.0 exige **preservar los avisos, marcar los ficheros
+  modificados y propagar el `NOTICE`**; MIT solo exige el aviso de copyright. Como la licencia efectiva
+  **por fichero es ambigua**, lo seguro es tratar todo lo tomado de `servers/` como Apache-2.0, cuyas
+  obligaciones son un superconjunto de las de MIT.
+
+Detalle en `analysis/00-mcp-componentes.md` §3.1 y `RESULTADOS-MCP.md` §12.
 
 ## Los motores externos (binarios, no código)
 

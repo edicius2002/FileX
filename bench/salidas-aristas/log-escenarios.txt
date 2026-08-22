@@ -1,0 +1,10 @@
+ESTRATO INDETERMINADO por motor: {'indet:ffmpeg': 60664, 'indet:imagemagick': 15210}  total 75874
+  residual medido ffmpeg       50.6 %  (n=202 sobre N=16399)
+  residual medido imagemagick  4.4 %  (n=296 sobre N=23853)
+  semiarista de entrada muerta ffmpeg       8/114 = 7.0 %
+  semiarista de entrada muerta imagemagick  26/160 = 16.2 %
+
+ESCENARIOS SOBRE LAS 138501 ARISTAS DECLARADAS
+  A minimo (todas las indeterminadas son reales)    31530  =  22.8 %
+  B (indeterminadas = su motor)                     67345  =  48.6 %
+  C maximo (indeterminadas todas nominales)        107404  =  77.5 %

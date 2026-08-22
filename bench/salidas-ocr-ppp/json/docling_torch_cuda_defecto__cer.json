@@ -1,0 +1,124 @@
+{
+  "cabecera": {
+    "dispositivo": "cuda",
+    "backend": "torch",
+    "docs": [
+      "patologico_escaneado",
+      "escaneado_d1",
+      "escaneado_d2",
+      "escaneado_d3"
+    ],
+    "ppp": "defecto",
+    "reps": 9,
+    "vram_base_MiB": 835,
+    "quietud_pct": 17,
+    "flag": "SUCIA(pico 17%)",
+    "torch": "2.6.0+cu124",
+    "torch_cuda": true,
+    "modelo": {
+      "lang_pedido": "english",
+      "lang_resuelto": "en",
+      "ppocr_version": "PP-OCRv6",
+      "model_type_v6": "small",
+      "model_type_v4v5": "mobile"
+    }
+  },
+  "fin": {
+    "evento": "fin",
+    "vram_pico_MiB": 2034,
+    "vram_base_MiB": 835,
+    "coste_propio_MiB": 1199,
+    "pico_util_pct": 64,
+    "sonda_activa": true
+  },
+  "res": {
+    "pppdefecto__patologico_escaneado": {
+      "ppp_param": null,
+      "escala": 3.0,
+      "ppp_efectivo_param": 216.0,
+      "px_reales_al_motor": [
+        1398,
+        1935
+      ],
+      "cer_pct": 0.0,
+      "dist_global": 0,
+      "frases_exactas": 3,
+      "chars": 81,
+      "normalizada": "documento escaneado texto que solo existe como pixeles debe recuperarse con ocr",
+      "ms_mediana": 823.9,
+      "ms_min": 796.7,
+      "ms_max": 884.8,
+      "n": 9,
+      "determinista": true,
+      "constructor_s": 0.09,
+      "vram_pico_MiB": 2034,
+      "vram_delta_MiB": 2034
+    },
+    "pppdefecto__escaneado_d1": {
+      "ppp_param": null,
+      "escala": 3.0,
+      "ppp_efectivo_param": 216.0,
+      "px_reales_al_motor": [
+        1397,
+        1872
+      ],
+      "cer_pct": 0.0,
+      "dist_global": 0,
+      "frases_exactas": 3,
+      "chars": 85,
+      "normalizada": "documento escaneado texto que solo existe como pixeles debe recuperarse con ocr",
+      "ms_mediana": 643.5,
+      "ms_min": 617.4,
+      "ms_max": 721.1,
+      "n": 9,
+      "determinista": true,
+      "constructor_s": 0.09,
+      "vram_pico_MiB": 2034,
+      "vram_delta_MiB": 0
+    },
+    "pppdefecto__escaneado_d2": {
+      "ppp_param": null,
+      "escala": 3.0,
+      "ppp_efectivo_param": 216.0,
+      "px_reales_al_motor": [
+        1398,
+        1836
+      ],
+      "cer_pct": 0.0,
+      "dist_global": 0,
+      "frases_exactas": 3,
+      "chars": 85,
+      "normalizada": "documento escaneado texto que solo existe como pixeles debe recuperarse con ocr",
+      "ms_mediana": 595.3,
+      "ms_min": 577.0,
+      "ms_max": 718.1,
+      "n": 9,
+      "determinista": true,
+      "constructor_s": 0.09,
+      "vram_pico_MiB": 2034,
+      "vram_delta_MiB": 0
+    },
+    "pppdefecto__escaneado_d3": {
+      "ppp_param": null,
+      "escala": 3.0,
+      "ppp_efectivo_param": 216.0,
+      "px_reales_al_motor": [
+        1398,
+        1836
+      ],
+      "cer_pct": 58.2,
+      "dist_global": 46,
+      "frases_exactas": 1,
+      "chars": 38,
+      "normalizada": "documento escaneado texto que salo",
+      "ms_mediana": 605.5,
+      "ms_min": 567.0,
+      "ms_max": 641.4,
+      "n": 9,
+      "determinista": true,
+      "constructor_s": 0.09,
+      "vram_pico_MiB": 2034,
+      "vram_delta_MiB": 0
+    }
+  }
+}

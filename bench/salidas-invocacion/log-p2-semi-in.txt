@@ -1,0 +1,39 @@
+REINTENTO DE 34 SEMIARISTAS DE ENTRADA MUERTAS
+
+  ffmpeg|avs               base=muerta  P2=muerta  cat=3  
+  ffmpeg|avs2              base=muerta  P2=muerta  cat=3  FALLO
+  ffmpeg|mpc               base=muerta  P2=muerta  cat=3  
+  ffmpeg|mtv               base=muerta  P2=muerta  cat=3  
+  ffmpeg|rgb               base=muerta  P2=muerta  cat=3  
+  ffmpeg|svg               base=muerta  P2=muerta  cat=3  FALLO
+  ffmpeg|txt               base=OK  P2=VIVA  cat=1  DEGRADADO
+  ffmpeg|yuv               base=muerta  P2=muerta  cat=3  
+  imagemagick|avs          base=muerta  P2=muerta  cat=3  FALLO
+  imagemagick|bayer        base=muerta  P2=VIVA  cat=2  INTEGRO
+  imagemagick|bayera       base=muerta  P2=VIVA  cat=2  INTEGRO
+  imagemagick|bgr          base=muerta  P2=VIVA  cat=2  INTEGRO
+  imagemagick|bgra         base=muerta  P2=VIVA  cat=2  INTEGRO
+  imagemagick|bgro         base=muerta  P2=muerta  cat=3  FALLO
+  imagemagick|cmyk         base=muerta  P2=VIVA  cat=2  INTEGRO
+  imagemagick|cmyka        base=muerta  P2=VIVA  cat=2  INTEGRO
+  imagemagick|ftxt         base=muerta  P2=muerta  cat=3  FALLO
+  imagemagick|g4           base=muerta  P2=muerta  cat=3  FALLO
+  imagemagick|gray         base=muerta  P2=VIVA  cat=2  INTEGRO
+  imagemagick|graya        base=muerta  P2=VIVA  cat=2  INTEGRO
+  imagemagick|map          base=muerta  P2=muerta  cat=3  FALLO
+  imagemagick|mono         base=muerta  P2=VIVA  cat=2  DEGRADADO
+  imagemagick|msvg         base=muerta  P2=muerta  cat=3  FALLO
+  imagemagick|pal          base=muerta  P2=VIVA  cat=2  INTEGRO
+  imagemagick|pcl          base=muerta  P2=muerta  cat=3  FALLO
+  imagemagick|pix          base=muerta  P2=muerta  cat=3  FALLO
+  imagemagick|rgb          base=muerta  P2=muerta  cat=3  
+  imagemagick|rgba         base=muerta  P2=VIVA  cat=2  INTEGRO
+  imagemagick|rgbo         base=muerta  P2=VIVA  cat=2  INTEGRO
+  imagemagick|rgf          base=muerta  P2=muerta  cat=3  FALLO
+  imagemagick|uyvy         base=muerta  P2=VIVA  cat=2  INTEGRO
+  imagemagick|ycbcr        base=muerta  P2=VIVA  cat=2  INTEGRO
+  imagemagick|ycbcra       base=muerta  P2=VIVA  cat=2  INTEGRO
+  imagemagick|yuv          base=muerta  P2=muerta  cat=3  
+
+RESUMEN: {('muerta', 3): 18, ('viva', 1): 1, ('viva', 2): 15}   (83 s)
+revividas 16 de 34 (47.1 %)

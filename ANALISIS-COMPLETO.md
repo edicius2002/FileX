@@ -5,6 +5,8 @@
 **Hardware:** RTX 3060 12 GB (compute capability 8.6, driver 572.61) · Windows 10 · 12 núcleos · Docker 29.4.3 + WSL2 · Python 3.11.9
 
 > Todas las cifras proceden de código clonado o de comandos ejecutados en esta máquina. **Ninguna procede de README ni de metadatos de GitHub.** Donde ambos discrepaban, se indica explícitamente.
+>
+> **Revisado el 21 de agosto de 2026.** Cinco afirmaciones de este documento quedaron desmentidas por mediciones posteriores y **están corregidas en su sitio, diciendo qué se creía y qué se midió**: el multiplicador del grafo (§1, §3.4), las marcas de OCR de dificultad 2 y 3 (§5.5), OCRmyPDF como preprocesador (§2.2, §4.2), la licencia de `modelcontextprotocol/servers` (§3.2, §4.3) y «la lista blanca hay que diseñarla desde cero» (§6.3). **Ninguna cifra original se ha borrado.**
 
 ---
 
@@ -21,13 +23,27 @@ El ecosistema está **partido en dos mitades que nadie ha unido**:
 
 | # | Diferenciador | Evidencia | Estado |
 |---:|---|---|---|
-| **1** | **Verificación obligatoria de la salida** | **7 fallos independientes en 6 proyectos**: un `.avif` que es PNG entregado con estado "Done"; pérdida silenciosa de pista de audio en **los dos** competidores; degradación 16→8 bits sin avisar; cadena vacía con `isError: false` | ✅ **Medido. El más fuerte** |
-| **2** | Grafo con **coste por arista** | 0 de 7 orquestadores hacen búsqueda de camino. ConvertX elige mal el motor (`png→jpg` acaba en ffmpeg teniendo vips disponible) | ✅ Medido · ⏳ **el 2,93× es alcanzabilidad, no fidelidad: sin medir** |
-| **3** | MCP **multi-modal en un solo servidor** | Los servidores no coexisten (`mcp~=1.8.0` frente a `mcp>=2.0.0`). ~2 400× de diferencia en tokens entre patrones | ✅ Medido · ⏳ **solo sobre MCP documentales; el caso binario sin probar** |
+| **1** | **Verificación obligatoria de la salida** | **8 fallos independientes en 7 proyectos**: un `.avif` que es PNG entregado con estado "Done"; pérdida silenciosa de pista de audio en **los dos** competidores; degradación 16→8 bits sin avisar; cadena vacía con `isError: false`; **y un PNG perfecto sin una sola letra** (`resvg`) | ✅ **Medido. El más fuerte** · ⚠️ **con su frontera medida: el octavo NO lo atrapa el contrato de cuatro puntos** (§5.5) · ✅ **la regla I9 sí lo atrapa, 6/6** · ⚠️ **pero `resvg` era una FAMILIA de cinco miembros y uno sigue descubierto** (§5.5) |
+| **2** | Grafo con **coste por arista** | 0 de 7 orquestadores hacen búsqueda de camino. ConvertX elige mal el motor (`png→jpg` acaba en ffmpeg teniendo vips disponible) | ✅ Medido en su parte de **selección** · ❌ **el multi-salto, REFUTADO al ejecutarlo** (ver abajo) · ✅ **la tasa de aristas nominales, MEDIDA: 50,5 % global, pero 3,0 % en el estrato PDF** (§3.4) · ✅ **y acotada: el 18,8 % de ese 50,5 % era invocación → 41,0 % real, con 3 226 aristas de ganancia automática** (§3.4) |
+| **3** | MCP **multi-modal en un solo servidor** | Los servidores no coexisten (`mcp~=1.8.0` frente a `mcp>=2.0.0`). ~2 400× de diferencia en tokens entre patrones | ✅ Medido · ✅ **caso binario resuelto (20/08)** · ✅ **saturación del catálogo resuelta (21/08) y REFUTADA: 27 herramientas eligieron mejor que 8** |
 | **4** | NVENC en vídeo | Ningún orquestador lo usa. **8,39× en HEVC**, n=9. Pero se pasa un 8–11 % del bitrate pedido | ✅ Medido · ⏳ **rendimiento en lote sin probar** |
-| **5** | OCR en GPU | Todos lo hacen en CPU. Resuelto con Docling + RapidOCR `backend="torch"`, **coste de infraestructura cero** | ⚠️ **Degradado: ya no es foso** · ⏳ falta OCRmyPDF como preprocesador |
+| **5** | OCR en GPU | Todos lo hacen en CPU. Resuelto con Docling + RapidOCR `backend="torch"`, **coste de infraestructura cero** | ⚠️ **Degradado: ya no es foso** · 🔁 **reabierto: las marcas de d2/d3 eran un artefacto del arnés** (§5.5) |
 
 **Los tres criterios de juicio:** ¿nadie lo hace? ¿es barato? ¿lo nota el usuario? **Solo el nº 1 cumple los tres.** El OCR es replicable en una tarde, el patrón MCP ya lo implementa bien IBM, NVENC solo importa en lote, y el grafo amplía alcance sin garantizar corrección.
+
+> **Corrección al diferenciador nº 2 — MEDIDA el 21/08/2026 (`bench/fidelidad-caminos.md`, 69 caminos ejecutados).** Se daba por «real, pero reformulado». **Los datos refutan el multi-salto:**
+>
+> | Categoría | Multi-salto (n=47) | 1 salto (n=22) |
+> |---|---:|---:|
+> | ÍNTEGRO | 10,6 % | 50,0 % |
+> | PÉRDIDA INEVITABLE | 21,3 % | 4,5 % |
+> | DEGRADADO | 38,3 % | 22,7 % |
+> | **DESTRUIDO** | **17,0 %** | 9,1 % |
+> | FALLO | 12,8 % | 13,6 % |
+>
+> **Aceptable: 31,9 % en multi-salto frente a 54,5 % en un salto.** Y el 2,93× se deshace en cuatro pasos: **(1)** con los motores instalados aquí cae a **1,93×**; **(2)** de los 128 426 pares nuevos solo **610 (0,48 %)** son plausibles → la ganancia honesta es **+32,7 %, no +193 %**; **(3)** **820 de los 1 599 pares «pedidos» tienen PDF como único intermedio** —el multi-salto aquí es «pásalo por PDF»—; **(4)** `epub→png`, `epub→docx` y `tex→docx` **no se pueden ejecutar**. El estrato que mejor puntúa (documento→imagen, 7/8) **aprueba solo porque el destino es una imagen y perder el texto es «inevitable» por definición**: funciona mejor donde menos sirve.
+>
+> **Lo que se sostiene es la selección correcta con coste explícito**, que arregla por construcción el bug de despacho de ConvertX y se cobra en el primer salto. El multi-salto era la propina; ahora sabemos que la propina es **pequeña y arriesgada**. *(`HUECOS.md` §2 ya lo sospechaba sin datos —«el número lo sobrevende»—: la sospecha era correcta y ahora está medida.)*
 
 **El argumento de FileX**, en consecuencia, no es *"convierte más cosas más rápido"* —discutible y en parte replicable— sino:
 
@@ -37,16 +53,34 @@ El ecosistema está **partido en dos mitades que nadie ha unido**:
 
 | Pendiente | Afecta a | Especificado en |
 |---|---|---|
-| Fracción de los 447 398 caminos con fidelidad aceptable | Difer. 2 | — |
+| ~~Fracción de los 447 398 caminos con fidelidad aceptable~~ · **RESUELTO 21/08: 31,9 % en multi-salto** | Difer. 2 | `bench/fidelidad-caminos.md` |
+| ~~Cuántas de las 138 501 aristas del grafo son **nominales**~~ · **RESUELTO 21/08: el 50,5 % de las verificables NO existe**, IC 95 % [48,2–53,0]. **Pero la tasa no es uniforme (factor 18) y el estrato PDF —el que usa el multi-salto— sale al 3,0 %** | Difer. 2 | **`bench/aristas-nominales.md`** |
+| **El 54,78 % de aristas indeterminadas**: exige un corpus de 445 formatos que ningún motor local escribe (corpus FATE de ffmpeg). Es lo único que convierte el escenario central (48,6 %) en un número medido | Difer. 2 | ídem §7, §11 |
+| ~~**Cuánto de ese 50,5 % se recupera con una invocación mejor**~~ · **RESUELTO 21/08 (14:00): el 18,8 %** [16,8–21,3]. **La tasa baja a 41,0 % con los mismos motores y el mismo build**, y **3 226 aristas (10,2 %) son ganancia automática sin pedirle nada al usuario**. Lo que **no** se puede prometer es el 81,2 % irrecuperable | Difer. 2 | **`bench/invocacion-aristas.md`** |
+| ~~**Las 140 aristas de Ghostscript y Gotenberg**~~ · **RESUELTO: 3,1 % nominal** [0,9–10,7], con **censo completo** de Ghostscript (9/9 reales) y Gotenberg/Chromium (25/25). **Coincide con el 3,0 % del estrato PDF por un camino independiente** | Difer. 2 | ídem §8 |
+| ~~**`qpdf` y `tesseract`, los dos `no_evaluable` que quedaban**~~ · **RESUELTO: 8 líneas de Dockerfile, 28,1 s, +50 MB.** qpdf 12.4.0 resuelve 7 de 7 operaciones; Tesseract 5.5.0 **trae `spa`** | Difer. 1 | ídem §9 |
+| **La profundidad de los crudos de terceros.** Lo medido son ficheros que escribió el propio ImageMagick a 16 bits; uno de 8 bits **daría basura con la misma bandera**. La categoría «recuperable con un parámetro» exige **cuatro** datos, no uno | Difer. 2 | ídem §11 |
 | ~~Qué devuelve un MCP tras convertir un **binario**~~ · **RESUELTO 20/08** | Difer. 3 | `RESULTADOS-MCP.md` §3 |
-| Si 27 herramientas saturan la **elección** del modelo · *sigue pendiente: el catálogo está medido (7.964 tok), el comportamiento no* | Difer. 3 | `RESULTADOS-MCP.md` §13 |
+| ~~Si 27 herramientas saturan la **elección** del modelo~~ · **RESUELTO 21/08, y EN CONTRA de la hipótesis: 540 ejecuciones, 27 herramientas acertaron 100 %/98 % y 8 acertaron 85 %/77 %.** El objetivo de 4 se sostiene **solo por coste** | Difer. 3 | `bench/saturacion-herramientas.md` |
+| **Riesgo nuevo, en dirección contraria: un catálogo escueto produce fallos silenciosos (15–17 %)** — la cobertura declarada de `convert` pasa a ser requisito de seguridad | Difer. 3 | ídem §3.5 y §7.2 |
 | Rendimiento NVENC en lote sobre una carpeta real | Difer. 4 | — |
-| **OCRmyPDF como preprocesador** — único candidato para la dificultad 3 | Difer. 5 | `AGENTES-PRUEBAS-PENDIENTES.md` |
-| Reintento de Surya por `llamacpp` o VRAM configurable | Difer. 5 | `AGENTES-PRUEBAS-PENDIENTES.md` |
-| MinerU con el extra `[vlm]` | Difer. 5 | `AGENTES-PRUEBAS-PENDIENTES.md` |
-| Coste real de implementar el contrato de verificación | Difer. 1 | `PLAN-ORQUESTADOR.md` §7, hito 3 |
+| ~~**OCRmyPDF como preprocesador**~~ · **RESUELTO 20/08: descartado, y destapó un artefacto del arnés** | Difer. 5 | `bench/ocrmypdf.md` |
+| ~~**Repetir la fase 2 de OCR rasterizando a los ppp nativos**~~ · **RESUELTO 21/08: tabla canónica, 296 celdas, 4 motores** | Difer. 5 | **`bench/ocr-ppp-nativos.md`** |
+| ~~**Construir un `escaneado_d4`**~~ · **RESUELTO 21/08: existe, cumple los cuatro criterios y el de éxito declarado antes de medir** (19,30 / 36,91 / 41,78 / 61,41 %). Y **la laguna de las tildes queda medida**: 155 caracteres de error ocultos en 28 celdas | Difer. 5 | **`bench/corpus-d4.md`** |
+| ~~**Aislar la asimetría de PaddleOCR**~~ · **RESUELTO 21/08, y no era ninguna de las tres candidatas: era que RapidOCR normaliza el PP-OCRv6 con `mean=std=0,5` cuando el modelo declara ImageNet.** 72,2 puntos de CER por seis números | Difer. 5 | ídem §7 |
+| ~~**Validar esa corrección fuera del corpus `d4`**~~ · **RESUELTO 21/08 (14:00): 0 regresiones en 15 documentos sobre `PP-OCRv6 small` — y 12 de 42 celdas PEORES si se aplica a la familia entera**, con +42,50 puntos en `PP-OCRv4 mobile` sobre un documento limpio del patrón oro. **Entra como tabla por checkpoint, no como ajuste global** | Difer. 5 | **`bench/ppp-y-normalizacion.md`** §3 |
+| ~~**Barrer la curva de ppp sobre `d4`**~~ · **RESUELTO 21/08 (14:00), y el techo absoluto queda REFUTADO igual que el relativo: NO HAY UNA REGLA GLOBAL DE ppp, hay una por motor.** Los ppp **no son la unidad** (24 celdas), y la elección **baja al adaptador de cada motor** | Difer. 5 | ídem §2 |
+| **Caracterizar el `k` de cada motor sobre más de un documento.** Que *haya* un `k` por motor está apoyado por tres documentos; **el VALOR de cada `k` es una estimación de un punto** (todos salen de `escaneado_d4`) | Difer. 5 | ídem §8 |
+| ~~**Validar la regla `P9`**~~ · **RESUELTO 21/08 (14:00) y REFUTADA:** 8,3 % de sensibilidad sobre 32 capas OCR reales y 36 % de falsos positivos. **Sustituto medido, 16/16: el acuerdo entre dos pasadas de OCR con idiomas distintos** | Difer. 1 | **`bench/contrato-quinto-punto.md`** §6 |
+| ~~**Implementar el quinto punto del contrato y la regla de fidelidad de `resvg`**~~ · **RESUELTOS los dos.** Punto 5: **+11,0 % del contrato con R18, ×8,6 sin él, 0 falsos positivos**. I9: **6/6**, con coste real **32–2 454 ms** en vez de los 26 estimados | Difer. 1 | ídem §2, §4 |
+| **El miembro de la familia que sigue descubierto**: audio con un canal silenciado hacia un destino **con pérdida**. La cobertura depende del destino, no del fallo | Difer. 1 | ídem §5 |
+| Reintento de Surya por `llamacpp` o VRAM configurable | Difer. 5 | `ESTADO-Y-REPARTO.md` §3.B |
+| MinerU con el extra `[vlm]` | Difer. 5 | `ESTADO-Y-REPARTO.md` §3.B |
+| ~~Coste real de implementar el contrato de verificación~~ · **RESUELTO 21/08: 1.503 líneas, 0,032 % del tiempo de convertir** | Difer. 1 | `bench/coste-verificacion.md` |
+| ~~El mínimo del canal alfa en proceso~~ · **RESUELTO 21/08: 66,0 ms en el peor caso, y en 7 de 12 casos no lee un píxel.** La **fidelidad** cuesta ×1.100 el contrato y va **fuera del camino caliente** | Difer. 1 | **`bench/verificador-fidelidad.md`** |
+| ~~`min(alfa)` de TIFF comprimido, GIF y PNG entrelazado; reglas V2 y V5~~ · **RESUELTO 21/08: cubiertos, 36 de 36 contra `magick`, 0 falsos positivos.** Coste real ×2,9 y ×3,6 sobre lo estimado. **Y V2 no era barata: sube la suite de fidelidad un +60,6 %** | Difer. 1 | **`bench/verificador-ghostscript.md`** |
 
-**Cobertura de la ejecución:** de los 9 motores de IA clonados, **6 se ejecutaron y 3 no** (surya no arranca; marker y MinerU nunca se intentaron). De los 6 repos de referencias MCP, **ninguno se ejecutó** y solo uno se analizó a fondo.
+**Cobertura de la ejecución:** de los 9 motores de IA clonados, **6 se ejecutaron y 3 no** (surya no arranca; marker y MinerU nunca se intentaron). ~~De los 6 repos de referencias MCP, ninguno se ejecutó.~~ **Actualizado el 20/08: los 6 se ejecutaron por el protocolo** — 90 componentes catalogados con veredicto y `fichero:línea` en `analysis/00-mcp-componentes.md`, resultados en `RESULTADOS-MCP.md`.
 
 **Decisión de arquitectura:** híbrido asimétrico. Núcleo propio (grafo + registro + **verificación** + MCP) desde cero, reutilizando todo lo demás. Python con sidecar separado desde el día 1.
 
@@ -74,7 +108,7 @@ El ecosistema está **partido en dos mitades que nadie ha unido**:
 | MinerU | 77 989 | Apache + términos | 71 556 | 15 | sin probar | Aplazar a v2 |
 | docling | 65 198 | **MIT** | 121 131 | 37 | **910 MiB** | ✅ **Motor documental** |
 | marker | 38 861 | Apache-2.0 | 16 467 | 7 | sin probar | ⏳ **el bloqueo era diagnóstico erróneo**: su backend es parámetro público |
-| OCRmyPDF | 34 500 | MPL-2.0 | 41 102 | 0 | — | Referencia de preprocesado |
+| OCRmyPDF | 34 500 | MPL-2.0 | 41 102 | 0 | — | ❌ **Descartado como preprocesador (MEDIDO)**; quizá como empaquetador de PDF/A |
 | faster-whisper | 24 992 | **MIT** | 4 027 | 5 | **4 525 MiB** (large-v3) | ✅ **Adoptar tal cual** |
 | surya | 21 294 | Apache-2.0 | 13 541 | 15 | ❌ sin dato | ⏳ solo se probó su backend por defecto; **tiene 4** |
 | docling-serve | 1 745 | MIT | 11 032 | 0 | — | Patrón de sidecar |
@@ -84,7 +118,7 @@ El ecosistema está **partido en dos mitades que nadie ha unido**:
 
 | Repo | ⭐ | Líneas | Herramientas | GPU | Aporte |
 |---|---:|---:|---:|---|---|
-| servers (oficial) | 89 685 | 14 957 | — | ❌ | Guía de estilo. **Ningún conversor entre ellas** |
+| servers (oficial) | 89 685 | 14 957 | — | ❌ | **Confinamiento de rutas listo para portar** (28/29 vectores denegados). Ningún conversor entre ellas. Licencia: **MIT/Apache-2.0 en transición**, ver §3.2 |
 | kordoc | 1 748 | 65 463 | 16 | ❌ | ✅ **CLI + MCP en un binario** |
 | markitdown_mcp_server | 86 | 162 | **0** | ❌ | ⚠️ **No es un servidor de herramientas**: solo expone 2 prompts. `tools/list` responde `-32601 Method not found` |
 | video-audio-mcp | 84 | 2 494 | — | ❌ | FFmpeg vía MCP |
@@ -119,12 +153,17 @@ El ecosistema está **partido en dos mitades que nadie ha unido**:
 | Repo | Licencia | ¿Copiar su código? |
 |---|---|---|
 | transmute, gotenberg, morphos, markitdown, docling (+mcp/serve), faster-whisper, kordoc | MIT | ✅ Sin restricciones |
+| **modelcontextprotocol/servers** | **MIT/Apache-2.0 (transición)** | ✅ Sin restricciones de fondo · ⚠️ **obligaciones de Apache-2.0** — ver nota |
 | marker, surya | Apache-2.0 | ✅ Con atribución. ⚠️ Los *pesos* se licencian aparte |
 | MinerU | Apache + términos | ✅ Umbrales de 100 M usuarios / 20 M USD irrelevantes; atribuir si es servicio online |
 | OCRmyPDF | MPL-2.0 | ⚠️ Copyleft por fichero |
 | ConvertX, VERT | AGPL-3.0 | ❌ Contamina incluso ofreciéndolo por red |
 | SnapOtter | AGPL + `packages/enterprise` propietario + CLA irrevocable | ❌ Y alimentaría a un competidor comercial |
 | Stirling-PDF | MIT con 10 directorios excluidos | ⚠️ El núcleo sí; **su MCP requiere suscripción** |
+
+> **Corrección MEDIDA (21/08/2026): `modelcontextprotocol/servers` NO es MIT.** Todo el proyecto lo daba por MIT, y es el repo del que más piezas se propone copiar (el confinamiento completo de `src/filesystem`). Su `LICENSE` empieza: *«The MCP project is undergoing a licensing transition from the MIT License to the Apache License, Version 2.0»* — el código nuevo es Apache-2.0 y **las contribuciones cuyo autor no consintió el relicenciamiento siguen bajo MIT**. Sus `package.json` dicen `"license": "SEE LICENSE IN LICENSE"`.
+>
+> **No invalida ningún veredicto de reutilización.** Pero **Apache-2.0 obliga a preservar los avisos, marcar los ficheros modificados y adjuntar el `NOTICE`**, cosa que MIT no exige igual. Como la licencia efectiva por fichero es ambigua, **lo seguro es tratar todo lo tomado de `servers/` como Apache-2.0**, cuyas obligaciones son un superconjunto de las de MIT. Detalle en `analysis/00-licencias.md` y `analysis/00-mcp-componentes.md` §3.1.
 
 **Principio que sostiene la arquitectura:** invocar un binario como proceso separado **no contamina**; enlazar una librería GPL sí. Por eso todos los conversores serios son orquestadores de procesos, y por eso FileX debe serlo: preserva todas las opciones de negocio sin coste técnico.
 
@@ -149,6 +188,8 @@ Ampliando a las cuatro fuentes (ConvertX, transmute, SnapOtter, gotenberg): **1 
 
 > **Nota metodológica.** Una primera extracción dio 893/496 porque la expresión regular limitaba los identificadores a 12 caracteres y descartaba 7 dialectos largos de pandoc (`markdown_strict`, `jats_articleauthoring`…). Las cifras de este documento son las de la extracción sin límite, confirmadas por una segunda extracción independiente vía AST.
 
+> **Y estas cifras ya tienen su factor de descuento MEDIDO (21/08/2026, `bench/aristas-nominales.md`).** Son **cobertura declarada**, no capacidad. Al ejecutarla: **el 16,3 % de las salidas que ffmpeg declara escribir no las escribe** (33 de 202) y **el 2,2 % de las de ImageMagick** (4 de 183); **el 16,2 % de los formatos que ImageMagick declara leer no los lee** (26 de 160 materializables) **y son ficheros que acaba de escribir él mismo** — autoinconsistencia del mismo binario, en la misma sesión y el mismo directorio. **De los 473 formatos de entrada declarados por ffmpeg, 17 el binario ni los reconoce por nombre, y diez de esos diecisiete son dispositivos de captura de Linux** (`alsa`, `pulse`, `x11grab`, `v4l2`…): ConvertX los declara como «formatos de entrada» porque copió la salida de `ffmpeg -formats` sin filtrar. **Detalle y la cifra global en §3.4.**
+
 ### 3.4 El cálculo que justifica el grafo
 
 | Estrategia | Pares alcanzables |
@@ -159,14 +200,60 @@ Ampliando a las cuatro fuentes (ConvertX, transmute, SnapOtter, gotenberg): **1 
 
 **Multiplicador: 2,93× con exactamente los mismos motores.**
 
-| Conversión | Hoy | Con grafo |
-|---|---|---|
-| `epub → png` | ❌ imposible | ✅ 2 saltos |
-| `docx → webp` | ❌ imposible | ✅ 2 saltos |
-| `tex → docx` | ❌ imposible | ✅ 2 saltos |
-| `cbz → pdf` | ✅ ya directo | igual |
+| Conversión | Hoy | Con grafo | **Ejecutado (21/08)** |
+|---|---|---|---|
+| `epub → png` | ❌ imposible | ✅ 2 saltos | ⚠️ **con LibreOffice no** (HTTP 500 con tres EPUB) · **con Calibre SÍ (21/08, 10:00)**: `ebook-convert epub → pdf` da `rc=0`, 26 817 B, centinela y tabla intactos. **No es una arista muerta: es un fallo de selección de motor** |
+| `docx → webp` | ❌ imposible | ✅ 2 saltos | ✅ **funciona** |
+| `tex → docx` | ❌ imposible | ✅ 2 saltos | ❌ **inalcanzable en Windows**: no hay Pandoc ni XeLaTeX. **Dentro del contenedor sí**: Pandoc dio 8/8 `rc=0` |
+| `cbz → pdf` | ✅ ya directo | igual | — |
 
 > **Salvedad honesta:** 447 398 es un límite superior de *alcanzabilidad*, no una promesa de fidelidad. Encadenar degrada: pasar por un formato rasterizado destruye el texto seleccionable, y algunos pares declarados son nominales. Por eso el grafo necesita **coste por arista** (velocidad, pérdida de calidad, si preserva texto), no solo conectividad.
+>
+> **La salvedad se quedó corta — MEDIDO el 21/08/2026** (`bench/fidelidad-caminos.md`). La cifra de este apartado es **correcta y reproducible** (recalculada: 152 478 → 446 006, desvío −0,3 %), pero al ejecutarla se cae por tres sitios: **con los motores instalados aquí el multiplicador es 1,93×**; de los 128 426 pares nuevos solo **610 (0,48 %)** son plausibles (**+32,7 %, no +193 %**); y **solo el 31,9 % de los caminos multi-salto ejecutados da una salida aceptable**. Además, **cuatro aristas declaradas quedaron refutadas por ejecución**: `epub→pdf`, `txt→png`, `pdf→txt` (152 MB de píxeles enumerados desde un PDF de 3 KB) y `mp4→pdf` (no terminó en 240 s y dejó un hijo `ffmpeg` colgando al supervisor). **Una arista declarada por el catálogo de un motor no es una arista.**
+>
+> ### Y esa frase ya tiene su cifra — MEDIDO el 21/08/2026 (`bench/aristas-nominales.md`)
+>
+> **El 50,5 % de las aristas declaradas que se han podido verificar NO EXISTE**, IC 95 % **[48,2 % – 53,0 %]**, sobre las **62 487 aristas (45,1 % de la población de 138 501)** con veredicto de ejecución. **Declarado explícitamente como cota inferior**, por tres sesgos que su propio informe escribe. Sobre la población entera: **cota inferior 22,8 %, central 48,6 %, superior 77,5 %**.
+>
+> **No hizo falta sondear las 138 501, y ese es el resultado metodológico:** las aristas son cuadráticas (`entradas × salidas`) y las **semiaristas** lineales (`entradas + salidas`). **El censo de 1 104 semiaristas cuesta 9 min 35 s y decide el 45 % de la población** — **22 235 aristas (16,05 %) quedan refutadas sin ejecutar ni una de ellas.**
+>
+> **Pero la tasa no es uniforme, y los dos hechos hay que citarlos juntos o la cifra engaña:**
+>
+> | Estrato | Nominal | IC 95 % |
+> |---|---:|---|
+> | `ffmpeg` **cruzando** familias | **76,9 %** | [67,3 – 84,4] |
+> | `ffmpeg` misma familia | 28,8 % | [21,2 – 37,9] |
+> | `imagemagick` distinta familia | 5,1 % | [1,7 – 13,9] |
+> | `imagemagick` **misma** familia | **4,2 %** | [2,3 – 7,6] |
+> | **aristas que tocan PDF** (n=100) | **3,0 %** | **[1,0 – 8,5]** |
+>
+> **Factor 18 entre el peor estrato y el mejor**, y **no es que ffmpeg sea peor**: es que su producto cartesiano cruza modalidades y el de ImageMagick no. Declarar `473 × 202` es declarar que un `.aptx` se convierte en `.gif`.
+>
+> **Y el estrato prioritario —PDF como intermedio, el que sostiene el multi-salto— sale al 3,0 %.** `bench/fidelidad-caminos.md` midió que 820 de los 1 599 pares «pedidos» tienen PDF como único intermedio: **si una arista hacia PDF fuera nominal se caería media tesis, y no lo son.** **Las aristas que el multi-salto usa de verdad sí existen** — eso **refuerza** aquel informe en vez de contradecirlo.
+>
+> **Tres hallazgos laterales que cambian la unidad del grafo:** `epub→pdf` es **real con Calibre y nominal con LibreOffice**; `png→ico` es **real por ffmpeg y nominal por ImageMagick**; `svg→png` es **real en Windows y nominal en Debian**. **La arista mínima viable es `(origen, destino, motor, parametrización, build)`.** Y **20 de los 26 formatos que ImageMagick declara leer y no lee son crudos sin cabecera** (`rgb`, `yuv`, `cmyk`…): la geometría **no está en el fichero** y ConvertX invoca sin `-size`. **O se guarda la geometría fuera del fichero, o esos 20 se borran del catálogo declarado.**
+
+> ### Y el 50,5 % tiene ahora su cota por arriba: **el 18,8 % era invocación, no capacidad** — MEDIDO el 21/08 a las 14:00 (`bench/invocacion-aristas.md`)
+>
+> Se reintentaron **las 34 + 37 semiaristas muertas y las 118 aristas nominales** de la muestra —un **censo de los fallos**, no una muestra nueva— con una política de invocación declarada **antes** de medir y **con el mismo juez**, para no medir el juez en vez de la invocación.
+>
+> **Con los mismos motores, el mismo build y el mismo corpus, la tasa nominal baja de 50,5 % a 41,0 %.** IC 95 % [16,8 – 21,3].
+>
+> | Categoría | Aristas | % del 50,5 % |
+> |---|---:|---:|
+> | **Recuperable con bandera — ganancia automática** | **3 226** | **10,2 %** |
+> | Recuperable con un parámetro del usuario | 2 704 | 8,6 % |
+> | **Irrecuperable** | **25 603** | **81,2 %** |
+>
+> > **La afirmación de producto que sale de aquí, con su acotamiento pegado: FileX puede ofrecer un 10,2 % más de aristas que ConvertX con exactamente los mismos motores y sin pedirle nada al usuario. Lo que no se puede prometer es el otro 81,2 %.**
+>
+> **Y lo que impide inflar la cifra pesa tanto como la cifra:** **69 de las 118 aristas nominales (58,5 %) son «el muxer no admite ninguna pista que la entrada tenga»** —declaraciones sin sentido, no órdenes mal escritas—, y **19 de las 33 semiaristas de salida muertas de ffmpeg son codificadores no compilados**, que es **build**. Eso último **confirma la quinta dimensión de la arista desde otro lado**: el `build` decide 19 casos y la `parametrización` otros 8.
+>
+> **El gradiente se invierte respecto al de la tasa nominal, y es informativo:** donde ConvertX fallaba **poco** fallaba **por invocación** (ImageMagick misma familia: **80,0 % recuperable**) y donde fallaba **mucho** fallaba **por capacidad** (ffmpeg cruzando familias: **17,1 %**). **Leer mal es un problema de invocación; escribir lo que el binario no sabe codificar es un problema de build.**
+>
+> **Lo que más rinde:** `-frames:v 1 -update 1` recupera **13 de las 27** aristas del residuo; **17 de los 20 crudos reviven** —pero exigen **cuatro** datos externos, no uno—; y **`imagen → pdf` con la densidad ajustada a la página hace desaparecer las 6 de 6 degradaciones P7**, entregando un A4 exacto en vez de los 677 × 381 mm de ConvertX.
+>
+> **Y la superficie documental sale reforzada por un camino independiente: censo COMPLETO de Ghostscript (9 de 9 reales) y de Gotenberg/Chromium (25 de 25 reales), con 3,1 % nominal [0,9 – 10,7] sobre 136 aristas — que coincide con el 3,0 % del estrato PDF medido con otros motores y otro protocolo. Dos medidas independientes que dan lo mismo. Si FileX tiene que elegir dónde prometer, es aquí.**
 
 ---
 
@@ -412,8 +499,19 @@ async def convert_to_markdown(uri: str) -> str:
 ### OCRmyPDF · 34,5k ⭐ · MPL-2.0
 
 - **Cero CUDA en 41k líneas**: delega en Tesseract, CPU pura.
-- Su valor no es el OCR sino **todo lo que lo rodea**: rotación automática, corrección de inclinación, eliminación de ruido, optimización del PDF resultante y preservación del original. Es justo el preprocesado que exige el caso patológico del corpus.
+- ~~Su valor no es el OCR sino **todo lo que lo rodea**: rotación automática, corrección de inclinación, eliminación de ruido…~~ **REFUTADO al ejecutarlo (20/08/2026, `bench/ocrmypdf.md`).** Ese preprocesado, en la versión 16.13.0, **no existe o no hace nada**:
+  - `--remove-background` lanza **`NotImplementedError`** (rc=15). La bandera sigue anunciada en `--help`.
+  - `--deskew` es **inerte**: delega en `tesseract --psm 2`, que devuelve `Deskew angle: 0.0000` **incluso sobre una página girada 5° exactos**.
+  - `--clean-final` corre con los filtros útiles desactivados; activarlos **destruye** la página (d2 pasa de 30,4 % a 100 % de CER).
+  - `--rotate-pages` es correcto pero solo múltiplos de 90°, y **triplica el tiempo** para decidir «no change».
+  - Comprobado **pixel a pixel**: la salida de `--deskew`, `--clean-final` y `--rotate-pages` es **bit a bit idéntica** a no usarlas.
+- **Y atravesarlo degrada:** RapidOCR sobre `escaneado_d2` pasa de **1,3 % a 44,3 % de CER** solo por el ciclo rasterizar→JPEG q95→Ghostscript→PDF/A. **Su pasada no es neutra.**
+- **Como motor: CER del 100 % en la dificultad 3** (sidecar vacío), como se esperaba.
+- **Lo que sí hace bien y nadie más hace:** PDF → **PDF/A-2b con capa de texto buscable**, con `--skip-text` y sidecar `.txt`. Si FileX necesita emitir PDF *buscables* —no solo texto extraído—, es la herramienta. Coste: **502 MB de cierre de dependencias**, WSL o contenedor, **~434 ms de arranque por documento** (no tiene modo servidor) y un aviso permanente de Ghostscript en `stderr` que hay que filtrar. **En ese papel no toca el hueco 5.**
+- **No puede aprovechar el Tesseract embebido en Ghostscript**: necesita el binario `tesseract` de verdad.
 - MPL-2.0 es copyleft *por fichero*: combinable con código propietario publicando solo los ficheros MPL modificados.
+
+> **Aviso de trazabilidad:** `analysis/OCRmyPDF.md` sigue diciendo que *«su preprocesado de imagen es la referencia a imitar»* y que es *«la ruta por defecto para PDF escaneado»*. **Esa ficha es anterior a la ejecución y queda sustituida por lo de arriba y por `bench/ocrmypdf.md`.**
 
 ---
 
@@ -436,9 +534,12 @@ async def convert_to_markdown(uri: str) -> str:
 
 **Ninguno usa GPU. Ninguno pasa de 3 400 líneas.** Compárese con los 174 667 ⭐ de MarkItDown: la demanda de conversión es enorme y la oferta vía MCP es testimonial.
 
-### modelcontextprotocol/servers · 89,7k ⭐
+### modelcontextprotocol/servers · 89,7k ⭐ · **MIT/Apache-2.0 (transición)**
 
 Implementaciones oficiales de referencia. **No hay ni un servidor de conversión de ficheros entre ellas.**
+
+- **Licencia corregida (MEDIDO):** no es MIT a secas. Su `LICENSE` declara la transición MIT→Apache-2.0 y las contribuciones no relicenciadas siguen bajo MIT; los `package.json` remiten al fichero. **Tratar todo lo copiado como Apache-2.0** (preservar avisos, marcar modificaciones, adjuntar `NOTICE`). Ver §3.2.
+- **Su `src/filesystem` es la pieza de más valor de todo el carril MCP:** **28 de 29 vectores de ataque denegados**, con ~1.000 líneas de tests. El único concedido fue un flujo de datos alternativo (ADS). Su virtud es un detalle de orden —el predicado léxico corre **antes** de tocar el disco— que se copia en una línea. Es lo que sustituye a «la lista blanca hay que inventarla» de `PLAN-ORQUESTADOR.md` §4.6.
 
 ---
 
@@ -510,15 +611,169 @@ La pérdida de calidad es mínima (<1 punto de VMAF), pero **el fichero sale un 
 
 ### 5.5 OCR en GPU — los tres candidatos
 
-| Motor | Aceleración GPU | VRAM | CER dificultad 2 | CER dificultad 3 |
+**La tabla canónica de CER, MEDIDA a ppp nativos** — `bench/ocr-ppp-nativos.md` §3 (21/08/2026, 296 celdas, todas deterministas). **Sustituye a la de `bench/gpu-fase2.md` §5.** Entre paréntesis, la distancia de edición en caracteres sobre 79.
+
+| Motor (backbone real) | `patologico` (200 ppp) | `d1` (150) | `d2` (100) | `d3` (100) |
 |---|---:|---:|---:|---:|
-| **RapidOCR `backend=torch`** | 3,5–4,2× | +1 344 MiB | 1,3 % | 65,8 % |
-| PaddleOCR | 8,9–11,7× | +1 486 MiB | **0,0 %** | 75,9 % |
-| EasyOCR | 12,4–17,0× | +2 079 MiB | 43,0 % | 57,0 % |
+| **PaddleOCR** (PP-OCRv6 **medium**, `es`) | 0,0 % (0) | 0,0 % (0) | 0,0 % (0) | **2,5 % (2)** |
+| **Docling + RapidOCR `backend="torch"`** (PP-OCRv6 **small**) | 0,0 % (0) | 0,0 % (0) | 0,0 % (0) | 75,9 % (60) |
+| **RapidOCR** aislado (PP-OCRv5 **mobile**, ONNX) | 1,3 % (1) | 0,0 % (0) | 0,0 % (0) | 77,2 % (61) |
+| **EasyOCR** (CRAFT + `latin_g2`) | 0,0 % (0) | 0,0 % (0) | **43,0 % (34)** | 54,4 % (43) |
+
+Aceleración y VRAM de la fase 2, **que siguen valiendo como aceleración pero NO como presupuesto** (ver el aviso de VRAM al final de esta sección):
+
+| Motor | Aceleración GPU | VRAM (fase 2, medida a 200 ppp) |
+|---|---:|---:|
+| **RapidOCR `backend=torch`** | 3,5–4,2× | +1 344 MiB |
+| PaddleOCR | 8,9–11,7× | +1 486 MiB |
+| EasyOCR | 12,4–17,0× | +2 079 MiB |
+
+*(Las cifras de CER que esta tabla tenía tachadas —1,3 % / 65,8 % / 0,0 % / 75,9 % / 43,0 % / 57,0 %— eran de `bench/gpu-fase2.md`, medidas rasterizando todo a 200 ppp. El 57,0 % de EasyOCR en d3 era su lectura **de CPU**; su lectura de GPU fue 59,5 %, y `ocr-ppp-nativos.md` §2 la reproduce exactamente: **EasyOCR no es determinista entre CPU y GPU** sobre d3, como ya anotaba `gpu-fase2.md` §3.)*
+
+> **Y esa nota deja de ser una rareza de una celda — MEDIDO el 21/08 (`bench/corpus-d4.md` §9.3).** La frase de `gpu-fase2.md` §2 —**«CPU y GPU dan salida idéntica carácter a carácter»**, citada en este proyecto para decir que la GPU no cambia el resultado— **queda REFUTADA**: sobre **21 celdas comparables, 5 difieren**, y **la CPU es mejor en dos y peor en tres**.
+>
+> | motor | celdas | **distintas** | mayor discrepancia |
+> |---|---:|---:|---|
+> | RapidOCR | 9 | **1** | `d3` a 200 ppp: **65,82 % (GPU) vs 70,89 % (CPU)** |
+> | PaddleOCR | 9 | **1** | `d4`: 19,30 % (GPU) vs 19,63 % (CPU) |
+> | EasyOCR | 3 | **3** | `d3` a 200 ppp: 59,49 % (GPU) vs **56,96 % (CPU)** |
+>
+> **La conclusión matizada, que es la útil:** *la salida coincide mientras el documento es fácil; en la zona de degradación donde el motor duda, el dispositivo cambia el resultado, y puede cambiarlo en cualquier dirección.* **Para FileX: no se puede validar en CPU y desplegar en GPU dando por hecho el mismo resultado, y toda prueba de regresión de OCR tiene que fijar el dispositivo.** *(Matiz honesto de su informe: EasyOCR difiere en la salida de `d3` a 100 ppp aunque el CER coincida — es una permutación del texto, no un cambio de calidad.)*
 
 - **Los múltiplos grandes engañan.** RapidOCR "solo" gana 3,5× porque **su ruta CPU ya es la más rápida** (763 ms frente a los 6 660 ms de EasyOCR). Mejor-CPU contra mejor-GPU, la ganancia real es **3,9×, no 17×**.
 - **Elección: RapidOCR con `backend="torch"`** — coste de infraestructura GPU **cero** y salida idéntica a la de CPU. PaddleOCR queda como ruta opcional de máxima precisión (3,73 GB, venv aislado, 24,8 s de carga). **EasyOCR descartado**: peor precisión y **no determinista entre CPU y GPU** en entradas degradadas.
-- **En la dificultad 3 fallan los tres** (57–76 % de CER). El OCR acelerado resuelve documentos degradados, no destruidos.
+- ~~**En la dificultad 3 fallan los tres** (57–76 % de CER).~~ **FALSO. Corregido el 21/08/2026.**
+
+#### La corrección: las marcas de dificultad 2 y 3 son un artefacto del arnés — **MEDIDO**
+
+**Qué se creía:** que d3 rompía a los tres motores y que el OCR acelerado *«resuelve documentos degradados, no destruidos»*.
+
+**Qué se midió** (`bench/ocrmypdf.md` §3.4, confirmado tres veces de forma independiente): `corpus/pdf/escaneado_d2.pdf` y `escaneado_d3.pdf` llevan una imagen incrustada de **647×850 px sobre una página de 465,84×612 pt = 100 ppp nativos**; `patologico_escaneado.pdf` es de **200 ppp nativos** (1294×1792 sobre 465,84×645,12 pt). **El arnés de la fase 2 rasterizaba todo a 200 ppp.** Para el patológico era correcto; **para d2 y d3 es interpolar ×2**, y ese ×2 convierte el grano JPEG q25 en manchas del tamaño de un trazo.
+
+> **Las cifras publicadas no miden los motores: miden un ×2 de interpolación.** A ppp nativos, **PaddleOCR resuelve la dificultad 3 con 2,5 % de CER** — dos errores de un carácter sobre 79. Con la imagen incrustada extraída sin rasterizar, igual.
+
+La cadena de medición era **fiel**: el control `ctrlppp200` reproduce las marcas antiguas **exactamente, 4 de 4** — y `ocr-ppp-nativos.md` §2 lo reconfirma con **12 de 12** marcas reproducidas. El sesgo estaba localizado en la elección de ppp, no en el instrumento. **Las cifras de `bench/gpu-fase2.md` se conservan tal cual, con un aviso** que las marca como no válidas para medir capacidad de motores.
+
+#### El aviso hay que matizarlo en dos sentidos, los dos MEDIDOS (`bench/ocr-ppp-nativos.md` §4)
+
+**Artefacto = CER a 200 ppp − CER a ppp nativos.** Positivo = la cifra vieja exageraba el error.
+
+| Motor | d2 (nativo 100) | **d3 (nativo 100)** | d1 (150) | patológico (200) |
+|---|---:|---:|---:|---:|
+| **PaddleOCR** | **0,0 pp** | **+73,4 pp** | 0,0 pp | 0,0 pp |
+| **RapidOCR** | +1,3 pp | **−11,4 pp** | 0,0 pp | 0,0 pp |
+| **EasyOCR** | **0,0 pp** | +5,1 pp | 0,0 pp | 0,0 pp |
+| **Docling+RapidOCR torch** | 0,0 pp | **−17,7 pp** | 0,0 pp | 0,0 pp |
+
+1. **En d2 no había nada que corregir.** El artefacto es **cero** para PaddleOCR y EasyOCR y 1,3 puntos —un carácter— para RapidOCR. **Las cifras de d2 publicadas eran correctas, y el 43,0 % de EasyOCR es un fallo real del motor**, no del arnés: sigue ahí a ppp nativos y con la imagen extraída.
+2. **En d3 el artefacto es de UN SOLO motor.** Los 73,4 puntos son **todos de PaddleOCR**. Para **RapidOCR** y **Docling+RapidOCR torch**, la cifra vieja de 200 ppp era **su mejor resultado, no el peor**. Por eso **«a ppp nativos siempre es mejor» es falso como regla general**: lo que es cierto siempre es que es **más rápido** (×1,48 a ×3,13) y **más barato en VRAM** (hasta 6 851 MiB menos).
+
+**Una asimetría que sí es real, con su número corregido:** **RapidOCR no resuelve d3 a ninguna resolución**, pero su mejor caso es **65,8 % a 200 ppp**, no 53,2 % — el 53,2 % de `bench/ocrmypdf.md` incluía `magick -deskew 40%`, que el barrido nuevo no aplica en ninguna celda. **Y la explicación «PP-OCRv5 *mobile* frente al *medium* de Paddle» queda parcialmente refutada:** Docling+RapidOCR torch corre **PP-OCRv6 *small*** —la misma generación que PaddleOCR— **y tampoco resuelve d3**. Hay un v6 en el lado que falla. El límite existe y es grande (2,5 % frente a 39–77 %), pero **no es la generación del backbone**; los candidatos que quedan —tamaño del modelo, idioma del reconocedor, idioma del detector— están **PENDIENTES** de aislar.
+
+**Consecuencia de diseño, y no es la que se anticipaba:** no es «añadir una etapa de preprocesado» sino **leer los ppp de la imagen incrustada y no sobremuestrear**, con la regla medida `ppp_ocr = clamp(ppp_nativos, 100, ppp_nativos × 1,4)` — **techo ×1,4 porque entre ×1,4 y ×1,6 se pierden 72 puntos de CER**, y **suelo 100 porque a 75 ppp RapidOCR se rompe en d2** (44,3 %). Es **una decisión, no una etapa**, y cuesta *menos* CPU y VRAM. `magick -deskew 40%` entra como red de seguridad, no como fuente de la ganancia. **El hueco 5 se reabre** — ver `HUECOS.md` §5.
+
+**Aviso colateral de VRAM, ampliado — MEDIDO** (`ocr-ppp-nativos.md` §7.2): **PaddleOCR picó a 12 025 de 12 288 MiB** con imágenes a 600 ppp, y **EasyOCR a 11 877 MiB con imágenes a solo 300 ppp**, a 411 MiB de agotar la tarjeta, sobre un documento de **una página**. **El presupuesto del sidecar hay que fijarlo por motor Y por resolución de entrada**: el «+2 079 MiB» de la fase 2 subestima el peor caso de EasyOCR casi **5×**. **RapidOCR es el único insensible a los ppp** (+0 MiB entre la imagen extraída y 300 ppp).
+
+**Y el corpus dejó de medir lo que se creía — MEDIDO** (`ocr-ppp-nativos.md` §8): tenía **tres documentos que todos resuelven al 0,0 %** y uno que para PaddleOCR era **un interruptor** (2,5 % o 75,9 %, casi sin estados intermedios) y para los otros tres una pared plana. **Ya no medía dificultad: medía selección de motor.** ~~Hace falta construir un `escaneado_d4`.~~ **RESUELTO el 21/08 — ver abajo.**
+
+#### `escaneado_d4`: el corpus que sí mide margen — MEDIDO (`bench/corpus-d4.md`, 21/08/2026)
+
+**Criterio de éxito declarado ANTES de medir:** *al menos un motor entre 15 % y 60 % de CER, y al menos dos separados por más de 10 puntos.* **Mediana de n=9, ppp nativos, 28 celdas deterministas. Formato: CER con acentos / CER ascii.**
+
+| documento | PaddleOCR (v6 medium) | Docling+RapidOCR torch (v6 small) | RapidOCR (v5 mobile) | EasyOCR |
+|---|---:|---:|---:|---:|
+| `d4_limpio` (**control**) | **0,00** / 0,00 | 0,00 / 0,00 | 1,17 / 0,50 | 0,50 / 0,50 |
+| `escaneado_d4c` | 0,67 / 0,00 | 22,99 / 22,48 | 15,60 / 11,91 | 15,10 / 13,76 |
+| **`escaneado_d4`** | **19,30** / 18,46 | **36,91** / 36,24 | **41,78** / 38,59 | **61,41** / 59,56 |
+| `escaneado_d4e` | 70,97 / 70,47 | 88,59 / 88,42 | 92,45 / 92,11 | 73,32 / 72,32 |
+
+**Cumple: tres motores en la banda 15–60 % y 17,6 puntos entre el primero y el segundo.** **Y el control importa** —`d4_limpio` sale a 0,00–1,17 %—: **todo lo que se mide viene de la degradación, no del diseño de la página.**
+
+**Dos decisiones de diseño reutilizables, y la segunda explica en parte el «interruptor» de d3:**
+
+1. **Cuatro tamaños de letra en la misma página** — 24 / 13 / 11 / **7 pt** (19,3 px de cuerpo a 200 ppp) — para producir fallo **graduado**.
+2. **Una referencia de 610 caracteres, que cuantiza el CER a 0,16 puntos por carácter frente a los 1,27 de los 79 de d1-d3.** **Con 79 caracteres no puede haber gradiente aunque el documento lo tenga.**
+
+**Y el criterio «atacar al reconocedor, no al detector» está MEDIDO con recuento de cajas: PaddleOCR detecta 12 de 12 renglones sobre `escaneado_d4` y aun así comete 19,30 % de CER.** Los cuatro renglones de 7 pt están **detectados y transcritos como basura** (58,69 % de CER en ese bloque frente al 1,60 % del cuerpo). Es lo contrario de d3, donde los motores que fallaban recuperaban el titular y **no emitían nada** del cuerpo.
+
+**La métrica antigua es ciega a las tildes, y ahora se sabe cuánto: 155 caracteres de error ocultos en 28 celdas, media 5,54, máximo 23.** RapidOCR **no recupera ni uno de los 35 caracteres acentuados** de `d4` y `ocr_eval.py` le da 38,59 % en vez de 41,78 %. **Las 296 celdas de `ocr-ppp-nativos.md` siguen siendo válidas para lo que miden** —su referencia no tiene una sola tilde—, **pero no se pueden extrapolar a castellano.**
+
+#### La asimetría de PaddleOCR, RESUELTA — y no era ninguna de las tres candidatas
+
+**MEDIDO** (`bench/corpus-d4.md` §7). Refutadas una a una: **(1) el tamaño del modelo** —el **mismo** PP-OCRv6 small da **3,80 % en PaddleOCR y 75,95 % en RapidOCR** sobre d3—; **(2) el idioma del reconocedor** —en v6, `lang="es"` y `lang="en"` resuelven al **mismo par de checkpoints** y dan salida idéntica carácter a carácter—; **(3) el idioma del detector** —en v6 hay **un solo detector, `multi`**—.
+
+> **La causa: RapidOCR normaliza el PP-OCRv6 con `mean=std=0,5` cuando el `inference.yml` que Baidu distribuye CON el modelo declara las estadísticas de ImageNet** (`[0,485, 0,456, 0,406]` / `[0,229, 0,224, 0,225]`).
+>
+> **A/B causal, mismo checkpoint: la normalización sola vale 64,6 puntos de CER en d3 (75,95 → 11,39); el post-proceso solo, 0,0; los dos juntos reproducen la cifra de PaddleOCR exactamente (3,80 %).** Con recuento de cajas, el detector pasa de encontrar **1 renglón de 3 a 3 de 3**.
+
+**Cuatro consecuencias:** la explicación «es límite de modelo, v5 mobile frente al medium» **queda superada del todo**; **Docling hereda el defecto** y es corregible desde fuera; **es la corrección más barata medida en el proyecto —seis números por 72,2 puntos de CER—**; y deja una **regla general**: *cuando el motor y el modelo vienen de proyectos distintos, hay que comprobar que el preprocesado que aplica el motor es el que declara el fichero de configuración del modelo.* Mismo tipo de fallo que `onnxruntime-gpu` cayendo a CPU en silencio: **nada da error, solo empeora.**
+
+**Y con esa corrección, la elección de motor cambia: un solo motor cubre el corpus entero.** RapidOCR ONNX con PP-OCRv6 small da **0,00 / 0,00 / 0,00 / 3,80 / 18,62 %** sobre patológico, d1, d2, d3 y d4, **gana a PaddleOCR en cuatro de las cinco filas, arranca en 3,7 s en vez de 18,4 y funciona en CPU** (0,32–1,18 s/página, ×2,3–3,8 sobre la GPU; PaddleOCR es ×9,8–13,8, hasta 5,42 s). *La excepción es d3, donde PaddleOCR gana por **1,27 puntos — un carácter sobre 79**. No es base para una regla de conmutación.*
+
+#### El techo de la regla de ppp pasa de relativo a absoluto — MEDIDO (`corpus-d4.md` §8)
+
+Sobre `escaneado_d4` (**200 ppp nativos**), subir a **280 ppp (= ×1,4)** **empeora PaddleOCR de 19,30 % a 36,24 %** y a RapidOCR corregido de 18,62 % a 28,86 %. **La meseta de ×1,4 se midió sobre d3, de 100 ppp nativos, y era en parte un artefacto de que todo el corpus viejo fuera de 100–200 ppp.** Lo que decide no es el factor sino **el tamaño en píxeles que llega al detector**. Propuesta: `clamp(nativos, 100, 200)` — **techo absoluto**, que **no viola ninguna medida existente y el relativo sí. PENDIENTE de barrer la curva sobre `d4`.**
+
+#### Y al barrer la curva cayó también el techo absoluto: **NO HAY UNA REGLA GLOBAL DE ppp** — MEDIDO (`bench/ppp-y-normalizacion.md` §2, 21/08 14:00)
+
+**17 puntos de ppp sobre `escaneado_d4` con siete configuraciones de motor, más `d3`, `d4c`, `d4f` y `patologico_escaneado`. Mediana de n=9, GPU, dispositivo fijado. Las tres unidades candidatas caen una a una:** los **ppp absolutos** (`d3` se rompe a 160; `d4c`, `d4f` y el patológico no se rompen a 400), el **factor sobre el nativo** (PaddleOCR se rompe en `d4` a ×1,4, en `d3` a ×1,6 y **nunca** en `d4c` ni `d4f`) y la **anchura en píxeles** (`d3` se rompe a 1 035 px; `d4c` no se rompe a 2 070).
+
+**El experimento que lo decide, 24 celdas:** el **mismo JPEG** de `escaneado_d4` reempaquetado en tres páginas de 100, 200 y 400 ppp nativos da, **a los mismos 200 ppp**, CER de **19,13 / 19,63 / 36,24 %**; **a los mismos píxeles coincide a la centésima**, doce parejas exactas.
+
+> **Los ppp no son una propiedad del documento que el OCR pueda usar: son una división entre los píxeles que hay y el tamaño que el PDF dice que tiene la página. Una regla escrita en ppp está escrita en la unidad equivocada.**
+
+**La respuesta es la cuarta candidata: la regla es POR MOTOR.** Siete configuraciones sobre el mismo documento dan óptimos entre **×0,50 y ×1,80** (×0,88 Docling+R6 · ×1,00 RapidOCR+R6 · ×1,25 PaddleOCR · ×1,60 Docling sin corregir · ×1,80 EasyOCR). **Y sobre `escaneado_d3`, a ×1,4, el mismo fichero es seguro para PaddleOCR (3,80 %) y catastrófico para RapidOCR+R6 (2,53 → 46,84 %).** El mecanismo está sondeado en ejecución: **`Global.max_side_len: 2000` hace que por encima de 233 ppp RapidOCR reciba el array idéntico; PaddleOCR no recorta.** *(Deducirlo del código de PaddleX daba lo contrario, y su informe lo publica como error propio: es «sondear en ejecución, no deducir» otra vez.)*
+
+> **La consecuencia de arquitectura: la elección de ppp pertenece al ADAPTADOR DE CADA MOTOR, no al orquestador.** Es un parámetro del motor, del mismo rango que `Det.mean`. **Si se queda en el orquestador, cada motor nuevo hereda en silencio los ppp que le convenían a otro** — lo que le pasa hoy a Tesseract, al que la regla vieja le asigna 100 ppp sobre `escaneado_d2` y **le cuesta 32,10 puntos**.
+
+**Lo que sí queda como regla global es de VRAM, no de precisión:** barrer hasta 400 ppp con **una sola página** llevó a **PaddleOCR a 11 942** y a **EasyOCR a 12 037 de 12 288 MiB, sin dar error**. **El coste de no poner límite son 10 GB.**
+
+#### La normalización de RapidOCR, validada — y con un lado malo — MEDIDO (`bench/ppp-y-normalizacion.md` §3)
+
+**Sobre `PP-OCRv6 small`, 15 documentos y n=9 —incluidas cuatro rasterizaciones del patrón oro—: 6 mejoras, 9 empates, 0 empeoramientos**, hasta −72,15 puntos. **Docling: 7 de 7, cuatro mejoras grandes, cero regresiones y coste en tiempo nulo**, corregible desde fuera por `RapidOcrOptions.rapidocr_params`.
+
+**Pero se buscaron los casos peores y se encontraron: 12 de 42 celdas del cribado EMPEORAN**, con **+42,50 puntos en `PP-OCRv4 mobile` sobre `tipico_texto` del patrón oro —un documento limpio—**, +16,45 y +13,60 en `PP-OCRv6 tiny`, y 4 de 15 celdas peores en `PP-OCRv5 mobile`.
+
+> **El desajuste es universal; el daño no.** Los **ocho** `inference.yml` que Baidu distribuye, de PP-OCRv3 a PP-OCRv6, **declaran ImageNet**, y `rapidocr/config.yaml` aplica `0,5` a los ocho. **Pero solo `PP-OCRv6 small` se hunde por ello: la hipótesis obvia es falsa para 7 de los 8.** **Devolverle al modelo lo que su propio fichero de configuración declara es una hipótesis, no una solución — hay que medirla checkpoint por checkpoint**, y por eso entra en FileX **como tabla por checkpoint, no como ajuste global del motor**.
+
+#### Y hay OCR de calidad sin tarjeta — MEDIDO (`bench/verificador-ghostscript.md` §5)
+
+El **Tesseract embebido en Ghostscript 10.07** da **0,0 % de CER en patológico, d1 y d2 a ppp nativos con `spa`** —igual que la ruta de GPU—, con **VRAM 0** y **carga en frío de 122 ms frente a 3,4–17,3 s**. **En d3 fracasa alucinando (165,8 % de CER):** un modo de fallo **cualitativamente distinto** del de los motores GPU, que devuelven poco texto. **Para una CLI que convierte un fichero y termina, la carga en frío ES el coste**, y ahí la diferencia es de **28× a 142×** a favor de la CPU. *(Coste de distribución real: Ghostscript trae el motor pero **no los datos de idioma** — 2-4 MB por idioma.)*
+
+#### El octavo fallo de verificación, y es el primero que el contrato no atrapa — MEDIDO
+
+**`resvg 0.46.0` rasteriza un SVG con dos bloques de texto y devuelve `rc=0`, un PNG de firma válida y de la geometría exacta pedida, y sin una sola letra** (`bench/aristas-nominales.md` §8.2):
+
+| Rasterizador | Bytes | Geometría | **Tinta en la banda de texto** | Tinta total | rc |
+|---|---:|---|---:|---:|---:|
+| Inkscape (contenedor) | 13 456 | 400×200 | **14,02 %** | 13,38 % | 0 |
+| **resvg 0.46.0** | 8 973 | 400×200 | **0,00 %** | 8,78 % | **0** |
+| `magick` 7.1.2 (Windows) | 8 628 | 400×200 | **15,07 %** | 13,39 % | 0 |
+| `magick` (contenedor Debian) | — | — | — | — | **1** |
+
+**Firma correcta · flujos correctos · propiedades declaradas coherentes · pedido = obtenido. Los cuatro puntos del contrato lo aprueban.** Lo único que lo delata está en `stderr` (`No match for '"DejaVu Sans", sans-serif' font-family`) — y el contenedor **tiene 153 fuentes instaladas**: no es un problema de fuentes, es que ese build no resuelve familias.
+
+> **Esto acota el diferenciador nº 1 con precisión y no lo invalida.** El contrato juzga **la declaración** de la salida; el **contenido que desaparece sin dejar rastro en ninguna propiedad declarada** solo se ve **comparando la salida con la entrada**, es decir, en la fidelidad. ~~**PENDIENTE** la regla que lo atraparía~~ — **IMPLEMENTADA el 21/08 a las 14:00, y con dos sorpresas.**
+
+##### La regla I9 y la familia de `resvg` — MEDIDO (`bench/contrato-quinto-punto.md` §4, §5)
+
+**I9 discrimina 6 de 6 con margen binario:** `resvg` **0,00 %** de tinta en la banda de texto frente a **20,01 %** (Inkscape) y **23,61 %** (`magick`), sin un falso positivo en tres controles y sin añadir ni un aviso sobre las 53 salidas del patrón oro.
+
+**Primera sorpresa: cuesta 32–59 ms a 400×200 y 2 454 ms a 1920×960. La estimación de «del orden de 26 ms» se queda corta ×94.** Y de ahí sale **una refutación de una constante de diseño del proyecto**: *«verificar en proceso, no con subprocesos»* **no se transfiere a leer PÍXELES** — `magick` hace la misma medida en **138 ms** donde el lector en proceso tarda **2 834**, y **el punto de cruce está en ~0,1 Mpx**. Sigue siendo cierto para cabeceras, donde el factor es **145× a favor del proceso**. **Son dos regímenes.**
+
+**Segunda sorpresa: `resvg` no era un caso aislado, es una familia de al menos cinco miembros** —SVG sin fuentes, vídeo con envase correcto y todo negro (**5,39 dB**, y solo `aviso`), PDF de texto rasterizado, CSV→JSON que pierde una columna, y audio con un canal silenciado—. **El contrato atrapa uno, I9 otro, y uno sigue sin cubrir:** el canal silenciado hacia un destino **con pérdida** (el mismo fallo hacia FLAC sí lo atrapa A4). **La cobertura depende del destino, no del fallo.**
+
+> **Y el acotamiento que el proyecto había escrito —«el contrato juzga la declaración; el contenido que desaparece necesita fidelidad»— queda CONFIRMADO, con formulación precisa:** *el contrato atrapa la pérdida cuando el contenido perdido está **declarado en metadatos** —filas, cabecera de un CSV, pistas, páginas— porque la sonda ya los lee para los puntos 2, 3 y 4; necesita fidelidad cuando el contenido **solo existe como píxeles o como muestras**.* **La pregunta se planteó como posible excusa y la medición la confirmó como arquitectura:** el precio es de **tres órdenes de magnitud**, y **el miembro cuyo contenido sí está declarado —el CSV— lo atrapa el contrato y no la fidelidad**.
+
+**Y hay un sexto candidato, encontrado por otro agente y por otro camino** (`bench/invocacion-aristas.md` §4.1): este ImageMagick es **Q16-HDRI y escribe los crudos a 16 bits/canal**; releer un `.rgb` con `-depth 8` **no falla**, entrega **la geometría exacta pedida** y **píxeles basura**, y **pasa los cuatro puntos del contrato**. **Dos vías independientes llegando al mismo patrón** es lo que lo convierte de anécdota en clase de fallo.
+
+##### Y el quinto punto está implementado, con un coste que reordena una prioridad — MEDIDO (ídem §2, §3)
+
+**Cuesta 0,047 ms, el +11,0 % del contrato, y entra en el camino caliente — pero solo con R18:** sin directorio de trabajo desechable, sobre un directorio de **1 000 ficheros**, cuesta **3,66 ms, ×8,6 el contrato entero**. **R18 deja de ser higiene y pasa a ser requisito de coste.** **Falsos positivos sobre el patrón oro: cero**, con las 39 órdenes reejecutadas.
+
+> **Y su coste honesto es un cambio de naturaleza: sin censo, 49 de las 53 salidas bajan de `ok` a `ok_parcial`.** No es un falso positivo: **el punto 5 es el primero del contrato que no es verificable a posteriori.** **La verificación tiene que vivir dentro de la conversión, no ser un paso posterior.**
+
+**Y una nota de portabilidad que va con la tabla:** `magick svg → png` **funciona en el ImageMagick de Windows y falla (rc=1) en el de Debian del contenedor**. La misma arista, el mismo motor, la misma versión mayor: **real en una máquina y nominal en otra.**
 
 ### 5.6 MCP — el coste en contexto
 
@@ -592,7 +847,9 @@ La pérdida de calidad es mínima (<1 punto de VMAF), pero **el fichero sale un 
 
 ### 6.3 Lo que FileX tiene que inventar
 
-**Ninguno de los seis recibe una ruta del sistema de ficheros**: todos reciben una subida HTTP y escriben ellos el fichero. **FileX recibirá rutas arbitrarias de un LLM.** La lista blanca de raíces —denegar por defecto, resolución canónica, y error indistinguible entre "prohibido" y "no existe" para no ser un oráculo de existencia— hay que diseñarla desde cero.
+**Ninguno de los seis recibe una ruta del sistema de ficheros**: todos reciben una subida HTTP y escriben ellos el fichero. **FileX recibirá rutas arbitrarias de un LLM.**
+
+> **Corrección MEDIDA (21/08/2026).** Aquí se decía que la lista blanca de raíces «hay que diseñarla desde cero». **Es cierto para los seis orquestadores y falso para el ecosistema MCP:** `modelcontextprotocol/servers/src/filesystem` resiste **28 de 29 vectores medidos** y su porte a Python es ~1 día. **La corrección es parcial:** lo que existe ya hecho es la **contención de rutas**; siguen siendo trabajo propio de FileX **el mensaje opaco** (ninguna referencia lo hace), **el confinamiento frente a procesos externos** —que es la ventana real, de minutos, porque quien lee y escribe es ffmpeg— y **el contenido hostil**. Las **18** reglas, con su evidencia, en `PLAN-ORQUESTADOR.md` §4.6 — **la 18.ª, medida el 21/08: un directorio de trabajo desechable por conversión, porque hay motores que escriben en el `cwd` del proceso.**
 
 **Tres hallazgos cambian de gravedad con un llamante no humano:**
 
@@ -643,16 +900,20 @@ filex (CLI / MCP / watcher / API)      <- Python, proceso único y persistente
 
 | Regla | Evidencia |
 |---|---|
-| **Grafo dirigido con coste por arista** y Dijkstra | 2,93× de cobertura; resuelve de paso el bug de prioridad de ConvertX |
-| **Contrato de verificación obligatorio tras cada conversión** | Habría atrapado el `.avif`-que-era-PNG, la pista perdida y las degradaciones de bits/ppp/bitrate |
+| **Grafo dirigido con coste por arista** y Dijkstra | Resuelve el bug de prioridad de ConvertX. ~~2,93× de cobertura~~: **1,93× con los motores instalados, y solo el 31,9 % de los caminos multi-salto da salida aceptable.** El valor está en elegir bien el primer salto |
+| **Contrato de verificación obligatorio tras cada conversión, con CUATRO puntos** | Habría atrapado el `.avif`-que-era-PNG, la pista perdida y las degradaciones de bits/ppp/bitrate. **El cuarto punto —pedido frente a obtenido— atrapa además el redimensionado no solicitado, que los otros tres no ven** |
+| **Verificar leyendo cabeceras en proceso, no con `ffprobe`** | 0,372 ms frente a 54,06 ms: **145×**. Con subprocesos, en 15 de 39 órdenes verificar cuesta más que convertir |
+| **Leer los ppp de la fuente antes de rasterizar; no sobremuestrear** | Un ×2 de interpolación llevó a PaddleOCR de 2,5 % a 75,9 % de CER, y a 12 025 MiB de VRAM |
+| **`stdin=DEVNULL` + banderas no interactivas en todo subproceso** | ffmpeg sin `-y` heredó la tubería JSON-RPC y colgó la sesión MCP entera: 1,4 s con `-y`, infinito sin él |
+| **Toda operación larga devuelve un `job_id` al empezar** | Un clip de 5 s superó los 900 s de timeout **con la conversión ya terminada bien en disco** |
 | **Un recurso alternativo sin verificación es peor que no tenerlo** | Convierte un fallo honesto en uno silencioso: literalmente lo que le pasa a ImageMagick dentro de ConvertX |
 | **Registro por reflexión con `can_register()`** | Solo 4 de ~12 motores presentes en esta máquina |
 | **Sondear capacidades en ejecución, no deducirlas** | `av1_nvenc` aparece listado y no funciona |
 | **Verificar `torch.cuda.is_available()` en cada arranque** | `pip install surya-ocr` tumbó CUDA sin un solo error |
 | **Comprobar `session.get_providers()`, no `get_device()`** | onnxruntime dice `'GPU'` mientras corre en CPU |
-| **Catálogo MCP generado desde el registro** | Patrón de `McpToolCatalog` de Stirling-PDF |
-| **MCP devuelve ruta y metadatos, nunca contenido** | ~2 400× de diferencia en tokens |
-| **Pocas herramientas MCP, bien nombradas** | 19 herramientas = 5 280 tokens de suelo; 3 = 880 |
+| **Del registro se generan los `enum` de parámetros, NO las herramientas** | «Un motor nuevo = una herramienta» es el mecanismo que produce las **27 herramientas planas** de `video-audio-mcp` (7.964 tokens de catálogo). Las cuatro herramientas se escriben a mano |
+| **MCP devuelve ruta y metadatos, nunca contenido — en ninguna codificación** | ~2 400× de diferencia en tokens. Y el binario aparece de verdad como **base64 dentro de un `TextContent`**: 71 → 6.218 tokens con un booleano |
+| **Presupuesto de catálogo en TOKENS, no en número de herramientas** | El coste por herramienta varía **×11** (79 → 875) según su superficie de parámetros. Objetivo: **≤1.200 tokens** para las cuatro |
 | **Registro LRU de modelos acotado por VRAM + TTL** | SnapOtter no gestiona VRAM en absoluto |
 | **Filtrar por `language_probability`** | Whisper alucina `Thanks for watching!` sobre un tono puro |
 | **Lista blanca de raíces, denegar por defecto** | Ninguno de los seis lo resuelve; markitdown devolvió `win.ini` |
@@ -663,7 +924,7 @@ filex (CLI / MCP / watcher / API)      <- Python, proceso único y persistente
 1. **Registro, grafo y CLI** con FFmpeg e ImageMagick — **75 % de la cobertura de formatos con dos motores**.
 2. **NVENC** con sondeo de capacidades y degradación a CPU. 8,4× en HEVC, coste casi nulo.
 3. **Contrato de verificación post-conversión.** Sin él, todo lo anterior puede mentir.
-4. **Capa MCP generada desde el registro**, devolviendo ruta y metadatos.
+4. **Capa MCP de cuatro herramientas escritas a mano, con los `enum` generados desde el registro**, devolviendo ruta y metadatos.
 5. **Gotenberg en Docker** para ofimática→PDF, evitando instalar LibreOffice en Windows.
 6. **Sidecar IA**: faster-whisper (`distil` ≤30 s, `large-v3` por encima) y Docling con RapidOCR en `backend="torch"`.
 7. **Watcher y API HTTP local**, superficies delgadas sobre el mismo núcleo.
@@ -677,10 +938,21 @@ Los pasos 1 y 2 ya superan en cobertura y velocidad a todo lo analizado, salvo e
 | Ruta | Contenido |
 |---|---|
 | `informe-filex.html` | Informe navegable (publicado como Artifact) |
-| **`RESULTADOS-MCP.md`** | **Resultados de los 6 repos de `mcp-refs/`** (sustituye a `PRUEBAS-MCP-REFS.md`): el caso binario, los catálogos medidos, las 15 reglas de confinamiento, y **7 correcciones a este documento y a `PLAN-ORQUESTADOR.md`** |
+| **`RESULTADOS-MCP.md`** | **Resultados de los 6 repos de `mcp-refs/`**: el caso binario, los catálogos medidos, las 15 reglas de confinamiento (**ampliadas a 18** en `PLAN-ORQUESTADOR.md` §4.6), y **7 correcciones a este documento y a `PLAN-ORQUESTADOR.md`** (estado de aplicación en su §12) |
+| **`bench/coste-verificacion.md`** | El precio del diferenciador nº 1: coste medido, el 4º punto del contrato y el 17 % de falsos positivos de la primera versión |
+| **`bench/fidelidad-caminos.md`** | 69 caminos multi-salto ejecutados y clasificados; la función de coste propuesta |
+| **`bench/ocrmypdf.md`** | OCRmyPDF descartado como preprocesador, y el artefacto de ppp que invalida las marcas de OCR de d2/d3 |
+| **`bench/sdk-mcp-capacidades.md`** | Roots, la desaparición de Tasks y la restricción `mcp>=2.0.0` |
+| **`bench/confinamiento-multimedia.md`** | Los MCP de multimedia atacados: origen de las reglas R16 y R17 |
+| **`bench/aristas-nominales.md`** | **El 50,5 % de aristas nominales** con su método (censo de semiaristas + muestra estratificada), el estrato PDF al 3,0 %, el **quinto punto del contrato**, el caso de `resvg` y los 5 de 7 `no_evaluable` cerrados en contenedor |
+| **`bench/corpus-d4.md`** | **`escaneado_d4`**, la causa real de la asimetría de PaddleOCR, el techo absoluto de ppp y las dos refutaciones CPU/GPU |
+| **`bench/verificador-ghostscript.md`** | **El OCR sin GPU de Ghostscript**, `min(alfa)` de TIFF/GIF/Adam7, V2 y su coste, `P9` contra la alucinación *(refutada después)*, y el segundo testigo de ruido |
+| **`bench/ppp-y-normalizacion.md`** | **La curva de ppp barrida (17 puntos) y la refutación de las TRES unidades candidatas**; el **`k` por motor** y por qué la elección baja al adaptador; el tope interno de cada detector sondeado en ejecución; y **la validación de la normalización por checkpoint**, con sus 12 empeoramientos |
+| **`bench/invocacion-aristas.md`** | **El 18,8 % del 50,5 % que era invocación** y sus tres categorías; los crudos y sus cuatro datos externos; `imagen → pdf` con densidad ajustada a página; el **censo completo de Ghostscript y Gotenberg al 3,1 %**; y el **coste de integrar `qpdf` y `tesseract`: 8 líneas, 28,1 s, +50 MB** |
+| **`bench/contrato-quinto-punto.md`** | **El quinto punto implementado y medido** (+11,0 % con R18, ×8,6 sin él, y **no verificable a posteriori**); **la regla I9** y su coste real; **la familia de cinco miembros**; **`P9` refutada con su sustituto medido**; el interruptor de V2; y **el fallo de la propia sonda `_gs_texto`** |
 | `analysis/00-mcp-componentes.md` | 90 componentes MCP → veredicto, con `fichero:línea` |
 | `bench/mcp-refs-multimedia.md` | El caso binario ejecutado: qué devuelve un MCP tras convertir |
-| `bench/mcp-refs-confinamiento.md` | Ataques de ruta, oráculo de existencia, TOCTOU, y las 15 reglas |
+| `bench/mcp-refs-confinamiento.md` | Ataques de ruta, oráculo de existencia, TOCTOU, y las reglas R1-R15 (R16 y R17 en `bench/confinamiento-multimedia.md` §6; **R18 en `bench/aristas-nominales.md` §5.2**; las **18** juntas, en `PLAN-ORQUESTADOR.md` §4.6) |
 | `analysis/` | 24 documentos: uno por repositorio más 6 transversales |
 | `analysis/00-seguridad.md` | Auditoría de los 6 orquestadores (911 líneas) |
 | `analysis/00-sidecar-protocolo.md` | Disección del sidecar de SnapOtter (425 líneas) |
@@ -696,7 +968,7 @@ Los pasos 1 y 2 ya superan en cobertura y velocidad a todo lo analizado, salvo e
 | `bench/docker.md` | Entorno de los competidores |
 | `bench/lib/harness.sh` | Arnés de medición con lock de GPU y etiquetado limpia/SUCIA |
 | `repos/` | 22 repositorios clonados (2,2 GB) |
-| `corpus/` | 20 ficheros de prueba, incluidas 3 variantes duras de OCR |
+| `corpus/` | Ficheros de prueba en 5 categorías: las 3 variantes duras de OCR (`d1`-`d3`) **más la familia `escaneado_d4{,a,b,c,e,f}`, seis PDF de 200-240 ppp nativos con castellano acentuado**, con `corpus/pdf/MANIFIESTO-d4.md` |
 | `.venv-ai/`, `.venv-paddle/`, `.venv-mcp-md/` | Entornos CUDA funcionales |
 | `docker/` | Compose de SnapOtter (CPU y GPU), ConvertX y gotenberg |
 | `.mcp.json` | Configuración MCP **de proyecto** (no global) |

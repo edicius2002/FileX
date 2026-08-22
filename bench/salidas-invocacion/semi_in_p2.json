@@ -1,0 +1,1442 @@
+{
+"ffmpeg|avs": {
+"estado": "muerta",
+"categoria_p2": 3,
+"base_convertx_ok": false,
+"geometria": null,
+"procedencia": "ffmpeg<-video_cif",
+"intentos": [
+{
+"destino": "mkv",
+"args": null,
+"reglas": [
+"C-sin-pista-compatible"
+],
+"categoria": 3,
+"motivo": "el muxer matroska admite asv y la entrada tiene -",
+"rc": null,
+"bytes": -1,
+"vivo": false
+},
+{
+"destino": "wav",
+"args": null,
+"reglas": [
+"C-sin-pista-compatible"
+],
+"categoria": 3,
+"motivo": "el muxer wav admite a y la entrada tiene -",
+"rc": null,
+"bytes": -1,
+"vivo": false
+},
+{
+"destino": "png",
+"args": null,
+"reglas": [
+"C-sin-pista-compatible"
+],
+"categoria": 3,
+"motivo": "el muxer image2 admite v y la entrada tiene -",
+"rc": null,
+"bytes": -1,
+"vivo": false
+}
+]
+},
+"ffmpeg|avs2": {
+"estado": "muerta",
+"categoria_p2": 3,
+"base_convertx_ok": false,
+"geometria": null,
+"procedencia": "ffmpeg<-video_cif",
+"intentos": [
+{
+"destino": "mkv",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\in\\m.avs2",
+"-map",
+"0:v",
+"-c:v",
+"h264",
+"-f",
+"matroska",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_in\\p2_avs2.mkv"
+],
+"reglas": [
+"M",
+"C",
+"F-out"
+],
+"categoria": 1,
+"rc": 3221225477,
+"bytes": -1,
+"ms": 80.7,
+"vivo": false,
+"veredicto": "FALLO",
+"motivo": "rc=3221225477 bytes=-1",
+"ancho": null,
+"alto": null,
+"firma": null,
+"err": "CPU Capabilities:  MMX2 SSE2Fast SSSE3 SSE4.2 AVX AVX2 FMA3 LZCNT BMI2\u001b[0m \u001b[1;36m[davs2 info]: Manager 1c5495e00a0: using 1 thread(s): 1(frame/AEC)+0(pool/REC), 2 tasks\u001b[0m \u001b[1;36m[davs2 info]: Manager 1c5495e00a0: Sequence Resolution: 352x288.\u001b[0m "
+},
+{
+"destino": "wav",
+"args": null,
+"reglas": [
+"C-sin-pista-compatible"
+],
+"categoria": 3,
+"motivo": "el muxer wav admite a y la entrada tiene v",
+"rc": null,
+"bytes": -1,
+"vivo": false
+},
+{
+"destino": "png",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\in\\m.avs2",
+"-map",
+"0:v",
+"-c:v",
+"mjpeg",
+"-f",
+"image2",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_in\\p2_avs2.png"
+],
+"reglas": [
+"M",
+"C",
+"F-out"
+],
+"categoria": 1,
+"rc": 3221225477,
+"bytes": 9264,
+"ms": 117.1,
+"vivo": false,
+"veredicto": "FALLO",
+"motivo": "rc=3221225477 bytes=9264",
+"ancho": null,
+"alto": null,
+"firma": null,
+"err": "lid argument) [out#0/image2 @ 000001726697cc80] video:20KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown frame=    2 fps=0.0 q=24.8 Lsize=N/A time=00:00:00.08 bitrate=N/A speed=1.65x elapsed=0:00:00.04     "
+}
+]
+},
+"ffmpeg|mpc": {
+"estado": "muerta",
+"categoria_p2": 3,
+"base_convertx_ok": false,
+"geometria": [
+1920,
+1080
+],
+"procedencia": "magick<-jpeg_exif",
+"intentos": [
+{
+"destino": "mkv",
+"args": null,
+"reglas": [
+"C-sin-pista-compatible"
+],
+"categoria": 3,
+"motivo": "el muxer matroska admite asv y la entrada tiene -",
+"rc": null,
+"bytes": -1,
+"vivo": false
+},
+{
+"destino": "wav",
+"args": null,
+"reglas": [
+"C-sin-pista-compatible"
+],
+"categoria": 3,
+"motivo": "el muxer wav admite a y la entrada tiene -",
+"rc": null,
+"bytes": -1,
+"vivo": false
+},
+{
+"destino": "png",
+"args": null,
+"reglas": [
+"C-sin-pista-compatible"
+],
+"categoria": 3,
+"motivo": "el muxer image2 admite v y la entrada tiene -",
+"rc": null,
+"bytes": -1,
+"vivo": false
+}
+]
+},
+"ffmpeg|mtv": {
+"estado": "muerta",
+"categoria_p2": 3,
+"base_convertx_ok": false,
+"geometria": [
+1920,
+1080
+],
+"procedencia": "magick<-jpeg_exif",
+"intentos": [
+{
+"destino": "mkv",
+"args": null,
+"reglas": [
+"C-sin-pista-compatible"
+],
+"categoria": 3,
+"motivo": "el muxer matroska admite asv y la entrada tiene -",
+"rc": null,
+"bytes": -1,
+"vivo": false
+},
+{
+"destino": "wav",
+"args": null,
+"reglas": [
+"C-sin-pista-compatible"
+],
+"categoria": 3,
+"motivo": "el muxer wav admite a y la entrada tiene -",
+"rc": null,
+"bytes": -1,
+"vivo": false
+},
+{
+"destino": "png",
+"args": null,
+"reglas": [
+"C-sin-pista-compatible"
+],
+"categoria": 3,
+"motivo": "el muxer image2 admite v y la entrada tiene -",
+"rc": null,
+"bytes": -1,
+"vivo": false
+}
+]
+},
+"ffmpeg|rgb": {
+"estado": "muerta",
+"categoria_p2": 3,
+"base_convertx_ok": false,
+"geometria": null,
+"procedencia": "ffmpeg<-video_cif",
+"intentos": [
+{
+"destino": "mkv",
+"args": null,
+"reglas": [
+"F-in-sin-geometria"
+],
+"categoria": 2,
+"motivo": "P2-INV no puede construir la invocacion",
+"rc": null,
+"bytes": -1,
+"vivo": false
+},
+{
+"destino": "wav",
+"args": null,
+"reglas": [
+"F-in-sin-geometria"
+],
+"categoria": 2,
+"motivo": "P2-INV no puede construir la invocacion",
+"rc": null,
+"bytes": -1,
+"vivo": false
+},
+{
+"destino": "png",
+"args": null,
+"reglas": [
+"F-in-sin-geometria"
+],
+"categoria": 2,
+"motivo": "P2-INV no puede construir la invocacion",
+"rc": null,
+"bytes": -1,
+"vivo": false
+}
+]
+},
+"ffmpeg|svg": {
+"estado": "muerta",
+"categoria_p2": 3,
+"base_convertx_ok": false,
+"geometria": [
+1920,
+1080
+],
+"procedencia": "magick<-jpeg_exif",
+"intentos": [
+{
+"destino": "mkv",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\in\\m.svg",
+"-map",
+"0:v",
+"-c:v",
+"h264",
+"-f",
+"matroska",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_in\\p2_svg.mkv"
+],
+"reglas": [
+"M",
+"C",
+"F-out"
+],
+"categoria": 1,
+"rc": 4294967274,
+"bytes": -1,
+"ms": 41.2,
+"vivo": false,
+"veredicto": "FALLO",
+"motivo": "rc=4294967274 bytes=-1",
+"ancho": null,
+"alto": null,
+"firma": null,
+"err": "one, 25 fps, 25 tbr, 25 tbn [vist#0:0/svg @ 00000184396d8240] Decoding requested, but no decoder found for: svg Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_in\\p2_svg.mkv. Error opening output files: Invalid argument "
+},
+{
+"destino": "wav",
+"args": null,
+"reglas": [
+"C-sin-pista-compatible"
+],
+"categoria": 3,
+"motivo": "el muxer wav admite a y la entrada tiene v",
+"rc": null,
+"bytes": -1,
+"vivo": false
+},
+{
+"destino": "png",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\in\\m.svg",
+"-map",
+"0:v",
+"-c:v",
+"mjpeg",
+"-f",
+"image2",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_in\\p2_svg.png"
+],
+"reglas": [
+"M",
+"C",
+"F-out"
+],
+"categoria": 1,
+"rc": 4294967274,
+"bytes": -1,
+"ms": 44.7,
+"vivo": false,
+"veredicto": "FALLO",
+"motivo": "rc=4294967274 bytes=-1",
+"ancho": null,
+"alto": null,
+"firma": null,
+"err": "one, 25 fps, 25 tbr, 25 tbn [vist#0:0/svg @ 0000028afb1a7e40] Decoding requested, but no decoder found for: svg Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_in\\p2_svg.png. Error opening output files: Invalid argument "
+}
+]
+},
+"ffmpeg|txt": {
+"estado": "viva",
+"categoria_p2": 1,
+"base_convertx_ok": true,
+"geometria": [
+200,
+200
+],
+"procedencia": "magick<-png_alfa",
+"intentos": [
+{
+"destino": "mkv",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\in\\m.txt",
+"-map",
+"0:v",
+"-c:v",
+"h264",
+"-f",
+"matroska",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_in\\p2_txt.mkv"
+],
+"reglas": [
+"M",
+"C",
+"F-out"
+],
+"categoria": 1,
+"rc": 0,
+"bytes": 20910867,
+"ms": 13632.0,
+"vivo": true,
+"veredicto": "DEGRADADO",
+"motivo": "I1/V7:REDIMENSIONADO NO SOLICITADO: no se pidio cambiar el tamano; I1:la relacion de aspecto cambia (indicio de barras anadidas)",
+"ancho": null,
+"alto": null,
+"firma": "matroska",
+"err": ""
+}
+]
+},
+"ffmpeg|yuv": {
+"estado": "muerta",
+"categoria_p2": 3,
+"base_convertx_ok": false,
+"geometria": null,
+"procedencia": "ffmpeg<-video_cif",
+"intentos": [
+{
+"destino": "mkv",
+"args": null,
+"reglas": [
+"F-in-sin-geometria"
+],
+"categoria": 2,
+"motivo": "P2-INV no puede construir la invocacion",
+"rc": null,
+"bytes": -1,
+"vivo": false
+},
+{
+"destino": "wav",
+"args": null,
+"reglas": [
+"F-in-sin-geometria"
+],
+"categoria": 2,
+"motivo": "P2-INV no puede construir la invocacion",
+"rc": null,
+"bytes": -1,
+"vivo": false
+},
+{
+"destino": "png",
+"args": null,
+"reglas": [
+"F-in-sin-geometria"
+],
+"categoria": 2,
+"motivo": "P2-INV no puede construir la invocacion",
+"rc": null,
+"bytes": -1,
+"vivo": false
+}
+]
+},
+"imagemagick|avs": {
+"estado": "muerta",
+"categoria_p2": 3,
+"base_convertx_ok": false,
+"geometria": null,
+"procedencia": "ffmpeg<-video_cif",
+"intentos": [
+{
+"destino": "png",
+"args": [
+"magick",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\in\\m.avs",
+"-auto-orient",
+"png:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_in\\p2_avs.png"
+],
+"reglas": [
+"X-out"
+],
+"categoria": 1,
+"rc": 1,
+"bytes": -1,
+"ms": 41.4,
+"vivo": false,
+"veredicto": "FALLO",
+"motivo": "rc=1 bytes=-1",
+"ancho": null,
+"alto": null,
+"firma": null,
+"err": "magick: unable to extend cache 'D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\in\\m.avs': No space left on device @ error/cache.c/OpenPixelCache/4023. "
+}
+]
+},
+"imagemagick|bayer": {
+"estado": "viva",
+"categoria_p2": 2,
+"base_convertx_ok": false,
+"geometria": [
+1920,
+1080
+],
+"procedencia": "magick<-jpeg_exif",
+"intentos": [
+{
+"destino": "png",
+"args": [
+"magick",
+"-size",
+"1920x1080",
+"-depth",
+"8",
+"bayer:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\in\\m.bayer",
+"-auto-orient",
+"png:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_in\\p2_bayer.png"
+],
+"reglas": [
+"G",
+"X-in",
+"X-out"
+],
+"categoria": 2,
+"rc": 0,
+"bytes": 34165,
+"ms": 808.6,
+"vivo": true,
+"veredicto": "INTEGRO",
+"motivo": "",
+"ancho": 1920,
+"alto": 1080,
+"firma": "png",
+"err": ""
+}
+]
+},
+"imagemagick|bayera": {
+"estado": "viva",
+"categoria_p2": 2,
+"base_convertx_ok": false,
+"geometria": [
+1920,
+1080
+],
+"procedencia": "magick<-jpeg_exif",
+"intentos": [
+{
+"destino": "png",
+"args": [
+"magick",
+"-size",
+"1920x1080",
+"-depth",
+"8",
+"bayera:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\in\\m.bayera",
+"-auto-orient",
+"png:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_in\\p2_bayera.png"
+],
+"reglas": [
+"G",
+"X-in",
+"X-out"
+],
+"categoria": 2,
+"rc": 0,
+"bytes": 34165,
+"ms": 697.6,
+"vivo": true,
+"veredicto": "INTEGRO",
+"motivo": "",
+"ancho": 1920,
+"alto": 1080,
+"firma": "png",
+"err": ""
+}
+]
+},
+"imagemagick|bgr": {
+"estado": "viva",
+"categoria_p2": 2,
+"base_convertx_ok": false,
+"geometria": [
+1920,
+1080
+],
+"procedencia": "magick<-jpeg_exif",
+"intentos": [
+{
+"destino": "png",
+"args": [
+"magick",
+"-size",
+"1920x1080",
+"-depth",
+"8",
+"bgr:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\in\\m.bgr",
+"-auto-orient",
+"png:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_in\\p2_bgr.png"
+],
+"reglas": [
+"G",
+"X-in",
+"X-out"
+],
+"categoria": 2,
+"rc": 0,
+"bytes": 32635,
+"ms": 309.0,
+"vivo": true,
+"veredicto": "INTEGRO",
+"motivo": "",
+"ancho": 1920,
+"alto": 1080,
+"firma": "png",
+"err": ""
+}
+]
+},
+"imagemagick|bgra": {
+"estado": "viva",
+"categoria_p2": 2,
+"base_convertx_ok": false,
+"geometria": [
+1920,
+1080
+],
+"procedencia": "magick<-jpeg_exif",
+"intentos": [
+{
+"destino": "png",
+"args": [
+"magick",
+"-size",
+"1920x1080",
+"-depth",
+"8",
+"bgra:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\in\\m.bgra",
+"-auto-orient",
+"png:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_in\\p2_bgra.png"
+],
+"reglas": [
+"G",
+"X-in",
+"X-out"
+],
+"categoria": 2,
+"rc": 0,
+"bytes": 37167,
+"ms": 389.9,
+"vivo": true,
+"veredicto": "INTEGRO",
+"motivo": "",
+"ancho": 1920,
+"alto": 1080,
+"firma": "png",
+"err": ""
+}
+]
+},
+"imagemagick|bgro": {
+"estado": "muerta",
+"categoria_p2": 3,
+"base_convertx_ok": false,
+"geometria": [
+1920,
+1080
+],
+"procedencia": "magick<-jpeg_exif",
+"intentos": [
+{
+"destino": "png",
+"args": [
+"magick",
+"-size",
+"1920x1080",
+"-depth",
+"8",
+"bgro:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\in\\m.bgro",
+"-auto-orient",
+"png:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_in\\p2_bgro.png"
+],
+"reglas": [
+"G",
+"X-in",
+"X-out"
+],
+"categoria": 2,
+"rc": 3221226505,
+"bytes": -1,
+"ms": 28603.7,
+"vivo": false,
+"veredicto": "FALLO",
+"motivo": "rc=3221226505 bytes=-1",
+"ancho": null,
+"alto": null,
+"firma": null,
+"err": ""
+}
+]
+},
+"imagemagick|cmyk": {
+"estado": "viva",
+"categoria_p2": 2,
+"base_convertx_ok": false,
+"geometria": [
+1920,
+1080
+],
+"procedencia": "magick<-jpeg_exif",
+"intentos": [
+{
+"destino": "png",
+"args": [
+"magick",
+"-size",
+"1920x1080",
+"-depth",
+"8",
+"cmyk:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\in\\m.cmyk",
+"-auto-orient",
+"png:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_in\\p2_cmyk.png"
+],
+"reglas": [
+"G",
+"X-in",
+"X-out"
+],
+"categoria": 2,
+"rc": 0,
+"bytes": 32654,
+"ms": 479.1,
+"vivo": true,
+"veredicto": "INTEGRO",
+"motivo": "",
+"ancho": 1920,
+"alto": 1080,
+"firma": "png",
+"err": ""
+}
+]
+},
+"imagemagick|cmyka": {
+"estado": "viva",
+"categoria_p2": 2,
+"base_convertx_ok": false,
+"geometria": [
+1920,
+1080
+],
+"procedencia": "magick<-jpeg_exif",
+"intentos": [
+{
+"destino": "png",
+"args": [
+"magick",
+"-size",
+"1920x1080",
+"-depth",
+"8",
+"cmyka:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\in\\m.cmyka",
+"-auto-orient",
+"png:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_in\\p2_cmyka.png"
+],
+"reglas": [
+"G",
+"X-in",
+"X-out"
+],
+"categoria": 2,
+"rc": 0,
+"bytes": 37186,
+"ms": 548.8,
+"vivo": true,
+"veredicto": "INTEGRO",
+"motivo": "",
+"ancho": 1920,
+"alto": 1080,
+"firma": "png",
+"err": ""
+}
+]
+},
+"imagemagick|ftxt": {
+"estado": "muerta",
+"categoria_p2": 3,
+"base_convertx_ok": false,
+"geometria": [
+200,
+200
+],
+"procedencia": "magick<-png_alfa",
+"intentos": [
+{
+"destino": "png",
+"args": [
+"magick",
+"-size",
+"200x200",
+"-depth",
+"8",
+"ftxt:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\in\\m.ftxt",
+"-auto-orient",
+"png:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_in\\p2_ftxt.png"
+],
+"reglas": [
+"G",
+"X-in",
+"X-out"
+],
+"categoria": 2,
+"rc": 1,
+"bytes": -1,
+"ms": 79.1,
+"vivo": false,
+"veredicto": "FALLO",
+"motivo": "rc=1 bytes=-1",
+"ancho": null,
+"alto": null,
+"firma": null,
+"err": "magick: NumChannelsError `D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\in\\m.ftxt' @ error/ftxt.c/ReadFTXTImage/731. "
+}
+]
+},
+"imagemagick|g4": {
+"estado": "muerta",
+"categoria_p2": 3,
+"base_convertx_ok": false,
+"geometria": [
+1920,
+1080
+],
+"procedencia": "magick<-jpeg_exif",
+"intentos": [
+{
+"destino": "png",
+"args": [
+"magick",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\in\\m.g4",
+"-auto-orient",
+"png:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_in\\p2_g4.png"
+],
+"reglas": [
+"X-out"
+],
+"categoria": 1,
+"rc": 1,
+"bytes": -1,
+"ms": 38.4,
+"vivo": false,
+"veredicto": "FALLO",
+"motivo": "rc=1 bytes=-1",
+"ancho": null,
+"alto": null,
+"firma": null,
+"err": ":/Users/krato/AppData/Local/Temp/magick-cdfDRu-Cmy_lO-Xai-bKSOeCOn4dz2Tb: Bad value 0 for \"RowsPerStrip\" tag. `_TIFFVSetField' @ error/tiff.c/TIFFErrors/571. magick: Computed scanline size is zero. `TIFFScanlineSize64' @ error/tiff.c/TIFFErrors/571. "
+}
+]
+},
+"imagemagick|gray": {
+"estado": "viva",
+"categoria_p2": 2,
+"base_convertx_ok": false,
+"geometria": [
+1920,
+1080
+],
+"procedencia": "magick<-jpeg_exif",
+"intentos": [
+{
+"destino": "png",
+"args": [
+"magick",
+"-size",
+"1920x1080",
+"-depth",
+"8",
+"gray:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\in\\m.gray",
+"-auto-orient",
+"png:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_in\\p2_gray.png"
+],
+"reglas": [
+"G",
+"X-in",
+"X-out"
+],
+"categoria": 2,
+"rc": 0,
+"bytes": 14127,
+"ms": 798.3,
+"vivo": true,
+"veredicto": "INTEGRO",
+"motivo": "",
+"ancho": 1920,
+"alto": 1080,
+"firma": "png",
+"err": ""
+}
+]
+},
+"imagemagick|graya": {
+"estado": "viva",
+"categoria_p2": 2,
+"base_convertx_ok": false,
+"geometria": [
+1920,
+1080
+],
+"procedencia": "magick<-jpeg_exif",
+"intentos": [
+{
+"destino": "png",
+"args": [
+"magick",
+"-size",
+"1920x1080",
+"-depth",
+"8",
+"graya:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\in\\m.graya",
+"-auto-orient",
+"png:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_in\\p2_graya.png"
+],
+"reglas": [
+"G",
+"X-in",
+"X-out"
+],
+"categoria": 2,
+"rc": 0,
+"bytes": 14127,
+"ms": 975.0,
+"vivo": true,
+"veredicto": "INTEGRO",
+"motivo": "",
+"ancho": 1920,
+"alto": 1080,
+"firma": "png",
+"err": ""
+}
+]
+},
+"imagemagick|map": {
+"estado": "muerta",
+"categoria_p2": 3,
+"base_convertx_ok": false,
+"geometria": [
+1920,
+1080
+],
+"procedencia": "magick<-jpeg_exif",
+"intentos": [
+{
+"destino": "png",
+"args": [
+"magick",
+"-size",
+"1920x1080",
+"-depth",
+"8",
+"map:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\in\\m.map",
+"-auto-orient",
+"png:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_in\\p2_map.png"
+],
+"reglas": [
+"G",
+"X-in",
+"X-out"
+],
+"categoria": 2,
+"rc": 1,
+"bytes": -1,
+"ms": 72.5,
+"vivo": false,
+"veredicto": "FALLO",
+"motivo": "rc=1 bytes=-1",
+"ancho": null,
+"alto": null,
+"firma": null,
+"err": "magick: unexpected end-of-file 'D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\in\\m.map': No such file or directory @ error/map.c/ReadMAPImage/255. "
+}
+]
+},
+"imagemagick|mono": {
+"estado": "viva",
+"categoria_p2": 2,
+"base_convertx_ok": false,
+"geometria": [
+1920,
+1080
+],
+"procedencia": "magick<-jpeg_exif",
+"intentos": [
+{
+"destino": "png",
+"args": [
+"magick",
+"-size",
+"1920x1080",
+"-depth",
+"8",
+"mono:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\in\\m.mono",
+"-auto-orient",
+"png:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_in\\p2_mono.png"
+],
+"reglas": [
+"G",
+"X-in",
+"X-out"
+],
+"categoria": 2,
+"rc": 0,
+"bytes": 2230,
+"ms": 159.6,
+"vivo": true,
+"veredicto": "DEGRADADO",
+"motivo": "I4:DEGRADACION DE PROFUNDIDAD no pedida ni inevitable",
+"ancho": 1920,
+"alto": 1080,
+"firma": "png",
+"err": ""
+}
+]
+},
+"imagemagick|msvg": {
+"estado": "muerta",
+"categoria_p2": 3,
+"base_convertx_ok": false,
+"geometria": [
+1920,
+1080
+],
+"procedencia": "magick<-jpeg_exif",
+"intentos": [
+{
+"destino": "png",
+"args": [
+"magick",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\in\\m.msvg",
+"-auto-orient",
+"png:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_in\\p2_msvg.png"
+],
+"reglas": [
+"X-out"
+],
+"categoria": 1,
+"rc": 1,
+"bytes": -1,
+"ms": 45.7,
+"vivo": false,
+"veredicto": "FALLO",
+"motivo": "rc=1 bytes=-1",
+"ancho": null,
+"alto": null,
+"firma": null,
+"err": "RawAAAAAAAAAAbEJMQAMAAAAAAAAABkEADQAAAAAA AAAYBAE0AAAAAAAAAGAQQYQOaAAAAAAAAADA+guqutFrAAAAAAAAAABsQlRwAAAAAAAAAAAGQQAN AAAAAAAAABgEATQAAAAAAAAAYBAcQggAAAAAAAAAGASHEAIAAAAAAAAABkEFBwAAAAAAAABgEATQ AAAAAAAAAIBBEEADAAAAAAAAAAYR1NlGrwEAAAAAAAAAsAkxAQ0A. "
+}
+]
+},
+"imagemagick|pal": {
+"estado": "viva",
+"categoria_p2": 2,
+"base_convertx_ok": false,
+"geometria": [
+1920,
+1080
+],
+"procedencia": "magick<-jpeg_exif",
+"intentos": [
+{
+"destino": "png",
+"args": [
+"magick",
+"-size",
+"1920x1080",
+"-depth",
+"8",
+"pal:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\in\\m.pal",
+"-auto-orient",
+"png:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_in\\p2_pal.png"
+],
+"reglas": [
+"G",
+"X-in",
+"X-out"
+],
+"categoria": 2,
+"rc": 0,
+"bytes": 32929,
+"ms": 344.4,
+"vivo": true,
+"veredicto": "INTEGRO",
+"motivo": "",
+"ancho": 1920,
+"alto": 1080,
+"firma": "png",
+"err": ""
+}
+]
+},
+"imagemagick|pcl": {
+"estado": "muerta",
+"categoria_p2": 3,
+"base_convertx_ok": false,
+"geometria": [
+1920,
+1080
+],
+"procedencia": "magick<-jpeg_exif",
+"intentos": [
+{
+"destino": "png",
+"args": [
+"magick",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\in\\m.pcl",
+"-auto-orient",
+"png:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_in\\p2_pcl.png"
+],
+"reglas": [
+"X-out"
+],
+"categoria": 1,
+"rc": 1,
+"bytes": -1,
+"ms": 94.3,
+"vivo": false,
+"veredicto": "FALLO",
+"motivo": "rc=1 bytes=-1",
+"ancho": null,
+"alto": null,
+"firma": null,
+"err": "magick: PCL delegate failed `D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\in\\m.pcl' @ error/pcl.c/ReadPCLImage/375. "
+}
+]
+},
+"imagemagick|pix": {
+"estado": "muerta",
+"categoria_p2": 3,
+"base_convertx_ok": false,
+"geometria": [
+1920,
+1080
+],
+"procedencia": "ffmpeg<-jpeg_exif",
+"intentos": [
+{
+"destino": "png",
+"args": [
+"magick",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\in\\m.pix",
+"-auto-orient",
+"png:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_in\\p2_pix.png"
+],
+"reglas": [
+"X-out"
+],
+"categoria": 1,
+"rc": 1,
+"bytes": -1,
+"ms": 40.6,
+"vivo": false,
+"veredicto": "FALLO",
+"motivo": "rc=1 bytes=-1",
+"ancho": null,
+"alto": null,
+"firma": null,
+"err": "magick: no images found for operation `-auto-orient' at CLI arg 2 @ error/operation.c/CLIOption/5481. "
+}
+]
+},
+"imagemagick|rgb": {
+"estado": "muerta",
+"categoria_p2": 3,
+"base_convertx_ok": false,
+"geometria": null,
+"procedencia": "ffmpeg<-video_cif",
+"intentos": [
+{
+"destino": "png",
+"args": null,
+"reglas": [
+"G-sin-geometria"
+],
+"categoria": 2,
+"motivo": "P2-INV no puede construir la invocacion",
+"rc": null,
+"bytes": -1,
+"vivo": false
+}
+]
+},
+"imagemagick|rgba": {
+"estado": "viva",
+"categoria_p2": 2,
+"base_convertx_ok": false,
+"geometria": [
+1920,
+1080
+],
+"procedencia": "magick<-jpeg_exif",
+"intentos": [
+{
+"destino": "png",
+"args": [
+"magick",
+"-size",
+"1920x1080",
+"-depth",
+"8",
+"rgba:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\in\\m.rgba",
+"-auto-orient",
+"png:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_in\\p2_rgba.png"
+],
+"reglas": [
+"G",
+"X-in",
+"X-out"
+],
+"categoria": 2,
+"rc": 0,
+"bytes": 37167,
+"ms": 325.9,
+"vivo": true,
+"veredicto": "INTEGRO",
+"motivo": "",
+"ancho": 1920,
+"alto": 1080,
+"firma": "png",
+"err": ""
+}
+]
+},
+"imagemagick|rgbo": {
+"estado": "viva",
+"categoria_p2": 2,
+"base_convertx_ok": false,
+"geometria": [
+1920,
+1080
+],
+"procedencia": "magick<-jpeg_exif",
+"intentos": [
+{
+"destino": "png",
+"args": [
+"magick",
+"-size",
+"1920x1080",
+"-depth",
+"8",
+"rgbo:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\in\\m.rgbo",
+"-auto-orient",
+"png:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_in\\p2_rgbo.png"
+],
+"reglas": [
+"G",
+"X-in",
+"X-out"
+],
+"categoria": 2,
+"rc": 0,
+"bytes": 37167,
+"ms": 333.0,
+"vivo": true,
+"veredicto": "INTEGRO",
+"motivo": "",
+"ancho": 1920,
+"alto": 1080,
+"firma": "png",
+"err": ""
+}
+]
+},
+"imagemagick|rgf": {
+"estado": "muerta",
+"categoria_p2": 3,
+"base_convertx_ok": false,
+"geometria": [
+200,
+200
+],
+"procedencia": "magick<-png_alfa",
+"intentos": [
+{
+"destino": "png",
+"args": [
+"magick",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\in\\m.rgf",
+"-auto-orient",
+"png:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_in\\p2_rgf.png"
+],
+"reglas": [
+"X-out"
+],
+"categoria": 1,
+"rc": 1,
+"bytes": -1,
+"ms": 109.7,
+"vivo": false,
+"veredicto": "FALLO",
+"motivo": "rc=1 bytes=-1",
+"ancho": null,
+"alto": null,
+"firma": null,
+"err": "magick: unexpected end-of-file 'D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\in\\m.rgf': No such file or directory @ error/rgf.c/ReadRGFImage/188. "
+}
+]
+},
+"imagemagick|uyvy": {
+"estado": "viva",
+"categoria_p2": 2,
+"base_convertx_ok": false,
+"geometria": [
+1920,
+1080
+],
+"procedencia": "magick<-jpeg_exif",
+"intentos": [
+{
+"destino": "png",
+"args": [
+"magick",
+"-size",
+"1920x1080",
+"-depth",
+"8",
+"uyvy:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\in\\m.uyvy",
+"-auto-orient",
+"png:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_in\\p2_uyvy.png"
+],
+"reglas": [
+"G",
+"X-in",
+"X-out"
+],
+"categoria": 2,
+"rc": 0,
+"bytes": 32929,
+"ms": 309.3,
+"vivo": true,
+"veredicto": "INTEGRO",
+"motivo": "",
+"ancho": 1920,
+"alto": 1080,
+"firma": "png",
+"err": ""
+}
+]
+},
+"imagemagick|ycbcr": {
+"estado": "viva",
+"categoria_p2": 2,
+"base_convertx_ok": false,
+"geometria": [
+1920,
+1080
+],
+"procedencia": "magick<-jpeg_exif",
+"intentos": [
+{
+"destino": "png",
+"args": [
+"magick",
+"-size",
+"1920x1080",
+"-depth",
+"8",
+"ycbcr:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\in\\m.ycbcr",
+"-auto-orient",
+"png:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_in\\p2_ycbcr.png"
+],
+"reglas": [
+"G",
+"X-in",
+"X-out"
+],
+"categoria": 2,
+"rc": 0,
+"bytes": 33147,
+"ms": 335.2,
+"vivo": true,
+"veredicto": "INTEGRO",
+"motivo": "",
+"ancho": 1920,
+"alto": 1080,
+"firma": "png",
+"err": ""
+}
+]
+},
+"imagemagick|ycbcra": {
+"estado": "viva",
+"categoria_p2": 2,
+"base_convertx_ok": false,
+"geometria": [
+1920,
+1080
+],
+"procedencia": "magick<-jpeg_exif",
+"intentos": [
+{
+"destino": "png",
+"args": [
+"magick",
+"-size",
+"1920x1080",
+"-depth",
+"8",
+"ycbcra:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\in\\m.ycbcra",
+"-auto-orient",
+"png:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_in\\p2_ycbcra.png"
+],
+"reglas": [
+"G",
+"X-in",
+"X-out"
+],
+"categoria": 2,
+"rc": 0,
+"bytes": 37825,
+"ms": 383.5,
+"vivo": true,
+"veredicto": "INTEGRO",
+"motivo": "",
+"ancho": 1920,
+"alto": 1080,
+"firma": "png",
+"err": ""
+}
+]
+},
+"imagemagick|yuv": {
+"estado": "muerta",
+"categoria_p2": 3,
+"base_convertx_ok": false,
+"geometria": null,
+"procedencia": "ffmpeg<-video_cif",
+"intentos": [
+{
+"destino": "png",
+"args": null,
+"reglas": [
+"G-sin-geometria"
+],
+"categoria": 2,
+"motivo": "P2-INV no puede construir la invocacion",
+"rc": null,
+"bytes": -1,
+"vivo": false
+}
+]
+}
+}

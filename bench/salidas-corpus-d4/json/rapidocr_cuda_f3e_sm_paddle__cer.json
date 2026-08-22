@@ -1,0 +1,128 @@
+{
+  "cabecera": {
+    "etiqueta": "rapidocr_cuda_f3e_sm_paddle",
+    "motor": "rapidocr",
+    "dispositivo": "cuda",
+    "referencia": "d4",
+    "patron": "*.png",
+    "imgdir": "D:/Work/research/FileX/bench/salidas-corpus-d4/img_f3",
+    "carga_frio_s": 3.41,
+    "vram_base_MiB": 2923,
+    "vram_tras_carga_MiB": 3161,
+    "quietud_pct": 46,
+    "cpu_pico_pct": null,
+    "flag": "SUCIA(pico 46%)",
+    "modelos": {
+      "text_det": "ch_PP-OCRv4_det_mobile.onnx",
+      "text_cls": "ch_PP-OCRv4_det_mobile.onnx",
+      "text_rec": "ch_PP-OCRv4_det_mobile.onnx",
+      "pedido": {
+        "Det.engine_type": "onnxruntime",
+        "Rec.engine_type": "onnxruntime",
+        "Det.lang_type": "ch",
+        "Rec.lang_type": "ch",
+        "Det.ocr_version": "PP-OCRv6",
+        "Rec.ocr_version": "PP-OCRv6",
+        "Det.model_type": "small",
+        "Rec.model_type": "small",
+        "Global.model_root_dir": "D:/Work/research/FileX/bench/salidas-corpus-d4/modelos",
+        "Det.mean": "[0.485, 0.456, 0.406]",
+        "Det.std": "[0.229, 0.224, 0.225]",
+        "Det.thresh": "0.2",
+        "Det.box_thresh": "0.45",
+        "Det.unclip_ratio": "1.4",
+        "Det.max_candidates": "3000"
+      }
+    },
+    "reps": 9,
+    "muestreo_vram": false
+  },
+  "fin": {
+    "evento": "fin",
+    "vram_pico_MiB": 3161,
+    "vram_base_MiB": 2923,
+    "coste_propio_MiB": 238,
+    "pico_util_pct": 0,
+    "muestreo_vram": false
+  },
+  "res": {
+    "ppp100__escaneado_d3": {
+      "referencia": "legado",
+      "cer_acentos_pct": 3.8,
+      "dist_acentos": 3,
+      "cer_ascii_pct": 3.8,
+      "dist_ascii": 3,
+      "chars_ref_acentos": 79,
+      "chars": 80,
+      "lineas_exactas": 2,
+      "lineas_totales": 3,
+      "acentos_ref": 0,
+      "acentos_salida": 0,
+      "bloques": {
+        "cuerpo": 3.8
+      },
+      "normalizada_acentos": "documento escaneado texto que salo existe camo pixales debe recuperarse con ocr",
+      "ms_mediana": 80.8,
+      "ms_min": 77.6,
+      "ms_max": 97.6,
+      "n": 9,
+      "determinista": true,
+      "vram_pico_MiB": 3161,
+      "vram_delta_lote_MiB": 0
+    },
+    "ppp200__escaneado_d4": {
+      "referencia": "d4",
+      "cer_acentos_pct": 18.62,
+      "dist_acentos": 111,
+      "cer_ascii_pct": 17.62,
+      "dist_ascii": 105,
+      "chars_ref_acentos": 596,
+      "chars": 543,
+      "lineas_exactas": 3,
+      "lineas_totales": 12,
+      "acentos_ref": 35,
+      "acentos_salida": 17,
+      "bloques": {
+        "titulo": 0.0,
+        "subtitulo": 0.0,
+        "cuerpo": 2.56,
+        "pequeña": 54.93
+      },
+      "normalizada_acentos": "informe de digitalización expediente núm 4 827 2026 archivo histórico el dia 14 de marzo se recibió la solicitud de análisis técnico sobre veintiún volúmenes encuaderados en piel la comisión determinó que la reproducción fotografica debia realizarse con iluminación difusa y sin contacto seg n la noma une 15 402 para evitar daños añadidos en los pliegos más frágiles del año 1893 qa ko0 a p07 que ka vavaan onogafca a ingavco del kegap as reponsabkdad dl area de canvervacbe preveriva avckv2 06 cbdga4 7 6 9 4 y 12 4 qumdan arabadve",
+      "ms_mediana": 334.1,
+      "ms_min": 317.2,
+      "ms_max": 371.7,
+      "n": 9,
+      "determinista": true,
+      "vram_pico_MiB": 3161,
+      "vram_delta_lote_MiB": 0
+    },
+    "ppp200__escaneado_d4c": {
+      "referencia": "d4",
+      "cer_acentos_pct": 1.17,
+      "dist_acentos": 7,
+      "cer_ascii_pct": 0.34,
+      "dist_ascii": 2,
+      "chars_ref_acentos": 596,
+      "chars": 607,
+      "lineas_exactas": 9,
+      "lineas_totales": 12,
+      "acentos_ref": 35,
+      "acentos_salida": 30,
+      "bloques": {
+        "titulo": 0.0,
+        "subtitulo": 0.0,
+        "cuerpo": 0.0,
+        "pequeña": 6.1
+      },
+      "normalizada_acentos": "informe de digitalización expediente núm 4 827 2026 archivo histórico el día 14 de marzo se recibió la solicitud de análisis técnico sobre veintiún volúmenes encuadernados en piel la comisión determinó que la reproducción fotográfica debía realizarse con iluminación difusa y sin contacto según la norma une 15 402 para evitar daños añadidos en los pliegos más frágiles del año 1893 quien autorizó la excepción el párrafo tercero señala que la revisión ortografica y linguistica det legajo es responsabilidad del área de conservación preventiva atención los códigos 7 8 9 n y 12 k quedan anulados",
+      "ms_mediana": 353.4,
+      "ms_min": 335.6,
+      "ms_max": 382.0,
+      "n": 9,
+      "determinista": true,
+      "vram_pico_MiB": 3161,
+      "vram_delta_lote_MiB": 0
+    }
+  }
+}

@@ -1,0 +1,137 @@
+[lock] adquirido por g1-ocr-ppp-tiempos
+########## 02:52:39  tiempos limpios — rapidocr ##########
+[32m[INFO] 2026-08-21 02:52:47,469 [RapidOCR] main.py:63: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_PP-OCRv5_det_mobile.onnx[0m
+[32m[INFO] 2026-08-21 02:52:47,734 [RapidOCR] main.py:63: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ppocr_mobile_v2.0_cls_mobile.onnx[0m
+[32m[INFO] 2026-08-21 02:52:47,795 [RapidOCR] main.py:63: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_PP-OCRv5_rec_mobile.onnx[0m
+{"etiqueta": "rapidocr_cuda_t", "motor": "rapidocr", "dispositivo": "cuda", "carga_frio_s": 3.38, "vram_base_MiB": 827, "vram_tras_carga_MiB": 999, "quietud_pct": 12, "flag": "SUCIA(pico 12%)", "modelos": {"text_det": "el.ttf', 'SHA256': '892e6c81071fc85923f8d0ff925edab6049dd4495a2fdedffddc04753bf348b3'}}}", "text_cls": "el.ttf', 'SHA256': '892e6c81071fc85923f8d0ff925edab6049dd4495a2fdedffddc04753bf348b3'}}}", "text_rec": "el.ttf', 'SHA256': '892e6c81071fc85923f8d0ff925edab6049dd4495a2fdedffddc04753bf348b3'}}}", "params_forzados": "PPOCRV5/MOBILE/ONNXRUNTIME (igual que bench/scripts/ocr_motor.py)"}, "reps": 9, "muestreo_vram": false}
+ext__escaneado_d1                    CER=   0.0%  dist=   0  frases=3/3    121.1 ms  det=si
+ext__escaneado_d2                    CER=   0.0%  dist=   0  frases=3/3     78.0 ms  det=si
+ext__escaneado_d3                    CER=  77.2%  dist=  61  frases=0/3     65.2 ms  det=si
+ext__patologico_escaneado            CER=   0.0%  dist=   0  frases=3/3    212.4 ms  det=si
+extg__escaneado_d1                   CER=   0.0%  dist=   0  frases=3/3    132.5 ms  det=si
+extg__escaneado_d2                   CER=   0.0%  dist=   0  frases=3/3     80.5 ms  det=si
+extg__escaneado_d3                   CER=  77.2%  dist=  61  frases=0/3     68.6 ms  det=si
+extg__patologico_escaneado           CER=   1.3%  dist=   1  frases=2/3    221.4 ms  det=si
+ppp100__escaneado_d1                 CER=   0.0%  dist=   0  frases=3/3     89.1 ms  det=si
+ppp100__escaneado_d2                 CER=   0.0%  dist=   0  frases=3/3     82.1 ms  det=si
+ppp100__escaneado_d3                 CER=  77.2%  dist=  61  frases=0/3     69.1 ms  det=si
+ppp100__patologico_escaneado         CER=   1.3%  dist=   1  frases=2/3    149.7 ms  det=si
+ppp125__escaneado_d1                 CER=   0.0%  dist=   0  frases=3/3    103.2 ms  det=si
+ppp125__escaneado_d2                 CER=   0.0%  dist=   0  frases=3/3    100.0 ms  det=si
+ppp125__escaneado_d3                 CER=  75.9%  dist=  60  frases=1/3     83.2 ms  det=si
+ppp125__patologico_escaneado         CER=   1.3%  dist=   1  frases=2/3    210.7 ms  det=si
+ppp150__escaneado_d1                 CER=   0.0%  dist=   0  frases=3/3    149.3 ms  det=si
+ppp150__escaneado_d2                 CER=   0.0%  dist=   0  frases=3/3    129.7 ms  det=si
+ppp150__escaneado_d3                 CER=  75.9%  dist=  60  frases=1/3    118.4 ms  det=si
+ppp150__patologico_escaneado         CER=   1.3%  dist=   1  frases=2/3    272.6 ms  det=si
+ppp175__escaneado_d1                 CER=   0.0%  dist=   0  frases=3/3    184.1 ms  det=si
+ppp175__escaneado_d2                 CER=   1.3%  dist=   1  frases=2/3    170.1 ms  det=si
+ppp175__escaneado_d3                 CER=  75.9%  dist=  60  frases=1/3    158.2 ms  det=si
+ppp175__patologico_escaneado         CER=   1.3%  dist=   1  frases=2/3    375.0 ms  det=si
+ppp200__escaneado_d1                 CER=   0.0%  dist=   0  frases=3/3    221.3 ms  det=si
+ppp200__escaneado_d2                 CER=   1.3%  dist=   1  frases=2/3    214.9 ms  det=si
+ppp200__escaneado_d3                 CER=  65.8%  dist=  52  frases=0/3    216.5 ms  det=si
+ppp200__patologico_escaneado         CER=   1.3%  dist=   1  frases=2/3    465.3 ms  det=si
+ppp250__escaneado_d1                 CER=   0.0%  dist=   0  frases=3/3    278.9 ms  det=si
+ppp250__escaneado_d2                 CER=   0.0%  dist=   0  frases=3/3    273.1 ms  det=si
+ppp250__escaneado_d3                 CER=  70.9%  dist=  56  frases=1/3    270.2 ms  det=si
+ppp250__patologico_escaneado         CER=   0.0%  dist=   0  frases=3/3    703.7 ms  det=si
+ppp300__escaneado_d1                 CER=   0.0%  dist=   0  frases=3/3    288.8 ms  det=si
+ppp300__escaneado_d2                 CER=   0.0%  dist=   0  frases=3/3    277.0 ms  det=si
+ppp300__escaneado_d3                 CER=  77.2%  dist=  61  frases=0/3    281.1 ms  det=si
+ppp300__patologico_escaneado         CER=   1.3%  dist=   1  frases=2/3    876.0 ms  det=si
+ppp75__escaneado_d1                  CER=   1.3%  dist=   1  frases=2/3     89.6 ms  det=si
+ppp75__escaneado_d2                  CER=  44.3%  dist=  35  frases=2/3     84.2 ms  det=si
+ppp75__escaneado_d3                  CER=  75.9%  dist=  60  frases=1/3     67.7 ms  det=si
+ppp75__patologico_escaneado          CER=   0.0%  dist=   0  frases=3/3    123.7 ms  det=si
+{"evento": "fin", "vram_pico_MiB": 999, "vram_base_MiB": 827, "coste_propio_MiB": 172, "pico_util_pct": 0, "muestreo_vram": false, "aviso": "tiempos limpios, pico de VRAM NO medido"}
+########## 02:54:13  tiempos limpios — paddleocr ##########
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+W0821 02:54:23.102061 143820 gpu_resources.cc:114] Please NOTE: device: 0, GPU Compute Capability: 8.6, Driver API Version: 12.8, Runtime API Version: 12.6
+{"etiqueta": "paddleocr_cuda_t", "motor": "paddleocr", "dispositivo": "cuda", "carga_frio_s": 6.43, "vram_base_MiB": 838, "vram_tras_carga_MiB": 1106, "quietud_pct": 1, "flag": "limpia", "modelos": {"paddle": "3.2.0", "paddle_cudnn_aviso": "compilado con cuDNN 9.9, maquina 9.5 (aviso de paddle)", "nombres_modelo": "ERROR TypeError: PaddleOCR._get_ocr_model_names() missing 2 required positional arguments: 'lang' and 'ppocr_version'", "params": {"doc_orientation_classify_model_name": "None", "doc_orientation_classify_model_dir": "None", "doc_unwarping_model_name": "None", "doc_unwarping_model_dir": "None", "text_detection_model_name": "PP-OCRv6_medium_det", "text_detection_model_dir": "None", "textline_orientation_model_name": "None", "textline_orientation_model_dir": "None", "text_recognition_model_name": "PP-OCRv6_medium_rec", "text_recognition_model_dir": "None"}}, "reps": 9, "muestreo_vram": false}
+W0821 02:54:25.630147 143820 gpu_resources.cc:243] WARNING: device: 0. The installed Paddle is compiled with CUDNN 9.9, but CUDNN version in your machine is 9.5, which may cause serious incompatible bug. Please recompile or reinstall Paddle with compatible CUDNN version.
+ext__escaneado_d1                    CER=   0.0%  dist=   0  frases=3/3    150.6 ms  det=si
+ext__escaneado_d2                    CER=   0.0%  dist=   0  frases=3/3     89.9 ms  det=si
+ext__escaneado_d3                    CER=   2.5%  dist=   2  frases=2/3     83.2 ms  det=si
+ext__patologico_escaneado            CER=   0.0%  dist=   0  frases=3/3    250.7 ms  det=si
+extg__escaneado_d1                   CER=   0.0%  dist=   0  frases=3/3    147.0 ms  det=si
+extg__escaneado_d2                   CER=   0.0%  dist=   0  frases=3/3     87.3 ms  det=si
+extg__escaneado_d3                   CER=   2.5%  dist=   2  frases=2/3     82.9 ms  det=si
+extg__patologico_escaneado           CER=   0.0%  dist=   0  frases=3/3    227.9 ms  det=si
+ppp100__escaneado_d1                 CER=   0.0%  dist=   0  frases=3/3     88.8 ms  det=si
+ppp100__escaneado_d2                 CER=   0.0%  dist=   0  frases=3/3     90.7 ms  det=si
+ppp100__escaneado_d3                 CER=   2.5%  dist=   2  frases=2/3     82.6 ms  det=si
+ppp100__patologico_escaneado         CER=   0.0%  dist=   0  frases=3/3     98.0 ms  det=si
+ppp125__escaneado_d1                 CER=   0.0%  dist=   0  frases=3/3    112.7 ms  det=si
+ppp125__escaneado_d2                 CER=   0.0%  dist=   0  frases=3/3    111.9 ms  det=si
+ppp125__escaneado_d3                 CER=   5.1%  dist=   4  frases=2/3    106.7 ms  det=si
+ppp125__patologico_escaneado         CER=   0.0%  dist=   0  frases=3/3    128.9 ms  det=si
+ppp150__escaneado_d1                 CER=   0.0%  dist=   0  frases=3/3    151.3 ms  det=si
+ppp150__escaneado_d2                 CER=   0.0%  dist=   0  frases=3/3    145.1 ms  det=si
+ppp150__escaneado_d3                 CER=  31.6%  dist=  25  frases=2/3    134.0 ms  det=si
+ppp150__patologico_escaneado         CER=   0.0%  dist=   0  frases=3/3    173.0 ms  det=si
+ppp175__escaneado_d1                 CER=   0.0%  dist=   0  frases=3/3    180.5 ms  det=si
+ppp175__escaneado_d2                 CER=   0.0%  dist=   0  frases=3/3    177.4 ms  det=si
+ppp175__escaneado_d3                 CER=  75.9%  dist=  60  frases=1/3    156.6 ms  det=si
+ppp175__patologico_escaneado         CER=   0.0%  dist=   0  frases=3/3    221.8 ms  det=si
+ppp200__escaneado_d1                 CER=   0.0%  dist=   0  frases=3/3    226.2 ms  det=si
+ppp200__escaneado_d2                 CER=   0.0%  dist=   0  frases=3/3    216.7 ms  det=si
+ppp200__escaneado_d3                 CER=  75.9%  dist=  60  frases=1/3    197.2 ms  det=si
+ppp200__patologico_escaneado         CER=   0.0%  dist=   0  frases=3/3    270.6 ms  det=si
+ppp250__escaneado_d1                 CER=   0.0%  dist=   0  frases=3/3    331.5 ms  det=si
+ppp250__escaneado_d2                 CER=   0.0%  dist=   0  frases=3/3    319.7 ms  det=si
+ppp250__escaneado_d3                 CER=  75.9%  dist=  60  frases=1/3    300.3 ms  det=si
+ppp250__patologico_escaneado         CER=   0.0%  dist=   0  frases=3/3    410.8 ms  det=si
+ppp300__escaneado_d1                 CER=   0.0%  dist=   0  frases=3/3    453.1 ms  det=si
+ppp300__escaneado_d2                 CER=   0.0%  dist=   0  frases=3/3    444.1 ms  det=si
+ppp300__escaneado_d3                 CER=  75.9%  dist=  60  frases=1/3    413.3 ms  det=si
+ppp300__patologico_escaneado         CER=   0.0%  dist=   0  frases=3/3    541.5 ms  det=si
+ppp75__escaneado_d1                  CER=   0.0%  dist=   0  frases=3/3     63.2 ms  det=si
+ppp75__escaneado_d2                  CER=   0.0%  dist=   0  frases=3/3     66.7 ms  det=si
+ppp75__escaneado_d3                  CER=  11.4%  dist=   9  frases=1/3     61.6 ms  det=si
+ppp75__patologico_escaneado          CER=   0.0%  dist=   0  frases=3/3     70.6 ms  det=si
+{"evento": "fin", "vram_pico_MiB": 1106, "vram_base_MiB": 838, "coste_propio_MiB": 268, "pico_util_pct": 0, "muestreo_vram": false, "aviso": "tiempos limpios, pico de VRAM NO medido"}
+########## 02:55:44  tiempos limpios — easyocr ##########
+{"etiqueta": "easyocr_cuda_t", "motor": "easyocr", "dispositivo": "cuda", "carga_frio_s": 6.34, "vram_base_MiB": 838, "vram_tras_carga_MiB": 1084, "quietud_pct": 1, "flag": "limpia", "modelos": {"torch": "2.6.0+cu124", "torch_cuda": "True"}, "reps": 9, "muestreo_vram": false}
+ext__escaneado_d1                    CER=   0.0%  dist=   0  frases=3/3    277.3 ms  det=si
+ext__escaneado_d2                    CER=  43.0%  dist=  34  frases=1/3    183.0 ms  det=si
+ext__escaneado_d3                    CER=  54.4%  dist=  43  frases=1/3    299.1 ms  det=si
+ext__patologico_escaneado            CER=   0.0%  dist=   0  frases=3/3    503.9 ms  det=si
+extg__escaneado_d1                   CER=   0.0%  dist=   0  frases=3/3    281.7 ms  det=si
+extg__escaneado_d2                   CER=  43.0%  dist=  34  frases=1/3    180.1 ms  det=si
+extg__escaneado_d3                   CER=  54.4%  dist=  43  frases=1/3    309.4 ms  det=si
+extg__patologico_escaneado           CER=   0.0%  dist=   0  frases=3/3    450.6 ms  det=si
+ppp100__escaneado_d1                 CER=  15.2%  dist=  12  frases=2/3    171.6 ms  det=si
+ppp100__escaneado_d2                 CER=  43.0%  dist=  34  frases=1/3    183.8 ms  det=si
+ppp100__escaneado_d3                 CER=  54.4%  dist=  43  frases=1/3    309.2 ms  det=si
+ppp100__patologico_escaneado         CER=   0.0%  dist=   0  frases=3/3    202.9 ms  det=si
+ppp125__escaneado_d1                 CER=   0.0%  dist=   0  frases=3/3    212.0 ms  det=si
+ppp125__escaneado_d2                 CER=  40.5%  dist=  32  frases=1/3    240.6 ms  det=si
+ppp125__escaneado_d3                 CER=  50.6%  dist=  40  frases=1/3    300.1 ms  det=si
+ppp125__patologico_escaneado         CER=   0.0%  dist=   0  frases=3/3    269.2 ms  det=si
+ppp150__escaneado_d1                 CER=   0.0%  dist=   0  frases=3/3    276.6 ms  det=si
+ppp150__escaneado_d2                 CER=  39.2%  dist=  31  frases=1/3    301.6 ms  det=si
+ppp150__escaneado_d3                 CER=  54.4%  dist=  43  frases=1/3    401.3 ms  det=si
+ppp150__patologico_escaneado         CER=   0.0%  dist=   0  frases=3/3    342.0 ms  det=si
+ppp175__escaneado_d1                 CER=   0.0%  dist=   0  frases=3/3    356.5 ms  det=si
+ppp175__escaneado_d2                 CER=  44.3%  dist=  35  frases=1/3    365.2 ms  det=si
+ppp175__escaneado_d3                 CER=  54.4%  dist=  43  frases=1/3    408.9 ms  det=si
+ppp175__patologico_escaneado         CER=   0.0%  dist=   0  frases=3/3    441.8 ms  det=si
+ppp200__escaneado_d1                 CER=   0.0%  dist=   0  frases=3/3    426.2 ms  det=si
+ppp200__escaneado_d2                 CER=  43.0%  dist=  34  frases=1/3    459.7 ms  det=si
+ppp200__escaneado_d3                 CER=  59.5%  dist=  47  frases=1/3    530.2 ms  det=si
+ppp200__patologico_escaneado         CER=   0.0%  dist=   0  frases=3/3    537.4 ms  det=si
+ppp250__escaneado_d1                 CER=   0.0%  dist=   0  frases=3/3    606.5 ms  det=si
+ppp250__escaneado_d2                 CER=  34.2%  dist=  27  frases=1/3    626.5 ms  det=si
+ppp250__escaneado_d3                 CER=  51.9%  dist=  41  frases=1/3    702.0 ms  det=si
+ppp250__patologico_escaneado         CER=   0.0%  dist=   0  frases=3/3    814.0 ms  det=si
+ppp300__escaneado_d1                 CER=   0.0%  dist=   0  frases=3/3   1838.1 ms  det=si
+ppp300__escaneado_d2                 CER=  40.5%  dist=  32  frases=1/3   2753.0 ms  det=si
+ppp300__escaneado_d3                 CER=  53.2%  dist=  42  frases=1/3   2855.3 ms  det=si
+ppp300__patologico_escaneado         CER=   0.0%  dist=   0  frases=3/3   2021.3 ms  det=si
+ppp75__escaneado_d1                  CER=  12.7%  dist=  10  frases=2/3    140.2 ms  det=si
+ppp75__escaneado_d2                  CER=  43.0%  dist=  34  frases=1/3    131.7 ms  det=si
+ppp75__escaneado_d3                  CER=  58.2%  dist=  46  frases=1/3    230.9 ms  det=si
+ppp75__patologico_escaneado          CER=   0.0%  dist=   0  frases=3/3    158.1 ms  det=si
+{"evento": "fin", "vram_pico_MiB": 1084, "vram_base_MiB": 838, "coste_propio_MiB": 246, "pico_util_pct": 0, "muestreo_vram": false, "aviso": "tiempos limpios, pico de VRAM NO medido"}
+[lock] liberado  02:59:40

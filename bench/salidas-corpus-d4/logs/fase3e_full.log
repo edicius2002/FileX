@@ -1,0 +1,33 @@
+[lock] adquirido por G1-fase3e-normalizacion
+=== fase 3e: Fri Aug 21 08:28:56 HPS 2026 ===
+
+--- rapidocr _sm_normRGB : PP-OCRv6/small extra={"Det.mean": [0.485,0.456,0.406], "Det.std": [0.229,0.224,0.225]}
+ppp100__escaneado_d3                     CERac= 11.39%  CERascii= 11.39%  lin=1/3  bloques={'cuerpo': 11.39}     81.7 ms  det=si
+ppp200__escaneado_d4                     CERac= 20.13%  CERascii= 19.30%  lin=3/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 1.92, 'pequeña': 58.22}    351.8 ms  det=si
+ppp200__escaneado_d4c                    CERac=  1.01%  CERascii=  0.34%  lin=9/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.0, 'pequeña': 6.1}    392.8 ms  det=si
+
+--- rapidocr _sm_normBGR : PP-OCRv6/small extra={"Det.mean": [0.406,0.456,0.485], "Det.std": [0.225,0.224,0.229]}
+ppp100__escaneado_d3                     CERac=  8.86%  CERascii=  8.86%  lin=2/3  bloques={'cuerpo': 8.86}     77.5 ms  det=si
+ppp200__escaneado_d4                     CERac= 18.79%  CERascii= 17.62%  lin=3/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 2.56, 'pequeña': 57.28}    384.7 ms  det=si
+ppp200__escaneado_d4c                    CERac=  1.01%  CERascii=  0.17%  lin=9/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.0, 'pequeña': 5.63}    367.1 ms  det=si
+
+--- rapidocr _sm_post : PP-OCRv6/small extra={"Det.thresh": 0.2, "Det.box_thresh": 0.45, "Det.unclip_ratio": 1.4, "Det.max_candidates": 3000}
+ppp100__escaneado_d3                     CERac= 75.95%  CERascii= 75.95%  lin=1/3  bloques={'cuerpo': 75.95}    102.5 ms  det=si
+ppp200__escaneado_d4                     CERac= 36.58%  CERascii= 36.24%  lin=4/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 5.45, 'pequeña': 75.12}    960.4 ms  det=si
+ppp200__escaneado_d4c                    CERac= 32.21%  CERascii= 32.21%  lin=8/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.0, 'pequeña': 75.12}    962.0 ms  det=si
+
+--- rapidocr _sm_paddle : PP-OCRv6/small extra={"Det.mean": [0.485,0.456,0.406], "Det.std": [0.229,0.224,0.225], "Det.thresh": 0.2, "Det.box_thresh": 0.45, "Det.unclip_ratio": 1.4, "Det.max_candidates": 3000}
+ppp100__escaneado_d3                     CERac=  3.80%  CERascii=  3.80%  lin=2/3  bloques={'cuerpo': 3.8}     80.8 ms  det=si
+ppp200__escaneado_d4                     CERac= 18.62%  CERascii= 17.62%  lin=3/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 2.56, 'pequeña': 54.93}    334.1 ms  det=si
+ppp200__escaneado_d4c                    CERac=  1.17%  CERascii=  0.34%  lin=9/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.0, 'pequeña': 6.1}    353.4 ms  det=si
+
+--- rapidocr _med_paddle : PP-OCRv6/medium extra={"Det.mean": [0.485,0.456,0.406], "Det.std": [0.229,0.224,0.225], "Det.thresh": 0.2, "Det.box_thresh": 0.45, "Det.unclip_ratio": 1.4, "Det.max_candidates": 3000}
+ppp100__escaneado_d3                     CERac=  2.53%  CERascii=  2.53%  lin=2/3  bloques={'cuerpo': 2.53}    108.2 ms  det=si
+ppp200__escaneado_d4                     CERac= 23.15%  CERascii= 22.32%  lin=4/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 1.28, 'pequeña': 71.36}    408.0 ms  det=si
+ppp200__escaneado_d4c                    CERac=  9.56%  CERascii=  9.06%  lin=9/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.0, 'pequeña': 24.88}    409.8 ms  det=si
+
+--- rapidocr _v5m_paddle : PP-OCRv5/mobile extra={"Det.mean": [0.485,0.456,0.406], "Det.std": [0.229,0.224,0.225], "Det.thresh": 0.2, "Det.box_thresh": 0.45, "Det.unclip_ratio": 1.4, "Det.max_candidates": 3000}
+ppp100__escaneado_d3                     CERac= 54.43%  CERascii= 54.43%  lin=1/3  bloques={'cuerpo': 54.43}     74.6 ms  det=si
+ppp200__escaneado_d4                     CERac= 42.62%  CERascii= 39.43%  lin=0/12  bloques={'titulo': 4.0, 'subtitulo': 20.93, 'cuerpo': 17.95, 'pequeña': 74.18}    438.4 ms  det=si
+ppp200__escaneado_d4c                    CERac=  8.05%  CERascii=  3.36%  lin=0/12  bloques={'titulo': 4.0, 'subtitulo': 4.65, 'cuerpo': 4.81, 'pequeña': 15.49}    301.1 ms  det=si
+=== fin fase 3e: Fri Aug 21 08:31:57 HPS 2026 ===

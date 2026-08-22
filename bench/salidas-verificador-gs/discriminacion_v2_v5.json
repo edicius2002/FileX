@@ -1,0 +1,106 @@
+[
+ {
+  "caso": "V5 control: remux que conserva las etiquetas",
+  "esperado": "sin aviso",
+  "veredicto": "ok",
+  "severidades": {
+   "V5": "informativo",
+   "V2": "informativo"
+  },
+  "bytes": 4079227,
+  "hallazgos": [
+   {
+    "regla": "V5",
+    "severidad": "informativo",
+    "mensaje": "las 2 etiquetas de pista se conservan"
+   },
+   {
+    "regla": "V2",
+    "severidad": "informativo",
+    "mensaje": "300 fotogramas conservados (contados)"
+   }
+  ]
+ },
+ {
+  "caso": "V5 fallo: remux que PIERDE las etiquetas",
+  "esperado": "aviso",
+  "veredicto": "aviso",
+  "severidades": {
+   "V5": "aviso",
+   "V2": "informativo"
+  },
+  "bytes": 4079101,
+  "hallazgos": [
+   {
+    "regla": "V5",
+    "severidad": "aviso",
+    "mensaje": "se pierden etiquetas de pista: pista 1 language: 'spa' -> None; pista 1 title: 'Castellano' -> None; pista 2 language: 'eng' -> None; pista 2 title: 'English' -> None"
+   },
+   {
+    "regla": "V2",
+    "severidad": "informativo",
+    "mensaje": "300 fotogramas conservados (contados)"
+   }
+  ]
+ },
+ {
+  "caso": "V2 control: remux con todos los fotogramas",
+  "esperado": "sin fallo",
+  "veredicto": "ok",
+  "severidades": {
+   "V5": "informativo",
+   "V2": "informativo"
+  },
+  "bytes": 3902833,
+  "hallazgos": [
+   {
+    "regla": "V5",
+    "severidad": "informativo",
+    "mensaje": "la entrada no trae etiquetas de idioma ni titulo en ninguna de sus 3 pistas: la regla no discrimina"
+   },
+   {
+    "regla": "V2",
+    "severidad": "informativo",
+    "mensaje": "300 fotogramas conservados (contados)"
+   }
+  ]
+ },
+ {
+  "caso": "V2 fallo: entrega la mitad de los fotogramas",
+  "esperado": "fallo",
+  "veredicto": "fallo",
+  "severidades": {
+   "V5": "informativo",
+   "V2": "fallo"
+  },
+  "bytes": 1952818,
+  "hallazgos": [
+   {
+    "regla": "V5",
+    "severidad": "informativo",
+    "mensaje": "la entrada no trae etiquetas de idioma ni titulo en ninguna de sus 3 pistas: la regla no discrimina"
+   },
+   {
+    "regla": "V2",
+    "severidad": "fallo",
+    "mensaje": "el numero de fotogramas de video NO se conserva"
+   }
+  ]
+ },
+ {
+  "caso": "V2 excepcion: se PIDIO cambiar el fps (no debe fallar)",
+  "esperado": "sin fallo",
+  "veredicto": "ok",
+  "severidades": {
+   "V5": "informativo"
+  },
+  "bytes": 2441086,
+  "hallazgos": [
+   {
+    "regla": "V5",
+    "severidad": "informativo",
+    "mensaje": "la entrada no trae etiquetas de idioma ni titulo en ninguna de sus 3 pistas: la regla no discrimina"
+   }
+  ]
+ }
+]

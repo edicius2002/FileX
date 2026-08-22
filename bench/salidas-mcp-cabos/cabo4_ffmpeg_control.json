@@ -1,0 +1,155 @@
+{
+  "n_por_caso": 5,
+  "timeout_s": 20.0,
+  "casos": [
+    {
+      "caso": "sin_y__tuberia",
+      "flags": [],
+      "stdin": "tuberia",
+      "n": 5,
+      "colgadas": 5,
+      "ms": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "bytes_salida": [
+        192,
+        192,
+        192,
+        192,
+        192
+      ],
+      "ms_mediana_ok": null
+    },
+    {
+      "caso": "con_y__tuberia",
+      "flags": [
+        "-y"
+      ],
+      "stdin": "tuberia",
+      "n": 5,
+      "colgadas": 0,
+      "ms": [
+        208.4,
+        182.6,
+        190.9,
+        194.2,
+        187.3
+      ],
+      "ultimo_stderr": "p: 45% 18% 36%  1%\r\n[libx264 @ 0000015fdf4feb80] Weighted P-Frames: Y:0.0% UV:0.0%\r\n[libx264 @ 0000015fdf4feb80] ref P L0: 56.3%  4.7% 23.8% 15.2%\r\n[libx264 @ 0000015fdf4feb80] ref B L0: 77.2% 18.3%  4.4%\r\n[libx264 @ 0000015fdf4feb80] ref B L1: 95.2%  4.8%\r\n[libx264 @ 0000015fdf4feb80] kb/s:173.72\r\n",
+      "codigos": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "bytes_salida": [
+        111482,
+        111482,
+        111482,
+        111482,
+        111482
+      ],
+      "ms_mediana_ok": 190.9
+    },
+    {
+      "caso": "con_y_nostdin__tuberia",
+      "flags": [
+        "-nostdin",
+        "-y"
+      ],
+      "stdin": "tuberia",
+      "n": 5,
+      "colgadas": 0,
+      "ms": [
+        231.6,
+        188.5,
+        176.8,
+        183.9,
+        175.5
+      ],
+      "ultimo_stderr": "p: 45% 18% 36%  1%\r\n[libx264 @ 0000025d62bdebc0] Weighted P-Frames: Y:0.0% UV:0.0%\r\n[libx264 @ 0000025d62bdebc0] ref P L0: 56.3%  4.7% 23.8% 15.2%\r\n[libx264 @ 0000025d62bdebc0] ref B L0: 77.2% 18.3%  4.4%\r\n[libx264 @ 0000025d62bdebc0] ref B L1: 95.2%  4.8%\r\n[libx264 @ 0000025d62bdebc0] kb/s:173.72\r\n",
+      "codigos": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "bytes_salida": [
+        111482,
+        111482,
+        111482,
+        111482,
+        111482
+      ],
+      "ms_mediana_ok": 183.9
+    },
+    {
+      "caso": "sin_y__devnull",
+      "flags": [],
+      "stdin": "devnull",
+      "n": 5,
+      "colgadas": 0,
+      "ms": [
+        43.8,
+        40.2,
+        41.1,
+        41.7,
+        46.6
+      ],
+      "ultimo_stderr": "  encoder         : Lavc62.15.100 libx264\r\nFile 'D:\\Work\\research\\FileX\\bench\\salidas-mcp-cabos\\cabo4_ffmpeg\\sin_y__devnull_0.mp4' already exists. Overwrite? [y/N] Not overwriting - exiting\r\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-mcp-cabos\\cabo4_ffmpeg\\sin_y__devnull_0.mp4.\r\n",
+      "codigos": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "bytes_salida": [
+        192,
+        192,
+        192,
+        192,
+        192
+      ],
+      "ms_mediana_ok": 41.7
+    },
+    {
+      "caso": "con_y__devnull",
+      "flags": [
+        "-y"
+      ],
+      "stdin": "devnull",
+      "n": 5,
+      "colgadas": 0,
+      "ms": [
+        185.2,
+        198.0,
+        180.3,
+        186.0,
+        181.7
+      ],
+      "ultimo_stderr": "p: 45% 18% 36%  1%\r\n[libx264 @ 0000017f0470a880] Weighted P-Frames: Y:0.0% UV:0.0%\r\n[libx264 @ 0000017f0470a880] ref P L0: 56.3%  4.7% 23.8% 15.2%\r\n[libx264 @ 0000017f0470a880] ref B L0: 77.2% 18.3%  4.4%\r\n[libx264 @ 0000017f0470a880] ref B L1: 95.2%  4.8%\r\n[libx264 @ 0000017f0470a880] kb/s:173.72\r\n",
+      "codigos": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "bytes_salida": [
+        111482,
+        111482,
+        111482,
+        111482,
+        111482
+      ],
+      "ms_mediana_ok": 185.2
+    }
+  ]
+}

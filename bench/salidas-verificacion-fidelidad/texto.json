@@ -1,0 +1,104 @@
+{
+ "casos": [
+  {
+   "ruta": "corpus/pdf/tipico_texto.pdf",
+   "nota": "con capa de texto real",
+   "n_chars": 105,
+   "muestra": "FileX - documento de prueba con texto se",
+   "umbral_10": true,
+   "umbral_0": true,
+   "ms": 179.287,
+   "flag": "limpia",
+   "bytes": 3219
+  },
+  {
+   "ruta": "corpus/pdf/trivial.pdf",
+   "nota": "sin texto",
+   "n_chars": 0,
+   "muestra": "",
+   "umbral_10": false,
+   "umbral_0": false,
+   "ms": 172.229,
+   "flag": "limpia",
+   "bytes": 6356
+  },
+  {
+   "ruta": "corpus/pdf/patologico_escaneado.pdf",
+   "nota": "escaneado, sin capa de texto",
+   "n_chars": 0,
+   "muestra": "",
+   "umbral_10": false,
+   "umbral_0": false,
+   "ms": 297.381,
+   "flag": "SUCIA(testigo +23%)",
+   "bytes": 8555521
+  },
+  {
+   "ruta": "corpus/pdf/escaneado_d1.pdf",
+   "nota": "escaneado, sin capa de texto",
+   "n_chars": 0,
+   "muestra": "",
+   "umbral_10": false,
+   "umbral_0": false,
+   "ms": 189.94,
+   "flag": "limpia",
+   "bytes": 84653
+  },
+  {
+   "ruta": "bench/salidas-referencia/pdf/alpha_png-to.pdf",
+   "nota": "imagen -> PDF",
+   "n_chars": 2,
+   "muestra": "FX",
+   "umbral_10": false,
+   "umbral_0": true,
+   "ms": 191.292,
+   "flag": "limpia",
+   "bytes": 6111
+  },
+  {
+   "ruta": "bench/salidas-referencia/pdf/tipico_png-to.pdf",
+   "nota": "imagen -> PDF",
+   "n_chars": 0,
+   "muestra": "",
+   "umbral_10": false,
+   "umbral_0": false,
+   "ms": 207.426,
+   "flag": "limpia",
+   "bytes": 17153
+  },
+  {
+   "ruta": "bench/salidas-referencia/pdf/tipico_jpg-to.pdf",
+   "nota": "imagen -> PDF",
+   "n_chars": 0,
+   "muestra": "",
+   "umbral_10": false,
+   "umbral_0": false,
+   "ms": 212.486,
+   "flag": "limpia",
+   "bytes": 89885
+  },
+  {
+   "ruta": "bench/salidas-referencia/pdf/tipico_texto_rasterizado.pdf",
+   "nota": "PDF rasterizado",
+   "n_chars": 0,
+   "muestra": "",
+   "umbral_10": false,
+   "umbral_0": false,
+   "ms": 181.359,
+   "flag": "limpia",
+   "bytes": 8689
+  },
+  {
+   "ruta": "bench/salidas-referencia/pdf/tipico_texto_pdf-to-gs.pdf",
+   "nota": "PDF -> PDF con gs",
+   "n_chars": 105,
+   "muestra": "FileX - documento de prueba con texto se",
+   "umbral_10": true,
+   "umbral_0": true,
+   "ms": 178.548,
+   "flag": "limpia",
+   "bytes": 3291
+  }
+ ],
+ "falsos_positivos_con_umbral_0": 1
+}

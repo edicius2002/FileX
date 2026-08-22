@@ -1,0 +1,206 @@
+[
+ {
+  "etiqueta": "I3 aplanado (magick 1 pixel, JPEG 200x200)",
+  "n": 9,
+  "mediana_ms": 25.928,
+  "min_ms": 24.25,
+  "max_ms": 28.379,
+  "flag": "limpia",
+  "testigo_ms": [
+   16.32,
+   16.21
+  ]
+ },
+ {
+  "etiqueta": "I6 RMSE 200x200 paleta",
+  "n": 9,
+  "mediana_ms": 33.469,
+  "min_ms": 31.014,
+  "max_ms": 141.661,
+  "flag": "limpia",
+  "testigo_ms": [
+   16.27,
+   16.67
+  ]
+ },
+ {
+  "etiqueta": "I6 RMSE 4000x3000 16 bits (72 MB TIFF vs 61 MB PNG)",
+  "n": 9,
+  "mediana_ms": 1405.001,
+  "min_ms": 1379.008,
+  "max_ms": 1551.341,
+  "flag": "limpia",
+  "testigo_ms": [
+   17.93,
+   16.18
+  ]
+ },
+ {
+  "etiqueta": "I7 PSNR 1920x1080",
+  "n": 9,
+  "mediana_ms": 306.91,
+  "min_ms": 300.086,
+  "max_ms": 313.066,
+  "flag": "limpia",
+  "testigo_ms": [
+   16.22,
+   16.13
+  ]
+ },
+ {
+  "etiqueta": "I7 PSNR 200x200 sobre blanco (2 composiciones)",
+  "n": 9,
+  "mediana_ms": 39.394,
+  "min_ms": 38.686,
+  "max_ms": 44.328,
+  "flag": "limpia",
+  "testigo_ms": [
+   15.75,
+   17.48
+  ]
+ },
+ {
+  "etiqueta": "V9 paleta del GIF (EN PROCESO)",
+  "n": 9,
+  "mediana_ms": 0.176,
+  "min_ms": 0.171,
+  "max_ms": 0.291,
+  "flag": "limpia",
+  "testigo_ms": [
+   17.76,
+   16.87
+  ]
+ },
+ {
+  "etiqueta": "V6 framemd5 de trivial.mp4 (540 KB, 90 fotogramas)",
+  "n": 9,
+  "mediana_ms": 129.18,
+  "min_ms": 126.899,
+  "max_ms": 135.739,
+  "flag": "limpia",
+  "testigo_ms": [
+   16.28,
+   15.87
+  ]
+ },
+ {
+  "etiqueta": "V6 framemd5 de tipico.mp4 (16 MB, 600 fotogramas)",
+  "n": 9,
+  "mediana_ms": 3052.318,
+  "min_ms": 3001.834,
+  "max_ms": 3094.646,
+  "flag": "limpia",
+  "testigo_ms": [
+   17.49,
+   17.16
+  ]
+ },
+ {
+  "etiqueta": "V8 PSNR de video 640x360 (trivial -> webm)",
+  "n": 9,
+  "mediana_ms": 121.338,
+  "min_ms": 115.036,
+  "max_ms": 123.984,
+  "flag": "limpia",
+  "testigo_ms": [
+   16.98,
+   15.67
+  ]
+ },
+ {
+  "etiqueta": "V8 PSNR de video 1920x1080 (tipico -> webm)",
+  "n": 5,
+  "mediana_ms": 1753.619,
+  "min_ms": 1707.128,
+  "max_ms": 1801.329,
+  "flag": "limpia",
+  "testigo_ms": [
+   16.68,
+   17.81
+  ]
+ },
+ {
+  "etiqueta": "A4 md5 del PCM (WAV 706 KB, 8 s)",
+  "n": 9,
+  "mediana_ms": 51.095,
+  "min_ms": 43.412,
+  "max_ms": 60.705,
+  "flag": "limpia",
+  "testigo_ms": [
+   19.11,
+   17.76
+  ]
+ },
+ {
+  "etiqueta": "A4 md5 del PCM (FLAC 104 KB, 8 s)",
+  "n": 9,
+  "mediana_ms": 37.646,
+  "min_ms": 36.283,
+  "max_ms": 40.173,
+  "flag": "limpia",
+  "testigo_ms": [
+   17.24,
+   16.95
+  ]
+ },
+ {
+  "etiqueta": "A5 md5 del PCM de la pista de un MP4 de 16 MB",
+  "n": 9,
+  "mediana_ms": 55.461,
+  "min_ms": 53.566,
+  "max_ms": 59.944,
+  "flag": "limpia",
+  "testigo_ms": [
+   15.9,
+   17.39
+  ]
+ },
+ {
+  "etiqueta": "P6 txtwrite sobre un PDF de texto (3 KB)",
+  "n": 9,
+  "mediana_ms": 174.798,
+  "min_ms": 167.635,
+  "max_ms": 183.138,
+  "flag": "limpia",
+  "testigo_ms": [
+   16.98,
+   16.22
+  ]
+ },
+ {
+  "etiqueta": "P6 txtwrite sobre un PDF rasterizado (6 KB)",
+  "n": 9,
+  "mediana_ms": 199.642,
+  "min_ms": 185.201,
+  "max_ms": 225.774,
+  "flag": "limpia",
+  "testigo_ms": [
+   17.59,
+   18.58
+  ]
+ },
+ {
+  "etiqueta": "P6 txtwrite sobre un PDF escaneado (8,5 MB)",
+  "n": 9,
+  "mediana_ms": 316.025,
+  "min_ms": 273.387,
+  "max_ms": 357.465,
+  "flag": "SUCIA(testigo +30%)",
+  "testigo_ms": [
+   24.38,
+   17.13
+  ]
+ },
+ {
+  "etiqueta": "CONTRATO completo en proceso (referencia)",
+  "n": 15,
+  "mediana_ms": 0.373,
+  "min_ms": 0.319,
+  "max_ms": 0.763,
+  "flag": "limpia",
+  "testigo_ms": [
+   17.23,
+   16.57
+  ]
+ }
+]

@@ -1,0 +1,439 @@
+{
+ "semi_entrada": {
+  "muertas_E1": 34,
+  "revividas": 22,
+  "lista": [
+   "ffmpeg|rgb",
+   "ffmpeg|txt",
+   "ffmpeg|yuv",
+   "imagemagick|avs",
+   "imagemagick|bayer",
+   "imagemagick|bayera",
+   "imagemagick|bgr",
+   "imagemagick|bgra",
+   "imagemagick|cmyk",
+   "imagemagick|cmyka",
+   "imagemagick|gray",
+   "imagemagick|graya",
+   "imagemagick|mono",
+   "imagemagick|pal",
+   "imagemagick|pix",
+   "imagemagick|rgb",
+   "imagemagick|rgba",
+   "imagemagick|rgbo",
+   "imagemagick|uyvy",
+   "imagemagick|ycbcr",
+   "imagemagick|ycbcra",
+   "imagemagick|yuv"
+  ],
+  "ic95": [
+   47.9,
+   78.5
+  ]
+ },
+ "semi_salida": {
+  "muertas_E1": 37,
+  "revividas": 8,
+  "lista": [
+   "ffmpeg|302",
+   "ffmpeg|dnxhd",
+   "ffmpeg|dnxhr",
+   "ffmpeg|dv",
+   "ffmpeg|flm",
+   "ffmpeg|tun",
+   "ffmpeg|vbn",
+   "ffmpeg|xface"
+  ],
+  "causas_restantes": {
+   "codificador ausente del build: ac4": 1,
+   "": 4,
+   "codificador ausente del build: avs3": 1,
+   "codificador ausente del build: g729": 1,
+   "codificador ausente del build: codec2": 1,
+   "codificador ausente del build: cavs": 1,
+   "el muxer no declara ningun codec por def": 2,
+   "codificador ausente del build: adpcm_psx": 1,
+   "codificador ausente del build: dts": 1,
+   "codificador ausente del build: evc": 1,
+   "codificador ausente del build: gsm": 1,
+   "codificador ausente del build: jacosub": 2,
+   "codificador ausente del build: ilbc": 1,
+   "codificador ausente del build: atrac3": 1,
+   "codificador ausente del build: wmv3": 1,
+   "codificador ausente del build: eia_608": 1,
+   "codificador ausente del build: speex": 1,
+   "codificador ausente del build: microdvd": 1,
+   "codificador ausente del build: hdmv_pgs_": 1,
+   "codificador ausente del build: vc1": 1
+  },
+  "ic95": [
+   11.4,
+   37.2
+  ]
+ },
+ "crudos": [
+  {
+   "motor": "ffmpeg",
+   "formato": "rgb",
+   "bytes_por_pixel": 7.5,
+   "bits_por_canal": null,
+   "variante": null,
+   "rmse_color": null,
+   "rmse_vs_ideal": null,
+   "veredicto": "INTEGRO",
+   "estado": "viva"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "yuv",
+   "bytes_por_pixel": 7.5,
+   "bits_por_canal": null,
+   "variante": null,
+   "rmse_color": null,
+   "rmse_vs_ideal": null,
+   "veredicto": "INTEGRO",
+   "estado": "viva"
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "bayer",
+   "bytes_por_pixel": 2.0,
+   "bits_por_canal": 16.0,
+   "variante": "depth=16",
+   "rmse_color": 0.0719435,
+   "rmse_vs_ideal": null,
+   "veredicto": "PENDIENTE",
+   "estado": "viva"
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "bayera",
+   "bytes_por_pixel": 2.0,
+   "bits_por_canal": 8.0,
+   "variante": "depth=16",
+   "rmse_color": 0.0719435,
+   "rmse_vs_ideal": null,
+   "veredicto": "PENDIENTE",
+   "estado": "viva"
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "bgr",
+   "bytes_por_pixel": 6.0,
+   "bits_por_canal": 16.0,
+   "variante": "depth=16",
+   "rmse_color": 0.0,
+   "rmse_vs_ideal": null,
+   "veredicto": "INTEGRO",
+   "estado": "viva"
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "bgra",
+   "bytes_por_pixel": 8.0,
+   "bits_por_canal": 16.0,
+   "variante": "depth=16",
+   "rmse_color": 0.0,
+   "rmse_vs_ideal": null,
+   "veredicto": "INTEGRO",
+   "estado": "viva"
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "bgro",
+   "bytes_por_pixel": 6.0,
+   "bits_por_canal": 12.0,
+   "variante": null,
+   "rmse_color": null,
+   "rmse_vs_ideal": null,
+   "veredicto": "FALLO",
+   "estado": "muerta"
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "cmyk",
+   "bytes_por_pixel": 8.0,
+   "bits_por_canal": 16.0,
+   "variante": "depth=16",
+   "rmse_color": 0.0,
+   "rmse_vs_ideal": null,
+   "veredicto": "INTEGRO",
+   "estado": "viva"
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "cmyka",
+   "bytes_por_pixel": 10.0,
+   "bits_por_canal": 16.0,
+   "variante": "depth=16",
+   "rmse_color": 0.0,
+   "rmse_vs_ideal": null,
+   "veredicto": "INTEGRO",
+   "estado": "viva"
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "ftxt",
+   "bytes_por_pixel": 20.1654,
+   "bits_por_canal": 161.32,
+   "variante": "depth=16",
+   "rmse_color": 0.652292,
+   "rmse_vs_ideal": 0.652292,
+   "veredicto": "DESTRUIDO",
+   "estado": "viva"
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "gray",
+   "bytes_por_pixel": 2.0,
+   "bits_por_canal": 16.0,
+   "variante": "depth=16",
+   "rmse_color": 0.353895,
+   "rmse_vs_ideal": 0.0,
+   "veredicto": "INTEGRO",
+   "estado": "viva"
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "graya",
+   "bytes_por_pixel": 4.0,
+   "bits_por_canal": 16.0,
+   "variante": "depth=16",
+   "rmse_color": 0.353895,
+   "rmse_vs_ideal": 0.0,
+   "veredicto": "INTEGRO",
+   "estado": "viva"
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "map",
+   "bytes_por_pixel": 1.0479,
+   "bits_por_canal": 8.38,
+   "variante": null,
+   "rmse_color": null,
+   "rmse_vs_ideal": null,
+   "veredicto": "FALLO",
+   "estado": "muerta"
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "mono",
+   "bytes_por_pixel": 0.125,
+   "bits_por_canal": 1.0,
+   "variante": "depth=1",
+   "rmse_color": 0.422631,
+   "rmse_vs_ideal": 0.0,
+   "veredicto": "INTEGRO",
+   "estado": "viva"
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "pal",
+   "bytes_por_pixel": 2.0,
+   "bits_por_canal": 16.0,
+   "variante": "depth=16",
+   "rmse_color": 0.0141526,
+   "rmse_vs_ideal": null,
+   "veredicto": "INTEGRO",
+   "estado": "viva"
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "rgb",
+   "bytes_por_pixel": 6.0,
+   "bits_por_canal": 16.0,
+   "variante": "depth=16",
+   "rmse_color": 0.0,
+   "rmse_vs_ideal": null,
+   "veredicto": "INTEGRO",
+   "estado": "viva"
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "rgba",
+   "bytes_por_pixel": 8.0,
+   "bits_por_canal": 16.0,
+   "variante": "depth=16",
+   "rmse_color": 0.0,
+   "rmse_vs_ideal": null,
+   "veredicto": "INTEGRO",
+   "estado": "viva"
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "rgbo",
+   "bytes_por_pixel": 8.0,
+   "bits_por_canal": 16.0,
+   "variante": "depth=16",
+   "rmse_color": 0.0,
+   "rmse_vs_ideal": null,
+   "veredicto": "INTEGRO",
+   "estado": "viva"
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "uyvy",
+   "bytes_por_pixel": 2.0,
+   "bits_por_canal": 8.0,
+   "variante": "depth=8",
+   "rmse_color": 0.0141526,
+   "rmse_vs_ideal": null,
+   "veredicto": "INTEGRO",
+   "estado": "viva"
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "ycbcr",
+   "bytes_por_pixel": 6.0,
+   "bits_por_canal": 16.0,
+   "variante": "depth=16",
+   "rmse_color": 0.000166906,
+   "rmse_vs_ideal": null,
+   "veredicto": "INTEGRO",
+   "estado": "viva"
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "ycbcra",
+   "bytes_por_pixel": 8.0,
+   "bits_por_canal": 16.0,
+   "variante": "depth=16",
+   "rmse_color": 0.000166906,
+   "rmse_vs_ideal": null,
+   "veredicto": "INTEGRO",
+   "estado": "viva"
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "yuv",
+   "bytes_por_pixel": 3.0,
+   "bits_por_canal": 8.0,
+   "variante": "depth=16",
+   "rmse_color": 0.0233124,
+   "rmse_vs_ideal": null,
+   "veredicto": "DEGRADADO",
+   "estado": "viva"
+  }
+ ],
+ "residuo": {
+  "n": 118,
+  "recuperadas": 27,
+  "tasa": 22.88,
+  "ic95": [
+   16.23,
+   31.24
+  ],
+  "por_categoria": {
+   "1": 27
+  }
+ },
+ "final": {
+  "poblacion": 138501,
+  "E1": {
+   "marco": 40252,
+   "muertas_semiarista": 22235,
+   "indeterminadas": 75874,
+   "otro_motor": 140,
+   "con_veredicto": 62487,
+   "nominales": 31533,
+   "tasa": 50.46
+  },
+  "P2": {
+   "marco": 44879,
+   "muertas_semiarista": 14740,
+   "recuperadas_por_semiarista": 4627,
+   "recuperadas_por_categoria": {
+    "1": 1337,
+    "2": 3290
+   },
+   "residuo_nominal": 17.81,
+   "nominales": 25603,
+   "tasa": 40.97
+  },
+  "residuo": {
+   "n": 118,
+   "recuperadas": 27,
+   "tasa": 22.88,
+   "ic95": [
+    16.23,
+    31.24
+   ],
+   "por_categoria": {
+    "1": 27
+   }
+  },
+  "recuperacion": {
+   "aristas": 5930,
+   "fraccion_del_50_5": 18.81,
+   "ic95_fraccion": [
+    16.84,
+    21.27
+   ],
+   "sensibilidad_pesimista": 18.03,
+   "cat1_aristas": 3226,
+   "cat2_aristas": 2704,
+   "cat1_fraccion": 10.23,
+   "cat2_fraccion": 8.57,
+   "sin_veredicto_nuevo": 2868
+  }
+ },
+ "C17": {
+  "ghostscript": {
+   "evaluadas": 9,
+   "nominales": 0,
+   "tasa": 0.0,
+   "ic95": [
+    0,
+    29.9
+   ],
+   "cuales": []
+  },
+  "gotenberg-chromium": {
+   "evaluadas": 25,
+   "nominales": 0,
+   "tasa": 0.0,
+   "ic95": [
+    0,
+    13.3
+   ],
+   "cuales": []
+  },
+  "gotenberg-lo": {
+   "evaluadas": 30,
+   "nominales": 2,
+   "tasa": 6.7,
+   "ic95": [
+    1.8,
+    21.3
+   ],
+   "cuales": [
+    [
+     "epub",
+     "pdf",
+     "LibreOffice failed to convert the document 'entrada.epub'. This is usually a res"
+    ],
+    [
+     "dbf",
+     "pdf",
+     "LibreOffice failed to convert the document 's.dbf'. This is usually a resource i"
+    ]
+   ]
+  },
+  "TOTAL": {
+   "evaluadas": 64,
+   "nominales": 2,
+   "tasa": 3.1,
+   "ic95": [
+    0.9,
+    10.7
+   ],
+   "poblacion_gs_gotenberg": 136,
+   "no_materializables": 72
+  }
+ },
+ "validacion": {
+  "NO COMPROBABLE": 9,
+  "COINCIDE": 16,
+  "DISCREPA": 7
+ }
+}

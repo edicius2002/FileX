@@ -1,0 +1,14 @@
+[32m[INFO] 2026-08-21 08:15:56,986 [RapidOCR] base.py:23: Using engine_name: onnxruntime[0m
+[32m[INFO] 2026-08-21 08:15:57,377 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\bench\salidas-corpus-d4\modelos\PP-OCRv6_det_small.onnx[0m
+[32m[INFO] 2026-08-21 08:15:57,377 [RapidOCR] main.py:63: Using D:\Work\research\FileX\bench\salidas-corpus-d4\modelos\PP-OCRv6_det_small.onnx[0m
+[32m[INFO] 2026-08-21 08:15:57,574 [RapidOCR] base.py:23: Using engine_name: onnxruntime[0m
+[32m[INFO] 2026-08-21 08:15:57,575 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\bench\salidas-corpus-d4\modelos\ch_ppocr_mobile_v2.0_cls_mobile.onnx[0m
+[32m[INFO] 2026-08-21 08:15:57,575 [RapidOCR] main.py:63: Using D:\Work\research\FileX\bench\salidas-corpus-d4\modelos\ch_ppocr_mobile_v2.0_cls_mobile.onnx[0m
+[32m[INFO] 2026-08-21 08:15:57,624 [RapidOCR] base.py:23: Using engine_name: onnxruntime[0m
+[32m[INFO] 2026-08-21 08:15:57,640 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\bench\salidas-corpus-d4\modelos\PP-OCRv6_rec_small.onnx[0m
+[32m[INFO] 2026-08-21 08:15:57,640 [RapidOCR] main.py:63: Using D:\Work\research\FileX\bench\salidas-corpus-d4\modelos\PP-OCRv6_rec_small.onnx[0m
+{"etiqueta": "rapidocr_cuda_f3b_sm_box03", "motor": "rapidocr", "dispositivo": "cuda", "referencia": "d4", "patron": "*.png", "imgdir": "D:/Work/research/FileX/bench/salidas-corpus-d4/img_f3", "carga_frio_s": 3.22, "vram_base_MiB": 2963, "vram_tras_carga_MiB": 3140, "quietud_pct": 35, "cpu_pico_pct": null, "flag": "SUCIA(pico 35%)", "modelos": {"text_det": "ch_PP-OCRv4_det_mobile.onnx", "text_cls": "ch_PP-OCRv4_det_mobile.onnx", "text_rec": "ch_PP-OCRv4_det_mobile.onnx", "pedido": {"Det.engine_type": "onnxruntime", "Rec.engine_type": "onnxruntime", "Det.lang_type": "ch", "Rec.lang_type": "ch", "Det.ocr_version": "PP-OCRv6", "Rec.ocr_version": "PP-OCRv6", "Det.model_type": "small", "Rec.model_type": "small", "Global.model_root_dir": "D:/Work/research/FileX/bench/salidas-corpus-d4/modelos", "Det.box_thresh": "0.3"}}, "reps": 9, "muestreo_vram": false}
+ppp100__escaneado_d3                     CERac= 75.95%  CERascii= 75.95%  lin=1/3  bloques={'cuerpo': 75.95}     66.5 ms  det=si
+ppp200__escaneado_d4                     CERac= 30.54%  CERascii= 29.53%  lin=3/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 2.24, 'pequeña': 74.65}    541.6 ms  det=si
+ppp200__escaneado_d4c                    CERac=  7.05%  CERascii=  6.71%  lin=8/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.0, 'pequeña': 37.56}    569.3 ms  det=si
+{"evento": "fin", "vram_pico_MiB": 3140, "vram_base_MiB": 2963, "coste_propio_MiB": 177, "pico_util_pct": 0, "muestreo_vram": false}

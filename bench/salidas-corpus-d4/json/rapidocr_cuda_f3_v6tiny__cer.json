@@ -1,0 +1,122 @@
+{
+  "cabecera": {
+    "etiqueta": "rapidocr_cuda_f3_v6tiny",
+    "motor": "rapidocr",
+    "dispositivo": "cuda",
+    "referencia": "d4",
+    "patron": "*.png",
+    "imgdir": "D:/Work/research/FileX/bench/salidas-corpus-d4/img_f3",
+    "carga_frio_s": 10.1,
+    "vram_base_MiB": 3040,
+    "vram_tras_carga_MiB": 3172,
+    "quietud_pct": 39,
+    "cpu_pico_pct": null,
+    "flag": "SUCIA(pico 39%)",
+    "modelos": {
+      "text_det": "ch_PP-OCRv4_det_mobile.onnx",
+      "text_cls": "ch_PP-OCRv4_det_mobile.onnx",
+      "text_rec": "ch_PP-OCRv4_det_mobile.onnx",
+      "pedido": {
+        "Det.engine_type": "onnxruntime",
+        "Rec.engine_type": "onnxruntime",
+        "Det.lang_type": "ch",
+        "Rec.lang_type": "ch",
+        "Det.ocr_version": "PP-OCRv6",
+        "Rec.ocr_version": "PP-OCRv6",
+        "Det.model_type": "tiny",
+        "Rec.model_type": "tiny",
+        "Global.model_root_dir": "D:/Work/research/FileX/bench/salidas-corpus-d4/modelos"
+      }
+    },
+    "reps": 9,
+    "muestreo_vram": false
+  },
+  "fin": {
+    "evento": "fin",
+    "vram_pico_MiB": 3172,
+    "vram_base_MiB": 3040,
+    "coste_propio_MiB": 132,
+    "pico_util_pct": 0,
+    "muestreo_vram": false
+  },
+  "res": {
+    "ppp100__escaneado_d3": {
+      "referencia": "legado",
+      "cer_acentos_pct": 43.04,
+      "dist_acentos": 34,
+      "cer_ascii_pct": 43.04,
+      "dist_ascii": 34,
+      "chars_ref_acentos": 79,
+      "chars": 63,
+      "lineas_exactas": 1,
+      "lineas_totales": 3,
+      "acentos_ref": 0,
+      "acentos_salida": 0,
+      "bloques": {
+        "cuerpo": 43.04
+      },
+      "normalizada_acentos": "documento escaneado fexto 4ue sm a ex9te dabe1e0 0 ame 00m 0cr",
+      "ms_mediana": 62.6,
+      "ms_min": 57.0,
+      "ms_max": 66.3,
+      "n": 9,
+      "determinista": true,
+      "vram_pico_MiB": 3172,
+      "vram_delta_lote_MiB": 0
+    },
+    "ppp200__escaneado_d4": {
+      "referencia": "d4",
+      "cer_acentos_pct": 39.6,
+      "dist_acentos": 236,
+      "cer_ascii_pct": 38.42,
+      "dist_ascii": 229,
+      "chars_ref_acentos": 596,
+      "chars": 382,
+      "lineas_exactas": 2,
+      "lineas_totales": 12,
+      "acentos_ref": 35,
+      "acentos_salida": 11,
+      "bloques": {
+        "titulo": 0.0,
+        "subtitulo": 0.0,
+        "cuerpo": 9.62,
+        "pequeña": 76.53
+      },
+      "normalizada_acentos": "informe de digitalización expediente núm 4 827 2026 archivo histórico el dia 14 d9 marz0 se recbi0 la solicitud de analisis técnico sobre veintiun votumenes encuademados en piel la comisión determinó que la reproduccion fotográfica debia realzarse con luminaci0n dfusa y sin contacto seg0n la norma une 15 402 para evitar daños añadkdos en los plieg0s más fragles del año 1893",
+      "ms_mediana": 380.7,
+      "ms_min": 367.8,
+      "ms_max": 411.6,
+      "n": 9,
+      "determinista": true,
+      "vram_pico_MiB": 3172,
+      "vram_delta_lote_MiB": 0
+    },
+    "ppp200__escaneado_d4c": {
+      "referencia": "d4",
+      "cer_acentos_pct": 4.19,
+      "dist_acentos": 25,
+      "cer_ascii_pct": 3.36,
+      "dist_ascii": 20,
+      "chars_ref_acentos": 596,
+      "chars": 603,
+      "lineas_exactas": 8,
+      "lineas_totales": 12,
+      "acentos_ref": 35,
+      "acentos_salida": 27,
+      "bloques": {
+        "titulo": 0.0,
+        "subtitulo": 0.0,
+        "cuerpo": 0.0,
+        "pequeña": 13.15
+      },
+      "normalizada_acentos": "informe de digitalización expediente núm 4 827 2026 archivo histórico el día 14 de marzo se recibió la solicitud de análisis técnico sobre veintiún volúmenes encuadernados en piel la comisión determinó que la reproducción fotográfica debía realizarse con iluminación difusa y sin contacto según la norma une 15 402 para evitar daños añadidos en los pliegos más frágiles del año 1893 quen autoriz0 1a 6xcepcon e1 paralo tercero señala que la revislón ortográfica y linguistica det legajo es responsabaidad del área de conservaclón preventiva alención1 los c6dig0s 7 8 9 1 y 12 k quedan an lados",
+      "ms_mediana": 277.9,
+      "ms_min": 260.8,
+      "ms_max": 292.3,
+      "n": 9,
+      "determinista": true,
+      "vram_pico_MiB": 3172,
+      "vram_delta_lote_MiB": 0
+    }
+  }
+}

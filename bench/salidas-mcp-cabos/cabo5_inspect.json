@@ -1,0 +1,82 @@
+{
+  "trivial.png (316 B)": {
+    "bytes": 316,
+    "ms_ffprobe_mediana": 36.1,
+    "ms_copia_mediana": 1.0,
+    "ffprobe": [
+      46.2,
+      42.6,
+      33.6,
+      36.1,
+      31.3
+    ],
+    "copia": [
+      1.0,
+      0.6,
+      1.0,
+      0.0,
+      1.0
+    ],
+    "copia_frente_a_inspect": 0.03
+  },
+  "tipico.mp4 (15,5 MB)": {
+    "bytes": 16246490,
+    "ms_ffprobe_mediana": 44.6,
+    "ms_copia_mediana": 10.0,
+    "ffprobe": [
+      44.6,
+      46.6,
+      45.0,
+      42.1,
+      42.6
+    ],
+    "copia": [
+      11.0,
+      10.0,
+      10.0,
+      10.0,
+      10.0
+    ],
+    "copia_frente_a_inspect": 0.22
+  },
+  "fuente_4k.mp4 (122 MB)": {
+    "bytes": 127932819,
+    "ms_ffprobe_mediana": 57.8,
+    "ms_copia_mediana": 76.1,
+    "ffprobe": [
+      64.9,
+      50.5,
+      57.8,
+      53.5,
+      70.3
+    ],
+    "copia": [
+      86.5,
+      76.1,
+      69.1,
+      75.1,
+      77.8
+    ],
+    "copia_frente_a_inspect": 1.32
+  },
+  "patologico_16bit.tif (72 MB)": {
+    "bytes": 72001016,
+    "ms_ffprobe_mediana": 70.2,
+    "ms_copia_mediana": 45.6,
+    "ffprobe": [
+      85.6,
+      56.1,
+      68.6,
+      158.1,
+      70.2
+    ],
+    "copia": [
+      39.0,
+      45.6,
+      40.8,
+      247.8,
+      47.1
+    ],
+    "copia_frente_a_inspect": 0.65
+  }
+}

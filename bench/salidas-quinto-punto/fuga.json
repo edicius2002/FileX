@@ -1,0 +1,113 @@
+[
+ {
+  "caso": "ffmpeg -> DASH .mpd",
+  "orden": "ffmpeg -y -nostdin -threads 4 -i trivial.mp4 \"D:\\Work\\research\\FileX\\bench\\salidas-quinto-punto\\tmp\\fuga\\destino\\t.mpd\"",
+  "rc": 0,
+  "ms": 340.8,
+  "bytes_declarado": 1234,
+  "veredicto_4_puntos": "ok_parcial",
+  "veredicto_5_puntos": "fallo",
+  "hallazgos_p5": [
+   {
+    "punto": 5,
+    "regla": "N5",
+    "severidad": "fallo",
+    "mensaje": "el motor escribio 2 fichero(s) (529261 B) FUERA del directorio de destino: chunk-stream0-00001.m4s, init-stream0.m4s",
+    "esperado": "0 ficheros fuera de D:\\Work\\research\\FileX\\bench\\salidas-quinto-punto\\tmp\\fuga\\destino",
+    "obtenido": [
+     "tmp\\fuga\\trabajo\\chunk-stream0-00001.m4s",
+     "tmp\\fuga\\trabajo\\init-stream0.m4s"
+    ]
+   },
+   {
+    "punto": 5,
+    "regla": "N9",
+    "severidad": "informativo",
+    "mensaje": "el fichero declarado lleva el 0.2 % de los bytes escritos (1234 de 530495 B)",
+    "esperado": "100 %",
+    "obtenido": 0.2
+   }
+  ],
+  "stderr": "0000016b5b99e8c0] ref P L0: 54.1%  6.3% 24.3% 15.4%\n[libx264 @ 0000016b5b99e8c0] ref B L0: 79.2% 16.2%  4.6%\n[libx264 @ 0000016b5b99e8c0] ref B L1: 95.8%  4.2%\n[libx264 @ 0000016b5b99e8c0] kb/s:842.60"
+ },
+ {
+  "caso": "magick -> .html",
+  "orden": "magick trivial.png -auto-orient \"D:\\Work\\research\\FileX\\bench\\salidas-quinto-punto\\tmp\\fuga\\destino\\u.html\"",
+  "rc": 0,
+  "ms": 43.8,
+  "bytes_declarado": 626,
+  "veredicto_4_puntos": "fallo",
+  "veredicto_5_puntos": "fallo",
+  "hallazgos_p5": [
+   {
+    "punto": 5,
+    "regla": "N6",
+    "severidad": "aviso",
+    "mensaje": "el motor escribio 1 fichero(s) (98 B) FUERA del directorio de destino: u_map.shtml",
+    "esperado": "0 ficheros fuera de D:\\Work\\research\\FileX\\bench\\salidas-quinto-punto\\tmp\\fuga\\destino",
+    "obtenido": [
+     "tmp\\fuga\\trabajo\\u_map.shtml"
+    ]
+   },
+   {
+    "punto": 5,
+    "regla": "N7",
+    "severidad": "informativo",
+    "mensaje": "salida multifichero declarada (html): 1 fichero(s) acompañan al declarado",
+    "esperado": "magick escribe el HTML y el PNG al que apunta",
+    "obtenido": [
+     "u.png"
+    ]
+   },
+   {
+    "punto": 5,
+    "regla": "N9",
+    "severidad": "informativo",
+    "mensaje": "el fichero declarado lleva el 59.4 % de los bytes escritos (626 de 1053 B)",
+    "esperado": "100 %",
+    "obtenido": 59.4
+   }
+  ],
+  "stderr": ""
+ },
+ {
+  "caso": "magick -> .map (control: un solo fichero)",
+  "orden": "magick trivial.png -auto-orient \"D:\\Work\\research\\FileX\\bench\\salidas-quinto-punto\\tmp\\fuga\\destino\\v.map\"",
+  "rc": 0,
+  "ms": 36.2,
+  "bytes_declarado": 4102,
+  "veredicto_4_puntos": "ok_parcial",
+  "veredicto_5_puntos": "ok_parcial",
+  "hallazgos_p5": [
+   {
+    "punto": 5,
+    "regla": "N9",
+    "severidad": "informativo",
+    "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (4102 de 4102 B)",
+    "esperado": "100 %",
+    "obtenido": 100.0
+   }
+  ],
+  "stderr": ""
+ },
+ {
+  "caso": "control sano: magick -> .webp",
+  "orden": "magick trivial.png -quality 80 \"D:\\Work\\research\\FileX\\bench\\salidas-quinto-punto\\tmp\\fuga\\destino\\w.webp\"",
+  "rc": 0,
+  "ms": 44.7,
+  "bytes_declarado": 94,
+  "veredicto_4_puntos": "ok_parcial",
+  "veredicto_5_puntos": "ok_parcial",
+  "hallazgos_p5": [
+   {
+    "punto": 5,
+    "regla": "N9",
+    "severidad": "informativo",
+    "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (94 de 94 B)",
+    "esperado": "100 %",
+    "obtenido": 100.0
+   }
+  ],
+  "stderr": ""
+ }
+]

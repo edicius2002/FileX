@@ -1,0 +1,29 @@
+==============================================================================
+POBLACION: 138501 aristas declaradas por el grafo instalado
+  refutadas por ejecucion de una semiarista (CENSO):  22235  16.05 %
+  con las dos semiaristas vivas (marco muestral)   :  40252  29.06 %
+  indeterminadas (origen no materializable)        :  75874  54.78 %
+  otros motores (gs / Gotenberg), tratadas aparte  :    140   0.10 %
+
+==============================================================================
+MUESTRA SOBRE EL MARCO (n=498 de 40252)
+estrato                               N      n  nominal IC 95 % (Wilson)
+ffmpeg|distinta-familia            7414     91    76.9 % [67.3 % , 84.4 %]
+ffmpeg|misma-familia               8985    111    28.8 % [21.2 % , 37.9 %]
+imagemagick|distinta-familia       4760     59     5.1 % [1.7 % , 13.9 %]
+imagemagick|misma-familia         19093    237     4.2 % [2.3 % , 7.6 %]
+TODOS                             40252    498    23.1 % [19.6 % , 27.0 %]  <- global sin ponderar
+TODOS (ponderado por estrato)                     23.2 %
+
+  categorias en la muestra general: {'FALLO': 112, 'INTEGRO': 320, 'DEGRADADO': 63, 'DESTRUIDO': 3}
+  N2 evaluable en 62 de 498 (12 %)
+
+  ESTRATO PRIORITARIO PDF (100 de 311 aristas que tocan pdf): 3.0 % nominal [1.0 % , 8.5 %]
+  categorias: {'INTEGRO': 85, 'DEGRADADO': 12, 'DESTRUIDO': 1, 'FALLO': 2}
+
+==============================================================================
+  estimacion puntual     -> nominales    31530 de 62487 verificadas =  50.5 %   (22.8 % de las 138501 declaradas)
+  extremo bajo del IC    -> nominales    30127 de 62487 verificadas =  48.2 %   (21.8 % de las 138501 declaradas)
+  extremo alto del IC    -> nominales    33100 de 62487 verificadas =  53.0 %   (23.9 % de las 138501 declaradas)
+
+  subpoblacion verificada: 62487 de 138501 = 45.1 % de la poblacion

@@ -1,0 +1,14 @@
+{"dispositivo": "cuda", "backend": "torch", "docs": ["patologico_escaneado", "escaneado_d1", "escaneado_d2", "escaneado_d3"], "ppp": "defecto", "reps": 9, "vram_base_MiB": 835, "quietud_pct": 17, "flag": "SUCIA(pico 17%)", "torch": "2.6.0+cu124", "torch_cuda": true, "modelo": {"lang_pedido": "english", "lang_resuelto": "en", "ppocr_version": "PP-OCRv6", "model_type_v6": "small", "model_type_v4v5": "mobile"}}
+[32m[INFO] 2026-08-21 02:26:30,743 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 02:26:30,753 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_det_small.pth[0m
+[32m[INFO] 2026-08-21 02:26:31,059 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 02:26:31,060 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-08-21 02:26:31,180 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 02:26:31,197 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_rec_small.pth[0m
+D:\Work\research\FileX\.venv-ai\Lib\site-packages\torch\nn\modules\conv.py:549: UserWarning: Using padding='same' with even kernel lengths and odd dilation may require a zero-padded copy of the input be created (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\aten\src\ATen\native\Convolution.cpp:1037.)
+  return F.conv2d(
+pppdefecto__patologico_escaneado   escala=3.000 (~216ppp) px_motor=(1398, 1935)  CER=   0.0%  dist=   0     823.9 ms
+pppdefecto__escaneado_d1           escala=3.000 (~216ppp) px_motor=(1397, 1872)  CER=   0.0%  dist=   0     643.5 ms
+pppdefecto__escaneado_d2           escala=3.000 (~216ppp) px_motor=(1398, 1836)  CER=   0.0%  dist=   0     595.3 ms
+pppdefecto__escaneado_d3           escala=3.000 (~216ppp) px_motor=(1398, 1836)  CER=  58.2%  dist=  46     605.5 ms
+{"evento": "fin", "vram_pico_MiB": 2034, "vram_base_MiB": 835, "coste_propio_MiB": 1199, "pico_util_pct": 64, "sonda_activa": true}

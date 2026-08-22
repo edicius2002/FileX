@@ -1,0 +1,29 @@
+INFORMACIàN: no se pudo encontrar ning£n archivo para los patrones dados.
+D:\Work\research\FileX\.venv-paddle\Lib\site-packages\paddle\utils\cpp_extension\extension_utils.py:718: UserWarning: No ccache found. Please be aware that recompiling all source files may be required. You can download and install ccache from: https://github.com/ccache/ccache/blob/master/doc/INSTALL.md
+  warnings.warn(warning_message)
+[32mCreating model: ('PP-LCNet_x1_0_textline_ori', None, None)[0m
+[32mModel files already exist. Using cached files. To redownload, please delete the directory manually: `C:\Users\krato\.paddlex\official_models\PP-LCNet_x1_0_textline_ori`.[0m
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+W0821 12:42:18.513120 17908 gpu_resources.cc:114] Please NOTE: device: 0, GPU Compute Capability: 8.6, Driver API Version: 12.8, Runtime API Version: 12.6
+[32mCreating model: ('PP-OCRv6_medium_det', None, None)[0m
+[32mModel files already exist. Using cached files. To redownload, please delete the directory manually: `C:\Users\krato\.paddlex\official_models\PP-OCRv6_medium_det`.[0m
+[32mCreating model: ('PP-OCRv6_medium_rec', None, None)[0m
+[32mModel files already exist. Using cached files. To redownload, please delete the directory manually: `C:\Users\krato\.paddlex\official_models\PP-OCRv6_medium_rec`.[0m
+{"etiqueta": "paddleocr_cuda_F_pd6med", "motor": "paddleocr", "dispositivo": "cuda", "patron": "*.png", "imgdir": "D:/Work/research/FileX/bench/salidas-ppp-norm/img_docs2", "ref_forzada": null, "carga_frio_s": 5.12, "vram_base_MiB": 1432, "vram_tras_carga_MiB": 1701, "quietud_pct": 39, "flag": "SUCIA(pico 39%)", "testigo_monohilo_ini_ms": 20.63, "testigo_proceso_ini_ms": 23.25, "modelos": {"paddle": "3.2.0", "kwargs": {"device": "gpu:0", "use_doc_orientation_classify": "False", "use_doc_unwarping": "False", "use_textline_orientation": "True"}, "params": {"doc_orientation_classify_model_name": "None", "doc_unwarping_model_name": "None", "text_detection_model_name": "PP-OCRv6_medium_det", "textline_orientation_model_name": "None", "text_recognition_model_name": "PP-OCRv6_medium_rec"}}, "reps": 9, "muestreo_vram": false}
+W0821 12:42:20.656808 17908 gpu_resources.cc:243] WARNING: device: 0. The installed Paddle is compiled with CUDNN 9.9, but CUDNN version in your machine is 9.5, which may cause serious incompatible bug. Please recompile or reinstall Paddle with compatible CUDNN version.
+ppp0100__patologico_escaneado                CERac=  0.00%  CERascii=  0.00%  lin=3/3  cajas=3  bloques={'cuerpo': 0.0}      98.0 ms  det=si
+ppp0150__patologico_escaneado                CERac=  0.00%  CERascii=  0.00%  lin=3/3  cajas=3  bloques={'cuerpo': 0.0}     178.7 ms  det=si
+ppp0200__patologico_escaneado                CERac=  0.00%  CERascii=  0.00%  lin=3/3  cajas=3  bloques={'cuerpo': 0.0}     292.5 ms  det=si
+ppp0250__escaneado_d4                        CERac= 13.09%  CERascii= 12.08%  lin=5/12  cajas=12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.96, 'pequeña': 41.31}     523.8 ms  det=si
+ppp0250__patologico_escaneado                CERac=  0.00%  CERascii=  0.00%  lin=3/3  cajas=3  bloques={'cuerpo': 0.0}     431.1 ms  det=si
+ppp0255__escaneado_d4                        CERac= 15.10%  CERascii= 14.09%  lin=5/12  cajas=12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.96, 'pequeña': 45.54}     534.5 ms  det=si
+ppp0260__escaneado_d4                        CERac= 23.66%  CERascii= 22.82%  lin=6/12  cajas=12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.64, 'pequeña': 74.18}     537.5 ms  det=si
+ppp0265__escaneado_d4                        CERac= 16.44%  CERascii= 15.44%  lin=6/12  cajas=13  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.64, 'pequeña': 51.17}     574.3 ms  det=si
+ppp0270__escaneado_d4                        CERac= 13.09%  CERascii= 11.58%  lin=4/12  cajas=12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 1.6, 'pequeña': 38.03}     562.2 ms  det=si
+ppp0275__escaneado_d4                        CERac= 21.31%  CERascii= 20.30%  lin=5/12  cajas=12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.96, 'pequeña': 74.18}     572.1 ms  det=si
+ppp0280__escaneado_d4                        CERac= 36.24%  CERascii= 35.91%  lin=6/12  cajas=8  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.64, 'pequeña': 75.12}     541.2 ms  det=si
+ppp0280__patologico_escaneado                CERac=  0.00%  CERascii=  0.00%  lin=3/3  cajas=3  bloques={'cuerpo': 0.0}     523.9 ms  det=si
+ppp0300__escaneado_d4                        CERac= 25.17%  CERascii= 24.50%  lin=5/12  cajas=11  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.96, 'pequeña': 74.65}     633.3 ms  det=si
+ppp0320__patologico_escaneado                CERac=  0.00%  CERascii=  0.00%  lin=3/3  cajas=3  bloques={'cuerpo': 0.0}     670.9 ms  det=si
+ppp0400__patologico_escaneado                CERac=  0.00%  CERascii=  0.00%  lin=3/3  cajas=3  bloques={'cuerpo': 0.0}    2922.0 ms  det=si
+{"evento": "fin", "vram_pico_MiB": 1701, "vram_base_MiB": 1432, "coste_propio_MiB": 269, "pico_util_pct": 0, "testigo_monohilo_ini_ms": 20.63, "testigo_monohilo_fin_ms": 22.39, "deriva_monohilo": 1.09, "testigo_proceso_ini_ms": 23.25, "testigo_proceso_fin_ms": 29.23, "nivel_proceso_vs_reposo": 1.1, "muestreo_vram": false}

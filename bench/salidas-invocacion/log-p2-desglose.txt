@@ -1,0 +1,16 @@
+ESTRATO                      nominales(E1)  recuperadas     %
+  ffmpeg|distinta-familia        70          12     17.1
+  ffmpeg|misma-familia           32           4     12.5
+  imagemagick|distinta-familia      3           1     33.3
+  imagemagick|misma-familia      10           8     80.0
+  pdf                             3           2     66.7
+  TOTAL                         118          27     22.9
+
+CAUSA de las que no reviven: {'muxer sin pista compatible': 69, 'sin paquetes tras barrer parametros': 11, 'codificador ausente del build': 2, 'otra': 3, 'TIMEOUT': 1}
+
+INVOCACIONES: semiaristas 364, residuo 288, crudos 116, C17 149  -> TOTAL 917
+
+VEREDICTO de las revividas del residuo:
+  {'FALLO': 15, 'INTEGRO': 24, 'DEGRADADO': 3}
+
+aristas cuyo motor escribio FUERA del destino (5o punto): 0

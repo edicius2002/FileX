@@ -1,0 +1,69 @@
+{
+  "rapidocr_models_dir": "D:\\Work\\research\\FileX\\.venv-ai\\Lib\\site-packages\\rapidocr\\models",
+  "rapidocr_ficheros": [
+    [
+      ".gitkeep",
+      0
+    ],
+    [
+      "PP-OCRv6_det_small.onnx",
+      9929594
+    ],
+    [
+      "PP-OCRv6_det_small.pth",
+      10248727
+    ],
+    [
+      "PP-OCRv6_rec_small.onnx",
+      21234383
+    ],
+    [
+      "PP-OCRv6_rec_small.pth",
+      21326017
+    ],
+    [
+      "ch_PP-OCRv5_det_mobile.onnx",
+      4819576
+    ],
+    [
+      "ch_PP-OCRv5_rec_mobile.onnx",
+      16631306
+    ],
+    [
+      "ch_ppocr_mobile_v2.0_cls_mobile.onnx",
+      585532
+    ],
+    [
+      "ch_ptocr_mobile_v2.0_cls_mobile.pth",
+      588638
+    ],
+    [
+      "ppocrv6_dict.txt",
+      74947
+    ]
+  ],
+  "docling_constantes": {
+    "det_model_lang": "ch",
+    "model_type_para_v6": "small",
+    "model_type_para_v4_v5": "mobile"
+  },
+  "docling_resuelve": {
+    "onnxruntime/english": "PP-OCRv6 small (rec_lang=en)",
+    "onnxruntime/chinese": "PP-OCRv6 small (rec_lang=ch)",
+    "onnxruntime/latin": "PP-OCRv5 mobile (rec_lang=latin)",
+    "onnxruntime/es": "PP-OCRv6 small (rec_lang=es)",
+    "torch/english": "PP-OCRv6 small (rec_lang=en)",
+    "torch/chinese": "PP-OCRv6 small (rec_lang=ch)",
+    "torch/latin": "PP-OCRv4 mobile (rec_lang=latin)",
+    "torch/es": "PP-OCRv6 small (rec_lang=es)",
+    "paddle/english": "PP-OCRv6 small (rec_lang=en)",
+    "paddle/chinese": "PP-OCRv6 small (rec_lang=ch)",
+    "paddle/latin": "PP-OCRv5 mobile (rec_lang=latin)",
+    "paddle/es": "PP-OCRv6 small (rec_lang=es)",
+    "openvino/english": "PP-OCRv6 small (rec_lang=en)",
+    "openvino/chinese": "PP-OCRv6 small (rec_lang=ch)",
+    "openvino/latin": "PP-OCRv5 mobile (rec_lang=latin)",
+    "openvino/es": "PP-OCRv6 small (rec_lang=es)"
+  },
+  "banco_aislado_rapidocr": "bench/scripts/ocr_motor.py fuerza Det/Rec.ocr_version=PPOCRV5 y Det/Rec.model_type=MOBILE sobre EngineType.ONNXRUNTIME -> ch_PP-OCRv5_det_mobile.onnx + ch_PP-OCRv5_rec_mobile.onnx"
+}

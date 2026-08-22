@@ -1,0 +1,123 @@
+{
+  "cabecera": {
+    "etiqueta": "rapidocr_cuda_f3b_sm_nocls",
+    "motor": "rapidocr",
+    "dispositivo": "cuda",
+    "referencia": "d4",
+    "patron": "*.png",
+    "imgdir": "D:/Work/research/FileX/bench/salidas-corpus-d4/img_f3",
+    "carga_frio_s": 3.33,
+    "vram_base_MiB": 2970,
+    "vram_tras_carga_MiB": 3152,
+    "quietud_pct": 38,
+    "cpu_pico_pct": null,
+    "flag": "SUCIA(pico 38%)",
+    "modelos": {
+      "text_det": "ch_PP-OCRv4_det_mobile.onnx",
+      "text_cls": "ch_PP-OCRv4_det_mobile.onnx",
+      "text_rec": "ch_PP-OCRv4_det_mobile.onnx",
+      "pedido": {
+        "Det.engine_type": "onnxruntime",
+        "Rec.engine_type": "onnxruntime",
+        "Det.lang_type": "ch",
+        "Rec.lang_type": "ch",
+        "Det.ocr_version": "PP-OCRv6",
+        "Rec.ocr_version": "PP-OCRv6",
+        "Det.model_type": "small",
+        "Rec.model_type": "small",
+        "Global.model_root_dir": "D:/Work/research/FileX/bench/salidas-corpus-d4/modelos",
+        "Global.use_cls": "False"
+      }
+    },
+    "reps": 9,
+    "muestreo_vram": false
+  },
+  "fin": {
+    "evento": "fin",
+    "vram_pico_MiB": 3152,
+    "vram_base_MiB": 2970,
+    "coste_propio_MiB": 182,
+    "pico_util_pct": 0,
+    "muestreo_vram": false
+  },
+  "res": {
+    "ppp100__escaneado_d3": {
+      "referencia": "legado",
+      "cer_acentos_pct": 75.95,
+      "dist_acentos": 60,
+      "cer_ascii_pct": 75.95,
+      "dist_ascii": 60,
+      "chars_ref_acentos": 79,
+      "chars": 19,
+      "lineas_exactas": 1,
+      "lineas_totales": 3,
+      "acentos_ref": 0,
+      "acentos_salida": 0,
+      "bloques": {
+        "cuerpo": 75.95
+      },
+      "normalizada_acentos": "documento escaneado",
+      "ms_mediana": 64.4,
+      "ms_min": 62.2,
+      "ms_max": 68.3,
+      "n": 9,
+      "determinista": true,
+      "vram_pico_MiB": 3152,
+      "vram_delta_lote_MiB": 0
+    },
+    "ppp200__escaneado_d4": {
+      "referencia": "d4",
+      "cer_acentos_pct": 36.91,
+      "dist_acentos": 220,
+      "cer_ascii_pct": 36.24,
+      "dist_ascii": 216,
+      "chars_ref_acentos": 596,
+      "chars": 388,
+      "lineas_exactas": 3,
+      "lineas_totales": 12,
+      "acentos_ref": 35,
+      "acentos_salida": 17,
+      "bloques": {
+        "titulo": 0.0,
+        "subtitulo": 0.0,
+        "cuerpo": 6.09,
+        "pequeña": 74.65
+      },
+      "normalizada_acentos": "informe de digitalización expediente núm 4 827 2026 archivo histórico el dia 14 de marzo se recibió la solicitud de análisis técnico sobre veintiún volúmenes encuademados en piel la comisión determinó que la reproducción fotográfica debia realizarse con iluminación difusa y sin contacto seg n la norma une 15 402 para evitar daños añadidos en los pliegos más fragiles del año 1893",
+      "ms_mediana": 370.8,
+      "ms_min": 353.0,
+      "ms_max": 436.3,
+      "n": 9,
+      "determinista": true,
+      "vram_pico_MiB": 3152,
+      "vram_delta_lote_MiB": 0
+    },
+    "ppp200__escaneado_d4c": {
+      "referencia": "d4",
+      "cer_acentos_pct": 29.36,
+      "dist_acentos": 175,
+      "cer_ascii_pct": 29.36,
+      "dist_ascii": 175,
+      "chars_ref_acentos": 596,
+      "chars": 428,
+      "lineas_exactas": 8,
+      "lineas_totales": 12,
+      "acentos_ref": 35,
+      "acentos_salida": 22,
+      "bloques": {
+        "titulo": 0.0,
+        "subtitulo": 0.0,
+        "cuerpo": 0.0,
+        "pequeña": 75.12
+      },
+      "normalizada_acentos": "informe de digitalización expediente núm 4 827 2026 archivo histórico el día 14 de marzo se recibió la solicitud de análisis técnico sobre veintiún volúmenes encuadernados en piel la comisión determinó que la reproducción fotográfica debía realizarse con iluminación difusa y sin contacto según la norma une 15 402 para evitar daños añadidos en los pliegos más frágiles del año 1893 rrafo tercero señala k quedan anulados",
+      "ms_mediana": 364.1,
+      "ms_min": 343.9,
+      "ms_max": 391.3,
+      "n": 9,
+      "determinista": true,
+      "vram_pico_MiB": 3152,
+      "vram_delta_lote_MiB": 0
+    }
+  }
+}

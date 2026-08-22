@@ -1,0 +1,63 @@
+GHOSTSCRIPT (9 aristas)
+  eps   -> docx   rc=0       10030 B  INTEGRO
+  eps   -> pclm   rc=0      258492 B  INTEGRO
+  eps   -> xps    rc=0      148790 B  INTEGRO
+  pdf   -> docx   rc=0       10047 B  INTEGRO
+  pdf   -> pclm   rc=0      258492 B  INTEGRO
+  pdf   -> xps    rc=0      148790 B  INTEGRO
+  ps    -> docx   rc=0       10030 B  INTEGRO
+  ps    -> pclm   rc=0      258492 B  INTEGRO
+  ps    -> xps    rc=0      148790 B  INTEGRO
+
+GOTENBERG / CHROMIUM (25 aristas)
+  htm   -> jpeg  HTTP 200     21599 B  firma=jpeg     INTEGRO
+  htm   -> jpg   HTTP 200     21599 B  firma=jpeg     INTEGRO
+  htm   -> pdf   HTTP 200     12231 B  firma=pdf      INTEGRO
+  htm   -> png   HTTP 200      8685 B  firma=png      INTEGRO
+  htm   -> webp  HTTP 200      5376 B  firma=webp     INTEGRO
+  html  -> jpeg  HTTP 200     21599 B  firma=jpeg     INTEGRO
+  html  -> jpg   HTTP 200     21599 B  firma=jpeg     INTEGRO
+  html  -> pdf   HTTP 200     12231 B  firma=pdf      INTEGRO
+  html  -> png   HTTP 200      8685 B  firma=png      INTEGRO
+  html  -> webp  HTTP 200      5376 B  firma=webp     INTEGRO
+  md    -> jpeg  HTTP 200     21599 B  firma=jpeg     INTEGRO
+  md    -> jpg   HTTP 200     21599 B  firma=jpeg     INTEGRO
+  md    -> pdf   HTTP 200     12231 B  firma=pdf      INTEGRO
+  md    -> png   HTTP 200      8685 B  firma=png      INTEGRO
+  md    -> webp  HTTP 200      5376 B  firma=webp     INTEGRO
+  url   -> jpeg  HTTP 200     33592 B  firma=jpeg     INTEGRO
+  url   -> jpg   HTTP 200     33592 B  firma=jpeg     INTEGRO
+  url   -> pdf   HTTP 200     14944 B  firma=pdf      INTEGRO
+  url   -> png   HTTP 200     17928 B  firma=png      INTEGRO
+  url   -> webp  HTTP 200      8486 B  firma=webp     INTEGRO
+  xhtml -> jpeg  HTTP 200     21599 B  firma=jpeg     INTEGRO
+  xhtml -> jpg   HTTP 200     21599 B  firma=jpeg     INTEGRO
+  xhtml -> pdf   HTTP 200     12231 B  firma=pdf      INTEGRO
+  xhtml -> png   HTTP 200      8685 B  firma=png      INTEGRO
+  xhtml -> webp  HTTP 200      5376 B  firma=webp     INTEGRO
+
+GOTENBERG / LIBREOFFICE (102 aristas, 102 extensiones)
+  semillas materializadas: 18 de 102
+  csv      -> pdf  HTTP -1          0 B  FALLO      [WinError 10054] Se ha forzado la interrupción de una conexi
+  doc      -> pdf  HTTP 200     26784 B  INTEGRO    
+  docm     -> pdf  HTTP 200     26784 B  INTEGRO    
+  docx     -> pdf  HTTP 200     17090 B  INTEGRO    
+  dot      -> pdf  HTTP 200     26784 B  INTEGRO    
+  dotm     -> pdf  HTTP 200     26784 B  INTEGRO    
+  dotx     -> pdf  HTTP 200     26784 B  INTEGRO    
+  epub     -> pdf  HTTP 500         0 B  FALLO      LibreOffice failed to convert the document 'entrada.epub'. T
+  fodt     -> pdf  HTTP 200     26784 B  INTEGRO    
+  odt      -> pdf  HTTP 200     26784 B  INTEGRO    
+  ott      -> pdf  HTTP 200     26784 B  INTEGRO    
+  rtf      -> pdf  HTTP 200     20234 B  INTEGRO    
+  tif      -> pdf  HTTP 200   2085065 B  INTEGRO    
+  uof      -> pdf  HTTP 200      6835 B  INTEGRO    
+  uot      -> pdf  HTTP 200      6835 B  INTEGRO    
+  wps      -> pdf  HTTP 200     26784 B  INTEGRO    
+  xlsx     -> pdf  HTTP 200     17018 B  INTEGRO    
+  xml      -> pdf  HTTP 200     26784 B  INTEGRO    
+
+RESUMEN C17
+  ghostscript            9 aristas,   9 evaluables,   0 nominales (0.0 %)  {'INTEGRO': 9}
+  gotenberg-chromium    25 aristas,  25 evaluables,   0 nominales (0.0 %)  {'INTEGRO': 25}
+  gotenberg-lo         102 aristas,  18 evaluables,   2 nominales (11.1 %)  {'FALLO': 2, 'INTEGRO': 16}

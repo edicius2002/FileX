@@ -1,0 +1,1105 @@
+{
+"ffmpeg|avs": {
+"estado": "muerta",
+"procedencia": "ffmpeg<-video_cif",
+"intentos": [
+{
+"destino": "mkv",
+"rc": 3221225477,
+"bytes": -1,
+"ficheros": 0,
+"ms": 56.6,
+"err": "st SSSE3 SSE4.2 AVX AVX2 FMA3 LZCNT BMI2\u001b[0m \u001b[1;36m[davs2 info]: Manager 20a8f0c00a0: using 1 thread(s): 1(frame/AEC)+0(pool/REC), 2 tasks\u001b[0m \u001b[1;36m[davs2 info]: Manager 20a8f0c00a0: Sequence Resolution: 352x288.\u001b[0m "
+},
+{
+"destino": "wav",
+"rc": 4294967274,
+"bytes": -1,
+"ficheros": 0,
+"ms": 66.6,
+"err": "tmp4\\y0002.wav': [out#0/wav @ 00000163a78d9b80] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp4\\y0002.wav. Error opening output files: Invalid argument "
+},
+{
+"destino": "png",
+"rc": 3221225477,
+"bytes": -1,
+"ficheros": 0,
+"ms": 58.4,
+"err": "st SSSE3 SSE4.2 AVX AVX2 FMA3 LZCNT BMI2\u001b[0m \u001b[1;36m[davs2 info]: Manager 278737e00a0: using 1 thread(s): 1(frame/AEC)+0(pool/REC), 2 tasks\u001b[0m \u001b[1;36m[davs2 info]: Manager 278737e00a0: Sequence Resolution: 352x288.\u001b[0m "
+}
+]
+},
+"ffmpeg|avs2": {
+"estado": "muerta",
+"nota": "semilla perdida",
+"procedencia": "ffmpeg<-video_cif"
+},
+"ffmpeg|mpc": {
+"estado": "muerta",
+"procedencia": "magick<-jpeg_exif",
+"intentos": [
+{
+"destino": "mkv",
+"rc": 3199971767,
+"bytes": -1,
+"ficheros": 0,
+"ms": 41.4,
+"err": "f40] Error opening input: Invalid data found when processing input Error opening input file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\pool\\in\\m.mpc. Error opening input files: Invalid data found when processing input "
+},
+{
+"destino": "wav",
+"rc": 3199971767,
+"bytes": -1,
+"ficheros": 0,
+"ms": 46.7,
+"err": "780] Error opening input: Invalid data found when processing input Error opening input file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\pool\\in\\m.mpc. Error opening input files: Invalid data found when processing input "
+},
+{
+"destino": "png",
+"rc": 3199971767,
+"bytes": -1,
+"ficheros": 0,
+"ms": 46.4,
+"err": "100] Error opening input: Invalid data found when processing input Error opening input file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\pool\\in\\m.mpc. Error opening input files: Invalid data found when processing input "
+}
+]
+},
+"ffmpeg|mtv": {
+"estado": "muerta",
+"procedencia": "magick<-jpeg_exif",
+"intentos": [
+{
+"destino": "mkv",
+"rc": 3199971767,
+"bytes": -1,
+"ficheros": 0,
+"ms": 119.2,
+"err": "1c0] Error opening input: Invalid data found when processing input Error opening input file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\pool\\in\\m.mtv. Error opening input files: Invalid data found when processing input "
+},
+{
+"destino": "wav",
+"rc": 3199971767,
+"bytes": -1,
+"ficheros": 0,
+"ms": 132.5,
+"err": "8c0] Error opening input: Invalid data found when processing input Error opening input file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\pool\\in\\m.mtv. Error opening input files: Invalid data found when processing input "
+},
+{
+"destino": "png",
+"rc": 3199971767,
+"bytes": -1,
+"ficheros": 0,
+"ms": 133.9,
+"err": "1c0] Error opening input: Invalid data found when processing input Error opening input file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\pool\\in\\m.mtv. Error opening input files: Invalid data found when processing input "
+}
+]
+},
+"ffmpeg|rgb": {
+"estado": "muerta",
+"procedencia": "ffmpeg<-video_cif",
+"intentos": [
+{
+"destino": "mkv",
+"rc": 4294967274,
+"bytes": -1,
+"ficheros": 0,
+"ms": 55.5,
+"err": "icture size 0x0 is invalid [in#0 @ 000001a0766ece00] Error opening input: Invalid argument Error opening input file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\pool\\in\\m.rgb. Error opening input files: Invalid argument "
+},
+{
+"destino": "wav",
+"rc": 4294967274,
+"bytes": -1,
+"ficheros": 0,
+"ms": 49.2,
+"err": "icture size 0x0 is invalid [in#0 @ 000002a8dddc6b40] Error opening input: Invalid argument Error opening input file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\pool\\in\\m.rgb. Error opening input files: Invalid argument "
+},
+{
+"destino": "png",
+"rc": 4294967274,
+"bytes": -1,
+"ficheros": 0,
+"ms": 42.7,
+"err": "icture size 0x0 is invalid [in#0 @ 00000222e6d00080] Error opening input: Invalid argument Error opening input file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\pool\\in\\m.rgb. Error opening input files: Invalid argument "
+}
+]
+},
+"ffmpeg|svg": {
+"estado": "muerta",
+"procedencia": "magick<-jpeg_exif",
+"intentos": [
+{
+"destino": "mkv",
+"rc": 4294967274,
+"bytes": -1,
+"ficheros": 0,
+"ms": 41.6,
+"err": "tbn [vist#0:0/svg @ 00000229278e81c0] Decoding requested, but no decoder found for: svg Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp4\\y0013.mkv. Error opening output files: Invalid argument "
+},
+{
+"destino": "wav",
+"rc": 4294967274,
+"bytes": -1,
+"ficheros": 0,
+"ms": 43.3,
+"err": "tmp4\\y0014.wav': [out#0/wav @ 0000025121f7c9c0] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp4\\y0014.wav. Error opening output files: Invalid argument "
+},
+{
+"destino": "png",
+"rc": 4294967274,
+"bytes": -1,
+"ficheros": 0,
+"ms": 50.6,
+"err": "tbn [vist#0:0/svg @ 0000015f2e3d1840] Decoding requested, but no decoder found for: svg Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp4\\y0015.png. Error opening output files: Invalid argument "
+}
+]
+},
+"ffmpeg|txt": {
+"estado": "muerta",
+"procedencia": "magick<-jpeg_exif",
+"intentos": [
+{
+"destino": "mkv",
+"rc": -9,
+"bytes": 39321600,
+"ficheros": 1,
+"ms": 60125.0,
+"err": "TIMEOUT"
+},
+{
+"destino": "wav",
+"rc": 4294967274,
+"bytes": -1,
+"ficheros": 0,
+"ms": 463.1,
+"err": "tmp4\\y0017.wav': [out#0/wav @ 000001bc72229700] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp4\\y0017.wav. Error opening output files: Invalid argument "
+},
+{
+"destino": "png",
+"rc": 4294967274,
+"bytes": 3363,
+"ficheros": 1,
+"ms": 1882.7,
+"err": "ideo:7KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown frame=    2 fps=1.2 q=-0.0 Lsize=N/A time=00:00:00.32 bitrate=N/A speed=0.197x elapsed=0:00:01.62     Conversion failed! "
+}
+]
+},
+"ffmpeg|yuv": {
+"estado": "muerta",
+"procedencia": "ffmpeg<-video_cif",
+"intentos": [
+{
+"destino": "mkv",
+"rc": 4294967274,
+"bytes": -1,
+"ficheros": 0,
+"ms": 177.8,
+"err": "icture size 0x0 is invalid [in#0 @ 000001b53a2ab500] Error opening input: Invalid argument Error opening input file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\pool\\in\\m.yuv. Error opening input files: Invalid argument "
+},
+{
+"destino": "wav",
+"rc": 4294967274,
+"bytes": -1,
+"ficheros": 0,
+"ms": 108.9,
+"err": "icture size 0x0 is invalid [in#0 @ 00000228233eb500] Error opening input: Invalid argument Error opening input file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\pool\\in\\m.yuv. Error opening input files: Invalid argument "
+},
+{
+"destino": "png",
+"rc": 4294967274,
+"bytes": -1,
+"ficheros": 0,
+"ms": 308.1,
+"err": "icture size 0x0 is invalid [in#0 @ 00000222e17cb500] Error opening input: Invalid argument Error opening input file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\pool\\in\\m.yuv. Error opening input files: Invalid argument "
+}
+]
+},
+"imagemagick|avi": {
+"estado": "viva",
+"procedencia": "ffmpeg<-video_cif",
+"intentos": [
+{
+"destino": "png",
+"rc": 0,
+"bytes": 36490,
+"ficheros": 25,
+"ms": 6259.9,
+"err": ""
+}
+]
+},
+"imagemagick|avif": {
+"estado": "viva",
+"procedencia": "ffmpeg<-video_cif",
+"intentos": [
+{
+"destino": "png",
+"rc": 0,
+"bytes": 16657,
+"ficheros": 25,
+"ms": 1412.7,
+"err": ""
+}
+]
+},
+"imagemagick|avs": {
+"estado": "muerta",
+"procedencia": "ffmpeg<-video_cif",
+"intentos": [
+{
+"destino": "png",
+"rc": 1,
+"bytes": -1,
+"ficheros": 0,
+"ms": 117.1,
+"err": "magick: unable to extend cache 'D:\\Work\\research\\FileX\\bench\\salidas-aristas\\pool\\in\\m.avs': No space left on device @ error/cache.c/OpenPixelCache/4023. "
+},
+{
+"destino": "miff",
+"rc": 1,
+"bytes": -1,
+"ficheros": 0,
+"ms": 169.9,
+"err": "magick: unable to extend cache 'D:\\Work\\research\\FileX\\bench\\salidas-aristas\\pool\\in\\m.avs': No space left on device @ error/cache.c/OpenPixelCache/4023. "
+}
+]
+},
+"imagemagick|bayer": {
+"estado": "muerta",
+"procedencia": "magick<-jpeg_exif",
+"intentos": [
+{
+"destino": "png",
+"rc": 1,
+"bytes": -1,
+"ficheros": 0,
+"ms": 437.5,
+"err": "magick: must specify image size `D:\\Work\\research\\FileX\\bench\\salidas-aristas\\pool\\in\\m.bayer' @ error/gray.c/ReadGRAYImage/148. "
+},
+{
+"destino": "miff",
+"rc": 1,
+"bytes": -1,
+"ficheros": 0,
+"ms": 136.1,
+"err": "magick: must specify image size `D:\\Work\\research\\FileX\\bench\\salidas-aristas\\pool\\in\\m.bayer' @ error/gray.c/ReadGRAYImage/148. "
+}
+]
+},
+"imagemagick|bayera": {
+"estado": "muerta",
+"procedencia": "magick<-jpeg_exif",
+"intentos": [
+{
+"destino": "png",
+"rc": 1,
+"bytes": -1,
+"ficheros": 0,
+"ms": 471.8,
+"err": "magick: must specify image size `D:\\Work\\research\\FileX\\bench\\salidas-aristas\\pool\\in\\m.bayera' @ error/gray.c/ReadGRAYImage/148. "
+},
+{
+"destino": "miff",
+"rc": 1,
+"bytes": -1,
+"ficheros": 0,
+"ms": 930.7,
+"err": "magick: must specify image size `D:\\Work\\research\\FileX\\bench\\salidas-aristas\\pool\\in\\m.bayera' @ error/gray.c/ReadGRAYImage/148. "
+}
+]
+},
+"imagemagick|bgr": {
+"estado": "muerta",
+"procedencia": "magick<-jpeg_exif",
+"intentos": [
+{
+"destino": "png",
+"rc": 1,
+"bytes": -1,
+"ficheros": 0,
+"ms": 1430.8,
+"err": "magick: must specify image size `D:\\Work\\research\\FileX\\bench\\salidas-aristas\\pool\\in\\m.bgr' @ error/bgr.c/ReadBGRImage/147. "
+},
+{
+"destino": "miff",
+"rc": 1,
+"bytes": -1,
+"ficheros": 0,
+"ms": 808.4,
+"err": "magick: must specify image size `D:\\Work\\research\\FileX\\bench\\salidas-aristas\\pool\\in\\m.bgr' @ error/bgr.c/ReadBGRImage/147. "
+}
+]
+},
+"imagemagick|bgra": {
+"estado": "muerta",
+"procedencia": "magick<-jpeg_exif",
+"intentos": [
+{
+"destino": "png",
+"rc": 1,
+"bytes": -1,
+"ficheros": 0,
+"ms": 759.5,
+"err": "magick: must specify image size `D:\\Work\\research\\FileX\\bench\\salidas-aristas\\pool\\in\\m.bgra' @ error/bgr.c/ReadBGRImage/147. "
+},
+{
+"destino": "miff",
+"rc": 1,
+"bytes": -1,
+"ficheros": 0,
+"ms": 500.2,
+"err": "magick: must specify image size `D:\\Work\\research\\FileX\\bench\\salidas-aristas\\pool\\in\\m.bgra' @ error/bgr.c/ReadBGRImage/147. "
+}
+]
+},
+"imagemagick|bgro": {
+"estado": "muerta",
+"procedencia": "magick<-jpeg_exif",
+"intentos": [
+{
+"destino": "png",
+"rc": 1,
+"bytes": -1,
+"ficheros": 0,
+"ms": 367.5,
+"err": "magick: must specify image size `D:\\Work\\research\\FileX\\bench\\salidas-aristas\\pool\\in\\m.bgro' @ error/bgr.c/ReadBGRImage/147. "
+},
+{
+"destino": "miff",
+"rc": 1,
+"bytes": -1,
+"ficheros": 0,
+"ms": 405.9,
+"err": "magick: must specify image size `D:\\Work\\research\\FileX\\bench\\salidas-aristas\\pool\\in\\m.bgro' @ error/bgr.c/ReadBGRImage/147. "
+}
+]
+},
+"imagemagick|cmyk": {
+"estado": "muerta",
+"procedencia": "magick<-jpeg_exif",
+"intentos": [
+{
+"destino": "png",
+"rc": 1,
+"bytes": -1,
+"ficheros": 0,
+"ms": 296.3,
+"err": "magick: must specify image size `D:\\Work\\research\\FileX\\bench\\salidas-aristas\\pool\\in\\m.cmyk' @ error/cmyk.c/ReadCMYKImage/147. "
+},
+{
+"destino": "miff",
+"rc": 1,
+"bytes": -1,
+"ficheros": 0,
+"ms": 755.3,
+"err": "magick: must specify image size `D:\\Work\\research\\FileX\\bench\\salidas-aristas\\pool\\in\\m.cmyk' @ error/cmyk.c/ReadCMYKImage/147. "
+}
+]
+},
+"imagemagick|cmyka": {
+"estado": "muerta",
+"procedencia": "magick<-jpeg_exif",
+"intentos": [
+{
+"destino": "png",
+"rc": 1,
+"bytes": -1,
+"ficheros": 0,
+"ms": 1211.9,
+"err": "magick: must specify image size `D:\\Work\\research\\FileX\\bench\\salidas-aristas\\pool\\in\\m.cmyka' @ error/cmyk.c/ReadCMYKImage/147. "
+},
+{
+"destino": "miff",
+"rc": 1,
+"bytes": -1,
+"ficheros": 0,
+"ms": 761.6,
+"err": "magick: must specify image size `D:\\Work\\research\\FileX\\bench\\salidas-aristas\\pool\\in\\m.cmyka' @ error/cmyk.c/ReadCMYKImage/147. "
+}
+]
+},
+"imagemagick|ept": {
+"estado": "viva",
+"procedencia": "magick<-jpeg_exif",
+"intentos": [
+{
+"destino": "png",
+"rc": 0,
+"bytes": 37275,
+"ficheros": 2,
+"ms": 2828.5,
+"err": ""
+}
+]
+},
+"imagemagick|ept2": {
+"estado": "viva",
+"procedencia": "magick<-jpeg_exif",
+"intentos": [
+{
+"destino": "png",
+"rc": 0,
+"bytes": 37679,
+"ficheros": 2,
+"ms": 2294.3,
+"err": ""
+}
+]
+},
+"imagemagick|ept3": {
+"estado": "viva",
+"procedencia": "magick<-jpeg_exif",
+"intentos": [
+{
+"destino": "png",
+"rc": 0,
+"bytes": 37679,
+"ficheros": 2,
+"ms": 4506.4,
+"err": ""
+}
+]
+},
+"imagemagick|fits": {
+"estado": "viva",
+"procedencia": "ffmpeg<-video_cif",
+"intentos": [
+{
+"destino": "png",
+"rc": 0,
+"bytes": 8714,
+"ficheros": 75,
+"ms": 2475.7,
+"err": ""
+}
+]
+},
+"imagemagick|flv": {
+"estado": "viva",
+"procedencia": "ffmpeg<-video_cif",
+"intentos": [
+{
+"destino": "png",
+"rc": 0,
+"bytes": 38014,
+"ficheros": 25,
+"ms": 4439.7,
+"err": ""
+}
+]
+},
+"imagemagick|fts": {
+"estado": "viva",
+"procedencia": "magick<-jpeg_exif",
+"intentos": [
+{
+"destino": "png",
+"rc": 0,
+"bytes": 14983,
+"ficheros": 3,
+"ms": 4773.9,
+"err": ""
+}
+]
+},
+"imagemagick|ftxt": {
+"estado": "muerta",
+"procedencia": "magick<-jpeg_exif",
+"intentos": [
+{
+"destino": "png",
+"rc": 1,
+"bytes": -1,
+"ficheros": 0,
+"ms": 274.0,
+"err": "k\\research\\FileX\\bench\\salidas-aristas\\pool\\in\\m.ftxt' @ error/cache.c/OpenPixelCache/3769. magick: must specify image size `D:\\Work\\research\\FileX\\bench\\salidas-aristas\\pool\\in\\m.ftxt' @ error/ftxt.c/ReadFTXTImage/493. "
+},
+{
+"destino": "miff",
+"rc": 1,
+"bytes": -1,
+"ficheros": 0,
+"ms": 329.0,
+"err": "k\\research\\FileX\\bench\\salidas-aristas\\pool\\in\\m.ftxt' @ error/cache.c/OpenPixelCache/3769. magick: must specify image size `D:\\Work\\research\\FileX\\bench\\salidas-aristas\\pool\\in\\m.ftxt' @ error/ftxt.c/ReadFTXTImage/493. "
+}
+]
+},
+"imagemagick|g4": {
+"estado": "muerta",
+"procedencia": "magick<-jpeg_exif",
+"intentos": [
+{
+"destino": "png",
+"rc": 1,
+"bytes": -1,
+"ficheros": 0,
+"ms": 143.5,
+"err": "mp/magick-ipF83eGnw3nJ19EVxgzv_OEcqLgPFZWO: Bad value 0 for \"RowsPerStrip\" tag. `_TIFFVSetField' @ error/tiff.c/TIFFErrors/571. magick: Computed scanline size is zero. `TIFFScanlineSize64' @ error/tiff.c/TIFFErrors/571. "
+},
+{
+"destino": "miff",
+"rc": 1,
+"bytes": -1,
+"ficheros": 0,
+"ms": 473.2,
+"err": "mp/magick-VCL7ABWZutuWdJGjOjcL6suCeH7VlBlh: Bad value 0 for \"RowsPerStrip\" tag. `_TIFFVSetField' @ error/tiff.c/TIFFErrors/571. magick: Computed scanline size is zero. `TIFFScanlineSize64' @ error/tiff.c/TIFFErrors/571. "
+}
+]
+},
+"imagemagick|gif": {
+"estado": "viva",
+"procedencia": "ffmpeg<-video_cif",
+"intentos": [
+{
+"destino": "png",
+"rc": 0,
+"bytes": 7149,
+"ficheros": 25,
+"ms": 414.5,
+"err": ""
+}
+]
+},
+"imagemagick|gray": {
+"estado": "muerta",
+"procedencia": "magick<-jpeg_exif",
+"intentos": [
+{
+"destino": "png",
+"rc": 1,
+"bytes": -1,
+"ficheros": 0,
+"ms": 832.2,
+"err": "magick: must specify image size `D:\\Work\\research\\FileX\\bench\\salidas-aristas\\pool\\in\\m.gray' @ error/gray.c/ReadGRAYImage/148. "
+},
+{
+"destino": "miff",
+"rc": 1,
+"bytes": -1,
+"ficheros": 0,
+"ms": 200.7,
+"err": "magick: must specify image size `D:\\Work\\research\\FileX\\bench\\salidas-aristas\\pool\\in\\m.gray' @ error/gray.c/ReadGRAYImage/148. "
+}
+]
+},
+"imagemagick|graya": {
+"estado": "muerta",
+"procedencia": "magick<-jpeg_exif",
+"intentos": [
+{
+"destino": "png",
+"rc": 1,
+"bytes": -1,
+"ficheros": 0,
+"ms": 188.4,
+"err": "magick: must specify image size `D:\\Work\\research\\FileX\\bench\\salidas-aristas\\pool\\in\\m.graya' @ error/gray.c/ReadGRAYImage/148. "
+},
+{
+"destino": "miff",
+"rc": 1,
+"bytes": -1,
+"ficheros": 0,
+"ms": 230.3,
+"err": "magick: must specify image size `D:\\Work\\research\\FileX\\bench\\salidas-aristas\\pool\\in\\m.graya' @ error/gray.c/ReadGRAYImage/148. "
+}
+]
+},
+"imagemagick|m2v": {
+"estado": "viva",
+"procedencia": "ffmpeg<-video_cif",
+"intentos": [
+{
+"destino": "png",
+"rc": 0,
+"bytes": 39023,
+"ficheros": 25,
+"ms": 5091.5,
+"err": ""
+}
+]
+},
+"imagemagick|m4v": {
+"estado": "viva",
+"procedencia": "ffmpeg<-video_cif",
+"intentos": [
+{
+"destino": "png",
+"rc": 0,
+"bytes": 34872,
+"ficheros": 25,
+"ms": 655.7,
+"err": ""
+}
+]
+},
+"imagemagick|map": {
+"estado": "muerta",
+"procedencia": "magick<-jpeg_exif",
+"intentos": [
+{
+"destino": "png",
+"rc": 1,
+"bytes": -1,
+"ficheros": 0,
+"ms": 121.1,
+"err": "magick: must specify image size `D:\\Work\\research\\FileX\\bench\\salidas-aristas\\pool\\in\\m.map' @ error/map.c/ReadMAPImage/142. "
+},
+{
+"destino": "miff",
+"rc": 1,
+"bytes": -1,
+"ficheros": 0,
+"ms": 61.1,
+"err": "magick: must specify image size `D:\\Work\\research\\FileX\\bench\\salidas-aristas\\pool\\in\\m.map' @ error/map.c/ReadMAPImage/142. "
+}
+]
+},
+"imagemagick|mkv": {
+"estado": "viva",
+"procedencia": "corpus",
+"intentos": [
+{
+"destino": "png",
+"rc": -9,
+"bytes": 224077,
+"ficheros": 211,
+"ms": 60600.1,
+"err": "TIMEOUT"
+},
+{
+"destino": "miff",
+"rc": 0,
+"bytes": 1044663608,
+"ficheros": 1,
+"ms": 34699.7,
+"err": ""
+}
+]
+},
+"imagemagick|mono": {
+"estado": "muerta",
+"procedencia": "magick<-jpeg_exif",
+"intentos": [
+{
+"destino": "png",
+"rc": 1,
+"bytes": -1,
+"ficheros": 0,
+"ms": 32.4,
+"err": "magick: must specify image size `D:\\Work\\research\\FileX\\bench\\salidas-aristas\\pool\\in\\m.mono' @ error/mono.c/ReadMONOImage/133. "
+},
+{
+"destino": "miff",
+"rc": 1,
+"bytes": -1,
+"ficheros": 0,
+"ms": 32.7,
+"err": "magick: must specify image size `D:\\Work\\research\\FileX\\bench\\salidas-aristas\\pool\\in\\m.mono' @ error/mono.c/ReadMONOImage/133. "
+}
+]
+},
+"imagemagick|mov": {
+"estado": "viva",
+"procedencia": "ffmpeg<-video_cif",
+"intentos": [
+{
+"destino": "png",
+"rc": 0,
+"bytes": 34872,
+"ficheros": 25,
+"ms": 432.3,
+"err": ""
+}
+]
+},
+"imagemagick|mp4": {
+"estado": "viva",
+"procedencia": "corpus",
+"intentos": [
+{
+"destino": "png",
+"rc": 0,
+"bytes": 100791,
+"ficheros": 120,
+"ms": 9249.1,
+"err": ""
+}
+]
+},
+"imagemagick|mpeg": {
+"estado": "viva",
+"procedencia": "ffmpeg<-video_cif",
+"intentos": [
+{
+"destino": "png",
+"rc": 0,
+"bytes": 39854,
+"ficheros": 25,
+"ms": 574.7,
+"err": ""
+}
+]
+},
+"imagemagick|mpg": {
+"estado": "viva",
+"procedencia": "ffmpeg<-video_cif",
+"intentos": [
+{
+"destino": "png",
+"rc": 0,
+"bytes": 39854,
+"ficheros": 25,
+"ms": 500.3,
+"err": ""
+}
+]
+},
+"imagemagick|msvg": {
+"estado": "muerta",
+"procedencia": "magick<-jpeg_exif",
+"intentos": [
+{
+"destino": "png",
+"rc": 1,
+"bytes": -1,
+"ficheros": 0,
+"ms": 38.9,
+"err": "kEADQAAAAAA AAAYBAE0AAAAAAAAAGAQQYQOaAAAAAAAAADA+guqutFrAAAAAAAAAABsQlRwAAAAAAAAAAAGQQAN AAAAAAAAABgEATQAAAAAAAAAYBAcQggAAAAAAAAAGASHEAIAAAAAAAAABkEFBwAAAAAAAABgEATQ AAAAAAAAAIBBEEADAAAAAAAAAAYR1NlGrwEAAAAAAAAAsAkxAQ0A. "
+},
+{
+"destino": "miff",
+"rc": 1,
+"bytes": -1,
+"ficheros": 0,
+"ms": 34.9,
+"err": "kEADQAAAAAA AAAYBAE0AAAAAAAAAGAQQYQOaAAAAAAAAADA+guqutFrAAAAAAAAAABsQlRwAAAAAAAAAAAGQQAN AAAAAAAAABgEATQAAAAAAAAAYBAcQggAAAAAAAAAGASHEAIAAAAAAAAABkEFBwAAAAAAAABgEATQ AAAAAAAAAIBBEEADAAAAAAAAAAYR1NlGrwEAAAAAAAAAsAkxAQ0A. "
+}
+]
+},
+"imagemagick|pal": {
+"estado": "muerta",
+"procedencia": "magick<-jpeg_exif",
+"intentos": [
+{
+"destino": "png",
+"rc": 1,
+"bytes": -1,
+"ficheros": 0,
+"ms": 27.6,
+"err": "magick: must specify image size `D:\\Work\\research\\FileX\\bench\\salidas-aristas\\pool\\in\\m.pal' @ error/uyvy.c/ReadUYVYImage/132. "
+},
+{
+"destino": "miff",
+"rc": 1,
+"bytes": -1,
+"ficheros": 0,
+"ms": 29.0,
+"err": "magick: must specify image size `D:\\Work\\research\\FileX\\bench\\salidas-aristas\\pool\\in\\m.pal' @ error/uyvy.c/ReadUYVYImage/132. "
+}
+]
+},
+"imagemagick|pcl": {
+"estado": "muerta",
+"procedencia": "magick<-jpeg_exif",
+"intentos": [
+{
+"destino": "png",
+"rc": 1,
+"bytes": -1,
+"ficheros": 0,
+"ms": 85.3,
+"err": "magick: PCL delegate failed `D:\\Work\\research\\FileX\\bench\\salidas-aristas\\pool\\in\\m.pcl' @ error/pcl.c/ReadPCLImage/375. "
+},
+{
+"destino": "miff",
+"rc": 1,
+"bytes": -1,
+"ficheros": 0,
+"ms": 191.6,
+"err": "magick: PCL delegate failed `D:\\Work\\research\\FileX\\bench\\salidas-aristas\\pool\\in\\m.pcl' @ error/pcl.c/ReadPCLImage/375. "
+}
+]
+},
+"imagemagick|pix": {
+"estado": "muerta",
+"procedencia": "ffmpeg<-jpeg_exif",
+"intentos": [
+{
+"destino": "png",
+"rc": 1,
+"bytes": -1,
+"ficheros": 0,
+"ms": 42.0,
+"err": "magick: no images found for operation `-auto-orient' at CLI arg 2 @ error/operation.c/CLIOption/5481. "
+},
+{
+"destino": "miff",
+"rc": 1,
+"bytes": -1,
+"ficheros": 0,
+"ms": 150.2,
+"err": "magick: no images found for operation `-auto-orient' at CLI arg 2 @ error/operation.c/CLIOption/5481. "
+}
+]
+},
+"imagemagick|psb": {
+"estado": "viva",
+"procedencia": "magick<-jpeg_exif",
+"intentos": [
+{
+"destino": "png",
+"rc": 0,
+"bytes": 32655,
+"ficheros": 2,
+"ms": 570.9,
+"err": ""
+}
+]
+},
+"imagemagick|psd": {
+"estado": "viva",
+"procedencia": "magick<-jpeg_exif",
+"intentos": [
+{
+"destino": "png",
+"rc": 0,
+"bytes": 32655,
+"ficheros": 2,
+"ms": 543.1,
+"err": ""
+}
+]
+},
+"imagemagick|ptif": {
+"estado": "viva",
+"procedencia": "magick<-jpeg_exif",
+"intentos": [
+{
+"destino": "png",
+"rc": 0,
+"bytes": 32762,
+"ficheros": 6,
+"ms": 388.1,
+"err": ""
+}
+]
+},
+"imagemagick|rgb": {
+"estado": "muerta",
+"procedencia": "ffmpeg<-video_cif",
+"intentos": [
+{
+"destino": "png",
+"rc": 1,
+"bytes": -1,
+"ficheros": 0,
+"ms": 28.0,
+"err": "magick: must specify image size `D:\\Work\\research\\FileX\\bench\\salidas-aristas\\pool\\in\\m.rgb' @ error/rgb.c/ReadRGBImage/147. "
+},
+{
+"destino": "miff",
+"rc": 1,
+"bytes": -1,
+"ficheros": 0,
+"ms": 131.1,
+"err": "magick: must specify image size `D:\\Work\\research\\FileX\\bench\\salidas-aristas\\pool\\in\\m.rgb' @ error/rgb.c/ReadRGBImage/147. "
+}
+]
+},
+"imagemagick|rgba": {
+"estado": "muerta",
+"procedencia": "magick<-jpeg_exif",
+"intentos": [
+{
+"destino": "png",
+"rc": 1,
+"bytes": -1,
+"ficheros": 0,
+"ms": 30.9,
+"err": "magick: must specify image size `D:\\Work\\research\\FileX\\bench\\salidas-aristas\\pool\\in\\m.rgba' @ error/rgb.c/ReadRGBImage/147. "
+},
+{
+"destino": "miff",
+"rc": 1,
+"bytes": -1,
+"ficheros": 0,
+"ms": 32.1,
+"err": "magick: must specify image size `D:\\Work\\research\\FileX\\bench\\salidas-aristas\\pool\\in\\m.rgba' @ error/rgb.c/ReadRGBImage/147. "
+}
+]
+},
+"imagemagick|rgbo": {
+"estado": "muerta",
+"procedencia": "magick<-jpeg_exif",
+"intentos": [
+{
+"destino": "png",
+"rc": 1,
+"bytes": -1,
+"ficheros": 0,
+"ms": 31.0,
+"err": "magick: must specify image size `D:\\Work\\research\\FileX\\bench\\salidas-aristas\\pool\\in\\m.rgbo' @ error/rgb.c/ReadRGBImage/147. "
+},
+{
+"destino": "miff",
+"rc": 1,
+"bytes": -1,
+"ficheros": 0,
+"ms": 29.7,
+"err": "magick: must specify image size `D:\\Work\\research\\FileX\\bench\\salidas-aristas\\pool\\in\\m.rgbo' @ error/rgb.c/ReadRGBImage/147. "
+}
+]
+},
+"imagemagick|rgf": {
+"estado": "muerta",
+"procedencia": "magick<-png_alfa",
+"intentos": [
+{
+"destino": "png",
+"rc": 1,
+"bytes": -1,
+"ficheros": 0,
+"ms": 217.5,
+"err": "magick: unexpected end-of-file 'D:\\Work\\research\\FileX\\bench\\salidas-aristas\\pool\\in\\m.rgf': No such file or directory @ error/rgf.c/ReadRGFImage/188. "
+},
+{
+"destino": "miff",
+"rc": 1,
+"bytes": -1,
+"ficheros": 0,
+"ms": 127.9,
+"err": "magick: unexpected end-of-file 'D:\\Work\\research\\FileX\\bench\\salidas-aristas\\pool\\in\\m.rgf': No such file or directory @ error/rgf.c/ReadRGFImage/188. "
+}
+]
+},
+"imagemagick|txt": {
+"estado": "viva",
+"procedencia": "magick<-jpeg_exif",
+"intentos": [
+{
+"destino": "png",
+"rc": 0,
+"bytes": 32635,
+"ficheros": 1,
+"ms": 23437.3,
+"err": ""
+}
+]
+},
+"imagemagick|uyvy": {
+"estado": "muerta",
+"procedencia": "magick<-jpeg_exif",
+"intentos": [
+{
+"destino": "png",
+"rc": 1,
+"bytes": -1,
+"ficheros": 0,
+"ms": 27.5,
+"err": "magick: must specify image size `D:\\Work\\research\\FileX\\bench\\salidas-aristas\\pool\\in\\m.uyvy' @ error/uyvy.c/ReadUYVYImage/132. "
+},
+{
+"destino": "miff",
+"rc": 1,
+"bytes": -1,
+"ficheros": 0,
+"ms": 26.4,
+"err": "magick: must specify image size `D:\\Work\\research\\FileX\\bench\\salidas-aristas\\pool\\in\\m.uyvy' @ error/uyvy.c/ReadUYVYImage/132. "
+}
+]
+},
+"imagemagick|webm": {
+"estado": "viva",
+"procedencia": "ffmpeg<-video_cif",
+"intentos": [
+{
+"destino": "png",
+"rc": 0,
+"bytes": 36401,
+"ficheros": 25,
+"ms": 431.3,
+"err": ""
+}
+]
+},
+"imagemagick|wmv": {
+"estado": "viva",
+"procedencia": "ffmpeg<-video_cif",
+"intentos": [
+{
+"destino": "png",
+"rc": 0,
+"bytes": 36490,
+"ficheros": 25,
+"ms": 434.8,
+"err": ""
+}
+]
+},
+"imagemagick|ycbcr": {
+"estado": "muerta",
+"procedencia": "magick<-jpeg_exif",
+"intentos": [
+{
+"destino": "png",
+"rc": 1,
+"bytes": -1,
+"ficheros": 0,
+"ms": 29.4,
+"err": "magick: must specify image size `D:\\Work\\research\\FileX\\bench\\salidas-aristas\\pool\\in\\m.ycbcr' @ error/ycbcr.c/ReadYCBCRImage/147. "
+},
+{
+"destino": "miff",
+"rc": 1,
+"bytes": -1,
+"ficheros": 0,
+"ms": 28.8,
+"err": "magick: must specify image size `D:\\Work\\research\\FileX\\bench\\salidas-aristas\\pool\\in\\m.ycbcr' @ error/ycbcr.c/ReadYCBCRImage/147. "
+}
+]
+},
+"imagemagick|ycbcra": {
+"estado": "muerta",
+"procedencia": "magick<-jpeg_exif",
+"intentos": [
+{
+"destino": "png",
+"rc": 1,
+"bytes": -1,
+"ficheros": 0,
+"ms": 26.6,
+"err": "magick: must specify image size `D:\\Work\\research\\FileX\\bench\\salidas-aristas\\pool\\in\\m.ycbcra' @ error/ycbcr.c/ReadYCBCRImage/147. "
+},
+{
+"destino": "miff",
+"rc": 1,
+"bytes": -1,
+"ficheros": 0,
+"ms": 27.9,
+"err": "magick: must specify image size `D:\\Work\\research\\FileX\\bench\\salidas-aristas\\pool\\in\\m.ycbcra' @ error/ycbcr.c/ReadYCBCRImage/147. "
+}
+]
+},
+"imagemagick|yuv": {
+"estado": "muerta",
+"procedencia": "ffmpeg<-video_cif",
+"intentos": [
+{
+"destino": "png",
+"rc": 1,
+"bytes": -1,
+"ficheros": 0,
+"ms": 26.2,
+"err": "magick: must specify image size `D:\\Work\\research\\FileX\\bench\\salidas-aristas\\pool\\in\\m.yuv' @ error/yuv.c/ReadYUVImage/146. "
+},
+{
+"destino": "miff",
+"rc": 1,
+"bytes": -1,
+"ficheros": 0,
+"ms": 26.1,
+"err": "magick: must specify image size `D:\\Work\\research\\FileX\\bench\\salidas-aristas\\pool\\in\\m.yuv' @ error/yuv.c/ReadYUVImage/146. "
+}
+]
+}
+}

@@ -1,0 +1,13 @@
+sondeando ffmpeg (demuxers)...
+sondeando ffmpeg (muxers)...
+  ffmpeg: dispositivos D=5 E=0
+  ffmpeg: 405 demuxers (267 ext) -> 541 tokens de entrada
+  ffmpeg: 184 muxers   (203 ext) -> 300 tokens de salida
+  declarados por ConvertX: 473 in / 202 out
+  DESCONOCIDOS por el binario: 17 in / 0 out
+
+  aristas grafo A (ffmpeg declarado)  : 138501
+  aristas grafo B (ffmpeg sondeado)   : 135116
+  aristas muertas por nombre          : 3385  (2.44 %)
+
+escrito censo.json y aristas.json

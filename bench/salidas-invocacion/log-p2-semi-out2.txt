@@ -1,0 +1,36 @@
+  302        mux=daud           cod={'a': 'pcm_s24daud'}         VIVA INTEGRO
+  ac4        CODIFICADOR AUSENTE (ac4)
+  amv        mux=amv            cod={'v': 'amv'}                 muerta 
+  avs3       CODIFICADOR AUSENTE (avs3)
+  bit        CODIFICADOR AUSENTE (g729)
+  c2         CODIFICADOR AUSENTE (codec2)
+  cavs       CODIFICADOR AUSENTE (cavs)
+  chk        MUXER SIN CODEC POR DEFECTO (webm_chunk)
+  cvg        CODIFICADOR AUSENTE (adpcm_psx)
+  dnxhd      mux=dnxhd          cod={'v': 'dnxhd'}               VIVA INTEGRO
+  dnxhr      mux=dnxhd          cod={'v': 'dnxhd'}               VIVA INTEGRO
+  dts        CODIFICADOR AUSENTE (dts)
+  dv         mux=dv             cod={'v': 'dvvideo', 'a': 'pcm_s16le'} VIVA INTEGRO
+  evc        CODIFICADOR AUSENTE (evc)
+  flm        mux=filmstrip      cod={'v': 'rawvideo'}            VIVA INTEGRO
+  gsm        CODIFICADOR AUSENTE (gsm)
+  gxf        mux=gxf            cod={'v': 'mpeg2video', 'a': 'pcm_s16le'} muerta 
+  js         CODIFICADOR AUSENTE (jacosub)
+  jss        CODIFICADOR AUSENTE (jacosub)
+  lbc        CODIFICADOR AUSENTE (ilbc)
+  mlp        mux=mlp            cod={'a': 'mlp'}                 muerta 
+  oma        CODIFICADOR AUSENTE (atrac3)
+  rcv        CODIFICADOR AUSENTE (wmv3)
+  scc        CODIFICADOR AUSENTE (eia_608)
+  spx        CODIFICADOR AUSENTE (speex)
+  sub        CODIFICADOR AUSENTE (microdvd)
+  sup        CODIFICADOR AUSENTE (hdmv_pgs_subtitle)
+  thd        mux=truehd         cod={'a': 'truehd'}              muerta 
+  tun        mux=alp            cod={'a': 'adpcm_ima_alp'}       VIVA INTEGRO
+  vbn        mux=image2         cod={'v': 'vbn'}                 VIVA INTEGRO
+  vc1        CODIFICADOR AUSENTE (vc1)
+  xface      mux=image2         cod={'v': 'xface'}               VIVA DEGRADADO
+  xml        MUXER SIN CODEC POR DEFECTO (webm_dash_manifest)
+
+ {('viva', ''): 8, ('muerta', 'codificador ausente del build:'): 19, ('muerta', ''): 4, ('muerta', 'el muxer no declara ningun cod'): 2}
+revividas: 8 de 33

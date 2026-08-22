@@ -1,0 +1,10 @@
+SALIDA  ffmpeg       declaradas=202 vivas=169 MUERTAS=33 (16.3 %)
+   muertas: 302, ac4, amv, avs3, bit, c2, cavs, chk, cvg, dnxhd, dnxhr, dts, dv, evc, flm, gsm, gxf, js, jss, lbc, mlp, oma, rcv, scc, spx, sub, sup, thd, tun, vbn, vc1, xface, xml
+   revividas en 2a vuelta: ass, h261, h263, lrc, srt, ssa, ttml, vtt
+SALIDA  imagemagick  declaradas=183 vivas=179 MUERTAS=4 (2.2 %)
+   muertas: clip, jpt, mask, thumbnail
+   revividas en 2a vuelta: matte
+ENTRADA ffmpeg       declaradas=473 no_materializables=359 vivas=106 MUERTAS=8 (7.0 % del marco)
+   muertas: avs, avs2, mpc, mtv, rgb, svg, txt, yuv
+ENTRADA imagemagick  declaradas=246 no_materializables=86 vivas=134 MUERTAS=26 (16.2 % del marco)
+   muertas: avs, bayer, bayera, bgr, bgra, bgro, cmyk, cmyka, ftxt, g4, gray, graya, map, mono, msvg, pal, pcl, pix, rgb, rgba, rgbo, rgf, uyvy, ycbcr, ycbcra, yuv

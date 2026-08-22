@@ -1,0 +1,1061 @@
+[
+ {
+  "id": "img.png2webp",
+  "orden": "magick -limit thread 4 tipico.png -quality 80 tipico_png-to.webp",
+  "rc": 0,
+  "ms": 1753.7,
+  "declarado": "tipico_png-to.webp",
+  "nuevos": [
+   "tipico_png-to.webp"
+  ],
+  "n_nuevos": 1,
+  "multifichero": false,
+  "tam": {
+   "tipico_png-to.webp": 13516
+  },
+  "hallazgos": [
+   {
+    "punto": 5,
+    "regla": "N9",
+    "severidad": "informativo",
+    "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (13516 de 13516 B)",
+    "esperado": "100 %%",
+    "obtenido": 100.0
+   }
+  ],
+  "sev": [
+   "informativo"
+  ],
+  "stderr": ""
+ },
+ {
+  "id": "img.png2avif",
+  "orden": "magick -limit thread 4 tipico.png -quality 50 tipico_png-to.avif",
+  "rc": 0,
+  "ms": 3638.5,
+  "declarado": "tipico_png-to.avif",
+  "nuevos": [
+   "tipico_png-to.avif"
+  ],
+  "n_nuevos": 1,
+  "multifichero": false,
+  "tam": {
+   "tipico_png-to.avif": 1595
+  },
+  "hallazgos": [
+   {
+    "punto": 5,
+    "regla": "N9",
+    "severidad": "informativo",
+    "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (1595 de 1595 B)",
+    "esperado": "100 %%",
+    "obtenido": 100.0
+   }
+  ],
+  "sev": [
+   "informativo"
+  ],
+  "stderr": ""
+ },
+ {
+  "id": "img.png2jpg",
+  "orden": "magick -limit thread 4 tipico.png -quality 85 tipico_png-to.jpg",
+  "rc": 0,
+  "ms": 1970.3,
+  "declarado": "tipico_png-to.jpg",
+  "nuevos": [
+   "tipico_png-to.jpg"
+  ],
+  "n_nuevos": 1,
+  "multifichero": false,
+  "tam": {
+   "tipico_png-to.jpg": 40963
+  },
+  "hallazgos": [
+   {
+    "punto": 5,
+    "regla": "N9",
+    "severidad": "informativo",
+    "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (40963 de 40963 B)",
+    "esperado": "100 %%",
+    "obtenido": 100.0
+   }
+  ],
+  "sev": [
+   "informativo"
+  ],
+  "stderr": ""
+ },
+ {
+  "id": "img.alpha2webp",
+  "orden": "magick -limit thread 4 alpha.png -quality 80 alpha_png-to.webp",
+  "rc": 0,
+  "ms": 241.7,
+  "declarado": "alpha_png-to.webp",
+  "nuevos": [
+   "alpha_png-to.webp"
+  ],
+  "n_nuevos": 1,
+  "multifichero": false,
+  "tam": {
+   "alpha_png-to.webp": 2496
+  },
+  "hallazgos": [
+   {
+    "punto": 5,
+    "regla": "N9",
+    "severidad": "informativo",
+    "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (2496 de 2496 B)",
+    "esperado": "100 %%",
+    "obtenido": 100.0
+   }
+  ],
+  "sev": [
+   "informativo"
+  ],
+  "stderr": ""
+ },
+ {
+  "id": "img.alpha2avif",
+  "orden": "magick -limit thread 4 alpha.png -quality 50 alpha_png-to.avif",
+  "rc": 0,
+  "ms": 297.0,
+  "declarado": "alpha_png-to.avif",
+  "nuevos": [
+   "alpha_png-to.avif"
+  ],
+  "n_nuevos": 1,
+  "multifichero": false,
+  "tam": {
+   "alpha_png-to.avif": 1670
+  },
+  "hallazgos": [
+   {
+    "punto": 5,
+    "regla": "N9",
+    "severidad": "informativo",
+    "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (1670 de 1670 B)",
+    "esperado": "100 %%",
+    "obtenido": 100.0
+   }
+  ],
+  "sev": [
+   "informativo"
+  ],
+  "stderr": ""
+ },
+ {
+  "id": "img.alpha2jpg.negro",
+  "orden": "magick -limit thread 4 alpha.png -quality 85 alpha_png-to.jpg",
+  "rc": 0,
+  "ms": 138.2,
+  "declarado": "alpha_png-to.jpg",
+  "nuevos": [
+   "alpha_png-to.jpg"
+  ],
+  "n_nuevos": 1,
+  "multifichero": false,
+  "tam": {
+   "alpha_png-to.jpg": 4643
+  },
+  "hallazgos": [
+   {
+    "punto": 5,
+    "regla": "N9",
+    "severidad": "informativo",
+    "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (4643 de 4643 B)",
+    "esperado": "100 %%",
+    "obtenido": 100.0
+   }
+  ],
+  "sev": [
+   "informativo"
+  ],
+  "stderr": ""
+ },
+ {
+  "id": "img.alpha2jpg.blanco",
+  "orden": "magick -limit thread 4 alpha.png -background white -alpha remove -alpha off -quality 85 alpha_png-to-flat.jpg",
+  "rc": 0,
+  "ms": 171.8,
+  "declarado": "alpha_png-to-flat.jpg",
+  "nuevos": [
+   "alpha_png-to-flat.jpg"
+  ],
+  "n_nuevos": 1,
+  "multifichero": false,
+  "tam": {
+   "alpha_png-to-flat.jpg": 4389
+  },
+  "hallazgos": [
+   {
+    "punto": 5,
+    "regla": "N9",
+    "severidad": "informativo",
+    "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (4389 de 4389 B)",
+    "esperado": "100 %%",
+    "obtenido": 100.0
+   }
+  ],
+  "sev": [
+   "informativo"
+  ],
+  "stderr": ""
+ },
+ {
+  "id": "img.tif16_2png",
+  "orden": "magick -limit thread 4 patologico_16bit.tif 16bit_tif-to-default.png",
+  "rc": 0,
+  "ms": 8847.4,
+  "declarado": "16bit_tif-to-default.png",
+  "nuevos": [
+   "16bit_tif-to-default.png"
+  ],
+  "n_nuevos": 1,
+  "multifichero": false,
+  "tam": {
+   "16bit_tif-to-default.png": 61849791
+  },
+  "hallazgos": [
+   {
+    "punto": 5,
+    "regla": "N9",
+    "severidad": "informativo",
+    "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (61849791 de 61849791 B)",
+    "esperado": "100 %%",
+    "obtenido": 100.0
+   }
+  ],
+  "sev": [
+   "informativo"
+  ],
+  "stderr": ""
+ },
+ {
+  "id": "img.tif16_2png8",
+  "orden": "magick -limit thread 4 patologico_16bit.tif -depth 8 16bit_tif-to-d8.png",
+  "rc": 0,
+  "ms": 7657.5,
+  "declarado": "16bit_tif-to-d8.png",
+  "nuevos": [
+   "16bit_tif-to-d8.png"
+  ],
+  "n_nuevos": 1,
+  "multifichero": false,
+  "tam": {
+   "16bit_tif-to-d8.png": 18943503
+  },
+  "hallazgos": [
+   {
+    "punto": 5,
+    "regla": "N9",
+    "severidad": "informativo",
+    "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (18943503 de 18943503 B)",
+    "esperado": "100 %%",
+    "obtenido": 100.0
+   }
+  ],
+  "sev": [
+   "informativo"
+  ],
+  "stderr": ""
+ },
+ {
+  "id": "img.trivial2webp.lossy",
+  "orden": "magick -limit thread 4 trivial.png -quality 80 trivial_png-to.webp",
+  "rc": 0,
+  "ms": 113.1,
+  "declarado": "trivial_png-to.webp",
+  "nuevos": [
+   "trivial_png-to.webp"
+  ],
+  "n_nuevos": 1,
+  "multifichero": false,
+  "tam": {
+   "trivial_png-to.webp": 94
+  },
+  "hallazgos": [
+   {
+    "punto": 5,
+    "regla": "N9",
+    "severidad": "informativo",
+    "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (94 de 94 B)",
+    "esperado": "100 %%",
+    "obtenido": 100.0
+   }
+  ],
+  "sev": [
+   "informativo"
+  ],
+  "stderr": ""
+ },
+ {
+  "id": "img.trivial2webp.lossless",
+  "orden": "magick -limit thread 4 trivial.png -define webp:lossless=true trivial_png-to-lossless.webp",
+  "rc": 0,
+  "ms": 106.4,
+  "declarado": "trivial_png-to-lossless.webp",
+  "nuevos": [
+   "trivial_png-to-lossless.webp"
+  ],
+  "n_nuevos": 1,
+  "multifichero": false,
+  "tam": {
+   "trivial_png-to-lossless.webp": 42
+  },
+  "hallazgos": [
+   {
+    "punto": 5,
+    "regla": "N9",
+    "severidad": "informativo",
+    "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (42 de 42 B)",
+    "esperado": "100 %%",
+    "obtenido": 100.0
+   }
+  ],
+  "sev": [
+   "informativo"
+  ],
+  "stderr": ""
+ },
+ {
+  "id": "img.png2pdf.72",
+  "orden": "magick -limit thread 4 tipico.png tipico_png-to.pdf",
+  "rc": 0,
+  "ms": 719.8,
+  "declarado": "tipico_png-to.pdf",
+  "nuevos": [
+   "tipico_png-to.pdf"
+  ],
+  "n_nuevos": 1,
+  "multifichero": false,
+  "tam": {
+   "tipico_png-to.pdf": 17153
+  },
+  "hallazgos": [
+   {
+    "punto": 5,
+    "regla": "N9",
+    "severidad": "informativo",
+    "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (17153 de 17153 B)",
+    "esperado": "100 %%",
+    "obtenido": 100.0
+   }
+  ],
+  "sev": [
+   "informativo"
+  ],
+  "stderr": ""
+ },
+ {
+  "id": "img.png2pdf.150",
+  "orden": "magick -limit thread 4 tipico.png -density 150 -units PixelsPerInch tipico_png-to-150dpi.pdf",
+  "rc": 0,
+  "ms": 747.5,
+  "declarado": "tipico_png-to-150dpi.pdf",
+  "nuevos": [
+   "tipico_png-to-150dpi.pdf"
+  ],
+  "n_nuevos": 1,
+  "multifichero": false,
+  "tam": {
+   "tipico_png-to-150dpi.pdf": 17187
+  },
+  "hallazgos": [
+   {
+    "punto": 5,
+    "regla": "N9",
+    "severidad": "informativo",
+    "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (17187 de 17187 B)",
+    "esperado": "100 %%",
+    "obtenido": 100.0
+   }
+  ],
+  "sev": [
+   "informativo"
+  ],
+  "stderr": ""
+ },
+ {
+  "id": "pdf.2png",
+  "orden": "gswin64c -q -dNOPAUSE -dBATCH -dSAFER -sDEVICE=png16m -r150 -dNumRenderingThreads=4 -sOutputFile=%d.png tipico_texto.pdf",
+  "rc": 0,
+  "ms": 579.5,
+  "declarado": "1.png",
+  "nuevos": [
+   "1.png"
+  ],
+  "n_nuevos": 1,
+  "multifichero": false,
+  "tam": {
+   "1.png": 15804
+  },
+  "hallazgos": [
+   {
+    "punto": 5,
+    "regla": "N9",
+    "severidad": "informativo",
+    "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (15804 de 15804 B)",
+    "esperado": "100 %%",
+    "obtenido": 100.0
+   }
+  ],
+  "sev": [
+   "informativo"
+  ],
+  "stderr": ""
+ },
+ {
+  "id": "pdf.2jpg",
+  "orden": "gswin64c -q -dNOPAUSE -dBATCH -dSAFER -sDEVICE=jpeg -dJPEGQ=85 -r150 -sOutputFile=%d.jpg tipico_texto.pdf",
+  "rc": 0,
+  "ms": 330.6,
+  "declarado": "1.jpg",
+  "nuevos": [
+   "1.jpg"
+  ],
+  "n_nuevos": 1,
+  "multifichero": false,
+  "tam": {
+   "1.jpg": 71269
+  },
+  "hallazgos": [
+   {
+    "punto": 5,
+    "regla": "N9",
+    "severidad": "informativo",
+    "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (71269 de 71269 B)",
+    "esperado": "100 %%",
+    "obtenido": 100.0
+   }
+  ],
+  "sev": [
+   "informativo"
+  ],
+  "stderr": ""
+ },
+ {
+  "id": "pdf.2tif",
+  "orden": "gswin64c -q -dNOPAUSE -dBATCH -dSAFER -sDEVICE=tiff24nc -r150 -sOutputFile=out.tif tipico_texto.pdf",
+  "rc": 0,
+  "ms": 1756.6,
+  "declarado": "out.tif",
+  "nuevos": [
+   "out.tif"
+  ],
+  "n_nuevos": 1,
+  "multifichero": false,
+  "tam": {
+   "out.tif": 6533038
+  },
+  "hallazgos": [
+   {
+    "punto": 5,
+    "regla": "N9",
+    "severidad": "informativo",
+    "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (6533038 de 6533038 B)",
+    "esperado": "100 %%",
+    "obtenido": 100.0
+   }
+  ],
+  "sev": [
+   "informativo"
+  ],
+  "stderr": ""
+ },
+ {
+  "id": "pdf.2pdf",
+  "orden": "gswin64c -q -dNOPAUSE -dBATCH -dSAFER -sDEVICE=pdfwrite -sOutputFile=out.pdf tipico_texto.pdf",
+  "rc": 0,
+  "ms": 2252.4,
+  "declarado": "out.pdf",
+  "nuevos": [
+   "out.pdf"
+  ],
+  "n_nuevos": 1,
+  "multifichero": false,
+  "tam": {
+   "out.pdf": 3284
+  },
+  "hallazgos": [
+   {
+    "punto": 5,
+    "regla": "N9",
+    "severidad": "informativo",
+    "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (3284 de 3284 B)",
+    "esperado": "100 %%",
+    "obtenido": 100.0
+   }
+  ],
+  "sev": [
+   "informativo"
+  ],
+  "stderr": ""
+ },
+ {
+  "id": "pdf.rasterizado",
+  "orden": "magick -limit thread 4 tipico_texto_pdf-to-p1.png tipico_texto_rasterizado.pdf",
+  "rc": 0,
+  "ms": 147.7,
+  "declarado": "tipico_texto_rasterizado.pdf",
+  "nuevos": [
+   "tipico_texto_rasterizado.pdf"
+  ],
+  "n_nuevos": 1,
+  "multifichero": false,
+  "tam": {
+   "tipico_texto_rasterizado.pdf": 8689
+  },
+  "hallazgos": [
+   {
+    "punto": 5,
+    "regla": "N9",
+    "severidad": "informativo",
+    "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (8689 de 8689 B)",
+    "esperado": "100 %%",
+    "obtenido": 100.0
+   }
+  ],
+  "sev": [
+   "informativo"
+  ],
+  "stderr": ""
+ },
+ {
+  "id": "vid.mkv2mp4.default",
+  "orden": "ffmpeg -threads 4 -i patologico_2pistas.mkv -c:v libx264 -crf 23 -preset medium -c:a aac -b:a 128k out.mp4",
+  "rc": 0,
+  "ms": 4137.5,
+  "declarado": "out.mp4",
+  "nuevos": [
+   "out.mp4"
+  ],
+  "n_nuevos": 1,
+  "multifichero": false,
+  "tam": {
+   "out.mp4": 3859442
+  },
+  "hallazgos": [
+   {
+    "punto": 5,
+    "regla": "N9",
+    "severidad": "informativo",
+    "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (3859442 de 3859442 B)",
+    "esperado": "100 %%",
+    "obtenido": 100.0
+   }
+  ],
+  "sev": [
+   "informativo"
+  ],
+  "stderr": ""
+ },
+ {
+  "id": "vid.mkv2mp4.map0",
+  "orden": "ffmpeg -threads 4 -i patologico_2pistas.mkv -map 0 -c:v libx264 -crf 23 -preset medium -c:a aac -b:a 128k out.mp4",
+  "rc": 0,
+  "ms": 2340.0,
+  "declarado": "out.mp4",
+  "nuevos": [
+   "out.mp4"
+  ],
+  "n_nuevos": 1,
+  "multifichero": false,
+  "tam": {
+   "out.mp4": 3966842
+  },
+  "hallazgos": [
+   {
+    "punto": 5,
+    "regla": "N9",
+    "severidad": "informativo",
+    "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (3966842 de 3966842 B)",
+    "esperado": "100 %%",
+    "obtenido": 100.0
+   }
+  ],
+  "sev": [
+   "informativo"
+  ],
+  "stderr": ""
+ },
+ {
+  "id": "vid.mkv2mp4.copy",
+  "orden": "ffmpeg -threads 4 -i patologico_2pistas.mkv -map 0 -c copy out.mp4",
+  "rc": 0,
+  "ms": 426.8,
+  "declarado": "out.mp4",
+  "nuevos": [
+   "out.mp4"
+  ],
+  "n_nuevos": 1,
+  "multifichero": false,
+  "tam": {
+   "out.mp4": 4085275
+  },
+  "hallazgos": [
+   {
+    "punto": 5,
+    "regla": "N9",
+    "severidad": "informativo",
+    "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (4085275 de 4085275 B)",
+    "esperado": "100 %%",
+    "obtenido": 100.0
+   }
+  ],
+  "sev": [
+   "informativo"
+  ],
+  "stderr": ""
+ },
+ {
+  "id": "vid.mp42webm",
+  "orden": "ffmpeg -threads 4 -i tipico.mp4 -c:v libvpx-vp9 -crf 33 -b:v 0 -row-mt 1 -deadline good -cpu-used 4 -c:a libopus -b:a 96k out.webm",
+  "rc": 0,
+  "ms": 54678.7,
+  "declarado": "out.webm",
+  "nuevos": [
+   "out.webm"
+  ],
+  "n_nuevos": 1,
+  "multifichero": false,
+  "tam": {
+   "out.webm": 17014670
+  },
+  "hallazgos": [
+   {
+    "punto": 5,
+    "regla": "N9",
+    "severidad": "informativo",
+    "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (17014670 de 17014670 B)",
+    "esperado": "100 %%",
+    "obtenido": 100.0
+   }
+  ],
+  "sev": [
+   "informativo"
+  ],
+  "stderr": ""
+ },
+ {
+  "id": "vid.mp42mkv",
+  "orden": "ffmpeg -threads 4 -i tipico.mp4 -map 0 -c copy out.mkv",
+  "rc": 0,
+  "ms": 284.3,
+  "declarado": "out.mkv",
+  "nuevos": [
+   "out.mkv"
+  ],
+  "n_nuevos": 1,
+  "multifichero": false,
+  "tam": {
+   "out.mkv": 16235751
+  },
+  "hallazgos": [
+   {
+    "punto": 5,
+    "regla": "N9",
+    "severidad": "informativo",
+    "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (16235751 de 16235751 B)",
+    "esperado": "100 %%",
+    "obtenido": 100.0
+   }
+  ],
+  "sev": [
+   "informativo"
+  ],
+  "stderr": ""
+ },
+ {
+  "id": "vid.2gif.paleta",
+  "orden": "ffmpeg -threads 4 -i trivial.mp4 -vf \"fps=12,scale=320:-1:flags=lanczos,split[a][b];[a]palettegen=max_colors=256[p];[b][p]paletteuse=dither=bayer\" -loop 0 out.gif",
+  "rc": 0,
+  "ms": 4885.3,
+  "declarado": "out.gif",
+  "nuevos": [
+   "out.gif"
+  ],
+  "n_nuevos": 1,
+  "multifichero": false,
+  "tam": {
+   "out.gif": 609893
+  },
+  "hallazgos": [
+   {
+    "punto": 5,
+    "regla": "N9",
+    "severidad": "informativo",
+    "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (609893 de 609893 B)",
+    "esperado": "100 %%",
+    "obtenido": 100.0
+   }
+  ],
+  "sev": [
+   "informativo"
+  ],
+  "stderr": ""
+ },
+ {
+  "id": "vid.2gif.naive",
+  "orden": "ffmpeg -threads 4 -i trivial.mp4 -vf \"fps=12,scale=320:-1\" -loop 0 out.gif",
+  "rc": 0,
+  "ms": 128.2,
+  "declarado": "out.gif",
+  "nuevos": [
+   "out.gif"
+  ],
+  "n_nuevos": 1,
+  "multifichero": false,
+  "tam": {
+   "out.gif": 394712
+  },
+  "hallazgos": [
+   {
+    "punto": 5,
+    "regla": "N9",
+    "severidad": "informativo",
+    "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (394712 de 394712 B)",
+    "esperado": "100 %%",
+    "obtenido": 100.0
+   }
+  ],
+  "sev": [
+   "informativo"
+  ],
+  "stderr": ""
+ },
+ {
+  "id": "vid.extraer.mp3",
+  "orden": "ffmpeg -threads 4 -i tipico.mp4 -vn -c:a libmp3lame -b:a 192k out.mp3",
+  "rc": 0,
+  "ms": 163.6,
+  "declarado": "out.mp3",
+  "nuevos": [
+   "out.mp3"
+  ],
+  "n_nuevos": 1,
+  "multifichero": false,
+  "tam": {
+   "out.mp3": 482262
+  },
+  "hallazgos": [
+   {
+    "punto": 5,
+    "regla": "N9",
+    "severidad": "informativo",
+    "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (482262 de 482262 B)",
+    "esperado": "100 %%",
+    "obtenido": 100.0
+   }
+  ],
+  "sev": [
+   "informativo"
+  ],
+  "stderr": ""
+ },
+ {
+  "id": "vid.extraer.copy",
+  "orden": "ffmpeg -threads 4 -i tipico.mp4 -vn -c:a copy out.m4a",
+  "rc": 0,
+  "ms": 177.2,
+  "declarado": "out.m4a",
+  "nuevos": [
+   "out.m4a"
+  ],
+  "n_nuevos": 1,
+  "multifichero": false,
+  "tam": {
+   "out.m4a": 177427
+  },
+  "hallazgos": [
+   {
+    "punto": 5,
+    "regla": "N9",
+    "severidad": "informativo",
+    "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (177427 de 177427 B)",
+    "esperado": "100 %%",
+    "obtenido": 100.0
+   }
+  ],
+  "sev": [
+   "informativo"
+  ],
+  "stderr": ""
+ },
+ {
+  "id": "aud.wav2mp3",
+  "orden": "ffmpeg -threads 4 -i trivial.wav -c:a libmp3lame -b:a 192k out.mp3",
+  "rc": 0,
+  "ms": 110.1,
+  "declarado": "out.mp3",
+  "nuevos": [
+   "out.mp3"
+  ],
+  "n_nuevos": 1,
+  "multifichero": false,
+  "tam": {
+   "out.mp3": 193767
+  },
+  "hallazgos": [
+   {
+    "punto": 5,
+    "regla": "N9",
+    "severidad": "informativo",
+    "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (193767 de 193767 B)",
+    "esperado": "100 %%",
+    "obtenido": 100.0
+   }
+  ],
+  "sev": [
+   "informativo"
+  ],
+  "stderr": ""
+ },
+ {
+  "id": "aud.wav2flac",
+  "orden": "ffmpeg -threads 4 -i trivial.wav -c:a flac out.flac",
+  "rc": 0,
+  "ms": 82.4,
+  "declarado": "out.flac",
+  "nuevos": [
+   "out.flac"
+  ],
+  "n_nuevos": 1,
+  "multifichero": false,
+  "tam": {
+   "out.flac": 104318
+  },
+  "hallazgos": [
+   {
+    "punto": 5,
+    "regla": "N9",
+    "severidad": "informativo",
+    "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (104318 de 104318 B)",
+    "esperado": "100 %%",
+    "obtenido": 100.0
+   }
+  ],
+  "sev": [
+   "informativo"
+  ],
+  "stderr": ""
+ },
+ {
+  "id": "aud.wav2opus",
+  "orden": "ffmpeg -threads 4 -i trivial.wav -c:a libopus -b:a 96k out.opus",
+  "rc": 0,
+  "ms": 433.8,
+  "declarado": "out.opus",
+  "nuevos": [
+   "out.opus"
+  ],
+  "n_nuevos": 1,
+  "multifichero": false,
+  "tam": {
+   "out.opus": 116918
+  },
+  "hallazgos": [
+   {
+    "punto": 5,
+    "regla": "N9",
+    "severidad": "informativo",
+    "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (116918 de 116918 B)",
+    "esperado": "100 %%",
+    "obtenido": 100.0
+   }
+  ],
+  "sev": [
+   "informativo"
+  ],
+  "stderr": ""
+ },
+ {
+  "id": "aud.wav2aac",
+  "orden": "ffmpeg -threads 4 -i trivial.wav -c:a aac -b:a 192k out.m4a",
+  "rc": 0,
+  "ms": 1572.2,
+  "declarado": "out.m4a",
+  "nuevos": [
+   "out.m4a"
+  ],
+  "n_nuevos": 1,
+  "multifichero": false,
+  "tam": {
+   "out.m4a": 131397
+  },
+  "hallazgos": [
+   {
+    "punto": 5,
+    "regla": "N9",
+    "severidad": "informativo",
+    "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (131397 de 131397 B)",
+    "esperado": "100 %%",
+    "obtenido": 100.0
+   }
+  ],
+  "sev": [
+   "informativo"
+  ],
+  "stderr": ""
+ },
+ {
+  "id": "aud.flac2wav",
+  "orden": "ffmpeg -threads 4 -i tipico.flac -c:a pcm_s16le out.wav",
+  "rc": 0,
+  "ms": 77.4,
+  "declarado": "out.wav",
+  "nuevos": [
+   "out.wav"
+  ],
+  "n_nuevos": 1,
+  "multifichero": false,
+  "tam": {
+   "out.wav": 705678
+  },
+  "hallazgos": [
+   {
+    "punto": 5,
+    "regla": "N9",
+    "severidad": "informativo",
+    "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (705678 de 705678 B)",
+    "esperado": "100 %%",
+    "obtenido": 100.0
+   }
+  ],
+  "sev": [
+   "informativo"
+  ],
+  "stderr": ""
+ },
+ {
+  "id": "aud.flac2mp3",
+  "orden": "ffmpeg -threads 4 -i tipico.flac -c:a libmp3lame -b:a 192k out.mp3",
+  "rc": 0,
+  "ms": 217.1,
+  "declarado": "out.mp3",
+  "nuevos": [
+   "out.mp3"
+  ],
+  "n_nuevos": 1,
+  "multifichero": false,
+  "tam": {
+   "out.mp3": 193767
+  },
+  "hallazgos": [
+   {
+    "punto": 5,
+    "regla": "N9",
+    "severidad": "informativo",
+    "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (193767 de 193767 B)",
+    "esperado": "100 %%",
+    "obtenido": 100.0
+   }
+  ],
+  "sev": [
+   "informativo"
+  ],
+  "stderr": ""
+ },
+ {
+  "id": "aud.flac2opus",
+  "orden": "ffmpeg -threads 4 -i tipico.flac -c:a libopus -b:a 96k out.opus",
+  "rc": 0,
+  "ms": 103.4,
+  "declarado": "out.opus",
+  "nuevos": [
+   "out.opus"
+  ],
+  "n_nuevos": 1,
+  "multifichero": false,
+  "tam": {
+   "out.opus": 116918
+  },
+  "hallazgos": [
+   {
+    "punto": 5,
+    "regla": "N9",
+    "severidad": "informativo",
+    "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (116918 de 116918 B)",
+    "esperado": "100 %%",
+    "obtenido": 100.0
+   }
+  ],
+  "sev": [
+   "informativo"
+  ],
+  "stderr": ""
+ },
+ {
+  "id": "aud.mp32wav",
+  "orden": "ffmpeg -threads 4 -i tipico.mp3 -c:a pcm_s16le out.wav",
+  "rc": 0,
+  "ms": 66.7,
+  "declarado": "out.wav",
+  "nuevos": [
+   "out.wav"
+  ],
+  "n_nuevos": 1,
+  "multifichero": false,
+  "tam": {
+   "out.wav": 705678
+  },
+  "hallazgos": [
+   {
+    "punto": 5,
+    "regla": "N9",
+    "severidad": "informativo",
+    "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (705678 de 705678 B)",
+    "esperado": "100 %%",
+    "obtenido": 100.0
+   }
+  ],
+  "sev": [
+   "informativo"
+  ],
+  "stderr": ""
+ },
+ {
+  "id": "aud.mp32flac",
+  "orden": "ffmpeg -threads 4 -i tipico.mp3 -c:a flac out.flac",
+  "rc": 0,
+  "ms": 71.4,
+  "declarado": "out.flac",
+  "nuevos": [
+   "out.flac"
+  ],
+  "n_nuevos": 1,
+  "multifichero": false,
+  "tam": {
+   "out.flac": 398105
+  },
+  "hallazgos": [
+   {
+    "punto": 5,
+    "regla": "N9",
+    "severidad": "informativo",
+    "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (398105 de 398105 B)",
+    "esperado": "100 %%",
+    "obtenido": 100.0
+   }
+  ],
+  "sev": [
+   "informativo"
+  ],
+  "stderr": ""
+ },
+ {
+  "id": "dat.csv2json",
+  "saltada": "no es una orden de motor",
+  "orden": "python -c \"csv.reader sobre utf-8-sig; json.dump(ensure_ascii=False)\""
+ },
+ {
+  "id": "dat.csv2csv",
+  "saltada": "no es una orden de motor",
+  "orden": "csv.reader + csv.writer(lineterminator='\\n'), salida UTF-8 sin BOM"
+ },
+ {
+  "id": "dat.json2csv",
+  "saltada": "no es una orden de motor",
+  "orden": "json.load + csv.writer sobre items[]"
+ }
+]

@@ -1,0 +1,13 @@
+proceso   1 PNG con extension .avif                      fallo    OK    71.61 ms
+proceso   2 pierde una pista de audio                    fallo    OK     0.94 ms
+proceso   3 degradacion 16 -> 8 bits no pedida           fallo    OK     0.50 ms
+proceso   4a redimensionado no solicitado                fallo    OK    64.47 ms
+proceso   4b control: mismo JPEG -> PNG sin tocar geometria ok       OK     0.42 ms
+proceso   5 fichero de 0 bytes como exito                fallo    OK     0.78 ms
+subproceso 1 PNG con extension .avif                      fallo    OK   422.83 ms
+subproceso 2 pierde una pista de audio                    fallo    OK    86.97 ms
+subproceso 3 degradacion 16 -> 8 bits no pedida           fallo    OK   465.56 ms
+subproceso 4a redimensionado no solicitado                fallo    OK   233.48 ms
+subproceso 4b control: mismo JPEG -> PNG sin tocar geometria ok       OK   115.13 ms
+subproceso 5 fichero de 0 bytes como exito                fallo    OK    40.37 ms
+-> D:\Work\research\FileX\bench\salidas-verificacion-fidelidad\fallos.json

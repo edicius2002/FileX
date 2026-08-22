@@ -1,0 +1,124 @@
+{
+  "cabecera": {
+    "etiqueta": "paddleocr_cuda_f3_v5_en",
+    "motor": "paddleocr",
+    "dispositivo": "cuda",
+    "referencia": "d4",
+    "patron": "*.png",
+    "imgdir": "D:/Work/research/FileX/bench/salidas-corpus-d4/img_f3",
+    "carga_frio_s": 14.88,
+    "vram_base_MiB": 3045,
+    "vram_tras_carga_MiB": 3261,
+    "quietud_pct": 49,
+    "cpu_pico_pct": null,
+    "flag": "SUCIA(pico 49%)",
+    "modelos": {
+      "paddle": "3.2.0",
+      "kwargs": {
+        "device": "gpu:0",
+        "use_doc_orientation_classify": "False",
+        "use_doc_unwarping": "False",
+        "use_textline_orientation": "True",
+        "text_detection_model_name": "PP-OCRv5_server_det",
+        "text_recognition_model_name": "en_PP-OCRv5_mobile_rec"
+      },
+      "params": {
+        "doc_orientation_classify_model_name": "None",
+        "doc_unwarping_model_name": "None",
+        "text_detection_model_name": "PP-OCRv5_server_det",
+        "textline_orientation_model_name": "None",
+        "text_recognition_model_name": "en_PP-OCRv5_mobile_rec"
+      }
+    },
+    "reps": 9,
+    "muestreo_vram": false
+  },
+  "fin": {
+    "evento": "fin",
+    "vram_pico_MiB": 3261,
+    "vram_base_MiB": 3045,
+    "coste_propio_MiB": 216,
+    "pico_util_pct": 0,
+    "muestreo_vram": false
+  },
+  "res": {
+    "ppp100__escaneado_d3": {
+      "referencia": "legado",
+      "cer_acentos_pct": 7.59,
+      "dist_acentos": 6,
+      "cer_ascii_pct": 7.59,
+      "dist_ascii": 6,
+      "chars_ref_acentos": 79,
+      "chars": 79,
+      "lineas_exactas": 1,
+      "lineas_totales": 3,
+      "acentos_ref": 0,
+      "acentos_salida": 0,
+      "bloques": {
+        "cuerpo": 7.59
+      },
+      "normalizada_acentos": "documento escaneado texto que solo existe corno poxeles debe jecuprare con ocr",
+      "ms_mediana": 103.6,
+      "ms_min": 98.8,
+      "ms_max": 111.3,
+      "n": 9,
+      "determinista": true,
+      "vram_pico_MiB": 3261,
+      "vram_delta_lote_MiB": 0
+    },
+    "ppp200__escaneado_d4": {
+      "referencia": "d4",
+      "cer_acentos_pct": 30.37,
+      "dist_acentos": 181,
+      "cer_ascii_pct": 27.52,
+      "dist_ascii": 164,
+      "chars_ref_acentos": 596,
+      "chars": 466,
+      "lineas_exactas": 1,
+      "lineas_totales": 12,
+      "acentos_ref": 35,
+      "acentos_salida": 3,
+      "bloques": {
+        "titulo": 0.0,
+        "subtitulo": 4.65,
+        "cuerpo": 6.41,
+        "pequeña": 74.18
+      },
+      "normalizada_acentos": "informe de digitalización expediente num 4 827 2026 archivo historico ei dia 14 de marzo se recibió la solicitud de analisis tecnico sobre veintiun volumenes encuadernados en piel la comision determino que ia reproduccion fotografica debia realizarse con iluminacion difusa y sin contacto segun la norma une 15 402 para evitar danios anadidos en los pliegos más fragiles del aro 1893 c n is gcep eo t seh cend d de c adan ls cd 78 14y 12 k qunan ad 3 10",
+      "ms_mediana": 470.1,
+      "ms_min": 462.3,
+      "ms_max": 484.0,
+      "n": 9,
+      "determinista": true,
+      "vram_pico_MiB": 3261,
+      "vram_delta_lote_MiB": 0
+    },
+    "ppp200__escaneado_d4c": {
+      "referencia": "d4",
+      "cer_acentos_pct": 3.86,
+      "dist_acentos": 23,
+      "cer_ascii_pct": 1.01,
+      "dist_ascii": 6,
+      "chars_ref_acentos": 596,
+      "chars": 607,
+      "lineas_exactas": 4,
+      "lineas_totales": 12,
+      "acentos_ref": 35,
+      "acentos_salida": 16,
+      "bloques": {
+        "titulo": 0.0,
+        "subtitulo": 2.33,
+        "cuerpo": 1.28,
+        "pequeña": 11.27
+      },
+      "normalizada_acentos": "informe de digitalización expediente num 4 827 2026 archivo histórico el dia 14 de marzo se recibió la solicitud de análisis técnico sobre veintiun volumenes encuadernados en piel la comisión determinó que la reproducción fotográfica debia realizarse con iluminación difusa y sin contacto según la norma une 15 402 para evitar daños añadidos en los pliegos más frágiles del año 1893 quien autorizo la excepcion el parrafo tercero seriala que ia revisidn ortografica y linguistica del legajo es responsablidad del area de conservacion preventiva atencion los codigos 7 8 9 n y 12 k quedan anulados",
+      "ms_mediana": 522.0,
+      "ms_min": 476.4,
+      "ms_max": 564.4,
+      "n": 9,
+      "determinista": true,
+      "vram_pico_MiB": 3261,
+      "vram_delta_lote_MiB": 0
+    }
+  }
+}

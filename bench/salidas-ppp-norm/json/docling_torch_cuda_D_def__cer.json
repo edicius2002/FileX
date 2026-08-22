@@ -1,0 +1,278 @@
+{
+  "cabecera": {
+    "etiqueta": "docling_torch_cuda_D_def",
+    "dispositivo": "cuda",
+    "backend": "torch",
+    "lang": "english",
+    "docs": [
+      "patologico_escaneado",
+      "escaneado_d1",
+      "escaneado_d2",
+      "escaneado_d3",
+      "escaneado_d4",
+      "escaneado_d4c",
+      "escaneado_d4f"
+    ],
+    "modo_ppp": "nativo",
+    "reps": 9,
+    "R6": false,
+    "vram_base_MiB": 1437,
+    "quietud_pct": 41,
+    "flag": "SUCIA(pico 41%)",
+    "testigo_monohilo_ini_ms": 24.67,
+    "testigo_proceso_ini_ms": 24.4,
+    "torch": "2.6.0+cu124",
+    "torch_cuda": true,
+    "modelo": {
+      "lang_pedido": "english",
+      "lang_resuelto": "en",
+      "ppocr_version": "PP-OCRv6",
+      "model_type_v6": "small",
+      "model_type_v4v5": "mobile"
+    },
+    "muestreo_vram": false
+  },
+  "fin": {
+    "evento": "fin",
+    "vram_pico_MiB": 0,
+    "vram_base_MiB": 1437,
+    "coste_propio_MiB": -1437,
+    "pico_util_pct": 0,
+    "testigo_monohilo_ini_ms": 24.67,
+    "testigo_monohilo_fin_ms": 22.64,
+    "deriva_monohilo": 0.92,
+    "testigo_proceso_ini_ms": 24.4,
+    "testigo_proceso_fin_ms": 27.9,
+    "nivel_proceso_vs_reposo": 1.05,
+    "sonda_activa": true,
+    "muestreo_vram": false
+  },
+  "res": {
+    "ppp0200__patologico_escaneado": {
+      "referencia": "legado",
+      "ppp_nativos": 200.0,
+      "escala": 2.7778,
+      "ppp_efectivo_param": 200.0,
+      "px_reales_al_motor": [
+        1294,
+        1792
+      ],
+      "cer_acentos_pct": 0.0,
+      "dist_acentos": 0,
+      "cer_ascii_pct": 0.0,
+      "dist_ascii": 0,
+      "chars": 81,
+      "lineas_exactas": 3,
+      "lineas_totales": 3,
+      "acentos_ref": 0,
+      "acentos_salida": 0,
+      "bloques": {
+        "cuerpo": 0.0
+      },
+      "normalizada_acentos": "documento escaneado texto que solo existe como pixeles debe recuperarse con ocr",
+      "ms_mediana": 731.2,
+      "ms_min": 701.1,
+      "ms_max": 788.7,
+      "n": 9,
+      "determinista": true,
+      "constructor_s": 0.08,
+      "vram_pico_MiB": 0,
+      "vram_delta_MiB": 0
+    },
+    "ppp0150__escaneado_d1": {
+      "referencia": "legado",
+      "ppp_nativos": 150.0,
+      "escala": 2.0833,
+      "ppp_efectivo_param": 150.0,
+      "px_reales_al_motor": [
+        970,
+        1300
+      ],
+      "cer_acentos_pct": 0.0,
+      "dist_acentos": 0,
+      "cer_ascii_pct": 0.0,
+      "dist_ascii": 0,
+      "chars": 85,
+      "lineas_exactas": 3,
+      "lineas_totales": 3,
+      "acentos_ref": 0,
+      "acentos_salida": 0,
+      "bloques": {
+        "cuerpo": 0.0
+      },
+      "normalizada_acentos": "documento escaneado texto que solo existe como pixeles debe recuperarse con ocr",
+      "ms_mediana": 450.2,
+      "ms_min": 435.7,
+      "ms_max": 472.8,
+      "n": 9,
+      "determinista": true,
+      "constructor_s": 0.09,
+      "vram_pico_MiB": 0,
+      "vram_delta_MiB": 0
+    },
+    "ppp0100__escaneado_d2": {
+      "referencia": "legado",
+      "ppp_nativos": 100.0,
+      "escala": 1.3889,
+      "ppp_efectivo_param": 100.0,
+      "px_reales_al_motor": [
+        647,
+        850
+      ],
+      "cer_acentos_pct": 0.0,
+      "dist_acentos": 0,
+      "cer_ascii_pct": 0.0,
+      "dist_ascii": 0,
+      "chars": 82,
+      "lineas_exactas": 3,
+      "lineas_totales": 3,
+      "acentos_ref": 0,
+      "acentos_salida": 0,
+      "bloques": {
+        "cuerpo": 0.0
+      },
+      "normalizada_acentos": "documento escaneado texto que solo existe como pixeles debe recuperarse con ocr",
+      "ms_mediana": 371.4,
+      "ms_min": 353.7,
+      "ms_max": 425.7,
+      "n": 9,
+      "determinista": true,
+      "constructor_s": 0.09,
+      "vram_pico_MiB": 0,
+      "vram_delta_MiB": 0
+    },
+    "ppp0100__escaneado_d3": {
+      "referencia": "legado",
+      "ppp_nativos": 100.0,
+      "escala": 1.3889,
+      "ppp_efectivo_param": 100.0,
+      "px_reales_al_motor": [
+        647,
+        850
+      ],
+      "cer_acentos_pct": 75.95,
+      "dist_acentos": 60,
+      "cer_ascii_pct": 75.95,
+      "dist_ascii": 60,
+      "chars": 22,
+      "lineas_exactas": 1,
+      "lineas_totales": 3,
+      "acentos_ref": 0,
+      "acentos_salida": 0,
+      "bloques": {
+        "cuerpo": 75.95
+      },
+      "normalizada_acentos": "documento escaneado",
+      "ms_mediana": 349.9,
+      "ms_min": 336.1,
+      "ms_max": 357.1,
+      "n": 9,
+      "determinista": true,
+      "constructor_s": 0.09,
+      "vram_pico_MiB": 0,
+      "vram_delta_MiB": 0
+    },
+    "ppp0200__escaneado_d4": {
+      "referencia": "d4",
+      "ppp_nativos": 200.0,
+      "escala": 2.7778,
+      "ppp_efectivo_param": 200.0,
+      "px_reales_al_motor": [
+        1294,
+        1716
+      ],
+      "cer_acentos_pct": 36.91,
+      "dist_acentos": 220,
+      "cer_ascii_pct": 36.24,
+      "dist_ascii": 216,
+      "chars": 391,
+      "lineas_exactas": 2,
+      "lineas_totales": 12,
+      "acentos_ref": 35,
+      "acentos_salida": 17,
+      "bloques": {
+        "titulo": 0.0,
+        "subtitulo": 0.0,
+        "cuerpo": 6.09,
+        "pequeña": 75.12
+      },
+      "normalizada_acentos": "informe de digitalización expediente núm 4 827 2026 archivo histórico el dia 14 de marzo se recibió la solicitud de análisis técnico sobre veintiún volúmenes encuaderados en piel la comisión determinó que la reproducción fotografica debia realizarse con iluminación difusa y sin contacto segón la norma une 15 402 para evitar daños añadidos en los pliegos más fragiles del año 1893",
+      "ms_mediana": 708.7,
+      "ms_min": 685.3,
+      "ms_max": 737.1,
+      "n": 9,
+      "determinista": true,
+      "constructor_s": 0.09,
+      "vram_pico_MiB": 0,
+      "vram_delta_MiB": 0
+    },
+    "ppp0200__escaneado_d4c": {
+      "referencia": "d4",
+      "ppp_nativos": 200.0,
+      "escala": 2.7778,
+      "ppp_efectivo_param": 200.0,
+      "px_reales_al_motor": [
+        1294,
+        1734
+      ],
+      "cer_acentos_pct": 22.99,
+      "dist_acentos": 137,
+      "cer_ascii_pct": 22.48,
+      "dist_ascii": 134,
+      "chars": 475,
+      "lineas_exactas": 8,
+      "lineas_totales": 12,
+      "acentos_ref": 35,
+      "acentos_salida": 23,
+      "bloques": {
+        "titulo": 0.0,
+        "subtitulo": 0.0,
+        "cuerpo": 0.0,
+        "pequeña": 71.83
+      },
+      "normalizada_acentos": "informe de digitalización expediente núm 4 827 2026 archivo histórico el día 14 de marzo se recibió la solicitud de análisis técnico sobre veintiún volúmenes encuadernados en piel la comisión determinó que la reproducción fotográfica debía realizarse con iluminación difusa y sin contacto según la norma une 15 402 para evitar daños añadidos en los pliegos más frágiles del año 1893 que la revisión ortográfica y linguistica del legajo 9 n y 12 k quedan anulados",
+      "ms_mediana": 716.1,
+      "ms_min": 702.1,
+      "ms_max": 743.2,
+      "n": 9,
+      "determinista": true,
+      "constructor_s": 0.08,
+      "vram_pico_MiB": 0,
+      "vram_delta_MiB": 0
+    },
+    "ppp0240__escaneado_d4f": {
+      "referencia": "d4",
+      "ppp_nativos": 240.0,
+      "escala": 3.3333,
+      "ppp_efectivo_param": 240.0,
+      "px_reales_al_motor": [
+        1552,
+        2080
+      ],
+      "cer_acentos_pct": 22.15,
+      "dist_acentos": 132,
+      "cer_ascii_pct": 21.98,
+      "dist_ascii": 131,
+      "chars": 478,
+      "lineas_exactas": 8,
+      "lineas_totales": 12,
+      "acentos_ref": 35,
+      "acentos_salida": 24,
+      "bloques": {
+        "titulo": 0.0,
+        "subtitulo": 0.0,
+        "cuerpo": 0.0,
+        "pequeña": 75.59
+      },
+      "normalizada_acentos": "informe de digitalización expediente núm 4 827 2026 archivo histórico el día 14 de marzo se recibió la solicitud de análisis técnico sobre veintiún volúmenes encuadernados en piel la comisión determinó que la reproducción fotográfica debía realizarse con iluminación difusa y sin contacto según la norma une 15 402 para evitar daños añadidos en los pliegos más frágiles del año 1893 fo tercero señala que la revisión ortografica y ca del legajo servación preventiva",
+      "ms_mediana": 799.9,
+      "ms_min": 779.1,
+      "ms_max": 812.4,
+      "n": 9,
+      "determinista": true,
+      "constructor_s": 0.11,
+      "vram_pico_MiB": 0,
+      "vram_delta_MiB": 0
+    }
+  }
+}

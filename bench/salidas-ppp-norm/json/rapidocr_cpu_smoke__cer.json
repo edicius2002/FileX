@@ -1,0 +1,85 @@
+{
+  "cabecera": {
+    "etiqueta": "rapidocr_cpu_smoke",
+    "motor": "rapidocr",
+    "dispositivo": "cpu",
+    "patron": "ppp0200__escaneado_d4.png",
+    "imgdir": "D:\\Work\\research\\FileX\\bench\\salidas-ppp-norm\\img",
+    "ref_forzada": null,
+    "carga_frio_s": 11.18,
+    "vram_base_MiB": 2993,
+    "vram_tras_carga_MiB": 2993,
+    "quietud_pct": 32,
+    "flag": "SUCIA(pico 32%)",
+    "testigo_monohilo_ini_ms": 26.1,
+    "testigo_proceso_ini_ms": 27.49,
+    "modelos": {
+      "text_det": "ch_PP-OCRv4_det_mobile.onnx",
+      "text_cls": "ch_PP-OCRv4_det_mobile.onnx",
+      "text_rec": "ch_PP-OCRv4_det_mobile.onnx",
+      "R6": "0",
+      "pedido": {
+        "Det.engine_type": "onnxruntime",
+        "Rec.engine_type": "onnxruntime",
+        "Det.lang_type": "ch",
+        "Rec.lang_type": "ch",
+        "Det.ocr_version": "PP-OCRv5",
+        "Rec.ocr_version": "PP-OCRv5",
+        "Det.model_type": "mobile",
+        "Rec.model_type": "mobile",
+        "Global.model_root_dir": "D:/Work/research/FileX/bench/salidas-ppp-norm/modelos"
+      },
+      "det_efectivo": {
+        "mean": "?",
+        "std": "?"
+      }
+    },
+    "reps": 1,
+    "muestreo_vram": false
+  },
+  "fin": {
+    "evento": "fin",
+    "vram_pico_MiB": 2993,
+    "vram_base_MiB": 2993,
+    "coste_propio_MiB": 0,
+    "pico_util_pct": 0,
+    "testigo_monohilo_ini_ms": 26.1,
+    "testigo_monohilo_fin_ms": 26.06,
+    "deriva_monohilo": 1.0,
+    "testigo_proceso_ini_ms": 27.49,
+    "testigo_proceso_fin_ms": 29.15,
+    "nivel_proceso_vs_reposo": 1.09,
+    "muestreo_vram": false
+  },
+  "res": {
+    "ppp0200__escaneado_d4": {
+      "referencia": "d4",
+      "cer_acentos_pct": 41.78,
+      "dist_acentos": 249,
+      "cer_ascii_pct": 38.59,
+      "dist_ascii": 230,
+      "chars_ref_acentos": 596,
+      "chars": 375,
+      "lineas_exactas": 0,
+      "lineas_totales": 12,
+      "acentos_ref": 35,
+      "acentos_salida": 0,
+      "bloques": {
+        "titulo": 4.0,
+        "subtitulo": 11.63,
+        "cuerpo": 14.42,
+        "pequeña": 74.65
+      },
+      "cajas": 8,
+      "normalizada_acentos": "informe de digitalizacion expediente num 4 827 2026 archivo histonco el dia 14 de marzo se recbio la soicitud de analisis tecnico sobre veintian voumenes encuadernados en piel la comision determind gue la reproduccion fotografca debiarealizarse con lumnacon dfusay sin contacto segun la norma une 15 402 para evitar danos anaddos en los pliegos mas fragiles del ano 1893",
+      "ms_mediana": 1357.9,
+      "ms_min": 1357.9,
+      "ms_max": 1357.9,
+      "n": 1,
+      "determinista": true,
+      "vram_pico_MiB": 2993,
+      "vram_delta_lote_MiB": 0,
+      "testigo_monohilo_ms": 25.72
+    }
+  }
+}

@@ -1,0 +1,20 @@
+[32m[INFO] 2026-08-21 08:32:48,093 [RapidOCR] base.py:23: Using engine_name: onnxruntime[0m
+[32m[INFO] 2026-08-21 08:32:54,793 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_PP-OCRv5_det_mobile.onnx[0m
+[32m[INFO] 2026-08-21 08:32:54,793 [RapidOCR] main.py:63: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_PP-OCRv5_det_mobile.onnx[0m
+[32m[INFO] 2026-08-21 08:32:55,041 [RapidOCR] base.py:23: Using engine_name: onnxruntime[0m
+[32m[INFO] 2026-08-21 08:32:55,042 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ppocr_mobile_v2.0_cls_mobile.onnx[0m
+[32m[INFO] 2026-08-21 08:32:55,042 [RapidOCR] main.py:63: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ppocr_mobile_v2.0_cls_mobile.onnx[0m
+[32m[INFO] 2026-08-21 08:32:55,091 [RapidOCR] base.py:23: Using engine_name: onnxruntime[0m
+[32m[INFO] 2026-08-21 08:32:55,104 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_PP-OCRv5_rec_mobile.onnx[0m
+[32m[INFO] 2026-08-21 08:32:55,104 [RapidOCR] main.py:63: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_PP-OCRv5_rec_mobile.onnx[0m
+{"etiqueta": "rapidocr_cuda_f4_cuda", "motor": "rapidocr", "dispositivo": "cuda", "referencia": "d4", "patron": "*.png", "imgdir": "D:/Work/research/FileX/bench/salidas-corpus-d4/img_f4", "carga_frio_s": 10.08, "vram_base_MiB": 2925, "vram_tras_carga_MiB": 3158, "quietud_pct": 35, "cpu_pico_pct": -1, "flag": "SUCIA(pico 35%)", "modelos": {"text_det": "ch_PP-OCRv4_det_mobile.onnx", "text_cls": "ch_PP-OCRv4_det_mobile.onnx", "text_rec": "ch_PP-OCRv4_det_mobile.onnx", "pedido": {"Det.engine_type": "onnxruntime", "Rec.engine_type": "onnxruntime", "Det.lang_type": "ch", "Rec.lang_type": "ch", "Det.ocr_version": "PP-OCRv5", "Rec.ocr_version": "PP-OCRv5", "Det.model_type": "mobile", "Rec.model_type": "mobile"}}, "reps": 9, "muestreo_vram": false}
+ppp100__escaneado_d2                     CERac=  0.00%  CERascii=  0.00%  lin=3/3  bloques={'cuerpo': 0.0}     95.1 ms  det=si
+ppp100__escaneado_d3                     CERac= 77.22%  CERascii= 77.22%  lin=0/3  bloques={'cuerpo': 77.22}     75.6 ms  det=si
+ppp150__escaneado_d1                     CERac=  0.00%  CERascii=  0.00%  lin=3/3  bloques={'cuerpo': 0.0}    136.1 ms  det=si
+ppp200__escaneado_d1                     CERac=  0.00%  CERascii=  0.00%  lin=3/3  bloques={'cuerpo': 0.0}    203.8 ms  det=si
+ppp200__escaneado_d2                     CERac=  1.27%  CERascii=  1.27%  lin=2/3  bloques={'cuerpo': 1.27}    192.3 ms  det=si
+ppp200__escaneado_d3                     CERac= 65.82%  CERascii= 65.82%  lin=0/3  bloques={'cuerpo': 65.82}    208.8 ms  det=si
+ppp200__escaneado_d4                     CERac= 41.78%  CERascii= 38.59%  lin=0/12  bloques={'titulo': 4.0, 'subtitulo': 11.63, 'cuerpo': 14.42, 'pequeña': 74.65}    454.3 ms  det=si
+ppp200__patologico_escaneado             CERac=  1.27%  CERascii=  1.27%  lin=2/3  bloques={'cuerpo': 1.27}    433.5 ms  det=si
+ppp280__escaneado_d4                     CERac= 41.95%  CERascii= 38.76%  lin=0/12  bloques={'titulo': 4.0, 'subtitulo': 6.98, 'cuerpo': 16.35, 'pequeña': 75.59}    465.1 ms  det=si
+{"evento": "fin", "vram_pico_MiB": 3158, "vram_base_MiB": 2925, "coste_propio_MiB": 233, "pico_util_pct": 0, "muestreo_vram": false}

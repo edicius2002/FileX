@@ -1,0 +1,18 @@
+[32m[INFO] 2026-08-21 08:10:49,757 [RapidOCR] base.py:23: Using engine_name: onnxruntime[0m
+[32m[INFO] 2026-08-21 08:10:50,142 [RapidOCR] download_file.py:68: Initiating download: https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/v3.9.2/onnx/PP-OCRv6/det/PP-OCRv6_det_tiny.onnx[0m
+[32m[INFO] 2026-08-21 08:10:52,964 [RapidOCR] download_file.py:82: Download size: 1.74MB[0m
+[32m[INFO] 2026-08-21 08:10:54,874 [RapidOCR] download_file.py:95: Successfully saved to: D:\Work\research\FileX\bench\salidas-corpus-d4\modelos\PP-OCRv6_det_tiny.onnx[0m
+[32m[INFO] 2026-08-21 08:10:54,877 [RapidOCR] main.py:63: Using D:\Work\research\FileX\bench\salidas-corpus-d4\modelos\PP-OCRv6_det_tiny.onnx[0m
+[32m[INFO] 2026-08-21 08:10:55,093 [RapidOCR] base.py:23: Using engine_name: onnxruntime[0m
+[32m[INFO] 2026-08-21 08:10:55,095 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\bench\salidas-corpus-d4\modelos\ch_ppocr_mobile_v2.0_cls_mobile.onnx[0m
+[32m[INFO] 2026-08-21 08:10:55,095 [RapidOCR] main.py:63: Using D:\Work\research\FileX\bench\salidas-corpus-d4\modelos\ch_ppocr_mobile_v2.0_cls_mobile.onnx[0m
+[32m[INFO] 2026-08-21 08:10:55,147 [RapidOCR] base.py:23: Using engine_name: onnxruntime[0m
+[32m[INFO] 2026-08-21 08:10:55,147 [RapidOCR] download_file.py:68: Initiating download: https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/v3.9.2/onnx/PP-OCRv6/rec/PP-OCRv6_rec_tiny.onnx[0m
+[32m[INFO] 2026-08-21 08:10:57,193 [RapidOCR] download_file.py:82: Download size: 4.28MB[0m
+[32m[INFO] 2026-08-21 08:10:57,355 [RapidOCR] download_file.py:95: Successfully saved to: D:\Work\research\FileX\bench\salidas-corpus-d4\modelos\PP-OCRv6_rec_tiny.onnx[0m
+[32m[INFO] 2026-08-21 08:10:57,358 [RapidOCR] main.py:63: Using D:\Work\research\FileX\bench\salidas-corpus-d4\modelos\PP-OCRv6_rec_tiny.onnx[0m
+{"etiqueta": "rapidocr_cuda_f3_v6tiny", "motor": "rapidocr", "dispositivo": "cuda", "referencia": "d4", "patron": "*.png", "imgdir": "D:/Work/research/FileX/bench/salidas-corpus-d4/img_f3", "carga_frio_s": 10.1, "vram_base_MiB": 3040, "vram_tras_carga_MiB": 3172, "quietud_pct": 39, "cpu_pico_pct": null, "flag": "SUCIA(pico 39%)", "modelos": {"text_det": "ch_PP-OCRv4_det_mobile.onnx", "text_cls": "ch_PP-OCRv4_det_mobile.onnx", "text_rec": "ch_PP-OCRv4_det_mobile.onnx", "pedido": {"Det.engine_type": "onnxruntime", "Rec.engine_type": "onnxruntime", "Det.lang_type": "ch", "Rec.lang_type": "ch", "Det.ocr_version": "PP-OCRv6", "Rec.ocr_version": "PP-OCRv6", "Det.model_type": "tiny", "Rec.model_type": "tiny", "Global.model_root_dir": "D:/Work/research/FileX/bench/salidas-corpus-d4/modelos"}}, "reps": 9, "muestreo_vram": false}
+ppp100__escaneado_d3                     CERac= 43.04%  CERascii= 43.04%  lin=1/3  bloques={'cuerpo': 43.04}     62.6 ms  det=si
+ppp200__escaneado_d4                     CERac= 39.60%  CERascii= 38.42%  lin=2/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 9.62, 'pequeña': 76.53}    380.7 ms  det=si
+ppp200__escaneado_d4c                    CERac=  4.19%  CERascii=  3.36%  lin=8/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.0, 'pequeña': 13.15}    277.9 ms  det=si
+{"evento": "fin", "vram_pico_MiB": 3172, "vram_base_MiB": 3040, "coste_propio_MiB": 132, "pico_util_pct": 0, "muestreo_vram": false}

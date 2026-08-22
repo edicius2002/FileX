@@ -1,0 +1,217 @@
+{
+  "sdk_mcp": "2.0.0",
+  "raices_servidor": [
+    "D:/Work/research/FileX/bench/salidas-mcp-cabos/raiz_srv"
+  ],
+  "roots_cliente": [
+    "D:/Work/research/FileX/bench/salidas-mcp-cabos/raiz_srv/sub",
+    "D:/Work/research/FileX/bench/salidas-mcp-cabos/raiz_fuera"
+  ],
+  "resultados": [
+    {
+      "modo": "auto",
+      "cliente_declara_roots": true,
+      "pasos": [
+        {
+          "paso": "t_dura",
+          "ms": 343.0,
+          "isError": false,
+          "contenido": [
+            {
+              "type": "text",
+              "text": "{\"modo\": \"INTERSECADO\", \"servidor\": [\"D:\\\\Work\\\\research\\\\FileX\\\\bench\\\\salidas-mcp-cabos\\\\raiz_srv\"], \"cliente\": [\"file:///D:/Work/research/FileX/bench/salidas-mcp-cabos/raiz_srv/sub\", \"file:///D:/Work/research/FileX/bench/salidas-mcp-cabos/raiz_fuera\"], \"efectiva\": [\"D:\\\\Work\\\\research\\\\FileX\\\\bench\\\\salidas-mcp-cabos\\\\raiz_srv\\\\sub\"]}"
+            }
+          ]
+        },
+        {
+          "paso": "t_condicional",
+          "ms": 7.0,
+          "isError": false,
+          "contenido": [
+            {
+              "type": "text",
+              "text": "{\"modo\": \"INTERSECADO\", \"servidor\": [\"D:\\\\Work\\\\research\\\\FileX\\\\bench\\\\salidas-mcp-cabos\\\\raiz_srv\"], \"cliente\": [\"file:///D:/Work/research/FileX/bench/salidas-mcp-cabos/raiz_srv/sub\", \"file:///D:/Work/research/FileX/bench/salidas-mcp-cabos/raiz_fuera\"], \"efectiva\": [\"D:\\\\Work\\\\research\\\\FileX\\\\bench\\\\salidas-mcp-cabos\\\\raiz_srv\\\\sub\"], \"capacidad_roots_declarada\": true, \"protocolo\": \"2026-07-28\"}"
+            }
+          ]
+        },
+        {
+          "paso": "t_cuerpo",
+          "ms": 3.0,
+          "isError": false,
+          "contenido": [
+            {
+              "type": "text",
+              "text": "{\"EXCEPCION\": \"mcp.shared.exceptions.NoBackChannelError\", \"repr\": \"NoBackChannelError(-32600, \\\"Cannot send 'roots/list': this transport context has no back-channel for server-initiated requests.\\\", None)\", \"degradado_a\": [\"D:\\\\Work\\\\research\\\\FileX\\\\bench\\\\salidas-mcp-cabos\\\\raiz_srv\"], \"protocolo\": \"2026-07-28\"}"
+            }
+          ]
+        },
+        {
+          "paso": "t_ping_final",
+          "ms": 3.0,
+          "isError": false,
+          "contenido": [
+            {
+              "type": "text",
+              "text": "pong"
+            }
+          ]
+        }
+      ],
+      "protocolo_negociado": "2026-07-28",
+      "veces_que_el_cliente_respondio_roots": [
+        1.278,
+        1.614
+      ]
+    },
+    {
+      "modo": "auto",
+      "cliente_declara_roots": false,
+      "pasos": [
+        {
+          "paso": "t_dura",
+          "ms": 2.0,
+          "EXCEPCION": "mcp.shared.exceptions.MCPError",
+          "repr": "MCPError(-32021, \"Client did not declare the roots capability required by resolver '__main__:pedir_roots_duro'\", {'requiredCapabilities': {'roots': {}}})"
+        },
+        {
+          "paso": "t_condicional",
+          "ms": 8.0,
+          "isError": false,
+          "contenido": [
+            {
+              "type": "text",
+              "text": "{\"modo\": \"DEGRADADO (sin roots del cliente)\", \"servidor\": [\"D:\\\\Work\\\\research\\\\FileX\\\\bench\\\\salidas-mcp-cabos\\\\raiz_srv\"], \"cliente\": [], \"efectiva\": [\"D:\\\\Work\\\\research\\\\FileX\\\\bench\\\\salidas-mcp-cabos\\\\raiz_srv\"], \"capacidad_roots_declarada\": false, \"protocolo\": \"2026-07-28\"}"
+            }
+          ]
+        },
+        {
+          "paso": "t_cuerpo",
+          "ms": 3.0,
+          "isError": false,
+          "contenido": [
+            {
+              "type": "text",
+              "text": "{\"modo\": \"DEGRADADO (sin capacidad)\", \"efectiva\": [\"D:\\\\Work\\\\research\\\\FileX\\\\bench\\\\salidas-mcp-cabos\\\\raiz_srv\"], \"protocolo\": \"2026-07-28\"}"
+            }
+          ]
+        },
+        {
+          "paso": "t_ping_final",
+          "ms": 3.0,
+          "isError": false,
+          "contenido": [
+            {
+              "type": "text",
+              "text": "pong"
+            }
+          ]
+        }
+      ],
+      "protocolo_negociado": "2026-07-28",
+      "veces_que_el_cliente_respondio_roots": []
+    },
+    {
+      "modo": "legacy",
+      "cliente_declara_roots": true,
+      "pasos": [
+        {
+          "paso": "t_dura",
+          "ms": 11.0,
+          "isError": false,
+          "contenido": [
+            {
+              "type": "text",
+              "text": "{\"modo\": \"INTERSECADO\", \"servidor\": [\"D:\\\\Work\\\\research\\\\FileX\\\\bench\\\\salidas-mcp-cabos\\\\raiz_srv\"], \"cliente\": [\"file:///D:/Work/research/FileX/bench/salidas-mcp-cabos/raiz_srv/sub\", \"file:///D:/Work/research/FileX/bench/salidas-mcp-cabos/raiz_fuera\"], \"efectiva\": [\"D:\\\\Work\\\\research\\\\FileX\\\\bench\\\\salidas-mcp-cabos\\\\raiz_srv\\\\sub\"]}"
+            }
+          ]
+        },
+        {
+          "paso": "t_condicional",
+          "ms": 4.0,
+          "isError": false,
+          "contenido": [
+            {
+              "type": "text",
+              "text": "{\"modo\": \"INTERSECADO\", \"servidor\": [\"D:\\\\Work\\\\research\\\\FileX\\\\bench\\\\salidas-mcp-cabos\\\\raiz_srv\"], \"cliente\": [\"file:///D:/Work/research/FileX/bench/salidas-mcp-cabos/raiz_srv/sub\", \"file:///D:/Work/research/FileX/bench/salidas-mcp-cabos/raiz_fuera\"], \"efectiva\": [\"D:\\\\Work\\\\research\\\\FileX\\\\bench\\\\salidas-mcp-cabos\\\\raiz_srv\\\\sub\"], \"capacidad_roots_declarada\": true, \"protocolo\": \"2025-11-25\"}"
+            }
+          ]
+        },
+        {
+          "paso": "t_cuerpo",
+          "ms": 4.0,
+          "isError": false,
+          "contenido": [
+            {
+              "type": "text",
+              "text": "{\"modo\": \"INTERSECADO\", \"servidor\": [\"D:\\\\Work\\\\research\\\\FileX\\\\bench\\\\salidas-mcp-cabos\\\\raiz_srv\"], \"cliente\": [\"file:///D:/Work/research/FileX/bench/salidas-mcp-cabos/raiz_srv/sub\", \"file:///D:/Work/research/FileX/bench/salidas-mcp-cabos/raiz_fuera\"], \"efectiva\": [\"D:\\\\Work\\\\research\\\\FileX\\\\bench\\\\salidas-mcp-cabos\\\\raiz_srv\\\\sub\"]}"
+            }
+          ]
+        },
+        {
+          "paso": "t_ping_final",
+          "ms": 3.0,
+          "isError": false,
+          "contenido": [
+            {
+              "type": "text",
+              "text": "pong"
+            }
+          ]
+        }
+      ],
+      "protocolo_negociado": "2025-11-25",
+      "veces_que_el_cliente_respondio_roots": [
+        1.365,
+        1.374,
+        1.377
+      ]
+    },
+    {
+      "modo": "legacy",
+      "cliente_declara_roots": false,
+      "pasos": [
+        {
+          "paso": "t_dura",
+          "ms": 3.0,
+          "EXCEPCION": "mcp.shared.exceptions.MCPError",
+          "repr": "MCPError(-32021, \"Client did not declare the roots capability required by resolver '__main__:pedir_roots_duro'\", {'requiredCapabilities': {'roots': {}}})"
+        },
+        {
+          "paso": "t_condicional",
+          "ms": 5.0,
+          "isError": false,
+          "contenido": [
+            {
+              "type": "text",
+              "text": "{\"modo\": \"DEGRADADO (sin roots del cliente)\", \"servidor\": [\"D:\\\\Work\\\\research\\\\FileX\\\\bench\\\\salidas-mcp-cabos\\\\raiz_srv\"], \"cliente\": [], \"efectiva\": [\"D:\\\\Work\\\\research\\\\FileX\\\\bench\\\\salidas-mcp-cabos\\\\raiz_srv\"], \"capacidad_roots_declarada\": false, \"protocolo\": \"2025-11-25\"}"
+            }
+          ]
+        },
+        {
+          "paso": "t_cuerpo",
+          "ms": 2.0,
+          "isError": false,
+          "contenido": [
+            {
+              "type": "text",
+              "text": "{\"modo\": \"DEGRADADO (sin capacidad)\", \"efectiva\": [\"D:\\\\Work\\\\research\\\\FileX\\\\bench\\\\salidas-mcp-cabos\\\\raiz_srv\"], \"protocolo\": \"2025-11-25\"}"
+            }
+          ]
+        },
+        {
+          "paso": "t_ping_final",
+          "ms": 2.0,
+          "isError": false,
+          "contenido": [
+            {
+              "type": "text",
+              "text": "pong"
+            }
+          ]
+        }
+      ],
+      "protocolo_negociado": "2025-11-25",
+      "veces_que_el_cliente_respondio_roots": []
+    }
+  ]
+}

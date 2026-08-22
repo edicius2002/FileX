@@ -1,0 +1,3124 @@
+{
+"ffmpeg|302": {
+"estado": "muerta",
+"categoria_p2": 3,
+"veredicto": "",
+"diagnostico": "muxer=daud v=None a=pcm_s24daud s=None",
+"base_convertx_ok": false,
+"intentos": [
+{
+"semilla": "video_cif",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\s_cif.mp4",
+"-map",
+"0:a",
+"-c:a",
+"pcm_s24daud",
+"-sample_fmt",
+"s16",
+"-f",
+"daud",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.302"
+],
+"reglas": [
+"M",
+"R",
+"C",
+"F-out"
+],
+"rc": 4294967274,
+"bytes": 0,
+"ms": 137.9,
+"veredicto": "FALLO",
+"motivo": "rc=4294967274 bytes=0",
+"err": "turn code -22 (Invalid argument) [out#0/daud @ 000001d839709840] Nothing was written into output file, because at least one of its streams received no packets. size=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00     Conversion failed! "
+},
+{
+"semilla": "subtitulo",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer daud admite a y la entrada tiene s",
+"rc": null
+},
+{
+"semilla": "audio48",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\s48.wav",
+"-map",
+"0:a",
+"-c:a",
+"pcm_s24daud",
+"-sample_fmt",
+"s16",
+"-f",
+"daud",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.302"
+],
+"reglas": [
+"M",
+"R",
+"C",
+"F-out"
+],
+"rc": 4294967274,
+"bytes": 0,
+"ms": 49.5,
+"veredicto": "FALLO",
+"motivo": "rc=4294967274 bytes=0",
+"err": "turn code -22 (Invalid argument) [out#0/daud @ 0000026d53bec480] Nothing was written into output file, because at least one of its streams received no packets. size=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00     Conversion failed! "
+},
+{
+"semilla": "jpeg_exif",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer daud admite a y la entrada tiene v",
+"rc": null
+}
+]
+},
+"ffmpeg|ac4": {
+"estado": "muerta",
+"categoria_p2": 3,
+"veredicto": "",
+"diagnostico": "muxer=ac4 v=None a=ac4 s=None",
+"base_convertx_ok": false,
+"intentos": [
+{
+"semilla": "video_cif",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\s_cif.mp4",
+"-map",
+"0:a",
+"-c:a",
+"ac4",
+"-f",
+"ac4",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.ac4"
+],
+"reglas": [
+"M",
+"C",
+"F-out"
+],
+"rc": 3165764104,
+"bytes": -1,
+"ms": 34.9,
+"veredicto": "FALLO",
+"motivo": "rc=3165764104 bytes=-1",
+"err": "0][0] [aost#0:0 @ 000001bc38bfb480] Unknown encoder 'ac4' [aost#0:0 @ 000001bc38bfb480] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.ac4. Error opening output files: Encoder not found "
+},
+{
+"semilla": "subtitulo",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer ac4 admite a y la entrada tiene s",
+"rc": null
+},
+{
+"semilla": "audio48",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\s48.wav",
+"-map",
+"0:a",
+"-c:a",
+"ac4",
+"-f",
+"ac4",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.ac4"
+],
+"reglas": [
+"M",
+"C",
+"F-out"
+],
+"rc": 3165764104,
+"bytes": -1,
+"ms": 50.7,
+"veredicto": "FALLO",
+"motivo": "rc=3165764104 bytes=-1",
+"err": " kb/s [aost#0:0 @ 00000228e996cd40] Unknown encoder 'ac4' [aost#0:0 @ 00000228e996cd40] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.ac4. Error opening output files: Encoder not found "
+},
+{
+"semilla": "jpeg_exif",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer ac4 admite a y la entrada tiene v",
+"rc": null
+}
+]
+},
+"ffmpeg|amv": {
+"estado": "muerta",
+"categoria_p2": 3,
+"veredicto": "",
+"diagnostico": "muxer=amv v=amv a=adpcm_ima_amv s=None",
+"base_convertx_ok": false,
+"intentos": [
+{
+"semilla": "video_cif",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\s_cif.mp4",
+"-map",
+"0:a",
+"-map",
+"0:v",
+"-c:a",
+"adpcm_ima_amv",
+"-ac",
+"1",
+"-sample_fmt",
+"s16",
+"-c:v",
+"amv",
+"-pix_fmt",
+"yuvj420p",
+"-strict",
+"-2",
+"-f",
+"amv",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.amv"
+],
+"reglas": [
+"M",
+"R",
+"C",
+"F-out"
+],
+"rc": 4294967274,
+"bytes": 0,
+"ms": 57.7,
+"veredicto": "FALLO",
+"motivo": "rc=4294967274 bytes=0",
+"err": "amv @ 0000018a2bd6ebc0] Nothing was written into output file, because at least one of its streams received no packets. frame=    0 fps=0.0 q=24.8 Lsize=       0KiB time=N/A bitrate=N/A dup=1 drop=0 speed=N/A elapsed=0:00:00.01     Conversion failed! "
+},
+{
+"semilla": "subtitulo",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer amv admite av y la entrada tiene s",
+"rc": null
+},
+{
+"semilla": "audio48",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\s48.wav",
+"-map",
+"0:a",
+"-c:a",
+"adpcm_ima_amv",
+"-ac",
+"1",
+"-sample_fmt",
+"s16",
+"-f",
+"amv",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.amv"
+],
+"reglas": [
+"M",
+"R",
+"C",
+"F-out"
+],
+"rc": 4294967274,
+"bytes": 0,
+"ms": 1882.5,
+"veredicto": "FALLO",
+"motivo": "rc=4294967274 bytes=0",
+"err": "eturn code -22 (Invalid argument) [out#0/amv @ 000001bc99e2e580] Nothing was written into output file, because at least one of its streams received no packets. size=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00     Conversion failed! "
+},
+{
+"semilla": "jpeg_exif",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\corpus\\imagen\\tipico.jpg",
+"-map",
+"0:v",
+"-c:v",
+"amv",
+"-pix_fmt",
+"yuvj420p",
+"-strict",
+"-2",
+"-f",
+"amv",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.amv"
+],
+"reglas": [
+"M",
+"R",
+"C",
+"F-out"
+],
+"rc": 4294967274,
+"bytes": 0,
+"ms": 67.7,
+"veredicto": "FALLO",
+"motivo": "rc=4294967274 bytes=0",
+"err": "ument) [out#0/amv @ 000001f8a0c0a9c0] Nothing was written into output file, because at least one of its streams received no packets. frame=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.02     Conversion failed! "
+}
+]
+},
+"ffmpeg|avs3": {
+"estado": "muerta",
+"categoria_p2": 3,
+"veredicto": "",
+"diagnostico": "muxer=avs3 v=avs3 a=None s=None",
+"base_convertx_ok": false,
+"intentos": [
+{
+"semilla": "video_cif",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\s_cif.mp4",
+"-map",
+"0:v",
+"-c:v",
+"avs3",
+"-f",
+"avs3",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.avs3"
+],
+"reglas": [
+"M",
+"C",
+"F-out"
+],
+"rc": 3165764104,
+"bytes": -1,
+"ms": 36.3,
+"veredicto": "FALLO",
+"motivo": "rc=3165764104 bytes=-1",
+"err": "[0] [vost#0:0 @ 00000264e1b37240] Unknown encoder 'avs3' [vost#0:0 @ 00000264e1b37240] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.avs3. Error opening output files: Encoder not found "
+},
+{
+"semilla": "subtitulo",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer avs3 admite v y la entrada tiene s",
+"rc": null
+},
+{
+"semilla": "audio48",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer avs3 admite v y la entrada tiene a",
+"rc": null
+},
+{
+"semilla": "jpeg_exif",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\corpus\\imagen\\tipico.jpg",
+"-map",
+"0:v",
+"-c:v",
+"avs3",
+"-f",
+"avs3",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.avs3"
+],
+"reglas": [
+"M",
+"C",
+"F-out"
+],
+"rc": 3165764104,
+"bytes": -1,
+"ms": 33.8,
+"veredicto": "FALLO",
+"motivo": "rc=3165764104 bytes=-1",
+"err": "tbn [vost#0:0 @ 000001419efc7180] Unknown encoder 'avs3' [vost#0:0 @ 000001419efc7180] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.avs3. Error opening output files: Encoder not found "
+}
+]
+},
+"ffmpeg|bit": {
+"estado": "muerta",
+"categoria_p2": 3,
+"veredicto": "",
+"diagnostico": "muxer=bit v=None a=g729 s=None",
+"base_convertx_ok": false,
+"intentos": [
+{
+"semilla": "video_cif",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\s_cif.mp4",
+"-map",
+"0:a",
+"-c:a",
+"g729",
+"-f",
+"bit",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.bit"
+],
+"reglas": [
+"M",
+"C",
+"F-out"
+],
+"rc": 3165764104,
+"bytes": -1,
+"ms": 39.6,
+"veredicto": "FALLO",
+"motivo": "rc=3165764104 bytes=-1",
+"err": "][0] [aost#0:0 @ 00000207907e4700] Unknown encoder 'g729' [aost#0:0 @ 00000207907e4700] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.bit. Error opening output files: Encoder not found "
+},
+{
+"semilla": "subtitulo",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer bit admite a y la entrada tiene s",
+"rc": null
+},
+{
+"semilla": "audio48",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\s48.wav",
+"-map",
+"0:a",
+"-c:a",
+"g729",
+"-f",
+"bit",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.bit"
+],
+"reglas": [
+"M",
+"C",
+"F-out"
+],
+"rc": 3165764104,
+"bytes": -1,
+"ms": 53.0,
+"veredicto": "FALLO",
+"motivo": "rc=3165764104 bytes=-1",
+"err": "kb/s [aost#0:0 @ 000001ec1ce4cd40] Unknown encoder 'g729' [aost#0:0 @ 000001ec1ce4cd40] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.bit. Error opening output files: Encoder not found "
+},
+{
+"semilla": "jpeg_exif",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer bit admite a y la entrada tiene v",
+"rc": null
+}
+]
+},
+"ffmpeg|c2": {
+"estado": "muerta",
+"categoria_p2": 3,
+"veredicto": "",
+"diagnostico": "muxer=codec2 v=None a=codec2 s=None",
+"base_convertx_ok": false,
+"intentos": [
+{
+"semilla": "video_cif",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\s_cif.mp4",
+"-map",
+"0:a",
+"-c:a",
+"codec2",
+"-f",
+"codec2",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.c2"
+],
+"reglas": [
+"M",
+"C",
+"F-out"
+],
+"rc": 3165764104,
+"bytes": -1,
+"ms": 36.8,
+"veredicto": "FALLO",
+"motivo": "rc=3165764104 bytes=-1",
+"err": "[0] [aost#0:0 @ 00000298b2878280] Unknown encoder 'codec2' [aost#0:0 @ 00000298b2878280] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.c2. Error opening output files: Encoder not found "
+},
+{
+"semilla": "subtitulo",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer codec2 admite a y la entrada tiene s",
+"rc": null
+},
+{
+"semilla": "audio48",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\s48.wav",
+"-map",
+"0:a",
+"-c:a",
+"codec2",
+"-f",
+"codec2",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.c2"
+],
+"reglas": [
+"M",
+"C",
+"F-out"
+],
+"rc": 3165764104,
+"bytes": -1,
+"ms": 44.7,
+"veredicto": "FALLO",
+"motivo": "rc=3165764104 bytes=-1",
+"err": "b/s [aost#0:0 @ 00000219d7ffd140] Unknown encoder 'codec2' [aost#0:0 @ 00000219d7ffd140] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.c2. Error opening output files: Encoder not found "
+},
+{
+"semilla": "jpeg_exif",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer codec2 admite a y la entrada tiene v",
+"rc": null
+}
+]
+},
+"ffmpeg|cavs": {
+"estado": "muerta",
+"categoria_p2": 3,
+"veredicto": "",
+"diagnostico": "muxer=cavsvideo v=cavs a=None s=None",
+"base_convertx_ok": false,
+"intentos": [
+{
+"semilla": "video_cif",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\s_cif.mp4",
+"-map",
+"0:v",
+"-c:v",
+"cavs",
+"-f",
+"cavsvideo",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.cavs"
+],
+"reglas": [
+"M",
+"C",
+"F-out"
+],
+"rc": 3165764104,
+"bytes": -1,
+"ms": 36.1,
+"veredicto": "FALLO",
+"motivo": "rc=3165764104 bytes=-1",
+"err": "[0] [vost#0:0 @ 000002a5b10b4d40] Unknown encoder 'cavs' [vost#0:0 @ 000002a5b10b4d40] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.cavs. Error opening output files: Encoder not found "
+},
+{
+"semilla": "subtitulo",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer cavsvideo admite v y la entrada tiene s",
+"rc": null
+},
+{
+"semilla": "audio48",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer cavsvideo admite v y la entrada tiene a",
+"rc": null
+},
+{
+"semilla": "jpeg_exif",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\corpus\\imagen\\tipico.jpg",
+"-map",
+"0:v",
+"-c:v",
+"cavs",
+"-f",
+"cavsvideo",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.cavs"
+],
+"reglas": [
+"M",
+"C",
+"F-out"
+],
+"rc": 3165764104,
+"bytes": -1,
+"ms": 38.0,
+"veredicto": "FALLO",
+"motivo": "rc=3165764104 bytes=-1",
+"err": "tbn [vost#0:0 @ 000002084e63d140] Unknown encoder 'cavs' [vost#0:0 @ 000002084e63d140] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.cavs. Error opening output files: Encoder not found "
+}
+]
+},
+"ffmpeg|chk": {
+"estado": "muerta",
+"categoria_p2": 3,
+"veredicto": "",
+"diagnostico": "muxer=webm_chunk v=None a=None s=None",
+"base_convertx_ok": false,
+"intentos": [
+{
+"semilla": "video_cif",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\s_cif.mp4",
+"-map",
+"0:a",
+"-map",
+"0:v",
+"-f",
+"webm_chunk",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.chk"
+],
+"reglas": [
+"M",
+"C",
+"F-out"
+],
+"rc": 3165764104,
+"bytes": -1,
+"ms": 36.8,
+"veredicto": "FALLO",
+"motivo": "rc=3165764104 bytes=-1",
+"err": " is probably disabled. Please choose an encoder manually. [aost#0:0 @ 0000020102b236c0] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.chk. Error opening output files: Encoder not found "
+},
+{
+"semilla": "subtitulo",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\s.srt",
+"-map",
+"0:s",
+"-f",
+"webm_chunk",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.chk"
+],
+"reglas": [
+"M",
+"C",
+"F-out"
+],
+"rc": 3165764104,
+"bytes": -1,
+"ms": 33.1,
+"veredicto": "FALLO",
+"motivo": "rc=3165764104 bytes=-1",
+"err": " is probably disabled. Please choose an encoder manually. [sost#0:0 @ 0000023a2b75eb80] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.chk. Error opening output files: Encoder not found "
+},
+{
+"semilla": "audio48",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\s48.wav",
+"-map",
+"0:a",
+"-f",
+"webm_chunk",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.chk"
+],
+"reglas": [
+"M",
+"C",
+"F-out"
+],
+"rc": 3165764104,
+"bytes": -1,
+"ms": 46.8,
+"veredicto": "FALLO",
+"motivo": "rc=3165764104 bytes=-1",
+"err": " is probably disabled. Please choose an encoder manually. [aost#0:0 @ 00000246944dea40] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.chk. Error opening output files: Encoder not found "
+},
+{
+"semilla": "jpeg_exif",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\corpus\\imagen\\tipico.jpg",
+"-map",
+"0:v",
+"-f",
+"webm_chunk",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.chk"
+],
+"reglas": [
+"M",
+"C",
+"F-out"
+],
+"rc": 3165764104,
+"bytes": -1,
+"ms": 32.0,
+"veredicto": "FALLO",
+"motivo": "rc=3165764104 bytes=-1",
+"err": " is probably disabled. Please choose an encoder manually. [vost#0:0 @ 0000029189f7ee40] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.chk. Error opening output files: Encoder not found "
+}
+]
+},
+"ffmpeg|cvg": {
+"estado": "muerta",
+"categoria_p2": 3,
+"veredicto": "",
+"diagnostico": "muxer=argo_cvg v=None a=adpcm_psx s=None",
+"base_convertx_ok": false,
+"intentos": [
+{
+"semilla": "video_cif",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\s_cif.mp4",
+"-map",
+"0:a",
+"-c:a",
+"adpcm_psx",
+"-f",
+"argo_cvg",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.cvg"
+],
+"reglas": [
+"M",
+"C",
+"F-out"
+],
+"rc": 3165764104,
+"bytes": -1,
+"ms": 32.3,
+"veredicto": "FALLO",
+"motivo": "rc=3165764104 bytes=-1",
+"err": "[aost#0:0 @ 0000022a34da7d40] Unknown encoder 'adpcm_psx' [aost#0:0 @ 0000022a34da7d40] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.cvg. Error opening output files: Encoder not found "
+},
+{
+"semilla": "subtitulo",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer argo_cvg admite a y la entrada tiene s",
+"rc": null
+},
+{
+"semilla": "audio48",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\s48.wav",
+"-map",
+"0:a",
+"-c:a",
+"adpcm_psx",
+"-f",
+"argo_cvg",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.cvg"
+],
+"reglas": [
+"M",
+"C",
+"F-out"
+],
+"rc": 3165764104,
+"bytes": -1,
+"ms": 41.8,
+"veredicto": "FALLO",
+"motivo": "rc=3165764104 bytes=-1",
+"err": "[aost#0:0 @ 000002188d97ca40] Unknown encoder 'adpcm_psx' [aost#0:0 @ 000002188d97ca40] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.cvg. Error opening output files: Encoder not found "
+},
+{
+"semilla": "jpeg_exif",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer argo_cvg admite a y la entrada tiene v",
+"rc": null
+}
+]
+},
+"ffmpeg|dnxhd": {
+"estado": "muerta",
+"categoria_p2": 3,
+"veredicto": "",
+"diagnostico": "muxer=dnxhd v=dnxhd a=None s=None",
+"base_convertx_ok": false,
+"intentos": [
+{
+"semilla": "video_cif",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\s_cif.mp4",
+"-map",
+"0:v",
+"-c:v",
+"dnxhd",
+"-pix_fmt",
+"yuv422p",
+"-f",
+"dnxhd",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.dnxhd"
+],
+"reglas": [
+"M",
+"R",
+"C",
+"F-out"
+],
+"rc": 4294967274,
+"bytes": 0,
+"ms": 53.4,
+"veredicto": "FALLO",
+"motivo": "rc=4294967274 bytes=0",
+"err": "ent) [out#0/dnxhd @ 000001ca04e19e40] Nothing was written into output file, because at least one of its streams received no packets. frame=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.01     Conversion failed! "
+},
+{
+"semilla": "subtitulo",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer dnxhd admite v y la entrada tiene s",
+"rc": null
+},
+{
+"semilla": "audio48",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer dnxhd admite v y la entrada tiene a",
+"rc": null
+},
+{
+"semilla": "jpeg_exif",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\corpus\\imagen\\tipico.jpg",
+"-map",
+"0:v",
+"-c:v",
+"dnxhd",
+"-pix_fmt",
+"yuv422p",
+"-f",
+"dnxhd",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.dnxhd"
+],
+"reglas": [
+"M",
+"R",
+"C",
+"F-out"
+],
+"rc": 4294967274,
+"bytes": 0,
+"ms": 56.6,
+"veredicto": "FALLO",
+"motivo": "rc=4294967274 bytes=0",
+"err": "ent) [out#0/dnxhd @ 000002328b81fe80] Nothing was written into output file, because at least one of its streams received no packets. frame=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.02     Conversion failed! "
+}
+]
+},
+"ffmpeg|dnxhr": {
+"estado": "muerta",
+"categoria_p2": 3,
+"veredicto": "",
+"diagnostico": "muxer=dnxhd v=dnxhd a=None s=None",
+"base_convertx_ok": false,
+"intentos": [
+{
+"semilla": "video_cif",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\s_cif.mp4",
+"-map",
+"0:v",
+"-c:v",
+"dnxhd",
+"-pix_fmt",
+"yuv422p",
+"-f",
+"dnxhd",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.dnxhr"
+],
+"reglas": [
+"M",
+"R",
+"C",
+"F-out"
+],
+"rc": 4294967274,
+"bytes": 0,
+"ms": 52.6,
+"veredicto": "FALLO",
+"motivo": "rc=4294967274 bytes=0",
+"err": "ent) [out#0/dnxhd @ 00000260e77debc0] Nothing was written into output file, because at least one of its streams received no packets. frame=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.01     Conversion failed! "
+},
+{
+"semilla": "subtitulo",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer dnxhd admite v y la entrada tiene s",
+"rc": null
+},
+{
+"semilla": "audio48",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer dnxhd admite v y la entrada tiene a",
+"rc": null
+},
+{
+"semilla": "jpeg_exif",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\corpus\\imagen\\tipico.jpg",
+"-map",
+"0:v",
+"-c:v",
+"dnxhd",
+"-pix_fmt",
+"yuv422p",
+"-f",
+"dnxhd",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.dnxhr"
+],
+"reglas": [
+"M",
+"R",
+"C",
+"F-out"
+],
+"rc": 4294967274,
+"bytes": 0,
+"ms": 59.8,
+"veredicto": "FALLO",
+"motivo": "rc=4294967274 bytes=0",
+"err": "ent) [out#0/dnxhd @ 000001b09ecefec0] Nothing was written into output file, because at least one of its streams received no packets. frame=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.02     Conversion failed! "
+}
+]
+},
+"ffmpeg|dts": {
+"estado": "muerta",
+"categoria_p2": 3,
+"veredicto": "",
+"diagnostico": "muxer=dts v=None a=dts s=None",
+"base_convertx_ok": false,
+"intentos": [
+{
+"semilla": "video_cif",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\s_cif.mp4",
+"-map",
+"0:a",
+"-c:a",
+"dts",
+"-ar",
+"8000",
+"-ac",
+"1",
+"-sample_fmt",
+"s32",
+"-f",
+"dts",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.dts"
+],
+"reglas": [
+"M",
+"R",
+"C",
+"F-out"
+],
+"rc": 3561836632,
+"bytes": 0,
+"ms": 38.3,
+"veredicto": "FALLO",
+"motivo": "rc=3561836632 bytes=0",
+"err": "eturn code -22 (Invalid argument) [out#0/dts @ 0000019a461d8c40] Nothing was written into output file, because at least one of its streams received no packets. size=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00     Conversion failed! "
+},
+{
+"semilla": "subtitulo",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer dts admite a y la entrada tiene s",
+"rc": null
+},
+{
+"semilla": "audio48",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\s48.wav",
+"-map",
+"0:a",
+"-c:a",
+"dts",
+"-ar",
+"8000",
+"-ac",
+"1",
+"-sample_fmt",
+"s32",
+"-f",
+"dts",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.dts"
+],
+"reglas": [
+"M",
+"R",
+"C",
+"F-out"
+],
+"rc": 3561836632,
+"bytes": 0,
+"ms": 49.8,
+"veredicto": "FALLO",
+"motivo": "rc=3561836632 bytes=0",
+"err": "eturn code -22 (Invalid argument) [out#0/dts @ 0000022e2995cc00] Nothing was written into output file, because at least one of its streams received no packets. size=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00     Conversion failed! "
+},
+{
+"semilla": "jpeg_exif",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer dts admite a y la entrada tiene v",
+"rc": null
+}
+]
+},
+"ffmpeg|dv": {
+"estado": "muerta",
+"categoria_p2": 3,
+"veredicto": "",
+"diagnostico": "muxer=dv v=dvvideo a=pcm_s16le s=None",
+"base_convertx_ok": false,
+"intentos": [
+{
+"semilla": "video_cif",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\s_cif.mp4",
+"-map",
+"0:a",
+"-map",
+"0:v",
+"-c:a",
+"pcm_s16le",
+"-sample_fmt",
+"s16",
+"-c:v",
+"dvvideo",
+"-pix_fmt",
+"yuv411p",
+"-f",
+"dv",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.dv"
+],
+"reglas": [
+"M",
+"R",
+"C",
+"F-out"
+],
+"rc": 4294967274,
+"bytes": 0,
+"ms": 63.3,
+"veredicto": "FALLO",
+"motivo": "rc=4294967274 bytes=0",
+"err": "gument) [out#0/dv @ 000002608717aa80] Nothing was written into output file, because at least one of its streams received no packets. frame=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.01     Conversion failed! "
+},
+{
+"semilla": "subtitulo",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer dv admite av y la entrada tiene s",
+"rc": null
+},
+{
+"semilla": "audio48",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\s48.wav",
+"-map",
+"0:a",
+"-c:a",
+"pcm_s16le",
+"-sample_fmt",
+"s16",
+"-f",
+"dv",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.dv"
+],
+"reglas": [
+"M",
+"R",
+"C",
+"F-out"
+],
+"rc": 3199971767,
+"bytes": 0,
+"ms": 47.3,
+"veredicto": "FALLO",
+"motivo": "rc=3199971767 bytes=0",
+"err": " data found when processing input) [out#0/dv @ 00000234d347b400] Nothing was written into output file, because at least one of its streams received no packets. size=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00     Conversion failed! "
+},
+{
+"semilla": "jpeg_exif",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\corpus\\imagen\\tipico.jpg",
+"-map",
+"0:v",
+"-c:v",
+"dvvideo",
+"-pix_fmt",
+"yuv411p",
+"-f",
+"dv",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.dv"
+],
+"reglas": [
+"M",
+"R",
+"C",
+"F-out"
+],
+"rc": 4294967274,
+"bytes": 0,
+"ms": 64.5,
+"veredicto": "FALLO",
+"motivo": "rc=4294967274 bytes=0",
+"err": "gument) [out#0/dv @ 00000166bf73cf40] Nothing was written into output file, because at least one of its streams received no packets. frame=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.02     Conversion failed! "
+}
+]
+},
+"ffmpeg|evc": {
+"estado": "muerta",
+"categoria_p2": 3,
+"veredicto": "",
+"diagnostico": "muxer=evc v=evc a=None s=None",
+"base_convertx_ok": false,
+"intentos": [
+{
+"semilla": "video_cif",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\s_cif.mp4",
+"-map",
+"0:v",
+"-c:v",
+"evc",
+"-f",
+"evc",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.evc"
+],
+"reglas": [
+"M",
+"C",
+"F-out"
+],
+"rc": 3165764104,
+"bytes": -1,
+"ms": 41.8,
+"veredicto": "FALLO",
+"motivo": "rc=3165764104 bytes=-1",
+"err": "0][0] [vost#0:0 @ 0000012b0f6ae680] Unknown encoder 'evc' [vost#0:0 @ 0000012b0f6ae680] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.evc. Error opening output files: Encoder not found "
+},
+{
+"semilla": "subtitulo",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer evc admite v y la entrada tiene s",
+"rc": null
+},
+{
+"semilla": "audio48",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer evc admite v y la entrada tiene a",
+"rc": null
+},
+{
+"semilla": "jpeg_exif",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\corpus\\imagen\\tipico.jpg",
+"-map",
+"0:v",
+"-c:v",
+"evc",
+"-f",
+"evc",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.evc"
+],
+"reglas": [
+"M",
+"C",
+"F-out"
+],
+"rc": 3165764104,
+"bytes": -1,
+"ms": 44.0,
+"veredicto": "FALLO",
+"motivo": "rc=3165764104 bytes=-1",
+"err": "5 tbn [vost#0:0 @ 00000233b09fcd80] Unknown encoder 'evc' [vost#0:0 @ 00000233b09fcd80] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.evc. Error opening output files: Encoder not found "
+}
+]
+},
+"ffmpeg|flm": {
+"estado": "muerta",
+"categoria_p2": 3,
+"veredicto": "",
+"diagnostico": "muxer=filmstrip v=rawvideo a=None s=None",
+"base_convertx_ok": false,
+"intentos": [
+{
+"semilla": "video_cif",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\s_cif.mp4",
+"-map",
+"0:v",
+"-c:v",
+"rawvideo",
+"-f",
+"filmstrip",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.flm"
+],
+"reglas": [
+"M",
+"C",
+"F-out"
+],
+"rc": 3199971767,
+"bytes": 0,
+"ms": 62.0,
+"veredicto": "FALLO",
+"motivo": "rc=3199971767 bytes=0",
+"err": " [out#0/filmstrip @ 00000146d2f8c880] Nothing was written into output file, because at least one of its streams received no packets. frame=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00     Conversion failed! "
+},
+{
+"semilla": "subtitulo",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer filmstrip admite v y la entrada tiene s",
+"rc": null
+},
+{
+"semilla": "audio48",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer filmstrip admite v y la entrada tiene a",
+"rc": null
+},
+{
+"semilla": "jpeg_exif",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\corpus\\imagen\\tipico.jpg",
+"-map",
+"0:v",
+"-c:v",
+"rawvideo",
+"-f",
+"filmstrip",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.flm"
+],
+"reglas": [
+"M",
+"C",
+"F-out"
+],
+"rc": 3199971767,
+"bytes": 0,
+"ms": 56.0,
+"veredicto": "FALLO",
+"motivo": "rc=3199971767 bytes=0",
+"err": " [out#0/filmstrip @ 000001ecaaa5da00] Nothing was written into output file, because at least one of its streams received no packets. frame=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.01     Conversion failed! "
+}
+]
+},
+"ffmpeg|gsm": {
+"estado": "muerta",
+"categoria_p2": 3,
+"veredicto": "",
+"diagnostico": "muxer=gsm v=None a=gsm s=None",
+"base_convertx_ok": false,
+"intentos": [
+{
+"semilla": "video_cif",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\s_cif.mp4",
+"-map",
+"0:a",
+"-c:a",
+"gsm",
+"-f",
+"gsm",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.gsm"
+],
+"reglas": [
+"M",
+"C",
+"F-out"
+],
+"rc": 3165764104,
+"bytes": -1,
+"ms": 37.0,
+"veredicto": "FALLO",
+"motivo": "rc=3165764104 bytes=-1",
+"err": "0][0] [aost#0:0 @ 0000026f6ced3500] Unknown encoder 'gsm' [aost#0:0 @ 0000026f6ced3500] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.gsm. Error opening output files: Encoder not found "
+},
+{
+"semilla": "subtitulo",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer gsm admite a y la entrada tiene s",
+"rc": null
+},
+{
+"semilla": "audio48",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\s48.wav",
+"-map",
+"0:a",
+"-c:a",
+"gsm",
+"-f",
+"gsm",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.gsm"
+],
+"reglas": [
+"M",
+"C",
+"F-out"
+],
+"rc": 3165764104,
+"bytes": -1,
+"ms": 43.4,
+"veredicto": "FALLO",
+"motivo": "rc=3165764104 bytes=-1",
+"err": " kb/s [aost#0:0 @ 000002b95cc47d80] Unknown encoder 'gsm' [aost#0:0 @ 000002b95cc47d80] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.gsm. Error opening output files: Encoder not found "
+},
+{
+"semilla": "jpeg_exif",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer gsm admite a y la entrada tiene v",
+"rc": null
+}
+]
+},
+"ffmpeg|gxf": {
+"estado": "muerta",
+"categoria_p2": 3,
+"veredicto": "",
+"diagnostico": "muxer=gxf v=mpeg2video a=pcm_s16le s=None",
+"base_convertx_ok": false,
+"intentos": [
+{
+"semilla": "video_cif",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\s_cif.mp4",
+"-map",
+"0:a",
+"-map",
+"0:v",
+"-c:a",
+"pcm_s16le",
+"-sample_fmt",
+"s16",
+"-c:v",
+"mpeg2video",
+"-pix_fmt",
+"yuv420p",
+"-r",
+"1/1",
+"-strict",
+"-2",
+"-f",
+"gxf",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.gxf"
+],
+"reglas": [
+"M",
+"R",
+"C",
+"F-out"
+],
+"rc": 4294967274,
+"bytes": 0,
+"ms": 61.5,
+"veredicto": "FALLO",
+"motivo": "rc=4294967274 bytes=0",
+"err": "ument) [out#0/gxf @ 0000026ac3fec300] Nothing was written into output file, because at least one of its streams received no packets. frame=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.01     Conversion failed! "
+},
+{
+"semilla": "subtitulo",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer gxf admite av y la entrada tiene s",
+"rc": null
+},
+{
+"semilla": "audio48",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\s48.wav",
+"-map",
+"0:a",
+"-c:a",
+"pcm_s16le",
+"-sample_fmt",
+"s16",
+"-f",
+"gxf",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.gxf"
+],
+"reglas": [
+"M",
+"R",
+"C",
+"F-out"
+],
+"rc": 4294967274,
+"bytes": 0,
+"ms": 49.5,
+"veredicto": "FALLO",
+"motivo": "rc=4294967274 bytes=0",
+"err": "eturn code -22 (Invalid argument) [out#0/gxf @ 00000177a665c3c0] Nothing was written into output file, because at least one of its streams received no packets. size=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00     Conversion failed! "
+},
+{
+"semilla": "jpeg_exif",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\corpus\\imagen\\tipico.jpg",
+"-map",
+"0:v",
+"-c:v",
+"mpeg2video",
+"-pix_fmt",
+"yuv420p",
+"-r",
+"1/1",
+"-strict",
+"-2",
+"-f",
+"gxf",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.gxf"
+],
+"reglas": [
+"M",
+"R",
+"C",
+"F-out"
+],
+"rc": 4294967274,
+"bytes": 0,
+"ms": 66.6,
+"veredicto": "FALLO",
+"motivo": "rc=4294967274 bytes=0",
+"err": "ument) [out#0/gxf @ 000001cc015ab4c0] Nothing was written into output file, because at least one of its streams received no packets. frame=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.02     Conversion failed! "
+}
+]
+},
+"ffmpeg|js": {
+"estado": "muerta",
+"categoria_p2": 3,
+"veredicto": "",
+"diagnostico": "muxer=jacosub v=None a=None s=jacosub",
+"base_convertx_ok": false,
+"intentos": [
+{
+"semilla": "video_cif",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer jacosub admite s y la entrada tiene av",
+"rc": null
+},
+{
+"semilla": "subtitulo",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\s.srt",
+"-map",
+"0:s",
+"-c:s",
+"jacosub",
+"-f",
+"jacosub",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.js"
+],
+"reglas": [
+"M",
+"C",
+"F-out"
+],
+"rc": 3165764104,
+"bytes": -1,
+"ms": 34.3,
+"veredicto": "FALLO",
+"motivo": "rc=3165764104 bytes=-1",
+"err": "t) [sost#0:0 @ 000002142738d140] Unknown encoder 'jacosub' [sost#0:0 @ 000002142738d140] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.js. Error opening output files: Encoder not found "
+},
+{
+"semilla": "audio48",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer jacosub admite s y la entrada tiene a",
+"rc": null
+},
+{
+"semilla": "jpeg_exif",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer jacosub admite s y la entrada tiene v",
+"rc": null
+}
+]
+},
+"ffmpeg|jss": {
+"estado": "muerta",
+"categoria_p2": 3,
+"veredicto": "",
+"diagnostico": "muxer=jacosub v=None a=None s=jacosub",
+"base_convertx_ok": false,
+"intentos": [
+{
+"semilla": "video_cif",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer jacosub admite s y la entrada tiene av",
+"rc": null
+},
+{
+"semilla": "subtitulo",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\s.srt",
+"-map",
+"0:s",
+"-c:s",
+"jacosub",
+"-f",
+"jacosub",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.jss"
+],
+"reglas": [
+"M",
+"C",
+"F-out"
+],
+"rc": 3165764104,
+"bytes": -1,
+"ms": 33.5,
+"veredicto": "FALLO",
+"motivo": "rc=3165764104 bytes=-1",
+"err": ") [sost#0:0 @ 0000021bb39cedc0] Unknown encoder 'jacosub' [sost#0:0 @ 0000021bb39cedc0] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.jss. Error opening output files: Encoder not found "
+},
+{
+"semilla": "audio48",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer jacosub admite s y la entrada tiene a",
+"rc": null
+},
+{
+"semilla": "jpeg_exif",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer jacosub admite s y la entrada tiene v",
+"rc": null
+}
+]
+},
+"ffmpeg|lbc": {
+"estado": "muerta",
+"categoria_p2": 3,
+"veredicto": "",
+"diagnostico": "muxer=ilbc v=None a=ilbc s=None",
+"base_convertx_ok": false,
+"intentos": [
+{
+"semilla": "video_cif",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\s_cif.mp4",
+"-map",
+"0:a",
+"-c:a",
+"ilbc",
+"-f",
+"ilbc",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.lbc"
+],
+"reglas": [
+"M",
+"C",
+"F-out"
+],
+"rc": 3165764104,
+"bytes": -1,
+"ms": 38.3,
+"veredicto": "FALLO",
+"motivo": "rc=3165764104 bytes=-1",
+"err": "][0] [aost#0:0 @ 0000022602eacd40] Unknown encoder 'ilbc' [aost#0:0 @ 0000022602eacd40] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.lbc. Error opening output files: Encoder not found "
+},
+{
+"semilla": "subtitulo",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer ilbc admite a y la entrada tiene s",
+"rc": null
+},
+{
+"semilla": "audio48",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\s48.wav",
+"-map",
+"0:a",
+"-c:a",
+"ilbc",
+"-f",
+"ilbc",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.lbc"
+],
+"reglas": [
+"M",
+"C",
+"F-out"
+],
+"rc": 3165764104,
+"bytes": -1,
+"ms": 42.8,
+"veredicto": "FALLO",
+"motivo": "rc=3165764104 bytes=-1",
+"err": "kb/s [aost#0:0 @ 000001e3ee52cd40] Unknown encoder 'ilbc' [aost#0:0 @ 000001e3ee52cd40] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.lbc. Error opening output files: Encoder not found "
+},
+{
+"semilla": "jpeg_exif",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer ilbc admite a y la entrada tiene v",
+"rc": null
+}
+]
+},
+"ffmpeg|mlp": {
+"estado": "muerta",
+"categoria_p2": 3,
+"veredicto": "",
+"diagnostico": "muxer=mlp v=None a=mlp s=None",
+"base_convertx_ok": false,
+"intentos": [
+{
+"semilla": "video_cif",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\s_cif.mp4",
+"-map",
+"0:a",
+"-c:a",
+"mlp",
+"-ar",
+"44100",
+"-ac",
+"1",
+"-sample_fmt",
+"s16p",
+"-f",
+"mlp",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.mlp"
+],
+"reglas": [
+"M",
+"R",
+"C",
+"F-out"
+],
+"rc": 3561836632,
+"bytes": 0,
+"ms": 54.4,
+"veredicto": "FALLO",
+"motivo": "rc=3561836632 bytes=0",
+"err": "eturn code -22 (Invalid argument) [out#0/mlp @ 000001be3127bc80] Nothing was written into output file, because at least one of its streams received no packets. size=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00     Conversion failed! "
+},
+{
+"semilla": "subtitulo",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer mlp admite a y la entrada tiene s",
+"rc": null
+},
+{
+"semilla": "audio48",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\s48.wav",
+"-map",
+"0:a",
+"-c:a",
+"mlp",
+"-ar",
+"44100",
+"-ac",
+"1",
+"-sample_fmt",
+"s16p",
+"-f",
+"mlp",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.mlp"
+],
+"reglas": [
+"M",
+"R",
+"C",
+"F-out"
+],
+"rc": 3561836632,
+"bytes": 0,
+"ms": 61.5,
+"veredicto": "FALLO",
+"motivo": "rc=3561836632 bytes=0",
+"err": "eturn code -22 (Invalid argument) [out#0/mlp @ 00000198642aca00] Nothing was written into output file, because at least one of its streams received no packets. size=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00     Conversion failed! "
+},
+{
+"semilla": "jpeg_exif",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer mlp admite a y la entrada tiene v",
+"rc": null
+}
+]
+},
+"ffmpeg|oma": {
+"estado": "muerta",
+"categoria_p2": 3,
+"veredicto": "",
+"diagnostico": "muxer=oma v=None a=atrac3 s=None",
+"base_convertx_ok": false,
+"intentos": [
+{
+"semilla": "video_cif",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\s_cif.mp4",
+"-map",
+"0:a",
+"-c:a",
+"atrac3",
+"-f",
+"oma",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.oma"
+],
+"reglas": [
+"M",
+"C",
+"F-out"
+],
+"rc": 3165764104,
+"bytes": -1,
+"ms": 34.3,
+"veredicto": "FALLO",
+"motivo": "rc=3165764104 bytes=-1",
+"err": "0] [aost#0:0 @ 0000019c8a897940] Unknown encoder 'atrac3' [aost#0:0 @ 0000019c8a897940] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.oma. Error opening output files: Encoder not found "
+},
+{
+"semilla": "subtitulo",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer oma admite a y la entrada tiene s",
+"rc": null
+},
+{
+"semilla": "audio48",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\s48.wav",
+"-map",
+"0:a",
+"-c:a",
+"atrac3",
+"-f",
+"oma",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.oma"
+],
+"reglas": [
+"M",
+"C",
+"F-out"
+],
+"rc": 3165764104,
+"bytes": -1,
+"ms": 41.3,
+"veredicto": "FALLO",
+"motivo": "rc=3165764104 bytes=-1",
+"err": "/s [aost#0:0 @ 000002901c518880] Unknown encoder 'atrac3' [aost#0:0 @ 000002901c518880] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.oma. Error opening output files: Encoder not found "
+},
+{
+"semilla": "jpeg_exif",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer oma admite a y la entrada tiene v",
+"rc": null
+}
+]
+},
+"ffmpeg|rcv": {
+"estado": "muerta",
+"categoria_p2": 3,
+"veredicto": "",
+"diagnostico": "muxer=vc1test v=wmv3 a=None s=None",
+"base_convertx_ok": false,
+"intentos": [
+{
+"semilla": "video_cif",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\s_cif.mp4",
+"-map",
+"0:v",
+"-c:v",
+"wmv3",
+"-f",
+"vc1test",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.rcv"
+],
+"reglas": [
+"M",
+"C",
+"F-out"
+],
+"rc": 3165764104,
+"bytes": -1,
+"ms": 36.0,
+"veredicto": "FALLO",
+"motivo": "rc=3165764104 bytes=-1",
+"err": "][0] [vost#0:0 @ 00000220d578a980] Unknown encoder 'wmv3' [vost#0:0 @ 00000220d578a980] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.rcv. Error opening output files: Encoder not found "
+},
+{
+"semilla": "subtitulo",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer vc1test admite v y la entrada tiene s",
+"rc": null
+},
+{
+"semilla": "audio48",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer vc1test admite v y la entrada tiene a",
+"rc": null
+},
+{
+"semilla": "jpeg_exif",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\corpus\\imagen\\tipico.jpg",
+"-map",
+"0:v",
+"-c:v",
+"wmv3",
+"-f",
+"vc1test",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.rcv"
+],
+"reglas": [
+"M",
+"C",
+"F-out"
+],
+"rc": 3165764104,
+"bytes": -1,
+"ms": 32.1,
+"veredicto": "FALLO",
+"motivo": "rc=3165764104 bytes=-1",
+"err": " tbn [vost#0:0 @ 000002887546d2c0] Unknown encoder 'wmv3' [vost#0:0 @ 000002887546d2c0] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.rcv. Error opening output files: Encoder not found "
+}
+]
+},
+"ffmpeg|scc": {
+"estado": "muerta",
+"categoria_p2": 3,
+"veredicto": "",
+"diagnostico": "muxer=scc v=None a=None s=eia_608",
+"base_convertx_ok": false,
+"intentos": [
+{
+"semilla": "video_cif",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer scc admite s y la entrada tiene av",
+"rc": null
+},
+{
+"semilla": "subtitulo",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\s.srt",
+"-map",
+"0:s",
+"-c:s",
+"eia_608",
+"-f",
+"scc",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.scc"
+],
+"reglas": [
+"M",
+"C",
+"F-out"
+],
+"rc": 3165764104,
+"bytes": -1,
+"ms": 29.8,
+"veredicto": "FALLO",
+"motivo": "rc=3165764104 bytes=-1",
+"err": ") [sost#0:0 @ 00000275c319d180] Unknown encoder 'eia_608' [sost#0:0 @ 00000275c319d180] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.scc. Error opening output files: Encoder not found "
+},
+{
+"semilla": "audio48",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer scc admite s y la entrada tiene a",
+"rc": null
+},
+{
+"semilla": "jpeg_exif",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer scc admite s y la entrada tiene v",
+"rc": null
+}
+]
+},
+"ffmpeg|spx": {
+"estado": "muerta",
+"categoria_p2": 3,
+"veredicto": "",
+"diagnostico": "muxer=spx v=None a=speex s=None",
+"base_convertx_ok": false,
+"intentos": [
+{
+"semilla": "video_cif",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\s_cif.mp4",
+"-map",
+"0:a",
+"-c:a",
+"speex",
+"-f",
+"spx",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.spx"
+],
+"reglas": [
+"M",
+"C",
+"F-out"
+],
+"rc": 3165764104,
+"bytes": -1,
+"ms": 39.9,
+"veredicto": "FALLO",
+"motivo": "rc=3165764104 bytes=-1",
+"err": "[0] [aost#0:0 @ 000001d83bed5d40] Unknown encoder 'speex' [aost#0:0 @ 000001d83bed5d40] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.spx. Error opening output files: Encoder not found "
+},
+{
+"semilla": "subtitulo",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer spx admite a y la entrada tiene s",
+"rc": null
+},
+{
+"semilla": "audio48",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\s48.wav",
+"-map",
+"0:a",
+"-c:a",
+"speex",
+"-f",
+"spx",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.spx"
+],
+"reglas": [
+"M",
+"C",
+"F-out"
+],
+"rc": 3165764104,
+"bytes": -1,
+"ms": 42.6,
+"veredicto": "FALLO",
+"motivo": "rc=3165764104 bytes=-1",
+"err": "b/s [aost#0:0 @ 000001b81551e640] Unknown encoder 'speex' [aost#0:0 @ 000001b81551e640] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.spx. Error opening output files: Encoder not found "
+},
+{
+"semilla": "jpeg_exif",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer spx admite a y la entrada tiene v",
+"rc": null
+}
+]
+},
+"ffmpeg|sub": {
+"estado": "muerta",
+"categoria_p2": 3,
+"veredicto": "",
+"diagnostico": "muxer=microdvd v=None a=None s=microdvd",
+"base_convertx_ok": false,
+"intentos": [
+{
+"semilla": "video_cif",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer microdvd admite s y la entrada tiene av",
+"rc": null
+},
+{
+"semilla": "subtitulo",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\s.srt",
+"-map",
+"0:s",
+"-c:s",
+"microdvd",
+"-f",
+"microdvd",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.sub"
+],
+"reglas": [
+"M",
+"C",
+"F-out"
+],
+"rc": 3165764104,
+"bytes": -1,
+"ms": 37.1,
+"veredicto": "FALLO",
+"motivo": "rc=3165764104 bytes=-1",
+"err": " [sost#0:0 @ 00000227abd7d180] Unknown encoder 'microdvd' [sost#0:0 @ 00000227abd7d180] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.sub. Error opening output files: Encoder not found "
+},
+{
+"semilla": "audio48",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer microdvd admite s y la entrada tiene a",
+"rc": null
+},
+{
+"semilla": "jpeg_exif",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer microdvd admite s y la entrada tiene v",
+"rc": null
+}
+]
+},
+"ffmpeg|sup": {
+"estado": "muerta",
+"categoria_p2": 3,
+"veredicto": "",
+"diagnostico": "muxer=sup v=None a=None s=hdmv_pgs_subtitle",
+"base_convertx_ok": false,
+"intentos": [
+{
+"semilla": "video_cif",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer sup admite s y la entrada tiene av",
+"rc": null
+},
+{
+"semilla": "subtitulo",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\s.srt",
+"-map",
+"0:s",
+"-c:s",
+"hdmv_pgs_subtitle",
+"-f",
+"sup",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.sup"
+],
+"reglas": [
+"M",
+"C",
+"F-out"
+],
+"rc": 3165764104,
+"bytes": -1,
+"ms": 35.3,
+"veredicto": "FALLO",
+"motivo": "rc=3165764104 bytes=-1",
+"err": "0 @ 00000244d1a42300] Unknown encoder 'hdmv_pgs_subtitle' [sost#0:0 @ 00000244d1a42300] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.sup. Error opening output files: Encoder not found "
+},
+{
+"semilla": "audio48",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer sup admite s y la entrada tiene a",
+"rc": null
+},
+{
+"semilla": "jpeg_exif",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer sup admite s y la entrada tiene v",
+"rc": null
+}
+]
+},
+"ffmpeg|thd": {
+"estado": "muerta",
+"categoria_p2": 3,
+"veredicto": "",
+"diagnostico": "muxer=truehd v=None a=truehd s=None",
+"base_convertx_ok": false,
+"intentos": [
+{
+"semilla": "video_cif",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\s_cif.mp4",
+"-map",
+"0:a",
+"-c:a",
+"truehd",
+"-ar",
+"44100",
+"-ac",
+"1",
+"-sample_fmt",
+"s16p",
+"-f",
+"truehd",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.thd"
+],
+"reglas": [
+"M",
+"R",
+"C",
+"F-out"
+],
+"rc": 3561836632,
+"bytes": 0,
+"ms": 44.3,
+"veredicto": "FALLO",
+"motivo": "rc=3561836632 bytes=0",
+"err": "rn code -22 (Invalid argument) [out#0/truehd @ 000002662aa9db40] Nothing was written into output file, because at least one of its streams received no packets. size=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00     Conversion failed! "
+},
+{
+"semilla": "subtitulo",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer truehd admite a y la entrada tiene s",
+"rc": null
+},
+{
+"semilla": "audio48",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\s48.wav",
+"-map",
+"0:a",
+"-c:a",
+"truehd",
+"-ar",
+"44100",
+"-ac",
+"1",
+"-sample_fmt",
+"s16p",
+"-f",
+"truehd",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.thd"
+],
+"reglas": [
+"M",
+"R",
+"C",
+"F-out"
+],
+"rc": 3561836632,
+"bytes": 0,
+"ms": 51.7,
+"veredicto": "FALLO",
+"motivo": "rc=3561836632 bytes=0",
+"err": "rn code -22 (Invalid argument) [out#0/truehd @ 0000021aade0a940] Nothing was written into output file, because at least one of its streams received no packets. size=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00     Conversion failed! "
+},
+{
+"semilla": "jpeg_exif",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer truehd admite a y la entrada tiene v",
+"rc": null
+}
+]
+},
+"ffmpeg|tun": {
+"estado": "muerta",
+"categoria_p2": 3,
+"veredicto": "",
+"diagnostico": "muxer=alp v=None a=adpcm_ima_alp s=None",
+"base_convertx_ok": false,
+"intentos": [
+{
+"semilla": "video_cif",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\s_cif.mp4",
+"-map",
+"0:a",
+"-c:a",
+"adpcm_ima_alp",
+"-ac",
+"1",
+"-sample_fmt",
+"s16",
+"-f",
+"alp",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.tun"
+],
+"reglas": [
+"M",
+"R",
+"C",
+"F-out"
+],
+"rc": 4294967274,
+"bytes": 0,
+"ms": 38.3,
+"veredicto": "FALLO",
+"motivo": "rc=4294967274 bytes=0",
+"err": "eturn code -22 (Invalid argument) [out#0/alp @ 0000019c6e6fae40] Nothing was written into output file, because at least one of its streams received no packets. size=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00     Conversion failed! "
+},
+{
+"semilla": "subtitulo",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer alp admite a y la entrada tiene s",
+"rc": null
+},
+{
+"semilla": "audio48",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\s48.wav",
+"-map",
+"0:a",
+"-c:a",
+"adpcm_ima_alp",
+"-ac",
+"1",
+"-sample_fmt",
+"s16",
+"-f",
+"alp",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.tun"
+],
+"reglas": [
+"M",
+"R",
+"C",
+"F-out"
+],
+"rc": 4294967274,
+"bytes": 0,
+"ms": 45.6,
+"veredicto": "FALLO",
+"motivo": "rc=4294967274 bytes=0",
+"err": "eturn code -22 (Invalid argument) [out#0/alp @ 000002bed265c900] Nothing was written into output file, because at least one of its streams received no packets. size=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00     Conversion failed! "
+},
+{
+"semilla": "jpeg_exif",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer alp admite a y la entrada tiene v",
+"rc": null
+}
+]
+},
+"ffmpeg|vbn": {
+"estado": "viva",
+"categoria_p2": 1,
+"veredicto": "INTEGRO",
+"diagnostico": "muxer=image2 v=mjpeg a=None s=None",
+"base_convertx_ok": false,
+"intentos": [
+{
+"semilla": "video_cif",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\s_cif.mp4",
+"-map",
+"0:v",
+"-c:v",
+"mjpeg",
+"-pix_fmt",
+"yuvj420p",
+"-strict",
+"-2",
+"-f",
+"image2",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.vbn"
+],
+"reglas": [
+"M",
+"R",
+"C",
+"F-out"
+],
+"rc": 4294967274,
+"bytes": 9212,
+"ms": 69.3,
+"veredicto": "FALLO",
+"motivo": "rc=4294967274 bytes=9212",
+"err": "0/image2 @ 0000024220dcd800] video:19KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown frame=    2 fps=0.0 q=24.8 Lsize=N/A time=00:00:00.08 bitrate=N/A speed=4.16x elapsed=0:00:00.01     Conversion failed! "
+},
+{
+"semilla": "subtitulo",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer image2 admite v y la entrada tiene s",
+"rc": null
+},
+{
+"semilla": "audio48",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer image2 admite v y la entrada tiene a",
+"rc": null
+},
+{
+"semilla": "jpeg_exif",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\corpus\\imagen\\tipico.jpg",
+"-map",
+"0:v",
+"-c:v",
+"mjpeg",
+"-pix_fmt",
+"yuvj420p",
+"-strict",
+"-2",
+"-f",
+"image2",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.vbn"
+],
+"reglas": [
+"M",
+"R",
+"C",
+"F-out"
+],
+"rc": 0,
+"bytes": 27232,
+"ms": 66.2,
+"veredicto": "INTEGRO",
+"motivo": "[N2 no evaluable]",
+"err": ""
+}
+]
+},
+"ffmpeg|vc1": {
+"estado": "muerta",
+"categoria_p2": 3,
+"veredicto": "",
+"diagnostico": "muxer=vc1 v=vc1 a=None s=None",
+"base_convertx_ok": false,
+"intentos": [
+{
+"semilla": "video_cif",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\s_cif.mp4",
+"-map",
+"0:v",
+"-c:v",
+"vc1",
+"-f",
+"vc1",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.vc1"
+],
+"reglas": [
+"M",
+"C",
+"F-out"
+],
+"rc": 3165764104,
+"bytes": -1,
+"ms": 37.1,
+"veredicto": "FALLO",
+"motivo": "rc=3165764104 bytes=-1",
+"err": "0][0] [vost#0:0 @ 0000026e6a51ea80] Unknown encoder 'vc1' [vost#0:0 @ 0000026e6a51ea80] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.vc1. Error opening output files: Encoder not found "
+},
+{
+"semilla": "subtitulo",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer vc1 admite v y la entrada tiene s",
+"rc": null
+},
+{
+"semilla": "audio48",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer vc1 admite v y la entrada tiene a",
+"rc": null
+},
+{
+"semilla": "jpeg_exif",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\corpus\\imagen\\tipico.jpg",
+"-map",
+"0:v",
+"-c:v",
+"vc1",
+"-f",
+"vc1",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.vc1"
+],
+"reglas": [
+"M",
+"C",
+"F-out"
+],
+"rc": 3165764104,
+"bytes": -1,
+"ms": 34.2,
+"veredicto": "FALLO",
+"motivo": "rc=3165764104 bytes=-1",
+"err": "5 tbn [vost#0:0 @ 0000024bf7e2d140] Unknown encoder 'vc1' [vost#0:0 @ 0000024bf7e2d140] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.vc1. Error opening output files: Encoder not found "
+}
+]
+},
+"ffmpeg|xface": {
+"estado": "viva",
+"categoria_p2": 1,
+"veredicto": "INTEGRO",
+"diagnostico": "muxer=image2 v=mjpeg a=None s=None",
+"base_convertx_ok": false,
+"intentos": [
+{
+"semilla": "video_cif",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\s_cif.mp4",
+"-map",
+"0:v",
+"-c:v",
+"mjpeg",
+"-pix_fmt",
+"yuvj420p",
+"-strict",
+"-2",
+"-f",
+"image2",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.xface"
+],
+"reglas": [
+"M",
+"R",
+"C",
+"F-out"
+],
+"rc": 4294967274,
+"bytes": 9212,
+"ms": 64.7,
+"veredicto": "FALLO",
+"motivo": "rc=4294967274 bytes=9212",
+"err": "0/image2 @ 000002219787d900] video:19KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown frame=    2 fps=0.0 q=24.8 Lsize=N/A time=00:00:00.12 bitrate=N/A speed=6.07x elapsed=0:00:00.01     Conversion failed! "
+},
+{
+"semilla": "subtitulo",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer image2 admite v y la entrada tiene s",
+"rc": null
+},
+{
+"semilla": "audio48",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer image2 admite v y la entrada tiene a",
+"rc": null
+},
+{
+"semilla": "jpeg_exif",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\corpus\\imagen\\tipico.jpg",
+"-map",
+"0:v",
+"-c:v",
+"mjpeg",
+"-pix_fmt",
+"yuvj420p",
+"-strict",
+"-2",
+"-f",
+"image2",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.xface"
+],
+"reglas": [
+"M",
+"R",
+"C",
+"F-out"
+],
+"rc": 0,
+"bytes": 27232,
+"ms": 66.5,
+"veredicto": "INTEGRO",
+"motivo": "[N2 no evaluable]",
+"err": ""
+}
+]
+},
+"ffmpeg|xml": {
+"estado": "muerta",
+"categoria_p2": 3,
+"veredicto": "",
+"diagnostico": "muxer=webm_dash_manifest v=None a=None s=None",
+"base_convertx_ok": false,
+"intentos": [
+{
+"semilla": "video_cif",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\s_cif.mp4",
+"-map",
+"0:a",
+"-map",
+"0:v",
+"-f",
+"webm_dash_manifest",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.xml"
+],
+"reglas": [
+"M",
+"C",
+"F-out"
+],
+"rc": 3165764104,
+"bytes": -1,
+"ms": 39.5,
+"veredicto": "FALLO",
+"motivo": "rc=3165764104 bytes=-1",
+"err": " is probably disabled. Please choose an encoder manually. [aost#0:0 @ 000001e3d4b7ed00] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.xml. Error opening output files: Encoder not found "
+},
+{
+"semilla": "subtitulo",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\s.srt",
+"-map",
+"0:s",
+"-f",
+"webm_dash_manifest",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.xml"
+],
+"reglas": [
+"M",
+"C",
+"F-out"
+],
+"rc": 3165764104,
+"bytes": -1,
+"ms": 36.8,
+"veredicto": "FALLO",
+"motivo": "rc=3165764104 bytes=-1",
+"err": " is probably disabled. Please choose an encoder manually. [sost#0:0 @ 00000243a8bbef00] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.xml. Error opening output files: Encoder not found "
+},
+{
+"semilla": "audio48",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\s48.wav",
+"-map",
+"0:a",
+"-f",
+"webm_dash_manifest",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.xml"
+],
+"reglas": [
+"M",
+"C",
+"F-out"
+],
+"rc": 3165764104,
+"bytes": -1,
+"ms": 46.9,
+"veredicto": "FALLO",
+"motivo": "rc=3165764104 bytes=-1",
+"err": " is probably disabled. Please choose an encoder manually. [aost#0:0 @ 0000026017e8e540] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.xml. Error opening output files: Encoder not found "
+},
+{
+"semilla": "jpeg_exif",
+"args": [
+"ffmpeg",
+"-nostdin",
+"-y",
+"-i",
+"D:\\Work\\research\\FileX\\corpus\\imagen\\tipico.jpg",
+"-map",
+"0:v",
+"-f",
+"webm_dash_manifest",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.xml"
+],
+"reglas": [
+"M",
+"C",
+"F-out"
+],
+"rc": 3165764104,
+"bytes": -1,
+"ms": 32.3,
+"veredicto": "FALLO",
+"motivo": "rc=3165764104 bytes=-1",
+"err": " is probably disabled. Please choose an encoder manually. [vost#0:0 @ 000001c0ea18ea40] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.xml. Error opening output files: Encoder not found "
+}
+]
+},
+"imagemagick|clip": {
+"estado": "muerta",
+"categoria_p2": 3,
+"veredicto": "",
+"diagnostico": "",
+"base_convertx_ok": false,
+"intentos": [
+{
+"semilla": "jpeg_exif",
+"args": [
+"magick",
+"D:\\Work\\research\\FileX\\corpus\\imagen\\tipico.jpg",
+"-auto-orient",
+"-alpha",
+"set",
+"clip:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.clip"
+],
+"reglas": [
+"A",
+"X-out"
+],
+"rc": 1,
+"bytes": -1,
+"ms": 1620.0,
+"veredicto": "FALLO",
+"motivo": "rc=1 bytes=-1",
+"err": "\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.clip': No such file or directory @ error/image.c/ClipImagePath/730. magick: image does not have a clip mask `D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.clip' @ error/clip.c/WriteCLIPImage/234. "
+},
+{
+"semilla": "png_alfa",
+"args": [
+"magick",
+"D:\\Work\\research\\FileX\\corpus\\imagen\\alpha.png",
+"-auto-orient",
+"-alpha",
+"set",
+"clip:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.clip"
+],
+"reglas": [
+"A",
+"X-out"
+],
+"rc": 1,
+"bytes": -1,
+"ms": 1244.0,
+"veredicto": "FALLO",
+"motivo": "rc=1 bytes=-1",
+"err": "\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.clip': No such file or directory @ error/image.c/ClipImagePath/730. magick: image does not have a clip mask `D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.clip' @ error/clip.c/WriteCLIPImage/234. "
+},
+{
+"semilla": "tif16",
+"args": [
+"magick",
+"D:\\Work\\research\\FileX\\corpus\\imagen\\tipico.png",
+"-auto-orient",
+"-alpha",
+"set",
+"clip:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.clip"
+],
+"reglas": [
+"A",
+"X-out"
+],
+"rc": 1,
+"bytes": -1,
+"ms": 141.4,
+"veredicto": "FALLO",
+"motivo": "rc=1 bytes=-1",
+"err": "\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.clip': No such file or directory @ error/image.c/ClipImagePath/730. magick: image does not have a clip mask `D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.clip' @ error/clip.c/WriteCLIPImage/234. "
+}
+]
+},
+"imagemagick|jpt": {
+"estado": "muerta",
+"categoria_p2": 3,
+"veredicto": "",
+"diagnostico": "",
+"base_convertx_ok": false,
+"intentos": [
+{
+"semilla": "jpeg_exif",
+"args": [
+"magick",
+"D:\\Work\\research\\FileX\\corpus\\imagen\\tipico.jpg",
+"-auto-orient",
+"jpt:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.jpt"
+],
+"reglas": [
+"X-out"
+],
+"rc": 1,
+"bytes": 0,
+"ms": 18936.6,
+"veredicto": "FALLO",
+"motivo": "rc=1 bytes=0",
+"err": "magick: unable to encode image file `D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.jpt' @ error/jp2.c/WriteJP2Image/1271. "
+},
+{
+"semilla": "png_alfa",
+"args": [
+"magick",
+"D:\\Work\\research\\FileX\\corpus\\imagen\\alpha.png",
+"-auto-orient",
+"jpt:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.jpt"
+],
+"reglas": [
+"X-out"
+],
+"rc": 1,
+"bytes": 0,
+"ms": 38.1,
+"veredicto": "FALLO",
+"motivo": "rc=1 bytes=0",
+"err": "magick: unable to encode image file `D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.jpt' @ error/jp2.c/WriteJP2Image/1271. "
+},
+{
+"semilla": "tif16",
+"args": [
+"magick",
+"D:\\Work\\research\\FileX\\corpus\\imagen\\tipico.png",
+"-auto-orient",
+"jpt:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.jpt"
+],
+"reglas": [
+"X-out"
+],
+"rc": 1,
+"bytes": 0,
+"ms": 213.4,
+"veredicto": "FALLO",
+"motivo": "rc=1 bytes=0",
+"err": "magick: unable to encode image file `D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.jpt' @ error/jp2.c/WriteJP2Image/1271. "
+}
+]
+},
+"imagemagick|mask": {
+"estado": "muerta",
+"categoria_p2": 3,
+"veredicto": "",
+"diagnostico": "",
+"base_convertx_ok": false,
+"intentos": [
+{
+"semilla": "jpeg_exif",
+"args": [
+"magick",
+"D:\\Work\\research\\FileX\\corpus\\imagen\\tipico.jpg",
+"-auto-orient",
+"-alpha",
+"set",
+"mask:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.mask"
+],
+"reglas": [
+"A",
+"X-out"
+],
+"rc": 1,
+"bytes": -1,
+"ms": 1079.2,
+"veredicto": "FALLO",
+"motivo": "rc=1 bytes=-1",
+"err": "magick: image does not have an mask channel `D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.mask' @ error/mask.c/WriteMASKImage/353. "
+},
+{
+"semilla": "png_alfa",
+"args": [
+"magick",
+"D:\\Work\\research\\FileX\\corpus\\imagen\\alpha.png",
+"-auto-orient",
+"-alpha",
+"set",
+"mask:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.mask"
+],
+"reglas": [
+"A",
+"X-out"
+],
+"rc": 1,
+"bytes": -1,
+"ms": 34.0,
+"veredicto": "FALLO",
+"motivo": "rc=1 bytes=-1",
+"err": "magick: image does not have an mask channel `D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.mask' @ error/mask.c/WriteMASKImage/353. "
+},
+{
+"semilla": "tif16",
+"args": [
+"magick",
+"D:\\Work\\research\\FileX\\corpus\\imagen\\tipico.png",
+"-auto-orient",
+"-alpha",
+"set",
+"mask:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.mask"
+],
+"reglas": [
+"A",
+"X-out"
+],
+"rc": 1,
+"bytes": -1,
+"ms": 145.5,
+"veredicto": "FALLO",
+"motivo": "rc=1 bytes=-1",
+"err": "magick: image does not have an mask channel `D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.mask' @ error/mask.c/WriteMASKImage/353. "
+}
+]
+},
+"imagemagick|thumbnail": {
+"estado": "muerta",
+"categoria_p2": 3,
+"veredicto": "",
+"diagnostico": "",
+"base_convertx_ok": false,
+"intentos": [
+{
+"semilla": "jpeg_exif",
+"args": [
+"magick",
+"D:\\Work\\research\\FileX\\corpus\\imagen\\tipico.jpg",
+"-auto-orient",
+"thumbnail:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.thumbnail"
+],
+"reglas": [
+"X-out"
+],
+"rc": 1,
+"bytes": -1,
+"ms": 647.4,
+"veredicto": "FALLO",
+"motivo": "rc=1 bytes=-1",
+"err": "magick: image does not have a EXIF thumbnail `D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.thumbnail' @ error/thumbnail.c/WriteTHUMBNAILImage/187. "
+},
+{
+"semilla": "png_alfa",
+"args": [
+"magick",
+"D:\\Work\\research\\FileX\\corpus\\imagen\\alpha.png",
+"-auto-orient",
+"thumbnail:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.thumbnail"
+],
+"reglas": [
+"X-out"
+],
+"rc": 1,
+"bytes": -1,
+"ms": 38.2,
+"veredicto": "FALLO",
+"motivo": "rc=1 bytes=-1",
+"err": "magick: image does not have a EXIF thumbnail `D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.thumbnail' @ error/thumbnail.c/WriteTHUMBNAILImage/187. "
+},
+{
+"semilla": "tif16",
+"args": [
+"magick",
+"D:\\Work\\research\\FileX\\corpus\\imagen\\tipico.png",
+"-auto-orient",
+"thumbnail:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.thumbnail"
+],
+"reglas": [
+"X-out"
+],
+"rc": 1,
+"bytes": -1,
+"ms": 237.5,
+"veredicto": "FALLO",
+"motivo": "rc=1 bytes=-1",
+"err": "magick: image does not have a EXIF thumbnail `D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_out\\p.thumbnail' @ error/thumbnail.c/WriteTHUMBNAILImage/187. "
+}
+]
+}
+}

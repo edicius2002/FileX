@@ -1,0 +1,39 @@
+{
+ "por_rasterizador": {
+  "inkscape 1.x (contenedor)": {
+   "bytes": 13456,
+   "geometria": "400x200",
+   "tinta_banda_texto_pct": 14.022,
+   "tinta_total_pct": 13.379
+  },
+  "resvg 0.46.0 (contenedor)": {
+   "bytes": 8973,
+   "geometria": "400x200",
+   "tinta_banda_texto_pct": 0.0,
+   "tinta_total_pct": 8.775
+  },
+  "magick 7.1.2 (Windows)": {
+   "bytes": 8628,
+   "geometria": "400x200",
+   "tinta_banda_texto_pct": 15.072,
+   "tinta_total_pct": 13.395
+  }
+ },
+ "pares": [
+  {
+   "a": "inkscape 1.x (contenedor)",
+   "b": "resvg 0.46.0 (contenedor)",
+   "rmse": "8479.52 (0.129389)"
+  },
+  {
+   "a": "inkscape 1.x (contenedor)",
+   "b": "magick 7.1.2 (Windows)",
+   "rmse": "9048.53 (0.138072)"
+  },
+  {
+   "a": "resvg 0.46.0 (contenedor)",
+   "b": "magick 7.1.2 (Windows)",
+   "rmse": "8974.69 (0.136945)"
+  }
+ ]
+}

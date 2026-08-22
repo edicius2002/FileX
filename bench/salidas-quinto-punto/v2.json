@@ -1,0 +1,1636 @@
+{
+ "con V2": {
+  "total_ms": 70692.6,
+  "v2_ms": 23936.1,
+  "veredictos": {
+   "ok": 37,
+   "aviso": 8,
+   "ok_parcial": 8
+  },
+  "avisos": 8,
+  "detalle": [
+   {
+    "salida": "tipico_flac-to.mp3",
+    "veredicto": "ok",
+    "cobertura": {
+     "V5": true
+    },
+    "ms": {
+     "sondeo": 16.12,
+     "V5": 114.84,
+     "total": 130.97
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "tipico_flac-to.opus",
+    "veredicto": "ok",
+    "cobertura": {
+     "V5": true
+    },
+    "ms": {
+     "sondeo": 12.37,
+     "V5": 88.72,
+     "total": 101.1
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "tipico_flac-to.wav",
+    "veredicto": "ok",
+    "cobertura": {
+     "A4": true
+    },
+    "ms": {
+     "sondeo": 11.26,
+     "A4": 157.07,
+     "total": 168.34
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "tipico_mp3-to.flac",
+    "veredicto": "aviso",
+    "cobertura": {
+     "V5": true,
+     "A4": true
+    },
+    "ms": {
+     "sondeo": 15.63,
+     "V5": 75.29,
+     "A4": 102.17,
+     "total": 193.09
+    },
+    "hallazgos": [
+     {
+      "punto": "F",
+      "regla": "A4",
+      "severidad": "aviso",
+      "mensaje": "el PCM no coincide, pero la profundidad esta INFLADA (24 bits sobre un origen de 16 efectivos, regla A6): el redondeo al medir explica la diferencia",
+      "esperado": "f5ddaa6410d81575bcdcc6b5b3a8f59b",
+      "obtenido": "984b4619d1c3034c7bafc37264dac0ec"
+     }
+    ]
+   },
+   {
+    "salida": "tipico_mp3-to.wav",
+    "veredicto": "ok",
+    "cobertura": {
+     "A4": true
+    },
+    "ms": {
+     "sondeo": 23.55,
+     "A4": 122.43,
+     "total": 145.98
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "tipico_mp4-audio-copy.m4a",
+    "veredicto": "ok",
+    "cobertura": {
+     "V5": true,
+     "A5": true
+    },
+    "ms": {
+     "sondeo": 30.44,
+     "V5": 141.89,
+     "A5": 171.3,
+     "total": 343.63
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "tipico_mp4-audio.flac",
+    "veredicto": "aviso",
+    "cobertura": {
+     "V5": true,
+     "A5": true
+    },
+    "ms": {
+     "sondeo": 14.4,
+     "V5": 89.03,
+     "A5": 114.82,
+     "total": 218.25
+    },
+    "hallazgos": [
+     {
+      "punto": "F",
+      "regla": "A5",
+      "severidad": "aviso",
+      "mensaje": "el PCM no coincide, pero la profundidad esta INFLADA (24 bits sobre un origen de 16 efectivos, regla A6): el redondeo al medir explica la diferencia",
+      "esperado": "d0bd638ebac71997b3043a458f350ea6",
+      "obtenido": "14a16866cc07029dab371161c0b9a773"
+     }
+    ]
+   },
+   {
+    "salida": "tipico_mp4-audio.mp3",
+    "veredicto": "ok",
+    "cobertura": {
+     "V5": true
+    },
+    "ms": {
+     "sondeo": 18.14,
+     "V5": 88.14,
+     "total": 106.28
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "trivial_wav-to.flac",
+    "veredicto": "ok",
+    "cobertura": {
+     "V5": true,
+     "A4": true
+    },
+    "ms": {
+     "sondeo": 24.47,
+     "V5": 79.8,
+     "A4": 99.46,
+     "total": 203.73
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "trivial_wav-to.m4a",
+    "veredicto": "ok",
+    "cobertura": {
+     "V5": true
+    },
+    "ms": {
+     "sondeo": 10.3,
+     "V5": 79.77,
+     "total": 90.07
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "trivial_wav-to.mp3",
+    "veredicto": "ok",
+    "cobertura": {
+     "V5": true
+    },
+    "ms": {
+     "sondeo": 10.03,
+     "V5": 78.52,
+     "total": 88.55
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "trivial_wav-to.opus",
+    "veredicto": "ok",
+    "cobertura": {
+     "V5": true
+    },
+    "ms": {
+     "sondeo": 15.64,
+     "V5": 76.53,
+     "total": 92.18
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "patologico_bom_csv-to-normalizado.csv",
+    "veredicto": "ok_parcial",
+    "cobertura": {},
+    "ms": {
+     "sondeo": 25.89,
+     "total": 25.89
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "patologico_bom_csv-to.json",
+    "veredicto": "ok_parcial",
+    "cobertura": {},
+    "ms": {
+     "sondeo": 12.73,
+     "total": 12.73
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "tipico_json-to.csv",
+    "veredicto": "ok_parcial",
+    "cobertura": {},
+    "ms": {
+     "sondeo": 17.47,
+     "total": 17.47
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "16bit_tif-to-d16.png",
+    "veredicto": "ok",
+    "cobertura": {
+     "I6": true
+    },
+    "ms": {
+     "sondeo": 25.08,
+     "I6": 4699.65,
+     "total": 4724.73
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "16bit_tif-to-d8.png",
+    "veredicto": "ok",
+    "cobertura": {
+     "I7": true
+    },
+    "ms": {
+     "sondeo": 33.04,
+     "I7": 2464.62,
+     "total": 2497.66
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "16bit_tif-to-default.png",
+    "veredicto": "ok",
+    "cobertura": {
+     "I6": true
+    },
+    "ms": {
+     "sondeo": 13.07,
+     "I6": 4106.94,
+     "total": 4120.0
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "16bit_tif-to.jpg",
+    "veredicto": "ok",
+    "cobertura": {
+     "I3": true,
+     "I7": true
+    },
+    "ms": {
+     "sondeo": 14.58,
+     "I3": 0.14,
+     "I7": 1171.22,
+     "total": 1185.94
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "16bit_tif-to.webp",
+    "veredicto": "ok",
+    "cobertura": {
+     "I7": true
+    },
+    "ms": {
+     "sondeo": 45.75,
+     "I7": 2150.45,
+     "total": 2196.19
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "alpha_png-to-flat.jpg",
+    "veredicto": "ok",
+    "cobertura": {
+     "I7": true
+    },
+    "ms": {
+     "sondeo": 19.38,
+     "I7": 38.87,
+     "total": 58.25
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "alpha_png-to.avif",
+    "veredicto": "aviso",
+    "cobertura": {
+     "I8": true,
+     "I7": true
+    },
+    "ms": {
+     "sondeo": 7.95,
+     "I7": 113.91,
+     "total": 121.86
+    },
+    "hallazgos": [
+     {
+      "punto": "F",
+      "regla": "I8",
+      "severidad": "aviso",
+      "mensaje": "grafismo (origen de paleta) codificado CON PERDIDA en un destino que admite sin perdida",
+      "esperado": "avif sin perdida",
+      "obtenido": "avif con perdida"
+     }
+    ]
+   },
+   {
+    "salida": "alpha_png-to.jpg",
+    "veredicto": "aviso",
+    "cobertura": {
+     "I3": true,
+     "I7": true
+    },
+    "ms": {
+     "sondeo": 12.24,
+     "I3": 36.34,
+     "I7": 45.72,
+     "total": 94.29
+    },
+    "hallazgos": [
+     {
+      "punto": "F",
+      "regla": "I3",
+      "severidad": "aviso",
+      "mensaje": "APLANADO SOBRE NEGRO: el pixel (0,0), 100 % transparente en la entrada, sale negro",
+      "esperado": "srgb(255,255,255)",
+      "obtenido": "srgb(0, 0, 0)"
+     },
+     {
+      "punto": "F",
+      "regla": "I7",
+      "severidad": "aviso",
+      "mensaje": "PSNR por debajo del umbral (sobre blanco)",
+      "esperado": ">= 40.0 dB",
+      "obtenido": 0.704711
+     }
+    ]
+   },
+   {
+    "salida": "alpha_png-to.png8.png",
+    "veredicto": "ok",
+    "cobertura": {
+     "I6": true
+    },
+    "ms": {
+     "sondeo": 12.53,
+     "I6": 43.42,
+     "total": 55.95
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "alpha_png-to.webp",
+    "veredicto": "aviso",
+    "cobertura": {
+     "I8": true,
+     "I7": true
+    },
+    "ms": {
+     "sondeo": 17.82,
+     "I7": 45.48,
+     "total": 63.3
+    },
+    "hallazgos": [
+     {
+      "punto": "F",
+      "regla": "I8",
+      "severidad": "aviso",
+      "mensaje": "grafismo (origen de paleta) codificado CON PERDIDA en un destino que admite sin perdida",
+      "esperado": "webp sin perdida",
+      "obtenido": "webp con perdida"
+     }
+    ]
+   },
+   {
+    "salida": "tipico_jpg-to.png",
+    "veredicto": "ok",
+    "cobertura": {
+     "I6": true
+    },
+    "ms": {
+     "sondeo": 12.61,
+     "I6": 355.79,
+     "total": 368.41
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "tipico_png-to.avif",
+    "veredicto": "ok",
+    "cobertura": {
+     "I7": true
+    },
+    "ms": {
+     "sondeo": 22.62,
+     "I7": 452.62,
+     "total": 475.24
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "tipico_png-to.jpg",
+    "veredicto": "ok",
+    "cobertura": {
+     "I3": true,
+     "I7": true
+    },
+    "ms": {
+     "sondeo": 12.68,
+     "I3": 67.82,
+     "I7": 578.07,
+     "total": 658.58
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "tipico_png-to.webp",
+    "veredicto": "ok",
+    "cobertura": {
+     "I7": true
+    },
+    "ms": {
+     "sondeo": 14.91,
+     "I7": 464.12,
+     "total": 479.04
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "tipico_webp-to.jpg",
+    "veredicto": "ok",
+    "cobertura": {
+     "I3": true,
+     "I7": true
+    },
+    "ms": {
+     "sondeo": 15.45,
+     "I3": 0.17,
+     "I7": 311.04,
+     "total": 326.66
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "tipico_webp-to.png",
+    "veredicto": "ok",
+    "cobertura": {
+     "I6": true
+    },
+    "ms": {
+     "sondeo": 13.58,
+     "I6": 357.39,
+     "total": 370.96
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "trivial_png-to-lossless.webp",
+    "veredicto": "ok",
+    "cobertura": {
+     "I7": true
+    },
+    "ms": {
+     "sondeo": 11.47,
+     "I7": 40.72,
+     "total": 52.19
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "trivial_png-to.jpg",
+    "veredicto": "ok",
+    "cobertura": {
+     "I3": true,
+     "I7": true
+    },
+    "ms": {
+     "sondeo": 7.93,
+     "I3": 0.13,
+     "I7": 34.31,
+     "total": 42.38
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "trivial_png-to.webp",
+    "veredicto": "aviso",
+    "cobertura": {
+     "I8": true,
+     "I7": true
+    },
+    "ms": {
+     "sondeo": 10.9,
+     "I7": 32.34,
+     "total": 43.23
+    },
+    "hallazgos": [
+     {
+      "punto": "F",
+      "regla": "I8",
+      "severidad": "aviso",
+      "mensaje": "grafismo (origen de paleta) codificado CON PERDIDA en un destino que admite sin perdida",
+      "esperado": "webp sin perdida",
+      "obtenido": "webp con perdida"
+     }
+    ]
+   },
+   {
+    "salida": "alpha_png-to.pdf",
+    "veredicto": "ok",
+    "cobertura": {
+     "P6": true
+    },
+    "ms": {
+     "sondeo": 5.16,
+     "P6": 248.95,
+     "total": 254.11
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "patologico_escaneado_pdf-to-p1.png",
+    "veredicto": "ok_parcial",
+    "cobertura": {},
+    "ms": {
+     "sondeo": 42.11,
+     "total": 42.11
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "tipico_jpg-to.pdf",
+    "veredicto": "ok",
+    "cobertura": {
+     "P6": true
+    },
+    "ms": {
+     "sondeo": 13.8,
+     "P6": 229.76,
+     "total": 243.56
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "tipico_png-to-150dpi.pdf",
+    "veredicto": "ok",
+    "cobertura": {
+     "P6": true
+    },
+    "ms": {
+     "sondeo": 13.82,
+     "P6": 226.71,
+     "total": 240.53
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "tipico_png-to.pdf",
+    "veredicto": "ok",
+    "cobertura": {
+     "P6": true
+    },
+    "ms": {
+     "sondeo": 16.6,
+     "P6": 226.46,
+     "total": 243.06
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "tipico_texto_pdf-to-gs.pdf",
+    "veredicto": "ok",
+    "cobertura": {
+     "P6": true,
+     "P9": true,
+     "P2": true
+    },
+    "ms": {
+     "sondeo": 3.33,
+     "P6": 188.73,
+     "P9": 0.02,
+     "P2": 186.92,
+     "total": 379.0
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "tipico_texto_pdf-to-p1.jpg",
+    "veredicto": "ok_parcial",
+    "cobertura": {},
+    "ms": {
+     "sondeo": 14.22,
+     "total": 14.22
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "tipico_texto_pdf-to-p1.png",
+    "veredicto": "ok_parcial",
+    "cobertura": {},
+    "ms": {
+     "sondeo": 8.51,
+     "total": 8.51
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "tipico_texto_pdf-to.tif",
+    "veredicto": "ok_parcial",
+    "cobertura": {},
+    "ms": {
+     "sondeo": 58.65,
+     "total": 58.65
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "tipico_texto_rasterizado.pdf",
+    "veredicto": "ok",
+    "cobertura": {
+     "P6": true
+    },
+    "ms": {
+     "sondeo": 11.27,
+     "P6": 193.29,
+     "total": 204.56
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "trivial_pdf-to-p1.png",
+    "veredicto": "ok_parcial",
+    "cobertura": {},
+    "ms": {
+     "sondeo": 21.97,
+     "total": 21.97
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "2pistas_mkv-to-COPY.mp4",
+    "veredicto": "ok",
+    "cobertura": {
+     "V5": true,
+     "V2": true,
+     "V6": true,
+     "V8": true,
+     "A4": true
+    },
+    "ms": {
+     "sondeo": 25.82,
+     "V5": 99.12,
+     "V2": 2267.26,
+     "V6": 1634.42,
+     "A4": 102.49,
+     "total": 4129.11
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "2pistas_mkv-to-DEFAULT.mp4",
+    "veredicto": "ok",
+    "cobertura": {
+     "V5": true,
+     "V2": true,
+     "V6": true,
+     "V8": true
+    },
+    "ms": {
+     "sondeo": 19.36,
+     "V5": 86.0,
+     "V2": 1723.85,
+     "V6": 1651.25,
+     "V8": 916.67,
+     "total": 4397.13
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "2pistas_mkv-to-MAP0.mp4",
+    "veredicto": "ok",
+    "cobertura": {
+     "V5": true,
+     "V2": true,
+     "V6": true,
+     "V8": true
+    },
+    "ms": {
+     "sondeo": 85.11,
+     "V5": 138.72,
+     "V2": 1934.17,
+     "V6": 1610.71,
+     "V8": 504.25,
+     "total": 4272.95
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "tipico_mp4-to.mkv",
+    "veredicto": "ok",
+    "cobertura": {
+     "V5": true,
+     "V2": true,
+     "V6": true,
+     "V8": true,
+     "A4": true
+    },
+    "ms": {
+     "sondeo": 12.67,
+     "V5": 119.43,
+     "V2": 9553.56,
+     "V6": 7421.31,
+     "A4": 139.93,
+     "total": 17246.91
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "tipico_mp4-to.webm",
+    "veredicto": "ok",
+    "cobertura": {
+     "V5": true,
+     "V2": true,
+     "V6": true,
+     "V8": true
+    },
+    "ms": {
+     "sondeo": 13.69,
+     "V5": 109.07,
+     "V2": 8084.49,
+     "V6": 6937.12,
+     "V8": 2625.68,
+     "total": 17770.06
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "trivial_mp4-to-naive.gif",
+    "veredicto": "aviso",
+    "cobertura": {
+     "V9": true
+    },
+    "ms": {
+     "sondeo": 14.41,
+     "V9": 0.15,
+     "total": 14.56
+    },
+    "hallazgos": [
+     {
+      "punto": "F",
+      "regla": "V9",
+      "severidad": "aviso",
+      "mensaje": "PALETA GENERICA: la tabla de color es una rejilla regular (8x8x4), no se calculo sobre el clip",
+      "esperado": "paleta derivada del clip (palettegen)",
+      "obtenido": "rejilla fija"
+     }
+    ]
+   },
+   {
+    "salida": "trivial_mp4-to-palette.gif",
+    "veredicto": "ok",
+    "cobertura": {
+     "V9": true
+    },
+    "ms": {
+     "sondeo": 9.47,
+     "V9": 0.22,
+     "total": 9.7
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "trivial_mp4-to.webm",
+    "veredicto": "aviso",
+    "cobertura": {
+     "V5": true,
+     "V2": true,
+     "V6": true,
+     "V8": true
+    },
+    "ms": {
+     "sondeo": 15.26,
+     "V5": 89.35,
+     "V2": 372.8,
+     "V6": 458.28,
+     "V8": 182.26,
+     "total": 1117.96
+    },
+    "hallazgos": [
+     {
+      "punto": "F",
+      "regla": "V8",
+      "severidad": "aviso",
+      "mensaje": "PSNR de luminancia bajo",
+      "esperado": ">= 40 dB",
+      "obtenido": 29.625658
+     }
+    ]
+   }
+  ]
+ },
+ "sin V2": {
+  "total_ms": 37947.4,
+  "v2_ms": 0,
+  "veredictos": {
+   "ok": 32,
+   "aviso": 8,
+   "ok_parcial": 13
+  },
+  "avisos": 8,
+  "detalle": [
+   {
+    "salida": "tipico_flac-to.mp3",
+    "veredicto": "ok",
+    "cobertura": {
+     "V5": true
+    },
+    "ms": {
+     "sondeo": 1.51,
+     "V5": 94.26,
+     "total": 95.77
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "tipico_flac-to.opus",
+    "veredicto": "ok",
+    "cobertura": {
+     "V5": true
+    },
+    "ms": {
+     "sondeo": 1.04,
+     "V5": 78.61,
+     "total": 79.65
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "tipico_flac-to.wav",
+    "veredicto": "ok",
+    "cobertura": {
+     "A4": true
+    },
+    "ms": {
+     "sondeo": 0.6,
+     "A4": 109.15,
+     "total": 109.75
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "tipico_mp3-to.flac",
+    "veredicto": "aviso",
+    "cobertura": {
+     "V5": true,
+     "A4": true
+    },
+    "ms": {
+     "sondeo": 0.48,
+     "V5": 84.97,
+     "A4": 97.79,
+     "total": 183.23
+    },
+    "hallazgos": [
+     {
+      "punto": "F",
+      "regla": "A4",
+      "severidad": "aviso",
+      "mensaje": "el PCM no coincide, pero la profundidad esta INFLADA (24 bits sobre un origen de 16 efectivos, regla A6): el redondeo al medir explica la diferencia",
+      "esperado": "f5ddaa6410d81575bcdcc6b5b3a8f59b",
+      "obtenido": "984b4619d1c3034c7bafc37264dac0ec"
+     }
+    ]
+   },
+   {
+    "salida": "tipico_mp3-to.wav",
+    "veredicto": "ok",
+    "cobertura": {
+     "A4": true
+    },
+    "ms": {
+     "sondeo": 0.43,
+     "A4": 106.81,
+     "total": 107.24
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "tipico_mp4-audio-copy.m4a",
+    "veredicto": "ok",
+    "cobertura": {
+     "V5": true,
+     "A5": true
+    },
+    "ms": {
+     "sondeo": 0.85,
+     "V5": 83.09,
+     "A5": 134.61,
+     "total": 218.56
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "tipico_mp4-audio.flac",
+    "veredicto": "aviso",
+    "cobertura": {
+     "V5": true,
+     "A5": true
+    },
+    "ms": {
+     "sondeo": 0.82,
+     "V5": 83.8,
+     "A5": 108.66,
+     "total": 193.28
+    },
+    "hallazgos": [
+     {
+      "punto": "F",
+      "regla": "A5",
+      "severidad": "aviso",
+      "mensaje": "el PCM no coincide, pero la profundidad esta INFLADA (24 bits sobre un origen de 16 efectivos, regla A6): el redondeo al medir explica la diferencia",
+      "esperado": "d0bd638ebac71997b3043a458f350ea6",
+      "obtenido": "14a16866cc07029dab371161c0b9a773"
+     }
+    ]
+   },
+   {
+    "salida": "tipico_mp4-audio.mp3",
+    "veredicto": "ok",
+    "cobertura": {
+     "V5": true
+    },
+    "ms": {
+     "sondeo": 0.94,
+     "V5": 79.76,
+     "total": 80.7
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "trivial_wav-to.flac",
+    "veredicto": "ok",
+    "cobertura": {
+     "V5": true,
+     "A4": true
+    },
+    "ms": {
+     "sondeo": 0.73,
+     "V5": 86.5,
+     "A4": 100.9,
+     "total": 188.13
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "trivial_wav-to.m4a",
+    "veredicto": "ok",
+    "cobertura": {
+     "V5": true
+    },
+    "ms": {
+     "sondeo": 0.68,
+     "V5": 95.46,
+     "total": 96.14
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "trivial_wav-to.mp3",
+    "veredicto": "ok",
+    "cobertura": {
+     "V5": true
+    },
+    "ms": {
+     "sondeo": 0.41,
+     "V5": 97.85,
+     "total": 98.27
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "trivial_wav-to.opus",
+    "veredicto": "ok",
+    "cobertura": {
+     "V5": true
+    },
+    "ms": {
+     "sondeo": 0.49,
+     "V5": 86.07,
+     "total": 86.57
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "patologico_bom_csv-to-normalizado.csv",
+    "veredicto": "ok_parcial",
+    "cobertura": {},
+    "ms": {
+     "sondeo": 0.97,
+     "total": 0.97
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "patologico_bom_csv-to.json",
+    "veredicto": "ok_parcial",
+    "cobertura": {},
+    "ms": {
+     "sondeo": 0.65,
+     "total": 0.65
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "tipico_json-to.csv",
+    "veredicto": "ok_parcial",
+    "cobertura": {},
+    "ms": {
+     "sondeo": 0.46,
+     "total": 0.46
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "16bit_tif-to-d16.png",
+    "veredicto": "ok",
+    "cobertura": {
+     "I6": true
+    },
+    "ms": {
+     "sondeo": 0.4,
+     "I6": 1842.35,
+     "total": 1842.76
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "16bit_tif-to-d8.png",
+    "veredicto": "ok",
+    "cobertura": {
+     "I7": true
+    },
+    "ms": {
+     "sondeo": 0.45,
+     "I7": 1452.63,
+     "total": 1453.08
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "16bit_tif-to-default.png",
+    "veredicto": "ok",
+    "cobertura": {
+     "I6": true
+    },
+    "ms": {
+     "sondeo": 0.47,
+     "I6": 1729.12,
+     "total": 1729.59
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "16bit_tif-to.jpg",
+    "veredicto": "ok",
+    "cobertura": {
+     "I3": true,
+     "I7": true
+    },
+    "ms": {
+     "sondeo": 0.43,
+     "I3": 0.13,
+     "I7": 1195.03,
+     "total": 1195.59
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "16bit_tif-to.webp",
+    "veredicto": "ok",
+    "cobertura": {
+     "I7": true
+    },
+    "ms": {
+     "sondeo": 0.54,
+     "I7": 1423.35,
+     "total": 1423.89
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "alpha_png-to-flat.jpg",
+    "veredicto": "ok",
+    "cobertura": {
+     "I7": true
+    },
+    "ms": {
+     "sondeo": 0.83,
+     "I7": 59.84,
+     "total": 60.68
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "alpha_png-to.avif",
+    "veredicto": "aviso",
+    "cobertura": {
+     "I8": true,
+     "I7": true
+    },
+    "ms": {
+     "sondeo": 1.04,
+     "I7": 73.23,
+     "total": 74.27
+    },
+    "hallazgos": [
+     {
+      "punto": "F",
+      "regla": "I8",
+      "severidad": "aviso",
+      "mensaje": "grafismo (origen de paleta) codificado CON PERDIDA en un destino que admite sin perdida",
+      "esperado": "avif sin perdida",
+      "obtenido": "avif con perdida"
+     }
+    ]
+   },
+   {
+    "salida": "alpha_png-to.jpg",
+    "veredicto": "aviso",
+    "cobertura": {
+     "I3": true,
+     "I7": true
+    },
+    "ms": {
+     "sondeo": 0.64,
+     "I3": 51.94,
+     "I7": 51.57,
+     "total": 104.16
+    },
+    "hallazgos": [
+     {
+      "punto": "F",
+      "regla": "I3",
+      "severidad": "aviso",
+      "mensaje": "APLANADO SOBRE NEGRO: el pixel (0,0), 100 % transparente en la entrada, sale negro",
+      "esperado": "srgb(255,255,255)",
+      "obtenido": "srgb(0, 0, 0)"
+     },
+     {
+      "punto": "F",
+      "regla": "I7",
+      "severidad": "aviso",
+      "mensaje": "PSNR por debajo del umbral (sobre blanco)",
+      "esperado": ">= 40.0 dB",
+      "obtenido": 0.704711
+     }
+    ]
+   },
+   {
+    "salida": "alpha_png-to.png8.png",
+    "veredicto": "ok",
+    "cobertura": {
+     "I6": true
+    },
+    "ms": {
+     "sondeo": 0.58,
+     "I6": 49.55,
+     "total": 50.13
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "alpha_png-to.webp",
+    "veredicto": "aviso",
+    "cobertura": {
+     "I8": true,
+     "I7": true
+    },
+    "ms": {
+     "sondeo": 1.47,
+     "I7": 45.95,
+     "total": 47.42
+    },
+    "hallazgos": [
+     {
+      "punto": "F",
+      "regla": "I8",
+      "severidad": "aviso",
+      "mensaje": "grafismo (origen de paleta) codificado CON PERDIDA en un destino que admite sin perdida",
+      "esperado": "webp sin perdida",
+      "obtenido": "webp con perdida"
+     }
+    ]
+   },
+   {
+    "salida": "tipico_jpg-to.png",
+    "veredicto": "ok",
+    "cobertura": {
+     "I6": true
+    },
+    "ms": {
+     "sondeo": 0.65,
+     "I6": 398.92,
+     "total": 399.57
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "tipico_png-to.avif",
+    "veredicto": "ok",
+    "cobertura": {
+     "I7": true
+    },
+    "ms": {
+     "sondeo": 0.5,
+     "I7": 476.32,
+     "total": 476.82
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "tipico_png-to.jpg",
+    "veredicto": "ok",
+    "cobertura": {
+     "I3": true,
+     "I7": true
+    },
+    "ms": {
+     "sondeo": 0.43,
+     "I3": 79.96,
+     "I7": 466.26,
+     "total": 546.65
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "tipico_png-to.webp",
+    "veredicto": "ok",
+    "cobertura": {
+     "I7": true
+    },
+    "ms": {
+     "sondeo": 0.42,
+     "I7": 526.01,
+     "total": 526.43
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "tipico_webp-to.jpg",
+    "veredicto": "ok",
+    "cobertura": {
+     "I3": true,
+     "I7": true
+    },
+    "ms": {
+     "sondeo": 0.6,
+     "I3": 0.19,
+     "I7": 331.4,
+     "total": 332.2
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "tipico_webp-to.png",
+    "veredicto": "ok",
+    "cobertura": {
+     "I6": true
+    },
+    "ms": {
+     "sondeo": 0.42,
+     "I6": 336.44,
+     "total": 336.86
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "trivial_png-to-lossless.webp",
+    "veredicto": "ok",
+    "cobertura": {
+     "I7": true
+    },
+    "ms": {
+     "sondeo": 0.89,
+     "I7": 34.93,
+     "total": 35.81
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "trivial_png-to.jpg",
+    "veredicto": "ok",
+    "cobertura": {
+     "I3": true,
+     "I7": true
+    },
+    "ms": {
+     "sondeo": 0.59,
+     "I3": 0.21,
+     "I7": 44.75,
+     "total": 45.55
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "trivial_png-to.webp",
+    "veredicto": "aviso",
+    "cobertura": {
+     "I8": true,
+     "I7": true
+    },
+    "ms": {
+     "sondeo": 0.62,
+     "I7": 46.41,
+     "total": 47.03
+    },
+    "hallazgos": [
+     {
+      "punto": "F",
+      "regla": "I8",
+      "severidad": "aviso",
+      "mensaje": "grafismo (origen de paleta) codificado CON PERDIDA en un destino que admite sin perdida",
+      "esperado": "webp sin perdida",
+      "obtenido": "webp con perdida"
+     }
+    ]
+   },
+   {
+    "salida": "alpha_png-to.pdf",
+    "veredicto": "ok",
+    "cobertura": {
+     "P6": true
+    },
+    "ms": {
+     "sondeo": 0.85,
+     "P6": 254.11,
+     "total": 254.96
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "patologico_escaneado_pdf-to-p1.png",
+    "veredicto": "ok_parcial",
+    "cobertura": {},
+    "ms": {
+     "sondeo": 9.44,
+     "total": 9.44
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "tipico_jpg-to.pdf",
+    "veredicto": "ok",
+    "cobertura": {
+     "P6": true
+    },
+    "ms": {
+     "sondeo": 0.59,
+     "P6": 231.66,
+     "total": 232.25
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "tipico_png-to-150dpi.pdf",
+    "veredicto": "ok",
+    "cobertura": {
+     "P6": true
+    },
+    "ms": {
+     "sondeo": 0.8,
+     "P6": 247.62,
+     "total": 248.42
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "tipico_png-to.pdf",
+    "veredicto": "ok",
+    "cobertura": {
+     "P6": true
+    },
+    "ms": {
+     "sondeo": 0.53,
+     "P6": 227.06,
+     "total": 227.59
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "tipico_texto_pdf-to-gs.pdf",
+    "veredicto": "ok",
+    "cobertura": {
+     "P6": true,
+     "P9": true,
+     "P2": true
+    },
+    "ms": {
+     "sondeo": 0.59,
+     "P6": 192.53,
+     "P9": 0.02,
+     "P2": 177.33,
+     "total": 370.47
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "tipico_texto_pdf-to-p1.jpg",
+    "veredicto": "ok_parcial",
+    "cobertura": {},
+    "ms": {
+     "sondeo": 0.41,
+     "total": 0.41
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "tipico_texto_pdf-to-p1.png",
+    "veredicto": "ok_parcial",
+    "cobertura": {},
+    "ms": {
+     "sondeo": 0.35,
+     "total": 0.35
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "tipico_texto_pdf-to.tif",
+    "veredicto": "ok_parcial",
+    "cobertura": {},
+    "ms": {
+     "sondeo": 0.39,
+     "total": 0.39
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "tipico_texto_rasterizado.pdf",
+    "veredicto": "ok",
+    "cobertura": {
+     "P6": true
+    },
+    "ms": {
+     "sondeo": 0.38,
+     "P6": 187.5,
+     "total": 187.88
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "trivial_pdf-to-p1.png",
+    "veredicto": "ok_parcial",
+    "cobertura": {},
+    "ms": {
+     "sondeo": 0.5,
+     "total": 0.5
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "2pistas_mkv-to-COPY.mp4",
+    "veredicto": "ok_parcial",
+    "cobertura": {
+     "V5": true,
+     "V2": false,
+     "V6": true,
+     "V8": true,
+     "A4": true
+    },
+    "ms": {
+     "sondeo": 0.98,
+     "V5": 92.56,
+     "V6": 1758.47,
+     "A4": 103.87,
+     "total": 1955.89
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "2pistas_mkv-to-DEFAULT.mp4",
+    "veredicto": "ok_parcial",
+    "cobertura": {
+     "V5": true,
+     "V2": false,
+     "V6": true,
+     "V8": true
+    },
+    "ms": {
+     "sondeo": 1.01,
+     "V5": 87.75,
+     "V6": 1711.82,
+     "V8": 482.0,
+     "total": 2282.58
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "2pistas_mkv-to-MAP0.mp4",
+    "veredicto": "ok_parcial",
+    "cobertura": {
+     "V5": true,
+     "V2": false,
+     "V6": true,
+     "V8": true
+    },
+    "ms": {
+     "sondeo": 1.34,
+     "V5": 106.69,
+     "V6": 1635.55,
+     "V8": 582.67,
+     "total": 2326.26
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "tipico_mp4-to.mkv",
+    "veredicto": "ok_parcial",
+    "cobertura": {
+     "V5": true,
+     "V2": false,
+     "V6": true,
+     "V8": true,
+     "A4": true
+    },
+    "ms": {
+     "sondeo": 1.02,
+     "V5": 101.42,
+     "V6": 7301.79,
+     "A4": 133.83,
+     "total": 7538.06
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "tipico_mp4-to.webm",
+    "veredicto": "ok_parcial",
+    "cobertura": {
+     "V5": true,
+     "V2": false,
+     "V6": true,
+     "V8": true
+    },
+    "ms": {
+     "sondeo": 0.98,
+     "V5": 101.11,
+     "V6": 6735.21,
+     "V8": 2513.59,
+     "total": 9350.89
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "trivial_mp4-to-naive.gif",
+    "veredicto": "aviso",
+    "cobertura": {
+     "V9": true
+    },
+    "ms": {
+     "sondeo": 1.43,
+     "V9": 0.17,
+     "total": 1.61
+    },
+    "hallazgos": [
+     {
+      "punto": "F",
+      "regla": "V9",
+      "severidad": "aviso",
+      "mensaje": "PALETA GENERICA: la tabla de color es una rejilla regular (8x8x4), no se calculo sobre el clip",
+      "esperado": "paleta derivada del clip (palettegen)",
+      "obtenido": "rejilla fija"
+     }
+    ]
+   },
+   {
+    "salida": "trivial_mp4-to-palette.gif",
+    "veredicto": "ok",
+    "cobertura": {
+     "V9": true
+    },
+    "ms": {
+     "sondeo": 1.97,
+     "V9": 0.2,
+     "total": 2.17
+    },
+    "hallazgos": []
+   },
+   {
+    "salida": "trivial_mp4-to.webm",
+    "veredicto": "aviso",
+    "cobertura": {
+     "V5": true,
+     "V2": false,
+     "V6": true,
+     "V8": true
+    },
+    "ms": {
+     "sondeo": 0.71,
+     "V5": 84.76,
+     "V6": 306.44,
+     "V8": 152.6,
+     "total": 544.52
+    },
+    "hallazgos": [
+     {
+      "punto": "F",
+      "regla": "V8",
+      "severidad": "aviso",
+      "mensaje": "PSNR de luminancia bajo",
+      "esperado": ">= 40 dB",
+      "obtenido": 29.625658
+     }
+    ]
+   }
+  ]
+ }
+}

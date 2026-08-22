@@ -1,0 +1,32 @@
+[32m[INFO] 2026-08-21 11:39:30,810 [RapidOCR] base.py:23: Using engine_name: onnxruntime[0m
+[32m[INFO] 2026-08-21 11:39:31,364 [RapidOCR] download_file.py:68: Initiating download: https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/v3.9.2/onnx/PP-OCRv6/det/PP-OCRv6_det_small.onnx[0m
+[32m[INFO] 2026-08-21 11:39:34,445 [RapidOCR] download_file.py:82: Download size: 9.47MB[0m
+[32m[INFO] 2026-08-21 11:39:34,810 [RapidOCR] download_file.py:95: Successfully saved to: D:\Work\research\FileX\bench\salidas-ppp-norm\modelos\PP-OCRv6_det_small.onnx[0m
+[32m[INFO] 2026-08-21 11:39:34,813 [RapidOCR] main.py:63: Using D:\Work\research\FileX\bench\salidas-ppp-norm\modelos\PP-OCRv6_det_small.onnx[0m
+[32m[INFO] 2026-08-21 11:39:35,169 [RapidOCR] base.py:23: Using engine_name: onnxruntime[0m
+[32m[INFO] 2026-08-21 11:39:35,171 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\bench\salidas-ppp-norm\modelos\ch_ppocr_mobile_v2.0_cls_mobile.onnx[0m
+[32m[INFO] 2026-08-21 11:39:35,171 [RapidOCR] main.py:63: Using D:\Work\research\FileX\bench\salidas-ppp-norm\modelos\ch_ppocr_mobile_v2.0_cls_mobile.onnx[0m
+[32m[INFO] 2026-08-21 11:39:35,240 [RapidOCR] base.py:23: Using engine_name: onnxruntime[0m
+[32m[INFO] 2026-08-21 11:39:35,241 [RapidOCR] download_file.py:68: Initiating download: https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/v3.9.2/onnx/PP-OCRv6/rec/PP-OCRv6_rec_small.onnx[0m
+[32m[INFO] 2026-08-21 11:39:36,977 [RapidOCR] download_file.py:82: Download size: 20.25MB[0m
+[32m[INFO] 2026-08-21 11:39:37,894 [RapidOCR] download_file.py:95: Successfully saved to: D:\Work\research\FileX\bench\salidas-ppp-norm\modelos\PP-OCRv6_rec_small.onnx[0m
+[32m[INFO] 2026-08-21 11:39:37,897 [RapidOCR] main.py:63: Using D:\Work\research\FileX\bench\salidas-ppp-norm\modelos\PP-OCRv6_rec_small.onnx[0m
+{"etiqueta": "rapidocr_cuda_A_ro6sm_def", "motor": "rapidocr", "dispositivo": "cuda", "patron": "ppp*__escaneado_d4.png", "imgdir": "D:\\Work\\research\\FileX\\bench\\salidas-ppp-norm\\img", "ref_forzada": null, "carga_frio_s": 10.92, "vram_base_MiB": 1575, "vram_tras_carga_MiB": 1752, "quietud_pct": 41, "flag": "SUCIA(pico 41%)", "testigo_monohilo_ini_ms": 31.9, "testigo_proceso_ini_ms": 31.42, "modelos": {"text_det": "ch_PP-OCRv4_det_mobile.onnx", "text_cls": "ch_PP-OCRv4_det_mobile.onnx", "text_rec": "ch_PP-OCRv4_det_mobile.onnx", "R6": "0", "pedido": {"Det.engine_type": "onnxruntime", "Rec.engine_type": "onnxruntime", "Det.lang_type": "ch", "Rec.lang_type": "ch", "Det.ocr_version": "PP-OCRv6", "Rec.ocr_version": "PP-OCRv6", "Det.model_type": "small", "Rec.model_type": "small", "Global.model_root_dir": "D:/Work/research/FileX/bench/salidas-ppp-norm/modelos"}, "det_efectivo": {"mean": "?", "std": "?"}}, "reps": 9, "muestreo_vram": false}
+ppp0100__escaneado_d4                        CERac= 36.58%  CERascii= 35.91%  lin=4/12  cajas=8  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 1.28, 'pequeña': 75.12}     487.6 ms  det=si
+ppp0125__escaneado_d4                        CERac= 36.74%  CERascii= 36.07%  lin=4/12  cajas=8  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 5.77, 'pequeña': 74.65}     516.9 ms  det=si
+ppp0150__escaneado_d4                        CERac= 36.58%  CERascii= 35.91%  lin=4/12  cajas=8  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 1.28, 'pequeña': 75.12}     560.4 ms  det=si
+ppp0175__escaneado_d4                        CERac= 37.25%  CERascii= 36.07%  lin=4/12  cajas=8  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 2.56, 'pequeña': 75.12}     617.9 ms  det=si
+ppp0200__escaneado_d4                        CERac= 36.91%  CERascii= 36.24%  lin=3/12  cajas=8  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 6.09, 'pequeña': 74.65}     602.7 ms  det=si
+ppp0225__escaneado_d4                        CERac= 42.79%  CERascii= 42.28%  lin=3/12  cajas=8  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 26.28, 'pequeña': 75.12}     694.0 ms  det=si
+ppp0250__escaneado_d4                        CERac= 32.72%  CERascii= 32.05%  lin=4/12  cajas=9  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 1.28, 'pequeña': 72.77}     749.4 ms  det=si
+ppp0255__escaneado_d4                        CERac= 36.91%  CERascii= 36.24%  lin=3/12  cajas=8  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 5.77, 'pequeña': 74.65}     721.1 ms  det=si
+ppp0260__escaneado_d4                        CERac= 33.22%  CERascii= 32.72%  lin=4/12  cajas=9  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 1.28, 'pequeña': 74.65}     724.9 ms  det=si
+ppp0265__escaneado_d4                        CERac= 36.74%  CERascii= 36.07%  lin=3/12  cajas=8  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 1.6, 'pequeña': 75.12}     687.3 ms  det=si
+ppp0270__escaneado_d4                        CERac= 37.08%  CERascii= 36.41%  lin=3/12  cajas=8  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 6.09, 'pequeña': 74.65}     675.0 ms  det=si
+ppp0275__escaneado_d4                        CERac= 36.74%  CERascii= 36.24%  lin=3/12  cajas=8  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 5.77, 'pequeña': 75.12}     680.3 ms  det=si
+ppp0280__escaneado_d4                        CERac= 36.58%  CERascii= 35.91%  lin=4/12  cajas=8  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 1.28, 'pequeña': 75.12}     648.6 ms  det=si
+ppp0300__escaneado_d4                        CERac= 36.58%  CERascii= 35.91%  lin=4/12  cajas=8  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 1.28, 'pequeña': 75.12}     623.4 ms  det=si
+ppp0320__escaneado_d4                        CERac= 33.05%  CERascii= 32.55%  lin=3/12  cajas=9  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 3.21, 'pequeña': 74.18}     573.5 ms  det=si
+ppp0360__escaneado_d4                        CERac= 36.91%  CERascii= 36.41%  lin=3/12  cajas=8  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 5.77, 'pequeña': 74.65}     633.4 ms  det=si
+ppp0400__escaneado_d4                        CERac= 36.74%  CERascii= 36.24%  lin=4/12  cajas=8  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 5.77, 'pequeña': 74.65}     604.8 ms  det=si
+{"evento": "fin", "vram_pico_MiB": 1752, "vram_base_MiB": 1575, "coste_propio_MiB": 177, "pico_util_pct": 0, "testigo_monohilo_ini_ms": 31.9, "testigo_monohilo_fin_ms": 22.96, "deriva_monohilo": 0.72, "testigo_proceso_ini_ms": 31.42, "testigo_proceso_fin_ms": 51.6, "nivel_proceso_vs_reposo": 1.94, "muestreo_vram": false}

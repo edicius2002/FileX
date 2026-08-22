@@ -1,0 +1,87 @@
+{
+  "cabecera": {
+    "etiqueta": "rapidocr_cuda_ctrlfase2",
+    "motor": "rapidocr",
+    "dispositivo": "cuda",
+    "carga_frio_s": 3.49,
+    "vram_base_MiB": 833,
+    "vram_tras_carga_MiB": 1009,
+    "quietud_pct": 6,
+    "flag": "limpia",
+    "modelos": {
+      "text_det": "el.ttf', 'SHA256': '892e6c81071fc85923f8d0ff925edab6049dd4495a2fdedffddc04753bf348b3'}}}",
+      "text_cls": "el.ttf', 'SHA256': '892e6c81071fc85923f8d0ff925edab6049dd4495a2fdedffddc04753bf348b3'}}}",
+      "text_rec": "el.ttf', 'SHA256': '892e6c81071fc85923f8d0ff925edab6049dd4495a2fdedffddc04753bf348b3'}}}",
+      "params_forzados": "PPOCRV5/MOBILE/ONNXRUNTIME (igual que bench/scripts/ocr_motor.py)"
+    },
+    "reps": 9,
+    "muestreo_vram": true
+  },
+  "fin": {
+    "evento": "fin",
+    "vram_pico_MiB": 3225,
+    "vram_base_MiB": 833,
+    "coste_propio_MiB": 2392,
+    "pico_util_pct": 62,
+    "muestreo_vram": true,
+    "aviso": "pico de VRAM valido; los tiempos llevan el coste del muestreo"
+  },
+  "res": {
+    "escaneado_d1": {
+      "cer_pct": 0.0,
+      "dist_global": 0,
+      "frases_exactas": 3,
+      "chars": 81,
+      "normalizada": "documento escaneado texto que solo existe como pixeles debe recuperarse con ocr",
+      "ms_mediana": 226.9,
+      "ms_min": 187.2,
+      "ms_max": 265.4,
+      "n": 9,
+      "determinista": true,
+      "vram_pico_MiB": 2201,
+      "vram_delta_lote_MiB": 1192
+    },
+    "escaneado_d2": {
+      "cer_pct": 1.3,
+      "dist_global": 1,
+      "frases_exactas": 2,
+      "chars": 81,
+      "normalizada": "documento escaneado texto que solo existe coma pixeles debe recuperarse con ocr",
+      "ms_mediana": 193.6,
+      "ms_min": 184.1,
+      "ms_max": 256.0,
+      "n": 9,
+      "determinista": true,
+      "vram_pico_MiB": 2201,
+      "vram_delta_lote_MiB": 0
+    },
+    "escaneado_d3": {
+      "cer_pct": 65.8,
+      "dist_global": 52,
+      "frases_exactas": 0,
+      "chars": 27,
+      "normalizada": "documentoescaneado oue ooer",
+      "ms_mediana": 218.0,
+      "ms_min": 191.2,
+      "ms_max": 227.8,
+      "n": 9,
+      "determinista": true,
+      "vram_pico_MiB": 2201,
+      "vram_delta_lote_MiB": 0
+    },
+    "patologico_escaneado": {
+      "cer_pct": 0.0,
+      "dist_global": 0,
+      "frases_exactas": 3,
+      "chars": 81,
+      "normalizada": "documento escaneado texto que solo existe como pixeles debe recuperarse con ocr",
+      "ms_mediana": 274.6,
+      "ms_min": 266.6,
+      "ms_max": 332.6,
+      "n": 9,
+      "determinista": true,
+      "vram_pico_MiB": 3225,
+      "vram_delta_lote_MiB": 1024
+    }
+  }
+}

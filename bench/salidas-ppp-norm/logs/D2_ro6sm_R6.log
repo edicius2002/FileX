@@ -1,0 +1,26 @@
+[32m[INFO] 2026-08-21 12:31:34,034 [RapidOCR] base.py:23: Using engine_name: onnxruntime[0m
+[32m[INFO] 2026-08-21 12:31:34,423 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\bench\salidas-ppp-norm\modelos\PP-OCRv6_det_small.onnx[0m
+[32m[INFO] 2026-08-21 12:31:34,423 [RapidOCR] main.py:63: Using D:\Work\research\FileX\bench\salidas-ppp-norm\modelos\PP-OCRv6_det_small.onnx[0m
+[32m[INFO] 2026-08-21 12:31:34,658 [RapidOCR] base.py:23: Using engine_name: onnxruntime[0m
+[32m[INFO] 2026-08-21 12:31:34,660 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\bench\salidas-ppp-norm\modelos\ch_ppocr_mobile_v2.0_cls_mobile.onnx[0m
+[32m[INFO] 2026-08-21 12:31:34,660 [RapidOCR] main.py:63: Using D:\Work\research\FileX\bench\salidas-ppp-norm\modelos\ch_ppocr_mobile_v2.0_cls_mobile.onnx[0m
+[32m[INFO] 2026-08-21 12:31:34,711 [RapidOCR] base.py:23: Using engine_name: onnxruntime[0m
+[32m[INFO] 2026-08-21 12:31:34,728 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\bench\salidas-ppp-norm\modelos\PP-OCRv6_rec_small.onnx[0m
+[32m[INFO] 2026-08-21 12:31:34,728 [RapidOCR] main.py:63: Using D:\Work\research\FileX\bench\salidas-ppp-norm\modelos\PP-OCRv6_rec_small.onnx[0m
+{"etiqueta": "rapidocr_cuda_D_ro6sm_R6", "motor": "rapidocr", "dispositivo": "cuda", "patron": "*.png", "imgdir": "D:/Work/research/FileX/bench/salidas-ppp-norm/img_b10", "ref_forzada": null, "carga_frio_s": 3.23, "vram_base_MiB": 1435, "vram_tras_carga_MiB": 1611, "quietud_pct": 33, "flag": "SUCIA(pico 33%)", "testigo_monohilo_ini_ms": 21.74, "testigo_proceso_ini_ms": 23.85, "modelos": {"text_det": "ch_PP-OCRv4_det_mobile.onnx", "text_cls": "ch_PP-OCRv4_det_mobile.onnx", "text_rec": "ch_PP-OCRv4_det_mobile.onnx", "R6": "1", "pedido": {"Det.engine_type": "onnxruntime", "Rec.engine_type": "onnxruntime", "Det.lang_type": "ch", "Rec.lang_type": "ch", "Det.ocr_version": "PP-OCRv6", "Rec.ocr_version": "PP-OCRv6", "Det.model_type": "small", "Rec.model_type": "small", "Global.model_root_dir": "D:/Work/research/FileX/bench/salidas-ppp-norm/modelos", "Det.mean": "[0.485, 0.456, 0.406]", "Det.std": "[0.229, 0.224, 0.225]", "Det.thresh": "0.2", "Det.box_thresh": "0.45", "Det.unclip_ratio": "1.4", "Det.max_candidates": "3000"}, "det_efectivo": {"mean": "[0.485, 0.456, 0.406]", "std": "[0.229, 0.224, 0.225]", "limit_side_len": 736, "limit_type": "min", "thresh": 0.2, "box_thresh": 0.45, "unclip_ratio": 1.4, "max_candidates": 3000}}, "reps": 9, "muestreo_vram": false}
+oro__patologico_escaneado_p1                 CERac=  0.00%  CERascii=  0.00%  lin=3/3  cajas=3  bloques={'cuerpo': 0.0}     119.4 ms  det=si
+oro__tipico_texto_p1                         CERac=  0.83%  CERascii=  0.00%  lin=3/4  cajas=6  bloques={'cuerpo': 0.83}     201.7 ms  det=si
+oro__tipico_texto_p1jpg                      CERac=  0.83%  CERascii=  0.00%  lin=3/4  cajas=6  bloques={'cuerpo': 0.83}     201.9 ms  det=si
+oro__trivial_p1                              CERac= 94.94%  CERascii= 94.94%  lin=0/3  cajas=1  bloques={'cuerpo': 94.94}      58.1 ms  det=si
+ppp0100__escaneado_d2                        CERac=  0.00%  CERascii=  0.00%  lin=3/3  cajas=3  bloques={'cuerpo': 0.0}      67.0 ms  det=si
+ppp0100__escaneado_d3                        CERac=  3.80%  CERascii=  3.80%  lin=2/3  cajas=3  bloques={'cuerpo': 3.8}      75.5 ms  det=si
+ppp0150__escaneado_d1                        CERac=  0.00%  CERascii=  0.00%  lin=3/3  cajas=3  bloques={'cuerpo': 0.0}     122.6 ms  det=si
+ppp0150__tipico_texto                        CERac=  0.83%  CERascii=  0.00%  lin=3/4  cajas=6  bloques={'cuerpo': 0.83}     195.7 ms  det=si
+ppp0200__escaneado_d4                        CERac= 18.62%  CERascii= 17.62%  lin=3/12  cajas=12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 2.56, 'pequeña': 54.93}     344.0 ms  det=si
+ppp0200__escaneado_d4a                       CERac=  7.38%  CERascii=  7.05%  lin=10/12  cajas=12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.0, 'pequeña': 22.07}     334.1 ms  det=si
+ppp0200__escaneado_d4b                       CERac=  0.34%  CERascii=  0.00%  lin=10/12  cajas=12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.0, 'pequeña': 3.76}     343.8 ms  det=si
+ppp0200__escaneado_d4c                       CERac=  1.17%  CERascii=  0.34%  lin=9/12  cajas=12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.0, 'pequeña': 6.1}     327.9 ms  det=si
+ppp0200__escaneado_d4e                       CERac= 77.52%  CERascii= 76.85%  lin=1/12  cajas=6  bloques={'titulo': 0.0, 'subtitulo': 4.65, 'cuerpo': 73.72, 'pequeña': 74.65}     446.9 ms  det=si
+ppp0200__patologico_escaneado                CERac=  0.00%  CERascii=  0.00%  lin=3/3  cajas=3  bloques={'cuerpo': 0.0}     439.3 ms  det=si
+ppp0240__escaneado_d4f                       CERac=  7.05%  CERascii=  6.88%  lin=10/12  cajas=12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.0, 'pequeña': 38.97}     409.1 ms  det=si
+{"evento": "fin", "vram_pico_MiB": 1611, "vram_base_MiB": 1435, "coste_propio_MiB": 176, "pico_util_pct": 0, "testigo_monohilo_ini_ms": 21.74, "testigo_monohilo_fin_ms": 22.71, "deriva_monohilo": 1.04, "testigo_proceso_ini_ms": 23.85, "testigo_proceso_fin_ms": 22.61, "nivel_proceso_vs_reposo": 0.89, "muestreo_vram": false}

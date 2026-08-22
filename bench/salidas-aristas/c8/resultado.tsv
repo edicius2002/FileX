@@ -1,0 +1,61 @@
+L01	docx_pdf	soffice	0	2434	soffice --headless --convert-to pdf --outdir /tmp/e1/out /tmp/e1/in/entrada.docx
+L02	xlsx_pdf	soffice	0	983	soffice --headless --convert-to pdf --outdir /tmp/e1/out/x /tmp/e1/in/entrada.xlsx
+L03	odt_pdf	soffice	0	606	soffice --headless --convert-to pdf --outdir /tmp/e1/out/o /tmp/e1/in/entrada.odt
+L04	pdf_docx	soffice	0	693	soffice --headless --infilter=writer_pdf_import --convert-to docx --outdir /tmp/e1/out/p /tmp/e1/in/tipico_texto.pdf
+L05	docx_odt	soffice	0	830	soffice --headless --convert-to odt --outdir /tmp/e1/out/d /tmp/e1/in/entrada.docx
+L06	epub_pdf	soffice	1	708	soffice --headless --convert-to pdf --outdir /tmp/e1/out/e /tmp/e1/in/entrada.epub
+P01	md_docx	pandoc	0	988	pandoc /tmp/e1/in/entrada.md -o /tmp/e1/out/p_md.docx
+P02	docx_md	pandoc	0	36	pandoc /tmp/e1/in/entrada.docx -o /tmp/e1/out/p_docx.md
+P03	html_docx	pandoc	0	69	pandoc /tmp/e1/in/entrada.html -o /tmp/e1/out/p_html.docx
+P04	md_html	pandoc	0	20	pandoc /tmp/e1/in/entrada.md -o /tmp/e1/out/p_md.html
+P05	docx_pdf	pandoc	0	3399	pandoc /tmp/e1/in/entrada.docx --pdf-engine=xelatex -o /tmp/e1/out/p_docx.pdf
+P06	epub_md	pandoc	0	112	pandoc /tmp/e1/in/entrada.epub -o /tmp/e1/out/p_epub.md
+P07	md_epub	pandoc	0	90	pandoc /tmp/e1/in/entrada.md -o /tmp/e1/out/p_md.epub
+P08	docx_rtf	pandoc	0	12	pandoc /tmp/e1/in/entrada.docx -o /tmp/e1/out/p_docx.rtf
+C01	epub_pdf	calibre	0	7045	ebook-convert /tmp/e1/in/entrada.epub /tmp/e1/out/c_epub.pdf
+C02	epub_mobi	calibre	0	5857	ebook-convert /tmp/e1/in/entrada.epub /tmp/e1/out/c_epub.mobi
+C03	epub_azw3	calibre	0	720	ebook-convert /tmp/e1/in/entrada.epub /tmp/e1/out/c_epub.azw3
+C04	azw3_epub	calibre	0	901	ebook-convert /tmp/e1/out/c_epub.azw3 /tmp/e1/out/c_azw3.epub
+C05	mobi_epub	calibre	0	740	ebook-convert /tmp/e1/out/c_epub.mobi /tmp/e1/out/c_mobi.epub
+C06	epub_docx	calibre	0	722	ebook-convert /tmp/e1/in/entrada.epub /tmp/e1/out/c_epub.docx
+S01	svg_png_inkscape	inkscape	0	839	inkscape --export-type=png --export-filename=/tmp/e1/out/s_ink.png /tmp/e1/in/e1.svg
+S02	svg_pdf_inkscape	inkscape	0	215	inkscape --export-type=pdf --export-filename=/tmp/e1/out/s_ink.pdf /tmp/e1/in/e1.svg
+S03	svg_png_resvg	resvg	0	273	resvg /tmp/e1/in/e1.svg /tmp/e1/out/s_resvg.png
+S04	svg_png_magick	magick	1	60	magick /tmp/e1/in/e1.svg /tmp/e1/out/s_magick.png
+S05	svg_pdf_magick	magick	1	10	magick /tmp/e1/in/e1.svg /tmp/e1/out/s_magick.pdf
+Q01	qpdf_lineal	qpdf	127	2	qpdf --linearize /tmp/e1/in/tipico_texto.pdf /tmp/e1/out/q_lin.pdf
+Q02	qpdf_cifra	qpdf	127	2	qpdf --encrypt u o 256 -- /tmp/e1/in/tipico_texto.pdf /tmp/e1/out/q_enc.pdf
+V01	png_jpg_vips	vips	0	341	vips copy /tmp/e1/in/tipico.png /tmp/e1/out/v.jpg
+V02	png_webp_vips	vips	0	241	vips copy /tmp/e1/in/tipico.png /tmp/e1/out/v.webp
+V03	png_tif_vips	vips	0	158	vips copy /tmp/e1/in/tipico.png /tmp/e1/out/v.tif
+FICH	/tmp/e1/out/p_html.docx	10880
+FICH	/tmp/e1/out/p_md.docx	10860
+FICH	/tmp/e1/out/p/tipico_texto.docx	6162
+FICH	/tmp/e1/out/s_ink.pdf.txt	78
+FICH	/tmp/e1/out/c_mobi.epub	20975
+FICH	/tmp/e1/out/p_docx.md	566
+FICH	/tmp/e1/out/s_resvg.png	8973
+FICH	/tmp/e1/out/d/entrada.odt	13561
+FICH	/tmp/e1/out/s_ink.pdf	17818
+FICH	/tmp/e1/out/o/entrada.pdf	31996
+FICH	/tmp/e1/out/o/entrada.pdf.txt	579
+FICH	/tmp/e1/out/c_epub.azw3	11706
+FICH	/tmp/e1/out/p_docx.rtf	1481
+FICH	/tmp/e1/out/c_epub.mobi	10196
+FICH	/tmp/e1/out/c_epub.pdf	26817
+FICH	/tmp/e1/out/v.jpg	61126
+FICH	/tmp/e1/out/p_md.html	695
+FICH	/tmp/e1/out/p_md.epub	5273
+FICH	/tmp/e1/out/s_ink.png	13456
+FICH	/tmp/e1/out/v.webp	13194
+FICH	/tmp/e1/out/p_epub.md	585
+FICH	/tmp/e1/out/c_azw3.epub	23712
+FICH	/tmp/e1/out/x/entrada.pdf	20983
+FICH	/tmp/e1/out/x/entrada.pdf.txt	250
+FICH	/tmp/e1/out/c_epub.docx	4480
+FICH	/tmp/e1/out/p_docx.pdf	8165
+FICH	/tmp/e1/out/entrada.pdf	22840
+FICH	/tmp/e1/out/c_epub.pdf.txt	587
+FICH	/tmp/e1/out/entrada.pdf.txt	601
+FICH	/tmp/e1/out/v.tif	16589110
+FICH	/tmp/e1/out/p_docx.pdf.txt	964

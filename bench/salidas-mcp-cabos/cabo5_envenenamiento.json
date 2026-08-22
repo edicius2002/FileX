@@ -1,0 +1,54 @@
+{
+  "referencia_limpia": {
+    "ms": 8136.3,
+    "sha_salida": "00084f42c41d40d2",
+    "bytes_salida": 15450077,
+    "returncode": 0
+  },
+  "vectores": [
+    {
+      "vector": "a_reemplazar",
+      "retardo_s": 3.0,
+      "ffmpeg_seguia_vivo": true,
+      "accion_permitida": false,
+      "error": "PermissionError: 5 Acceso denegado",
+      "ms_total": 7239.6,
+      "returncode": 0,
+      "bytes_salida": 15450077,
+      "sha_salida": "00084f42c41d40d2"
+    },
+    {
+      "vector": "b_borrar",
+      "retardo_s": 3.0,
+      "ffmpeg_seguia_vivo": true,
+      "accion_permitida": false,
+      "error": "PermissionError: 32 El proceso no tiene acceso al archivo porque está siendo utilizado por otro proceso",
+      "ms_total": 7466.8,
+      "returncode": 0,
+      "bytes_salida": 15450077,
+      "sha_salida": "00084f42c41d40d2"
+    },
+    {
+      "vector": "c_escritura_en_sitio",
+      "retardo_s": 3.0,
+      "ffmpeg_seguia_vivo": true,
+      "resultado_accion": "escritos 65536 ceros en el offset 9747894 de 16246490",
+      "accion_permitida": true,
+      "ms_total": 8222.6,
+      "returncode": 0,
+      "bytes_salida": 15502924,
+      "sha_salida": "5db86bacf3802092"
+    },
+    {
+      "vector": "d_renombrar_directorio_padre",
+      "retardo_s": 3.0,
+      "ffmpeg_seguia_vivo": true,
+      "accion_permitida": false,
+      "error": "PermissionError: 5 Acceso denegado",
+      "ms_total": 8289.4,
+      "returncode": 0,
+      "bytes_salida": 15450077,
+      "sha_salida": "00084f42c41d40d2"
+    }
+  ]
+}

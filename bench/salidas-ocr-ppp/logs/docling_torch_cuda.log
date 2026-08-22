@@ -1,0 +1,84 @@
+{"dispositivo": "cuda", "backend": "torch", "docs": ["patologico_escaneado", "escaneado_d1", "escaneado_d2", "escaneado_d3"], "ppp": "75,100,125,150,175,200,250,300", "reps": 9, "vram_base_MiB": 835, "quietud_pct": 26, "flag": "SUCIA(pico 26%)", "torch": "2.6.0+cu124", "torch_cuda": true, "modelo": {"lang_pedido": "english", "lang_resuelto": "en", "ppocr_version": "PP-OCRv6", "model_type_v6": "small", "model_type_v4v5": "mobile"}}
+[32m[INFO] 2026-08-21 02:21:52,898 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 02:21:52,991 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_det_small.pth[0m
+[32m[INFO] 2026-08-21 02:21:53,359 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 02:21:53,368 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-08-21 02:21:53,495 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 02:21:53,654 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_rec_small.pth[0m
+D:\Work\research\FileX\.venv-ai\Lib\site-packages\torch\nn\modules\conv.py:549: UserWarning: Using padding='same' with even kernel lengths and odd dilation may require a zero-padded copy of the input be created (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\aten\src\ATen\native\Convolution.cpp:1037.)
+  return F.conv2d(
+ppp75__patologico_escaneado        escala=1.042 (~75ppp) px_motor=(485, 672)  CER=   0.0%  dist=   0     479.7 ms
+ppp75__escaneado_d1                escala=1.042 (~75ppp) px_motor=(485, 650)  CER=   0.0%  dist=   0     425.3 ms
+ppp75__escaneado_d2                escala=1.042 (~75ppp) px_motor=(485, 638)  CER=   0.0%  dist=   0     388.9 ms
+ppp75__escaneado_d3                escala=1.042 (~75ppp) px_motor=(485, 638)  CER=  75.9%  dist=  60     364.5 ms
+[32m[INFO] 2026-08-21 02:22:54,319 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 02:22:54,329 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_det_small.pth[0m
+[32m[INFO] 2026-08-21 02:22:54,530 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 02:22:54,532 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-08-21 02:22:54,681 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 02:22:54,700 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_rec_small.pth[0m
+ppp100__patologico_escaneado       escala=1.389 (~100ppp) px_motor=(647, 896)  CER=   0.0%  dist=   0     543.4 ms
+ppp100__escaneado_d1               escala=1.389 (~100ppp) px_motor=(647, 867)  CER=   0.0%  dist=   0     450.6 ms
+ppp100__escaneado_d2               escala=1.389 (~100ppp) px_motor=(647, 850)  CER=   0.0%  dist=   0     425.8 ms
+ppp100__escaneado_d3               escala=1.389 (~100ppp) px_motor=(647, 850)  CER=  75.9%  dist=  60     417.4 ms
+[32m[INFO] 2026-08-21 02:23:14,596 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 02:23:14,605 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_det_small.pth[0m
+[32m[INFO] 2026-08-21 02:23:14,827 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 02:23:14,828 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-08-21 02:23:14,976 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 02:23:14,995 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_rec_small.pth[0m
+ppp125__patologico_escaneado       escala=1.736 (~125ppp) px_motor=(809, 1120)  CER=   0.0%  dist=   0     569.7 ms
+ppp125__escaneado_d1               escala=1.736 (~125ppp) px_motor=(808, 1083)  CER=   0.0%  dist=   0     460.7 ms
+ppp125__escaneado_d2               escala=1.736 (~125ppp) px_motor=(809, 1062)  CER=   0.0%  dist=   0     424.1 ms
+ppp125__escaneado_d3               escala=1.736 (~125ppp) px_motor=(809, 1062)  CER=  75.9%  dist=  60     402.2 ms
+[32m[INFO] 2026-08-21 02:23:35,467 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 02:23:35,476 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_det_small.pth[0m
+[32m[INFO] 2026-08-21 02:23:35,673 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 02:23:35,674 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-08-21 02:23:35,802 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 02:23:35,820 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_rec_small.pth[0m
+ppp150__patologico_escaneado       escala=2.083 (~150ppp) px_motor=(970, 1344)  CER=   0.0%  dist=   0     698.1 ms
+ppp150__escaneado_d1               escala=2.083 (~150ppp) px_motor=(970, 1300)  CER=   0.0%  dist=   0     540.3 ms
+ppp150__escaneado_d2               escala=2.083 (~150ppp) px_motor=(970, 1275)  CER=   0.0%  dist=   0     501.8 ms
+ppp150__escaneado_d3               escala=2.083 (~150ppp) px_motor=(970, 1275)  CER=  65.8%  dist=  52     554.4 ms
+[32m[INFO] 2026-08-21 02:24:00,886 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 02:24:00,896 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_det_small.pth[0m
+[32m[INFO] 2026-08-21 02:24:01,142 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 02:24:01,145 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-08-21 02:24:01,297 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 02:24:01,317 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_rec_small.pth[0m
+ppp175__patologico_escaneado       escala=2.431 (~175ppp) px_motor=(1132, 1568)  CER=   0.0%  dist=   0     786.4 ms
+ppp175__escaneado_d1               escala=2.431 (~175ppp) px_motor=(1132, 1517)  CER=   0.0%  dist=   0     643.3 ms
+ppp175__escaneado_d2               escala=2.431 (~175ppp) px_motor=(1132, 1487)  CER=   0.0%  dist=   0     608.0 ms
+ppp175__escaneado_d3               escala=2.431 (~175ppp) px_motor=(1132, 1487)  CER=  39.2%  dist=  31     586.5 ms
+[32m[INFO] 2026-08-21 02:24:29,671 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 02:24:29,682 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_det_small.pth[0m
+[32m[INFO] 2026-08-21 02:24:29,911 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 02:24:29,913 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-08-21 02:24:30,067 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 02:24:30,090 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_rec_small.pth[0m
+ppp200__patologico_escaneado       escala=2.778 (~200ppp) px_motor=(1294, 1792)  CER=   0.0%  dist=   0    1175.7 ms
+ppp200__escaneado_d1               escala=2.778 (~200ppp) px_motor=(1293, 1733)  CER=   0.0%  dist=   0     629.0 ms
+ppp200__escaneado_d2               escala=2.778 (~200ppp) px_motor=(1294, 1700)  CER=   0.0%  dist=   0     590.4 ms
+ppp200__escaneado_d3               escala=2.778 (~200ppp) px_motor=(1294, 1700)  CER=  58.2%  dist=  46     609.0 ms
+[32m[INFO] 2026-08-21 02:25:04,225 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 02:25:04,234 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_det_small.pth[0m
+[32m[INFO] 2026-08-21 02:25:04,433 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 02:25:04,435 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-08-21 02:25:04,580 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 02:25:04,597 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_rec_small.pth[0m
+ppp250__patologico_escaneado       escala=3.472 (~250ppp) px_motor=(1617, 2240)  CER=   0.0%  dist=   0     954.9 ms
+ppp250__escaneado_d1               escala=3.472 (~250ppp) px_motor=(1617, 2167)  CER=   0.0%  dist=   0     754.3 ms
+ppp250__escaneado_d2               escala=3.472 (~250ppp) px_motor=(1617, 2125)  CER=   0.0%  dist=   0     698.2 ms
+ppp250__escaneado_d3               escala=3.472 (~250ppp) px_motor=(1617, 2125)  CER=  51.9%  dist=  41     687.4 ms
+[32m[INFO] 2026-08-21 02:25:37,182 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 02:25:37,193 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_det_small.pth[0m
+[32m[INFO] 2026-08-21 02:25:37,406 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 02:25:37,407 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-08-21 02:25:37,563 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 02:25:37,581 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_rec_small.pth[0m
+ppp300__patologico_escaneado       escala=4.167 (~300ppp) px_motor=(1941, 2688)  CER=   0.0%  dist=   0    1174.8 ms
+ppp300__escaneado_d1               escala=4.167 (~300ppp) px_motor=(1940, 2600)  CER=   0.0%  dist=   0     935.5 ms
+ppp300__escaneado_d2               escala=4.167 (~300ppp) px_motor=(1941, 2550)  CER=   0.0%  dist=   0     955.2 ms
+ppp300__escaneado_d3               escala=4.167 (~300ppp) px_motor=(1941, 2550)  CER=  48.1%  dist=  38     777.4 ms
+{"evento": "fin", "vram_pico_MiB": 2820, "vram_base_MiB": 835, "coste_propio_MiB": 1985, "pico_util_pct": 100, "sonda_activa": true}

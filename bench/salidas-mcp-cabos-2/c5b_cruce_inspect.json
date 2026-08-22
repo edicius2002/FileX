@@ -1,0 +1,195 @@
+{
+  "n": 11,
+  "testigos_reposo": {
+    "deriva_ms": 18.486,
+    "proceso_ms": 39.544
+  },
+  "copia": [
+    {
+      "mediana_ms": 1.6857,
+      "min_ms": 1.3275,
+      "max_ms": 2.3406,
+      "tam_mb": 1,
+      "bytes": 1048576,
+      "mbps": 593.2,
+      "etiqueta": "SUCIA",
+      "testigo_proc_ms": 40.1
+    },
+    {
+      "mediana_ms": 5.2355,
+      "min_ms": 4.4406,
+      "max_ms": 9.7298,
+      "tam_mb": 5,
+      "bytes": 5242880,
+      "mbps": 955.0,
+      "etiqueta": "limpia",
+      "testigo_proc_ms": 45.9
+    },
+    {
+      "mediana_ms": 9.2309,
+      "min_ms": 7.1314,
+      "max_ms": 13.0672,
+      "tam_mb": 10,
+      "bytes": 10485760,
+      "mbps": 1083.3,
+      "etiqueta": "limpia",
+      "testigo_proc_ms": 33.4
+    },
+    {
+      "mediana_ms": 19.3324,
+      "min_ms": 16.5971,
+      "max_ms": 21.8716,
+      "tam_mb": 25,
+      "bytes": 26214400,
+      "mbps": 1293.2,
+      "etiqueta": "limpia",
+      "testigo_proc_ms": 31.1
+    },
+    {
+      "mediana_ms": 40.0951,
+      "min_ms": 35.9744,
+      "max_ms": 44.1488,
+      "tam_mb": 50,
+      "bytes": 52428800,
+      "mbps": 1247.0,
+      "etiqueta": "limpia",
+      "testigo_proc_ms": 29.9
+    },
+    {
+      "mediana_ms": 59.144,
+      "min_ms": 53.6385,
+      "max_ms": 4420.5952,
+      "tam_mb": 75,
+      "bytes": 78643200,
+      "mbps": 1268.1,
+      "etiqueta": "limpia",
+      "testigo_proc_ms": 35.0
+    },
+    {
+      "mediana_ms": 71.5588,
+      "min_ms": 66.0608,
+      "max_ms": 75.7259,
+      "tam_mb": 90,
+      "bytes": 94371840,
+      "mbps": 1257.7,
+      "etiqueta": "limpia",
+      "testigo_proc_ms": 31.0
+    },
+    {
+      "mediana_ms": 95.7293,
+      "min_ms": 80.314,
+      "max_ms": 3216.1691,
+      "tam_mb": 100,
+      "bytes": 104857600,
+      "mbps": 1044.6,
+      "etiqueta": "limpia",
+      "testigo_proc_ms": 36.2
+    },
+    {
+      "mediana_ms": 99.1886,
+      "min_ms": 95.6819,
+      "max_ms": 136.4662,
+      "tam_mb": 128,
+      "bytes": 134217728,
+      "mbps": 1290.5,
+      "etiqueta": "limpia",
+      "testigo_proc_ms": 37.5
+    },
+    {
+      "mediana_ms": 183.2547,
+      "min_ms": 118.2017,
+      "max_ms": 1962.4171,
+      "tam_mb": 160,
+      "bytes": 167772160,
+      "mbps": 873.1,
+      "etiqueta": "limpia",
+      "testigo_proc_ms": 30.7
+    },
+    {
+      "mediana_ms": 166.2057,
+      "min_ms": 142.3273,
+      "max_ms": 968.3247,
+      "tam_mb": 200,
+      "bytes": 209715200,
+      "mbps": 1203.3,
+      "etiqueta": "limpia",
+      "testigo_proc_ms": 35.8
+    },
+    {
+      "mediana_ms": 223.0174,
+      "min_ms": 192.5482,
+      "max_ms": 2436.7698,
+      "tam_mb": 256,
+      "bytes": 268435456,
+      "mbps": 1147.9,
+      "etiqueta": "limpia",
+      "testigo_proc_ms": 36.8
+    }
+  ],
+  "ffprobe_reales": [
+    {
+      "mediana_ms": 42.9211,
+      "min_ms": 38.9184,
+      "max_ms": 49.2643,
+      "fichero": "trivial.mp4",
+      "tam_mb": 0.5
+    },
+    {
+      "mediana_ms": 54.3307,
+      "min_ms": 49.9235,
+      "max_ms": 60.1217,
+      "fichero": "tipico.mp4",
+      "tam_mb": 15.5
+    },
+    {
+      "mediana_ms": 72.9043,
+      "min_ms": 64.7393,
+      "max_ms": 84.5353,
+      "fichero": "patologico_16bit.tif",
+      "tam_mb": 68.7
+    },
+    {
+      "mediana_ms": 59.562,
+      "min_ms": 55.852,
+      "max_ms": 63.146,
+      "fichero": "fuente_4k.mp4",
+      "tam_mb": 122.0
+    }
+  ],
+  "inspect_proceso_reales": [
+    {
+      "mediana_ms": 0.0566,
+      "min_ms": 0.0469,
+      "max_ms": 0.0784,
+      "fichero": "trivial.mp4",
+      "tam_mb": 0.5
+    },
+    {
+      "mediana_ms": 0.0642,
+      "min_ms": 0.0607,
+      "max_ms": 0.2425,
+      "fichero": "tipico.mp4",
+      "tam_mb": 15.5
+    },
+    {
+      "mediana_ms": 0.0563,
+      "min_ms": 0.0542,
+      "max_ms": 0.0806,
+      "fichero": "patologico_16bit.tif",
+      "tam_mb": 68.7
+    },
+    {
+      "mediana_ms": 0.0414,
+      "min_ms": 0.0397,
+      "max_ms": 0.0484,
+      "fichero": "fuente_4k.mp4",
+      "tam_mb": 122.0
+    }
+  ],
+  "cruce": {
+    "ffprobe_mediana_ms": 56.95,
+    "copia_mbps_med(>=50MB)": 1225.2,
+    "cruce_interpolado_MB": 72.1,
+    "cruce_modelo_MB": 69.8
+  }
+}

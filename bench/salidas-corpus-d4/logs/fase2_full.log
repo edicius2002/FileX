@@ -1,0 +1,315 @@
+[lock] adquirido por G1-fase2-d4
+=== fase 2: Fri Aug 21 07:48:01 HPS 2026 ===
+
+########## pasada V (SIN_MUESTREO=0) ##########
+--- paddleocr ---
+INFORMACIàN: no se pudo encontrar ning£n archivo para los patrones dados.
+D:\Work\research\FileX\.venv-paddle\Lib\site-packages\paddle\utils\cpp_extension\extension_utils.py:718: UserWarning: No ccache found. Please be aware that recompiling all source files may be required. You can download and install ccache from: https://github.com/ccache/ccache/blob/master/doc/INSTALL.md
+  warnings.warn(warning_message)
+[32mCreating model: ('PP-LCNet_x1_0_textline_ori', None, None)[0m
+[32mModel files already exist. Using cached files. To redownload, please delete the directory manually: `C:\Users\krato\.paddlex\official_models\PP-LCNet_x1_0_textline_ori`.[0m
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+W0821 07:48:10.465549 30368 gpu_resources.cc:114] Please NOTE: device: 0, GPU Compute Capability: 8.6, Driver API Version: 12.8, Runtime API Version: 12.6
+[32mCreating model: ('PP-OCRv6_medium_det', None, None)[0m
+[32mModel files already exist. Using cached files. To redownload, please delete the directory manually: `C:\Users\krato\.paddlex\official_models\PP-OCRv6_medium_det`.[0m
+[32mCreating model: ('PP-OCRv6_medium_rec', None, None)[0m
+[32mModel files already exist. Using cached files. To redownload, please delete the directory manually: `C:\Users\krato\.paddlex\official_models\PP-OCRv6_medium_rec`.[0m
+{"etiqueta": "paddleocr_cuda_vram", "motor": "paddleocr", "dispositivo": "cuda", "referencia": "d4", "patron": "*.png", "imgdir": "D:\\Work\\research\\FileX\\bench\\salidas-corpus-d4\\img", "carga_frio_s": 5.53, "vram_base_MiB": 2878, "vram_tras_carga_MiB": 3157, "quietud_pct": 61, "flag": "SUCIA(pico 61%)", "modelos": {"paddle": "3.2.0", "kwargs": {"device": "gpu:0", "use_doc_orientation_classify": "False", "use_doc_unwarping": "False", "use_textline_orientation": "True"}, "params": {"doc_orientation_classify_model_name": "None", "doc_unwarping_model_name": "None", "text_detection_model_name": "PP-OCRv6_medium_det", "textline_orientation_model_name": "None", "text_recognition_model_name": "PP-OCRv6_medium_rec"}}, "reps": 9, "muestreo_vram": true}
+W0821 07:48:12.754515 30368 gpu_resources.cc:243] WARNING: device: 0. The installed Paddle is compiled with CUDNN 9.9, but CUDNN version in your machine is 9.5, which may cause serious incompatible bug. Please recompile or reinstall Paddle with compatible CUDNN version.
+ppp200__d4_limpio                        CERac=  0.00%  CERascii=  0.00%  lin=12/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.0, 'pequeña': 2.82}    395.9 ms  det=si
+ppp200__escaneado_d4                     CERac= 19.30%  CERascii= 18.46%  lin=4/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 1.6, 'pequeña': 58.69}    407.2 ms  det=si
+ppp200__escaneado_d4a                    CERac=  0.00%  CERascii=  0.00%  lin=12/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.0, 'pequeña': 2.82}    464.3 ms  det=si
+ppp200__escaneado_d4b                    CERac=  0.17%  CERascii=  0.00%  lin=11/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.0, 'pequeña': 3.29}    406.2 ms  det=si
+ppp200__escaneado_d4c                    CERac=  0.67%  CERascii=  0.00%  lin=9/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.0, 'pequeña': 4.69}    392.0 ms  det=si
+ppp200__escaneado_d4e                    CERac= 70.97%  CERascii= 70.47%  lin=1/12  bloques={'titulo': 0.0, 'subtitulo': 2.33, 'cuerpo': 61.86, 'pequeña': 77.0}    279.9 ms  det=si
+ppp240__escaneado_d4f                    CERac=  0.67%  CERascii=  0.00%  lin=9/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.0, 'pequeña': 4.69}    470.6 ms  det=si
+{"evento": "fin", "vram_pico_MiB": 5586, "vram_base_MiB": 2878, "coste_propio_MiB": 2708, "pico_util_pct": 100, "muestreo_vram": true}
+--- rapidocr ---
+[32m[INFO] 2026-08-21 07:49:25,850 [RapidOCR] base.py:23: Using engine_name: onnxruntime[0m
+[32m[INFO] 2026-08-21 07:49:26,327 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_PP-OCRv5_det_mobile.onnx[0m
+[32m[INFO] 2026-08-21 07:49:26,327 [RapidOCR] main.py:63: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_PP-OCRv5_det_mobile.onnx[0m
+[32m[INFO] 2026-08-21 07:49:26,597 [RapidOCR] base.py:23: Using engine_name: onnxruntime[0m
+[32m[INFO] 2026-08-21 07:49:26,599 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ppocr_mobile_v2.0_cls_mobile.onnx[0m
+[32m[INFO] 2026-08-21 07:49:26,599 [RapidOCR] main.py:63: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ppocr_mobile_v2.0_cls_mobile.onnx[0m
+[32m[INFO] 2026-08-21 07:49:26,659 [RapidOCR] base.py:23: Using engine_name: onnxruntime[0m
+[32m[INFO] 2026-08-21 07:49:26,673 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_PP-OCRv5_rec_mobile.onnx[0m
+[32m[INFO] 2026-08-21 07:49:26,673 [RapidOCR] main.py:63: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_PP-OCRv5_rec_mobile.onnx[0m
+{"etiqueta": "rapidocr_cuda_vram", "motor": "rapidocr", "dispositivo": "cuda", "referencia": "d4", "patron": "*.png", "imgdir": "D:\\Work\\research\\FileX\\bench\\salidas-corpus-d4\\img", "carga_frio_s": 3.91, "vram_base_MiB": 2906, "vram_tras_carga_MiB": 3076, "quietud_pct": 41, "flag": "SUCIA(pico 41%)", "modelos": {"text_det": "el.ttf', 'SHA256': '892e6c81071fc85923f8d0ff925edab6049dd4495a2fdedffddc04753bf348b3'}}}", "text_cls": "el.ttf', 'SHA256': '892e6c81071fc85923f8d0ff925edab6049dd4495a2fdedffddc04753bf348b3'}}}", "text_rec": "el.ttf', 'SHA256': '892e6c81071fc85923f8d0ff925edab6049dd4495a2fdedffddc04753bf348b3'}}}", "pedido": {"ver": "PP-OCRv5", "tipo": "mobile", "langdet": "ch", "langrec": "ch"}}, "reps": 9, "muestreo_vram": true}
+ppp200__d4_limpio                        CERac=  1.17%  CERascii=  0.50%  lin=7/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.64, 'pequeña': 2.35}    369.3 ms  det=si
+ppp200__escaneado_d4                     CERac= 41.78%  CERascii= 38.59%  lin=0/12  bloques={'titulo': 4.0, 'subtitulo': 11.63, 'cuerpo': 14.42, 'pequeña': 74.65}    494.4 ms  det=si
+ppp200__escaneado_d4a                    CERac=  1.51%  CERascii=  0.67%  lin=7/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.64, 'pequeña': 6.1}    337.5 ms  det=si
+ppp200__escaneado_d4b                    CERac=  2.18%  CERascii=  0.34%  lin=6/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.64, 'pequeña': 8.45}    354.9 ms  det=si
+ppp200__escaneado_d4c                    CERac= 15.60%  CERascii= 11.91%  lin=0/12  bloques={'titulo': 4.0, 'subtitulo': 2.33, 'cuerpo': 4.17, 'pequeña': 51.17}    389.8 ms  det=si
+ppp200__escaneado_d4e                    CERac= 92.45%  CERascii= 92.11%  lin=0/12  bloques={'titulo': 4.0, 'subtitulo': 65.12, 'cuerpo': 88.78, 'pequeña': 85.92}    220.4 ms  det=si
+ppp240__escaneado_d4f                    CERac=  6.04%  CERascii=  2.18%  lin=0/12  bloques={'titulo': 4.0, 'subtitulo': 2.33, 'cuerpo': 2.88, 'pequeña': 15.49}    431.1 ms  det=si
+{"evento": "fin", "vram_pico_MiB": 5471, "vram_base_MiB": 2906, "coste_propio_MiB": 2565, "pico_util_pct": 73, "muestreo_vram": true}
+--- easyocr ---
+{"etiqueta": "easyocr_cuda_vram", "motor": "easyocr", "dispositivo": "cuda", "referencia": "d4", "patron": "*.png", "imgdir": "D:\\Work\\research\\FileX\\bench\\salidas-corpus-d4\\img", "carga_frio_s": 6.99, "vram_base_MiB": 2907, "vram_tras_carga_MiB": 3145, "quietud_pct": 54, "flag": "SUCIA(pico 54%)", "modelos": {"torch": "2.6.0+cu124", "torch_cuda": "True"}, "reps": 9, "muestreo_vram": true}
+ppp200__d4_limpio                        CERac=  0.50%  CERascii=  0.50%  lin=11/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.0, 'pequeña': 4.69}   1286.6 ms  det=si
+ppp200__escaneado_d4                     CERac= 61.41%  CERascii= 59.56%  lin=1/12  bloques={'titulo': 0.0, 'subtitulo': 53.49, 'cuerpo': 59.94, 'pequeña': 75.12}   2198.8 ms  det=si
+ppp200__escaneado_d4a                    CERac=  0.34%  CERascii=  0.34%  lin=11/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.0, 'pequeña': 1.88}   1147.4 ms  det=si
+ppp200__escaneado_d4b                    CERac= 27.68%  CERascii= 27.18%  lin=1/12  bloques={'titulo': 0.0, 'subtitulo': 23.26, 'cuerpo': 33.33, 'pequeña': 15.49}   1086.1 ms  det=si
+ppp200__escaneado_d4c                    CERac= 15.10%  CERascii= 13.76%  lin=4/12  bloques={'titulo': 12.0, 'subtitulo': 0.0, 'cuerpo': 3.53, 'pequeña': 45.07}   1198.6 ms  det=si
+ppp200__escaneado_d4e                    CERac= 73.32%  CERascii= 72.32%  lin=0/12  bloques={'titulo': 8.0, 'subtitulo': 51.16, 'cuerpo': 79.81, 'pequeña': 84.04}   1121.8 ms  det=si
+ppp240__escaneado_d4f                    CERac= 17.95%  CERascii= 16.11%  lin=3/12  bloques={'titulo': 12.0, 'subtitulo': 0.0, 'cuerpo': 12.5, 'pequeña': 37.56}   1423.7 ms  det=si
+{"evento": "fin", "vram_pico_MiB": 7337, "vram_base_MiB": 2907, "coste_propio_MiB": 4430, "pico_util_pct": 100, "muestreo_vram": true}
+--- docling+rapidocr torch ---
+{"etiqueta": "docling_torch_cuda_vram", "dispositivo": "cuda", "backend": "torch", "lang": "english", "docs": ["d4_limpio", "escaneado_d4a", "escaneado_d4b", "escaneado_d4c", "escaneado_d4", "escaneado_d4e", "escaneado_d4f"], "modo_ppp": "nativo", "reps": 9, "vram_base_MiB": 2897, "quietud_pct": 39, "flag": "SUCIA(pico 39%)", "torch": "2.6.0+cu124", "torch_cuda": true, "modelo": {"lang_pedido": "english", "lang_resuelto": "en", "ppocr_version": "PP-OCRv6", "model_type_v6": "small", "model_type_v4v5": "mobile"}, "muestreo_vram": true}
+[32m[INFO] 2026-08-21 07:53:10,181 [RapidOCR] base.py:23: Using engine_name: torch[0m
+[32m[INFO] 2026-08-21 07:53:10,191 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 07:53:10,201 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_det_small.pth[0m
+[32m[INFO] 2026-08-21 07:53:10,201 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_det_small.pth[0m
+[32m[INFO] 2026-08-21 07:53:10,569 [RapidOCR] base.py:23: Using engine_name: torch[0m
+[32m[INFO] 2026-08-21 07:53:10,570 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 07:53:10,572 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-08-21 07:53:10,573 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-08-21 07:53:10,746 [RapidOCR] base.py:23: Using engine_name: torch[0m
+[32m[INFO] 2026-08-21 07:53:10,746 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 07:53:10,765 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_rec_small.pth[0m
+[32m[INFO] 2026-08-21 07:53:10,765 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_rec_small.pth[0m
+Loading weights:   0%|          | 0/770 [00:00<?, ?it/s]Loading weights:  59%|#####8    | 451/770 [00:00<00:00, 4497.16it/s]Loading weights: 100%|##########| 770/770 [00:00<00:00, 5628.53it/s]
+D:\Work\research\FileX\.venv-ai\Lib\site-packages\torch\nn\modules\conv.py:549: UserWarning: Using padding='same' with even kernel lengths and odd dilation may require a zero-padded copy of the input be created (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\aten\src\ATen\native\Convolution.cpp:1037.)
+  return F.conv2d(
+nativo__d4_limpio                        nat=200.0 escala=2.778 (~200ppp) px=(1294, 1792)  CERac=  0.00%  CERascii=  0.00%  lin=12/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.0, 'pequeña': 2.82}     808.4 ms
+[32m[INFO] 2026-08-21 07:53:29,751 [RapidOCR] base.py:23: Using engine_name: torch[0m
+[32m[INFO] 2026-08-21 07:53:29,751 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 07:53:29,760 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_det_small.pth[0m
+[32m[INFO] 2026-08-21 07:53:29,760 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_det_small.pth[0m
+[32m[INFO] 2026-08-21 07:53:29,999 [RapidOCR] base.py:23: Using engine_name: torch[0m
+[32m[INFO] 2026-08-21 07:53:30,000 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 07:53:30,001 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-08-21 07:53:30,002 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-08-21 07:53:30,166 [RapidOCR] base.py:23: Using engine_name: torch[0m
+[32m[INFO] 2026-08-21 07:53:30,166 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 07:53:30,185 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_rec_small.pth[0m
+[32m[INFO] 2026-08-21 07:53:30,185 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_rec_small.pth[0m
+Loading weights:   0%|          | 0/770 [00:00<?, ?it/s]Loading weights:  52%|#####1    | 399/770 [00:00<00:00, 3980.65it/s]Loading weights: 100%|##########| 770/770 [00:00<00:00, 5140.18it/s]
+nativo__escaneado_d4a                    nat=200.0 escala=2.778 (~200ppp) px=(1294, 1752)  CERac=  7.05%  CERascii=  6.71%  lin=10/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.0, 'pequeña': 23.0}     820.9 ms
+[32m[INFO] 2026-08-21 07:53:45,404 [RapidOCR] base.py:23: Using engine_name: torch[0m
+[32m[INFO] 2026-08-21 07:53:45,405 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 07:53:45,413 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_det_small.pth[0m
+[32m[INFO] 2026-08-21 07:53:45,413 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_det_small.pth[0m
+[32m[INFO] 2026-08-21 07:53:45,624 [RapidOCR] base.py:23: Using engine_name: torch[0m
+[32m[INFO] 2026-08-21 07:53:45,625 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 07:53:45,626 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-08-21 07:53:45,626 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-08-21 07:53:45,773 [RapidOCR] base.py:23: Using engine_name: torch[0m
+[32m[INFO] 2026-08-21 07:53:45,774 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 07:53:45,791 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_rec_small.pth[0m
+[32m[INFO] 2026-08-21 07:53:45,791 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_rec_small.pth[0m
+Loading weights:   0%|          | 0/770 [00:00<?, ?it/s]Loading weights:  55%|#####4    | 423/770 [00:00<00:00, 4220.57it/s]Loading weights: 100%|##########| 770/770 [00:00<00:00, 5425.65it/s]
+nativo__escaneado_d4b                    nat=200.0 escala=2.778 (~200ppp) px=(1294, 1734)  CERac= 18.46%  CERascii= 18.12%  lin=10/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 34.62, 'pequeña': 3.76}     771.9 ms
+[32m[INFO] 2026-08-21 07:54:00,596 [RapidOCR] base.py:23: Using engine_name: torch[0m
+[32m[INFO] 2026-08-21 07:54:00,597 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 07:54:00,606 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_det_small.pth[0m
+[32m[INFO] 2026-08-21 07:54:00,607 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_det_small.pth[0m
+[32m[INFO] 2026-08-21 07:54:00,880 [RapidOCR] base.py:23: Using engine_name: torch[0m
+[32m[INFO] 2026-08-21 07:54:00,881 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 07:54:00,882 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-08-21 07:54:00,882 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-08-21 07:54:01,030 [RapidOCR] base.py:23: Using engine_name: torch[0m
+[32m[INFO] 2026-08-21 07:54:01,031 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 07:54:01,049 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_rec_small.pth[0m
+[32m[INFO] 2026-08-21 07:54:01,049 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_rec_small.pth[0m
+Loading weights:   0%|          | 0/770 [00:00<?, ?it/s]Loading weights:  57%|#####6    | 436/770 [00:00<00:00, 4355.97it/s]Loading weights: 100%|##########| 770/770 [00:00<00:00, 5606.45it/s]
+nativo__escaneado_d4c                    nat=200.0 escala=2.778 (~200ppp) px=(1294, 1734)  CERac= 22.99%  CERascii= 22.48%  lin=8/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.0, 'pequeña': 71.83}     878.7 ms
+[32m[INFO] 2026-08-21 07:54:14,303 [RapidOCR] base.py:23: Using engine_name: torch[0m
+[32m[INFO] 2026-08-21 07:54:14,303 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 07:54:14,312 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_det_small.pth[0m
+[32m[INFO] 2026-08-21 07:54:14,312 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_det_small.pth[0m
+[32m[INFO] 2026-08-21 07:54:14,529 [RapidOCR] base.py:23: Using engine_name: torch[0m
+[32m[INFO] 2026-08-21 07:54:14,529 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 07:54:14,531 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-08-21 07:54:14,531 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-08-21 07:54:14,678 [RapidOCR] base.py:23: Using engine_name: torch[0m
+[32m[INFO] 2026-08-21 07:54:14,679 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 07:54:14,698 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_rec_small.pth[0m
+[32m[INFO] 2026-08-21 07:54:14,698 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_rec_small.pth[0m
+Loading weights:   0%|          | 0/770 [00:00<?, ?it/s]Loading weights:  64%|######3   | 490/770 [00:00<00:00, 4870.95it/s]Loading weights: 100%|##########| 770/770 [00:00<00:00, 6492.59it/s]
+nativo__escaneado_d4                     nat=200.0 escala=2.778 (~200ppp) px=(1294, 1716)  CERac= 36.91%  CERascii= 36.24%  lin=2/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 6.09, 'pequeña': 75.12}     799.8 ms
+[32m[INFO] 2026-08-21 07:54:26,375 [RapidOCR] base.py:23: Using engine_name: torch[0m
+[32m[INFO] 2026-08-21 07:54:26,376 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 07:54:26,385 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_det_small.pth[0m
+[32m[INFO] 2026-08-21 07:54:26,385 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_det_small.pth[0m
+[32m[INFO] 2026-08-21 07:54:26,601 [RapidOCR] base.py:23: Using engine_name: torch[0m
+[32m[INFO] 2026-08-21 07:54:26,602 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 07:54:26,603 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-08-21 07:54:26,603 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-08-21 07:54:26,761 [RapidOCR] base.py:23: Using engine_name: torch[0m
+[32m[INFO] 2026-08-21 07:54:26,762 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 07:54:26,780 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_rec_small.pth[0m
+[32m[INFO] 2026-08-21 07:54:26,780 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_rec_small.pth[0m
+Loading weights:   0%|          | 0/770 [00:00<?, ?it/s]Loading weights:  56%|#####5    | 429/770 [00:00<00:00, 4275.17it/s]Loading weights: 100%|##########| 770/770 [00:00<00:00, 5218.75it/s]
+nativo__escaneado_d4e                    nat=200.0 escala=2.778 (~200ppp) px=(1294, 1716)  CERac= 88.59%  CERascii= 88.42%  lin=1/12  bloques={'titulo': 0.0, 'subtitulo': 2.33, 'cuerpo': 85.26, 'pequeña': 83.57}     644.2 ms
+[32m[INFO] 2026-08-21 07:54:34,858 [RapidOCR] base.py:23: Using engine_name: torch[0m
+[32m[INFO] 2026-08-21 07:54:34,858 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 07:54:34,866 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_det_small.pth[0m
+[32m[INFO] 2026-08-21 07:54:34,867 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_det_small.pth[0m
+[32m[INFO] 2026-08-21 07:54:35,043 [RapidOCR] base.py:23: Using engine_name: torch[0m
+[32m[INFO] 2026-08-21 07:54:35,044 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 07:54:35,045 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-08-21 07:54:35,045 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-08-21 07:54:35,173 [RapidOCR] base.py:23: Using engine_name: torch[0m
+[32m[INFO] 2026-08-21 07:54:35,174 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 07:54:35,191 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_rec_small.pth[0m
+[32m[INFO] 2026-08-21 07:54:35,191 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_rec_small.pth[0m
+Loading weights:   0%|          | 0/770 [00:00<?, ?it/s]Loading weights:  57%|#####6    | 438/770 [00:00<00:00, 4348.07it/s]Loading weights: 100%|##########| 770/770 [00:00<00:00, 5583.49it/s]
+nativo__escaneado_d4f                    nat=240.0 escala=3.333 (~240ppp) px=(1552, 2080)  CERac= 22.15%  CERascii= 21.98%  lin=8/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.0, 'pequeña': 75.59}     841.6 ms
+{"evento": "fin", "vram_pico_MiB": 4381, "vram_base_MiB": 2897, "coste_propio_MiB": 1484, "pico_util_pct": 92, "sonda_activa": true, "muestreo_vram": true}
+
+########## pasada T (SIN_MUESTREO=1) ##########
+--- paddleocr ---
+INFORMACIàN: no se pudo encontrar ning£n archivo para los patrones dados.
+D:\Work\research\FileX\.venv-paddle\Lib\site-packages\paddle\utils\cpp_extension\extension_utils.py:718: UserWarning: No ccache found. Please be aware that recompiling all source files may be required. You can download and install ccache from: https://github.com/ccache/ccache/blob/master/doc/INSTALL.md
+  warnings.warn(warning_message)
+[32mCreating model: ('PP-LCNet_x1_0_textline_ori', None, None)[0m
+[32mModel files already exist. Using cached files. To redownload, please delete the directory manually: `C:\Users\krato\.paddlex\official_models\PP-LCNet_x1_0_textline_ori`.[0m
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+W0821 07:54:57.722589  1124 gpu_resources.cc:114] Please NOTE: device: 0, GPU Compute Capability: 8.6, Driver API Version: 12.8, Runtime API Version: 12.6
+[32mCreating model: ('PP-OCRv6_medium_det', None, None)[0m
+[32mModel files already exist. Using cached files. To redownload, please delete the directory manually: `C:\Users\krato\.paddlex\official_models\PP-OCRv6_medium_det`.[0m
+[32mCreating model: ('PP-OCRv6_medium_rec', None, None)[0m
+[32mModel files already exist. Using cached files. To redownload, please delete the directory manually: `C:\Users\krato\.paddlex\official_models\PP-OCRv6_medium_rec`.[0m
+{"etiqueta": "paddleocr_cuda_t", "motor": "paddleocr", "dispositivo": "cuda", "referencia": "d4", "patron": "*.png", "imgdir": "D:\\Work\\research\\FileX\\bench\\salidas-corpus-d4\\img", "carga_frio_s": 5.34, "vram_base_MiB": 2927, "vram_tras_carga_MiB": 3186, "quietud_pct": 48, "flag": "SUCIA(pico 48%)", "modelos": {"paddle": "3.2.0", "kwargs": {"device": "gpu:0", "use_doc_orientation_classify": "False", "use_doc_unwarping": "False", "use_textline_orientation": "True"}, "params": {"doc_orientation_classify_model_name": "None", "doc_unwarping_model_name": "None", "text_detection_model_name": "PP-OCRv6_medium_det", "textline_orientation_model_name": "None", "text_recognition_model_name": "PP-OCRv6_medium_rec"}}, "reps": 9, "muestreo_vram": false}
+W0821 07:54:59.976418  1124 gpu_resources.cc:243] WARNING: device: 0. The installed Paddle is compiled with CUDNN 9.9, but CUDNN version in your machine is 9.5, which may cause serious incompatible bug. Please recompile or reinstall Paddle with compatible CUDNN version.
+ppp200__d4_limpio                        CERac=  0.00%  CERascii=  0.00%  lin=12/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.0, 'pequeña': 2.82}    384.1 ms  det=si
+ppp200__escaneado_d4                     CERac= 19.30%  CERascii= 18.46%  lin=4/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 1.6, 'pequeña': 58.69}    388.1 ms  det=si
+ppp200__escaneado_d4a                    CERac=  0.00%  CERascii=  0.00%  lin=12/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.0, 'pequeña': 2.82}    395.9 ms  det=si
+ppp200__escaneado_d4b                    CERac=  0.17%  CERascii=  0.00%  lin=11/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.0, 'pequeña': 3.29}    446.8 ms  det=si
+ppp200__escaneado_d4c                    CERac=  0.67%  CERascii=  0.00%  lin=9/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.0, 'pequeña': 4.69}    396.0 ms  det=si
+ppp200__escaneado_d4e                    CERac= 70.97%  CERascii= 70.47%  lin=1/12  bloques={'titulo': 0.0, 'subtitulo': 2.33, 'cuerpo': 61.86, 'pequeña': 77.0}    278.7 ms  det=si
+ppp240__escaneado_d4f                    CERac=  0.67%  CERascii=  0.00%  lin=9/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.0, 'pequeña': 4.69}    466.5 ms  det=si
+{"evento": "fin", "vram_pico_MiB": 3186, "vram_base_MiB": 2927, "coste_propio_MiB": 259, "pico_util_pct": 0, "muestreo_vram": false}
+--- rapidocr ---
+[32m[INFO] 2026-08-21 07:56:11,650 [RapidOCR] base.py:23: Using engine_name: onnxruntime[0m
+[32m[INFO] 2026-08-21 07:56:12,065 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_PP-OCRv5_det_mobile.onnx[0m
+[32m[INFO] 2026-08-21 07:56:12,065 [RapidOCR] main.py:63: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_PP-OCRv5_det_mobile.onnx[0m
+[32m[INFO] 2026-08-21 07:56:12,315 [RapidOCR] base.py:23: Using engine_name: onnxruntime[0m
+[32m[INFO] 2026-08-21 07:56:12,317 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ppocr_mobile_v2.0_cls_mobile.onnx[0m
+[32m[INFO] 2026-08-21 07:56:12,317 [RapidOCR] main.py:63: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ppocr_mobile_v2.0_cls_mobile.onnx[0m
+[32m[INFO] 2026-08-21 07:56:12,367 [RapidOCR] base.py:23: Using engine_name: onnxruntime[0m
+[32m[INFO] 2026-08-21 07:56:12,379 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_PP-OCRv5_rec_mobile.onnx[0m
+[32m[INFO] 2026-08-21 07:56:12,379 [RapidOCR] main.py:63: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_PP-OCRv5_rec_mobile.onnx[0m
+{"etiqueta": "rapidocr_cuda_t", "motor": "rapidocr", "dispositivo": "cuda", "referencia": "d4", "patron": "*.png", "imgdir": "D:\\Work\\research\\FileX\\bench\\salidas-corpus-d4\\img", "carga_frio_s": 3.89, "vram_base_MiB": 2927, "vram_tras_carga_MiB": 3090, "quietud_pct": 35, "flag": "SUCIA(pico 35%)", "modelos": {"text_det": "el.ttf', 'SHA256': '892e6c81071fc85923f8d0ff925edab6049dd4495a2fdedffddc04753bf348b3'}}}", "text_cls": "el.ttf', 'SHA256': '892e6c81071fc85923f8d0ff925edab6049dd4495a2fdedffddc04753bf348b3'}}}", "text_rec": "el.ttf', 'SHA256': '892e6c81071fc85923f8d0ff925edab6049dd4495a2fdedffddc04753bf348b3'}}}", "pedido": {"ver": "PP-OCRv5", "tipo": "mobile", "langdet": "ch", "langrec": "ch"}}, "reps": 9, "muestreo_vram": false}
+ppp200__d4_limpio                        CERac=  1.17%  CERascii=  0.50%  lin=7/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.64, 'pequeña': 2.35}    298.3 ms  det=si
+ppp200__escaneado_d4                     CERac= 41.78%  CERascii= 38.59%  lin=0/12  bloques={'titulo': 4.0, 'subtitulo': 11.63, 'cuerpo': 14.42, 'pequeña': 74.65}    394.0 ms  det=si
+ppp200__escaneado_d4a                    CERac=  1.51%  CERascii=  0.67%  lin=7/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.64, 'pequeña': 6.1}    282.0 ms  det=si
+ppp200__escaneado_d4b                    CERac=  2.18%  CERascii=  0.34%  lin=6/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.64, 'pequeña': 8.45}    345.8 ms  det=si
+ppp200__escaneado_d4c                    CERac= 15.60%  CERascii= 11.91%  lin=0/12  bloques={'titulo': 4.0, 'subtitulo': 2.33, 'cuerpo': 4.17, 'pequeña': 51.17}    406.8 ms  det=si
+ppp200__escaneado_d4e                    CERac= 92.45%  CERascii= 92.11%  lin=0/12  bloques={'titulo': 4.0, 'subtitulo': 65.12, 'cuerpo': 88.78, 'pequeña': 85.92}    196.0 ms  det=si
+ppp240__escaneado_d4f                    CERac=  6.04%  CERascii=  2.18%  lin=0/12  bloques={'titulo': 4.0, 'subtitulo': 2.33, 'cuerpo': 2.88, 'pequeña': 15.49}    378.7 ms  det=si
+{"evento": "fin", "vram_pico_MiB": 3090, "vram_base_MiB": 2927, "coste_propio_MiB": 163, "pico_util_pct": 0, "muestreo_vram": false}
+--- easyocr ---
+{"etiqueta": "easyocr_cuda_t", "motor": "easyocr", "dispositivo": "cuda", "referencia": "d4", "patron": "*.png", "imgdir": "D:\\Work\\research\\FileX\\bench\\salidas-corpus-d4\\img", "carga_frio_s": 7.19, "vram_base_MiB": 2905, "vram_tras_carga_MiB": 3189, "quietud_pct": 42, "flag": "SUCIA(pico 42%)", "modelos": {"torch": "2.6.0+cu124", "torch_cuda": "True"}, "reps": 9, "muestreo_vram": false}
+ppp200__d4_limpio                        CERac=  0.50%  CERascii=  0.50%  lin=11/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.0, 'pequeña': 4.69}   1224.1 ms  det=si
+ppp200__escaneado_d4                     CERac= 61.41%  CERascii= 59.56%  lin=1/12  bloques={'titulo': 0.0, 'subtitulo': 53.49, 'cuerpo': 59.94, 'pequeña': 75.12}   1165.6 ms  det=si
+ppp200__escaneado_d4a                    CERac=  0.34%  CERascii=  0.34%  lin=11/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.0, 'pequeña': 1.88}    959.6 ms  det=si
+ppp200__escaneado_d4b                    CERac= 27.68%  CERascii= 27.18%  lin=1/12  bloques={'titulo': 0.0, 'subtitulo': 23.26, 'cuerpo': 33.33, 'pequeña': 15.49}   1116.9 ms  det=si
+ppp200__escaneado_d4c                    CERac= 15.10%  CERascii= 13.76%  lin=4/12  bloques={'titulo': 12.0, 'subtitulo': 0.0, 'cuerpo': 3.53, 'pequeña': 45.07}   1157.5 ms  det=si
+ppp200__escaneado_d4e                    CERac= 73.32%  CERascii= 72.32%  lin=0/12  bloques={'titulo': 8.0, 'subtitulo': 51.16, 'cuerpo': 79.81, 'pequeña': 84.04}   1173.8 ms  det=si
+ppp240__escaneado_d4f                    CERac= 17.95%  CERascii= 16.11%  lin=3/12  bloques={'titulo': 12.0, 'subtitulo': 0.0, 'cuerpo': 12.5, 'pequeña': 37.56}   1438.3 ms  det=si
+{"evento": "fin", "vram_pico_MiB": 3189, "vram_base_MiB": 2905, "coste_propio_MiB": 284, "pico_util_pct": 0, "muestreo_vram": false}
+--- docling+rapidocr torch ---
+{"etiqueta": "docling_torch_cuda_t", "dispositivo": "cuda", "backend": "torch", "lang": "english", "docs": ["d4_limpio", "escaneado_d4a", "escaneado_d4b", "escaneado_d4c", "escaneado_d4", "escaneado_d4e", "escaneado_d4f"], "modo_ppp": "nativo", "reps": 9, "vram_base_MiB": 2967, "quietud_pct": 16, "flag": "SUCIA(pico 16%)", "torch": "2.6.0+cu124", "torch_cuda": true, "modelo": {"lang_pedido": "english", "lang_resuelto": "en", "ppocr_version": "PP-OCRv6", "model_type_v6": "small", "model_type_v4v5": "mobile"}, "muestreo_vram": false}
+[32m[INFO] 2026-08-21 07:59:27,877 [RapidOCR] base.py:23: Using engine_name: torch[0m
+[32m[INFO] 2026-08-21 07:59:27,886 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 07:59:27,895 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_det_small.pth[0m
+[32m[INFO] 2026-08-21 07:59:27,896 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_det_small.pth[0m
+[32m[INFO] 2026-08-21 07:59:28,248 [RapidOCR] base.py:23: Using engine_name: torch[0m
+[32m[INFO] 2026-08-21 07:59:28,248 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 07:59:28,250 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-08-21 07:59:28,250 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-08-21 07:59:28,382 [RapidOCR] base.py:23: Using engine_name: torch[0m
+[32m[INFO] 2026-08-21 07:59:28,383 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 07:59:28,398 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_rec_small.pth[0m
+[32m[INFO] 2026-08-21 07:59:28,398 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_rec_small.pth[0m
+Loading weights:   0%|          | 0/770 [00:00<?, ?it/s]Loading weights:  65%|######4   | 499/770 [00:00<00:00, 4952.52it/s]Loading weights: 100%|##########| 770/770 [00:00<00:00, 6070.73it/s]
+D:\Work\research\FileX\.venv-ai\Lib\site-packages\torch\nn\modules\conv.py:549: UserWarning: Using padding='same' with even kernel lengths and odd dilation may require a zero-padded copy of the input be created (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\aten\src\ATen\native\Convolution.cpp:1037.)
+  return F.conv2d(
+nativo__d4_limpio                        nat=200.0 escala=2.778 (~200ppp) px=(1294, 1792)  CERac=  0.00%  CERascii=  0.00%  lin=12/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.0, 'pequeña': 2.82}     736.6 ms
+[32m[INFO] 2026-08-21 07:59:46,235 [RapidOCR] base.py:23: Using engine_name: torch[0m
+[32m[INFO] 2026-08-21 07:59:46,235 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 07:59:46,244 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_det_small.pth[0m
+[32m[INFO] 2026-08-21 07:59:46,245 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_det_small.pth[0m
+[32m[INFO] 2026-08-21 07:59:46,447 [RapidOCR] base.py:23: Using engine_name: torch[0m
+[32m[INFO] 2026-08-21 07:59:46,448 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 07:59:46,449 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-08-21 07:59:46,449 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-08-21 07:59:46,598 [RapidOCR] base.py:23: Using engine_name: torch[0m
+[32m[INFO] 2026-08-21 07:59:46,599 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 07:59:46,615 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_rec_small.pth[0m
+[32m[INFO] 2026-08-21 07:59:46,615 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_rec_small.pth[0m
+Loading weights:   0%|          | 0/770 [00:00<?, ?it/s]Loading weights:  60%|#####9    | 459/770 [00:00<00:00, 4546.82it/s]Loading weights: 100%|##########| 770/770 [00:00<00:00, 5767.27it/s]
+nativo__escaneado_d4a                    nat=200.0 escala=2.778 (~200ppp) px=(1294, 1752)  CERac=  7.05%  CERascii=  6.71%  lin=10/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.0, 'pequeña': 23.0}     723.7 ms
+[32m[INFO] 2026-08-21 08:00:00,032 [RapidOCR] base.py:23: Using engine_name: torch[0m
+[32m[INFO] 2026-08-21 08:00:00,032 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 08:00:00,040 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_det_small.pth[0m
+[32m[INFO] 2026-08-21 08:00:00,040 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_det_small.pth[0m
+[32m[INFO] 2026-08-21 08:00:00,255 [RapidOCR] base.py:23: Using engine_name: torch[0m
+[32m[INFO] 2026-08-21 08:00:00,255 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 08:00:00,256 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-08-21 08:00:00,256 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-08-21 08:00:00,406 [RapidOCR] base.py:23: Using engine_name: torch[0m
+[32m[INFO] 2026-08-21 08:00:00,407 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 08:00:00,424 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_rec_small.pth[0m
+[32m[INFO] 2026-08-21 08:00:00,425 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_rec_small.pth[0m
+Loading weights:   0%|          | 0/770 [00:00<?, ?it/s]Loading weights:  55%|#####5    | 425/770 [00:00<00:00, 4236.02it/s]Loading weights: 100%|##########| 770/770 [00:00<00:00, 5332.68it/s]
+nativo__escaneado_d4b                    nat=200.0 escala=2.778 (~200ppp) px=(1294, 1734)  CERac= 18.46%  CERascii= 18.12%  lin=10/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 34.62, 'pequeña': 3.76}     718.7 ms
+[32m[INFO] 2026-08-21 08:00:14,442 [RapidOCR] base.py:23: Using engine_name: torch[0m
+[32m[INFO] 2026-08-21 08:00:14,443 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 08:00:14,451 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_det_small.pth[0m
+[32m[INFO] 2026-08-21 08:00:14,451 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_det_small.pth[0m
+[32m[INFO] 2026-08-21 08:00:14,640 [RapidOCR] base.py:23: Using engine_name: torch[0m
+[32m[INFO] 2026-08-21 08:00:14,641 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 08:00:14,642 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-08-21 08:00:14,642 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-08-21 08:00:14,783 [RapidOCR] base.py:23: Using engine_name: torch[0m
+[32m[INFO] 2026-08-21 08:00:14,783 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 08:00:14,799 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_rec_small.pth[0m
+[32m[INFO] 2026-08-21 08:00:14,800 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_rec_small.pth[0m
+Loading weights:   0%|          | 0/770 [00:00<?, ?it/s]Loading weights:  56%|#####6    | 432/770 [00:00<00:00, 4311.94it/s]Loading weights: 100%|##########| 770/770 [00:00<00:00, 5837.07it/s]
+nativo__escaneado_d4c                    nat=200.0 escala=2.778 (~200ppp) px=(1294, 1734)  CERac= 22.99%  CERascii= 22.48%  lin=8/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.0, 'pequeña': 71.83}     808.6 ms
+[32m[INFO] 2026-08-21 08:00:26,824 [RapidOCR] base.py:23: Using engine_name: torch[0m
+[32m[INFO] 2026-08-21 08:00:26,824 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 08:00:26,832 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_det_small.pth[0m
+[32m[INFO] 2026-08-21 08:00:26,832 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_det_small.pth[0m
+[32m[INFO] 2026-08-21 08:00:27,024 [RapidOCR] base.py:23: Using engine_name: torch[0m
+[32m[INFO] 2026-08-21 08:00:27,025 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 08:00:27,026 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-08-21 08:00:27,026 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-08-21 08:00:27,157 [RapidOCR] base.py:23: Using engine_name: torch[0m
+[32m[INFO] 2026-08-21 08:00:27,157 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 08:00:27,174 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_rec_small.pth[0m
+[32m[INFO] 2026-08-21 08:00:27,174 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_rec_small.pth[0m
+Loading weights:   0%|          | 0/770 [00:00<?, ?it/s]Loading weights:  64%|######4   | 493/770 [00:00<00:00, 4900.41it/s]Loading weights: 100%|##########| 770/770 [00:00<00:00, 6048.29it/s]
+nativo__escaneado_d4                     nat=200.0 escala=2.778 (~200ppp) px=(1294, 1716)  CERac= 36.91%  CERascii= 36.24%  lin=2/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 6.09, 'pequeña': 75.12}     705.0 ms
+[32m[INFO] 2026-08-21 08:00:37,640 [RapidOCR] base.py:23: Using engine_name: torch[0m
+[32m[INFO] 2026-08-21 08:00:37,641 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 08:00:37,649 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_det_small.pth[0m
+[32m[INFO] 2026-08-21 08:00:37,649 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_det_small.pth[0m
+[32m[INFO] 2026-08-21 08:00:37,838 [RapidOCR] base.py:23: Using engine_name: torch[0m
+[32m[INFO] 2026-08-21 08:00:37,839 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 08:00:37,840 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-08-21 08:00:37,840 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-08-21 08:00:37,981 [RapidOCR] base.py:23: Using engine_name: torch[0m
+[32m[INFO] 2026-08-21 08:00:37,981 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 08:00:37,998 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_rec_small.pth[0m
+[32m[INFO] 2026-08-21 08:00:37,998 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_rec_small.pth[0m
+Loading weights:   0%|          | 0/770 [00:00<?, ?it/s]Loading weights:  63%|######2   | 482/770 [00:00<00:00, 4812.80it/s]Loading weights: 100%|##########| 770/770 [00:00<00:00, 5883.28it/s]
+nativo__escaneado_d4e                    nat=200.0 escala=2.778 (~200ppp) px=(1294, 1716)  CERac= 88.59%  CERascii= 88.42%  lin=1/12  bloques={'titulo': 0.0, 'subtitulo': 2.33, 'cuerpo': 85.26, 'pequeña': 83.57}     571.2 ms
+[32m[INFO] 2026-08-21 08:00:45,681 [RapidOCR] base.py:23: Using engine_name: torch[0m
+[32m[INFO] 2026-08-21 08:00:45,682 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 08:00:45,690 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_det_small.pth[0m
+[32m[INFO] 2026-08-21 08:00:45,690 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_det_small.pth[0m
+[32m[INFO] 2026-08-21 08:00:45,896 [RapidOCR] base.py:23: Using engine_name: torch[0m
+[32m[INFO] 2026-08-21 08:00:45,896 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 08:00:45,897 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-08-21 08:00:45,897 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-08-21 08:00:46,032 [RapidOCR] base.py:23: Using engine_name: torch[0m
+[32m[INFO] 2026-08-21 08:00:46,033 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 08:00:46,051 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_rec_small.pth[0m
+[32m[INFO] 2026-08-21 08:00:46,052 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_rec_small.pth[0m
+Loading weights:   0%|          | 0/770 [00:00<?, ?it/s]Loading weights:  56%|#####6    | 434/770 [00:00<00:00, 4308.08it/s]Loading weights: 100%|##########| 770/770 [00:00<00:00, 4973.00it/s]
+nativo__escaneado_d4f                    nat=240.0 escala=3.333 (~240ppp) px=(1552, 2080)  CERac= 22.15%  CERascii= 21.98%  lin=8/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.0, 'pequeña': 75.59}     843.3 ms
+{"evento": "fin", "vram_pico_MiB": 0, "vram_base_MiB": 2967, "coste_propio_MiB": -2967, "pico_util_pct": 0, "sonda_activa": true, "muestreo_vram": false}
+=== fin fase 2: Fri Aug 21 08:01:00 HPS 2026 ===

@@ -1,0 +1,13 @@
+testigos ANTES: cpu 452.1 ms  proceso 32.0 ms
+  png 1920x1080    viejo 0.0586 ms   nuevo 0.0536 ms   x0.91   (png -> png)
+  jpeg             viejo 0.0631 ms   nuevo 0.0485 ms   x0.77   (jpeg -> jpeg)
+  mp4 16 MB        viejo 0.0701 ms   nuevo 0.0469 ms   x0.67   (mp4 -> mp4)
+  pdf              viejo 0.0504 ms   nuevo 0.0653 ms   x1.30   (pdf -> pdf)
+  flac             viejo 0.0445 ms   nuevo 0.0506 ms   x1.14   (flac -> flac)
+  docx (ZIP)       viejo 0.1031 ms   nuevo 0.2550 ms   x2.47   (zip -> docx)
+
+  CONTRATO sobre las 53, en proceso: viejo 52.2 ms  nuevo 47.6 ms  x0.91
+    por salida: 0.986 ms -> 0.897 ms
+
+testigos DESPUES: cpu 469.0 ms  proceso 29.0 ms -> deriva x1.04 nivel x1.20 -> SUCIA
+escrito coste.json

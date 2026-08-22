@@ -1,0 +1,136 @@
+[
+ {
+  "caso": "HLS: ffmpeg -> .m3u8 (segmentos EN EL DESTINO)",
+  "orden": "ffmpeg -y -nostdin -threads 4 -i trivial.mp4 -c:v libx264 -crf 30 -hls_time 1 -hls_segment_filename \"D:\\Work\\research\\FileX\\bench\\salidas-quinto-punto\\tmp\\multi\\destino\\h%03d.ts\" \"D:\\Work\\research\\FileX\\bench\\salidas-quinto-punto\\tmp\\multi\\destino\\h.m3u8\"",
+  "rc": 0,
+  "ms": 529.1,
+  "nuevos_en_destino": [
+   "h.m3u8",
+   "h000.ts"
+  ],
+  "n_en_destino": 2,
+  "nuevos_en_trabajo": [],
+  "hallazgos": [
+   {
+    "punto": 5,
+    "regla": "N7",
+    "severidad": "informativo",
+    "mensaje": "salida multifichero declarada (m3u8): 1 fichero(s) acompañan al declarado",
+    "esperado": "lista HLS: los segmentos son ficheros aparte",
+    "obtenido": [
+     "h000.ts"
+    ]
+   },
+   {
+    "punto": 5,
+    "regla": "N9",
+    "severidad": "informativo",
+    "mensaje": "el fichero declarado lleva el 0.0 % de los bytes escritos (114 de 248086 B)",
+    "esperado": "100 %%",
+    "obtenido": 0.0
+   }
+  ],
+  "sev": [
+   "informativo"
+  ],
+  "stderr": ""
+ },
+ {
+  "caso": "secuencia: ffmpeg -> f%03d.png",
+  "orden": "ffmpeg -y -nostdin -threads 4 -i trivial.mp4 -vf fps=4 \"D:\\Work\\research\\FileX\\bench\\salidas-quinto-punto\\tmp\\multi\\destino\\f%03d.png\"",
+  "rc": 0,
+  "ms": 200.9,
+  "nuevos_en_destino": [
+   "f001.png",
+   "f002.png",
+   "f003.png",
+   "f004.png",
+   "f005.png",
+   "f006.png",
+   "f007.png",
+   "f008.png"
+  ],
+  "n_en_destino": 20,
+  "nuevos_en_trabajo": [],
+  "hallazgos": [
+   {
+    "punto": 5,
+    "regla": "N9",
+    "severidad": "informativo",
+    "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (1259100 de 1259100 B)",
+    "esperado": "100 %%",
+    "obtenido": 100.0
+   }
+  ],
+  "sev": [
+   "informativo"
+  ],
+  "stderr": ""
+ },
+ {
+  "caso": "secuencia: gs -sOutputFile=%d.png sobre un PDF de 2 paginas",
+  "orden": "gswin64c -q -dNOPAUSE -dBATCH -dSAFER -sDEVICE=png16m -r72 -sOutputFile=\"D:\\Work\\research\\FileX\\bench\\salidas-quinto-punto\\tmp\\multi\\destino\\p%d.png\" \"D:\\Work\\research\\FileX\\bench\\salidas-quinto-punto\\tmp\\multi\\trabajo\\dos.pdf\"",
+  "rc": 0,
+  "ms": 283.9,
+  "nuevos_en_destino": [
+   "p1.png",
+   "p2.png"
+  ],
+  "n_en_destino": 2,
+  "nuevos_en_trabajo": [],
+  "hallazgos": [
+   {
+    "punto": 5,
+    "regla": "N9",
+    "severidad": "informativo",
+    "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (11412 de 11412 B)",
+    "esperado": "100 %%",
+    "obtenido": 100.0
+   }
+  ],
+  "sev": [
+   "informativo"
+  ],
+  "stderr": ""
+ },
+ {
+  "caso": "DASH declarado como multifichero en el PEDIDO",
+  "orden": "ffmpeg -y -nostdin -threads 4 -i trivial.mp4 \"D:\\Work\\research\\FileX\\bench\\salidas-quinto-punto\\tmp\\multi\\destino\\d.mpd\"",
+  "rc": 0,
+  "ms": 468.7,
+  "nuevos_en_destino": [
+   "d.mpd"
+  ],
+  "n_en_destino": 1,
+  "nuevos_en_trabajo": [
+   "chunk-stream0-00001.m4s",
+   "init-stream0.m4s"
+  ],
+  "hallazgos": [
+   {
+    "punto": 5,
+    "regla": "N5",
+    "severidad": "fallo",
+    "mensaje": "el motor escribio 2 fichero(s) (529261 B) FUERA del directorio de destino: chunk-stream0-00001.m4s, init-stream0.m4s",
+    "esperado": "0 ficheros fuera de D:\\Work\\research\\FileX\\bench\\salidas-quinto-punto\\tmp\\multi\\destino",
+    "obtenido": [
+     "tmp\\multi\\trabajo\\chunk-stream0-00001.m4s",
+     "tmp\\multi\\trabajo\\init-stream0.m4s"
+    ]
+   },
+   {
+    "punto": 5,
+    "regla": "N9",
+    "severidad": "informativo",
+    "mensaje": "el fichero declarado lleva el 0.2 % de los bytes escritos (1234 de 530495 B)",
+    "esperado": "100 %%",
+    "obtenido": 0.2
+   }
+  ],
+  "sev": [
+   "fallo",
+   "informativo"
+  ],
+  "stderr": ""
+ }
+]

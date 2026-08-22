@@ -1,0 +1,56 @@
+tipico_flac-to.mp3                     ok_parcial        1 ms  {}
+tipico_flac-to.opus                    ok_parcial        1 ms  {}
+tipico_flac-to.wav                     ok               98 ms  {'A4': True}
+tipico_mp3-to.flac                     aviso            76 ms  {'A4': True}
+tipico_mp3-to.wav                      ok               92 ms  {'A4': True}
+tipico_mp4-audio-copy.m4a              ok              119 ms  {'A5': True}
+tipico_mp4-audio.flac                  aviso            88 ms  {'A5': True}
+tipico_mp4-audio.mp3                   ok_parcial        1 ms  {}
+trivial_wav-to.flac                    ok               81 ms  {'A4': True}
+trivial_wav-to.m4a                     ok_parcial        1 ms  {}
+trivial_wav-to.mp3                     ok_parcial        1 ms  {}
+trivial_wav-to.opus                    ok_parcial        1 ms  {}
+patologico_bom_csv-to-normalizado.csv  ok_parcial        2 ms  {}
+patologico_bom_csv-to.json             ok_parcial        1 ms  {}
+tipico_json-to.csv                     ok_parcial        0 ms  {}
+16bit_tif-to-d16.png                   ok             1367 ms  {'I6': True}
+16bit_tif-to-d8.png                    ok             1062 ms  {'I7': True}
+16bit_tif-to-default.png               ok             1323 ms  {'I6': True}
+16bit_tif-to.jpg                       ok              899 ms  {'I3': True, 'I7': True}
+16bit_tif-to.webp                      ok              987 ms  {'I7': True}
+alpha_png-to-flat.jpg                  ok               36 ms  {'I7': True}
+alpha_png-to.avif                      aviso            40 ms  {'I8': True, 'I7': True}
+alpha_png-to.jpg                       aviso            59 ms  {'I3': True, 'I7': True}
+alpha_png-to.png8.png                  ok               33 ms  {'I6': True}
+alpha_png-to.webp                      aviso            33 ms  {'I8': True, 'I7': True}
+tipico_jpg-to.png                      ok              255 ms  {'I6': True}
+tipico_png-to.avif                     ok              359 ms  {'I7': True}
+tipico_png-to.jpg                      ok              397 ms  {'I3': True, 'I7': True}
+tipico_png-to.webp                     ok              343 ms  {'I7': True}
+tipico_webp-to.jpg                     ok              334 ms  {'I3': True, 'I7': True}
+tipico_webp-to.png                     ok              265 ms  {'I6': True}
+trivial_png-to-lossless.webp           ok               25 ms  {'I7': True}
+trivial_png-to.jpg                     ok               26 ms  {'I3': True, 'I7': True}
+trivial_png-to.webp                    aviso            25 ms  {'I8': True, 'I7': True}
+alpha_png-to.pdf                       ok              188 ms  {'P6': True}
+patologico_escaneado_pdf-to-p1.png     ok_parcial        7 ms  {}
+tipico_jpg-to.pdf                      ok              213 ms  {'P6': True}
+tipico_png-to-150dpi.pdf               ok              201 ms  {'P6': True}
+tipico_png-to.pdf                      ok              207 ms  {'P6': True}
+tipico_texto_pdf-to-gs.pdf             ok              349 ms  {'P6': True, 'P2': True}
+tipico_texto_pdf-to-p1.jpg             ok_parcial        0 ms  {}
+tipico_texto_pdf-to-p1.png             ok_parcial        0 ms  {}
+tipico_texto_pdf-to.tif                ok_parcial        0 ms  {}
+tipico_texto_rasterizado.pdf           ok              185 ms  {'P6': True}
+trivial_pdf-to-p1.png                  ok_parcial        0 ms  {}
+2pistas_mkv-to-COPY.mp4                ok             1559 ms  {'V6': True, 'V8': True, 'A4': True}
+2pistas_mkv-to-DEFAULT.mp4             ok             1730 ms  {'V6': True, 'V8': True}
+2pistas_mkv-to-MAP0.mp4                ok             1731 ms  {'V6': True, 'V8': True}
+tipico_mp4-to.mkv                      ok             6128 ms  {'V6': True, 'V8': True, 'A4': True}
+tipico_mp4-to.webm                     ok             7534 ms  {'V6': True, 'V8': True}
+trivial_mp4-to-naive.gif               aviso             1 ms  {'V9': True}
+trivial_mp4-to-palette.gif             ok                1 ms  {'V9': True}
+trivial_mp4-to.webm                    aviso           388 ms  {'V6': True, 'V8': True}
+
+TOTAL 28858 ms | fallos 0 | avisos 8 | ok_parcial 14
+-> D:\Work\research\FileX\bench\salidas-verificacion-fidelidad\fidelidad.json

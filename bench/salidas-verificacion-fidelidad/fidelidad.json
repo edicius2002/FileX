@@ -1,0 +1,1283 @@
+{
+ "n": 53,
+ "total_ms": 28858.2,
+ "fallos": [],
+ "avisos": [
+  "tipico_mp3-to.flac",
+  "tipico_mp4-audio.flac",
+  "alpha_png-to.avif",
+  "alpha_png-to.jpg",
+  "alpha_png-to.webp",
+  "trivial_png-to.webp",
+  "trivial_mp4-to-naive.gif",
+  "trivial_mp4-to.webm"
+ ],
+ "ok_parcial": [
+  "tipico_flac-to.mp3",
+  "tipico_flac-to.opus",
+  "tipico_mp4-audio.mp3",
+  "trivial_wav-to.m4a",
+  "trivial_wav-to.mp3",
+  "trivial_wav-to.opus",
+  "patologico_bom_csv-to-normalizado.csv",
+  "patologico_bom_csv-to.json",
+  "tipico_json-to.csv",
+  "patologico_escaneado_pdf-to-p1.png",
+  "tipico_texto_pdf-to-p1.jpg",
+  "tipico_texto_pdf-to-p1.png",
+  "tipico_texto_pdf-to.tif",
+  "trivial_pdf-to-p1.png"
+ ],
+ "filas": [
+  {
+   "salida": "tipico_flac-to.mp3",
+   "cat": "audio",
+   "esperado": "ok",
+   "veredicto": "ok_parcial",
+   "cobertura": {},
+   "ms": 0.6,
+   "ms_regla": {
+    "sondeo": 0.6,
+    "total": 0.6
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "tipico_flac-to.opus",
+   "cat": "audio",
+   "esperado": "ok",
+   "veredicto": "ok_parcial",
+   "cobertura": {},
+   "ms": 0.5,
+   "ms_regla": {
+    "sondeo": 0.5,
+    "total": 0.5
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "tipico_flac-to.wav",
+   "cat": "audio",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "A4": true
+   },
+   "ms": 98.2,
+   "ms_regla": {
+    "sondeo": 0.3,
+    "A4": 97.9,
+    "total": 98.2
+   },
+   "hallazgos": [
+    {
+     "punto": "F",
+     "regla": "A4",
+     "severidad": "informativo",
+     "mensaje": "PCM identico bit a bit",
+     "esperado": "b1cdfb164f2319cd862dbf24a43679e5",
+     "obtenido": "b1cdfb164f2319cd862dbf24a43679e5"
+    }
+   ]
+  },
+  {
+   "salida": "tipico_mp3-to.flac",
+   "cat": "audio",
+   "esperado": "ok",
+   "veredicto": "aviso",
+   "cobertura": {
+    "A4": true
+   },
+   "ms": 76.2,
+   "ms_regla": {
+    "sondeo": 0.4,
+    "A4": 75.7,
+    "total": 76.2
+   },
+   "hallazgos": [
+    {
+     "punto": "F",
+     "regla": "A4",
+     "severidad": "aviso",
+     "mensaje": "el PCM no coincide, pero la profundidad esta INFLADA (24 bits sobre un origen de 16 efectivos, regla A6): el redondeo al medir explica la diferencia",
+     "esperado": "f5ddaa6410d81575bcdcc6b5b3a8f59b",
+     "obtenido": "984b4619d1c3034c7bafc37264dac0ec"
+    }
+   ]
+  },
+  {
+   "salida": "tipico_mp3-to.wav",
+   "cat": "audio",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "A4": true
+   },
+   "ms": 92.4,
+   "ms_regla": {
+    "sondeo": 0.4,
+    "A4": 91.9,
+    "total": 92.3
+   },
+   "hallazgos": [
+    {
+     "punto": "F",
+     "regla": "A4",
+     "severidad": "informativo",
+     "mensaje": "PCM identico bit a bit",
+     "esperado": "f5ddaa6410d81575bcdcc6b5b3a8f59b",
+     "obtenido": "f5ddaa6410d81575bcdcc6b5b3a8f59b"
+    }
+   ]
+  },
+  {
+   "salida": "tipico_mp4-audio-copy.m4a",
+   "cat": "audio",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "A5": true
+   },
+   "ms": 119.4,
+   "ms_regla": {
+    "sondeo": 0.8,
+    "A5": 118.6,
+    "total": 119.4
+   },
+   "hallazgos": [
+    {
+     "punto": "F",
+     "regla": "A5",
+     "severidad": "informativo",
+     "mensaje": "PCM identico bit a bit",
+     "esperado": "d0bd638ebac71997b3043a458f350ea6",
+     "obtenido": "d0bd638ebac71997b3043a458f350ea6"
+    }
+   ]
+  },
+  {
+   "salida": "tipico_mp4-audio.flac",
+   "cat": "audio",
+   "esperado": "ok",
+   "veredicto": "aviso",
+   "cobertura": {
+    "A5": true
+   },
+   "ms": 88.0,
+   "ms_regla": {
+    "sondeo": 0.6,
+    "A5": 87.3,
+    "total": 87.9
+   },
+   "hallazgos": [
+    {
+     "punto": "F",
+     "regla": "A5",
+     "severidad": "aviso",
+     "mensaje": "el PCM no coincide, pero la profundidad esta INFLADA (24 bits sobre un origen de 16 efectivos, regla A6): el redondeo al medir explica la diferencia",
+     "esperado": "d0bd638ebac71997b3043a458f350ea6",
+     "obtenido": "14a16866cc07029dab371161c0b9a773"
+    }
+   ]
+  },
+  {
+   "salida": "tipico_mp4-audio.mp3",
+   "cat": "audio",
+   "esperado": "ok",
+   "veredicto": "ok_parcial",
+   "cobertura": {},
+   "ms": 0.6,
+   "ms_regla": {
+    "sondeo": 0.6,
+    "total": 0.6
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "trivial_wav-to.flac",
+   "cat": "audio",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "A4": true
+   },
+   "ms": 80.8,
+   "ms_regla": {
+    "sondeo": 0.3,
+    "A4": 80.5,
+    "total": 80.8
+   },
+   "hallazgos": [
+    {
+     "punto": "F",
+     "regla": "A4",
+     "severidad": "informativo",
+     "mensaje": "PCM identico bit a bit",
+     "esperado": "b1cdfb164f2319cd862dbf24a43679e5",
+     "obtenido": "b1cdfb164f2319cd862dbf24a43679e5"
+    }
+   ]
+  },
+  {
+   "salida": "trivial_wav-to.m4a",
+   "cat": "audio",
+   "esperado": "ok",
+   "veredicto": "ok_parcial",
+   "cobertura": {},
+   "ms": 0.8,
+   "ms_regla": {
+    "sondeo": 0.7,
+    "total": 0.7
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "trivial_wav-to.mp3",
+   "cat": "audio",
+   "esperado": "ok",
+   "veredicto": "ok_parcial",
+   "cobertura": {},
+   "ms": 0.6,
+   "ms_regla": {
+    "sondeo": 0.6,
+    "total": 0.6
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "trivial_wav-to.opus",
+   "cat": "audio",
+   "esperado": "ok",
+   "veredicto": "ok_parcial",
+   "cobertura": {},
+   "ms": 0.6,
+   "ms_regla": {
+    "sondeo": 0.6,
+    "total": 0.6
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "patologico_bom_csv-to-normalizado.csv",
+   "cat": "datos",
+   "esperado": "ok",
+   "veredicto": "ok_parcial",
+   "cobertura": {},
+   "ms": 2.3,
+   "ms_regla": {
+    "sondeo": 2.3,
+    "total": 2.3
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "patologico_bom_csv-to.json",
+   "cat": "datos",
+   "esperado": "ok",
+   "veredicto": "ok_parcial",
+   "cobertura": {},
+   "ms": 0.6,
+   "ms_regla": {
+    "sondeo": 0.6,
+    "total": 0.6
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "tipico_json-to.csv",
+   "cat": "datos",
+   "esperado": "ok",
+   "veredicto": "ok_parcial",
+   "cobertura": {},
+   "ms": 0.4,
+   "ms_regla": {
+    "sondeo": 0.4,
+    "total": 0.4
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "16bit_tif-to-d16.png",
+   "cat": "imagen",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "I6": true
+   },
+   "ms": 1366.6,
+   "ms_regla": {
+    "sondeo": 0.4,
+    "I6": 1366.2,
+    "total": 1366.6
+   },
+   "hallazgos": [
+    {
+     "punto": "F",
+     "regla": "I6",
+     "severidad": "informativo",
+     "mensaje": "pixeles identicos (RMSE 0)",
+     "esperado": 0,
+     "obtenido": 0
+    }
+   ]
+  },
+  {
+   "salida": "16bit_tif-to-d8.png",
+   "cat": "imagen",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "I7": true
+   },
+   "ms": 1062.2,
+   "ms_regla": {
+    "sondeo": 0.6,
+    "I7": 1061.6,
+    "total": 1062.2
+   },
+   "hallazgos": [
+    {
+     "punto": "F",
+     "regla": "I7",
+     "severidad": "informativo",
+     "mensaje": "PSNR 59.02 dB",
+     "esperado": ">= 40.0 dB",
+     "obtenido": 59.0188
+    }
+   ]
+  },
+  {
+   "salida": "16bit_tif-to-default.png",
+   "cat": "imagen",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "I6": true
+   },
+   "ms": 1323.5,
+   "ms_regla": {
+    "sondeo": 0.4,
+    "I6": 1323.0,
+    "total": 1323.4
+   },
+   "hallazgos": [
+    {
+     "punto": "F",
+     "regla": "I6",
+     "severidad": "informativo",
+     "mensaje": "pixeles identicos (RMSE 0)",
+     "esperado": 0,
+     "obtenido": 0
+    }
+   ]
+  },
+  {
+   "salida": "16bit_tif-to.jpg",
+   "cat": "imagen",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "I3": true,
+    "I7": true
+   },
+   "ms": 899.5,
+   "ms_regla": {
+    "sondeo": 0.4,
+    "I3": 0.1,
+    "I7": 898.9,
+    "total": 899.5
+   },
+   "hallazgos": [
+    {
+     "punto": "F",
+     "regla": "I7",
+     "severidad": "informativo",
+     "mensaje": "PSNR 35.28 dB por debajo de 40 dB, excepcion justificada: entrada de 16 bits cuantizada a 8: el techo no depende del motor (16bit_tif -> JPEG 35,3 dB, -> WebP 34,8 dB)",
+     "esperado": ">= 40.0 dB",
+     "obtenido": 35.284
+    }
+   ]
+  },
+  {
+   "salida": "16bit_tif-to.webp",
+   "cat": "imagen",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "I7": true
+   },
+   "ms": 986.7,
+   "ms_regla": {
+    "sondeo": 0.5,
+    "I7": 986.2,
+    "total": 986.7
+   },
+   "hallazgos": [
+    {
+     "punto": "F",
+     "regla": "I7",
+     "severidad": "informativo",
+     "mensaje": "PSNR 34.76 dB por debajo de 40 dB, excepcion justificada: entrada de 16 bits cuantizada a 8: el techo no depende del motor (16bit_tif -> JPEG 35,3 dB, -> WebP 34,8 dB)",
+     "esperado": ">= 40.0 dB",
+     "obtenido": 34.7567
+    }
+   ]
+  },
+  {
+   "salida": "alpha_png-to-flat.jpg",
+   "cat": "imagen",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "I7": true
+   },
+   "ms": 35.8,
+   "ms_regla": {
+    "sondeo": 0.4,
+    "I7": 35.4,
+    "total": 35.8
+   },
+   "hallazgos": [
+    {
+     "punto": "F",
+     "regla": "I7",
+     "severidad": "informativo",
+     "mensaje": "PSNR 35.50 dB (sobre blanco) por debajo de 40 dB, excepcion justificada: grafismo, no fotografia: el umbral de 40 dB de I7 esta calibrado para fotografia; los bordes duros lo hunden",
+     "esperado": ">= 40.0 dB",
+     "obtenido": 35.5025
+    }
+   ]
+  },
+  {
+   "salida": "alpha_png-to.avif",
+   "cat": "imagen",
+   "esperado": "ok",
+   "veredicto": "aviso",
+   "cobertura": {
+    "I8": true,
+    "I7": true
+   },
+   "ms": 40.2,
+   "ms_regla": {
+    "sondeo": 0.5,
+    "I7": 39.6,
+    "total": 40.1
+   },
+   "hallazgos": [
+    {
+     "punto": "F",
+     "regla": "I8",
+     "severidad": "aviso",
+     "mensaje": "grafismo (origen de paleta) codificado CON PERDIDA en un destino que admite sin perdida",
+     "esperado": "avif sin perdida",
+     "obtenido": "avif con perdida"
+    },
+    {
+     "punto": "F",
+     "regla": "I7",
+     "severidad": "informativo",
+     "mensaje": "PSNR 39.80 dB por debajo de 40 dB, excepcion justificada: AVIF comprime el plano alfa CON PERDIDA (referencia.json, perdidas): alpha.png -> AVIF da 38,8 dB sobre blanco",
+     "esperado": ">= 40.0 dB",
+     "obtenido": 39.7956
+    }
+   ]
+  },
+  {
+   "salida": "alpha_png-to.jpg",
+   "cat": "imagen",
+   "esperado": "aviso",
+   "veredicto": "aviso",
+   "cobertura": {
+    "I3": true,
+    "I7": true
+   },
+   "ms": 59.1,
+   "ms_regla": {
+    "sondeo": 0.5,
+    "I3": 24.8,
+    "I7": 33.8,
+    "total": 59.0
+   },
+   "hallazgos": [
+    {
+     "punto": "F",
+     "regla": "I3",
+     "severidad": "aviso",
+     "mensaje": "APLANADO SOBRE NEGRO: el pixel (0,0), 100 % transparente en la entrada, sale negro",
+     "esperado": "srgb(255,255,255)",
+     "obtenido": "srgb(0, 0, 0)"
+    },
+    {
+     "punto": "F",
+     "regla": "I7",
+     "severidad": "aviso",
+     "mensaje": "PSNR por debajo del umbral (sobre blanco)",
+     "esperado": ">= 40.0 dB",
+     "obtenido": 0.704711
+    }
+   ]
+  },
+  {
+   "salida": "alpha_png-to.png8.png",
+   "cat": "imagen",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "I6": true
+   },
+   "ms": 33.1,
+   "ms_regla": {
+    "sondeo": 0.5,
+    "I6": 32.6,
+    "total": 33.1
+   },
+   "hallazgos": [
+    {
+     "punto": "F",
+     "regla": "I6",
+     "severidad": "informativo",
+     "mensaje": "pixeles identicos (RMSE 0)",
+     "esperado": 0,
+     "obtenido": 0
+    }
+   ]
+  },
+  {
+   "salida": "alpha_png-to.webp",
+   "cat": "imagen",
+   "esperado": "ok",
+   "veredicto": "aviso",
+   "cobertura": {
+    "I8": true,
+    "I7": true
+   },
+   "ms": 33.1,
+   "ms_regla": {
+    "sondeo": 0.4,
+    "I7": 32.7,
+    "total": 33.1
+   },
+   "hallazgos": [
+    {
+     "punto": "F",
+     "regla": "I8",
+     "severidad": "aviso",
+     "mensaje": "grafismo (origen de paleta) codificado CON PERDIDA en un destino que admite sin perdida",
+     "esperado": "webp sin perdida",
+     "obtenido": "webp con perdida"
+    },
+    {
+     "punto": "F",
+     "regla": "I7",
+     "severidad": "informativo",
+     "mensaje": "PSNR 45.13 dB",
+     "esperado": ">= 40.0 dB",
+     "obtenido": 45.1275
+    }
+   ]
+  },
+  {
+   "salida": "tipico_jpg-to.png",
+   "cat": "imagen",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "I6": true
+   },
+   "ms": 255.0,
+   "ms_regla": {
+    "sondeo": 0.4,
+    "I6": 254.6,
+    "total": 255.0
+   },
+   "hallazgos": [
+    {
+     "punto": "F",
+     "regla": "I6",
+     "severidad": "informativo",
+     "mensaje": "pixeles identicos (RMSE 0)",
+     "esperado": 0,
+     "obtenido": 0
+    }
+   ]
+  },
+  {
+   "salida": "tipico_png-to.avif",
+   "cat": "imagen",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "I7": true
+   },
+   "ms": 359.4,
+   "ms_regla": {
+    "sondeo": 0.5,
+    "I7": 358.9,
+    "total": 359.3
+   },
+   "hallazgos": [
+    {
+     "punto": "F",
+     "regla": "I7",
+     "severidad": "informativo",
+     "mensaje": "PSNR 47.94 dB",
+     "esperado": ">= 40.0 dB",
+     "obtenido": 47.942
+    }
+   ]
+  },
+  {
+   "salida": "tipico_png-to.jpg",
+   "cat": "imagen",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "I3": true,
+    "I7": true
+   },
+   "ms": 396.9,
+   "ms_regla": {
+    "sondeo": 0.4,
+    "I3": 62.7,
+    "I7": 333.7,
+    "total": 396.8
+   },
+   "hallazgos": [
+    {
+     "punto": "F",
+     "regla": "I7",
+     "severidad": "informativo",
+     "mensaje": "PSNR 48.70 dB (sobre blanco)",
+     "esperado": ">= 40.0 dB",
+     "obtenido": 48.7046
+    }
+   ]
+  },
+  {
+   "salida": "tipico_png-to.webp",
+   "cat": "imagen",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "I7": true
+   },
+   "ms": 342.6,
+   "ms_regla": {
+    "sondeo": 0.4,
+    "I7": 342.2,
+    "total": 342.5
+   },
+   "hallazgos": [
+    {
+     "punto": "F",
+     "regla": "I7",
+     "severidad": "informativo",
+     "mensaje": "PSNR 48.69 dB (sobre blanco)",
+     "esperado": ">= 40.0 dB",
+     "obtenido": 48.6875
+    }
+   ]
+  },
+  {
+   "salida": "tipico_webp-to.jpg",
+   "cat": "imagen",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "I3": true,
+    "I7": true
+   },
+   "ms": 333.9,
+   "ms_regla": {
+    "sondeo": 0.4,
+    "I3": 0.1,
+    "I7": 333.4,
+    "total": 333.9
+   },
+   "hallazgos": [
+    {
+     "punto": "F",
+     "regla": "I7",
+     "severidad": "informativo",
+     "mensaje": "PSNR 48.42 dB",
+     "esperado": ">= 40.0 dB",
+     "obtenido": 48.4173
+    }
+   ]
+  },
+  {
+   "salida": "tipico_webp-to.png",
+   "cat": "imagen",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "I6": true
+   },
+   "ms": 265.2,
+   "ms_regla": {
+    "sondeo": 0.4,
+    "I6": 264.8,
+    "total": 265.2
+   },
+   "hallazgos": [
+    {
+     "punto": "F",
+     "regla": "I6",
+     "severidad": "informativo",
+     "mensaje": "pixeles identicos (RMSE 0)",
+     "esperado": 0,
+     "obtenido": 0
+    }
+   ]
+  },
+  {
+   "salida": "trivial_png-to-lossless.webp",
+   "cat": "imagen",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "I7": true
+   },
+   "ms": 25.5,
+   "ms_regla": {
+    "sondeo": 0.4,
+    "I7": 25.0,
+    "total": 25.5
+   },
+   "hallazgos": [
+    {
+     "punto": "F",
+     "regla": "I7",
+     "severidad": "informativo",
+     "mensaje": "PSNR 120.00 dB",
+     "esperado": ">= 40.0 dB",
+     "obtenido": 120.0
+    }
+   ]
+  },
+  {
+   "salida": "trivial_png-to.jpg",
+   "cat": "imagen",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "I3": true,
+    "I7": true
+   },
+   "ms": 26.0,
+   "ms_regla": {
+    "sondeo": 0.4,
+    "I3": 0.1,
+    "I7": 25.5,
+    "total": 25.9
+   },
+   "hallazgos": [
+    {
+     "punto": "F",
+     "regla": "I7",
+     "severidad": "informativo",
+     "mensaje": "PSNR 52.90 dB",
+     "esperado": ">= 40.0 dB",
+     "obtenido": 52.902
+    }
+   ]
+  },
+  {
+   "salida": "trivial_png-to.webp",
+   "cat": "imagen",
+   "esperado": "ok",
+   "veredicto": "aviso",
+   "cobertura": {
+    "I8": true,
+    "I7": true
+   },
+   "ms": 25.5,
+   "ms_regla": {
+    "sondeo": 0.3,
+    "I7": 25.1,
+    "total": 25.4
+   },
+   "hallazgos": [
+    {
+     "punto": "F",
+     "regla": "I8",
+     "severidad": "aviso",
+     "mensaje": "grafismo (origen de paleta) codificado CON PERDIDA en un destino que admite sin perdida",
+     "esperado": "webp sin perdida",
+     "obtenido": "webp con perdida"
+    },
+    {
+     "punto": "F",
+     "regla": "I7",
+     "severidad": "informativo",
+     "mensaje": "PSNR 51.95 dB",
+     "esperado": ">= 40.0 dB",
+     "obtenido": 51.9465
+    }
+   ]
+  },
+  {
+   "salida": "alpha_png-to.pdf",
+   "cat": "pdf",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "P6": true
+   },
+   "ms": 187.8,
+   "ms_regla": {
+    "sondeo": 0.4,
+    "P6": 183.6,
+    "total": 184.0
+   },
+   "hallazgos": [
+    {
+     "punto": "F",
+     "regla": "P6",
+     "severidad": "informativo",
+     "mensaje": "texto extraido: 2 caracteres imprimibles (umbral 10)",
+     "esperado": ">= 10 para considerar que hay capa de texto",
+     "obtenido": 2
+    },
+    {
+     "punto": "F",
+     "regla": "P6",
+     "severidad": "informativo",
+     "mensaje": "txtwrite devuelve 2 caracteres ('FX'): BASURA, no una capa de texto",
+     "esperado": 0,
+     "obtenido": 2
+    }
+   ]
+  },
+  {
+   "salida": "patologico_escaneado_pdf-to-p1.png",
+   "cat": "pdf",
+   "esperado": "ok",
+   "veredicto": "ok_parcial",
+   "cobertura": {},
+   "ms": 7.1,
+   "ms_regla": {
+    "sondeo": 7.1,
+    "total": 7.1
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "tipico_jpg-to.pdf",
+   "cat": "pdf",
+   "esperado": "aviso",
+   "veredicto": "ok",
+   "cobertura": {
+    "P6": true
+   },
+   "ms": 212.9,
+   "ms_regla": {
+    "sondeo": 0.5,
+    "P6": 212.4,
+    "total": 212.8
+   },
+   "hallazgos": [
+    {
+     "punto": "F",
+     "regla": "P6",
+     "severidad": "informativo",
+     "mensaje": "texto extraido: 0 caracteres imprimibles (umbral 10)",
+     "esperado": ">= 10 para considerar que hay capa de texto",
+     "obtenido": 0
+    }
+   ]
+  },
+  {
+   "salida": "tipico_png-to-150dpi.pdf",
+   "cat": "pdf",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "P6": true
+   },
+   "ms": 200.7,
+   "ms_regla": {
+    "sondeo": 0.4,
+    "P6": 200.3,
+    "total": 200.7
+   },
+   "hallazgos": [
+    {
+     "punto": "F",
+     "regla": "P6",
+     "severidad": "informativo",
+     "mensaje": "texto extraido: 0 caracteres imprimibles (umbral 10)",
+     "esperado": ">= 10 para considerar que hay capa de texto",
+     "obtenido": 0
+    }
+   ]
+  },
+  {
+   "salida": "tipico_png-to.pdf",
+   "cat": "pdf",
+   "esperado": "aviso",
+   "veredicto": "ok",
+   "cobertura": {
+    "P6": true
+   },
+   "ms": 207.0,
+   "ms_regla": {
+    "sondeo": 0.4,
+    "P6": 206.5,
+    "total": 207.0
+   },
+   "hallazgos": [
+    {
+     "punto": "F",
+     "regla": "P6",
+     "severidad": "informativo",
+     "mensaje": "texto extraido: 0 caracteres imprimibles (umbral 10)",
+     "esperado": ">= 10 para considerar que hay capa de texto",
+     "obtenido": 0
+    }
+   ]
+  },
+  {
+   "salida": "tipico_texto_pdf-to-gs.pdf",
+   "cat": "pdf",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "P6": true,
+    "P2": true
+   },
+   "ms": 348.6,
+   "ms_regla": {
+    "sondeo": 0.5,
+    "P6": 169.0,
+    "P2": 178.9,
+    "total": 348.5
+   },
+   "hallazgos": [
+    {
+     "punto": "F",
+     "regla": "P6",
+     "severidad": "informativo",
+     "mensaje": "texto extraido: 105 caracteres imprimibles (umbral 10)",
+     "esperado": ">= 10 para considerar que hay capa de texto",
+     "obtenido": 105
+    },
+    {
+     "punto": "F",
+     "regla": "P2",
+     "severidad": "informativo",
+     "mensaje": "texto conservado ntegro (sha256 igual)",
+     "esperado": "fd982188d50f2e5e",
+     "obtenido": "fd982188d50f2e5e"
+    }
+   ]
+  },
+  {
+   "salida": "tipico_texto_pdf-to-p1.jpg",
+   "cat": "pdf",
+   "esperado": "ok",
+   "veredicto": "ok_parcial",
+   "cobertura": {},
+   "ms": 0.4,
+   "ms_regla": {
+    "sondeo": 0.4,
+    "total": 0.4
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "tipico_texto_pdf-to-p1.png",
+   "cat": "pdf",
+   "esperado": "ok",
+   "veredicto": "ok_parcial",
+   "cobertura": {},
+   "ms": 0.3,
+   "ms_regla": {
+    "sondeo": 0.3,
+    "total": 0.3
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "tipico_texto_pdf-to.tif",
+   "cat": "pdf",
+   "esperado": "ok",
+   "veredicto": "ok_parcial",
+   "cobertura": {},
+   "ms": 0.4,
+   "ms_regla": {
+    "sondeo": 0.4,
+    "total": 0.4
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "tipico_texto_rasterizado.pdf",
+   "cat": "pdf",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "P6": true
+   },
+   "ms": 184.7,
+   "ms_regla": {
+    "sondeo": 0.3,
+    "P6": 184.4,
+    "total": 184.7
+   },
+   "hallazgos": [
+    {
+     "punto": "F",
+     "regla": "P6",
+     "severidad": "informativo",
+     "mensaje": "texto extraido: 0 caracteres imprimibles (umbral 10)",
+     "esperado": ">= 10 para considerar que hay capa de texto",
+     "obtenido": 0
+    }
+   ]
+  },
+  {
+   "salida": "trivial_pdf-to-p1.png",
+   "cat": "pdf",
+   "esperado": "ok",
+   "veredicto": "ok_parcial",
+   "cobertura": {},
+   "ms": 0.4,
+   "ms_regla": {
+    "sondeo": 0.4,
+    "total": 0.4
+   },
+   "hallazgos": []
+  },
+  {
+   "salida": "2pistas_mkv-to-COPY.mp4",
+   "cat": "video",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "V6": true,
+    "V8": true,
+    "A4": true
+   },
+   "ms": 1558.5,
+   "ms_regla": {
+    "sondeo": 0.8,
+    "V6": 1466.1,
+    "A4": 91.6,
+    "total": 1558.5
+   },
+   "hallazgos": [
+    {
+     "punto": "F",
+     "regla": "V6",
+     "severidad": "informativo",
+     "mensaje": "remux exacto: 300 fotogramas con el mismo hash por pixel",
+     "esperado": "2b2996095383ddf4c7def5f43e5d8115",
+     "obtenido": "2b2996095383ddf4c7def5f43e5d8115"
+    },
+    {
+     "punto": "F",
+     "regla": "A4",
+     "severidad": "informativo",
+     "mensaje": "PCM identico bit a bit",
+     "esperado": "11388652f7b64fb7dd1d4f1997c8f421",
+     "obtenido": "11388652f7b64fb7dd1d4f1997c8f421"
+    }
+   ]
+  },
+  {
+   "salida": "2pistas_mkv-to-DEFAULT.mp4",
+   "cat": "video",
+   "esperado": "fallo",
+   "veredicto": "ok",
+   "cobertura": {
+    "V6": true,
+    "V8": true
+   },
+   "ms": 1730.1,
+   "ms_regla": {
+    "sondeo": 0.8,
+    "V6": 1393.3,
+    "V8": 336.0,
+    "total": 1730.1
+   },
+   "hallazgos": [
+    {
+     "punto": "F",
+     "regla": "V8",
+     "severidad": "informativo",
+     "mensaje": "PSNR y 45.58 dB",
+     "esperado": ">= 40 dB",
+     "obtenido": 45.581552
+    }
+   ]
+  },
+  {
+   "salida": "2pistas_mkv-to-MAP0.mp4",
+   "cat": "video",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "V6": true,
+    "V8": true
+   },
+   "ms": 1731.5,
+   "ms_regla": {
+    "sondeo": 1.0,
+    "V6": 1396.4,
+    "V8": 334.1,
+    "total": 1731.4
+   },
+   "hallazgos": [
+    {
+     "punto": "F",
+     "regla": "V8",
+     "severidad": "informativo",
+     "mensaje": "PSNR y 45.58 dB",
+     "esperado": ">= 40 dB",
+     "obtenido": 45.581552
+    }
+   ]
+  },
+  {
+   "salida": "tipico_mp4-to.mkv",
+   "cat": "video",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "V6": true,
+    "V8": true,
+    "A4": true
+   },
+   "ms": 6127.5,
+   "ms_regla": {
+    "sondeo": 0.8,
+    "V6": 5908.4,
+    "A4": 109.7,
+    "total": 6018.9
+   },
+   "hallazgos": [
+    {
+     "punto": "F",
+     "regla": "V6",
+     "severidad": "informativo",
+     "mensaje": "remux exacto: 600 fotogramas con el mismo hash por pixel",
+     "esperado": "290f047331c3fea4f8f726427528cd1e",
+     "obtenido": "290f047331c3fea4f8f726427528cd1e"
+    },
+    {
+     "punto": "F",
+     "regla": "A4",
+     "severidad": "informativo",
+     "mensaje": "remux exacto salvo 512 muestras de priming al principio: la edit list de MP4 las recorta y Matroska no puede expresarla. El resto del PCM es identico byte a byte",
+     "esperado": "d0bd638ebac71997b3043a458f350ea6",
+     "obtenido": "cdf200c9b979da6887ad254cfb8a6dbd"
+    }
+   ]
+  },
+  {
+   "salida": "tipico_mp4-to.webm",
+   "cat": "video",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "V6": true,
+    "V8": true
+   },
+   "ms": 7534.0,
+   "ms_regla": {
+    "sondeo": 1.1,
+    "V6": 5855.7,
+    "V8": 1677.2,
+    "total": 7534.0
+   },
+   "hallazgos": [
+    {
+     "punto": "F",
+     "regla": "V8",
+     "severidad": "informativo",
+     "mensaje": "PSNR y 46.15 dB",
+     "esperado": ">= 40 dB",
+     "obtenido": 46.152997
+    }
+   ]
+  },
+  {
+   "salida": "trivial_mp4-to-naive.gif",
+   "cat": "video",
+   "esperado": "aviso",
+   "veredicto": "aviso",
+   "cobertura": {
+    "V9": true
+   },
+   "ms": 1.3,
+   "ms_regla": {
+    "sondeo": 1.1,
+    "V9": 0.1,
+    "total": 1.2
+   },
+   "hallazgos": [
+    {
+     "punto": "F",
+     "regla": "V9",
+     "severidad": "aviso",
+     "mensaje": "PALETA GENERICA: la tabla de color es una rejilla regular (8x8x4), no se calculo sobre el clip",
+     "esperado": "paleta derivada del clip (palettegen)",
+     "obtenido": "rejilla fija"
+    }
+   ]
+  },
+  {
+   "salida": "trivial_mp4-to-palette.gif",
+   "cat": "video",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "cobertura": {
+    "V9": true
+   },
+   "ms": 1.4,
+   "ms_regla": {
+    "sondeo": 1.3,
+    "V9": 0.1,
+    "total": 1.4
+   },
+   "hallazgos": [
+    {
+     "punto": "F",
+     "regla": "V9",
+     "severidad": "informativo",
+     "mensaje": "paleta calculada sobre el clip",
+     "esperado": null,
+     "obtenido": 256
+    }
+   ]
+  },
+  {
+   "salida": "trivial_mp4-to.webm",
+   "cat": "video",
+   "esperado": "ok",
+   "veredicto": "aviso",
+   "cobertura": {
+    "V6": true,
+    "V8": true
+   },
+   "ms": 387.9,
+   "ms_regla": {
+    "sondeo": 0.5,
+    "V6": 263.4,
+    "V8": 123.9,
+    "total": 387.8
+   },
+   "hallazgos": [
+    {
+     "punto": "F",
+     "regla": "V8",
+     "severidad": "aviso",
+     "mensaje": "PSNR de luminancia bajo",
+     "esperado": ">= 40 dB",
+     "obtenido": 29.625658
+    }
+   ]
+  }
+ ]
+}

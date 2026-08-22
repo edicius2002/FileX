@@ -1,0 +1,18 @@
+I3 aplanado (magick 1 pixel, JPEG 200x200)                      25.93 ms  n=9   limpia
+I6 RMSE 200x200 paleta                                          33.47 ms  n=9   limpia
+I6 RMSE 4000x3000 16 bits (72 MB TIFF vs 61 MB PNG)           1405.00 ms  n=9   limpia
+I7 PSNR 1920x1080                                              306.91 ms  n=9   limpia
+I7 PSNR 200x200 sobre blanco (2 composiciones)                  39.39 ms  n=9   limpia
+V9 paleta del GIF (EN PROCESO)                                   0.18 ms  n=9   limpia
+V6 framemd5 de trivial.mp4 (540 KB, 90 fotogramas)             129.18 ms  n=9   limpia
+V6 framemd5 de tipico.mp4 (16 MB, 600 fotogramas)             3052.32 ms  n=9   limpia
+V8 PSNR de video 640x360 (trivial -> webm)                     121.34 ms  n=9   limpia
+V8 PSNR de video 1920x1080 (tipico -> webm)                   1753.62 ms  n=5   limpia
+A4 md5 del PCM (WAV 706 KB, 8 s)                                51.09 ms  n=9   limpia
+A4 md5 del PCM (FLAC 104 KB, 8 s)                               37.65 ms  n=9   limpia
+A5 md5 del PCM de la pista de un MP4 de 16 MB                   55.46 ms  n=9   limpia
+P6 txtwrite sobre un PDF de texto (3 KB)                       174.80 ms  n=9   limpia
+P6 txtwrite sobre un PDF rasterizado (6 KB)                    199.64 ms  n=9   limpia
+P6 txtwrite sobre un PDF escaneado (8,5 MB)                    316.02 ms  n=9   SUCIA(testigo +30%)
+CONTRATO completo en proceso (referencia)                        0.37 ms  n=15  limpia
+-> D:\Work\research\FileX\bench\salidas-verificacion-fidelidad\reglas.json

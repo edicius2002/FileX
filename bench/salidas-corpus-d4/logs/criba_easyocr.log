@@ -1,0 +1,14 @@
+{"etiqueta": "easyocr_cuda_criba", "motor": "easyocr", "dispositivo": "cuda", "referencia": "d4", "patron": "*.png", "imgdir": "D:\\Work\\research\\FileX\\bench\\salidas-corpus-d4\\img", "carga_frio_s": 6.21, "vram_base_MiB": 2957, "vram_tras_carga_MiB": 3221, "quietud_pct": 35, "flag": "SUCIA(pico 35%)", "modelos": {"torch": "2.6.0+cu124", "torch_cuda": "True"}, "reps": 1, "muestreo_vram": false}
+ppp200__abl_d4d_ang0                     CERac= 39.77%  CERascii= 36.91%  lin=1/12  bloques={'titulo': 0.0, 'subtitulo': 4.65, 'cuerpo': 20.19, 'pequeña': 75.12}   1536.2 ms  det=si
+ppp200__abl_d4d_blur12                   CERac= 55.37%  CERascii= 52.68%  lin=1/12  bloques={'titulo': 0.0, 'subtitulo': 46.51, 'cuerpo': 48.4, 'pequeña': 75.59}   1226.6 ms  det=si
+ppp200__abl_d4d_jq45                     CERac= 60.07%  CERascii= 57.72%  lin=1/12  bloques={'titulo': 0.0, 'subtitulo': 44.19, 'cuerpo': 51.6, 'pequeña': 76.53}   1121.4 ms  det=si
+ppp200__abl_d4d_niv20                    CERac= 56.54%  CERascii= 54.53%  lin=1/12  bloques={'titulo': 0.0, 'subtitulo': 51.16, 'cuerpo': 50.96, 'pequeña': 76.06}   1333.4 ms  det=si
+ppp200__abl_d4d_rui35                    CERac= 56.54%  CERascii= 55.03%  lin=1/12  bloques={'titulo': 0.0, 'subtitulo': 44.19, 'cuerpo': 50.64, 'pequeña': 75.59}   1040.6 ms  det=si
+ppp200__d4_limpio                        CERac=  0.50%  CERascii=  0.50%  lin=11/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.0, 'pequeña': 4.69}   1089.0 ms  det=si
+ppp200__escaneado_d4a                    CERac=  0.34%  CERascii=  0.34%  lin=11/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.0, 'pequeña': 1.88}   1039.8 ms  det=si
+ppp200__escaneado_d4b                    CERac= 27.68%  CERascii= 27.18%  lin=1/12  bloques={'titulo': 0.0, 'subtitulo': 23.26, 'cuerpo': 33.33, 'pequeña': 15.49}   1130.5 ms  det=si
+ppp200__escaneado_d4c                    CERac= 15.10%  CERascii= 13.76%  lin=4/12  bloques={'titulo': 12.0, 'subtitulo': 0.0, 'cuerpo': 3.53, 'pequeña': 45.07}   1163.7 ms  det=si
+ppp200__escaneado_d4d                    CERac= 61.41%  CERascii= 59.56%  lin=1/12  bloques={'titulo': 0.0, 'subtitulo': 53.49, 'cuerpo': 59.94, 'pequeña': 75.12}   1275.0 ms  det=si
+ppp200__escaneado_d4e                    CERac= 73.32%  CERascii= 72.32%  lin=0/12  bloques={'titulo': 8.0, 'subtitulo': 51.16, 'cuerpo': 79.81, 'pequeña': 84.04}   1123.0 ms  det=si
+ppp240__escaneado_d4f                    CERac= 17.95%  CERascii= 16.11%  lin=3/12  bloques={'titulo': 12.0, 'subtitulo': 0.0, 'cuerpo': 12.5, 'pequeña': 37.56}   1499.7 ms  det=si
+{"evento": "fin", "vram_pico_MiB": 3221, "vram_base_MiB": 2957, "coste_propio_MiB": 264, "pico_util_pct": 0, "muestreo_vram": false}

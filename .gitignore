@@ -75,3 +75,27 @@ bench/salidas-fidelidad/*
 **/pip-install.log
 **/npm-install.log
 bench/clone.log
+
+# Binarios regenerables de bench/salidas-aristas/ (c8/in, c8/out, fuga/): ~30 ficheros,
+# ~406 KB. bench/salidas-aristas/MANIFIESTO.md los cubre con nombre, sha256, tamano y la
+# orden exacta que los reproduce. El texto de esos mismos directorios SI entra: los
+# *.pdf.txt, el .csv/.html/.md/.txt de entrada, el .tsv, los .json y —sobre todo— los
+# .html/.shtml de fuga/, que son la prueba literal de que magick escribio fuera del destino.
+bench/salidas-aristas/**/*.png
+bench/salidas-aristas/**/*.jpg
+bench/salidas-aristas/**/*.webp
+bench/salidas-aristas/**/*.pdf
+bench/salidas-aristas/**/*.docx
+bench/salidas-aristas/**/*.odt
+bench/salidas-aristas/**/*.xlsx
+bench/salidas-aristas/**/*.rtf
+bench/salidas-aristas/**/*.epub
+bench/salidas-aristas/**/*.azw3
+bench/salidas-aristas/**/*.mobi
+
+# Los PNG de fixture de bench/salidas-quinto-punto/ se regeneran de los .svg que si estan
+# versionados junto a ellos.
+bench/salidas-quinto-punto/fixtures/*.png
+
+# El lock de GPU es estado de ejecucion, no evidencia. Nunca se versiona.
+bench/.gpu.lock

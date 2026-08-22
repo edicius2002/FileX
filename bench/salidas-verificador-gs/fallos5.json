@@ -1,0 +1,231 @@
+{
+ "n_mal": 0,
+ "casos": [
+  {
+   "caso": "1 PNG con extension .avif",
+   "motor": "proceso",
+   "esperado": "fallo",
+   "veredicto": "fallo",
+   "correcto": true,
+   "ms": 72.27,
+   "cobertura_completa": true,
+   "hallazgos": [
+    {
+     "punto": 1,
+     "regla": "G3",
+     "severidad": "fallo",
+     "mensaje": "la firma real no corresponde a la extension pedida",
+     "esperado": "avif",
+     "obtenido": "png"
+    }
+   ]
+  },
+  {
+   "caso": "2 pierde una pista de audio",
+   "motor": "proceso",
+   "esperado": "fallo",
+   "veredicto": "fallo",
+   "correcto": true,
+   "ms": 1.09,
+   "cobertura_completa": true,
+   "hallazgos": [
+    {
+     "punto": 2,
+     "regla": "V3",
+     "severidad": "fallo",
+     "mensaje": "numero de pistas de audio distinto del esperado",
+     "esperado": 2,
+     "obtenido": 1
+    }
+   ]
+  },
+  {
+   "caso": "3 degradacion 16 -> 8 bits no pedida",
+   "motor": "proceso",
+   "esperado": "fallo",
+   "veredicto": "fallo",
+   "correcto": true,
+   "ms": 0.7,
+   "cobertura_completa": true,
+   "hallazgos": [
+    {
+     "punto": 4,
+     "regla": "I4",
+     "severidad": "fallo",
+     "mensaje": "DEGRADACION DE PROFUNDIDAD no pedida ni inevitable",
+     "esperado": 16,
+     "obtenido": 8
+    }
+   ]
+  },
+  {
+   "caso": "4a redimensionado no solicitado",
+   "motor": "proceso",
+   "esperado": "fallo",
+   "veredicto": "fallo",
+   "correcto": true,
+   "ms": 65.38,
+   "cobertura_completa": true,
+   "hallazgos": [
+    {
+     "punto": 4,
+     "regla": "I1/V7",
+     "severidad": "fallo",
+     "mensaje": "REDIMENSIONADO NO SOLICITADO: no se pidio cambiar el tamano",
+     "esperado": "1920x1080",
+     "obtenido": "800x600"
+    }
+   ]
+  },
+  {
+   "caso": "4b control: mismo JPEG -> PNG sin tocar geometria",
+   "motor": "proceso",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "correcto": true,
+   "ms": 0.69,
+   "cobertura_completa": true,
+   "hallazgos": []
+  },
+  {
+   "caso": "5 fichero de 0 bytes como exito",
+   "motor": "proceso",
+   "esperado": "fallo",
+   "veredicto": "fallo",
+   "correcto": true,
+   "ms": 0.93,
+   "cobertura_completa": false,
+   "hallazgos": [
+    {
+     "punto": 1,
+     "regla": "G1",
+     "severidad": "fallo",
+     "mensaje": "fichero de 0 bytes presentado como exito",
+     "esperado": "> 0 bytes",
+     "obtenido": "0 bytes"
+    },
+    {
+     "punto": 3,
+     "regla": "G2",
+     "severidad": "fallo",
+     "mensaje": "el fichero no se abre sin errores",
+     "esperado": null,
+     "obtenido": "fichero de 0 bytes"
+    }
+   ]
+  },
+  {
+   "caso": "1 PNG con extension .avif",
+   "motor": "subproceso",
+   "esperado": "fallo",
+   "veredicto": "fallo",
+   "correcto": true,
+   "ms": 324.39,
+   "cobertura_completa": true,
+   "hallazgos": [
+    {
+     "punto": 1,
+     "regla": "G3",
+     "severidad": "fallo",
+     "mensaje": "la firma real no corresponde a la extension pedida",
+     "esperado": "avif",
+     "obtenido": "png"
+    }
+   ]
+  },
+  {
+   "caso": "2 pierde una pista de audio",
+   "motor": "subproceso",
+   "esperado": "fallo",
+   "veredicto": "fallo",
+   "correcto": true,
+   "ms": 100.71,
+   "cobertura_completa": true,
+   "hallazgos": [
+    {
+     "punto": 2,
+     "regla": "V3",
+     "severidad": "fallo",
+     "mensaje": "numero de pistas de audio distinto del esperado",
+     "esperado": 2,
+     "obtenido": 1
+    }
+   ]
+  },
+  {
+   "caso": "3 degradacion 16 -> 8 bits no pedida",
+   "motor": "subproceso",
+   "esperado": "fallo",
+   "veredicto": "fallo",
+   "correcto": true,
+   "ms": 469.5,
+   "cobertura_completa": true,
+   "hallazgos": [
+    {
+     "punto": 4,
+     "regla": "I4",
+     "severidad": "fallo",
+     "mensaje": "DEGRADACION DE PROFUNDIDAD no pedida ni inevitable",
+     "esperado": 16,
+     "obtenido": 8
+    }
+   ]
+  },
+  {
+   "caso": "4a redimensionado no solicitado",
+   "motor": "subproceso",
+   "esperado": "fallo",
+   "veredicto": "fallo",
+   "correcto": true,
+   "ms": 230.8,
+   "cobertura_completa": true,
+   "hallazgos": [
+    {
+     "punto": 4,
+     "regla": "I1/V7",
+     "severidad": "fallo",
+     "mensaje": "REDIMENSIONADO NO SOLICITADO: no se pidio cambiar el tamano",
+     "esperado": "1920x1080",
+     "obtenido": "800x600"
+    }
+   ]
+  },
+  {
+   "caso": "4b control: mismo JPEG -> PNG sin tocar geometria",
+   "motor": "subproceso",
+   "esperado": "ok",
+   "veredicto": "ok",
+   "correcto": true,
+   "ms": 102.85,
+   "cobertura_completa": true,
+   "hallazgos": []
+  },
+  {
+   "caso": "5 fichero de 0 bytes como exito",
+   "motor": "subproceso",
+   "esperado": "fallo",
+   "veredicto": "fallo",
+   "correcto": true,
+   "ms": 52.83,
+   "cobertura_completa": false,
+   "hallazgos": [
+    {
+     "punto": 1,
+     "regla": "G1",
+     "severidad": "fallo",
+     "mensaje": "fichero de 0 bytes presentado como exito",
+     "esperado": "> 0 bytes",
+     "obtenido": "0 bytes"
+    },
+    {
+     "punto": 3,
+     "regla": "G2",
+     "severidad": "fallo",
+     "mensaje": "el fichero no se abre sin errores",
+     "esperado": null,
+     "obtenido": "fichero de 0 bytes"
+    }
+   ]
+  }
+ ]
+}

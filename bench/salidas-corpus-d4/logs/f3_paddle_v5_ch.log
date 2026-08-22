@@ -1,0 +1,19 @@
+INFORMACI‡N: no se pudo encontrar ning£n archivo para los patrones dados.
+D:\Work\research\FileX\.venv-paddle\Lib\site-packages\paddle\utils\cpp_extension\extension_utils.py:718: UserWarning: No ccache found. Please be aware that recompiling all source files may be required. You can download and install ccache from: https://github.com/ccache/ccache/blob/master/doc/INSTALL.md
+  warnings.warn(warning_message)
+[32mCreating model: ('PP-LCNet_x1_0_textline_ori', None, None)[0m
+[32mModel files already exist. Using cached files. To redownload, please delete the directory manually: `C:\Users\krato\.paddlex\official_models\PP-LCNet_x1_0_textline_ori`.[0m
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+W0821 08:07:40.139833 12596 gpu_resources.cc:114] Please NOTE: device: 0, GPU Compute Capability: 8.6, Driver API Version: 12.8, Runtime API Version: 12.6
+[32mCreating model: ('PP-OCRv5_server_det', None, None)[0m
+[32mModel files already exist. Using cached files. To redownload, please delete the directory manually: `C:\Users\krato\.paddlex\official_models\PP-OCRv5_server_det`.[0m
+[32mCreating model: ('PP-OCRv5_server_rec', None, None)[0m
+[33mChecking connectivity to the model hosters, this may take a while. To bypass this check, set `PADDLE_PDX_DISABLE_MODEL_SOURCE_CHECK` to `True`.[0m
+[32mUsing official model (PP-OCRv5_server_rec), the model files will be automatically downloaded and saved in `C:\Users\krato\.paddlex\official_models\PP-OCRv5_server_rec`.[0m
+Fetching 6 files:   0%|          | 0/6 [00:00<?, ?it/s]Fetching 6 files:  17%|#6        | 1/6 [00:00<00:04,  1.15it/s]Fetching 6 files:  83%|########3 | 5/6 [00:00<00:00,  6.53it/s]Fetching 6 files:  83%|########3 | 5/6 [00:20<00:00,  6.53it/s]Fetching 6 files: 100%|##########| 6/6 [00:22<00:00,  5.02s/it]Fetching 6 files: 100%|##########| 6/6 [00:22<00:00,  3.67s/it]
+{"etiqueta": "paddleocr_cuda_f3_v5_ch", "motor": "paddleocr", "dispositivo": "cuda", "referencia": "d4", "patron": "*.png", "imgdir": "D:/Work/research/FileX/bench/salidas-corpus-d4/img_f3", "carga_frio_s": 44.95, "vram_base_MiB": 2998, "vram_tras_carga_MiB": 3370, "quietud_pct": 25, "cpu_pico_pct": null, "flag": "SUCIA(pico 25%)", "modelos": {"paddle": "3.2.0", "kwargs": {"device": "gpu:0", "use_doc_orientation_classify": "False", "use_doc_unwarping": "False", "use_textline_orientation": "True", "text_detection_model_name": "PP-OCRv5_server_det", "text_recognition_model_name": "PP-OCRv5_server_rec"}, "params": {"doc_orientation_classify_model_name": "None", "doc_unwarping_model_name": "None", "text_detection_model_name": "PP-OCRv5_server_det", "textline_orientation_model_name": "None", "text_recognition_model_name": "PP-OCRv5_server_rec"}}, "reps": 9, "muestreo_vram": false}
+W0821 08:08:21.988691 12596 gpu_resources.cc:243] WARNING: device: 0. The installed Paddle is compiled with CUDNN 9.9, but CUDNN version in your machine is 9.5, which may cause serious incompatible bug. Please recompile or reinstall Paddle with compatible CUDNN version.
+ppp100__escaneado_d3                     CERac= 25.32%  CERascii= 25.32%  lin=0/3  bloques={'cuerpo': 25.32}    132.6 ms  det=si
+ppp200__escaneado_d4                     CERac= 40.94%  CERascii= 37.58%  lin=0/12  bloques={'titulo': 12.0, 'subtitulo': 13.95, 'cuerpo': 11.54, 'pequeÒa': 74.65}    602.9 ms  det=si
+ppp200__escaneado_d4c                    CERac= 20.64%  CERascii= 16.61%  lin=0/12  bloques={'titulo': 4.0, 'subtitulo': 9.3, 'cuerpo': 7.37, 'pequeÒa': 66.2}    585.7 ms  det=si
+{"evento": "fin", "vram_pico_MiB": 3370, "vram_base_MiB": 2998, "coste_propio_MiB": 372, "pico_util_pct": 0, "muestreo_vram": false}

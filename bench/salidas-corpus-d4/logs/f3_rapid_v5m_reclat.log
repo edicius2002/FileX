@@ -1,0 +1,16 @@
+[32m[INFO] 2026-08-21 08:10:24,112 [RapidOCR] base.py:23: Using engine_name: onnxruntime[0m
+[32m[INFO] 2026-08-21 08:10:24,501 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\bench\salidas-corpus-d4\modelos\ch_PP-OCRv5_det_mobile.onnx[0m
+[32m[INFO] 2026-08-21 08:10:24,502 [RapidOCR] main.py:63: Using D:\Work\research\FileX\bench\salidas-corpus-d4\modelos\ch_PP-OCRv5_det_mobile.onnx[0m
+[32m[INFO] 2026-08-21 08:10:24,733 [RapidOCR] base.py:23: Using engine_name: onnxruntime[0m
+[32m[INFO] 2026-08-21 08:10:24,734 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\bench\salidas-corpus-d4\modelos\ch_ppocr_mobile_v2.0_cls_mobile.onnx[0m
+[32m[INFO] 2026-08-21 08:10:24,734 [RapidOCR] main.py:63: Using D:\Work\research\FileX\bench\salidas-corpus-d4\modelos\ch_ppocr_mobile_v2.0_cls_mobile.onnx[0m
+[32m[INFO] 2026-08-21 08:10:24,782 [RapidOCR] base.py:23: Using engine_name: onnxruntime[0m
+[32m[INFO] 2026-08-21 08:10:24,783 [RapidOCR] download_file.py:68: Initiating download: https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/v3.9.2/onnx/PP-OCRv5/rec/latin_PP-OCRv5_rec_mobile.onnx[0m
+[32m[INFO] 2026-08-21 08:10:26,456 [RapidOCR] download_file.py:82: Download size: 7.54MB[0m
+[32m[INFO] 2026-08-21 08:10:26,736 [RapidOCR] download_file.py:95: Successfully saved to: D:\Work\research\FileX\bench\salidas-corpus-d4\modelos\latin_PP-OCRv5_rec_mobile.onnx[0m
+[32m[INFO] 2026-08-21 08:10:26,738 [RapidOCR] main.py:63: Using D:\Work\research\FileX\bench\salidas-corpus-d4\modelos\latin_PP-OCRv5_rec_mobile.onnx[0m
+{"etiqueta": "rapidocr_cuda_f3_v5m_reclat", "motor": "rapidocr", "dispositivo": "cuda", "referencia": "d4", "patron": "*.png", "imgdir": "D:/Work/research/FileX/bench/salidas-corpus-d4/img_f3", "carga_frio_s": 5.47, "vram_base_MiB": 3107, "vram_tras_carga_MiB": 3189, "quietud_pct": 33, "cpu_pico_pct": null, "flag": "SUCIA(pico 33%)", "modelos": {"text_det": "ch_PP-OCRv4_det_mobile.onnx", "text_cls": "ch_PP-OCRv4_det_mobile.onnx", "text_rec": "ch_PP-OCRv4_det_mobile.onnx", "pedido": {"Det.engine_type": "onnxruntime", "Rec.engine_type": "onnxruntime", "Det.lang_type": "ch", "Rec.lang_type": "latin", "Det.ocr_version": "PP-OCRv5", "Rec.ocr_version": "PP-OCRv5", "Det.model_type": "mobile", "Rec.model_type": "mobile", "Global.model_root_dir": "D:/Work/research/FileX/bench/salidas-corpus-d4/modelos"}}, "reps": 9, "muestreo_vram": false}
+ppp100__escaneado_d3                     CERac= 75.95%  CERascii= 75.95%  lin=1/3  bloques={'cuerpo': 75.95}     64.2 ms  det=si
+ppp200__escaneado_d4                     CERac= 36.24%  CERascii= 35.91%  lin=6/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.64, 'pequeña': 75.12}    412.2 ms  det=si
+ppp200__escaneado_d4c                    CERac=  9.56%  CERascii=  9.40%  lin=10/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.0, 'pequeña': 43.66}    273.2 ms  det=si
+{"evento": "fin", "vram_pico_MiB": 3189, "vram_base_MiB": 3107, "coste_propio_MiB": 82, "pico_util_pct": 0, "muestreo_vram": false}

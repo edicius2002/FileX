@@ -1,0 +1,99 @@
+{
+  "rapidocr_version": "?",
+  "LangDet": [
+    "CH=ch",
+    "EN=en",
+    "MULTI=multi"
+  ],
+  "LangRec": [
+    "CH=ch",
+    "CH_DOC=ch_doc",
+    "EN=en",
+    "ARABIC=arabic",
+    "CHINESE_CHT=chinese_cht",
+    "CYRILLIC=cyrillic",
+    "DEVANAGARI=devanagari",
+    "JAPAN=japan",
+    "KOREAN=korean",
+    "KA=ka",
+    "LATIN=latin",
+    "TA=ta",
+    "TE=te",
+    "ESLAV=eslav",
+    "TH=th",
+    "EL=el"
+  ],
+  "ModelType": [
+    "MOBILE=mobile",
+    "SERVER=server",
+    "TINY=tiny",
+    "SMALL=small",
+    "MEDIUM=medium"
+  ],
+  "OCRVersion": [
+    "PPOCRV4=PP-OCRv4",
+    "PPOCRV5=PP-OCRv5",
+    "PPOCRV6=PP-OCRv6"
+  ],
+  "EngineType": [
+    "ONNXRUNTIME=onnxruntime",
+    "OPENVINO=openvino",
+    "PADDLE=paddle",
+    "TORCH=torch",
+    "TENSORRT=tensorrt",
+    "MNN=mnn"
+  ],
+  "modelos_en_disco": [
+    ".gitkeep",
+    "PP-OCRv6_det_small.onnx",
+    "PP-OCRv6_det_small.pth",
+    "PP-OCRv6_rec_small.onnx",
+    "PP-OCRv6_rec_small.pth",
+    "ch_PP-OCRv5_det_mobile.onnx",
+    "ch_PP-OCRv5_rec_mobile.onnx",
+    "ch_ppocr_mobile_v2.0_cls_mobile.onnx",
+    "ch_ptocr_mobile_v2.0_cls_mobile.pth",
+    "ppocrv6_dict.txt"
+  ],
+  "yaml_modelos": [
+    "D:\\Work\\research\\FileX\\.venv-ai\\Lib\\site-packages\\rapidocr\\default_models.yaml"
+  ],
+  "docling_model_type_v6": "small",
+  "docling_model_type_v4v5": "mobile",
+  "docling_resolucion": {
+    "english/torch": {
+      "lang_token": "en",
+      "ppocr": "PP-OCRv6"
+    },
+    "english/onnxruntime": {
+      "lang_token": "en",
+      "ppocr": "PP-OCRv6"
+    },
+    "es/torch": {
+      "lang_token": "es",
+      "ppocr": "PP-OCRv6"
+    },
+    "es/onnxruntime": {
+      "lang_token": "es",
+      "ppocr": "PP-OCRv6"
+    },
+    "spanish/torch": "ValueError: RapidOCR torch backend does not support language 'spanish'. Supported: ['af', 'arabic', 'az', 'bs', 'ca', 'ch', 'chinese",
+    "spanish/onnxruntime": "ValueError: RapidOCR onnxruntime backend does not support language 'spanish'. Supported: ['af', 'arabic', 'az', 'bs', 'ca', 'ch', 'c",
+    "latin/torch": {
+      "lang_token": "latin",
+      "ppocr": "PP-OCRv4"
+    },
+    "latin/onnxruntime": {
+      "lang_token": "latin",
+      "ppocr": "PP-OCRv5"
+    },
+    "ch/torch": {
+      "lang_token": "ch",
+      "ppocr": "PP-OCRv6"
+    },
+    "ch/onnxruntime": {
+      "lang_token": "ch",
+      "ppocr": "PP-OCRv6"
+    }
+  }
+}

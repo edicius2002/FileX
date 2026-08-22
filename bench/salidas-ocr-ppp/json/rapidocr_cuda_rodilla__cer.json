@@ -1,0 +1,87 @@
+{
+  "cabecera": {
+    "etiqueta": "rapidocr_cuda_rodilla",
+    "motor": "rapidocr",
+    "dispositivo": "cuda",
+    "carga_frio_s": 18.93,
+    "vram_base_MiB": 824,
+    "vram_tras_carga_MiB": 997,
+    "quietud_pct": 10,
+    "flag": "SUCIA(pico 10%)",
+    "modelos": {
+      "text_det": "el.ttf', 'SHA256': '892e6c81071fc85923f8d0ff925edab6049dd4495a2fdedffddc04753bf348b3'}}}",
+      "text_cls": "el.ttf', 'SHA256': '892e6c81071fc85923f8d0ff925edab6049dd4495a2fdedffddc04753bf348b3'}}}",
+      "text_rec": "el.ttf', 'SHA256': '892e6c81071fc85923f8d0ff925edab6049dd4495a2fdedffddc04753bf348b3'}}}",
+      "params_forzados": "PPOCRV5/MOBILE/ONNXRUNTIME (igual que bench/scripts/ocr_motor.py)"
+    },
+    "reps": 9,
+    "muestreo_vram": true
+  },
+  "fin": {
+    "evento": "fin",
+    "vram_pico_MiB": 1577,
+    "vram_base_MiB": 824,
+    "coste_propio_MiB": 753,
+    "pico_util_pct": 61,
+    "muestreo_vram": true,
+    "aviso": "pico de VRAM valido; los tiempos llevan el coste del muestreo"
+  },
+  "res": {
+    "ppp110__escaneado_d3": {
+      "cer_pct": 75.9,
+      "dist_global": 60,
+      "frases_exactas": 1,
+      "chars": 19,
+      "normalizada": "documento escaneado",
+      "ms_mediana": 81.6,
+      "ms_min": 72.6,
+      "ms_max": 255.5,
+      "n": 9,
+      "determinista": true,
+      "vram_pico_MiB": 1321,
+      "vram_delta_lote_MiB": 324
+    },
+    "ppp130__escaneado_d3": {
+      "cer_pct": 75.9,
+      "dist_global": 60,
+      "frases_exactas": 1,
+      "chars": 19,
+      "normalizada": "documento escaneado",
+      "ms_mediana": 100.1,
+      "ms_min": 98.5,
+      "ms_max": 102.9,
+      "n": 9,
+      "determinista": true,
+      "vram_pico_MiB": 1321,
+      "vram_delta_lote_MiB": 0
+    },
+    "ppp140__escaneado_d3": {
+      "cer_pct": 74.7,
+      "dist_global": 59,
+      "frases_exactas": 0,
+      "chars": 20,
+      "normalizada": "documentoescaneado a",
+      "ms_mediana": 129.4,
+      "ms_min": 111.8,
+      "ms_max": 185.9,
+      "n": 9,
+      "determinista": true,
+      "vram_pico_MiB": 1577,
+      "vram_delta_lote_MiB": 256
+    },
+    "ppp160__escaneado_d3": {
+      "cer_pct": 75.9,
+      "dist_global": 60,
+      "frases_exactas": 1,
+      "chars": 19,
+      "normalizada": "documento escaneado",
+      "ms_mediana": 144.0,
+      "ms_min": 136.7,
+      "ms_max": 150.6,
+      "n": 9,
+      "determinista": true,
+      "vram_pico_MiB": 1577,
+      "vram_delta_lote_MiB": 0
+    }
+  }
+}

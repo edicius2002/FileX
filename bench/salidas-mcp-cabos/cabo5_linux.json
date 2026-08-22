@@ -1,0 +1,34 @@
+{
+  "referencia_A": "b16bd32b101132fd",
+  "referencia_envenenada": "1e73901850ea8117",
+  "vectores": [
+    {
+      "vector": "a_reemplazar",
+      "sha_original": "b16bd32b101132fd",
+      "resultado": "os.replace OK",
+      "permitida": true,
+      "lo_que_leyo_el_motor": "LEIDOS 8388608 SHA b16bd32b101132fd"
+    },
+    {
+      "vector": "b_borrar",
+      "sha_original": "b16bd32b101132fd",
+      "resultado": "os.remove OK",
+      "permitida": true,
+      "lo_que_leyo_el_motor": "LEIDOS 8388608 SHA b16bd32b101132fd"
+    },
+    {
+      "vector": "c_escritura_en_sitio",
+      "sha_original": "b16bd32b101132fd",
+      "resultado": "escritura en sitio OK",
+      "permitida": true,
+      "lo_que_leyo_el_motor": "LEIDOS 8388608 SHA 1e73901850ea8117"
+    },
+    {
+      "vector": "d_renombrar_directorio_padre",
+      "sha_original": "b16bd32b101132fd",
+      "resultado": "directorio renombrado",
+      "permitida": true,
+      "lo_que_leyo_el_motor": "LEIDOS 8388608 SHA b16bd32b101132fd"
+    }
+  ]
+}

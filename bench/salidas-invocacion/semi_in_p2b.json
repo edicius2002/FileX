@@ -1,0 +1,478 @@
+{
+"ffmpeg|avs": {
+"estado": "muerta",
+"categoria_p2": 3,
+"bytes_por_pixel": 0.2842,
+"bytes_semilla": 873,
+"semilla": "ff.avs",
+"base_convertx_ok": false,
+"intentos": [
+{
+"destino": "mkv",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer matroska admite asv y la entrada tiene -",
+"rc": null
+},
+{
+"destino": "png",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer image2 admite v y la entrada tiene -",
+"rc": null
+}
+]
+},
+"ffmpeg|avs2": {
+"estado": "muerta",
+"categoria_p2": 3,
+"bytes_por_pixel": 0.2842,
+"bytes_semilla": 873,
+"semilla": "ff.avs2",
+"base_convertx_ok": false,
+"intentos": [
+{
+"destino": "mkv",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer matroska admite asv y la entrada tiene -",
+"rc": null
+},
+{
+"destino": "png",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer image2 admite v y la entrada tiene -",
+"rc": null
+}
+]
+},
+"ffmpeg|mpc": {
+"estado": "sin_semilla",
+"err_semilla": "arch\\FileX\\bench\\salidas-invocacion\\pool2\\ff.mpc: Invalid argument\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool2\\ff.mpc.\nError opening output files: Invalid argument\n"
+},
+"ffmpeg|mtv": {
+"estado": "sin_semilla",
+"err_semilla": "arch\\FileX\\bench\\salidas-invocacion\\pool2\\ff.mtv: Invalid argument\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool2\\ff.mtv.\nError opening output files: Invalid argument\n"
+},
+"ffmpeg|rgb": {
+"estado": "muerta",
+"categoria_p2": 3,
+"bytes_por_pixel": 7.5,
+"bytes_semilla": 23040,
+"semilla": "ff.rgb",
+"base_convertx_ok": false,
+"intentos": [
+{
+"destino": "mkv",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer matroska admite asv y la entrada tiene -",
+"rc": null
+},
+{
+"destino": "png",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer image2 admite v y la entrada tiene -",
+"rc": null
+}
+]
+},
+"ffmpeg|svg": {
+"estado": "sin_semilla",
+"err_semilla": "arch\\FileX\\bench\\salidas-invocacion\\pool2\\ff.svg: Invalid argument\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool2\\ff.svg.\nError opening output files: Invalid argument\n"
+},
+"ffmpeg|yuv": {
+"estado": "muerta",
+"categoria_p2": 3,
+"bytes_por_pixel": 7.5,
+"bytes_semilla": 23040,
+"semilla": "ff.yuv",
+"base_convertx_ok": false,
+"intentos": [
+{
+"destino": "mkv",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer matroska admite asv y la entrada tiene -",
+"rc": null
+},
+{
+"destino": "png",
+"reglas": [
+"C-sin-pista-compatible"
+],
+"motivo": "el muxer image2 admite v y la entrada tiene -",
+"rc": null
+}
+]
+},
+"imagemagick|avs": {
+"estado": "viva",
+"categoria_p2": 1,
+"bytes_por_pixel": 4.0026,
+"bytes_semilla": 12296,
+"semilla": "im.avs",
+"base_convertx_ok": true,
+"intentos": [
+{
+"destino": "png",
+"args": [
+"magick",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool2\\im.avs",
+"-auto-orient",
+"png:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_in2\\p.png"
+],
+"reglas": [
+"X-out"
+],
+"rc": 0,
+"bytes": 652,
+"ms": 32.3,
+"veredicto": "DEGRADADO",
+"motivo": "I4:DEGRADACION DE PROFUNDIDAD no pedida ni inevitable",
+"ancho": 64,
+"alto": 48,
+"err": ""
+}
+]
+},
+"imagemagick|bgro": {
+"estado": "muerta",
+"categoria_p2": 3,
+"bytes_por_pixel": 6.0,
+"bytes_semilla": 18432,
+"semilla": "im.bgro",
+"base_convertx_ok": false,
+"intentos": [
+{
+"destino": "png",
+"args": [
+"magick",
+"-size",
+"64x48",
+"-depth",
+"8",
+"bgro:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool2\\im.bgro",
+"-auto-orient",
+"png:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_in2\\p.png"
+],
+"reglas": [
+"G",
+"X-in",
+"X-out"
+],
+"rc": 0,
+"bytes": -1,
+"ms": 70.8,
+"veredicto": "FALLO",
+"motivo": "rc=0 bytes=-1",
+"ancho": null,
+"alto": null,
+"err": ""
+}
+]
+},
+"imagemagick|ftxt": {
+"estado": "viva",
+"categoria_p2": 2,
+"bytes_por_pixel": 20.1654,
+"bytes_semilla": 61948,
+"semilla": "im.ftxt",
+"base_convertx_ok": false,
+"intentos": [
+{
+"destino": "png",
+"args": [
+"magick",
+"-size",
+"64x48",
+"-depth",
+"8",
+"ftxt:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool2\\im.ftxt",
+"-auto-orient",
+"png:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_in2\\p.png"
+],
+"reglas": [
+"G",
+"X-in",
+"X-out"
+],
+"rc": 0,
+"bytes": 311,
+"ms": 46.2,
+"veredicto": "DEGRADADO",
+"motivo": "I4:DEGRADACION DE PROFUNDIDAD no pedida ni inevitable",
+"ancho": 64,
+"alto": 48,
+"err": ""
+}
+]
+},
+"imagemagick|g4": {
+"estado": "muerta",
+"categoria_p2": 3,
+"bytes_por_pixel": 0.1136,
+"bytes_semilla": 349,
+"semilla": "im.g4",
+"base_convertx_ok": false,
+"intentos": [
+{
+"destino": "png",
+"args": [
+"magick",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool2\\im.g4",
+"-auto-orient",
+"png:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_in2\\p.png"
+],
+"reglas": [
+"X-out"
+],
+"rc": 1,
+"bytes": -1,
+"ms": 215.9,
+"veredicto": "FALLO",
+"motivo": "rc=1 bytes=-1",
+"ancho": null,
+"alto": null,
+"err": ":/Users/krato/AppData/Local/Temp/magick-_Q3xBmzwn-VagBDjLlIUTft1eaehOdZh: Bad value 0 for \"RowsPerStrip\" tag. `_TIFFVSetField' @ error/tiff.c/TIFFErrors/571. magick: Computed scanline size is zero. `TIFFScanlineSize64' @ error/tiff.c/TIFFErrors/571. "
+}
+]
+},
+"imagemagick|map": {
+"estado": "muerta",
+"categoria_p2": 3,
+"bytes_por_pixel": 1.0479,
+"bytes_semilla": 3219,
+"semilla": "im.map",
+"base_convertx_ok": false,
+"intentos": [
+{
+"destino": "png",
+"args": [
+"magick",
+"-size",
+"64x48",
+"-depth",
+"8",
+"map:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool2\\im.map",
+"-auto-orient",
+"png:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_in2\\p.png"
+],
+"reglas": [
+"G",
+"X-in",
+"X-out"
+],
+"rc": 1,
+"bytes": -1,
+"ms": 64.7,
+"veredicto": "FALLO",
+"motivo": "rc=1 bytes=-1",
+"ancho": null,
+"alto": null,
+"err": "magick: unexpected end-of-file 'D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool2\\im.map': No such file or directory @ error/map.c/ReadMAPImage/255. "
+}
+]
+},
+"imagemagick|msvg": {
+"estado": "muerta",
+"categoria_p2": 3,
+"bytes_por_pixel": 0.515,
+"bytes_semilla": 1582,
+"semilla": "im.msvg",
+"base_convertx_ok": false,
+"intentos": [
+{
+"destino": "png",
+"args": [
+"magick",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool2\\im.msvg",
+"-auto-orient",
+"png:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_in2\\p.png"
+],
+"reglas": [
+"X-out"
+],
+"rc": 1,
+"bytes": -1,
+"ms": 77.6,
+"veredicto": "FALLO",
+"motivo": "rc=1 bytes=-1",
+"ancho": null,
+"alto": null,
+"err": "zp8lSHpNYDBhZ8TLbAIS Z9LvA8hk/wMY7rAz4qW/FZE4JZ0CCP9Dq3ClewCZtHIg/I9tw2W2G5o4I80GMJmyM+Il9SdgdsjO iJfUusD8hZ0RL6m+AUWbnREvWe8B3wN2RrxkbQH8bLIz4iX5+d/ueMIhAJD+sobnF/ARpICvdot+ AAAAAElFTkSuQmCC': No such file or directory @ error/blob.c/OpenBlob/3683. "
+}
+]
+},
+"imagemagick|pcl": {
+"estado": "muerta",
+"categoria_p2": 3,
+"bytes_por_pixel": 2.4577,
+"bytes_semilla": 7550,
+"semilla": "im.pcl",
+"base_convertx_ok": false,
+"intentos": [
+{
+"destino": "png",
+"args": [
+"magick",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool2\\im.pcl",
+"-auto-orient",
+"png:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_in2\\p.png"
+],
+"reglas": [
+"X-out"
+],
+"rc": 1,
+"bytes": -1,
+"ms": 1474.0,
+"veredicto": "FALLO",
+"motivo": "rc=1 bytes=-1",
+"ancho": null,
+"alto": null,
+"err": "magick: PCL delegate failed `D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool2\\im.pcl' @ error/pcl.c/ReadPCLImage/375. "
+}
+]
+},
+"imagemagick|pix": {
+"estado": "viva",
+"categoria_p2": 1,
+"bytes_por_pixel": 0.2637,
+"bytes_semilla": 810,
+"semilla": "im.pix",
+"base_convertx_ok": true,
+"intentos": [
+{
+"destino": "png",
+"args": [
+"magick",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool2\\im.pix",
+"-auto-orient",
+"png:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_in2\\p.png"
+],
+"reglas": [
+"X-out"
+],
+"rc": 0,
+"bytes": 810,
+"ms": 50.8,
+"veredicto": "INTEGRO",
+"motivo": "",
+"ancho": 64,
+"alto": 48,
+"err": ""
+}
+]
+},
+"imagemagick|rgb": {
+"estado": "muerta",
+"categoria_p2": 3,
+"bytes_por_pixel": 6.0,
+"bytes_semilla": 18432,
+"semilla": "im.rgb",
+"base_convertx_ok": false,
+"intentos": [
+{
+"destino": "png",
+"args": [
+"magick",
+"-size",
+"64x48",
+"-depth",
+"8",
+"rgb:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool2\\im.rgb",
+"-auto-orient",
+"png:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_in2\\p.png"
+],
+"reglas": [
+"G",
+"X-in",
+"X-out"
+],
+"rc": 0,
+"bytes": -1,
+"ms": 43.3,
+"veredicto": "FALLO",
+"motivo": "rc=0 bytes=-1",
+"ancho": null,
+"alto": null,
+"err": ""
+}
+]
+},
+"imagemagick|rgf": {
+"estado": "muerta",
+"categoria_p2": 3,
+"bytes_por_pixel": 0.1257,
+"bytes_semilla": 386,
+"semilla": "im.rgf",
+"base_convertx_ok": false,
+"intentos": [
+{
+"destino": "png",
+"args": [
+"magick",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool2\\im.rgf",
+"-auto-orient",
+"png:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_in2\\p.png"
+],
+"reglas": [
+"X-out"
+],
+"rc": 1,
+"bytes": -1,
+"ms": 54.3,
+"veredicto": "FALLO",
+"motivo": "rc=1 bytes=-1",
+"ancho": null,
+"alto": null,
+"err": "magick: unexpected end-of-file 'D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool2\\im.rgf': No such file or directory @ error/rgf.c/ReadRGFImage/188. "
+}
+]
+},
+"imagemagick|yuv": {
+"estado": "muerta",
+"categoria_p2": 3,
+"bytes_por_pixel": 3.0,
+"bytes_semilla": 9216,
+"semilla": "im.yuv",
+"base_convertx_ok": false,
+"intentos": [
+{
+"destino": "png",
+"args": [
+"magick",
+"-size",
+"64x48",
+"-depth",
+"8",
+"yuv:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool2\\im.yuv",
+"-auto-orient",
+"png:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_in2\\p.png"
+],
+"reglas": [
+"G",
+"X-in",
+"X-out"
+],
+"rc": 0,
+"bytes": -1,
+"ms": 42.3,
+"veredicto": "FALLO",
+"motivo": "rc=0 bytes=-1",
+"ancho": null,
+"alto": null,
+"err": ""
+}
+]
+}
+}

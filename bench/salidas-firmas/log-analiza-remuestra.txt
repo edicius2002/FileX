@@ -1,0 +1,60 @@
+=== POR ESTRATO, COMO LO PUBLICO E1 ===
+
+--- estrato general (n=498, con fichero 386) ---
+   E1 publicado            :  62 =  12.4 %
+   viejo, reejecutado      :  62 =  12.4 %
+   NUEVO                   : 270 =  54.2 %   (formato 270 + familia 0)
+   NO APLICA               :  76 =  15.3 %
+   deuda restante          :  40 =   8.0 %
+   sin fichero (N1)        : 112 =  22.5 %
+
+--- estrato pdf (n=100, con fichero 97) ---
+   E1 publicado            :  51 =  51.0 %
+   viejo, reejecutado      :  50 =  50.0 %
+   NUEVO                   :  77 =  77.0 %   (formato 77 + familia 0)
+   NO APLICA               :  12 =  12.0 %
+   deuda restante          :   8 =   8.0 %
+   sin fichero (N1)        :   3 =   3.0 %
+
+--- union (n=598, con fichero 483) ---
+   E1 publicado            : 113 =  18.9 %
+   viejo, reejecutado      : 112 =  18.7 %
+   NUEVO                   : 347 =  58.0 %   (formato 347 + familia 0)
+   NO APLICA               :  88 =  14.7 %
+   deuda restante          :  48 =   8.0 %
+   sin fichero (N1)        : 115 =  19.2 %
+filas reejecutadas      : 598
+con fichero (rc=0, >0 B): 483
+sin semilla de entrada  : 0
+
+=== PUNTO 1 SOBRE LA MISMA MUESTRA (denominador = las 598 filas) ===
+  E1, tal y como lo publico       : 113  = 18.9 %
+  vocabulario VIEJO, reejecutado  : 112  = 18.7 %
+  vocabulario NUEVO               : 347  = 58.0 %
+     de ellos a nivel de FORMATO  : 347  = 58.0 %
+     de ellos a nivel de FAMILIA  : 0  = 0.0 %
+  NO APLICA (formato sin marcador): 88  = 14.7 %
+  sigue sin vocabulario (DEUDA)   : 48  = 8.0 %
+  sin fichero que juzgar (N1)     : 115  = 19.2 %
+
+=== SOBRE LAS 483 QUE SI PRODUJERON FICHERO ===
+  viejo  : 23.2 %   nuevo: 71.8 % (formato 71.8 % + familia 0.0 %)
+  no aplica: 18.2 %   deuda restante: 9.9 %
+
+=== EL REPARTO DEL 88 % DE E1 (los 485 destinos que no pudo evaluar) ===
+   A_sin_fichero_que_juzgar            114 =  23.5 %
+   B_era_deuda_nuestra_CERRADA         236 =  48.7 %
+   C_propiedad_del_formato              87 =  17.9 %
+   D_sigue_siendo_deuda                 48 =   9.9 %
+   -- solo sobre las 371 que SI produjeron fichero:
+      evaluado                         236 =  63.6 %
+      no_aplica                         87 =  23.5 %
+      sin_vocabulario                   48 =  12.9 %
+
+=== EL RIESGO ===
+  N2 disparaba con el vocabulario viejo : 1
+  el punto 1 nuevo dispara              : 0
+  ...de ellas, E1 las conto como REALES : 0   <- hay que revisarlas una a una
+
+  (destino, firma real obtenida) -> n:
+

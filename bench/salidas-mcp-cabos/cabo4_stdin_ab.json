@@ -1,0 +1,56 @@
+{
+  "conv_heredado": {
+    "herramienta": "conv_heredado",
+    "n": 5,
+    "colgadas": 2,
+    "resultados": [
+      {
+        "ms": 2741.1,
+        "texto": "OK norm_0=328.2ms | norm_1=328.4ms | concat=48.2ms"
+      },
+      {
+        "ms": 954.6,
+        "texto": "OK norm_0=536.0ms | norm_1=334.4ms | concat=57.2ms"
+      },
+      {
+        "ms": 923.7,
+        "texto": "OK norm_0=468.0ms | norm_1=341.9ms | concat=78.1ms"
+      },
+      {
+        "ms": 20651.1,
+        "texto": "PASO COLGADO: norm_0=20302.4ms COLGADA"
+      },
+      {
+        "ms": 27796.7,
+        "texto": "PASO COLGADO: norm_0=27739.1ms COLGADA"
+      }
+    ]
+  },
+  "conv_devnull": {
+    "herramienta": "conv_devnull",
+    "n": 5,
+    "colgadas": 0,
+    "resultados": [
+      {
+        "ms": 2725.0,
+        "texto": "OK norm_0=1563.8ms | norm_1=669.6ms | concat=286.1ms"
+      },
+      {
+        "ms": 3299.7,
+        "texto": "OK norm_0=677.1ms | norm_1=2288.8ms | concat=7.0ms"
+      },
+      {
+        "ms": 2547.1,
+        "texto": "OK norm_0=1983.1ms | norm_1=440.1ms | concat=63.1ms"
+      },
+      {
+        "ms": 1746.9,
+        "texto": "OK norm_0=1198.2ms | norm_1=377.2ms | concat=61.2ms"
+      },
+      {
+        "ms": 2871.1,
+        "texto": "OK norm_0=342.2ms | norm_1=1811.9ms | concat=687.2ms"
+      }
+    ]
+  }
+}

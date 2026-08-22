@@ -1,0 +1,107 @@
+{
+  "cabecera": {
+    "etiqueta": "easyocr_cpu_f4_cpu",
+    "motor": "easyocr",
+    "dispositivo": "cpu",
+    "referencia": "d4",
+    "patron": "ppp?00__escaneado_d[34].png",
+    "imgdir": "D:/Work/research/FileX/bench/salidas-corpus-d4/img_f4",
+    "carga_frio_s": 5.39,
+    "vram_base_MiB": 2900,
+    "vram_tras_carga_MiB": 2900,
+    "quietud_pct": 31,
+    "cpu_pico_pct": -1,
+    "flag": "SUCIA(pico 31%)",
+    "modelos": {
+      "torch": "2.6.0+cu124",
+      "torch_cuda": "True"
+    },
+    "reps": 9,
+    "muestreo_vram": false
+  },
+  "fin": {
+    "evento": "fin",
+    "vram_pico_MiB": 2900,
+    "vram_base_MiB": 2900,
+    "coste_propio_MiB": 0,
+    "pico_util_pct": 0,
+    "muestreo_vram": false
+  },
+  "res": {
+    "ppp100__escaneado_d3": {
+      "referencia": "legado",
+      "cer_acentos_pct": 54.43,
+      "dist_acentos": 43,
+      "cer_ascii_pct": 54.43,
+      "dist_ascii": 43,
+      "chars_ref_acentos": 79,
+      "chars": 68,
+      "lineas_exactas": 1,
+      "lineas_totales": 3,
+      "acentos_ref": 0,
+      "acentos_salida": 0,
+      "bloques": {
+        "cuerpo": 54.43
+      },
+      "normalizada_acentos": "documento escaneado 4e s0ic 5e cat ar cxsr 1rxf 4ues croeaecon8e",
+      "ms_mediana": 1908.3,
+      "ms_min": 1825.5,
+      "ms_max": 1957.1,
+      "n": 9,
+      "determinista": true,
+      "vram_pico_MiB": 2900,
+      "vram_delta_lote_MiB": 0
+    },
+    "ppp200__escaneado_d3": {
+      "referencia": "legado",
+      "cer_acentos_pct": 56.96,
+      "dist_acentos": 45,
+      "cer_ascii_pct": 56.96,
+      "dist_ascii": 45,
+      "chars_ref_acentos": 79,
+      "chars": 64,
+      "lineas_exactas": 1,
+      "lineas_totales": 3,
+      "acentos_ref": 0,
+      "acentos_salida": 0,
+      "bloques": {
+        "cuerpo": 56.96
+      },
+      "normalizada_acentos": "documento escaneado nue 5u rueats v9iot ui8 hohor iurf 2566 o2oe",
+      "ms_mediana": 6474.2,
+      "ms_min": 6299.5,
+      "ms_max": 6479.6,
+      "n": 9,
+      "determinista": true,
+      "vram_pico_MiB": 2900,
+      "vram_delta_lote_MiB": 0
+    },
+    "ppp200__escaneado_d4": {
+      "referencia": "d4",
+      "cer_acentos_pct": 62.08,
+      "dist_acentos": 370,
+      "cer_ascii_pct": 60.23,
+      "dist_ascii": 359,
+      "chars_ref_acentos": 596,
+      "chars": 426,
+      "lineas_exactas": 1,
+      "lineas_totales": 12,
+      "acentos_ref": 35,
+      "acentos_salida": 4,
+      "bloques": {
+        "titulo": 0.0,
+        "subtitulo": 53.49,
+        "cuerpo": 60.26,
+        "pequeña": 76.06
+      },
+      "normalizada_acentos": "informe de digitalización hislónco 2 827 2026 archivo expediente recibió a solicitud de anátisis e dia 14 de ma zo se eil sobre veintiun volumenes encuaderados tocnco a reproduccicn fotogratica la comision delormino quo contaerto bumninacion dilusa y sin debia teanzaisa ton danos adadidus ja norma une 15402 euter mas ilagues ano 1005 enlos pieccs ar exgerui 8 31c2ee 74 ee5 0 es cigs galeento e nun piel para segun 0w a",
+      "ms_mediana": 7676.1,
+      "ms_min": 7529.3,
+      "ms_max": 9396.1,
+      "n": 9,
+      "determinista": true,
+      "vram_pico_MiB": 2900,
+      "vram_delta_lote_MiB": 0
+    }
+  }
+}

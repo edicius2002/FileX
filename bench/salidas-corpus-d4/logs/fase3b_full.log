@@ -1,0 +1,48 @@
+[lock] adquirido por G1-fase3b-tuberia
+=== fase 3b: Fri Aug 21 08:15:01 HPS 2026 ===
+
+--- rapidocr _sm_score00 : PP-OCRv6/small extra={"Global.text_score": 0.0}
+ppp100__escaneado_d3                     CERac= 75.95%  CERascii= 75.95%  lin=1/3  bloques={'cuerpo': 75.95}     65.5 ms  det=si
+ppp200__escaneado_d4                     CERac= 36.91%  CERascii= 36.24%  lin=3/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 6.09, 'pequeña': 74.65}    458.5 ms  det=si
+ppp200__escaneado_d4c                    CERac= 29.36%  CERascii= 29.36%  lin=8/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.0, 'pequeña': 75.12}    504.6 ms  det=si
+
+--- rapidocr _sm_score01 : PP-OCRv6/small extra={"Global.text_score": 0.1}
+ppp100__escaneado_d3                     CERac= 75.95%  CERascii= 75.95%  lin=1/3  bloques={'cuerpo': 75.95}     63.5 ms  det=si
+ppp200__escaneado_d4                     CERac= 36.91%  CERascii= 36.24%  lin=3/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 6.09, 'pequeña': 74.65}    451.7 ms  det=si
+ppp200__escaneado_d4c                    CERac= 29.36%  CERascii= 29.36%  lin=8/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.0, 'pequeña': 75.12}    476.2 ms  det=si
+
+--- rapidocr _sm_box03 : PP-OCRv6/small extra={"Det.box_thresh": 0.3}
+ppp100__escaneado_d3                     CERac= 75.95%  CERascii= 75.95%  lin=1/3  bloques={'cuerpo': 75.95}     66.5 ms  det=si
+ppp200__escaneado_d4                     CERac= 30.54%  CERascii= 29.53%  lin=3/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 2.24, 'pequeña': 74.65}    541.6 ms  det=si
+ppp200__escaneado_d4c                    CERac=  7.05%  CERascii=  6.71%  lin=8/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.0, 'pequeña': 37.56}    569.3 ms  det=si
+
+--- rapidocr _sm_unc20 : PP-OCRv6/small extra={"Det.unclip_ratio": 2.0}
+ppp100__escaneado_d3                     CERac= 75.95%  CERascii= 75.95%  lin=1/3  bloques={'cuerpo': 75.95}     67.1 ms  det=si
+ppp200__escaneado_d4                     CERac= 37.25%  CERascii= 36.41%  lin=3/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 6.41, 'pequeña': 75.12}    484.0 ms  det=si
+ppp200__escaneado_d4c                    CERac= 29.53%  CERascii= 29.36%  lin=7/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.32, 'pequeña': 75.12}    487.5 ms  det=si
+
+--- rapidocr _sm_lim1200 : PP-OCRv6/small extra={"Det.limit_side_len": 1200}
+ppp100__escaneado_d3                     CERac= 49.37%  CERascii= 49.37%  lin=1/3  bloques={'cuerpo': 49.37}    147.9 ms  det=si
+ppp200__escaneado_d4                     CERac= 36.91%  CERascii= 36.24%  lin=3/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 6.09, 'pequeña': 74.65}    481.2 ms  det=si
+ppp200__escaneado_d4c                    CERac= 29.36%  CERascii= 29.36%  lin=8/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.0, 'pequeña': 75.12}    532.7 ms  det=si
+
+--- rapidocr _sm_nocls : PP-OCRv6/small extra={"Global.use_cls": false}
+ppp100__escaneado_d3                     CERac= 75.95%  CERascii= 75.95%  lin=1/3  bloques={'cuerpo': 75.95}     64.4 ms  det=si
+ppp200__escaneado_d4                     CERac= 36.91%  CERascii= 36.24%  lin=3/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 6.09, 'pequeña': 74.65}    370.8 ms  det=si
+ppp200__escaneado_d4c                    CERac= 29.36%  CERascii= 29.36%  lin=8/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.0, 'pequeña': 75.12}    364.1 ms  det=si
+
+--- rapidocr _sm_todo : PP-OCRv6/small extra={"Global.text_score": 0.0, "Det.box_thresh": 0.3, "Det.unclip_ratio": 2.0}
+ppp100__escaneado_d3                     CERac= 75.95%  CERascii= 75.95%  lin=1/3  bloques={'cuerpo': 75.95}     71.1 ms  det=si
+ppp200__escaneado_d4                     CERac= 30.54%  CERascii= 29.36%  lin=3/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 3.21, 'pequeña': 75.12}    546.6 ms  det=si
+ppp200__escaneado_d4c                    CERac=  6.71%  CERascii=  6.04%  lin=8/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.0, 'pequeña': 34.27}    570.8 ms  det=si
+
+--- rapidocr _v5m_score00 : PP-OCRv5/mobile extra={"Global.text_score": 0.0}
+ppp100__escaneado_d3                     CERac= 77.22%  CERascii= 77.22%  lin=0/3  bloques={'cuerpo': 77.22}     66.6 ms  det=si
+ppp200__escaneado_d4                     CERac= 41.78%  CERascii= 38.59%  lin=0/12  bloques={'titulo': 4.0, 'subtitulo': 11.63, 'cuerpo': 14.42, 'pequeña': 74.65}    429.5 ms  det=si
+ppp200__escaneado_d4c                    CERac= 15.10%  CERascii= 11.41%  lin=0/12  bloques={'titulo': 4.0, 'subtitulo': 2.33, 'cuerpo': 4.17, 'pequeña': 53.52}    304.7 ms  det=si
+
+--- rapidocr _v5m_todo : PP-OCRv5/mobile extra={"Global.text_score": 0.0, "Det.box_thresh": 0.3, "Det.unclip_ratio": 2.0}
+ppp100__escaneado_d3                     CERac= 75.95%  CERascii= 75.95%  lin=1/3  bloques={'cuerpo': 75.95}     72.1 ms  det=si
+ppp200__escaneado_d4                     CERac= 41.44%  CERascii= 38.42%  lin=0/12  bloques={'titulo': 4.0, 'subtitulo': 6.98, 'cuerpo': 15.38, 'pequeña': 75.59}    423.1 ms  det=si
+ppp200__escaneado_d4c                    CERac= 20.30%  CERascii= 17.45%  lin=1/12  bloques={'titulo': 4.0, 'subtitulo': 0.0, 'cuerpo': 4.81, 'pequeña': 63.85}    311.5 ms  det=si
+=== fin fase 3b: Fri Aug 21 08:18:47 HPS 2026 ===

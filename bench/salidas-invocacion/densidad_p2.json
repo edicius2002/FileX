@@ -1,0 +1,485 @@
+[
+{
+"a": "group4",
+"geometria": [
+1920,
+1080
+],
+"convertx": {
+"rc": 0,
+"bytes": 89879,
+"pagina_mm": [
+677.3,
+381.0
+],
+"veredicto": "DEGRADADO",
+"P7": true,
+"ms": 104.7,
+"motivo": "P7:1 px -> 1 pt: pagina absurda (1920 x 1080 pt = 677 x 381 mm)",
+"args": [
+"magick",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\in\\m.group4",
+"-auto-orient",
+"pdf:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_dens\\d00_convertx.pdf"
+]
+},
+"densidad150": {
+"rc": 0,
+"bytes": 89897,
+"pagina_mm": [
+325.1,
+182.9
+],
+"veredicto": "INTEGRO",
+"P7": false,
+"ms": 103.5,
+"motivo": "",
+"args": [
+"magick",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\in\\m.group4",
+"-auto-orient",
+"-units",
+"PixelsPerInch",
+"-density",
+"150",
+"pdf:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_dens\\d00_densidad150.pdf"
+]
+},
+"ajuste_a4": {
+"rc": 0,
+"bytes": 89898,
+"pagina_mm": [
+210.0,
+118.1
+],
+"veredicto": "INTEGRO",
+"P7": false,
+"ms": 103.2,
+"motivo": "",
+"args": [
+"magick",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\in\\m.group4",
+"-auto-orient",
+"-units",
+"PixelsPerInch",
+"-density",
+"232.23",
+"pdf:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_dens\\d00_ajuste_a4.pdf"
+]
+}
+},
+{
+"a": "png48",
+"geometria": [
+1920,
+1080
+],
+"convertx": {
+"rc": 0,
+"bytes": 28815,
+"pagina_mm": [
+677.3,
+381.0
+],
+"veredicto": "DEGRADADO",
+"P7": true,
+"ms": 240.0,
+"motivo": "P7:1 px -> 1 pt: pagina absurda (1920 x 1080 pt = 677 x 381 mm)",
+"args": [
+"magick",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\in\\m.png48",
+"-auto-orient",
+"pdf:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_dens\\d01_convertx.pdf"
+]
+},
+"densidad150": {
+"rc": 0,
+"bytes": 28833,
+"pagina_mm": [
+325.1,
+182.9
+],
+"veredicto": "INTEGRO",
+"P7": false,
+"ms": 241.7,
+"motivo": "",
+"args": [
+"magick",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\in\\m.png48",
+"-auto-orient",
+"-units",
+"PixelsPerInch",
+"-density",
+"150",
+"pdf:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_dens\\d01_densidad150.pdf"
+]
+},
+"ajuste_a4": {
+"rc": 0,
+"bytes": 28834,
+"pagina_mm": [
+210.0,
+118.1
+],
+"veredicto": "INTEGRO",
+"P7": false,
+"ms": 132.9,
+"motivo": "",
+"args": [
+"magick",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\in\\m.png48",
+"-auto-orient",
+"-units",
+"PixelsPerInch",
+"-density",
+"232.23",
+"pdf:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_dens\\d01_ajuste_a4.pdf"
+]
+}
+},
+{
+"a": "sf3",
+"geometria": [
+1920,
+1080
+],
+"convertx": {
+"rc": 0,
+"bytes": 89879,
+"pagina_mm": [
+677.3,
+381.0
+],
+"veredicto": "DEGRADADO",
+"P7": true,
+"ms": 106.1,
+"motivo": "P7:1 px -> 1 pt: pagina absurda (1920 x 1080 pt = 677 x 381 mm)",
+"args": [
+"magick",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\in\\m.sf3",
+"-auto-orient",
+"pdf:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_dens\\d02_convertx.pdf"
+]
+},
+"densidad150": {
+"rc": 0,
+"bytes": 89897,
+"pagina_mm": [
+325.1,
+182.9
+],
+"veredicto": "INTEGRO",
+"P7": false,
+"ms": 95.3,
+"motivo": "",
+"args": [
+"magick",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\in\\m.sf3",
+"-auto-orient",
+"-units",
+"PixelsPerInch",
+"-density",
+"150",
+"pdf:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_dens\\d02_densidad150.pdf"
+]
+},
+"ajuste_a4": {
+"rc": 0,
+"bytes": 89898,
+"pagina_mm": [
+210.0,
+118.1
+],
+"veredicto": "INTEGRO",
+"P7": false,
+"ms": 103.9,
+"motivo": "",
+"args": [
+"magick",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\in\\m.sf3",
+"-auto-orient",
+"-units",
+"PixelsPerInch",
+"-density",
+"232.23",
+"pdf:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_dens\\d02_ajuste_a4.pdf"
+]
+}
+},
+{
+"a": "png",
+"geometria": [
+64,
+64
+],
+"convertx": {
+"rc": 0,
+"bytes": 1922,
+"pagina_mm": [
+22.6,
+22.6
+],
+"veredicto": "INTEGRO",
+"P7": false,
+"ms": 26.5,
+"motivo": "",
+"args": [
+"magick",
+"D:\\Work\\research\\FileX\\corpus\\imagen\\trivial.png",
+"-auto-orient",
+"pdf:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_dens\\d03_convertx.pdf"
+]
+},
+"densidad150": {
+"rc": 0,
+"bytes": 1952,
+"pagina_mm": [
+10.8,
+10.8
+],
+"veredicto": "INTEGRO",
+"P7": false,
+"ms": 19.7,
+"motivo": "",
+"args": [
+"magick",
+"D:\\Work\\research\\FileX\\corpus\\imagen\\trivial.png",
+"-auto-orient",
+"-units",
+"PixelsPerInch",
+"-density",
+"150",
+"pdf:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_dens\\d03_densidad150.pdf"
+]
+},
+"ajuste_a4": {
+"rc": 0,
+"bytes": 1956,
+"pagina_mm": [
+210.0,
+210.0
+],
+"veredicto": "INTEGRO",
+"P7": false,
+"ms": 20.3,
+"motivo": "",
+"args": [
+"magick",
+"D:\\Work\\research\\FileX\\corpus\\imagen\\trivial.png",
+"-auto-orient",
+"-units",
+"PixelsPerInch",
+"-density",
+"7.74",
+"pdf:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_dens\\d03_ajuste_a4.pdf"
+]
+}
+},
+{
+"a": "pjpeg",
+"geometria": [
+1920,
+1080
+],
+"convertx": {
+"rc": 0,
+"bytes": 89879,
+"pagina_mm": [
+677.3,
+381.0
+],
+"veredicto": "DEGRADADO",
+"P7": true,
+"ms": 221.9,
+"motivo": "P7:1 px -> 1 pt: pagina absurda (1920 x 1080 pt = 677 x 381 mm)",
+"args": [
+"magick",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\in\\m.pjpeg",
+"-auto-orient",
+"pdf:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_dens\\d04_convertx.pdf"
+]
+},
+"densidad150": {
+"rc": 0,
+"bytes": 89897,
+"pagina_mm": [
+325.1,
+182.9
+],
+"veredicto": "INTEGRO",
+"P7": false,
+"ms": 111.4,
+"motivo": "",
+"args": [
+"magick",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\in\\m.pjpeg",
+"-auto-orient",
+"-units",
+"PixelsPerInch",
+"-density",
+"150",
+"pdf:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_dens\\d04_densidad150.pdf"
+]
+},
+"ajuste_a4": {
+"rc": 0,
+"bytes": 89898,
+"pagina_mm": [
+210.0,
+118.1
+],
+"veredicto": "INTEGRO",
+"P7": false,
+"ms": 113.6,
+"motivo": "",
+"args": [
+"magick",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\in\\m.pjpeg",
+"-auto-orient",
+"-units",
+"PixelsPerInch",
+"-density",
+"232.23",
+"pdf:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_dens\\d04_ajuste_a4.pdf"
+]
+}
+},
+{
+"a": "jpeg",
+"geometria": [
+1920,
+1080
+],
+"convertx": {
+"rc": 0,
+"bytes": 70370,
+"pagina_mm": [
+677.3,
+381.0
+],
+"veredicto": "DEGRADADO",
+"P7": true,
+"ms": 110.2,
+"motivo": "P7:1 px -> 1 pt: pagina absurda (1920 x 1080 pt = 677 x 381 mm)",
+"args": [
+"magick",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\in\\m.jpeg",
+"-auto-orient",
+"pdf:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_dens\\d05_convertx.pdf"
+]
+},
+"densidad150": {
+"rc": 0,
+"bytes": 70388,
+"pagina_mm": [
+325.1,
+182.9
+],
+"veredicto": "INTEGRO",
+"P7": false,
+"ms": 98.2,
+"motivo": "",
+"args": [
+"magick",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\in\\m.jpeg",
+"-auto-orient",
+"-units",
+"PixelsPerInch",
+"-density",
+"150",
+"pdf:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_dens\\d05_densidad150.pdf"
+]
+},
+"ajuste_a4": {
+"rc": 0,
+"bytes": 70389,
+"pagina_mm": [
+210.0,
+118.1
+],
+"veredicto": "INTEGRO",
+"P7": false,
+"ms": 97.2,
+"motivo": "",
+"args": [
+"magick",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\in\\m.jpeg",
+"-auto-orient",
+"-units",
+"PixelsPerInch",
+"-density",
+"232.23",
+"pdf:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_dens\\d05_ajuste_a4.pdf"
+]
+}
+},
+{
+"a": "gif87",
+"geometria": [
+1920,
+1080
+],
+"convertx": {
+"rc": 0,
+"bytes": 122926,
+"pagina_mm": [
+677.3,
+381.0
+],
+"veredicto": "DEGRADADO",
+"P7": true,
+"ms": 257.7,
+"motivo": "P7:1 px -> 1 pt: pagina absurda (1920 x 1080 pt = 677 x 381 mm)",
+"args": [
+"magick",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\in\\m.gif87",
+"-auto-orient",
+"pdf:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_dens\\d06_convertx.pdf"
+]
+},
+"densidad150": {
+"rc": 0,
+"bytes": 122944,
+"pagina_mm": [
+325.1,
+182.9
+],
+"veredicto": "INTEGRO",
+"P7": false,
+"ms": 146.7,
+"motivo": "",
+"args": [
+"magick",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\in\\m.gif87",
+"-auto-orient",
+"-units",
+"PixelsPerInch",
+"-density",
+"150",
+"pdf:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_dens\\d06_densidad150.pdf"
+]
+},
+"ajuste_a4": {
+"rc": 0,
+"bytes": 122945,
+"pagina_mm": [
+210.0,
+118.1
+],
+"veredicto": "INTEGRO",
+"P7": false,
+"ms": 143.6,
+"motivo": "",
+"args": [
+"magick",
+"D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\pool\\in\\m.gif87",
+"-auto-orient",
+"-units",
+"PixelsPerInch",
+"-density",
+"232.23",
+"pdf:D:\\Work\\research\\FileX\\bench\\salidas-invocacion\\tmp_dens\\d06_ajuste_a4.pdf"
+]
+}
+}
+]

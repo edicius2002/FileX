@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "filexpesado": {
+      "type": "stdio",
+      "command": "D:\\Work\\research\\FileX\\.venv-mcp-sdk-2x\\Scripts\\python.exe",
+      "args": [
+        "D:\\Work\\research\\FileX\\bench\\salidas-mcp-cabos-2\\c4_probe_srv.py"
+      ],
+      "env": {
+        "STUB_CATALOG": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-cabos-2\\c4_cat_pesado.json",
+        "STUB_LOG": "D:\\Work\\research\\FileX\\bench\\salidas-mcp-cabos-2\\c4_log_pesado.jsonl",
+        "STUB_NAME": "filexpesado"
+      }
+    }
+  }
+}

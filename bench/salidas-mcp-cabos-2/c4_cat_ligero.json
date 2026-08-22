@@ -1,0 +1,152 @@
+[
+  {
+    "name": "probe_convert",
+    "description": "probe_convert.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "input_path": {
+          "type": "string",
+          "description": "ruta de entrada absoluta"
+        },
+        "output_path": {
+          "type": "string",
+          "description": "ruta de salida absoluta"
+        },
+        "target_format": {
+          "type": "string",
+          "description": "formato de destino"
+        }
+      },
+      "required": [
+        "input_path",
+        "output_path"
+      ]
+    }
+  },
+  {
+    "name": "probe_inspect",
+    "description": "probe_inspect.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "input_path": {
+          "type": "string",
+          "description": "ruta de entrada absoluta"
+        },
+        "output_path": {
+          "type": "string",
+          "description": "ruta de salida absoluta"
+        },
+        "target_format": {
+          "type": "string",
+          "description": "formato de destino"
+        }
+      },
+      "required": [
+        "input_path",
+        "output_path"
+      ]
+    }
+  },
+  {
+    "name": "probe_transcode",
+    "description": "probe_transcode.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "input_path": {
+          "type": "string",
+          "description": "ruta de entrada absoluta"
+        },
+        "output_path": {
+          "type": "string",
+          "description": "ruta de salida absoluta"
+        },
+        "target_format": {
+          "type": "string",
+          "description": "formato de destino"
+        }
+      },
+      "required": [
+        "input_path",
+        "output_path"
+      ]
+    }
+  },
+  {
+    "name": "probe_thumbnail",
+    "description": "probe_thumbnail.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "input_path": {
+          "type": "string",
+          "description": "ruta de entrada absoluta"
+        },
+        "output_path": {
+          "type": "string",
+          "description": "ruta de salida absoluta"
+        },
+        "target_format": {
+          "type": "string",
+          "description": "formato de destino"
+        }
+      },
+      "required": [
+        "input_path",
+        "output_path"
+      ]
+    }
+  },
+  {
+    "name": "probe_extract",
+    "description": "probe_extract.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "input_path": {
+          "type": "string",
+          "description": "ruta de entrada absoluta"
+        },
+        "output_path": {
+          "type": "string",
+          "description": "ruta de salida absoluta"
+        },
+        "target_format": {
+          "type": "string",
+          "description": "formato de destino"
+        }
+      },
+      "required": [
+        "input_path",
+        "output_path"
+      ]
+    }
+  },
+  {
+    "name": "probe_package",
+    "description": "probe_package.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "input_path": {
+          "type": "string",
+          "description": "ruta de entrada absoluta"
+        },
+        "output_path": {
+          "type": "string",
+          "description": "ruta de salida absoluta"
+        },
+        "target_format": {
+          "type": "string",
+          "description": "formato de destino"
+        }
+      },
+      "required": [
+        "input_path",
+        "output_path"
+      ]
+    }
+  }
+]

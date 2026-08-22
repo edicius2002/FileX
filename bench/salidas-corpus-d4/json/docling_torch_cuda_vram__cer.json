@@ -1,0 +1,281 @@
+{
+  "cabecera": {
+    "etiqueta": "docling_torch_cuda_vram",
+    "dispositivo": "cuda",
+    "backend": "torch",
+    "lang": "english",
+    "docs": [
+      "d4_limpio",
+      "escaneado_d4a",
+      "escaneado_d4b",
+      "escaneado_d4c",
+      "escaneado_d4",
+      "escaneado_d4e",
+      "escaneado_d4f"
+    ],
+    "modo_ppp": "nativo",
+    "reps": 9,
+    "vram_base_MiB": 2897,
+    "quietud_pct": 39,
+    "flag": "SUCIA(pico 39%)",
+    "torch": "2.6.0+cu124",
+    "torch_cuda": true,
+    "modelo": {
+      "lang_pedido": "english",
+      "lang_resuelto": "en",
+      "ppocr_version": "PP-OCRv6",
+      "model_type_v6": "small",
+      "model_type_v4v5": "mobile"
+    },
+    "muestreo_vram": true
+  },
+  "fin": {
+    "evento": "fin",
+    "vram_pico_MiB": 4381,
+    "vram_base_MiB": 2897,
+    "coste_propio_MiB": 1484,
+    "pico_util_pct": 92,
+    "sonda_activa": true,
+    "muestreo_vram": true
+  },
+  "res": {
+    "nativo__d4_limpio": {
+      "referencia": "d4",
+      "ppp_nativos": 200.0,
+      "escala": 2.7778,
+      "ppp_efectivo_param": 200.0,
+      "px_reales_al_motor": [
+        1294,
+        1792
+      ],
+      "cer_acentos_pct": 0.0,
+      "dist_acentos": 0,
+      "cer_ascii_pct": 0.0,
+      "dist_ascii": 0,
+      "chars": 615,
+      "lineas_exactas": 12,
+      "lineas_totales": 12,
+      "acentos_ref": 35,
+      "acentos_salida": 35,
+      "bloques": {
+        "titulo": 0.0,
+        "subtitulo": 0.0,
+        "cuerpo": 0.0,
+        "pequeña": 2.82
+      },
+      "normalizada_acentos": "informe de digitalización expediente núm 4 827 2026 archivo histórico el día 14 de marzo se recibió la solicitud de análisis técnico sobre veintiún volúmenes encuadernados en piel la comisión determinó que la reproducción fotográfica debía realizarse con iluminación difusa y sin contacto según la norma une 15 402 para evitar daños añadidos en los pliegos más frágiles del año 1893 quién autorizó la excepción el párrafo tercero señala que la revisión ortográfica y lingüística del legajo es responsabilidad del área de conservación preventiva atención los códigos 7 b 9 ñ y 12 k quedan anulados",
+      "ms_mediana": 808.4,
+      "ms_min": 739.5,
+      "ms_max": 864.5,
+      "n": 9,
+      "determinista": true,
+      "constructor_s": 0.11,
+      "vram_pico_MiB": 3922,
+      "vram_delta_MiB": 3922
+    },
+    "nativo__escaneado_d4a": {
+      "referencia": "d4",
+      "ppp_nativos": 200.0,
+      "escala": 2.7778,
+      "ppp_efectivo_param": 200.0,
+      "px_reales_al_motor": [
+        1294,
+        1752
+      ],
+      "cer_acentos_pct": 7.05,
+      "dist_acentos": 42,
+      "cer_ascii_pct": 6.71,
+      "dist_ascii": 40,
+      "chars": 580,
+      "lineas_exactas": 10,
+      "lineas_totales": 12,
+      "acentos_ref": 35,
+      "acentos_salida": 29,
+      "bloques": {
+        "titulo": 0.0,
+        "subtitulo": 0.0,
+        "cuerpo": 0.0,
+        "pequeña": 23.0
+      },
+      "normalizada_acentos": "informe de digitalización expediente núm 4 827 2026 archivo histórico el día 14 de marzo se recibió la solicitud de análisis técnico sobre veintiún volúmenes encuadernados en piel la comisión determinó que la reproducción fotográfica debía realizarse con iluminación difusa y sin contacto según la norma une 15 402 para evitar daños añadidos en los pliegos más frágiles del año 1893 cui ao a anala que la revisión ortográfica y lingüística del legajo es responsabilidad del área de conservación preventiva atención los códigos 7 b 9 n y 12 k quedan anulados",
+      "ms_mediana": 820.9,
+      "ms_min": 806.2,
+      "ms_max": 832.0,
+      "n": 9,
+      "determinista": true,
+      "constructor_s": 0.1,
+      "vram_pico_MiB": 3942,
+      "vram_delta_MiB": 20
+    },
+    "nativo__escaneado_d4b": {
+      "referencia": "d4",
+      "ppp_nativos": 200.0,
+      "escala": 2.7778,
+      "ppp_efectivo_param": 200.0,
+      "px_reales_al_motor": [
+        1294,
+        1734
+      ],
+      "cer_acentos_pct": 18.46,
+      "dist_acentos": 110,
+      "cer_ascii_pct": 18.12,
+      "dist_ascii": 108,
+      "chars": 616,
+      "lineas_exactas": 10,
+      "lineas_totales": 12,
+      "acentos_ref": 35,
+      "acentos_salida": 33,
+      "bloques": {
+        "titulo": 0.0,
+        "subtitulo": 0.0,
+        "cuerpo": 34.62,
+        "pequeña": 3.76
+      },
+      "normalizada_acentos": "informe de digitalización expediente núm 4 827 2026 archivo histórico la comisión determinó que la reproducción fotográfica el día 14 de marzo se recibió la solicitud de análisis técnico sobre veintiún volúmenes encuadernados en piel debía realizarse con iluminación difusa y sin contacto según la norma une 15 402 para evitar daños añadidos en los pliegos más frágiles del año 1893 quién autorizó la excepción el párrafo tercero señala que la revisión ortográfica y lingüistica del legajo es responsabilidad del área de conservación preventiva atención los códigos 7 b 9 n y 12 k quedan anulados",
+      "ms_mediana": 771.9,
+      "ms_min": 753.5,
+      "ms_max": 811.6,
+      "n": 9,
+      "determinista": true,
+      "constructor_s": 0.11,
+      "vram_pico_MiB": 3942,
+      "vram_delta_MiB": 0
+    },
+    "nativo__escaneado_d4c": {
+      "referencia": "d4",
+      "ppp_nativos": 200.0,
+      "escala": 2.7778,
+      "ppp_efectivo_param": 200.0,
+      "px_reales_al_motor": [
+        1294,
+        1734
+      ],
+      "cer_acentos_pct": 22.99,
+      "dist_acentos": 137,
+      "cer_ascii_pct": 22.48,
+      "dist_ascii": 134,
+      "chars": 475,
+      "lineas_exactas": 8,
+      "lineas_totales": 12,
+      "acentos_ref": 35,
+      "acentos_salida": 23,
+      "bloques": {
+        "titulo": 0.0,
+        "subtitulo": 0.0,
+        "cuerpo": 0.0,
+        "pequeña": 71.83
+      },
+      "normalizada_acentos": "informe de digitalización expediente núm 4 827 2026 archivo histórico el día 14 de marzo se recibió la solicitud de análisis técnico sobre veintiún volúmenes encuadernados en piel la comisión determinó que la reproducción fotográfica debía realizarse con iluminación difusa y sin contacto según la norma une 15 402 para evitar daños añadidos en los pliegos más frágiles del año 1893 que la revisión ortográfica y linguistica del legajo 9 n y 12 k quedan anulados",
+      "ms_mediana": 878.7,
+      "ms_min": 759.5,
+      "ms_max": 943.0,
+      "n": 9,
+      "determinista": true,
+      "constructor_s": 0.13,
+      "vram_pico_MiB": 3962,
+      "vram_delta_MiB": 20
+    },
+    "nativo__escaneado_d4": {
+      "referencia": "d4",
+      "ppp_nativos": 200.0,
+      "escala": 2.7778,
+      "ppp_efectivo_param": 200.0,
+      "px_reales_al_motor": [
+        1294,
+        1716
+      ],
+      "cer_acentos_pct": 36.91,
+      "dist_acentos": 220,
+      "cer_ascii_pct": 36.24,
+      "dist_ascii": 216,
+      "chars": 391,
+      "lineas_exactas": 2,
+      "lineas_totales": 12,
+      "acentos_ref": 35,
+      "acentos_salida": 17,
+      "bloques": {
+        "titulo": 0.0,
+        "subtitulo": 0.0,
+        "cuerpo": 6.09,
+        "pequeña": 75.12
+      },
+      "normalizada_acentos": "informe de digitalización expediente núm 4 827 2026 archivo histórico el dia 14 de marzo se recibió la solicitud de análisis técnico sobre veintiún volúmenes encuaderados en piel la comisión determinó que la reproducción fotografica debia realizarse con iluminación difusa y sin contacto segón la norma une 15 402 para evitar daños añadidos en los pliegos más fragiles del año 1893",
+      "ms_mediana": 799.8,
+      "ms_min": 779.1,
+      "ms_max": 938.8,
+      "n": 9,
+      "determinista": true,
+      "constructor_s": 0.1,
+      "vram_pico_MiB": 3973,
+      "vram_delta_MiB": 11
+    },
+    "nativo__escaneado_d4e": {
+      "referencia": "d4",
+      "ppp_nativos": 200.0,
+      "escala": 2.7778,
+      "ppp_efectivo_param": 200.0,
+      "px_reales_al_motor": [
+        1294,
+        1716
+      ],
+      "cer_acentos_pct": 88.59,
+      "dist_acentos": 528,
+      "cer_ascii_pct": 88.42,
+      "dist_ascii": 527,
+      "chars": 75,
+      "lineas_exactas": 1,
+      "lineas_totales": 12,
+      "acentos_ref": 35,
+      "acentos_salida": 2,
+      "bloques": {
+        "titulo": 0.0,
+        "subtitulo": 2.33,
+        "cuerpo": 85.26,
+        "pequeña": 83.57
+      },
+      "normalizada_acentos": "informe de digitalización expediente num 4 827 2026 archivo histórico",
+      "ms_mediana": 644.2,
+      "ms_min": 612.6,
+      "ms_max": 683.2,
+      "n": 9,
+      "determinista": true,
+      "constructor_s": 0.12,
+      "vram_pico_MiB": 3973,
+      "vram_delta_MiB": 0
+    },
+    "nativo__escaneado_d4f": {
+      "referencia": "d4",
+      "ppp_nativos": 240.0,
+      "escala": 3.3333,
+      "ppp_efectivo_param": 240.0,
+      "px_reales_al_motor": [
+        1552,
+        2080
+      ],
+      "cer_acentos_pct": 22.15,
+      "dist_acentos": 132,
+      "cer_ascii_pct": 21.98,
+      "dist_ascii": 131,
+      "chars": 478,
+      "lineas_exactas": 8,
+      "lineas_totales": 12,
+      "acentos_ref": 35,
+      "acentos_salida": 24,
+      "bloques": {
+        "titulo": 0.0,
+        "subtitulo": 0.0,
+        "cuerpo": 0.0,
+        "pequeña": 75.59
+      },
+      "normalizada_acentos": "informe de digitalización expediente núm 4 827 2026 archivo histórico el día 14 de marzo se recibió la solicitud de análisis técnico sobre veintiún volúmenes encuadernados en piel la comisión determinó que la reproducción fotográfica debía realizarse con iluminación difusa y sin contacto según la norma une 15 402 para evitar daños añadidos en los pliegos más frágiles del año 1893 fo tercero señala que la revisión ortografica y ca del legajo servación preventiva",
+      "ms_mediana": 841.6,
+      "ms_min": 830.9,
+      "ms_max": 856.4,
+      "n": 9,
+      "determinista": true,
+      "constructor_s": 0.31,
+      "vram_pico_MiB": 4381,
+      "vram_delta_MiB": 408
+    }
+  }
+}

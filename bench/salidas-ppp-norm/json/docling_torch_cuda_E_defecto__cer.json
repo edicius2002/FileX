@@ -1,0 +1,208 @@
+{
+  "cabecera": {
+    "etiqueta": "docling_torch_cuda_E_defecto",
+    "dispositivo": "cuda",
+    "backend": "torch",
+    "lang": "english",
+    "docs": [
+      "escaneado_d4",
+      "escaneado_d3",
+      "escaneado_d2",
+      "escaneado_d1",
+      "patologico_escaneado"
+    ],
+    "modo_ppp": "defecto",
+    "reps": 9,
+    "R6": false,
+    "vram_base_MiB": 2007,
+    "quietud_pct": 39,
+    "flag": "SUCIA(pico 39%)",
+    "testigo_monohilo_ini_ms": 25.33,
+    "testigo_proceso_ini_ms": 28.03,
+    "torch": "2.6.0+cu124",
+    "torch_cuda": true,
+    "modelo": {
+      "lang_pedido": "english",
+      "lang_resuelto": "en",
+      "ppocr_version": "PP-OCRv6",
+      "model_type_v6": "small",
+      "model_type_v4v5": "mobile"
+    },
+    "muestreo_vram": false
+  },
+  "fin": {
+    "evento": "fin",
+    "vram_pico_MiB": 0,
+    "vram_base_MiB": 2007,
+    "coste_propio_MiB": -2007,
+    "pico_util_pct": 0,
+    "testigo_monohilo_ini_ms": 25.33,
+    "testigo_monohilo_fin_ms": 26.72,
+    "deriva_monohilo": 1.05,
+    "testigo_proceso_ini_ms": 28.03,
+    "testigo_proceso_fin_ms": 34.54,
+    "nivel_proceso_vs_reposo": 1.3,
+    "sonda_activa": true,
+    "muestreo_vram": false
+  },
+  "res": {
+    "pppDEF__escaneado_d4": {
+      "referencia": "d4",
+      "ppp_nativos": 200.0,
+      "escala": 3.0,
+      "ppp_efectivo_param": 216.0,
+      "px_reales_al_motor": [
+        1398,
+        1853
+      ],
+      "cer_acentos_pct": 36.91,
+      "dist_acentos": 220,
+      "cer_ascii_pct": 36.41,
+      "dist_ascii": 217,
+      "chars": 392,
+      "lineas_exactas": 3,
+      "lineas_totales": 12,
+      "acentos_ref": 35,
+      "acentos_salida": 18,
+      "bloques": {
+        "titulo": 0.0,
+        "subtitulo": 0.0,
+        "cuerpo": 1.92,
+        "pequeña": 75.12
+      },
+      "normalizada_acentos": "informe de digitalización expediente núm 4 827 2026 archivo histórico el dia 14 de marzo se recibió la solicitud de análisis técnico sobre veintiún volúmenes encuadermnados en piel la comisión determinó que la reproducción fotográfica debia realizarse con iluminación difusa y sin contacto segón la noma une 15 402 para evitar daños añadidos en los pliegos más fragiles del año 1893",
+      "ms_mediana": 943.9,
+      "ms_min": 889.7,
+      "ms_max": 1031.2,
+      "n": 9,
+      "determinista": true,
+      "constructor_s": 0.11,
+      "vram_pico_MiB": 0,
+      "vram_delta_MiB": 0
+    },
+    "pppDEF__escaneado_d3": {
+      "referencia": "legado",
+      "ppp_nativos": 100.0,
+      "escala": 3.0,
+      "ppp_efectivo_param": 216.0,
+      "px_reales_al_motor": [
+        1398,
+        1836
+      ],
+      "cer_acentos_pct": 58.23,
+      "dist_acentos": 46,
+      "cer_ascii_pct": 58.23,
+      "dist_ascii": 46,
+      "chars": 38,
+      "lineas_exactas": 1,
+      "lineas_totales": 3,
+      "acentos_ref": 0,
+      "acentos_salida": 0,
+      "bloques": {
+        "cuerpo": 58.23
+      },
+      "normalizada_acentos": "documento escaneado texto que salo",
+      "ms_mediana": 645.9,
+      "ms_min": 602.3,
+      "ms_max": 693.4,
+      "n": 9,
+      "determinista": true,
+      "constructor_s": 0.1,
+      "vram_pico_MiB": 0,
+      "vram_delta_MiB": 0
+    },
+    "pppDEF__escaneado_d2": {
+      "referencia": "legado",
+      "ppp_nativos": 100.0,
+      "escala": 3.0,
+      "ppp_efectivo_param": 216.0,
+      "px_reales_al_motor": [
+        1398,
+        1836
+      ],
+      "cer_acentos_pct": 0.0,
+      "dist_acentos": 0,
+      "cer_ascii_pct": 0.0,
+      "dist_ascii": 0,
+      "chars": 85,
+      "lineas_exactas": 3,
+      "lineas_totales": 3,
+      "acentos_ref": 0,
+      "acentos_salida": 0,
+      "bloques": {
+        "cuerpo": 0.0
+      },
+      "normalizada_acentos": "documento escaneado texto que solo existe como pixeles debe recuperarse con ocr",
+      "ms_mediana": 665.5,
+      "ms_min": 620.8,
+      "ms_max": 708.3,
+      "n": 9,
+      "determinista": true,
+      "constructor_s": 0.11,
+      "vram_pico_MiB": 0,
+      "vram_delta_MiB": 0
+    },
+    "pppDEF__escaneado_d1": {
+      "referencia": "legado",
+      "ppp_nativos": 150.0,
+      "escala": 3.0,
+      "ppp_efectivo_param": 216.0,
+      "px_reales_al_motor": [
+        1397,
+        1872
+      ],
+      "cer_acentos_pct": 0.0,
+      "dist_acentos": 0,
+      "cer_ascii_pct": 0.0,
+      "dist_ascii": 0,
+      "chars": 85,
+      "lineas_exactas": 3,
+      "lineas_totales": 3,
+      "acentos_ref": 0,
+      "acentos_salida": 0,
+      "bloques": {
+        "cuerpo": 0.0
+      },
+      "normalizada_acentos": "documento escaneado texto que solo existe como pixeles debe recuperarse con ocr",
+      "ms_mediana": 670.9,
+      "ms_min": 649.8,
+      "ms_max": 709.9,
+      "n": 9,
+      "determinista": true,
+      "constructor_s": 0.12,
+      "vram_pico_MiB": 0,
+      "vram_delta_MiB": 0
+    },
+    "pppDEF__patologico_escaneado": {
+      "referencia": "legado",
+      "ppp_nativos": 200.0,
+      "escala": 3.0,
+      "ppp_efectivo_param": 216.0,
+      "px_reales_al_motor": [
+        1398,
+        1935
+      ],
+      "cer_acentos_pct": 0.0,
+      "dist_acentos": 0,
+      "cer_ascii_pct": 0.0,
+      "dist_ascii": 0,
+      "chars": 81,
+      "lineas_exactas": 3,
+      "lineas_totales": 3,
+      "acentos_ref": 0,
+      "acentos_salida": 0,
+      "bloques": {
+        "cuerpo": 0.0
+      },
+      "normalizada_acentos": "documento escaneado texto que solo existe como pixeles debe recuperarse con ocr",
+      "ms_mediana": 897.8,
+      "ms_min": 836.6,
+      "ms_max": 1034.7,
+      "n": 9,
+      "determinista": true,
+      "constructor_s": 0.12,
+      "vram_pico_MiB": 0,
+      "vram_delta_MiB": 0
+    }
+  }
+}

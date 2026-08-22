@@ -1,0 +1,124 @@
+{
+  "cabecera": {
+    "etiqueta": "paddleocr_cuda_f3_detS_recM",
+    "motor": "paddleocr",
+    "dispositivo": "cuda",
+    "referencia": "d4",
+    "patron": "*.png",
+    "imgdir": "D:/Work/research/FileX/bench/salidas-corpus-d4/img_f3",
+    "carga_frio_s": 6.44,
+    "vram_base_MiB": 2968,
+    "vram_tras_carga_MiB": 3273,
+    "quietud_pct": 61,
+    "cpu_pico_pct": null,
+    "flag": "SUCIA(pico 61%)",
+    "modelos": {
+      "paddle": "3.2.0",
+      "kwargs": {
+        "device": "gpu:0",
+        "use_doc_orientation_classify": "False",
+        "use_doc_unwarping": "False",
+        "use_textline_orientation": "True",
+        "text_detection_model_name": "PP-OCRv6_small_det",
+        "text_recognition_model_name": "PP-OCRv6_medium_rec"
+      },
+      "params": {
+        "doc_orientation_classify_model_name": "None",
+        "doc_unwarping_model_name": "None",
+        "text_detection_model_name": "PP-OCRv6_small_det",
+        "textline_orientation_model_name": "None",
+        "text_recognition_model_name": "PP-OCRv6_medium_rec"
+      }
+    },
+    "reps": 9,
+    "muestreo_vram": false
+  },
+  "fin": {
+    "evento": "fin",
+    "vram_pico_MiB": 3273,
+    "vram_base_MiB": 2968,
+    "coste_propio_MiB": 305,
+    "pico_util_pct": 0,
+    "muestreo_vram": false
+  },
+  "res": {
+    "ppp100__escaneado_d3": {
+      "referencia": "legado",
+      "cer_acentos_pct": 3.8,
+      "dist_acentos": 3,
+      "cer_ascii_pct": 3.8,
+      "dist_ascii": 3,
+      "chars_ref_acentos": 79,
+      "chars": 81,
+      "lineas_exactas": 2,
+      "lineas_totales": 3,
+      "acentos_ref": 0,
+      "acentos_salida": 0,
+      "bloques": {
+        "cuerpo": 3.8
+      },
+      "normalizada_acentos": "documento escaneado texto que sola existe como pikales debe recuperarse con ocr",
+      "ms_mediana": 71.9,
+      "ms_min": 62.1,
+      "ms_max": 81.2,
+      "n": 9,
+      "determinista": true,
+      "vram_pico_MiB": 3273,
+      "vram_delta_lote_MiB": 0
+    },
+    "ppp200__escaneado_d4": {
+      "referencia": "d4",
+      "cer_acentos_pct": 22.99,
+      "dist_acentos": 137,
+      "cer_ascii_pct": 22.15,
+      "dist_ascii": 132,
+      "chars_ref_acentos": 596,
+      "chars": 530,
+      "lineas_exactas": 5,
+      "lineas_totales": 12,
+      "acentos_ref": 35,
+      "acentos_salida": 18,
+      "bloques": {
+        "titulo": 0.0,
+        "subtitulo": 0.0,
+        "cuerpo": 0.96,
+        "pequeña": 64.32
+      },
+      "normalizada_acentos": "informe de digitalización expediente núm 4 827 2026 archivo histórico el dia 14 de marzo se recibió la solicitud de análisis técnico sobre veintiún volúmenes encuadernados en piel la comisión determinó que la reproducción fotográfica debia realizarse con iluminación difusa y sin contacto seg n la norma une 15 402 para evitar daños añadidos en los pliegos más frágiles del año 1893 ue ba ravvan omagrafca akngkvbaca da legajo 89 reapon5ab da2 da a766 de 09msa2va 9m pra aaiv8 ammvk0m2b06 05dg6 7 8 94ky 12 k 9 m0an avaad19",
+      "ms_mediana": 288.1,
+      "ms_min": 274.6,
+      "ms_max": 426.9,
+      "n": 9,
+      "determinista": true,
+      "vram_pico_MiB": 3273,
+      "vram_delta_lote_MiB": 0
+    },
+    "ppp200__escaneado_d4c": {
+      "referencia": "d4",
+      "cer_acentos_pct": 1.01,
+      "dist_acentos": 6,
+      "cer_ascii_pct": 0.0,
+      "dist_ascii": 0,
+      "chars_ref_acentos": 596,
+      "chars": 606,
+      "lineas_exactas": 9,
+      "lineas_totales": 12,
+      "acentos_ref": 35,
+      "acentos_salida": 29,
+      "bloques": {
+        "titulo": 0.0,
+        "subtitulo": 0.0,
+        "cuerpo": 0.0,
+        "pequeña": 5.63
+      },
+      "normalizada_acentos": "informe de digitalización expediente núm 4 827 2026 archivo histórico el día 14 de marzo se recibió la solicitud de análisis técnico sobre veintiún volúmenes encuadernados en piel la comisión determinó que la reproducción fotográfica debía realizarse con iluminación difusa y sin contacto según la norma une 15 402 para evitar daños añadidos en los pliegos más frágiles del año 1893 quien autorizó la excepción el parrafo tercero señala que la revisión ortografica y linguistica del legajo es responsabilidad del área de conservación preventiva atención los códigos 7 b 9 n y 12 k quedan anulados",
+      "ms_mediana": 314.2,
+      "ms_min": 300.7,
+      "ms_max": 347.7,
+      "n": 9,
+      "determinista": true,
+      "vram_pico_MiB": 3273,
+      "vram_delta_lote_MiB": 0
+    }
+  }
+}

@@ -1,0 +1,122 @@
+[lock] adquirido por G1-fase4-cpugpu
+=== fase 4: Fri Aug 21 08:32:37 HPS 2026 ===
+
+########## rapidocr cuda ##########
+{"etiqueta": "rapidocr_cuda_f4_cuda", "motor": "rapidocr", "dispositivo": "cuda", "referencia": "d4", "patron": "*.png", "imgdir": "D:/Work/research/FileX/bench/salidas-corpus-d4/img_f4", "carga_frio_s": 10.08, "vram_base_MiB": 2925, "vram_tras_carga_MiB": 3158, "quietud_pct": 35, "cpu_pico_pct": -1, "flag": "SUCIA(pico 35%)", "modelos": {"text_det": "ch_PP-OCRv4_det_mobile.onnx", "text_cls": "ch_PP-OCRv4_det_mobile.onnx", "text_rec": "ch_PP-OCRv4_det_mobile.onnx", "pedido": {"Det.engine_type": "onnxruntime", "Rec.engine_type": "onnxruntime", "Det.lang_type": "ch", "Rec.lang_type": "ch", "Det.ocr_version": "PP-OCRv5", "Rec.ocr_version": "PP-OCRv5", "Det.model_type": "mobile", "Rec.model_type": "mobile"}}, "reps": 9, "muestreo_vram": false}
+ppp100__escaneado_d2                     CERac=  0.00%  CERascii=  0.00%  lin=3/3  bloques={'cuerpo': 0.0}     95.1 ms  det=si
+ppp100__escaneado_d3                     CERac= 77.22%  CERascii= 77.22%  lin=0/3  bloques={'cuerpo': 77.22}     75.6 ms  det=si
+ppp150__escaneado_d1                     CERac=  0.00%  CERascii=  0.00%  lin=3/3  bloques={'cuerpo': 0.0}    136.1 ms  det=si
+ppp200__escaneado_d1                     CERac=  0.00%  CERascii=  0.00%  lin=3/3  bloques={'cuerpo': 0.0}    203.8 ms  det=si
+ppp200__escaneado_d2                     CERac=  1.27%  CERascii=  1.27%  lin=2/3  bloques={'cuerpo': 1.27}    192.3 ms  det=si
+ppp200__escaneado_d3                     CERac= 65.82%  CERascii= 65.82%  lin=0/3  bloques={'cuerpo': 65.82}    208.8 ms  det=si
+ppp200__escaneado_d4                     CERac= 41.78%  CERascii= 38.59%  lin=0/12  bloques={'titulo': 4.0, 'subtitulo': 11.63, 'cuerpo': 14.42, 'pequeña': 74.65}    454.3 ms  det=si
+ppp200__patologico_escaneado             CERac=  1.27%  CERascii=  1.27%  lin=2/3  bloques={'cuerpo': 1.27}    433.5 ms  det=si
+ppp280__escaneado_d4                     CERac= 41.95%  CERascii= 38.76%  lin=0/12  bloques={'titulo': 4.0, 'subtitulo': 6.98, 'cuerpo': 16.35, 'pequeña': 75.59}    465.1 ms  det=si
+{"evento": "fin", "vram_pico_MiB": 3158, "vram_base_MiB": 2925, "coste_propio_MiB": 233, "pico_util_pct": 0, "muestreo_vram": false}
+
+########## rapidocr cpu ##########
+{"etiqueta": "rapidocr_cpu_f4_cpu", "motor": "rapidocr", "dispositivo": "cpu", "referencia": "d4", "patron": "*.png", "imgdir": "D:/Work/research/FileX/bench/salidas-corpus-d4/img_f4", "carga_frio_s": 9.87, "vram_base_MiB": 2925, "vram_tras_carga_MiB": 2928, "quietud_pct": 34, "cpu_pico_pct": -1, "flag": "SUCIA(pico 34%)", "modelos": {"text_det": "ch_PP-OCRv4_det_mobile.onnx", "text_cls": "ch_PP-OCRv4_det_mobile.onnx", "text_rec": "ch_PP-OCRv4_det_mobile.onnx", "pedido": {"Det.engine_type": "onnxruntime", "Rec.engine_type": "onnxruntime", "Det.lang_type": "ch", "Rec.lang_type": "ch", "Det.ocr_version": "PP-OCRv5", "Rec.ocr_version": "PP-OCRv5", "Det.model_type": "mobile", "Rec.model_type": "mobile"}}, "reps": 9, "muestreo_vram": false}
+ppp100__escaneado_d2                     CERac=  0.00%  CERascii=  0.00%  lin=3/3  bloques={'cuerpo': 0.0}    262.6 ms  det=si
+ppp100__escaneado_d3                     CERac= 77.22%  CERascii= 77.22%  lin=0/3  bloques={'cuerpo': 77.22}    219.9 ms  det=si
+ppp150__escaneado_d1                     CERac=  0.00%  CERascii=  0.00%  lin=3/3  bloques={'cuerpo': 0.0}    460.6 ms  det=si
+ppp200__escaneado_d1                     CERac=  0.00%  CERascii=  0.00%  lin=3/3  bloques={'cuerpo': 0.0}    750.7 ms  det=si
+ppp200__escaneado_d2                     CERac=  1.27%  CERascii=  1.27%  lin=2/3  bloques={'cuerpo': 1.27}    720.6 ms  det=si
+ppp200__escaneado_d3                     CERac= 70.89%  CERascii= 70.89%  lin=0/3  bloques={'cuerpo': 70.89}    727.6 ms  det=si
+ppp200__escaneado_d4                     CERac= 41.78%  CERascii= 38.59%  lin=0/12  bloques={'titulo': 4.0, 'subtitulo': 11.63, 'cuerpo': 14.42, 'pequeña': 74.65}   1192.0 ms  det=si
+ppp200__patologico_escaneado             CERac=  1.27%  CERascii=  1.27%  lin=2/3  bloques={'cuerpo': 1.27}    995.1 ms  det=si
+ppp280__escaneado_d4                     CERac= 41.95%  CERascii= 38.76%  lin=0/12  bloques={'titulo': 4.0, 'subtitulo': 6.98, 'cuerpo': 16.35, 'pequeña': 75.59}   1338.9 ms  det=si
+{"evento": "fin", "vram_pico_MiB": 2928, "vram_base_MiB": 2925, "coste_propio_MiB": 3, "pico_util_pct": 0, "muestreo_vram": false}
+
+########## paddleocr cuda ##########
+{"etiqueta": "paddleocr_cuda_f4_cuda", "motor": "paddleocr", "dispositivo": "cuda", "referencia": "d4", "patron": "*.png", "imgdir": "D:/Work/research/FileX/bench/salidas-corpus-d4/img_f4", "carga_frio_s": 18.36, "vram_base_MiB": 2907, "vram_tras_carga_MiB": 3176, "quietud_pct": 22, "cpu_pico_pct": -1, "flag": "SUCIA(pico 22%)", "modelos": {"paddle": "3.2.0", "kwargs": {"device": "gpu:0", "use_doc_orientation_classify": "False", "use_doc_unwarping": "False", "use_textline_orientation": "True"}, "params": {"doc_orientation_classify_model_name": "None", "doc_unwarping_model_name": "None", "text_detection_model_name": "PP-OCRv6_medium_det", "textline_orientation_model_name": "None", "text_recognition_model_name": "PP-OCRv6_medium_rec"}}, "reps": 9, "muestreo_vram": false}
+ppp100__escaneado_d2                     CERac=  0.00%  CERascii=  0.00%  lin=3/3  bloques={'cuerpo': 0.0}     98.3 ms  det=si
+ppp100__escaneado_d3                     CERac=  2.53%  CERascii=  2.53%  lin=2/3  bloques={'cuerpo': 2.53}     89.9 ms  det=si
+ppp150__escaneado_d1                     CERac=  0.00%  CERascii=  0.00%  lin=3/3  bloques={'cuerpo': 0.0}    162.0 ms  det=si
+ppp200__escaneado_d1                     CERac=  0.00%  CERascii=  0.00%  lin=3/3  bloques={'cuerpo': 0.0}    255.4 ms  det=si
+ppp200__escaneado_d2                     CERac=  0.00%  CERascii=  0.00%  lin=3/3  bloques={'cuerpo': 0.0}    233.8 ms  det=si
+ppp200__escaneado_d3                     CERac= 75.95%  CERascii= 75.95%  lin=1/3  bloques={'cuerpo': 75.95}    212.8 ms  det=si
+ppp200__escaneado_d4                     CERac= 19.30%  CERascii= 18.46%  lin=4/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 1.6, 'pequeña': 58.69}    393.2 ms  det=si
+ppp200__patologico_escaneado             CERac=  0.00%  CERascii=  0.00%  lin=3/3  bloques={'cuerpo': 0.0}    296.1 ms  det=si
+ppp280__escaneado_d4                     CERac= 36.24%  CERascii= 35.91%  lin=6/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.64, 'pequeña': 75.12}    545.3 ms  det=si
+{"evento": "fin", "vram_pico_MiB": 3176, "vram_base_MiB": 2907, "coste_propio_MiB": 269, "pico_util_pct": 0, "muestreo_vram": false}
+
+########## paddleocr cpu ##########
+{"etiqueta": "paddleocr_cpu_f4_cpu", "motor": "paddleocr", "dispositivo": "cpu", "referencia": "d4", "patron": "*.png", "imgdir": "D:/Work/research/FileX/bench/salidas-corpus-d4/img_f4", "carga_frio_s": 62.96, "vram_base_MiB": 2907, "vram_tras_carga_MiB": 2907, "quietud_pct": 36, "cpu_pico_pct": -1, "flag": "SUCIA(pico 36%)", "modelos": {"paddle": "3.2.0", "kwargs": {"device": "cpu", "use_doc_orientation_classify": "False", "use_doc_unwarping": "False", "use_textline_orientation": "True"}, "params": {"doc_orientation_classify_model_name": "None", "doc_unwarping_model_name": "None", "text_detection_model_name": "PP-OCRv6_medium_det", "textline_orientation_model_name": "None", "text_recognition_model_name": "PP-OCRv6_medium_rec"}}, "reps": 9, "muestreo_vram": false}
+ppp100__escaneado_d2                     CERac=  0.00%  CERascii=  0.00%  lin=3/3  bloques={'cuerpo': 0.0}   1017.5 ms  det=si
+ppp100__escaneado_d3                     CERac=  2.53%  CERascii=  2.53%  lin=2/3  bloques={'cuerpo': 2.53}    879.6 ms  det=si
+ppp150__escaneado_d1                     CERac=  0.00%  CERascii=  0.00%  lin=3/3  bloques={'cuerpo': 0.0}   1609.1 ms  det=si
+ppp200__escaneado_d1                     CERac=  0.00%  CERascii=  0.00%  lin=3/3  bloques={'cuerpo': 0.0}   2727.5 ms  det=si
+ppp200__escaneado_d2                     CERac=  0.00%  CERascii=  0.00%  lin=3/3  bloques={'cuerpo': 0.0}   2953.5 ms  det=si
+ppp200__escaneado_d3                     CERac= 75.95%  CERascii= 75.95%  lin=1/3  bloques={'cuerpo': 75.95}   2539.9 ms  det=si
+ppp200__escaneado_d4                     CERac= 19.63%  CERascii= 18.79%  lin=4/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 1.6, 'pequeña': 60.09}   5418.1 ms  det=si
+ppp200__patologico_escaneado             CERac=  0.00%  CERascii=  0.00%  lin=3/3  bloques={'cuerpo': 0.0}   3112.9 ms  det=si
+ppp280__escaneado_d4                     CERac= 36.24%  CERascii= 35.91%  lin=6/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.64, 'pequeña': 75.12}   5809.0 ms  det=si
+{"evento": "fin", "vram_pico_MiB": 2907, "vram_base_MiB": 2907, "coste_propio_MiB": 0, "pico_util_pct": 0, "muestreo_vram": false}
+
+########## easyocr cuda (subconjunto d3/d4) ##########
+{"etiqueta": "easyocr_cuda_f4_cuda", "motor": "easyocr", "dispositivo": "cuda", "referencia": "d4", "patron": "ppp?00__escaneado_d[34].png", "imgdir": "D:/Work/research/FileX/bench/salidas-corpus-d4/img_f4", "carga_frio_s": 5.91, "vram_base_MiB": 2900, "vram_tras_carga_MiB": 3146, "quietud_pct": 54, "cpu_pico_pct": -1, "flag": "SUCIA(pico 54%)", "modelos": {"torch": "2.6.0+cu124", "torch_cuda": "True"}, "reps": 9, "muestreo_vram": false}
+ppp100__escaneado_d3                     CERac= 54.43%  CERascii= 54.43%  lin=1/3  bloques={'cuerpo': 54.43}    292.0 ms  det=si
+ppp200__escaneado_d3                     CERac= 59.49%  CERascii= 59.49%  lin=1/3  bloques={'cuerpo': 59.49}    537.7 ms  det=si
+ppp200__escaneado_d4                     CERac= 61.41%  CERascii= 59.56%  lin=1/12  bloques={'titulo': 0.0, 'subtitulo': 53.49, 'cuerpo': 59.94, 'pequeña': 75.12}   1139.1 ms  det=si
+{"evento": "fin", "vram_pico_MiB": 3146, "vram_base_MiB": 2900, "coste_propio_MiB": 246, "pico_util_pct": 0, "muestreo_vram": false}
+
+########## easyocr cpu (subconjunto d3/d4) ##########
+{"etiqueta": "easyocr_cpu_f4_cpu", "motor": "easyocr", "dispositivo": "cpu", "referencia": "d4", "patron": "ppp?00__escaneado_d[34].png", "imgdir": "D:/Work/research/FileX/bench/salidas-corpus-d4/img_f4", "carga_frio_s": 5.39, "vram_base_MiB": 2900, "vram_tras_carga_MiB": 2900, "quietud_pct": 31, "cpu_pico_pct": -1, "flag": "SUCIA(pico 31%)", "modelos": {"torch": "2.6.0+cu124", "torch_cuda": "True"}, "reps": 9, "muestreo_vram": false}
+ppp100__escaneado_d3                     CERac= 54.43%  CERascii= 54.43%  lin=1/3  bloques={'cuerpo': 54.43}   1908.3 ms  det=si
+ppp200__escaneado_d3                     CERac= 56.96%  CERascii= 56.96%  lin=1/3  bloques={'cuerpo': 56.96}   6474.2 ms  det=si
+ppp200__escaneado_d4                     CERac= 62.08%  CERascii= 60.23%  lin=1/12  bloques={'titulo': 0.0, 'subtitulo': 53.49, 'cuerpo': 60.26, 'pequeña': 76.06}   7676.1 ms  det=si
+{"evento": "fin", "vram_pico_MiB": 2900, "vram_base_MiB": 2900, "coste_propio_MiB": 0, "pico_util_pct": 0, "muestreo_vram": false}
+
+########## docling cuda backend=torch ##########
+{"etiqueta": "docling_torch_cuda_f4_cuda_torch", "dispositivo": "cuda", "backend": "torch", "lang": "english", "docs": ["patologico_escaneado", "escaneado_d1", "escaneado_d2", "escaneado_d3", "escaneado_d4"], "modo_ppp": "nativo", "reps": 9, "vram_base_MiB": 2983, "quietud_pct": 30, "flag": "SUCIA(pico 30%)", "torch": "2.6.0+cu124", "torch_cuda": true, "modelo": {"lang_pedido": "english", "lang_resuelto": "en", "ppocr_version": "PP-OCRv6", "model_type_v6": "small", "model_type_v4v5": "mobile"}, "muestreo_vram": false}
+nativo__patologico_escaneado             nat=200.0 escala=2.778 (~200ppp) px=(1294, 1792)  CERac=  0.00%  CERascii=  0.00%  lin=3/3  bloques={'cuerpo': 0.0}     736.0 ms
+nativo__escaneado_d1                     nat=150.0 escala=2.083 (~150ppp) px=(970, 1300)  CERac=  0.00%  CERascii=  0.00%  lin=3/3  bloques={'cuerpo': 0.0}     474.7 ms
+nativo__escaneado_d2                     nat=100.0 escala=1.389 (~100ppp) px=(647, 850)  CERac=  0.00%  CERascii=  0.00%  lin=3/3  bloques={'cuerpo': 0.0}     399.3 ms
+nativo__escaneado_d3                     nat=100.0 escala=1.389 (~100ppp) px=(647, 850)  CERac= 75.95%  CERascii= 75.95%  lin=1/3  bloques={'cuerpo': 75.95}     370.6 ms
+nativo__escaneado_d4                     nat=200.0 escala=2.778 (~200ppp) px=(1294, 1716)  CERac= 36.91%  CERascii= 36.24%  lin=2/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 6.09, 'pequeña': 75.12}     680.9 ms
+{"evento": "fin", "vram_pico_MiB": 0, "vram_base_MiB": 2983, "coste_propio_MiB": -2983, "pico_util_pct": 0, "sonda_activa": true, "muestreo_vram": false}
+
+########## docling cpu backend=torch ##########
+{"etiqueta": "docling_torch_cpu_f4_cpu_torch", "dispositivo": "cpu", "backend": "torch", "lang": "english", "docs": ["patologico_escaneado", "escaneado_d1", "escaneado_d2", "escaneado_d3", "escaneado_d4"], "modo_ppp": "nativo", "reps": 9, "vram_base_MiB": 2972, "quietud_pct": 33, "flag": "SUCIA(pico 33%)", "torch": "2.6.0+cu124", "torch_cuda": true, "modelo": {"lang_pedido": "english", "lang_resuelto": "en", "ppocr_version": "PP-OCRv6", "model_type_v6": "small", "model_type_v4v5": "mobile"}, "muestreo_vram": false}
+nativo__patologico_escaneado             nat=200.0 escala=2.778 (~200ppp) px=(1294, 1792)  CERac=  0.00%  CERascii=  0.00%  lin=3/3  bloques={'cuerpo': 0.0}    2167.9 ms
+nativo__escaneado_d1                     nat=150.0 escala=2.083 (~150ppp) px=(970, 1300)  CERac=  0.00%  CERascii=  0.00%  lin=3/3  bloques={'cuerpo': 0.0}    1468.7 ms
+nativo__escaneado_d2                     nat=100.0 escala=1.389 (~100ppp) px=(647, 850)  CERac=  0.00%  CERascii=  0.00%  lin=3/3  bloques={'cuerpo': 0.0}    1135.8 ms
+nativo__escaneado_d3                     nat=100.0 escala=1.389 (~100ppp) px=(647, 850)  CERac= 75.95%  CERascii= 75.95%  lin=1/3  bloques={'cuerpo': 75.95}    1075.7 ms
+nativo__escaneado_d4                     nat=200.0 escala=2.778 (~200ppp) px=(1294, 1716)  CERac= 36.91%  CERascii= 36.24%  lin=2/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 6.09, 'pequeña': 75.12}    2237.9 ms
+{"evento": "fin", "vram_pico_MiB": 0, "vram_base_MiB": 2972, "coste_propio_MiB": -2972, "pico_util_pct": 0, "sonda_activa": true, "muestreo_vram": false}
+
+########## docling cpu backend=onnxruntime ##########
+{"etiqueta": "docling_onnxruntime_cpu_f4_cpu_onnxruntime", "dispositivo": "cpu", "backend": "onnxruntime", "lang": "english", "docs": ["patologico_escaneado", "escaneado_d1", "escaneado_d2", "escaneado_d3", "escaneado_d4"], "modo_ppp": "nativo", "reps": 9, "vram_base_MiB": 2951, "quietud_pct": 55, "flag": "SUCIA(pico 55%)", "torch": "2.6.0+cu124", "torch_cuda": true, "modelo": {"lang_pedido": "english", "lang_resuelto": "en", "ppocr_version": "PP-OCRv6", "model_type_v6": "small", "model_type_v4v5": "mobile"}, "muestreo_vram": false}
+nativo__patologico_escaneado             nat=200.0 escala=2.778 (~200ppp) px=(1294, 1792)  CERac=  0.00%  CERascii=  0.00%  lin=3/3  bloques={'cuerpo': 0.0}    1735.3 ms
+nativo__escaneado_d1                     nat=150.0 escala=2.083 (~150ppp) px=(970, 1300)  CERac=  0.00%  CERascii=  0.00%  lin=3/3  bloques={'cuerpo': 0.0}    1258.5 ms
+nativo__escaneado_d2                     nat=100.0 escala=1.389 (~100ppp) px=(647, 850)  CERac=  0.00%  CERascii=  0.00%  lin=3/3  bloques={'cuerpo': 0.0}    1056.7 ms
+nativo__escaneado_d3                     nat=100.0 escala=1.389 (~100ppp) px=(647, 850)  CERac= 75.95%  CERascii= 75.95%  lin=1/3  bloques={'cuerpo': 75.95}    1063.2 ms
+nativo__escaneado_d4                     nat=200.0 escala=2.778 (~200ppp) px=(1294, 1716)  CERac= 36.91%  CERascii= 36.24%  lin=2/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 6.09, 'pequeña': 75.12}    1962.1 ms
+{"evento": "fin", "vram_pico_MiB": 0, "vram_base_MiB": 2951, "coste_propio_MiB": -2951, "pico_util_pct": 0, "sonda_activa": true, "muestreo_vram": false}
+
+########## rapidocr CORREGIDO (v6 small + norm PaddleX) cuda ##########
+{"etiqueta": "rapidocr_cuda_f4corr_cuda", "motor": "rapidocr", "dispositivo": "cuda", "referencia": "d4", "patron": "*.png", "imgdir": "D:/Work/research/FileX/bench/salidas-corpus-d4/img_f4", "carga_frio_s": 3.68, "vram_base_MiB": 2950, "vram_tras_carga_MiB": 3229, "quietud_pct": 31, "cpu_pico_pct": -1, "flag": "SUCIA(pico 31%)", "modelos": {"text_det": "ch_PP-OCRv4_det_mobile.onnx", "text_cls": "ch_PP-OCRv4_det_mobile.onnx", "text_rec": "ch_PP-OCRv4_det_mobile.onnx", "pedido": {"Det.engine_type": "onnxruntime", "Rec.engine_type": "onnxruntime", "Det.lang_type": "ch", "Rec.lang_type": "ch", "Det.ocr_version": "PP-OCRv6", "Rec.ocr_version": "PP-OCRv6", "Det.model_type": "small", "Rec.model_type": "small", "Global.model_root_dir": "D:/Work/research/FileX/bench/salidas-corpus-d4/modelos", "Det.mean": "[0.485, 0.456, 0.406]", "Det.std": "[0.229, 0.224, 0.225]", "Det.thresh": "0.2", "Det.box_thresh": "0.45", "Det.unclip_ratio": "1.4", "Det.max_candidates": "3000"}}, "reps": 9, "muestreo_vram": false}
+ppp100__escaneado_d2                     CERac=  0.00%  CERascii=  0.00%  lin=3/3  bloques={'cuerpo': 0.0}     78.1 ms  det=si
+ppp100__escaneado_d3                     CERac=  3.80%  CERascii=  3.80%  lin=2/3  bloques={'cuerpo': 3.8}     82.2 ms  det=si
+ppp150__escaneado_d1                     CERac=  0.00%  CERascii=  0.00%  lin=3/3  bloques={'cuerpo': 0.0}    124.6 ms  det=si
+ppp200__escaneado_d1                     CERac=  0.00%  CERascii=  0.00%  lin=3/3  bloques={'cuerpo': 0.0}    193.3 ms  det=si
+ppp200__escaneado_d2                     CERac=  0.00%  CERascii=  0.00%  lin=3/3  bloques={'cuerpo': 0.0}    177.4 ms  det=si
+ppp200__escaneado_d3                     CERac= 53.16%  CERascii= 53.16%  lin=1/3  bloques={'cuerpo': 53.16}    174.7 ms  det=si
+ppp200__escaneado_d4                     CERac= 18.62%  CERascii= 17.62%  lin=3/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 2.56, 'pequeña': 54.93}    339.6 ms  det=si
+ppp200__patologico_escaneado             CERac=  0.00%  CERascii=  0.00%  lin=3/3  bloques={'cuerpo': 0.0}    445.8 ms  det=si
+ppp280__escaneado_d4                     CERac= 28.86%  CERascii= 27.68%  lin=2/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 2.24, 'pequeña': 73.24}    534.6 ms  det=si
+{"evento": "fin", "vram_pico_MiB": 3229, "vram_base_MiB": 2950, "coste_propio_MiB": 279, "pico_util_pct": 0, "muestreo_vram": false}
+
+########## rapidocr CORREGIDO (v6 small + norm PaddleX) cpu ##########
+{"etiqueta": "rapidocr_cpu_f4corr_cpu", "motor": "rapidocr", "dispositivo": "cpu", "referencia": "d4", "patron": "*.png", "imgdir": "D:/Work/research/FileX/bench/salidas-corpus-d4/img_f4", "carga_frio_s": 3.35, "vram_base_MiB": 2969, "vram_tras_carga_MiB": 3013, "quietud_pct": 33, "cpu_pico_pct": -1, "flag": "SUCIA(pico 33%)", "modelos": {"text_det": "ch_PP-OCRv4_det_mobile.onnx", "text_cls": "ch_PP-OCRv4_det_mobile.onnx", "text_rec": "ch_PP-OCRv4_det_mobile.onnx", "pedido": {"Det.engine_type": "onnxruntime", "Rec.engine_type": "onnxruntime", "Det.lang_type": "ch", "Rec.lang_type": "ch", "Det.ocr_version": "PP-OCRv6", "Rec.ocr_version": "PP-OCRv6", "Det.model_type": "small", "Rec.model_type": "small", "Global.model_root_dir": "D:/Work/research/FileX/bench/salidas-corpus-d4/modelos", "Det.mean": "[0.485, 0.456, 0.406]", "Det.std": "[0.229, 0.224, 0.225]", "Det.thresh": "0.2", "Det.box_thresh": "0.45", "Det.unclip_ratio": "1.4", "Det.max_candidates": "3000"}}, "reps": 9, "muestreo_vram": false}
+ppp100__escaneado_d2                     CERac=  0.00%  CERascii=  0.00%  lin=3/3  bloques={'cuerpo': 0.0}    323.9 ms  det=si
+ppp100__escaneado_d3                     CERac=  3.80%  CERascii=  3.80%  lin=2/3  bloques={'cuerpo': 3.8}    380.4 ms  det=si
+ppp150__escaneado_d1                     CERac=  0.00%  CERascii=  0.00%  lin=3/3  bloques={'cuerpo': 0.0}    531.6 ms  det=si
+ppp200__escaneado_d1                     CERac=  0.00%  CERascii=  0.00%  lin=3/3  bloques={'cuerpo': 0.0}    800.9 ms  det=si
+ppp200__escaneado_d2                     CERac=  0.00%  CERascii=  0.00%  lin=3/3  bloques={'cuerpo': 0.0}    772.3 ms  det=si
+ppp200__escaneado_d3                     CERac= 53.16%  CERascii= 53.16%  lin=1/3  bloques={'cuerpo': 53.16}    723.5 ms  det=si
+ppp200__escaneado_d4                     CERac= 18.62%  CERascii= 17.62%  lin=3/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 2.56, 'pequeña': 57.28}   1177.6 ms  det=si
+ppp200__patologico_escaneado             CERac=  0.00%  CERascii=  0.00%  lin=3/3  bloques={'cuerpo': 0.0}   1024.3 ms  det=si
+ppp280__escaneado_d4                     CERac= 28.86%  CERascii= 27.68%  lin=2/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 2.24, 'pequeña': 73.24}   1335.4 ms  det=si
+{"evento": "fin", "vram_pico_MiB": 3013, "vram_base_MiB": 2969, "coste_propio_MiB": 44, "pico_util_pct": 0, "muestreo_vram": false}
+=== fin fase 4: Fri Aug 21 08:52:55 HPS 2026 ===

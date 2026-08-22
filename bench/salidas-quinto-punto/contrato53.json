@@ -1,0 +1,138 @@
+[
+ {
+  "motor": "proceso",
+  "censo": "sin censo",
+  "cuenta": {
+   "ok": 0,
+   "aviso": 3,
+   "ok_parcial": 49,
+   "fallo": 1
+  },
+  "n_avisos_o_fallos": 1,
+  "detalle": [
+   {
+    "salida": "tipico_mp4-audio.flac",
+    "veredicto": "aviso",
+    "hallazgos": [
+     {
+      "punto": 4,
+      "regla": "A6",
+      "severidad": "aviso",
+      "mensaje": "profundidad de bits INFLADA sin informacion nueva",
+      "esperado": 16,
+      "obtenido": 24
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "motor": "proceso",
+  "censo": "censo vacio (R18 ideal)",
+  "cuenta": {
+   "ok": 49,
+   "aviso": 3,
+   "ok_parcial": 0,
+   "fallo": 1
+  },
+  "n_avisos_o_fallos": 1,
+  "detalle": [
+   {
+    "salida": "tipico_mp4-audio.flac",
+    "veredicto": "aviso",
+    "hallazgos": [
+     {
+      "punto": 4,
+      "regla": "A6",
+      "severidad": "aviso",
+      "mensaje": "profundidad de bits INFLADA sin informacion nueva",
+      "esperado": 16,
+      "obtenido": 24
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "motor": "subproceso",
+  "censo": "sin censo",
+  "cuenta": {
+   "ok": 0,
+   "aviso": 4,
+   "ok_parcial": 48,
+   "fallo": 1
+  },
+  "n_avisos_o_fallos": 2,
+  "detalle": [
+   {
+    "salida": "tipico_mp4-audio.flac",
+    "veredicto": "aviso",
+    "hallazgos": [
+     {
+      "punto": 4,
+      "regla": "A6",
+      "severidad": "aviso",
+      "mensaje": "profundidad de bits INFLADA sin informacion nueva",
+      "esperado": 8,
+      "obtenido": 24
+     }
+    ]
+   },
+   {
+    "salida": "trivial_wav-to.m4a",
+    "veredicto": "aviso",
+    "hallazgos": [
+     {
+      "punto": 4,
+      "regla": "-",
+      "severidad": "aviso",
+      "mensaje": "bitrate lejos del pedido",
+      "esperado": 192000,
+      "obtenido": 128833
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "motor": "subproceso",
+  "censo": "censo vacio (R18 ideal)",
+  "cuenta": {
+   "ok": 48,
+   "aviso": 4,
+   "ok_parcial": 0,
+   "fallo": 1
+  },
+  "n_avisos_o_fallos": 2,
+  "detalle": [
+   {
+    "salida": "tipico_mp4-audio.flac",
+    "veredicto": "aviso",
+    "hallazgos": [
+     {
+      "punto": 4,
+      "regla": "A6",
+      "severidad": "aviso",
+      "mensaje": "profundidad de bits INFLADA sin informacion nueva",
+      "esperado": 8,
+      "obtenido": 24
+     }
+    ]
+   },
+   {
+    "salida": "trivial_wav-to.m4a",
+    "veredicto": "aviso",
+    "hallazgos": [
+     {
+      "punto": 4,
+      "regla": "-",
+      "severidad": "aviso",
+      "mensaje": "bitrate lejos del pedido",
+      "esperado": 192000,
+      "obtenido": 128833
+     }
+    ]
+   }
+  ]
+ }
+]

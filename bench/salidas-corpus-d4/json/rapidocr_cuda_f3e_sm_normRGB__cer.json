@@ -1,0 +1,124 @@
+{
+  "cabecera": {
+    "etiqueta": "rapidocr_cuda_f3e_sm_normRGB",
+    "motor": "rapidocr",
+    "dispositivo": "cuda",
+    "referencia": "d4",
+    "patron": "*.png",
+    "imgdir": "D:/Work/research/FileX/bench/salidas-corpus-d4/img_f3",
+    "carga_frio_s": 3.75,
+    "vram_base_MiB": 2948,
+    "vram_tras_carga_MiB": 3209,
+    "quietud_pct": 54,
+    "cpu_pico_pct": null,
+    "flag": "SUCIA(pico 54%)",
+    "modelos": {
+      "text_det": "ch_PP-OCRv4_det_mobile.onnx",
+      "text_cls": "ch_PP-OCRv4_det_mobile.onnx",
+      "text_rec": "ch_PP-OCRv4_det_mobile.onnx",
+      "pedido": {
+        "Det.engine_type": "onnxruntime",
+        "Rec.engine_type": "onnxruntime",
+        "Det.lang_type": "ch",
+        "Rec.lang_type": "ch",
+        "Det.ocr_version": "PP-OCRv6",
+        "Rec.ocr_version": "PP-OCRv6",
+        "Det.model_type": "small",
+        "Rec.model_type": "small",
+        "Global.model_root_dir": "D:/Work/research/FileX/bench/salidas-corpus-d4/modelos",
+        "Det.mean": "[0.485, 0.456, 0.406]",
+        "Det.std": "[0.229, 0.224, 0.225]"
+      }
+    },
+    "reps": 9,
+    "muestreo_vram": false
+  },
+  "fin": {
+    "evento": "fin",
+    "vram_pico_MiB": 3209,
+    "vram_base_MiB": 2948,
+    "coste_propio_MiB": 261,
+    "pico_util_pct": 0,
+    "muestreo_vram": false
+  },
+  "res": {
+    "ppp100__escaneado_d3": {
+      "referencia": "legado",
+      "cer_acentos_pct": 11.39,
+      "dist_acentos": 9,
+      "cer_ascii_pct": 11.39,
+      "dist_ascii": 9,
+      "chars_ref_acentos": 79,
+      "chars": 81,
+      "lineas_exactas": 1,
+      "lineas_totales": 3,
+      "acentos_ref": 0,
+      "acentos_salida": 0,
+      "bloques": {
+        "cuerpo": 11.39
+      },
+      "normalizada_acentos": "documento escaneado testo que soko existe cavma pivales debe recuperame con ocr",
+      "ms_mediana": 81.7,
+      "ms_min": 73.0,
+      "ms_max": 94.3,
+      "n": 9,
+      "determinista": true,
+      "vram_pico_MiB": 3209,
+      "vram_delta_lote_MiB": 0
+    },
+    "ppp200__escaneado_d4": {
+      "referencia": "d4",
+      "cer_acentos_pct": 20.13,
+      "dist_acentos": 120,
+      "cer_ascii_pct": 19.3,
+      "dist_ascii": 115,
+      "chars_ref_acentos": 596,
+      "chars": 528,
+      "lineas_exactas": 3,
+      "lineas_totales": 12,
+      "acentos_ref": 35,
+      "acentos_salida": 18,
+      "bloques": {
+        "titulo": 0.0,
+        "subtitulo": 0.0,
+        "cuerpo": 1.92,
+        "pequeña": 58.22
+      },
+      "normalizada_acentos": "informe de digitalización expediente núm 4 827 2026 archivo histórico el dia 14 de marzo se recibió la solicitud de análisis técnico sobre veintiún volúmenes encuaderados en piel la comisión determinó que la reproducción fotográfica debia realizarse con iluminación difusa y sin contacto segón la norma une 15 402 para evitar daños añadidos en los pliegos más fragiles del año 1893 que ka vavaan o00gafca a knglvmca dol igap ae resonsacbdad del area de conservave preveriva avckbv2 06 c5dga4 7 6 9 4 y 12 k queaa0 ardada",
+      "ms_mediana": 351.8,
+      "ms_min": 328.4,
+      "ms_max": 391.2,
+      "n": 9,
+      "determinista": true,
+      "vram_pico_MiB": 3209,
+      "vram_delta_lote_MiB": 0
+    },
+    "ppp200__escaneado_d4c": {
+      "referencia": "d4",
+      "cer_acentos_pct": 1.01,
+      "dist_acentos": 6,
+      "cer_ascii_pct": 0.34,
+      "dist_ascii": 2,
+      "chars_ref_acentos": 596,
+      "chars": 608,
+      "lineas_exactas": 9,
+      "lineas_totales": 12,
+      "acentos_ref": 35,
+      "acentos_salida": 31,
+      "bloques": {
+        "titulo": 0.0,
+        "subtitulo": 0.0,
+        "cuerpo": 0.0,
+        "pequeña": 6.1
+      },
+      "normalizada_acentos": "informe de digitalización expediente núm 4 827 2026 archivo histórico el día 14 de marzo se recibió la solicitud de análisis técnico sobre veintiún volúmenes encuadernados en piel la comisión determinó que la reproducción fotográfica debía realizarse con iluminación difusa y sin contacto según la norma une 15 402 para evitar daños añadidos en los pliegos más frágiles del año 1893 quien autorizó la excepción el párrafo tercero señala que la revisión ortográfica y linguistica del legajo es responsabilidad del área de conservación preventiva atenciónt los códigos 7 8 9 n y 12 k quedan anulados",
+      "ms_mediana": 392.8,
+      "ms_min": 352.8,
+      "ms_max": 405.2,
+      "n": 9,
+      "determinista": true,
+      "vram_pico_MiB": 3209,
+      "vram_delta_lote_MiB": 0
+    }
+  }
+}

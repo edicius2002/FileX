@@ -1,0 +1,23 @@
+[32m[INFO] 2026-08-21 07:42:30,844 [RapidOCR] base.py:23: Using engine_name: onnxruntime[0m
+[32m[INFO] 2026-08-21 07:42:31,260 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_PP-OCRv5_det_mobile.onnx[0m
+[32m[INFO] 2026-08-21 07:42:31,260 [RapidOCR] main.py:63: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_PP-OCRv5_det_mobile.onnx[0m
+[32m[INFO] 2026-08-21 07:42:31,533 [RapidOCR] base.py:23: Using engine_name: onnxruntime[0m
+[32m[INFO] 2026-08-21 07:42:31,534 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ppocr_mobile_v2.0_cls_mobile.onnx[0m
+[32m[INFO] 2026-08-21 07:42:31,534 [RapidOCR] main.py:63: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ppocr_mobile_v2.0_cls_mobile.onnx[0m
+[32m[INFO] 2026-08-21 07:42:31,589 [RapidOCR] base.py:23: Using engine_name: onnxruntime[0m
+[32m[INFO] 2026-08-21 07:42:31,602 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_PP-OCRv5_rec_mobile.onnx[0m
+[32m[INFO] 2026-08-21 07:42:31,602 [RapidOCR] main.py:63: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_PP-OCRv5_rec_mobile.onnx[0m
+{"etiqueta": "rapidocr_cuda_criba", "motor": "rapidocr", "dispositivo": "cuda", "referencia": "d4", "patron": "*.png", "imgdir": "D:\\Work\\research\\FileX\\bench\\salidas-corpus-d4\\img", "carga_frio_s": 3.65, "vram_base_MiB": 3030, "vram_tras_carga_MiB": 3200, "quietud_pct": 36, "flag": "SUCIA(pico 36%)", "modelos": {"text_det": "el.ttf', 'SHA256': '892e6c81071fc85923f8d0ff925edab6049dd4495a2fdedffddc04753bf348b3'}}}", "text_cls": "el.ttf', 'SHA256': '892e6c81071fc85923f8d0ff925edab6049dd4495a2fdedffddc04753bf348b3'}}}", "text_rec": "el.ttf', 'SHA256': '892e6c81071fc85923f8d0ff925edab6049dd4495a2fdedffddc04753bf348b3'}}}", "pedido": {"ver": "PP-OCRv5", "tipo": "mobile", "langdet": "ch", "langrec": "ch"}}, "reps": 1, "muestreo_vram": false}
+ppp200__abl_d4d_ang0                     CERac= 40.60%  CERascii= 37.08%  lin=0/12  bloques={'titulo': 4.0, 'subtitulo': 6.98, 'cuerpo': 10.9, 'pequeña': 76.06}    449.4 ms  det=si
+ppp200__abl_d4d_blur12                   CERac= 19.30%  CERascii= 14.93%  lin=0/12  bloques={'titulo': 4.0, 'subtitulo': 4.65, 'cuerpo': 6.73, 'pequeña': 69.95}    317.3 ms  det=si
+ppp200__abl_d4d_jq45                     CERac= 41.95%  CERascii= 39.09%  lin=0/12  bloques={'titulo': 4.0, 'subtitulo': 6.98, 'cuerpo': 16.67, 'pequeña': 77.46}    436.9 ms  det=si
+ppp200__abl_d4d_niv20                    CERac= 31.38%  CERascii= 28.19%  lin=0/12  bloques={'titulo': 4.0, 'subtitulo': 2.33, 'cuerpo': 5.45, 'pequeña': 75.12}    311.9 ms  det=si
+ppp200__abl_d4d_rui35                    CERac= 35.91%  CERascii= 32.55%  lin=0/12  bloques={'titulo': 4.0, 'subtitulo': 4.65, 'cuerpo': 6.09, 'pequeña': 75.59}    426.5 ms  det=si
+ppp200__d4_limpio                        CERac=  1.17%  CERascii=  0.50%  lin=7/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.64, 'pequeña': 2.35}    301.6 ms  det=si
+ppp200__escaneado_d4a                    CERac=  1.51%  CERascii=  0.67%  lin=7/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.64, 'pequeña': 6.1}    320.6 ms  det=si
+ppp200__escaneado_d4b                    CERac=  2.18%  CERascii=  0.34%  lin=6/12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.64, 'pequeña': 8.45}    296.1 ms  det=si
+ppp200__escaneado_d4c                    CERac= 15.60%  CERascii= 11.91%  lin=0/12  bloques={'titulo': 4.0, 'subtitulo': 2.33, 'cuerpo': 4.17, 'pequeña': 51.17}    290.7 ms  det=si
+ppp200__escaneado_d4d                    CERac= 41.78%  CERascii= 38.59%  lin=0/12  bloques={'titulo': 4.0, 'subtitulo': 11.63, 'cuerpo': 14.42, 'pequeña': 74.65}    421.3 ms  det=si
+ppp200__escaneado_d4e                    CERac= 92.45%  CERascii= 92.11%  lin=0/12  bloques={'titulo': 4.0, 'subtitulo': 65.12, 'cuerpo': 88.78, 'pequeña': 85.92}    186.3 ms  det=si
+ppp240__escaneado_d4f                    CERac=  6.04%  CERascii=  2.18%  lin=0/12  bloques={'titulo': 4.0, 'subtitulo': 2.33, 'cuerpo': 2.88, 'pequeña': 15.49}    397.5 ms  det=si
+{"evento": "fin", "vram_pico_MiB": 3200, "vram_base_MiB": 3030, "coste_propio_MiB": 170, "pico_util_pct": 0, "muestreo_vram": false}

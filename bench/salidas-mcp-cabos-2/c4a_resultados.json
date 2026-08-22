@@ -1,0 +1,229 @@
+{
+  "timeout_por_llamada_s": 18.0,
+  "n": 21,
+  "casos": [
+    {
+      "caso": "G1_set_video_bitrate",
+      "herramienta": "set_video_bitrate",
+      "salida_preexistente": true,
+      "bytes_preexistentes": 152,
+      "ms_llamada": 18018.1,
+      "veredicto": "DEADLOCK (sin respuesta en 18.0s)",
+      "ffmpeg_huerfanos": [],
+      "grupo": "G1"
+    },
+    {
+      "caso": "G1_set_video_frame_rate",
+      "herramienta": "set_video_frame_rate",
+      "salida_preexistente": true,
+      "bytes_preexistentes": 152,
+      "ms_llamada": 18181.8,
+      "veredicto": "DEADLOCK (sin respuesta en 18.0s)",
+      "ffmpeg_huerfanos": [],
+      "grupo": "G1"
+    },
+    {
+      "caso": "G1_set_video_audio_track_codec",
+      "herramienta": "set_video_audio_track_codec",
+      "salida_preexistente": true,
+      "bytes_preexistentes": 152,
+      "ms_llamada": 18167.7,
+      "veredicto": "DEADLOCK (sin respuesta en 18.0s)",
+      "ffmpeg_huerfanos": [
+        19760
+      ],
+      "grupo": "G1"
+    },
+    {
+      "caso": "G1_set_video_audio_track_bitrate",
+      "herramienta": "set_video_audio_track_bitrate",
+      "salida_preexistente": true,
+      "bytes_preexistentes": 152,
+      "ms_llamada": 18159.0,
+      "veredicto": "DEADLOCK (sin respuesta en 18.0s)",
+      "ffmpeg_huerfanos": [],
+      "grupo": "G1"
+    },
+    {
+      "caso": "G1_set_video_audio_track_sample_rate",
+      "herramienta": "set_video_audio_track_sample_rate",
+      "salida_preexistente": true,
+      "bytes_preexistentes": 152,
+      "ms_llamada": 18239.7,
+      "veredicto": "DEADLOCK (sin respuesta en 18.0s)",
+      "ffmpeg_huerfanos": [],
+      "grupo": "G1"
+    },
+    {
+      "caso": "G1_set_video_audio_track_channels",
+      "herramienta": "set_video_audio_track_channels",
+      "salida_preexistente": true,
+      "bytes_preexistentes": 152,
+      "ms_llamada": 18031.0,
+      "veredicto": "DEADLOCK (sin respuesta en 18.0s)",
+      "ffmpeg_huerfanos": [],
+      "grupo": "G1"
+    },
+    {
+      "caso": "G2_convert_video_format",
+      "herramienta": "convert_video_format",
+      "salida_preexistente": true,
+      "bytes_preexistentes": 152,
+      "ms_llamada": 94.8,
+      "isError": false,
+      "respuesta": "Error. Primary method failed: ffmpeg version N-121159-g0bd5a7d371-20250921 Copyright (c) 2000-2025 the FFmpeg developers\r\n  built with gcc 15.2.0 (crosstool-NG 1.28.0.1_403899e)\r\n  configuration: --prefix=/ffbuild/prefix --pkg-config-flags=--static --pkg-config=pkg-config --cross-prefix=x86_64-w64-m",
+      "veredicto": "RESPONDE(error-ff)",
+      "bytes_salida": 152,
+      "ffmpeg_huerfanos": [],
+      "grupo": "G2"
+    },
+    {
+      "caso": "G2_change_aspect_ratio",
+      "herramienta": "change_aspect_ratio",
+      "salida_preexistente": true,
+      "bytes_preexistentes": 152,
+      "ms_llamada": 18242.5,
+      "veredicto": "DEADLOCK (sin respuesta en 18.0s)",
+      "ffmpeg_huerfanos": [],
+      "grupo": "G2"
+    },
+    {
+      "caso": "G2_change_video_speed",
+      "herramienta": "change_video_speed",
+      "salida_preexistente": true,
+      "bytes_preexistentes": 152,
+      "ms_llamada": 18222.1,
+      "veredicto": "DEADLOCK (sin respuesta en 18.0s)",
+      "ffmpeg_huerfanos": [],
+      "grupo": "G2"
+    },
+    {
+      "caso": "G2_add_text_overlay",
+      "herramienta": "add_text_overlay",
+      "salida_preexistente": true,
+      "bytes_preexistentes": 152,
+      "ms_llamada": 18180.1,
+      "veredicto": "DEADLOCK (sin respuesta en 18.0s)",
+      "ffmpeg_huerfanos": [],
+      "grupo": "G2"
+    },
+    {
+      "caso": "G2_add_image_overlay",
+      "herramienta": "add_image_overlay",
+      "salida_preexistente": true,
+      "bytes_preexistentes": 152,
+      "ms_llamada": 102.6,
+      "isError": false,
+      "respuesta": "Error adding image overlay. Audio copy attempt: ffmpeg version N-121159-g0bd5a7d371-20250921 Copyright (c) 2000-2025 the FFmpeg developers\r\n  built with gcc 15.2.0 (crosstool-NG 1.28.0.1_403899e)\r\n  configuration: --prefix=/ffbuild/prefix --pkg-config-flags=--static --pkg-config=pkg-config --cross-p",
+      "veredicto": "RESPONDE(error-ff)",
+      "bytes_salida": 152,
+      "ffmpeg_huerfanos": [],
+      "grupo": "G2"
+    },
+    {
+      "caso": "G2_add_subtitles",
+      "herramienta": "add_subtitles",
+      "salida_preexistente": true,
+      "bytes_preexistentes": 152,
+      "ms_llamada": 94.6,
+      "isError": false,
+      "respuesta": "Error adding subtitles. Audio copy attempt: ffmpeg version N-121159-g0bd5a7d371-20250921 Copyright (c) 2000-2025 the FFmpeg developers\r\n  built with gcc 15.2.0 (crosstool-NG 1.28.0.1_403899e)\r\n  configuration: --prefix=/ffbuild/prefix --pkg-config-flags=--static --pkg-config=pkg-config --cross-prefi",
+      "veredicto": "RESPONDE(error-ff)",
+      "bytes_salida": 152,
+      "ffmpeg_huerfanos": [],
+      "grupo": "G2"
+    },
+    {
+      "caso": "G2_add_basic_transitions",
+      "herramienta": "add_basic_transitions",
+      "salida_preexistente": true,
+      "bytes_preexistentes": 152,
+      "ms_llamada": 18019.5,
+      "veredicto": "DEADLOCK (sin respuesta en 18.0s)",
+      "ffmpeg_huerfanos": [],
+      "grupo": "G2"
+    },
+    {
+      "caso": "G2_extract_audio_from_video",
+      "herramienta": "extract_audio_from_video",
+      "salida_preexistente": true,
+      "bytes_preexistentes": 152,
+      "ms_llamada": 18134.1,
+      "veredicto": "DEADLOCK (sin respuesta en 18.0s)",
+      "ffmpeg_huerfanos": [],
+      "grupo": "G2"
+    },
+    {
+      "caso": "G2_convert_audio_format",
+      "herramienta": "convert_audio_format",
+      "salida_preexistente": true,
+      "bytes_preexistentes": 152,
+      "ms_llamada": 18179.3,
+      "veredicto": "DEADLOCK (sin respuesta en 18.0s)",
+      "ffmpeg_huerfanos": [],
+      "grupo": "G2"
+    },
+    {
+      "caso": "G2_convert_audio_properties",
+      "herramienta": "convert_audio_properties",
+      "salida_preexistente": true,
+      "bytes_preexistentes": 152,
+      "ms_llamada": 18196.6,
+      "veredicto": "DEADLOCK (sin respuesta en 18.0s)",
+      "ffmpeg_huerfanos": [],
+      "grupo": "G2"
+    },
+    {
+      "caso": "G2_set_audio_bitrate",
+      "herramienta": "set_audio_bitrate",
+      "salida_preexistente": true,
+      "bytes_preexistentes": 152,
+      "ms_llamada": 18191.5,
+      "veredicto": "DEADLOCK (sin respuesta en 18.0s)",
+      "ffmpeg_huerfanos": [],
+      "grupo": "G2"
+    },
+    {
+      "caso": "G2_set_audio_sample_rate",
+      "herramienta": "set_audio_sample_rate",
+      "salida_preexistente": true,
+      "bytes_preexistentes": 152,
+      "ms_llamada": 18178.7,
+      "veredicto": "DEADLOCK (sin respuesta en 18.0s)",
+      "ffmpeg_huerfanos": [],
+      "grupo": "G2"
+    },
+    {
+      "caso": "G2_set_audio_channels",
+      "herramienta": "set_audio_channels",
+      "salida_preexistente": true,
+      "bytes_preexistentes": 152,
+      "ms_llamada": 18151.8,
+      "veredicto": "DEADLOCK (sin respuesta en 18.0s)",
+      "ffmpeg_huerfanos": [],
+      "grupo": "G2"
+    },
+    {
+      "caso": "G2_remove_silence",
+      "herramienta": "remove_silence",
+      "salida_preexistente": true,
+      "bytes_preexistentes": 152,
+      "ms_llamada": 18197.6,
+      "veredicto": "DEADLOCK (sin respuesta en 18.0s)",
+      "ffmpeg_huerfanos": [],
+      "grupo": "G2"
+    },
+    {
+      "caso": "G3_add_b_roll",
+      "herramienta": "add_b_roll",
+      "salida_preexistente": true,
+      "bytes_preexistentes": 152,
+      "ms_llamada": 18134.5,
+      "veredicto": "DEADLOCK (sin respuesta en 18.0s)",
+      "ffmpeg_huerfanos": [
+        14828
+      ],
+      "grupo": "G3"
+    }
+  ]
+}

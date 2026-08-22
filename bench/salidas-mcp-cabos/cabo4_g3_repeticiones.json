@@ -1,0 +1,58 @@
+[
+  {
+    "caso": "G3_concat2_rep1",
+    "herramienta": "concatenate_videos",
+    "args": {
+      "video_paths": [
+        "D:/Work/research/FileX/corpus/video/trivial.mp4",
+        "D:/Work/research/FileX/corpus/video/trivial.mp4"
+      ],
+      "output_video_path": "D:/Work/research/FileX/bench/salidas-mcp-cabos/cabo4_trabajo/g3rep1.mp4"
+    },
+    "salida_preexistente": true,
+    "bytes_preexistentes": 152,
+    "ms_arranque": 24776.7,
+    "ms_llamada": 60184.4,
+    "veredicto": "DEADLOCK (sin respuesta en 60.0s)",
+    "ffmpeg_huerfanos": [],
+    "bytes_salida": 152
+  },
+  {
+    "caso": "G3_concat2_rep2",
+    "herramienta": "concatenate_videos",
+    "args": {
+      "video_paths": [
+        "D:/Work/research/FileX/corpus/video/trivial.mp4",
+        "D:/Work/research/FileX/corpus/video/trivial.mp4"
+      ],
+      "output_video_path": "D:/Work/research/FileX/bench/salidas-mcp-cabos/cabo4_trabajo/g3rep2.mp4"
+    },
+    "salida_preexistente": true,
+    "bytes_preexistentes": 152,
+    "ms_arranque": 1260.8,
+    "ms_llamada": 2778.7,
+    "isError": false,
+    "respuesta": "Videos concatenated successfully to D:/Work/research/FileX/bench/salidas-mcp-cabos/cabo4_trabajo/g3rep2.mp4",
+    "veredicto": "RESPONDE",
+    "ffmpeg_huerfanos": [],
+    "bytes_salida": 1058306
+  },
+  {
+    "caso": "G3_concat2_rep3",
+    "herramienta": "concatenate_videos",
+    "args": {
+      "video_paths": [
+        "D:/Work/research/FileX/corpus/video/trivial.mp4",
+        "D:/Work/research/FileX/corpus/video/trivial.mp4"
+      ],
+      "output_video_path": "D:/Work/research/FileX/bench/salidas-mcp-cabos/cabo4_trabajo/g3rep3.mp4"
+    },
+    "salida_preexistente": true,
+    "bytes_preexistentes": 152,
+    "ms_arranque": 1458.3,
+    "ms_llamada": 60205.2,
+    "veredicto": "DEADLOCK (sin respuesta en 60.0s)",
+    "ffmpeg_huerfanos": [],
+    "bytes_salida": 152
+  }
+]

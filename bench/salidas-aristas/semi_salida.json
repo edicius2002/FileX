@@ -1,0 +1,5840 @@
+{
+"ffmpeg|264": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 1515,
+"ms": 54.7,
+"err": ""
+}
+]
+},
+"ffmpeg|265": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 3162,
+"ms": 130.0,
+"err": ""
+}
+]
+},
+"ffmpeg|266": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 675,
+"ms": 343.8,
+"err": ""
+}
+]
+},
+"ffmpeg|302": {
+"vivo": false,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": 0,
+"ms": 35.0,
+"err": "t)\n[out#0/daud @ 0000018e3740be00] Nothing was written into output file, because at least one of its streams received no packets.\nsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": 0,
+"ms": 35.9,
+"err": "t)\n[out#0/daud @ 0000016bcc10bf00] Nothing was written into output file, because at least one of its streams received no packets.\nsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "imagen",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 30.9,
+"err": "\\tmp\\o0006.302':\n[out#0/daud @ 00000289614baa80] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0006.302.\nError opening output files: Invalid argument\n"
+}
+]
+},
+"ffmpeg|3g2": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": 0,
+"ms": 43.3,
+"err": "49c640] Nothing was written into output file, because at least one of its streams received no packets.\nframe=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 0,
+"bytes": 1450,
+"ms": 43.3,
+"err": ""
+}
+]
+},
+"ffmpeg|3gp": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": 0,
+"ms": 42.1,
+"err": "8ee840] Nothing was written into output file, because at least one of its streams received no packets.\nframe=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 0,
+"bytes": 1450,
+"ms": 32.6,
+"err": ""
+}
+]
+},
+"ffmpeg|a64": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 4290,
+"ms": 120.6,
+"err": ""
+}
+]
+},
+"ffmpeg|aac": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 4862,
+"ms": 43.6,
+"err": ""
+}
+]
+},
+"ffmpeg|ac3": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 6268,
+"ms": 37.3,
+"err": ""
+}
+]
+},
+"ffmpeg|ac4": {
+"vivo": false,
+"intentos": [
+{
+"semilla": "video",
+"rc": 3165764104,
+"bytes": -1,
+"ms": 30.4,
+"err": "se choose an encoder manually.\n[aost#0:0 @ 000002bc925ced80] Error selecting an encoder\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0015.ac4.\nError opening output files: Encoder not found\n"
+},
+{
+"semilla": "audio",
+"rc": 3165764104,
+"bytes": -1,
+"ms": 30.2,
+"err": "se choose an encoder manually.\n[aost#0:0 @ 0000017f6cdeebc0] Error selecting an encoder\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0016.ac4.\nError opening output files: Encoder not found\n"
+},
+{
+"semilla": "imagen",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 30.8,
+"err": "s\\tmp\\o0017.ac4':\n[out#0/ac4 @ 000001fe06fec140] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0017.ac4.\nError opening output files: Invalid argument\n"
+}
+]
+},
+"ffmpeg|adts": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 4862,
+"ms": 44.9,
+"err": ""
+}
+]
+},
+"ffmpeg|adx": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 12726,
+"ms": 42.8,
+"err": ""
+}
+]
+},
+"ffmpeg|afc": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 45110,
+"ms": 52.1,
+"err": ""
+}
+]
+},
+"ffmpeg|aif": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 45110,
+"ms": 46.4,
+"err": ""
+}
+]
+},
+"ffmpeg|aifc": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 45110,
+"ms": 46.6,
+"err": ""
+}
+]
+},
+"ffmpeg|aiff": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 45110,
+"ms": 47.6,
+"err": ""
+}
+]
+},
+"ffmpeg|al": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 22528,
+"ms": 34.5,
+"err": ""
+}
+]
+},
+"ffmpeg|amr": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967256,
+"bytes": 0,
+"ms": 35.0,
+"err": "nt)\n[out#0/amr @ 000002c81501cd80] Nothing was written into output file, because at least one of its streams received no packets.\nsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 0,
+"bytes": 838,
+"ms": 35.7,
+"err": ""
+}
+]
+},
+"ffmpeg|amv": {
+"vivo": false,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": 0,
+"ms": 54.2,
+"err": "cfe280] Nothing was written into output file, because at least one of its streams received no packets.\nframe=    0 fps=0.0 q=1.6 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.01    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": 0,
+"ms": 31.8,
+"err": "nt)\n[out#0/amv @ 000001beafe9cf00] Nothing was written into output file, because at least one of its streams received no packets.\nsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "imagen",
+"rc": 4294967274,
+"bytes": 0,
+"ms": 39.5,
+"err": "b82c40] Nothing was written into output file, because at least one of its streams received no packets.\nframe=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+}
+]
+},
+"ffmpeg|apm": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 11364,
+"ms": 35.0,
+"err": ""
+}
+]
+},
+"ffmpeg|apng": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 8811,
+"ms": 44.4,
+"err": ""
+}
+]
+},
+"ffmpeg|aptx": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 22528,
+"ms": 46.2,
+"err": ""
+}
+]
+},
+"ffmpeg|aptxhd": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 33792,
+"ms": 40.8,
+"err": ""
+}
+]
+},
+"ffmpeg|asf": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 13857,
+"ms": 54.8,
+"err": ""
+}
+]
+},
+"ffmpeg|ass": {
+"vivo": false,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 31.2,
+"err": "s\\tmp\\o0037.ass':\n[out#0/ass @ 000002673539b700] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0037.ass.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 29.5,
+"err": "s\\tmp\\o0038.ass':\n[out#0/ass @ 000002667e3f04c0] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0038.ass.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 27.9,
+"err": "s\\tmp\\o0039.ass':\n[out#0/ass @ 00000141fa3ebc40] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0039.ass.\nError opening output files: Invalid argument\n"
+}
+]
+},
+"ffmpeg|ast": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 45824,
+"ms": 35.7,
+"err": ""
+}
+]
+},
+"ffmpeg|au": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 45088,
+"ms": 37.0,
+"err": ""
+}
+]
+},
+"ffmpeg|aud": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 11364,
+"ms": 38.3,
+"err": ""
+}
+]
+},
+"ffmpeg|av1.mkv": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 7136,
+"ms": 261.7,
+"err": ""
+}
+]
+},
+"ffmpeg|av1.mp4": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 7022,
+"ms": 158.3,
+"err": ""
+}
+]
+},
+"ffmpeg|avi": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 17602,
+"ms": 50.3,
+"err": ""
+}
+]
+},
+"ffmpeg|avif": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 1734,
+"ms": 170.7,
+"err": ""
+}
+]
+},
+"ffmpeg|avs": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 873,
+"ms": 76.2,
+"err": ""
+}
+]
+},
+"ffmpeg|avs2": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 873,
+"ms": 62.4,
+"err": ""
+}
+]
+},
+"ffmpeg|avs3": {
+"vivo": false,
+"intentos": [
+{
+"semilla": "video",
+"rc": 3165764104,
+"bytes": -1,
+"ms": 30.5,
+"err": "e choose an encoder manually.\n[vost#0:0 @ 00000164eba8ed40] Error selecting an encoder\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0050.avs3.\nError opening output files: Encoder not found\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 29.2,
+"err": "mp\\o0051.avs3':\n[out#0/avs3 @ 000002083278d680] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0051.avs3.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 3165764104,
+"bytes": -1,
+"ms": 28.7,
+"err": "e choose an encoder manually.\n[vost#0:0 @ 000001eda5f4cd00] Error selecting an encoder\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0052.avs3.\nError opening output files: Encoder not found\n"
+}
+]
+},
+"ffmpeg|bit": {
+"vivo": false,
+"intentos": [
+{
+"semilla": "video",
+"rc": 3165764104,
+"bytes": -1,
+"ms": 31.4,
+"err": "se choose an encoder manually.\n[aost#0:0 @ 000002dedd3dd080] Error selecting an encoder\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0054.bit.\nError opening output files: Encoder not found\n"
+},
+{
+"semilla": "audio",
+"rc": 3165764104,
+"bytes": -1,
+"ms": 28.7,
+"err": "se choose an encoder manually.\n[aost#0:0 @ 0000021b28fde580] Error selecting an encoder\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0055.bit.\nError opening output files: Encoder not found\n"
+},
+{
+"semilla": "imagen",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 28.7,
+"err": "s\\tmp\\o0056.bit':\n[out#0/bit @ 00000218d0b5b700] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0056.bit.\nError opening output files: Invalid argument\n"
+}
+]
+},
+"ffmpeg|bmp": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": 9270,
+"ms": 45.8,
+"err": "ideo:18KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=71.5x elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 30.4,
+"err": "mp\\o0059.bmp':\n[out#0/image2 @ 0000027b0c13d780] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0059.bmp.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 9270,
+"ms": 38.1,
+"err": ""
+}
+]
+},
+"ffmpeg|c2": {
+"vivo": false,
+"intentos": [
+{
+"semilla": "video",
+"rc": 3165764104,
+"bytes": -1,
+"ms": 30.6,
+"err": "ase choose an encoder manually.\n[aost#0:0 @ 0000019f96927400] Error selecting an encoder\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0061.c2.\nError opening output files: Encoder not found\n"
+},
+{
+"semilla": "audio",
+"rc": 3165764104,
+"bytes": -1,
+"ms": 28.8,
+"err": "ase choose an encoder manually.\n[aost#0:0 @ 000001a2f5b8ecc0] Error selecting an encoder\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0062.c2.\nError opening output files: Encoder not found\n"
+},
+{
+"semilla": "imagen",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 31.3,
+"err": "\\tmp\\o0063.c2':\n[out#0/codec2 @ 0000027ddc8ebc80] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0063.c2.\nError opening output files: Invalid argument\n"
+}
+]
+},
+"ffmpeg|caf": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 45255,
+"ms": 36.7,
+"err": ""
+}
+]
+},
+"ffmpeg|cavs": {
+"vivo": false,
+"intentos": [
+{
+"semilla": "video",
+"rc": 3165764104,
+"bytes": -1,
+"ms": 31.3,
+"err": "e choose an encoder manually.\n[vost#0:0 @ 000002030258eb80] Error selecting an encoder\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0066.cavs.\nError opening output files: Encoder not found\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 28.6,
+"err": "067.cavs':\n[out#0/cavsvideo @ 00000144f599d900] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0067.cavs.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 3165764104,
+"bytes": -1,
+"ms": 28.7,
+"err": "e choose an encoder manually.\n[vost#0:0 @ 000002190edbd100] Error selecting an encoder\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0068.cavs.\nError opening output files: Encoder not found\n"
+}
+]
+},
+"ffmpeg|chk": {
+"vivo": false,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 31.3,
+"err": "0070.chk':\n[out#0/webm_chunk @ 000001e008bdc3c0] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0070.chk.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 28.3,
+"err": "0071.chk':\n[out#0/webm_chunk @ 000001f6cba9ccc0] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0071.chk.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 27.9,
+"err": "0072.chk':\n[out#0/webm_chunk @ 000002ac7584f0c0] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0072.chk.\nError opening output files: Invalid argument\n"
+}
+]
+},
+"ffmpeg|cpk": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 50138,
+"ms": 89.5,
+"err": ""
+}
+]
+},
+"ffmpeg|cvg": {
+"vivo": false,
+"intentos": [
+{
+"semilla": "video",
+"rc": 3165764104,
+"bytes": -1,
+"ms": 33.2,
+"err": "se choose an encoder manually.\n[aost#0:0 @ 000002308765e9c0] Error selecting an encoder\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0075.cvg.\nError opening output files: Encoder not found\n"
+},
+{
+"semilla": "audio",
+"rc": 3165764104,
+"bytes": -1,
+"ms": 30.5,
+"err": "se choose an encoder manually.\n[aost#0:0 @ 00000248bb64c440] Error selecting an encoder\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0076.cvg.\nError opening output files: Encoder not found\n"
+},
+{
+"semilla": "imagen",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 28.7,
+"err": "\\o0077.cvg':\n[out#0/argo_cvg @ 000002195e22b4c0] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0077.cvg.\nError opening output files: Invalid argument\n"
+}
+]
+},
+"ffmpeg|dfpwm": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 2816,
+"ms": 35.3,
+"err": ""
+}
+]
+},
+"ffmpeg|dnxhd": {
+"vivo": false,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": 0,
+"ms": 50.2,
+"err": "2ed780] Nothing was written into output file, because at least one of its streams received no packets.\nframe=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 30.3,
+"err": "o0081.dnxhd':\n[out#0/dnxhd @ 0000014688f6a300] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0081.dnxhd.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 4294967274,
+"bytes": 0,
+"ms": 35.3,
+"err": "56a380] Nothing was written into output file, because at least one of its streams received no packets.\nframe=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+}
+]
+},
+"ffmpeg|dnxhr": {
+"vivo": false,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": 0,
+"ms": 43.5,
+"err": "fbc1c0] Nothing was written into output file, because at least one of its streams received no packets.\nframe=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 28.4,
+"err": "o0085.dnxhr':\n[out#0/dnxhd @ 0000020ebc9800c0] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0085.dnxhr.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 4294967274,
+"bytes": 0,
+"ms": 36.5,
+"err": "991180] Nothing was written into output file, because at least one of its streams received no packets.\nframe=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+}
+]
+},
+"ffmpeg|dpx": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": 10880,
+"ms": 46.2,
+"err": "ideo:21KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=70.1x elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 29.8,
+"err": "mp\\o0089.dpx':\n[out#0/image2 @ 000001f26d8dca80] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0089.dpx.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 20096,
+"ms": 33.7,
+"err": ""
+}
+]
+},
+"ffmpeg|drc": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 1966630,
+"ms": 46.1,
+"err": ""
+}
+]
+},
+"ffmpeg|dts": {
+"vivo": false,
+"intentos": [
+{
+"semilla": "video",
+"rc": 3561836632,
+"bytes": 0,
+"ms": 40.3,
+"err": "nt)\n[out#0/dts @ 000001f5de319c80] Nothing was written into output file, because at least one of its streams received no packets.\nsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 3561836632,
+"bytes": 0,
+"ms": 35.7,
+"err": "nt)\n[out#0/dts @ 00000263111dc000] Nothing was written into output file, because at least one of its streams received no packets.\nsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "imagen",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 28.8,
+"err": "s\\tmp\\o0094.dts':\n[out#0/dts @ 000001feba26e580] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0094.dts.\nError opening output files: Invalid argument\n"
+}
+]
+},
+"ffmpeg|dv": {
+"vivo": false,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": 0,
+"ms": 45.5,
+"err": "97d240] Nothing was written into output file, because at least one of its streams received no packets.\nframe=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 3199971767,
+"bytes": 0,
+"ms": 32.8,
+"err": "put)\n[out#0/dv @ 000001b0aa76cc40] Nothing was written into output file, because at least one of its streams received no packets.\nsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "imagen",
+"rc": 4294967274,
+"bytes": 0,
+"ms": 35.7,
+"err": "8ec380] Nothing was written into output file, because at least one of its streams received no packets.\nframe=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+}
+]
+},
+"ffmpeg|dvd": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 32768,
+"ms": 45.3,
+"err": ""
+}
+]
+},
+"ffmpeg|eac3": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 6268,
+"ms": 37.7,
+"err": ""
+}
+]
+},
+"ffmpeg|ec3": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 6268,
+"ms": 37.9,
+"err": ""
+}
+]
+},
+"ffmpeg|evc": {
+"vivo": false,
+"intentos": [
+{
+"semilla": "video",
+"rc": 3165764104,
+"bytes": -1,
+"ms": 32.7,
+"err": "se choose an encoder manually.\n[vost#0:0 @ 0000013d03b67dc0] Error selecting an encoder\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0103.evc.\nError opening output files: Encoder not found\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 28.2,
+"err": "s\\tmp\\o0104.evc':\n[out#0/evc @ 000002f8e75acd00] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0104.evc.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 3165764104,
+"bytes": -1,
+"ms": 28.8,
+"err": "se choose an encoder manually.\n[vost#0:0 @ 0000024731d9d080] Error selecting an encoder\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0105.evc.\nError opening output files: Encoder not found\n"
+}
+]
+},
+"ffmpeg|exr": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": 38024,
+"ms": 45.3,
+"err": "ideo:74KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=  66x elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 29.3,
+"err": "mp\\o0108.exr':\n[out#0/image2 @ 0000021ed3862280] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0108.exr.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 37993,
+"ms": 37.9,
+"err": ""
+}
+]
+},
+"ffmpeg|f4v": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 7822,
+"ms": 52.2,
+"err": ""
+}
+]
+},
+"ffmpeg|ffmeta": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 104,
+"ms": 31.5,
+"err": ""
+}
+]
+},
+"ffmpeg|fits": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 72000,
+"ms": 46.5,
+"err": ""
+}
+]
+},
+"ffmpeg|flac": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 34485,
+"ms": 55.5,
+"err": ""
+}
+]
+},
+"ffmpeg|flm": {
+"vivo": false,
+"intentos": [
+{
+"semilla": "video",
+"rc": 3199971767,
+"bytes": 0,
+"ms": 42.6,
+"err": "b3e0c0] Nothing was written into output file, because at least one of its streams received no packets.\nframe=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 29.5,
+"err": "o0115.flm':\n[out#0/filmstrip @ 000001668325d700] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0115.flm.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 3199971767,
+"bytes": 0,
+"ms": 37.0,
+"err": "a19000] Nothing was written into output file, because at least one of its streams received no packets.\nframe=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+}
+]
+},
+"ffmpeg|flv": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 7994,
+"ms": 48.1,
+"err": ""
+}
+]
+},
+"ffmpeg|g722": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 11264,
+"ms": 39.0,
+"err": ""
+}
+]
+},
+"ffmpeg|gif": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 3913,
+"ms": 49.6,
+"err": ""
+}
+]
+},
+"ffmpeg|gsm": {
+"vivo": false,
+"intentos": [
+{
+"semilla": "video",
+"rc": 3165764104,
+"bytes": -1,
+"ms": 34.3,
+"err": "se choose an encoder manually.\n[aost#0:0 @ 0000019f4e1caf80] Error selecting an encoder\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0121.gsm.\nError opening output files: Encoder not found\n"
+},
+{
+"semilla": "audio",
+"rc": 3165764104,
+"bytes": -1,
+"ms": 30.7,
+"err": "se choose an encoder manually.\n[aost#0:0 @ 000001f9a246f900] Error selecting an encoder\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0122.gsm.\nError opening output files: Encoder not found\n"
+},
+{
+"semilla": "imagen",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 31.7,
+"err": "s\\tmp\\o0123.gsm':\n[out#0/gsm @ 000001a347daaf80] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0123.gsm.\nError opening output files: Invalid argument\n"
+}
+]
+},
+"ffmpeg|gxf": {
+"vivo": false,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": 0,
+"ms": 43.8,
+"err": "b1b880] Nothing was written into output file, because at least one of its streams received no packets.\nframe=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": 0,
+"ms": 32.5,
+"err": "nt)\n[out#0/gxf @ 000001dffb4abc00] Nothing was written into output file, because at least one of its streams received no packets.\nsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "imagen",
+"rc": 4294967274,
+"bytes": 0,
+"ms": 38.6,
+"err": "3b3140] Nothing was written into output file, because at least one of its streams received no packets.\nframe=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+}
+]
+},
+"ffmpeg|h261": {
+"vivo": false,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": 0,
+"ms": 46.3,
+"err": "35aa40] Nothing was written into output file, because at least one of its streams received no packets.\nframe=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 30.6,
+"err": "mp\\o0130.h261':\n[out#0/h261 @ 0000020e707dcc40] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0130.h261.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 4294967274,
+"bytes": 0,
+"ms": 36.3,
+"err": "4cd440] Nothing was written into output file, because at least one of its streams received no packets.\nframe=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+}
+]
+},
+"ffmpeg|h263": {
+"vivo": false,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": 0,
+"ms": 42.0,
+"err": "709440] Nothing was written into output file, because at least one of its streams received no packets.\nframe=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 31.4,
+"err": "mp\\o0134.h263':\n[out#0/h263 @ 0000022f9b7ac800] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0134.h263.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 4294967274,
+"bytes": 0,
+"ms": 38.6,
+"err": "3b9ec0] Nothing was written into output file, because at least one of its streams received no packets.\nframe=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+}
+]
+},
+"ffmpeg|h264.mkv": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 7447,
+"ms": 53.4,
+"err": ""
+}
+]
+},
+"ffmpeg|h264.mp4": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 7838,
+"ms": 53.5,
+"err": ""
+}
+]
+},
+"ffmpeg|h265.mkv": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 9118,
+"ms": 75.7,
+"err": ""
+}
+]
+},
+"ffmpeg|h265.mp4": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 9531,
+"ms": 70.1,
+"err": ""
+}
+]
+},
+"ffmpeg|h266.mkv": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 3165764104,
+"bytes": -1,
+"ms": 31.7,
+"err": "Unknown encoder 'libx266'\n[vost#0:0 @ 000001abfc7f3d00] Error selecting an encoder\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0141.h266.mkv.\nError opening output files: Encoder not found\n"
+},
+{
+"semilla": "audio",
+"rc": 0,
+"bytes": 3658,
+"ms": 35.4,
+"err": ""
+}
+]
+},
+"ffmpeg|hdr": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": 9999,
+"ms": 46.5,
+"err": "ideo:20KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=68.4x elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 31.3,
+"err": "mp\\o0144.hdr':\n[out#0/image2 @ 00000163f45ed880] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0144.hdr.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 1019,
+"ms": 39.9,
+"err": ""
+}
+]
+},
+"ffmpeg|hevc": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 3162,
+"ms": 70.8,
+"err": ""
+}
+]
+},
+"ffmpeg|ico": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967291,
+"bytes": 9704,
+"ms": 46.9,
+"err": "KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=       9KiB time=00:00:00.40 bitrate= 194.1kbits/s speed=58.1x elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 32.9,
+"err": "s\\tmp\\o0148.ico':\n[out#0/ico @ 00000214bca3ccc0] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0148.ico.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 9704,
+"ms": 39.2,
+"err": ""
+}
+]
+},
+"ffmpeg|im1": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": 8682,
+"ms": 44.9,
+"err": "ideo:17KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=  81x elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 29.0,
+"err": "mp\\o0151.im1':\n[out#0/image2 @ 000002b494a7d300] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0151.im1.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 7040,
+"ms": 36.3,
+"err": ""
+}
+]
+},
+"ffmpeg|im24": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": 8682,
+"ms": 45.9,
+"err": "ideo:17KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=80.6x elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 28.5,
+"err": "\\o0154.im24':\n[out#0/image2 @ 0000024f2861be00] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0154.im24.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 7040,
+"ms": 43.5,
+"err": ""
+}
+]
+},
+"ffmpeg|im8": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": 8682,
+"ms": 48.2,
+"err": "ideo:17KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=  85x elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 29.5,
+"err": "mp\\o0157.im8':\n[out#0/image2 @ 000001ff0746df00] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0157.im8.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 7040,
+"ms": 36.2,
+"err": ""
+}
+]
+},
+"ffmpeg|ircam": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 46080,
+"ms": 35.6,
+"err": ""
+}
+]
+},
+"ffmpeg|isma": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 8066,
+"ms": 52.0,
+"err": ""
+}
+]
+},
+"ffmpeg|ismv": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 8066,
+"ms": 52.0,
+"err": ""
+}
+]
+},
+"ffmpeg|ivf": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 1588,
+"ms": 61.2,
+"err": ""
+}
+]
+},
+"ffmpeg|j2c": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": 2953,
+"ms": 48.3,
+"err": "video:6KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=57.3x elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 34.1,
+"err": "mp\\o0164.j2c':\n[out#0/image2 @ 000002963bdeb500] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0164.j2c.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 5294,
+"ms": 40.8,
+"err": ""
+}
+]
+},
+"ffmpeg|j2k": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": 2953,
+"ms": 45.2,
+"err": "video:6KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=76.2x elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 29.3,
+"err": "mp\\o0167.j2k':\n[out#0/image2 @ 00000213a2c3dfc0] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0167.j2k.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 5294,
+"ms": 40.3,
+"err": ""
+}
+]
+},
+"ffmpeg|jls": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": 2979,
+"ms": 46.3,
+"err": "video:6KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=  68x elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 28.5,
+"err": "mp\\o0170.jls':\n[out#0/image2 @ 0000022ec26bcd40] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0170.jls.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 865,
+"ms": 38.5,
+"err": ""
+}
+]
+},
+"ffmpeg|jp2": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": 2953,
+"ms": 48.8,
+"err": "video:6KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=77.8x elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 32.2,
+"err": "mp\\o0173.jp2':\n[out#0/image2 @ 00000142d7ebf040] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0173.jp2.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 5294,
+"ms": 43.4,
+"err": ""
+}
+]
+},
+"ffmpeg|jpeg": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": 1449,
+"ms": 47.3,
+"err": " video:3KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=1.6 Lsize=N/A time=00:00:00.30 bitrate=N/A speed=46.2x elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 31.8,
+"err": "\\o0176.jpeg':\n[out#0/image2 @ 0000029d4a6bdb40] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0176.jpeg.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 740,
+"ms": 39.0,
+"err": ""
+}
+]
+},
+"ffmpeg|jpg": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": 1449,
+"ms": 44.3,
+"err": " video:3KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=1.6 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=83.3x elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 28.6,
+"err": "mp\\o0179.jpg':\n[out#0/image2 @ 000001e7619db000] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0179.jpg.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 740,
+"ms": 36.1,
+"err": ""
+}
+]
+},
+"ffmpeg|js": {
+"vivo": false,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 31.6,
+"err": "tmp\\o0181.js':\n[out#0/jacosub @ 000001efb20fe400] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0181.js.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 30.1,
+"err": "tmp\\o0182.js':\n[out#0/jacosub @ 000002898058d140] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0182.js.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 28.5,
+"err": "tmp\\o0183.js':\n[out#0/jacosub @ 0000017a90b50580] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0183.js.\nError opening output files: Invalid argument\n"
+}
+]
+},
+"ffmpeg|jss": {
+"vivo": false,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 33.2,
+"err": "p\\o0185.jss':\n[out#0/jacosub @ 00000218a2b6ca00] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0185.jss.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 31.4,
+"err": "p\\o0186.jss':\n[out#0/jacosub @ 000002388c76f340] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0186.jss.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 28.3,
+"err": "p\\o0187.jss':\n[out#0/jacosub @ 0000027ee596cb80] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0187.jss.\nError opening output files: Invalid argument\n"
+}
+]
+},
+"ffmpeg|jxl": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": 1852,
+"ms": 139.1,
+"err": "video:4KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.20 bitrate=N/A speed=1.97x elapsed=0:00:00.10    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 28.7,
+"err": "mp\\o0190.jxl':\n[out#0/image2 @ 000001b2d0b1acc0] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0190.jxl.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 715,
+"ms": 46.6,
+"err": ""
+}
+]
+},
+"ffmpeg|latm": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 4827,
+"ms": 45.2,
+"err": ""
+}
+]
+},
+"ffmpeg|lbc": {
+"vivo": false,
+"intentos": [
+{
+"semilla": "video",
+"rc": 3165764104,
+"bytes": -1,
+"ms": 30.9,
+"err": "se choose an encoder manually.\n[aost#0:0 @ 000001556f43e200] Error selecting an encoder\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0193.lbc.\nError opening output files: Encoder not found\n"
+},
+{
+"semilla": "audio",
+"rc": 3165764104,
+"bytes": -1,
+"ms": 28.6,
+"err": "se choose an encoder manually.\n[aost#0:0 @ 000001617236fa00] Error selecting an encoder\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0194.lbc.\nError opening output files: Encoder not found\n"
+},
+{
+"semilla": "imagen",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 29.1,
+"err": "\\tmp\\o0195.lbc':\n[out#0/ilbc @ 0000014add741d40] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0195.lbc.\nError opening output files: Invalid argument\n"
+}
+]
+},
+"ffmpeg|ljpg": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 44.1,
+"err": "b5bec0] Nothing was written into output file, because at least one of its streams received no packets.\nframe=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 32.1,
+"err": "\\o0198.ljpg':\n[out#0/image2 @ 000002333cb0ac40] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0198.ljpg.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 3076,
+"ms": 38.2,
+"err": ""
+}
+]
+},
+"ffmpeg|loas": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 4827,
+"ms": 46.2,
+"err": ""
+}
+]
+},
+"ffmpeg|lrc": {
+"vivo": false,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 34.6,
+"err": "s\\tmp\\o0201.lrc':\n[out#0/lrc @ 0000024d8b58d280] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0201.lrc.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 30.5,
+"err": "s\\tmp\\o0202.lrc':\n[out#0/lrc @ 000002110796b200] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0202.lrc.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 31.7,
+"err": "s\\tmp\\o0203.lrc':\n[out#0/lrc @ 000002611826c040] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0203.lrc.\nError opening output files: Invalid argument\n"
+}
+]
+},
+"ffmpeg|m1v": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": 0,
+"ms": 44.0,
+"err": "3a9600] Nothing was written into output file, because at least one of its streams received no packets.\nframe=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 30.8,
+"err": "0206.m1v':\n[out#0/mpeg1video @ 0000020bccdbc240] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0206.m1v.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 483,
+"ms": 37.1,
+"err": ""
+}
+]
+},
+"ffmpeg|m2a": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 25077,
+"ms": 35.3,
+"err": ""
+}
+]
+},
+"ffmpeg|m2t": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 32524,
+"ms": 47.1,
+"err": ""
+}
+]
+},
+"ffmpeg|m2ts": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 36864,
+"ms": 47.6,
+"err": ""
+}
+]
+},
+"ffmpeg|m2v": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 2908,
+"ms": 45.9,
+"err": ""
+}
+]
+},
+"ffmpeg|m3u8": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 116,
+"ms": 55.1,
+"err": ""
+}
+]
+},
+"ffmpeg|m4a": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 7826,
+"ms": 51.4,
+"err": ""
+}
+]
+},
+"ffmpeg|m4b": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 7826,
+"ms": 54.0,
+"err": ""
+}
+]
+},
+"ffmpeg|m4v": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 7826,
+"ms": 55.4,
+"err": ""
+}
+]
+},
+"ffmpeg|mjpeg": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 8105,
+"ms": 44.5,
+"err": ""
+}
+]
+},
+"ffmpeg|mjpg": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 8105,
+"ms": 48.2,
+"err": ""
+}
+]
+},
+"ffmpeg|mkv": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 7447,
+"ms": 52.8,
+"err": ""
+}
+]
+},
+"ffmpeg|mlp": {
+"vivo": false,
+"intentos": [
+{
+"semilla": "video",
+"rc": 3561836632,
+"bytes": 0,
+"ms": 38.3,
+"err": "nt)\n[out#0/mlp @ 000001be68f4a980] Nothing was written into output file, because at least one of its streams received no packets.\nsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 3561836632,
+"bytes": 0,
+"ms": 35.6,
+"err": "nt)\n[out#0/mlp @ 0000014bc96ad140] Nothing was written into output file, because at least one of its streams received no packets.\nsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "imagen",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 29.2,
+"err": "s\\tmp\\o0221.mlp':\n[out#0/mlp @ 0000014522e518c0] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0221.mlp.\nError opening output files: Invalid argument\n"
+}
+]
+},
+"ffmpeg|mmf": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 11355,
+"ms": 37.0,
+"err": ""
+}
+]
+},
+"ffmpeg|mov": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 7889,
+"ms": 53.4,
+"err": ""
+}
+]
+},
+"ffmpeg|mp2": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 25077,
+"ms": 42.8,
+"err": ""
+}
+]
+},
+"ffmpeg|mp3": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 4717,
+"ms": 43.2,
+"err": ""
+}
+]
+},
+"ffmpeg|mp4": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 7838,
+"ms": 52.1,
+"err": ""
+}
+]
+},
+"ffmpeg|mpa": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 25077,
+"ms": 36.2,
+"err": ""
+}
+]
+},
+"ffmpeg|mpd": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 1875,
+"ms": 58.5,
+"err": ""
+}
+]
+},
+"ffmpeg|mpeg": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": 0,
+"ms": 44.6,
+"err": "9607c0] Nothing was written into output file, because at least one of its streams received no packets.\nframe=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 0,
+"bytes": 10240,
+"ms": 35.2,
+"err": ""
+}
+]
+},
+"ffmpeg|mpg": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": 0,
+"ms": 44.2,
+"err": "79e580] Nothing was written into output file, because at least one of its streams received no packets.\nframe=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 0,
+"bytes": 10240,
+"ms": 36.7,
+"err": ""
+}
+]
+},
+"ffmpeg|msbc": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 8096,
+"ms": 44.4,
+"err": ""
+}
+]
+},
+"ffmpeg|mts": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 32524,
+"ms": 48.0,
+"err": ""
+}
+]
+},
+"ffmpeg|mxf": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": 0,
+"ms": 45.6,
+"err": "ecb180] Nothing was written into output file, because at least one of its streams received no packets.\nframe=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967295,
+"bytes": 0,
+"ms": 34.5,
+"err": "ed)\n[out#0/mxf @ 000002bdeb81e100] Nothing was written into output file, because at least one of its streams received no packets.\nsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 8249,
+"ms": 42.6,
+"err": ""
+}
+]
+},
+"ffmpeg|nut": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 8041,
+"ms": 49.1,
+"err": ""
+}
+]
+},
+"ffmpeg|obu": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 736,
+"ms": 167.7,
+"err": ""
+}
+]
+},
+"ffmpeg|oga": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 26564,
+"ms": 43.5,
+"err": ""
+}
+]
+},
+"ffmpeg|ogg": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 11227,
+"ms": 61.2,
+"err": ""
+}
+]
+},
+"ffmpeg|ogv": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 11227,
+"ms": 54.5,
+"err": ""
+}
+]
+},
+"ffmpeg|oma": {
+"vivo": false,
+"intentos": [
+{
+"semilla": "video",
+"rc": 3165764104,
+"bytes": -1,
+"ms": 35.7,
+"err": "se choose an encoder manually.\n[aost#0:0 @ 000002965daaf8c0] Error selecting an encoder\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0244.oma.\nError opening output files: Encoder not found\n"
+},
+{
+"semilla": "audio",
+"rc": 3165764104,
+"bytes": -1,
+"ms": 31.9,
+"err": "se choose an encoder manually.\n[aost#0:0 @ 000002e38b9d2900] Error selecting an encoder\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0245.oma.\nError opening output files: Encoder not found\n"
+},
+{
+"semilla": "imagen",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 27.6,
+"err": "s\\tmp\\o0246.oma':\n[out#0/oma @ 000002bfad04e740] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0246.oma.\nError opening output files: Invalid argument\n"
+}
+]
+},
+"ffmpeg|opus": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 5072,
+"ms": 47.0,
+"err": ""
+}
+]
+},
+"ffmpeg|pam": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": 9277,
+"ms": 50.8,
+"err": "ideo:18KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=63.7x elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 31.2,
+"err": "mp\\o0250.pam':\n[out#0/image2 @ 000001f06efcbb00] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0250.pam.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 18495,
+"ms": 42.3,
+"err": ""
+}
+]
+},
+"ffmpeg|pbm": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": 393,
+"ms": 50.0,
+"err": "video:1KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=69.5x elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 31.6,
+"err": "mp\\o0253.pbm':\n[out#0/image2 @ 000001e71314d740] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0253.pbm.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 393,
+"ms": 38.9,
+"err": ""
+}
+]
+},
+"ffmpeg|pcm": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 11284,
+"ms": 35.9,
+"err": ""
+}
+]
+},
+"ffmpeg|pcx": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": 5567,
+"ms": 42.7,
+"err": "ideo:11KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=91.5x elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 28.5,
+"err": "mp\\o0257.pcx':\n[out#0/image2 @ 000002060700a180] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0257.pcx.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 787,
+"ms": 36.3,
+"err": ""
+}
+]
+},
+"ffmpeg|pfm": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": 36882,
+"ms": 46.2,
+"err": "ideo:72KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=69.2x elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 27.8,
+"err": "mp\\o0260.pfm':\n[out#0/image2 @ 000002b4f960dd80] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0260.pfm.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 36882,
+"ms": 35.8,
+"err": ""
+}
+]
+},
+"ffmpeg|pgm": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": 3085,
+"ms": 46.0,
+"err": "video:6KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=89.4x elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 31.6,
+"err": "mp\\o0263.pgm':\n[out#0/image2 @ 0000024443eea880] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0263.pgm.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 6159,
+"ms": 34.5,
+"err": ""
+}
+]
+},
+"ffmpeg|pgmyuv": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": 4621,
+"ms": 40.9,
+"err": "video:9KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed= 139x elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 28.9,
+"err": "66.pgmyuv':\n[out#0/image2 @ 0000029bdedefbc0] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0266.pgmyuv.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 9231,
+"ms": 36.2,
+"err": ""
+}
+]
+},
+"ffmpeg|phm": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": 18451,
+"ms": 43.5,
+"err": "ideo:36KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=82.2x elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 28.0,
+"err": "mp\\o0269.phm':\n[out#0/image2 @ 000002999b240440] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0269.phm.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 18451,
+"ms": 35.5,
+"err": ""
+}
+]
+},
+"ffmpeg|pix": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": 5822,
+"ms": 45.8,
+"err": "ideo:11KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=81.5x elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 30.7,
+"err": "mp\\o0272.pix':\n[out#0/image2 @ 000002324bbdaa80] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0272.pix.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 386,
+"ms": 37.4,
+"err": ""
+}
+]
+},
+"ffmpeg|png": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": 2495,
+"ms": 46.9,
+"err": "video:5KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=69.4x elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 36.7,
+"err": "mp\\o0275.png':\n[out#0/image2 @ 00000244acdeea00] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0275.png.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 487,
+"ms": 37.6,
+"err": ""
+}
+]
+},
+"ffmpeg|ppm": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": 9229,
+"ms": 44.9,
+"err": "ideo:18KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=  87x elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 32.4,
+"err": "mp\\o0278.ppm':\n[out#0/image2 @ 000001f3494dc740] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0278.ppm.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 18447,
+"ms": 33.6,
+"err": ""
+}
+]
+},
+"ffmpeg|psp": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 7953,
+"ms": 55.9,
+"err": ""
+}
+]
+},
+"ffmpeg|qoi": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": 3582,
+"ms": 44.7,
+"err": "video:7KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=78.3x elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 30.8,
+"err": "mp\\o0282.qoi':\n[out#0/image2 @ 00000233562ecc40] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0282.qoi.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 285,
+"ms": 35.8,
+"err": ""
+}
+]
+},
+"ffmpeg|ra": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 9676,
+"ms": 51.7,
+"err": ""
+}
+]
+},
+"ffmpeg|ras": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": 8682,
+"ms": 44.2,
+"err": "ideo:17KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=93.8x elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 28.1,
+"err": "mp\\o0286.ras':\n[out#0/image2 @ 000001bd737dd180] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0286.ras.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 7040,
+"ms": 36.2,
+"err": ""
+}
+]
+},
+"ffmpeg|rco": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": 0,
+"ms": 39.0,
+"err": "\n[out#0/g723_1 @ 000001b2359bf440] Nothing was written into output file, because at least one of its streams received no packets.\nsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 0,
+"bytes": 408,
+"ms": 39.4,
+"err": ""
+}
+]
+},
+"ffmpeg|rcv": {
+"vivo": false,
+"intentos": [
+{
+"semilla": "video",
+"rc": 3165764104,
+"bytes": -1,
+"ms": 30.1,
+"err": "se choose an encoder manually.\n[vost#0:0 @ 000001f0c420ef40] Error selecting an encoder\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0290.rcv.\nError opening output files: Encoder not found\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 28.6,
+"err": "p\\o0291.rcv':\n[out#0/vc1test @ 000001e1e030a800] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0291.rcv.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 3165764104,
+"bytes": -1,
+"ms": 30.3,
+"err": "se choose an encoder manually.\n[vost#0:0 @ 00000141e6e93200] Error selecting an encoder\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0292.rcv.\nError opening output files: Encoder not found\n"
+}
+]
+},
+"ffmpeg|rgb": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 23040,
+"ms": 43.1,
+"err": ""
+}
+]
+},
+"ffmpeg|rm": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 9676,
+"ms": 49.9,
+"err": ""
+}
+]
+},
+"ffmpeg|roq": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": 0,
+"ms": 72.0,
+"err": "29c80] Nothing was written into output file, because at least one of its streams received no packets.\nframe=    0 fps=0.0 q=-0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.02    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": 0,
+"ms": 35.8,
+"err": "nt)\n[out#0/roq @ 000002387ad3bcc0] Nothing was written into output file, because at least one of its streams received no packets.\nsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 662,
+"ms": 37.1,
+"err": ""
+}
+]
+},
+"ffmpeg|rs": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": 8682,
+"ms": 43.0,
+"err": "ideo:17KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=79.2x elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 29.2,
+"err": "\\tmp\\o0300.rs':\n[out#0/image2 @ 0000014abbdcd5c0] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0300.rs.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 7040,
+"ms": 36.1,
+"err": ""
+}
+]
+},
+"ffmpeg|rso": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 22536,
+"ms": 34.1,
+"err": ""
+}
+]
+},
+"ffmpeg|sb": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 22528,
+"ms": 35.2,
+"err": ""
+}
+]
+},
+"ffmpeg|sbc": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 8096,
+"ms": 35.4,
+"err": ""
+}
+]
+},
+"ffmpeg|scc": {
+"vivo": false,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 31.0,
+"err": "s\\tmp\\o0305.scc':\n[out#0/scc @ 000001b4f609e700] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0305.scc.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 28.4,
+"err": "s\\tmp\\o0306.scc':\n[out#0/scc @ 00000149fa08f280] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0306.scc.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 29.9,
+"err": "s\\tmp\\o0307.scc':\n[out#0/scc @ 000002565386cc40] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0307.scc.\nError opening output files: Invalid argument\n"
+}
+]
+},
+"ffmpeg|sf": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 46080,
+"ms": 35.8,
+"err": ""
+}
+]
+},
+"ffmpeg|sgi": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": 6817,
+"ms": 48.0,
+"err": "ideo:13KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=62.4x elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 31.6,
+"err": "mp\\o0311.sgi':\n[out#0/image2 @ 0000024257d5f1c0] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0311.sgi.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 2792,
+"ms": 34.8,
+"err": ""
+}
+]
+},
+"ffmpeg|sox": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 90144,
+"ms": 34.5,
+"err": ""
+}
+]
+},
+"ffmpeg|spdif": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 92160,
+"ms": 37.2,
+"err": ""
+}
+]
+},
+"ffmpeg|spx": {
+"vivo": false,
+"intentos": [
+{
+"semilla": "video",
+"rc": 3165764104,
+"bytes": -1,
+"ms": 31.1,
+"err": "se choose an encoder manually.\n[aost#0:0 @ 0000019f52363180] Error selecting an encoder\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0315.spx.\nError opening output files: Encoder not found\n"
+},
+{
+"semilla": "audio",
+"rc": 3165764104,
+"bytes": -1,
+"ms": 28.8,
+"err": "se choose an encoder manually.\n[aost#0:0 @ 00000211630918c0] Error selecting an encoder\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0316.spx.\nError opening output files: Encoder not found\n"
+},
+{
+"semilla": "imagen",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 28.6,
+"err": "s\\tmp\\o0317.spx':\n[out#0/spx @ 000001814146fa80] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0317.spx.\nError opening output files: Invalid argument\n"
+}
+]
+},
+"ffmpeg|srt": {
+"vivo": false,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 30.1,
+"err": "s\\tmp\\o0319.srt':\n[out#0/srt @ 00000246e64e8840] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0319.srt.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 27.5,
+"err": "s\\tmp\\o0320.srt':\n[out#0/srt @ 0000017c51d705c0] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0320.srt.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 27.8,
+"err": "s\\tmp\\o0321.srt':\n[out#0/srt @ 000001b24f1ec600] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0321.srt.\nError opening output files: Invalid argument\n"
+}
+]
+},
+"ffmpeg|ssa": {
+"vivo": false,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 30.3,
+"err": "s\\tmp\\o0323.ssa':\n[out#0/ass @ 0000018f00a0bac0] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0323.ssa.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 28.2,
+"err": "s\\tmp\\o0324.ssa':\n[out#0/ass @ 000002425bd5bb80] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0324.ssa.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 28.0,
+"err": "s\\tmp\\o0325.ssa':\n[out#0/ass @ 00000190cadfcb40] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0325.ssa.\nError opening output files: Invalid argument\n"
+}
+]
+},
+"ffmpeg|sub": {
+"vivo": false,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 34.7,
+"err": "\\o0327.sub':\n[out#0/microdvd @ 00000184d9c59d40] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0327.sub.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 30.9,
+"err": "\\o0328.sub':\n[out#0/microdvd @ 000001afd391aac0] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0328.sub.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 29.3,
+"err": "\\o0329.sub':\n[out#0/microdvd @ 000001b9d435e080] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0329.sub.\nError opening output files: Invalid argument\n"
+}
+]
+},
+"ffmpeg|sun": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": 8682,
+"ms": 43.8,
+"err": "ideo:17KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=92.1x elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 28.7,
+"err": "mp\\o0332.sun':\n[out#0/image2 @ 000001de6b35e840] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0332.sun.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 7040,
+"ms": 33.6,
+"err": ""
+}
+]
+},
+"ffmpeg|sunras": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": 8682,
+"ms": 43.4,
+"err": "ideo:17KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=84.8x elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 30.4,
+"err": "35.sunras':\n[out#0/image2 @ 000001de5bc3b4c0] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0335.sunras.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 7040,
+"ms": 35.9,
+"err": ""
+}
+]
+},
+"ffmpeg|sup": {
+"vivo": false,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 30.1,
+"err": "s\\tmp\\o0337.sup':\n[out#0/sup @ 000002152ae1ae80] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0337.sup.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 27.6,
+"err": "s\\tmp\\o0338.sup':\n[out#0/sup @ 0000022852f5cf00] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0338.sup.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 28.3,
+"err": "s\\tmp\\o0339.sup':\n[out#0/sup @ 0000029789c32440] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0339.sup.\nError opening output files: Invalid argument\n"
+}
+]
+},
+"ffmpeg|sw": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 45056,
+"ms": 34.7,
+"err": ""
+}
+]
+},
+"ffmpeg|swf": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 6545,
+"ms": 45.0,
+"err": ""
+}
+]
+},
+"ffmpeg|tco": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": 0,
+"ms": 34.2,
+"err": "\n[out#0/g723_1 @ 00000242b73880c0] Nothing was written into output file, because at least one of its streams received no packets.\nsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 0,
+"bytes": 408,
+"ms": 36.7,
+"err": ""
+}
+]
+},
+"ffmpeg|tga": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": 5138,
+"ms": 45.3,
+"err": "ideo:10KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=63.8x elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 29.6,
+"err": "mp\\o0346.tga':\n[out#0/image2 @ 0000011656f0c200] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0346.tga.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 420,
+"ms": 37.4,
+"err": ""
+}
+]
+},
+"ffmpeg|thd": {
+"vivo": false,
+"intentos": [
+{
+"semilla": "video",
+"rc": 3561836632,
+"bytes": 0,
+"ms": 38.1,
+"err": "\n[out#0/truehd @ 0000026c6119dd80] Nothing was written into output file, because at least one of its streams received no packets.\nsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 3561836632,
+"bytes": 0,
+"ms": 34.1,
+"err": "\n[out#0/truehd @ 00000215eef9b940] Nothing was written into output file, because at least one of its streams received no packets.\nsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "imagen",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 30.8,
+"err": "mp\\o0350.thd':\n[out#0/truehd @ 000002236d3ceac0] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0350.thd.\nError opening output files: Invalid argument\n"
+}
+]
+},
+"ffmpeg|tif": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": 4392,
+"ms": 46.5,
+"err": "video:9KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=54.6x elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 28.3,
+"err": "mp\\o0353.tif':\n[out#0/image2 @ 0000027ad0d3ea00] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0353.tif.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 14117,
+"ms": 35.1,
+"err": ""
+}
+]
+},
+"ffmpeg|tiff": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": 4392,
+"ms": 40.6,
+"err": "video:9KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed= 138x elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 27.9,
+"err": "\\o0356.tiff':\n[out#0/image2 @ 00000211fb9efcc0] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0356.tiff.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 14117,
+"ms": 35.3,
+"err": ""
+}
+]
+},
+"ffmpeg|ts": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 32524,
+"ms": 44.7,
+"err": ""
+}
+]
+},
+"ffmpeg|tta": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 28535,
+"ms": 38.2,
+"err": ""
+}
+]
+},
+"ffmpeg|ttml": {
+"vivo": false,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 32.7,
+"err": "mp\\o0360.ttml':\n[out#0/ttml @ 00000252e6afde40] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0360.ttml.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 32.7,
+"err": "mp\\o0361.ttml':\n[out#0/ttml @ 000002b30174e700] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0361.ttml.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 30.8,
+"err": "mp\\o0362.ttml':\n[out#0/ttml @ 000002613f75ef80] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0362.ttml.\nError opening output files: Invalid argument\n"
+}
+]
+},
+"ffmpeg|tun": {
+"vivo": false,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": 0,
+"ms": 33.1,
+"err": "nt)\n[out#0/alp @ 0000029b2924df80] Nothing was written into output file, because at least one of its streams received no packets.\nsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": 0,
+"ms": 32.5,
+"err": "nt)\n[out#0/alp @ 0000019f29a5b340] Nothing was written into output file, because at least one of its streams received no packets.\nsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "imagen",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 28.4,
+"err": "s\\tmp\\o0366.tun':\n[out#0/alp @ 0000015c1fc6b880] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0366.tun.\nError opening output files: Invalid argument\n"
+}
+]
+},
+"ffmpeg|ub": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 22528,
+"ms": 34.9,
+"err": ""
+}
+]
+},
+"ffmpeg|ul": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 22528,
+"ms": 34.5,
+"err": ""
+}
+]
+},
+"ffmpeg|uw": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 45056,
+"ms": 34.5,
+"err": ""
+}
+]
+},
+"ffmpeg|vag": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 11278,
+"ms": 34.1,
+"err": ""
+}
+]
+},
+"ffmpeg|vbn": {
+"vivo": false,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 42.9,
+"err": "ge2 @ 0000018d349cbc00] Output file is empty, nothing was encoded(check -ss / -t / -frames parameters if used)\nframe=    0 fps=0.0 q=0.0 Lsize=N/A time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 31.9,
+"err": "mp\\o0373.vbn':\n[out#0/image2 @ 000001c6b106e180] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0373.vbn.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 35.4,
+"err": "ge2 @ 00000126de35e080] Output file is empty, nothing was encoded(check -ss / -t / -frames parameters if used)\nframe=    0 fps=0.0 q=0.0 Lsize=N/A time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+}
+]
+},
+"ffmpeg|vc1": {
+"vivo": false,
+"intentos": [
+{
+"semilla": "video",
+"rc": 3165764104,
+"bytes": -1,
+"ms": 32.3,
+"err": "se choose an encoder manually.\n[vost#0:0 @ 000001cef58ee3c0] Error selecting an encoder\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0376.vc1.\nError opening output files: Encoder not found\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 28.0,
+"err": "s\\tmp\\o0377.vc1':\n[out#0/vc1 @ 0000027863e2a700] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0377.vc1.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 3165764104,
+"bytes": -1,
+"ms": 28.0,
+"err": "se choose an encoder manually.\n[vost#0:0 @ 000002998947e480] Error selecting an encoder\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0378.vc1.\nError opening output files: Encoder not found\n"
+}
+]
+},
+"ffmpeg|vc2": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 1966630,
+"ms": 42.1,
+"err": ""
+}
+]
+},
+"ffmpeg|vob": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 32768,
+"ms": 49.9,
+"err": ""
+}
+]
+},
+"ffmpeg|voc": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 45183,
+"ms": 37.1,
+"err": ""
+}
+]
+},
+"ffmpeg|vtt": {
+"vivo": false,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 29.7,
+"err": "mp\\o0383.vtt':\n[out#0/webvtt @ 0000027953c0cd00] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0383.vtt.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 29.0,
+"err": "mp\\o0384.vtt':\n[out#0/webvtt @ 000001fb9386f080] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0384.vtt.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 28.8,
+"err": "mp\\o0385.vtt':\n[out#0/webvtt @ 000002a3df7de280] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0385.vtt.\nError opening output files: Invalid argument\n"
+}
+]
+},
+"ffmpeg|vvc": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 675,
+"ms": 267.8,
+"err": ""
+}
+]
+},
+"ffmpeg|w64": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 45160,
+"ms": 43.4,
+"err": ""
+}
+]
+},
+"ffmpeg|wav": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 45134,
+"ms": 36.8,
+"err": ""
+}
+]
+},
+"ffmpeg|wbmp": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": 388,
+"ms": 51.2,
+"err": "video:1KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=42.6x elapsed=0:00:00.01    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 29.1,
+"err": "\\o0391.wbmp':\n[out#0/image2 @ 000002856475fb00] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0391.wbmp.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 388,
+"ms": 37.7,
+"err": ""
+}
+]
+},
+"ffmpeg|webm": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 7026,
+"ms": 86.2,
+"err": ""
+}
+]
+},
+"ffmpeg|webp": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 2586,
+"ms": 52.7,
+"err": ""
+}
+]
+},
+"ffmpeg|wma": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 13857,
+"ms": 43.8,
+"err": ""
+}
+]
+},
+"ffmpeg|wmv": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 13857,
+"ms": 46.4,
+"err": ""
+}
+]
+},
+"ffmpeg|wtv": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 45056,
+"ms": 46.4,
+"err": ""
+}
+]
+},
+"ffmpeg|wv": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 45075,
+"ms": 37.7,
+"err": ""
+}
+]
+},
+"ffmpeg|xbm": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": 2440,
+"ms": 42.4,
+"err": "video:5KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=77.8x elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 28.8,
+"err": "mp\\o0400.xbm':\n[out#0/image2 @ 00000206ae2cca80] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0400.xbm.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 2440,
+"ms": 35.2,
+"err": ""
+}
+]
+},
+"ffmpeg|xface": {
+"vivo": false,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 42.7,
+"err": "ge2 @ 000002100b07eac0] Output file is empty, nothing was encoded(check -ss / -t / -frames parameters if used)\nframe=    0 fps=0.0 q=0.0 Lsize=N/A time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 28.4,
+"err": "0403.xface':\n[out#0/image2 @ 0000027af3dba800] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0403.xface.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 34.9,
+"err": "ge2 @ 000001ff9d8cd9c0] Output file is empty, nothing was encoded(check -ss / -t / -frames parameters if used)\nframe=    0 fps=0.0 q=0.0 Lsize=N/A time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+}
+]
+},
+"ffmpeg|xml": {
+"vivo": false,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 32.0,
+"err": "':\n[out#0/webm_dash_manifest @ 00000258a54ad540] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0406.xml.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 29.9,
+"err": "':\n[out#0/webm_dash_manifest @ 000001c2aae10780] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0407.xml.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 29.7,
+"err": "':\n[out#0/webm_dash_manifest @ 0000024a0ba913c0] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0408.xml.\nError opening output files: Invalid argument\n"
+}
+]
+},
+"ffmpeg|xwd": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": 9327,
+"ms": 44.6,
+"err": "ideo:18KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=  87x elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 29.3,
+"err": "mp\\o0411.xwd':\n[out#0/image2 @ 000002ea8f22bb00] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0411.xwd.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 9327,
+"ms": 36.7,
+"err": ""
+}
+]
+},
+"ffmpeg|y": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 4294967274,
+"bytes": 3072,
+"ms": 50.6,
+"err": "video:9KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=98.6x elapsed=0:00:00.00    \nConversion failed!\n"
+},
+{
+"semilla": "audio",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 34.2,
+"err": "as\\tmp\\o0414.y':\n[out#0/image2 @ 00000201a6fcaf40] Output file does not contain any stream\nError opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0414.y.\nError opening output files: Invalid argument\n"
+},
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 18432,
+"ms": 35.7,
+"err": ""
+}
+]
+},
+"ffmpeg|y4m": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 23128,
+"ms": 41.5,
+"err": ""
+}
+]
+},
+"ffmpeg|yuv": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "video",
+"rc": 0,
+"bytes": 23040,
+"ms": 42.6,
+"err": ""
+}
+]
+},
+"imagemagick|aai": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 12296,
+"ms": 20.8,
+"err": ""
+}
+]
+},
+"imagemagick|ai": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 2134,
+"ms": 21.9,
+"err": ""
+}
+]
+},
+"imagemagick|apng": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 1316,
+"ms": 87.5,
+"err": ""
+}
+]
+},
+"imagemagick|art": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 392,
+"ms": 50.0,
+"err": ""
+}
+]
+},
+"imagemagick|ashlar": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 684,
+"ms": 22.5,
+"err": ""
+}
+]
+},
+"imagemagick|avif": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 379,
+"ms": 84.2,
+"err": ""
+}
+]
+},
+"imagemagick|avs": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 12296,
+"ms": 20.2,
+"err": ""
+}
+]
+},
+"imagemagick|bayer": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 6144,
+"ms": 33.6,
+"err": ""
+}
+]
+},
+"imagemagick|bayera": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 6144,
+"ms": 31.9,
+"err": ""
+}
+]
+},
+"imagemagick|bgr": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 18432,
+"ms": 18.8,
+"err": ""
+}
+]
+},
+"imagemagick|bgra": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 24576,
+"ms": 19.5,
+"err": ""
+}
+]
+},
+"imagemagick|bgro": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 18432,
+"ms": 19.8,
+"err": ""
+}
+]
+},
+"imagemagick|bmp": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 9354,
+"ms": 19.4,
+"err": ""
+}
+]
+},
+"imagemagick|bmp2": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 9242,
+"ms": 125.0,
+"err": ""
+}
+]
+},
+"imagemagick|bmp3": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 9270,
+"ms": 18.4,
+"err": ""
+}
+]
+},
+"imagemagick|brf": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 550,
+"ms": 55.0,
+"err": ""
+}
+]
+},
+"imagemagick|cal": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 2066,
+"ms": 120.9,
+"err": ""
+}
+]
+},
+"imagemagick|cals": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 2066,
+"ms": 202.1,
+"err": ""
+}
+]
+},
+"imagemagick|cin": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 20480,
+"ms": 20.7,
+"err": ""
+}
+]
+},
+"imagemagick|cip": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 1717,
+"ms": 19.3,
+"err": ""
+}
+]
+},
+"imagemagick|clip": {
+"vivo": false,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 1,
+"bytes": -1,
+"ms": 28.0,
+"err": "stas\\tmp\\o0438.clip': No such file or directory @ error/image.c/ClipImagePath/730.\nmagick: image does not have a clip mask `D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0438.clip' @ error/clip.c/WriteCLIPImage/234.\n"
+}
+]
+},
+"imagemagick|clipboard": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 810,
+"ms": 19.5,
+"err": ""
+}
+]
+},
+"imagemagick|cmyk": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 24576,
+"ms": 19.3,
+"err": ""
+}
+]
+},
+"imagemagick|cmyka": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 30720,
+"ms": 18.8,
+"err": ""
+}
+]
+},
+"imagemagick|cur": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 12734,
+"ms": 20.2,
+"err": ""
+}
+]
+},
+"imagemagick|data": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 810,
+"ms": 21.1,
+"err": ""
+}
+]
+},
+"imagemagick|dcx": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 4887,
+"ms": 19.2,
+"err": ""
+}
+]
+},
+"imagemagick|dds": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 1664,
+"ms": 18.8,
+"err": ""
+}
+]
+},
+"imagemagick|dpx": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 26624,
+"ms": 19.5,
+"err": ""
+}
+]
+},
+"imagemagick|dxt1": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 1664,
+"ms": 123.5,
+"err": ""
+}
+]
+},
+"imagemagick|dxt5": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 1664,
+"ms": 19.8,
+"err": ""
+}
+]
+},
+"imagemagick|epdf": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 2134,
+"ms": 20.9,
+"err": ""
+}
+]
+},
+"imagemagick|epi": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 25250,
+"ms": 19.5,
+"err": ""
+}
+]
+},
+"imagemagick|eps": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 24397,
+"ms": 19.9,
+"err": ""
+}
+]
+},
+"imagemagick|eps2": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 11118,
+"ms": 19.3,
+"err": ""
+}
+]
+},
+"imagemagick|eps3": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 4805,
+"ms": 19.8,
+"err": ""
+}
+]
+},
+"imagemagick|epsf": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 24398,
+"ms": 19.4,
+"err": ""
+}
+]
+},
+"imagemagick|epsi": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 25251,
+"ms": 20.0,
+"err": ""
+}
+]
+},
+"imagemagick|ept": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 29320,
+"ms": 35.3,
+"err": ""
+}
+]
+},
+"imagemagick|ept2": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 16040,
+"ms": 137.7,
+"err": ""
+}
+]
+},
+"imagemagick|ept3": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 9727,
+"ms": 37.4,
+"err": ""
+}
+]
+},
+"imagemagick|exr": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 19513,
+"ms": 47.9,
+"err": ""
+}
+]
+},
+"imagemagick|farbfeld": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 24592,
+"ms": 22.2,
+"err": ""
+}
+]
+},
+"imagemagick|fax": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 349,
+"ms": 56.7,
+"err": ""
+}
+]
+},
+"imagemagick|ff": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 24592,
+"ms": 24.1,
+"err": ""
+}
+]
+},
+"imagemagick|fits": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 23040,
+"ms": 22.5,
+"err": ""
+}
+]
+},
+"imagemagick|fl32": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 36880,
+"ms": 22.7,
+"err": ""
+}
+]
+},
+"imagemagick|flv": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 798,
+"ms": 72.0,
+"err": ""
+}
+]
+},
+"imagemagick|fts": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 23040,
+"ms": 20.4,
+"err": ""
+}
+]
+},
+"imagemagick|ftxt": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 61948,
+"ms": 24.3,
+"err": ""
+}
+]
+},
+"imagemagick|g3": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 349,
+"ms": 51.5,
+"err": ""
+}
+]
+},
+"imagemagick|g4": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 349,
+"ms": 57.8,
+"err": ""
+}
+]
+},
+"imagemagick|gif": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 815,
+"ms": 60.8,
+"err": ""
+}
+]
+},
+"imagemagick|gif87": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 807,
+"ms": 168.1,
+"err": ""
+}
+]
+},
+"imagemagick|gray": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 6144,
+"ms": 19.7,
+"err": ""
+}
+]
+},
+"imagemagick|graya": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 12288,
+"ms": 20.2,
+"err": ""
+}
+]
+},
+"imagemagick|group4": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 810,
+"ms": 23.2,
+"err": ""
+}
+]
+},
+"imagemagick|hdr": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 1025,
+"ms": 20.1,
+"err": ""
+}
+]
+},
+"imagemagick|histogram": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 810,
+"ms": 20.7,
+"err": ""
+}
+]
+},
+"imagemagick|hrz": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 184320,
+"ms": 22.5,
+"err": ""
+}
+]
+},
+"imagemagick|htm": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 810,
+"ms": 23.0,
+"err": ""
+}
+]
+},
+"imagemagick|html": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 810,
+"ms": 21.2,
+"err": ""
+}
+]
+},
+"imagemagick|icb": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 9234,
+"ms": 20.0,
+"err": ""
+}
+]
+},
+"imagemagick|icn": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 12734,
+"ms": 22.7,
+"err": ""
+}
+]
+},
+"imagemagick|ico": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 12734,
+"ms": 127.5,
+"err": ""
+}
+]
+},
+"imagemagick|icon": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 12734,
+"ms": 20.3,
+"err": ""
+}
+]
+},
+"imagemagick|info": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 110,
+"ms": 20.3,
+"err": ""
+}
+]
+},
+"imagemagick|inline": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 810,
+"ms": 20.0,
+"err": ""
+}
+]
+},
+"imagemagick|ipl": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 18484,
+"ms": 19.3,
+"err": ""
+}
+]
+},
+"imagemagick|isobrl": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 384,
+"ms": 145.5,
+"err": ""
+}
+]
+},
+"imagemagick|isobrl6": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 512,
+"ms": 50.9,
+"err": ""
+}
+]
+},
+"imagemagick|j2c": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 2284,
+"ms": 132.8,
+"err": ""
+}
+]
+},
+"imagemagick|j2k": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 2199,
+"ms": 21.4,
+"err": ""
+}
+]
+},
+"imagemagick|jng": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 655,
+"ms": 23.6,
+"err": ""
+}
+]
+},
+"imagemagick|jp2": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 2284,
+"ms": 21.8,
+"err": ""
+}
+]
+},
+"imagemagick|jpc": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 2284,
+"ms": 131.9,
+"err": ""
+}
+]
+},
+"imagemagick|jpe": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 838,
+"ms": 20.3,
+"err": ""
+}
+]
+},
+"imagemagick|jpeg": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 838,
+"ms": 20.1,
+"err": ""
+}
+]
+},
+"imagemagick|jpg": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 838,
+"ms": 128.2,
+"err": ""
+}
+]
+},
+"imagemagick|jpm": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 2284,
+"ms": 23.0,
+"err": ""
+}
+]
+},
+"imagemagick|jps": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 838,
+"ms": 21.6,
+"err": ""
+}
+]
+},
+"imagemagick|jpt": {
+"vivo": false,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 1,
+"bytes": 0,
+"ms": 30.1,
+"err": "magick: unable to encode image file `D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0499.jpt' @ error/jp2.c/WriteJP2Image/1271.\n"
+}
+]
+},
+"imagemagick|json": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 3632,
+"ms": 141.1,
+"err": ""
+}
+]
+},
+"imagemagick|jxl": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 776,
+"ms": 93.4,
+"err": ""
+}
+]
+},
+"imagemagick|m2v": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 550,
+"ms": 64.7,
+"err": ""
+}
+]
+},
+"imagemagick|m4v": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 1639,
+"ms": 64.4,
+"err": ""
+}
+]
+},
+"imagemagick|map": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 3219,
+"ms": 47.2,
+"err": ""
+}
+]
+},
+"imagemagick|mask": {
+"vivo": false,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 1,
+"bytes": -1,
+"ms": 28.3,
+"err": "magick: image does not have an mask channel `D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0505.mask' @ error/mask.c/WriteMASKImage/353.\n"
+}
+]
+},
+"imagemagick|mat": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 9408,
+"ms": 20.0,
+"err": ""
+}
+]
+},
+"imagemagick|matte": {
+"vivo": false,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 1,
+"bytes": -1,
+"ms": 27.8,
+"err": "magick: image does not have an alpha channel `D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0507.matte' @ error/matte.c/WriteMATTEImage/180.\n"
+}
+]
+},
+"imagemagick|miff": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 19292,
+"ms": 20.1,
+"err": ""
+}
+]
+},
+"imagemagick|mkv": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 1452,
+"ms": 62.5,
+"err": ""
+}
+]
+},
+"imagemagick|mng": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 650,
+"ms": 20.0,
+"err": ""
+}
+]
+},
+"imagemagick|mono": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 384,
+"ms": 52.1,
+"err": ""
+}
+]
+},
+"imagemagick|mov": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 1578,
+"ms": 97.9,
+"err": ""
+}
+]
+},
+"imagemagick|mp4": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 1631,
+"ms": 61.4,
+"err": ""
+}
+]
+},
+"imagemagick|mpc": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 36864,
+"ms": 19.6,
+"err": ""
+}
+]
+},
+"imagemagick|mpeg": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 2048,
+"ms": 61.2,
+"err": ""
+}
+]
+},
+"imagemagick|mpg": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 2048,
+"ms": 65.0,
+"err": ""
+}
+]
+},
+"imagemagick|msvg": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 1582,
+"ms": 23.9,
+"err": ""
+}
+]
+},
+"imagemagick|mtv": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 9222,
+"ms": 131.4,
+"err": ""
+}
+]
+},
+"imagemagick|mvg": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 810,
+"ms": 134.5,
+"err": ""
+}
+]
+},
+"imagemagick|null": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 810,
+"ms": 20.6,
+"err": ""
+}
+]
+},
+"imagemagick|otb": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 388,
+"ms": 52.3,
+"err": ""
+}
+]
+},
+"imagemagick|pal": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 6144,
+"ms": 20.9,
+"err": ""
+}
+]
+},
+"imagemagick|palm": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 3088,
+"ms": 52.3,
+"err": ""
+}
+]
+},
+"imagemagick|pam": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 18495,
+"ms": 19.7,
+"err": ""
+}
+]
+},
+"imagemagick|pbm": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 393,
+"ms": 57.5,
+"err": ""
+}
+]
+},
+"imagemagick|pcd": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 788480,
+"ms": 84.5,
+"err": ""
+}
+]
+},
+"imagemagick|pcds": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 788480,
+"ms": 87.6,
+"err": ""
+}
+]
+},
+"imagemagick|pcl": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 7550,
+"ms": 20.1,
+"err": ""
+}
+]
+},
+"imagemagick|pct": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 1244,
+"ms": 19.6,
+"err": ""
+}
+]
+},
+"imagemagick|pcx": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 787,
+"ms": 129.8,
+"err": ""
+}
+]
+},
+"imagemagick|pdb": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 538,
+"ms": 22.3,
+"err": ""
+}
+]
+},
+"imagemagick|pdf": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 2134,
+"ms": 22.4,
+"err": ""
+}
+]
+},
+"imagemagick|pdfa": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 3613,
+"ms": 21.8,
+"err": ""
+}
+]
+},
+"imagemagick|pfm": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 36877,
+"ms": 19.9,
+"err": ""
+}
+]
+},
+"imagemagick|pgm": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 6159,
+"ms": 19.3,
+"err": ""
+}
+]
+},
+"imagemagick|pgx": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 6161,
+"ms": 119.7,
+"err": ""
+}
+]
+},
+"imagemagick|phm": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 18445,
+"ms": 120.8,
+"err": ""
+}
+]
+},
+"imagemagick|picon": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 2147,
+"ms": 80.4,
+"err": ""
+}
+]
+},
+"imagemagick|pict": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 1244,
+"ms": 20.1,
+"err": ""
+}
+]
+},
+"imagemagick|pjpeg": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 1097,
+"ms": 22.1,
+"err": ""
+}
+]
+},
+"imagemagick|png": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 810,
+"ms": 24.5,
+"err": ""
+}
+]
+},
+"imagemagick|png00": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 810,
+"ms": 21.1,
+"err": ""
+}
+]
+},
+"imagemagick|png24": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 460,
+"ms": 19.5,
+"err": ""
+}
+]
+},
+"imagemagick|png32": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 480,
+"ms": 19.4,
+"err": ""
+}
+]
+},
+"imagemagick|png48": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 810,
+"ms": 19.5,
+"err": ""
+}
+]
+},
+"imagemagick|png64": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 820,
+"ms": 18.6,
+"err": ""
+}
+]
+},
+"imagemagick|png8": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 652,
+"ms": 52.7,
+"err": ""
+}
+]
+},
+"imagemagick|pnm": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 18447,
+"ms": 20.1,
+"err": ""
+}
+]
+},
+"imagemagick|pocketmod": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 810,
+"ms": 20.0,
+"err": ""
+}
+]
+},
+"imagemagick|ppm": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 18447,
+"ms": 19.8,
+"err": ""
+}
+]
+},
+"imagemagick|ps": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 24423,
+"ms": 19.4,
+"err": ""
+}
+]
+},
+"imagemagick|ps2": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 11144,
+"ms": 20.4,
+"err": ""
+}
+]
+},
+"imagemagick|ps3": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 4819,
+"ms": 19.7,
+"err": ""
+}
+]
+},
+"imagemagick|psb": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 10785,
+"ms": 22.2,
+"err": ""
+}
+]
+},
+"imagemagick|psd": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 10477,
+"ms": 22.8,
+"err": ""
+}
+]
+},
+"imagemagick|ptif": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 18696,
+"ms": 20.8,
+"err": ""
+}
+]
+},
+"imagemagick|qoi": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 321,
+"ms": 19.0,
+"err": ""
+}
+]
+},
+"imagemagick|ras": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 9248,
+"ms": 20.0,
+"err": ""
+}
+]
+},
+"imagemagick|rgb": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 18432,
+"ms": 19.9,
+"err": ""
+}
+]
+},
+"imagemagick|rgba": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 24576,
+"ms": 22.3,
+"err": ""
+}
+]
+},
+"imagemagick|rgbo": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 24576,
+"ms": 20.3,
+"err": ""
+}
+]
+},
+"imagemagick|rgf": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 386,
+"ms": 51.5,
+"err": ""
+}
+]
+},
+"imagemagick|rsvg": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 1582,
+"ms": 25.7,
+"err": ""
+}
+]
+},
+"imagemagick|sf3": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 810,
+"ms": 20.4,
+"err": ""
+}
+]
+},
+"imagemagick|sgi": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 18944,
+"ms": 19.7,
+"err": ""
+}
+]
+},
+"imagemagick|shtml": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 155,
+"ms": 19.9,
+"err": ""
+}
+]
+},
+"imagemagick|six": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 1207,
+"ms": 47.3,
+"err": ""
+}
+]
+},
+"imagemagick|sixel": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 1207,
+"ms": 48.5,
+"err": ""
+}
+]
+},
+"imagemagick|sparse-color": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 90877,
+"ms": 29.6,
+"err": ""
+}
+]
+},
+"imagemagick|strimg": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 3072,
+"ms": 19.4,
+"err": ""
+}
+]
+},
+"imagemagick|sun": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 9248,
+"ms": 19.3,
+"err": ""
+}
+]
+},
+"imagemagick|svg": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 1582,
+"ms": 23.8,
+"err": ""
+}
+]
+},
+"imagemagick|svgz": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 755,
+"ms": 19.7,
+"err": ""
+}
+]
+},
+"imagemagick|tga": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 9234,
+"ms": 20.3,
+"err": ""
+}
+]
+},
+"imagemagick|thumbnail": {
+"vivo": false,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 1,
+"bytes": -1,
+"ms": 28.3,
+"err": "magick: image does not have a EXIF thumbnail `D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp\\o0575.thumbnail' @ error/thumbnail.c/WriteTHUMBNAILImage/187.\n"
+}
+]
+},
+"imagemagick|tiff": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 18696,
+"ms": 21.5,
+"err": ""
+}
+]
+},
+"imagemagick|tiff64": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 18828,
+"ms": 21.6,
+"err": ""
+}
+]
+},
+"imagemagick|txt": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 186682,
+"ms": 40.1,
+"err": ""
+}
+]
+},
+"imagemagick|ubrl": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 1186,
+"ms": 158.8,
+"err": ""
+}
+]
+},
+"imagemagick|ubrl6": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 1574,
+"ms": 69.4,
+"err": ""
+}
+]
+},
+"imagemagick|uil": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 5553,
+"ms": 67.7,
+"err": ""
+}
+]
+},
+"imagemagick|uyvy": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 6144,
+"ms": 20.1,
+"err": ""
+}
+]
+},
+"imagemagick|vda": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 9234,
+"ms": 19.4,
+"err": ""
+}
+]
+},
+"imagemagick|vicar": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 7168,
+"ms": 20.3,
+"err": ""
+}
+]
+},
+"imagemagick|vid": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 810,
+"ms": 23.3,
+"err": ""
+}
+]
+},
+"imagemagick|viff": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 10240,
+"ms": 20.5,
+"err": ""
+}
+]
+},
+"imagemagick|vips": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 18496,
+"ms": 20.6,
+"err": ""
+}
+]
+},
+"imagemagick|vst": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 9234,
+"ms": 20.1,
+"err": ""
+}
+]
+},
+"imagemagick|wbmp": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 388,
+"ms": 47.1,
+"err": ""
+}
+]
+},
+"imagemagick|webm": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 729,
+"ms": 76.9,
+"err": ""
+}
+]
+},
+"imagemagick|webp": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 220,
+"ms": 21.2,
+"err": ""
+}
+]
+},
+"imagemagick|wmv": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 3819,
+"ms": 61.5,
+"err": ""
+}
+]
+},
+"imagemagick|wpg": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 1006,
+"ms": 49.0,
+"err": ""
+}
+]
+},
+"imagemagick|xbm": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 2481,
+"ms": 54.6,
+"err": ""
+}
+]
+},
+"imagemagick|xpm": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 4097,
+"ms": 62.6,
+"err": ""
+}
+]
+},
+"imagemagick|xv": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 10240,
+"ms": 19.5,
+"err": ""
+}
+]
+},
+"imagemagick|yaml": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 3228,
+"ms": 145.8,
+"err": ""
+}
+]
+},
+"imagemagick|ycbcr": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 18432,
+"ms": 19.5,
+"err": ""
+}
+]
+},
+"imagemagick|ycbcra": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 24576,
+"ms": 19.7,
+"err": ""
+}
+]
+},
+"imagemagick|yuv": {
+"vivo": true,
+"intentos": [
+{
+"semilla": "imagen",
+"rc": 0,
+"bytes": 9216,
+"ms": 20.2,
+"err": ""
+}
+]
+}
+}

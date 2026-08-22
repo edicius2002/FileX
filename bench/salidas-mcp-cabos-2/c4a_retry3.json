@@ -1,0 +1,41 @@
+[
+  {
+    "caso": "retry_G1_convert_video_format",
+    "herramienta": "convert_video_format",
+    "salida_preexistente": true,
+    "bytes_preexistentes": 152,
+    "ms_llamada": 5003.3,
+    "isError": false,
+    "respuesta": "Error. Primary method failed: ffmpeg version N-121159-g0bd5a7d371-20250921 Copyright (c) 2000-2025 the FFmpeg developers\r\n  built with gcc 15.2.0 (crosstool-NG 1.28.0.1_403899e)\r\n  configuration: --prefix=/ffbuild/prefix --pkg-config-flags=--static --pkg-config=pkg-config --cross-prefix=x86_64-w64-m",
+    "veredicto": "RESPONDE(error-ff)",
+    "bytes_salida": 152,
+    "ffmpeg_huerfanos": [
+      19012
+    ],
+    "grupo": "G1"
+  },
+  {
+    "caso": "retry_G2_add_image_overlay",
+    "herramienta": "add_image_overlay",
+    "salida_preexistente": true,
+    "bytes_preexistentes": 152,
+    "ms_llamada": 18153.8,
+    "veredicto": "DEADLOCK (sin respuesta en 18.0s)",
+    "ffmpeg_huerfanos": [
+      27412
+    ],
+    "grupo": "G2"
+  },
+  {
+    "caso": "retry_G2_add_subtitles",
+    "herramienta": "add_subtitles",
+    "salida_preexistente": true,
+    "bytes_preexistentes": 152,
+    "ms_llamada": 18219.1,
+    "veredicto": "DEADLOCK (sin respuesta en 18.0s)",
+    "ffmpeg_huerfanos": [
+      18732
+    ],
+    "grupo": "G2"
+  }
+]

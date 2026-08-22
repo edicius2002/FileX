@@ -1,0 +1,350 @@
+{
+  "fichero": "D:\\Work\\research\\FileX\\repos\\mcp-refs\\video-audio-mcp\\server.py",
+  "n_herramientas": 27,
+  "grupos": {
+    "G1 - ffmpeg-python via _run_ffmpeg_with_fallback (reintento sobre ruta ya creada)": {
+      "n": 9,
+      "herramientas": [
+        "convert_video_format",
+        "set_video_audio_track_bitrate",
+        "set_video_audio_track_channels",
+        "set_video_audio_track_codec",
+        "set_video_audio_track_sample_rate",
+        "set_video_bitrate",
+        "set_video_codec",
+        "set_video_frame_rate",
+        "set_video_resolution"
+      ]
+    },
+    "G2 - ffmpeg-python en el cuerpo (depende de que la salida ya exista)": {
+      "n": 15,
+      "herramientas": [
+        "add_basic_transitions",
+        "add_image_overlay",
+        "add_subtitles",
+        "add_text_overlay",
+        "change_aspect_ratio",
+        "change_video_speed",
+        "convert_audio_format",
+        "convert_audio_properties",
+        "convert_video_properties",
+        "extract_audio_from_video",
+        "remove_silence",
+        "set_audio_bitrate",
+        "set_audio_channels",
+        "set_audio_sample_rate",
+        "trim_video"
+      ]
+    },
+    "G3 - mixta (subprocess con -y + ffmpeg-python sin overwrite_output)": {
+      "n": 2,
+      "herramientas": [
+        "add_b_roll",
+        "concatenate_videos"
+      ]
+    },
+    "G4 - no toca ffmpeg": {
+      "n": 1,
+      "herramientas": [
+        "health_check"
+      ]
+    }
+  },
+  "detalle": {
+    "add_b_roll": {
+      "ffmpeg_python_run": 1,
+      "subprocess": 2,
+      "overwrite_output": 0,
+      "flag_y": 2,
+      "flag_nostdin": 0,
+      "stdin_fijado": 0,
+      "helpers": [
+        "_get_media_properties",
+        "_parse_time_to_seconds"
+      ],
+      "grupo": "G3 - mixta (subprocess con -y + ffmpeg-python sin overwrite_output)"
+    },
+    "add_basic_transitions": {
+      "ffmpeg_python_run": 2,
+      "subprocess": 0,
+      "overwrite_output": 0,
+      "flag_y": 0,
+      "flag_nostdin": 0,
+      "stdin_fijado": 0,
+      "helpers": [
+        "_get_media_properties"
+      ],
+      "grupo": "G2 - ffmpeg-python en el cuerpo (depende de que la salida ya exista)"
+    },
+    "add_image_overlay": {
+      "ffmpeg_python_run": 2,
+      "subprocess": 0,
+      "overwrite_output": 0,
+      "flag_y": 0,
+      "flag_nostdin": 0,
+      "stdin_fijado": 0,
+      "helpers": [],
+      "grupo": "G2 - ffmpeg-python en el cuerpo (depende de que la salida ya exista)"
+    },
+    "add_subtitles": {
+      "ffmpeg_python_run": 2,
+      "subprocess": 0,
+      "overwrite_output": 0,
+      "flag_y": 0,
+      "flag_nostdin": 0,
+      "stdin_fijado": 0,
+      "helpers": [],
+      "grupo": "G2 - ffmpeg-python en el cuerpo (depende de que la salida ya exista)"
+    },
+    "add_text_overlay": {
+      "ffmpeg_python_run": 2,
+      "subprocess": 0,
+      "overwrite_output": 0,
+      "flag_y": 0,
+      "flag_nostdin": 0,
+      "stdin_fijado": 0,
+      "helpers": [],
+      "grupo": "G2 - ffmpeg-python en el cuerpo (depende de que la salida ya exista)"
+    },
+    "change_aspect_ratio": {
+      "ffmpeg_python_run": 6,
+      "subprocess": 0,
+      "overwrite_output": 0,
+      "flag_y": 0,
+      "flag_nostdin": 0,
+      "stdin_fijado": 0,
+      "helpers": [],
+      "grupo": "G2 - ffmpeg-python en el cuerpo (depende de que la salida ya exista)"
+    },
+    "change_video_speed": {
+      "ffmpeg_python_run": 1,
+      "subprocess": 0,
+      "overwrite_output": 0,
+      "flag_y": 0,
+      "flag_nostdin": 0,
+      "stdin_fijado": 0,
+      "helpers": [],
+      "grupo": "G2 - ffmpeg-python en el cuerpo (depende de que la salida ya exista)"
+    },
+    "concatenate_videos": {
+      "ffmpeg_python_run": 1,
+      "subprocess": 5,
+      "overwrite_output": 0,
+      "flag_y": 5,
+      "flag_nostdin": 0,
+      "stdin_fijado": 0,
+      "helpers": [
+        "_get_media_properties"
+      ],
+      "grupo": "G3 - mixta (subprocess con -y + ffmpeg-python sin overwrite_output)"
+    },
+    "convert_audio_format": {
+      "ffmpeg_python_run": 1,
+      "subprocess": 0,
+      "overwrite_output": 0,
+      "flag_y": 0,
+      "flag_nostdin": 0,
+      "stdin_fijado": 0,
+      "helpers": [],
+      "grupo": "G2 - ffmpeg-python en el cuerpo (depende de que la salida ya exista)"
+    },
+    "convert_audio_properties": {
+      "ffmpeg_python_run": 1,
+      "subprocess": 0,
+      "overwrite_output": 0,
+      "flag_y": 0,
+      "flag_nostdin": 0,
+      "stdin_fijado": 0,
+      "helpers": [],
+      "grupo": "G2 - ffmpeg-python en el cuerpo (depende de que la salida ya exista)"
+    },
+    "convert_video_format": {
+      "ffmpeg_python_run": 2,
+      "subprocess": 0,
+      "overwrite_output": 0,
+      "flag_y": 0,
+      "flag_nostdin": 0,
+      "stdin_fijado": 0,
+      "helpers": [
+        "_run_ffmpeg_with_fallback"
+      ],
+      "grupo": "G1 - ffmpeg-python via _run_ffmpeg_with_fallback (reintento sobre ruta ya creada)"
+    },
+    "convert_video_properties": {
+      "ffmpeg_python_run": 1,
+      "subprocess": 0,
+      "overwrite_output": 0,
+      "flag_y": 0,
+      "flag_nostdin": 0,
+      "stdin_fijado": 0,
+      "helpers": [],
+      "grupo": "G2 - ffmpeg-python en el cuerpo (depende de que la salida ya exista)"
+    },
+    "extract_audio_from_video": {
+      "ffmpeg_python_run": 1,
+      "subprocess": 0,
+      "overwrite_output": 0,
+      "flag_y": 0,
+      "flag_nostdin": 0,
+      "stdin_fijado": 0,
+      "helpers": [],
+      "grupo": "G2 - ffmpeg-python en el cuerpo (depende de que la salida ya exista)"
+    },
+    "health_check": {
+      "ffmpeg_python_run": 0,
+      "subprocess": 0,
+      "overwrite_output": 0,
+      "flag_y": 0,
+      "flag_nostdin": 0,
+      "stdin_fijado": 0,
+      "helpers": [],
+      "grupo": "G4 - no toca ffmpeg"
+    },
+    "remove_silence": {
+      "ffmpeg_python_run": 2,
+      "subprocess": 0,
+      "overwrite_output": 0,
+      "flag_y": 0,
+      "flag_nostdin": 0,
+      "stdin_fijado": 0,
+      "helpers": [],
+      "grupo": "G2 - ffmpeg-python en el cuerpo (depende de que la salida ya exista)"
+    },
+    "set_audio_bitrate": {
+      "ffmpeg_python_run": 1,
+      "subprocess": 0,
+      "overwrite_output": 0,
+      "flag_y": 0,
+      "flag_nostdin": 0,
+      "stdin_fijado": 0,
+      "helpers": [],
+      "grupo": "G2 - ffmpeg-python en el cuerpo (depende de que la salida ya exista)"
+    },
+    "set_audio_channels": {
+      "ffmpeg_python_run": 1,
+      "subprocess": 0,
+      "overwrite_output": 0,
+      "flag_y": 0,
+      "flag_nostdin": 0,
+      "stdin_fijado": 0,
+      "helpers": [],
+      "grupo": "G2 - ffmpeg-python en el cuerpo (depende de que la salida ya exista)"
+    },
+    "set_audio_sample_rate": {
+      "ffmpeg_python_run": 1,
+      "subprocess": 0,
+      "overwrite_output": 0,
+      "flag_y": 0,
+      "flag_nostdin": 0,
+      "stdin_fijado": 0,
+      "helpers": [],
+      "grupo": "G2 - ffmpeg-python en el cuerpo (depende de que la salida ya exista)"
+    },
+    "set_video_audio_track_bitrate": {
+      "ffmpeg_python_run": 2,
+      "subprocess": 0,
+      "overwrite_output": 0,
+      "flag_y": 0,
+      "flag_nostdin": 0,
+      "stdin_fijado": 0,
+      "helpers": [
+        "_run_ffmpeg_with_fallback"
+      ],
+      "grupo": "G1 - ffmpeg-python via _run_ffmpeg_with_fallback (reintento sobre ruta ya creada)"
+    },
+    "set_video_audio_track_channels": {
+      "ffmpeg_python_run": 2,
+      "subprocess": 0,
+      "overwrite_output": 0,
+      "flag_y": 0,
+      "flag_nostdin": 0,
+      "stdin_fijado": 0,
+      "helpers": [
+        "_run_ffmpeg_with_fallback"
+      ],
+      "grupo": "G1 - ffmpeg-python via _run_ffmpeg_with_fallback (reintento sobre ruta ya creada)"
+    },
+    "set_video_audio_track_codec": {
+      "ffmpeg_python_run": 2,
+      "subprocess": 0,
+      "overwrite_output": 0,
+      "flag_y": 0,
+      "flag_nostdin": 0,
+      "stdin_fijado": 0,
+      "helpers": [
+        "_run_ffmpeg_with_fallback"
+      ],
+      "grupo": "G1 - ffmpeg-python via _run_ffmpeg_with_fallback (reintento sobre ruta ya creada)"
+    },
+    "set_video_audio_track_sample_rate": {
+      "ffmpeg_python_run": 2,
+      "subprocess": 0,
+      "overwrite_output": 0,
+      "flag_y": 0,
+      "flag_nostdin": 0,
+      "stdin_fijado": 0,
+      "helpers": [
+        "_run_ffmpeg_with_fallback"
+      ],
+      "grupo": "G1 - ffmpeg-python via _run_ffmpeg_with_fallback (reintento sobre ruta ya creada)"
+    },
+    "set_video_bitrate": {
+      "ffmpeg_python_run": 2,
+      "subprocess": 0,
+      "overwrite_output": 0,
+      "flag_y": 0,
+      "flag_nostdin": 0,
+      "stdin_fijado": 0,
+      "helpers": [
+        "_run_ffmpeg_with_fallback"
+      ],
+      "grupo": "G1 - ffmpeg-python via _run_ffmpeg_with_fallback (reintento sobre ruta ya creada)"
+    },
+    "set_video_codec": {
+      "ffmpeg_python_run": 2,
+      "subprocess": 0,
+      "overwrite_output": 0,
+      "flag_y": 0,
+      "flag_nostdin": 0,
+      "stdin_fijado": 0,
+      "helpers": [
+        "_run_ffmpeg_with_fallback"
+      ],
+      "grupo": "G1 - ffmpeg-python via _run_ffmpeg_with_fallback (reintento sobre ruta ya creada)"
+    },
+    "set_video_frame_rate": {
+      "ffmpeg_python_run": 2,
+      "subprocess": 0,
+      "overwrite_output": 0,
+      "flag_y": 0,
+      "flag_nostdin": 0,
+      "stdin_fijado": 0,
+      "helpers": [
+        "_run_ffmpeg_with_fallback"
+      ],
+      "grupo": "G1 - ffmpeg-python via _run_ffmpeg_with_fallback (reintento sobre ruta ya creada)"
+    },
+    "set_video_resolution": {
+      "ffmpeg_python_run": 2,
+      "subprocess": 0,
+      "overwrite_output": 0,
+      "flag_y": 0,
+      "flag_nostdin": 0,
+      "stdin_fijado": 0,
+      "helpers": [
+        "_run_ffmpeg_with_fallback"
+      ],
+      "grupo": "G1 - ffmpeg-python via _run_ffmpeg_with_fallback (reintento sobre ruta ya creada)"
+    },
+    "trim_video": {
+      "ffmpeg_python_run": 2,
+      "subprocess": 0,
+      "overwrite_output": 0,
+      "flag_y": 0,
+      "flag_nostdin": 0,
+      "stdin_fijado": 0,
+      "helpers": [],
+      "grupo": "G2 - ffmpeg-python en el cuerpo (depende de que la salida ya exista)"
+    }
+  }
+}

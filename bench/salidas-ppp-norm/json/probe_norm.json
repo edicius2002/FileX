@@ -1,0 +1,273 @@
+{
+  "rapidocr_config_yaml": {
+    "fichero": "<RAIZ>\\.venv-ai\\Lib\\site-packages\\rapidocr\\config.yaml",
+    "Det": {
+      "engine_type": {
+        "valor": "\"onnxruntime\"",
+        "linea": 131
+      },
+      "lang_type": {
+        "valor": "\"ch\"",
+        "linea": 132
+      },
+      "model_type": {
+        "valor": "\"small\"",
+        "linea": 133
+      },
+      "ocr_version": {
+        "valor": "\"PP-OCRv6\"",
+        "linea": 134
+      },
+      "task_type": {
+        "valor": "\"det\"",
+        "linea": 136
+      },
+      "model_path": {
+        "valor": "null",
+        "linea": 138
+      },
+      "model_dir": {
+        "valor": "null",
+        "linea": 139
+      },
+      "limit_side_len": {
+        "valor": "736",
+        "linea": 141
+      },
+      "limit_type": {
+        "valor": "min",
+        "linea": 142
+      },
+      "std": {
+        "valor": "[ 0.5, 0.5, 0.5 ]",
+        "linea": 143
+      },
+      "mean": {
+        "valor": "[ 0.5, 0.5, 0.5 ]",
+        "linea": 144
+      },
+      "thresh": {
+        "valor": "0.3",
+        "linea": 146
+      },
+      "box_thresh": {
+        "valor": "0.5",
+        "linea": 147
+      },
+      "max_candidates": {
+        "valor": "1000",
+        "linea": 148
+      },
+      "unclip_ratio": {
+        "valor": "1.6",
+        "linea": 149
+      },
+      "use_dilation": {
+        "valor": "true",
+        "linea": 150
+      },
+      "score_mode": {
+        "valor": "fast",
+        "linea": 151
+      }
+    }
+  },
+  "rapidocr_donde_se_aplica": [
+    {
+      "fichero": "rapidocr/ch_ppocr_det/utils.py",
+      "linea": 53,
+      "codigo": "self.mean = np.array(mean)"
+    },
+    {
+      "fichero": "rapidocr/ch_ppocr_det/utils.py",
+      "linea": 54,
+      "codigo": "self.std = np.array(std)"
+    },
+    {
+      "fichero": "rapidocr/ch_ppocr_det/utils.py",
+      "linea": 71,
+      "codigo": "return (img.astype(\"float32\") * self.scale - self.mean) / self.std"
+    }
+  ],
+  "rapidocr_donde_se_lee": [
+    {
+      "fichero": "rapidocr/ch_ppocr_det/main.py",
+      "linea": 33,
+      "codigo": "self.mean = cfg.get(\"mean\")"
+    },
+    {
+      "fichero": "rapidocr/ch_ppocr_det/main.py",
+      "linea": 34,
+      "codigo": "self.std = cfg.get(\"std\")"
+    },
+    {
+      "fichero": "rapidocr/ch_ppocr_det/main.py",
+      "linea": 79,
+      "codigo": "return DetPreProcess(limit_side_len, self.limit_type, self.mean, self.std)"
+    }
+  ],
+  "inference_yml_de_los_modelos": {
+    "PP-OCRv5_server_det": {
+      "mean": [
+        0.485,
+        0.456,
+        0.406
+      ],
+      "std": [
+        0.229,
+        0.224,
+        0.225
+      ],
+      "es_imagenet": true
+    },
+    "PP-OCRv6_medium_det": {
+      "mean": [
+        0.485,
+        0.456,
+        0.406
+      ],
+      "std": [
+        0.229,
+        0.224,
+        0.225
+      ],
+      "es_imagenet": true
+    },
+    "PP-OCRv6_small_det": {
+      "mean": [
+        0.485,
+        0.456,
+        0.406
+      ],
+      "std": [
+        0.229,
+        0.224,
+        0.225
+      ],
+      "es_imagenet": true
+    },
+    "PP-OCRv6_tiny_det": {
+      "mean": [
+        0.485,
+        0.456,
+        0.406
+      ],
+      "std": [
+        0.229,
+        0.224,
+        0.225
+      ],
+      "es_imagenet": true
+    }
+  },
+  "en_memoria": {
+    "v6_small__defecto": {
+      "mean": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "std": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "limit_side_len": 736,
+      "limit_type": "min",
+      "thresh": 0.3,
+      "box_thresh": 0.5,
+      "unclip_ratio": 1.6,
+      "max_candidates": 1000
+    },
+    "v6_small__R6": {
+      "mean": [
+        0.485,
+        0.456,
+        0.406
+      ],
+      "std": [
+        0.229,
+        0.224,
+        0.225
+      ],
+      "limit_side_len": 736,
+      "limit_type": "min",
+      "thresh": 0.2,
+      "box_thresh": 0.45,
+      "unclip_ratio": 1.4,
+      "max_candidates": 3000
+    },
+    "v5_mobile__defecto": {
+      "mean": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "std": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "limit_side_len": 736,
+      "limit_type": "min",
+      "thresh": 0.3,
+      "box_thresh": 0.5,
+      "unclip_ratio": 1.6,
+      "max_candidates": 1000
+    },
+    "v5_mobile__R6": {
+      "mean": [
+        0.485,
+        0.456,
+        0.406
+      ],
+      "std": [
+        0.229,
+        0.224,
+        0.225
+      ],
+      "limit_side_len": 736,
+      "limit_type": "min",
+      "thresh": 0.2,
+      "box_thresh": 0.45,
+      "unclip_ratio": 1.4,
+      "max_candidates": 3000
+    },
+    "v4_mobile__defecto": {
+      "mean": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "std": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "limit_side_len": 736,
+      "limit_type": "min",
+      "thresh": 0.3,
+      "box_thresh": 0.5,
+      "unclip_ratio": 1.6,
+      "max_candidates": 1000
+    },
+    "v4_mobile__R6": {
+      "mean": [
+        0.485,
+        0.456,
+        0.406
+      ],
+      "std": [
+        0.229,
+        0.224,
+        0.225
+      ],
+      "limit_side_len": 736,
+      "limit_type": "min",
+      "thresh": 0.2,
+      "box_thresh": 0.45,
+      "unclip_ratio": 1.4,
+      "max_candidates": 3000
+    }
+  }
+}

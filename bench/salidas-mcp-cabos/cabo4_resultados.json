@@ -1,0 +1,155 @@
+{
+  "timeout_por_llamada_s": 40.0,
+  "casos": [
+    {
+      "caso": "G4_health_check",
+      "herramienta": "health_check",
+      "args": {},
+      "salida_preexistente": false,
+      "ms_arranque": 2034.4,
+      "ms_llamada": 11.6,
+      "isError": false,
+      "respuesta": "Server is healthy!",
+      "veredicto": "RESPONDE",
+      "ffmpeg_huerfanos": []
+    },
+    {
+      "caso": "G1_set_video_resolution_preexistente",
+      "herramienta": "set_video_resolution",
+      "args": {
+        "input_video_path": "D:/Work/research/FileX/corpus/video/trivial.mp4",
+        "output_video_path": "D:/Work/research/FileX/bench/salidas-mcp-cabos/cabo4_trabajo/g1_res.mkv",
+        "resolution": "320x240"
+      },
+      "salida_preexistente": true,
+      "bytes_preexistentes": 152,
+      "ms_arranque": 1097.6,
+      "ms_llamada": 40158.8,
+      "veredicto": "DEADLOCK (sin respuesta en 40.0s)",
+      "ffmpeg_huerfanos": [],
+      "bytes_salida": 152
+    },
+    {
+      "caso": "G1_set_video_codec_preexistente",
+      "herramienta": "set_video_codec",
+      "args": {
+        "input_video_path": "D:/Work/research/FileX/corpus/video/trivial.mp4",
+        "output_video_path": "D:/Work/research/FileX/bench/salidas-mcp-cabos/cabo4_trabajo/g1_cod.mp4",
+        "video_codec": "libx264"
+      },
+      "salida_preexistente": true,
+      "bytes_preexistentes": 152,
+      "ms_arranque": 3689.6,
+      "ms_llamada": 40141.7,
+      "veredicto": "DEADLOCK (sin respuesta en 40.0s)",
+      "ffmpeg_huerfanos": [],
+      "bytes_salida": 152
+    },
+    {
+      "caso": "G1_set_video_resolution_control",
+      "herramienta": "set_video_resolution",
+      "args": {
+        "input_video_path": "D:/Work/research/FileX/corpus/video/trivial.mp4",
+        "output_video_path": "D:/Work/research/FileX/bench/salidas-mcp-cabos/cabo4_trabajo/g1_ctl.mkv",
+        "resolution": "320x240"
+      },
+      "salida_preexistente": false,
+      "ms_arranque": 2567.1,
+      "ms_llamada": 694.9,
+      "isError": false,
+      "respuesta": "Operation successful (primary method) and saved to D:/Work/research/FileX/bench/salidas-mcp-cabos/cabo4_trabajo/g1_ctl.mkv",
+      "veredicto": "RESPONDE",
+      "ffmpeg_huerfanos": [],
+      "bytes_salida": 110870
+    },
+    {
+      "caso": "G2_convert_video_properties_preexistente",
+      "herramienta": "convert_video_properties",
+      "args": {
+        "input_video_path": "D:/Work/research/FileX/corpus/video/trivial.mp4",
+        "output_video_path": "D:/Work/research/FileX/bench/salidas-mcp-cabos/cabo4_trabajo/g2b_pre.mp4",
+        "target_format": "mp4",
+        "resolution": "320x240"
+      },
+      "salida_preexistente": true,
+      "bytes_preexistentes": 152,
+      "ms_arranque": 2267.7,
+      "ms_llamada": 40146.5,
+      "veredicto": "DEADLOCK (sin respuesta en 40.0s)",
+      "ffmpeg_huerfanos": [],
+      "bytes_salida": 152
+    },
+    {
+      "caso": "G2_trim_video_preexistente",
+      "herramienta": "trim_video",
+      "args": {
+        "video_path": "D:/Work/research/FileX/corpus/video/trivial.mp4",
+        "output_video_path": "D:/Work/research/FileX/bench/salidas-mcp-cabos/cabo4_trabajo/g2c_pre.mp4",
+        "start_time": "0",
+        "end_time": "1"
+      },
+      "salida_preexistente": true,
+      "bytes_preexistentes": 152,
+      "ms_arranque": 2168.5,
+      "ms_llamada": 40191.9,
+      "veredicto": "DEADLOCK (sin respuesta en 40.0s)",
+      "ffmpeg_huerfanos": [
+        121068
+      ],
+      "bytes_salida": 152
+    },
+    {
+      "caso": "G2_convert_video_properties_control",
+      "herramienta": "convert_video_properties",
+      "args": {
+        "input_video_path": "D:/Work/research/FileX/corpus/video/trivial.mp4",
+        "output_video_path": "D:/Work/research/FileX/bench/salidas-mcp-cabos/cabo4_trabajo/g2b_ctl.mp4",
+        "target_format": "mp4",
+        "resolution": "320x240"
+      },
+      "salida_preexistente": false,
+      "ms_arranque": 2106.5,
+      "ms_llamada": 553.6,
+      "isError": false,
+      "respuesta": "Video converted successfully to D:/Work/research/FileX/bench/salidas-mcp-cabos/cabo4_trabajo/g2b_ctl.mp4 with format mp4 and specified properties.",
+      "veredicto": "RESPONDE",
+      "ffmpeg_huerfanos": [],
+      "bytes_salida": 111482
+    },
+    {
+      "caso": "G3_concatenate_2videos_preexistente",
+      "herramienta": "concatenate_videos",
+      "args": {
+        "video_paths": [
+          "D:/Work/research/FileX/corpus/video/trivial.mp4",
+          "D:/Work/research/FileX/corpus/video/trivial.mp4"
+        ],
+        "output_video_path": "D:/Work/research/FileX/bench/salidas-mcp-cabos/cabo4_trabajo/g3_pre.mp4"
+      },
+      "salida_preexistente": true,
+      "bytes_preexistentes": 152,
+      "ms_arranque": 2380.8,
+      "ms_llamada": 40009.1,
+      "veredicto": "DEADLOCK (sin respuesta en 40.0s)",
+      "ffmpeg_huerfanos": [],
+      "bytes_salida": 152
+    },
+    {
+      "caso": "G3_concatenate_1video_preexistente",
+      "herramienta": "concatenate_videos",
+      "args": {
+        "video_paths": [
+          "D:/Work/research/FileX/corpus/video/trivial.mp4"
+        ],
+        "output_video_path": "D:/Work/research/FileX/bench/salidas-mcp-cabos/cabo4_trabajo/g3b_pre.mp4"
+      },
+      "salida_preexistente": true,
+      "bytes_preexistentes": 152,
+      "ms_arranque": 2799.6,
+      "ms_llamada": 40132.9,
+      "veredicto": "DEADLOCK (sin respuesta en 40.0s)",
+      "ffmpeg_huerfanos": [],
+      "bytes_salida": 152
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+corpus/pdf/tipico_texto.pdf                          n=105   >=10:True  >0:True     179.3 ms  'FileX - documento de'
+corpus/pdf/trivial.pdf                               n=0     >=10:False >0:False    172.2 ms  ''
+corpus/pdf/patologico_escaneado.pdf                  n=0     >=10:False >0:False    297.4 ms  ''
+corpus/pdf/escaneado_d1.pdf                          n=0     >=10:False >0:False    189.9 ms  ''
+bench/salidas-referencia/pdf/alpha_png-to.pdf        n=2     >=10:False >0:True     191.3 ms  'FX'
+bench/salidas-referencia/pdf/tipico_png-to.pdf       n=0     >=10:False >0:False    207.4 ms  ''
+bench/salidas-referencia/pdf/tipico_jpg-to.pdf       n=0     >=10:False >0:False    212.5 ms  ''
+/salidas-referencia/pdf/tipico_texto_rasterizado.pdf n=0     >=10:False >0:False    181.4 ms  ''
+ch/salidas-referencia/pdf/tipico_texto_pdf-to-gs.pdf n=105   >=10:True  >0:True     178.5 ms  'FileX - documento de'
+
+Con umbral >0 se declararian 1 PDF con 'capa de texto' que NO la tienen: ['bench/salidas-referencia/pdf/alpha_png-to.pdf']
+-> D:\Work\research\FileX\bench\salidas-verificacion-fidelidad\texto.json

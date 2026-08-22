@@ -1,0 +1,152 @@
+[
+  {
+    "name": "probe_convert",
+    "description": "[probe_convert] Esta herramienta forma parte del banco de sonda de FileX y su descripcion se ha inflado a proposito para medir el coste de catalogo en tokens. Convierte, transforma y verifica ficheros aplicando el motor correspondiente como proceso separado sin shell, con los argumentos en un array y stdin apuntando al dispositivo nulo, comprobando siempre la firma real de la salida, sus flujos, las propiedades declaradas, las propiedades pedidas frente a las obtenidas y que el motor no haya escrito nada fuera de lo declarado. Acepta rutas absolutas dentro de la lista blanca de raices y deniega por defecto cualquier otra, resolviendo los enlaces simbolicos en cada llamada y copiando la entrada a un area de trabajo privada antes de entregarsela a un motor externo. Devuelve unicamente la ruta de la salida y sus metadatos, nunca el contenido, y jamas el stderr crudo del motor. Esta herramienta forma parte del banco de sonda de FileX y su descripcion se ha inflado a proposito para medir el coste de catalogo en tokens. Convierte, transforma y verifica ficheros aplicando el motor correspondiente como proceso separado sin shell, con los argumentos en un array y stdin apuntando al dispositivo nulo, comprobando siempre la firma real de la salida, sus flujos, las propiedades declaradas, las propiedades pedidas frente a las obtenidas y que el motor no haya escrito nada fuera de lo declarado. Acepta rutas absolutas dentro de la lista blanca de raices y deniega por defecto cualquier otra, resolviendo los enlaces simbolicos en cada llamada y copiando la entrada a un area de trabajo privada antes de entregarsela a un motor externo. Devuelve unicamente la ruta de la salida y sus metadatos, nunca el contenido, y jamas el stderr crudo del motor. Esta herramienta forma parte del banco de sonda de FileX y su descripcion se ha inflado a proposito para medir el coste de catalogo en tokens. Convierte, transforma y verifica ficheros aplicando el motor correspondiente como proceso separado sin shell, con los argumentos en un array y stdin apuntando al dispositivo nulo, comprobando siempre la firma real de la salida, sus flujos, las propiedades declaradas, las propiedades pedidas frente a las obtenidas y que el motor no haya escrito nada fuera de lo declarado. Acepta rutas absolutas dentro de la lista blanca de raices y deniega por defecto cualquier otra, resolviendo los enlaces simbolicos en cada llamada y copiando la entrada a un area de trabajo privada antes de entregarsela a un motor externo. Devuelve unicamente la ruta de la salida y sus metadatos, nunca el contenido, y jamas el stderr crudo del motor. ",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "input_path": {
+          "type": "string",
+          "description": "ruta de entrada absoluta"
+        },
+        "output_path": {
+          "type": "string",
+          "description": "ruta de salida absoluta"
+        },
+        "target_format": {
+          "type": "string",
+          "description": "formato de destino"
+        }
+      },
+      "required": [
+        "input_path",
+        "output_path"
+      ]
+    }
+  },
+  {
+    "name": "probe_inspect",
+    "description": "[probe_inspect] Esta herramienta forma parte del banco de sonda de FileX y su descripcion se ha inflado a proposito para medir el coste de catalogo en tokens. Convierte, transforma y verifica ficheros aplicando el motor correspondiente como proceso separado sin shell, con los argumentos en un array y stdin apuntando al dispositivo nulo, comprobando siempre la firma real de la salida, sus flujos, las propiedades declaradas, las propiedades pedidas frente a las obtenidas y que el motor no haya escrito nada fuera de lo declarado. Acepta rutas absolutas dentro de la lista blanca de raices y deniega por defecto cualquier otra, resolviendo los enlaces simbolicos en cada llamada y copiando la entrada a un area de trabajo privada antes de entregarsela a un motor externo. Devuelve unicamente la ruta de la salida y sus metadatos, nunca el contenido, y jamas el stderr crudo del motor. Esta herramienta forma parte del banco de sonda de FileX y su descripcion se ha inflado a proposito para medir el coste de catalogo en tokens. Convierte, transforma y verifica ficheros aplicando el motor correspondiente como proceso separado sin shell, con los argumentos en un array y stdin apuntando al dispositivo nulo, comprobando siempre la firma real de la salida, sus flujos, las propiedades declaradas, las propiedades pedidas frente a las obtenidas y que el motor no haya escrito nada fuera de lo declarado. Acepta rutas absolutas dentro de la lista blanca de raices y deniega por defecto cualquier otra, resolviendo los enlaces simbolicos en cada llamada y copiando la entrada a un area de trabajo privada antes de entregarsela a un motor externo. Devuelve unicamente la ruta de la salida y sus metadatos, nunca el contenido, y jamas el stderr crudo del motor. Esta herramienta forma parte del banco de sonda de FileX y su descripcion se ha inflado a proposito para medir el coste de catalogo en tokens. Convierte, transforma y verifica ficheros aplicando el motor correspondiente como proceso separado sin shell, con los argumentos en un array y stdin apuntando al dispositivo nulo, comprobando siempre la firma real de la salida, sus flujos, las propiedades declaradas, las propiedades pedidas frente a las obtenidas y que el motor no haya escrito nada fuera de lo declarado. Acepta rutas absolutas dentro de la lista blanca de raices y deniega por defecto cualquier otra, resolviendo los enlaces simbolicos en cada llamada y copiando la entrada a un area de trabajo privada antes de entregarsela a un motor externo. Devuelve unicamente la ruta de la salida y sus metadatos, nunca el contenido, y jamas el stderr crudo del motor. ",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "input_path": {
+          "type": "string",
+          "description": "ruta de entrada absoluta"
+        },
+        "output_path": {
+          "type": "string",
+          "description": "ruta de salida absoluta"
+        },
+        "target_format": {
+          "type": "string",
+          "description": "formato de destino"
+        }
+      },
+      "required": [
+        "input_path",
+        "output_path"
+      ]
+    }
+  },
+  {
+    "name": "probe_transcode",
+    "description": "[probe_transcode] Esta herramienta forma parte del banco de sonda de FileX y su descripcion se ha inflado a proposito para medir el coste de catalogo en tokens. Convierte, transforma y verifica ficheros aplicando el motor correspondiente como proceso separado sin shell, con los argumentos en un array y stdin apuntando al dispositivo nulo, comprobando siempre la firma real de la salida, sus flujos, las propiedades declaradas, las propiedades pedidas frente a las obtenidas y que el motor no haya escrito nada fuera de lo declarado. Acepta rutas absolutas dentro de la lista blanca de raices y deniega por defecto cualquier otra, resolviendo los enlaces simbolicos en cada llamada y copiando la entrada a un area de trabajo privada antes de entregarsela a un motor externo. Devuelve unicamente la ruta de la salida y sus metadatos, nunca el contenido, y jamas el stderr crudo del motor. Esta herramienta forma parte del banco de sonda de FileX y su descripcion se ha inflado a proposito para medir el coste de catalogo en tokens. Convierte, transforma y verifica ficheros aplicando el motor correspondiente como proceso separado sin shell, con los argumentos en un array y stdin apuntando al dispositivo nulo, comprobando siempre la firma real de la salida, sus flujos, las propiedades declaradas, las propiedades pedidas frente a las obtenidas y que el motor no haya escrito nada fuera de lo declarado. Acepta rutas absolutas dentro de la lista blanca de raices y deniega por defecto cualquier otra, resolviendo los enlaces simbolicos en cada llamada y copiando la entrada a un area de trabajo privada antes de entregarsela a un motor externo. Devuelve unicamente la ruta de la salida y sus metadatos, nunca el contenido, y jamas el stderr crudo del motor. Esta herramienta forma parte del banco de sonda de FileX y su descripcion se ha inflado a proposito para medir el coste de catalogo en tokens. Convierte, transforma y verifica ficheros aplicando el motor correspondiente como proceso separado sin shell, con los argumentos en un array y stdin apuntando al dispositivo nulo, comprobando siempre la firma real de la salida, sus flujos, las propiedades declaradas, las propiedades pedidas frente a las obtenidas y que el motor no haya escrito nada fuera de lo declarado. Acepta rutas absolutas dentro de la lista blanca de raices y deniega por defecto cualquier otra, resolviendo los enlaces simbolicos en cada llamada y copiando la entrada a un area de trabajo privada antes de entregarsela a un motor externo. Devuelve unicamente la ruta de la salida y sus metadatos, nunca el contenido, y jamas el stderr crudo del motor. ",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "input_path": {
+          "type": "string",
+          "description": "ruta de entrada absoluta"
+        },
+        "output_path": {
+          "type": "string",
+          "description": "ruta de salida absoluta"
+        },
+        "target_format": {
+          "type": "string",
+          "description": "formato de destino"
+        }
+      },
+      "required": [
+        "input_path",
+        "output_path"
+      ]
+    }
+  },
+  {
+    "name": "probe_thumbnail",
+    "description": "[probe_thumbnail] Esta herramienta forma parte del banco de sonda de FileX y su descripcion se ha inflado a proposito para medir el coste de catalogo en tokens. Convierte, transforma y verifica ficheros aplicando el motor correspondiente como proceso separado sin shell, con los argumentos en un array y stdin apuntando al dispositivo nulo, comprobando siempre la firma real de la salida, sus flujos, las propiedades declaradas, las propiedades pedidas frente a las obtenidas y que el motor no haya escrito nada fuera de lo declarado. Acepta rutas absolutas dentro de la lista blanca de raices y deniega por defecto cualquier otra, resolviendo los enlaces simbolicos en cada llamada y copiando la entrada a un area de trabajo privada antes de entregarsela a un motor externo. Devuelve unicamente la ruta de la salida y sus metadatos, nunca el contenido, y jamas el stderr crudo del motor. Esta herramienta forma parte del banco de sonda de FileX y su descripcion se ha inflado a proposito para medir el coste de catalogo en tokens. Convierte, transforma y verifica ficheros aplicando el motor correspondiente como proceso separado sin shell, con los argumentos en un array y stdin apuntando al dispositivo nulo, comprobando siempre la firma real de la salida, sus flujos, las propiedades declaradas, las propiedades pedidas frente a las obtenidas y que el motor no haya escrito nada fuera de lo declarado. Acepta rutas absolutas dentro de la lista blanca de raices y deniega por defecto cualquier otra, resolviendo los enlaces simbolicos en cada llamada y copiando la entrada a un area de trabajo privada antes de entregarsela a un motor externo. Devuelve unicamente la ruta de la salida y sus metadatos, nunca el contenido, y jamas el stderr crudo del motor. Esta herramienta forma parte del banco de sonda de FileX y su descripcion se ha inflado a proposito para medir el coste de catalogo en tokens. Convierte, transforma y verifica ficheros aplicando el motor correspondiente como proceso separado sin shell, con los argumentos en un array y stdin apuntando al dispositivo nulo, comprobando siempre la firma real de la salida, sus flujos, las propiedades declaradas, las propiedades pedidas frente a las obtenidas y que el motor no haya escrito nada fuera de lo declarado. Acepta rutas absolutas dentro de la lista blanca de raices y deniega por defecto cualquier otra, resolviendo los enlaces simbolicos en cada llamada y copiando la entrada a un area de trabajo privada antes de entregarsela a un motor externo. Devuelve unicamente la ruta de la salida y sus metadatos, nunca el contenido, y jamas el stderr crudo del motor. ",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "input_path": {
+          "type": "string",
+          "description": "ruta de entrada absoluta"
+        },
+        "output_path": {
+          "type": "string",
+          "description": "ruta de salida absoluta"
+        },
+        "target_format": {
+          "type": "string",
+          "description": "formato de destino"
+        }
+      },
+      "required": [
+        "input_path",
+        "output_path"
+      ]
+    }
+  },
+  {
+    "name": "probe_extract",
+    "description": "[probe_extract] Esta herramienta forma parte del banco de sonda de FileX y su descripcion se ha inflado a proposito para medir el coste de catalogo en tokens. Convierte, transforma y verifica ficheros aplicando el motor correspondiente como proceso separado sin shell, con los argumentos en un array y stdin apuntando al dispositivo nulo, comprobando siempre la firma real de la salida, sus flujos, las propiedades declaradas, las propiedades pedidas frente a las obtenidas y que el motor no haya escrito nada fuera de lo declarado. Acepta rutas absolutas dentro de la lista blanca de raices y deniega por defecto cualquier otra, resolviendo los enlaces simbolicos en cada llamada y copiando la entrada a un area de trabajo privada antes de entregarsela a un motor externo. Devuelve unicamente la ruta de la salida y sus metadatos, nunca el contenido, y jamas el stderr crudo del motor. Esta herramienta forma parte del banco de sonda de FileX y su descripcion se ha inflado a proposito para medir el coste de catalogo en tokens. Convierte, transforma y verifica ficheros aplicando el motor correspondiente como proceso separado sin shell, con los argumentos en un array y stdin apuntando al dispositivo nulo, comprobando siempre la firma real de la salida, sus flujos, las propiedades declaradas, las propiedades pedidas frente a las obtenidas y que el motor no haya escrito nada fuera de lo declarado. Acepta rutas absolutas dentro de la lista blanca de raices y deniega por defecto cualquier otra, resolviendo los enlaces simbolicos en cada llamada y copiando la entrada a un area de trabajo privada antes de entregarsela a un motor externo. Devuelve unicamente la ruta de la salida y sus metadatos, nunca el contenido, y jamas el stderr crudo del motor. Esta herramienta forma parte del banco de sonda de FileX y su descripcion se ha inflado a proposito para medir el coste de catalogo en tokens. Convierte, transforma y verifica ficheros aplicando el motor correspondiente como proceso separado sin shell, con los argumentos en un array y stdin apuntando al dispositivo nulo, comprobando siempre la firma real de la salida, sus flujos, las propiedades declaradas, las propiedades pedidas frente a las obtenidas y que el motor no haya escrito nada fuera de lo declarado. Acepta rutas absolutas dentro de la lista blanca de raices y deniega por defecto cualquier otra, resolviendo los enlaces simbolicos en cada llamada y copiando la entrada a un area de trabajo privada antes de entregarsela a un motor externo. Devuelve unicamente la ruta de la salida y sus metadatos, nunca el contenido, y jamas el stderr crudo del motor. ",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "input_path": {
+          "type": "string",
+          "description": "ruta de entrada absoluta"
+        },
+        "output_path": {
+          "type": "string",
+          "description": "ruta de salida absoluta"
+        },
+        "target_format": {
+          "type": "string",
+          "description": "formato de destino"
+        }
+      },
+      "required": [
+        "input_path",
+        "output_path"
+      ]
+    }
+  },
+  {
+    "name": "probe_package",
+    "description": "[probe_package] Esta herramienta forma parte del banco de sonda de FileX y su descripcion se ha inflado a proposito para medir el coste de catalogo en tokens. Convierte, transforma y verifica ficheros aplicando el motor correspondiente como proceso separado sin shell, con los argumentos en un array y stdin apuntando al dispositivo nulo, comprobando siempre la firma real de la salida, sus flujos, las propiedades declaradas, las propiedades pedidas frente a las obtenidas y que el motor no haya escrito nada fuera de lo declarado. Acepta rutas absolutas dentro de la lista blanca de raices y deniega por defecto cualquier otra, resolviendo los enlaces simbolicos en cada llamada y copiando la entrada a un area de trabajo privada antes de entregarsela a un motor externo. Devuelve unicamente la ruta de la salida y sus metadatos, nunca el contenido, y jamas el stderr crudo del motor. Esta herramienta forma parte del banco de sonda de FileX y su descripcion se ha inflado a proposito para medir el coste de catalogo en tokens. Convierte, transforma y verifica ficheros aplicando el motor correspondiente como proceso separado sin shell, con los argumentos en un array y stdin apuntando al dispositivo nulo, comprobando siempre la firma real de la salida, sus flujos, las propiedades declaradas, las propiedades pedidas frente a las obtenidas y que el motor no haya escrito nada fuera de lo declarado. Acepta rutas absolutas dentro de la lista blanca de raices y deniega por defecto cualquier otra, resolviendo los enlaces simbolicos en cada llamada y copiando la entrada a un area de trabajo privada antes de entregarsela a un motor externo. Devuelve unicamente la ruta de la salida y sus metadatos, nunca el contenido, y jamas el stderr crudo del motor. Esta herramienta forma parte del banco de sonda de FileX y su descripcion se ha inflado a proposito para medir el coste de catalogo en tokens. Convierte, transforma y verifica ficheros aplicando el motor correspondiente como proceso separado sin shell, con los argumentos en un array y stdin apuntando al dispositivo nulo, comprobando siempre la firma real de la salida, sus flujos, las propiedades declaradas, las propiedades pedidas frente a las obtenidas y que el motor no haya escrito nada fuera de lo declarado. Acepta rutas absolutas dentro de la lista blanca de raices y deniega por defecto cualquier otra, resolviendo los enlaces simbolicos en cada llamada y copiando la entrada a un area de trabajo privada antes de entregarsela a un motor externo. Devuelve unicamente la ruta de la salida y sus metadatos, nunca el contenido, y jamas el stderr crudo del motor. ",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "input_path": {
+          "type": "string",
+          "description": "ruta de entrada absoluta"
+        },
+        "output_path": {
+          "type": "string",
+          "description": "ruta de salida absoluta"
+        },
+        "target_format": {
+          "type": "string",
+          "description": "formato de destino"
+        }
+      },
+      "required": [
+        "input_path",
+        "output_path"
+      ]
+    }
+  }
+]

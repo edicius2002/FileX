@@ -1,0 +1,582 @@
+{
+ "_criterio": "DECLARADO ANTES DE MEDIR EL GRID. 'mejor' = herramienta que resuelve la peticion entera sin perder ningun requisito. 'acepta' = conjunto de herramientas que resuelven la tarea (superconjunto de 'mejor'). 'parcial' = resuelve solo parte de la peticion (p.ej. cambia el formato pero pierde el bitrate pedido). 'trampa' = herramienta que el analisis estructural predice como error plausible y que produciria un fichero incorrecto SIN dar error. 'abstencion_correcta': true = el catalogo no puede hacer la tarea y lo correcto es no llamar a ninguna herramienta de conversion y decirlo. Estrato 3: la respuesta correcta es una SECUENCIA ordenada.",
+ "_catalogos": {
+  "A": "video-audio-mcp completo, 27 herramientas, 7.964 tok",
+  "C": "video-audio-mcp SIN las 13 subsumidas, 14 herramientas, 4.773 tok (ablacion de la redundancia: mismo estilo, mismos nombres, mismas descripciones)",
+  "B": "ffmpeg-mcp-lite, 8 herramientas, 2.322 tok (agrupado por intencion del usuario)"
+ },
+ "_estratos": {
+  "1": "inequivocas (control)",
+  "2": "ambiguas por solapamiento, con pista explicita en la peticion",
+  "3": "exigen encadenar dos herramientas",
+  "4": "ambiguas SIN pista, redactadas como hablaria un usuario (anadidas tras el piloto, antes de medir el grid)"
+ },
+ "sistema": "Eres un asistente que resuelve peticiones del usuario sobre ficheros multimedia usando las herramientas disponibles. Llama a las herramientas que hagan falta para cumplir la peticion. No pidas confirmacion ni hagas preguntas de vuelta. Cuando termines, responde en una sola linea.",
+ "tareas": [
+  {
+   "id": "E1a",
+   "estrato": 1,
+   "nombre": "extraer audio",
+   "prompt": "Tengo el fichero entrada.mp4. Sacame el audio en mp3 y guardalo como entrada.mp3.",
+   "A": {
+    "mejor": [
+     "extract_audio_from_video"
+    ],
+    "acepta": [
+     "extract_audio_from_video"
+    ],
+    "parcial": [],
+    "trampa": [
+     "convert_audio_format",
+     "convert_audio_properties",
+     "convert_video_properties",
+     "convert_video_format"
+    ]
+   },
+   "C": {
+    "mejor": [
+     "extract_audio_from_video"
+    ],
+    "acepta": [
+     "extract_audio_from_video"
+    ],
+    "parcial": [],
+    "trampa": [
+     "convert_audio_properties",
+     "convert_video_properties"
+    ]
+   },
+   "B": {
+    "mejor": [
+     "ffmpeg_extract_audio"
+    ],
+    "acepta": [
+     "ffmpeg_extract_audio"
+    ],
+    "parcial": [],
+    "trampa": [
+     "ffmpeg_convert"
+    ]
+   },
+   "requisitos_args": [
+    "mp3"
+   ]
+  },
+  {
+   "id": "E1b",
+   "estrato": 1,
+   "nombre": "recortar",
+   "prompt": "De clip.mp4 quiero solo el trozo que va del segundo 30 al segundo 90. Guardalo en recorte.mp4.",
+   "A": {
+    "mejor": [
+     "trim_video"
+    ],
+    "acepta": [
+     "trim_video"
+    ],
+    "parcial": [],
+    "trampa": []
+   },
+   "C": {
+    "mejor": [
+     "trim_video"
+    ],
+    "acepta": [
+     "trim_video"
+    ],
+    "parcial": [],
+    "trampa": []
+   },
+   "B": {
+    "mejor": [
+     "ffmpeg_trim"
+    ],
+    "acepta": [
+     "ffmpeg_trim"
+    ],
+    "parcial": [],
+    "trampa": []
+   },
+   "requisitos_args": [
+    "30",
+    "90"
+   ]
+  },
+  {
+   "id": "E1c",
+   "estrato": 1,
+   "nombre": "convertir contenedor",
+   "prompt": "Convierte pelicula.mov a mp4. Guardalo como pelicula.mp4.",
+   "A": {
+    "mejor": [
+     "convert_video_format"
+    ],
+    "acepta": [
+     "convert_video_format",
+     "convert_video_properties"
+    ],
+    "parcial": [],
+    "trampa": []
+   },
+   "C": {
+    "mejor": [
+     "convert_video_properties"
+    ],
+    "acepta": [
+     "convert_video_properties"
+    ],
+    "parcial": [],
+    "trampa": []
+   },
+   "B": {
+    "mejor": [
+     "ffmpeg_convert"
+    ],
+    "acepta": [
+     "ffmpeg_convert"
+    ],
+    "parcial": [],
+    "trampa": [
+     "ffmpeg_compress"
+    ]
+   },
+   "requisitos_args": [
+    "mp4"
+   ]
+  },
+  {
+   "id": "E2a",
+   "estrato": 2,
+   "nombre": "bajar resolucion",
+   "prompt": "clip.mp4 esta en 4K y pesa demasiado. Dejalo en 1280x720 y guardalo en clip720.mp4.",
+   "A": {
+    "mejor": [
+     "set_video_resolution"
+    ],
+    "acepta": [
+     "set_video_resolution",
+     "convert_video_properties"
+    ],
+    "parcial": [],
+    "trampa": [
+     "change_aspect_ratio"
+    ]
+   },
+   "C": {
+    "mejor": [
+     "convert_video_properties"
+    ],
+    "acepta": [
+     "convert_video_properties"
+    ],
+    "parcial": [],
+    "trampa": [
+     "change_aspect_ratio"
+    ]
+   },
+   "B": {
+    "mejor": [
+     "ffmpeg_convert"
+    ],
+    "acepta": [
+     "ffmpeg_convert",
+     "ffmpeg_compress"
+    ],
+    "parcial": [],
+    "trampa": []
+   },
+   "requisitos_args": [
+    "720"
+   ]
+  },
+  {
+   "id": "E2b",
+   "estrato": 2,
+   "nombre": "codec de la pista de audio de un video",
+   "prompt": "El fichero clip.mp4 lleva el audio en AAC. Quiero ese mismo video pero con el audio en MP3, sin tocar la imagen. Guardalo en clip2.mp4.",
+   "A": {
+    "mejor": [
+     "set_video_audio_track_codec"
+    ],
+    "acepta": [
+     "set_video_audio_track_codec",
+     "convert_video_properties"
+    ],
+    "parcial": [],
+    "trampa": [
+     "convert_audio_format",
+     "convert_audio_properties",
+     "set_video_codec",
+     "extract_audio_from_video"
+    ]
+   },
+   "C": {
+    "mejor": [
+     "convert_video_properties"
+    ],
+    "acepta": [
+     "convert_video_properties"
+    ],
+    "parcial": [],
+    "trampa": [
+     "convert_audio_properties",
+     "extract_audio_from_video"
+    ]
+   },
+   "B": {
+    "mejor": [
+     "ffmpeg_convert"
+    ],
+    "acepta": [
+     "ffmpeg_convert"
+    ],
+    "parcial": [],
+    "trampa": [
+     "ffmpeg_extract_audio"
+    ]
+   },
+   "requisitos_args": [
+    "mp3"
+   ]
+  },
+  {
+   "id": "E2c",
+   "estrato": 2,
+   "nombre": "formato + bitrate de audio (subsuncion)",
+   "prompt": "Pasa cancion.wav a mp3 con un bitrate de 192k. Guardalo como cancion.mp3.",
+   "A": {
+    "mejor": [
+     "convert_audio_properties"
+    ],
+    "acepta": [
+     "convert_audio_properties"
+    ],
+    "parcial": [
+     "convert_audio_format",
+     "set_audio_bitrate"
+    ],
+    "trampa": []
+   },
+   "C": {
+    "mejor": [
+     "convert_audio_properties"
+    ],
+    "acepta": [
+     "convert_audio_properties"
+    ],
+    "parcial": [],
+    "trampa": []
+   },
+   "B": {
+    "mejor": [
+     "ffmpeg_extract_audio"
+    ],
+    "acepta": [
+     "ffmpeg_extract_audio"
+    ],
+    "parcial": [
+     "ffmpeg_convert"
+    ],
+    "trampa": []
+   },
+   "requisitos_args": [
+    "mp3",
+    "192"
+   ]
+  },
+  {
+   "id": "E2d",
+   "estrato": 2,
+   "nombre": "bitrate de la pista de audio de un video, CON pista explicita",
+   "prompt": "El audio de entrevista.mp4 va a 320 kbps y no hace falta tanto. Dejalo en 96 kbps sin volver a comprimir la imagen. Guardalo en entrevista_lig.mp4.",
+   "A": {
+    "mejor": [
+     "set_video_audio_track_bitrate"
+    ],
+    "acepta": [
+     "set_video_audio_track_bitrate",
+     "convert_video_properties"
+    ],
+    "parcial": [],
+    "trampa": [
+     "set_audio_bitrate",
+     "convert_audio_properties",
+     "convert_audio_format"
+    ]
+   },
+   "C": {
+    "mejor": [
+     "convert_video_properties"
+    ],
+    "acepta": [
+     "convert_video_properties"
+    ],
+    "parcial": [],
+    "trampa": [
+     "convert_audio_properties"
+    ]
+   },
+   "B": {
+    "mejor": [],
+    "acepta": [],
+    "parcial": [
+     "ffmpeg_get_info"
+    ],
+    "trampa": [
+     "ffmpeg_compress",
+     "ffmpeg_convert",
+     "ffmpeg_extract_audio"
+    ],
+    "abstencion_correcta": true
+   },
+   "requisitos_args": [
+    "96"
+   ]
+  },
+  {
+   "id": "E3a",
+   "estrato": 3,
+   "nombre": "recortar y luego extraer audio",
+   "prompt": "De grabacion.mp4 quiero el trozo que va del minuto 1 al minuto 2, y de ese trozo quiero el audio suelto en mp3. Deja el mp3 en fragmento.mp3.",
+   "A": {
+    "secuencia": [
+     "trim_video",
+     "extract_audio_from_video"
+    ],
+    "acepta": [
+     "trim_video",
+     "extract_audio_from_video"
+    ],
+    "trampa": [
+     "convert_audio_properties",
+     "convert_audio_format"
+    ]
+   },
+   "C": {
+    "secuencia": [
+     "trim_video",
+     "extract_audio_from_video"
+    ],
+    "acepta": [
+     "trim_video",
+     "extract_audio_from_video"
+    ],
+    "trampa": [
+     "convert_audio_properties"
+    ]
+   },
+   "B": {
+    "secuencia": [
+     "ffmpeg_trim",
+     "ffmpeg_extract_audio"
+    ],
+    "acepta": [
+     "ffmpeg_trim",
+     "ffmpeg_extract_audio"
+    ],
+    "trampa": [
+     "ffmpeg_convert"
+    ]
+   },
+   "requisitos_args": [
+    "mp3"
+   ]
+  },
+  {
+   "id": "E3b",
+   "estrato": 3,
+   "nombre": "unir y luego reescalar",
+   "prompt": "Junta a.mp4 y b.mp4 en un solo video y despues dejalo en 720p. El resultado final en final.mp4.",
+   "A": {
+    "secuencia": [
+     "concatenate_videos",
+     "set_video_resolution"
+    ],
+    "acepta": [
+     "concatenate_videos",
+     "set_video_resolution",
+     "convert_video_properties"
+    ],
+    "trampa": [
+     "add_b_roll",
+     "add_basic_transitions",
+     "change_aspect_ratio"
+    ]
+   },
+   "C": {
+    "secuencia": [
+     "concatenate_videos",
+     "convert_video_properties"
+    ],
+    "acepta": [
+     "concatenate_videos",
+     "convert_video_properties"
+    ],
+    "trampa": [
+     "add_b_roll",
+     "add_basic_transitions",
+     "change_aspect_ratio"
+    ]
+   },
+   "B": {
+    "secuencia": [
+     "ffmpeg_merge",
+     "ffmpeg_convert"
+    ],
+    "acepta": [
+     "ffmpeg_merge",
+     "ffmpeg_convert",
+     "ffmpeg_compress"
+    ],
+    "trampa": []
+   },
+   "requisitos_args": [
+    "720"
+   ]
+  },
+  {
+   "id": "E4a",
+   "estrato": 4,
+   "nombre": "bitrate de la pista de audio SIN pista (ablacion de E2d)",
+   "prompt": "El audio de podcast.mp4 esta a 320 kbps. Ponlo a 96 para que ocupe menos.",
+   "A": {
+    "mejor": [
+     "set_video_audio_track_bitrate"
+    ],
+    "acepta": [
+     "set_video_audio_track_bitrate",
+     "convert_video_properties"
+    ],
+    "parcial": [],
+    "trampa": [
+     "set_audio_bitrate",
+     "convert_audio_properties",
+     "convert_audio_format",
+     "extract_audio_from_video"
+    ]
+   },
+   "C": {
+    "mejor": [
+     "convert_video_properties"
+    ],
+    "acepta": [
+     "convert_video_properties"
+    ],
+    "parcial": [],
+    "trampa": [
+     "convert_audio_properties",
+     "extract_audio_from_video"
+    ]
+   },
+   "B": {
+    "mejor": [],
+    "acepta": [],
+    "parcial": [
+     "ffmpeg_get_info"
+    ],
+    "trampa": [
+     "ffmpeg_compress",
+     "ffmpeg_convert",
+     "ffmpeg_extract_audio"
+    ],
+    "abstencion_correcta": true
+   },
+   "requisitos_args": [
+    "96"
+   ]
+  },
+  {
+   "id": "E4b",
+   "estrato": 4,
+   "nombre": "peticion al nivel de la intencion, no del parametro",
+   "prompt": "Tengo boda.mp4 y pesa 4 GB, asi no me deja mandarlo por ningun lado. Arreglalo.",
+   "A": {
+    "mejor": [
+     "set_video_bitrate"
+    ],
+    "acepta": [
+     "set_video_bitrate",
+     "set_video_resolution",
+     "convert_video_properties"
+    ],
+    "parcial": [],
+    "trampa": [
+     "change_video_speed",
+     "remove_silence",
+     "trim_video"
+    ]
+   },
+   "C": {
+    "mejor": [
+     "convert_video_properties"
+    ],
+    "acepta": [
+     "convert_video_properties"
+    ],
+    "parcial": [],
+    "trampa": [
+     "change_video_speed",
+     "remove_silence",
+     "trim_video"
+    ]
+   },
+   "B": {
+    "mejor": [
+     "ffmpeg_compress"
+    ],
+    "acepta": [
+     "ffmpeg_compress",
+     "ffmpeg_convert"
+    ],
+    "parcial": [],
+    "trampa": [
+     "ffmpeg_trim"
+    ]
+   },
+   "requisitos_args": []
+  },
+  {
+   "id": "E4c",
+   "estrato": 4,
+   "nombre": "capacidad que solo tiene el catalogo pequeno",
+   "prompt": "Necesito una imagen de portada sacada de intro.mp4, un fotograma cualquiera vale.",
+   "A": {
+    "mejor": [],
+    "acepta": [],
+    "parcial": [],
+    "trampa": [
+     "add_image_overlay",
+     "convert_video_properties",
+     "convert_video_format",
+     "trim_video",
+     "extract_audio_from_video"
+    ],
+    "abstencion_correcta": true
+   },
+   "C": {
+    "mejor": [],
+    "acepta": [],
+    "parcial": [],
+    "trampa": [
+     "add_image_overlay",
+     "convert_video_properties",
+     "trim_video",
+     "extract_audio_from_video"
+    ],
+    "abstencion_correcta": true
+   },
+   "B": {
+    "mejor": [
+     "ffmpeg_extract_frames"
+    ],
+    "acepta": [
+     "ffmpeg_extract_frames"
+    ],
+    "parcial": [],
+    "trampa": []
+   },
+   "requisitos_args": []
+  }
+ ],
+ "_requisitos_args": "Cadenas que DEBEN aparecer en los argumentos de alguna llamada para que la peticion se haya cumplido entera. Declarado tras el piloto y ANTES de puntuar el grid."
+}

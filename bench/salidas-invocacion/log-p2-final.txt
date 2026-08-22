@@ -1,0 +1,20 @@
+POBLACION: 138501 aristas
+
+                                E1 (ConvertX)     P2-INV
+  marco muestral                   40252        44879
+  muertas por semiarista           22235        14740
+  indeterminadas                   75874        78742
+  con veredicto                    62487        59619
+  residuo nominal del marco        23.1 %       17.8 %
+  NOMINALES                        31533        25603
+  TASA NOMINAL                     50.5 %       41.0 %
+
+  aristas recuperadas por semiarista: 4627  {1: 1337, 2: 3290}
+  residuo: 27 de 118 recuperadas = 22.9 % [16.2 - 31.2]  {1: 27}
+  aristas que pasan de MUERTA a SIN VEREDICTO (no recuperadas): 2868
+
+>>> RECUPERADO: 5930 aristas = 18.8 % del 50,5 %  [IC 95 %: 16.8 - 21.3]
+    sensibilidad (residuo de las recuperadas = 23,1 %): 18.0 %
+    categoria 1 (bandera):     3226 aristas = 10.2 % del 50,5 %
+    categoria 2 (parametro):   2704 aristas = 8.6 % del 50,5 %
+    categoria 3 (irrecuperable): 81.2 % del 50,5 %

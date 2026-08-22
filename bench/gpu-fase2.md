@@ -7,6 +7,35 @@
 
 ---
 
+> ## ⚠️ AVISO AÑADIDO EL 21/08/2026 — las cifras de CER de d2 y d3 NO miden a los motores
+>
+> **Las cifras de este informe son las que se midieron y se conservan tal cual.** Lo que cambia es su
+> interpretación, y solo para las dificultades **2 y 3**.
+>
+> **El arnés de esta fase rasterizaba todos los PDF a 200 ppp.** Verificado sobre el corpus:
+> `corpus/pdf/escaneado_d2.pdf` y `escaneado_d3.pdf` llevan una imagen incrustada de **647×850 px sobre
+> una página de 465,84×612 pt = 100 ppp nativos**. Rasterizarlos a 200 ppp es **interpolar ×2**, que
+> convierte el grano JPEG q25 en manchas del tamaño de un trazo. (Para `patologico_escaneado.pdf`,
+> 1294×1792 sobre 465,84×645,12 pt = **200 ppp nativos**, el arnés era correcto; d0 y d1 no están
+> afectados de la misma forma.)
+>
+> **Consecuencia:** las marcas de d2 y d3 de las tablas de §1, §3, §4 y §5 —RapidOCR 65,8 %,
+> PaddleOCR 75,9 %, EasyOCR 57,0 % de CER en d3— **no son válidas como medida de la capacidad de los
+> motores frente a un documento degradado**: miden en buena parte ese ×2 de interpolación. **A ppp
+> nativos, PaddleOCR resuelve d3 con 2,5 % de CER**, confirmado tres veces de forma independiente.
+> La conclusión «en d3 fallan los tres» es **falsa**.
+>
+> **Lo que sí sobrevive como asimetría real entre motores:** **RapidOCR no resuelve d3 a ninguna
+> resolución** (mejor caso 53,2 %). Es límite de modelo, no de preprocesado.
+>
+> La cadena de medición es fiel: el control `ctrlppp200` reproduce estas marcas **exactamente, 4 de 4**.
+> El sesgo está localizado en la elección de ppp del arnés, no en el instrumento.
+>
+> **Detalle, matriz ppp × deskew y consecuencias de diseño: `bench/ocrmypdf.md` §3.4 y §8.**
+> **PENDIENTE:** repetir esta fase rasterizando a los ppp nativos.
+
+---
+
 ## 0. Veredicto, primero
 
 **Sí, el hueco competitivo nº 4 (OCR acelerado por GPU) es alcanzable, y sale más barato de
@@ -63,6 +92,10 @@ El resultado es una escala que discrimina de verdad:
 - **d0 y d1**: todos los motores aciertan al 100 %. Sirven de control.
 - **d2**: separa a EasyOCR (43 % de error) de RapidOCR (1,3 %) y PaddleOCR (0 %).
 - **d3**: rompe a todos. Nadie recupera más que el titular. Es el suelo de la escala.
+
+> ⚠️ **Corregido el 21/08/2026 (ver aviso de cabecera).** «d3 rompe a todos» es un artefacto del arnés:
+> d2 y d3 son de **100 ppp nativos** y se rasterizaron a 200. A ppp nativos **PaddleOCR resuelve d3 con
+> 2,5 % de CER**; RapidOCR no lo resuelve a ninguna resolución. `bench/ocrmypdf.md` §3.4.
 
 `escaneado_d3.pdf` sigue siendo legible para un humano —lo verifiqué visualmente— así que
 mide el margen real que queda por ganar, no un imposible.
@@ -297,6 +330,9 @@ consume: **+2 079 MiB** aislado, **+2 977 MiB** dentro de docling.
 | **d2** | **43,0 %** | **43,0 %** |
 | d3 | 57,0 % | **59,5 %** |
 
+> ⚠️ **d2 y d3 medidos con ×2 de sobremuestreo** (100 ppp nativos rasterizados a 200). No valen como
+> medida de capacidad del motor. Ver aviso de cabecera y `bench/ocrmypdf.md` §3.4.
+
 Sobre d2, EasyOCR desordena las líneas y confunde caracteres:
 `documento escaneado solo existe texlo con ocr debe recuperarse pixeles` — mezcla el orden de
 lectura de las dos frases. RapidOCR sobre el mismo documento se equivoca en **un solo
@@ -348,6 +384,10 @@ instalación más cara de la fase.
 | **Aceleración** | **8,9×** | **10,8×** | **11,7×** | **11,2×** |
 | **CER** (idéntico CPU/GPU) | 0,0 % | 0,0 % | **0,0 %** | 75,9 % |
 
+> ⚠️ **El 75,9 % de d3 mide el ×2 de sobremuestreo del arnés, no al motor.** A los 100 ppp nativos del
+> documento, **PaddleOCR resuelve d3 con 2,5 % de CER** (y con la imagen incrustada sin rasterizar,
+> igual). Ver aviso de cabecera y `bench/ocrmypdf.md` §3.4.
+
 **PaddleOCR es el más preciso del banco: el único que resuelve d2 sin un solo error.** Y en
 GPU es igual de rápido que RapidOCR (198–274 ms frente a 210–275 ms), lo cual tiene sentido
 —RapidOCR ejecuta los mismos modelos PP-OCR, solo que exportados a ONNX.
@@ -367,6 +407,11 @@ Contrapartidas medidas:
 
 Motor aislado sobre las páginas rasterizadas a 200 ppp (sin la etapa de maquetación de
 docling), mediana de n=9. `Coste propio` = VRAM pico menos la línea base del escritorio.
+
+> ⚠️ **Las cuatro columnas de CER de d2 y d3 no son válidas como medida de capacidad de los motores**:
+> esos dos documentos son de **100 ppp nativos** y aquí se rasterizaron a 200 (×2 de interpolación).
+> Las columnas de tiempo y VRAM **sí** valen. A ppp nativos: **PaddleOCR d3 = 2,5 %**; RapidOCR no
+> resuelve d3 a ninguna resolución (mejor caso 53,2 %). Ver aviso de cabecera y `bench/ocrmypdf.md` §3.4.
 
 | Motor | Disp. | Carga | Coste VRAM | d0 | d1 | d2 | d3 | CER d0 | CER d1 | CER d2 | CER d3 |
 |---|---|---|---|---|---|---|---|---|---|---|---|

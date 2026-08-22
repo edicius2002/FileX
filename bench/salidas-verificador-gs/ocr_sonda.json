@@ -1,0 +1,88 @@
+{
+ "gs_version": "10.07.0",
+ "sin_tessdata_prefix_por_defecto": {
+  "rc": 1,
+  "err": "Error opening data file ./eng.traineddata\nPlease make sure the TESSDATA_PREFIX environment variable is set to your \"tessdata\" directory.\nFailed loading language 'eng'\nTesseract couldn't load any languages!\n**** Unable to open the initial device, quitting.",
+  "out": ""
+ },
+ "sin_tessdata_prefix_spa": {
+  "rc": 1,
+  "err": "Error opening data file ./spa.traineddata\nPlease make sure the TESSDATA_PREFIX environment variable is set to your \"tessdata\" directory.\nFailed loading language 'spa'\nTesseract couldn't load any languages!\n**** Unable to open the initial device, quitting.",
+  "out": ""
+ },
+ "tessdata_de_tesseract_ocr_por_defecto": {
+  "rc": 0,
+  "err": "",
+  "out": "DOCUMENTO ESCANEADO\nTexto que golo existe como pixeles.\nDebe recuperarse con OCR."
+ },
+ "tessdata_de_tesseract_ocr_spa": {
+  "rc": 1,
+  "err": "Error opening data file C:\\Program Files\\Tesseract-OCR\\tessdata/spa.traineddata\nPlease make sure the TESSDATA_PREFIX environment variable is set to your \"tessdata\" directory.\nFailed loading language 'spa'\nTesseract couldn't load any languages!\n**** Unable to open the initial device, quitting.",
+  "out": ""
+ },
+ "dispositivos_ocr": [
+  "ocr",
+  "hocr",
+  "pdfocr8",
+  "pdfocr24",
+  "pdfocr32",
+  "txtwrite",
+  "docxwrite",
+  "xpswrite",
+  "pclm"
+ ],
+ "tessdata": [
+  "eng.traineddata",
+  "osd.traineddata",
+  "spa.traineddata"
+ ],
+ "idiomas": {
+  "eng": {
+   "rc": 0,
+   "chars": 81,
+   "muestra": "DOCUMENTO ESCANEADO | Texto que golo existe como pixeles. | Debe",
+   "err": ""
+  },
+  "spa": {
+   "rc": 0,
+   "chars": 81,
+   "muestra": "DOCUMENTO ESCANEADO | Texto que solo existe como pixeles. | Debe",
+   "err": ""
+  },
+  "spa+eng": {
+   "rc": 0,
+   "chars": 81,
+   "muestra": "DOCUMENTO ESCANEADO | Texto que solo existe como pixeles. | Debe",
+   "err": ""
+  },
+  "eng+spa": {
+   "rc": 0,
+   "chars": 81,
+   "muestra": "DOCUMENTO ESCANEADO | Texto que solo existe como pixeles. | Debe",
+   "err": ""
+  },
+  "deu": {
+   "rc": 1,
+   "chars": 0,
+   "muestra": "",
+   "err": "Error opening data file D:\\Work\\research\\FileX\\bench\\salidas-verificador-gs\\tessdata/deu.traineddata\nPlease make sure the TESSDATA_PREFIX environment variable i"
+  },
+  "osd": {
+   "rc": 3221225477,
+   "chars": 0,
+   "muestra": "",
+   "err": "Error: LSTM requested, but not present!! Loading tesseract.\nno best words!!\nno best words!!\nno best words!!\nno best words!!\nno best words!!\nno best words!!\nno b"
+  }
+ },
+ "dOCRLanguage": {
+  "rc": 1,
+  "err": "",
+  "out": "Invalid value for option -dOCRLanguage=spa, use -sNAME= to define string constants"
+ },
+ "origen_spa": {
+  "ruta": "C:/Program Files/PDFgear/tessdata/spa.traineddata",
+  "bytes": 2294433,
+  "puesto_por_el_proyecto": false,
+  "nota": "no lo instalo FileX; venia con PDFgear. Si no estuviera, habria que descargarlo de tessdata_fast/best."
+ }
+}

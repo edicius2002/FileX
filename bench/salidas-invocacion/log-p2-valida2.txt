@@ -1,0 +1,18 @@
+apm      -> swf           8869 B  head=b'FWS\x04\x00\x00@\x06p\x00'
+    ffprobe: codec_name=mp3 | codec_type=audio | format_name=swf
+pdb      -> matte      6221291 B  head=b'id=ImageMa'
+    ffprobe: 
+ipl      -> matte      6221306 B  head=b'id=ImageMa'
+    ffprobe: 
+hdr      -> matte     12442023 B  head=b'id=ImageMa'
+    ffprobe: 
+avif     -> inline        2651 B  head=b'data:image'
+    ffprobe: 
+aptx     -> isma         17604 B  head=b'\x00\x00\x00\x18ftypis'
+    ffprobe: codec_name=aac | codec_type=audio | format_name=mov,mp4,m4a,3gp,3g2,mj2
+msbc     -> ismv         17671 B  head=b'\x00\x00\x00\x18ftypis'
+    ffprobe: codec_name=aac | codec_type=audio | format_name=mov,mp4,m4a,3gp,3g2,mj2
+tta      -> h265.mp4     17449 B  head=b'\x00\x00\x00\x1cftypis'
+    ffprobe: codec_name=aac | codec_type=audio | format_name=mov,mp4,m4a,3gp,3g2,mj2
+266      -> y            50688 B  head=b'\x00\x02\x00\x02\x00\x02\x00\x02\x00\x02'
+    ffprobe: 

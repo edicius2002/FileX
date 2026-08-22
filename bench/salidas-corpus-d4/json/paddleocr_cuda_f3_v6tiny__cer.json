@@ -1,0 +1,124 @@
+{
+  "cabecera": {
+    "etiqueta": "paddleocr_cuda_f3_v6tiny",
+    "motor": "paddleocr",
+    "dispositivo": "cuda",
+    "referencia": "d4",
+    "patron": "*.png",
+    "imgdir": "D:/Work/research/FileX/bench/salidas-corpus-d4/img_f3",
+    "carga_frio_s": 23.76,
+    "vram_base_MiB": 2978,
+    "vram_tras_carga_MiB": 3277,
+    "quietud_pct": 38,
+    "cpu_pico_pct": null,
+    "flag": "SUCIA(pico 38%)",
+    "modelos": {
+      "paddle": "3.2.0",
+      "kwargs": {
+        "device": "gpu:0",
+        "use_doc_orientation_classify": "False",
+        "use_doc_unwarping": "False",
+        "use_textline_orientation": "True",
+        "text_detection_model_name": "PP-OCRv6_tiny_det",
+        "text_recognition_model_name": "PP-OCRv6_tiny_rec"
+      },
+      "params": {
+        "doc_orientation_classify_model_name": "None",
+        "doc_unwarping_model_name": "None",
+        "text_detection_model_name": "PP-OCRv6_tiny_det",
+        "textline_orientation_model_name": "None",
+        "text_recognition_model_name": "PP-OCRv6_tiny_rec"
+      }
+    },
+    "reps": 9,
+    "muestreo_vram": false
+  },
+  "fin": {
+    "evento": "fin",
+    "vram_pico_MiB": 3277,
+    "vram_base_MiB": 2978,
+    "coste_propio_MiB": 299,
+    "pico_util_pct": 0,
+    "muestreo_vram": false
+  },
+  "res": {
+    "ppp100__escaneado_d3": {
+      "referencia": "legado",
+      "cer_acentos_pct": 43.04,
+      "dist_acentos": 34,
+      "cer_ascii_pct": 43.04,
+      "dist_ascii": 34,
+      "chars_ref_acentos": 79,
+      "chars": 75,
+      "lineas_exactas": 1,
+      "lineas_totales": 3,
+      "acentos_ref": 0,
+      "acentos_salida": 0,
+      "bloques": {
+        "cuerpo": 43.04
+      },
+      "normalizada_acentos": "documento escaneado tvt9 4 6 90 a 0ste c0ma pmab0 d6b 1e0 001ame 00n 0cr",
+      "ms_mediana": 56.7,
+      "ms_min": 48.1,
+      "ms_max": 68.5,
+      "n": 9,
+      "determinista": true,
+      "vram_pico_MiB": 3277,
+      "vram_delta_lote_MiB": 0
+    },
+    "ppp200__escaneado_d4": {
+      "referencia": "d4",
+      "cer_acentos_pct": 31.88,
+      "dist_acentos": 190,
+      "cer_ascii_pct": 30.7,
+      "dist_ascii": 183,
+      "chars_ref_acentos": 596,
+      "chars": 460,
+      "lineas_exactas": 2,
+      "lineas_totales": 12,
+      "acentos_ref": 35,
+      "acentos_salida": 11,
+      "bloques": {
+        "titulo": 0.0,
+        "subtitulo": 0.0,
+        "cuerpo": 8.97,
+        "pequeña": 75.59
+      },
+      "normalizada_acentos": "informe de digitalización expediente núm 4 827 2026 archivo histórico e1 dia 14 de marz0 se rec bi0 la solicitud de anaisis técnico sobre veintiun volumenes encuademados en piel la comisión determinó que la reproduccion fotográfica debia realizarse con lminaci0n dfusa y sin contacto seg0n la norma une 15 402 para evitar daños añadkdos en los plieg0s más fragles del año 1893 wrgunwdip ss de dermeer6dde gwe ersvs aacak210s c55ga7 0 ry 12 k qumc0 4adie",
+      "ms_mediana": 191.0,
+      "ms_min": 181.8,
+      "ms_max": 205.8,
+      "n": 9,
+      "determinista": true,
+      "vram_pico_MiB": 3277,
+      "vram_delta_lote_MiB": 0
+    },
+    "ppp200__escaneado_d4c": {
+      "referencia": "d4",
+      "cer_acentos_pct": 4.87,
+      "dist_acentos": 29,
+      "cer_ascii_pct": 4.19,
+      "dist_ascii": 25,
+      "chars_ref_acentos": 596,
+      "chars": 605,
+      "lineas_exactas": 7,
+      "lineas_totales": 12,
+      "acentos_ref": 35,
+      "acentos_salida": 25,
+      "bloques": {
+        "titulo": 0.0,
+        "subtitulo": 0.0,
+        "cuerpo": 0.32,
+        "pequeña": 15.02
+      },
+      "normalizada_acentos": "informe de digitalización expediente núm 4 827 2026 archivo histórico el dia 14 de marzo se recibió la solicitud de análisis técnico sobre veintiún volúmenes encuadernados en piel la comisión determinó que la reproducción fotográfica debía realizarse con iluminación difusa y sin contacto según la norma une 15 402 para evitar daños añadidos en los pliegos más frágiles del año 1893 qus6n autar20 la 6xcepckón7 e1 arra o tercero 5e ala que la revisión ortográfica y linguistica det legaj0 es responsabaidad del área de conservaci6n preventiva atención1 las c6digos 7 8 9 8 y 12 k quedan anuladas",
+      "ms_mediana": 177.8,
+      "ms_min": 166.7,
+      "ms_max": 194.9,
+      "n": 9,
+      "determinista": true,
+      "vram_pico_MiB": 3277,
+      "vram_delta_lote_MiB": 0
+    }
+  }
+}

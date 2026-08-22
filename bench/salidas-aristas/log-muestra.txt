@@ -1,0 +1,45 @@
+{"etiqueta": "antes-muestra", "mediana_ms": 330.39, "min_ms": 325.7, "max_ms": 346.81, "n": 7, "ts": "2026-08-21T07:46:40"}
+ESTRATOS DEL MARCO (40252 aristas)
+   ffmpeg|distinta-familia            7414  (18.4 %)
+   ffmpeg|misma-familia               8985  (22.3 %)
+   imagemagick|distinta-familia       4760  (11.8 %)
+   imagemagick|misma-familia         19093  (47.4 %)
+
+PLAN DE MUESTREO (n objetivo 500 -> 500):
+   ffmpeg|distinta-familia          n=92
+   ffmpeg|misma-familia             n=112
+   imagemagick|distinta-familia     n=59
+   imagemagick|misma-familia        n=237
+
+estrato PDF (prioritario): 100 de 311 aristas que tocan pdf
+   general 0/500 (0s)
+   general 25/500 (1s)
+   general 50/500 (3s)
+   general 75/500 (6s)
+   general 100/500 (20s)
+   general 125/500 (22s)
+   general 150/500 (26s)
+   general 175/500 (43s)
+   general 200/500 (44s)
+   general 225/500 (61s)
+   general 250/500 (120s)
+   general 275/500 (134s)
+   general 300/500 (168s)
+   general 325/500 (196s)
+   general 350/500 (295s)
+   general 375/500 (313s)
+   general 400/500 (329s)
+   general 425/500 (349s)
+   general 450/500 (389s)
+   general 475/500 (412s)
+   pdf 0/100 (0s)
+   pdf 25/100 (73s)
+   pdf 50/100 (87s)
+   pdf 75/100 (148s)
+{"etiqueta": "despues-muestra", "mediana_ms": 389.85, "min_ms": 367.02, "max_ms": 413.55, "n": 7, "ts": "2026-08-21T07:57:16"}
+
+GENERAL: 115/498 nominales = 23.1 %
+    {'FALLO': 112, 'INTEGRO': 320, 'DEGRADADO': 63, None: 2, 'DESTRUIDO': 3}
+
+PDF: 3/100 nominales = 3.0 %
+    {'INTEGRO': 85, 'DEGRADADO': 12, 'DESTRUIDO': 1, 'FALLO': 2}

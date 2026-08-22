@@ -1,0 +1,122 @@
+{
+  "cabecera": {
+    "etiqueta": "rapidocr_cuda_f3_v4_detmul",
+    "motor": "rapidocr",
+    "dispositivo": "cuda",
+    "referencia": "d4",
+    "patron": "*.png",
+    "imgdir": "D:/Work/research/FileX/bench/salidas-corpus-d4/img_f3",
+    "carga_frio_s": 13.63,
+    "vram_base_MiB": 2999,
+    "vram_tras_carga_MiB": 3135,
+    "quietud_pct": 38,
+    "cpu_pico_pct": null,
+    "flag": "SUCIA(pico 38%)",
+    "modelos": {
+      "text_det": "ch_PP-OCRv4_det_mobile.onnx",
+      "text_cls": "ch_PP-OCRv4_det_mobile.onnx",
+      "text_rec": "ch_PP-OCRv4_det_mobile.onnx",
+      "pedido": {
+        "Det.engine_type": "onnxruntime",
+        "Rec.engine_type": "onnxruntime",
+        "Det.lang_type": "multi",
+        "Rec.lang_type": "ch",
+        "Det.ocr_version": "PP-OCRv4",
+        "Rec.ocr_version": "PP-OCRv4",
+        "Det.model_type": "mobile",
+        "Rec.model_type": "mobile",
+        "Global.model_root_dir": "D:/Work/research/FileX/bench/salidas-corpus-d4/modelos"
+      }
+    },
+    "reps": 9,
+    "muestreo_vram": false
+  },
+  "fin": {
+    "evento": "fin",
+    "vram_pico_MiB": 3135,
+    "vram_base_MiB": 2999,
+    "coste_propio_MiB": 136,
+    "pico_util_pct": 0,
+    "muestreo_vram": false
+  },
+  "res": {
+    "ppp100__escaneado_d3": {
+      "referencia": "legado",
+      "cer_acentos_pct": 46.84,
+      "dist_acentos": 37,
+      "cer_ascii_pct": 46.84,
+      "dist_ascii": 37,
+      "chars_ref_acentos": 79,
+      "chars": 46,
+      "lineas_exactas": 1,
+      "lineas_totales": 3,
+      "acentos_ref": 0,
+      "acentos_salida": 0,
+      "bloques": {
+        "cuerpo": 46.84
+      },
+      "normalizada_acentos": "documento escaneado tortoue existe webe conogr",
+      "ms_mediana": 626.1,
+      "ms_min": 557.2,
+      "ms_max": 791.9,
+      "n": 9,
+      "determinista": true,
+      "vram_pico_MiB": 3135,
+      "vram_delta_lote_MiB": 0
+    },
+    "ppp200__escaneado_d4": {
+      "referencia": "d4",
+      "cer_acentos_pct": 61.07,
+      "dist_acentos": 364,
+      "cer_ascii_pct": 58.89,
+      "dist_ascii": 351,
+      "chars_ref_acentos": 596,
+      "chars": 367,
+      "lineas_exactas": 0,
+      "lineas_totales": 12,
+      "acentos_ref": 35,
+      "acentos_salida": 0,
+      "bloques": {
+        "titulo": 60.0,
+        "subtitulo": 9.3,
+        "cuerpo": 54.49,
+        "pequeña": 76.06
+      },
+      "normalizada_acentos": "de digitalizacion informe expediente num 4 827 2026 archivo hislonico dia 14 do marzo se recibio solicitud de anaisis en piel encuademados vofumenes lecnico sobre veintian fotografica determino quo reproduccion la comision ditusa sin contacto debia reaizarse une con huminacion 15 402 para evitar danos anadidos segun la norma n los pliegos mas fragies d ano 1893 o",
+      "ms_mediana": 856.5,
+      "ms_min": 789.5,
+      "ms_max": 902.3,
+      "n": 9,
+      "determinista": true,
+      "vram_pico_MiB": 3135,
+      "vram_delta_lote_MiB": 0
+    },
+    "ppp200__escaneado_d4c": {
+      "referencia": "d4",
+      "cer_acentos_pct": 15.27,
+      "dist_acentos": 91,
+      "cer_ascii_pct": 9.73,
+      "dist_ascii": 58,
+      "chars_ref_acentos": 596,
+      "chars": 573,
+      "lineas_exactas": 0,
+      "lineas_totales": 12,
+      "acentos_ref": 35,
+      "acentos_salida": 0,
+      "bloques": {
+        "titulo": 4.0,
+        "subtitulo": 4.65,
+        "cuerpo": 11.22,
+        "pequeña": 34.74
+      },
+      "normalizada_acentos": "informe de digitalizacion expediente num 4 827 2026 archivo historico ei dia 14 de marzo se recibio la solicitud de analisis tecnico sobre veintiun volumenes encuadernados la comision determino en piel que la reproduccion fotografica debia realizarse con iluminacion difusa y sin contacto segun la norma une 15 402 para evitar danos anadidos en los pliegos mas fragiles del ano 1893 quien excepcon parrato torcero sehala larevision onografica linguistica det leggo eresponsabidad del area do conservacion preventiva atenciont los codkgos 7 8 s ny 12 k quedan anulados",
+      "ms_mediana": 1252.5,
+      "ms_min": 1094.6,
+      "ms_max": 1319.2,
+      "n": 9,
+      "determinista": true,
+      "vram_pico_MiB": 3135,
+      "vram_delta_lote_MiB": 0
+    }
+  }
+}

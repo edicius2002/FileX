@@ -1,0 +1,144 @@
+=== N por celda ===
+A 120
+C 120
+B 120
+
+=== ACIERTO ESTRICTO (la mejor herramienta) ===
+estr   tarea             n  acierto IC95            
+  E1  cat A            30     100% [0.89, 1.00]
+  E1  cat C            30     100% [0.89, 1.00]
+  E1  cat B            30     100% [0.89, 1.00]
+  E2  cat A            40     100% [0.91, 1.00]
+  E2  cat C            40     100% [0.91, 1.00]
+  E2  cat B            40      70% [0.55, 0.82]
+  E3  cat A            20     100% [0.84, 1.00]
+  E3  cat C            20     100% [0.84, 1.00]
+  E3  cat B            20      95% [0.76, 0.99]
+  E4  cat A            30      73% [0.56, 0.86]
+  E4  cat C            30     100% [0.89, 1.00]
+  E4  cat B            30      70% [0.52, 0.83]
+  ---- global ----
+  ALL cat A           120      93% [0.87, 0.97]
+  ALL cat C           120     100% [0.97, 1.00]
+  ALL cat B           120      82% [0.74, 0.88]
+
+=== ACIERTO PERMISIVO (una que resuelve) ===
+estr   tarea             n  acierto IC95            
+  E1  cat A            30     100% [0.89, 1.00]
+  E1  cat C            30     100% [0.89, 1.00]
+  E1  cat B            30     100% [0.89, 1.00]
+  E2  cat A            40     100% [0.91, 1.00]
+  E2  cat C            40     100% [0.91, 1.00]
+  E2  cat B            40      78% [0.62, 0.88]
+  E3  cat A            20     100% [0.84, 1.00]
+  E3  cat C            20     100% [0.84, 1.00]
+  E3  cat B            20     100% [0.84, 1.00]
+  E4  cat A            30     100% [0.89, 1.00]
+  E4  cat C            30     100% [0.89, 1.00]
+  E4  cat B            30      70% [0.52, 0.83]
+  ---- global ----
+  ALL cat A           120     100% [0.97, 1.00]
+  ALL cat C           120     100% [0.97, 1.00]
+  ALL cat B           120      85% [0.78, 0.90]
+
+=== PETICION CUMPLIDA ENTERA (requisitos en los argumentos) ===
+estr   tarea             n  acierto IC95            
+  E1  cat A            30     100% [0.89, 1.00]
+  E1  cat C            30     100% [0.89, 1.00]
+  E1  cat B            30     100% [0.89, 1.00]
+  E2  cat A            40     100% [0.91, 1.00]
+  E2  cat C            40     100% [0.91, 1.00]
+  E2  cat B            40      75% [0.60, 0.86]
+  E3  cat A            20     100% [0.84, 1.00]
+  E3  cat C            20     100% [0.84, 1.00]
+  E3  cat B            20     100% [0.84, 1.00]
+  E4  cat A            30      67% [0.49, 0.81]
+  E4  cat C            30      67% [0.49, 0.81]
+  E4  cat B            30      77% [0.59, 0.88]
+  ---- global ----
+  ALL cat A           120      92% [0.85, 0.95]
+  ALL cat C           120      92% [0.85, 0.95]
+  ALL cat B           120      86% [0.78, 0.91]
+
+=== ELECCION TRAMPA (fichero incorrecto sin error) ===
+estr   tarea             n  acierto IC95            
+  E1  cat A            30       0% [0.00, 0.11]
+  E1  cat C            30       0% [0.00, 0.11]
+  E1  cat B            30       0% [0.00, 0.11]
+  E2  cat A            40       0% [0.00, 0.09]
+  E2  cat C            40       0% [0.00, 0.09]
+  E2  cat B            40      22% [0.12, 0.38]
+  E3  cat A            20       0% [0.00, 0.16]
+  E3  cat C            20       0% [0.00, 0.16]
+  E3  cat B            20       0% [0.00, 0.16]
+  E4  cat A            30       0% [0.00, 0.11]
+  E4  cat C            30       0% [0.00, 0.11]
+  E4  cat B            30      30% [0.17, 0.48]
+  ---- global ----
+  ALL cat A           120       0% [0.00, 0.03]
+  ALL cat C           120       0% [0.00, 0.03]
+  ALL cat B           120      15% [0.10, 0.22]
+
+=== por tarea: acierto estricto / permisivo / completa / trampa ===
+tarea  cat      n     estr     perm    compl    tramp
+E1a    A       10     100%     100%     100%       0%
+E1a    C       10     100%     100%     100%       0%
+E1a    B       10     100%     100%     100%       0%
+E1b    A       10     100%     100%     100%       0%
+E1b    C       10     100%     100%     100%       0%
+E1b    B       10     100%     100%     100%       0%
+E1c    A       10     100%     100%     100%       0%
+E1c    C       10     100%     100%     100%       0%
+E1c    B       10     100%     100%     100%       0%
+E2a    A       10     100%     100%     100%       0%
+E2a    C       10     100%     100%     100%       0%
+E2a    B       10      70%     100%     100%       0%
+E2b    A       10     100%     100%     100%       0%
+E2b    C       10     100%     100%     100%       0%
+E2b    B       10     100%     100%     100%       0%
+E2c    A       10     100%     100%     100%       0%
+E2c    C       10     100%     100%     100%       0%
+E2c    B       10     100%     100%     100%       0%
+E2d    A       10     100%     100%     100%       0%
+E2d    C       10     100%     100%     100%       0%
+E2d    B       10      10%      10%       0%      90%
+E3a    A       10     100%     100%     100%       0%
+E3a    C       10     100%     100%     100%       0%
+E3a    B       10     100%     100%     100%       0%
+E3b    A       10     100%     100%     100%       0%
+E3b    C       10     100%     100%     100%       0%
+E3b    B       10      90%     100%     100%       0%
+E4a    A       10     100%     100%     100%       0%
+E4a    C       10     100%     100%     100%       0%
+E4a    B       10      10%      10%      30%      90%
+E4b    A       10      20%     100%     100%       0%
+E4b    C       10     100%     100%     100%       0%
+E4b    B       10     100%     100%     100%       0%
+E4c    A       10     100%     100%       0%       0%
+E4c    C       10     100%     100%       0%       0%
+E4c    B       10     100%     100%     100%       0%
+
+=== contraste A vs C y A vs B (Fisher bilateral) ===
+  estricta   A(112/120=93%) vs C(120/120=100%)  p=0.0069  *
+  estricta   A(112/120=93%) vs B(98/120=82%)  p=0.0102  *
+  permisiva  A(120/120=100%) vs C(120/120=100%)  p=1.0000
+  permisiva  A(120/120=100%) vs B(102/120=85%)  p=0.0000  *
+  completa   A(110/120=92%) vs C(110/120=92%)  p=1.0000
+  completa   A(110/120=92%) vs B(103/120=86%)  p=0.2198
+  trampa     A(0/120=0%) vs C(0/120=0%)  p=1.0000
+  trampa     A(0/120=0%) vs B(18/120=15%)  p=0.0000  *
+
+=== distribucion de clases ===
+  A {'mejor': 82, 'secuencia_exacta': 20, 'resuelve': 8, 'abstencion': 10}
+  C {'mejor': 90, 'secuencia_exacta': 20, 'abstencion': 10}
+  B {'mejor': 77, 'resuelve': 3, 'trampa': 18, 'secuencia_exacta': 19, 'incompleta': 1, 'abstencion': 2}
+
+=== herramientas elegidas por primera vez, por catalogo ===
+  A {'trim_video': 20, 'set_video_audio_track_bitrate': 20, 'extract_audio_from_video': 10, 'convert_video_format': 10, 'set_video_resolution': 10, 'set_video_audio_track_codec': 10, 'convert_audio_properties': 10, 'concatenate_videos': 10, None: 10, 'convert_video_properties': 8, 'set_video_bitrate': 2}
+  C {'convert_video_properties': 60, 'trim_video': 20, 'extract_audio_from_video': 10, 'convert_audio_properties': 10, 'concatenate_videos': 10, None: 10}
+  B {'ffmpeg_convert': 37, 'ffmpeg_extract_audio': 23, 'ffmpeg_trim': 20, 'ffmpeg_compress': 18, 'ffmpeg_merge': 10, 'ffmpeg_extract_frames': 10, None: 2}
+
+=== coste y latencia ===
+  A  coste medio 0.0066 USD  dur media 12.2s  llamadas medias 1.08
+  C  coste medio 0.0065 USD  dur media 12.1s  llamadas medias 1.08
+  B  coste medio 0.0168 USD  dur media 18.1s  llamadas medias 1.17

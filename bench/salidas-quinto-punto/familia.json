@@ -1,0 +1,199 @@
+[
+ {
+  "miembro": "1. SVG con <text> -> PNG sin fuentes (resvg)",
+  "salida": "bench\\salidas-aristas\\c8\\out\\out\\s_resvg.png",
+  "nota": "rc=0, PNG valido, 400x200 exacto, cero letras",
+  "contrato": "ok_parcial",
+  "fidelidad": "fallo",
+  "atrapa_contrato": [],
+  "atrapa_fidelidad": [
+   "I9:fallo"
+  ],
+  "cubierto": true,
+  "hallazgos_contrato": [],
+  "hallazgos_fidelidad": [
+   {
+    "punto": "F",
+    "regla": "I9",
+    "severidad": "fallo",
+    "mensaje": "TEXTO PERDIDO: el SVG tiene 2 elemento(s) <text> y la salida rasterizada no tiene tinta donde estaban (0.00 % maximo)",
+    "esperado": ">= 0.5 % de tinta",
+    "obtenido": 0.0
+   }
+  ]
+ },
+ {
+  "miembro": "1c. control: el mismo SVG con Inkscape",
+  "salida": "bench\\salidas-aristas\\c8\\out\\out\\s_ink.png",
+  "nota": "control sano",
+  "contrato": "ok_parcial",
+  "fidelidad": "ok",
+  "atrapa_contrato": [],
+  "atrapa_fidelidad": [],
+  "cubierto": false,
+  "hallazgos_contrato": [],
+  "hallazgos_fidelidad": []
+ },
+ {
+  "miembro": "2. video con duracion/geometria correctas y TODO NEGRO",
+  "salida": "bench\\salidas-quinto-punto\\tmp\\familia\\negro.mp4",
+  "nota": "lut=y=0: cada fotograma en negro",
+  "contrato": "ok_parcial",
+  "fidelidad": "aviso",
+  "atrapa_contrato": [],
+  "atrapa_fidelidad": [
+   "V8:aviso"
+  ],
+  "cubierto": true,
+  "hallazgos_contrato": [],
+  "hallazgos_fidelidad": [
+   {
+    "punto": "F",
+    "regla": "V8",
+    "severidad": "aviso",
+    "mensaje": "PSNR de luminancia bajo",
+    "esperado": ">= 40 dB",
+    "obtenido": 5.385942
+   }
+  ]
+ },
+ {
+  "miembro": "3. PDF con texto -> PDF rasterizado (pierde el texto)",
+  "salida": "bench\\salidas-referencia\\pdf\\tipico_texto_rasterizado.pdf",
+  "nota": "del propio patron oro",
+  "contrato": "ok_parcial",
+  "fidelidad": "fallo",
+  "atrapa_contrato": [],
+  "atrapa_fidelidad": [
+   "P2:fallo"
+  ],
+  "cubierto": true,
+  "hallazgos_contrato": [],
+  "hallazgos_fidelidad": [
+   {
+    "punto": "F",
+    "regla": "P2",
+    "severidad": "fallo",
+    "mensaje": "PDF -> PDF que NO conserva el texto (105 -> 0 caracteres)",
+    "esperado": "fd982188d50f2e5e",
+    "obtenido": "e3b0c44298fc1c14"
+   }
+  ]
+ },
+ {
+  "miembro": "4. CSV -> JSON que PIERDE la ultima columna",
+  "salida": "bench\\salidas-quinto-punto\\tmp\\familia\\sin_columna.json",
+  "nota": "mismas filas, un campo menos",
+  "contrato": "fallo",
+  "fidelidad": "ok_parcial",
+  "atrapa_contrato": [
+   "D4:fallo"
+  ],
+  "atrapa_fidelidad": [],
+  "cubierto": true,
+  "hallazgos_contrato": [
+   {
+    "punto": 4,
+    "regla": "D4",
+    "severidad": "fallo",
+    "mensaje": "cambia la cabecera (BOM o clave perdida)",
+    "esperado": [
+     "id",
+     "nombre",
+     "notas"
+    ],
+    "obtenido": [
+     "id",
+     "nombre"
+    ]
+   }
+  ],
+  "hallazgos_fidelidad": []
+ },
+ {
+  "miembro": "4b. control: CSV -> JSON que pierde una FILA",
+  "salida": "bench\\salidas-quinto-punto\\tmp\\familia\\sin_fila.json",
+  "nota": "control",
+  "contrato": "fallo",
+  "fidelidad": "ok_parcial",
+  "atrapa_contrato": [
+   "D1:fallo"
+  ],
+  "atrapa_fidelidad": [],
+  "cubierto": true,
+  "hallazgos_contrato": [
+   {
+    "punto": 4,
+    "regla": "D1",
+    "severidad": "fallo",
+    "mensaje": "cambia el numero de filas logicas",
+    "esperado": 2,
+    "obtenido": 1
+   }
+  ],
+  "hallazgos_fidelidad": []
+ },
+ {
+  "miembro": "5. audio estereo: canal derecho SILENCIADO (destino con perdida)",
+  "salida": "bench\\salidas-quinto-punto\\tmp\\familia\\mudo.mp3",
+  "nota": "duracion, canales (2) y frecuencia correctos",
+  "contrato": "ok_parcial",
+  "fidelidad": "ok",
+  "atrapa_contrato": [],
+  "atrapa_fidelidad": [],
+  "cubierto": false,
+  "hallazgos_contrato": [],
+  "hallazgos_fidelidad": []
+ },
+ {
+  "miembro": "5c. control: el mismo estereo sin silenciar nada",
+  "salida": "bench\\salidas-quinto-punto\\tmp\\familia\\sano.mp3",
+  "nota": "control sano",
+  "contrato": "ok_parcial",
+  "fidelidad": "ok",
+  "atrapa_contrato": [],
+  "atrapa_fidelidad": [],
+  "cubierto": false,
+  "hallazgos_contrato": [],
+  "hallazgos_fidelidad": []
+ },
+ {
+  "miembro": "5b. el MISMO fallo a un destino SIN PERDIDA (flac)",
+  "salida": "bench\\salidas-quinto-punto\\tmp\\familia\\mudo.flac",
+  "nota": "aqui A4 si puede comparar el PCM",
+  "contrato": "ok_parcial",
+  "fidelidad": "fallo",
+  "atrapa_contrato": [],
+  "atrapa_fidelidad": [
+   "A4:fallo"
+  ],
+  "cubierto": true,
+  "hallazgos_contrato": [],
+  "hallazgos_fidelidad": [
+   {
+    "punto": "F",
+    "regla": "A4",
+    "severidad": "fallo",
+    "mensaje": "el PCM decodificado NO es identico",
+    "esperado": "2e15b350aafb3afcd962f91f6cc1c419",
+    "obtenido": "c5af0950e94f2d363506c1a4ae780528"
+   }
+  ]
+ },
+ {
+  "miembro": "6. PDF con anotacion -> gs pdfwrite",
+  "salida": "bench\\salidas-quinto-punto\\tmp\\familia\\sin_anotacion.pdf",
+  "nota": "/Annots entrada=True salida=True",
+  "contrato": "ok_parcial",
+  "fidelidad": "ok",
+  "atrapa_contrato": [],
+  "atrapa_fidelidad": [],
+  "cubierto": false,
+  "hallazgos_contrato": [],
+  "hallazgos_fidelidad": [],
+  "annots": {
+   "entrada": true,
+   "salida": true
+  }
+ }
+]

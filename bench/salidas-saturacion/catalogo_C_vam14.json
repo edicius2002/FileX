@@ -1,0 +1,732 @@
+[
+ {
+  "name": "health_check",
+  "description": "Returns a simple health status to confirm the server is running.",
+  "annotations": {},
+  "tiene_readOnlyHint": false,
+  "tiene_destructiveHint": false,
+  "tokens_declaracion": 88,
+  "inputSchema": {
+   "properties": {},
+   "title": "health_checkArguments",
+   "type": "object"
+  },
+  "outputSchema": {
+   "properties": {
+    "result": {
+     "title": "Result",
+     "type": "string"
+    }
+   },
+   "required": [
+    "result"
+   ],
+   "title": "health_checkOutput",
+   "type": "object"
+  }
+ },
+ {
+  "name": "extract_audio_from_video",
+  "description": "Extracts audio from a video file and saves it.\n    \n    Args:\n        video_path: The path to the input video file.\n        output_audio_path: The path to save the extracted audio file.\n        audio_codec: The audio codec to use for the output (e.g., 'mp3', 'aac', 'wav'). Defaults to 'mp3'.\n    Returns:\n        A status message indicating success or failure.",
+  "annotations": {},
+  "tiene_readOnlyHint": false,
+  "tiene_destructiveHint": false,
+  "tokens_declaracion": 251,
+  "inputSchema": {
+   "properties": {
+    "video_path": {
+     "title": "Video Path",
+     "type": "string"
+    },
+    "output_audio_path": {
+     "title": "Output Audio Path",
+     "type": "string"
+    },
+    "audio_codec": {
+     "default": "mp3",
+     "title": "Audio Codec",
+     "type": "string"
+    }
+   },
+   "required": [
+    "video_path",
+    "output_audio_path"
+   ],
+   "title": "extract_audio_from_videoArguments",
+   "type": "object"
+  },
+  "outputSchema": {
+   "properties": {
+    "result": {
+     "title": "Result",
+     "type": "string"
+    }
+   },
+   "required": [
+    "result"
+   ],
+   "title": "extract_audio_from_videoOutput",
+   "type": "object"
+  }
+ },
+ {
+  "name": "trim_video",
+  "description": "Trims a video to the specified start and end times.\n\n    Args:\n        video_path: The path to the input video file.\n        output_video_path: The path to save the trimmed video file.\n        start_time: The start time for trimming (HH:MM:SS or seconds).\n        end_time: The end time for trimming (HH:MM:SS or seconds).\n    Returns:\n        A status message indicating success or failure.",
+  "annotations": {},
+  "tiene_readOnlyHint": false,
+  "tiene_destructiveHint": false,
+  "tokens_declaracion": 266,
+  "inputSchema": {
+   "properties": {
+    "video_path": {
+     "title": "Video Path",
+     "type": "string"
+    },
+    "output_video_path": {
+     "title": "Output Video Path",
+     "type": "string"
+    },
+    "start_time": {
+     "title": "Start Time",
+     "type": "string"
+    },
+    "end_time": {
+     "title": "End Time",
+     "type": "string"
+    }
+   },
+   "required": [
+    "video_path",
+    "output_video_path",
+    "start_time",
+    "end_time"
+   ],
+   "title": "trim_videoArguments",
+   "type": "object"
+  },
+  "outputSchema": {
+   "properties": {
+    "result": {
+     "title": "Result",
+     "type": "string"
+    }
+   },
+   "required": [
+    "result"
+   ],
+   "title": "trim_videoOutput",
+   "type": "object"
+  }
+ },
+ {
+  "name": "convert_audio_properties",
+  "description": "Converts audio file format and ALL specified properties like bitrate, sample rate, and channels.\n\n    Args:\n        input_audio_path: Path to the source audio file.\n        output_audio_path: Path to save the converted audio file.\n        target_format: Desired output audio format (e.g., 'mp3', 'wav', 'aac').\n        bitrate: Target audio bitrate (e.g., '128k', '192k'). Optional.\n        sample_rate: Target audio sample rate in Hz (e.g., 44100, 48000). Optional.\n        channels: Number of audio channels (1 for mono, 2 for stereo). Optional.\n    Returns:\n        A status message indicating success or failure.",
+  "annotations": {},
+  "tiene_readOnlyHint": false,
+  "tiene_destructiveHint": false,
+  "tokens_declaracion": 372,
+  "inputSchema": {
+   "properties": {
+    "input_audio_path": {
+     "title": "Input Audio Path",
+     "type": "string"
+    },
+    "output_audio_path": {
+     "title": "Output Audio Path",
+     "type": "string"
+    },
+    "target_format": {
+     "title": "Target Format",
+     "type": "string"
+    },
+    "bitrate": {
+     "default": null,
+     "title": "Bitrate",
+     "type": "string"
+    },
+    "sample_rate": {
+     "default": null,
+     "title": "Sample Rate",
+     "type": "integer"
+    },
+    "channels": {
+     "default": null,
+     "title": "Channels",
+     "type": "integer"
+    }
+   },
+   "required": [
+    "input_audio_path",
+    "output_audio_path",
+    "target_format"
+   ],
+   "title": "convert_audio_propertiesArguments",
+   "type": "object"
+  },
+  "outputSchema": {
+   "properties": {
+    "result": {
+     "title": "Result",
+     "type": "string"
+    }
+   },
+   "required": [
+    "result"
+   ],
+   "title": "convert_audio_propertiesOutput",
+   "type": "object"
+  }
+ },
+ {
+  "name": "convert_video_properties",
+  "description": "Converts video file format and ALL specified properties like resolution, codecs, bitrates, and frame rate.\n    Args listed in PRD.\n    Returns:\n        A status message indicating success or failure.",
+  "annotations": {},
+  "tiene_readOnlyHint": false,
+  "tiene_destructiveHint": false,
+  "tokens_declaracion": 377,
+  "inputSchema": {
+   "properties": {
+    "input_video_path": {
+     "title": "Input Video Path",
+     "type": "string"
+    },
+    "output_video_path": {
+     "title": "Output Video Path",
+     "type": "string"
+    },
+    "target_format": {
+     "title": "Target Format",
+     "type": "string"
+    },
+    "resolution": {
+     "default": null,
+     "title": "Resolution",
+     "type": "string"
+    },
+    "video_codec": {
+     "default": null,
+     "title": "Video Codec",
+     "type": "string"
+    },
+    "video_bitrate": {
+     "default": null,
+     "title": "Video Bitrate",
+     "type": "string"
+    },
+    "frame_rate": {
+     "default": null,
+     "title": "Frame Rate",
+     "type": "integer"
+    },
+    "audio_codec": {
+     "default": null,
+     "title": "Audio Codec",
+     "type": "string"
+    },
+    "audio_bitrate": {
+     "default": null,
+     "title": "Audio Bitrate",
+     "type": "string"
+    },
+    "audio_sample_rate": {
+     "default": null,
+     "title": "Audio Sample Rate",
+     "type": "integer"
+    },
+    "audio_channels": {
+     "default": null,
+     "title": "Audio Channels",
+     "type": "integer"
+    }
+   },
+   "required": [
+    "input_video_path",
+    "output_video_path",
+    "target_format"
+   ],
+   "title": "convert_video_propertiesArguments",
+   "type": "object"
+  },
+  "outputSchema": {
+   "properties": {
+    "result": {
+     "title": "Result",
+     "type": "string"
+    }
+   },
+   "required": [
+    "result"
+   ],
+   "title": "convert_video_propertiesOutput",
+   "type": "object"
+  }
+ },
+ {
+  "name": "change_aspect_ratio",
+  "description": "Changes the aspect ratio of a video, using padding or cropping.\n    Args listed in PRD.\n    Returns:\n        A status message indicating success or failure.",
+  "annotations": {},
+  "tiene_readOnlyHint": false,
+  "tiene_destructiveHint": false,
+  "tokens_declaracion": 240,
+  "inputSchema": {
+   "properties": {
+    "video_path": {
+     "title": "Video Path",
+     "type": "string"
+    },
+    "output_video_path": {
+     "title": "Output Video Path",
+     "type": "string"
+    },
+    "target_aspect_ratio": {
+     "title": "Target Aspect Ratio",
+     "type": "string"
+    },
+    "resize_mode": {
+     "default": "pad",
+     "title": "Resize Mode",
+     "type": "string"
+    },
+    "padding_color": {
+     "default": "black",
+     "title": "Padding Color",
+     "type": "string"
+    }
+   },
+   "required": [
+    "video_path",
+    "output_video_path",
+    "target_aspect_ratio"
+   ],
+   "title": "change_aspect_ratioArguments",
+   "type": "object"
+  },
+  "outputSchema": {
+   "properties": {
+    "result": {
+     "title": "Result",
+     "type": "string"
+    }
+   },
+   "required": [
+    "result"
+   ],
+   "title": "change_aspect_ratioOutput",
+   "type": "object"
+  }
+ },
+ {
+  "name": "add_subtitles",
+  "description": "Burns subtitles from an SRT file onto a video, with optional styling.\n\n    Args:\n        video_path: Path to the input video file.\n        srt_file_path: Path to the SRT subtitle file.\n        output_video_path: Path to save the video with subtitles.\n        font_style (dict, optional): A dictionary for subtitle styling. \n            Supported keys and example values:\n            - 'font_name': 'Arial' (str)\n            - 'font_size': 24 (int)\n            - 'font_color': 'white' or '&H00FFFFFF' (str, FFmpeg color syntax)\n            - 'outline_color': 'black' or '&H00000000' (str)\n            - 'outline_width': 2 (int)\n            - 'shadow_color': 'black' (str)\n            - 'shadow_offset_x': 1 (int)\n            - 'shadow_offset_y': 1 (int)\n            - 'alignment': 7 (int, ASS alignment - Numpad layout: 1=bottom-left, 7=top-left etc. Default often 2=bottom-center)\n            - 'margin_v': 10 (int, vertical margin from edge, depends on alignment)\n            - 'margin_l': 10 (int, left margin)\n            - 'margin_r': 10 (int, right margin)\n            Default is None, which uses FFmpeg's default subtitle styling.\n\n    Returns:\n        A status message indicating success or failure.",
+  "annotations": {},
+  "tiene_readOnlyHint": false,
+  "tiene_destructiveHint": false,
+  "tokens_declaracion": 512,
+  "inputSchema": {
+   "properties": {
+    "video_path": {
+     "title": "Video Path",
+     "type": "string"
+    },
+    "srt_file_path": {
+     "title": "Srt File Path",
+     "type": "string"
+    },
+    "output_video_path": {
+     "title": "Output Video Path",
+     "type": "string"
+    },
+    "font_style": {
+     "additionalProperties": true,
+     "default": null,
+     "title": "Font Style",
+     "type": "object"
+    }
+   },
+   "required": [
+    "video_path",
+    "srt_file_path",
+    "output_video_path"
+   ],
+   "title": "add_subtitlesArguments",
+   "type": "object"
+  },
+  "outputSchema": {
+   "properties": {
+    "result": {
+     "title": "Result",
+     "type": "string"
+    }
+   },
+   "required": [
+    "result"
+   ],
+   "title": "add_subtitlesOutput",
+   "type": "object"
+  }
+ },
+ {
+  "name": "add_text_overlay",
+  "description": "Adds one or more text overlays to a video at specified times and positions.\n\n    Args:\n        video_path: Path to the input main video file.\n        output_video_path: Path to save the video with text overlays.\n        text_elements: A list of dictionaries, where each dictionary defines a text overlay.\n            Required keys for each text_element dict:\n            - 'text': str - The text to display.\n            - 'start_time': str or float - Start time (HH:MM:SS, or seconds).\n            - 'end_time': str or float - End time (HH:MM:SS, or seconds).\n            Optional keys for each text_element dict:\n            - 'font_size': int (default: 24)\n            - 'font_color': str (default: 'white')\n            - 'x_pos': str or int (default: 'center')\n            - 'y_pos': str or int (default: 'h-th-10')\n            - 'box': bool (default: False)\n            - 'box_color': str (default: 'black@0.5')\n            - 'box_border_width': int (default: 0)\n    Returns:\n        A status message indicating success or failure.",
+  "annotations": {},
+  "tiene_readOnlyHint": false,
+  "tiene_destructiveHint": false,
+  "tokens_declaracion": 437,
+  "inputSchema": {
+   "properties": {
+    "video_path": {
+     "title": "Video Path",
+     "type": "string"
+    },
+    "output_video_path": {
+     "title": "Output Video Path",
+     "type": "string"
+    },
+    "text_elements": {
+     "items": {
+      "additionalProperties": true,
+      "type": "object"
+     },
+     "title": "Text Elements",
+     "type": "array"
+    }
+   },
+   "required": [
+    "video_path",
+    "output_video_path",
+    "text_elements"
+   ],
+   "title": "add_text_overlayArguments",
+   "type": "object"
+  },
+  "outputSchema": {
+   "properties": {
+    "result": {
+     "title": "Result",
+     "type": "string"
+    }
+   },
+   "required": [
+    "result"
+   ],
+   "title": "add_text_overlayOutput",
+   "type": "object"
+  }
+ },
+ {
+  "name": "add_image_overlay",
+  "description": "Adds an image overlay (watermark/logo) to a video.\n\n    Args:\n        video_path: Path to the input video file.\n        output_video_path: Path to save the video with the image overlay.\n        image_path: Path to the image file for the overlay.\n        position: Position of the overlay. \n            Options: 'top_left', 'top_right', 'bottom_left', 'bottom_right', 'center'. \n            Or specify custom coordinates like 'x=10:y=10'.\n        opacity: Opacity of the overlay (0.0 to 1.0). If None, image's own alpha is used.\n        start_time: Start time for the overlay (HH:MM:SS or seconds). If None, starts from beginning.\n        end_time: End time for the overlay (HH:MM:SS or seconds). If None, lasts till end.\n        width: Width for the overlay image (e.g., '100', 'iw*0.1'). Original if None.\n        height: Height for the overlay image (e.g., '50', 'ih*0.1'). Original if None.\n\n    Returns:\n        A status message indicating success or failure.",
+  "annotations": {},
+  "tiene_readOnlyHint": false,
+  "tiene_destructiveHint": false,
+  "tokens_declaracion": 537,
+  "inputSchema": {
+   "properties": {
+    "video_path": {
+     "title": "Video Path",
+     "type": "string"
+    },
+    "output_video_path": {
+     "title": "Output Video Path",
+     "type": "string"
+    },
+    "image_path": {
+     "title": "Image Path",
+     "type": "string"
+    },
+    "position": {
+     "default": "top_right",
+     "title": "Position",
+     "type": "string"
+    },
+    "opacity": {
+     "default": null,
+     "title": "Opacity",
+     "type": "number"
+    },
+    "start_time": {
+     "default": null,
+     "title": "Start Time",
+     "type": "string"
+    },
+    "end_time": {
+     "default": null,
+     "title": "End Time",
+     "type": "string"
+    },
+    "width": {
+     "default": null,
+     "title": "Width",
+     "type": "string"
+    },
+    "height": {
+     "default": null,
+     "title": "Height",
+     "type": "string"
+    }
+   },
+   "required": [
+    "video_path",
+    "output_video_path",
+    "image_path"
+   ],
+   "title": "add_image_overlayArguments",
+   "type": "object"
+  },
+  "outputSchema": {
+   "properties": {
+    "result": {
+     "title": "Result",
+     "type": "string"
+    }
+   },
+   "required": [
+    "result"
+   ],
+   "title": "add_image_overlayOutput",
+   "type": "object"
+  }
+ },
+ {
+  "name": "concatenate_videos",
+  "description": "Concatenates multiple video files into a single output file.\n    Supports optional xfade transition when concatenating exactly two videos.\n\n    Args:\n        video_paths: A list of paths to the video files to concatenate.\n        output_video_path: The path to save the concatenated video file.\n        transition_effect (str, optional): The xfade transition type. Options:\n            - 'dissolve': Gradual blend between clips\n            - 'fade': Simple fade through black\n            - 'fadeblack': Fade through black\n            - 'fadewhite': Fade through white\n            - 'fadegrays': Fade through grayscale\n            - 'distance': Distance transform transition\n            - 'wipeleft', 'wiperight': Horizontal wipe\n            - 'wipeup', 'wipedown': Vertical wipe\n            - 'slideleft', 'slideright': Horizontal slide\n            - 'slideup', 'slidedown': Vertical slide\n            - 'smoothleft', 'smoothright': Smooth horizontal slide\n            - 'smoothup', 'smoothdown': Smooth vertical slide\n            - 'circlecrop': Rectangle crop transition\n            - 'rectcrop': Rectangle crop transition\n            - 'circleopen', 'circleclose': Circle open/close\n            - 'vertopen', 'vertclose': Vertical open/close\n            - 'horzopen', 'horzclose': Horizontal open/close\n            - 'diagtl', 'diagtr', 'diagbl', 'diagbr': Diagonal transitions\n            - 'hlslice', 'hrslice': Horizontal slice\n            - 'vuslice', 'vdslice': Vertical slice\n            - 'pixelize': Pixelize effect\n            - 'radial': Radial transition\n            - 'hblur': Horizontal blur\n            Only applied if exactly two videos are provided. Defaults to None (no transition).\n        transition_duration (float, optional): The duration of the xfade transition in seconds. \n                                             Required if transition_effect is specified. Defaults to None.\n    \n    Returns:\n        A status message indicating success or failure.",
+  "annotations": {},
+  "tiene_readOnlyHint": false,
+  "tiene_destructiveHint": false,
+  "tokens_declaracion": 629,
+  "inputSchema": {
+   "properties": {
+    "video_paths": {
+     "items": {
+      "type": "string"
+     },
+     "title": "Video Paths",
+     "type": "array"
+    },
+    "output_video_path": {
+     "title": "Output Video Path",
+     "type": "string"
+    },
+    "transition_effect": {
+     "default": null,
+     "title": "Transition Effect",
+     "type": "string"
+    },
+    "transition_duration": {
+     "default": null,
+     "title": "Transition Duration",
+     "type": "number"
+    }
+   },
+   "required": [
+    "video_paths",
+    "output_video_path"
+   ],
+   "title": "concatenate_videosArguments",
+   "type": "object"
+  },
+  "outputSchema": {
+   "properties": {
+    "result": {
+     "title": "Result",
+     "type": "string"
+    }
+   },
+   "required": [
+    "result"
+   ],
+   "title": "concatenate_videosOutput",
+   "type": "object"
+  }
+ },
+ {
+  "name": "change_video_speed",
+  "description": "Changes the playback speed of a video (and its audio).\n\n    Args:\n        video_path: Path to the input video file.\n        output_video_path: Path to save the speed-adjusted video file.\n        speed_factor: The factor by which to change the speed (e.g., 2.0 for 2x speed, 0.5 for half speed).\n                      Must be positive.\n    \n    Returns:\n        A status message indicating success or failure.",
+  "annotations": {},
+  "tiene_readOnlyHint": false,
+  "tiene_destructiveHint": false,
+  "tokens_declaracion": 254,
+  "inputSchema": {
+   "properties": {
+    "video_path": {
+     "title": "Video Path",
+     "type": "string"
+    },
+    "output_video_path": {
+     "title": "Output Video Path",
+     "type": "string"
+    },
+    "speed_factor": {
+     "title": "Speed Factor",
+     "type": "number"
+    }
+   },
+   "required": [
+    "video_path",
+    "output_video_path",
+    "speed_factor"
+   ],
+   "title": "change_video_speedArguments",
+   "type": "object"
+  },
+  "outputSchema": {
+   "properties": {
+    "result": {
+     "title": "Result",
+     "type": "string"
+    }
+   },
+   "required": [
+    "result"
+   ],
+   "title": "change_video_speedOutput",
+   "type": "object"
+  }
+ },
+ {
+  "name": "remove_silence",
+  "description": "Removes silent segments from an audio or video file.\n\n    Args:\n        media_path: Path to the input audio or video file.\n        output_media_path: Path to save the media file with silences removed.\n        silence_threshold_db: The noise level (in dBFS) below which is considered silence (e.g., -30.0).\n        min_silence_duration_ms: Minimum duration (in milliseconds) of silence to be removed (e.g., 500).\n    \n    Returns:\n        A status message indicating success or failure.",
+  "annotations": {},
+  "tiene_readOnlyHint": false,
+  "tiene_destructiveHint": false,
+  "tokens_declaracion": 311,
+  "inputSchema": {
+   "properties": {
+    "media_path": {
+     "title": "Media Path",
+     "type": "string"
+    },
+    "output_media_path": {
+     "title": "Output Media Path",
+     "type": "string"
+    },
+    "silence_threshold_db": {
+     "default": -30.0,
+     "title": "Silence Threshold Db",
+     "type": "number"
+    },
+    "min_silence_duration_ms": {
+     "default": 500,
+     "title": "Min Silence Duration Ms",
+     "type": "integer"
+    }
+   },
+   "required": [
+    "media_path",
+    "output_media_path"
+   ],
+   "title": "remove_silenceArguments",
+   "type": "object"
+  },
+  "outputSchema": {
+   "properties": {
+    "result": {
+     "title": "Result",
+     "type": "string"
+    }
+   },
+   "required": [
+    "result"
+   ],
+   "title": "remove_silenceOutput",
+   "type": "object"
+  }
+ },
+ {
+  "name": "add_b_roll",
+  "description": "Inserts B-roll clips into a main video as overlays.\n    Args listed in previous messages (docstring unchanged for brevity here)",
+  "annotations": {},
+  "tiene_readOnlyHint": false,
+  "tiene_destructiveHint": false,
+  "tokens_declaracion": 202,
+  "inputSchema": {
+   "properties": {
+    "main_video_path": {
+     "title": "Main Video Path",
+     "type": "string"
+    },
+    "broll_clips": {
+     "items": {
+      "additionalProperties": true,
+      "type": "object"
+     },
+     "title": "Broll Clips",
+     "type": "array"
+    },
+    "output_video_path": {
+     "title": "Output Video Path",
+     "type": "string"
+    }
+   },
+   "required": [
+    "main_video_path",
+    "broll_clips",
+    "output_video_path"
+   ],
+   "title": "add_b_rollArguments",
+   "type": "object"
+  },
+  "outputSchema": {
+   "properties": {
+    "result": {
+     "title": "Result",
+     "type": "string"
+    }
+   },
+   "required": [
+    "result"
+   ],
+   "title": "add_b_rollOutput",
+   "type": "object"
+  }
+ },
+ {
+  "name": "add_basic_transitions",
+  "description": "Adds basic fade transitions to the beginning or end of a video.\n\n    Args:\n        video_path: Path to the input video file.\n        output_video_path: Path to save the video with the transition.\n        transition_type: Type of transition. Options: 'fade_in', 'fade_out'.\n                         (Note: 'crossfade_from_black' is like 'fade_in', 'crossfade_to_black' is like 'fade_out')\n        duration_seconds: Duration of the fade effect in seconds.\n    Returns:\n        A status message indicating success or failure.",
+  "annotations": {},
+  "tiene_readOnlyHint": false,
+  "tiene_destructiveHint": false,
+  "tokens_declaracion": 297,
+  "inputSchema": {
+   "properties": {
+    "video_path": {
+     "title": "Video Path",
+     "type": "string"
+    },
+    "output_video_path": {
+     "title": "Output Video Path",
+     "type": "string"
+    },
+    "transition_type": {
+     "title": "Transition Type",
+     "type": "string"
+    },
+    "duration_seconds": {
+     "title": "Duration Seconds",
+     "type": "number"
+    }
+   },
+   "required": [
+    "video_path",
+    "output_video_path",
+    "transition_type",
+    "duration_seconds"
+   ],
+   "title": "add_basic_transitionsArguments",
+   "type": "object"
+  },
+  "outputSchema": {
+   "properties": {
+    "result": {
+     "title": "Result",
+     "type": "string"
+    }
+   },
+   "required": [
+    "result"
+   ],
+   "title": "add_basic_transitionsOutput",
+   "type": "object"
+  }
+ }
+]

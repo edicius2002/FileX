@@ -216,6 +216,10 @@ ejecutar, y va al entregable `bench/mcp-refs-ejecucion.md`).
 - **LEÍDO** — El caso extremo existe y son **27 herramientas planas** (`grep @mcp.tool` = 27 ✔). Coste de catálogo
   **estimado por caracteres en ≈3 610 tokens**, frente a **≈811 de las 8 de `ffmpeg-mcp-lite`** cubriendo el 80 %
   del mismo dominio. **4,5× más barato.**
+  > ⚠️ **MEDIDO después, y las estimaciones se quedaron cortas por más del doble.** `RESULTADOS-MCP.md` §4 sondeó
+  > los catálogos reales con `tiktoken`/`o200k_base`: **7.964 tokens** las 27 y **2.322** las 8. La razón por la que
+  > la estimación fallaba está en el propio aviso de la línea siguiente: no contaba el envoltorio JSON Schema.
+  > **Las cifras vigentes son las de `RESULTADOS-MCP.md` §4.** La proporción, en cambio, aguanta: 3,4× en vez de 4,5×.
 - **LEÍDO, con reserva** — Estas dos cifras son **estimaciones por caracteres (nombre + firma + docstring ÷ 4)**,
   declaradas como tales en el análisis de origen, y son **cotas inferiores**: el catálogo real añade el envoltorio
   JSON Schema. Las cifras de contraste (5 280 tokens / 19 herramientas de docling) sí están medidas.
@@ -471,8 +475,9 @@ En el mismo apartado, dos viñetas:
 **Son incompatibles tal como están escritas.** «Un motor nuevo aparece como herramienta» es exactamente el mecanismo
 que produce las 27 herramientas planas de `video-audio-mcp`, y el criterio de aceptación del hito 4 («añadir un motor
 no toca la capa MCP») presiona en la misma dirección. El carril binario es la evidencia de dónde acaba eso: 27
-herramientas ≈3 610 tokens frente a 8 ≈811 cubriendo el mismo dominio, **porque una agrupa por parámetro del motor y
-la otra por intención del usuario**.
+herramientas **7.964 tokens medidos** frente a 8 con **2.322** cubriendo el mismo dominio, **porque una agrupa por
+parámetro del motor y la otra por intención del usuario**. (Cifras de `RESULTADOS-MCP.md` §4, medidas con `tiktoken`;
+las ≈3 610 / ≈811 que se estimaron por caracteres en la fase de lectura eran cotas inferiores.)
 
 **Resolución, y es una decisión de diseño que hay que tomar antes del hito 4:** del registro se genera **el contenido
 de los esquemas** —los `Literal`/`enum` de formatos de origen y destino, la lista de motores disponibles, la matriz

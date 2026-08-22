@@ -1,6 +1,13 @@
 # 00 — Implementación de referencia oficial MCP: `filesystem`, `everything`, `fetch`
 
-Repo analizado: `D:\Work\research\FileX\repos\mcp-refs\servers\src\` (modelcontextprotocol/servers, MIT).
+Repo analizado: `D:\Work\research\FileX\repos\mcp-refs\servers\src\` (modelcontextprotocol/servers, **MIT/Apache-2.0 en transición** — ver aviso).
+
+> ⚠️ **Corrección de licencia (21/08/2026).** Este documento y varios otros daban el repo por **MIT**. Su `LICENSE`
+> empieza: *«The MCP project is undergoing a licensing transition from the MIT License to the Apache License,
+> Version 2.0»*; las contribuciones cuyo autor no consintió el relicenciamiento **siguen bajo MIT**, y su
+> `package.json` dice `"license": "SEE LICENSE IN LICENSE"`. **No invalida ningún veredicto de reutilización**
+> —Apache-2.0 es permisiva— pero **sí cambia las obligaciones**: preservar avisos, marcar los ficheros modificados
+> y adjuntar `NOTICE`. Ver `analysis/00-licencias.md`.
 Tarea de solo lectura. Todas las afirmaciones técnicas llevan cita `fichero:línea`. Lo que no he podido verificar en el código está marcado como **[no verificado]**.
 
 ---
@@ -15,7 +22,7 @@ y `PLAN-ORQUESTADOR.md:266-271` la repite bajo el epígrafe «Seguridad — lo q
 
 **Es falsa en su primera mitad y correcta en la segunda.**
 
-- **Falsa**: la lista blanca de raíces con denegación por defecto y resolución canónica **ya existe, está probada y es MIT**, en `repos/mcp-refs/servers/src/filesystem/`. Son ~200 líneas de lógica de seguridad real (`lib.ts:99-140` + `path-validation.ts:11-86`) más ~1000 líneas de tests que documentan explícitamente qué ataques para y cuáles **no** (`__tests__/path-validation.test.ts`, 997 líneas). No hay que diseñarla desde cero: hay que **portarla a Python y arreglar sus tres huecos conocidos**.
+- **Falsa**: la lista blanca de raíces con denegación por defecto y resolución canónica **ya existe, está probada y es de licencia permisiva** (MIT/Apache-2.0 en transición; ver el aviso de cabecera), en `repos/mcp-refs/servers/src/filesystem/`. Son ~200 líneas de lógica de seguridad real (`lib.ts:99-140` + `path-validation.ts:11-86`) más ~1000 líneas de tests que documentan explícitamente qué ataques para y cuáles **no** (`__tests__/path-validation.test.ts`, 997 líneas). No hay que diseñarla desde cero: hay que **portarla a Python y arreglar sus tres huecos conocidos**.
 - **Correcta**: lo del oráculo de existencia sí es trabajo propio, porque **la referencia oficial no lo hace** — distingue explícitamente "prohibido" de "no existe" y además filtra rutas absolutas y la lista blanca completa en los mensajes de error (§A.4).
 
 Además el proyecto se está perdiendo un mecanismo del propio protocolo: **MCP Roots** (§A.5), que resuelve la negociación cliente↔servidor de qué directorios son accesibles sin inventar nada.

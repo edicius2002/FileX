@@ -1,0 +1,1398 @@
+{
+"ffmpeg|302": {
+"vivo": false,
+"revivida_por": null,
+"intentos": [
+{
+"semilla": "video_cif",
+"rc": 4294967274,
+"bytes": 0,
+"ms": 33.6,
+"err": "002001bc7d740] Nothing was written into output file, because at least one of its streams received no packets. size=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00     Conversion failed! "
+},
+{
+"semilla": "subtitulo",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 37.3,
+"err": "#0/daud @ 0000027c2686c240] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0002.302. Error opening output files: Invalid argument "
+},
+{
+"semilla": "audio48",
+"rc": 4294967274,
+"bytes": 0,
+"ms": 41.1,
+"err": "00206c7a7d840] Nothing was written into output file, because at least one of its streams received no packets. size=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00     Conversion failed! "
+},
+{
+"semilla": "jpeg_exif",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 43.4,
+"err": "#0/daud @ 000001f78e72c9c0] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0004.302. Error opening output files: Invalid argument "
+}
+]
+},
+"ffmpeg|ac4": {
+"vivo": false,
+"revivida_por": null,
+"intentos": [
+{
+"semilla": "video_cif",
+"rc": 3165764104,
+"bytes": -1,
+"ms": 29.2,
+"err": "manually. [aost#0:0 @ 00000152777b6e80] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0005.ac4. Error opening output files: Encoder not found "
+},
+{
+"semilla": "subtitulo",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 28.1,
+"err": "t#0/ac4 @ 000002f51ff6f080] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0006.ac4. Error opening output files: Invalid argument "
+},
+{
+"semilla": "audio48",
+"rc": 3165764104,
+"bytes": -1,
+"ms": 37.1,
+"err": "manually. [aost#0:0 @ 000001b7ffc70c00] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0007.ac4. Error opening output files: Encoder not found "
+},
+{
+"semilla": "jpeg_exif",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 29.9,
+"err": "t#0/ac4 @ 0000013406b9ea80] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0008.ac4. Error opening output files: Invalid argument "
+}
+]
+},
+"ffmpeg|amv": {
+"vivo": false,
+"revivida_por": null,
+"intentos": [
+{
+"semilla": "video_cif",
+"rc": 4294967274,
+"bytes": 0,
+"ms": 54.7,
+"err": "utput file, because at least one of its streams received no packets. frame=    0 fps=0.0 q=24.8 Lsize=       0KiB time=N/A bitrate=N/A dup=1 drop=0 speed=N/A elapsed=0:00:00.01     Conversion failed! "
+},
+{
+"semilla": "subtitulo",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 28.6,
+"err": "t#0/amv @ 000001208956b6c0] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0010.amv. Error opening output files: Invalid argument "
+},
+{
+"semilla": "audio48",
+"rc": 4294967274,
+"bytes": 0,
+"ms": 40.3,
+"err": "0025ce8d7fcc0] Nothing was written into output file, because at least one of its streams received no packets. size=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00     Conversion failed! "
+},
+{
+"semilla": "jpeg_exif",
+"rc": 4294967274,
+"bytes": 0,
+"ms": 54.7,
+"err": "written into output file, because at least one of its streams received no packets. frame=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.02     Conversion failed! "
+}
+]
+},
+"ffmpeg|ass": {
+"vivo": true,
+"revivida_por": "subtitulo",
+"intentos": [
+{
+"semilla": "video_cif",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 30.2,
+"err": "t#0/ass @ 000001b60279c980] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0013.ass. Error opening output files: Invalid argument "
+},
+{
+"semilla": "subtitulo",
+"rc": 0,
+"bytes": 726,
+"ms": 35.3,
+"err": ""
+}
+]
+},
+"ffmpeg|avs3": {
+"vivo": false,
+"revivida_por": null,
+"intentos": [
+{
+"semilla": "video_cif",
+"rc": 3165764104,
+"bytes": -1,
+"ms": 31.9,
+"err": "anually. [vost#0:0 @ 00000169ed698cc0] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0015.avs3. Error opening output files: Encoder not found "
+},
+{
+"semilla": "subtitulo",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 28.2,
+"err": "0/avs3 @ 0000022b41d92180] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0016.avs3. Error opening output files: Invalid argument "
+},
+{
+"semilla": "audio48",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 40.4,
+"err": "0/avs3 @ 0000025f67fcba00] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0017.avs3. Error opening output files: Invalid argument "
+},
+{
+"semilla": "jpeg_exif",
+"rc": 3165764104,
+"bytes": -1,
+"ms": 33.9,
+"err": "anually. [vost#0:0 @ 000002c3878d1f80] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0018.avs3. Error opening output files: Encoder not found "
+}
+]
+},
+"ffmpeg|bit": {
+"vivo": false,
+"revivida_por": null,
+"intentos": [
+{
+"semilla": "video_cif",
+"rc": 3165764104,
+"bytes": -1,
+"ms": 33.1,
+"err": "manually. [aost#0:0 @ 0000012856fb8980] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0019.bit. Error opening output files: Encoder not found "
+},
+{
+"semilla": "subtitulo",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 33.0,
+"err": "t#0/bit @ 0000022e99c5c780] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0020.bit. Error opening output files: Invalid argument "
+},
+{
+"semilla": "audio48",
+"rc": 3165764104,
+"bytes": -1,
+"ms": 40.9,
+"err": "manually. [aost#0:0 @ 00000211e2e7f040] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0021.bit. Error opening output files: Encoder not found "
+},
+{
+"semilla": "jpeg_exif",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 29.6,
+"err": "t#0/bit @ 000001e449dea800] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0022.bit. Error opening output files: Invalid argument "
+}
+]
+},
+"ffmpeg|c2": {
+"vivo": false,
+"revivida_por": null,
+"intentos": [
+{
+"semilla": "video_cif",
+"rc": 3165764104,
+"bytes": -1,
+"ms": 34.9,
+"err": " manually. [aost#0:0 @ 000001c3537651c0] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0023.c2. Error opening output files: Encoder not found "
+},
+{
+"semilla": "subtitulo",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 28.8,
+"err": "0/codec2 @ 0000022e8a309900] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0024.c2. Error opening output files: Invalid argument "
+},
+{
+"semilla": "audio48",
+"rc": 3165764104,
+"bytes": -1,
+"ms": 37.9,
+"err": " manually. [aost#0:0 @ 000001382745e880] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0025.c2. Error opening output files: Encoder not found "
+},
+{
+"semilla": "jpeg_exif",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 30.0,
+"err": "0/codec2 @ 000001e5374308c0] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0026.c2. Error opening output files: Invalid argument "
+}
+]
+},
+"ffmpeg|cavs": {
+"vivo": false,
+"revivida_por": null,
+"intentos": [
+{
+"semilla": "video_cif",
+"rc": 3165764104,
+"bytes": -1,
+"ms": 33.2,
+"err": "anually. [vost#0:0 @ 000001738b42cd40] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0027.cavs. Error opening output files: Encoder not found "
+},
+{
+"semilla": "subtitulo",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 29.1,
+"err": "svideo @ 0000025b124fc5c0] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0028.cavs. Error opening output files: Invalid argument "
+},
+{
+"semilla": "audio48",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 37.2,
+"err": "svideo @ 0000022b7f13c640] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0029.cavs. Error opening output files: Invalid argument "
+},
+{
+"semilla": "jpeg_exif",
+"rc": 3165764104,
+"bytes": -1,
+"ms": 28.2,
+"err": "anually. [vost#0:0 @ 0000019dc957d0c0] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0030.cavs. Error opening output files: Encoder not found "
+}
+]
+},
+"ffmpeg|chk": {
+"vivo": false,
+"revivida_por": null,
+"intentos": [
+{
+"semilla": "video_cif",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 32.8,
+"err": "m_chunk @ 0000018e623dda40] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0031.chk. Error opening output files: Invalid argument "
+},
+{
+"semilla": "subtitulo",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 31.8,
+"err": "m_chunk @ 000002575c9badc0] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0032.chk. Error opening output files: Invalid argument "
+},
+{
+"semilla": "audio48",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 36.6,
+"err": "m_chunk @ 0000028369d0ce80] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0033.chk. Error opening output files: Invalid argument "
+},
+{
+"semilla": "jpeg_exif",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 31.1,
+"err": "m_chunk @ 000002fb141cb4c0] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0034.chk. Error opening output files: Invalid argument "
+}
+]
+},
+"ffmpeg|cvg": {
+"vivo": false,
+"revivida_por": null,
+"intentos": [
+{
+"semilla": "video_cif",
+"rc": 3165764104,
+"bytes": -1,
+"ms": 31.3,
+"err": "manually. [aost#0:0 @ 000002aeef94dd80] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0035.cvg. Error opening output files: Encoder not found "
+},
+{
+"semilla": "subtitulo",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 29.6,
+"err": "rgo_cvg @ 000002079b15b780] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0036.cvg. Error opening output files: Invalid argument "
+},
+{
+"semilla": "audio48",
+"rc": 3165764104,
+"bytes": -1,
+"ms": 41.9,
+"err": "manually. [aost#0:0 @ 00000280abf61900] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0037.cvg. Error opening output files: Encoder not found "
+},
+{
+"semilla": "jpeg_exif",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 29.3,
+"err": "rgo_cvg @ 000002a723f0b280] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0038.cvg. Error opening output files: Invalid argument "
+}
+]
+},
+"ffmpeg|dnxhd": {
+"vivo": false,
+"revivida_por": null,
+"intentos": [
+{
+"semilla": "video_cif",
+"rc": 4294967274,
+"bytes": 0,
+"ms": 51.8,
+"err": "written into output file, because at least one of its streams received no packets. frame=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.01     Conversion failed! "
+},
+{
+"semilla": "subtitulo",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 28.7,
+"err": "dnxhd @ 000001f32bd2fbc0] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0040.dnxhd. Error opening output files: Invalid argument "
+},
+{
+"semilla": "audio48",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 43.7,
+"err": "dnxhd @ 000001aa16c4c540] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0041.dnxhd. Error opening output files: Invalid argument "
+},
+{
+"semilla": "jpeg_exif",
+"rc": 4294967274,
+"bytes": 0,
+"ms": 56.4,
+"err": "written into output file, because at least one of its streams received no packets. frame=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.02     Conversion failed! "
+}
+]
+},
+"ffmpeg|dnxhr": {
+"vivo": false,
+"revivida_por": null,
+"intentos": [
+{
+"semilla": "video_cif",
+"rc": 4294967274,
+"bytes": 0,
+"ms": 52.2,
+"err": "written into output file, because at least one of its streams received no packets. frame=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.01     Conversion failed! "
+},
+{
+"semilla": "subtitulo",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 31.9,
+"err": "dnxhd @ 0000027b1c3fd600] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0044.dnxhr. Error opening output files: Invalid argument "
+},
+{
+"semilla": "audio48",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 39.9,
+"err": "dnxhd @ 000001850d9cc640] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0045.dnxhr. Error opening output files: Invalid argument "
+},
+{
+"semilla": "jpeg_exif",
+"rc": 4294967274,
+"bytes": 0,
+"ms": 51.0,
+"err": "written into output file, because at least one of its streams received no packets. frame=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.02     Conversion failed! "
+}
+]
+},
+"ffmpeg|dts": {
+"vivo": false,
+"revivida_por": null,
+"intentos": [
+{
+"semilla": "video_cif",
+"rc": 3561836632,
+"bytes": 0,
+"ms": 37.1,
+"err": "0014eca68b680] Nothing was written into output file, because at least one of its streams received no packets. size=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00     Conversion failed! "
+},
+{
+"semilla": "subtitulo",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 30.0,
+"err": "t#0/dts @ 000001bf6e4acec0] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0048.dts. Error opening output files: Invalid argument "
+},
+{
+"semilla": "audio48",
+"rc": 3561836632,
+"bytes": 0,
+"ms": 44.4,
+"err": "0026ebf04fd80] Nothing was written into output file, because at least one of its streams received no packets. size=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00     Conversion failed! "
+},
+{
+"semilla": "jpeg_exif",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 34.0,
+"err": "t#0/dts @ 00000245e4d0b900] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0050.dts. Error opening output files: Invalid argument "
+}
+]
+},
+"ffmpeg|dv": {
+"vivo": false,
+"revivida_por": null,
+"intentos": [
+{
+"semilla": "video_cif",
+"rc": 4294967274,
+"bytes": 0,
+"ms": 52.2,
+"err": "written into output file, because at least one of its streams received no packets. frame=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00     Conversion failed! "
+},
+{
+"semilla": "subtitulo",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 30.2,
+"err": "out#0/dv @ 00000204ebf0d840] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0052.dv. Error opening output files: Invalid argument "
+},
+{
+"semilla": "audio48",
+"rc": 3199971767,
+"bytes": 0,
+"ms": 42.8,
+"err": "002361870c5c0] Nothing was written into output file, because at least one of its streams received no packets. size=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00     Conversion failed! "
+},
+{
+"semilla": "jpeg_exif",
+"rc": 4294967274,
+"bytes": 0,
+"ms": 54.7,
+"err": "written into output file, because at least one of its streams received no packets. frame=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.02     Conversion failed! "
+}
+]
+},
+"ffmpeg|evc": {
+"vivo": false,
+"revivida_por": null,
+"intentos": [
+{
+"semilla": "video_cif",
+"rc": 3165764104,
+"bytes": -1,
+"ms": 31.5,
+"err": "manually. [vost#0:0 @ 00000163efd7dbc0] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0055.evc. Error opening output files: Encoder not found "
+},
+{
+"semilla": "subtitulo",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 29.8,
+"err": "t#0/evc @ 000001568fc8cd80] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0056.evc. Error opening output files: Invalid argument "
+},
+{
+"semilla": "audio48",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 40.0,
+"err": "t#0/evc @ 000002dbd706bec0] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0057.evc. Error opening output files: Invalid argument "
+},
+{
+"semilla": "jpeg_exif",
+"rc": 3165764104,
+"bytes": -1,
+"ms": 30.5,
+"err": "manually. [vost#0:0 @ 0000026bf738eb00] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0058.evc. Error opening output files: Encoder not found "
+}
+]
+},
+"ffmpeg|flm": {
+"vivo": false,
+"revivida_por": null,
+"intentos": [
+{
+"semilla": "video_cif",
+"rc": 3199971767,
+"bytes": 0,
+"ms": 52.9,
+"err": "written into output file, because at least one of its streams received no packets. frame=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00     Conversion failed! "
+},
+{
+"semilla": "subtitulo",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 33.4,
+"err": "lmstrip @ 000001ed9437aac0] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0060.flm. Error opening output files: Invalid argument "
+},
+{
+"semilla": "audio48",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 45.3,
+"err": "lmstrip @ 00000238ab97af40] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0061.flm. Error opening output files: Invalid argument "
+},
+{
+"semilla": "jpeg_exif",
+"rc": 3199971767,
+"bytes": 0,
+"ms": 53.1,
+"err": "written into output file, because at least one of its streams received no packets. frame=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.01     Conversion failed! "
+}
+]
+},
+"ffmpeg|gsm": {
+"vivo": false,
+"revivida_por": null,
+"intentos": [
+{
+"semilla": "video_cif",
+"rc": 3165764104,
+"bytes": -1,
+"ms": 32.9,
+"err": "manually. [aost#0:0 @ 0000019aa0095700] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0063.gsm. Error opening output files: Encoder not found "
+},
+{
+"semilla": "subtitulo",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 31.5,
+"err": "t#0/gsm @ 000001fb8877e6c0] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0064.gsm. Error opening output files: Invalid argument "
+},
+{
+"semilla": "audio48",
+"rc": 3165764104,
+"bytes": -1,
+"ms": 43.3,
+"err": "manually. [aost#0:0 @ 000001566afdee40] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0065.gsm. Error opening output files: Encoder not found "
+},
+{
+"semilla": "jpeg_exif",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 32.7,
+"err": "t#0/gsm @ 000001defd6bc1c0] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0066.gsm. Error opening output files: Invalid argument "
+}
+]
+},
+"ffmpeg|gxf": {
+"vivo": false,
+"revivida_por": null,
+"intentos": [
+{
+"semilla": "video_cif",
+"rc": 4294967274,
+"bytes": 0,
+"ms": 53.1,
+"err": "written into output file, because at least one of its streams received no packets. frame=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00     Conversion failed! "
+},
+{
+"semilla": "subtitulo",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 30.3,
+"err": "t#0/gxf @ 0000018b9dcacc00] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0068.gxf. Error opening output files: Invalid argument "
+},
+{
+"semilla": "audio48",
+"rc": 4294967274,
+"bytes": 0,
+"ms": 42.3,
+"err": "001e711dccb80] Nothing was written into output file, because at least one of its streams received no packets. size=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00     Conversion failed! "
+},
+{
+"semilla": "jpeg_exif",
+"rc": 4294967274,
+"bytes": 0,
+"ms": 55.6,
+"err": "written into output file, because at least one of its streams received no packets. frame=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.02     Conversion failed! "
+}
+]
+},
+"ffmpeg|h261": {
+"vivo": true,
+"revivida_por": "video_cif",
+"intentos": [
+{
+"semilla": "video_cif",
+"rc": 0,
+"bytes": 66814,
+"ms": 53.0,
+"err": ""
+}
+]
+},
+"ffmpeg|h263": {
+"vivo": true,
+"revivida_por": "video_cif",
+"intentos": [
+{
+"semilla": "video_cif",
+"rc": 0,
+"bytes": 68302,
+"ms": 53.8,
+"err": ""
+}
+]
+},
+"ffmpeg|js": {
+"vivo": false,
+"revivida_por": null,
+"intentos": [
+{
+"semilla": "video_cif",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 34.2,
+"err": "/jacosub @ 00000209ec51c900] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0073.js. Error opening output files: Invalid argument "
+},
+{
+"semilla": "subtitulo",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 31.6,
+"err": "/jacosub @ 000001d4d9c1dd40] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0074.js. Error opening output files: Invalid argument "
+},
+{
+"semilla": "audio48",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 37.6,
+"err": "/jacosub @ 0000028348dfc7c0] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0075.js. Error opening output files: Invalid argument "
+},
+{
+"semilla": "jpeg_exif",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 31.7,
+"err": "/jacosub @ 000002833db2ff80] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0076.js. Error opening output files: Invalid argument "
+}
+]
+},
+"ffmpeg|jss": {
+"vivo": false,
+"revivida_por": null,
+"intentos": [
+{
+"semilla": "video_cif",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 33.6,
+"err": "jacosub @ 0000027593e9d740] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0077.jss. Error opening output files: Invalid argument "
+},
+{
+"semilla": "subtitulo",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 28.1,
+"err": "jacosub @ 0000012b93a7b980] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0078.jss. Error opening output files: Invalid argument "
+},
+{
+"semilla": "audio48",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 38.8,
+"err": "jacosub @ 00000288c78eb640] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0079.jss. Error opening output files: Invalid argument "
+},
+{
+"semilla": "jpeg_exif",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 29.8,
+"err": "jacosub @ 000002ae565bf280] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0080.jss. Error opening output files: Invalid argument "
+}
+]
+},
+"ffmpeg|lbc": {
+"vivo": false,
+"revivida_por": null,
+"intentos": [
+{
+"semilla": "video_cif",
+"rc": 3165764104,
+"bytes": -1,
+"ms": 34.0,
+"err": "manually. [aost#0:0 @ 0000018b27b03a80] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0081.lbc. Error opening output files: Encoder not found "
+},
+{
+"semilla": "subtitulo",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 31.5,
+"err": "#0/ilbc @ 000001a2e4df9d00] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0082.lbc. Error opening output files: Invalid argument "
+},
+{
+"semilla": "audio48",
+"rc": 3165764104,
+"bytes": -1,
+"ms": 38.9,
+"err": "manually. [aost#0:0 @ 000001d230e2fac0] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0083.lbc. Error opening output files: Encoder not found "
+},
+{
+"semilla": "jpeg_exif",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 27.9,
+"err": "#0/ilbc @ 00000218ceaace40] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0084.lbc. Error opening output files: Invalid argument "
+}
+]
+},
+"ffmpeg|lrc": {
+"vivo": true,
+"revivida_por": "subtitulo",
+"intentos": [
+{
+"semilla": "video_cif",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 30.8,
+"err": "t#0/lrc @ 0000020fddc4aa40] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0085.lrc. Error opening output files: Invalid argument "
+},
+{
+"semilla": "subtitulo",
+"rc": 0,
+"bytes": 98,
+"ms": 29.5,
+"err": ""
+}
+]
+},
+"ffmpeg|mlp": {
+"vivo": false,
+"revivida_por": null,
+"intentos": [
+{
+"semilla": "video_cif",
+"rc": 3561836632,
+"bytes": 0,
+"ms": 43.4,
+"err": "0015d05eacd80] Nothing was written into output file, because at least one of its streams received no packets. size=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00     Conversion failed! "
+},
+{
+"semilla": "subtitulo",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 33.9,
+"err": "t#0/mlp @ 000002357107b200] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0088.mlp. Error opening output files: Invalid argument "
+},
+{
+"semilla": "audio48",
+"rc": 3561836632,
+"bytes": 0,
+"ms": 47.8,
+"err": "00189b2dcc880] Nothing was written into output file, because at least one of its streams received no packets. size=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00     Conversion failed! "
+},
+{
+"semilla": "jpeg_exif",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 31.5,
+"err": "t#0/mlp @ 000001e089a9da00] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0090.mlp. Error opening output files: Invalid argument "
+}
+]
+},
+"ffmpeg|oma": {
+"vivo": false,
+"revivida_por": null,
+"intentos": [
+{
+"semilla": "video_cif",
+"rc": 3165764104,
+"bytes": -1,
+"ms": 35.6,
+"err": "manually. [aost#0:0 @ 000001a3f354cd00] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0091.oma. Error opening output files: Encoder not found "
+},
+{
+"semilla": "subtitulo",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 31.6,
+"err": "t#0/oma @ 00000229db91ba40] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0092.oma. Error opening output files: Invalid argument "
+},
+{
+"semilla": "audio48",
+"rc": 3165764104,
+"bytes": -1,
+"ms": 39.8,
+"err": "manually. [aost#0:0 @ 000001fa54aed500] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0093.oma. Error opening output files: Encoder not found "
+},
+{
+"semilla": "jpeg_exif",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 29.6,
+"err": "t#0/oma @ 000001de3b8bb180] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0094.oma. Error opening output files: Invalid argument "
+}
+]
+},
+"ffmpeg|rcv": {
+"vivo": false,
+"revivida_por": null,
+"intentos": [
+{
+"semilla": "video_cif",
+"rc": 3165764104,
+"bytes": -1,
+"ms": 31.8,
+"err": "manually. [vost#0:0 @ 0000016abaed9f80] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0095.rcv. Error opening output files: Encoder not found "
+},
+{
+"semilla": "subtitulo",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 30.1,
+"err": "vc1test @ 000001d27c5be640] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0096.rcv. Error opening output files: Invalid argument "
+},
+{
+"semilla": "audio48",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 37.7,
+"err": "vc1test @ 000001eae142ce00] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0097.rcv. Error opening output files: Invalid argument "
+},
+{
+"semilla": "jpeg_exif",
+"rc": 3165764104,
+"bytes": -1,
+"ms": 29.7,
+"err": "manually. [vost#0:0 @ 00000264a0c2fa80] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0098.rcv. Error opening output files: Encoder not found "
+}
+]
+},
+"ffmpeg|scc": {
+"vivo": false,
+"revivida_por": null,
+"intentos": [
+{
+"semilla": "video_cif",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 35.5,
+"err": "t#0/scc @ 00000223539f9840] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0099.scc. Error opening output files: Invalid argument "
+},
+{
+"semilla": "subtitulo",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 31.3,
+"err": "t#0/scc @ 00000249ec9ed540] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0100.scc. Error opening output files: Invalid argument "
+},
+{
+"semilla": "audio48",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 40.1,
+"err": "t#0/scc @ 000002d46f21b680] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0101.scc. Error opening output files: Invalid argument "
+},
+{
+"semilla": "jpeg_exif",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 29.4,
+"err": "t#0/scc @ 00000291c75b1cc0] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0102.scc. Error opening output files: Invalid argument "
+}
+]
+},
+"ffmpeg|spx": {
+"vivo": false,
+"revivida_por": null,
+"intentos": [
+{
+"semilla": "video_cif",
+"rc": 3165764104,
+"bytes": -1,
+"ms": 31.9,
+"err": "manually. [aost#0:0 @ 000002454baed140] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0103.spx. Error opening output files: Encoder not found "
+},
+{
+"semilla": "subtitulo",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 32.8,
+"err": "t#0/spx @ 000002370801cc80] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0104.spx. Error opening output files: Invalid argument "
+},
+{
+"semilla": "audio48",
+"rc": 3165764104,
+"bytes": -1,
+"ms": 43.0,
+"err": "manually. [aost#0:0 @ 0000022eda6755c0] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0105.spx. Error opening output files: Encoder not found "
+},
+{
+"semilla": "jpeg_exif",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 29.7,
+"err": "t#0/spx @ 00000185331ef880] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0106.spx. Error opening output files: Invalid argument "
+}
+]
+},
+"ffmpeg|srt": {
+"vivo": true,
+"revivida_por": "subtitulo",
+"intentos": [
+{
+"semilla": "video_cif",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 34.8,
+"err": "t#0/srt @ 000001fc517a90c0] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0107.srt. Error opening output files: Invalid argument "
+},
+{
+"semilla": "subtitulo",
+"rc": 0,
+"bytes": 111,
+"ms": 32.7,
+"err": ""
+}
+]
+},
+"ffmpeg|ssa": {
+"vivo": true,
+"revivida_por": "subtitulo",
+"intentos": [
+{
+"semilla": "video_cif",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 31.1,
+"err": "t#0/ass @ 0000011e0146aa80] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0109.ssa. Error opening output files: Invalid argument "
+},
+{
+"semilla": "subtitulo",
+"rc": 0,
+"bytes": 726,
+"ms": 32.1,
+"err": ""
+}
+]
+},
+"ffmpeg|sub": {
+"vivo": false,
+"revivida_por": null,
+"intentos": [
+{
+"semilla": "video_cif",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 34.9,
+"err": "icrodvd @ 000001884017e340] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0111.sub. Error opening output files: Invalid argument "
+},
+{
+"semilla": "subtitulo",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 28.6,
+"err": "icrodvd @ 000001e84a11fc40] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0112.sub. Error opening output files: Invalid argument "
+},
+{
+"semilla": "audio48",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 47.6,
+"err": "icrodvd @ 000002c23b41d640] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0113.sub. Error opening output files: Invalid argument "
+},
+{
+"semilla": "jpeg_exif",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 31.8,
+"err": "icrodvd @ 000001d16889db80] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0114.sub. Error opening output files: Invalid argument "
+}
+]
+},
+"ffmpeg|sup": {
+"vivo": false,
+"revivida_por": null,
+"intentos": [
+{
+"semilla": "video_cif",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 31.1,
+"err": "t#0/sup @ 0000017cbc60b240] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0115.sup. Error opening output files: Invalid argument "
+},
+{
+"semilla": "subtitulo",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 33.6,
+"err": "t#0/sup @ 00000120ff60bc00] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0116.sup. Error opening output files: Invalid argument "
+},
+{
+"semilla": "audio48",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 42.8,
+"err": "t#0/sup @ 0000020412ceb600] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0117.sup. Error opening output files: Invalid argument "
+},
+{
+"semilla": "jpeg_exif",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 30.9,
+"err": "t#0/sup @ 000002a41d9ee200] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0118.sup. Error opening output files: Invalid argument "
+}
+]
+},
+"ffmpeg|thd": {
+"vivo": false,
+"revivida_por": null,
+"intentos": [
+{
+"semilla": "video_cif",
+"rc": 3561836632,
+"bytes": 0,
+"ms": 41.9,
+"err": "00204edade640] Nothing was written into output file, because at least one of its streams received no packets. size=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00     Conversion failed! "
+},
+{
+"semilla": "subtitulo",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 33.7,
+"err": "/truehd @ 00000249a649d7c0] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0120.thd. Error opening output files: Invalid argument "
+},
+{
+"semilla": "audio48",
+"rc": 3561836632,
+"bytes": 0,
+"ms": 55.7,
+"err": "0024c6ac7a680] Nothing was written into output file, because at least one of its streams received no packets. size=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00     Conversion failed! "
+},
+{
+"semilla": "jpeg_exif",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 32.5,
+"err": "/truehd @ 0000017590e8b940] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0122.thd. Error opening output files: Invalid argument "
+}
+]
+},
+"ffmpeg|ttml": {
+"vivo": true,
+"revivida_por": "subtitulo",
+"intentos": [
+{
+"semilla": "video_cif",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 35.2,
+"err": "0/ttml @ 0000021de428e100] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0123.ttml. Error opening output files: Invalid argument "
+},
+{
+"semilla": "subtitulo",
+"rc": 0,
+"bytes": 850,
+"ms": 36.8,
+"err": ""
+}
+]
+},
+"ffmpeg|tun": {
+"vivo": false,
+"revivida_por": null,
+"intentos": [
+{
+"semilla": "video_cif",
+"rc": 4294967274,
+"bytes": 0,
+"ms": 40.2,
+"err": "001e9c316b940] Nothing was written into output file, because at least one of its streams received no packets. size=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00     Conversion failed! "
+},
+{
+"semilla": "subtitulo",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 33.3,
+"err": "t#0/alp @ 000001e36860bf80] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0126.tun. Error opening output files: Invalid argument "
+},
+{
+"semilla": "audio48",
+"rc": 4294967274,
+"bytes": 0,
+"ms": 45.1,
+"err": "001eb42ebb640] Nothing was written into output file, because at least one of its streams received no packets. size=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00     Conversion failed! "
+},
+{
+"semilla": "jpeg_exif",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 34.1,
+"err": "t#0/alp @ 000001519f95e400] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0128.tun. Error opening output files: Invalid argument "
+}
+]
+},
+"ffmpeg|vbn": {
+"vivo": false,
+"revivida_por": null,
+"intentos": [
+{
+"semilla": "video_cif",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 52.6,
+"err": "80] Output file is empty, nothing was encoded(check -ss / -t / -frames parameters if used) frame=    0 fps=0.0 q=0.0 Lsize=N/A time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.01     Conversion failed! "
+},
+{
+"semilla": "subtitulo",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 31.9,
+"err": "/image2 @ 000002443e34c780] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0130.vbn. Error opening output files: Invalid argument "
+},
+{
+"semilla": "audio48",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 43.6,
+"err": "/image2 @ 000001d2ec849a40] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0131.vbn. Error opening output files: Invalid argument "
+},
+{
+"semilla": "jpeg_exif",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 65.3,
+"err": "80] Output file is empty, nothing was encoded(check -ss / -t / -frames parameters if used) frame=    0 fps=0.0 q=0.0 Lsize=N/A time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.02     Conversion failed! "
+}
+]
+},
+"ffmpeg|vc1": {
+"vivo": false,
+"revivida_por": null,
+"intentos": [
+{
+"semilla": "video_cif",
+"rc": 3165764104,
+"bytes": -1,
+"ms": 41.8,
+"err": "manually. [vost#0:0 @ 0000021c4aa099c0] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0133.vc1. Error opening output files: Encoder not found "
+},
+{
+"semilla": "subtitulo",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 30.8,
+"err": "t#0/vc1 @ 000001add378e980] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0134.vc1. Error opening output files: Invalid argument "
+},
+{
+"semilla": "audio48",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 38.5,
+"err": "t#0/vc1 @ 00000228c248bec0] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0135.vc1. Error opening output files: Invalid argument "
+},
+{
+"semilla": "jpeg_exif",
+"rc": 3165764104,
+"bytes": -1,
+"ms": 31.4,
+"err": "manually. [vost#0:0 @ 0000021fefdeed80] Error selecting an encoder Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0136.vc1. Error opening output files: Encoder not found "
+}
+]
+},
+"ffmpeg|vtt": {
+"vivo": true,
+"revivida_por": "subtitulo",
+"intentos": [
+{
+"semilla": "video_cif",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 33.0,
+"err": "/webvtt @ 000001b525b8a900] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0137.vtt. Error opening output files: Invalid argument "
+},
+{
+"semilla": "subtitulo",
+"rc": 0,
+"bytes": 102,
+"ms": 29.6,
+"err": ""
+}
+]
+},
+"ffmpeg|xface": {
+"vivo": false,
+"revivida_por": null,
+"intentos": [
+{
+"semilla": "video_cif",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 51.4,
+"err": "00] Output file is empty, nothing was encoded(check -ss / -t / -frames parameters if used) frame=    0 fps=0.0 q=0.0 Lsize=N/A time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.01     Conversion failed! "
+},
+{
+"semilla": "subtitulo",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 29.5,
+"err": "mage2 @ 00000219bc3dc040] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0140.xface. Error opening output files: Invalid argument "
+},
+{
+"semilla": "audio48",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 46.7,
+"err": "mage2 @ 0000025c81dd9f40] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0141.xface. Error opening output files: Invalid argument "
+},
+{
+"semilla": "jpeg_exif",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 54.5,
+"err": "00] Output file is empty, nothing was encoded(check -ss / -t / -frames parameters if used) frame=    0 fps=0.0 q=0.0 Lsize=N/A time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.02     Conversion failed! "
+}
+]
+},
+"ffmpeg|xml": {
+"vivo": false,
+"revivida_por": null,
+"intentos": [
+{
+"semilla": "video_cif",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 37.6,
+"err": "anifest @ 000002819c9be740] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0143.xml. Error opening output files: Invalid argument "
+},
+{
+"semilla": "subtitulo",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 33.5,
+"err": "anifest @ 000002509303acc0] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0144.xml. Error opening output files: Invalid argument "
+},
+{
+"semilla": "audio48",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 43.8,
+"err": "anifest @ 000001ce2903ec00] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0145.xml. Error opening output files: Invalid argument "
+},
+{
+"semilla": "jpeg_exif",
+"rc": 4294967274,
+"bytes": -1,
+"ms": 33.8,
+"err": "anifest @ 00000250bb30b740] Output file does not contain any stream Error opening output file D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0146.xml. Error opening output files: Invalid argument "
+}
+]
+},
+"imagemagick|clip": {
+"vivo": false,
+"revivida_por": null,
+"intentos": [
+{
+"semilla": "jpeg_exif",
+"rc": 1,
+"bytes": -1,
+"ms": 54.3,
+"err": " No such file or directory @ error/image.c/ClipImagePath/730. magick: image does not have a clip mask `D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0147.clip' @ error/clip.c/WriteCLIPImage/234. "
+},
+{
+"semilla": "png_alfa",
+"rc": 1,
+"bytes": -1,
+"ms": 136.4,
+"err": " No such file or directory @ error/image.c/ClipImagePath/730. magick: image does not have a clip mask `D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0148.clip' @ error/clip.c/WriteCLIPImage/234. "
+},
+{
+"semilla": "tif16",
+"rc": 1,
+"bytes": -1,
+"ms": 138.3,
+"err": " No such file or directory @ error/image.c/ClipImagePath/730. magick: image does not have a clip mask `D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0149.clip' @ error/clip.c/WriteCLIPImage/234. "
+}
+]
+},
+"imagemagick|jpt": {
+"vivo": false,
+"revivida_por": null,
+"intentos": [
+{
+"semilla": "jpeg_exif",
+"rc": 1,
+"bytes": 0,
+"ms": 99.7,
+"err": "magick: unable to encode image file `D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0150.jpt' @ error/jp2.c/WriteJP2Image/1271. "
+},
+{
+"semilla": "png_alfa",
+"rc": 1,
+"bytes": 0,
+"ms": 33.6,
+"err": "magick: unable to encode image file `D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0151.jpt' @ error/jp2.c/WriteJP2Image/1271. "
+},
+{
+"semilla": "tif16",
+"rc": 1,
+"bytes": 0,
+"ms": 207.8,
+"err": "magick: unable to encode image file `D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0152.jpt' @ error/jp2.c/WriteJP2Image/1271. "
+}
+]
+},
+"imagemagick|mask": {
+"vivo": false,
+"revivida_por": null,
+"intentos": [
+{
+"semilla": "jpeg_exif",
+"rc": 1,
+"bytes": -1,
+"ms": 157.3,
+"err": "magick: image does not have an mask channel `D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0153.mask' @ error/mask.c/WriteMASKImage/353. "
+},
+{
+"semilla": "png_alfa",
+"rc": 1,
+"bytes": -1,
+"ms": 34.3,
+"err": "magick: image does not have an mask channel `D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0154.mask' @ error/mask.c/WriteMASKImage/353. "
+},
+{
+"semilla": "tif16",
+"rc": 1,
+"bytes": -1,
+"ms": 139.0,
+"err": "magick: image does not have an mask channel `D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0155.mask' @ error/mask.c/WriteMASKImage/353. "
+}
+]
+},
+"imagemagick|matte": {
+"vivo": true,
+"revivida_por": "png_alfa",
+"intentos": [
+{
+"semilla": "jpeg_exif",
+"rc": 1,
+"bytes": -1,
+"ms": 51.5,
+"err": "magick: image does not have an alpha channel `D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0156.matte' @ error/matte.c/WriteMATTEImage/180. "
+},
+{
+"semilla": "png_alfa",
+"rc": 0,
+"bytes": 120926,
+"ms": 24.0,
+"err": ""
+}
+]
+},
+"imagemagick|thumbnail": {
+"vivo": false,
+"revivida_por": null,
+"intentos": [
+{
+"semilla": "jpeg_exif",
+"rc": 1,
+"bytes": -1,
+"ms": 51.7,
+"err": "magick: image does not have a EXIF thumbnail `D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0158.thumbnail' @ error/thumbnail.c/WriteTHUMBNAILImage/187. "
+},
+{
+"semilla": "png_alfa",
+"rc": 1,
+"bytes": -1,
+"ms": 29.1,
+"err": "magick: image does not have a EXIF thumbnail `D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0159.thumbnail' @ error/thumbnail.c/WriteTHUMBNAILImage/187. "
+},
+{
+"semilla": "tif16",
+"rc": 1,
+"bytes": -1,
+"ms": 143.0,
+"err": "magick: image does not have a EXIF thumbnail `D:\\Work\\research\\FileX\\bench\\salidas-aristas\\tmp2\\r0160.thumbnail' @ error/thumbnail.c/WriteTHUMBNAILImage/187. "
+}
+]
+}
+}

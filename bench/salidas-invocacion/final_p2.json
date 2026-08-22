@@ -1,0 +1,50 @@
+{
+ "poblacion": 138501,
+ "E1": {
+  "marco": 40252,
+  "muertas_semiarista": 22235,
+  "indeterminadas": 75874,
+  "otro_motor": 140,
+  "con_veredicto": 62487,
+  "nominales": 31533,
+  "tasa": 50.46
+ },
+ "P2": {
+  "marco": 44879,
+  "muertas_semiarista": 14740,
+  "recuperadas_por_semiarista": 4627,
+  "recuperadas_por_categoria": {
+   "1": 1337,
+   "2": 3290
+  },
+  "residuo_nominal": 17.81,
+  "nominales": 25603,
+  "tasa": 40.97
+ },
+ "residuo": {
+  "n": 118,
+  "recuperadas": 27,
+  "tasa": 22.88,
+  "ic95": [
+   16.23,
+   31.24
+  ],
+  "por_categoria": {
+   "1": 27
+  }
+ },
+ "recuperacion": {
+  "aristas": 5930,
+  "fraccion_del_50_5": 18.81,
+  "ic95_fraccion": [
+   16.84,
+   21.27
+  ],
+  "sensibilidad_pesimista": 18.03,
+  "cat1_aristas": 3226,
+  "cat2_aristas": 2704,
+  "cat1_fraccion": 10.23,
+  "cat2_fraccion": 8.57,
+  "sin_veredicto_nuevo": 2868
+ }
+}

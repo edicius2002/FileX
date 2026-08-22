@@ -1,0 +1,308 @@
+[
+ {
+  "nombre": "alpha_tiff_none.tif",
+  "orden": [
+   "magick",
+   "D:\\Work\\research\\FileX\\corpus\\imagen\\alpha.png",
+   "-define",
+   "tiff:alpha=unassociated",
+   "-compress",
+   "None",
+   "TIFF:D:\\Work\\research\\FileX\\bench\\salidas-verificador-gs\\fixtures\\alpha_tiff_none.tif"
+  ],
+  "rc": 0,
+  "bytes": 160290,
+  "sha256": "589dc3611e6b67526a8e814baf503e29a95636c211cce1a0ec0f5aacea1a5d66",
+  "err": ""
+ },
+ {
+  "nombre": "alpha_tiff_lzw.tif",
+  "orden": [
+   "magick",
+   "D:\\Work\\research\\FileX\\corpus\\imagen\\alpha.png",
+   "-define",
+   "tiff:alpha=unassociated",
+   "-compress",
+   "LZW",
+   "TIFF:D:\\Work\\research\\FileX\\bench\\salidas-verificador-gs\\fixtures\\alpha_tiff_lzw.tif"
+  ],
+  "rc": 0,
+  "bytes": 4344,
+  "sha256": "60af9ab9152bc420eb8af693aeda0164723d980f102eba2c527e110f972d1b97",
+  "err": ""
+ },
+ {
+  "nombre": "alpha_tiff_lzw_pred.tif",
+  "orden": [
+   "magick",
+   "D:\\Work\\research\\FileX\\corpus\\imagen\\alpha.png",
+   "-define",
+   "tiff:alpha=unassociated",
+   "-define",
+   "tiff:predictor=2",
+   "-compress",
+   "LZW",
+   "TIFF:D:\\Work\\research\\FileX\\bench\\salidas-verificador-gs\\fixtures\\alpha_tiff_lzw_pred.tif"
+  ],
+  "rc": 0,
+  "bytes": 4344,
+  "sha256": "60af9ab9152bc420eb8af693aeda0164723d980f102eba2c527e110f972d1b97",
+  "err": ""
+ },
+ {
+  "nombre": "alpha_tiff_zip.tif",
+  "orden": [
+   "magick",
+   "D:\\Work\\research\\FileX\\corpus\\imagen\\alpha.png",
+   "-define",
+   "tiff:alpha=unassociated",
+   "-compress",
+   "Zip",
+   "TIFF:D:\\Work\\research\\FileX\\bench\\salidas-verificador-gs\\fixtures\\alpha_tiff_zip.tif"
+  ],
+  "rc": 0,
+  "bytes": 3746,
+  "sha256": "68888a65618036fae43cf3a7b246cfaacfe03d7d9bd22699ce94a73916988b65",
+  "err": ""
+ },
+ {
+  "nombre": "alpha_tiff_zip_pred.tif",
+  "orden": [
+   "magick",
+   "D:\\Work\\research\\FileX\\corpus\\imagen\\alpha.png",
+   "-define",
+   "tiff:alpha=unassociated",
+   "-define",
+   "tiff:predictor=2",
+   "-compress",
+   "Zip",
+   "TIFF:D:\\Work\\research\\FileX\\bench\\salidas-verificador-gs\\fixtures\\alpha_tiff_zip_pred.tif"
+  ],
+  "rc": 0,
+  "bytes": 3746,
+  "sha256": "68888a65618036fae43cf3a7b246cfaacfe03d7d9bd22699ce94a73916988b65",
+  "err": ""
+ },
+ {
+  "nombre": "alpha_tiff_rle.tif",
+  "orden": [
+   "magick",
+   "D:\\Work\\research\\FileX\\corpus\\imagen\\alpha.png",
+   "-define",
+   "tiff:alpha=unassociated",
+   "-compress",
+   "RLE",
+   "TIFF:D:\\Work\\research\\FileX\\bench\\salidas-verificador-gs\\fixtures\\alpha_tiff_rle.tif"
+  ],
+  "rc": 0,
+  "bytes": 26608,
+  "sha256": "34e48eba06deb367befaa6d7f8c4de925eb9f5e53efa843d5afee0a967d4e633",
+  "err": ""
+ },
+ {
+  "nombre": "alpha_tiff_planar.tif",
+  "orden": [
+   "magick",
+   "D:\\Work\\research\\FileX\\corpus\\imagen\\alpha.png",
+   "-define",
+   "tiff:alpha=unassociated",
+   "-interlace",
+   "Plane",
+   "-compress",
+   "LZW",
+   "TIFF:D:\\Work\\research\\FileX\\bench\\salidas-verificador-gs\\fixtures\\alpha_tiff_planar.tif"
+  ],
+  "rc": 0,
+  "bytes": 5956,
+  "sha256": "31b2fa4f6069513fd14ae93db3054844570a492bd8170786b5819e2fe005e2e7",
+  "err": ""
+ },
+ {
+  "nombre": "tipico_tiff_lzw.tif",
+  "orden": [
+   "magick",
+   "D:\\Work\\research\\FileX\\corpus\\imagen\\tipico.png",
+   "-define",
+   "tiff:alpha=unassociated",
+   "-compress",
+   "LZW",
+   "TIFF:D:\\Work\\research\\FileX\\bench\\salidas-verificador-gs\\fixtures\\tipico_tiff_lzw.tif"
+  ],
+  "rc": 0,
+  "bytes": 62780,
+  "sha256": "8657fd0ee6c3151334ee60003f6ccbdc8d3636d40acf8137eb33797a16837c79",
+  "err": ""
+ },
+ {
+  "nombre": "alpha_tiff_lzw16.tif",
+  "orden": [
+   "magick",
+   "D:\\Work\\research\\FileX\\corpus\\imagen\\alpha.png",
+   "-depth",
+   "16",
+   "-define",
+   "tiff:alpha=unassociated",
+   "-compress",
+   "LZW",
+   "TIFF:D:\\Work\\research\\FileX\\bench\\salidas-verificador-gs\\fixtures\\alpha_tiff_lzw16.tif"
+  ],
+  "rc": 0,
+  "bytes": 6012,
+  "sha256": "52a9c6117708ab7053531d9c9d22790ddfaabca3b11e0a425e5c9227ac9a38a9",
+  "err": ""
+ },
+ {
+  "nombre": "tipico_tiff_zip16.tif",
+  "orden": [
+   "magick",
+   "D:\\Work\\research\\FileX\\corpus\\imagen\\tipico.png",
+   "-define",
+   "tiff:alpha=unassociated",
+   "-compress",
+   "Zip",
+   "TIFF:D:\\Work\\research\\FileX\\bench\\salidas-verificador-gs\\fixtures\\tipico_tiff_zip16.tif"
+  ],
+  "rc": 0,
+  "bytes": 46986,
+  "sha256": "b4798f6f194b62d6b1957c49a2df5b499527a3102438b73ebb9d35f59fc659f2",
+  "err": ""
+ },
+ {
+  "nombre": "alpha_gif.gif",
+  "orden": [
+   "magick",
+   "D:\\Work\\research\\FileX\\corpus\\imagen\\alpha.png",
+   "GIF:D:\\Work\\research\\FileX\\bench\\salidas-verificador-gs\\fixtures\\alpha_gif.gif"
+  ],
+  "rc": 0,
+  "bytes": 2598,
+  "sha256": "0affa28523910c70774f64f1e399f0348dcc3b98a9413ec6b47a02fff30e79e5",
+  "err": ""
+ },
+ {
+  "nombre": "trivial_gif_opaco.gif",
+  "orden": [
+   "magick",
+   "D:\\Work\\research\\FileX\\corpus\\imagen\\trivial.png",
+   "GIF:D:\\Work\\research\\FileX\\bench\\salidas-verificador-gs\\fixtures\\trivial_gif_opaco.gif"
+  ],
+  "rc": 0,
+  "bytes": 110,
+  "sha256": "329fae3b346f090fc5ab3925cf055acc1c2d5ebe44f26671aadef6f57063c383",
+  "err": ""
+ },
+ {
+  "nombre": "tipico_gif_opaco.gif",
+  "orden": [
+   "magick",
+   "D:\\Work\\research\\FileX\\corpus\\imagen\\tipico.png",
+   "-alpha",
+   "off",
+   "GIF:D:\\Work\\research\\FileX\\bench\\salidas-verificador-gs\\fixtures\\tipico_gif_opaco.gif"
+  ],
+  "rc": 0,
+  "bytes": 99971,
+  "sha256": "bd50e2463fb387bcc1884021c2646f9bbfe5a29edcec0610e3326fd2a52ffa22",
+  "err": ""
+ },
+ {
+  "nombre": "alpha_adam7.png",
+  "orden": [
+   "magick",
+   "D:\\Work\\research\\FileX\\corpus\\imagen\\alpha.png",
+   "-interlace",
+   "PNG",
+   "PNG:D:\\Work\\research\\FileX\\bench\\salidas-verificador-gs\\fixtures\\alpha_adam7.png"
+  ],
+  "rc": 0,
+  "bytes": 3335,
+  "sha256": "305766d92b50af7de13d3f25ef61e1bbb2b0146ecf88ee8e9535b6ff65a23443",
+  "err": ""
+ },
+ {
+  "nombre": "alpha_adam7_rgba.png",
+  "orden": [
+   "magick",
+   "D:\\Work\\research\\FileX\\corpus\\imagen\\alpha.png",
+   "-define",
+   "png:color-type=6",
+   "-define",
+   "png:bit-depth=8",
+   "-interlace",
+   "PNG",
+   "PNG:D:\\Work\\research\\FileX\\bench\\salidas-verificador-gs\\fixtures\\alpha_adam7_rgba.png"
+  ],
+  "rc": 0,
+  "bytes": 5238,
+  "sha256": "16059d815a693fd9d8a3fb0e36f33a570017c6c92b85f44704e2865f442250fb",
+  "err": ""
+ },
+ {
+  "nombre": "alpha_adam7_rgba16.png",
+  "orden": [
+   "magick",
+   "D:\\Work\\research\\FileX\\corpus\\imagen\\alpha.png",
+   "-define",
+   "png:color-type=6",
+   "-define",
+   "png:bit-depth=16",
+   "-interlace",
+   "PNG",
+   "PNG:D:\\Work\\research\\FileX\\bench\\salidas-verificador-gs\\fixtures\\alpha_adam7_rgba16.png"
+  ],
+  "rc": 0,
+  "bytes": 6712,
+  "sha256": "894686c46324f0820181f20d1ec278760703277d0136e915594646e4514ef523",
+  "err": ""
+ },
+ {
+  "nombre": "alpha_adam7_4b.png",
+  "orden": [
+   "magick",
+   "D:\\Work\\research\\FileX\\corpus\\imagen\\alpha.png",
+   "-colors",
+   "12",
+   "-define",
+   "png:color-type=3",
+   "-define",
+   "png:bit-depth=4",
+   "-interlace",
+   "PNG",
+   "PNG:D:\\Work\\research\\FileX\\bench\\salidas-verificador-gs\\fixtures\\alpha_adam7_4b.png"
+  ],
+  "rc": 0,
+  "bytes": 1736,
+  "sha256": "df847c52b956c0c79b90afc63da45c184482746d652020cad98f8f950b03d35b",
+  "err": ""
+ },
+ {
+  "nombre": "tipico_adam7.png",
+  "orden": [
+   "magick",
+   "D:\\Work\\research\\FileX\\corpus\\imagen\\tipico.png",
+   "-interlace",
+   "PNG",
+   "PNG:D:\\Work\\research\\FileX\\bench\\salidas-verificador-gs\\fixtures\\tipico_adam7.png"
+  ],
+  "rc": 0,
+  "bytes": 54646,
+  "sha256": "639527e538cebe888e0703958a4feeb5f08e1507ef37275a02d26d77586e719e",
+  "err": ""
+ },
+ {
+  "nombre": "tipico_adam7_8b.png",
+  "orden": [
+   "magick",
+   "D:\\Work\\research\\FileX\\corpus\\imagen\\tipico.png",
+   "-depth",
+   "8",
+   "-interlace",
+   "PNG",
+   "PNG:D:\\Work\\research\\FileX\\bench\\salidas-verificador-gs\\fixtures\\tipico_adam7_8b.png"
+  ],
+  "rc": 0,
+  "bytes": 27299,
+  "sha256": "b8c2a54ddc298dbd634713ce70a0ca5794d97e263109b7b63b04f7138ced4ec4",
+  "err": ""
+ }
+]

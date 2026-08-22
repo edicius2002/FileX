@@ -1,0 +1,128 @@
+[33mThe CJS build of Vite's Node API is deprecated. See https://vitejs.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
+
+[1m[46m RUN [49m[22m [36mv3.2.7 [39m[90mD:/Work/research/FileX/repos/mcp-refs/image-worker-mcp[39m
+
+ [32m✓[39m tests/services/cloudflare.test.ts[2m > [22mCloudflareUploadService[2m > [22mconstructor[2m > [22mshould create S3Client with correct Cloudflare R2 configuration[32m 7[2mms[22m[39m
+ [32m✓[39m tests/services/cloudflare.test.ts[2m > [22mCloudflareUploadService[2m > [22mconstructor[2m > [22mshould use default region if not provided[32m 1[2mms[22m[39m
+ [32m✓[39m tests/services/cloudflare.test.ts[2m > [22mCloudflareUploadService[2m > [22mupload[2m > [22mshould successfully upload file without folder[32m 1[2mms[22m[39m
+ [32m✓[39m tests/services/cloudflare.test.ts[2m > [22mCloudflareUploadService[2m > [22mupload[2m > [22mshould successfully upload file with folder[32m 1[2mms[22m[39m
+ [32m✓[39m tests/services/cloudflare.test.ts[2m > [22mCloudflareUploadService[2m > [22mupload[2m > [22mshould generate custom domain URL when baseUrl is provided[32m 1[2mms[22m[39m
+ [32m✓[39m tests/services/cloudflare.test.ts[2m > [22mCloudflareUploadService[2m > [22mupload[2m > [22mshould handle file extension correctly[32m 1[2mms[22m[39m
+ [32m✓[39m tests/services/cloudflare.test.ts[2m > [22mCloudflareUploadService[2m > [22mupload[2m > [22mshould default to jpg extension if none provided[32m 0[2mms[22m[39m
+ [32m✓[39m tests/services/cloudflare.test.ts[2m > [22mCloudflareUploadService[2m > [22mupload[2m > [22mshould set correct content type for different file types[32m 3[2mms[22m[39m
+ [32m✓[39m tests/services/cloudflare.test.ts[2m > [22mCloudflareUploadService[2m > [22mupload[2m > [22mshould not include ACL in upload command (R2 specific)[32m 1[2mms[22m[39m
+ [32m✓[39m tests/services/cloudflare.test.ts[2m > [22mCloudflareUploadService[2m > [22mupload[2m > [22mshould include metadata in upload command[32m 1[2mms[22m[39m
+ [32m✓[39m tests/services/cloudflare.test.ts[2m > [22mCloudflareUploadService[2m > [22mupload[2m > [22mshould not include tags in upload command (R2 limitation)[32m 1[2mms[22m[39m
+ [32m✓[39m tests/services/cloudflare.test.ts[2m > [22mCloudflareUploadService[2m > [22mupload[2m > [22moverwrite protection[2m > [22mshould check for existing file when overwrite is false[32m 1[2mms[22m[39m
+ [32m✓[39m tests/services/cloudflare.test.ts[2m > [22mCloudflareUploadService[2m > [22mupload[2m > [22moverwrite protection[2m > [22mshould throw error if file exists and overwrite is false[32m 2[2mms[22m[39m
+ [32m✓[39m tests/services/cloudflare.test.ts[2m > [22mCloudflareUploadService[2m > [22mupload[2m > [22moverwrite protection[2m > [22mshould skip existence check when overwrite is true[32m 1[2mms[22m[39m
+ [32m✓[39m tests/services/cloudflare.test.ts[2m > [22mCloudflareUploadService[2m > [22mupload[2m > [22moverwrite protection[2m > [22mshould handle NoSuchKey error as file not found[32m 1[2mms[22m[39m
+ [32m✓[39m tests/services/cloudflare.test.ts[2m > [22mCloudflareUploadService[2m > [22mupload[2m > [22merror handling[2m > [22mshould wrap R2 errors in McpError[32m 1[2mms[22m[39m
+ [32m✓[39m tests/services/cloudflare.test.ts[2m > [22mCloudflareUploadService[2m > [22mupload[2m > [22merror handling[2m > [22mshould preserve McpError instances[32m 0[2mms[22m[39m
+ [32m✓[39m tests/services/cloudflare.test.ts[2m > [22mCloudflareUploadService[2m > [22mgetContentType[2m > [22mshould return correct MIME types for supported formats[32m 1[2mms[22m[39m
+ [32m✓[39m tests/services/cloudflare.test.ts[2m > [22mCloudflareUploadService[2m > [22mgetContentType[2m > [22mshould return default MIME type for unknown extensions[32m 0[2mms[22m[39m
+ [32m✓[39m tests/services/cloudflare.test.ts[2m > [22mCloudflareUploadService[2m > [22mgenerateUrl[2m > [22mshould generate R2 endpoint URL by default[32m 0[2mms[22m[39m
+ [32m✓[39m tests/services/cloudflare.test.ts[2m > [22mCloudflareUploadService[2m > [22mgenerateUrl[2m > [22mshould generate custom domain URL when baseUrl is provided[32m 0[2mms[22m[39m
+ [32m✓[39m tests/services/cloudflare.test.ts[2m > [22mCloudflareUploadService[2m > [22mgenerateUrl[2m > [22mshould handle keys without folders[32m 0[2mms[22m[39m
+ [32m✓[39m tests/services/cloudflare.test.ts[2m > [22mCloudflareUploadService[2m > [22mCloudflare R2 specific features[2m > [22mshould always use forcePathStyle for R2 compatibility[32m 1[2mms[22m[39m
+ [32m✓[39m tests/services/cloudflare.test.ts[2m > [22mCloudflareUploadService[2m > [22mCloudflare R2 specific features[2m > [22mshould use auto region by default for R2[32m 0[2mms[22m[39m
+ [32m✓[39m tests/services/gcloud.test.ts[2m > [22mGCloudUploadService[2m > [22mconstructor[2m > [22mshould create Storage client with correct configuration[32m 8[2mms[22m[39m
+ [32m✓[39m tests/services/gcloud.test.ts[2m > [22mGCloudUploadService[2m > [22mconstructor[2m > [22mshould include keyFilename if GCLOUD_CREDENTIALS_PATH is provided[32m 1[2mms[22m[39m
+ [32m✓[39m tests/services/gcloud.test.ts[2m > [22mGCloudUploadService[2m > [22mconstructor[2m > [22mshould not include keyFilename if GCLOUD_CREDENTIALS_PATH is not provided[32m 2[2mms[22m[39m
+ [32m✓[39m tests/services/gcloud.test.ts[2m > [22mGCloudUploadService[2m > [22mupload[2m > [22mshould successfully upload file without folder[32m 3[2mms[22m[39m
+ [32m✓[39m tests/services/gcloud.test.ts[2m > [22mGCloudUploadService[2m > [22mupload[2m > [22mshould successfully upload file with folder[32m 1[2mms[22m[39m
+ [32m✓[39m tests/services/gcloud.test.ts[2m > [22mGCloudUploadService[2m > [22mupload[2m > [22mshould handle file extension correctly[32m 1[2mms[22m[39m
+ [32m✓[39m tests/services/gcloud.test.ts[2m > [22mGCloudUploadService[2m > [22mupload[2m > [22mshould default to jpg extension if none provided[32m 1[2mms[22m[39m
+ [32m✓[39m tests/services/gcloud.test.ts[2m > [22mGCloudUploadService[2m > [22mupload[2m > [22mshould set correct content type for different file types[32m 3[2mms[22m[39m
+ [32m✓[39m tests/services/gcloud.test.ts[2m > [22mGCloudUploadService[2m > [22mupload[2m > [22mshould set public flag correctly[32m 2[2mms[22m[39m
+ [32m✓[39m tests/services/gcloud.test.ts[2m > [22mGCloudUploadService[2m > [22mupload[2m > [22mshould include metadata in upload command[32m 1[2mms[22m[39m
+ [32m✓[39m tests/services/gcloud.test.ts[2m > [22mGCloudUploadService[2m > [22mupload[2m > [22moverwrite protection[2m > [22mshould check for existing file when overwrite is false[32m 1[2mms[22m[39m
+ [32m✓[39m tests/services/gcloud.test.ts[2m > [22mGCloudUploadService[2m > [22mupload[2m > [22moverwrite protection[2m > [22mshould throw error if file exists and overwrite is false[32m 6[2mms[22m[39m
+ [32m✓[39m tests/services/gcloud.test.ts[2m > [22mGCloudUploadService[2m > [22mupload[2m > [22moverwrite protection[2m > [22mshould skip existence check when overwrite is true[32m 1[2mms[22m[39m
+ [32m✓[39m tests/services/gcloud.test.ts[2m > [22mGCloudUploadService[2m > [22mupload[2m > [22merror handling[2m > [22mshould wrap GCloud errors in McpError[32m 1[2mms[22m[39m
+ [32m✓[39m tests/services/gcloud.test.ts[2m > [22mGCloudUploadService[2m > [22mupload[2m > [22merror handling[2m > [22mshould preserve McpError instances[32m 1[2mms[22m[39m
+ [32m✓[39m tests/services/gcloud.test.ts[2m > [22mGCloudUploadService[2m > [22mupload[2m > [22merror handling[2m > [22mshould handle upload errors[32m 1[2mms[22m[39m
+ [32m✓[39m tests/services/gcloud.test.ts[2m > [22mGCloudUploadService[2m > [22mgetContentType[2m > [22mshould return correct MIME types for supported formats[32m 1[2mms[22m[39m
+ [32m✓[39m tests/services/gcloud.test.ts[2m > [22mGCloudUploadService[2m > [22mgetContentType[2m > [22mshould return default MIME type for unknown extensions[32m 1[2mms[22m[39m
+ [32m✓[39m tests/services/gcloud.test.ts[2m > [22mGCloudUploadService[2m > [22mgenerateUrl[2m > [22mshould generate Google Cloud Storage URL[32m 1[2mms[22m[39m
+ [32m✓[39m tests/services/gcloud.test.ts[2m > [22mGCloudUploadService[2m > [22mgenerateUrl[2m > [22mshould handle keys without folders[32m 1[2mms[22m[39m
+ [32m✓[39m tests/services/gcloud.test.ts[2m > [22mGCloudUploadService[2m > [22mGCloud specific features[2m > [22mshould use Google Cloud Storage client[32m 1[2mms[22m[39m
+ [32m✓[39m tests/services/gcloud.test.ts[2m > [22mGCloudUploadService[2m > [22mGCloud specific features[2m > [22mshould support custom credentials path[32m 1[2mms[22m[39m
+ [32m✓[39m tests/services/gcloud.test.ts[2m > [22mGCloudUploadService[2m > [22mGCloud specific features[2m > [22mshould use default authentication when no credentials path provided[32m 1[2mms[22m[39m
+ [32m✓[39m tests/services/gcloud.test.ts[2m > [22mGCloudUploadService[2m > [22mGCloudEnvConfigSchema validation[2m > [22mshould require GCLOUD_BUCKET[32m 1[2mms[22m[39m
+ [32m✓[39m tests/services/gcloud.test.ts[2m > [22mGCloudUploadService[2m > [22mGCloudEnvConfigSchema validation[2m > [22mshould require GCLOUD_PROJECT_ID[32m 1[2mms[22m[39m
+ [32m✓[39m tests/services/gcloud.test.ts[2m > [22mGCloudUploadService[2m > [22mGCloudEnvConfigSchema validation[2m > [22mshould accept valid configuration[32m 1[2mms[22m[39m
+ [32m✓[39m tests/services/gcloud.test.ts[2m > [22mGCloudUploadService[2m > [22mGCloudEnvConfigSchema validation[2m > [22mshould accept configuration with credentials path[32m 1[2mms[22m[39m
+ [32m✓[39m tests/services/s3.test.ts[2m > [22mS3UploadService[2m > [22mconstructor[2m > [22mshould create S3Client with mapped configuration from ENV-style input[32m 5[2mms[22m[39m
+ [32m✓[39m tests/services/s3.test.ts[2m > [22mS3UploadService[2m > [22mconstructor[2m > [22mshould include endpoint if provided in ENV-style config[32m 1[2mms[22m[39m
+ [32m✓[39m tests/services/s3.test.ts[2m > [22mS3UploadService[2m > [22mconstructor[2m > [22mshould use default region if S3_REGION not provided in ENV-style config[32m 3[2mms[22m[39m
+ [32m✓[39m tests/services/s3.test.ts[2m > [22mS3UploadService[2m > [22mconstructor[2m > [22mshould create S3Client without credentials if AWS keys are not provided in ENV-style config[32m 2[2mms[22m[39m
+ [32m✓[39m tests/services/s3.test.ts[2m > [22mS3UploadService[2m > [22mupload[2m > [22mshould successfully upload file without folder[32m 2[2mms[22m[39m
+ [32m✓[39m tests/services/s3.test.ts[2m > [22mS3UploadService[2m > [22mupload[2m > [22mshould successfully upload file with folder[32m 1[2mms[22m[39m
+ [32m✓[39m tests/services/s3.test.ts[2m > [22mS3UploadService[2m > [22mupload[2m > [22mshould generate custom endpoint URL when S3_ENDPOINT is provided[32m 1[2mms[22m[39m
+ [32m✓[39m tests/services/s3.test.ts[2m > [22mS3UploadService[2m > [22mupload[2m > [22mshould handle file extension correctly[32m 1[2mms[22m[39m
+ [32m✓[39m tests/services/s3.test.ts[2m > [22mS3UploadService[2m > [22mupload[2m > [22mshould default to jpg extension if none provided[32m 2[2mms[22m[39m
+ [32m✓[39m tests/services/s3.test.ts[2m > [22mS3UploadService[2m > [22mupload[2m > [22mshould set correct content type for different file types[32m 9[2mms[22m[39m
+ [32m✓[39m tests/services/s3.test.ts[2m > [22mS3UploadService[2m > [22mupload[2m > [22mshould set ACL based on public flag[32m 3[2mms[22m[39m
+ [32m✓[39m tests/services/s3.test.ts[2m > [22mS3UploadService[2m > [22mupload[2m > [22mshould include metadata in upload command[32m 10[2mms[22m[39m
+ [32m✓[39m tests/services/s3.test.ts[2m > [22mS3UploadService[2m > [22mupload[2m > [22mshould include tags in upload command[32m 2[2mms[22m[39m
+ [32m✓[39m tests/services/s3.test.ts[2m > [22mS3UploadService[2m > [22mupload[2m > [22mshould not include tagging if no tags provided[32m 3[2mms[22m[39m
+ [32m✓[39m tests/services/s3.test.ts[2m > [22mS3UploadService[2m > [22mupload[2m > [22moverwrite protection[2m > [22mshould check for existing file when overwrite is false[32m 3[2mms[22m[39m
+ [32m✓[39m tests/services/s3.test.ts[2m > [22mS3UploadService[2m > [22mupload[2m > [22moverwrite protection[2m > [22mshould throw error if file exists and overwrite is false[32m 4[2mms[22m[39m
+ [32m✓[39m tests/services/s3.test.ts[2m > [22mS3UploadService[2m > [22mupload[2m > [22moverwrite protection[2m > [22mshould skip existence check when overwrite is true[32m 1[2mms[22m[39m
+ [32m✓[39m tests/services/s3.test.ts[2m > [22mS3UploadService[2m > [22mupload[2m > [22moverwrite protection[2m > [22mshould handle NoSuchKey error as file not found[32m 1[2mms[22m[39m
+ [32m✓[39m tests/services/s3.test.ts[2m > [22mS3UploadService[2m > [22mupload[2m > [22merror handling[2m > [22mshould wrap S3 errors in McpError[32m 3[2mms[22m[39m
+ [32m✓[39m tests/services/s3.test.ts[2m > [22mS3UploadService[2m > [22mupload[2m > [22merror handling[2m > [22mshould preserve McpError instances[32m 2[2mms[22m[39m
+ [32m✓[39m tests/services/s3.test.ts[2m > [22mS3UploadService[2m > [22mgetContentType[2m > [22mshould return correct MIME types for supported formats[32m 1[2mms[22m[39m
+ [32m✓[39m tests/services/s3.test.ts[2m > [22mS3UploadService[2m > [22mgetContentType[2m > [22mshould return default MIME type for unknown extensions[32m 0[2mms[22m[39m
+ [32m✓[39m tests/services/s3.test.ts[2m > [22mS3UploadService[2m > [22mgenerateUrl[2m > [22mshould generate standard AWS S3 URL[32m 0[2mms[22m[39m
+ [32m✓[39m tests/services/s3.test.ts[2m > [22mS3UploadService[2m > [22mgenerateUrl[2m > [22mshould generate custom endpoint URL when S3_ENDPOINT is provided[32m 0[2mms[22m[39m
+ [32m✓[39m tests/utils.test.ts[2m > [22mUtility Functions[2m > [22misValidInputFormat[2m > [22mshould return true for supported input formats[32m 3[2mms[22m[39m
+ [32m✓[39m tests/utils.test.ts[2m > [22mUtility Functions[2m > [22misValidInputFormat[2m > [22mshould return false for unsupported input formats[32m 0[2mms[22m[39m
+ [32m✓[39m tests/utils.test.ts[2m > [22mUtility Functions[2m > [22misValidOutputFormat[2m > [22mshould return true for supported output formats[32m 0[2mms[22m[39m
+ [32m✓[39m tests/utils.test.ts[2m > [22mUtility Functions[2m > [22misValidOutputFormat[2m > [22mshould return false for unsupported output formats[32m 0[2mms[22m[39m
+ [32m✓[39m tests/utils.test.ts[2m > [22mUtility Functions[2m > [22misValidDimensions[2m > [22mshould return true for valid dimensions[32m 0[2mms[22m[39m
+ [32m✓[39m tests/utils.test.ts[2m > [22mUtility Functions[2m > [22misValidDimensions[2m > [22mshould return false for invalid dimensions[32m 0[2mms[22m[39m
+ [32m✓[39m tests/utils.test.ts[2m > [22mUtility Functions[2m > [22misValidQuality[2m > [22mshould return true for valid quality values[32m 0[2mms[22m[39m
+ [32m✓[39m tests/utils.test.ts[2m > [22mUtility Functions[2m > [22misValidQuality[2m > [22mshould return false for invalid quality values[32m 0[2mms[22m[39m
+ [32m✓[39m tests/utils.test.ts[2m > [22mUtility Functions[2m > [22mgetFileExtension[2m > [22mshould return the correct extension in lowercase[32m 1[2mms[22m[39m
+ [32m✓[39m tests/utils.test.ts[2m > [22mUtility Functions[2m > [22mgetFileExtension[2m > [22mshould return an empty string if no extension[32m 0[2mms[22m[39m
+ [32m✓[39m tests/utils.test.ts[2m > [22mUtility Functions[2m > [22mgetFileExtension[2m > [22mshould handle files starting with a dot[32m 0[2mms[22m[39m
+ [32m✓[39m tests/utils.test.ts[2m > [22mUtility Functions[2m > [22mbase64ToBuffer[2m > [22mshould convert a base64 string to a Buffer[32m 0[2mms[22m[39m
+ [32m✓[39m tests/utils.test.ts[2m > [22mUtility Functions[2m > [22mbase64ToBuffer[2m > [22mshould handle base64 strings with data URL prefix[32m 0[2mms[22m[39m
+ [32m✓[39m tests/utils.test.ts[2m > [22mUtility Functions[2m > [22mbufferToBase64[2m > [22mshould convert a Buffer to a data URL base64 string[32m 0[2mms[22m[39m
+ [32m✓[39m tests/utils.test.ts[2m > [22mUtility Functions[2m > [22mnormalizeFilePath[2m > [22mshould replace escaped spaces with actual spaces[32m 0[2mms[22m[39m
+ [32m✓[39m tests/utils.test.ts[2m > [22mUtility Functions[2m > [22mnormalizeFilePath[2m > [22mshould handle various escaped characters[32m 0[2mms[22m[39m
+ [32m✓[39m tests/utils.test.ts[2m > [22mUtility Functions[2m > [22mnormalizeFilePath[2m > [22mshould return the same path if no escaped characters[32m 0[2mms[22m[39m
+ [32m✓[39m tests/utils.test.ts[2m > [22mUtility Functions[2m > [22mnormalizeFilePath[2m > [22mshould handle mixed escaped and normal characters[32m 0[2mms[22m[39m
+ [32m✓[39m tests/tools/sharp.test.ts[2m > [22mresizeImageTool[2m > [22mshould throw McpError if no image source is provided[32m 7[2mms[22m[39m
+ [32m✓[39m tests/tools/sharp.test.ts[2m > [22mresizeImageTool[2m > [22mshould process image from imagePath successfully[32m 9[2mms[22m[39m
+ [32m✓[39m tests/tools/sharp.test.ts[2m > [22mresizeImageTool[2m > [22mshould process image from imageUrl successfully[32m 2[2mms[22m[39m
+ [32m✓[39m tests/tools/sharp.test.ts[2m > [22mresizeImageTool[2m > [22mshould process image from base64Image successfully[32m 2[2mms[22m[39m
+ [32m✓[39m tests/tools/sharp.test.ts[2m > [22mresizeImageTool[2m > [22mshould throw McpError for unsupported input format[32m 1[2mms[22m[39m
+ [32m✓[39m tests/tools/sharp.test.ts[2m > [22mresizeImageTool[2m > [22mshould throw McpError if fs.readFileSync fails[32m 1[2mms[22m[39m
+ [32m✓[39m tests/tools/sharp.test.ts[2m > [22mresizeImageTool[2m > [22mshould throw McpError if fs.writeFileSync fails[32m 1[2mms[22m[39m
+ [32m✓[39m tests/tools/sharp.test.ts[2m > [22mresizeImageTool[2m > [22mshould apply various transformations like rotate and grayscale[32m 2[2mms[22m[39m
+ [32m✓[39m tests/tools/sharp.test.ts[2m > [22mresizeImageTool[2m > [22mshould handle aspect ratio correctly when only width is provided[32m 2[2mms[22m[39m
+ [32m✓[39m tests/tools/sharp.test.ts[2m > [22mresizeImageTool[2m > [22mshould handle aspect ratio correctly when only height is provided[32m 1[2mms[22m[39m
+ [32m✓[39m tests/tools/sharp.test.ts[2m > [22mresizeImageTool[2m > [22mshould use default dimensions and "contain" fit if none are provided[32m 9[2mms[22m[39m
+ [32m✓[39m tests/tools/sharp.test.ts[2m > [22mresizeImageTool[2m > [22mshould process HEIC image successfully using actual libheif-js and sharp[33m 1977[2mms[22m[39m
+ [32m✓[39m tests/tools/sharp.test.ts[2m > [22mresizeImageTool[2m > [22mshould process HEIC to PNG (base64 output) successfully using actual libheif-js and sharp[33m 1461[2mms[22m[39m
+ [32m✓[39m tests/tools/upload.test.ts[2m > [22mUpload Tool[2m > [22mUploadTool execution[2m > [22mshould upload image from imagePath[32m 7[2mms[22m[39m
+ [32m✓[39m tests/tools/upload.test.ts[2m > [22mUpload Tool[2m > [22mUploadTool execution[2m > [22mshould upload image from imageUrl[32m 1[2mms[22m[39m
+ [32m✓[39m tests/tools/upload.test.ts[2m > [22mUpload Tool[2m > [22mUploadTool execution[2m > [22mshould upload image from base64Image[32m 1[2mms[22m[39m
+ [32m✓[39m tests/tools/upload.test.ts[2m > [22mUpload Tool[2m > [22mUploadTool execution[2m > [22mshould return McpErrorResponse if no image source provided[32m 1[2mms[22m[39m
+ [32m✓[39m tests/tools/upload.test.ts[2m > [22mUpload Tool[2m > [22mUploadTool execution[2m > [22mshould use custom filename if provided[32m 1[2mms[22m[39m
+ [32m✓[39m tests/tools/upload.test.ts[2m > [22mUpload Tool[2m > [22mUploadTool execution[2m > [22mshould handle filename with existing extension[32m 1[2mms[22m[39m
+ [32m✓[39m tests/tools/upload.test.ts[2m > [22mUpload Tool[2m > [22mUploadTool execution[2m > [22mshould handle filename without extension (derive from imagePath)[32m 1[2mms[22m[39m
+ [32m✓[39m tests/tools/upload.test.ts[2m > [22mUpload Tool[2m > [22mUploadTool execution[2m > [22mshould return McpErrorResponse if imagePath does not exist[32m 0[2mms[22m[39m
+ [32m✓[39m tests/tools/upload.test.ts[2m > [22mUpload Tool[2m > [22mUploadTool execution[2m > [22mshould return McpErrorResponse if imageUrl fetch fails[32m 1[2mms[22m[39m
+ [32m✓[39m tests/tools/upload.test.ts[2m > [22mUpload Tool[2m > [22mUploadTool execution[2m > [22mshould return McpErrorResponse if base64ToBuffer fails[32m 1[2mms[22m[39m
+ [32m✓[39m tests/tools/upload.test.ts[2m > [22mUpload Tool[2m > [22mUploadTool execution[2m > [22mshould correctly pass through all args to upload service[32m 1[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m6 passed[39m[22m[90m (6)[39m
+[2m      Tests [22m [1m[32m117 passed[39m[22m[90m (117)[39m
+[2m   Start at [22m 02:00:52
+[2m   Duration [22m 6.43s[2m (transform 1.03s, setup 0ms, collect 8.30s, tests 3.64s, environment 2ms, prepare 3.83s)[22m
+
+EXIT=0

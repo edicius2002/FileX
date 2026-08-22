@@ -1,0 +1,37 @@
+=== A. 22 destinos en los que `magick` escribe OTRA COSA ===
+  b           firma=png     viejo=ok_parcial  nuevo=aviso       p1=no_aplica       
+  c           firma=png     viejo=ok_parcial  nuevo=aviso       p1=no_aplica       
+  g           firma=png     viejo=ok_parcial  nuevo=aviso       p1=no_aplica       
+  k           firma=png     viejo=ok_parcial  nuevo=aviso       p1=no_aplica       
+  m           firma=png     viejo=ok_parcial  nuevo=aviso       p1=no_aplica       
+  o           firma=png     viejo=ok_parcial  nuevo=aviso       p1=no_aplica       
+  r           firma=png     viejo=ok_parcial  nuevo=aviso       p1=no_aplica       
+  y           firma=png     viejo=ok_parcial  nuevo=aviso       p1=no_aplica       
+  p7          firma=png     viejo=ok_parcial  nuevo=aviso       p1=sin_vocabulario 
+  preview     firma=png     viejo=ok_parcial  nuevo=aviso       p1=sin_vocabulario 
+  clipboard   firma=png     viejo=ok_parcial  nuevo=aviso       p1=sin_vocabulario 
+  data        firma=png     viejo=ok_parcial  nuevo=aviso       p1=sin_vocabulario 
+  flif        firma=png     viejo=ok_parcial  nuevo=aviso       p1=sin_vocabulario 
+  group4      firma=png     viejo=ok_parcial  nuevo=aviso       p1=no_aplica       
+  histogram   firma=png     viejo=ok_parcial  nuevo=aviso       p1=sin_vocabulario 
+  inline      firma=png     viejo=ok_parcial  nuevo=aviso       p1=sin_vocabulario 
+  msl         firma=png     viejo=ok_parcial  nuevo=aviso       p1=sin_vocabulario 
+  mvg         firma=png     viejo=ok_parcial  nuevo=aviso       p1=sin_vocabulario 
+  null        firma=png     viejo=ok_parcial  nuevo=aviso       p1=sin_vocabulario 
+  pocketmod   firma=png     viejo=ok_parcial  nuevo=aviso       p1=sin_vocabulario 
+  sparse      firma=png     viejo=ok_parcial  nuevo=aviso       p1=sin_vocabulario 
+  vid         firma=png     viejo=ok_parcial  nuevo=aviso       p1=sin_vocabulario 
+
+  escritos: 22   atrapa el VIEJO: 0   atrapa el NUEVO: 0
+
+=== B. el punto ciego de la categoria 3 (crudo sin cabecera) ===
+  .rgb de 64x48: 18432 B = 6.00 bytes/pixel -> profundidad 16 bits
+  depth8_MAL         2 fichero(s) r_depth8_MAL-0.png     RMSE=23590.7 (0.359972)     contrato VIEJO=fallo       NUEVO=fallo      
+         (4, 'I4', 'fallo', 'DEGRADACION DE PROFUNDIDAD no pedida ni inevitable')
+  depth16_derivada   1 fichero(s) r_depth16_derivada.png RMSE=0 (0)                  contrato VIEJO=ok          NUEVO=ok_parcial 
+  contrato SOBRE EL .rgb: firma desconocido -> desconocido ; veredicto ok -> ok_parcial ; punto1=no_aplica
+         (1, 'G4', 'informativo', 'el formato no tiene marcador (pixeles crudos sin cabecera): el punto 1 NO APLICA a .rgb')
+   cobertura viejo: {'1_firma': True, '2_flujos': True, '3_propiedades': True, '4_pedido': True, '4_alfa': True}
+   cobertura nuevo: {'1_firma': True, '2_flujos': True, '3_propiedades': False, '4_pedido': False, '4_alfa': True, '5_escritura': False}
+
+escrito categoria3.json

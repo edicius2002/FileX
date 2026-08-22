@@ -1,0 +1,44 @@
+{
+ "orden": [
+  "magick -size 1240x600 xc:white -fill black -font Arial -pointsize 44 -annotate +80+140 INFORME TÉCNICO -pointsize 32 -annotate +80+240 La conversión se añadió en el último año. -annotate +80+320 Ñandú, camión, acción, pequeñez y ambigüedad. -density 150 -units PixelsPerInch D:\\Work\\research\\FileX\\bench\\salidas-verificador-gs\\fixtures\\acentos_150ppp.png",
+  "magick D:\\Work\\research\\FileX\\bench\\salidas-verificador-gs\\fixtures\\acentos_150ppp.png -density 150 -units PixelsPerInch D:\\Work\\research\\FileX\\bench\\salidas-verificador-gs\\fixtures\\acentos_150ppp.pdf"
+ ],
+ "texto_real": [
+  "INFORME TÉCNICO",
+  "La conversión se añadió en el último año.",
+  "Ñandú, camión, acción, pequeñez y ambigüedad."
+ ],
+ "ppp": 150,
+ "lecturas": [
+  {
+   "idioma": "spa",
+   "rc": 0,
+   "texto": "INFORME TÉCNICO\nLa conversión se añadió en el último año.\nÑandú, camión, acción, pequeñez y ambigiledad.",
+   "cer_ciego_pct": 2.0,
+   "cer_tildes_pct": 1.9,
+   "frases_exactas_tildes": 2,
+   "salida": "bench/salidas-verificador-gs/ocr/acentos_spa.txt",
+   "puntos_que_oculta_el_evaluador_ciego": -0.1
+  },
+  {
+   "idioma": "eng",
+   "rc": 0,
+   "texto": "INFORME TECNICO\nLa conversion se afiadio en el ultimo afio.\nNandu, camion, accién, pequefiez y ambigiiedad.",
+   "cer_ciego_pct": 9.2,
+   "cer_tildes_pct": 15.5,
+   "frases_exactas_tildes": 0,
+   "salida": "bench/salidas-verificador-gs/ocr/acentos_eng.txt",
+   "puntos_que_oculta_el_evaluador_ciego": 6.3
+  },
+  {
+   "idioma": "spa+eng",
+   "rc": 0,
+   "texto": "INFORME TÉCNICO\nLa conversión se añadió en el último año.\nÑandú, camión, acción, pequeñez y ambigiiedad.",
+   "cer_ciego_pct": 2.0,
+   "cer_tildes_pct": 1.9,
+   "frases_exactas_tildes": 2,
+   "salida": "bench/salidas-verificador-gs/ocr/acentos_spa-eng.txt",
+   "puntos_que_oculta_el_evaluador_ciego": -0.1
+  }
+ ]
+}

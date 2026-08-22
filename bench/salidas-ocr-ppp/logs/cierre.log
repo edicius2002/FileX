@@ -1,0 +1,192 @@
+[lock] adquirido por g1-ocr-ppp-cierre
+ppp110__escaneado_d3.png ppp130__escaneado_d3.png ppp140__escaneado_d3.png ppp160__escaneado_d3.png 
+########## 02:34:32  rodilla d3 — PaddleOCR ##########
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+W0821 02:35:13.668182 83736 gpu_resources.cc:114] Please NOTE: device: 0, GPU Compute Capability: 8.6, Driver API Version: 12.8, Runtime API Version: 12.6
+{"etiqueta": "paddleocr_cuda_rodilla", "motor": "paddleocr", "dispositivo": "cuda", "carga_frio_s": 52.47, "vram_base_MiB": 824, "vram_tras_carga_MiB": 1093, "quietud_pct": 1, "flag": "limpia", "modelos": {"paddle": "3.2.0", "paddle_cudnn_aviso": "compilado con cuDNN 9.9, maquina 9.5 (aviso de paddle)", "nombres_modelo": "ERROR TypeError: PaddleOCR._get_ocr_model_names() missing 2 required positional arguments: 'lang' and 'ppocr_version'", "params": {"doc_orientation_classify_model_name": "None", "doc_orientation_classify_model_dir": "None", "doc_unwarping_model_name": "None", "doc_unwarping_model_dir": "None", "text_detection_model_name": "PP-OCRv6_medium_det", "text_detection_model_dir": "None", "textline_orientation_model_name": "None", "textline_orientation_model_dir": "None", "text_recognition_model_name": "PP-OCRv6_medium_rec", "text_recognition_model_dir": "None"}}, "reps": 9, "muestreo_vram": true}
+W0821 02:35:30.375444 83736 gpu_resources.cc:243] WARNING: device: 0. The installed Paddle is compiled with CUDNN 9.9, but CUDNN version in your machine is 9.5, which may cause serious incompatible bug. Please recompile or reinstall Paddle with compatible CUDNN version.
+ppp110__escaneado_d3                 CER=   3.8%  dist=   3  frases=2/3     93.5 ms  det=si
+ppp130__escaneado_d3                 CER=   2.5%  dist=   2  frases=2/3    115.3 ms  det=si
+ppp140__escaneado_d3                 CER=   3.8%  dist=   3  frases=2/3    123.6 ms  det=si
+ppp160__escaneado_d3                 CER=  75.9%  dist=  60  frases=1/3    132.8 ms  det=si
+{"evento": "fin", "vram_pico_MiB": 2401, "vram_base_MiB": 824, "coste_propio_MiB": 1577, "pico_util_pct": 100, "muestreo_vram": true, "aviso": "pico de VRAM valido; los tiempos llevan el coste del muestreo"}
+########## 02:35:47  rodilla d3 — RapidOCR ##########
+[32m[INFO] 2026-08-21 02:36:03,997 [RapidOCR] main.py:63: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_PP-OCRv5_det_mobile.onnx[0m
+[32m[INFO] 2026-08-21 02:36:12,074 [RapidOCR] main.py:63: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ppocr_mobile_v2.0_cls_mobile.onnx[0m
+[32m[INFO] 2026-08-21 02:36:12,988 [RapidOCR] main.py:63: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_PP-OCRv5_rec_mobile.onnx[0m
+{"etiqueta": "rapidocr_cuda_rodilla", "motor": "rapidocr", "dispositivo": "cuda", "carga_frio_s": 18.93, "vram_base_MiB": 824, "vram_tras_carga_MiB": 997, "quietud_pct": 10, "flag": "SUCIA(pico 10%)", "modelos": {"text_det": "el.ttf', 'SHA256': '892e6c81071fc85923f8d0ff925edab6049dd4495a2fdedffddc04753bf348b3'}}}", "text_cls": "el.ttf', 'SHA256': '892e6c81071fc85923f8d0ff925edab6049dd4495a2fdedffddc04753bf348b3'}}}", "text_rec": "el.ttf', 'SHA256': '892e6c81071fc85923f8d0ff925edab6049dd4495a2fdedffddc04753bf348b3'}}}", "params_forzados": "PPOCRV5/MOBILE/ONNXRUNTIME (igual que bench/scripts/ocr_motor.py)"}, "reps": 9, "muestreo_vram": true}
+ppp110__escaneado_d3                 CER=  75.9%  dist=  60  frases=1/3     81.6 ms  det=si
+ppp130__escaneado_d3                 CER=  75.9%  dist=  60  frases=1/3    100.1 ms  det=si
+ppp140__escaneado_d3                 CER=  74.7%  dist=  59  frases=0/3    129.4 ms  det=si
+ppp160__escaneado_d3                 CER=  75.9%  dist=  60  frases=1/3    144.0 ms  det=si
+{"evento": "fin", "vram_pico_MiB": 1577, "vram_base_MiB": 824, "coste_propio_MiB": 753, "pico_util_pct": 61, "muestreo_vram": true, "aviso": "pico de VRAM valido; los tiempos llevan el coste del muestreo"}
+########## 02:36:31  docling / imagen extraida (escala 1.0) ##########
+{"dispositivo": "cuda", "backend": "torch", "escala": 1.0, "via": "imagen incrustada extraida (InputFormat.IMAGE)", "reps": 9, "vram_base_MiB": 824, "quietud_pct": 24, "flag": "SUCIA(pico 24%)"}
+[32m[INFO] 2026-08-21 02:36:45,155 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 02:36:45,163 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_det_small.pth[0m
+[32m[INFO] 2026-08-21 02:36:45,474 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 02:36:45,475 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-08-21 02:36:45,606 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-08-21 02:36:45,624 [RapidOCR] main.py:50: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_rec_small.pth[0m
+D:\Work\research\FileX\.venv-ai\Lib\site-packages\torch\nn\modules\conv.py:549: UserWarning: Using padding='same' with even kernel lengths and odd dilation may require a zero-padded copy of the input be created (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\aten\src\ATen\native\Convolution.cpp:1037.)
+  return F.conv2d(
+ext__escaneado_d1                  png=(970, 1300) motor=(970, 1300) OK  CER=   0.0%  dist=   0     386.0 ms
+ext__escaneado_d2                  png=(647, 850) motor=(647, 850) OK  CER=   0.0%  dist=   0     316.2 ms
+ext__escaneado_d3                  png=(647, 850) motor=(647, 850) OK  CER=  75.9%  dist=  60     357.5 ms
+ext__patologico_escaneado          png=(1294, 1792) motor=(1294, 1792) OK  CER=   0.0%  dist=   0    1188.3 ms
+extg__escaneado_d1                 png=(970, 1300) motor=(970, 1300) OK  CER=   0.0%  dist=   0     361.7 ms
+extg__escaneado_d2                 png=(647, 850) motor=(647, 850) OK  CER=   0.0%  dist=   0    1221.7 ms
+extg__escaneado_d3                 png=(647, 850) motor=(647, 850) OK  CER=  75.9%  dist=  60     835.8 ms
+extg__patologico_escaneado         png=(1294, 1792) motor=(1294, 1792) OK  CER=   0.0%  dist=   0     637.8 ms
+{"evento": "fin", "vram_pico_MiB": 1902, "vram_base_MiB": 824, "coste_propio_MiB": 1078, "pico_util_pct": 100, "sonda_activa": true}
+########## 02:37:55  tiempos limpios — rapidocr ##########
+[32m[INFO] 2026-08-21 02:38:04,022 [RapidOCR] main.py:63: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_PP-OCRv5_det_mobile.onnx[0m
+[32m[INFO] 2026-08-21 02:38:04,305 [RapidOCR] main.py:63: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ppocr_mobile_v2.0_cls_mobile.onnx[0m
+[32m[INFO] 2026-08-21 02:38:04,380 [RapidOCR] main.py:63: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_PP-OCRv5_rec_mobile.onnx[0m
+{"etiqueta": "rapidocr_cuda_t", "motor": "rapidocr", "dispositivo": "cuda", "carga_frio_s": 3.65, "vram_base_MiB": 833, "vram_tras_carga_MiB": 1004, "quietud_pct": 15, "flag": "SUCIA(pico 15%)", "modelos": {"text_det": "el.ttf', 'SHA256': '892e6c81071fc85923f8d0ff925edab6049dd4495a2fdedffddc04753bf348b3'}}}", "text_cls": "el.ttf', 'SHA256': '892e6c81071fc85923f8d0ff925edab6049dd4495a2fdedffddc04753bf348b3'}}}", "text_rec": "el.ttf', 'SHA256': '892e6c81071fc85923f8d0ff925edab6049dd4495a2fdedffddc04753bf348b3'}}}", "params_forzados": "PPOCRV5/MOBILE/ONNXRUNTIME (igual que bench/scripts/ocr_motor.py)"}, "reps": 9, "muestreo_vram": false}
+ext__escaneado_d1                    CER=   0.0%  dist=   0  frases=3/3    128.1 ms  det=si
+ext__escaneado_d2                    CER=   0.0%  dist=   0  frases=3/3     83.5 ms  det=si
+ext__escaneado_d3                    CER=  77.2%  dist=  61  frases=0/3     72.0 ms  det=si
+ext__patologico_escaneado            CER=   0.0%  dist=   0  frases=3/3    245.4 ms  det=si
+extg__escaneado_d1                   CER=   0.0%  dist=   0  frases=3/3    145.3 ms  det=si
+extg__escaneado_d2                   CER=   0.0%  dist=   0  frases=3/3    112.1 ms  det=si
+extg__escaneado_d3                   CER=  77.2%  dist=  61  frases=0/3    104.0 ms  det=si
+extg__patologico_escaneado           CER=   1.3%  dist=   1  frases=2/3    239.1 ms  det=si
+ppp100__escaneado_d1                 CER=   0.0%  dist=   0  frases=3/3     97.3 ms  det=si
+ppp100__escaneado_d2                 CER=   0.0%  dist=   0  frases=3/3     94.0 ms  det=si
+ppp100__escaneado_d3                 CER=  77.2%  dist=  61  frases=0/3     78.1 ms  det=si
+ppp100__patologico_escaneado         CER=   1.3%  dist=   1  frases=2/3    171.6 ms  det=si
+ppp125__escaneado_d1                 CER=   0.0%  dist=   0  frases=3/3    118.3 ms  det=si
+ppp125__escaneado_d2                 CER=   0.0%  dist=   0  frases=3/3    125.5 ms  det=si
+ppp125__escaneado_d3                 CER=  75.9%  dist=  60  frases=1/3    109.6 ms  det=si
+ppp125__patologico_escaneado         CER=   1.3%  dist=   1  frases=2/3    238.5 ms  det=si
+ppp150__escaneado_d1                 CER=   0.0%  dist=   0  frases=3/3    158.3 ms  det=si
+ppp150__escaneado_d2                 CER=   0.0%  dist=   0  frases=3/3    141.4 ms  det=si
+ppp150__escaneado_d3                 CER=  75.9%  dist=  60  frases=1/3    125.2 ms  det=si
+ppp150__patologico_escaneado         CER=   1.3%  dist=   1  frases=2/3    281.1 ms  det=si
+ppp175__escaneado_d1                 CER=   0.0%  dist=   0  frases=3/3    205.5 ms  det=si
+ppp175__escaneado_d2                 CER=   1.3%  dist=   1  frases=2/3    192.5 ms  det=si
+ppp175__escaneado_d3                 CER=  75.9%  dist=  60  frases=1/3    185.2 ms  det=si
+ppp175__patologico_escaneado         CER=   1.3%  dist=   1  frases=2/3    407.3 ms  det=si
+ppp200__escaneado_d1                 CER=   0.0%  dist=   0  frases=3/3    228.2 ms  det=si
+ppp200__escaneado_d2                 CER=   1.3%  dist=   1  frases=2/3    212.9 ms  det=si
+ppp200__escaneado_d3                 CER=  65.8%  dist=  52  frases=0/3    212.9 ms  det=si
+ppp200__patologico_escaneado         CER=   1.3%  dist=   1  frases=2/3    496.3 ms  det=si
+ppp250__escaneado_d1                 CER=   0.0%  dist=   0  frases=3/3    279.8 ms  det=si
+ppp250__escaneado_d2                 CER=   0.0%  dist=   0  frases=3/3    256.9 ms  det=si
+ppp250__escaneado_d3                 CER=  70.9%  dist=  56  frases=1/3    259.6 ms  det=si
+ppp250__patologico_escaneado         CER=   0.0%  dist=   0  frases=3/3    723.2 ms  det=si
+ppp300__escaneado_d1                 CER=   0.0%  dist=   0  frases=3/3    308.8 ms  det=si
+ppp300__escaneado_d2                 CER=   0.0%  dist=   0  frases=3/3    285.4 ms  det=si
+ppp300__escaneado_d3                 CER=  77.2%  dist=  61  frases=0/3    448.3 ms  det=si
+ppp300__patologico_escaneado         CER=   1.3%  dist=   1  frases=2/3    982.9 ms  det=si
+ppp75__escaneado_d1                  CER=   1.3%  dist=   1  frases=2/3     89.3 ms  det=si
+ppp75__escaneado_d2                  CER=  44.3%  dist=  35  frases=2/3     81.6 ms  det=si
+ppp75__escaneado_d3                  CER=  75.9%  dist=  60  frases=1/3     75.0 ms  det=si
+ppp75__patologico_escaneado          CER=   0.0%  dist=   0  frases=3/3    134.9 ms  det=si
+Traceback (most recent call last):
+  File "D:\Work\research\FileX\bench\salidas-ocr-ppp\20_ocr_lote.py", line 225, in <module>
+    mu.join(timeout=2)
+  File "C:\Users\krato\AppData\Local\Programs\Python\Python311\Lib\threading.py", line 1114, in join
+    raise RuntimeError("cannot join thread before it is started")
+RuntimeError: cannot join thread before it is started
+########## 02:39:44  tiempos limpios — paddleocr ##########
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+W0821 02:39:54.358323 165008 gpu_resources.cc:114] Please NOTE: device: 0, GPU Compute Capability: 8.6, Driver API Version: 12.8, Runtime API Version: 12.6
+{"etiqueta": "paddleocr_cuda_t", "motor": "paddleocr", "dispositivo": "cuda", "carga_frio_s": 6.72, "vram_base_MiB": 833, "vram_tras_carga_MiB": 1102, "quietud_pct": 7, "flag": "limpia", "modelos": {"paddle": "3.2.0", "paddle_cudnn_aviso": "compilado con cuDNN 9.9, maquina 9.5 (aviso de paddle)", "nombres_modelo": "ERROR TypeError: PaddleOCR._get_ocr_model_names() missing 2 required positional arguments: 'lang' and 'ppocr_version'", "params": {"doc_orientation_classify_model_name": "None", "doc_orientation_classify_model_dir": "None", "doc_unwarping_model_name": "None", "doc_unwarping_model_dir": "None", "text_detection_model_name": "PP-OCRv6_medium_det", "text_detection_model_dir": "None", "textline_orientation_model_name": "None", "textline_orientation_model_dir": "None", "text_recognition_model_name": "PP-OCRv6_medium_rec", "text_recognition_model_dir": "None"}}, "reps": 9, "muestreo_vram": false}
+W0821 02:39:57.158938 165008 gpu_resources.cc:243] WARNING: device: 0. The installed Paddle is compiled with CUDNN 9.9, but CUDNN version in your machine is 9.5, which may cause serious incompatible bug. Please recompile or reinstall Paddle with compatible CUDNN version.
+ext__escaneado_d1                    CER=   0.0%  dist=   0  frases=3/3    159.7 ms  det=si
+ext__escaneado_d2                    CER=   0.0%  dist=   0  frases=3/3     95.8 ms  det=si
+ext__escaneado_d3                    CER=   2.5%  dist=   2  frases=2/3     89.1 ms  det=si
+ext__patologico_escaneado            CER=   0.0%  dist=   0  frases=3/3    249.8 ms  det=si
+extg__escaneado_d1                   CER=   0.0%  dist=   0  frases=3/3    156.0 ms  det=si
+extg__escaneado_d2                   CER=   0.0%  dist=   0  frases=3/3     88.4 ms  det=si
+extg__escaneado_d3                   CER=   2.5%  dist=   2  frases=2/3     82.5 ms  det=si
+extg__patologico_escaneado           CER=   0.0%  dist=   0  frases=3/3    239.7 ms  det=si
+ppp100__escaneado_d1                 CER=   0.0%  dist=   0  frases=3/3     90.9 ms  det=si
+ppp100__escaneado_d2                 CER=   0.0%  dist=   0  frases=3/3     87.1 ms  det=si
+ppp100__escaneado_d3                 CER=   2.5%  dist=   2  frases=2/3     85.4 ms  det=si
+ppp100__patologico_escaneado         CER=   0.0%  dist=   0  frases=3/3     99.7 ms  det=si
+ppp125__escaneado_d1                 CER=   0.0%  dist=   0  frases=3/3    115.3 ms  det=si
+ppp125__escaneado_d2                 CER=   0.0%  dist=   0  frases=3/3    107.9 ms  det=si
+ppp125__escaneado_d3                 CER=   5.1%  dist=   4  frases=2/3    107.6 ms  det=si
+ppp125__patologico_escaneado         CER=   0.0%  dist=   0  frases=3/3    121.3 ms  det=si
+ppp150__escaneado_d1                 CER=   0.0%  dist=   0  frases=3/3    147.8 ms  det=si
+ppp150__escaneado_d2                 CER=   0.0%  dist=   0  frases=3/3    147.7 ms  det=si
+ppp150__escaneado_d3                 CER=  31.6%  dist=  25  frases=2/3    148.1 ms  det=si
+ppp150__patologico_escaneado         CER=   0.0%  dist=   0  frases=3/3    186.6 ms  det=si
+ppp175__escaneado_d1                 CER=   0.0%  dist=   0  frases=3/3    184.6 ms  det=si
+ppp175__escaneado_d2                 CER=   0.0%  dist=   0  frases=3/3    175.4 ms  det=si
+ppp175__escaneado_d3                 CER=  75.9%  dist=  60  frases=1/3    159.5 ms  det=si
+ppp175__patologico_escaneado         CER=   0.0%  dist=   0  frases=3/3    224.2 ms  det=si
+ppp200__escaneado_d1                 CER=   0.0%  dist=   0  frases=3/3    241.3 ms  det=si
+ppp200__escaneado_d2                 CER=   0.0%  dist=   0  frases=3/3    218.4 ms  det=si
+ppp200__escaneado_d3                 CER=  75.9%  dist=  60  frases=1/3    202.5 ms  det=si
+ppp200__patologico_escaneado         CER=   0.0%  dist=   0  frases=3/3    401.9 ms  det=si
+ppp250__escaneado_d1                 CER=   0.0%  dist=   0  frases=3/3    516.0 ms  det=si
+ppp250__escaneado_d2                 CER=   0.0%  dist=   0  frases=3/3    524.1 ms  det=si
+ppp250__escaneado_d3                 CER=  75.9%  dist=  60  frases=1/3    430.4 ms  det=si
+ppp250__patologico_escaneado         CER=   0.0%  dist=   0  frases=3/3    619.3 ms  det=si
+ppp300__escaneado_d1                 CER=   0.0%  dist=   0  frases=3/3    662.1 ms  det=si
+ppp300__escaneado_d2                 CER=   0.0%  dist=   0  frases=3/3    639.1 ms  det=si
+ppp300__escaneado_d3                 CER=  75.9%  dist=  60  frases=1/3    550.8 ms  det=si
+ppp300__patologico_escaneado         CER=   0.0%  dist=   0  frases=3/3    553.9 ms  det=si
+ppp75__escaneado_d1                  CER=   0.0%  dist=   0  frases=3/3     62.1 ms  det=si
+ppp75__escaneado_d2                  CER=   0.0%  dist=   0  frases=3/3     62.5 ms  det=si
+ppp75__escaneado_d3                  CER=  11.4%  dist=   9  frases=1/3     65.6 ms  det=si
+ppp75__patologico_escaneado          CER=   0.0%  dist=   0  frases=3/3     71.1 ms  det=si
+Traceback (most recent call last):
+  File "D:\Work\research\FileX\bench\salidas-ocr-ppp\20_ocr_lote.py", line 225, in <module>
+    mu.join(timeout=2)
+  File "C:\Users\krato\AppData\Local\Programs\Python\Python311\Lib\threading.py", line 1114, in join
+    raise RuntimeError("cannot join thread before it is started")
+RuntimeError: cannot join thread before it is started
+########## 02:41:31  tiempos limpios — easyocr ##########
+{"etiqueta": "easyocr_cuda_t", "motor": "easyocr", "dispositivo": "cuda", "carga_frio_s": 7.46, "vram_base_MiB": 865, "vram_tras_carga_MiB": 1111, "quietud_pct": 6, "flag": "limpia", "modelos": {"torch": "2.6.0+cu124", "torch_cuda": "True"}, "reps": 9, "muestreo_vram": false}
+ext__escaneado_d1                    CER=   0.0%  dist=   0  frases=3/3    297.5 ms  det=si
+ext__escaneado_d2                    CER=  43.0%  dist=  34  frases=1/3    206.2 ms  det=si
+ext__escaneado_d3                    CER=  54.4%  dist=  43  frases=1/3    326.6 ms  det=si
+ext__patologico_escaneado            CER=   0.0%  dist=   0  frases=3/3    525.0 ms  det=si
+extg__escaneado_d1                   CER=   0.0%  dist=   0  frases=3/3    317.2 ms  det=si
+extg__escaneado_d2                   CER=  43.0%  dist=  34  frases=1/3    203.9 ms  det=si
+extg__escaneado_d3                   CER=  54.4%  dist=  43  frases=1/3    309.1 ms  det=si
+extg__patologico_escaneado           CER=   0.0%  dist=   0  frases=3/3    485.8 ms  det=si
+ppp100__escaneado_d1                 CER=  15.2%  dist=  12  frases=2/3    165.3 ms  det=si
+ppp100__escaneado_d2                 CER=  43.0%  dist=  34  frases=1/3    181.1 ms  det=si
+ppp100__escaneado_d3                 CER=  54.4%  dist=  43  frases=1/3    347.7 ms  det=si
+ppp100__patologico_escaneado         CER=   0.0%  dist=   0  frases=3/3    216.0 ms  det=si
+ppp125__escaneado_d1                 CER=   0.0%  dist=   0  frases=3/3    209.4 ms  det=si
+ppp125__escaneado_d2                 CER=  40.5%  dist=  32  frases=1/3    265.5 ms  det=si
+ppp125__escaneado_d3                 CER=  50.6%  dist=  40  frases=1/3    371.0 ms  det=si
+ppp125__patologico_escaneado         CER=   0.0%  dist=   0  frases=3/3    268.3 ms  det=si
+ppp150__escaneado_d1                 CER=   0.0%  dist=   0  frases=3/3    302.0 ms  det=si
+ppp150__escaneado_d2                 CER=  39.2%  dist=  31  frases=1/3    333.3 ms  det=si
+ppp150__escaneado_d3                 CER=  54.4%  dist=  43  frases=1/3    377.7 ms  det=si
+ppp150__patologico_escaneado         CER=   0.0%  dist=   0  frases=3/3    356.7 ms  det=si
+ppp175__escaneado_d1                 CER=   0.0%  dist=   0  frases=3/3    363.3 ms  det=si
+ppp175__escaneado_d2                 CER=  44.3%  dist=  35  frases=1/3    367.1 ms  det=si
+ppp175__escaneado_d3                 CER=  54.4%  dist=  43  frases=1/3    408.0 ms  det=si
+ppp175__patologico_escaneado         CER=   0.0%  dist=   0  frases=3/3    472.8 ms  det=si
+ppp200__escaneado_d1                 CER=   0.0%  dist=   0  frases=3/3    418.9 ms  det=si
+ppp200__escaneado_d2                 CER=  43.0%  dist=  34  frases=1/3    478.7 ms  det=si
+ppp200__escaneado_d3                 CER=  59.5%  dist=  47  frases=1/3    536.5 ms  det=si
+ppp200__patologico_escaneado         CER=   0.0%  dist=   0  frases=3/3    550.1 ms  det=si
+ppp250__escaneado_d1                 CER=   0.0%  dist=   0  frases=3/3    618.5 ms  det=si
+ppp250__escaneado_d2                 CER=  34.2%  dist=  27  frases=1/3    627.8 ms  det=si
+ppp250__escaneado_d3                 CER=  51.9%  dist=  41  frases=1/3    684.0 ms  det=si
+ppp250__patologico_escaneado         CER=   0.0%  dist=   0  frases=3/3    821.4 ms  det=si
+ppp300__escaneado_d1                 CER=   0.0%  dist=   0  frases=3/3   1905.5 ms  det=si
+ppp300__escaneado_d2                 CER=  40.5%  dist=  32  frases=1/3   2907.1 ms  det=si
+ppp300__escaneado_d3                 CER=  53.2%  dist=  42  frases=1/3   3177.5 ms  det=si
+ppp300__patologico_escaneado         CER=   0.0%  dist=   0  frases=3/3   2119.7 ms  det=si
+ppp75__escaneado_d1                  CER=  12.7%  dist=  10  frases=2/3    143.0 ms  det=si
+ppp75__escaneado_d2                  CER=  43.0%  dist=  34  frases=1/3    142.2 ms  det=si
+ppp75__escaneado_d3                  CER=  58.2%  dist=  46  frases=1/3    250.7 ms  det=si
+ppp75__patologico_escaneado          CER=   0.0%  dist=   0  frases=3/3    173.4 ms  det=si
+Traceback (most recent call last):
+  File "D:\Work\research\FileX\bench\salidas-ocr-ppp\20_ocr_lote.py", line 225, in <module>
+    mu.join(timeout=2)
+  File "C:\Users\krato\AppData\Local\Programs\Python\Python311\Lib\threading.py", line 1114, in join
+    raise RuntimeError("cannot join thread before it is started")
+RuntimeError: cannot join thread before it is started
+[lock] liberado  02:45:41

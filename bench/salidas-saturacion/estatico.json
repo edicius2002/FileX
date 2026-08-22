@@ -1,0 +1,1001 @@
+[
+ {
+  "catalogo": "A",
+  "etiqueta": "video-audio-mcp (27)",
+  "n": 27,
+  "tokens_declaracion_suma": 7936,
+  "familias_prefijo": {
+   "convert_audio": [
+    "convert_audio_properties",
+    "convert_audio_format"
+   ],
+   "convert_video": [
+    "convert_video_properties",
+    "convert_video_format"
+   ],
+   "set_audio": [
+    "set_audio_bitrate",
+    "set_audio_sample_rate",
+    "set_audio_channels"
+   ],
+   "set_video": [
+    "set_video_resolution",
+    "set_video_codec",
+    "set_video_bitrate",
+    "set_video_frame_rate",
+    "set_video_audio_track_codec",
+    "set_video_audio_track_bitrate",
+    "set_video_audio_track_sample_rate",
+    "set_video_audio_track_channels"
+   ],
+   "set_video_audio": [
+    "set_video_audio_track_codec",
+    "set_video_audio_track_bitrate",
+    "set_video_audio_track_sample_rate",
+    "set_video_audio_track_channels"
+   ],
+   "set_video_audio_track": [
+    "set_video_audio_track_codec",
+    "set_video_audio_track_bitrate",
+    "set_video_audio_track_sample_rate",
+    "set_video_audio_track_channels"
+   ]
+  },
+  "n_pares": 351,
+  "pares_nombre_sim_ge_070": 22,
+  "pares_desc_sim_ge_070": 31,
+  "pares_desc_sim_ge_085": 13,
+  "pares_params_identicos": 0,
+  "pares_params_anidados": 40,
+  "pares_confundibles": 13,
+  "frac_con_gemelo_por_descripcion": 0.519,
+  "frac_confundible_nombre_y_desc": 0.481,
+  "herramientas_confundibles": [
+   "convert_audio_format",
+   "convert_audio_properties",
+   "convert_video_format",
+   "convert_video_properties",
+   "set_audio_bitrate",
+   "set_audio_sample_rate",
+   "set_video_audio_track_bitrate",
+   "set_video_audio_track_channels",
+   "set_video_audio_track_codec",
+   "set_video_audio_track_sample_rate",
+   "set_video_bitrate",
+   "set_video_codec",
+   "set_video_frame_rate"
+  ],
+  "resumenes_identicos": {},
+  "descripciones_con_referencia_externa": [
+   {
+    "tool": "convert_video_properties",
+    "marcas": [
+     "prd"
+    ]
+   },
+   {
+    "tool": "change_aspect_ratio",
+    "marcas": [
+     "prd"
+    ]
+   },
+   {
+    "tool": "remove_silence",
+    "marcas": [
+     "below"
+    ]
+   },
+   {
+    "tool": "add_b_roll",
+    "marcas": [
+     "previous message",
+     "brevity"
+    ]
+   }
+  ],
+  "n_parametros": 102,
+  "n_parametros_sin_descripcion": 102,
+  "frac_parametros_sin_descripcion": 1.0,
+  "esquemas_opacos": [
+   "add_subtitles.font_style",
+   "add_text_overlay.text_elements",
+   "add_b_roll.broll_clips"
+  ],
+  "formas_esquema": {
+   "(('string', True), ('string', True), ('string', True))": [
+    "convert_audio_format",
+    "set_audio_bitrate",
+    "convert_video_format",
+    "set_video_resolution",
+    "set_video_codec",
+    "set_video_bitrate",
+    "set_video_audio_track_codec",
+    "set_video_audio_track_bitrate"
+   ],
+   "(('integer', True), ('string', True), ('string', True))": [
+    "set_audio_sample_rate",
+    "set_audio_channels",
+    "set_video_frame_rate",
+    "set_video_audio_track_sample_rate",
+    "set_video_audio_track_channels"
+   ],
+   "(('array', True), ('string', True), ('string', True))": [
+    "add_text_overlay",
+    "add_b_roll"
+   ]
+  },
+  "n_en_forma_compartida": 15,
+  "frac_en_forma_compartida": 0.556,
+  "indistinguibles_salvo_nombres_de_argumento": [
+   "convert_audio_format",
+   "convert_video_format",
+   "set_video_audio_track_bitrate",
+   "set_video_audio_track_channels",
+   "set_video_audio_track_codec",
+   "set_video_audio_track_sample_rate",
+   "set_video_bitrate",
+   "set_video_codec",
+   "set_video_frame_rate",
+   "set_video_resolution"
+  ],
+  "frac_indistinguibles": 0.37,
+  "_pares": [
+   {
+    "a": "set_video_audio_track_bitrate",
+    "b": "set_video_audio_track_sample_rate",
+    "jaccard_nombre": 0.571,
+    "sim_nombre": 0.839,
+    "jaccard_desc": 0.727,
+    "sim_desc": 0.943,
+    "jaccard_params": 0.5,
+    "params_anidados": false
+   },
+   {
+    "a": "set_video_audio_track_codec",
+    "b": "set_video_audio_track_bitrate",
+    "jaccard_nombre": 0.667,
+    "sim_nombre": 0.821,
+    "jaccard_desc": 0.8,
+    "sim_desc": 0.94,
+    "jaccard_params": 0.5,
+    "params_anidados": false
+   },
+   {
+    "a": "set_video_audio_track_codec",
+    "b": "set_video_audio_track_channels",
+    "jaccard_nombre": 0.667,
+    "sim_nombre": 0.842,
+    "jaccard_desc": 0.727,
+    "sim_desc": 0.894,
+    "jaccard_params": 0.5,
+    "params_anidados": false
+   },
+   {
+    "a": "set_video_audio_track_bitrate",
+    "b": "set_video_audio_track_channels",
+    "jaccard_nombre": 0.667,
+    "sim_nombre": 0.814,
+    "jaccard_desc": 0.727,
+    "sim_desc": 0.884,
+    "jaccard_params": 0.5,
+    "params_anidados": false
+   },
+   {
+    "a": "set_video_audio_track_codec",
+    "b": "set_video_audio_track_sample_rate",
+    "jaccard_nombre": 0.571,
+    "sim_nombre": 0.767,
+    "jaccard_desc": 0.727,
+    "sim_desc": 0.919,
+    "jaccard_params": 0.5,
+    "params_anidados": false
+   },
+   {
+    "a": "set_video_bitrate",
+    "b": "set_video_frame_rate",
+    "jaccard_nombre": 0.4,
+    "sim_nombre": 0.757,
+    "jaccard_desc": 0.667,
+    "sim_desc": 0.921,
+    "jaccard_params": 0.5,
+    "params_anidados": false
+   },
+   {
+    "a": "convert_audio_properties",
+    "b": "convert_video_properties",
+    "jaccard_nombre": 0.5,
+    "sim_nombre": 0.875,
+    "jaccard_desc": 0.4,
+    "sim_desc": 0.752,
+    "jaccard_params": 0.062,
+    "params_anidados": false
+   },
+   {
+    "a": "set_video_codec",
+    "b": "set_video_bitrate",
+    "jaccard_nombre": 0.5,
+    "sim_nombre": 0.688,
+    "jaccard_desc": 0.75,
+    "sim_desc": 0.929,
+    "jaccard_params": 0.5,
+    "params_anidados": false
+   },
+   {
+    "a": "set_audio_bitrate",
+    "b": "set_audio_sample_rate",
+    "jaccard_nombre": 0.4,
+    "sim_nombre": 0.737,
+    "jaccard_desc": 0.4,
+    "sim_desc": 0.865,
+    "jaccard_params": 0.5,
+    "params_anidados": false
+   },
+   {
+    "a": "set_video_audio_track_sample_rate",
+    "b": "set_video_audio_track_channels",
+    "jaccard_nombre": 0.571,
+    "sim_nombre": 0.73,
+    "jaccard_desc": 0.667,
+    "sim_desc": 0.854,
+    "jaccard_params": 0.5,
+    "params_anidados": false
+   },
+   {
+    "a": "set_video_bitrate",
+    "b": "set_video_audio_track_bitrate",
+    "jaccard_nombre": 0.6,
+    "sim_nombre": 0.739,
+    "jaccard_desc": 0.778,
+    "sim_desc": 0.833,
+    "jaccard_params": 0.5,
+    "params_anidados": false
+   },
+   {
+    "a": "convert_audio_format",
+    "b": "convert_video_format",
+    "jaccard_nombre": 0.5,
+    "sim_nombre": 0.85,
+    "jaccard_desc": 0.25,
+    "sim_desc": 0.714,
+    "jaccard_params": 0.2,
+    "params_anidados": false
+   },
+   {
+    "a": "set_video_resolution",
+    "b": "set_video_frame_rate",
+    "jaccard_nombre": 0.4,
+    "sim_nombre": 0.65,
+    "jaccard_desc": 0.667,
+    "sim_desc": 0.897,
+    "jaccard_params": 0.5,
+    "params_anidados": false
+   },
+   {
+    "a": "set_video_codec",
+    "b": "set_video_audio_track_codec",
+    "jaccard_nombre": 0.6,
+    "sim_nombre": 0.714,
+    "jaccard_desc": 0.778,
+    "sim_desc": 0.829,
+    "jaccard_params": 0.5,
+    "params_anidados": false
+   },
+   {
+    "a": "set_video_resolution",
+    "b": "set_video_codec",
+    "jaccard_nombre": 0.5,
+    "sim_nombre": 0.629,
+    "jaccard_desc": 0.75,
+    "sim_desc": 0.891,
+    "jaccard_params": 0.5,
+    "params_anidados": false
+   },
+   {
+    "a": "set_video_codec",
+    "b": "set_video_frame_rate",
+    "jaccard_nombre": 0.4,
+    "sim_nombre": 0.629,
+    "jaccard_desc": 0.667,
+    "sim_desc": 0.891,
+    "jaccard_params": 0.5,
+    "params_anidados": false
+   },
+   {
+    "a": "set_video_frame_rate",
+    "b": "set_video_audio_track_sample_rate",
+    "jaccard_nombre": 0.429,
+    "sim_nombre": 0.717,
+    "jaccard_desc": 0.636,
+    "sim_desc": 0.803,
+    "jaccard_params": 0.5,
+    "params_anidados": false
+   },
+   {
+    "a": "set_video_resolution",
+    "b": "set_video_bitrate",
+    "jaccard_nombre": 0.5,
+    "sim_nombre": 0.649,
+    "jaccard_desc": 0.75,
+    "sim_desc": 0.863,
+    "jaccard_params": 0.5,
+    "params_anidados": false
+   },
+   {
+    "a": "set_video_frame_rate",
+    "b": "set_video_audio_track_bitrate",
+    "jaccard_nombre": 0.286,
+    "sim_nombre": 0.694,
+    "jaccard_desc": 0.545,
+    "sim_desc": 0.797,
+    "jaccard_params": 0.5,
+    "params_anidados": false
+   },
+   {
+    "a": "set_video_bitrate",
+    "b": "set_video_audio_track_codec",
+    "jaccard_nombre": 0.333,
+    "sim_nombre": 0.682,
+    "jaccard_desc": 0.6,
+    "sim_desc": 0.753,
+    "jaccard_params": 0.5,
+    "params_anidados": false
+   },
+   {
+    "a": "set_video_bitrate",
+    "b": "set_video_audio_track_sample_rate",
+    "jaccard_nombre": 0.286,
+    "sim_nombre": 0.64,
+    "jaccard_desc": 0.545,
+    "sim_desc": 0.775,
+    "jaccard_params": 0.5,
+    "params_anidados": false
+   },
+   {
+    "a": "set_audio_bitrate",
+    "b": "set_video_bitrate",
+    "jaccard_nombre": 0.5,
+    "sim_nombre": 0.824,
+    "jaccard_desc": 0.429,
+    "sim_desc": 0.566,
+    "jaccard_params": 0.0,
+    "params_anidados": false
+   },
+   {
+    "a": "set_video_bitrate",
+    "b": "set_video_audio_track_channels",
+    "jaccard_nombre": 0.333,
+    "sim_nombre": 0.638,
+    "jaccard_desc": 0.545,
+    "sim_desc": 0.719,
+    "jaccard_params": 0.5,
+    "params_anidados": false
+   },
+   {
+    "a": "set_video_resolution",
+    "b": "set_video_audio_track_codec",
+    "jaccard_nombre": 0.333,
+    "sim_nombre": 0.553,
+    "jaccard_desc": 0.6,
+    "sim_desc": 0.768,
+    "jaccard_params": 0.5,
+    "params_anidados": false
+   },
+   {
+    "a": "set_audio_channels",
+    "b": "set_video_audio_track_channels",
+    "jaccard_nombre": 0.6,
+    "sim_nombre": 0.75,
+    "jaccard_desc": 0.286,
+    "sim_desc": 0.568,
+    "jaccard_params": 0.0,
+    "params_anidados": false
+   }
+  ]
+ },
+ {
+  "catalogo": "C",
+  "etiqueta": "video-audio-mcp sin subsumidas (14)",
+  "n": 14,
+  "tokens_declaracion_suma": 4773,
+  "familias_prefijo": {},
+  "n_pares": 91,
+  "pares_nombre_sim_ge_070": 2,
+  "pares_desc_sim_ge_070": 1,
+  "pares_desc_sim_ge_085": 0,
+  "pares_params_identicos": 0,
+  "pares_params_anidados": 14,
+  "pares_confundibles": 1,
+  "frac_con_gemelo_por_descripcion": 0.143,
+  "frac_confundible_nombre_y_desc": 0.143,
+  "herramientas_confundibles": [
+   "convert_audio_properties",
+   "convert_video_properties"
+  ],
+  "resumenes_identicos": {},
+  "descripciones_con_referencia_externa": [
+   {
+    "tool": "convert_video_properties",
+    "marcas": [
+     "prd"
+    ]
+   },
+   {
+    "tool": "change_aspect_ratio",
+    "marcas": [
+     "prd"
+    ]
+   },
+   {
+    "tool": "remove_silence",
+    "marcas": [
+     "below"
+    ]
+   },
+   {
+    "tool": "add_b_roll",
+    "marcas": [
+     "previous message",
+     "brevity"
+    ]
+   }
+  ],
+  "n_parametros": 63,
+  "n_parametros_sin_descripcion": 63,
+  "frac_parametros_sin_descripcion": 1.0,
+  "esquemas_opacos": [
+   "add_subtitles.font_style",
+   "add_text_overlay.text_elements",
+   "add_b_roll.broll_clips"
+  ],
+  "formas_esquema": {
+   "(('array', True), ('string', True), ('string', True))": [
+    "add_text_overlay",
+    "add_b_roll"
+   ]
+  },
+  "n_en_forma_compartida": 2,
+  "frac_en_forma_compartida": 0.143,
+  "indistinguibles_salvo_nombres_de_argumento": [],
+  "frac_indistinguibles": 0.0,
+  "_pares": [
+   {
+    "a": "convert_audio_properties",
+    "b": "convert_video_properties",
+    "jaccard_nombre": 0.5,
+    "sim_nombre": 0.875,
+    "jaccard_desc": 0.4,
+    "sim_desc": 0.752,
+    "jaccard_params": 0.062,
+    "params_anidados": false
+   },
+   {
+    "a": "add_text_overlay",
+    "b": "add_image_overlay",
+    "jaccard_nombre": 0.5,
+    "sim_nombre": 0.788,
+    "jaccard_desc": 0.167,
+    "sim_desc": 0.432,
+    "jaccard_params": 0.2,
+    "params_anidados": false
+   },
+   {
+    "a": "change_aspect_ratio",
+    "b": "change_video_speed",
+    "jaccard_nombre": 0.2,
+    "sim_nombre": 0.541,
+    "jaccard_desc": 0.2,
+    "sim_desc": 0.564,
+    "jaccard_params": 0.333,
+    "params_anidados": false
+   },
+   {
+    "a": "extract_audio_from_video",
+    "b": "trim_video",
+    "jaccard_nombre": 0.2,
+    "sim_nombre": 0.588,
+    "jaccard_desc": 0.125,
+    "sim_desc": 0.454,
+    "jaccard_params": 0.167,
+    "params_anidados": false
+   },
+   {
+    "a": "add_subtitles",
+    "b": "add_b_roll",
+    "jaccard_nombre": 0.25,
+    "sim_nombre": 0.522,
+    "jaccard_desc": 0.083,
+    "sim_desc": 0.45,
+    "jaccard_params": 0.167,
+    "params_anidados": false
+   },
+   {
+    "a": "extract_audio_from_video",
+    "b": "convert_audio_properties",
+    "jaccard_nombre": 0.167,
+    "sim_nombre": 0.583,
+    "jaccard_desc": 0.077,
+    "sim_desc": 0.366,
+    "jaccard_params": 0.125,
+    "params_anidados": false
+   },
+   {
+    "a": "convert_video_properties",
+    "b": "concatenate_videos",
+    "jaccard_nombre": 0.0,
+    "sim_nombre": 0.571,
+    "jaccard_desc": 0.043,
+    "sim_desc": 0.342,
+    "jaccard_params": 0.071,
+    "params_anidados": false
+   },
+   {
+    "a": "convert_video_properties",
+    "b": "change_video_speed",
+    "jaccard_nombre": 0.2,
+    "sim_nombre": 0.619,
+    "jaccard_desc": 0.062,
+    "sim_desc": 0.263,
+    "jaccard_params": 0.077,
+    "params_anidados": false
+   },
+   {
+    "a": "add_subtitles",
+    "b": "add_text_overlay",
+    "jaccard_nombre": 0.25,
+    "sim_nombre": 0.483,
+    "jaccard_desc": 0.077,
+    "sim_desc": 0.389,
+    "jaccard_params": 0.4,
+    "params_anidados": false
+   },
+   {
+    "a": "add_subtitles",
+    "b": "remove_silence",
+    "jaccard_nombre": 0.0,
+    "sim_nombre": 0.37,
+    "jaccard_desc": 0.1,
+    "sim_desc": 0.479,
+    "jaccard_params": 0.0,
+    "params_anidados": false
+   },
+   {
+    "a": "add_text_overlay",
+    "b": "add_b_roll",
+    "jaccard_nombre": 0.2,
+    "sim_nombre": 0.538,
+    "jaccard_desc": 0.154,
+    "sim_desc": 0.302,
+    "jaccard_params": 0.2,
+    "params_anidados": false
+   },
+   {
+    "a": "add_image_overlay",
+    "b": "add_b_roll",
+    "jaccard_nombre": 0.2,
+    "sim_nombre": 0.519,
+    "jaccard_desc": 0.083,
+    "sim_desc": 0.317,
+    "jaccard_params": 0.091,
+    "params_anidados": false
+   },
+   {
+    "a": "add_b_roll",
+    "b": "add_basic_transitions",
+    "jaccard_nombre": 0.2,
+    "sim_nombre": 0.516,
+    "jaccard_desc": 0.077,
+    "sim_desc": 0.316,
+    "jaccard_params": 0.167,
+    "params_anidados": false
+   },
+   {
+    "a": "extract_audio_from_video",
+    "b": "change_aspect_ratio",
+    "jaccard_nombre": 0.0,
+    "sim_nombre": 0.372,
+    "jaccard_desc": 0.111,
+    "sim_desc": 0.459,
+    "jaccard_params": 0.143,
+    "params_anidados": false
+   },
+   {
+    "a": "trim_video",
+    "b": "convert_video_properties",
+    "jaccard_nombre": 0.25,
+    "sim_nombre": 0.412,
+    "jaccard_desc": 0.067,
+    "sim_desc": 0.408,
+    "jaccard_params": 0.071,
+    "params_anidados": false
+   },
+   {
+    "a": "extract_audio_from_video",
+    "b": "change_video_speed",
+    "jaccard_nombre": 0.167,
+    "sim_nombre": 0.333,
+    "jaccard_desc": 0.25,
+    "sim_desc": 0.48,
+    "jaccard_params": 0.2,
+    "params_anidados": false
+   },
+   {
+    "a": "concatenate_videos",
+    "b": "change_video_speed",
+    "jaccard_nombre": 0.0,
+    "sim_nombre": 0.556,
+    "jaccard_desc": 0.056,
+    "sim_desc": 0.255,
+    "jaccard_params": 0.167,
+    "params_anidados": false
+   },
+   {
+    "a": "trim_video",
+    "b": "concatenate_videos",
+    "jaccard_nombre": 0.0,
+    "sim_nombre": 0.5,
+    "jaccard_desc": 0.059,
+    "sim_desc": 0.292,
+    "jaccard_params": 0.143,
+    "params_anidados": false
+   },
+   {
+    "a": "add_subtitles",
+    "b": "add_basic_transitions",
+    "jaccard_nombre": 0.25,
+    "sim_nombre": 0.471,
+    "jaccard_desc": 0.083,
+    "sim_desc": 0.303,
+    "jaccard_params": 0.333,
+    "params_anidados": false
+   },
+   {
+    "a": "trim_video",
+    "b": "change_video_speed",
+    "jaccard_nombre": 0.25,
+    "sim_nombre": 0.429,
+    "jaccard_desc": 0.1,
+    "sim_desc": 0.324,
+    "jaccard_params": 0.4,
+    "params_anidados": false
+   },
+   {
+    "a": "add_image_overlay",
+    "b": "add_basic_transitions",
+    "jaccard_nombre": 0.2,
+    "sim_nombre": 0.368,
+    "jaccard_desc": 0.182,
+    "sim_desc": 0.372,
+    "jaccard_params": 0.182,
+    "params_anidados": false
+   },
+   {
+    "a": "add_subtitles",
+    "b": "add_image_overlay",
+    "jaccard_nombre": 0.25,
+    "sim_nombre": 0.4,
+    "jaccard_desc": 0.091,
+    "sim_desc": 0.336,
+    "jaccard_params": 0.182,
+    "params_anidados": false
+   },
+   {
+    "a": "change_aspect_ratio",
+    "b": "add_b_roll",
+    "jaccard_nombre": 0.0,
+    "sim_nombre": 0.345,
+    "jaccard_desc": 0.083,
+    "sim_desc": 0.386,
+    "jaccard_params": 0.143,
+    "params_anidados": false
+   },
+   {
+    "a": "extract_audio_from_video",
+    "b": "add_b_roll",
+    "jaccard_nombre": 0.0,
+    "sim_nombre": 0.294,
+    "jaccard_desc": 0.1,
+    "sim_desc": 0.433,
+    "jaccard_params": 0.0,
+    "params_anidados": false
+   },
+   {
+    "a": "add_text_overlay",
+    "b": "add_basic_transitions",
+    "jaccard_nombre": 0.2,
+    "sim_nombre": 0.378,
+    "jaccard_desc": 0.154,
+    "sim_desc": 0.348,
+    "jaccard_params": 0.4,
+    "params_anidados": false
+   }
+  ]
+ },
+ {
+  "catalogo": "B",
+  "etiqueta": "ffmpeg-mcp-lite (8)",
+  "n": 8,
+  "tokens_declaracion_suma": 2313,
+  "familias_prefijo": {
+   "ffmpeg_extract": [
+    "ffmpeg_extract_audio",
+    "ffmpeg_extract_frames"
+   ]
+  },
+  "n_pares": 28,
+  "pares_nombre_sim_ge_070": 2,
+  "pares_desc_sim_ge_070": 1,
+  "pares_desc_sim_ge_085": 0,
+  "pares_params_identicos": 0,
+  "pares_params_anidados": 6,
+  "pares_confundibles": 1,
+  "frac_con_gemelo_por_descripcion": 0.25,
+  "frac_confundible_nombre_y_desc": 0.25,
+  "herramientas_confundibles": [
+   "ffmpeg_extract_audio",
+   "ffmpeg_extract_frames"
+  ],
+  "resumenes_identicos": {},
+  "descripciones_con_referencia_externa": [],
+  "n_parametros": 28,
+  "n_parametros_sin_descripcion": 28,
+  "frac_parametros_sin_descripcion": 1.0,
+  "esquemas_opacos": [],
+  "formas_esquema": {},
+  "n_en_forma_compartida": 0,
+  "frac_en_forma_compartida": 0.0,
+  "indistinguibles_salvo_nombres_de_argumento": [],
+  "frac_indistinguibles": 0.0,
+  "_pares": [
+   {
+    "a": "ffmpeg_extract_audio",
+    "b": "ffmpeg_extract_frames",
+    "jaccard_nombre": 0.5,
+    "sim_nombre": 0.78,
+    "jaccard_desc": 0.333,
+    "sim_desc": 0.711,
+    "jaccard_params": 0.167,
+    "params_anidados": false
+   },
+   {
+    "a": "ffmpeg_compress",
+    "b": "ffmpeg_merge",
+    "jaccard_nombre": 0.333,
+    "sim_nombre": 0.741,
+    "jaccard_desc": 0.125,
+    "sim_desc": 0.524,
+    "jaccard_params": 0.0,
+    "params_anidados": false
+   },
+   {
+    "a": "ffmpeg_convert",
+    "b": "ffmpeg_compress",
+    "jaccard_nombre": 0.333,
+    "sim_nombre": 0.69,
+    "jaccard_desc": 0.125,
+    "sim_desc": 0.452,
+    "jaccard_params": 0.286,
+    "params_anidados": false
+   },
+   {
+    "a": "ffmpeg_get_info",
+    "b": "ffmpeg_convert",
+    "jaccard_nombre": 0.25,
+    "sim_nombre": 0.621,
+    "jaccard_desc": 0.25,
+    "sim_desc": 0.512,
+    "jaccard_params": 0.2,
+    "params_anidados": true
+   },
+   {
+    "a": "ffmpeg_compress",
+    "b": "ffmpeg_trim",
+    "jaccard_nombre": 0.333,
+    "sim_nombre": 0.615,
+    "jaccard_desc": 0.125,
+    "sim_desc": 0.518,
+    "jaccard_params": 0.143,
+    "params_anidados": false
+   },
+   {
+    "a": "ffmpeg_get_info",
+    "b": "ffmpeg_merge",
+    "jaccard_nombre": 0.25,
+    "sim_nombre": 0.667,
+    "jaccard_desc": 0.111,
+    "sim_desc": 0.465,
+    "jaccard_params": 0.0,
+    "params_anidados": false
+   },
+   {
+    "a": "ffmpeg_convert",
+    "b": "ffmpeg_merge",
+    "jaccard_nombre": 0.333,
+    "sim_nombre": 0.692,
+    "jaccard_desc": 0.111,
+    "sim_desc": 0.429,
+    "jaccard_params": 0.0,
+    "params_anidados": false
+   },
+   {
+    "a": "ffmpeg_convert",
+    "b": "ffmpeg_trim",
+    "jaccard_nombre": 0.333,
+    "sim_nombre": 0.64,
+    "jaccard_desc": 0.111,
+    "sim_desc": 0.471,
+    "jaccard_params": 0.125,
+    "params_anidados": false
+   },
+   {
+    "a": "ffmpeg_trim",
+    "b": "ffmpeg_extract_audio",
+    "jaccard_nombre": 0.25,
+    "sim_nombre": 0.645,
+    "jaccard_desc": 0.286,
+    "sim_desc": 0.395,
+    "jaccard_params": 0.167,
+    "params_anidados": false
+   },
+   {
+    "a": "ffmpeg_get_info",
+    "b": "ffmpeg_trim",
+    "jaccard_nombre": 0.25,
+    "sim_nombre": 0.692,
+    "jaccard_desc": 0.111,
+    "sim_desc": 0.345,
+    "jaccard_params": 0.25,
+    "params_anidados": true
+   },
+   {
+    "a": "ffmpeg_extract_audio",
+    "b": "ffmpeg_merge",
+    "jaccard_nombre": 0.25,
+    "sim_nombre": 0.562,
+    "jaccard_desc": 0.125,
+    "sim_desc": 0.45,
+    "jaccard_params": 0.0,
+    "params_anidados": false
+   },
+   {
+    "a": "ffmpeg_merge",
+    "b": "ffmpeg_add_subtitles",
+    "jaccard_nombre": 0.25,
+    "sim_nombre": 0.5,
+    "jaccard_desc": 0.111,
+    "sim_desc": 0.505,
+    "jaccard_params": 0.167,
+    "params_anidados": false
+   },
+   {
+    "a": "ffmpeg_convert",
+    "b": "ffmpeg_extract_audio",
+    "jaccard_nombre": 0.25,
+    "sim_nombre": 0.529,
+    "jaccard_desc": 0.286,
+    "sim_desc": 0.475,
+    "jaccard_params": 0.143,
+    "params_anidados": false
+   },
+   {
+    "a": "ffmpeg_get_info",
+    "b": "ffmpeg_extract_audio",
+    "jaccard_nombre": 0.2,
+    "sim_nombre": 0.686,
+    "jaccard_desc": 0.286,
+    "sim_desc": 0.317,
+    "jaccard_params": 0.333,
+    "params_anidados": true
+   },
+   {
+    "a": "ffmpeg_trim",
+    "b": "ffmpeg_merge",
+    "jaccard_nombre": 0.333,
+    "sim_nombre": 0.696,
+    "jaccard_desc": 0.111,
+    "sim_desc": 0.306,
+    "jaccard_params": 0.0,
+    "params_anidados": false
+   },
+   {
+    "a": "ffmpeg_get_info",
+    "b": "ffmpeg_compress",
+    "jaccard_nombre": 0.25,
+    "sim_nombre": 0.533,
+    "jaccard_desc": 0.125,
+    "sim_desc": 0.465,
+    "jaccard_params": 0.25,
+    "params_anidados": true
+   },
+   {
+    "a": "ffmpeg_trim",
+    "b": "ffmpeg_extract_frames",
+    "jaccard_nombre": 0.25,
+    "sim_nombre": 0.625,
+    "jaccard_desc": 0.286,
+    "sim_desc": 0.37,
+    "jaccard_params": 0.143,
+    "params_anidados": false
+   },
+   {
+    "a": "ffmpeg_compress",
+    "b": "ffmpeg_extract_frames",
+    "jaccard_nombre": 0.25,
+    "sim_nombre": 0.611,
+    "jaccard_desc": 0.143,
+    "sim_desc": 0.375,
+    "jaccard_params": 0.143,
+    "params_anidados": false
+   },
+   {
+    "a": "ffmpeg_extract_frames",
+    "b": "ffmpeg_add_subtitles",
+    "jaccard_nombre": 0.2,
+    "sim_nombre": 0.537,
+    "jaccard_desc": 0.125,
+    "sim_desc": 0.414,
+    "jaccard_params": 0.125,
+    "params_anidados": false
+   },
+   {
+    "a": "ffmpeg_compress",
+    "b": "ffmpeg_add_subtitles",
+    "jaccard_nombre": 0.25,
+    "sim_nombre": 0.514,
+    "jaccard_desc": 0.125,
+    "sim_desc": 0.418,
+    "jaccard_params": 0.125,
+    "params_anidados": false
+   },
+   {
+    "a": "ffmpeg_compress",
+    "b": "ffmpeg_extract_audio",
+    "jaccard_nombre": 0.25,
+    "sim_nombre": 0.514,
+    "jaccard_desc": 0.143,
+    "sim_desc": 0.4,
+    "jaccard_params": 0.167,
+    "params_anidados": false
+   },
+   {
+    "a": "ffmpeg_get_info",
+    "b": "ffmpeg_add_subtitles",
+    "jaccard_nombre": 0.2,
+    "sim_nombre": 0.457,
+    "jaccard_desc": 0.111,
+    "sim_desc": 0.452,
+    "jaccard_params": 0.2,
+    "params_anidados": true
+   },
+   {
+    "a": "ffmpeg_trim",
+    "b": "ffmpeg_add_subtitles",
+    "jaccard_nombre": 0.25,
+    "sim_nombre": 0.581,
+    "jaccard_desc": 0.111,
+    "sim_desc": 0.326,
+    "jaccard_params": 0.125,
+    "params_anidados": false
+   },
+   {
+    "a": "ffmpeg_get_info",
+    "b": "ffmpeg_extract_frames",
+    "jaccard_nombre": 0.2,
+    "sim_nombre": 0.611,
+    "jaccard_desc": 0.125,
+    "sim_desc": 0.293,
+    "jaccard_params": 0.25,
+    "params_anidados": true
+   },
+   {
+    "a": "ffmpeg_merge",
+    "b": "ffmpeg_extract_frames",
+    "jaccard_nombre": 0.25,
+    "sim_nombre": 0.545,
+    "jaccard_desc": 0.125,
+    "sim_desc": 0.35,
+    "jaccard_params": 0.0,
+    "params_anidados": false
+   }
+  ]
+ }
+]

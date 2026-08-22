@@ -1,0 +1,30 @@
+== versiones ==
+qpdf version 12.4.0
+tesseract 5.5.0
+ leptonica-1.86.0
+List of available languages in "/usr/share/tesseract-ocr/5/tessdata/" (3): eng osd spa 
+== caso 6: qpdf ==
+  qpdf_linearize rc=0 bytes=3814 563ms
+  qpdf_encrypt rc=0 bytes=3014 835ms
+  qpdf_decrypt rc=0 bytes=3203 316ms
+  qpdf_check rc=0 bytes=195 404ms
+  qpdf_json rc=0 bytes=4333 1068ms
+  qpdf_split rc=0 bytes=1408 117ms
+  qpdf_merge rc=0 bytes=1586 171ms
+== caso 5: tesseract (OCR sobre PDF escaneado) ==
+  gs_raster_patologico_escaneado rc=0 bytes=1908177 3669ms
+  tess_txt_patologico_escaneado rc=0 bytes=83 498ms
+  tess_pdf_patologico_escaneado rc=0 bytes=1908721 651ms
+  gs_raster_escaneado_d1 rc=0 bytes=967343 534ms
+  tess_txt_escaneado_d1 rc=0 bytes=84 428ms
+  tess_pdf_escaneado_d1 rc=0 bytes=969253 469ms
+  gs_raster_escaneado_d2 rc=0 bytes=620959 351ms
+  tess_txt_escaneado_d2 rc=0 bytes=84 384ms
+  tess_pdf_escaneado_d2 rc=0 bytes=623377 551ms
+  gs_raster_escaneado_d3 rc=0 bytes=717299 358ms
+  tess_txt_escaneado_d3 rc=0 bytes=0 588ms
+  tess_pdf_escaneado_d3 rc=0 bytes=719248 608ms
+  gs_raster_escaneado_d4 rc=0 bytes=1246275 601ms
+  tess_txt_escaneado_d4 rc=0 bytes=135 818ms
+  tess_pdf_escaneado_d4 rc=0 bytes=1248024 852ms
+== fin ==

@@ -1,0 +1,36 @@
+VALIDACION DE 32 ARISTAS REVIVIDAS
+
+  apm      -> swf        identify='' esperado=None   NO COMPROBABLE
+  png      -> ico        identify='ICO 256x256ICO 128x128ICO 64x64ICO 48x48ICO 32x32ICO 16x16' esperado=ICO    COINCIDE
+  data     -> icn        identify='ICN 256x256ICN 128x128ICN 64x64ICN 48x48ICN 32x32ICN 16x16' esperado=ICON   DISCREPA
+  miff     -> icn        identify='ICN 256x256ICN 128x128ICN 64x64ICN 48x48ICN 32x32ICN 16x16' esperado=ICON   DISCREPA
+  gif87    -> icon       identify='ICON 256x256ICON 128x128ICON 64x64ICON 48x48ICON 32x32ICON 16x16' esperado=ICON   COINCIDE
+  pfm      -> icn        identify='ICN 256x256ICN 128x128ICN 64x64ICN 48x48ICN 32x32ICN 16x16' esperado=ICON   DISCREPA
+  pdb      -> matte      identify='' esperado=MATTE  NO COMPROBABLE
+  cals     -> icon       identify='ICON 256x256ICON 128x128ICON 64x64ICON 48x48ICON 32x32ICON 16x16' esperado=ICON   COINCIDE
+  ipl      -> matte      identify='' esperado=MATTE  NO COMPROBABLE
+  hdr      -> matte      identify='' esperado=MATTE  NO COMPROBABLE
+  avif     -> inline     identify='' esperado=INLINE NO COMPROBABLE
+  pdf      -> cur        identify='CUR 256x256CUR 128x128CUR 64x64CUR 48x48CUR 32x32CUR 16x16' esperado=CUR    COINCIDE
+  pdf      -> ico        identify='ICO 256x256ICO 128x128ICO 64x64ICO 48x48ICO 32x32ICO 16x16' esperado=ICO    COINCIDE
+  aptx     -> isma       identify='' esperado=None   NO COMPROBABLE
+  msbc     -> ismv       identify='' esperado=None   NO COMPROBABLE
+  tta      -> h265.mp4   identify='' esperado=None   NO COMPROBABLE
+  mxf      -> sgi        identify='SGI 352x288' esperado=SGI    COINCIDE
+  ogg      -> im24       identify='SUN 352x288' esperado=IM24   DISCREPA
+  266      -> y          identify='' esperado=GRAY   NO COMPROBABLE
+  h263     -> pfm        identify='PFM 352x288' esperado=PFM    COINCIDE
+  wtv      -> im1        identify='SUN 352x288' esperado=IM1    DISCREPA
+  wtv      -> tif        identify='TIFF 352x288' esperado=TIFF   COINCIDE
+  mjpeg    -> ppm        identify='PPM 352x288' esperado=PPM    COINCIDE
+  isma     -> ppm        identify='PPM 352x288' esperado=PPM    COINCIDE
+  y4m      -> jpeg       identify='JPEG 352x288' esperado=JPEG   COINCIDE
+  265      -> jp2        identify='JP2 352x288' esperado=JP2    COINCIDE
+  isma     -> exr        identify='EXR 352x288' esperado=EXR    COINCIDE
+  266      -> bmp        identify='BMP3 352x288' esperado=BMP    DISCREPA
+  hevc     -> pbm        identify='PBM 352x288' esperado=PBM    COINCIDE
+  h263     -> ras        identify='RAS 352x288' esperado=SUN    DISCREPA
+  asf      -> rs         identify='SUN 352x288' esperado=SUN    COINCIDE
+  f4v      -> tif        identify='TIFF 352x288' esperado=TIFF   COINCIDE
+
+ {'NO COMPROBABLE': 9, 'COINCIDE': 16, 'DISCREPA': 7}

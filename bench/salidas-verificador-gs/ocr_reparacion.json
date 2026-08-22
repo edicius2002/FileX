@@ -1,0 +1,247 @@
+{
+ "cadenas": [
+  {
+   "documento": "patologico_escaneado",
+   "ppp": 200,
+   "directo": {
+    "rc": 0,
+    "ms": 322.4,
+    "orden": "gswin64c -q -dNOPAUSE -dBATCH -dSAFER -sDEVICE=docxwrite -sOutputFile=D:\\Work\\research\\FileX\\bench\\salidas-verificador-gs\\ocr\\patologico_escaneado_directo.docx D:\\Work\\research\\FileX\\corpus\\pdf\\patologico_escaneado.pdf",
+    "bytes": 9837,
+    "err": "",
+    "cer_ciego_pct": 100.0,
+    "dist_ciego": 79,
+    "frases_ciego": 0,
+    "cer_tildes_pct": 100.0,
+    "dist_tildes": 81,
+    "frases_tildes": 0,
+    "chars": 2,
+    "texto": ""
+   },
+   "reparado": {
+    "rc": [
+     0,
+     0
+    ],
+    "ms": 1255.4,
+    "ms_ocr": 1056.8,
+    "ms_docx": 198.6,
+    "orden": [
+     "gswin64c -q -dNOPAUSE -dBATCH -dSAFER -sDEVICE=pdfocr8 -sOCRLanguage=spa -r200 -sOutputFile=D:\\Work\\research\\FileX\\bench\\salidas-verificador-gs\\ocr\\patologico_escaneado_ocr_spa.pdf D:\\Work\\research\\FileX\\corpus\\pdf\\patologico_escaneado.pdf",
+     "gswin64c -q -dNOPAUSE -dBATCH -dSAFER -sDEVICE=docxwrite -sOutputFile=D:\\Work\\research\\FileX\\bench\\salidas-verificador-gs\\ocr\\patologico_escaneado_ocr.docx D:\\Work\\research\\FileX\\bench\\salidas-verificador-gs\\ocr\\patologico_escaneado_ocr_spa.pdf"
+    ],
+    "bytes_pdf": 1091107,
+    "bytes_docx": 10150,
+    "err": "",
+    "cer_ciego_pct": 0.0,
+    "dist_ciego": 0,
+    "frases_ciego": 3,
+    "cer_tildes_pct": 0.0,
+    "dist_tildes": 0,
+    "frases_tildes": 3,
+    "chars": 99,
+    "texto": "DOCUMENTO\n ESCANEADO \nTexto\n que\n solo\n existe\n como\n pixeles. \nDebe\n recuperarse\n con\n OCR."
+   },
+   "capa_txtwrite": {
+    "cer_ciego_pct": 0.0,
+    "dist_ciego": 0,
+    "frases_ciego": 3,
+    "cer_tildes_pct": 0.0,
+    "dist_tildes": 0,
+    "frases_tildes": 3,
+    "chars": 97,
+    "texto": "DOCUMENTO ESCANEADO\r\n    Texto que solo existe como pixeles.\r\n    Debe recuperarse con OCR.",
+    "rc": 0
+   }
+  },
+  {
+   "documento": "escaneado_d1",
+   "ppp": 150,
+   "directo": {
+    "rc": 0,
+    "ms": 177.3,
+    "orden": "gswin64c -q -dNOPAUSE -dBATCH -dSAFER -sDEVICE=docxwrite -sOutputFile=D:\\Work\\research\\FileX\\bench\\salidas-verificador-gs\\ocr\\escaneado_d1_directo.docx D:\\Work\\research\\FileX\\corpus\\pdf\\escaneado_d1.pdf",
+    "bytes": 9837,
+    "err": "",
+    "cer_ciego_pct": 100.0,
+    "dist_ciego": 79,
+    "frases_ciego": 0,
+    "cer_tildes_pct": 100.0,
+    "dist_tildes": 81,
+    "frases_tildes": 0,
+    "chars": 2,
+    "texto": ""
+   },
+   "reparado": {
+    "rc": [
+     0,
+     0
+    ],
+    "ms": 548.9,
+    "ms_ocr": 337.8,
+    "ms_docx": 211.1,
+    "orden": [
+     "gswin64c -q -dNOPAUSE -dBATCH -dSAFER -sDEVICE=pdfocr8 -sOCRLanguage=spa -r150 -sOutputFile=D:\\Work\\research\\FileX\\bench\\salidas-verificador-gs\\ocr\\escaneado_d1_ocr_spa.pdf D:\\Work\\research\\FileX\\corpus\\pdf\\escaneado_d1.pdf",
+     "gswin64c -q -dNOPAUSE -dBATCH -dSAFER -sDEVICE=docxwrite -sOutputFile=D:\\Work\\research\\FileX\\bench\\salidas-verificador-gs\\ocr\\escaneado_d1_ocr.docx D:\\Work\\research\\FileX\\bench\\salidas-verificador-gs\\ocr\\escaneado_d1_ocr_spa.pdf"
+    ],
+    "bytes_pdf": 651016,
+    "bytes_docx": 10157,
+    "err": "",
+    "cer_ciego_pct": 0.0,
+    "dist_ciego": 0,
+    "frases_ciego": 3,
+    "cer_tildes_pct": 0.0,
+    "dist_tildes": 0,
+    "frases_tildes": 3,
+    "chars": 102,
+    "texto": "DOCUMENTO\n ESCANEADO\n\n\n\n\nTexto\n que\n solo\n existe\n como\n pixeles. \nDebe\n recuperarse\n con\n OCR."
+   },
+   "capa_txtwrite": {
+    "cer_ciego_pct": 0.0,
+    "dist_ciego": 0,
+    "frases_ciego": 3,
+    "cer_tildes_pct": 0.0,
+    "dist_tildes": 0,
+    "frases_tildes": 3,
+    "chars": 114,
+    "texto": "DOCUMENTO ESCANEADO\r\n          Texto que solo existe como pixeles.\r\n           Debe recuperarse con OCR.",
+    "rc": 0
+   }
+  },
+  {
+   "documento": "escaneado_d2",
+   "ppp": 100,
+   "directo": {
+    "rc": 0,
+    "ms": 189.1,
+    "orden": "gswin64c -q -dNOPAUSE -dBATCH -dSAFER -sDEVICE=docxwrite -sOutputFile=D:\\Work\\research\\FileX\\bench\\salidas-verificador-gs\\ocr\\escaneado_d2_directo.docx D:\\Work\\research\\FileX\\corpus\\pdf\\escaneado_d2.pdf",
+    "bytes": 9837,
+    "err": "",
+    "cer_ciego_pct": 100.0,
+    "dist_ciego": 79,
+    "frases_ciego": 0,
+    "cer_tildes_pct": 100.0,
+    "dist_tildes": 81,
+    "frases_tildes": 0,
+    "chars": 2,
+    "texto": ""
+   },
+   "reparado": {
+    "rc": [
+     0,
+     0
+    ],
+    "ms": 437.7,
+    "ms_ocr": 255.2,
+    "ms_docx": 182.5,
+    "orden": [
+     "gswin64c -q -dNOPAUSE -dBATCH -dSAFER -sDEVICE=pdfocr8 -sOCRLanguage=spa -r100 -sOutputFile=D:\\Work\\research\\FileX\\bench\\salidas-verificador-gs\\ocr\\escaneado_d2_ocr_spa.pdf D:\\Work\\research\\FileX\\corpus\\pdf\\escaneado_d2.pdf",
+     "gswin64c -q -dNOPAUSE -dBATCH -dSAFER -sDEVICE=docxwrite -sOutputFile=D:\\Work\\research\\FileX\\bench\\salidas-verificador-gs\\ocr\\escaneado_d2_ocr.docx D:\\Work\\research\\FileX\\bench\\salidas-verificador-gs\\ocr\\escaneado_d2_ocr_spa.pdf"
+    ],
+    "bytes_pdf": 358432,
+    "bytes_docx": 10160,
+    "err": "",
+    "cer_ciego_pct": 0.0,
+    "dist_ciego": 0,
+    "frases_ciego": 3,
+    "cer_tildes_pct": 0.0,
+    "dist_tildes": 0,
+    "frases_tildes": 3,
+    "chars": 102,
+    "texto": "DOCUMENTO\n ESCANEADO\n\n\n\n\nTexto\n que\n solo\n existe\n como\n pixeles. \nDebe\n recuperarse\n con\n OCR."
+   },
+   "capa_txtwrite": {
+    "cer_ciego_pct": 1.3,
+    "dist_ciego": 1,
+    "frases_ciego": 2,
+    "cer_tildes_pct": 1.2,
+    "dist_tildes": 1,
+    "frases_tildes": 2,
+    "chars": 100,
+    "texto": "DOCUMENTOESCANEADO\r\n      Texto que solo existe como pixeles.\r\n      Debe recuperarse con OCR.",
+    "rc": 0
+   }
+  },
+  {
+   "documento": "escaneado_d3",
+   "ppp": 100,
+   "directo": {
+    "rc": 0,
+    "ms": 171.7,
+    "orden": "gswin64c -q -dNOPAUSE -dBATCH -dSAFER -sDEVICE=docxwrite -sOutputFile=D:\\Work\\research\\FileX\\bench\\salidas-verificador-gs\\ocr\\escaneado_d3_directo.docx D:\\Work\\research\\FileX\\corpus\\pdf\\escaneado_d3.pdf",
+    "bytes": 9837,
+    "err": "",
+    "cer_ciego_pct": 100.0,
+    "dist_ciego": 79,
+    "frases_ciego": 0,
+    "cer_tildes_pct": 100.0,
+    "dist_tildes": 81,
+    "frases_tildes": 0,
+    "chars": 2,
+    "texto": ""
+   },
+   "reparado": {
+    "rc": [
+     0,
+     0
+    ],
+    "ms": 1225.4,
+    "ms_ocr": 1038.0,
+    "ms_docx": 187.5,
+    "orden": [
+     "gswin64c -q -dNOPAUSE -dBATCH -dSAFER -sDEVICE=pdfocr8 -sOCRLanguage=spa -r100 -sOutputFile=D:\\Work\\research\\FileX\\bench\\salidas-verificador-gs\\ocr\\escaneado_d3_ocr_spa.pdf D:\\Work\\research\\FileX\\corpus\\pdf\\escaneado_d3.pdf",
+     "gswin64c -q -dNOPAUSE -dBATCH -dSAFER -sDEVICE=docxwrite -sOutputFile=D:\\Work\\research\\FileX\\bench\\salidas-verificador-gs\\ocr\\escaneado_d3_ocr.docx D:\\Work\\research\\FileX\\bench\\salidas-verificador-gs\\ocr\\escaneado_d3_ocr_spa.pdf"
+    ],
+    "bytes_pdf": 403868,
+    "bytes_docx": 10622,
+    "err": "",
+    "cer_ciego_pct": 119.0,
+    "dist_ciego": 94,
+    "frases_ciego": 0,
+    "cer_tildes_pct": 123.5,
+    "dist_tildes": 100,
+    "frases_tildes": 0,
+    "chars": 173,
+    "texto": "A\n Sc\nend\n\n\n\n\nA O\n at,\n\n\n\n\no\n a \na...\no \nO\na\ne\no\n o\nAl \nO\nA\na\n A\no\no\nO\nO \nO\n E\n E\nO\nA\n o \nA\n oa \nA\ne \nA\n A\n A \nO\nE\no\n o\nA\nA\no\nO\nA\n e\n US\n PE \no\nEA \no\nts\no\n.\n o.\na\nnoo"
+   },
+   "capa_txtwrite": {
+    "cer_ciego_pct": 93.7,
+    "dist_ciego": 74,
+    "frases_ciego": 0,
+    "cer_tildes_pct": 97.5,
+    "dist_tildes": 79,
+    "frases_tildes": 0,
+    "chars": 170,
+    "texto": "A ScAOat, end\r\noa\r\no\r\naeoAl\r\no       O\r\na...\r\na           A\r\nO OOoo\r\nA\r\nOE Eoa\r\nA\r\nA            oO\r\nA\r\nO\r\n EeAAA\r\no\r\nA              o\r\nA\r\no\r\nOAeUSPE noo EA\r\no\r\ntsoo.o.a",
+    "rc": 0
+   }
+  }
+ ],
+ "i1": {
+  "orden": [
+   "gswin64c -q -dNOPAUSE -dBATCH -dSAFER -sDEVICE=png16m -r150 -sOutputFile=D:\\Work\\research\\FileX\\bench\\salidas-verificador-gs\\ocr\\i1_rasterizado.png D:\\Work\\research\\FileX\\corpus\\pdf\\tipico_texto.pdf",
+   "magick D:\\Work\\research\\FileX\\bench\\salidas-verificador-gs\\ocr\\i1_rasterizado.png -density 150 -units PixelsPerInch D:\\Work\\research\\FileX\\bench\\salidas-verificador-gs\\ocr\\i1_rasterizado.pdf"
+  ],
+  "texto_original": "FileX - documento de prueba con texto seleccionable\r\n     Segunda linea: acentos aeiou n ˆ y simbolos % & @\r\n     Tabla:  Col A    Col B    Col C\r\n             1        2        3",
+  "chars_original": 105,
+  "sin_ocr_chars": 0,
+  "por_idioma": {
+   "eng": {
+    "rc": 0,
+    "texto": "Filex - documento de prueba con texto seleccionable\nSegunda linea: acentos aeiou n* y simbolos % & @\nTabla: ColA ColB ColC\n\n1 2 3",
+    "chars": 128,
+    "distancia": 7,
+    "similitud_pct": 94.7,
+    "similitud_pct_ciego": 97.5
+   },
+   "spa": {
+    "rc": 0,
+    "texto": "FileX - documento de prueba con texto seleccionable\nSegunda linea: acentos aeiou n * y simbolos % 8 Y\nTabla: ColA ColB  ColC\n\n1 2 3",
+    "chars": 129,
+    "distancia": 7,
+    "similitud_pct": 94.7,
+    "similitud_pct_ciego": 94.2
+   }
+  }
+ }
+}

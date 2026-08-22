@@ -1,0 +1,15 @@
+Informe FileX
+
+Informe de fidelidad de caminos multisalto. FILEXSENTINELA7743 es la
+marca que debe sobrevivir a la conversion. El texto seleccionable de un
+documento es una capa estructurada, no una imagen: si un salto
+intermedio rasteriza la pagina, esta frase deja de poder copiarse,
+buscarse o leerse con un lector de pantalla, y el fichero resultante ya
+no sirve para lo que sirve un documento.
+
+  -------- ---------- --------
+  codigo   cantidad   unidad
+  AX-1     128        kg
+  BX-2     256        kg
+  CX-3     512        kg
+  -------- ---------- --------

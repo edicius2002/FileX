@@ -1,0 +1,126 @@
+{
+  "plataforma": "win32",
+  "alternativas_posix": {
+    "plataforma": "win32",
+    "python": "3.11.9",
+    "O_NOFOLLOW": false,
+    "O_PATH": false,
+    "open_soporta_dir_fd": false,
+    "stat_soporta_dir_fd": false,
+    "supports_dir_fd": [],
+    "supports_fd": [
+      "stat",
+      "truncate"
+    ],
+    "st_dev": 553714096,
+    "st_ino": 562949955168582,
+    "st_ino_no_nulo": true,
+    "existe_proc_self_fd": false,
+    "existe_dev_fd": false
+  },
+  "coste_staging": {
+    "trivial.png (316 B)": {
+      "bytes": 316,
+      "ms": [
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        1.0
+      ],
+      "ms_mediana": 1.0,
+      "MB_s": 0.3
+    },
+    "tipico.mp4 (15,5 MB)": {
+      "bytes": 16246490,
+      "ms": [
+        22.6,
+        10.0,
+        10.0,
+        8.0,
+        11.2
+      ],
+      "ms_mediana": 10.0,
+      "MB_s": 1624.6
+    },
+    "fuente_4k.mp4 (122 MB)": {
+      "bytes": 127932819,
+      "ms": [
+        81.3,
+        76.1,
+        74.8,
+        78.6,
+        88.4
+      ],
+      "ms_mediana": 78.6,
+      "MB_s": 1627.6
+    }
+  },
+  "ventanas": [
+    {
+      "caso": "tipico.mp4 -> remux (-c copy)",
+      "entrada": "tipico.mp4",
+      "bytes_entrada": 16246490,
+      "ms_conversion_total": 342.7,
+      "returncode": 0,
+      "ms_hasta_primer_bloqueo": 38.5,
+      "ms_entrada_inmovilizada": 283.2,
+      "ms_hasta_liberada": 321.7,
+      "intentos_de_sustitucion": 56,
+      "se_pudo_sustituir_en_caliente": false,
+      "bytes_salida": 16235751
+    },
+    {
+      "caso": "tipico.mp4 -> transcodificacion x264 CPU",
+      "entrada": "tipico.mp4",
+      "bytes_entrada": 16246490,
+      "ms_conversion_total": 9794.5,
+      "returncode": 0,
+      "ms_hasta_primer_bloqueo": 25.3,
+      "ms_entrada_inmovilizada": 9758.1,
+      "ms_hasta_liberada": 9783.5,
+      "intentos_de_sustitucion": 1174,
+      "se_pudo_sustituir_en_caliente": false,
+      "bytes_salida": 15450077
+    },
+    {
+      "caso": "fuente_4k.mp4 -> remux (-c copy)",
+      "entrada": "fuente_4k.mp4",
+      "bytes_entrada": 127932819,
+      "ms_conversion_total": 401.9,
+      "returncode": 0,
+      "ms_hasta_primer_bloqueo": 52.7,
+      "ms_entrada_inmovilizada": 329.5,
+      "ms_hasta_liberada": 382.2,
+      "intentos_de_sustitucion": 63,
+      "se_pudo_sustituir_en_caliente": false,
+      "bytes_salida": 127929756
+    },
+    {
+      "caso": "fuente_4k.mp4 -> 720p x264 CPU",
+      "entrada": "fuente_4k.mp4",
+      "bytes_entrada": 127932819,
+      "ms_conversion_total": 1893.4,
+      "returncode": 0,
+      "ms_hasta_primer_bloqueo": 23.3,
+      "ms_entrada_inmovilizada": 1862.8,
+      "ms_hasta_liberada": 1886.1,
+      "intentos_de_sustitucion": 286,
+      "se_pudo_sustituir_en_caliente": false,
+      "bytes_salida": 789987
+    },
+    {
+      "caso": "trivial.png -> webp",
+      "entrada": "trivial.png",
+      "bytes_entrada": 316,
+      "ms_conversion_total": 63.6,
+      "returncode": 0,
+      "ms_hasta_primer_bloqueo": 31.0,
+      "ms_entrada_inmovilizada": 28.5,
+      "ms_hasta_liberada": 59.6,
+      "intentos_de_sustitucion": 11,
+      "se_pudo_sustituir_en_caliente": false,
+      "bytes_salida": 98
+    }
+  ]
+}

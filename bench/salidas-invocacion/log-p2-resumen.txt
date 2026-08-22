@@ -1,0 +1,219 @@
+{
+ "semi_entrada": {
+  "muertas_E1": 34,
+  "revividas": 22,
+  "lista": [
+   "ffmpeg|rgb",
+   "ffmpeg|txt",
+   "ffmpeg|yuv",
+   "imagemagick|avs",
+   "imagemagick|bayer",
+   "imagemagick|bayera",
+   "imagemagick|bgr",
+   "imagemagick|bgra",
+   "imagemagick|cmyk",
+   "imagemagick|cmyka",
+   "imagemagick|gray",
+   "imagemagick|graya",
+   "imagemagick|mono",
+   "imagemagick|pal",
+   "imagemagick|pix",
+   "imagemagick|rgb",
+   "imagemagick|rgba",
+   "imagemagick|rgbo",
+   "imagemagick|uyvy",
+   "imagemagick|ycbcr",
+   "imagemagick|ycbcra",
+   "imagemagick|yuv"
+  ],
+  "ic95": [
+   47.9,
+   78.5
+  ]
+ },
+ "semi_salida": {
+  "muertas_E1": 37,
+  "revividas": 8,
+  "lista": [
+   "ffmpeg|302",
+   "ffmpeg|dnxhd",
+   "ffmpeg|dnxhr",
+   "ffmpeg|dv",
+   "ffmpeg|flm",
+   "ffmpeg|tun",
+   "ffmpeg|vbn",
+   "ffmpeg|xface"
+  ],
+  "causas_restantes": {
+   "codificador ausente del build: ac4": 1,
+   "": 4,
+   "codificador ausente del build: avs3": 1,
+   "codificador ausente del build: g729": 1,
+   "codificador ausente del build: codec2": 1,
+   "codificador ausente del build: cavs": 1,
+   "el muxer no declara ningun codec por def": 2,
+   "codificador ausente del build: adpcm_psx": 1,
+   "codificador ausente del build: dts": 1,
+   "codificador ausente del build: evc": 1,
+   "codificador ausente del build: gsm": 1,
+   "codificador ausente del build: jacosub": 2,
+   "codificador ausente del build: ilbc": 1,
+   "codificador ausente del build: atrac3": 1,
+   "codificador ausente del build: wmv3": 1,
+   "codificador ausente del build: eia_608": 1,
+   "codificador ausente del build: speex": 1,
+   "codificador ausente del build: microdvd": 1,
+   "codificador ausente del build: hdmv_pgs_": 1,
+   "codificador ausente del build: vc1": 1
+  },
+  "ic95": [
+   11.4,
+   37.2
+  ]
+ },
+ "residuo": {
+  "n": 118,
+  "recuperadas": 27,
+  "tasa": 22.88,
+  "ic95": [
+   16.23,
+   31.24
+  ],
+  "por_categoria": {
+   "1": 27
+  }
+ },
+ "final": {
+  "poblacion": 138501,
+  "E1": {
+   "marco": 40252,
+   "muertas_semiarista": 22235,
+   "indeterminadas": 75874,
+   "otro_motor": 140,
+   "con_veredicto": 62487,
+   "nominales": 31533,
+   "tasa": 50.46
+  },
+  "P2": {
+   "marco": 45057,
+   "muertas_semiarista": 14562,
+   "recuperadas_por_semiarista": 4805,
+   "recuperadas_por_categoria": {
+    "1": 1337,
+    "2": 3468
+   },
+   "residuo_nominal": 17.81,
+   "nominales": 25457,
+   "tasa": 40.74
+  },
+  "residuo": {
+   "n": 118,
+   "recuperadas": 27,
+   "tasa": 22.88,
+   "ic95": [
+    16.23,
+    31.24
+   ],
+   "por_categoria": {
+    "1": 27
+   }
+  },
+  "recuperacion": {
+   "aristas": 6077,
+   "fraccion_del_50_5": 19.27,
+   "ic95_fraccion": [
+    17.31,
+    21.74
+   ],
+   "sensibilidad_pesimista": 18.46,
+   "cat1_aristas": 3226,
+   "cat2_aristas": 2850,
+   "cat1_fraccion": 10.23,
+   "cat2_fraccion": 9.04,
+   "sin_veredicto_nuevo": 2868
+  }
+ },
+ "C17": {
+  "ghostscript": {
+   "evaluadas": 9,
+   "nominales": 0,
+   "tasa": 0.0,
+   "ic95": [
+    0,
+    29.9
+   ],
+   "cuales": []
+  },
+  "gotenberg-chromium": {
+   "evaluadas": 25,
+   "nominales": 0,
+   "tasa": 0.0,
+   "ic95": [
+    0,
+    13.3
+   ],
+   "cuales": []
+  },
+  "gotenberg-lo": {
+   "evaluadas": 30,
+   "nominales": 2,
+   "tasa": 6.7,
+   "ic95": [
+    1.8,
+    21.3
+   ],
+   "cuales": [
+    [
+     "epub",
+     "pdf",
+     "LibreOffice failed to convert the document 'entrada.epub'. This is usually a res"
+    ],
+    [
+     "dbf",
+     "pdf",
+     "LibreOffice failed to convert the document 's.dbf'. This is usually a resource i"
+    ]
+   ]
+  },
+  "TOTAL": {
+   "evaluadas": 64,
+   "nominales": 2,
+   "tasa": 3.1,
+   "ic95": [
+    0.9,
+    10.7
+   ],
+   "poblacion_gs_gotenberg": 136,
+   "no_materializables": 72
+  }
+ },
+ "validacion": {
+  "NO COMPROBABLE": 9,
+  "COINCIDE": 16,
+  "DISCREPA": 7
+ }
+}
+
+CRUDOS
+  ffmpeg       rgb      bpp=7.5     bits=None   None           rmse=None      ideal=None      INTEGRO
+  ffmpeg       yuv      bpp=7.5     bits=None   None           rmse=None      ideal=None      INTEGRO
+  imagemagick  bayer    bpp=2.0     bits=16.0   depth=16       rmse=0.0719435 ideal=None      PENDIENTE
+  imagemagick  bayera   bpp=2.0     bits=8.0    depth=16       rmse=0.0719435 ideal=None      PENDIENTE
+  imagemagick  bgr      bpp=6.0     bits=16.0   depth=16       rmse=0.0       ideal=None      INTEGRO
+  imagemagick  bgra     bpp=8.0     bits=16.0   depth=16       rmse=0.0       ideal=None      INTEGRO
+  imagemagick  bgro     bpp=6.0     bits=12.0   None           rmse=None      ideal=None      FALLO
+  imagemagick  cmyk     bpp=8.0     bits=16.0   depth=16       rmse=0.0       ideal=None      INTEGRO
+  imagemagick  cmyka    bpp=10.0    bits=16.0   depth=16       rmse=0.0       ideal=None      INTEGRO
+  imagemagick  ftxt     bpp=20.1654 bits=161.32 depth=16       rmse=0.652292  ideal=0.652292  DESTRUIDO
+  imagemagick  gray     bpp=2.0     bits=16.0   depth=16       rmse=0.353895  ideal=0.0       INTEGRO
+  imagemagick  graya    bpp=4.0     bits=16.0   depth=16       rmse=0.353895  ideal=0.0       INTEGRO
+  imagemagick  map      bpp=1.0479  bits=8.38   None           rmse=None      ideal=None      FALLO
+  imagemagick  mono     bpp=0.125   bits=1.0    depth=1        rmse=0.422631  ideal=0.0       INTEGRO
+  imagemagick  pal      bpp=2.0     bits=16.0   depth=16       rmse=0.0141526 ideal=None      INTEGRO
+  imagemagick  rgb      bpp=6.0     bits=16.0   depth=16       rmse=0.0       ideal=None      INTEGRO
+  imagemagick  rgba     bpp=8.0     bits=16.0   depth=16       rmse=0.0       ideal=None      INTEGRO
+  imagemagick  rgbo     bpp=8.0     bits=16.0   depth=16       rmse=0.0       ideal=None      INTEGRO
+  imagemagick  uyvy     bpp=2.0     bits=8.0    depth=8        rmse=0.0141526 ideal=None      INTEGRO
+  imagemagick  ycbcr    bpp=6.0     bits=16.0   depth=16       rmse=0.000166906 ideal=None      INTEGRO
+  imagemagick  ycbcra   bpp=8.0     bits=16.0   depth=16       rmse=0.000166906 ideal=None      INTEGRO
+  imagemagick  yuv      bpp=3.0     bits=8.0    depth=16       rmse=0.0233124 ideal=None      DEGRADADO

@@ -1,0 +1,155 @@
+[
+ {
+  "etiqueta": "V2 -count_frames trivial.mp4 (540 KB, 90 fotogramas)",
+  "n": 9,
+  "mediana_ms": 143.27,
+  "min_ms": 132.621,
+  "max_ms": 161.388,
+  "flag": "SUCIA(deriva cpu +21%)",
+  "testigo_ms": [
+   24.49,
+   19.44
+  ],
+  "testigo_sub_ms": [
+   26.7,
+   30.8
+  ],
+  "nivel_sub": 1.15
+ },
+ {
+  "etiqueta": "V2 -count_frames trivial_mp4-to.webm (VP9)",
+  "n": 9,
+  "mediana_ms": 172.063,
+  "min_ms": 146.462,
+  "max_ms": 188.219,
+  "flag": "limpia",
+  "testigo_ms": [
+   20.96,
+   18.92
+  ],
+  "testigo_sub_ms": [
+   28.3,
+   30.6
+  ],
+  "nivel_sub": 1.14
+ },
+ {
+  "etiqueta": "V2 -count_frames patologico_2pistas.mkv (4 MB)",
+  "n": 9,
+  "mediana_ms": 719.473,
+  "min_ms": 681.227,
+  "max_ms": 841.9,
+  "flag": "limpia",
+  "testigo_ms": [
+   19.26,
+   16.79
+  ],
+  "testigo_sub_ms": [
+   25.1,
+   23.9
+  ],
+  "nivel_sub": 0.93
+ },
+ {
+  "etiqueta": "V2 -count_frames tipico.mp4 (16 MB, 600 fotogramas)",
+  "n": 9,
+  "mediana_ms": 3481.754,
+  "min_ms": 3165.026,
+  "max_ms": 3654.854,
+  "flag": "SUCIA(nivel sub x1.2)",
+  "testigo_ms": [
+   19.6,
+   16.94
+  ],
+  "testigo_sub_ms": [
+   33.1,
+   25.7
+  ],
+  "nivel_sub": 1.24
+ },
+ {
+  "etiqueta": "V5 etiquetas de patologico_2pistas.mkv",
+  "n": 9,
+  "mediana_ms": 36.641,
+  "min_ms": 34.006,
+  "max_ms": 39.351,
+  "flag": "limpia",
+  "testigo_ms": [
+   19.57,
+   16.71
+  ],
+  "testigo_sub_ms": [
+   27.1,
+   25.7
+  ],
+  "nivel_sub": 1.01
+ },
+ {
+  "etiqueta": "V5 etiquetas de tipico.mp4",
+  "n": 9,
+  "mediana_ms": 44.884,
+  "min_ms": 41.983,
+  "max_ms": 53.212,
+  "flag": "limpia",
+  "testigo_ms": [
+   18.28,
+   18.51
+  ],
+  "testigo_sub_ms": [
+   25.9,
+   26.1
+  ],
+  "nivel_sub": 0.98
+ },
+ {
+  "etiqueta": "V5 etiquetas de tipico.flac",
+  "n": 9,
+  "mediana_ms": 32.809,
+  "min_ms": 30.786,
+  "max_ms": 38.251,
+  "flag": "SUCIA(deriva cpu +28%)",
+  "testigo_ms": [
+   23.85,
+   17.26
+  ],
+  "testigo_sub_ms": [
+   31.7,
+   27.6
+  ],
+  "nivel_sub": 1.18
+ },
+ {
+  "etiqueta": "V6 framemd5 de trivial.mp4 (control del informe anterior)",
+  "n": 9,
+  "mediana_ms": 147.369,
+  "min_ms": 138.274,
+  "max_ms": 157.645,
+  "flag": "limpia",
+  "testigo_ms": [
+   16.38,
+   17.93
+  ],
+  "testigo_sub_ms": [
+   26.3,
+   26.3
+  ],
+  "nivel_sub": 0.98
+ },
+ {
+  "etiqueta": "CONTRATO completo en proceso (referencia)",
+  "n": 15,
+  "mediana_ms": 0.338,
+  "min_ms": 0.314,
+  "max_ms": 0.499,
+  "flag": "limpia",
+  "testigo_ms": [
+   17.78,
+   18.48
+  ],
+  "testigo_sub_ms": [
+   27.9,
+   30.9
+  ],
+  "nivel_sub": 1.15
+ }
+]
