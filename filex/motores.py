@@ -310,21 +310,56 @@ class FFmpeg(Motor):
 # ----------------------------------------------------------------- registro
 
 
+#: Los motores NATIVOS. Los de fuera no se listan aquí: se DESCUBREN.
 MOTORES = (ImageMagick, Ghostscript, FFmpeg)
 
 
+def _descubrir() -> list:
+    """Motores que viven en su propio fichero `filex/motor_*.py`.
+
+    **Un motor nuevo no toca este fichero.** Es una decisión de coordinación
+    antes que de arquitectura: una tupla central que hay que editar para añadir
+    un motor es un punto de colisión garantizado en cuanto dos personas —o dos
+    agentes— añaden uno a la vez. Aquí cada motor trae su fichero y su nombre.
+
+    Un módulo que no importa **no tumba el registro**: se ignora, igual que un
+    binario que falta. La misma regla, un nivel más arriba.
+    """
+    import importlib
+    import pkgutil
+
+    fuera = []
+    paquete = __name__.rsplit(".", 1)[0]
+    for info in pkgutil.iter_modules([os.path.dirname(os.path.abspath(__file__))]):
+        if not info.name.startswith("motor_"):
+            continue
+        try:
+            mod = importlib.import_module(f"{paquete}.{info.name}")
+        except Exception:
+            continue
+        for obj in vars(mod).values():
+            if (isinstance(obj, type) and issubclass(obj, Motor) and obj is not Motor
+                    and obj.__module__ == mod.__name__):
+                fuera.append(obj)
+    return fuera
+
+
 def sondear_todos() -> list[Motor]:
-    """Sondea los motores UNA vez y devuelve solo los que respondieron.
+    """Sondea los motores UNA vez y devuelve todos, disponibles o no.
 
     «Un motor cuyo binario falta se auto-excluye y la CLI lo informa, en lugar
     de fallar» — criterio de aceptación del hito 1.
     """
     out = []
-    for cls in MOTORES:
-        m = cls()
+    for cls in list(MOTORES) + _descubrir():
         try:
+            m = cls()
             m.sondear()
         except Exception:
+            try:
+                m = cls()
+            except Exception:
+                continue
             m.ruta = None
         out.append(m)
     return out
