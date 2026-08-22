@@ -1,0 +1,51 @@
+[lock] adquirido por M1-B13-tandaH-easy-resto
+=== tanda H: Sat Aug 22 09:36:58 HPS 2026 ===
+--- k1000 ---
+{"etiqueta": "easyocr_cuda_H_easy_1000", "motor": "easyocr", "dispositivo": "cuda", "patron": "k1000__*.png", "imgdir": "D:\\Work\\research\\FileX\\bench\\salidas-k-motor\\img", "ref_forzada": null, "carga_frio_s": 6.5, "vram_base_MiB": 2827, "vram_tras_carga_MiB": 3032, "quietud_pct": 40, "flag": "SUCIA(pico 40%)", "testigo_monohilo_ini_ms": 23.64, "testigo_proceso_ini_ms": 27.71, "modelos": {"torch": "2.6.0+cu124", "torch_cuda": "True"}, "reps": 9, "muestreo_vram": false}
+k1000__escaneado_d3                          CERac= 54.43%  CERascii= 54.43%  lin=1/3  cajas=7  bloques={'cuerpo': 54.43}     349.3 ms  det=si
+k1000__escaneado_d4                          CERac= 61.41%  CERascii= 59.56%  lin=1/12  cajas=37  bloques={'titulo': 0.0, 'subtitulo': 53.49, 'cuerpo': 59.94, 'pequeña': 75.12}    1302.8 ms  det=si
+k1000__escaneado_d4c                         CERac= 15.10%  CERascii= 13.76%  lin=4/12  cajas=26  bloques={'titulo': 12.0, 'subtitulo': 0.0, 'cuerpo': 3.53, 'pequeña': 45.07}    1242.9 ms  det=si
+k1000__patologico_escaneado                  CERac=  0.00%  CERascii=  0.00%  lin=3/3  cajas=3  bloques={'cuerpo': 0.0}     596.8 ms  det=si
+{"evento": "fin", "vram_pico_MiB": 3032, "vram_base_MiB": 2827, "coste_propio_MiB": 205, "pico_util_pct": 0, "testigo_monohilo_ini_ms": 23.64, "testigo_monohilo_fin_ms": 34.69, "deriva_monohilo": 1.47, "testigo_proceso_ini_ms": 27.71, "testigo_proceso_fin_ms": 30.71, "nivel_proceso_vs_reposo": 1.15, "testigo_topado": false, "vram_tope_MiB": 11900, "muestreo_vram": false}
+2785 MiB
+--- k1125 ---
+{"etiqueta": "easyocr_cuda_H_easy_1125", "motor": "easyocr", "dispositivo": "cuda", "patron": "k1125__*.png", "imgdir": "D:\\Work\\research\\FileX\\bench\\salidas-k-motor\\img", "ref_forzada": null, "carga_frio_s": 6.97, "vram_base_MiB": 2785, "vram_tras_carga_MiB": 3032, "quietud_pct": 19, "flag": "SUCIA(pico 19%)", "testigo_monohilo_ini_ms": 26.69, "testigo_proceso_ini_ms": 30.47, "modelos": {"torch": "2.6.0+cu124", "torch_cuda": "True"}, "reps": 9, "muestreo_vram": false}
+k1125__escaneado_d3                          CERac= 53.16%  CERascii= 53.16%  lin=1/3  cajas=8  bloques={'cuerpo': 53.16}     368.4 ms  det=si
+k1125__escaneado_d4                          CERac= 62.42%  CERascii= 61.07%  lin=1/12  cajas=36  bloques={'titulo': 0.0, 'subtitulo': 46.51, 'cuerpo': 57.69, 'pequeña': 78.4}    1414.0 ms  det=si
+k1125__escaneado_d4c                         CERac= 22.82%  CERascii= 20.64%  lin=1/12  cajas=31  bloques={'titulo': 8.0, 'subtitulo': 0.0, 'cuerpo': 18.59, 'pequeña': 42.72}    1445.5 ms  det=si
+k1125__patologico_escaneado                  CERac=  0.00%  CERascii=  0.00%  lin=3/3  cajas=3  bloques={'cuerpo': 0.0}     727.9 ms  det=si
+{"evento": "fin", "vram_pico_MiB": 3032, "vram_base_MiB": 2785, "coste_propio_MiB": 247, "pico_util_pct": 0, "testigo_monohilo_ini_ms": 26.69, "testigo_monohilo_fin_ms": 28.23, "deriva_monohilo": 1.06, "testigo_proceso_ini_ms": 30.47, "testigo_proceso_fin_ms": 29.02, "nivel_proceso_vs_reposo": 1.14, "testigo_topado": false, "vram_tope_MiB": 11900, "muestreo_vram": false}
+2790 MiB
+--- k1250 ---
+{"etiqueta": "easyocr_cuda_H_easy_1250", "motor": "easyocr", "dispositivo": "cuda", "patron": "k1250__*.png", "imgdir": "D:\\Work\\research\\FileX\\bench\\salidas-k-motor\\img", "ref_forzada": null, "carga_frio_s": 6.65, "vram_base_MiB": 2785, "vram_tras_carga_MiB": 3031, "quietud_pct": 17, "flag": "SUCIA(pico 17%)", "testigo_monohilo_ini_ms": 23.31, "testigo_proceso_ini_ms": 29.41, "modelos": {"torch": "2.6.0+cu124", "torch_cuda": "True"}, "reps": 9, "muestreo_vram": false}
+k1250__escaneado_d3                          CERac= 50.63%  CERascii= 50.63%  lin=1/3  cajas=6  bloques={'cuerpo': 50.63}     325.1 ms  det=si
+k1250__escaneado_d4                          CERac= 61.41%  CERascii= 58.72%  lin=1/12  cajas=34  bloques={'titulo': 0.0, 'subtitulo': 46.51, 'cuerpo': 59.29, 'pequeña': 76.06}    1507.0 ms  det=si
+k1250__escaneado_d4c                         CERac= 21.98%  CERascii= 19.63%  lin=2/12  cajas=26  bloques={'titulo': 8.0, 'subtitulo': 0.0, 'cuerpo': 16.99, 'pequeña': 43.66}    1539.1 ms  det=si
+k1250__patologico_escaneado                  CERac=  0.00%  CERascii=  0.00%  lin=3/3  cajas=3  bloques={'cuerpo': 0.0}     858.4 ms  det=si
+{"evento": "fin", "vram_pico_MiB": 3031, "vram_base_MiB": 2785, "coste_propio_MiB": 246, "pico_util_pct": 0, "testigo_monohilo_ini_ms": 23.31, "testigo_monohilo_fin_ms": 32.57, "deriva_monohilo": 1.4, "testigo_proceso_ini_ms": 29.41, "testigo_proceso_fin_ms": 31.74, "nivel_proceso_vs_reposo": 1.19, "testigo_topado": false, "vram_tope_MiB": 11900, "muestreo_vram": false}
+2784 MiB
+--- k1400 ---
+{"etiqueta": "easyocr_cuda_H_easy_1400", "motor": "easyocr", "dispositivo": "cuda", "patron": "k1400__*.png", "imgdir": "D:\\Work\\research\\FileX\\bench\\salidas-k-motor\\img", "ref_forzada": null, "carga_frio_s": 6.9, "vram_base_MiB": 2784, "vram_tras_carga_MiB": 3031, "quietud_pct": 18, "flag": "SUCIA(pico 18%)", "testigo_monohilo_ini_ms": 23.12, "testigo_proceso_ini_ms": 27.27, "modelos": {"torch": "2.6.0+cu124", "torch_cuda": "True"}, "reps": 9, "muestreo_vram": false}
+k1400__escaneado_d3                          CERac= 55.70%  CERascii= 55.70%  lin=1/3  cajas=7  bloques={'cuerpo': 55.7}     384.5 ms  det=si
+k1400__escaneado_d4                          CERac= 60.91%  CERascii= 59.40%  lin=1/12  cajas=34  bloques={'titulo': 0.0, 'subtitulo': 46.51, 'cuerpo': 56.41, 'pequeña': 77.46}    1859.3 ms  det=si
+k1400__escaneado_d4c                         CERac= 24.33%  CERascii= 22.32%  lin=2/12  cajas=31  bloques={'titulo': 8.0, 'subtitulo': 0.0, 'cuerpo': 19.55, 'pequeña': 47.89}    1998.2 ms  det=si
+k1400__patologico_escaneado                  CERac=  0.00%  CERascii=  0.00%  lin=3/3  cajas=3  bloques={'cuerpo': 0.0}    1062.4 ms  det=si
+{"evento": "fin", "vram_pico_MiB": 3031, "vram_base_MiB": 2784, "coste_propio_MiB": 247, "pico_util_pct": 0, "testigo_monohilo_ini_ms": 23.12, "testigo_monohilo_fin_ms": 33.29, "deriva_monohilo": 1.44, "testigo_proceso_ini_ms": 27.27, "testigo_proceso_fin_ms": 33.37, "nivel_proceso_vs_reposo": 1.25, "testigo_topado": false, "vram_tope_MiB": 11900, "muestreo_vram": false}
+2822 MiB
+--- k1600 ---
+{"etiqueta": "easyocr_cuda_H_easy_1600", "motor": "easyocr", "dispositivo": "cuda", "patron": "k1600__*.png", "imgdir": "D:\\Work\\research\\FileX\\bench\\salidas-k-motor\\img", "ref_forzada": null, "carga_frio_s": 6.89, "vram_base_MiB": 2784, "vram_tras_carga_MiB": 3030, "quietud_pct": 15, "flag": "SUCIA(pico 15%)", "testigo_monohilo_ini_ms": 23.89, "testigo_proceso_ini_ms": 25.03, "modelos": {"torch": "2.6.0+cu124", "torch_cuda": "True"}, "reps": 9, "muestreo_vram": false}
+k1600__escaneado_d3                          CERac= 54.43%  CERascii= 54.43%  lin=1/3  cajas=8  bloques={'cuerpo': 54.43}     477.9 ms  det=si
+k1600__escaneado_d4                          CERac= 62.42%  CERascii= 60.40%  lin=1/12  cajas=34  bloques={'titulo': 0.0, 'subtitulo': 46.51, 'cuerpo': 60.9, 'pequeña': 76.53}    2048.2 ms  det=si
+k1600__escaneado_d4c                         CERac= 18.12%  CERascii= 16.11%  lin=3/12  cajas=30  bloques={'titulo': 12.0, 'subtitulo': 0.0, 'cuerpo': 4.49, 'pequeña': 51.64}    2200.6 ms  det=si
+k1600__patologico_escaneado                  CERac=  0.00%  CERascii=  0.00%  lin=3/3  cajas=3  bloques={'cuerpo': 0.0}    1146.2 ms  det=si
+{"evento": "fin", "vram_pico_MiB": 3030, "vram_base_MiB": 2784, "coste_propio_MiB": 246, "pico_util_pct": 0, "testigo_monohilo_ini_ms": 23.89, "testigo_monohilo_fin_ms": 33.57, "deriva_monohilo": 1.41, "testigo_proceso_ini_ms": 25.03, "testigo_proceso_fin_ms": 29.45, "nivel_proceso_vs_reposo": 1.11, "testigo_topado": false, "vram_tope_MiB": 11900, "muestreo_vram": false}
+2782 MiB
+--- k1800 ---
+{"etiqueta": "easyocr_cuda_H_easy_1800", "motor": "easyocr", "dispositivo": "cuda", "patron": "k1800__*.png", "imgdir": "D:\\Work\\research\\FileX\\bench\\salidas-k-motor\\img", "ref_forzada": null, "carga_frio_s": 7.43, "vram_base_MiB": 2782, "vram_tras_carga_MiB": 3029, "quietud_pct": 26, "flag": "SUCIA(pico 26%)", "testigo_monohilo_ini_ms": 28.41, "testigo_proceso_ini_ms": 32.31, "modelos": {"torch": "2.6.0+cu124", "torch_cuda": "True"}, "reps": 9, "muestreo_vram": false}
+k1800__escaneado_d3                          CERac= 55.70%  CERascii= 55.70%  lin=1/3  cajas=7  bloques={'cuerpo': 55.7}     540.7 ms  det=si
+k1800__escaneado_d4                          CERac= 58.39%  CERascii= 56.38%  lin=1/12  cajas=31  bloques={'titulo': 0.0, 'subtitulo': 44.19, 'cuerpo': 56.73, 'pequeña': 78.87}    2207.3 ms  det=si
+k1800__escaneado_d4c                         CERac= 21.48%  CERascii= 19.30%  lin=2/12  cajas=32  bloques={'titulo': 12.0, 'subtitulo': 0.0, 'cuerpo': 12.18, 'pequeña': 51.17}    2340.0 ms  det=si
+k1800__patologico_escaneado                  CERac=  0.00%  CERascii=  0.00%  lin=3/3  cajas=3  bloques={'cuerpo': 0.0}    1203.9 ms  det=si
+{"evento": "fin", "vram_pico_MiB": 3029, "vram_base_MiB": 2782, "coste_propio_MiB": 247, "pico_util_pct": 0, "testigo_monohilo_ini_ms": 28.41, "testigo_monohilo_fin_ms": 35.1, "deriva_monohilo": 1.24, "testigo_proceso_ini_ms": 32.31, "testigo_proceso_fin_ms": 32.0, "nivel_proceso_vs_reposo": 1.21, "testigo_topado": false, "vram_tope_MiB": 11900, "muestreo_vram": false}
+2782 MiB
+=== fin tanda H: Sat Aug 22 09:44:40 HPS 2026 ===

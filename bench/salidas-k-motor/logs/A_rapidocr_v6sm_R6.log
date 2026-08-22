@@ -1,0 +1,51 @@
+[32m[INFO] 2026-08-22 08:14:59,557 [RapidOCR] base.py:23: Using engine_name: onnxruntime[0m
+[32m[INFO] 2026-08-22 08:15:00,373 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_det_small.onnx[0m
+[32m[INFO] 2026-08-22 08:15:00,373 [RapidOCR] main.py:63: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_det_small.onnx[0m
+[32m[INFO] 2026-08-22 08:15:01,415 [RapidOCR] base.py:23: Using engine_name: onnxruntime[0m
+[32m[INFO] 2026-08-22 08:15:01,423 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ppocr_mobile_v2.0_cls_mobile.onnx[0m
+[32m[INFO] 2026-08-22 08:15:01,423 [RapidOCR] main.py:63: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ppocr_mobile_v2.0_cls_mobile.onnx[0m
+[32m[INFO] 2026-08-22 08:15:01,494 [RapidOCR] base.py:23: Using engine_name: onnxruntime[0m
+[32m[INFO] 2026-08-22 08:15:01,622 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_rec_small.onnx[0m
+[32m[INFO] 2026-08-22 08:15:01,622 [RapidOCR] main.py:63: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_rec_small.onnx[0m
+{"etiqueta": "rapidocr_cuda_A_ro6sm_R6", "motor": "rapidocr", "dispositivo": "cuda", "patron": "k*__*.png", "imgdir": "D:\\Work\\research\\FileX\\bench\\salidas-k-motor\\img", "ref_forzada": null, "carga_frio_s": 19.0, "vram_base_MiB": 2793, "vram_tras_carga_MiB": 2977, "quietud_pct": 45, "flag": "SUCIA(pico 45%)", "testigo_monohilo_ini_ms": 24.99, "testigo_proceso_ini_ms": 29.89, "modelos": {"text_det": "ch_PP-OCRv4_det_mobile.onnx", "text_cls": "ch_PP-OCRv4_det_mobile.onnx", "text_rec": "ch_PP-OCRv4_det_mobile.onnx", "R6": "1", "pedido": {"Det.engine_type": "onnxruntime", "Rec.engine_type": "onnxruntime", "Det.lang_type": "ch", "Rec.lang_type": "ch", "Det.ocr_version": "PP-OCRv6", "Rec.ocr_version": "PP-OCRv6", "Det.model_type": "small", "Rec.model_type": "small", "Det.mean": "[0.485, 0.456, 0.406]", "Det.std": "[0.229, 0.224, 0.225]", "Det.thresh": "0.2", "Det.box_thresh": "0.45", "Det.unclip_ratio": "1.4", "Det.max_candidates": "3000"}, "det_efectivo": {"mean": "[0.485, 0.456, 0.406]", "std": "[0.229, 0.224, 0.225]", "limit_side_len": 736, "limit_type": "min", "thresh": 0.2, "box_thresh": 0.45, "unclip_ratio": 1.4, "max_candidates": 3000}}, "reps": 9, "muestreo_vram": false}
+k0500__escaneado_d3                          CERac= 35.44%  CERascii= 34.18%  lin=1/3  cajas=3  bloques={'cuerpo': 35.44}      82.2 ms  det=si
+k0500__escaneado_d4                          CERac= 30.70%  CERascii= 29.87%  lin=4/12  cajas=9  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 1.28, 'pequeña': 74.18}     845.9 ms  det=si
+k0500__escaneado_d4c                         CERac= 10.07%  CERascii=  9.40%  lin=8/12  cajas=11  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.32, 'pequeña': 23.0}     320.3 ms  det=si
+k0500__patologico_escaneado                  CERac=  0.00%  CERascii=  0.00%  lin=3/3  cajas=3  bloques={'cuerpo': 0.0}     223.2 ms  det=si
+k0625__escaneado_d3                          CERac= 13.92%  CERascii= 12.66%  lin=1/3  cajas=3  bloques={'cuerpo': 13.92}      98.8 ms  det=si
+k0625__escaneado_d4                          CERac= 26.68%  CERascii= 25.17%  lin=2/12  cajas=11  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 23.72, 'pequeña': 59.62}     592.0 ms  det=si
+k0625__escaneado_d4c                         CERac= 10.57%  CERascii=  9.40%  lin=7/12  cajas=11  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.32, 'pequeña': 57.75}     493.4 ms  det=si
+k0625__patologico_escaneado                  CERac=  0.00%  CERascii=  0.00%  lin=3/3  cajas=3  bloques={'cuerpo': 0.0}     263.4 ms  det=si
+k0750__escaneado_d3                          CERac= 22.78%  CERascii= 22.78%  lin=1/3  cajas=3  bloques={'cuerpo': 22.78}     105.2 ms  det=si
+k0750__escaneado_d4                          CERac= 18.96%  CERascii= 17.62%  lin=4/12  cajas=11  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 1.6, 'pequeña': 53.05}     459.5 ms  det=si
+k0750__escaneado_d4c                         CERac=  0.84%  CERascii=  0.17%  lin=8/12  cajas=12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.32, 'pequeña': 5.16}     392.7 ms  det=si
+k0750__patologico_escaneado                  CERac=  0.00%  CERascii=  0.00%  lin=3/3  cajas=3  bloques={'cuerpo': 0.0}     375.9 ms  det=si
+k0875__escaneado_d3                          CERac= 11.39%  CERascii= 11.39%  lin=1/3  cajas=3  bloques={'cuerpo': 11.39}     104.8 ms  det=si
+k0875__escaneado_d4                          CERac= 21.31%  CERascii= 20.30%  lin=4/12  cajas=12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 1.92, 'pequeña': 60.56}     751.2 ms  det=si
+k0875__escaneado_d4c                         CERac=  1.01%  CERascii=  0.17%  lin=9/12  cajas=12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.0, 'pequeña': 5.63}     480.8 ms  det=si
+k0875__patologico_escaneado                  CERac=  0.00%  CERascii=  0.00%  lin=3/3  cajas=3  bloques={'cuerpo': 0.0}     436.7 ms  det=si
+k1000__escaneado_d3                          CERac=  3.80%  CERascii=  3.80%  lin=2/3  cajas=3  bloques={'cuerpo': 3.8}      93.9 ms  det=si
+k1000__escaneado_d4                          CERac= 18.62%  CERascii= 17.62%  lin=3/12  cajas=12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 2.56, 'pequeña': 54.93}     470.8 ms  det=si
+k1000__escaneado_d4c                         CERac=  1.17%  CERascii=  0.34%  lin=9/12  cajas=12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.0, 'pequeña': 6.1}     519.8 ms  det=si
+k1000__patologico_escaneado                  CERac=  0.00%  CERascii=  0.00%  lin=3/3  cajas=3  bloques={'cuerpo': 0.0}     601.6 ms  det=si
+k1125__escaneado_d3                          CERac= 40.51%  CERascii= 40.51%  lin=1/3  cajas=2  bloques={'cuerpo': 40.51}      95.1 ms  det=si
+k1125__escaneado_d4                          CERac= 23.32%  CERascii= 22.15%  lin=3/12  cajas=11  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 2.24, 'pequeña': 73.24}     760.9 ms  det=si
+k1125__escaneado_d4c                         CERac=  0.84%  CERascii=  0.17%  lin=9/12  cajas=12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.0, 'pequeña': 5.16}     576.2 ms  det=si
+k1125__patologico_escaneado                  CERac=  0.00%  CERascii=  0.00%  lin=3/3  cajas=3  bloques={'cuerpo': 0.0}     866.4 ms  det=si
+k1250__escaneado_d3                          CERac=  2.53%  CERascii=  2.53%  lin=2/3  cajas=3  bloques={'cuerpo': 2.53}     119.4 ms  det=si
+k1250__escaneado_d4                          CERac= 24.50%  CERascii= 23.49%  lin=4/12  cajas=10  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 1.28, 'pequeña': 69.48}     810.4 ms  det=si
+k1250__escaneado_d4c                         CERac=  1.01%  CERascii=  0.34%  lin=9/12  cajas=12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.0, 'pequeña': 5.63}     554.1 ms  det=si
+k1250__patologico_escaneado                  CERac=  0.00%  CERascii=  0.00%  lin=3/3  cajas=3  bloques={'cuerpo': 0.0}     809.7 ms  det=si
+k1400__escaneado_d3                          CERac= 46.84%  CERascii= 46.84%  lin=1/3  cajas=3  bloques={'cuerpo': 46.84}     128.9 ms  det=si
+k1400__escaneado_d4                          CERac= 28.86%  CERascii= 27.68%  lin=2/12  cajas=10  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 2.24, 'pequeña': 73.24}     725.5 ms  det=si
+k1400__escaneado_d4c                         CERac=  9.56%  CERascii=  9.06%  lin=8/12  cajas=11  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.32, 'pequeña': 41.31}     864.5 ms  det=si
+k1400__patologico_escaneado                  CERac=  0.00%  CERascii=  0.00%  lin=3/3  cajas=3  bloques={'cuerpo': 0.0}     951.8 ms  det=si
+k1600__escaneado_d3                          CERac= 75.95%  CERascii= 75.95%  lin=1/3  cajas=1  bloques={'cuerpo': 75.95}     187.9 ms  det=si
+k1600__escaneado_d4                          CERac= 23.83%  CERascii= 22.99%  lin=3/12  cajas=12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 2.56, 'pequeña': 72.3}     536.4 ms  det=si
+k1600__escaneado_d4c                         CERac=  9.23%  CERascii=  8.89%  lin=9/12  cajas=11  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.0, 'pequeña': 40.85}     607.6 ms  det=si
+k1600__patologico_escaneado                  CERac=  0.00%  CERascii=  0.00%  lin=3/3  cajas=3  bloques={'cuerpo': 0.0}    1479.0 ms  det=si
+k1800__escaneado_d3                          CERac= 45.57%  CERascii= 45.57%  lin=1/3  cajas=2  bloques={'cuerpo': 45.57}     193.8 ms  det=si
+k1800__escaneado_d4                          CERac= 29.19%  CERascii= 28.52%  lin=5/12  cajas=10  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 1.28, 'pequeña': 73.24}     749.8 ms  det=si
+k1800__escaneado_d4c                         CERac=  9.56%  CERascii=  8.89%  lin=8/12  cajas=11  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.32, 'pequeña': 40.85}     627.1 ms  det=si
+k1800__patologico_escaneado                  CERac=  0.00%  CERascii=  0.00%  lin=3/3  cajas=3  bloques={'cuerpo': 0.0}    1379.1 ms  det=si
+{"evento": "fin", "vram_pico_MiB": 2977, "vram_base_MiB": 2793, "coste_propio_MiB": 184, "pico_util_pct": 0, "testigo_monohilo_ini_ms": 24.99, "testigo_monohilo_fin_ms": 24.03, "deriva_monohilo": 0.96, "testigo_proceso_ini_ms": 29.89, "testigo_proceso_fin_ms": 53.77, "nivel_proceso_vs_reposo": 2.02, "testigo_topado": false, "vram_tope_MiB": 11300, "muestreo_vram": false}

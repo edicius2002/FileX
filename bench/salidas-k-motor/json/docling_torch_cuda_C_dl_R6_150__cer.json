@@ -1,0 +1,185 @@
+{
+  "cabecera": {
+    "etiqueta": "docling_torch_cuda_C_dl_R6_150",
+    "dispositivo": "cuda",
+    "backend": "torch",
+    "lang": "english",
+    "docs": [
+      "escaneado_d3",
+      "escaneado_d4c",
+      "patologico_escaneado",
+      "escaneado_d4"
+    ],
+    "modo_ppp": "f1.5",
+    "reps": 9,
+    "R6": true,
+    "vram_base_MiB": 2810,
+    "quietud_pct": 40,
+    "flag": "SUCIA(pico 40%)",
+    "testigo_monohilo_ini_ms": 28.61,
+    "testigo_proceso_ini_ms": 34.91,
+    "torch": "2.6.0+cu124",
+    "torch_cuda": true,
+    "modelo": {
+      "lang_pedido": "english",
+      "lang_resuelto": "en",
+      "ppocr_version": "PP-OCRv6",
+      "model_type_v6": "small",
+      "model_type_v4v5": "mobile"
+    },
+    "muestreo_vram": false
+  },
+  "fin": {
+    "evento": "fin",
+    "vram_pico_MiB": 0,
+    "vram_base_MiB": 2810,
+    "coste_propio_MiB": -2810,
+    "pico_util_pct": 0,
+    "testigo_monohilo_ini_ms": 28.61,
+    "testigo_monohilo_fin_ms": 28.38,
+    "deriva_monohilo": 0.99,
+    "testigo_proceso_ini_ms": 34.91,
+    "testigo_proceso_fin_ms": 27.23,
+    "nivel_proceso_vs_reposo": 1.31,
+    "testigo_topado": false,
+    "vram_tope_MiB": 11900,
+    "sonda_activa": true,
+    "muestreo_vram": false
+  },
+  "res": {
+    "k1500__escaneado_d3": {
+      "referencia": "legado",
+      "ppp_nativos": 100.0,
+      "factor": 1.5,
+      "escala": 2.0833,
+      "ppp_efectivo_param": 150.0,
+      "px_reales_al_motor": [
+        970,
+        1275
+      ],
+      "cer_acentos_pct": 37.97,
+      "dist_acentos": 30,
+      "cer_ascii_pct": 37.97,
+      "dist_ascii": 30,
+      "chars": 58,
+      "lineas_exactas": 1,
+      "lineas_totales": 3,
+      "acentos_ref": 0,
+      "acentos_salida": 0,
+      "bloques": {
+        "cuerpo": 37.97
+      },
+      "normalizada_acentos": "documento escaneado texto que salo existe cama pivales",
+      "ms_mediana": 592.9,
+      "ms_min": 480.3,
+      "ms_max": 710.0,
+      "n": 9,
+      "determinista": true,
+      "constructor_s": 0.16,
+      "vram_pico_MiB": 0,
+      "vram_delta_MiB": 0
+    },
+    "k1500__escaneado_d4c": {
+      "referencia": "d4",
+      "ppp_nativos": 200.0,
+      "factor": 1.5,
+      "escala": 4.1667,
+      "ppp_efectivo_param": 300.0,
+      "px_reales_al_motor": [
+        1941,
+        2601
+      ],
+      "cer_acentos_pct": 0.84,
+      "dist_acentos": 5,
+      "cer_ascii_pct": 0.34,
+      "dist_ascii": 2,
+      "chars": 613,
+      "lineas_exactas": 9,
+      "lineas_totales": 12,
+      "acentos_ref": 35,
+      "acentos_salida": 32,
+      "bloques": {
+        "titulo": 0.0,
+        "subtitulo": 0.0,
+        "cuerpo": 0.0,
+        "pequeña": 5.16
+      },
+      "normalizada_acentos": "informe de digitalización expediente núm 4 827 2026 archivo histórico el día 14 de marzo se recibió la solicitud de análisis técnico sobre veintiún volúmenes encuadernados en piel la comisión determinó que la reproducción fotográfica debía realizarse con iluminación difusa y sin contacto según la norma une 15 402 para evitar daños añadidos en los pliegos más frágiles del año 1893 quien autorizó la excepción el párrafo tercero señala que ia revisión ortográfica y lingüistica del legajo es responsabilidad del área de conservación preventiva atención los códigos 7 8 9 n y 12 k quedan anulados",
+      "ms_mediana": 1040.0,
+      "ms_min": 964.6,
+      "ms_max": 1122.3,
+      "n": 9,
+      "determinista": true,
+      "constructor_s": 0.11,
+      "vram_pico_MiB": 0,
+      "vram_delta_MiB": 0
+    },
+    "k1500__patologico_escaneado": {
+      "referencia": "legado",
+      "ppp_nativos": 200.0,
+      "factor": 1.5,
+      "escala": 4.1667,
+      "ppp_efectivo_param": 300.0,
+      "px_reales_al_motor": [
+        1941,
+        2688
+      ],
+      "cer_acentos_pct": 0.0,
+      "dist_acentos": 0,
+      "cer_ascii_pct": 0.0,
+      "dist_ascii": 0,
+      "chars": 81,
+      "lineas_exactas": 3,
+      "lineas_totales": 3,
+      "acentos_ref": 0,
+      "acentos_salida": 0,
+      "bloques": {
+        "cuerpo": 0.0
+      },
+      "normalizada_acentos": "documento escaneado texto que solo existe como pixeles debe recuperarse con ocr",
+      "ms_mediana": 1107.3,
+      "ms_min": 1039.0,
+      "ms_max": 1186.9,
+      "n": 9,
+      "determinista": true,
+      "constructor_s": 0.11,
+      "vram_pico_MiB": 0,
+      "vram_delta_MiB": 0
+    },
+    "k1500__escaneado_d4": {
+      "referencia": "d4",
+      "ppp_nativos": 200.0,
+      "factor": 1.5,
+      "escala": 4.1667,
+      "ppp_efectivo_param": 300.0,
+      "px_reales_al_motor": [
+        1941,
+        2574
+      ],
+      "cer_acentos_pct": 21.98,
+      "dist_acentos": 131,
+      "cer_ascii_pct": 20.3,
+      "dist_ascii": 121,
+      "chars": 527,
+      "lineas_exactas": 2,
+      "lineas_totales": 12,
+      "acentos_ref": 35,
+      "acentos_salida": 16,
+      "bloques": {
+        "titulo": 0.0,
+        "subtitulo": 0.0,
+        "cuerpo": 2.56,
+        "pequeña": 66.2
+      },
+      "normalizada_acentos": "informe de digitalización expediente núm 4 827 2026 archivo histórico el dia 14 de marzo se recibió la solicitud de análisis técnico sobre veintiún volúmenes encuaderados en piel la comisión determinó que la reproducción fotografica debia realizarse con iluminación difusa y sin contacto seg n la nomma une 15 402 para evitar daños añadidos en los pliegos más fragiles del año 1893 que ka vavaion omografca a inglivvca del kegap as respionisaclcdad del ares de avvkbv2 lt 06 codga6 7 6 9 4 y 12 4 queda0 arvaadv9",
+      "ms_mediana": 1019.6,
+      "ms_min": 921.4,
+      "ms_max": 1037.0,
+      "n": 9,
+      "determinista": true,
+      "constructor_s": 0.11,
+      "vram_pico_MiB": 0,
+      "vram_delta_MiB": 0
+    }
+  }
+}

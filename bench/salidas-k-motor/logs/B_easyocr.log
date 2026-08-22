@@ -1,0 +1,42 @@
+{"etiqueta": "easyocr_cuda_B_easy", "motor": "easyocr", "dispositivo": "cuda", "patron": "k*__*.png", "imgdir": "D:\\Work\\research\\FileX\\bench\\salidas-k-motor\\img", "ref_forzada": null, "carga_frio_s": 29.36, "vram_base_MiB": 2924, "vram_tras_carga_MiB": 3218, "quietud_pct": 50, "flag": "SUCIA(pico 50%)", "testigo_monohilo_ini_ms": 26.28, "testigo_proceso_ini_ms": 39.63, "modelos": {"torch": "2.6.0+cu124", "torch_cuda": "True"}, "reps": 9, "muestreo_vram": false}
+k0500__escaneado_d3                          CERac= 74.68%  CERascii= 74.68%  lin=1/3  cajas=2  bloques={'cuerpo': 74.68}      98.2 ms  det=si
+k0500__escaneado_d4                          CERac= 62.58%  CERascii= 61.07%  lin=1/12  cajas=24  bloques={'titulo': 0.0, 'subtitulo': 53.49, 'cuerpo': 56.41, 'pequeña': 76.53}     726.0 ms  det=si
+k0500__escaneado_d4c                         CERac= 34.23%  CERascii= 32.89%  lin=3/12  cajas=31  bloques={'titulo': 8.0, 'subtitulo': 0.0, 'cuerpo': 17.63, 'pequeña': 76.06}    1023.3 ms  det=si
+k0500__patologico_escaneado                  CERac=  0.00%  CERascii=  0.00%  lin=3/3  cajas=3  bloques={'cuerpo': 0.0}     241.8 ms  det=si
+k0625__escaneado_d3                          CERac= 55.70%  CERascii= 55.70%  lin=1/3  cajas=5  bloques={'cuerpo': 55.7}     230.9 ms  det=si
+k0625__escaneado_d4                          CERac= 62.25%  CERascii= 60.40%  lin=1/12  cajas=32  bloques={'titulo': 0.0, 'subtitulo': 53.49, 'cuerpo': 59.62, 'pequeña': 78.87}     882.5 ms  det=si
+k0625__escaneado_d4c                         CERac= 25.84%  CERascii= 24.16%  lin=0/12  cajas=34  bloques={'titulo': 8.0, 'subtitulo': 9.3, 'cuerpo': 18.27, 'pequeña': 58.22}    1097.3 ms  det=si
+k0625__patologico_escaneado                  CERac=  0.00%  CERascii=  0.00%  lin=3/3  cajas=3  bloques={'cuerpo': 0.0}     309.6 ms  det=si
+k0750__escaneado_d3                          CERac= 58.23%  CERascii= 58.23%  lin=1/3  cajas=8  bloques={'cuerpo': 58.23}     281.2 ms  det=si
+k0750__escaneado_d4                          CERac= 61.58%  CERascii= 58.89%  lin=1/12  cajas=25  bloques={'titulo': 0.0, 'subtitulo': 55.81, 'cuerpo': 58.97, 'pequeña': 74.65}     828.2 ms  det=si
+k0750__escaneado_d4c                         CERac= 21.31%  CERascii= 19.13%  lin=1/12  cajas=24  bloques={'titulo': 4.0, 'subtitulo': 37.21, 'cuerpo': 10.26, 'pequeña': 52.11}    1145.5 ms  det=si
+k0750__patologico_escaneado                  CERac=  0.00%  CERascii=  0.00%  lin=3/3  cajas=3  bloques={'cuerpo': 0.0}     408.3 ms  det=si
+k0875__escaneado_d3                          CERac= 49.37%  CERascii= 49.37%  lin=1/3  cajas=6  bloques={'cuerpo': 49.37}     306.8 ms  det=si
+k0875__escaneado_d4                          CERac= 63.26%  CERascii= 62.08%  lin=1/12  cajas=28  bloques={'titulo': 0.0, 'subtitulo': 46.51, 'cuerpo': 58.33, 'pequeña': 77.0}    1003.3 ms  det=si
+k0875__escaneado_d4c                         CERac= 19.63%  CERascii= 17.45%  lin=1/12  cajas=27  bloques={'titulo': 8.0, 'subtitulo': 0.0, 'cuerpo': 11.22, 'pequeña': 46.95}    1311.1 ms  det=si
+k0875__patologico_escaneado                  CERac=  0.00%  CERascii=  0.00%  lin=3/3  cajas=3  bloques={'cuerpo': 0.0}     523.5 ms  det=si
+k1000__escaneado_d3                          OMITIDO por VRAM: 11327 > 11300 MiB
+k1000__escaneado_d4                          OMITIDO por VRAM: 11327 > 11300 MiB
+k1000__escaneado_d4c                         OMITIDO por VRAM: 11327 > 11300 MiB
+k1000__patologico_escaneado                  OMITIDO por VRAM: 11327 > 11300 MiB
+k1125__escaneado_d3                          OMITIDO por VRAM: 11327 > 11300 MiB
+k1125__escaneado_d4                          OMITIDO por VRAM: 11327 > 11300 MiB
+k1125__escaneado_d4c                         OMITIDO por VRAM: 11327 > 11300 MiB
+k1125__patologico_escaneado                  OMITIDO por VRAM: 11327 > 11300 MiB
+k1250__escaneado_d3                          OMITIDO por VRAM: 11327 > 11300 MiB
+k1250__escaneado_d4                          OMITIDO por VRAM: 11327 > 11300 MiB
+k1250__escaneado_d4c                         OMITIDO por VRAM: 11327 > 11300 MiB
+k1250__patologico_escaneado                  OMITIDO por VRAM: 11327 > 11300 MiB
+k1400__escaneado_d3                          OMITIDO por VRAM: 11327 > 11300 MiB
+k1400__escaneado_d4                          OMITIDO por VRAM: 11327 > 11300 MiB
+k1400__escaneado_d4c                         OMITIDO por VRAM: 11327 > 11300 MiB
+k1400__patologico_escaneado                  OMITIDO por VRAM: 11327 > 11300 MiB
+k1600__escaneado_d3                          OMITIDO por VRAM: 11327 > 11300 MiB
+k1600__escaneado_d4                          OMITIDO por VRAM: 11327 > 11300 MiB
+k1600__escaneado_d4c                         OMITIDO por VRAM: 11327 > 11300 MiB
+k1600__patologico_escaneado                  OMITIDO por VRAM: 11327 > 11300 MiB
+k1800__escaneado_d3                          OMITIDO por VRAM: 11327 > 11300 MiB
+k1800__escaneado_d4                          OMITIDO por VRAM: 11327 > 11300 MiB
+k1800__escaneado_d4c                         OMITIDO por VRAM: 11327 > 11300 MiB
+k1800__patologico_escaneado                  OMITIDO por VRAM: 11327 > 11300 MiB
+{"evento": "fin", "vram_pico_MiB": 3218, "vram_base_MiB": 2924, "coste_propio_MiB": 294, "pico_util_pct": 0, "testigo_monohilo_ini_ms": 26.28, "testigo_monohilo_fin_ms": 29.84, "deriva_monohilo": 1.14, "testigo_proceso_ini_ms": 39.63, "testigo_proceso_fin_ms": 32.59, "nivel_proceso_vs_reposo": 1.49, "testigo_topado": false, "vram_tope_MiB": 11300, "muestreo_vram": false}

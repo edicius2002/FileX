@@ -1,0 +1,15 @@
+[32mCreating model: ('PP-LCNet_x1_0_textline_ori', None, None)[0m
+[32mModel files already exist. Using cached files. To redownload, please delete the directory manually: `C:\Users\krato\.paddlex\official_models\PP-LCNet_x1_0_textline_ori`.[0m
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+W0822 09:25:21.374646 29912 gpu_resources.cc:114] Please NOTE: device: 0, GPU Compute Capability: 8.6, Driver API Version: 12.8, Runtime API Version: 12.6
+[32mCreating model: ('PP-OCRv6_medium_det', None, None)[0m
+[32mModel files already exist. Using cached files. To redownload, please delete the directory manually: `C:\Users\krato\.paddlex\official_models\PP-OCRv6_medium_det`.[0m
+[32mCreating model: ('PP-OCRv6_medium_rec', None, None)[0m
+[32mModel files already exist. Using cached files. To redownload, please delete the directory manually: `C:\Users\krato\.paddlex\official_models\PP-OCRv6_medium_rec`.[0m
+{"etiqueta": "paddleocr_cuda_G_pd6med_150", "motor": "paddleocr", "dispositivo": "cuda", "patron": "k1500__*.png", "imgdir": "D:\\Work\\research\\FileX\\bench\\salidas-k-motor\\img", "ref_forzada": null, "carga_frio_s": 23.28, "vram_base_MiB": 2864, "vram_tras_carga_MiB": 3120, "quietud_pct": 36, "flag": "SUCIA(pico 36%)", "testigo_monohilo_ini_ms": 26.97, "testigo_proceso_ini_ms": 33.67, "modelos": {"paddle": "3.2.0", "kwargs": {"device": "gpu:0", "use_doc_orientation_classify": "False", "use_doc_unwarping": "False", "use_textline_orientation": "True"}, "params": {"doc_orientation_classify_model_name": "None", "doc_unwarping_model_name": "None", "text_detection_model_name": "PP-OCRv6_medium_det", "textline_orientation_model_name": "None", "text_recognition_model_name": "PP-OCRv6_medium_rec"}}, "reps": 9, "muestreo_vram": false}
+W0822 09:25:25.585372 29912 gpu_resources.cc:243] WARNING: device: 0. The installed Paddle is compiled with CUDNN 9.9, but CUDNN version in your machine is 9.5, which may cause serious incompatible bug. Please recompile or reinstall Paddle with compatible CUDNN version.
+k1500__escaneado_d3                          CERac= 31.65%  CERascii= 31.65%  lin=2/3  cajas=2  bloques={'cuerpo': 31.65}     188.2 ms  det=si
+k1500__escaneado_d4                          CERac= 25.17%  CERascii= 24.50%  lin=5/12  cajas=11  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.96, 'pequeña': 74.65}     821.4 ms  det=si
+k1500__escaneado_d4c                         CERac=  0.84%  CERascii=  0.00%  lin=9/12  cajas=12  bloques={'titulo': 0.0, 'subtitulo': 0.0, 'cuerpo': 0.0, 'pequeña': 5.16}     851.7 ms  det=si
+k1500__patologico_escaneado                  CERac=  0.00%  CERascii=  0.00%  lin=3/3  cajas=3  bloques={'cuerpo': 0.0}     638.5 ms  det=si
+{"evento": "fin", "vram_pico_MiB": 3120, "vram_base_MiB": 2864, "coste_propio_MiB": 256, "pico_util_pct": 0, "testigo_monohilo_ini_ms": 26.97, "testigo_monohilo_fin_ms": 28.79, "deriva_monohilo": 1.07, "testigo_proceso_ini_ms": 33.67, "testigo_proceso_fin_ms": 33.49, "nivel_proceso_vs_reposo": 1.26, "testigo_topado": false, "vram_tope_MiB": 11900, "muestreo_vram": false}

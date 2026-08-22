@@ -1,0 +1,577 @@
+{
+  "cabecera": {
+    "etiqueta": "easyocr_cuda_B_easy",
+    "motor": "easyocr",
+    "dispositivo": "cuda",
+    "patron": "k*__*.png",
+    "imgdir": "D:\\Work\\research\\FileX\\bench\\salidas-k-motor\\img",
+    "ref_forzada": null,
+    "carga_frio_s": 29.36,
+    "vram_base_MiB": 2924,
+    "vram_tras_carga_MiB": 3218,
+    "quietud_pct": 50,
+    "flag": "SUCIA(pico 50%)",
+    "testigo_monohilo_ini_ms": 26.28,
+    "testigo_proceso_ini_ms": 39.63,
+    "modelos": {
+      "torch": "2.6.0+cu124",
+      "torch_cuda": "True"
+    },
+    "reps": 9,
+    "muestreo_vram": false
+  },
+  "fin": {
+    "evento": "fin",
+    "vram_pico_MiB": 3218,
+    "vram_base_MiB": 2924,
+    "coste_propio_MiB": 294,
+    "pico_util_pct": 0,
+    "testigo_monohilo_ini_ms": 26.28,
+    "testigo_monohilo_fin_ms": 29.84,
+    "deriva_monohilo": 1.14,
+    "testigo_proceso_ini_ms": 39.63,
+    "testigo_proceso_fin_ms": 32.59,
+    "nivel_proceso_vs_reposo": 1.49,
+    "testigo_topado": false,
+    "vram_tope_MiB": 11300,
+    "muestreo_vram": false
+  },
+  "res": {
+    "k0500__escaneado_d3": {
+      "referencia": "legado",
+      "cer_acentos_pct": 74.68,
+      "dist_acentos": 59,
+      "cer_ascii_pct": 74.68,
+      "dist_ascii": 59,
+      "chars_ref_acentos": 79,
+      "chars": 22,
+      "lineas_exactas": 1,
+      "lineas_totales": 3,
+      "acentos_ref": 0,
+      "acentos_salida": 0,
+      "bloques": {
+        "cuerpo": 74.68
+      },
+      "cajas": 2,
+      "normalizada_acentos": "documento escaneado y",
+      "ms_mediana": 98.2,
+      "ms_min": 87.5,
+      "ms_max": 181.1,
+      "n": 9,
+      "determinista": true,
+      "vram_pico_MiB": 3218,
+      "vram_delta_lote_MiB": 0,
+      "testigo_monohilo_ms": 33.68
+    },
+    "k0500__escaneado_d4": {
+      "referencia": "d4",
+      "cer_acentos_pct": 62.58,
+      "dist_acentos": 373,
+      "cer_ascii_pct": 61.07,
+      "dist_ascii": 364,
+      "chars_ref_acentos": 596,
+      "chars": 356,
+      "lineas_exactas": 1,
+      "lineas_totales": 12,
+      "acentos_ref": 35,
+      "acentos_salida": 1,
+      "bloques": {
+        "titulo": 0.0,
+        "subtitulo": 53.49,
+        "cuerpo": 56.41,
+        "pequeña": 76.53
+      },
+      "cajas": 24,
+      "normalizada_acentos": "informe de digitalización hislonco 827 2026 archivo expediente num reciaic l solicitud de eldia 4 de mafzo se sobre veintian voiumenes encuadernados iccnco reproducoon comtsion daloruno snn contadto reanzarse con luminacon ouusa debia eviter danos nadkos segun la noma une 15 402 fragues gal ano 1893 en los peocs mas anatis 5 ptel lologralica qua para",
+      "ms_mediana": 726.0,
+      "ms_min": 675.6,
+      "ms_max": 872.5,
+      "n": 9,
+      "determinista": true,
+      "vram_pico_MiB": 3218,
+      "vram_delta_lote_MiB": 0,
+      "testigo_monohilo_ms": 26.18
+    },
+    "k0500__escaneado_d4c": {
+      "referencia": "d4",
+      "cer_acentos_pct": 34.23,
+      "dist_acentos": 204,
+      "cer_ascii_pct": 32.89,
+      "dist_ascii": 196,
+      "chars_ref_acentos": 596,
+      "chars": 510,
+      "lineas_exactas": 3,
+      "lineas_totales": 12,
+      "acentos_ref": 35,
+      "acentos_salida": 17,
+      "bloques": {
+        "titulo": 8.0,
+        "subtitulo": 0.0,
+        "cuerpo": 17.63,
+        "pequeña": 76.06
+      },
+      "cajas": 31,
+      "normalizada_acentos": "eneforme de digitalización expediente núm 4 827 2026 archivo histórico el día 14 de marzo se recibió la solicitud de análisis técnico sobre veintiún volúmenes la comisión encuadernados en piel determino que la reproducción debia realizarse con iluminación fotografica difusa sin contacto según la norma une 15 402 para evitar daños anadidos en los pliegos más frágiles del año 1893 aulovo bcrouon hnn fanuon orcaralia mtoshg quk raspontuoudnn connen bgon pruvonlva aonconl lovcuid 308 7 8 0 4y 12 k cua",
+      "ms_mediana": 1023.3,
+      "ms_min": 981.9,
+      "ms_max": 1044.6,
+      "n": 9,
+      "determinista": true,
+      "vram_pico_MiB": 3218,
+      "vram_delta_lote_MiB": 0,
+      "testigo_monohilo_ms": 26.92
+    },
+    "k0500__patologico_escaneado": {
+      "referencia": "legado",
+      "cer_acentos_pct": 0.0,
+      "dist_acentos": 0,
+      "cer_ascii_pct": 0.0,
+      "dist_ascii": 0,
+      "chars_ref_acentos": 79,
+      "chars": 81,
+      "lineas_exactas": 3,
+      "lineas_totales": 3,
+      "acentos_ref": 0,
+      "acentos_salida": 0,
+      "bloques": {
+        "cuerpo": 0.0
+      },
+      "cajas": 3,
+      "normalizada_acentos": "documento escaneado texto que solo existe como pixeles debe recuperarse con ocr",
+      "ms_mediana": 241.8,
+      "ms_min": 233.5,
+      "ms_max": 249.7,
+      "n": 9,
+      "determinista": true,
+      "vram_pico_MiB": 3218,
+      "vram_delta_lote_MiB": 0,
+      "testigo_monohilo_ms": 37.24
+    },
+    "k0625__escaneado_d3": {
+      "referencia": "legado",
+      "cer_acentos_pct": 55.7,
+      "dist_acentos": 44,
+      "cer_ascii_pct": 55.7,
+      "dist_ascii": 44,
+      "chars_ref_acentos": 79,
+      "chars": 47,
+      "lineas_exactas": 1,
+      "lineas_totales": 3,
+      "acentos_ref": 0,
+      "acentos_salida": 0,
+      "bloques": {
+        "cuerpo": 55.7
+      },
+      "cajas": 5,
+      "normalizada_acentos": "documento escaneado 14o soc bavte cot 82 crolx",
+      "ms_mediana": 230.9,
+      "ms_min": 213.4,
+      "ms_max": 320.2,
+      "n": 9,
+      "determinista": true,
+      "vram_pico_MiB": 3218,
+      "vram_delta_lote_MiB": 0,
+      "testigo_monohilo_ms": 28.89
+    },
+    "k0625__escaneado_d4": {
+      "referencia": "d4",
+      "cer_acentos_pct": 62.25,
+      "dist_acentos": 371,
+      "cer_ascii_pct": 60.4,
+      "dist_ascii": 360,
+      "chars_ref_acentos": 596,
+      "chars": 366,
+      "lineas_exactas": 1,
+      "lineas_totales": 12,
+      "acentos_ref": 35,
+      "acentos_salida": 3,
+      "bloques": {
+        "titulo": 0.0,
+        "subtitulo": 53.49,
+        "cuerpo": 59.62,
+        "pequeña": 78.87
+      },
+      "cajas": 32,
+      "normalizada_acentos": "informe de digitalización histórico num 827 2026 archivo expediente recibió 1a soliciud de analisis edia 1 0a en veintiun volumenes encuadernados tecnico sobre lotogtalica celottrng feproducoion l comissjon oiusa sin centarto debia reaiizawse con uminacion hadios une 16402 evitor unos sequnla 1093 pliegos mas tregiles del ano elos nor muczo oial qua para norm",
+      "ms_mediana": 882.5,
+      "ms_min": 797.7,
+      "ms_max": 947.1,
+      "n": 9,
+      "determinista": true,
+      "vram_pico_MiB": 3218,
+      "vram_delta_lote_MiB": 0,
+      "testigo_monohilo_ms": 28.09
+    },
+    "k0625__escaneado_d4c": {
+      "referencia": "d4",
+      "cer_acentos_pct": 25.84,
+      "dist_acentos": 154,
+      "cer_ascii_pct": 24.16,
+      "dist_ascii": 144,
+      "chars_ref_acentos": 596,
+      "chars": 566,
+      "lineas_exactas": 0,
+      "lineas_totales": 12,
+      "acentos_ref": 35,
+      "acentos_salida": 17,
+      "bloques": {
+        "titulo": 8.0,
+        "subtitulo": 9.3,
+        "cuerpo": 18.27,
+        "pequeña": 58.22
+      },
+      "cajas": 34,
+      "normalizada_acentos": "eneforme de digitalización expediente núm 827 2026 archivo histórico el dia 14 de marzo se recibió la solicitud de análisis técnico sobre veintiún volúmenes la encuadernados en piel conisión determinó que la reproducción fotográfica debia realizarse iluminación y sin contacto según la norma une 15 402 para evitar daños en los pliegos frágiles del año anadidos 1893 quan slonza bicrockon7 el paftato iorcurp qu reston orroahca nguislicn oal wq o rpsponsabaidad del e 6 consetvacion povenibva aiancioni los ccd cs 7 8 4y 12 k quodan nnuladns con dilusa mas",
+      "ms_mediana": 1097.3,
+      "ms_min": 1059.2,
+      "ms_max": 1114.2,
+      "n": 9,
+      "determinista": true,
+      "vram_pico_MiB": 3218,
+      "vram_delta_lote_MiB": 0,
+      "testigo_monohilo_ms": 21.89
+    },
+    "k0625__patologico_escaneado": {
+      "referencia": "legado",
+      "cer_acentos_pct": 0.0,
+      "dist_acentos": 0,
+      "cer_ascii_pct": 0.0,
+      "dist_ascii": 0,
+      "chars_ref_acentos": 79,
+      "chars": 80,
+      "lineas_exactas": 3,
+      "lineas_totales": 3,
+      "acentos_ref": 0,
+      "acentos_salida": 0,
+      "bloques": {
+        "cuerpo": 0.0
+      },
+      "cajas": 3,
+      "normalizada_acentos": "documento escaneado texto que solo existe como pixeles debe recuperarse con ocr",
+      "ms_mediana": 309.6,
+      "ms_min": 302.3,
+      "ms_max": 336.8,
+      "n": 9,
+      "determinista": true,
+      "vram_pico_MiB": 3218,
+      "vram_delta_lote_MiB": 0,
+      "testigo_monohilo_ms": 32.06
+    },
+    "k0750__escaneado_d3": {
+      "referencia": "legado",
+      "cer_acentos_pct": 58.23,
+      "dist_acentos": 46,
+      "cer_ascii_pct": 58.23,
+      "dist_ascii": 46,
+      "chars_ref_acentos": 79,
+      "chars": 71,
+      "lineas_exactas": 1,
+      "lineas_totales": 3,
+      "acentos_ref": 0,
+      "acentos_salida": 0,
+      "bloques": {
+        "cuerpo": 58.23
+      },
+      "cajas": 8,
+      "normalizada_acentos": "documento escaneado gu eni 246te cot fuen7s looe9so4 2980 okr urey fod",
+      "ms_mediana": 281.2,
+      "ms_min": 250.3,
+      "ms_max": 291.7,
+      "n": 9,
+      "determinista": true,
+      "vram_pico_MiB": 3218,
+      "vram_delta_lote_MiB": 0,
+      "testigo_monohilo_ms": 27.92
+    },
+    "k0750__escaneado_d4": {
+      "referencia": "d4",
+      "cer_acentos_pct": 61.58,
+      "dist_acentos": 367,
+      "cer_ascii_pct": 58.89,
+      "dist_ascii": 351,
+      "chars_ref_acentos": 596,
+      "chars": 373,
+      "lineas_exactas": 1,
+      "lineas_totales": 12,
+      "acentos_ref": 35,
+      "acentos_salida": 3,
+      "bloques": {
+        "titulo": 0.0,
+        "subtitulo": 55.81,
+        "cuerpo": 58.97,
+        "pequeña": 74.65
+      },
+      "cajas": 25,
+      "normalizada_acentos": "informe de digitalización híslorico nuni 827 2026 archivo expediente recibio la solicitund analisis eldia 14 da marzo se en volumenes encuadernados jecnco sobit reproduccion fotografica comision delormino qu0 a la muminacion oiusa y sin contedio debia 1ealizarsa coxn danos nnarkdos noma une 16 402 para evitar sequnla m s fr gies dé ano 1893 enlos plegos pial vuinuun",
+      "ms_mediana": 828.2,
+      "ms_min": 773.5,
+      "ms_max": 862.9,
+      "n": 9,
+      "determinista": true,
+      "vram_pico_MiB": 3218,
+      "vram_delta_lote_MiB": 0,
+      "testigo_monohilo_ms": 22.52
+    },
+    "k0750__escaneado_d4c": {
+      "referencia": "d4",
+      "cer_acentos_pct": 21.31,
+      "dist_acentos": 127,
+      "cer_ascii_pct": 19.13,
+      "dist_ascii": 114,
+      "chars_ref_acentos": 596,
+      "chars": 578,
+      "lineas_exactas": 1,
+      "lineas_totales": 12,
+      "acentos_ref": 35,
+      "acentos_salida": 17,
+      "bloques": {
+        "titulo": 4.0,
+        "subtitulo": 37.21,
+        "cuerpo": 10.26,
+        "pequeña": 52.11
+      },
+      "cajas": 24,
+      "normalizada_acentos": "enforme de digitalización expediente núm 4 827 2026 histórico eldia 14 de marzo se recibió la solicitud de análisis técnico sobre veintiún volúmenes encuadernados en piel la comisión determinó que la reproducción debia realizarse con iluminación fotográfica difusa y sin contacto según la norma une 15 402 para evitar daños anadidos en los pliegos mas frágiles del año 1893 quen autorz la icopckn el paftato gicero beau qur la rovisson oroorahc a nguishica oel w9 o fobpunsubdidad del wen o conservscion povenpva aloncion los codcs 7b ry 12k quarien anuldos archivo",
+      "ms_mediana": 1145.5,
+      "ms_min": 1109.6,
+      "ms_max": 1209.6,
+      "n": 9,
+      "determinista": true,
+      "vram_pico_MiB": 3218,
+      "vram_delta_lote_MiB": 0,
+      "testigo_monohilo_ms": 26.56
+    },
+    "k0750__patologico_escaneado": {
+      "referencia": "legado",
+      "cer_acentos_pct": 0.0,
+      "dist_acentos": 0,
+      "cer_ascii_pct": 0.0,
+      "dist_ascii": 0,
+      "chars_ref_acentos": 79,
+      "chars": 81,
+      "lineas_exactas": 3,
+      "lineas_totales": 3,
+      "acentos_ref": 0,
+      "acentos_salida": 0,
+      "bloques": {
+        "cuerpo": 0.0
+      },
+      "cajas": 3,
+      "normalizada_acentos": "documento escaneado texto que solo existe como pixeles debe recuperarse con ocr",
+      "ms_mediana": 408.3,
+      "ms_min": 397.6,
+      "ms_max": 425.4,
+      "n": 9,
+      "determinista": true,
+      "vram_pico_MiB": 3218,
+      "vram_delta_lote_MiB": 0,
+      "testigo_monohilo_ms": 33.14
+    },
+    "k0875__escaneado_d3": {
+      "referencia": "legado",
+      "cer_acentos_pct": 49.37,
+      "dist_acentos": 39,
+      "cer_ascii_pct": 49.37,
+      "dist_ascii": 39,
+      "chars_ref_acentos": 79,
+      "chars": 65,
+      "lineas_exactas": 1,
+      "lineas_totales": 3,
+      "acentos_ref": 0,
+      "acentos_salida": 0,
+      "bloques": {
+        "cuerpo": 49.37
+      },
+      "cajas": 6,
+      "normalizada_acentos": "documento escaneado 1ctfo quo sukerue orrixene car 7xer labeoufoe",
+      "ms_mediana": 306.8,
+      "ms_min": 276.1,
+      "ms_max": 343.8,
+      "n": 9,
+      "determinista": true,
+      "vram_pico_MiB": 3218,
+      "vram_delta_lote_MiB": 0,
+      "testigo_monohilo_ms": 28.8
+    },
+    "k0875__escaneado_d4": {
+      "referencia": "d4",
+      "cer_acentos_pct": 63.26,
+      "dist_acentos": 377,
+      "cer_ascii_pct": 62.08,
+      "dist_ascii": 370,
+      "chars_ref_acentos": 596,
+      "chars": 373,
+      "lineas_exactas": 1,
+      "lineas_totales": 12,
+      "acentos_ref": 35,
+      "acentos_salida": 4,
+      "bloques": {
+        "titulo": 0.0,
+        "subtitulo": 46.51,
+        "cuerpo": 58.33,
+        "pequeña": 77.0
+      },
+      "cajas": 28,
+      "normalizada_acentos": "informe de digitalización histónco nuur 4 827 2026 archivo expadiente recibió a solichus du analisis e día 14 0a mefzo se en vesintin volumenes encuademnados tecnico sohie jotogtalica celortrna a reprodutecn la csjon dxusa y sin centacto debia reanzarse con uminacion adadios une 15 402 para euitar danos segun a norma ano 1095 n las plegcs m s tregnes pial qur qnf",
+      "ms_mediana": 1003.3,
+      "ms_min": 965.8,
+      "ms_max": 1060.2,
+      "n": 9,
+      "determinista": true,
+      "vram_pico_MiB": 3218,
+      "vram_delta_lote_MiB": 0,
+      "testigo_monohilo_ms": 44.21
+    },
+    "k0875__escaneado_d4c": {
+      "referencia": "d4",
+      "cer_acentos_pct": 19.63,
+      "dist_acentos": 117,
+      "cer_ascii_pct": 17.45,
+      "dist_ascii": 104,
+      "chars_ref_acentos": 596,
+      "chars": 585,
+      "lineas_exactas": 1,
+      "lineas_totales": 12,
+      "acentos_ref": 35,
+      "acentos_salida": 18,
+      "bloques": {
+        "titulo": 8.0,
+        "subtitulo": 0.0,
+        "cuerpo": 11.22,
+        "pequeña": 46.95
+      },
+      "cajas": 27,
+      "normalizada_acentos": "eneorme de digitalización expediente núm 4 827 2026 archivo histórico el dia 14 de marzo se recibió la solicitud de análisis técnico sobre veintiún volúmenes la encuadernados en piel comisión determinó que la reproducción debia realizarse con fotográfica iluminación difusa y sin contacto según la norma une 15 402 para evitar danos añadidos enlos pliegos más frágiles del año 1893 qusen autonza la cxcepcion el parrulo iorturo seat qutla ruusion oroxnalica inguistka dal wqwo responsabiidad del nten ot conservacion provenuver alonconi col 3cs 7 8 b y 1 k quedun nnutados loa",
+      "ms_mediana": 1311.1,
+      "ms_min": 1267.9,
+      "ms_max": 1520.8,
+      "n": 9,
+      "determinista": true,
+      "vram_pico_MiB": 3218,
+      "vram_delta_lote_MiB": 0,
+      "testigo_monohilo_ms": 26.77
+    },
+    "k0875__patologico_escaneado": {
+      "referencia": "legado",
+      "cer_acentos_pct": 0.0,
+      "dist_acentos": 0,
+      "cer_ascii_pct": 0.0,
+      "dist_ascii": 0,
+      "chars_ref_acentos": 79,
+      "chars": 81,
+      "lineas_exactas": 3,
+      "lineas_totales": 3,
+      "acentos_ref": 0,
+      "acentos_salida": 0,
+      "bloques": {
+        "cuerpo": 0.0
+      },
+      "cajas": 3,
+      "normalizada_acentos": "documento escaneado texto que solo existe como pixeles debe recuperarse con ocr",
+      "ms_mediana": 523.5,
+      "ms_min": 492.0,
+      "ms_max": 531.6,
+      "n": 9,
+      "determinista": true,
+      "vram_pico_MiB": 3218,
+      "vram_delta_lote_MiB": 0,
+      "testigo_monohilo_ms": 28.98
+    },
+    "k1000__escaneado_d3": {
+      "omitido_vram": 11327,
+      "tope": 11300
+    },
+    "k1000__escaneado_d4": {
+      "omitido_vram": 11327,
+      "tope": 11300
+    },
+    "k1000__escaneado_d4c": {
+      "omitido_vram": 11327,
+      "tope": 11300
+    },
+    "k1000__patologico_escaneado": {
+      "omitido_vram": 11327,
+      "tope": 11300
+    },
+    "k1125__escaneado_d3": {
+      "omitido_vram": 11327,
+      "tope": 11300
+    },
+    "k1125__escaneado_d4": {
+      "omitido_vram": 11327,
+      "tope": 11300
+    },
+    "k1125__escaneado_d4c": {
+      "omitido_vram": 11327,
+      "tope": 11300
+    },
+    "k1125__patologico_escaneado": {
+      "omitido_vram": 11327,
+      "tope": 11300
+    },
+    "k1250__escaneado_d3": {
+      "omitido_vram": 11327,
+      "tope": 11300
+    },
+    "k1250__escaneado_d4": {
+      "omitido_vram": 11327,
+      "tope": 11300
+    },
+    "k1250__escaneado_d4c": {
+      "omitido_vram": 11327,
+      "tope": 11300
+    },
+    "k1250__patologico_escaneado": {
+      "omitido_vram": 11327,
+      "tope": 11300
+    },
+    "k1400__escaneado_d3": {
+      "omitido_vram": 11327,
+      "tope": 11300
+    },
+    "k1400__escaneado_d4": {
+      "omitido_vram": 11327,
+      "tope": 11300
+    },
+    "k1400__escaneado_d4c": {
+      "omitido_vram": 11327,
+      "tope": 11300
+    },
+    "k1400__patologico_escaneado": {
+      "omitido_vram": 11327,
+      "tope": 11300
+    },
+    "k1600__escaneado_d3": {
+      "omitido_vram": 11327,
+      "tope": 11300
+    },
+    "k1600__escaneado_d4": {
+      "omitido_vram": 11327,
+      "tope": 11300
+    },
+    "k1600__escaneado_d4c": {
+      "omitido_vram": 11327,
+      "tope": 11300
+    },
+    "k1600__patologico_escaneado": {
+      "omitido_vram": 11327,
+      "tope": 11300
+    },
+    "k1800__escaneado_d3": {
+      "omitido_vram": 11327,
+      "tope": 11300
+    },
+    "k1800__escaneado_d4": {
+      "omitido_vram": 11327,
+      "tope": 11300
+    },
+    "k1800__escaneado_d4c": {
+      "omitido_vram": 11327,
+      "tope": 11300
+    },
+    "k1800__patologico_escaneado": {
+      "omitido_vram": 11327,
+      "tope": 11300
+    }
+  }
+}

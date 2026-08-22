@@ -1,0 +1,67 @@
+{
+  "cabecera": {
+    "etiqueta": "easyocr_cuda_E_easy_1800",
+    "motor": "easyocr",
+    "dispositivo": "cuda",
+    "patron": "k1800__patologico_escaneado.png",
+    "imgdir": "D:\\Work\\research\\FileX\\bench\\salidas-k-motor\\img",
+    "ref_forzada": null,
+    "carga_frio_s": 7.3,
+    "vram_base_MiB": 2895,
+    "vram_tras_carga_MiB": 3089,
+    "quietud_pct": 39,
+    "flag": "SUCIA(pico 39%)",
+    "testigo_monohilo_ini_ms": 29.18,
+    "testigo_proceso_ini_ms": 32.26,
+    "modelos": {
+      "torch": "2.6.0+cu124",
+      "torch_cuda": "True"
+    },
+    "reps": 9,
+    "muestreo_vram": false
+  },
+  "fin": {
+    "evento": "fin",
+    "vram_pico_MiB": 3089,
+    "vram_base_MiB": 2895,
+    "coste_propio_MiB": 194,
+    "pico_util_pct": 0,
+    "testigo_monohilo_ini_ms": 29.18,
+    "testigo_monohilo_fin_ms": 31.21,
+    "deriva_monohilo": 1.07,
+    "testigo_proceso_ini_ms": 32.26,
+    "testigo_proceso_fin_ms": 28.18,
+    "nivel_proceso_vs_reposo": 1.21,
+    "testigo_topado": false,
+    "vram_tope_MiB": 11900,
+    "muestreo_vram": false
+  },
+  "res": {
+    "k1800__patologico_escaneado": {
+      "referencia": "legado",
+      "cer_acentos_pct": 0.0,
+      "dist_acentos": 0,
+      "cer_ascii_pct": 0.0,
+      "dist_ascii": 0,
+      "chars_ref_acentos": 79,
+      "chars": 81,
+      "lineas_exactas": 3,
+      "lineas_totales": 3,
+      "acentos_ref": 0,
+      "acentos_salida": 0,
+      "bloques": {
+        "cuerpo": 0.0
+      },
+      "cajas": 3,
+      "normalizada_acentos": "documento escaneado texto que solo existe como pixeles debe recuperarse con ocr",
+      "ms_mediana": 1246.9,
+      "ms_min": 1177.1,
+      "ms_max": 1867.7,
+      "n": 9,
+      "determinista": true,
+      "vram_pico_MiB": 3089,
+      "vram_delta_lote_MiB": 0,
+      "testigo_monohilo_ms": 29.08
+    }
+  }
+}
