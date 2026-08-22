@@ -94,6 +94,7 @@ import tempfile
 from . import formatos, invocacion
 from .grafo import NOMINAL, REAL, SIN_SONDEAR, Arista
 from .motores import Motor
+from . import sondeo
 
 #: **REFUTADO: `filex-convertx` no es una imagen, es un CONTENEDOR.**
 #: `CLAUDE.md` §2 y `bench/aristas-nominales.md` §8 hablan de «la imagen
@@ -324,7 +325,8 @@ class _EnContenedor:
         # dimensión, y sin ella la tabla miente en otra máquina — `svg→png` con
         # `magick` es real en Windows y NOMINAL en este mismo Debian.
         self.version = f"{e['servidor']} · {e['imagen']}@{e['imagen_id'][7:19]}"
-        self.aristas = self._aristas()
+        # Igual que los nativos: lo sondeado se superpone desde datos.
+        self.aristas = sondeo.aplicar(self.nombre, self.build, self._aristas())
 
     # --------------------------------------------------------------- aristas
 

@@ -31,7 +31,7 @@ from __future__ import annotations
 import os
 from dataclasses import dataclass, field
 
-from . import formatos, invocacion
+from . import formatos, invocacion, sondeo
 from .grafo import REAL, SIN_SONDEAR, Arista
 
 #: El patrón oro midió con 4 hilos. Se conserva para que las cifras comparen.
@@ -56,11 +56,18 @@ class Motor:
         return self.ruta is not None
 
     def sondear(self) -> None:
-        """Rellena `ruta` y `version` preguntándole AL BINARIO."""
+        """Rellena `ruta` y `version` preguntándole AL BINARIO.
+
+        Y superpone lo que haya en `filex/sondeo/<motor>.json`: el resultado de
+        ejecutar una arista es DATO, no código. Una tabla tecleada en este
+        fichero no llevaría su `build`, y sin `build` una arista miente en la
+        siguiente máquina — `svg→png` con `magick` es real en Windows y nominal
+        en el Debian del contenedor.
+        """
         self.ruta = invocacion.disponible(self.binario)
         if self.ruta:
             self.version = self._version()
-            self.aristas = self._aristas()
+            self.aristas = sondeo.aplicar(self.nombre, self.build, self._aristas())
 
     def _version(self) -> str:
         return ""
