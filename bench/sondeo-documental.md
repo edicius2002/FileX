@@ -18,9 +18,11 @@ Cada afirmación va marcada **[MEDIDO]** o **[PENDIENTE]**. Todas las cifras sal
 | Aristas `doc_*` `nominal` | 3 | 3 |
 | Aristas `doc_*` `sin_sondear` | **23** | **0** |
 | Aristas del grafo entero | 215 | 215 |
-| Pruebas en verde | 88 | **88** |
+| Pruebas en verde | 88 | **88** ⁴ |
 
 **[MEDIDO]** — `python -m unittest discover -s pruebas` y `FileX().grafo`.
+
+⁴ *Con una salvedad honesta: en 2 de 5 pasadas de la suite completa falló **una** prueba, `test_el_tope_de_dentro_no_deja_contenedores_vivos`, que es de K1 y **es inestable bajo carga**, no una regresión de este trabajo — en aislamiento da 4 de 4 en verde y el contenedor no queda. Diagnóstico y números en el pendiente 8.*
 
 **Las 23 salen `real`. Ninguna sale `nominal`, y eso es un resultado, no un descuido:** las 23 se eligieron en su día porque compartían filtro de importación con una arista ya medida, y la apuesta se ha pagado 23 de 23. Lo interesante no está ahí.
 
@@ -398,7 +400,7 @@ Las del §3 están medidas y **no están en el grafo**, así que el sondeo que e
 | 5 | **`epub→epub` es una arista `real` que el grafo NUNCA puede elegir** | S22: 20 209 B con centinela, contrato `ok_parcial`. `camino()` sale antes por «origen y destino son el mismo formato». Es **normalización** —lo mismo que hace `pdf→pdf` con `pdfwrite`, que sí está declarada— y hoy no hay forma de pedirla |
 | 6 | **Descomprimir `/ObjStm` con `zlib`** para contar páginas de verdad (§7.2) | Cierra el falso negativo que deja abierto mi propio diff |
 | 7 | **`tex→pdf` recupera 268 caracteres y `tex→html` 2 939** sobre la misma entrada | Puede ser `txtwrite`, puede ser xelatex. No lo he separado |
-| 8 | **La suite depende del CONTENIDO de `filex/sondeo/*.json`, y esos ficheros aparecen mientras corre** | **[MEDIDO]**, observado: una pasada de las 88 falló 1 justo cuando el grafo pasó de 142 a 190 aristas `real` porque otro agente escribió su fichero; las dos pasadas siguientes, con el fichero ya en su sitio, dieron **88 en verde**. No es un fallo de nadie: es que **el sondeo es dato y las pruebas lo leen del disco**. Merece o un `sondeo` fijo en las pruebas, o que se declare que la suite no es reproducible mientras se sondea |
+| 8 | **`test_hito5.Integracion.test_el_tope_de_dentro_no_deja_contenedores_vivos` es INESTABLE bajo carga** (prueba de K1, no mía) | **[MEDIDO]: 2 fallos en 5 pasadas de la suite completa; 0 en 4 pasadas aisladas.** Y el contenedor **no queda**: `docker ps -a` inmediatamente después del fallo solo lista los 5 del proyecto. La prueba llama a `vivos()` **justo después** de que `docker run` devuelva, y el borrado por `--rm` lo hace el DEMONIO de forma asíncrona: con la máquina cargada aún aparece un instante. Es **el mismo problema que su propio comentario ya documenta para el `rc` 124/137**, un renglón más abajo: la prueba mide la carga de la máquina. Lo que hay que comprobar es que el contenedor **termina** borrado, no que ya lo esté — un sondeo con tope, no una lectura instantánea |
 
 ---
 

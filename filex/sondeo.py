@@ -32,6 +32,24 @@ Formato::
 
 `estado` es `real` o `nominal`, y **nada más**: `sin_sondear` es la ausencia de
 entrada, no un valor que se escriba.
+
+**Dos consecuencias de que el sondeo sea DATO, y las dos están medidas:**
+
+1. **La suite de pruebas lee estado del disco, así que no es reproducible
+   mientras se sondea.** OBSERVADO (`bench/sondeo-documental.md`): una pasada de
+   las 88 falló una justo cuando el grafo pasó de 142 a 190 aristas `real`
+   porque otro agente escribió su fichero a mitad; las dos siguientes, con el
+   fichero ya en su sitio, dieron 88 en verde. No es un fallo de nadie: es la
+   naturaleza del mecanismo. **PENDIENTE:** o las pruebas fijan su propio
+   sondeo, o se declara que la suite no vale mientras se sondea.
+
+2. **El sondeo caduca al cambiar el CÓDIGO de FileX, no solo el `build` del
+   motor — y hoy esto NO se comprueba.** MEDIDO el 22/08: 21 aristas que un
+   agente midió `nominal` quedaron obsoletas en cuanto se arreglaron la sonda y
+   la invocación; al resondearlas, **20 de 21 salieron `real`**. El `build` de
+   arriba protege contra cambiar de máquina; **nada protege contra cambiar de
+   código**. **PENDIENTE:** meter una huella del código que decide la arista
+   —`motores.py` y `verificador.py`— junto al `build`.
 """
 
 from __future__ import annotations
