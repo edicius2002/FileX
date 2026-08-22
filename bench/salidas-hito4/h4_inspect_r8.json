@@ -1,0 +1,67 @@
+{
+ "nota": "sesión de escritorio remoto activa: SUCIA por estructura",
+ "n_por_celda": 15,
+ "testigo_deriva_ms": [
+  39.6,
+  30.9,
+  0.78
+ ],
+ "testigo_nivel_ms": [
+  72.7,
+  41.9
+ ],
+ "testigo_agotado": false,
+ "etiqueta": "SUCIA (estructural)",
+ "filas": [
+  {
+   "fichero": "trivial.png",
+   "etiqueta": "PNG 64x64",
+   "MB": 0.0,
+   "inspect_en_proceso_ms": 0.2183,
+   "staging_copia_ms": 0.561,
+   "inspect_externo_ffprobe_ms": 43.55,
+   "staging_sobre_inspect": 2.6
+  },
+  {
+   "fichero": "tipico.png",
+   "etiqueta": "PNG 1920x1080",
+   "MB": 0.041,
+   "inspect_en_proceso_ms": 0.2477,
+   "staging_copia_ms": 0.501,
+   "inspect_externo_ffprobe_ms": 94.65,
+   "staging_sobre_inspect": 2.0
+  },
+  {
+   "fichero": "patologico_16bit.tif",
+   "etiqueta": "TIFF 16 bits",
+   "MB": 68.666,
+   "inspect_en_proceso_ms": 0.2142,
+   "staging_copia_ms": 60.926,
+   "inspect_externo_ffprobe_ms": 93.12,
+   "staging_sobre_inspect": 284.4
+  },
+  {
+   "fichero": "tipico.mp4",
+   "etiqueta": "MP4",
+   "MB": 15.494,
+   "inspect_en_proceso_ms": 0.5888,
+   "staging_copia_ms": 16.261,
+   "inspect_externo_ffprobe_ms": 53.45,
+   "staging_sobre_inspect": 27.6
+  },
+  {
+   "fichero": "tipico_texto.pdf",
+   "etiqueta": "PDF",
+   "MB": 0.003,
+   "inspect_en_proceso_ms": 0.2513,
+   "staging_copia_ms": 0.694,
+   "inspect_externo_ffprobe_ms": 34.91,
+   "staging_sobre_inspect": 2.8
+  }
+ ],
+ "referencia_cabo5": {
+  "inspect_en_proceso_ms": "0,04-0,06 (abrir + leer 64 KiB)",
+  "ffprobe_ms": 57.0,
+  "staging_ms": "1,7 (1 MB) a 166 (256 MB)"
+ }
+}

@@ -1,0 +1,90 @@
+{
+ "metodo": "tiktoken/o200k_base sobre model_dump(exclude_none, by_alias) serializado con json.dumps(ensure_ascii=False) — igual que bench/scripts/mcp_probe_bin.py:262",
+ "motores_disponibles": [
+  "imagemagick",
+  "ghostscript",
+  "ffmpeg",
+  "doc_libreoffice",
+  "doc_pandoc",
+  "doc_calibre"
+ ],
+ "motores_ausentes": [],
+ "aristas_en_el_grafo": 215,
+ "n_enum_origen": 30,
+ "n_enum_destino": 29,
+ "presupuesto_declarado": 1200,
+ "por_herramienta": [
+  {
+   "nombre": "convert",
+   "tokens": 653,
+   "tokens_nombre": 1,
+   "tokens_description": 74,
+   "tokens_inputSchema": 548,
+   "tokens_annotations": 14,
+   "n_parametros": 4,
+   "n_parametros_con_description": 4
+  },
+  {
+   "nombre": "inspect",
+   "tokens": 129,
+   "tokens_nombre": 1,
+   "tokens_description": 48,
+   "tokens_inputSchema": 50,
+   "tokens_annotations": 14,
+   "n_parametros": 1,
+   "n_parametros_con_description": 1
+  },
+  {
+   "nombre": "list_targets",
+   "tokens": 309,
+   "tokens_nombre": 2,
+   "tokens_description": 63,
+   "tokens_inputSchema": 214,
+   "tokens_annotations": 14,
+   "n_parametros": 2,
+   "n_parametros_con_description": 2
+  },
+  {
+   "nombre": "batch",
+   "tokens": 359,
+   "tokens_nombre": 1,
+   "tokens_description": 58,
+   "tokens_inputSchema": 270,
+   "tokens_annotations": 14,
+   "n_parametros": 3,
+   "n_parametros_con_description": 3
+  },
+  {
+   "nombre": "job",
+   "tokens": 153,
+   "tokens_nombre": 1,
+   "tokens_description": 30,
+   "tokens_inputSchema": 99,
+   "tokens_annotations": 7,
+   "n_parametros": 2,
+   "n_parametros_con_description": 2
+  }
+ ],
+ "tokens_solo_nombres": 6,
+ "variantes": {
+  "A_vigente_5_herramientas": 1605,
+  "B_sin_anotaciones": 1527,
+  "C_sin_description_por_parametro": 1145,
+  "D_sin_enums_del_registro": 1268,
+  "E_cuatro_del_plan_sin_job": 1452,
+  "F_cuatro_sin_job_sin_anotaciones": 1384,
+  "G_minimo_estilo_FastMCP": 728
+ },
+ "n_herramientas": 5,
+ "referencia_del_sector": {
+  "video-audio-mcp_27": 7964,
+  "docling-mcp_19": 5280,
+  "kordoc_15": 7759,
+  "servers_filesystem_14": 3360,
+  "ffmpeg-mcp-lite_8": 2322,
+  "image-worker-mcp_2": 1177,
+  "markitdown-mcp_1": 79
+ },
+ "tokens_catalogo": 1605,
+ "dentro_del_presupuesto": false
+}

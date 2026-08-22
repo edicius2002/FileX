@@ -1,52 +1,53 @@
-"""Puente al contrato de verificación. **No reimplementa nada.**
+"""El contrato de verificación. **No reimplementa nada:** envuelve el núcleo.
 
-El hito 3 está escrito: `bench/scripts/verificador.py`, 5.197 líneas, biblioteca
-estándar y cero dependencias, con el contrato de CINCO puntos, 15 reglas de
-fidelidad, la regla G6 y cuatro estados de cobertura. Este módulo solo lo hace
-importable desde el núcleo mientras siga viviendo en `bench/`.
+HITO 3 — DEUDA CERRADA. Hasta el 22/08/2026 este módulo cargaba
+`bench/scripts/verificador.py` con `importlib.util.spec_from_file_location`,
+es decir **importaba por ruta un fichero de otro árbol**. Ya no: el verificador
+—5.197 líneas, biblioteca estándar, cero dependencias, contrato de CINCO puntos,
+15 reglas de fidelidad, la regla G6 y cuatro estados de cobertura— vive en
+`filex/verificador.py` y aquí se importa con un `from . import` normal.
 
-**Deuda declarada:** el verificador debería MUDARSE aquí, no importarse desde
-`bench/`. Se deja como está a propósito, porque moverlo ahora rompería las citas
-`bench/scripts/verificador.py:NNN` de doce informes y del patrón oro. La mudanza
-es trabajo del hito 3.
+`bench/scripts/verificador.py` sigue existiendo como **envoltorio**, porque 19
+arneses de `bench/` lo importan por esa ruta y varios informes publican su CLI
+literal. El envoltorio aliasea en `sys.modules`, así que **hay un solo
+objeto-módulo**: no existe la posibilidad de que las dos vías diverjan.
+
+**Y la razón por la que la mudanza no se había hecho era falsa** (medido en
+`bench/hito3-mudanza.md` §1): en todo el repositorio no hay ni una sola cita
+`verificador.py:NNN`, y la única referencia con número de línea que existe ya
+estaba caducada por el crecimiento del propio fichero. Aun así, la copia es
+byte a byte, así que todo número de línea se conserva.
+
+Lo que este módulo aporta encima del verificador es **la política del núcleo**,
+que no es la misma que la del prototipo de laboratorio:
+
+- devuelve `no_verificado` en vez de reventar cuando la pieza falta, y
+- resume el veredicto en una línea para el humano, dejando el `dict` entero
+  para el modelo.
 """
 
 from __future__ import annotations
 
-import importlib.util
-import os
-import sys
-
-_RUTA = os.path.join(
-    os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-    "bench", "scripts", "verificador.py",
-)
-
-_mod = None
-_intentado = False
+from . import verificador as _verificador
 
 
 def verificador():
     """El módulo del verificador, o `None` si no está disponible.
 
-    Devolver `None` en vez de reventar es deliberado: el criterio de aceptación
-    del hito 1 dice que una pieza que falta **se informa**, no tumba la CLI.
+    Se mantiene como FUNCIÓN, y no se sustituye por el módulo a secas, porque
+    `filex/trabajo.py` la llama así para reutilizar `censar_dir` y no tener dos
+    censos divergiendo. Cambiar la firma aquí rompería ese módulo, que es de
+    otro agente.
+
+    Devolver `None` en vez de reventar era deliberado cuando la carga podía
+    fallar (fichero ausente en otro árbol). Ahora es un `import` del propio
+    paquete y **no puede** devolver `None`: si `filex.verificador` no está,
+    `filex` no está. Se conserva el contrato de la función —puede devolver
+    `None`— para no obligar a `trabajo.py` a cambiar, y porque un núcleo que
+    informa de la pieza que falta en vez de tumbar la CLI sigue siendo el
+    criterio de aceptación del hito 1.
     """
-    global _mod, _intentado
-    if _intentado:
-        return _mod
-    _intentado = True
-    if not os.path.isfile(_RUTA):
-        return None
-    try:
-        spec = importlib.util.spec_from_file_location("filex_verificador", _RUTA)
-        mod = importlib.util.module_from_spec(spec)
-        sys.modules["filex_verificador"] = mod
-        spec.loader.exec_module(mod)
-        _mod = mod
-    except Exception:
-        _mod = None
-    return _mod
+    return _verificador
 
 
 def verificar(salida: str, entrada: str | None, pedido: dict, censo: dict | None) -> dict:
@@ -57,7 +58,7 @@ def verificar(salida: str, entrada: str | None, pedido: dict, censo: dict | None
     fallo que el contrato existe para no cometer.
     """
     v = verificador()
-    if v is None:
+    if v is None:  # pragma: no cover - hoy imposible; ver docstring de verificador()
         return {
             "veredicto": "no_verificado",
             "motivo": "el verificador no está disponible",

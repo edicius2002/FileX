@@ -102,6 +102,22 @@ class Confinamiento:
             return False
         if "\x00" in ruta:
             return False
+        # R12 sobre CADA COMPONENTE de la ruta, no solo sobre el nombre de
+        # salida. `nombre_seguro` estaba escrito y probado desde el hito 1 y
+        # **no lo llamaba nadie más que la propia prueba**: W9 —el único de los
+        # 29 vectores que la referencia oficial concede— seguía abierto aquí,
+        # en el núcleo de FileX, tres líneas debajo del comentario que dice que
+        # la validación vive en el núcleo. MEDIDO (`bench/hito4-mcp.md` §8):
+        # `inspect` devolvía 72 B de `dentro.png:oculto`, bytes distintos de los
+        # del fichero validado.
+        resto = os.path.splitdrive(os.path.abspath(ruta))[1]
+        if os.altsep:
+            resto = resto.replace(os.altsep, os.sep)
+        for comp in resto.split(os.sep):
+            if comp in ("", ".", ".."):
+                continue
+            if not nombre_seguro(comp):
+                return False
         return True
 
     def _dentro(self, candidato: str, raices: list[str]) -> bool:

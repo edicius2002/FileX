@@ -1,0 +1,40 @@
+{
+ "n": 201,
+ "nota": "sesión de escritorio remoto activa: SUCIA por estructura. Las cifras ABSOLUTAS de tandas distintas no comparan; la RAZÓN entre celdas de esta misma tanda, sí.",
+ "celdas": {
+  "fuera_existe": {
+   "mediana_us": 6.5,
+   "respuesta": "{\"error\": \"ruta no accesible\"}",
+   "denegado": true
+  },
+  "fuera_no_existe": {
+   "mediana_us": 6.4,
+   "respuesta": "{\"error\": \"ruta no accesible\"}",
+   "denegado": true
+  },
+  "dentro_existe": {
+   "mediana_us": 606.0,
+   "respuesta": "{\"ruta\": \"C:\\\\Users\\\\krato\\\\AppData\\\\Local\\\\Temp\\\\h4-r4-im6am_ss\\\\dentro.png\", \"bytes\": 48, \"firma\": \"png\", \"formato\": \"png\", \"categoria\": \"imagen\", \"n_imagenes",
+   "denegado": false
+  },
+  "dentro_no_existe": {
+   "mediana_us": 319.9,
+   "respuesta": "{\"error\": \"ruta no accesible\"}",
+   "denegado": true
+  },
+  "travesia": {
+   "mediana_us": 7.9,
+   "respuesta": "{\"error\": \"ruta no accesible\"}",
+   "denegado": true
+  },
+  "ads": {
+   "mediana_us": 322.0,
+   "respuesta": "{\"error\": \"ruta no accesible\"}",
+   "denegado": true
+  }
+ },
+ "mismo_mensaje_fuera": true,
+ "razon_latencia_fuera": 1.016,
+ "veredicto": "sin oráculo detectable fuera de la raíz",
+ "referencia": "servers/filesystem: 1,4 ms vs 1,9 ms (razón 1,36) y se consideró equivalente (RESULTADOS-MCP.md §5)"
+}

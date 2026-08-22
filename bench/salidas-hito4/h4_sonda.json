@@ -1,0 +1,651 @@
+{
+  "spec": "bench/salidas-hito4/h4_spec.json",
+  "servidor": "filex-mcp (hito 4)",
+  "llamadas": [
+    {
+      "id": "lt_png",
+      "tool": "list_targets",
+      "args": {
+        "formato_origen": "png"
+      },
+      "nota": "la respuesta canónica a «¿puedo hacer X?»; mecanismo de seguridad contra el 15-17 % de fallos silenciosos",
+      "espera": "prosa",
+      "ok": true,
+      "isError": false,
+      "ms": 5.3,
+      "patron": "PROSA",
+      "n_piezas": 1,
+      "tokens_texto": 66,
+      "tokens_binario_si_se_inyecta": 0,
+      "tokens_total": 66,
+      "bytes_binario": 0,
+      "inviable_para_contexto": false,
+      "piezas": [
+        {
+          "tipo": "text",
+          "clase": "texto",
+          "chars": 190,
+          "tokens": 66
+        }
+      ],
+      "respuesta_recorte": "{\"origen\": \"png\", \"destinos\": [\"avif\", \"bmp\", \"gif\", \"ico\", \"jpg\", \"pdf\", \"tif\", \"webp\"], \"n\": 8, \"nota\": \"lista exhaustiva con los motores presentes; lo que no está aquí no se puede hacer\"}",
+      "coincide_con_lo_esperado": true
+    },
+    {
+      "id": "lt_imposible",
+      "tool": "list_targets",
+      "args": {
+        "formato_origen": "png",
+        "formato_destino": "mp3"
+      },
+      "nota": "lo imposible se dice, no se sustituye por lo parecido",
+      "espera": "prosa",
+      "ok": true,
+      "isError": false,
+      "ms": 9.7,
+      "patron": "PROSA",
+      "n_piezas": 1,
+      "tokens_texto": 80,
+      "tokens_binario_si_se_inyecta": 0,
+      "tokens_total": 80,
+      "bytes_binario": 0,
+      "inviable_para_contexto": false,
+      "piezas": [
+        {
+          "tipo": "text",
+          "clase": "texto",
+          "chars": 205,
+          "tokens": 80
+        }
+      ],
+      "respuesta_recorte": "{\"origen\": \"png\", \"destino\": \"mp3\", \"posible\": false, \"motivo\": \"'mp3' solo se escribe desde ['avi', 'flac', 'm4a', 'mkv', 'mov', 'mp4', 'ogg', 'opus', 'wav', 'webm'], y desde 'png' no se llega a ninguno\"}",
+      "coincide_con_lo_esperado": true
+    },
+    {
+      "id": "inspect_png",
+      "tool": "inspect",
+      "args": {
+        "ruta": "D:/Work/research/FileX/corpus/imagen/trivial.png"
+      },
+      "nota": "exento de R8 y R18: lectura de cabeceras en proceso",
+      "espera": "asa",
+      "ok": true,
+      "isError": false,
+      "ms": 3.1,
+      "patron": "ASA",
+      "n_piezas": 1,
+      "tokens_texto": 108,
+      "tokens_binario_si_se_inyecta": 0,
+      "tokens_total": 108,
+      "bytes_binario": 0,
+      "inviable_para_contexto": false,
+      "piezas": [
+        {
+          "tipo": "text",
+          "clase": "texto",
+          "chars": 274,
+          "tokens": 108
+        }
+      ],
+      "respuesta_recorte": "{\"ruta\": \"D:\\\\Work\\\\research\\\\FileX\\\\corpus\\\\imagen\\\\trivial.png\", \"bytes\": 316, \"firma\": \"png\", \"formato\": \"png\", \"categoria\": \"imagen\", \"ancho\": 64, \"alto\": 64, \"profundidad_bits\": 1, \"tiene_alfa\": false, \"canales\": 1, \"paleta\": true, \"n_imagenes\": 1, \"inspect_ms\": 0.322}",
+      "coincide_con_lo_esperado": true
+    },
+    {
+      "id": "inspect_mp4_15MB",
+      "tool": "inspect",
+      "args": {
+        "ruta": "D:/Work/research/FileX/corpus/video/tipico.mp4"
+      },
+      "nota": "el caso binario: 15,5 MB de entrada, respuesta constante",
+      "espera": "asa",
+      "ok": true,
+      "isError": false,
+      "ms": 3.8,
+      "patron": "ASA",
+      "n_piezas": 1,
+      "tokens_texto": 234,
+      "tokens_binario_si_se_inyecta": 0,
+      "tokens_total": 234,
+      "bytes_binario": 0,
+      "inviable_para_contexto": false,
+      "piezas": [
+        {
+          "tipo": "text",
+          "clase": "texto",
+          "chars": 555,
+          "tokens": 234
+        }
+      ],
+      "respuesta_recorte": "{\"ruta\": \"D:\\\\Work\\\\research\\\\FileX\\\\corpus\\\\video\\\\tipico.mp4\", \"bytes\": 16246490, \"firma\": \"mp4\", \"categoria\": \"av\", \"pistas\": [{\"ancho\": 1920, \"alto\": 1080, \"duracion_s\": 20.0, \"sample_rate_mdhd\": 15360, \"codec\": \"avc1\", \"profundidad_bits\": 0, \"tipo\": \"video\"}, {\"duracion_s\": 20.0232, \"sample_rate_mdhd\": 44100, \"codec\": \"mp4a\", \"canales\": 1, \"profundidad_bits\": 16, \"sample_rate\": 44100, \"tipo\": \"audio\"}], \"n_video\": 1, \"n_audio\": 1, \"n_subtitulo\": 0, \"duracion_s\": 20.0, \"n_pistas\": 2, \"formato\": \"mp4\", \"bitrate_bps\": 6498596, \"inspect_ms\": 0.788}",
+      "coincide_con_lo_esperado": true
+    },
+    {
+      "id": "inspect_fuera",
+      "tool": "inspect",
+      "args": {
+        "ruta": "C:/Windows/win.ini"
+      },
+      "nota": "R4: mismo mensaje que «no existe», sin lista blanca",
+      "espera": "prosa",
+      "ok": true,
+      "isError": true,
+      "ms": 2.4,
+      "patron": "ASA",
+      "n_piezas": 1,
+      "tokens_texto": 9,
+      "tokens_binario_si_se_inyecta": 0,
+      "tokens_total": 9,
+      "bytes_binario": 0,
+      "inviable_para_contexto": false,
+      "piezas": [
+        {
+          "tipo": "text",
+          "clase": "texto",
+          "chars": 30,
+          "tokens": 9
+        }
+      ],
+      "respuesta_recorte": "{\"error\": \"ruta no accesible\"}",
+      "coincide_con_lo_esperado": false
+    },
+    {
+      "id": "inspect_no_existe",
+      "tool": "inspect",
+      "args": {
+        "ruta": "D:/Work/research/FileX/corpus/imagen/no_existe.png"
+      },
+      "nota": "R4: tiene que ser IDÉNTICO al anterior",
+      "espera": "prosa",
+      "ok": true,
+      "isError": true,
+      "ms": 2.3,
+      "patron": "ASA",
+      "n_piezas": 1,
+      "tokens_texto": 9,
+      "tokens_binario_si_se_inyecta": 0,
+      "tokens_total": 9,
+      "bytes_binario": 0,
+      "inviable_para_contexto": false,
+      "piezas": [
+        {
+          "tipo": "text",
+          "clase": "texto",
+          "chars": 30,
+          "tokens": 9
+        }
+      ],
+      "respuesta_recorte": "{\"error\": \"ruta no accesible\"}",
+      "coincide_con_lo_esperado": false
+    },
+    {
+      "id": "convert_salida_ya_existe",
+      "tool": "convert",
+      "args": {
+        "entrada": "D:/Work/research/FileX/corpus/imagen/trivial.png",
+        "salida": "D:/Work/research/FileX/bench/salidas-hito4/tmp-sonda/ya_existe.webp"
+      },
+      "nota": "el disparador exacto de las 26 de 26 que cuelgan la sesión MCP entera; aquí devuelve el asa al empezar",
+      "espera": "asa",
+      "ok": true,
+      "isError": false,
+      "ms": 10.7,
+      "patron": "PROSA",
+      "n_piezas": 1,
+      "tokens_texto": 50,
+      "tokens_binario_si_se_inyecta": 0,
+      "tokens_total": 50,
+      "bytes_binario": 0,
+      "inviable_para_contexto": false,
+      "piezas": [
+        {
+          "tipo": "text",
+          "clase": "texto",
+          "chars": 121,
+          "tokens": 50
+        }
+      ],
+      "respuesta_recorte": "{\"job_id\": \"74c97b2440e7\", \"estado\": \"working\", \"sondeo_ms\": 1000, \"camino\": [\"png\", \"webp\"], \"motores\": [\"imagemagick\"]}",
+      "coincide_con_lo_esperado": false
+    },
+    {
+      "id": "convert_video_15MB",
+      "tool": "convert",
+      "args": {
+        "entrada": "D:/Work/research/FileX/corpus/video/tipico.mp4",
+        "salida": "D:/Work/research/FileX/bench/salidas-hito4/tmp-sonda/salida.mkv",
+        "parametros": {
+          "copia": true
+        }
+      },
+      "nota": "15,5 MB: la respuesta no puede crecer con la entrada",
+      "espera": "asa",
+      "ok": true,
+      "isError": false,
+      "ms": 19.2,
+      "patron": "PROSA",
+      "n_piezas": 1,
+      "tokens_texto": 49,
+      "tokens_binario_si_se_inyecta": 0,
+      "tokens_total": 49,
+      "bytes_binario": 0,
+      "inviable_para_contexto": false,
+      "piezas": [
+        {
+          "tipo": "text",
+          "clase": "texto",
+          "chars": 115,
+          "tokens": 49
+        }
+      ],
+      "respuesta_recorte": "{\"job_id\": \"9159d5ea268b\", \"estado\": \"working\", \"sondeo_ms\": 1000, \"camino\": [\"mp4\", \"mkv\"], \"motores\": [\"ffmpeg\"]}",
+      "coincide_con_lo_esperado": false
+    },
+    {
+      "id": "convert_imposible",
+      "tool": "convert",
+      "args": {
+        "entrada": "D:/Work/research/FileX/corpus/imagen/trivial.png",
+        "salida": "D:/Work/research/FileX/bench/salidas-hito4/tmp-sonda/x.mp3"
+      },
+      "nota": "falla EN EL ACTO y sin gastar un job_id: que no haya camino se sabe en microsegundos. El silencio es el modo peligroso",
+      "espera": "prosa",
+      "ok": true,
+      "isError": true,
+      "ms": 17.5,
+      "patron": "PROSA",
+      "n_piezas": 1,
+      "tokens_texto": 81,
+      "tokens_binario_si_se_inyecta": 0,
+      "tokens_total": 81,
+      "bytes_binario": 0,
+      "inviable_para_contexto": false,
+      "piezas": [
+        {
+          "tipo": "text",
+          "clase": "texto",
+          "chars": 249,
+          "tokens": 81
+        }
+      ],
+      "respuesta_recorte": "{\"error\": \"'mp3' solo se escribe desde ['avi', 'flac', 'm4a', 'mkv', 'mov', 'mp4', 'ogg', 'opus', 'wav', 'webm'], y desde 'png' no se llega a ninguno\", \"sugerencia\": \"list_targets con formato_origen dice a qué formatos se llega de verdad desde ahí\"}",
+      "coincide_con_lo_esperado": true
+    },
+    {
+      "id": "convert_entrada_rota",
+      "tool": "convert",
+      "args": {
+        "entrada": "D:/Work/research/FileX/bench/salidas-hito4/h4_roto.png",
+        "salida": "D:/Work/research/FileX/bench/salidas-hito4/tmp-sonda/roto.webp"
+      },
+      "nota": "un motor que falla: NUNCA stderr crudo (884-1.228 tokens de banner en los tres servidores de referencia)",
+      "espera": "asa",
+      "ok": true,
+      "isError": false,
+      "ms": 12.9,
+      "patron": "PROSA",
+      "n_piezas": 1,
+      "tokens_texto": 49,
+      "tokens_binario_si_se_inyecta": 0,
+      "tokens_total": 49,
+      "bytes_binario": 0,
+      "inviable_para_contexto": false,
+      "piezas": [
+        {
+          "tipo": "text",
+          "clase": "texto",
+          "chars": 121,
+          "tokens": 49
+        }
+      ],
+      "respuesta_recorte": "{\"job_id\": \"7327f02be27b\", \"estado\": \"working\", \"sondeo_ms\": 1000, \"camino\": [\"png\", \"webp\"], \"motores\": [\"imagemagick\"]}",
+      "coincide_con_lo_esperado": false
+    },
+    {
+      "id": "job_desconocido",
+      "tool": "job",
+      "args": {
+        "job_id": "no-existe-000000"
+      },
+      "nota": "no revienta la sesión",
+      "espera": "prosa",
+      "ok": true,
+      "isError": true,
+      "ms": 9.9,
+      "patron": "PROSA",
+      "n_piezas": 1,
+      "tokens_texto": 9,
+      "tokens_binario_si_se_inyecta": 0,
+      "tokens_total": 9,
+      "bytes_binario": 0,
+      "inviable_para_contexto": false,
+      "piezas": [
+        {
+          "tipo": "text",
+          "clase": "texto",
+          "chars": 31,
+          "tokens": 9
+        }
+      ],
+      "respuesta_recorte": "{\"error\": \"job_id desconocido\"}",
+      "coincide_con_lo_esperado": true
+    },
+    {
+      "id": "batch_dos",
+      "tool": "batch",
+      "args": {
+        "entradas": [
+          "D:/Work/research/FileX/corpus/imagen/trivial.png",
+          "D:/Work/research/FileX/corpus/imagen/tipico.png"
+        ],
+        "directorio_salida": "D:/Work/research/FileX/bench/salidas-hito4/tmp-sonda",
+        "formato_destino": "jpg"
+      },
+      "nota": "R5: una entrada rechazada no aborta las demás",
+      "espera": "asa",
+      "ok": true,
+      "isError": false,
+      "ms": 12.6,
+      "patron": "PROSA",
+      "n_piezas": 1,
+      "tokens_texto": 34,
+      "tokens_binario_si_se_inyecta": 0,
+      "tokens_total": 34,
+      "bytes_binario": 0,
+      "inviable_para_contexto": false,
+      "piezas": [
+        {
+          "tipo": "text",
+          "clase": "texto",
+          "chars": 74,
+          "tokens": 34
+        }
+      ],
+      "respuesta_recorte": "{\"job_id\": \"4e551bb8f122\", \"estado\": \"working\", \"n\": 2, \"sondeo_ms\": 1000}",
+      "coincide_con_lo_esperado": false
+    }
+  ],
+  "arranque_frio_ms": 3581.9,
+  "spawn_proceso_ms": 22.7,
+  "handshake_ms": 3559.2,
+  "server_info": {
+    "name": "filex",
+    "version": "0.1.0",
+    "protocolVersion": "2025-11-25",
+    "instructions": "FileX convierte ficheros y VERIFICA la salida. Devuelve rutas, nunca contenido. Si dudas de que una conversión exista, pregunta a list_targets: su respuesta es la verdad de esta máquina, no un catálogo teórico."
+  },
+  "list_tools_ms": 4.7,
+  "n_herramientas": 5,
+  "herramientas": [
+    {
+      "name": "convert",
+      "description": "Convierte un fichero y VERIFICA la salida. Devuelve un job_id al empezar (no bloquea): recoge el resultado con job. Devuelve rutas y metadatos, nunca contenido. Si no hay camino entre los dos formatos falla diciendo por qué; no convierte a algo parecido. Si dudas de que la conversión exista, pregunta antes a list_targets.",
+      "annotations": {
+        "destructiveHint": true,
+        "openWorldHint": false
+      },
+      "tiene_readOnlyHint": false,
+      "tiene_destructiveHint": true,
+      "tokens_declaracion": 619,
+      "inputSchema": {
+        "properties": {
+          "entrada": {
+            "type": "string",
+            "description": "Ruta absoluta del fichero de origen, dentro de las raíces permitidas."
+          },
+          "salida": {
+            "type": "string",
+            "description": "Ruta absoluta del destino. Su extensión decide el formato si no se pasa formato_destino."
+          },
+          "formato_destino": {
+            "type": "string",
+            "enum": [
+              "avi",
+              "avif",
+              "bmp",
+              "flac",
+              "gif",
+              "ico",
+              "jpg",
+              "m4a",
+              "mkv",
+              "mov",
+              "mp3",
+              "mp4",
+              "ogg",
+              "opus",
+              "pdf",
+              "png",
+              "tif",
+              "wav",
+              "webm",
+              "webp"
+            ],
+            "description": "Formato de salida. La lista es exhaustiva: la generan los motores presentes en esta máquina. Lo que no está aquí no se puede hacer, y nada parecido sirve."
+          },
+          "parametros": {
+            "type": "object",
+            "description": "Ajustes opcionales. Lo que no se pida aquí se deja como esté: no se aplica ninguna transformación no solicitada.",
+            "properties": {
+              "ancho": {
+                "type": "integer",
+                "minimum": 1,
+                "description": "Anchura en píxeles. Omitido: no se redimensiona."
+              },
+              "alto": {
+                "type": "integer",
+                "minimum": 1,
+                "description": "Altura en píxeles. Omitido: no se redimensiona."
+              },
+              "calidad": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 100,
+                "description": "1-100, solo en formatos con pérdida (jpg, webp, avif)."
+              },
+              "crf": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 63,
+                "description": "Calidad de vídeo; menor es mejor y más bytes. Defecto 23 (x264), 33 (VP9)."
+              },
+              "copia": {
+                "type": "boolean",
+                "description": "Recontenerizar sin recodificar; solo si el códec cabe en el envase de destino."
+              },
+              "dpi": {
+                "type": "integer",
+                "minimum": 1,
+                "description": "Puntos por pulgada al rasterizar un PDF. Usa los NATIVOS del documento: sobremuestrear degrada."
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "entrada",
+          "salida"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      },
+      "outputSchema": null
+    },
+    {
+      "name": "inspect",
+      "description": "Lee las cabeceras de un fichero: formato real por firma de bytes, geometría, pistas, duración, páginas. No escribe nada. La firma manda sobre la extensión: un .png que sea un JPEG se detecta aquí.",
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false
+      },
+      "tiene_readOnlyHint": true,
+      "tiene_destructiveHint": false,
+      "tokens_declaracion": 129,
+      "inputSchema": {
+        "properties": {
+          "ruta": {
+            "type": "string",
+            "description": "Ruta absoluta del fichero a examinar, dentro de las raíces permitidas."
+          }
+        },
+        "required": [
+          "ruta"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      },
+      "outputSchema": null
+    },
+    {
+      "name": "list_targets",
+      "description": "Qué conversiones existen DE VERDAD en esta máquina, con los motores instalados. Úsala antes de convert cuando no estés seguro. Con solo el origen enumera los destinos; con los dos devuelve el camino, los motores y lo que se perdería, o el motivo de que no haya camino.",
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false
+      },
+      "tiene_readOnlyHint": true,
+      "tiene_destructiveHint": false,
+      "tokens_declaracion": 275,
+      "inputSchema": {
+        "properties": {
+          "formato_origen": {
+            "type": "string",
+            "enum": [
+              "avi",
+              "avif",
+              "bmp",
+              "flac",
+              "gif",
+              "ico",
+              "jpg",
+              "m4a",
+              "mkv",
+              "mov",
+              "mp3",
+              "mp4",
+              "ogg",
+              "opus",
+              "pdf",
+              "png",
+              "svg",
+              "tif",
+              "wav",
+              "webm",
+              "webp"
+            ],
+            "description": "Formato de partida, sin punto (png). Solo los que algún motor presente sabe leer."
+          },
+          "formato_destino": {
+            "type": "string",
+            "description": "Formato de llegada, opcional y sin punto. Si se pasa, la respuesta es el camino concreto en vez de la lista de destinos."
+          }
+        },
+        "required": [
+          "formato_origen"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      },
+      "outputSchema": null
+    },
+    {
+      "name": "batch",
+      "description": "Convierte varios ficheros al mismo formato en un único trabajo. Devuelve un job_id al empezar; el resultado agregado se recoge con job. Devuelve rutas y contadores, nunca contenido. Los ajustes finos de convert no se aplican aquí: usa convert si los necesitas.",
+      "annotations": {
+        "destructiveHint": true,
+        "openWorldHint": false
+      },
+      "tiene_readOnlyHint": false,
+      "tiene_destructiveHint": true,
+      "tokens_declaracion": 325,
+      "inputSchema": {
+        "properties": {
+          "entradas": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1,
+            "description": "Rutas absolutas de origen. Cada una se valida por separado; una rechazada no aborta las demás."
+          },
+          "directorio_salida": {
+            "type": "string",
+            "description": "Dónde se escriben las salidas, con el mismo nombre base y la extensión nueva. Debe estar en una raíz de escritura."
+          },
+          "formato_destino": {
+            "type": "string",
+            "enum": [
+              "avi",
+              "avif",
+              "bmp",
+              "flac",
+              "gif",
+              "ico",
+              "jpg",
+              "m4a",
+              "mkv",
+              "mov",
+              "mp3",
+              "mp4",
+              "ogg",
+              "opus",
+              "pdf",
+              "png",
+              "tif",
+              "wav",
+              "webm",
+              "webp"
+            ],
+            "description": "Formato común a todas las entradas. Lista exhaustiva de lo posible."
+          }
+        },
+        "required": [
+          "entradas",
+          "directorio_salida",
+          "formato_destino"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      },
+      "outputSchema": null
+    },
+    {
+      "name": "job",
+      "description": "Consulta o cancela un trabajo de convert o batch. Nunca bloquea: si sigue en curso lo dice y sugiere cuándo volver a preguntar.",
+      "annotations": {
+        "openWorldHint": false
+      },
+      "tiene_readOnlyHint": false,
+      "tiene_destructiveHint": false,
+      "tokens_declaracion": 153,
+      "inputSchema": {
+        "properties": {
+          "job_id": {
+            "type": "string",
+            "description": "Identificador devuelto por convert o batch."
+          },
+          "accion": {
+            "type": "string",
+            "enum": [
+              "estado",
+              "resultado",
+              "cancelar"
+            ],
+            "description": "estado: fase y tiempo. resultado: además el veredicto y las rutas escritas. cancelar: detiene el trabajo."
+          }
+        },
+        "required": [
+          "job_id"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      },
+      "outputSchema": null
+    }
+  ],
+  "tokens_catalogo": 1503,
+  "n_anotadas": 5,
+  "n_prompts": null,
+  "prompts": "McpError: Method not found",
+  "n_recursos": null,
+  "recursos": "McpError: Method not found"
+}

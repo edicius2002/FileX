@@ -1,0 +1,398 @@
+{
+ "modelo": "haiku",
+ "n_por_caso": 3,
+ "cliente": "2.1.239 (Claude Code)",
+ "limitacion": "la temperatura no es fijable desde el CLI (limitación nº 1 heredada de saturacion-herramientas.md §8)",
+ "resumen": {
+  "fuera_docx_pdf": {
+   "n": 3,
+   "aciertos": 3,
+   "clases": {
+    "ABSTIENE": 3
+   },
+   "llamo_list_targets": 1,
+   "llamo_convert": 2,
+   "catalogo_diferido": 3
+  },
+  "fuera_pdf_docx": {
+   "n": 3,
+   "aciertos": 3,
+   "clases": {
+    "ABSTIENE": 3
+   },
+   "llamo_list_targets": 2,
+   "llamo_convert": 0,
+   "catalogo_diferido": 3
+  },
+  "fuera_mp4_txt": {
+   "n": 3,
+   "aciertos": 3,
+   "clases": {
+    "ABSTIENE": 3
+   },
+   "llamo_list_targets": 3,
+   "llamo_convert": 0,
+   "catalogo_diferido": 3
+  },
+  "control_png_webp": {
+   "n": 3,
+   "aciertos": 3,
+   "clases": {
+    "CONVIERTE": 3
+   },
+   "llamo_list_targets": 0,
+   "llamo_convert": 3,
+   "catalogo_diferido": 3
+  },
+  "control_pdf_png": {
+   "n": 3,
+   "aciertos": 3,
+   "clases": {
+    "CONVIERTE": 3
+   },
+   "llamo_list_targets": 1,
+   "llamo_convert": 3,
+   "catalogo_diferido": 3
+  }
+ },
+ "filas": [
+  {
+   "caso": "fuera_docx_pdf",
+   "i": 0,
+   "ms": 17482,
+   "texto": "No se puede convertir el fichero. El sistema reporta que **no hay ningún motor disponible que lea archivos .docx** en esta máquina.\n\nEl fichero `informe.docx` existe en el directorio, pero el FileX de esta instalación no tiene los motores de conversión necesarios para procesarlo.",
+   "herramientas": [
+    "Glob",
+    "ToolSearch",
+    "mcp__filex__convert"
+   ],
+   "catalogo_diferido": true,
+   "turnos": 4,
+   "tokens_entrada_total": 112703,
+   "es_error": false,
+   "ficheros_nuevos": [],
+   "fuera_de_cobertura": true,
+   "clase": "ABSTIENE",
+   "acierta": true,
+   "llamo_list_targets": false,
+   "llamo_convert": true
+  },
+  {
+   "caso": "fuera_docx_pdf",
+   "i": 1,
+   "ms": 20545,
+   "texto": "No se puede. El fichero `informe.docx` existe en el directorio, pero **FileX no soporta el formato DOCX** como entrada. \n\nLos formatos que FileX puede leer son limitados: avi, avif, bmp, flac, gif, ico, jpg, m4a, mkv, mov, mp3, mp4, ogg, opus, pdf, png, svg, tif, wav, webm y webp.\n\nPara convertir a PDF necesitarías primero convertir el DOCX a un formato intermedio (como PDF) usando otra herramienta, o usar LibreOffice/Word directamente. ¿Quieres intentar algo diferente?",
+   "herramientas": [
+    "ToolSearch",
+    "Glob",
+    "mcp__filex__list_targets"
+   ],
+   "catalogo_diferido": true,
+   "turnos": 4,
+   "tokens_entrada_total": 114740,
+   "es_error": false,
+   "ficheros_nuevos": [],
+   "fuera_de_cobertura": true,
+   "clase": "ABSTIENE",
+   "acierta": true,
+   "llamo_list_targets": true,
+   "llamo_convert": false
+  },
+  {
+   "caso": "fuera_docx_pdf",
+   "i": 2,
+   "ms": 32191,
+   "texto": "**No se puede hacer la conversión.** FileX no tiene ningún motor instalado que pueda leer ficheros DOCX. El fichero `informe.docx` existe, pero ninguno de los motores de conversión disponibles en esta máquina sabe trabajar con ese formato.\n\nLos formatos que FileX puede leer son: avi, avif, bmp, flac, gif, ico, jpg, m4a, mkv, mov, mp3, mp4, ogg, opus, **pdf**, png, svg, tif, wav, webm, webp.\n\nPara convertir ese documento, tendrías que:\n- Exportarlo primero a un formato soportado (como PDF) usando Microsoft Word u otra herramienta\n- O instalar un motor que sepa leer DOCX en esta máquina",
+   "herramientas": [
+    "ToolSearch",
+    "ToolSearch",
+    "PowerShell",
+    "mcp__filex__convert"
+   ],
+   "catalogo_diferido": true,
+   "turnos": 5,
+   "tokens_entrada_total": 144860,
+   "es_error": false,
+   "ficheros_nuevos": [],
+   "fuera_de_cobertura": true,
+   "clase": "ABSTIENE",
+   "acierta": true,
+   "llamo_list_targets": false,
+   "llamo_convert": true
+  },
+  {
+   "caso": "fuera_pdf_docx",
+   "i": 0,
+   "ms": 24414,
+   "texto": "**No se puede.** FileX no tiene motores disponibles que escriban DOCX. La conversión de PDF a Word (.docx) no es posible con las herramientas que tengo instaladas en esta máquina.\n\nLos formatos que FileX soporta son: avi, avif, bmp, flac, gif, ico, jpg, m4a, mkv, mov, mp3, mp4, ogg, opus, pdf, png, tif, wav, webm, webp — pero DOCX no está entre ellos.",
+   "herramientas": [
+    "ToolSearch",
+    "Glob",
+    "mcp__filex__list_targets"
+   ],
+   "catalogo_diferido": true,
+   "turnos": 4,
+   "tokens_entrada_total": 85605,
+   "es_error": false,
+   "ficheros_nuevos": [],
+   "fuera_de_cobertura": true,
+   "clase": "ABSTIENE",
+   "acierta": true,
+   "llamo_list_targets": true,
+   "llamo_convert": false
+  },
+  {
+   "caso": "fuera_pdf_docx",
+   "i": 1,
+   "ms": 22579,
+   "texto": "**No se puede hacer la conversión.** FileX no tiene ningún motor disponible que escriba archivos en formato DOCX (.docx). \n\nLos formatos a los que FileX puede convertir desde PDF son limitados y no incluyen Word. Si necesitas convertir a Word, tendrías que usar otra herramienta externa.\n\n¿Quieres que vea qué formatos sí puedo convertir desde ese PDF?",
+   "herramientas": [
+    "ToolSearch",
+    "Glob",
+    "mcp__filex__list_targets"
+   ],
+   "catalogo_diferido": true,
+   "turnos": 4,
+   "tokens_entrada_total": 85547,
+   "es_error": false,
+   "ficheros_nuevos": [],
+   "fuera_de_cobertura": true,
+   "clase": "ABSTIENE",
+   "acierta": true,
+   "llamo_list_targets": true,
+   "llamo_convert": false
+  },
+  {
+   "caso": "fuera_pdf_docx",
+   "i": 2,
+   "ms": 23427,
+   "texto": "Veo que las herramientas de FileX están disponibles. Sin embargo, hay un problema: **la conversión a .docx (Word) no está soportada**. \n\nLos formatos de destino disponibles en FileX son: avi, avif, bmp, flac, gif, ico, jpg, m4a, mkv, mov, mp3, mp4, ogg, opus, pdf, png, tif, wav, webm, webp.\n\nWord (.docx) no está en esa lista, así que **no es posible hacer esta conversión con las herramientas que tengo disponibles**. \n\n¿Hay algo alternativo que puedas hacer? Por ejemplo:\n- Convertir el PDF a **imágenes** (jpg, png, tif)\n- Mantenerlo como PDF\n- Usar una herramienta externa diferente si tienes acceso a ella\n\n¿Prefieres una de estas opciones?",
+   "herramientas": [
+    "ToolSearch"
+   ],
+   "catalogo_diferido": true,
+   "turnos": 2,
+   "tokens_entrada_total": 56017,
+   "es_error": false,
+   "ficheros_nuevos": [],
+   "fuera_de_cobertura": true,
+   "clase": "ABSTIENE",
+   "acierta": true,
+   "llamo_list_targets": false,
+   "llamo_convert": false
+  },
+  {
+   "caso": "fuera_mp4_txt",
+   "i": 0,
+   "ms": 20763,
+   "texto": "**No es posible.** FileX solo puede convertir mp4 a estos 19 formatos: avi, avif, bmp, flac, gif, ico, jpg, m4a, mkv, mov, mp3, ogg, opus, pdf, png, tif, wav, webm, webp.\n\nNo soporta conversión a texto (.txt), y tampoco tiene capacidad de transcripción de audio/vídeo (speech-to-text). Los motores instalados en esta máquina no incluyen herramientas de reconocimiento de voz.\n\nPara transcribir trivial.mp4, necesitarías una herramienta especializada en speech-to-text (como Whisper, Google Speech-to-Text, o similar), que está fuera del alcance de FileX.",
+   "herramientas": [
+    "ToolSearch",
+    "ToolSearch",
+    "mcp__filex__list_targets"
+   ],
+   "catalogo_diferido": true,
+   "turnos": 4,
+   "tokens_entrada_total": 115298,
+   "es_error": false,
+   "ficheros_nuevos": [],
+   "fuera_de_cobertura": true,
+   "clase": "ABSTIENE",
+   "acierta": true,
+   "llamo_list_targets": true,
+   "llamo_convert": false
+  },
+  {
+   "caso": "fuera_mp4_txt",
+   "i": 1,
+   "ms": 36484,
+   "texto": "**No se puede realizar la tarea.**\n\nHay dos problemas:\n\n1. **El archivo no existe**: `trivial.mp4` no se encuentra en el directorio actual (`D:\\Work\\research\\FileX\\bench\\salidas-hito4\\arena-cliente`)\n\n2. **La conversión no es posible**: FileX no soporta conversión de MP4 a TXT. El servidor responde que \"ningún motor disponible escribe 'txt'\". Los formatos de salida soportados son limitados: avi, avif, bmp, flac, gif, ico, jpg, m4a, mkv, mov, mp3, mp4, ogg, opus, pdf, png, tif, wav, webm, webp.\n\nPara transcribir audio/video a texto necesitarías una herramienta de reconocimiento de voz (speech-to-text) como Whisper, que no está disponible en FileX.",
+   "herramientas": [
+    "ToolSearch",
+    "Bash",
+    "ToolSearch",
+    "mcp__filex__list_targets"
+   ],
+   "catalogo_diferido": true,
+   "turnos": 5,
+   "tokens_entrada_total": 116297,
+   "es_error": false,
+   "ficheros_nuevos": [],
+   "fuera_de_cobertura": true,
+   "clase": "ABSTIENE",
+   "acierta": true,
+   "llamo_list_targets": true,
+   "llamo_convert": false
+  },
+  {
+   "caso": "fuera_mp4_txt",
+   "i": 2,
+   "ms": 20783,
+   "texto": "**No se puede hacer.** FileX no tiene capacidad para transcriba video a texto. El sistema reporta que \"ningún motor disponible escribe 'txt'\".\n\nFileX es un conversor de archivos multimedia (video, audio, imágenes, PDF), pero no tiene motores de transcripción de audio a texto. Para convertir trivial.mp4 a texto necesitarías:\n\n1. Un motor de speech-to-text (reconocimiento de voz)\n2. Extracción previa del audio\n\nEstas capacidades no están disponibles en el entorno actual.",
+   "herramientas": [
+    "ToolSearch",
+    "mcp__filex__list_targets"
+   ],
+   "catalogo_diferido": true,
+   "turnos": 3,
+   "tokens_entrada_total": 85637,
+   "es_error": false,
+   "ficheros_nuevos": [],
+   "fuera_de_cobertura": true,
+   "clase": "ABSTIENE",
+   "acierta": true,
+   "llamo_list_targets": true,
+   "llamo_convert": false
+  },
+  {
+   "caso": "control_png_webp",
+   "i": 0,
+   "ms": 27224,
+   "texto": "✓ Conversión completada. El archivo `tipico.png` se ha convertido a WebP en el mismo directorio:\n\n**`D:\\Work\\research\\FileX\\bench\\salidas-hito4\\arena-cliente\\tipico.webp`** (13.5 KB)\n\nLa conversión se hizo con ImageMagick en 438ms.",
+   "herramientas": [
+    "ToolSearch",
+    "mcp__filex__convert",
+    "ToolSearch",
+    "mcp__filex__job"
+   ],
+   "catalogo_diferido": true,
+   "turnos": 5,
+   "tokens_entrada_total": 144281,
+   "es_error": false,
+   "ficheros_nuevos": [
+    "tipico.webp"
+   ],
+   "fuera_de_cobertura": false,
+   "clase": "CONVIERTE",
+   "acierta": true,
+   "llamo_list_targets": false,
+   "llamo_convert": true
+  },
+  {
+   "caso": "control_png_webp",
+   "i": 1,
+   "ms": 39641,
+   "texto": "✓ Conversión completada. El archivo `tipico.webp` (13.5 KB) se ha creado en el directorio actual usando ImageMagick.",
+   "herramientas": [
+    "ToolSearch",
+    "mcp__filex__convert",
+    "ToolSearch",
+    "mcp__filex__job"
+   ],
+   "catalogo_diferido": true,
+   "turnos": 5,
+   "tokens_entrada_total": 144628,
+   "es_error": false,
+   "ficheros_nuevos": [
+    "tipico.webp"
+   ],
+   "fuera_de_cobertura": false,
+   "clase": "CONVIERTE",
+   "acierta": true,
+   "llamo_list_targets": false,
+   "llamo_convert": true
+  },
+  {
+   "caso": "control_png_webp",
+   "i": 2,
+   "ms": 37662,
+   "texto": "Conversión completada. `tipico.png` se ha convertido a WebP:\n\n- **Ruta**: `D:\\Work\\research\\FileX\\bench\\salidas-hito4\\arena-cliente\\tipico.webp`\n- **Tamaño**: 13.5 KB\n- **Tiempo**: 407 ms\n- **Motor**: ImageMagick\n\nEl archivo está listo en el mismo directorio.",
+   "herramientas": [
+    "ToolSearch",
+    "mcp__filex__convert",
+    "ToolSearch",
+    "mcp__filex__job"
+   ],
+   "catalogo_diferido": true,
+   "turnos": 5,
+   "tokens_entrada_total": 144183,
+   "es_error": false,
+   "ficheros_nuevos": [
+    "tipico.webp"
+   ],
+   "fuera_de_cobertura": false,
+   "clase": "CONVIERTE",
+   "acierta": true,
+   "llamo_list_targets": false,
+   "llamo_convert": true
+  },
+  {
+   "caso": "control_pdf_png",
+   "i": 0,
+   "ms": 39530,
+   "texto": "✓ Conversión completada. La primera página de `tipico_texto.pdf` se ha convertido a PNG:\n\n**Archivo de salida:** `D:\\Work\\research\\FileX\\bench\\salidas-hito4\\arena-cliente\\tipico_texto_page1.png` (15.8 KB)\n\nEl archivo está listo en tu directorio actual.",
+   "herramientas": [
+    "ToolSearch",
+    "Bash",
+    "ToolSearch",
+    "PowerShell",
+    "mcp__filex__list_targets",
+    "mcp__filex__convert",
+    "mcp__filex__job"
+   ],
+   "catalogo_diferido": true,
+   "turnos": 8,
+   "tokens_entrada_total": 207043,
+   "es_error": false,
+   "ficheros_nuevos": [
+    "tipico_texto_page1.png"
+   ],
+   "fuera_de_cobertura": false,
+   "clase": "CONVIERTE",
+   "acierta": true,
+   "llamo_list_targets": true,
+   "llamo_convert": true
+  },
+  {
+   "caso": "control_pdf_png",
+   "i": 1,
+   "ms": 42203,
+   "texto": "✅ Conversión completada. La primera página de `tipico_texto.pdf` se ha convertido a PNG en:\n\n**`D:\\Work\\research\\FileX\\bench\\salidas-hito4\\arena-cliente\\tipico_texto.png`** (15.8 KB)\n\nLa conversión fue realizada por ghostscript en 314ms.",
+   "herramientas": [
+    "ToolSearch",
+    "Bash",
+    "PowerShell",
+    "mcp__filex__convert",
+    "ToolSearch",
+    "mcp__filex__job"
+   ],
+   "catalogo_diferido": true,
+   "turnos": 7,
+   "tokens_entrada_total": 205600,
+   "es_error": false,
+   "ficheros_nuevos": [
+    "tipico_texto.png"
+   ],
+   "fuera_de_cobertura": false,
+   "clase": "CONVIERTE",
+   "acierta": true,
+   "llamo_list_targets": false,
+   "llamo_convert": true
+  },
+  {
+   "caso": "control_pdf_png",
+   "i": 2,
+   "ms": 21624,
+   "texto": "Listo. La primera página de `tipico_texto.pdf` se convirtió a PNG con éxito.\n\n**Archivo generado:** `tipico_texto_page1.png` (15.8 KB)\n\nEl archivo está en el directorio actual: `D:\\Work\\research\\FileX\\bench\\salidas-hito4\\arena-cliente\\tipico_texto_page1.png`",
+   "herramientas": [
+    "ToolSearch",
+    "Glob",
+    "mcp__filex__convert",
+    "ToolSearch",
+    "mcp__filex__job"
+   ],
+   "catalogo_diferido": true,
+   "turnos": 6,
+   "tokens_entrada_total": 173796,
+   "es_error": false,
+   "ficheros_nuevos": [
+    "tipico_texto_page1.png"
+   ],
+   "fuera_de_cobertura": false,
+   "clase": "CONVIERTE",
+   "acierta": true,
+   "llamo_list_targets": false,
+   "llamo_convert": true
+  }
+ ]
+}

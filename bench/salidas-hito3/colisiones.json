@@ -1,0 +1,124 @@
+[
+ {
+  "caso": "a1 PCD REAL de magick, extension .pcd",
+  "fichero": "real.pcd",
+  "destino_pedido": "pcd",
+  "cabecera_hex": "ff ff ff ff ff ff ff ff",
+  "firma_real": "mpegaudio",
+  "categoria": "av",
+  "n_pistas": 1,
+  "punto1": "sin_vocabulario",
+  "veredicto": "fallo",
+  "hallazgos": [
+   [
+    1,
+    "G3",
+    "informativo",
+    "extension sin firma conocida: .pcd"
+   ],
+   [
+    2,
+    "V3",
+    "informativo",
+    "sin referencia de entrada: no se puede comparar el numero de pistas"
+   ],
+   [
+    3,
+    "G4",
+    "fallo",
+    "duracion nula o ilegible"
+   ],
+   [
+    3,
+    "G4",
+    "aviso",
+    "bitrate no positivo"
+   ]
+  ]
+ },
+ {
+  "caso": "a2 MP3 entregado con extension .pcd",
+  "fichero": "mp3_como.pcd",
+  "destino_pedido": "pcd",
+  "cabecera_hex": "49 44 33 04 00 00 00 00",
+  "firma_real": "mp3",
+  "categoria": "av",
+  "n_pistas": 1,
+  "punto1": "sin_vocabulario",
+  "veredicto": "ok_parcial",
+  "hallazgos": [
+   [
+    1,
+    "G3",
+    "informativo",
+    "extension sin firma conocida: .pcd"
+   ],
+   [
+    2,
+    "V3",
+    "informativo",
+    "sin referencia de entrada: no se puede comparar el numero de pistas"
+   ],
+   [
+    4,
+    "-",
+    "informativo",
+    "sin entrada de referencia: el punto 4 no es evaluable"
+   ]
+  ]
+ },
+ {
+  "caso": "b0 cabecera del TGA fabricado",
+  "cabecera_hex": "00 00 02 00 00 00 00 00"
+ },
+ {
+  "caso": "b1 TGA con su extension .tga",
+  "fichero": "real.tga",
+  "destino_pedido": "tga",
+  "cabecera_hex": "00 00 02 00 00 00 00 00",
+  "firma_real": "cur",
+  "categoria": "desconocida",
+  "n_pistas": null,
+  "punto1": "no_aplica",
+  "veredicto": "ok_parcial",
+  "hallazgos": [
+   [
+    1,
+    "G4",
+    "informativo",
+    "el formato no tiene marcador (TGA/WBMP no definen numero magico: los 12 primeros bytes son campos. TGA 2.0 lleva 'TRUEVISION-XFILE' al FINAL y es opcional): el punto 1 NO APLICA a .tga"
+   ]
+  ]
+ },
+ {
+  "caso": "b2 TGA entregado con extension .cur",
+  "fichero": "tga_como.cur",
+  "destino_pedido": "cur",
+  "cabecera_hex": "00 00 02 00 00 00 00 00",
+  "firma_real": "cur",
+  "categoria": "desconocida",
+  "n_pistas": null,
+  "punto1": "evaluado",
+  "veredicto": "ok_parcial",
+  "hallazgos": []
+ },
+ {
+  "caso": "b3 CUR sintetico con extension .cur",
+  "fichero": "sintetico.cur",
+  "destino_pedido": "cur",
+  "cabecera_hex": "00 00 02 00 01 00 10 10",
+  "firma_real": "cur",
+  "categoria": "desconocida",
+  "n_pistas": null,
+  "punto1": "evaluado",
+  "veredicto": "ok_parcial",
+  "hallazgos": [
+   [
+    4,
+    "-",
+    "informativo",
+    "sin entrada de referencia: el punto 4 no es evaluable"
+   ]
+  ]
+ }
+]

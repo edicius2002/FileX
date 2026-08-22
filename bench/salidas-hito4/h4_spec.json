@@ -1,0 +1,144 @@
+{
+ "nombre": "filex-mcp (hito 4)",
+ "command": "D:/Work/research/FileX/.venv-mcp-filex/Scripts/python.exe",
+ "args": [
+  "-m",
+  "filex.mcp",
+  "--raiz",
+  "D:/Work/research/FileX"
+ ],
+ "cwd": "D:/Work/research/FileX",
+ "env": {
+  "PYTHONPATH": "D:/Work/research/FileX",
+  "PYTHONUTF8": "1"
+ },
+ "stderr_log": "D:/Work/research/FileX/bench/salidas-hito4/h4_sonda_stderr.txt",
+ "pasos": [
+  {
+   "id": "lt_png",
+   "tool": "list_targets",
+   "args": {
+    "formato_origen": "png"
+   },
+   "espera": "prosa",
+   "nota": "la respuesta canónica a «¿puedo hacer X?»; mecanismo de seguridad contra el 15-17 % de fallos silenciosos"
+  },
+  {
+   "id": "lt_imposible",
+   "tool": "list_targets",
+   "args": {
+    "formato_origen": "png",
+    "formato_destino": "mp3"
+   },
+   "espera": "prosa",
+   "nota": "lo imposible se dice, no se sustituye por lo parecido"
+  },
+  {
+   "id": "inspect_png",
+   "tool": "inspect",
+   "args": {
+    "ruta": "D:/Work/research/FileX/corpus/imagen/trivial.png"
+   },
+   "espera": "asa",
+   "nota": "exento de R8 y R18: lectura de cabeceras en proceso"
+  },
+  {
+   "id": "inspect_mp4_15MB",
+   "tool": "inspect",
+   "args": {
+    "ruta": "D:/Work/research/FileX/corpus/video/tipico.mp4"
+   },
+   "espera": "asa",
+   "nota": "el caso binario: 15,5 MB de entrada, respuesta constante"
+  },
+  {
+   "id": "inspect_fuera",
+   "tool": "inspect",
+   "args": {
+    "ruta": "C:/Windows/win.ini"
+   },
+   "espera": "prosa",
+   "nota": "R4: mismo mensaje que «no existe», sin lista blanca"
+  },
+  {
+   "id": "inspect_no_existe",
+   "tool": "inspect",
+   "args": {
+    "ruta": "D:/Work/research/FileX/corpus/imagen/no_existe.png"
+   },
+   "espera": "prosa",
+   "nota": "R4: tiene que ser IDÉNTICO al anterior"
+  },
+  {
+   "id": "convert_salida_ya_existe",
+   "tool": "convert",
+   "args": {
+    "entrada": "D:/Work/research/FileX/corpus/imagen/trivial.png",
+    "salida": "D:/Work/research/FileX/bench/salidas-hito4/tmp-sonda/ya_existe.webp"
+   },
+   "timeout": 60,
+   "espera": "asa",
+   "nota": "el disparador exacto de las 26 de 26 que cuelgan la sesión MCP entera; aquí devuelve el asa al empezar"
+  },
+  {
+   "id": "convert_video_15MB",
+   "tool": "convert",
+   "args": {
+    "entrada": "D:/Work/research/FileX/corpus/video/tipico.mp4",
+    "salida": "D:/Work/research/FileX/bench/salidas-hito4/tmp-sonda/salida.mkv",
+    "parametros": {
+     "copia": true
+    }
+   },
+   "timeout": 60,
+   "espera": "asa",
+   "nota": "15,5 MB: la respuesta no puede crecer con la entrada"
+  },
+  {
+   "id": "convert_imposible",
+   "tool": "convert",
+   "args": {
+    "entrada": "D:/Work/research/FileX/corpus/imagen/trivial.png",
+    "salida": "D:/Work/research/FileX/bench/salidas-hito4/tmp-sonda/x.mp3"
+   },
+   "timeout": 60,
+   "espera": "prosa",
+   "nota": "falla EN EL ACTO y sin gastar un job_id: que no haya camino se sabe en microsegundos. El silencio es el modo peligroso"
+  },
+  {
+   "id": "convert_entrada_rota",
+   "tool": "convert",
+   "args": {
+    "entrada": "D:/Work/research/FileX/bench/salidas-hito4/h4_roto.png",
+    "salida": "D:/Work/research/FileX/bench/salidas-hito4/tmp-sonda/roto.webp"
+   },
+   "timeout": 60,
+   "espera": "asa",
+   "nota": "un motor que falla: NUNCA stderr crudo (884-1.228 tokens de banner en los tres servidores de referencia)"
+  },
+  {
+   "id": "job_desconocido",
+   "tool": "job",
+   "args": {
+    "job_id": "no-existe-000000"
+   },
+   "espera": "prosa",
+   "nota": "no revienta la sesión"
+  },
+  {
+   "id": "batch_dos",
+   "tool": "batch",
+   "args": {
+    "entradas": [
+     "D:/Work/research/FileX/corpus/imagen/trivial.png",
+     "D:/Work/research/FileX/corpus/imagen/tipico.png"
+    ],
+    "directorio_salida": "D:/Work/research/FileX/bench/salidas-hito4/tmp-sonda",
+    "formato_destino": "jpg"
+   },
+   "timeout": 60,
+   "espera": "asa",
+   "nota": "R5: una entrada rechazada no aborta las demás"
+  }
+ ]
+}

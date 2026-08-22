@@ -19,7 +19,7 @@ import os
 from dataclasses import dataclass, field
 
 from . import contrato, formatos, invocacion, motores as _motores
-from .confinamiento import Confinamiento, Denegado
+from .confinamiento import Confinamiento, Denegado, nombre_seguro
 from .grafo import Arista, Camino, Decision, Grafo
 from .trabajo import DirectorioDeTrabajo
 
@@ -122,6 +122,13 @@ class FileX:
     # ------------------------------------------------------------ conversión
 
     def _resolver(self, entrada: str, salida: str) -> tuple[str, str]:
+        # R12 sobre el NOMBRE DE SALIDA, y va ANTES de mirar si hay lista
+        # blanca: sin esto se escriben 94 B en el flujo alternativo de un
+        # fichero ajeno con `veredicto: ok`, y el contenido visible de la
+        # víctima queda intacto, así que nadie lo nota. Validar el DIRECTORIO
+        # del destino no basta — el nombre del fichero no lo miraba nadie.
+        if not nombre_seguro(os.path.basename(os.path.abspath(salida))):
+            raise Denegado()
         if self.confinamiento is None:
             return os.path.abspath(entrada), os.path.abspath(salida)
         ent = self.confinamiento.resolver(entrada)

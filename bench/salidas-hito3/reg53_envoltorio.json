@@ -1,0 +1,3005 @@
+{
+ "fallos": [
+  {
+   "caso": "1 PNG con extension .avif",
+   "correcto": true,
+   "esperado": "fallo",
+   "firma": "png",
+   "p1": [
+    [
+     "G3",
+     "fallo",
+     "la firma real no corresponde a la extension pedida"
+    ]
+   ],
+   "punto1": "evaluado",
+   "veredicto": "fallo"
+  },
+  {
+   "caso": "1b control: PNG con extension .png",
+   "correcto": true,
+   "esperado": "ok",
+   "firma": "png",
+   "p1": [],
+   "punto1": "evaluado",
+   "veredicto": "ok_parcial"
+  },
+  {
+   "caso": "5 fichero de 0 bytes",
+   "correcto": true,
+   "esperado": "fallo",
+   "firma": "vacio",
+   "p1": [
+    [
+     "G1",
+     "fallo",
+     "fichero de 0 bytes presentado como exito"
+    ]
+   ],
+   "punto1": "evaluado",
+   "veredicto": "fallo"
+  },
+  {
+   "caso": "N PNG con extension .svg",
+   "correcto": true,
+   "esperado": "fallo",
+   "firma": "png",
+   "p1": [
+    [
+     "G3",
+     "fallo",
+     "la firma real no corresponde a la extension pedida"
+    ]
+   ],
+   "punto1": "evaluado",
+   "veredicto": "fallo"
+  },
+  {
+   "caso": "N PNG con extension .docx",
+   "correcto": true,
+   "esperado": "fallo",
+   "firma": "png",
+   "p1": [
+    [
+     "G3",
+     "fallo",
+     "la firma real no corresponde a la extension pedida"
+    ]
+   ],
+   "punto1": "evaluado",
+   "veredicto": "fallo"
+  },
+  {
+   "caso": "N PNG con extension .ico",
+   "correcto": true,
+   "esperado": "fallo",
+   "firma": "png",
+   "p1": [
+    [
+     "G3",
+     "fallo",
+     "la firma real no corresponde a la extension pedida"
+    ]
+   ],
+   "punto1": "evaluado",
+   "veredicto": "fallo"
+  },
+  {
+   "caso": "N PNG con extension .eps",
+   "correcto": true,
+   "esperado": "fallo",
+   "firma": "png",
+   "p1": [
+    [
+     "G3",
+     "fallo",
+     "la firma real no corresponde a la extension pedida"
+    ]
+   ],
+   "punto1": "evaluado",
+   "veredicto": "fallo"
+  },
+  {
+   "caso": "N PDF con extension .epub",
+   "correcto": true,
+   "esperado": "fallo",
+   "firma": "pdf",
+   "p1": [
+    [
+     "G3",
+     "fallo",
+     "la firma real no corresponde a la extension pedida"
+    ]
+   ],
+   "punto1": "evaluado",
+   "veredicto": "fallo"
+  },
+  {
+   "caso": "N FLAC con extension .aiff",
+   "correcto": true,
+   "esperado": "fallo",
+   "firma": "flac",
+   "p1": [
+    [
+     "G3",
+     "fallo",
+     "la firma real no corresponde a la extension pedida"
+    ]
+   ],
+   "punto1": "evaluado",
+   "veredicto": "fallo"
+  }
+ ],
+ "fichero": "D:\\Work\\research\\FileX\\filex\\verificador.py",
+ "fidelidad": [
+  {
+   "cobertura": {
+    "V5": true
+   },
+   "hallazgos": [
+    [
+     "V5",
+     "informativo",
+     "la entrada no trae etiquetas de idioma ni titulo en ninguna de sus 1 pistas: la regla no discrimina"
+    ]
+   ],
+   "salida": "tipico_flac-to.mp3",
+   "veredicto": "ok"
+  },
+  {
+   "cobertura": {
+    "V5": true
+   },
+   "hallazgos": [
+    [
+     "V5",
+     "informativo",
+     "la entrada no trae etiquetas de idioma ni titulo en ninguna de sus 1 pistas: la regla no discrimina"
+    ]
+   ],
+   "salida": "tipico_flac-to.opus",
+   "veredicto": "ok"
+  },
+  {
+   "cobertura": {
+    "A4": true
+   },
+   "hallazgos": [
+    [
+     "A4",
+     "informativo",
+     "PCM identico bit a bit"
+    ]
+   ],
+   "salida": "tipico_flac-to.wav",
+   "veredicto": "ok"
+  },
+  {
+   "cobertura": {
+    "A4": true,
+    "V5": true
+   },
+   "hallazgos": [
+    [
+     "V5",
+     "informativo",
+     "la entrada no trae etiquetas de idioma ni titulo en ninguna de sus 1 pistas: la regla no discrimina"
+    ],
+    [
+     "A4",
+     "aviso",
+     "el PCM no coincide, pero la profundidad esta INFLADA (24 bits sobre un origen de 16 efectivos, regla A6): el redondeo al medir explica la diferencia"
+    ]
+   ],
+   "salida": "tipico_mp3-to.flac",
+   "veredicto": "aviso"
+  },
+  {
+   "cobertura": {
+    "A4": true
+   },
+   "hallazgos": [
+    [
+     "A4",
+     "informativo",
+     "PCM identico bit a bit"
+    ]
+   ],
+   "salida": "tipico_mp3-to.wav",
+   "veredicto": "ok"
+  },
+  {
+   "cobertura": {
+    "V5": true
+   },
+   "hallazgos": [
+    [
+     "V5",
+     "informativo",
+     "las 2 etiquetas de pista se conservan"
+    ]
+   ],
+   "salida": "tipico_mp4-audio-copy.m4a",
+   "veredicto": "ok"
+  },
+  {
+   "cobertura": {
+    "A5": true,
+    "V5": true
+   },
+   "hallazgos": [
+    [
+     "V5",
+     "informativo",
+     "las 2 etiquetas de pista se conservan"
+    ],
+    [
+     "A5",
+     "aviso",
+     "el PCM no coincide, pero la profundidad esta INFLADA (24 bits sobre un origen de 16 efectivos, regla A6): el redondeo al medir explica la diferencia"
+    ]
+   ],
+   "salida": "tipico_mp4-audio.flac",
+   "veredicto": "aviso"
+  },
+  {
+   "cobertura": {
+    "V5": true
+   },
+   "hallazgos": [
+    [
+     "V5",
+     "informativo",
+     "las 2 etiquetas de pista se conservan"
+    ]
+   ],
+   "salida": "tipico_mp4-audio.mp3",
+   "veredicto": "ok"
+  },
+  {
+   "cobertura": {
+    "A4": true,
+    "V5": true
+   },
+   "hallazgos": [
+    [
+     "V5",
+     "informativo",
+     "la entrada no trae etiquetas de idioma ni titulo en ninguna de sus 1 pistas: la regla no discrimina"
+    ],
+    [
+     "A4",
+     "informativo",
+     "PCM identico bit a bit"
+    ]
+   ],
+   "salida": "trivial_wav-to.flac",
+   "veredicto": "ok"
+  },
+  {
+   "cobertura": {
+    "V5": true
+   },
+   "hallazgos": [
+    [
+     "V5",
+     "informativo",
+     "la entrada no trae etiquetas de idioma ni titulo en ninguna de sus 1 pistas: la regla no discrimina"
+    ]
+   ],
+   "salida": "trivial_wav-to.m4a",
+   "veredicto": "ok"
+  },
+  {
+   "cobertura": {
+    "V5": true
+   },
+   "hallazgos": [
+    [
+     "V5",
+     "informativo",
+     "la entrada no trae etiquetas de idioma ni titulo en ninguna de sus 1 pistas: la regla no discrimina"
+    ]
+   ],
+   "salida": "trivial_wav-to.mp3",
+   "veredicto": "ok"
+  },
+  {
+   "cobertura": {
+    "V5": true
+   },
+   "hallazgos": [
+    [
+     "V5",
+     "informativo",
+     "la entrada no trae etiquetas de idioma ni titulo en ninguna de sus 1 pistas: la regla no discrimina"
+    ]
+   ],
+   "salida": "trivial_wav-to.opus",
+   "veredicto": "ok"
+  },
+  {
+   "cobertura": {},
+   "hallazgos": [],
+   "salida": "patologico_bom_csv-to-normalizado.csv",
+   "veredicto": "ok_parcial"
+  },
+  {
+   "cobertura": {},
+   "hallazgos": [],
+   "salida": "patologico_bom_csv-to.json",
+   "veredicto": "ok_parcial"
+  },
+  {
+   "cobertura": {},
+   "hallazgos": [],
+   "salida": "tipico_json-to.csv",
+   "veredicto": "ok_parcial"
+  },
+  {
+   "cobertura": {
+    "I6": true
+   },
+   "hallazgos": [
+    [
+     "I6",
+     "informativo",
+     "pixeles identicos (RMSE 0)"
+    ]
+   ],
+   "salida": "16bit_tif-to-d16.png",
+   "veredicto": "ok"
+  },
+  {
+   "cobertura": {
+    "I7": true
+   },
+   "hallazgos": [
+    [
+     "I7",
+     "informativo",
+     "PSNR 59.02 dB"
+    ]
+   ],
+   "salida": "16bit_tif-to-d8.png",
+   "veredicto": "ok"
+  },
+  {
+   "cobertura": {
+    "I6": true
+   },
+   "hallazgos": [
+    [
+     "I6",
+     "informativo",
+     "pixeles identicos (RMSE 0)"
+    ]
+   ],
+   "salida": "16bit_tif-to-default.png",
+   "veredicto": "ok"
+  },
+  {
+   "cobertura": {
+    "I3": true,
+    "I7": true
+   },
+   "hallazgos": [
+    [
+     "I7",
+     "informativo",
+     "PSNR 35.28 dB por debajo de 40 dB, excepcion justificada: entrada de 16 bits cuantizada a 8: el techo no depende del motor (16bit_tif -> JPEG 35,3 dB, -> WebP 34,8 dB)"
+    ]
+   ],
+   "salida": "16bit_tif-to.jpg",
+   "veredicto": "ok"
+  },
+  {
+   "cobertura": {
+    "I7": true
+   },
+   "hallazgos": [
+    [
+     "I7",
+     "informativo",
+     "PSNR 34.76 dB por debajo de 40 dB, excepcion justificada: entrada de 16 bits cuantizada a 8: el techo no depende del motor (16bit_tif -> JPEG 35,3 dB, -> WebP 34,8 dB)"
+    ]
+   ],
+   "salida": "16bit_tif-to.webp",
+   "veredicto": "ok"
+  },
+  {
+   "cobertura": {
+    "I7": true
+   },
+   "hallazgos": [
+    [
+     "I7",
+     "informativo",
+     "PSNR 35.50 dB (sobre blanco) por debajo de 40 dB, excepcion justificada: grafismo, no fotografia: el umbral de 40 dB de I7 esta calibrado para fotografia; los bordes duros lo hunden"
+    ]
+   ],
+   "salida": "alpha_png-to-flat.jpg",
+   "veredicto": "ok"
+  },
+  {
+   "cobertura": {
+    "I7": true,
+    "I8": true
+   },
+   "hallazgos": [
+    [
+     "I8",
+     "aviso",
+     "grafismo (origen de paleta) codificado CON PERDIDA en un destino que admite sin perdida"
+    ],
+    [
+     "I7",
+     "informativo",
+     "PSNR 39.80 dB por debajo de 40 dB, excepcion justificada: AVIF comprime el plano alfa CON PERDIDA (referencia.json, perdidas): alpha.png -> AVIF da 38,8 dB sobre blanco"
+    ]
+   ],
+   "salida": "alpha_png-to.avif",
+   "veredicto": "aviso"
+  },
+  {
+   "cobertura": {
+    "I3": true,
+    "I7": true
+   },
+   "hallazgos": [
+    [
+     "I3",
+     "aviso",
+     "APLANADO SOBRE NEGRO: el pixel (0,0), 100 % transparente en la entrada, sale negro"
+    ],
+    [
+     "I7",
+     "aviso",
+     "PSNR por debajo del umbral (sobre blanco)"
+    ]
+   ],
+   "salida": "alpha_png-to.jpg",
+   "veredicto": "aviso"
+  },
+  {
+   "cobertura": {
+    "I6": true
+   },
+   "hallazgos": [
+    [
+     "I6",
+     "informativo",
+     "pixeles identicos (RMSE 0)"
+    ]
+   ],
+   "salida": "alpha_png-to.png8.png",
+   "veredicto": "ok"
+  },
+  {
+   "cobertura": {
+    "I7": true,
+    "I8": true
+   },
+   "hallazgos": [
+    [
+     "I8",
+     "aviso",
+     "grafismo (origen de paleta) codificado CON PERDIDA en un destino que admite sin perdida"
+    ],
+    [
+     "I7",
+     "informativo",
+     "PSNR 45.13 dB"
+    ]
+   ],
+   "salida": "alpha_png-to.webp",
+   "veredicto": "aviso"
+  },
+  {
+   "cobertura": {
+    "I6": true
+   },
+   "hallazgos": [
+    [
+     "I6",
+     "informativo",
+     "pixeles identicos (RMSE 0)"
+    ]
+   ],
+   "salida": "tipico_jpg-to.png",
+   "veredicto": "ok"
+  },
+  {
+   "cobertura": {
+    "I7": true
+   },
+   "hallazgos": [
+    [
+     "I7",
+     "informativo",
+     "PSNR 47.94 dB"
+    ]
+   ],
+   "salida": "tipico_png-to.avif",
+   "veredicto": "ok"
+  },
+  {
+   "cobertura": {
+    "I3": true,
+    "I7": true
+   },
+   "hallazgos": [
+    [
+     "I7",
+     "informativo",
+     "PSNR 48.70 dB (sobre blanco)"
+    ]
+   ],
+   "salida": "tipico_png-to.jpg",
+   "veredicto": "ok"
+  },
+  {
+   "cobertura": {
+    "I7": true
+   },
+   "hallazgos": [
+    [
+     "I7",
+     "informativo",
+     "PSNR 48.69 dB (sobre blanco)"
+    ]
+   ],
+   "salida": "tipico_png-to.webp",
+   "veredicto": "ok"
+  },
+  {
+   "cobertura": {
+    "I3": true,
+    "I7": true
+   },
+   "hallazgos": [
+    [
+     "I7",
+     "informativo",
+     "PSNR 48.42 dB"
+    ]
+   ],
+   "salida": "tipico_webp-to.jpg",
+   "veredicto": "ok"
+  },
+  {
+   "cobertura": {
+    "I6": true
+   },
+   "hallazgos": [
+    [
+     "I6",
+     "informativo",
+     "pixeles identicos (RMSE 0)"
+    ]
+   ],
+   "salida": "tipico_webp-to.png",
+   "veredicto": "ok"
+  },
+  {
+   "cobertura": {
+    "I7": true
+   },
+   "hallazgos": [
+    [
+     "I7",
+     "informativo",
+     "PSNR 120.00 dB"
+    ]
+   ],
+   "salida": "trivial_png-to-lossless.webp",
+   "veredicto": "ok"
+  },
+  {
+   "cobertura": {
+    "I3": true,
+    "I7": true
+   },
+   "hallazgos": [
+    [
+     "I7",
+     "informativo",
+     "PSNR 52.90 dB"
+    ]
+   ],
+   "salida": "trivial_png-to.jpg",
+   "veredicto": "ok"
+  },
+  {
+   "cobertura": {
+    "I7": true,
+    "I8": true
+   },
+   "hallazgos": [
+    [
+     "I8",
+     "aviso",
+     "grafismo (origen de paleta) codificado CON PERDIDA en un destino que admite sin perdida"
+    ],
+    [
+     "I7",
+     "informativo",
+     "PSNR 51.95 dB"
+    ]
+   ],
+   "salida": "trivial_png-to.webp",
+   "veredicto": "aviso"
+  },
+  {
+   "cobertura": {
+    "P6": true
+   },
+   "hallazgos": [
+    [
+     "P6",
+     "informativo",
+     "texto extraido: 2 caracteres imprimibles (umbral 10)"
+    ],
+    [
+     "P6",
+     "informativo",
+     "txtwrite devuelve 2 caracteres ('FX'): BASURA, no una capa de texto"
+    ]
+   ],
+   "salida": "alpha_png-to.pdf",
+   "veredicto": "ok"
+  },
+  {
+   "cobertura": {},
+   "hallazgos": [],
+   "salida": "patologico_escaneado_pdf-to-p1.png",
+   "veredicto": "ok_parcial"
+  },
+  {
+   "cobertura": {
+    "P6": true
+   },
+   "hallazgos": [
+    [
+     "P6",
+     "informativo",
+     "texto extraido: 0 caracteres imprimibles (umbral 10)"
+    ]
+   ],
+   "salida": "tipico_jpg-to.pdf",
+   "veredicto": "ok"
+  },
+  {
+   "cobertura": {
+    "P6": true
+   },
+   "hallazgos": [
+    [
+     "P6",
+     "informativo",
+     "texto extraido: 0 caracteres imprimibles (umbral 10)"
+    ]
+   ],
+   "salida": "tipico_png-to-150dpi.pdf",
+   "veredicto": "ok"
+  },
+  {
+   "cobertura": {
+    "P6": true
+   },
+   "hallazgos": [
+    [
+     "P6",
+     "informativo",
+     "texto extraido: 0 caracteres imprimibles (umbral 10)"
+    ]
+   ],
+   "salida": "tipico_png-to.pdf",
+   "veredicto": "ok"
+  },
+  {
+   "cobertura": {
+    "P2": true,
+    "P6": true,
+    "P9": true
+   },
+   "hallazgos": [
+    [
+     "P6",
+     "informativo",
+     "texto extraido: 105 caracteres imprimibles (umbral 10)"
+    ],
+    [
+     "P9",
+     "informativo",
+     "capa de texto plausible (long. media 3.62, 41.4 % de tokens de una letra)"
+    ],
+    [
+     "P2",
+     "informativo",
+     "texto conservado ntegro (sha256 igual)"
+    ]
+   ],
+   "salida": "tipico_texto_pdf-to-gs.pdf",
+   "veredicto": "ok"
+  },
+  {
+   "cobertura": {},
+   "hallazgos": [],
+   "salida": "tipico_texto_pdf-to-p1.jpg",
+   "veredicto": "ok_parcial"
+  },
+  {
+   "cobertura": {},
+   "hallazgos": [],
+   "salida": "tipico_texto_pdf-to-p1.png",
+   "veredicto": "ok_parcial"
+  },
+  {
+   "cobertura": {},
+   "hallazgos": [],
+   "salida": "tipico_texto_pdf-to.tif",
+   "veredicto": "ok_parcial"
+  },
+  {
+   "cobertura": {
+    "P6": true
+   },
+   "hallazgos": [
+    [
+     "P6",
+     "informativo",
+     "texto extraido: 0 caracteres imprimibles (umbral 10)"
+    ]
+   ],
+   "salida": "tipico_texto_rasterizado.pdf",
+   "veredicto": "ok"
+  },
+  {
+   "cobertura": {},
+   "hallazgos": [],
+   "salida": "trivial_pdf-to-p1.png",
+   "veredicto": "ok_parcial"
+  },
+  {
+   "cobertura": {
+    "V2": false,
+    "V5": true,
+    "V6": true,
+    "V8": true
+   },
+   "hallazgos": [
+    [
+     "V5",
+     "informativo",
+     "la entrada no trae etiquetas de idioma ni titulo en ninguna de sus 3 pistas: la regla no discrimina"
+    ],
+    [
+     "V2",
+     "informativo",
+     "recuento de fotogramas DESACTIVADO (--sin-v2): decodifica el video entero"
+    ],
+    [
+     "V6",
+     "informativo",
+     "remux exacto: 300 fotogramas con el mismo hash por pixel"
+    ]
+   ],
+   "salida": "2pistas_mkv-to-COPY.mp4",
+   "veredicto": "ok_parcial"
+  },
+  {
+   "cobertura": {
+    "V2": false,
+    "V5": true,
+    "V6": true,
+    "V8": true
+   },
+   "hallazgos": [
+    [
+     "V5",
+     "informativo",
+     "la entrada no trae etiquetas de idioma ni titulo en ninguna de sus 3 pistas: la regla no discrimina"
+    ],
+    [
+     "V2",
+     "informativo",
+     "recuento de fotogramas DESACTIVADO (--sin-v2): decodifica el video entero"
+    ],
+    [
+     "V8",
+     "informativo",
+     "PSNR y 45.58 dB"
+    ]
+   ],
+   "salida": "2pistas_mkv-to-DEFAULT.mp4",
+   "veredicto": "ok_parcial"
+  },
+  {
+   "cobertura": {
+    "V2": false,
+    "V5": true,
+    "V6": true,
+    "V8": true
+   },
+   "hallazgos": [
+    [
+     "V5",
+     "informativo",
+     "la entrada no trae etiquetas de idioma ni titulo en ninguna de sus 3 pistas: la regla no discrimina"
+    ],
+    [
+     "V2",
+     "informativo",
+     "recuento de fotogramas DESACTIVADO (--sin-v2): decodifica el video entero"
+    ],
+    [
+     "V8",
+     "informativo",
+     "PSNR y 45.58 dB"
+    ]
+   ],
+   "salida": "2pistas_mkv-to-MAP0.mp4",
+   "veredicto": "ok_parcial"
+  },
+  {
+   "cobertura": {
+    "V2": false,
+    "V5": true,
+    "V6": true,
+    "V8": true
+   },
+   "hallazgos": [
+    [
+     "V5",
+     "informativo",
+     "las 2 etiquetas de pista se conservan"
+    ],
+    [
+     "V2",
+     "informativo",
+     "recuento de fotogramas DESACTIVADO (--sin-v2): decodifica el video entero"
+    ],
+    [
+     "V6",
+     "informativo",
+     "remux exacto: 600 fotogramas con el mismo hash por pixel"
+    ]
+   ],
+   "salida": "tipico_mp4-to.mkv",
+   "veredicto": "ok_parcial"
+  },
+  {
+   "cobertura": {
+    "V2": false,
+    "V5": true,
+    "V6": true,
+    "V8": true
+   },
+   "hallazgos": [
+    [
+     "V5",
+     "informativo",
+     "las 2 etiquetas de pista se conservan"
+    ],
+    [
+     "V2",
+     "informativo",
+     "recuento de fotogramas DESACTIVADO (--sin-v2): decodifica el video entero"
+    ],
+    [
+     "V8",
+     "informativo",
+     "PSNR y 46.15 dB"
+    ]
+   ],
+   "salida": "tipico_mp4-to.webm",
+   "veredicto": "ok_parcial"
+  },
+  {
+   "cobertura": {
+    "V9": true
+   },
+   "hallazgos": [
+    [
+     "V9",
+     "aviso",
+     "PALETA GENERICA: la tabla de color es una rejilla regular (8x8x4), no se calculo sobre el clip"
+    ]
+   ],
+   "salida": "trivial_mp4-to-naive.gif",
+   "veredicto": "aviso"
+  },
+  {
+   "cobertura": {
+    "V9": true
+   },
+   "hallazgos": [
+    [
+     "V9",
+     "informativo",
+     "paleta calculada sobre el clip"
+    ]
+   ],
+   "salida": "trivial_mp4-to-palette.gif",
+   "veredicto": "ok"
+  },
+  {
+   "cobertura": {
+    "V2": false,
+    "V5": true,
+    "V6": true,
+    "V8": true
+   },
+   "hallazgos": [
+    [
+     "V5",
+     "informativo",
+     "las 1 etiquetas de pista se conservan"
+    ],
+    [
+     "V2",
+     "informativo",
+     "recuento de fotogramas DESACTIVADO (--sin-v2): decodifica el video entero"
+    ],
+    [
+     "V8",
+     "aviso",
+     "PSNR de luminancia bajo"
+    ]
+   ],
+   "salida": "trivial_mp4-to.webm",
+   "veredicto": "aviso"
+  }
+ ],
+ "fuente": "bench",
+ "modulo": "filex.verificador",
+ "proceso": {
+  "detalle": [
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "mp3",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "tipico_flac-to.mp3",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "ogg",
+    "hallazgos": [
+     [
+      4,
+      "A3",
+      "informativo",
+      "Opus fuerza 48 kHz",
+      44100,
+      48000
+     ]
+    ],
+    "punto1": "evaluado",
+    "salida": "tipico_flac-to.opus",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "wav",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "tipico_flac-to.wav",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "flac",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "tipico_mp3-to.flac",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "wav",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "tipico_mp3-to.wav",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "m4a",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "tipico_mp4-audio-copy.m4a",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "flac",
+    "hallazgos": [
+     [
+      4,
+      "A6",
+      "aviso",
+      "profundidad de bits INFLADA sin informacion nueva",
+      16,
+      24
+     ]
+    ],
+    "punto1": "evaluado",
+    "salida": "tipico_mp4-audio.flac",
+    "veredicto": "aviso"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "mp3",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "tipico_mp4-audio.mp3",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "flac",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "trivial_wav-to.flac",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "m4a",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "trivial_wav-to.m4a",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "mp3",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "trivial_wav-to.mp3",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "ogg",
+    "hallazgos": [
+     [
+      4,
+      "A3",
+      "informativo",
+      "Opus fuerza 48 kHz",
+      44100,
+      48000
+     ]
+    ],
+    "punto1": "evaluado",
+    "salida": "trivial_wav-to.opus",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "texto",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "patologico_bom_csv-to-normalizado.csv",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "texto",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "patologico_bom_csv-to.json",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "texto",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "tipico_json-to.csv",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "png",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "16bit_tif-to-d16.png",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "png",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "16bit_tif-to-d8.png",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "png",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "16bit_tif-to-default.png",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "jpeg",
+    "hallazgos": [
+     [
+      4,
+      "I5",
+      "informativo",
+      "reduccion de profundidad inevitable en jpg (techo 8 bits)",
+      16,
+      8
+     ]
+    ],
+    "punto1": "evaluado",
+    "salida": "16bit_tif-to.jpg",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "webp",
+    "hallazgos": [
+     [
+      4,
+      "I5",
+      "informativo",
+      "reduccion de profundidad inevitable en webp (techo 8 bits)",
+      16,
+      8
+     ]
+    ],
+    "punto1": "evaluado",
+    "salida": "16bit_tif-to.webp",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "jpeg",
+    "hallazgos": [
+     [
+      4,
+      "I2",
+      "informativo",
+      "jpg no admite alfa: perdida inevitable",
+      null,
+      null
+     ]
+    ],
+    "punto1": "evaluado",
+    "salida": "alpha_png-to-flat.jpg",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "avif",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "alpha_png-to.avif",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "aviso",
+    "firma": "jpeg",
+    "hallazgos": [
+     [
+      4,
+      "I2",
+      "informativo",
+      "jpg no admite alfa: perdida inevitable",
+      null,
+      null
+     ]
+    ],
+    "punto1": "evaluado",
+    "salida": "alpha_png-to.jpg",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "png",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "alpha_png-to.png8.png",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "webp",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "alpha_png-to.webp",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "png",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "tipico_jpg-to.png",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "avif",
+    "hallazgos": [
+     [
+      4,
+      "I5",
+      "informativo",
+      "reduccion de profundidad inevitable en avif (techo 12 bits)",
+      16,
+      12
+     ]
+    ],
+    "punto1": "evaluado",
+    "salida": "tipico_png-to.avif",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "jpeg",
+    "hallazgos": [
+     [
+      4,
+      "I5",
+      "informativo",
+      "reduccion de profundidad inevitable en jpg (techo 8 bits)",
+      16,
+      8
+     ]
+    ],
+    "punto1": "evaluado",
+    "salida": "tipico_png-to.jpg",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "webp",
+    "hallazgos": [
+     [
+      4,
+      "I5",
+      "informativo",
+      "reduccion de profundidad inevitable en webp (techo 8 bits)",
+      16,
+      8
+     ]
+    ],
+    "punto1": "evaluado",
+    "salida": "tipico_png-to.webp",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "jpeg",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "tipico_webp-to.jpg",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "png",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "tipico_webp-to.png",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "webp",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "trivial_png-to-lossless.webp",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "jpeg",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "trivial_png-to.jpg",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "webp",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "trivial_png-to.webp",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "pdf",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "alpha_png-to.pdf",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "png",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "patologico_escaneado_pdf-to-p1.png",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "aviso",
+    "firma": "pdf",
+    "hallazgos": [
+     [
+      4,
+      "P7",
+      "aviso",
+      "1 px -> 1 pt: pagina absurda (1920 x 1080 pt = 677 x 381 mm)",
+      "densidad declarada",
+      "1:1"
+     ]
+    ],
+    "punto1": "evaluado",
+    "salida": "tipico_jpg-to.pdf",
+    "veredicto": "aviso"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "pdf",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "tipico_png-to-150dpi.pdf",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "aviso",
+    "firma": "pdf",
+    "hallazgos": [
+     [
+      4,
+      "P7",
+      "aviso",
+      "1 px -> 1 pt: pagina absurda (1920 x 1080 pt = 677 x 381 mm)",
+      "densidad declarada",
+      "1:1"
+     ]
+    ],
+    "punto1": "evaluado",
+    "salida": "tipico_png-to.pdf",
+    "veredicto": "aviso"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "pdf",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "tipico_texto_pdf-to-gs.pdf",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "jpeg",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "tipico_texto_pdf-to-p1.jpg",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "png",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "tipico_texto_pdf-to-p1.png",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "tiff",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "tipico_texto_pdf-to.tif",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "pdf",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "tipico_texto_rasterizado.pdf",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "png",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "trivial_pdf-to-p1.png",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "mp4",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "2pistas_mkv-to-COPY.mp4",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "fallo",
+    "firma": "mp4",
+    "hallazgos": [
+     [
+      2,
+      "V3",
+      "fallo",
+      "numero de pistas de audio distinto del esperado",
+      2,
+      1
+     ]
+    ],
+    "punto1": "evaluado",
+    "salida": "2pistas_mkv-to-DEFAULT.mp4",
+    "veredicto": "fallo"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "mp4",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "2pistas_mkv-to-MAP0.mp4",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "matroska",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "tipico_mp4-to.mkv",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "matroska",
+    "hallazgos": [
+     [
+      4,
+      "A3",
+      "informativo",
+      "Opus fuerza 48 kHz",
+      44100,
+      48000
+     ]
+    ],
+    "punto1": "evaluado",
+    "salida": "tipico_mp4-to.webm",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "aviso",
+    "firma": "gif",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "trivial_mp4-to-naive.gif",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "gif",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "trivial_mp4-to-palette.gif",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "matroska",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "trivial_mp4-to.webm",
+    "veredicto": "ok_parcial"
+   }
+  ],
+  "resumen": {
+   "detalle_fn": [],
+   "detalle_fp": [],
+   "falsos_negativos": 0,
+   "falsos_positivos": 0,
+   "n": 53,
+   "punto1": {
+    "evaluado": 53
+   },
+   "veredictos": {
+    "aviso": 3,
+    "fallo": 1,
+    "ok_parcial": 49
+   }
+  }
+ },
+ "punto5": {
+  "limpio": {
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_alfa": true,
+    "4_pedido": false,
+    "5_escritura": true
+   },
+   "hallazgos": [
+    [
+     4,
+     "-",
+     "informativo"
+    ],
+    [
+     5,
+     "N9",
+     "informativo"
+    ]
+   ],
+   "veredicto": "ok_parcial"
+  },
+  "sucio": {
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_alfa": true,
+    "4_pedido": false,
+    "5_escritura": true
+   },
+   "hallazgos": [
+    [
+     4,
+     "-",
+     "informativo"
+    ],
+    [
+     5,
+     "N7",
+     "aviso"
+    ],
+    [
+     5,
+     "N9",
+     "informativo"
+    ]
+   ],
+   "veredicto": "aviso"
+  }
+ },
+ "subproceso": {
+  "detalle": [
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "mp3",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "tipico_flac-to.mp3",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "ogg",
+    "hallazgos": [
+     [
+      4,
+      "A3",
+      "informativo",
+      "Opus fuerza 48 kHz",
+      44100,
+      48000
+     ]
+    ],
+    "punto1": "evaluado",
+    "salida": "tipico_flac-to.opus",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "wav",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "tipico_flac-to.wav",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "flac",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "tipico_mp3-to.flac",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "wav",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "tipico_mp3-to.wav",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "m4a",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "tipico_mp4-audio-copy.m4a",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "flac",
+    "hallazgos": [
+     [
+      4,
+      "A6",
+      "aviso",
+      "profundidad de bits INFLADA sin informacion nueva",
+      8,
+      24
+     ]
+    ],
+    "punto1": "evaluado",
+    "salida": "tipico_mp4-audio.flac",
+    "veredicto": "aviso"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "mp3",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "tipico_mp4-audio.mp3",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "flac",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "trivial_wav-to.flac",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "m4a",
+    "hallazgos": [
+     [
+      4,
+      "-",
+      "aviso",
+      "bitrate lejos del pedido",
+      192000,
+      128833
+     ]
+    ],
+    "punto1": "evaluado",
+    "salida": "trivial_wav-to.m4a",
+    "veredicto": "aviso"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "mp3",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "trivial_wav-to.mp3",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "ogg",
+    "hallazgos": [
+     [
+      4,
+      "A3",
+      "informativo",
+      "Opus fuerza 48 kHz",
+      44100,
+      48000
+     ]
+    ],
+    "punto1": "evaluado",
+    "salida": "trivial_wav-to.opus",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "texto",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "patologico_bom_csv-to-normalizado.csv",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "texto",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "patologico_bom_csv-to.json",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "texto",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "tipico_json-to.csv",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "png",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "16bit_tif-to-d16.png",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "png",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "16bit_tif-to-d8.png",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "png",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "16bit_tif-to-default.png",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "jpeg",
+    "hallazgos": [
+     [
+      4,
+      "I5",
+      "informativo",
+      "reduccion de profundidad inevitable en jpg (techo 8 bits)",
+      16,
+      8
+     ]
+    ],
+    "punto1": "evaluado",
+    "salida": "16bit_tif-to.jpg",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "webp",
+    "hallazgos": [
+     [
+      4,
+      "I5",
+      "informativo",
+      "reduccion de profundidad inevitable en webp (techo 8 bits)",
+      16,
+      8
+     ]
+    ],
+    "punto1": "evaluado",
+    "salida": "16bit_tif-to.webp",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "jpeg",
+    "hallazgos": [
+     [
+      4,
+      "I2",
+      "informativo",
+      "jpg no admite alfa: perdida inevitable",
+      null,
+      null
+     ]
+    ],
+    "punto1": "evaluado",
+    "salida": "alpha_png-to-flat.jpg",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "avif",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "alpha_png-to.avif",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "aviso",
+    "firma": "jpeg",
+    "hallazgos": [
+     [
+      4,
+      "I2",
+      "informativo",
+      "jpg no admite alfa: perdida inevitable",
+      null,
+      null
+     ]
+    ],
+    "punto1": "evaluado",
+    "salida": "alpha_png-to.jpg",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "png",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "alpha_png-to.png8.png",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "webp",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "alpha_png-to.webp",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "png",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "tipico_jpg-to.png",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "avif",
+    "hallazgos": [
+     [
+      4,
+      "I5",
+      "informativo",
+      "reduccion de profundidad inevitable en avif (techo 12 bits)",
+      16,
+      12
+     ]
+    ],
+    "punto1": "evaluado",
+    "salida": "tipico_png-to.avif",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "jpeg",
+    "hallazgos": [
+     [
+      4,
+      "I5",
+      "informativo",
+      "reduccion de profundidad inevitable en jpg (techo 8 bits)",
+      16,
+      8
+     ]
+    ],
+    "punto1": "evaluado",
+    "salida": "tipico_png-to.jpg",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "webp",
+    "hallazgos": [
+     [
+      4,
+      "I5",
+      "informativo",
+      "reduccion de profundidad inevitable en webp (techo 8 bits)",
+      16,
+      8
+     ]
+    ],
+    "punto1": "evaluado",
+    "salida": "tipico_png-to.webp",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "jpeg",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "tipico_webp-to.jpg",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "png",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "tipico_webp-to.png",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "webp",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "trivial_png-to-lossless.webp",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "jpeg",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "trivial_png-to.jpg",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "webp",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "trivial_png-to.webp",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "pdf",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "alpha_png-to.pdf",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "png",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "patologico_escaneado_pdf-to-p1.png",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "aviso",
+    "firma": "pdf",
+    "hallazgos": [
+     [
+      4,
+      "P7",
+      "aviso",
+      "1 px -> 1 pt: pagina absurda (1920 x 1080 pt = 677 x 381 mm)",
+      "densidad declarada",
+      "1:1"
+     ]
+    ],
+    "punto1": "evaluado",
+    "salida": "tipico_jpg-to.pdf",
+    "veredicto": "aviso"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "pdf",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "tipico_png-to-150dpi.pdf",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "aviso",
+    "firma": "pdf",
+    "hallazgos": [
+     [
+      4,
+      "P7",
+      "aviso",
+      "1 px -> 1 pt: pagina absurda (1920 x 1080 pt = 677 x 381 mm)",
+      "densidad declarada",
+      "1:1"
+     ]
+    ],
+    "punto1": "evaluado",
+    "salida": "tipico_png-to.pdf",
+    "veredicto": "aviso"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "pdf",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "tipico_texto_pdf-to-gs.pdf",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "jpeg",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "tipico_texto_pdf-to-p1.jpg",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "png",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "tipico_texto_pdf-to-p1.png",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "tiff",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "tipico_texto_pdf-to.tif",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "pdf",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "tipico_texto_rasterizado.pdf",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "png",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "trivial_pdf-to-p1.png",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "mp4",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "2pistas_mkv-to-COPY.mp4",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "fallo",
+    "firma": "mp4",
+    "hallazgos": [
+     [
+      2,
+      "V3",
+      "fallo",
+      "numero de pistas de audio distinto del esperado",
+      2,
+      1
+     ]
+    ],
+    "punto1": "evaluado",
+    "salida": "2pistas_mkv-to-DEFAULT.mp4",
+    "veredicto": "fallo"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "mp4",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "2pistas_mkv-to-MAP0.mp4",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "matroska",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "tipico_mp4-to.mkv",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "matroska",
+    "hallazgos": [
+     [
+      4,
+      "A3",
+      "informativo",
+      "Opus fuerza 48 kHz",
+      44100,
+      48000
+     ]
+    ],
+    "punto1": "evaluado",
+    "salida": "tipico_mp4-to.webm",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "aviso",
+    "firma": "gif",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "trivial_mp4-to-naive.gif",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "gif",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "trivial_mp4-to-palette.gif",
+    "veredicto": "ok_parcial"
+   },
+   {
+    "cobertura": {
+     "1_firma": true,
+     "2_flujos": true,
+     "3_propiedades": true,
+     "4_alfa": true,
+     "4_pedido": true,
+     "5_escritura": false
+    },
+    "esperado": "ok",
+    "firma": "matroska",
+    "hallazgos": [],
+    "punto1": "evaluado",
+    "salida": "trivial_mp4-to.webm",
+    "veredicto": "ok_parcial"
+   }
+  ],
+  "resumen": {
+   "detalle_fn": [],
+   "detalle_fp": [],
+   "falsos_negativos": 0,
+   "falsos_positivos": 0,
+   "n": 53,
+   "punto1": {
+    "evaluado": 53
+   },
+   "veredictos": {
+    "aviso": 4,
+    "fallo": 1,
+    "ok_parcial": 48
+   }
+  }
+ }
+}

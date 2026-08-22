@@ -1,0 +1,37 @@
+{
+ "antes": {
+  "etiqueta": "SIN parche (núcleo tal como está hoy)",
+  "LECTURA_ads_concedida": true,
+  "LECTURA_bytes_devueltos": 72,
+  "ESCRITURA_ads_aceptada": true,
+  "ESCRITURA_veredicto": "ok",
+  "ESCRITURA_ads_existe_en_disco": true,
+  "victima_visible_intacta": "contenido legitimo",
+  "CONTROL_lectura_normal_ok": true,
+  "CONTROL_fuera_denegado": true
+ },
+ "media_correccion": {
+  "etiqueta": "CON media corrección (solo _lexico_ok)",
+  "LECTURA_ads_concedida": false,
+  "LECTURA_bytes_devueltos": null,
+  "ESCRITURA_ads_aceptada": true,
+  "ESCRITURA_veredicto": "ok",
+  "ESCRITURA_ads_existe_en_disco": true,
+  "victima_visible_intacta": "contenido legitimo",
+  "CONTROL_lectura_normal_ok": true,
+  "CONTROL_fuera_denegado": true
+ },
+ "despues": {
+  "etiqueta": "CON la corrección COMPLETA (lectura + escritura)",
+  "LECTURA_ads_concedida": false,
+  "LECTURA_bytes_devueltos": null,
+  "ESCRITURA_ads_aceptada": true,
+  "ESCRITURA_veredicto": "fallo",
+  "ESCRITURA_ads_existe_en_disco": false,
+  "victima_visible_intacta": "contenido legitimo",
+  "CONTROL_lectura_normal_ok": true,
+  "CONTROL_fuera_denegado": true
+ },
+ "regresion_test_hito1_y_4": "REGRESION 61 0 0",
+ "formato_regresion": "REGRESION <pruebas> <fallos> <errores>"
+}

@@ -98,11 +98,14 @@ hay que borrarlas de la cobertura declarada, no verificarlas mejor.**
 
 | | Coste |
 |---|---:|
-| `inspect` en proceso | **0,04–0,06 ms** |
+| `inspect` en proceso | ~~0,04–0,06 ms~~ → **0,21–0,59 ms** (corregido, ver abajo) |
 | Staging que R8 le impondría | **1,7 ms (1 MB) — 166 ms (256 MB)** |
 
-**De 30× a más de 3.000× la operación, a cambio de cero seguridad.** Y el cruce copia == `ffprobe` no
-es una constante de la máquina sino de la tanda:
+~~De 30× a más de 3.000× la operación~~ → **de 2,0× a 284×, a cambio de cero seguridad.**
+
+> **Corrección del mismo día (`bench/hito4-mcp.md` §6.4).** Los «0,04–0,06 ms» que consolidé aquí medían **abrir + leer 64 KiB de cabecera**, no un `inspect` — que además clasifica el formato y recorre las cajas de un ISOBMFF. El `inspect` real cuesta **0,21–0,59 ms**: la cifra estaba **×4–10 optimista**. **La exención se sostiene igual; su número no.** Y la lección es de consolidación, no de medición: acepté un número sin preguntar qué había medido exactamente el arnés.
+
+Y el cruce copia == `ffprobe` no es una constante de la máquina sino de la tanda:
 
 > **`cruce_MB ≈ ffprobe_ms × copia_MBps / 1000`.** Con `ffprobe` ≈ 57 ms: **~70 MB** con el disco
 > contendido (1,2 GB/s) y **~95 MB** holgado (1,6 GB/s). El **1,32×** que midió `cabo5` era el extremo
