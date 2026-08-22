@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "filex"
+version = "0.1.0"
+description = "Conversor universal de ficheros con verificación obligatoria de la salida"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { file = "LICENSE" }
+
+# SIN DEPENDENCIAS, y es una decisión, no una casualidad: el contrato de
+# verificación lee cabeceras en proceso con la biblioteca estándar, y eso es lo
+# que lo hace 145× más barato que lanzar `ffprobe`. Añadir una dependencia aquí
+# obliga a justificar por qué no se puede hacer en proceso.
+dependencies = []
+
+[project.scripts]
+filex = "filex.cli:main"
+
+[tool.setuptools]
+packages = ["filex"]

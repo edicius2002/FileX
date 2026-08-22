@@ -909,7 +909,22 @@ Detalle completo en `bench/sdk-mcp-capacidades.md` §3.6 y §5.2, y **la prueba 
 
 ## 7. Plan de construcción
 
-### Hito 1 — Registro, grafo y CLI
+### Hito 1 — Registro, grafo y CLI — **HECHO el 22/08/2026**
+
+> **Estado, criterio por criterio. Tres de cuatro se demuestran contra los motores reales; el cuarto NO se puede demostrar en esta máquina y se dice.**
+>
+> | Criterio | Estado |
+> |---|---|
+> | Convierte un fichero de **cada categoría** del corpus | ✅ `alpha.png→webp`, `patologico_2pistas.mkv→mp4`, `tipico.flac→mp3`, `tipico_texto.pdf→png`. Los cuatro con contrato, tres de ellos **6/6** |
+> | Un motor cuyo binario falta **se auto-excluye y se informa** | ✅ `filex motores` lista los presentes con su versión **sondeada en ejecución** y los ausentes por su capacidad |
+> | Cuando **no hay camino, explica por qué** | ✅ tres motivos distintos: nadie lee el origen, nadie escribe el destino, o el destino solo se escribe desde formatos inalcanzables — **nombrándolos** |
+> | Resuelve 2 saltos **y explica por qué rechaza un camino que rasteriza** | 🟡 **los 2 saltos, sí** (`pdf→png→webp`, contrato 6/6 en los dos). **El rechazo comparado, NO se puede demostrar aquí:** con ffmpeg, ImageMagick y Ghostscript **no existe ningún par de formatos donde compitan un camino que conserva el texto y otro que lo rasteriza**, porque ninguno de los tres escribe un formato con texto desde otro formato con texto salvo `pdf→pdf`. Es la misma limitación que midió `bench/fidelidad-caminos.md` §1.4. **El mecanismo está implementado y probado con un grafo sintético** (`pruebas/test_hito1.py::ElegirBien`); **la prueba de integración necesita el motor documental del hito 5** |
+>
+> **Lo que sí se demuestra hoy contra un competidor:** `patologico_2pistas.mkv` tiene **dos pistas de audio** y la salida tiene **dos**. ConvertX y SnapOtter entregan **una** y declaran éxito. Es `-map 0` explícito, y es el motivo de que esté en las reglas.
+>
+> **Y una autocorrección del propio hito, encontrada al probar:** la penalización por pérdida estaba **en la arista** («origen con pérdida y destino con pérdida») y hacía que el grafo prefiriera `mkv→flac→mp3` sobre `mkv→mp3` — un salto más, un intermedio enorme y **exactamente la misma codificación con pérdida al final**. Va por **camino**: se cuentan los saltos que ESCRIBEN con pérdida y se perdona el primero. Con prueba de regresión.
+>
+> **Deuda declarada:** (1) `bench/scripts/verificador.py` se **importa** desde `bench/` en vez de vivir en `filex/` — moverlo ahora rompería las citas `fichero:línea` de doce informes y del patrón oro, así que es trabajo del hito 3; (2) las aristas `sin_sondear` son 132 de 156: el sondeo real de capacidades por arista está **pendiente**, y hasta entonces cuestan +2,0 para no adelantar nunca a una medida; (3) `Ghostscript.orden` escribe **un solo fichero** y un PDF de varias páginas necesita `%d`, que es una salida multifichero y **el patrón oro no tiene ni una** (C22).
 
 **Qué:** portar el registro de transmute, construir el grafo dirigido con coste por arista, y una CLI `filex entrada.x salida.y` con autodetección de camino. Motores: **ffmpeg e ImageMagick** (75 % de la cobertura de formatos).
 
