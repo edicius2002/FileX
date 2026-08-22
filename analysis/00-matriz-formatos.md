@@ -39,6 +39,8 @@ Fuente: parseo automático de las declaraciones `properties.from` / `properties.
 
 **Totales canónicos:** **896 formatos de entrada únicos, 503 de salida.**
 
+> **Salvedad declarada (22/08/2026).** La reextracción con el **mismo parser** que usó E1 da **895 y 502** (`bench/firmas-contrato.md` §1). **La diferencia de uno en cada columna no se ha localizado.** No cambia ninguna conclusión —los porcentajes coinciden a la décima— pero se deja escrita en vez de elegir una de las dos cifras en silencio.
+
 > **Corrección metodológica.** Una primera extracción dio 893/496 porque la expresión regular limitaba los identificadores a 12 caracteres y descartaba 7 dialectos largos de pandoc (`markdown_strict`, `markdown_phpextra`, `asciidoc_legacy`, `jats_archiving`, `jats_articleauthoring`, `jats_publishing`, `pandoc native`). Las cifras de este documento son las de la extracción sin límite de longitud, confirmadas por una segunda extracción independiente vía AST.
 
 ## El agujero que nadie menciona: ConvertX no convierte hojas de cálculo

@@ -199,7 +199,11 @@ decirlo en la documentación de instalación en vez de que lo descubra el usuari
 el health-check con `connection timed out after 30000ms`. Se comprobaron a mano y arrancan; el
 timeout de 30 s del comprobador es corto para ellos. No afecta a este cabo.)*
 
-### 1.7 Lo que este cabo NO cerró
+### 1.7 Lo que este cabo NO cerró — **dos de ellos, cerrados el 22/08 en `bench/mcp-cabos-2.md`**
+
+> **`resources` / `prompts` («cero lecturas, no se pidió»): CERRADO, y el matiz importa.** El **cliente sí** los enumera —`resources/list` y `prompts/list`, n=1 cada uno, justo después de `tools/list`—; no era que no preguntara, es que no se le había pedido al modelo que los usara. **Pero el MODELO no los ve**: responde «NINGUNO». **Declararlos es coste sin retorno** (§3 de aquel informe).
+>
+> **`notifications/roots/list_changed`: capacidad MEDIDA.** Claude Code 2.1.238 declara `roots.listChanged: true` en su `initialize`, así que FileX puede **cachear los roots por sesión e invalidar con la notificación**. *Observar una emisión real* sigue PENDIENTE (§2 de aquel informe).
 
 - **PENDIENTE:** si Claude Code emite `notifications/roots/list_changed`. No hay forma de
   cambiar los roots a mitad de una sesión headless.
@@ -427,7 +431,9 @@ expect(metadata.format).toBe('png');
 
 ---
 
-## 4. Cabo 4 — El deadlock en las otras 23
+## 4. Cabo 4 — El deadlock en las otras 23 — **ALCANCE CERRADO el 22/08/2026**
+
+> **Las 20 que aquí quedaron «cubiertas por la clasificación, no por ejecución» se ejecutaron** (`bench/mcp-cabos-2.md` §1): **26 de 26 cuelgan, cero excepciones.** De la primera pasada, 18 colgaron directamente y 3 respondieron en <105 ms con la salida basura **intacta** — fallos *tempranos* por entradas del arnés, no defensas del código: dos por una fuente sin pista de audio y una por `target_format="mkv"`, que ffmpeg no conoce (el nombre válido es `matroska`). Corregida la causa, **las tres cuelgan**. **Y el matiz que delimita el enmascaramiento: `_run_ffmpeg_with_fallback` convierte el deadlock en error SOLO cuando ffmpeg falla antes de llegar al muxer.**
 
 `bench/mcp-refs-multimedia.md` §4.1 reprodujo el bloqueo end-to-end en **una** de las 27
 herramientas y dejó las otras 23 en **PENDIENTE**.

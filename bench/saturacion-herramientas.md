@@ -290,7 +290,9 @@ Las respuestas literales son lo más elocuente del informe:
 hace algo que no hace, cuando la que hace falta no está.** Y ese fallo lo produce el **hueco de
 cobertura**, en cualquier catálogo, grande o pequeño.
 
-### 3.6 Lo que el catálogo grande sí cuesta: tokens en cada turno (MEDIDO)
+### 3.6 Lo que el catálogo grande sí cuesta: tokens en cada turno (MEDIDO) — **RE-ACOTADO el 22/08/2026**
+
+> ⚠️ **Léase con esta salvedad: todo lo de abajo se midió con `--tools ""`, que es el RÉGIMEN ANSIOSO.** `bench/mcp-cabos-2.md` §4 midió que en una sesión real de Claude Code —con las ~15 herramientas internas presentes— **el catálogo llega DIFERIDO**: un catálogo pesado y uno ligero que difieren en ~3.300 tokens dan **26.941 = 26.941** tokens de entrada. **El ×2,0–2,6 por turno no es el coste del despliegue real de FileX**; los **nombres** sí se pagan siempre, el **cuerpo** no. Las cifras de esta sección siguen siendo correctas **para su condición**.
 
 | Modelo | Catálogo | `tokens_catalogo` | **Tokens de entrada por petición** | Turnos medios |
 |---|---|---:|---:|---:|

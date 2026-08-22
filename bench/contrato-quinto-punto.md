@@ -668,7 +668,7 @@ del repositorio quedó limpia.
 | `verificador-ghostscript.md` §5.8 (P9) | Propuesta calibrada sobre 5 puntos, no validada | **REFUTADA: 8,3 % de sensibilidad sobre 32 capas OCR reales y 36 % de falsos positivos sobre las legítimas. Sustituto medido: acuerdo entre dos idiomas de OCR, 16/16** (§6) |
 | `verificador-ghostscript.md` §5.9 (`txtwrite` vacío) | Observado una vez, no reproducido en 20 intentos | **REPRODUCIDO Y LOCALIZADO: 6 vacíos de 430 por tubería, 0 de 430 por fichero, al mismo coste. Corregido en `_gs_texto`** (§8) |
 | `verificador-ghostscript.md` §2.2 (V2) | V2 necesita interruptor propio | **Implementado (`--sin-v2`). Ahorra el 46,3 % de la suite sin cambiar ni un aviso; los `ok_parcial` suben de 8 a 13** (§7) |
-| `aristas-nominales.md` §11.3 (C14) | El vocabulario de firmas es corto | **Confirmado con un caso: la sonda clasifica un `.html` y un `.svg` como CSV. Con el HTML el contrato acierta por casualidad, con un `[p3 D2 fallo]` que no tiene nada que ver** (§3.1) |
+| `aristas-nominales.md` §11.3 (C14) | El vocabulario de firmas es corto | **Confirmado con un caso: la sonda clasifica un `.html` y un `.svg` como CSV. Con el HTML el contrato acierta por casualidad, con un `[p3 D2 fallo]` que no tiene nada que ver** (§3.1). **CERRADO el 22/08 (`bench/firmas-contrato.md` §8.2): `xml`, `html`, `svg`, `postscript` y `rtf` tienen ya firma y categoría propias.** |
 | Metodología (todos) | Dos testigos de ruido | **El testigo de proceso necesita su propio tope: `ffprobe -version` llegó a agotar 60 s y a tumbar una tanda. Nivel máximo observado: ×94,6** (§9) |
 
 ---

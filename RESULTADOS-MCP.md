@@ -179,7 +179,7 @@ La causa es la **superficie de parámetros**, no el número de herramientas: `re
 
 > Las cuatro herramientas previstas para FileX (`convert`, `inspect`, `list_targets`, `batch`) pueden costar **300 o 3.500 tokens** según cómo se declaren sus parámetros. **El presupuesto se fija en tokens de catálogo, no en número de herramientas.** Propuesta: ≤1.200 tokens para las cuatro.
 
-### El multiplicador que le faltaba al presupuesto: ×2,0–2,6 — MEDIDO (21/08/2026)
+### El multiplicador que le faltaba al presupuesto: ×2,0–2,6 — MEDIDO (21/08/2026), **RE-ACOTADO el 22/08/2026**
 
 `bench/saturacion-herramientas.md` §3.6 midió lo que cuesta de verdad un catálogo, y **no es su tamaño: es su tamaño por turno.**
 
@@ -195,6 +195,26 @@ La causa es la **superficie de parámetros**, no el número de herramientas: `re
 > **La regla de ≤1.200 tokens se confirma y se le añade la cifra que le faltaba: un catálogo de 1.200 tokens costará ≈2.400–3.100 tokens de entrada por petición sencilla.** Ese, y no 1.200, es el número que hay que comparar con el resto del presupuesto de contexto.
 >
 > *(Las cifras de Haiku para B están afectadas por un reparto desigual de aciertos de caché entre ejecuciones concurrentes; las de Sonnet son limpias. El recuento propio del informe da 7.886 y 2.306 frente a los 7.964 y 2.322 publicados aquí: **1 % por debajo**, por un detalle de serialización, y **la proporción entre catálogos es la misma**.)*
+
+> ### ⚠️ Re-acotado: ese ×2,0–2,6 es del **régimen ansioso**, y el despliegue real de FileX no está en él — MEDIDO (`bench/mcp-cabos-2.md` §4)
+>
+> Las cifras de arriba se midieron con `--tools ""` y pocas herramientas. **En una sesión normal de Claude Code, donde el servidor de FileX convive con las ~15 herramientas internas, el catálogo llega DIFERIDO: solo los nombres.**
+>
+> Dos catálogos con **los mismos 6 nombres y esquemas** y descripciones que difieren en ~3.300 tokens:
+>
+> | Condición | Herramientas internas | Catálogo | **Total de entrada (tok)** |
+> |---|---|---|---:|
+> | `pmin_pesado_deftools` | **sí** (sesión real) | pesado | **26.941** |
+> | `pmin_ligero_deftools` | **sí** (sesión real) | ligero | **26.941** |
+> | `pmin_pesado_notools` | no (`--tools ""`) | pesado | 11.188 |
+> | `pmin_ligero_notools` | no (`--tools ""`) | ligero | 7.890 |
+>
+> **26.941 = 26.941.** Las ~3.300 tokens de descripciones **no llegan al contexto**. Y el modelo lo dice con todas las letras: *«el system-reminder indica explícitamente que "Their schemas are NOT loaded", así que solo veo los nombres»*. Con `--tools ""` sí pega la descripción pesada entera.
+>
+> **Tres matices para no sobre-corregir:**
+> - **El coste no es cero.** Los **nombres** sí se inyectan en cada turno, y hay un `tools/list` por sesión. Lo que sale del camino caliente es el **cuerpo** —descripciones y esquemas—, que es justo lo que medía el presupuesto. **El ≤ 1.200 tokens sigue valiendo como higiene de NOMBRES**, no como multiplicador por turno.
+> - **Es comportamiento de UNA versión** (Claude Code 2.1.238) y depende del número **total** de herramientas de la sesión, no solo de las de FileX. Con **40** herramientas y `--tools ""` el catálogo ya sale **truncado**, no diferido. **La carga ansiosa es un régimen de catálogo pequeño.** Si alguien conectara solo FileX con `--tools ""`, volvería a él: **el diseño no debe apostar todo a la diferición**.
+> - **La otra cara no cambia:** un catálogo demasiado escueto produce **fallos silenciosos (15–17 %)**. La diferición abarata el catálogo grande; **no** rehabilita recortar la cobertura de `convert`.
 
 ### El tercer dato incómodo, y es nuevo: **0 de 193 parámetros lleva descripción** — MEDIDO
 
@@ -374,7 +394,7 @@ El desglose por vía de invocación (verificado en el código):
 | `ffmpeg-python` | 32 | **0** |
 | `subprocess` directo | 7 | **7** (`:898, :915, :956, :1001, :1022, :1434, :1547`) |
 
-De las 27 herramientas: 1 no toca ffmpeg, **24 usan solo `ffmpeg-python`** (15 en su cuerpo + 9 delegando en `_run_ffmpeg_with_fallback`) y 2 son mixtas. ~~Reproducido end-to-end en **una**; el resto es el mismo mecanismo, marcado **PENDIENTE**.~~ **Actualizado el 21/08/2026 (`bench/mcp-cabos-sueltos.md` §4): reproducido en 6 de las 26 que tocan ffmpeg**, y la clasificación de las 27 pasa de recuento manual a **AST reproducible** (`cabo4_clasificar.py`, que confirma **cero `overwrite_output()` y cero `stdin=` en todo el fichero**). El contraste es de tres órdenes de magnitud: **554-695 ms si la ruta de salida es nueva, infinito si ya existe.** Las 20 restantes quedan cubiertas por la clasificación, **no por ejecución**: eso sigue siendo **PENDIENTE**.
+De las 27 herramientas: 1 no toca ffmpeg, **24 usan solo `ffmpeg-python`** (15 en su cuerpo + 9 delegando en `_run_ffmpeg_with_fallback`) y 2 son mixtas. ~~Reproducido end-to-end en **una**; el resto es el mismo mecanismo, marcado **PENDIENTE**.~~ **Actualizado el 21/08/2026 (`bench/mcp-cabos-sueltos.md` §4): reproducido en 6 de las 26 que tocan ffmpeg**, y la clasificación de las 27 pasa de recuento manual a **AST reproducible** (`cabo4_clasificar.py`, que confirma **cero `overwrite_output()` y cero `stdin=` en todo el fichero**). El contraste es de tres órdenes de magnitud: **554-695 ms si la ruta de salida es nueva, infinito si ya existe.** ~~Las 20 restantes quedan cubiertas por la clasificación, **no por ejecución**: eso sigue siendo PENDIENTE.~~ **CERRADO el 22/08/2026 (`bench/mcp-cabos-2.md` §1): 26 de 26 por EJECUCIÓN, cero excepciones.** Las 20 restantes se ejecutaron una a una con la salida preexistente y timeout duro de 18 s: **18 colgaron directamente y 3 respondieron en <105 ms con la basura intacta** — fallos *tempranos* por entradas mías, no defensas del código. Corregida la causa (fuente sin pista de audio en dos; `target_format="mkv"`, que ffmpeg no conoce —el nombre válido es `matroska`— en la tercera), **las tres cuelgan también**. **Y el matiz que delimita dónde el `_run_ffmpeg_with_fallback` lo enmascara: convierte el deadlock en error SOLO cuando ffmpeg falla antes de llegar al muxer.** En cuanto el formato es válido y el grafo escribe, el deadlock reaparece.
 
 > **El mismo fichero sabe pasar `-y` en una vía y se le olvida en la otra.** No es que sus autores ignoraran el problema: lo resolvieron en un sitio y lo olvidaron en otro.
 >
@@ -459,12 +479,22 @@ El trabajo estaba hecho y el modelo no podía saberlo. Un agente reintentaría y
 | `_meta` | **No** |
 | `outputSchema` | **No** |
 | `icons` | **No** |
+| **Los `resources` y los `prompts` declarados** | **No** — MEDIDO el 22/08 |
 
 La prueba limpia es una herramienta declarada `destructiveHint=true`: **el modelo supo que era destructiva solo porque el autor lo escribió dentro de la descripción.** En palabras del propio cliente: *«Las anotaciones del protocolo no cruzan hasta el modelo; solo cruza la descripción.»* Y **tampoco cambian el permiso**: una herramienta `readOnlyHint=true, destructiveHint=false` fue **denegada igual** con el modo de permisos por defecto.
 
 Esto confirma por otra vía el dato incómodo de §4: **`structuredContent` tampoco compra nada del lado del modelo.** Una herramienta con `structured_output=True` y un `outputSchema` real entregó una línea de texto indistinguible de un `TextContent` con el mismo JSON serializado a mano, **y sin el `outputSchema` a la vista**.
 
 > **Qué cambia:** la regla de anotar sigue siendo correcta y barata, y otros clientes pueden usarla. **Pero no puede ser el sitio donde vive una advertencia de seguridad.** Lo que el modelo lee es la `description`; lo que impide una operación prohibida es el núcleo (R10).
+
+#### La lista crece: los **recursos** y los **prompts** tampoco cruzan — MEDIDO el 22/08/2026
+
+`bench/mcp-cabos-2.md` §3, con un servidor de sonda que declara `capabilities.resources` y `capabilities.prompts`, **un recurso** (`filex://probe/nota`) y **un prompt** (`filex_probe_prompt`), y registra toda lectura. **Hay que separar dos hechos:**
+
+1. **El CLIENTE sí los enumera.** Cada sesión muestra `resources/list` (n=1) y `prompts/list` (n=1) justo después de `tools/list`. Esto **actualiza** la observación de `mcp-cabos-sueltos.md` §1.7 («registró cero lecturas»): *no era que el cliente no preguntara; es que no se le había pedido al modelo que los usara*.
+2. **Pero el MODELO no los ve.** En las dos condiciones —con y sin herramientas internas— la respuesta literal fue **«NINGUNO — no veo recursos MCP ni prompts MCP disponibles en mi contexto actual»**.
+
+> **Declarar recursos y prompts es COSTE SIN RETORNO**, exactamente como las anotaciones. **FileX no gasta catálogo en ellos** con Claude Code como cliente objetivo. Si algún día quiere ofrecer datos «tirados por el servidor», tendrá que hacerlo **como herramienta**, que es el único canal que el modelo ve.
 
 ---
 
@@ -481,15 +511,15 @@ Esto confirma por otra vía el dato incómodo de §4: **`structuredContent` tamp
 | R5 | La misma opacidad **por elemento** en las operaciones por lotes | 6 rutas → 6 mensajes → 419 tokens |
 | R6 | Denegar por defecto; ninguna raíz accesible = no arrancar | `kordoc` sin `KORDOC_ROOT` no confina nada |
 | R7 | Resolver enlaces **en cada llamada** y validar la ruta resuelta. **En Linux, además, `O_NOFOLLOW` + `dir_fd` segmento a segmento** | El vector del encargo quedó refutado por esto. **MEDIDO (21/08):** en Windows **no existen** `O_NOFOLLOW`, `O_PATH`, `dir_fd` ni `/proc/self/fd`. Complemento de la validación, **nunca sustituto del staging** |
-| R8 | Copiar la entrada a un **staging privado** tras validarla, **inmediatamente**; al motor externo solo la ruta del staging. **Excepción explícita: `inspect`** | **MEDIDO (21/08):** la ventana es el **99,6 % de la conversión**; el vector que funciona **no es sustituir sino escribir en sitio**; el precio es **0,1 %-19,6 %**… salvo en `inspect`, donde el staging cuesta **1,32×** la operación |
+| R8 | Copiar la entrada a un **staging privado** tras validarla, **inmediatamente**; al motor externo solo la ruta del staging. **Excepción explícita: `inspect`, que además queda exento de R18** | **MEDIDO (21/08):** la ventana es el **99,6 % de la conversión**; el vector que funciona **no es sustituir sino escribir en sitio**; el precio es **0,1 %-19,6 %**. **Y la excepción, con número (22/08, `bench/mcp-cabos-2.md` §5.2-5.3):** el `inspect` en proceso cuesta **0,04–0,06 ms** y el staging que R8 le impondría, de **1,7 ms (1 MB) a 166 ms (256 MB)** — de **30× a más de 3.000× la operación, a cambio de cero seguridad**, porque una lectura de cabeceras en proceso nunca entrega la ruta a un lector ajeno. **El cruce copia == `ffprobe` no es una constante: `cruce_MB ≈ ffprobe_ms × copia_MBps / 1000`**, y con `ffprobe` ≈ 57 ms sale entre **~70 MB** (disco contendido a 1,2 GB/s) y **~95 MB** (holgado a 1,6 GB/s). El **1,32×** de `cabo5` era el extremo rápido de esa misma fórmula |
 | R9 | Raíz de lectura ≠ raíz de escritura; no sobrescribir en silencio | Una sola lista para las 14 herramientas; `write_file` destruyó el fichero y su ADS |
 | **R10** | **La validación vive en el núcleo, no en la superficie** | La CLI de kordoc ignora `KORDOC_ROOT`. FileX tiene cuatro superficies |
 | R11 | El tipo real se decide por **contenido**, no por extensión | En un conversor la extensión **elige el motor** |
 | R12 | Normalizar el nombre de salida; prohibir ADS, nombres reservados, puntos y espacios finales | **W9 concedió acceso a un ADS.** Renombrar a nombre opaco en el staging cierra además la inyección de opciones |
-| R13 | Los *roots* del cliente se **intersecan** con la lista del servidor, no la reemplazan | `index.ts:181` sustituye. ~~**PENDIENTE:** verificar `list_roots()` en el SDK Python~~ **CERRADA el 21/08: IMPLEMENTADA**, ocho líneas (`cabo2_roots.py`), demostrada en 4 configuraciones y contra el cliente real |
+| R13 | Los *roots* del cliente se **intersecan** con la lista del servidor, no la reemplazan | `index.ts:181` sustituye. ~~**PENDIENTE:** verificar `list_roots()` en el SDK Python~~ **CERRADA el 21/08: IMPLEMENTADA**, ocho líneas (`cabo2_roots.py`), demostrada en 4 configuraciones y contra el cliente real. **Y el 22/08 se añade la capacidad que faltaba para cachearlos:** Claude Code 2.1.238 declara `roots.listChanged: true` en su `initialize` (`bench/mcp-cabos-2.md` §2), es decir **se compromete a avisar cuando su lista de roots cambie**. FileX puede cachear los roots por sesión e invalidar con `notifications/roots/list_changed` en vez de llamar a `roots/list` en cada operación. **Observar una emisión real sigue PENDIENTE** —en headless no hay forma de cambiar los roots a media sesión—, pero para el diseño basta: si el cliente nunca emite, la caché no se invalida hasta el fin de sesión, que es el comportamiento correcto por defecto |
 | R14 | El error nombra la **capacidad** que falta, nunca el **comando** que la instala | kordoc responde con su propia CLI; docling con `pip install` |
 | R15 | Describir `path` como si el modelo no supiera nada | Las 14 herramientas declaran `"path": {"type":"string"}` sin descripción |
-| **R18** | **Un directorio de trabajo propio y DESECHABLE por conversión, con el `cwd` del hijo dentro. Validar la ruta de salida no basta.** Listarlo al terminar, comparar con lo declarado, recoger lo que sí es salida y borrarlo entero. **⚠ Y NO ES HIGIENE: ES REQUISITO DE COSTE — MEDIDO el 21/08 a las 14:00.** Con R18 el punto 5 cuesta **+11,0 %** del contrato; **sin él, sobre un directorio de 1 000 ficheros, ×8,6 el contrato entero** (`bench/contrato-quinto-punto.md` §2.2). **R18 es lo que hace viable el quinto punto** | **MEDIDO el 21/08** (`bench/aristas-nominales.md` §5.2). **`ffmpeg -i x out.mpd` deja 528 KB de segmentos DASH en el `cwd`** y entrega 1,2 KB inútiles; **`magick … out.html` produce dos ficheros en el destino y un tercero en el `cwd`**. Aparecieron como **33 ficheros no pedidos en la raíz del repositorio**. **R8 y R16 asumen que el motor escribe donde se le dice: estos dos no** |
+| **R18** | **Exento para `inspect`, que no escribe nada y por tanto no tiene censo que hacer.** Para todo lo demás: **un directorio de trabajo propio y DESECHABLE por conversión, con el `cwd` del hijo dentro. Validar la ruta de salida no basta.** Listarlo al terminar, comparar con lo declarado, recoger lo que sí es salida y borrarlo entero. **⚠ Y NO ES HIGIENE: ES REQUISITO DE COSTE — MEDIDO el 21/08 a las 14:00.** Con R18 el punto 5 cuesta **+11,0 %** del contrato; **sin él, sobre un directorio de 1 000 ficheros, ×8,6 el contrato entero** (`bench/contrato-quinto-punto.md` §2.2). **R18 es lo que hace viable el quinto punto** | **MEDIDO el 21/08** (`bench/aristas-nominales.md` §5.2). **`ffmpeg -i x out.mpd` deja 528 KB de segmentos DASH en el `cwd`** y entrega 1,2 KB inútiles; **`magick … out.html` produce dos ficheros en el destino y un tercero en el `cwd`**. Aparecieron como **33 ficheros no pedidos en la raíz del repositorio**. **R8 y R16 asumen que el motor escribe donde se le dice: estos dos no** |
 
 ---
 

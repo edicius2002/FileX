@@ -58,6 +58,20 @@ No estaba en la lista original porque **solo aparece al ejecutar**. Leyendo cód
 
 **Es sistémico, no anecdótico.** **Ocho** fallos independientes, en **siete** proyectos distintos, todos del mismo tipo: **el software declara éxito sobre un resultado incorrecto**.
 
+> ### Y el primero de la lista deja de ser anécdota de un competidor: **reproducido 22 veces con `magick`** — MEDIDO el 22/08 (`bench/firmas-contrato.md` §7.1)
+>
+> `magick corpus/imagen/tipico.png -auto-orient salida.group4` devuelve **rc=0** y entrega **un PNG de 313 bytes con firma PNG**. Igual con otros 21 destinos que ImageMagick y GraphicsMagick declaran saber escribir (`b c g k m o r y p7 preview clipboard data flif group4 histogram inline msl mvg null pocketmod sparse vid`). **Es el fallo nº 1 de esta tabla, producido por un motor de primera línea, 22 veces en la misma sesión.**
+>
+> | | Contrato de 5 puntos, vocabulario **viejo** | Vocabulario **nuevo, solo por firma** | Con la regla **G6** |
+> |---|---:|---:|---:|
+> | Detectados de 22 | **0** (los 22 salen `ok_parcial`) | **0** (los 22 salen `ok_parcial`) | **22** (los 22 salen `aviso`) |
+>
+> **La columna del medio es la importante, porque refuta la hipótesis obvia: ampliar el vocabulario de firmas NO atrapa este caso.** Para atrapar `.group4` por firma habría que saber qué firma esperar de `.group4`, y `.group4` son datos CCITT crudos: **no tiene ninguna**. Los otros 21 ni siquiera son formatos de fichero: son pseudoformatos de ImageMagick.
+>
+> **Lo que sí lo atrapa no necesita saber nada del destino — G6: la salida tiene la MISMA firma que la entrada y no era eso lo que se pedía.** Se dispara cuando (a) la extensión de destino no está en la tabla, (b) la firma de la salida es un formato reconocido y (c) coincide con la de la entrada, con otra extensión. **Cuesta 0: las dos firmas ya están calculadas.** Severidad `aviso`, no `fallo`: prueba que es sospechoso, no que sea incorrecto. Sobre las 53 del patrón oro **no se dispara ni una vez**; sobre 345 salidas legítimas se dispara **exactamente en los 12 casos en los que ImageMagick entrega un PNG**.
+>
+> **Y la consecuencia de catálogo, que es donde de verdad se arregla: esas 22 aristas son nominales y hay que BORRARLAS de la cobertura declarada, no verificarlas mejor.**
+
 > ### El octavo es cualitativamente distinto: **es el primero que el contrato de cuatro puntos NO atrapa** — MEDIDO (`bench/aristas-nominales.md` §8.2)
 >
 > Los siete anteriores caen con el contrato. Este no. **`resvg 0.46.0` rasteriza `e1.svg` —dos bloques de texto, uno *sans* y uno *serif*, más figuras— y entrega:**
