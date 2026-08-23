@@ -979,7 +979,9 @@ Detalle completo en `bench/sdk-mcp-capacidades.md` §3.6 y §5.2, y **la prueba 
 
 **Aceptación:** `hevc_nvenc` se usa por defecto cuando el destino es HEVC; `av1_nvenc` se sondea, falla, y degrada a `libsvtav1` **sin intervención**. El desvío de bitrate queda registrado en los metadatos de salida.
 
-### Hito 3 — Contrato de verificación
+### Hito 3 — Contrato de verificación — **HECHO el 22/08/2026**
+
+> **Marcador puesto el 23/08 por H7 (hito 7).** El hito estaba hecho y sin marcar: el único que lo llevaba era el 1. Evidencia: `filex/verificador.py` (5.241 líneas, biblioteca estándar, contrato de cinco puntos, 15 reglas de fidelidad, G6 y cuatro estados de cobertura), `filex/contrato.py` como frontera de política, `bench/hito3-mudanza.md` (agente K2) y las pruebas del núcleo en verde. **Con una deuda que ya estaba declarada y sigue abierta:** el patrón oro es un test flojo para el punto 5 porque no contiene ni una salida multifichero (punto 2 del recuadro de abajo).
 
 **Qué:** verificación post-conversión de firma, flujos y propiedades. **Antes que MCP**: sin esto, todo lo anterior puede mentir.
 
@@ -991,11 +993,21 @@ Detalle completo en `bench/sdk-mcp-capacidades.md` §3.6 y §5.2, y **la prueba 
 > 2. **El patrón oro es un test FLOJO para el punto 5, porque no contiene ni una salida multifichero.** El «0 falsos positivos» se apoya en cuatro casos fabricados a propósito (HLS, dos secuencias `%d`, y el DASH que sí debe fallar). **Ampliar `referencia.json` con una salida HLS y una secuencia `%d` cerraría el hueco. PENDIENTE.**
 > 3. **Y el criterio debería incluir el caso de `resvg`, que ahora sí se atrapa:** I9 discrimina **6 de 6** con margen binario (0,00 % de tinta frente a 18–24 %). **Pero es grupo C, no contrato** —cuesta 32 ms en el mejor caso y **2 454 ms sobre 1,8 Mpx**—, así que **entra en la suite de regresión, nunca en el camino caliente**.
 
-### Hito 4 — Capa MCP
+### Hito 4 — Capa MCP — **HECHO el 22/08/2026, con un criterio incumplido y medido**
+
+> **Marcador puesto el 23/08 por H7.** Evidencia: `filex/mcp.py` (cinco herramientas escritas a mano, `enum` generados del registro, `Servicio` sin una línea de protocolo, `Trabajos` persistido en disco), `pruebas/test_hito4.py` y `bench/hito4-mcp.md` (agente K3).
+>
+> **El criterio del catálogo NO se cumple, y está medido en vez de disimulado:** el catálogo vigente son **1.503 tokens** frente a los ≤1.200 pedidos, y **las cuatro herramientas del plan tampoco caben: 1.350**. Lo que lo rompe son las dos reglas de cobertura —la `description` de cada parámetro cuesta **460 tokens (30,6 %)** y los `enum` del registro **235 (15,6 %)**—, y quitarlas baja a **728**, que es exactamente el catálogo estilo FastMCP con el que se midió un **15–17 % de fallos silenciosos**. **El criterio está mal calibrado, no el código.**
+>
+> **Y hay un segundo criterio que este hito 7 acaba de medir y que tampoco se cumple:** *«una ruta fuera de la lista blanca se rechaza con el mismo mensaje **y la misma latencia** que una que no existe»*. El mensaje sí; **la latencia no: ×20,6 en el núcleo (9,4 µs frente a 193,3 µs) y ×1,37 por HTTP**, porque el predicado léxico de R1 corta antes del `realpath`. **R1 y R4 están en tensión** — `bench/hito7-superficies.md` §7.2.
 
 **Aceptación:** **añadir un motor no toca la capa MCP** —aparece como un valor más en los `enum` generados desde el registro, **no como una herramienta nueva** (§4.4)—; el catálogo de las cuatro herramientas **cabe en ≤1.200 tokens**, medido con `tiktoken`; las respuestas devuelven ruta y metadatos y **caben en ≤200 tokens salvo `inspect`**; una conversión larga devuelve **`job_id` al empezar** (§5.2); un error de motor llega al modelo como mensaje accionable que **enumera las alternativas válidas**, nunca como `stderr` crudo; y una ruta fuera de la lista blanca se rechaza **con el mismo mensaje y la misma latencia** que una que no existe.
 
-### Hito 5 — Gotenberg para ofimática
+### Hito 5 — Gotenberg para ofimática — **HECHO el 22/08/2026, por otra vía que la del título**
+
+> **Marcador puesto el 23/08 por H7.** Evidencia: `filex/motor_contenedor.py` (LibreOffice, Calibre y Pandoc en contenedor, con el tope **dentro** del contenedor), `pruebas/test_hito5.py` (25 pruebas, las de integración se saltan solas sin Docker) y `bench/hito5-documental.md` (agente K1).
+>
+> **Y el título del hito quedó desmentido por su propio informe:** la vía no es Gotenberg sino **`filex-c13`** —la imagen de ConvertX con `qpdf` y `tesseract` añadidos—, y **`filex-convertx` NO es una imagen sino un CONTENEDOR**. Eso es además lo que cierra el criterio amarillo del hito 1: **`epub→pdf` eligiendo Calibre y no LibreOffice, diciendo por qué**.
 
 **Aceptación:** `docx/xlsx/pptx/odt → pdf` vía contenedor, con las 132 extensiones importadas y filtradas. Degrada con un mensaje claro si el contenedor no está levantado.
 
@@ -1023,9 +1035,21 @@ Detalle completo en `bench/sdk-mcp-capacidades.md` §3.6 y §5.2, y **la prueba 
 
 > **Presupuesto de VRAM sobre la familia d4, a ppp nativos (200-240) — MEDIDO:** Docling+RapidOCR torch **+1 484 MiB** · RapidOCR ONNX **+2 565** · PaddleOCR **+2 708** · EasyOCR **+4 430**, con pico absoluto de 7 337 MiB. **Nada se acerca al peor caso de 11 877 MiB, y la razón es exactamente la que R1 predice: aquí no se sobremuestrea nada. Aplicar la regla de ppp es lo que hace predecible el presupuesto.** *(Aviso de comparabilidad del propio informe: 7 imágenes de 200-240 ppp frente a las 40 de 75-300 ppp de `ocr-ppp-nativos.md`; solo la columna «coste propio» es comparable entre motores.)*
 
-### Hito 7 — Watcher y API HTTP local
+### Hito 7 — Watcher y API HTTP local — **HECHO el 23/08/2026**
 
 A esas alturas son superficies delgadas sobre el mismo núcleo.
+
+> **Entregado (agente H7, `bench/hito7-superficies.md`):** `filex/watcher.py`, `filex/api.py` (`http.server`, biblioteca estándar, **cero dependencias nuevas**), `pruebas/test_hito7.py` con 41 pruebas. Suite: de **88** a **128**, las 88 anteriores intactas.
+>
+> **Y la frase «superficies delgadas» resultó ser el criterio, no un comentario: con cuatro superficies R10 deja de ser una afirmación y pasa a ser una PRUEBA.** Los mismos seis vectores por las cuatro —fuera de la lista blanca, dentro pero inexistente, nombre de salida reservado, flujo alternativo, conversión legítima y `stderr` del motor— dan **24 de 24 celdas idénticas**, y una prueba estructural lee los cuatro ficheros y comprueba que ninguno nombra `realpath`, `nombre_seguro`, `subprocess` ni `ejecutar`. **La API HTTP no reimplementa nada: importa el `Servicio` de la capa MCP**, que el hito 4 había separado del protocolo «para poder probarlo» y resulta que servía para esto.
+>
+> **⚠ Y el hito encontró un agujero del contrato que solo se ve con concurrencia — MEDIDO.** Tres peticiones simultáneas con tres entradas distintas y **la misma ruta de salida** devolvían **las tres `ok`**, con contrato aprobado, declarando **13 516 / 14 402 / 647 580 B** — y en el disco quedaba **un solo fichero**. **El contrato no puede verlo:** juzga la salida dentro del directorio desechable de R18, que es privado de cada conversión, y el atropello ocurre en el `move` al destino. **El punto 5 mira el desechable; al destino no lo miraba nadie.** Cerrado con un conjunto de destinos en curso en `filex/nucleo.py` (**3,2 µs**, el 0,0013 % de una conversión), **y el arreglo va en el núcleo y no en la API: es R10 funcionando** — la CLA, MCP y el watcher tenían el mismo agujero. **Alcance declarado: es un cerrojo de PROCESO; dos procesos `filex` siguen pisándose y eso queda PENDIENTE.**
+>
+> **Lo medido del watcher:** *«si puedo abrirlo, está completo»* es **falso** —`open(p,'rb')` funciona aunque otro proceso lo tenga abierto escribiendo— y *«con la estabilidad de `stat` basta»* también: con un escritor que se para más que el intervalo de sondeo, el watcher convirtió el **55 %** de un PNG. La defensa son **dos** cosas: estabilidad de `(tamaño, mtime_ns)` **más** `os.replace(p, p)` (WinError 32 mientras haya un escritor). Un fichero que aparece dos veces se resuelve con `(ruta, tamaño, mtime_ns)`: el renombrado es un fichero nuevo **y debe serlo**, y la reescritura y el `touch` los para R9 (`el destino ya existe`). Hacer hash en vez de `stat` costaría **×21** sobre 42 KB y **×23 311** sobre 72 MB.
+>
+> **Lo medido de la API:** 8 conversiones simultáneas → 8 asas en **69,6 ms**, 8 ficheros, **0 sobrantes** (R18 aguanta la concurrencia sin tocar nada); 4 en paralelo **×3,24** más rápidas que 4 en secuencia; el asa cuesta **121 B** para un fichero de 13 516 (**×111**). Escucha en **`127.0.0.1`** —desde la LAN, `ConnectionRefused`; en `0.0.0.0`, `200`— y salir de loopback exige `--permitir-red` porque **esta API no autentica a nadie**. Cuatro defensas de protocolo (`Host` de loopback contra DNS rebinding, `Origin` prohibido, `application/json` obligatorio, tope de cuerpo) y **cero cabeceras CORS**. **Ninguna de las cuatro mira el disco: no son R10, son HTTP.**
+>
+> **Autocorrección del propio hito:** en sus dos primeras versiones el cerrojo anti-*rebinding* y `--permitir-red` **se anulaban entre sí** — con `--host 0.0.0.0`, `Host: malo.example` respondía `200`. **Dos defensas que se anulan entre sí no son dos defensas**, y solo se vio al medirlas juntas.
 
 > **Los hitos 1 y 2 ya superan en cobertura y velocidad a todo lo analizado**, salvo en OCR y ofimática.
 

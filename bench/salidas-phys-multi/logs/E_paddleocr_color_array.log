@@ -1,0 +1,13 @@
+[32mCreating model: ('PP-LCNet_x1_0_textline_ori', None, None)[0m
+[32mModel files already exist. Using cached files. To redownload, please delete the directory manually: `C:\Users\krato\.paddlex\official_models\PP-LCNet_x1_0_textline_ori`.[0m
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+W0823 07:40:22.542361 39184 gpu_resources.cc:114] Please NOTE: device: 0, GPU Compute Capability: 8.6, Driver API Version: 12.8, Runtime API Version: 12.6
+[32mCreating model: ('PP-OCRv6_medium_det', None, None)[0m
+[32mModel files already exist. Using cached files. To redownload, please delete the directory manually: `C:\Users\krato\.paddlex\official_models\PP-OCRv6_medium_det`.[0m
+[32mCreating model: ('PP-OCRv6_medium_rec', None, None)[0m
+[32mModel files already exist. Using cached files. To redownload, please delete the directory manually: `C:\Users\krato\.paddlex\official_models\PP-OCRv6_medium_rec`.[0m
+{"etiqueta": "paddleocr_cuda_array_color", "motor": "paddleocr", "dispositivo": "cuda", "via": "array", "patron": "*.png", "imgdir": "D:/Work/research/FileX/bench/salidas-phys-multi/img_color", "carga_frio_s": 5.3, "vram_base_MiB": 3599, "vram_tras_carga_MiB": 3787, "quietud_pct": 53, "flag": "SUCIA(pico 53%)", "modelos": {"paddle": "3.2.0", "kwargs": {"device": "gpu:0", "use_doc_orientation_classify": "False", "use_doc_unwarping": "False", "use_textline_orientation": "True"}, "params": {"doc_orientation_classify_model_name": "None", "doc_unwarping_model_name": "None", "text_detection_model_name": "PP-OCRv6_medium_det", "textline_orientation_model_name": "None", "text_recognition_model_name": "PP-OCRv6_medium_rec"}}, "reps": 9, "testigo_monohilo_ini_ms": 20.96, "testigo_proceso_ini_ms": 25.49, "muestreo_vram": false}
+W0823 07:40:24.774495 39184 gpu_resources.cc:243] WARNING: device: 0. The installed Paddle is compiled with CUDNN 9.9, but CUDNN version in your machine is 9.5, which may cause serious incompatible bug. Please recompile or reinstall Paddle with compatible CUDNN version.
+escaneado_d4__k1000__color                     CERac=  10.07%  ch=  603  cajas=  12  md5=31fb26b2     373.2 ms  det=si
+escaneado_d4__k1000__color24                   CERac=  10.07%  ch=  603  cajas=  12  md5=31fb26b2     370.3 ms  det=si
+{"evento": "fin", "vram_pico_MiB": 3787, "vram_base_MiB": 3599, "coste_propio_MiB": 188, "pico_util_pct": 0, "testigo_monohilo_ini_ms": 20.96, "testigo_monohilo_fin_ms": 21.87, "deriva_monohilo": 1.04, "testigo_proceso_ini_ms": 25.49, "testigo_proceso_fin_ms": 55.95, "nivel_proceso_vs_reposo": 2.1, "testigo_topado": false, "vram_tope_MiB": 11300}

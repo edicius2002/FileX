@@ -1,0 +1,120 @@
+############ P0. Sintaxis y firmas ############
+  sintaxis: OK
+  funcion gpu_acquire: PRESENTE
+  funcion gpu_release: PRESENTE
+  funcion measure: PRESENTE
+  funcion peak_vram: PRESENTE
+  funcion gpu_state: PRESENTE
+  funcion gpu_quiet_check: PRESENTE
+  GPU_LOCK por defecto = /tmp/filex-gpu.lock
+  /tmp resuelve a: C:/Users/krato/AppData/Local/Temp
+
+############ P1. GPU_LOCK sigue siendo sobrescribible por entorno ############
+  GPU_LOCK = /d/Work/research/FileX/bench/salidas-lock/.lock.p1
+  OK: respeta el valor del entorno
+
+############ P2. Ciclo normal adquirir / liberar ############
+[lock] adquirido por prueba-P2  (lock: /d/Work/research/FileX/bench/salidas-lock/.lock.p2 · libre: 8795 MiB)
+  contenido: prueba-P2|46130|39540|bash|1787490226|/d/Work/research/FileX/bench/salidas-lock
+  OK: liberado
+
+############ P3. Lock HUERFANO: taskkill /F al dueño ############
+  lock tomado por winpid 34668: victima-P3|46171|34668|bash|1787490227|/d/Work/research/FileX/bench/salidas-lock
+  el fichero sigue ahi tras el taskkill (esperado: el trap no corre)
+  -- ahora el SIGUIENTE agente intenta adquirirlo:
+     [lock] HUERFANO detectado (dueño 'victima-P3' pid 34668 muerto): lo libero
+     [lock] adquirido por siguiente-P3  (lock: /d/Work/research/FileX/bench/salidas-lock/.lock.p3 · libre: 8813 MiB)
+          ADQUIRIDO
+  tardó 1 s  (el harness viejo habria esperado 900 s y abortado)
+
+############ P4. Lock OCUPADO por un dueño VIVO: no se roba ############
+     [bloqueado] GPU en uso por: vivo-P4	46243	37088	bash	1787490234	/d/Work/research/FileX/bench/salidas-lock
+  esperó 20 s sin robar el lock (correcto: el dueño esta vivo)
+
+############ P5. DETECCION: tarjeta despejada ############
+  VRAM libre ahora: 8816 MiB
+[lock] adquirido por detec-despejada  (lock: /d/Work/research/FileX/bench/salidas-lock/.lock.p5 · libre: 8816 MiB)
+  OK: arranca
+
+############ P6. DETECCION: tarjeta OCUPADA (simulada subiendo el umbral) ############
+  -- no se ocupa la GPU de verdad: se sube GPU_LIBRE_MIN_MIB por encima de lo libre.
+[gpu] OCUPADA por terceros: 8817 MiB libres < 20000 de mínimo
+[gpu] censo de procesos ajenos (no se puede atribuir VRAM por PID en WDDM):
+CENSO_AJENOS 22
+40068	python.exe	"C:\Users\krato\AppData\Local\Programs\Python\Python312\python.exe" "-c" "from multiprocessing.spawn import spawn_main; spawn_main(parent_pi
+42472	python.exe	"C:\Users\krato\AppData\Local\Programs\Python\Python311\python.exe"  "C:\Users\krato\AppData\Local\Programs\Python\Python311\Scripts\precios
+24236	python.exe	"C:\Users\krato\AppData\Local\Programs\Python\Python311\python.exe"  "C:\Users\krato\AppData\Local\Programs\Python\Python311\Scripts\precios
+38712	python.exe	"C:\Users\krato\AppData\Local\Programs\Python\Python311\python.exe"  "C:\Users\krato\AppData\Local\Programs\Python\Python311\Scripts\precios
+40136	node.exe	"C:\Program Files\nodejs\node.exe" "C:\Program Files\nodejs/node_modules/npm/bin/npm-cli.js" run api:dev
+37872	node.exe	node  scripts/api.mjs dev
+30208	python.exe	D:\Work\research\edicius-hq\services\api\.venv\Scripts\python.exe -m uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
+16824	python.exe	"C:\Users\krato\AppData\Local\Programs\Python\Python312\python.exe" -m uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
+32760	python.exe	"C:\Users\krato\AppData\Local\Programs\Python\Python312\python.exe" "-c" "from multiprocessing.spawn import spawn_main; spawn_main(parent_pi
+32084	python.exe	"C:\Users\krato\AppData\Local\Programs\Python\Python312\python.exe" "-c" "from multiprocessing.spawn import spawn_main; spawn_main(parent_pi
+8400	python.exe	"C:\Users\krato\AppData\Local\Programs\Python\Python311\python.exe"  "C:\Users\krato\AppData\Local\Programs\Python\Python311\Scripts\precios
+9596	python.exe	"C:\Users\krato\AppData\Local\Programs\Python\Python311\python.exe"  "C:\Users\krato\AppData\Local\Programs\Python\Python311\Scripts\precios
+41644	python.exe	"C:\Users\krato\AppData\Local\Programs\Python\Python311\python.exe"  "C:\Users\krato\AppData\Local\Programs\Python\Python311\Scripts\precios
+35800	python.exe	"C:\Users\krato\AppData\Local\Programs\Python\Python311\python.exe"  "C:\Users\krato\AppData\Local\Programs\Python\Python311\Scripts\precios
+30884	python.exe	"C:\Users\krato\AppData\Local\Programs\Python\Python311\python.exe"  "C:\Users\krato\AppData\Local\Programs\Python\Python311\Scripts\precios
+22068	python.exe	"C:\Users\krato\AppData\Local\Programs\Python\Python311\python.exe"  "C:\Users\krato\AppData\Local\Programs\Python\Python311\Scripts\precios
+35436	python.exe	"C:\Users\krato\AppData\Local\Programs\Python\Python311\python.exe"  "C:\Users\krato\AppData\Local\Programs\Python\Python311\Scripts\precios
+30192	python.exe	"C:\Users\krato\AppData\Local\Programs\Python\Python311\python.exe"  "C:\Users\krato\AppData\Local\Programs\Python\Python311\Scripts\precios
+14560	python.exe	"C:\Users\krato\AppData\Local\Programs\Python\Python311\python.exe"  "C:\Users\krato\AppData\Local\Programs\Python\Python311\Scripts\precios
+34536	node.exe	"C:\Program Files\nodejs\node.exe" "C:\Program Files\nodejs/node_modules/npm/bin/npm-cli.js" run dev
+36232	node.exe	"C:\Program Files\nodejs\\node.exe"  "C:\Program Files\nodejs\\node_modules\npm\bin\npm-cli.js" run dev -w web
+34120	node.exe	"node"   "D:\Work\research\edicius-hq\node_modules\.bin\\..\vite\bin\vite.js" 
+[gpu] ABORTO: la tarjeta está ocupada por un tercero. Repite cuando se libere,
+      o fuerza con GPU_GUARD=avisar (mide y marca SUCIA) / esperar / ignorar.
+  rc=2  (2 = se niega a medir, que es el defecto GPU_GUARD=abortar)
+  OK: soltó el lock al abortar
+
+############ P7. GPU_GUARD=avisar mide igualmente ############
+[gpu] OCUPADA por terceros: 8817 MiB libres < 20000 de mínimo
+[gpu] censo de procesos ajenos (no se puede atribuir VRAM por PID en WDDM):
+CENSO_AJENOS 22
+40068	python.exe	"C:\Users\krato\AppData\Local\Programs\Python\Python312\python.exe" "-c" "from multiprocessing.spawn import spawn_main; spawn_main(parent_pi
+42472	python.exe	"C:\Users\krato\AppData\Local\Programs\Python\Python311\python.exe"  "C:\Users\krato\AppData\Local\Programs\Python\Python311\Scripts\precios
+24236	python.exe	"C:\Users\krato\AppData\Local\Programs\Python\Python311\python.exe"  "C:\Users\krato\AppData\Local\Programs\Python\Python311\Scripts\precios
+38712	python.exe	"C:\Users\krato\AppData\Local\Programs\Python\Python311\python.exe"  "C:\Users\krato\AppData\Local\Programs\Python\Python311\Scripts\precios
+40136	node.exe	"C:\Program Files\nodejs\node.exe" "C:\Program Files\nodejs/node_modules/npm/bin/npm-cli.js" run api:dev
+37872	node.exe	node  scripts/api.mjs dev
+30208	python.exe	D:\Work\research\edicius-hq\services\api\.venv\Scripts\python.exe -m uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
+16824	python.exe	"C:\Users\krato\AppData\Local\Programs\Python\Python312\python.exe" -m uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
+32760	python.exe	"C:\Users\krato\AppData\Local\Programs\Python\Python312\python.exe" "-c" "from multiprocessing.spawn import spawn_main; spawn_main(parent_pi
+32084	python.exe	"C:\Users\krato\AppData\Local\Programs\Python\Python312\python.exe" "-c" "from multiprocessing.spawn import spawn_main; spawn_main(parent_pi
+8400	python.exe	"C:\Users\krato\AppData\Local\Programs\Python\Python311\python.exe"  "C:\Users\krato\AppData\Local\Programs\Python\Python311\Scripts\precios
+9596	python.exe	"C:\Users\krato\AppData\Local\Programs\Python\Python311\python.exe"  "C:\Users\krato\AppData\Local\Programs\Python\Python311\Scripts\precios
+41644	python.exe	"C:\Users\krato\AppData\Local\Programs\Python\Python311\python.exe"  "C:\Users\krato\AppData\Local\Programs\Python\Python311\Scripts\precios
+35800	python.exe	"C:\Users\krato\AppData\Local\Programs\Python\Python311\python.exe"  "C:\Users\krato\AppData\Local\Programs\Python\Python311\Scripts\precios
+30884	python.exe	"C:\Users\krato\AppData\Local\Programs\Python\Python311\python.exe"  "C:\Users\krato\AppData\Local\Programs\Python\Python311\Scripts\precios
+22068	python.exe	"C:\Users\krato\AppData\Local\Programs\Python\Python311\python.exe"  "C:\Users\krato\AppData\Local\Programs\Python\Python311\Scripts\precios
+35436	python.exe	"C:\Users\krato\AppData\Local\Programs\Python\Python311\python.exe"  "C:\Users\krato\AppData\Local\Programs\Python\Python311\Scripts\precios
+30192	python.exe	"C:\Users\krato\AppData\Local\Programs\Python\Python311\python.exe"  "C:\Users\krato\AppData\Local\Programs\Python\Python311\Scripts\precios
+14560	python.exe	"C:\Users\krato\AppData\Local\Programs\Python\Python311\python.exe"  "C:\Users\krato\AppData\Local\Programs\Python\Python311\Scripts\precios
+34536	node.exe	"C:\Program Files\nodejs\node.exe" "C:\Program Files\nodejs/node_modules/npm/bin/npm-cli.js" run dev
+36232	node.exe	"C:\Program Files\nodejs\\node.exe"  "C:\Program Files\nodejs\\node_modules\npm\bin\npm-cli.js" run dev -w web
+34120	node.exe	"node"   "D:\Work\research\edicius-hq\node_modules\.bin\\..\vite\bin\vite.js" 
+[gpu] GPU_GUARD=avisar: la tanda entera queda marcada SUCIA
+[lock] adquirido por detec-avisar  (lock: /d/Work/research/FileX/bench/salidas-lock/.lock.p7 · libre: 8775 MiB)
+  rc=0
+
+############ P8. measure() sigue funcionando y marca SUCIA por VRAM ############
+  -- con la tarjeta como esta:
+     control-ffprobe                        mediana:   118 ms  n=3    rango:71-142  [SUCIA(pico 47%)]  gpu_antes:3300,12288,17,57  gpu_despues:3300,12288,17,57
+  -- con el umbral de aviso por las nubes (simula VRAM ajena):
+     control-ffprobe                        mediana:    76 ms  n=3    rango:72-78  [SUCIA(vram_libre 8796MiB)]  gpu_antes:3320,12288,31,57  gpu_despues:3322,12288,31,57
+
+############ P9. peak_vram: fichero de muestras con PID, sin colision ############
+     pico_vram_total_MiB=3322 rc=0
+
+############ P10. Censo de procesos ajenos ############
+     CENSO_AJENOS 22
+     40068	python.exe	"C:\Users\krato\AppData\Local\Programs\Python\Python312\python.exe" "-c" "from multiprocessing.spawn import spawn_main; spawn_main(parent_pi
+     42472	python.exe	"C:\Users\krato\AppData\Local\Programs\Python\Python311\python.exe"  "C:\Users\krato\AppData\Local\Programs\Python\Python311\Scripts\precios
+     24236	python.exe	"C:\Users\krato\AppData\Local\Programs\Python\Python311\python.exe"  "C:\Users\krato\AppData\Local\Programs\Python\Python311\Scripts\precios
+     38712	python.exe	"C:\Users\krato\AppData\Local\Programs\Python\Python311\python.exe"  "C:\Users\krato\AppData\Local\Programs\Python\Python311\Scripts\precios
+     40136	node.exe	"C:\Program Files\nodejs\node.exe" "C:\Program Files\nodejs/node_modules/npm/bin/npm-cli.js" run api:dev
+     37872	node.exe	node  scripts/api.mjs dev
+     30208	python.exe	D:\Work\research\edicius-hq\services\api\.venv\Scripts\python.exe -m uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
+
+############ FIN ############

@@ -1,5 +1,19 @@
 # El corpus `d5`: el suelo de 100 ppp, un patológico que sí discrimina, y por qué el «efecto del rasterizador» no era del rasterizador
 
+> **⚠ ETIQUETA DE COMPARABILIDAD — añadida el 23/08 por `bench/phys-multimotor.md` §6.**
+> Las cifras de **Tesseract** de **§2.2-§2.4, §3.1-§3.3, §5.1, §6.1, §6.2 y la columna A de §4** (~266 celdas) se midieron sobre rásteres de `magick -density N`
+> **sin `-units PixelsPerInch`**, es decir con el `pHYs` a `unidad=0`. Tesseract entonces
+> **se inventa la resolución** y con ella cambia su análisis de maquetación: sobre `escaneado_d4`
+> con `psm 3` eso vale **33,22 puntos** (84,56 % sin declarar contra 51,34 % declarando el
+> verdadero), y hasta **47,15** en el conjunto.
+> 
+> **Las comparaciones DENTRO de este informe se sostienen** —todas sus celdas comparten
+> cabecera, igual que el criterio de `CLAUDE.md` §3 para los milisegundos—. **Lo que NO vale
+> es cruzarlas con PaddleOCR, RapidOCR o EasyOCR**, que son **inmunes al `pHYs`** (0,00 puntos,
+> 18 de 18 filas): sería comparar un motor mal alimentado con tres bien alimentados.
+> 
+> **Un `k` o un `--psm` de aquí no se transfiere sin declarar los tres: `(psm, k, pHYs)`.**
+
 **Encargo G3.** Construir los tres corpus que `bench/k-por-motor.md` §9 deja como
 pendientes: **B19** (un sustituto de `patologico_escaneado`, que no discrimina),
 **B15** (un original de 60–80 ppp nativos, para probar el suelo de 100 de la regla) y

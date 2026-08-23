@@ -1,0 +1,16 @@
+[gpu] OCUPADA por terceros: 8736 MiB libres < 20000 de mínimo
+[gpu] censo de procesos ajenos (no se puede atribuir VRAM por PID en WDDM):
+CENSO_AJENOS 26 (ordenados por RAM residente; la VRAM por PID NO es observable en WDDM)
+22708	node.exe	365 MB RAM	"node"   "D:\Work\research\edicius-hq\node_modules\.bin\\..\typescript\bin\tsc" -b --pretty false
+34120	node.exe	169 MB RAM	"node"   "D:\Work\research\edicius-hq\node_modules\.bin\\..\vite\bin\vite.js" 
+41644	python.exe	151 MB RAM	"C:\Users\krato\AppData\Local\Programs\Python\Python311\python.exe"  "C:\Users\krato\AppData\Local\Programs\Python\Pytho
+32760	python.exe	80 MB RAM	"C:\Users\krato\AppData\Local\Programs\Python\Python312\python.exe" "-c" "from multiprocessing.spawn import spawn_main; 
+14560	python.exe	67 MB RAM	"C:\Users\krato\AppData\Local\Programs\Python\Python311\python.exe"  "C:\Users\krato\AppData\Local\Programs\Python\Pytho
+35436	python.exe	60 MB RAM	"C:\Users\krato\AppData\Local\Programs\Python\Python311\python.exe"  "C:\Users\krato\AppData\Local\Programs\Python\Pytho
+30388	node.exe	59 MB RAM	"C:\Program Files\nodejs\\node.exe"  "C:\Program Files\nodejs\\node_modules\npm\bin\npm-cli.js" run typecheck -w web
+30192	python.exe	58 MB RAM	"C:\Users\krato\AppData\Local\Programs\Python\Python311\python.exe"  "C:\Users\krato\AppData\Local\Programs\Python\Pytho
+10488	node.exe	58 MB RAM	"C:\Program Files\nodejs\node.exe" "C:\Program Files\nodejs/node_modules/npm/bin/npm-cli.js" run typecheck
+34536	node.exe	56 MB RAM	"C:\Program Files\nodejs\node.exe" "C:\Program Files\nodejs/node_modules/npm/bin/npm-cli.js" run dev
+... y 16 mas
+[gpu] ABORTO: la tarjeta está ocupada por un tercero. Repite cuando se libere,
+      o fuerza con GPU_GUARD=avisar (mide y marca SUCIA) / esperar / ignorar.

@@ -1,0 +1,132 @@
+{
+  "cabecera": {
+    "etiqueta": "paddleocr_cuda_array_color",
+    "motor": "paddleocr",
+    "dispositivo": "cuda",
+    "via": "array",
+    "patron": "*.png",
+    "imgdir": "D:/Work/research/FileX/bench/salidas-phys-multi/img_color",
+    "carga_frio_s": 5.3,
+    "vram_base_MiB": 3599,
+    "vram_tras_carga_MiB": 3787,
+    "quietud_pct": 53,
+    "flag": "SUCIA(pico 53%)",
+    "modelos": {
+      "paddle": "3.2.0",
+      "kwargs": {
+        "device": "gpu:0",
+        "use_doc_orientation_classify": "False",
+        "use_doc_unwarping": "False",
+        "use_textline_orientation": "True"
+      },
+      "params": {
+        "doc_orientation_classify_model_name": "None",
+        "doc_unwarping_model_name": "None",
+        "text_detection_model_name": "PP-OCRv6_medium_det",
+        "textline_orientation_model_name": "None",
+        "text_recognition_model_name": "PP-OCRv6_medium_rec"
+      }
+    },
+    "reps": 9,
+    "testigo_monohilo_ini_ms": 20.96,
+    "testigo_proceso_ini_ms": 25.49,
+    "muestreo_vram": false
+  },
+  "fin": {
+    "evento": "fin",
+    "vram_pico_MiB": 3787,
+    "vram_base_MiB": 3599,
+    "coste_propio_MiB": 188,
+    "pico_util_pct": 0,
+    "testigo_monohilo_ini_ms": 20.96,
+    "testigo_monohilo_fin_ms": 21.87,
+    "deriva_monohilo": 1.04,
+    "testigo_proceso_ini_ms": 25.49,
+    "testigo_proceso_fin_ms": 55.95,
+    "nivel_proceso_vs_reposo": 2.1,
+    "testigo_topado": false,
+    "vram_tope_MiB": 11300
+  },
+  "res": {
+    "escaneado_d4__k1000__color": {
+      "doc": "escaneado_d4",
+      "raiz": "escaneado_d4__k1000",
+      "variante": "color",
+      "via": "array",
+      "referencia": "d4",
+      "excepcion": null,
+      "md5_entrada": "b659e6a246715927c932a3739427316c",
+      "forma_entrada": [
+        1716,
+        1294,
+        3
+      ],
+      "md5_texto": "31fb26b2d53a34770272ed3153efb6b3",
+      "cer_acentos_pct": 10.07,
+      "dist_acentos": 60,
+      "cer_ascii_pct": 8.72,
+      "dist_ascii": 52,
+      "chars_ref_acentos": 596,
+      "chars": 603,
+      "lineas_exactas": 5,
+      "lineas_totales": 12,
+      "acentos_ref": 35,
+      "acentos_salida": 23,
+      "bloques": {
+        "titulo": 0.0,
+        "subtitulo": 0.0,
+        "cuerpo": 0.96,
+        "pequeña": 28.17
+      },
+      "cajas": 12,
+      "ms_mediana": 373.2,
+      "ms_min": 355.9,
+      "ms_max": 397.8,
+      "n": 9,
+      "determinista": true,
+      "vram_pico_MiB": 3787,
+      "vram_delta_lote_MiB": 0,
+      "testigo_monohilo_ms": 20.85
+    },
+    "escaneado_d4__k1000__color24": {
+      "doc": "escaneado_d4",
+      "raiz": "escaneado_d4__k1000",
+      "variante": "color24",
+      "via": "array",
+      "referencia": "d4",
+      "excepcion": null,
+      "md5_entrada": "b659e6a246715927c932a3739427316c",
+      "forma_entrada": [
+        1716,
+        1294,
+        3
+      ],
+      "md5_texto": "31fb26b2d53a34770272ed3153efb6b3",
+      "cer_acentos_pct": 10.07,
+      "dist_acentos": 60,
+      "cer_ascii_pct": 8.72,
+      "dist_ascii": 52,
+      "chars_ref_acentos": 596,
+      "chars": 603,
+      "lineas_exactas": 5,
+      "lineas_totales": 12,
+      "acentos_ref": 35,
+      "acentos_salida": 23,
+      "bloques": {
+        "titulo": 0.0,
+        "subtitulo": 0.0,
+        "cuerpo": 0.96,
+        "pequeña": 28.17
+      },
+      "cajas": 12,
+      "ms_mediana": 370.3,
+      "ms_min": 360.8,
+      "ms_max": 393.2,
+      "n": 9,
+      "determinista": true,
+      "vram_pico_MiB": 3787,
+      "vram_delta_lote_MiB": 0,
+      "testigo_monohilo_ms": 21.1
+    }
+  }
+}

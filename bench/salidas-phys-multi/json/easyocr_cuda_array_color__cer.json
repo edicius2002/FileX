@@ -1,0 +1,120 @@
+{
+  "cabecera": {
+    "etiqueta": "easyocr_cuda_array_color",
+    "motor": "easyocr",
+    "dispositivo": "cuda",
+    "via": "array",
+    "patron": "*.png",
+    "imgdir": "D:/Work/research/FileX/bench/salidas-phys-multi/img_color",
+    "carga_frio_s": 5.85,
+    "vram_base_MiB": 3512,
+    "vram_tras_carga_MiB": 3836,
+    "quietud_pct": 50,
+    "flag": "SUCIA(pico 50%)",
+    "modelos": {
+      "torch": "2.6.0+cu124",
+      "torch_cuda": "True"
+    },
+    "reps": 9,
+    "testigo_monohilo_ini_ms": 22.74,
+    "testigo_proceso_ini_ms": 26.47,
+    "muestreo_vram": false
+  },
+  "fin": {
+    "evento": "fin",
+    "vram_pico_MiB": 3836,
+    "vram_base_MiB": 3512,
+    "coste_propio_MiB": 324,
+    "pico_util_pct": 0,
+    "testigo_monohilo_ini_ms": 22.74,
+    "testigo_monohilo_fin_ms": 23.22,
+    "deriva_monohilo": 1.02,
+    "testigo_proceso_ini_ms": 26.47,
+    "testigo_proceso_fin_ms": 24.04,
+    "nivel_proceso_vs_reposo": 0.99,
+    "testigo_topado": false,
+    "vram_tope_MiB": 11300
+  },
+  "res": {
+    "escaneado_d4__k1000__color": {
+      "doc": "escaneado_d4",
+      "raiz": "escaneado_d4__k1000",
+      "variante": "color",
+      "via": "array",
+      "referencia": "d4",
+      "excepcion": null,
+      "md5_entrada": "b659e6a246715927c932a3739427316c",
+      "forma_entrada": [
+        1716,
+        1294,
+        3
+      ],
+      "md5_texto": "5c817a8688c5a7f0a9b4536fe3cff35c",
+      "cer_acentos_pct": 58.05,
+      "dist_acentos": 346,
+      "cer_ascii_pct": 55.87,
+      "dist_ascii": 333,
+      "chars_ref_acentos": 596,
+      "chars": 487,
+      "lineas_exactas": 1,
+      "lineas_totales": 12,
+      "acentos_ref": 35,
+      "acentos_salida": 6,
+      "bloques": {
+        "titulo": 0.0,
+        "subtitulo": 41.86,
+        "cuerpo": 57.69,
+        "pequeña": 77.93
+      },
+      "cajas": 34,
+      "ms_mediana": 1149.8,
+      "ms_min": 1083.1,
+      "ms_max": 1199.7,
+      "n": 9,
+      "determinista": true,
+      "vram_pico_MiB": 3836,
+      "vram_delta_lote_MiB": 0,
+      "testigo_monohilo_ms": 22.16
+    },
+    "escaneado_d4__k1000__color24": {
+      "doc": "escaneado_d4",
+      "raiz": "escaneado_d4__k1000",
+      "variante": "color24",
+      "via": "array",
+      "referencia": "d4",
+      "excepcion": null,
+      "md5_entrada": "b659e6a246715927c932a3739427316c",
+      "forma_entrada": [
+        1716,
+        1294,
+        3
+      ],
+      "md5_texto": "5c817a8688c5a7f0a9b4536fe3cff35c",
+      "cer_acentos_pct": 58.05,
+      "dist_acentos": 346,
+      "cer_ascii_pct": 55.87,
+      "dist_ascii": 333,
+      "chars_ref_acentos": 596,
+      "chars": 487,
+      "lineas_exactas": 1,
+      "lineas_totales": 12,
+      "acentos_ref": 35,
+      "acentos_salida": 6,
+      "bloques": {
+        "titulo": 0.0,
+        "subtitulo": 41.86,
+        "cuerpo": 57.69,
+        "pequeña": 77.93
+      },
+      "cajas": 34,
+      "ms_mediana": 1129.4,
+      "ms_min": 1096.5,
+      "ms_max": 1226.8,
+      "n": 9,
+      "determinista": true,
+      "vram_pico_MiB": 3836,
+      "vram_delta_lote_MiB": 0,
+      "testigo_monohilo_ms": 22.23
+    }
+  }
+}

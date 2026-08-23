@@ -1,0 +1,14 @@
+== 1. arranco un tomador del lock en segundo plano (harness VIEJO) ==
+[lock] adquirido por victima
+-- contenido del lock:
+victima 45483
+-- winpid de la victima: 11656
+== 2. lo mato con taskkill /F /T (no ejecuta el trap) ==
+CORRECTO: el proceso con PID 11656 (proceso secundario de PID 42828)
+ha sido terminado.
+== 3. estado del lock DESPUES de la muerte violenta ==
+HUERFANO CONFIRMADO: el fichero sigue ahi -> victima 45483
+== 4. cuanto espera el siguiente agente (harness VIEJO, tope 900 s) ==
+[bloqueado] GPU en uso por: victima 45483
+-- el intento se cortó a los 25 s por MI timeout de 25 s; el harness viejo habria esperado 900
+== fin ==

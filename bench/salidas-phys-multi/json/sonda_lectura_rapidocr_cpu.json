@@ -1,0 +1,151 @@
+{
+  "meta": {
+    "motor": "rapidocr",
+    "dispositivo": "cpu",
+    "det_efectivo": {
+      "limit_side_len": 736,
+      "limit_type": "min",
+      "mean": "[0.485, 0.456, 0.406]"
+    },
+    "api": [
+      {
+        "firma": "(img_content: Union[str, numpy.ndarray, bytes, pathlib.Path], use_det: Optional[bool] = None, use_cls: Optional[bool] = None, use_rec: Optional[bool] = None, return_word_box: Optional[bool] = None, return_single_char_box: Optional[bool] = None, text_score: Optional[float] = None, box_thresh: Optional[float] = None, unclip_ratio: Optional[float] = None) -> Union[rapidocr.ch_ppocr_det.utils.TextDetOutput, rapidocr.ch_ppocr_cls.utils.TextClsOutput, rapidocr.ch_ppocr_rec.typings.TextRecOutput, rapidocr.utils.output.RapidOCROutput]",
+        "terminos_de_resolucion": [],
+        "nombre": "RapidOCR.__call__"
+      }
+    ]
+  },
+  "eventos_de_carga": {
+    "open": 0,
+    "cv2_imread": 0,
+    "cv2_imdecode": 0,
+    "pil_open": 0,
+    "skimage_imread": 0,
+    "info_consultada": 0,
+    "info_expuesta": 0
+  },
+  "por_png": {
+    "escaneado_d4__k1000__sin.png": {
+      "error": null,
+      "chars": 542,
+      "md5_texto": "b3af5308ce1f3038a276afbda8ce790d",
+      "eventos": {
+        "open": [
+          [
+            "escaneado_d4__k1000__sin.png",
+            "('rb',)"
+          ]
+        ],
+        "cv2_imread": [],
+        "cv2_imdecode": [],
+        "pil_open": [
+          [
+            "escaneado_d4__k1000__sin.png"
+          ]
+        ],
+        "skimage_imread": [],
+        "info_consultada": [
+          [
+            "escaneado_d4__k1000__sin.png",
+            "get",
+            "interlace"
+          ],
+          [
+            "escaneado_d4__k1000__sin.png",
+            "contains",
+            "exif"
+          ],
+          [
+            "escaneado_d4__k1000__sin.png",
+            "get",
+            "exif"
+          ],
+          [
+            "escaneado_d4__k1000__sin.png",
+            "contains",
+            "Raw profile type exif"
+          ],
+          [
+            "escaneado_d4__k1000__sin.png",
+            "get",
+            "XML:com.adobe.xmp"
+          ]
+        ],
+        "info_expuesta": [
+          [
+            "escaneado_d4__k1000__sin.png",
+            {
+              "aspect": "(200, 200)",
+              "date:create": "2026-08-23T11:28:22+00:00",
+              "date:modify": "2026-08-23T11:28:23+00:00",
+              "date:timestamp": "2026-08-23T11:28:23+00:00",
+              "pdf:HiResBoundingBox": "465.84x617.76+0+0",
+              "pdf:Version": "PDF-1.3"
+            }
+          ]
+        ]
+      }
+    },
+    "escaneado_d4__k1000__p0400.png": {
+      "error": null,
+      "chars": 542,
+      "md5_texto": "b3af5308ce1f3038a276afbda8ce790d",
+      "eventos": {
+        "open": [
+          [
+            "escaneado_d4__k1000__p0400.png",
+            "('rb',)"
+          ]
+        ],
+        "cv2_imread": [],
+        "cv2_imdecode": [],
+        "pil_open": [
+          [
+            "escaneado_d4__k1000__p0400.png"
+          ]
+        ],
+        "skimage_imread": [],
+        "info_consultada": [
+          [
+            "escaneado_d4__k1000__p0400.png",
+            "get",
+            "interlace"
+          ],
+          [
+            "escaneado_d4__k1000__p0400.png",
+            "contains",
+            "exif"
+          ],
+          [
+            "escaneado_d4__k1000__p0400.png",
+            "get",
+            "exif"
+          ],
+          [
+            "escaneado_d4__k1000__p0400.png",
+            "contains",
+            "Raw profile type exif"
+          ],
+          [
+            "escaneado_d4__k1000__p0400.png",
+            "get",
+            "XML:com.adobe.xmp"
+          ]
+        ],
+        "info_expuesta": [
+          [
+            "escaneado_d4__k1000__p0400.png",
+            {
+              "date:create": "2026-08-23T11:28:22+00:00",
+              "date:modify": "2026-08-23T11:28:23+00:00",
+              "date:timestamp": "2026-08-23T11:28:23+00:00",
+              "pdf:HiResBoundingBox": "465.84x617.76+0+0",
+              "pdf:Version": "PDF-1.3",
+              "dpi": "(399.9992, 399.9992)"
+            }
+          ]
+        ]
+      }
+    }
+  }
+}

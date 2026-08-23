@@ -1,0 +1,11 @@
+############ P11. Lock de legado VIVO: el harness nuevo espera ############
+  contenido del legado: tanda-vieja 46772
+     [bloqueado] lock de LEGADO vivo en /d/Work/research/FileX/bench/salidas-lock/.legado.prueba: tanda-vieja 46772
+  esperó 18 s por un lock que ni siquiera es el suyo: correcto
+
+############ P12. Lock de legado HUERFANO: lo borra y sigue ############
+     [lock] lock de LEGADO huérfano en /d/Work/research/FileX/bench/salidas-lock/.legado.prueba ('tanda-muerta 999999'): lo borro
+     [lock] adquirido por nuevo-P12  (lock: /d/Work/research/FileX/bench/salidas-lock/.lock.p12 · libre: 8738 MiB)
+          ADQUIRIDO
+  OK: legado huerfano borrado
+############ FIN ############

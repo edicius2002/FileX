@@ -1,0 +1,78 @@
+{
+  "meta": {
+    "motor": "paddleocr",
+    "dispositivo": "cuda",
+    "paddle": "3.2.0",
+    "api": [
+      {
+        "firma": "(input, *, use_doc_orientation_classify=None, use_doc_unwarping=None, use_textline_orientation=None, text_det_limit_side_len=None, text_det_limit_type=None, text_det_thresh=None, text_det_box_thresh=None, text_det_unclip_ratio=None, text_rec_score_thresh=None, return_word_box=None)",
+        "terminos_de_resolucion": [],
+        "nombre": "PaddleOCR.predict"
+      },
+      {
+        "firma": "(self, doc_orientation_classify_model_name=None, doc_orientation_classify_model_dir=None, doc_unwarping_model_name=None, doc_unwarping_model_dir=None, text_detection_model_name=None, text_detection_model_dir=None, textline_orientation_model_name=None, textline_orientation_model_dir=None, textline_orientation_batch_size=None, text_recognition_model_name=None, text_recognition_model_dir=None, text_recognition_batch_size=None, use_doc_orientation_classify=None, use_doc_unwarping=None, use_textline_orientation=None, text_det_limit_side_len=None, text_det_limit_type=None, text_det_thresh=None, text",
+        "terminos_de_resolucion": [],
+        "nombre": "PaddleOCR.__init__"
+      }
+    ]
+  },
+  "eventos_de_carga": {
+    "open": 0,
+    "cv2_imread": 0,
+    "cv2_imdecode": 0,
+    "pil_open": 0,
+    "skimage_imread": 0,
+    "info_consultada": 0,
+    "info_expuesta": 0
+  },
+  "por_png": {
+    "escaneado_d4__k1000__sin.png": {
+      "error": null,
+      "chars": 582,
+      "md5_texto": "c6d90ed20631788a67ff53a60965992e",
+      "eventos": {
+        "open": [
+          [
+            "escaneado_d4__k1000__sin.png",
+            "('rb',)"
+          ]
+        ],
+        "cv2_imread": [],
+        "cv2_imdecode": [
+          [
+            1172530,
+            "()"
+          ]
+        ],
+        "pil_open": [],
+        "skimage_imread": [],
+        "info_consultada": [],
+        "info_expuesta": []
+      }
+    },
+    "escaneado_d4__k1000__p0400.png": {
+      "error": null,
+      "chars": 582,
+      "md5_texto": "c6d90ed20631788a67ff53a60965992e",
+      "eventos": {
+        "open": [
+          [
+            "escaneado_d4__k1000__p0400.png",
+            "('rb',)"
+          ]
+        ],
+        "cv2_imread": [],
+        "cv2_imdecode": [
+          [
+            1172530,
+            "()"
+          ]
+        ],
+        "pil_open": [],
+        "skimage_imread": [],
+        "info_consultada": [],
+        "info_expuesta": []
+      }
+    }
+  }
+}

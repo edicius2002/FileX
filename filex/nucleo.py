@@ -16,6 +16,7 @@ hasta que el contrato la ha juzgado.
 from __future__ import annotations
 
 import os
+import threading
 from dataclasses import dataclass, field
 
 from . import contrato, formatos, invocacion, motores as _motores
@@ -38,6 +39,51 @@ CLAVES_DE_PIXEL = ("dpi", "ancho", "alto", "profundidad_bits", "fondo")
 
 def _pedido_intermedio(pedido: dict) -> dict:
     return {k: v for k, v in (pedido or {}).items() if k in CLAVES_DE_PIXEL}
+
+
+# --------------------------------------------------------------------------
+# El destino en curso — un agujero que solo se ve con CONCURRENCIA
+# --------------------------------------------------------------------------
+#
+# HITO 7, y es el hallazgo del hito — MEDIDO (`bench/hito7-superficies.md` §5.3).
+# Tres peticiones simultáneas de la API HTTP con **tres entradas distintas**
+# (PNG de 42 855 B, JPEG de 87 954 B y TIFF de 72 MB) y **la misma ruta de
+# salida** devolvieron las tres `ok`, con contrato aprobado, declarando
+# **13 516 / 14 402 / 647 580 bytes** — y en el disco quedó **un solo fichero de
+# 647 580 B**. Dos de las tres respuestas describían un fichero que ya no
+# existía.
+#
+# **El contrato no puede atraparlo y no es culpa suya:** juzga la salida dentro
+# del directorio desechable, que es privado de cada conversión, y el
+# atropello ocurre después, en el `shutil.move` al destino. El punto 5 mira el
+# desechable; nadie miraba el destino.
+#
+# El arreglo va AQUÍ y no en la API, y eso es R10 funcionando: el fallo lo
+# encontró la cuarta superficie y el remedio no vive en ella — la CLI, MCP y el
+# watcher tenían exactamente el mismo agujero y se cierra en el mismo sitio para
+# los cuatro.
+#
+# **Alcance declarado, sin adornos: es un cerrojo DE PROCESO.** Dos procesos
+# `filex` distintos —una API y un watcher, por ejemplo— siguen pudiendo pisarse.
+# Cerrarlo entre procesos necesita un cerrojo de fichero o un mutex con nombre,
+# igual que el `gpu_acquire` de `bench/`, y queda **PENDIENTE**.
+_DESTINOS_EN_CURSO: set[str] = set()
+_CERROJO_DESTINOS = threading.Lock()
+
+
+def _reservar_destino(ruta: str) -> bool:
+    clave = os.path.normcase(os.path.abspath(ruta))
+    with _CERROJO_DESTINOS:
+        if clave in _DESTINOS_EN_CURSO:
+            return False
+        _DESTINOS_EN_CURSO.add(clave)
+        return True
+
+
+def _soltar_destino(ruta: str) -> None:
+    clave = os.path.normcase(os.path.abspath(ruta))
+    with _CERROJO_DESTINOS:
+        _DESTINOS_EN_CURSO.discard(clave)
 
 
 @dataclass
@@ -180,6 +226,16 @@ class FileX:
             conv.motivo = "origen y destino son el mismo formato"
             return conv
 
+        # Nadie más puede estar escribiendo este destino. Se reserva DESPUÉS de
+        # saber que hay camino —reservar para luego decir «no hay camino» sería
+        # bloquear un destino por nada— y se suelta en el `finally`.
+        if not _reservar_destino(sal_abs):
+            # No es un mensaje opaco y no debe serlo: el cliente **pidió** esta
+            # ruta, así que nombrarla no le dice nada que no supiera. Lo que sí
+            # sería un fallo es devolver `ok` como se hacía hasta el hito 7.
+            conv.motivo = "otra conversión está escribiendo ya esa ruta de salida"
+            return conv
+
         actual = ent_abs
         temporales: list[DirectorioDeTrabajo] = []
         try:
@@ -196,6 +252,7 @@ class FileX:
             conv.ok = True
             return conv
         finally:
+            _soltar_destino(sal_abs)
             for t in temporales:
                 t.cerrar()
 

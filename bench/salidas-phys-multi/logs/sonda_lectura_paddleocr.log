@@ -1,0 +1,79 @@
+[32mCreating model: ('PP-LCNet_x1_0_textline_ori', None, None)[0m
+[32mModel files already exist. Using cached files. To redownload, please delete the directory manually: `C:\Users\krato\.paddlex\official_models\PP-LCNet_x1_0_textline_ori`.[0m
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+W0823 06:37:18.977680 42468 gpu_resources.cc:114] Please NOTE: device: 0, GPU Compute Capability: 8.6, Driver API Version: 12.8, Runtime API Version: 12.6
+[32mCreating model: ('PP-OCRv6_medium_det', None, None)[0m
+[32mModel files already exist. Using cached files. To redownload, please delete the directory manually: `C:\Users\krato\.paddlex\official_models\PP-OCRv6_medium_det`.[0m
+[32mCreating model: ('PP-OCRv6_medium_rec', None, None)[0m
+[32mModel files already exist. Using cached files. To redownload, please delete the directory manually: `C:\Users\krato\.paddlex\official_models\PP-OCRv6_medium_rec`.[0m
+W0823 06:38:07.463762 42468 gpu_resources.cc:243] WARNING: device: 0. The installed Paddle is compiled with CUDNN 9.9, but CUDNN version in your machine is 9.5, which may cause serious incompatible bug. Please recompile or reinstall Paddle with compatible CUDNN version.
+--- escaneado_d4__k1000__sin.png ---
+{
+ "open": [
+  [
+   "escaneado_d4__k1000__sin.png",
+   "('rb',)"
+  ]
+ ],
+ "cv2_imread": [],
+ "cv2_imdecode": [
+  [
+   1172530,
+   "()"
+  ]
+ ],
+ "pil_open": [],
+ "skimage_imread": [],
+ "info_consultada": [],
+ "info_expuesta": []
+}
+--- escaneado_d4__k1000__p0400.png ---
+{
+ "open": [
+  [
+   "escaneado_d4__k1000__p0400.png",
+   "('rb',)"
+  ]
+ ],
+ "cv2_imread": [],
+ "cv2_imdecode": [
+  [
+   1172530,
+   "()"
+  ]
+ ],
+ "pil_open": [],
+ "skimage_imread": [],
+ "info_consultada": [],
+ "info_expuesta": []
+}
+{
+  "meta": {
+    "motor": "paddleocr",
+    "dispositivo": "cuda",
+    "paddle": "3.2.0",
+    "api": [
+      {
+        "firma": "(input, *, use_doc_orientation_classify=None, use_doc_unwarping=None, use_textline_orientation=None, text_det_limit_side_len=None, text_det_limit_type=None, text_det_thresh=None, text_det_box_thresh=None, text_det_unclip_ratio=None, text_rec_score_thresh=None, return_word_box=None)",
+        "terminos_de_resolucion": [],
+        "nombre": "PaddleOCR.predict"
+      },
+      {
+        "firma": "(self, doc_orientation_classify_model_name=None, doc_orientation_classify_model_dir=None, doc_unwarping_model_name=None, doc_unwarping_model_dir=None, text_detection_model_name=None, text_detection_model_dir=None, textline_orientation_model_name=None, textline_orientation_model_dir=None, textline_orientation_batch_size=None, text_recognition_model_name=None, text_recognition_model_dir=None, text_recognition_batch_size=None, use_doc_orientation_classify=None, use_doc_unwarping=None, use_textline_orientation=None, text_det_limit_side_len=None, text_det_limit_type=None, text_det_thresh=None, text",
+        "terminos_de_resolucion": [],
+        "nombre": "PaddleOCR.__init__"
+      }
+    ]
+  },
+  "eventos_de_carga": {
+    "open": 0,
+    "cv2_imread": 0,
+    "cv2_imdecode": 0,
+    "pil_open": 0,
+    "skimage_imread": 0,
+    "info_consultada": 0,
+    "info_expuesta": 0
+  }
+}
+
+-> D:\Work\research\FileX\bench\salidas-phys-multi\json\sonda_lectura_paddleocr_cuda.json

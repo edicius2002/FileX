@@ -1,5 +1,19 @@
 # El `k` por motor, caracterizado sobre cuatro documentos
 
+> **⚠ ETIQUETA DE COMPARABILIDAD — añadida el 23/08 por `bench/phys-multimotor.md` §6.**
+> Las cifras de **Tesseract** de **§2.1, §3, §4.1, §4.3, §5, §6.1 (filas `magick`) y §6.2** — todo el eje Tesseract se midieron sobre rásteres de `magick -density N`
+> **sin `-units PixelsPerInch`**, es decir con el `pHYs` a `unidad=0`. Tesseract entonces
+> **se inventa la resolución** y con ella cambia su análisis de maquetación: sobre `escaneado_d4`
+> con `psm 3` eso vale **33,22 puntos** (84,56 % sin declarar contra 51,34 % declarando el
+> verdadero), y hasta **47,15** en el conjunto.
+> 
+> **Las comparaciones DENTRO de este informe se sostienen** —todas sus celdas comparten
+> cabecera, igual que el criterio de `CLAUDE.md` §3 para los milisegundos—. **Lo que NO vale
+> es cruzarlas con PaddleOCR, RapidOCR o EasyOCR**, que son **inmunes al `pHYs`** (0,00 puntos,
+> 18 de 18 filas): sería comparar un motor mal alimentado con tres bien alimentados.
+> 
+> **Un `k` o un `--psm` de aquí no se transfiere sin declarar los tres: `(psm, k, pHYs)`.**
+
 **Encargo B13 (M1).** `bench/ppp-y-normalizacion.md` §8 lo dejó escrito como *«el
 pendiente de más valor que abre este informe»*: la regla de ppp que hoy está en
 `CLAUDE.md` trampa 8 y en `PLAN-ORQUESTADOR.md` §5 usa un `k` **por motor**, y **los

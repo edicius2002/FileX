@@ -1,0 +1,61 @@
+[32m[INFO] 2026-08-23 06:38:23,551 [RapidOCR] base.py:23: Using engine_name: onnxruntime[0m
+[32m[INFO] 2026-08-23 06:38:24,044 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_det_small.onnx[0m
+[32m[INFO] 2026-08-23 06:38:24,045 [RapidOCR] main.py:63: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_det_small.onnx[0m
+[32m[INFO] 2026-08-23 06:38:24,351 [RapidOCR] base.py:23: Using engine_name: onnxruntime[0m
+[32m[INFO] 2026-08-23 06:38:24,352 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ppocr_mobile_v2.0_cls_mobile.onnx[0m
+[32m[INFO] 2026-08-23 06:38:24,353 [RapidOCR] main.py:63: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ppocr_mobile_v2.0_cls_mobile.onnx[0m
+[32m[INFO] 2026-08-23 06:38:24,434 [RapidOCR] base.py:23: Using engine_name: onnxruntime[0m
+[32m[INFO] 2026-08-23 06:38:24,461 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_rec_small.onnx[0m
+[32m[INFO] 2026-08-23 06:38:24,461 [RapidOCR] main.py:63: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_rec_small.onnx[0m
+{"etiqueta": "rapidocr_cuda_ruta", "motor": "rapidocr", "dispositivo": "cuda", "via": "ruta", "patron": "*.png", "imgdir": "D:\\Work\\research\\FileX\\bench\\salidas-phys-multi\\img", "carga_frio_s": 4.16, "vram_base_MiB": 3583, "vram_tras_carga_MiB": 3800, "quietud_pct": 11, "flag": "SUCIA(pico 11%)", "modelos": {"det_efectivo": {"mean": "[0.485, 0.456, 0.406]", "std": "[0.229, 0.224, 0.225]", "limit_side_len": 736, "limit_type": "min"}, "config": {"Det.engine_type": "onnxruntime", "Rec.engine_type": "onnxruntime", "Det.lang_type": "ch", "Rec.lang_type": "ch", "Det.ocr_version": "PP-OCRv6", "Rec.ocr_version": "PP-OCRv6", "Det.model_type": "small", "Rec.model_type": "small", "Det.mean": "[0.485, 0.456, 0.406]", "Det.std": "[0.229, 0.224, 0.225]", "Det.thresh": "0.2", "Det.box_thresh": "0.45", "Det.unclip_ratio": "1.4", "Det.max_candidates": "3000"}}, "reps": 9, "testigo_monohilo_ini_ms": 25.6, "testigo_proceso_ini_ms": 101.96, "muestreo_vram": false}
+escaneado_d3__k1000__ninguno                   CERac=   3.80%  ch=   80  cajas=   3  md5=8eb21b3e     108.2 ms  det=si
+escaneado_d3__k1000__p0070                     CERac=   3.80%  ch=   80  cajas=   3  md5=8eb21b3e      99.4 ms  det=si
+escaneado_d3__k1000__p0100                     CERac=   3.80%  ch=   80  cajas=   3  md5=8eb21b3e      85.1 ms  det=si
+escaneado_d3__k1000__p0150                     CERac=   3.80%  ch=   80  cajas=   3  md5=8eb21b3e     104.2 ms  det=si
+escaneado_d3__k1000__p0200                     CERac=   3.80%  ch=   80  cajas=   3  md5=8eb21b3e      92.6 ms  det=si
+escaneado_d3__k1000__p0300                     CERac=   3.80%  ch=   80  cajas=   3  md5=8eb21b3e      97.7 ms  det=si
+escaneado_d3__k1000__p0400                     CERac=   3.80%  ch=   80  cajas=   3  md5=8eb21b3e      96.2 ms  det=si
+escaneado_d3__k1000__sin                       CERac=   3.80%  ch=   80  cajas=   3  md5=8eb21b3e      93.1 ms  det=si
+escaneado_d4__k1000__ninguno                   CERac=  18.62%  ch=  543  cajas=  12  md5=ef754402     387.6 ms  det=si
+escaneado_d4__k1000__p0070                     CERac=  18.62%  ch=  543  cajas=  12  md5=ef754402     421.2 ms  det=si
+escaneado_d4__k1000__p0100                     CERac=  18.62%  ch=  543  cajas=  12  md5=ef754402     454.4 ms  det=si
+escaneado_d4__k1000__p0150                     CERac=  18.62%  ch=  543  cajas=  12  md5=ef754402     541.7 ms  det=si
+escaneado_d4__k1000__p0200                     CERac=  18.62%  ch=  543  cajas=  12  md5=ef754402     441.1 ms  det=si
+escaneado_d4__k1000__p0300                     CERac=  18.62%  ch=  543  cajas=  12  md5=ef754402     427.1 ms  det=si
+escaneado_d4__k1000__p0400                     CERac=  18.62%  ch=  543  cajas=  12  md5=ef754402     432.3 ms  det=si
+escaneado_d4__k1000__sin                       CERac=  18.62%  ch=  543  cajas=  12  md5=ef754402     445.2 ms  det=si
+escaneado_d4__k1250__ninguno                   CERac=  24.50%  ch=  483  cajas=  10  md5=857c26f9     717.2 ms  det=si
+escaneado_d4__k1250__p0070                     CERac=  24.50%  ch=  483  cajas=  10  md5=857c26f9     677.1 ms  det=si
+escaneado_d4__k1250__p0100                     CERac=  24.50%  ch=  483  cajas=  10  md5=857c26f9     742.0 ms  det=si
+escaneado_d4__k1250__p0150                     CERac=  24.50%  ch=  483  cajas=  10  md5=857c26f9     752.7 ms  det=si
+escaneado_d4__k1250__p0200                     CERac=  24.50%  ch=  483  cajas=  10  md5=857c26f9     647.0 ms  det=si
+escaneado_d4__k1250__p0250                     CERac=  24.50%  ch=  483  cajas=  10  md5=857c26f9     650.5 ms  det=si
+escaneado_d4__k1250__p0300                     CERac=  24.50%  ch=  483  cajas=  10  md5=857c26f9     749.3 ms  det=si
+escaneado_d4__k1250__p0400                     CERac=  24.50%  ch=  483  cajas=  10  md5=857c26f9     778.3 ms  det=si
+escaneado_d4__k1250__sin                       CERac=  24.50%  ch=  483  cajas=  10  md5=857c26f9     650.7 ms  det=si
+escaneado_d4c__k1000__ninguno                  CERac=   1.17%  ch=  607  cajas=  12  md5=a7b70077     446.4 ms  det=si
+escaneado_d4c__k1000__p0070                    CERac=   1.17%  ch=  607  cajas=  12  md5=a7b70077     451.2 ms  det=si
+escaneado_d4c__k1000__p0100                    CERac=   1.17%  ch=  607  cajas=  12  md5=a7b70077     444.4 ms  det=si
+escaneado_d4c__k1000__p0150                    CERac=   1.17%  ch=  607  cajas=  12  md5=a7b70077     434.0 ms  det=si
+escaneado_d4c__k1000__p0200                    CERac=   1.17%  ch=  607  cajas=  12  md5=a7b70077     431.7 ms  det=si
+escaneado_d4c__k1000__p0300                    CERac=   1.17%  ch=  607  cajas=  12  md5=a7b70077     455.1 ms  det=si
+escaneado_d4c__k1000__p0400                    CERac=   1.17%  ch=  607  cajas=  12  md5=a7b70077     523.8 ms  det=si
+escaneado_d4c__k1000__sin                      CERac=   1.17%  ch=  607  cajas=  12  md5=a7b70077     587.3 ms  det=si
+escaneado_d4e__k1000__ninguno                  CERac=  77.52%  ch=  149  cajas=   6  md5=dac5393e     561.6 ms  det=si
+escaneado_d4e__k1000__p0070                    CERac=  77.52%  ch=  149  cajas=   6  md5=dac5393e     578.6 ms  det=si
+escaneado_d4e__k1000__p0100                    CERac=  77.52%  ch=  149  cajas=   6  md5=dac5393e     569.7 ms  det=si
+escaneado_d4e__k1000__p0150                    CERac=  77.52%  ch=  149  cajas=   6  md5=dac5393e     585.8 ms  det=si
+escaneado_d4e__k1000__p0200                    CERac=  77.52%  ch=  149  cajas=   6  md5=dac5393e     600.9 ms  det=si
+escaneado_d4e__k1000__p0300                    CERac=  77.52%  ch=  149  cajas=   6  md5=dac5393e     513.3 ms  det=si
+escaneado_d4e__k1000__p0400                    CERac=  77.52%  ch=  149  cajas=   6  md5=dac5393e     795.9 ms  det=si
+escaneado_d4e__k1000__sin                      CERac=  77.52%  ch=  149  cajas=   6  md5=dac5393e     669.3 ms  det=si
+escaneado_d4f__k1000__ninguno                  CERac=   7.05%  ch=  577  cajas=  12  md5=61909c44     545.1 ms  det=si
+escaneado_d4f__k1000__p0070                    CERac=   7.05%  ch=  577  cajas=  12  md5=61909c44     556.2 ms  det=si
+escaneado_d4f__k1000__p0100                    CERac=   7.05%  ch=  577  cajas=  12  md5=61909c44     537.1 ms  det=si
+escaneado_d4f__k1000__p0150                    CERac=   7.05%  ch=  577  cajas=  12  md5=61909c44     532.5 ms  det=si
+escaneado_d4f__k1000__p0200                    CERac=   7.05%  ch=  577  cajas=  12  md5=61909c44     537.9 ms  det=si
+escaneado_d4f__k1000__p0240                    CERac=   7.05%  ch=  577  cajas=  12  md5=61909c44     528.2 ms  det=si
+escaneado_d4f__k1000__p0300                    CERac=   7.05%  ch=  577  cajas=  12  md5=61909c44     548.5 ms  det=si
+escaneado_d4f__k1000__p0400                    CERac=   7.05%  ch=  577  cajas=  12  md5=61909c44     511.7 ms  det=si
+escaneado_d4f__k1000__sin                      CERac=   7.05%  ch=  577  cajas=  12  md5=61909c44     516.3 ms  det=si
+{"evento": "fin", "vram_pico_MiB": 3800, "vram_base_MiB": 3583, "coste_propio_MiB": 217, "pico_util_pct": 0, "testigo_monohilo_ini_ms": 25.6, "testigo_monohilo_fin_ms": 26.47, "deriva_monohilo": 1.03, "testigo_proceso_ini_ms": 101.96, "testigo_proceso_fin_ms": 1063.26, "nivel_proceso_vs_reposo": 39.9, "testigo_topado": false, "vram_tope_MiB": 11300}
