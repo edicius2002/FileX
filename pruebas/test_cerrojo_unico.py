@@ -300,5 +300,75 @@ class ApiDelModulo(unittest.TestCase):
         self.assertFalse(c.tomado)
 
 
+class DeteccionYAfinidad(unittest.TestCase):
+    """N13 — los dos pendientes POSIX, y la afinidad de hilo del mutex.
+
+    Los números de POSIX no se pueden tomar aquí: esta máquina es Windows y el
+    candado **no cruza** a WSL2 (MEDIDO por P, con control positivo). Están en
+    `bench/salidas-cancelacion-procesos/sonda_posix.json`, tomados dentro de
+    WSL2 y sobre ext4. Lo que sí se prueba aquí es el contrato de la función y
+    el lado Windows, que es donde corre.
+    """
+
+    def setUp(self):
+        self.d = tempfile.mkdtemp(prefix="n13-")
+        self.ruta = os.path.join(self.d, "destino.bin")
+        with open(self.ruta, "wb") as fh:
+            fh.write(b"x" * 64)
+
+    def tearDown(self):
+        import shutil
+
+        shutil.rmtree(self.d, ignore_errors=True)
+
+    def test_un_fichero_que_nadie_tiene_abierto_no_esta_ocupado(self):
+        self.assertFalse(cerrojo.abierto_por_un_tercero(self.ruta))
+
+    def test_un_fichero_que_no_existe_no_revienta(self):
+        """Se pregunta por destinos que todavía no existen: es el caso normal."""
+        self.assertFalse(cerrojo.abierto_por_un_tercero(
+            os.path.join(self.d, "no-existe.bin")))
+
+    @unittest.skipUnless(sys.platform == "win32", "el lado Windows")
+    def test_en_windows_un_LECTOR_ajeno_ya_cuenta_como_ocupado(self):
+        """Trampa 33: `os.replace(p,p)` no dice «lo están escribiendo», dice
+        «lo tienen ABIERTO». Un hijo que solo lee dispara el mismo WinError 32."""
+        guion = ("import sys,time\n"
+                 "f=open(sys.argv[1],'rb')\n"
+                 "sys.stdout.write('listo\\n'); sys.stdout.flush()\n"
+                 "time.sleep(20)\n")
+        p = subprocess.Popen([sys.executable, "-c", guion, self.ruta],
+                             stdin=subprocess.DEVNULL, stdout=subprocess.PIPE,
+                             text=True)
+        try:
+            p.stdout.readline()
+            self.assertTrue(cerrojo.abierto_por_un_tercero(self.ruta))
+        finally:
+            p.kill()
+            p.wait(timeout=30)
+        self.assertFalse(cerrojo.abierto_por_un_tercero(self.ruta))
+
+    def test_el_candado_se_suelta_bien_desde_OTRO_hilo(self):
+        """MEDIDO que funciona, y MEDIDO que funciona por accidente.
+
+        `ReleaseMutex` desde otro hilo devuelve `ERROR_NOT_OWNER` (288) y lo que
+        libera el nombre es el `CloseHandle`
+        (`bench/salidas-cancelacion-procesos/sonda_afinidad.json`). Esta prueba
+        fija el comportamiento observable para que, si algún día se cachean
+        asas, se rompa aquí en vez de romperse en producción.
+        """
+        import threading
+
+        nombre = "filex-prueba-afinidad-hilo"
+        c = cerrojo.Candado(nombre)
+        self.assertTrue(c.tomar())
+        self.assertFalse(cerrojo.esta_libre(nombre))
+        h = threading.Thread(target=c.soltar)
+        h.start()
+        h.join(timeout=30)
+        self.assertTrue(cerrojo.esta_libre(nombre),
+                        "soltar desde otro hilo dejó el candado tomado")
+
+
 if __name__ == "__main__":
     unittest.main()

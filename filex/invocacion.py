@@ -29,6 +29,7 @@ tocan ffmpeg cuelgan la sesión entera cuando la salida ya existe.
 
 from __future__ import annotations
 
+import contextlib
 import os
 import re
 import shutil
@@ -258,6 +259,46 @@ def en_vuelo() -> int:
     """Cuántas invocaciones hay ahora mismo con un `Popen` vivo registrado."""
     with _CERROJO_VUELO:
         return len(_EN_VUELO)
+
+
+@contextlib.contextmanager
+def hilo_de():
+    """El hilo de un trabajo, con su rastro BORRADO al salir. Pase lo que pase.
+
+    N11. `bench/cancelacion-y-servicio.md` §4.3 dejó dicho el defecto con sus
+    palabras:
+
+        «Los `ident` de hilo se reciclan. `olvidar_hilo()` no es opcional:
+        `servicio.py` la llama en un `finally` en los dos trabajos. Quien añada
+        una tercera clase de trabajo tiene que hacer lo mismo, y **eso es una
+        disciplina que hay que recordar**, que es justo lo que este repositorio
+        evita en las invocaciones.»
+
+    Es literalmente la frase de `CLAUDE.md` §5 sobre el `stdin=DEVNULL`: *«una
+    disciplina que hay que recordar en cada punto de invocación no es una
+    defensa»*. La respuesta que el proyecto ya dio una vez fue quitar el punto
+    de invocación —hay uno— y la respuesta aquí es la misma: quitar el punto
+    donde se olvida. `filex/servicio.py` no construye hilos de trabajo salvo en
+    `Servicio._arrancar`, y `_arrancar` entra aquí; lo comprueba una prueba
+    sobre el AST (`pruebas/test_cancelacion_procesos.py::ElAndamiajeEsUnMecanismo`).
+
+    **NO se limpia al ENTRAR, y es deliberado.** Sería la simetría bonita y
+    abriría una carrera real: entre `Thread.start()` y la primera línea del
+    hilo, un `job(..., "cancelar")` puede marcar el `ident` recién nacido, y un
+    borrado de cortesía a la entrada se tragaría esa cancelación. El reciclaje
+    de `ident` solo puede ocurrir cuando el hilo anterior ya ha MUERTO, y para
+    entonces su `finally` ya pasó por aquí: limpiar a la salida basta y no
+    cuesta una ventana.
+
+    Uso::
+
+        with invocacion.hilo_de():
+            ...          # todo el trabajo, con sus N saltos
+    """
+    try:
+        yield threading.get_ident()
+    finally:
+        olvidar_hilo()
 
 
 def _nombre_contenedor_de(argv: list[str]) -> str:

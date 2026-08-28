@@ -1,0 +1,24 @@
+{
+  "plataforma": "win32",
+  "pid": 28068,
+  "A_mismo_hilo": {
+    "tomado": true,
+    "libre_despues": true
+  },
+  "B_otro_hilo": {
+    "tomado": true,
+    "ocupado_mientras_lo_teniamos": true,
+    "libre_despues": true,
+    "solto_otro_hilo": true
+  },
+  "C_release_crudo": {
+    "aplica": true,
+    "wait_inicial": 0,
+    "release_desde_otro_hilo_ok": false,
+    "release_desde_otro_hilo_err": 288,
+    "ERROR_NOT_OWNER": 288,
+    "wait_tras_cerrar_el_asa": 0,
+    "WAIT_OBJECT_0": 0,
+    "WAIT_TIMEOUT": 258
+  }
+}

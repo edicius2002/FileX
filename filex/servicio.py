@@ -45,14 +45,16 @@ para los números y para lo que NO cubre.
 
 from __future__ import annotations
 
+import contextlib
 import json
 import os
+import re
 import threading
 import time
 import uuid
 from dataclasses import dataclass, field
 
-from . import confinamiento as _conf
+from . import cerrojo, confinamiento as _conf
 from . import contrato, formatos, invocacion
 from .nucleo import FileX
 
@@ -81,6 +83,38 @@ SONDEO_MS = 1000
 #: exista en el protocolo: es el que los clientes y los modelos reconocen.
 TRABAJANDO, COMPLETADO, FALLIDO, CANCELADO = (
     "working", "completed", "failed", "cancelled")
+
+#: Cada cuánto mira el vigilante si hay un mando de cancelación en el disco.
+#: Es la mitad baja de la latencia de una cancelación entre procesos: la otra
+#: mitad es lo que tarde el trabajo en cerrar su contrato.
+INTERVALO_MANDO = 0.2
+
+#: Cuánto espera `job(..., "cancelar")` a ver el efecto de un mando entregado a
+#: OTRO proceso, antes de responder «entregado, todavía no atendido». Tope, no
+#: bucle de reintento. La cancelación no es síncrona y no debe fingir que lo es:
+#: esto no es una promesa, es hasta cuándo se mira.
+ESPERA_MANDO = 3.0
+
+#: Cuánto se insiste en tomar el candado del trabajo antes de arrancar su hilo.
+#: Normalmente es instantáneo; la espera existe porque `cerrojo.esta_libre()`
+#: —que es como OTRO proceso pregunta si el dueño vive— toma y suelta el
+#: candado, y sin espera un sondeo ajeno que cayera en ese instante dejaría al
+#: trabajo corriendo sin candado, es decir, con pinta de huérfano.
+ESPERA_CANDADO = 0.5
+
+#: Sufijo del fichero de mando. Un fichero por trabajo y por orden.
+SUFIJO_MANDO = ".cancelar"
+
+#: Prefijo de la clave de candado de un trabajo. No es una ruta: `cerrojo`
+#: resume el nombre con `sha256`, así que el directorio de candados no filtra
+#: qué trabajos hay en curso.
+PREFIJO_TRABAJO = "filex-trabajo:"
+
+#: Un `job_id` entra por la superficie —lo escribe el modelo o el usuario— y
+#: aquí se usa para COMPONER NOMBRES DE FICHERO. `../` dentro de un `job_id`
+#: sacaría el mando (y la lectura del trabajo) del directorio. Lista blanca,
+#: denegar por defecto: es R1 aplicado a un identificador en vez de a una ruta.
+_RE_JID = re.compile(r"^[0-9a-f]{6,64}$")
 # ==========================================================================
 # 1. Los trabajos — el asa que se entrega AL EMPEZAR
 # ==========================================================================
@@ -135,6 +169,13 @@ class Trabajos:
         if t is not None:
             return t
         # No está en memoria: puede ser de otra sesión o de otra superficie.
+        # **Y aquí el `job_id` deja de ser un identificador y pasa a ser parte
+        # de una ruta**, así que se filtra antes de tocar el disco: es el
+        # predicado léxico de R1 sobre un identificador. Sin esto, un `job_id`
+        # con `../` convierte `job` en un lector de JSON ajenos — la misma forma
+        # del oráculo de existencia que R4 evita, con otro nombre.
+        if not _RE_JID.match(jid or ""):
+            return None
         try:
             with open(self._fichero(jid), encoding="utf-8") as fh:
                 d = json.load(fh)
@@ -160,6 +201,213 @@ class Trabajos:
     def terminar(self, t: Trabajo, estado: str, resultado: dict) -> None:
         t.estado, t.resultado, t.fin = estado, resultado, time.time()
         self.volcar(t)
+
+
+# ==========================================================================
+# 1 bis. N10 — la cancelación deja de ser DE PROCESO
+# ==========================================================================
+#
+# C34 cerró «cancelar de verdad» y declaró su propio alcance
+# (`bench/cancelacion-y-servicio.md` §4.1):
+#
+#     «Es de PROCESO. El registro vive en la memoria de un `filex`. Cancelar un
+#     trabajo leído del disco desde otro proceso no alcanza su `Popen`, y la
+#     respuesta lo dice en vez de fingirlo: `motor_detenido: false`.»
+#
+# Es la MISMA FORMA que el cerrojo de destinos (trampa 26), y aquella se cerró
+# en dos mitades que aquí vuelven a hacer falta las dos:
+#
+# **Mitad 1 — el MANDO.** Un fichero `<job_id>.cancelar` en el directorio de
+# trabajos, que ya es el sitio donde las cuatro superficies se ven entre sí
+# («los cuatro frentes ven el mismo trabajo»). Quien cancela lo escribe; el
+# proceso dueño lo atiende con **un vigilante por proceso, no uno por trabajo**
+# —un `scandir` cada `INTERVALO_MANDO`, no un hilo por conversión— y llama al
+# `cancelar_hilo` de C34, que es el que ya sabe matar el árbol y el contenedor.
+# El mando NO reimplementa la cancelación: la ALCANZA desde fuera del proceso.
+#
+# **Mitad 2 — la DETECCIÓN, que es la que faltaría si solo se hiciera lo obvio.**
+# La lección de N-b y de P es que *un mecanismo que solo alcanza a quien coopera
+# resuelve la mitad*: si el proceso dueño MURIÓ, no hay nadie que atienda el
+# mando, y sin detección un trabajo `working` en el disco se queda `working`
+# **para siempre** —MEDIDO, `bench/cancelacion-entre-procesos.md` §3—. Aquí la
+# detección es un candado por trabajo, y usa exactamente el hueco para el que P
+# construyó `filex/cerrojo.py`:
+#
+#     «Lo que necesita no es excluir, es saber si el dueño sigue vivo sin
+#     preguntarle a nadie por su PID —que es lo que la trampa 31 dice que en
+#     esta máquina no se puede hacer bien—: un trabajo retiene su candado
+#     mientras vive, y `esta_libre()` responde por él.»
+#
+# El candado de rango de bytes **lo suelta el sistema operativo** cuando el
+# proceso muere (MEDIDO por N-b: 551,9 µs tras un `taskkill /F`), así que
+# «candado libre + disco dice `working`» es un huérfano, y lo es sin consultar
+# un solo PID. `dueno()` da además el PID y el instante para el log, que es
+# información para el humano y nunca la base de la decisión.
+#
+# **El trabajo no empieza a existir para el resto del mundo hasta que tiene su
+# candado, y esa espera es la que hace que la detección no mienta.** Sin ella
+# hay una ventana —trabajo ya escrito en el disco como `working`, candado
+# todavía sin tomar— en la que otro proceso lo declararía huérfano siendo un
+# trabajo recién nacido y perfectamente vivo. Es la misma familia que la ventana
+# entre `Popen()` y el registro que C34 cerró dentro del cerrojo: **una
+# detección con una ventana no es una detección, es un falso positivo con
+# horario.** Ver `Servicio._arrancar` para por qué el candado se toma dentro del
+# hilo y no fuera (afinidad de hilo del mutex, MEDIDO).
+
+#: `FILEX_MANDO=0` apaga las dos mitades y devuelve el comportamiento exacto de
+#: C34: cancelar desde otro proceso responde `motor_detenido: false`. Existe por
+#: el mismo motivo que el `FILEX_CERROJO_MUTEX` de P —poder medir el antes y el
+#: después DENTRO DE LA MISMA TANDA, que es la única comparación honesta en esta
+#: máquina— y para que una prueba pueda fallar por el fallo que dice cubrir.
+#: El defecto es el seguro.
+def _mando_activo() -> bool:
+    return (os.environ.get("FILEX_MANDO") or "1").strip() != "0"
+
+
+def clave_de(jid: str) -> str:
+    """La clave de candado de un trabajo. **El único sitio que la acuña.**"""
+    return PREFIJO_TRABAJO + jid
+
+
+def fichero_mando(directorio: str, jid: str) -> str:
+    """El fichero de mando de un trabajo, o `""` si el `job_id` no es válido."""
+    if not _RE_JID.match(jid or ""):
+        return ""
+    return os.path.join(directorio, jid + SUFIJO_MANDO)
+
+
+def pedir_mando(directorio: str, jid: str) -> bool:
+    """Deja la orden de cancelar en el disco. Devuelve si se pudo escribir.
+
+    Es la única escritura de este canal, y es **de un solo sentido**: quien
+    cancela no espera respuesta por aquí. La respuesta es el estado del trabajo,
+    que ya se publica en el disco y que las cuatro superficies ya leen.
+    """
+    f = fichero_mando(directorio, jid)
+    if not f:
+        return False
+    try:
+        with open(f, "w", encoding="utf-8") as fh:
+            fh.write(f"{os.getpid()}\t{int(time.time())}\n")
+        return True
+    except OSError:
+        return False
+
+
+def _borrar_mando(directorio: str, jid: str) -> None:
+    f = fichero_mando(directorio, jid)
+    if not f:
+        return
+    try:
+        os.remove(f)
+    except OSError:
+        pass
+
+
+#: `(directorio de trabajos, job_id) -> (ident de hilo, Trabajo)`. Lo que este
+#: proceso puede atender. Un mando de un trabajo que no está aquí no es nuestro.
+_EN_CURSO: dict[tuple[str, str], tuple[int, Trabajo]] = {}
+_CERROJO_MANDO = threading.Lock()
+_VIGILANTE: threading.Thread | None = None
+
+
+def _arrancar_vigilante() -> None:
+    """Arranca el vigilante si no lo hay. **Se llama con `_CERROJO_MANDO` tomado.**"""
+    global _VIGILANTE
+    if _VIGILANTE is None:
+        _VIGILANTE = threading.Thread(target=_vigilar, daemon=True,
+                                      name="filex-mandos")
+        _VIGILANTE.start()
+
+
+def _vigilar() -> None:
+    """Un `scandir` cada `INTERVALO_MANDO` mientras haya trabajos en curso.
+
+    **Uno por proceso, no uno por trabajo**, y sin hilo cuando no hay nada que
+    vigilar: el hilo nace con el primer trabajo y muere con el último. La
+    decisión de morir se toma bajo el mismo cerrojo con el que se decide nacer,
+    así que no hay ventana en la que un trabajo se registre contra un vigilante
+    que ya estaba saliendo.
+    """
+    global _VIGILANTE
+    while True:
+        time.sleep(INTERVALO_MANDO)
+        with _CERROJO_MANDO:
+            items = list(_EN_CURSO.items())
+            if not items:
+                _VIGILANTE = None
+                return
+        pedidos: set[tuple[str, str]] = set()
+        for d in {clave[0] for clave, _ in items}:
+            try:
+                with os.scandir(d) as it:
+                    for e in it:
+                        if e.name.endswith(SUFIJO_MANDO):
+                            pedidos.add((d, e.name[:-len(SUFIJO_MANDO)]))
+            except OSError:
+                continue
+        for clave, (ident, t) in items:
+            if clave not in pedidos:
+                continue
+            # Las DOS cosas, igual que en `job(..., "cancelar")` dentro del
+            # proceso: el `Event` cubre la ventana entre saltos, donde no hay
+            # ningún `Popen` que matar, y `cancelar_hilo` mata el motor que esté
+            # en vuelo ahora. Y el `Event` primero: si el hilo sale de
+            # `communicate` entre las dos líneas, tiene que encontrarlo puesto o
+            # el trabajo terminaría en `failed` en vez de en `cancelled`.
+            t.cancelar.set()
+            invocacion.cancelar_hilo(ident)
+
+
+def _tomar_candado(t: Trabajo):
+    """El candado que dice «este trabajo sigue vivo». `None` si no hay vía.
+
+    No se hace `raise` si no se puede tomar: un trabajo tiene que poder correr
+    aunque el directorio de candados no se deje escribir. Lo que NO se hace es
+    callarlo — `convert` devuelve el aviso —, porque degradar en silencio es la
+    trampa 13 y aquí la degradación es invisible desde fuera: un trabajo sin
+    candado tiene la misma pinta que un huérfano.
+    """
+    if not _mando_activo():
+        return None
+    c = cerrojo.Candado(clave_de(t.id), metadatos=f"{t.tipo}\t{t.id}")
+    return c if c.tomar(espera=ESPERA_CANDADO) else None
+
+
+@contextlib.contextmanager
+def en_curso(trabajos: Trabajos, t: Trabajo, candado):
+    """Todo el andamiaje de un trabajo en vuelo, atado a su `with`.
+
+    Tres cosas que antes estaban sueltas por el código y había que acordarse de
+    hacer en cada clase de trabajo:
+
+    1. `invocacion.hilo_de()` — el rastro del hilo, borrado pase lo que pase
+       (N11: era un `finally` copiado en dos sitios).
+    2. El registro del mando — lo que hace al trabajo alcanzable desde OTRO
+       proceso (N10).
+    3. El candado — lo que hace que otro proceso pueda saber que seguimos vivos,
+       y su liberación, que es lo que le dice que ya no.
+    """
+    ident = threading.get_ident()
+    clave = (trabajos.dir, t.id)
+    with _CERROJO_MANDO:
+        _EN_CURSO[clave] = (ident, t)
+        _arrancar_vigilante()
+    try:
+        with invocacion.hilo_de():
+            yield
+    finally:
+        with _CERROJO_MANDO:
+            _EN_CURSO.pop(clave, None)
+        if candado is not None:
+            candado.soltar()
+        # El mando se borra AL FINAL y siempre: si se quedara, el siguiente
+        # trabajo con ese `job_id` nacería cancelado. No puede pasar con
+        # `uuid4`, pero un fichero de mando que sobrevive a su trabajo es
+        # basura con capacidad de hacer daño, y son 20 µs quitarla.
+        _borrar_mando(trabajos.dir, t.id)
+
+
 # ==========================================================================
 # 2. Las respuestas — ruta y metadatos, dentro del presupuesto
 # ==========================================================================
@@ -258,6 +506,63 @@ class Servicio:
     def _salida_de(self, entrada: str, directorio: str, destino: str) -> str:
         base = os.path.splitext(os.path.basename(entrada))[0]
         return os.path.join(directorio, f"{base}.{destino}")
+
+    def _arrancar(self, t: Trabajo, cuerpo) -> str:
+        """Lanza el hilo de un trabajo. **La única puerta, y por eso es un
+        mecanismo y no una disciplina.**
+
+        N11. Antes cada clase de trabajo construía su propio `threading.Thread`
+        y tenía que acordarse de llamar a `invocacion.olvidar_hilo()` en un
+        `finally`; C34 lo dejó escrito como pendiente: *«quien añada una tercera
+        clase de trabajo tiene que hacer lo mismo, y eso es una disciplina que
+        hay que recordar»*. Ahora el andamiaje entero —el rastro del hilo, el
+        candado y el registro del mando— vive en `en_curso`, y una tercera clase
+        de trabajo no puede olvidarse de él porque **no construye hilos**: llama
+        aquí. `pruebas/test_cancelacion_procesos.py::ElAndamiajeEsUnMecanismo`
+        lo comprueba sobre el AST de este fichero, no sobre su comportamiento.
+
+        Devuelve el aviso de degradación, o `""`.
+
+        **El candado se toma DENTRO del hilo del trabajo, y esta función espera
+        a que esté tomado antes de volver.** Las dos mitades de esa frase son
+        deliberadas y cada una arregla una cosa distinta:
+
+        * *Dentro del hilo*, porque **un mutex de Windows tiene afinidad de
+          hilo** y `cerrojo.Candado` toma uno — MEDIDO
+          (`bench/salidas-cancelacion-procesos/sonda_afinidad.json`, celda C):
+          `ReleaseMutex` desde un hilo que no es el dueño devuelve `False` con
+          `ERROR_NOT_OWNER` (288). Soltar desde otro hilo *parece* funcionar
+          —`esta_libre()` dice `True` después, celda B— pero funciona por el
+          `CloseHandle` que viene detrás, no por el `ReleaseMutex` que falla.
+          **Un mecanismo que se apoya en un efecto colateral no es un
+          mecanismo**, y el día que `cerrojo` cachee asas dejaría de serlo sin
+          avisar.
+        * *Esperando a que esté tomado*, porque el trabajo ya figura `working`
+          en el disco desde `Trabajos.nuevo()`, y un trabajo `working` sin
+          candado es **un falso huérfano**: otro proceso lo declararía muerto
+          estando recién nacido. La espera reduce esa ventana al tiempo de
+          tomar el candado y le pone tope.
+        """
+        listo = threading.Event()
+        caja: dict = {}
+
+        def corre():
+            # Tomar y soltar, los dos en ESTE hilo: ver el docstring.
+            caja["candado"] = _tomar_candado(t)
+            listo.set()
+            with en_curso(self.trabajos, t, caja["candado"]):
+                cuerpo()
+
+        t.hilo = threading.Thread(target=corre, daemon=True, name=f"filex-{t.id}")
+        t.hilo.start()
+        # Tope siempre, también aquí: si el hilo no llegara a arrancar, quien
+        # pidió la conversión no se queda colgado — se queda sin candado, que es
+        # lo que dice el aviso.
+        listo.wait(ESPERA_CANDADO + 1.0)
+        if _mando_activo() and caja.get("candado") is None:
+            return ("sin candado de trabajo: otro proceso no podrá saber si "
+                    "este sigue vivo")
+        return ""
 
     # ------------------------------------------------------------ herramientas
 
@@ -374,13 +679,13 @@ class Servicio:
                 self.trabajos.terminar(t, estado, _resumen_conversion(conv))
             except Exception as e:                      # nunca la traza al modelo
                 self.trabajos.terminar(t, FALLIDO, {"ok": False, "motivo": type(e).__name__})
-            finally:
-                # **Obligatorio**: los `ident` de hilo se reciclan, y un `ident`
-                # reutilizado heredaría la cancelación del trabajo anterior.
-                invocacion.olvidar_hilo()
 
-        t.hilo = threading.Thread(target=corre, daemon=True, name=f"filex-{t.id}")
-        t.hilo.start()
+        # El `finally` con `invocacion.olvidar_hilo()` que había aquí —y su
+        # gemelo en `batch`— ya no está: lo hace `en_curso`, dentro de
+        # `_arrancar`. N11.
+        aviso = self._arrancar(t, corre)
+        if aviso:
+            r["aviso_cerrojo"] = aviso
         return r
 
     def batch(self, entradas: list[str], directorio_salida: str,
@@ -389,12 +694,6 @@ class Servicio:
         t = self.trabajos.nuevo("batch")
 
         def corre():
-            try:
-                _corre_batch()
-            finally:
-                invocacion.olvidar_hilo()
-
-        def _corre_batch():
             hechos, fallidos, rutas = 0, 0, []
             for e in entradas:
                 if t.cancelar.is_set():
@@ -420,15 +719,77 @@ class Servicio:
                 {"n": len(entradas), "convertidos": hechos, "fallidos": fallidos,
                  "directorio_salida": directorio_salida, "primeras_rutas": rutas})
 
-        t.hilo = threading.Thread(target=corre, daemon=True, name=f"filex-{t.id}")
-        t.hilo.start()
-        return {"job_id": t.id, "estado": TRABAJANDO, "n": len(entradas),
-                "sondeo_ms": SONDEO_MS}
+        r = {"job_id": t.id, "estado": TRABAJANDO, "n": len(entradas),
+             "sondeo_ms": SONDEO_MS}
+        aviso = self._arrancar(t, corre)
+        if aviso:
+            r["aviso_cerrojo"] = aviso
+        return r
+
+    # ------------------------------------------------- N10, entre procesos
+
+    def _es_huerfano(self, t: Trabajo) -> bool:
+        """¿El trabajo dice `working` y su proceso dueño ya no vive?
+
+        **La detección, y su coste es una llamada.** `cerrojo.esta_libre` lo
+        contesta tomando y soltando el candado, que es la única forma honesta:
+        preguntar por el PID del dueño es justo lo que la trampa 31 declara
+        imposible de automatizar en esta máquina. El candado de rango de bytes
+        **lo suelta el sistema operativo** cuando el proceso muere, así que
+        «libre» aquí significa «nadie vivo lo retiene», no «nadie lo tomó».
+        """
+        return cerrojo.esta_libre(clave_de(t.id))
+
+    def _recoger_huerfano(self, t: Trabajo) -> dict:
+        """Cierra un trabajo cuyo dueño murió. **Un `working` eterno es peor que
+        un `failed`**: el primero hace esperar para siempre a las cuatro
+        superficies y al modelo."""
+        self.trabajos.terminar(t, FALLIDO, {
+            "ok": False, "motivo": "proceso_dueno_muerto"})
+        return {"job_id": t.id, "estado": FALLIDO, "motor_detenido": False,
+                "huerfano": True,
+                "nota": "el proceso dueño del trabajo ya no vive: el trabajo se "
+                        "cierra como fallido en vez de quedarse working para "
+                        "siempre"}
+
+    def _cancelar_ajeno(self, t: Trabajo) -> dict:
+        """Cancela un trabajo que corre en OTRO proceso vivo.
+
+        Se deja el mando en el disco y se mira **con tope** si surte efecto. No
+        se promete nada: lo que se devuelve es lo que se vio.
+        """
+        t0 = time.perf_counter()
+        if not pedir_mando(self.trabajos.dir, t.id):
+            return {"job_id": t.id, "estado": t.estado, "motor_detenido": False,
+                    "nota": "no se pudo dejar la orden de cancelar en el disco"}
+        estado = t.estado
+        while time.perf_counter() - t0 < ESPERA_MANDO:
+            time.sleep(0.02)
+            otro = self.trabajos.get(t.id)
+            if otro is not None and otro.estado != TRABAJANDO:
+                estado = otro.estado
+                break
+        ms = round((time.perf_counter() - t0) * 1000, 1)
+        atendido = estado != TRABAJANDO
+        return {"job_id": t.id, "estado": estado, "motor_detenido": atendido,
+                "via": "entre procesos", "ms": ms,
+                "nota": "el proceso dueño atendió el mando y mató su motor"
+                        if atendido else
+                        "orden dejada en el disco; el proceso dueño vive y la "
+                        "atenderá, pero no lo ha hecho todavía"}
 
     def job(self, job_id: str, accion: str = "estado") -> dict:
         t = self.trabajos.get(job_id)
         if t is None:
             return {"error": "job_id desconocido"}
+        # **Ajeno = está en el disco y no tiene hilo aquí.** Se mira en las dos
+        # acciones y no solo al cancelar: un `working` cuyo dueño murió engaña
+        # igual a quien pregunta por el estado, y es donde más se pregunta.
+        ajeno = (_mando_activo() and t.hilo is None and t.estado == TRABAJANDO)
+        if ajeno and self._es_huerfano(t):
+            return self._recoger_huerfano(t)
+        if accion == "cancelar" and ajeno:
+            return self._cancelar_ajeno(t)
         if accion == "cancelar":
             # C34, CERRADO. Antes esto solo ponía un `Event` que se consultaba
             # ENTRE saltos: el motor en vuelo seguía hasta terminar o hasta
@@ -448,12 +809,24 @@ class Servicio:
             if hilo is not None and hilo.is_alive():
                 matado = invocacion.cancelar_hilo(hilo.ident)
             elif hilo is None and t.estado == TRABAJANDO:
-                # Trabajo leído del disco: es de otra sesión o de otro proceso,
-                # y su `Popen` no vive en este registro. Se dice, no se finge.
+                # Trabajo leído del disco y **sin canal de mando**: solo se
+                # llega aquí con `FILEX_MANDO=0`, es decir, midiendo el antes.
+                # Con el canal puesto, este caso lo atienden `_cancelar_ajeno` o
+                # `_recoger_huerfano` unas líneas más arriba.
+                #
+                # Y la nota vieja decía una cosa que NO era verdad — MEDIDO
+                # (`bench/cancelacion-entre-procesos.md` §3.1): *«la cancelación
+                # queda anotada»*. No quedaba anotada en ninguna parte.
+                # `Trabajos.get` construye un `Trabajo` NUEVO al leerlo del
+                # disco y **no lo guarda en `self._t`**, así que el
+                # `t.cancelar.set()` de la línea de arriba marca un objeto que
+                # se tira al volver de esta función. Es la trampa 25 en su forma
+                # de mensaje: una respuesta honesta sobre el motor («no se
+                # toca») acompañada de una promesa falsa sobre el resto.
                 return {"job_id": t.id, "estado": t.estado,
                         "motor_detenido": False,
-                        "nota": "el trabajo no corre en este proceso: la "
-                                "cancelación queda anotada, el motor no se toca"}
+                        "nota": "el trabajo no corre en este proceso y no hay "
+                                "canal de mando: el motor no se toca"}
             if t.estado == TRABAJANDO:
                 return {"job_id": t.id, "estado": TRABAJANDO,
                         "motor_detenido": matado,

@@ -215,15 +215,26 @@ class CancelarPorElServicio(unittest.TestCase):
         # núcleo, así que la salida no existe.
         self.assertFalse(os.path.exists(os.path.join(self.d, "s.webm")))
 
-    def test_cancelar_un_trabajo_de_otro_proceso_lo_dice_en_vez_de_fingir(self):
-        """Un trabajo leído del disco no tiene hilo aquí. R4 en versión honesta:
-        el registro es de PROCESO y la respuesta no puede aparentar otra cosa."""
-        r = self.sv.convert(VIDEO, os.path.join(self.d, "s2.webm"))
-        jid = r["job_id"]
-        otro = S.Servicio(self.sv.fx, S.Trabajos(self.sv.trabajos.dir))
-        c = otro.job(jid, "cancelar")
-        self.assertFalse(c["motor_detenido"])
-        self.assertIn("no corre en este proceso", c["nota"])
+    def test_sin_canal_de_mando_lo_dice_en_vez_de_fingir(self):
+        """El alcance de C34, conservado como el ANTES medible.
+
+        Esta prueba afirmaba el límite de C34 —*«cancelar un trabajo leído del
+        disco no alcanza su `Popen`»*— y N10 lo cierra, así que ahora afirma la
+        vía degradada: con `FILEX_MANDO=0` no hay canal entre procesos y la
+        respuesta **sigue siendo honesta**. La otra mitad, la que prueba que con
+        el canal SÍ se alcanza, está en
+        `pruebas/test_cancelacion_procesos.py`, y entre procesos de verdad.
+        """
+        os.environ["FILEX_MANDO"] = "0"
+        try:
+            r = self.sv.convert(VIDEO, os.path.join(self.d, "s2.webm"))
+            jid = r["job_id"]
+            otro = S.Servicio(self.sv.fx, S.Trabajos(self.sv.trabajos.dir))
+            c = otro.job(jid, "cancelar")
+            self.assertFalse(c["motor_detenido"])
+            self.assertIn("no corre en este proceso", c["nota"])
+        finally:
+            os.environ.pop("FILEX_MANDO", None)
         self.sv.job(jid, "cancelar")                 # limpieza: que no siga
 
 

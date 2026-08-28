@@ -58,6 +58,63 @@ usuarios y sesiones; el fichero conserva los metadatos, la limpieza automática
 y **la compatibilidad con cualquier `filex` que todavía no tenga el mutex**, que
 sin esto dejaría de verse con uno que sí. El mutex cuesta **7,0 µs**.
 
+**El mutex tiene AFINIDAD DE HILO, y `soltar()` desde otro hilo funciona por
+accidente — MEDIDO** (`bench/salidas-cancelacion-procesos/sonda_afinidad.json`).
+`ReleaseMutex` desde un hilo que no es el dueño devuelve `False` con
+`ERROR_NOT_OWNER` (288); lo que deja el nombre libre es el `CloseHandle` que
+viene detrás, no la liberación. Visto desde fuera todo cuadra —`esta_libre()`
+dice `True` después, celda B— y por eso es una trampa: **el día que este módulo
+cachee asas de mutex, soltar desde otro hilo dejaría de funcionar sin un solo
+error**. Quien tome un candado, que lo suelte en su propio hilo; `servicio.py`
+lo hace así a propósito (`Servicio._arrancar`).
+
+## POSIX, y por qué el barrido NO se hace ahí — MEDIDO, no supuesto
+
+`bench/cerrojo-de-maquina.md` §6.6 dejaba *«en POSIX el fichero de candado no se
+barre»* como **PENDIENTE**. Ya no lo es: es una decisión con números
+(`bench/salidas-cancelacion-procesos/sonda_posix.json`, WSL2 sobre **ext4**, no
+sobre `/mnt/d`, que sería medir drvfs). Dos motivos, y el segundo refuta la
+extrapolación que se le hacía a Windows:
+
+1. **Barrer abre una carrera real, y no hace falta ganar ninguna carrera para
+   reproducirla.** En POSIX un fichero desenlazado sigue vivo mientras alguien
+   lo tenga abierto, y el siguiente `open` crea otro inodo: con A soltando y
+   borrando, **B y C acaban creyendo los dos que tienen el candado — DOS
+   DUEÑOS**, determinista. Cerrarlo exige que **cada toma** verifique el inodo
+   (`os.stat(ruta).st_ino == os.fstat(fd).st_ino`), que cuesta **3,0 µs** en
+   todas las tomas, incluidas las que no barren nada.
+2. **Y el argumento de rendimiento que justifica barrer en Windows SE INVIERTE
+   en ext4.** N-b midió que sin el `remove` el ciclo era **×2,3 más lento**,
+   porque el `open` siguiente cae sobre un fichero con contenido y se paga el
+   `ftruncate`. Aquí el ciclo cuesta **16,8 µs con barrido y 9,5 µs sin él**:
+   barrer es **×1,77 MÁS LENTO**. Se pagarían 7,3 µs por ciclo más 3,0 µs por
+   toma, y una carrera nueva, **para ahorrar ~120 B por nombre distinto**.
+
+**Conclusión: en POSIX no se barre, y ahora es porque no compensa, no porque
+falte hacerlo.**
+
+## La detección en POSIX: existe, y cuesta ×182 — MEDIDO
+
+`bench/cerrojo-de-maquina.md` §6.5: *«en POSIX la detección no existe»*.
+Confirmado y cuantificado, con control positivo (ídem):
+
+* `os.replace(p, p)` con un tercero que solo tiene el fichero abierto **no
+  detecta nada** en POSIX (20,4 µs, sin error), mientras en Windows es
+  `WinError 32`. La frase era exacta.
+* `fcntl.flock(LOCK_EX|LOCK_NB)` sobre el destino detecta al tercero **que
+  también hace `flock`** (13,3 µs) y **no** al que solo hace `open()` (22,7 µs):
+  **es exclusión, no detección** — justo la mitad que faltaba.
+* Un barrido de `/proc/*/fd` **sí ve al tercero no cooperativo**, sin falsos
+  positivos, y cuesta **3 679,8 µs** de mediana (563 descriptores recorridos)
+  frente a los **20,2 µs** de la detección de Windows: **×182**. Y con un punto
+  ciego declarado: **47 procesos denegados**, que son los de otro usuario —sin
+  root, esta vía no ve exactamente el caso que el mutex `Global\\` vino a cubrir.
+
+Existe `abierto_por_un_tercero()` para quien quiera pagarlo; **el defecto en
+POSIX es no pagarlo**, y la decisión de si un 1 % de una conversión compra una
+detección con ese punto ciego es de quien monte el consumidor, no de este
+módulo.
+
 ## Lo que NO cubre — MEDIDO, no supuesto
 
 **No cruza a la VM de WSL2, y el motivo de siempre era falso.** Se decía que
@@ -401,6 +458,64 @@ class Candado:
     def dueno(self) -> str | None:
         """Quién lo tiene, sin adivinarlo. `None` si está libre."""
         return dueno(self.nombre)
+
+
+def abierto_por_un_tercero(ruta: str, *, barrido_proc: bool = False) -> bool:
+    """¿Hay OTRO proceso con `ruta` abierta? La DETECCIÓN, en las dos familias.
+
+    En Windows la respuesta es `os.replace(p, p)`, que es el único cerrojo real
+    aquí (trampas 27 y 33) y cuesta **20,2 µs**: no dice «alguien lo está
+    escribiendo», dice «alguien lo tiene ABIERTO», lector incluido.
+
+    En POSIX no hay equivalente —MEDIDO, no supuesto: ver el encabezado— y por
+    eso el defecto es **`False`**, que es lo que hace hoy `nucleo.py`. Con
+    `barrido_proc=True` se paga la única vía que sí ve a un tercero no
+    cooperativo, `/proc/*/fd`, con sus dos números encima de la mesa: **3 679,8
+    µs** y **ciega a los procesos de otro usuario**. No se activa sola porque
+    una detección de 3,7 ms que además tiene un punto ciego es una decisión de
+    producto, no un detalle de implementación.
+
+    **`False` significa «no lo he visto», nunca «está libre».** Es la misma
+    honestidad que `motor_detenido: false`: quien lo lea tiene que poder
+    distinguir «he mirado y no hay» de «aquí no se puede mirar».
+    """
+    if _ES_WINDOWS:
+        try:
+            os.replace(ruta, ruta)
+        except FileNotFoundError:
+            # No existe: nadie lo tiene abierto. **Sin esta línea el destino que
+            # todavía no se ha escrito —que es el caso NORMAL— se declara
+            # ocupado**, y la detección se convierte en un «no» permanente. La
+            # primera versión de esta función no la tenía y la encontró su
+            # propia prueba, no una conversión.
+            return False
+        except (OSError, ValueError):
+            return True
+        return False
+    if not barrido_proc:
+        return False
+    try:
+        real = os.path.realpath(ruta)
+        yo = str(os.getpid())
+        for pid in os.listdir("/proc"):
+            if not pid.isdigit() or pid == yo:
+                continue
+            d = f"/proc/{pid}/fd"
+            try:
+                for fd in os.listdir(d):
+                    try:
+                        if os.readlink(os.path.join(d, fd)) == real:
+                            return True
+                    except OSError:
+                        continue
+            except OSError:
+                # Proceso de otro usuario, o muerto entre el `listdir` y aquí.
+                # Es el punto ciego, y se calla porque no hay nada que decir:
+                # el que devuelve esta función es «no lo he visto».
+                continue
+    except OSError:
+        return False
+    return False
 
 
 def esta_libre(nombre: str) -> bool:

@@ -1,0 +1,163 @@
+{
+  "n": 9,
+  "pid": 624,
+  "testigos": {
+    "deriva_antes_ms": 14.22,
+    "nivel_antes_ms": 38.16,
+    "deriva_despues_ms": 15.45,
+    "nivel_despues_ms": 34.47,
+    "deriva": 1.086,
+    "hay_deriva": false
+  },
+  "M3_coste_camino_normal": {
+    "candado_tomar_us": 374.0,
+    "candado_soltar_us": 269.0,
+    "tick_vigilante_us": 50.0,
+    "intervalo_vigilante_s": 0.2,
+    "escribir_mando_us": 393.0,
+    "borrar_mando_us": 184.0,
+    "n": 200
+  },
+  "M4_coste_deteccion": {
+    "libre_us": 618.0,
+    "libre_respuesta": [
+      true
+    ],
+    "ocupado_us": 168.0,
+    "ocupado_respuesta": [
+      false
+    ],
+    "n": 200
+  },
+  "M2_dueno_muerto": {
+    "sin_deteccion": {
+      "estados": [
+        "working",
+        "working",
+        "working",
+        "working",
+        "working",
+        "working",
+        "working",
+        "working",
+        "working"
+      ],
+      "ms": [
+        8.43,
+        14.193,
+        13.051,
+        12.231,
+        9.664,
+        11.649,
+        7.937,
+        8.21,
+        8.882
+      ],
+      "sigue_working": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "mediana_ms": 9.664
+    },
+    "con_deteccion": {
+      "estados": [
+        "failed",
+        "failed",
+        "failed",
+        "failed",
+        "failed",
+        "failed",
+        "failed",
+        "failed",
+        "failed"
+      ],
+      "ms": [
+        28.699,
+        19.908,
+        25.386,
+        18.145,
+        19.183,
+        18.309,
+        21.701,
+        20.74,
+        24.352
+      ],
+      "motivos": [
+        "proceso_dueno_muerto",
+        "proceso_dueno_muerto",
+        "proceso_dueno_muerto",
+        "proceso_dueno_muerto",
+        "proceso_dueno_muerto",
+        "proceso_dueno_muerto",
+        "proceso_dueno_muerto",
+        "proceso_dueno_muerto",
+        "proceso_dueno_muerto"
+      ],
+      "mediana_ms": 20.74
+    }
+  },
+  "etiqueta": "SUCIA",
+  "R21_ficheros_nuevos_en_la_raiz": []
+}
+{
+  "M1": {
+    "sin_canal": {
+      "estados": [
+        "completed",
+        "completed",
+        "completed",
+        "completed",
+        "completed",
+        "completed",
+        "completed",
+        "completed",
+        "completed"
+      ],
+      "motor_detenido": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "mediana_ms": 21835.4
+    },
+    "con_canal": {
+      "estados": [
+        "cancelled",
+        "cancelled",
+        "cancelled",
+        "cancelled",
+        "cancelled",
+        "cancelled",
+        "cancelled",
+        "cancelled",
+        "cancelled"
+      ],
+      "motor_detenido": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "mediana_ms": 456.8
+    },
+    "ganancia": 47.8
+  }
+}

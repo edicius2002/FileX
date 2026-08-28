@@ -1,0 +1,60 @@
+{
+  "plataforma": "linux",
+  "python": "3.14.4",
+  "base": "/tmp/filex-n13",
+  "es_ext4": true,
+  "aplica": true,
+  "A1_os_replace": {
+    "detecta": false,
+    "error": "",
+    "us": 20.4,
+    "control_windows": "WinError 32 (MEDIDO por N-b, cerrojo-de-maquina.md §5.1)"
+  },
+  "A2_flock": {
+    "tercero_solo_abre": {
+      "detecta": false,
+      "us": 22.7
+    },
+    "tercero_con_flock": {
+      "detecta": true,
+      "us": 13.3
+    }
+  },
+  "A3_proc_fd": {
+    "ve_al_tercero": true,
+    "falso_positivo_sin_tercero": false,
+    "fds_recorridos": 563,
+    "procesos_denegados": 47,
+    "us_con_tercero": 4666.9,
+    "us_sin_tercero": 3993.4,
+    "mediana_us": 3679.8,
+    "n": 20,
+    "nota": "los procesos denegados son los de OTRO usuario: sin root, esta vía es ciega justo donde el candado de fichero lo es"
+  },
+  "B_barrido": {
+    "sin_verificar": {
+      "B_cree_tenerlo": true,
+      "C_cree_tenerlo": true,
+      "DOS_DUENOS": true
+    },
+    "verificando": {
+      "B_cree_tenerlo": false,
+      "C_cree_tenerlo": true,
+      "DOS_DUENOS": false
+    },
+    "coste_verificacion_us": 3.0,
+    "ciclo_us": {
+      "con_barrido": 16.8,
+      "sin_barrido": 9.5,
+      "razon_sin_entre_con": 0.565,
+      "control_windows_N_b": "sin el remove, x2,3 MAS LENTO"
+    },
+    "n": 200
+  },
+  "R21_sobrantes": [
+    "a1.bin",
+    "a2-tercero_con_flock.bin",
+    "a2-tercero_solo_abre.bin",
+    "a3.bin"
+  ]
+}
