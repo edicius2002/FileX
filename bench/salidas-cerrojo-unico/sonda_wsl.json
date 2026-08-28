@@ -1,0 +1,24 @@
+{
+ "cuando": "2026-08-27T22:31:09",
+ "ruta": {
+  "windows": "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-cruce-wsl-33156.lock",
+  "wsl": "/mnt/c/Users/krato/AppData/Local/Temp/filex-cruce-wsl-33156.lock"
+ },
+ "1_win_bloquea_wsl": {
+  "salida": "TOMADO",
+  "excluye": false
+ },
+ "2_wsl_bloquea_win": {
+  "hijo": "TOMADO",
+  "excluye": false
+ },
+ "3_control_wsl_wsl": {
+  "primero": "TOMADO",
+  "segundo": "BLOQUEADO 11 Resource temporarily unavailable",
+  "excluye": true
+ },
+ "veredicto": {
+  "el_candado_de_fichero_cruza_a_wsl2": false,
+  "flock_funciona_dentro_de_wsl2_sobre_9p": true
+ }
+}

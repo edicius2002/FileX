@@ -1,0 +1,17 @@
+testigos al empezar: deriva 26.5 ms · proceso 32.4 ms
+  maquina (mutex + identidad) = LO NUEVO     mediana   1113.3 us   p90   1486.9
+  maquina SIN mutex = el cerrojo de N-b      mediana   1049.4 us   p90   1385.2
+  maquina SIN identidad                      mediana   1039.0 us   p90   1333.0
+  proceso (el hito 7)                        mediana    353.4 us   p90    492.7
+  ninguno                                    mediana    361.7 us   p90    491.7
+-- desglose --
+  solo el mutex Global                       mediana     18.1 us
+  clave lexica (realpath del dir)            mediana    153.5 us
+  identidad NTFS, destino que NO existe      mediana     23.6 us
+  identidad NTFS, destino que SI existe      mediana     35.2 us
+  deteccion, destino que SI existe           mediana    179.2 us
+  deteccion, destino que NO existe (el caso normal) mediana     28.2 us
+-- conversion png->webp de referencia --
+  mediana 367.0 ms   p90 375.2 ms   (n=11)
+testigos al acabar: deriva 24.7 ms (x0.93) · proceso 37.3 ms -> limpia
+R21: antes=[] despues=['tipico.png']

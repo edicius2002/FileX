@@ -1,0 +1,71 @@
+{
+ "cuando": "2026-08-27T22:45:55",
+ "n": 20000,
+ "configuraciones": {
+  "maquina (mutex + identidad) = LO NUEVO": {
+   "mediana_us": 1113.3,
+   "p90_us": 1486.9
+  },
+  "maquina SIN mutex = el cerrojo de N-b": {
+   "mediana_us": 1049.4,
+   "p90_us": 1385.2
+  },
+  "maquina SIN identidad": {
+   "mediana_us": 1039.0,
+   "p90_us": 1333.0
+  },
+  "proceso (el hito 7)": {
+   "mediana_us": 353.4,
+   "p90_us": 492.7
+  },
+  "ninguno": {
+   "mediana_us": 361.7,
+   "p90_us": 491.7
+  }
+ },
+ "trozos": {
+  "solo el mutex Global": {
+   "mediana_us": 18.1,
+   "p90_us": 40.1
+  },
+  "clave lexica (realpath del dir)": {
+   "mediana_us": 153.5,
+   "p90_us": 220.8
+  },
+  "identidad NTFS, destino que NO existe": {
+   "mediana_us": 23.6,
+   "p90_us": 45.0
+  },
+  "identidad NTFS, destino que SI existe": {
+   "mediana_us": 35.2,
+   "p90_us": 64.4
+  },
+  "deteccion, destino que SI existe": {
+   "mediana_us": 179.2,
+   "p90_us": 242.9
+  },
+  "deteccion, destino que NO existe (el caso normal)": {
+   "mediana_us": 28.2,
+   "p90_us": 50.7
+  }
+ },
+ "conversion_ms": {
+  "mediana": 367.0,
+  "p90": 375.2,
+  "n": 11
+ },
+ "testigos": {
+  "deriva_ini_ms": 26.5,
+  "deriva_fin_ms": 24.7,
+  "deriva": 0.93,
+  "proceso_ini_ms": 32.4,
+  "proceso_fin_ms": 37.3,
+  "etiqueta": "limpia"
+ },
+ "R21": {
+  "antes": [],
+  "despues": [
+   "tipico.png"
+  ]
+ }
+}

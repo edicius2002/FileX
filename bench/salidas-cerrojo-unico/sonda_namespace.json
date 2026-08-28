@@ -1,0 +1,44 @@
+{
+ "cuando": "2026-08-27T22:29:22",
+ "C_sesion": {
+  "sesion": 1,
+  "qwinsta": "(qwinsta fallo: [WinError 2] El sistema no puede encontrar el archivo especificado)"
+ },
+ "A_distintos": {
+  "local_err": 0,
+  "global_err": 0,
+  "distintos": true
+ },
+ "B_namespace": {
+  "GLOBAL (de maquina)": {
+   "ruta": "\\BaseNamedObjects",
+   "objetos": 0,
+   "contiene_el_nuestro": false,
+   "error": "NtQueryDirectoryObject NTSTATUS=0x00000105"
+  },
+  "SESION 1": {
+   "ruta": "\\Sessions\\1\\BaseNamedObjects",
+   "objetos": 0,
+   "contiene_el_nuestro": false,
+   "error": "NtQueryDirectoryObject NTSTATUS=0x00000105"
+  }
+ },
+ "B2_por_ruta": {
+  "global": {
+   "ruta": "\\BaseNamedObjects\\filex-ns-32812",
+   "abre": true,
+   "ntstatus": "0x00000000"
+  },
+  "sesion": {
+   "ruta": "\\Sessions\\1\\BaseNamedObjects\\filex-ns-32812",
+   "abre": true,
+   "ntstatus": "0x00000000"
+  },
+  "global_inexistente": {
+   "ruta": "\\BaseNamedObjects\\filex-ns-32812-NO-EXISTE",
+   "abre": false,
+   "ntstatus": "0xc0000034"
+  }
+ },
+ "veredicto_global_de_verdad": true
+}

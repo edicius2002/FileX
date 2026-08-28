@@ -1,0 +1,14 @@
+== C. sesion de este proceso: 1 ==
+(qwinsta fallo: [WinError 2] El sistema no puede encontrar el archivo especificado)
+== A. Local\S y Global\S VIVOS A LA VEZ ==
+  Local\  handle=True err=0
+  Global\ handle=True err=0 (objeto NUEVO)
+  -> son objetos DISTINTOS: True
+== B. buscarlo en el namespace del kernel ==
+  \BaseNamedObjects                          n=    0    (no esta)  ERROR: NtQueryDirectoryObject NTSTATUS=0x00000105
+  \Sessions\1\BaseNamedObjects               n=    0    (no esta)  ERROR: NtQueryDirectoryObject NTSTATUS=0x00000105
+== B2. abrirlo por ruta absoluta del namespace ==
+  \BaseNamedObjects\filex-ns-32812                         -> ABRE  NTSTATUS=0x00000000
+  \Sessions\1\BaseNamedObjects\filex-ns-32812              -> ABRE  NTSTATUS=0x00000000
+  \BaseNamedObjects\filex-ns-32812-NO-EXISTE               -> no abre  NTSTATUS=0xc0000034
+== VEREDICTO: el mutex Global\ vive en el namespace de MAQUINA: True ==

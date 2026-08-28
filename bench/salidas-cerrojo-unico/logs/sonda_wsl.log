@@ -1,0 +1,11 @@
+fichero: C:\Users\krato\AppData\Local\Temp\filex-cruce-wsl-33156.lock
+     wsl: /mnt/c/Users/krato/AppData/Local/Temp/filex-cruce-wsl-33156.lock
+== 1. lo toma WINDOWS (msvcrt.locking); lo intenta WSL2 (flock) ==
+  WSL2 dice: 'TOMADO'  -> Windows excluye a WSL2: False
+== 2. lo toma WSL2 (flock); lo intenta WINDOWS (msvcrt.locking) ==
+  el hijo de WSL2 dice: 'TOMADO'
+  Windows LO TOMA IGUAL -> WSL2 no excluye a Windows
+== 3. CONTROL: dos flock del MISMO lado (WSL2) sobre /mnt/c ==
+  primero: 'TOMADO'   segundo: 'BLOQUEADO 11 Resource temporarily unavailable'
+  -> flock SÍ funciona sobre 9p entre dos procesos de WSL2: True
+== VEREDICTO: el candado de fichero cruza a WSL2: False ==

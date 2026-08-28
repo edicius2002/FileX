@@ -1,0 +1,16 @@
+== 1. Local\ frente a Global\ ==
+  Local\         creado=True  GetLastError=0
+  Global\        creado=True  GetLastError=0
+  (sin prefijo)  creado=True  GetLastError=0
+  -> se sigue con: Global\filex-sonda-30016-x
+== 2. exclusion entre DOS PROCESOS ==
+  hijo dice: {'tomado': True, 'wait': 0, 'pid': 27292}
+  el padre espera con timeout 0 -> 0x102 (WAIT_TIMEOUT: EXCLUYE) en 25.6 us
+== 3. dueno muerto por taskkill /F ==
+  taskkill rc=0; el siguiente espera -> 0x80 (WAIT_ABANDONED: el SISTEMA lo suelta) en 9.7 us
+== 4. metadatos: quien lo tiene ==
+  OpenMutexW tras soltarlo: handle=False -> el objeto no sigue vivo (lo mantiene nuestro propio handle si lo hubiera)
+  NO hay API de dueno: el mutex no lleva carga util. El fichero de candado si (pid, epoch, ruta).
+== 5. coste del ciclo tomar+soltar ==
+  mutex crear+wait+release+close: mediana 7.0 us  p90 7.5 us
+== escrito sonda_maquina.json ==

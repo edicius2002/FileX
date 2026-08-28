@@ -1,0 +1,45 @@
+{
+ "cuando": "2026-08-27T22:26:28",
+ "pid": 30016,
+ "1_espacios": {
+  "Local\\": {
+   "creado": true,
+   "last_error": 0
+  },
+  "Global\\": {
+   "creado": true,
+   "last_error": 0
+  },
+  "(sin prefijo)": {
+   "creado": true,
+   "last_error": 0
+  }
+ },
+ "2_exclusion": {
+  "hijo": {
+   "tomado": true,
+   "wait": 0,
+   "pid": 27292
+  },
+  "wait_padre": 258,
+  "excluye": true,
+  "us": 25.6
+ },
+ "3_huerfano": {
+  "taskkill_rc": 0,
+  "wait": 128,
+  "abandonado": true,
+  "recuperado": true,
+  "us": 9.7
+ },
+ "4_metadatos": {
+  "open_dice_si_existe": false,
+  "api_de_dueno": null,
+  "nota": "el mutex no lleva carga: OpenMutexW solo dice si existe; quien lo tiene no es consultable sin depurador"
+ },
+ "5_coste_us": {
+  "n": 20000,
+  "mediana": 7.0,
+  "p90": 7.5
+ }
+}

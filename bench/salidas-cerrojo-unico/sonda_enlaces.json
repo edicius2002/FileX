@@ -1,0 +1,58 @@
+{
+ "cuando": "2026-08-27T22:32:51",
+ "casos": [
+  {
+   "caso": "enlace duro (mklink /H)",
+   "alias": "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-enlaces-6knq2hxi\\duro.webp",
+   "creado": true,
+   "salida_mklink": "V¡nculos permanentes creados por C:\\Users\\krato\\AppData\\Local\\Temp\\filex-enlaces-6knq2hxi\\duro.webp <<===>> C:\\Users\\krato\\AppData\\Local\\Temp\\filex-enlaces-6knq2hxi\\real\\salida.webp",
+   "clave": "c:\\users\\krato\\appdata\\local\\temp\\filex-enlaces-6knq2hxi\\duro.webp",
+   "misma_clave_lexica": false,
+   "misma_identidad_ntfs": true,
+   "identidad": "(1105906800, 211387707509988680)",
+   "reserva_real": true,
+   "reserva_alias": true,
+   "dos_duenos": true
+  },
+  {
+   "caso": "enlace simbolico (mklink)",
+   "alias": "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-enlaces-6knq2hxi\\sim.webp",
+   "creado": true,
+   "salida_mklink": "v¡nculo simb¢lico creado para C:\\Users\\krato\\AppData\\Local\\Temp\\filex-enlaces-6knq2hxi\\sim.webp <<===>> C:\\Users\\krato\\AppData\\Local\\Temp\\filex-enlaces-6knq2hxi\\real\\salida.webp",
+   "clave": "c:\\users\\krato\\appdata\\local\\temp\\filex-enlaces-6knq2hxi\\sim.webp",
+   "misma_clave_lexica": false,
+   "misma_identidad_ntfs": true,
+   "identidad": "(1105906800, 211387707509988680)",
+   "reserva_real": true,
+   "reserva_alias": true,
+   "dos_duenos": true
+  },
+  {
+   "caso": "union de directorio (mklink /J)",
+   "alias": "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-enlaces-6knq2hxi\\union\\salida.webp",
+   "creado": true,
+   "salida_mklink": "Uni¢n creada para C:\\Users\\krato\\AppData\\Local\\Temp\\filex-enlaces-6knq2hxi\\union <<===>> C:\\Users\\krato\\AppData\\Local\\Temp\\filex-enlaces-6knq2hxi\\real",
+   "clave": "c:\\users\\krato\\appdata\\local\\temp\\filex-enlaces-6knq2hxi\\real\\salida.webp",
+   "misma_clave_lexica": true,
+   "misma_identidad_ntfs": true,
+   "identidad": "(1105906800, 211387707509988680)",
+   "reserva_real": true,
+   "reserva_alias": false,
+   "dos_duenos": false
+  }
+ ],
+ "coste_us": {
+  "stat_destino_que_existe": 34.2,
+  "stat_destino_que_no_existe": 21.9,
+  "n": 20000
+ },
+ "R21": {
+  "antes": [],
+  "despues": [
+   "duro.webp",
+   "real",
+   "sim.webp",
+   "union"
+  ]
+ }
+}

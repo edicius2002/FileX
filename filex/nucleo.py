@@ -15,15 +15,12 @@ hasta que el contrato la ha juzgado.
 
 from __future__ import annotations
 
-import hashlib
 import os
 import sys
-import tempfile
 import threading
-import time
 from dataclasses import dataclass, field
 
-from . import contrato, formatos, invocacion, motores as _motores
+from . import cerrojo, contrato, formatos, invocacion, motores as _motores
 from .confinamiento import Confinamiento, Denegado, nombre_seguro
 from .grafo import Arista, Camino, Decision, Grafo
 from .trabajo import DirectorioDeTrabajo
@@ -88,32 +85,37 @@ def _pedido_intermedio(pedido: dict) -> dict:
 # GPU: un lock excluye a quien lo toma. La mitad que cierra el caso ajeno es la
 # segunda.
 #
-# Lo que este cerrojo **NO** cubre está en `bench/cerrojo-de-maquina.md` §6, y
-# lo más importante es que **`%TEMP%` es POR USUARIO**: dos usuarios de Windows
-# distintos, o el `/tmp` de la VM de WSL2, tendrían candados distintos.
+# **Y «de máquina» era todavía un título prestado. CERRADO el 27/08 (P,
+# `bench/cerrojo-unico.md`)**, con las cuarenta líneas mudadas a
+# `filex/cerrojo.py` —que es donde tienen que estar, porque el mismo primitivo
+# lo piden otros dos consumidores— y con las dos mitades que faltaban:
+#
+#   * **La exclusión ahora cruza de usuario**, con un mutex con nombre en
+#     `Global\`, que **sí se puede crear en esta máquina desde un token sin
+#     elevar** —MEDIDO, y refuta el pendiente 1 de N-b—. Con descriptor de
+#     seguridad **explícito**: por defecto el objeto es global en el nombre y de
+#     usuario en el acceso.
+#   * **La identidad del destino ya no es solo léxica.** `realpath` del
+#     directorio cerró el nombre corto 8.3, pero un **enlace duro** al mismo
+#     fichero seguía dando **DOS DUEÑOS** (MEDIDO, `sonda_enlaces.log`), y un
+#     enlace duro no tiene «destino» que resolver: hace falta la identidad de
+#     NTFS.
+#
+# Lo que este cerrojo **NO** cubre sigue en `bench/cerrojo-de-maquina.md` §6 y
+# en `bench/cerrojo-unico.md` §6. Lo primero: **no cruza a la VM de WSL2**, y el
+# motivo que se daba era falso — el fichero SÍ se ve desde `/mnt/c`; lo que no
+# viaja es el candado (MEDIDO en las dos direcciones, con control positivo).
 _DESTINOS_EN_CURSO: set[str] = set()
 _CERROJO_DESTINOS = threading.Lock()
 
-#: Descriptores del candado de fichero, por clave de destino. Solo se tocan con
+#: Los candados vivos, por clave PRINCIPAL (la léxica, que es la estable entre
+#: reservar y soltar). Cada valor es `(claves, candados)`: se sueltan **las que
+#: se tomaron**, no las que se vuelvan a calcular. Solo se tocan con
 #: `_CERROJO_DESTINOS` cogido.
-_FDS_DESTINO: dict[str, int] = {}
+_RESERVAS: dict[str, tuple[list[str], list]] = {}
 
 _ES_WINDOWS = sys.platform == "win32"
 
-#: El byte que se bloquea, MUY lejos del principio del fichero: así los
-#: metadatos (quién lo tiene, desde cuándo, qué ruta) **siguen siendo legibles
-#: desde otro proceso** mientras el candado está tomado. MEDIDO
-#: (`bench/salidas-cerrojo/logs/sonda_primitivos.log`, paso 2).
-_OFFSET_CERROJO = 1 << 30
-
-#: Qué se declara cuando la infraestructura del candado no está disponible.
-#: Degradar EN SILENCIO es el fallo de la trampa 13 (`onnxruntime` cayendo a
-#: CPU sin un error): si el candado de máquina no se puede tomar, la conversión
-#: sigue con el cerrojo de proceso **y lo dice en el aviso**.
-_AVISO_SIN_CERROJO = ("cerrojo de máquina no disponible ({}): la exclusión es "
-                      "solo de proceso")
-
-_dir_cerrojos_cache: str | None = None
 _aviso_cerrojo: str = ""
 
 
@@ -129,13 +131,7 @@ def _modo_cerrojo() -> str:
 
 
 def _dir_cerrojos() -> str:
-    global _dir_cerrojos_cache
-    if _dir_cerrojos_cache is None:
-        d = os.environ.get("FILEX_CERROJO_DIR") or os.path.join(
-            tempfile.gettempdir(), "filex-destinos")
-        os.makedirs(d, exist_ok=True)
-        _dir_cerrojos_cache = d
-    return _dir_cerrojos_cache
+    return cerrojo.directorio()
 
 
 def _clave_destino(ruta: str) -> str:
@@ -167,117 +163,102 @@ def _clave_destino(ruta: str) -> str:
 
 
 def _fichero_cerrojo(clave: str) -> str:
-    # El nombre es un resumen, no la ruta: una ruta de 200 caracteres no cabe
-    # como nombre de fichero, y además el directorio de candados es común a
-    # todos los destinos, así que no debe filtrar a qué ficheros ajenos está
-    # accediendo otro usuario del mismo `%TEMP%`.
-    h = hashlib.sha256(clave.encode("utf-8", "surrogatepass")).hexdigest()[:32]
-    return os.path.join(_dir_cerrojos(), h + ".lock")
+    return cerrojo.fichero(clave)
 
 
-def _bloquear_fd(fd: int) -> None:
-    """Candado de rango de bytes, no bloqueante. Lo suelta el SISTEMA.
+def _identidad_destino(ruta: str) -> str | None:
+    """La clave que un ENLACE no puede esquivar, o `None` si no hay fichero.
 
-    Esa es la razón de elegirlo frente a un `O_CREAT|O_EXCL`: MEDIDO
-    (`sonda_primitivos.log`), matar al dueño con `taskkill /F` —que no ejecuta
-    ningún `finally`— deja el candado **libre en 22,1 µs**, mientras que un
-    `O_EXCL` deja un huérfano para siempre y obliga a un censo de PID que en
-    esta máquina ya se sabe que no se puede hacer bien (trampa 31).
+    Es el pendiente 4 de N-b, reproducido y cerrado — MEDIDO
+    (`bench/salidas-cerrojo-unico/logs/sonda_enlaces.log`). Con la clave léxica
+    a secas, sobre el MISMO fichero:
+
+        enlace duro (mklink /H)       misma clave: False  -> DOS DUEÑOS
+        enlace simbólico (mklink)     misma clave: False  -> DOS DUEÑOS
+        unión de directorio (/J)      misma clave: True   -> ya lo cerró N-b
+
+    **Y `realpath` de la ruta entera no habría bastado**, que es lo que la hacía
+    parecer la respuesta obvia: un enlace **duro** no tiene destino que
+    resolver — los dos nombres son igual de reales, y `realpath` devuelve cada
+    uno tal cual. Lo único que los iguala es el identificador de fichero de
+    NTFS, que `os.stat` ya trae: `st_dev` + `st_ino` coincidieron en los tres
+    alias.
+
+    **Solo se puede consultar si el fichero EXISTE**, y por eso esta clave es
+    *añadida* y no sustituye a la léxica: en el caso normal el destino todavía
+    no está. Cuesta 34,2 µs cuando existe y 21,9 cuando no.
     """
-    if _ES_WINDOWS:
-        import msvcrt
-
-        os.lseek(fd, _OFFSET_CERROJO, os.SEEK_SET)
-        msvcrt.locking(fd, msvcrt.LK_NBLCK, 1)
-    else:
-        import fcntl
-
-        fcntl.flock(fd, fcntl.LOCK_EX | fcntl.LOCK_NB)
-
-
-def _tomar_candado(clave: str) -> tuple[int | None, str]:
-    """`(fd, aviso)`. `fd is None` = lo tiene otro proceso. `aviso` = degradado."""
+    # `FILEX_CERROJO_IDENTIDAD=0` la apaga, por el mismo motivo que
+    # `FILEX_CERROJO_DESTINO`: medir el antes y el después en la misma tanda, y
+    # que la prueba de b4 pueda fallar por el fallo que dice cubrir.
+    if (os.environ.get("FILEX_CERROJO_IDENTIDAD") or "1").strip() == "0":
+        return None
     try:
-        ruta_lock = _fichero_cerrojo(clave)
-        fd = os.open(ruta_lock, os.O_RDWR | os.O_CREAT, 0o600)
-    except OSError as e:
-        return -1, _AVISO_SIN_CERROJO.format(e.__class__.__name__)
-    try:
-        _bloquear_fd(fd)
+        st = os.stat(ruta)
     except OSError:
-        os.close(fd)
-        return None, ""
-    try:
-        os.ftruncate(fd, 0)
-        os.lseek(fd, 0, os.SEEK_SET)
-        os.write(fd, f"{os.getpid()}\t{int(time.time())}\t{clave}\n".encode(
-            "utf-8", "surrogatepass"))
-    except OSError:
-        pass  # los metadatos son para el humano; la exclusión ya está tomada
-    return fd, ""
+        return None
+    if not st.st_ino:
+        return None                # sistemas de ficheros sin identidad estable
+    return f"id:{st.st_dev}:{st.st_ino}"
 
 
-def _soltar_candado(fd: int, clave: str) -> None:
-    if fd < 0:
-        return
-    try:
-        if _ES_WINDOWS:
-            import msvcrt
-
-            os.lseek(fd, _OFFSET_CERROJO, os.SEEK_SET)
-            msvcrt.locking(fd, msvcrt.LK_UNLCK, 1)
-        else:
-            import fcntl
-
-            fcntl.flock(fd, fcntl.LOCK_UN)
-    except OSError:
-        pass
-    try:
-        os.close(fd)
-    except OSError:
-        pass
-    if _ES_WINDOWS:
-        # Barrer el fichero para que `%TEMP%/filex-destinos` no crezca sin
-        # límite. **Solo en Windows, y no es pereza:** aquí un fichero abierto
-        # por cualquiera no se puede borrar (MEDIDO, `sonda_primitivos.log`
-        # paso 2), así que un borrado que TIENE ÉXITO demuestra que nadie lo
-        # tenía. En POSIX el borrado siempre funciona y abriría la carrera
-        # clásica de «borro el candado de otro», así que allí el fichero se
-        # queda.
-        try:
-            os.remove(_fichero_cerrojo(clave))
-        except OSError:
-            pass
+def _claves_destino(ruta: str) -> list[str]:
+    """La léxica siempre; la de identidad **además**, si hay algo que mirar."""
+    claves = [_clave_destino(ruta)]
+    ident = _identidad_destino(ruta)
+    if ident is not None:
+        claves.append(ident)
+    return claves
 
 
 def _reservar_destino(ruta: str) -> bool:
     """Nadie más —ni en este proceso ni en otro— puede estar escribiendo aquí."""
     global _aviso_cerrojo
-    clave = _clave_destino(ruta)
+    claves = _claves_destino(ruta)
+    principal = claves[0]
+    # Entre hilos, primero: es un `set` en memoria y corta sin tocar el disco.
     with _CERROJO_DESTINOS:
-        if clave in _DESTINOS_EN_CURSO:
+        if any(c in _DESTINOS_EN_CURSO for c in claves):
             return False
-        _DESTINOS_EN_CURSO.add(clave)
+        _DESTINOS_EN_CURSO.update(claves)
     if _modo_cerrojo() != "maquina":
-        return True
-    fd, aviso = _tomar_candado(clave)
-    if fd is None:
         with _CERROJO_DESTINOS:
-            _DESTINOS_EN_CURSO.discard(clave)
-        return False
-    _aviso_cerrojo = aviso
+            _RESERVAS[principal] = (claves, [])
+        return True
+
+    tomados: list = []
+    for clave in claves:
+        c = cerrojo.Candado(clave, metadatos=principal)
+        if not c.tomar():
+            # **Se sueltan los que ya se tenían.** Tomar dos candados es tomar
+            # dos candados: sin esta vuelta atrás, un rechazo por la segunda
+            # clave dejaría la primera bloqueada hasta que muriese el proceso.
+            for t in tomados:
+                t.soltar()
+            with _CERROJO_DESTINOS:
+                _DESTINOS_EN_CURSO.difference_update(claves)
+            return False
+        if c.aviso:
+            _aviso_cerrojo = c.aviso
+        tomados.append(c)
     with _CERROJO_DESTINOS:
-        _FDS_DESTINO[clave] = fd
+        _RESERVAS[principal] = (claves, tomados)
     return True
 
 
 def _soltar_destino(ruta: str) -> None:
-    clave = _clave_destino(ruta)
+    # Se sueltan **las claves que se reservaron**, no las que salgan de volver a
+    # mirar el disco: entre reservar y soltar el destino pasa de no existir a
+    # existir, así que la clave de identidad **no está en la reserva y sí en el
+    # recálculo**. Recalcular dejaría el candado tomado para siempre — que es
+    # exactamente el riesgo por el que N-b no resolvió la ruta entera, y aquí
+    # se evita guardando en vez de deduciendo.
+    principal = _clave_destino(ruta)
     with _CERROJO_DESTINOS:
-        _DESTINOS_EN_CURSO.discard(clave)
-        fd = _FDS_DESTINO.pop(clave, None)
-    if fd is not None:
-        _soltar_candado(fd, clave)
+        claves, candados = _RESERVAS.pop(principal, ([principal], []))
+        _DESTINOS_EN_CURSO.difference_update(claves)
+    for c in candados:
+        c.soltar()
 
 
 def destino_ocupado_por_un_tercero(ruta: str) -> bool:

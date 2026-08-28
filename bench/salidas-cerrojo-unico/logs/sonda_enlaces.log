@@ -1,0 +1,24 @@
+desechable: C:\Users\krato\AppData\Local\Temp\filex-enlaces-6knq2hxi
+real : C:\Users\krato\AppData\Local\Temp\filex-enlaces-6knq2hxi\real\salida.webp
+clave: c:\users\krato\appdata\local\temp\filex-enlaces-6knq2hxi\real\salida.webp
+ident: (1105906800, 211387707509988680)
+-- enlace duro (mklink /H)
+   clave alias  : c:\users\krato\appdata\local\temp\filex-enlaces-6knq2hxi\duro.webp
+   MISMA CLAVE (lexica) : False
+   MISMA IDENTIDAD NTFS : True  (1105906800, 211387707509988680)
+   reserva real=True alias=True  -> DOS DUENOS: True
+-- enlace simbolico (mklink)
+   clave alias  : c:\users\krato\appdata\local\temp\filex-enlaces-6knq2hxi\sim.webp
+   MISMA CLAVE (lexica) : False
+   MISMA IDENTIDAD NTFS : True  (1105906800, 211387707509988680)
+   reserva real=True alias=True  -> DOS DUENOS: True
+-- union de directorio (mklink /J)
+   clave alias  : c:\users\krato\appdata\local\temp\filex-enlaces-6knq2hxi\real\salida.webp
+   MISMA CLAVE (lexica) : True
+   MISMA IDENTIDAD NTFS : True  (1105906800, 211387707509988680)
+   reserva real=True alias=False  -> DOS DUENOS: False
+== 4. coste de la identidad NTFS (os.stat) ==
+  os.stat sobre destino que existe   : 34.2 us
+  os.stat sobre destino que NO existe: 21.9 us  (el caso normal: el destino aun no esta)
+== R21: antes=[]  despues=['duro.webp', 'real', 'sim.webp', 'union'] ==
+desechable borrado: True
