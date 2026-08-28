@@ -1,0 +1,79 @@
+{
+ "filas": [
+  {
+   "destino": "pict",
+   "rc": 0,
+   "bytes": 145028,
+   "firma_real": "pict",
+   "punto1_estado": "evaluado",
+   "en_EXT_A_FIRMAS": true,
+   "en_EXT_SIN_FIRMA": false,
+   "b0": 0,
+   "b1": 0,
+   "regla_ff_ex": false,
+   "bits_capa": 0,
+   "marcador_522": "001102ff0c00",
+   "marcador_2048": "81038103810381",
+   "primeros_512_todo_cero": true
+  },
+  {
+   "destino": "pct",
+   "rc": 0,
+   "bytes": 145028,
+   "firma_real": "pict",
+   "punto1_estado": "evaluado",
+   "en_EXT_A_FIRMAS": true,
+   "en_EXT_SIN_FIRMA": false,
+   "b0": 0,
+   "b1": 0,
+   "regla_ff_ex": false,
+   "bits_capa": 0,
+   "marcador_522": "001102ff0c00",
+   "marcador_2048": "81038103810381",
+   "primeros_512_todo_cero": true
+  },
+  {
+   "destino": "pcd",
+   "rc": 0,
+   "bytes": 788480,
+   "firma_real": "pcd",
+   "punto1_estado": "evaluado",
+   "en_EXT_A_FIRMAS": true,
+   "en_EXT_SIN_FIRMA": false,
+   "b0": 255,
+   "b1": 255,
+   "regla_ff_ex": true,
+   "bits_capa": 6,
+   "marcador_522": "000000000000",
+   "marcador_2048": "5043445f495049",
+   "primeros_512_todo_cero": false
+  },
+  {
+   "destino": "pcds",
+   "rc": 0,
+   "bytes": 788480,
+   "firma_real": "pcd",
+   "punto1_estado": "evaluado",
+   "en_EXT_A_FIRMAS": true,
+   "en_EXT_SIN_FIRMA": false,
+   "b0": 255,
+   "b1": 255,
+   "regla_ff_ex": true,
+   "bits_capa": 6,
+   "marcador_522": "000000000000",
+   "marcador_2048": "5043445f495049",
+   "primeros_512_todo_cero": false
+  }
+ ],
+ "contrato_pcd": {
+  "veredicto": "ok_parcial",
+  "punto1": "evaluado",
+  "hallazgos": [
+   [
+    "N9",
+    "informativo",
+    "el fichero declarado lleva el 100.0 % de los bytes escritos (788480 de 788480 B)"
+   ]
+  ]
+ }
+}

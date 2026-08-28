@@ -1,0 +1,158 @@
+# Regeneracion de las 53 salidas del patron oro
+raiz          : D:\Work\research\FileX\.claude\worktrees\agent-a52958ee3f209f964
+destino       : C:\Users\krato\AppData\Local\Temp\claude\D--Work-research-FileX\01b89f8d-cf1d-46e6-a799-e30ab2d26676\scratchpad\REF53
+filas         : 53
+timeout       : 300 s por orden
+NOTA timeout  : MEDIDO: la orden mas lenta de las 53 es el VP9 de video/tipico_mp4-to.webm, 27,1 y 30,1 s en dos tandas, es decir un 9-10 % del tope. Los 300 s valen para todas; no hace falta ninguna excepcion. (Cifras de tanda, no comparables entre tandas: CLAUDE.md §3.)
+GPU           : NO se usa (ffmpeg -threads 4 software, magick -limit thread 4)
+
+[ 1/53] audio/tipico_flac-to.mp3
+        rc=0       128.5 ms      193767 B (ref     193767)  -> exacta
+[ 2/53] audio/tipico_flac-to.opus
+        rc=0       109.6 ms      116918 B (ref     116918)  -> mismo_tamano
+[ 3/53] audio/tipico_flac-to.wav
+        rc=0        57.2 ms      705678 B (ref     705678)  -> exacta
+[ 4/53] audio/tipico_mp3-to.flac
+        rc=0        77.4 ms      398105 B (ref     398105)  -> exacta
+[ 5/53] audio/tipico_mp3-to.wav
+        rc=0        62.0 ms      705678 B (ref     705678)  -> exacta
+[ 6/53] audio/tipico_mp4-audio-copy.m4a
+        rc=0        62.5 ms      177427 B (ref     177427)  -> exacta
+[ 7/53] audio/tipico_mp4-audio.flac
+        rc=0        85.6 ms     1004509 B (ref    1004509)  -> exacta
+[ 8/53] audio/tipico_mp4-audio.mp3
+        rc=0       187.2 ms      482262 B (ref     482262)  -> exacta
+[ 9/53] audio/trivial_wav-to.flac
+        rc=0        72.3 ms      104318 B (ref     104318)  -> exacta
+[10/53] audio/trivial_wav-to.m4a
+        rc=0       610.8 ms      131397 B (ref     131397)  -> exacta
+[11/53] audio/trivial_wav-to.mp3
+        rc=0       121.1 ms      193767 B (ref     193767)  -> exacta
+[12/53] audio/trivial_wav-to.opus
+        rc=0       115.7 ms      116918 B (ref     116918)  -> mismo_tamano
+[13/53] datos/patologico_bom_csv-to-normalizado.csv
+        rc=0         2.2 ms          85 B (ref         85)  -> exacta
+[14/53] datos/patologico_bom_csv-to.json
+        rc=0         1.0 ms         174 B (ref        174)  -> exacta
+[15/53] datos/tipico_json-to.csv
+        rc=0         1.2 ms          14 B (ref         14)  -> exacta
+[16/53] imagen/16bit_tif-to-d16.png
+        rc=0      5284.7 ms    61849791 B (ref   61849791)  -> mismo_tamano
+[17/53] imagen/16bit_tif-to-d8.png
+        rc=0      4730.8 ms    18943503 B (ref   18943503)  -> mismo_tamano
+[18/53] imagen/16bit_tif-to-default.png
+        rc=0      5331.0 ms    61849791 B (ref   61849791)  -> mismo_tamano
+[19/53] imagen/16bit_tif-to.jpg
+        rc=0       484.8 ms     1571956 B (ref    1571956)  -> exacta
+[20/53] imagen/16bit_tif-to.webp
+        rc=0      1673.0 ms      647580 B (ref     647580)  -> exacta
+[21/53] imagen/alpha_png-to-flat.jpg
+        rc=0        34.1 ms        4389 B (ref       4389)  -> exacta
+[22/53] imagen/alpha_png-to.avif
+        rc=0       129.9 ms        1670 B (ref       1670)  -> exacta
+[23/53] imagen/alpha_png-to.jpg
+        rc=0        31.7 ms        4643 B (ref       4643)  -> exacta
+[24/53] imagen/alpha_png-to.png8.png
+        rc=0        43.4 ms        2780 B (ref       2780)  -> mismo_tamano
+[25/53] imagen/alpha_png-to.webp
+        rc=0        40.4 ms        2496 B (ref       2496)  -> exacta
+[26/53] imagen/tipico_jpg-to.png
+        rc=0       400.4 ms       32622 B (ref      32622)  -> mismo_tamano
+[27/53] imagen/tipico_png-to.avif
+        rc=0      1001.9 ms        1595 B (ref       1595)  -> exacta
+[28/53] imagen/tipico_png-to.jpg
+        rc=0       199.2 ms       40963 B (ref      40963)  -> exacta
+[29/53] imagen/tipico_png-to.webp
+        rc=0       374.6 ms       13516 B (ref      13516)  -> exacta
+[30/53] imagen/tipico_webp-to.jpg
+        rc=0       118.8 ms       42748 B (ref      42748)  -> exacta
+[31/53] imagen/tipico_webp-to.png
+        rc=0       376.1 ms       64232 B (ref      64232)  -> mismo_tamano
+[32/53] imagen/trivial_png-to-lossless.webp
+        rc=0        29.5 ms          42 B (ref         42)  -> exacta
+[33/53] imagen/trivial_png-to.jpg
+        rc=0        28.1 ms         312 B (ref        312)  -> exacta
+[34/53] imagen/trivial_png-to.webp
+        rc=0        29.0 ms          94 B (ref         94)  -> exacta
+[35/53] pdf/alpha_png-to.pdf
+        rc=0       145.8 ms        6111 B (ref       6111)  -> mismo_tamano
+[36/53] pdf/patologico_escaneado_pdf-to-p1.png
+        rc=0      1251.1 ms     1908177 B (ref    1908177)  -> exacta
+[37/53] pdf/tipico_jpg-to.pdf
+        rc=0       148.1 ms       89885 B (ref      89885)  -> mismo_tamano
+[38/53] pdf/tipico_png-to-150dpi.pdf
+        rc=0       271.7 ms       17187 B (ref      17187)  -> mismo_tamano
+[39/53] pdf/tipico_png-to.pdf
+        rc=0       262.5 ms       17153 B (ref      17153)  -> mismo_tamano
+[40/53] pdf/tipico_texto_pdf-to-gs.pdf
+        rc=0       222.5 ms        3280 B (ref       3291)  -> distinta
+[41/53] pdf/tipico_texto_pdf-to-p1.jpg
+        rc=0       230.8 ms       71269 B (ref      71269)  -> exacta
+[42/53] pdf/tipico_texto_pdf-to-p1.png
+        rc=0       287.8 ms       15804 B (ref      15804)  -> exacta
+[43/53] pdf/tipico_texto_pdf-to.tif
+        rc=0       208.4 ms     6533038 B (ref    6533038)  -> mismo_tamano
+[44/53] pdf/trivial_pdf-to-p1.png
+        rc=0       253.3 ms        4359 B (ref       4359)  -> exacta
+[45/53] video/2pistas_mkv-to-COPY.mp4
+        rc=0        80.4 ms     4085275 B (ref    4085275)  -> exacta
+[46/53] video/2pistas_mkv-to-DEFAULT.mp4
+        rc=0      1665.1 ms     3859442 B (ref    3859442)  -> exacta
+[47/53] video/2pistas_mkv-to-MAP0.mp4
+        rc=0      1834.7 ms     3966842 B (ref    3966842)  -> exacta
+[48/53] video/tipico_mp4-to.mkv
+        rc=0       121.6 ms    16235751 B (ref   16235751)  -> mismo_tamano
+[49/53] video/tipico_mp4-to.webm
+        rc=0     30749.8 ms    17014670 B (ref   17014670)  -> mismo_tamano
+[50/53] video/trivial_mp4-to-naive.gif
+        rc=0       161.2 ms      394712 B (ref     394712)  -> exacta
+[51/53] video/trivial_mp4-to-palette.gif
+        rc=0       807.8 ms      609893 B (ref     609893)  -> exacta
+[52/53] video/trivial_mp4-to.webm
+        rc=0      2201.3 ms      635908 B (ref     635908)  -> mismo_tamano
+[53/53] pdf/tipico_texto_rasterizado.pdf
+        rc=0       140.9 ms        8689 B (ref       8689)  -> mismo_tamano
+
+# Resumen
+  distinta       1
+  exacta         35
+  mismo_tamano   17
+  total          53 en 64.0 s
+
+# No exactas
+  audio/tipico_flac-to.opus                     mismo_tamano  rc=0    obt=116918 ref=116918
+      motivo: el flujo Ogg lleva un numero de serie aleatorio (88 bytes cambian entre dos ejecuciones)
+  audio/trivial_wav-to.opus                     mismo_tamano  rc=0    obt=116918 ref=116918
+      motivo: el flujo Ogg lleva un numero de serie aleatorio (88 bytes cambian entre dos ejecuciones)
+  imagen/16bit_tif-to-d16.png                   mismo_tamano  rc=0    obt=61849791 ref=61849791
+      motivo: magick estampa tEXt date:create / date:modify / date:timestamp con el reloj de pared (10 bytes cambian entre dos ejecuciones de la MISMA orden)
+  imagen/16bit_tif-to-d8.png                    mismo_tamano  rc=0    obt=18943503 ref=18943503
+      motivo: magick estampa tEXt date:create / date:modify / date:timestamp con el reloj de pared (10 bytes cambian entre dos ejecuciones de la MISMA orden)
+  imagen/16bit_tif-to-default.png               mismo_tamano  rc=0    obt=61849791 ref=61849791
+      motivo: magick estampa tEXt date:create / date:modify / date:timestamp con el reloj de pared (10 bytes cambian entre dos ejecuciones de la MISMA orden)
+  imagen/alpha_png-to.png8.png                  mismo_tamano  rc=0    obt=2780 ref=2780
+      motivo: magick estampa tEXt date:create / date:modify / date:timestamp con el reloj de pared (10 bytes cambian entre dos ejecuciones de la MISMA orden)
+  imagen/tipico_jpg-to.png                      mismo_tamano  rc=0    obt=32622 ref=32622
+      motivo: magick estampa tEXt date:create / date:modify / date:timestamp con el reloj de pared (10 bytes cambian entre dos ejecuciones de la MISMA orden)
+  imagen/tipico_webp-to.png                     mismo_tamano  rc=0    obt=64232 ref=64232
+      motivo: magick estampa tEXt date:create / date:modify / date:timestamp con el reloj de pared (10 bytes cambian entre dos ejecuciones de la MISMA orden)
+  pdf/alpha_png-to.pdf                          mismo_tamano  rc=0    obt=6111 ref=6111
+      motivo: magick estampa /CreationDate y /ModDate (trampa 22 de CLAUDE.md: SOURCE_DATE_EPOCH no lo evita)
+  pdf/tipico_jpg-to.pdf                         mismo_tamano  rc=0    obt=89885 ref=89885
+      motivo: magick estampa /CreationDate y /ModDate (trampa 22 de CLAUDE.md: SOURCE_DATE_EPOCH no lo evita)
+  pdf/tipico_png-to-150dpi.pdf                  mismo_tamano  rc=0    obt=17187 ref=17187
+      motivo: magick estampa /CreationDate y /ModDate (trampa 22 de CLAUDE.md: SOURCE_DATE_EPOCH no lo evita)
+  pdf/tipico_png-to.pdf                         mismo_tamano  rc=0    obt=17153 ref=17153
+      motivo: magick estampa /CreationDate y /ModDate (trampa 22 de CLAUDE.md: SOURCE_DATE_EPOCH no lo evita)
+  pdf/tipico_texto_pdf-to-gs.pdf                distinta      rc=0    obt=3280 ref=3291
+      motivo: Ghostscript pdfwrite estampa /CreationDate, /ModDate y un /ID aleatorio; ademas el tamano oscila (3 282 / 3 284 / 3 291 B) porque cambian los desplazamientos del xref
+  pdf/tipico_texto_pdf-to.tif                   mismo_tamano  rc=0    obt=6533038 ref=6533038
+      motivo: el TIFF de Ghostscript lleva la etiqueta DateTime; dos ejecuciones en el mismo segundo COINCIDEN y separadas en el tiempo NO (90048c48… en la tanda larga, c90e62b8… en el sondeo)
+  video/tipico_mp4-to.mkv                       mismo_tamano  rc=0    obt=16235751 ref=16235751
+      motivo: el muxer Matroska escribe un SegmentUID aleatorio y la fecha de segmento (60 bytes cambian entre dos ejecuciones)
+  video/tipico_mp4-to.webm                      mismo_tamano  rc=0    obt=17014670 ref=17014670
+      motivo: el muxer Matroska escribe un SegmentUID aleatorio y la fecha de segmento (60 bytes cambian entre dos ejecuciones)
+  video/trivial_mp4-to.webm                     mismo_tamano  rc=0    obt=635908 ref=635908
+      motivo: el muxer Matroska escribe un SegmentUID aleatorio y la fecha de segmento (60 bytes cambian entre dos ejecuciones)
+  pdf/tipico_texto_rasterizado.pdf              mismo_tamano  rc=0    obt=8689 ref=8689
+      motivo: magick estampa /CreationDate y /ModDate (trampa 22 de CLAUDE.md: SOURCE_DATE_EPOCH no lo evita)

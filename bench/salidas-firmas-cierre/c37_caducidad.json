@@ -1,0 +1,42 @@
+{
+ "motores": {
+  "doc_calibre": {
+   "n_aristas": 8,
+   "componentes_caducados": [
+    "contrato"
+   ],
+   "aristas_que_el_cambio_puede_mover": []
+  },
+  "doc_libreoffice": {
+   "n_aristas": 16,
+   "componentes_caducados": [
+    "contrato"
+   ],
+   "aristas_que_el_cambio_puede_mover": []
+  },
+  "doc_pandoc": {
+   "n_aristas": 16,
+   "componentes_caducados": [
+    "contrato"
+   ],
+   "aristas_que_el_cambio_puede_mover": []
+  },
+  "ffmpeg": {
+   "n_aristas": 70,
+   "componentes_caducados": [
+    "contrato"
+   ],
+   "aristas_que_el_cambio_puede_mover": []
+  },
+  "imagemagick": {
+   "n_aristas": 62,
+   "componentes_caducados": [
+    "contrato"
+   ],
+   "aristas_que_el_cambio_puede_mover": []
+  }
+ },
+ "aristas_tocables": [],
+ "n_aristas": 172,
+ "resumen": "172 aristas selladas caducan por el componente `contrato`; de ellas, 0 tienen como origen o destino uno de los cuatro formatos que el cambio toca (3ds, assjson, chunkedhtml, cip, dnxhd, dnxhr, dts, dzslides, fbxa, fig, ftxt, gpl, hpgl, mat, mpc, obj, objnomtl, pbrt, pcd, pcds, pct, pcx, pict, pov, rb, revealjs, s5, slideous, slidy, stl, vips, xfig)."
+}

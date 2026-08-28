@@ -1,0 +1,139 @@
+{
+ "desechable_antes": [],
+ "desechable_despues": [
+  "dnxhd_v1.dnxhd",
+  "dnxhd_v2.dnxhd",
+  "dts_a1.dts",
+  "dts_a2.dts",
+  "h261_v1.h261",
+  "h261_v2.h261",
+  "h263_v1.h263",
+  "h263_v2.h263",
+  "mlp_a1.mlp",
+  "mlp_a2.mlp",
+  "thd_a1.thd",
+  "thd_a2.thd"
+ ],
+ "resultados": [
+  {
+   "formato": "h261",
+   "orden": "-s 176x144 -r 15 -c:v h261",
+   "celdas": [
+    {
+     "semilla": "v1",
+     "rc": 0,
+     "bytes": 12076
+    },
+    {
+     "semilla": "v2",
+     "rc": 0,
+     "bytes": 3575
+    }
+   ],
+   "escrito": 2,
+   "prefijo_comun_n": 6,
+   "prefijo_comun_hex": "000100160001",
+   "prefijo_comun_ascii": ".\u0001.\u0016.\u0001"
+  },
+  {
+   "formato": "h263",
+   "orden": "-s 176x144 -r 15 -c:v h263",
+   "celdas": [
+    {
+     "semilla": "v1",
+     "rc": 0,
+     "bytes": 12687
+    },
+    {
+     "semilla": "v2",
+     "rc": 0,
+     "bytes": 3593
+    }
+   ],
+   "escrito": 2,
+   "prefijo_comun_n": 5,
+   "prefijo_comun_hex": "0000800208",
+   "prefijo_comun_ascii": "..\u0002\b"
+  },
+  {
+   "formato": "dnxhd",
+   "orden": "-s 1920x1080 -r 25 -c:v dnxhd -b:v 36M -pix_fmt yuv422p",
+   "celdas": [
+    {
+     "semilla": "v1",
+     "rc": 0,
+     "bytes": 2449408
+    },
+    {
+     "semilla": "v2",
+     "rc": 0,
+     "bytes": 2449408
+    }
+   ],
+   "escrito": 2,
+   "prefijo_comun_n": 64,
+   "prefijo_comun_hex": "00000280010180a00000000000000000000000000000000004380780000438000038880000000000000004e58000000000000000000000000000000000000000",
+   "prefijo_comun_ascii": "..\u0002\u0001\u0001 ................\u00048\u0007.\u00048..8.......\u0004å..................."
+  },
+  {
+   "formato": "dts",
+   "orden": "-c:a dca -strict -2 -ar 48000 -ac 2",
+   "celdas": [
+    {
+     "semilla": "a1",
+     "rc": 0,
+     "bytes": 88548
+    },
+    {
+     "semilla": "a2",
+     "rc": 0,
+     "bytes": 88548
+    }
+   ],
+   "escrito": 2,
+   "prefijo_comun_n": 20,
+   "prefijo_comun_hex": "7ffe8001fc3c75b0b6c001380003ef7fe006db1f",
+   "prefijo_comun_ascii": "þ\u0001ü<u°¶À\u00018.\u0003ïà\u0006Û\u001f"
+  },
+  {
+   "formato": "mlp",
+   "orden": "-c:a mlp -strict -2 -ar 48000 -ac 2",
+   "celdas": [
+    {
+     "semilla": "a1",
+     "rc": 0,
+     "bytes": 17370
+    },
+    {
+     "semilla": "a2",
+     "rc": 0,
+     "bytes": 152118
+    }
+   ],
+   "escrito": 2,
+   "prefijo_comun_n": 1,
+   "prefijo_comun_hex": "a0",
+   "prefijo_comun_ascii": " "
+  },
+  {
+   "formato": "thd",
+   "orden": "-c:a truehd -strict -2 -ar 48000 -ac 2",
+   "celdas": [
+    {
+     "semilla": "a1",
+     "rc": 0,
+     "bytes": 17370
+    },
+    {
+     "semilla": "a2",
+     "rc": 0,
+     "bytes": 152118
+    }
+   ],
+   "escrito": 2,
+   "prefijo_comun_n": 1,
+   "prefijo_comun_hex": "a0",
+   "prefijo_comun_ascii": " "
+  }
+ ]
+}

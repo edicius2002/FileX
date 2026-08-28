@@ -1,0 +1,33 @@
+sha256 antes  : 1812df12a01d1744bee5a39481a344def3fb97c80f75ae2744e63ec7f1e2062e
+sha256 despues: c023a9bc30b2457acfdccd0100b91b8dcfde0d8bbe23822626b90d5d9dc3bbd3
+celdas escritas: 857 -> 857   destinos: 288 -> 288
+celdas comparables: 857 | solo antes: 0 | solo despues: 0
+
+--- FALLOS QUE DESAPARECEN (los arreglos) ---
+  graphicsmagick   mpc          3 celdas   firma antes->despues: [('desconocido', 'mpc')]
+  graphicsmagick   pcx          2 celdas   firma antes->despues: [('desconocido', 'pcx')]
+  vips             mat          3 celdas   firma antes->despues: [('texto', 'texto')]
+  vips             vips         3 celdas   firma antes->despues: [('desconocido', 'vips')]
+
+--- FALLOS NUEVOS (serian regresion) ---
+  ninguno
+
+--- G6 QUE DESAPARECEN (serian regresion) ---
+  ninguno
+--- G6 NUEVOS ---
+  ninguno
+  G6 total: 48 -> 48 celdas, 16 -> 16 destinos
+
+--- FALLOS QUE SIGUEN (tienen que seguir: son capturas legitimas) ---
+  graphicsmagick   x            3 celdas
+  pandoc           rtf          3 celdas
+
+--- COBERTURA POR DESTINO ---
+  evaluado         158 -> 162  (+4)
+  familia           34 ->  42  (+8)
+  no_aplica         69 ->  73  (+4)
+  sin_vocabulario   27 ->  11  (-16)
+  cambios de estado por celda: 48 {('sin_vocabulario', 'familia'): 24, ('sin_vocabulario', 'no_aplica'): 12, ('sin_vocabulario', 'evaluado'): 12}
+
+--- SIGUEN EN sin_vocabulario (11 destinos) ---
+  calibre:pdb graphicsmagick:histogram graphicsmagick:info graphicsmagick:msl graphicsmagick:mvg graphicsmagick:null graphicsmagick:p7 graphicsmagick:pdb graphicsmagick:preview graphicsmagick:shtml graphicsmagick:vid

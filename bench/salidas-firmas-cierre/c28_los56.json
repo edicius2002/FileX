@@ -1,0 +1,336 @@
+{
+ "n": 56,
+ "reparto": {
+  "EINVAL (-22)": {
+   "n": 18,
+   "remedio": "una invocacion que cumpla las restricciones del formato"
+  },
+  "AVERROR_ENCODER_NOT_FOUND": {
+   "n": 11,
+   "remedio": "otro motor, u otra build de ffmpeg"
+  },
+  "metadato, no formato": {
+   "n": 8,
+   "remedio": "una ENTRADA con ese metadato dentro"
+  },
+  "sin clasificar": {
+   "n": 8,
+   "remedio": "mirarlo a mano"
+  },
+  "el motor no lo sabe escribir": {
+   "n": 4,
+   "remedio": "otro motor"
+  },
+  "AVERROR_EXPERIMENTAL": {
+   "n": 3,
+   "remedio": "una bandera: `-strict -2`"
+  },
+  "AVERROR_INVALIDDATA": {
+   "n": 2,
+   "remedio": "una entrada compatible"
+  },
+  "rc=0 y sin fichero": {
+   "n": 2,
+   "remedio": "tratar el destino como directorio"
+  }
+ },
+ "necesitan_FATE_o_un_motor_nuevo": [
+  "ac4",
+  "avs3",
+  "bit",
+  "c2",
+  "cavs",
+  "cvg",
+  "dzi",
+  "evc",
+  "lbc",
+  "nia",
+  "nii",
+  "oma",
+  "pml",
+  "rcv",
+  "vc1"
+ ],
+ "filas": [
+  {
+   "formato": "302",
+   "clase": "EINVAL (-22)",
+   "detalle": "el codificador ESTA y la invocacion no cumplia las restricciones del formato"
+  },
+  {
+   "formato": "8bim",
+   "clase": "metadato, no formato",
+   "detalle": "no es un destino de conversion: es un volcado de metadatos que solo existe si la ENTRADA lo trae"
+  },
+  {
+   "formato": "8bimtext",
+   "clase": "metadato, no formato",
+   "detalle": "no es un destino de conversion: es un volcado de metadatos que solo existe si la ENTRADA lo trae"
+  },
+  {
+   "formato": "8bimwtext",
+   "clase": "sin clasificar",
+   "detalle": "rc=1 "
+  },
+  {
+   "formato": "ac4",
+   "clase": "AVERROR_ENCODER_NOT_FOUND",
+   "detalle": "este ffmpeg NO trae el codificador"
+  },
+  {
+   "formato": "amv",
+   "clase": "EINVAL (-22)",
+   "detalle": "el codificador ESTA y la invocacion no cumplia las restricciones del formato"
+  },
+  {
+   "formato": "app1",
+   "clase": "metadato, no formato",
+   "detalle": "no es un destino de conversion: es un volcado de metadatos que solo existe si la ENTRADA lo trae"
+  },
+  {
+   "formato": "app1jpeg",
+   "clase": "sin clasificar",
+   "detalle": "rc=1 "
+  },
+  {
+   "formato": "avs2",
+   "clase": "EINVAL (-22)",
+   "detalle": "el codificador ESTA y la invocacion no cumplia las restricciones del formato"
+  },
+  {
+   "formato": "avs3",
+   "clase": "AVERROR_ENCODER_NOT_FOUND",
+   "detalle": "este ffmpeg NO trae el codificador"
+  },
+  {
+   "formato": "bit",
+   "clase": "AVERROR_ENCODER_NOT_FOUND",
+   "detalle": "este ffmpeg NO trae el codificador"
+  },
+  {
+   "formato": "c2",
+   "clase": "AVERROR_ENCODER_NOT_FOUND",
+   "detalle": "este ffmpeg NO trae el codificador"
+  },
+  {
+   "formato": "cavs",
+   "clase": "AVERROR_ENCODER_NOT_FOUND",
+   "detalle": "este ffmpeg NO trae el codificador"
+  },
+  {
+   "formato": "chk",
+   "clase": "EINVAL (-22)",
+   "detalle": "el codificador ESTA y la invocacion no cumplia las restricciones del formato"
+  },
+  {
+   "formato": "clip",
+   "clase": "sin clasificar",
+   "detalle": "imagen: rc=1 \\Temp\\claude\\D--Work-research-FileX\\0e6b04e1-651f-420c-a23c-4c6dd17f4821\\scratchpad\\f1\\tmp\\d0\\v140.clip' @ "
+  },
+  {
+   "formato": "cvg",
+   "clase": "AVERROR_ENCODER_NOT_FOUND",
+   "detalle": "este ffmpeg NO trae el codificador"
+  },
+  {
+   "formato": "dnxhd",
+   "clase": "EINVAL (-22)",
+   "detalle": "el codificador ESTA y la invocacion no cumplia las restricciones del formato"
+  },
+  {
+   "formato": "dnxhr",
+   "clase": "EINVAL (-22)",
+   "detalle": "el codificador ESTA y la invocacion no cumplia las restricciones del formato"
+  },
+  {
+   "formato": "dts",
+   "clase": "AVERROR_EXPERIMENTAL",
+   "detalle": "el codificador ESTA y pide `-strict -2`"
+  },
+  {
+   "formato": "dv",
+   "clase": "AVERROR_INVALIDDATA",
+   "detalle": "el codificador ESTA y la entrada no le vale"
+  },
+  {
+   "formato": "dzi",
+   "clase": "el motor no lo sabe escribir",
+   "detalle": "el propio motor lo dice"
+  },
+  {
+   "formato": "eml",
+   "clase": "rc=0 y sin fichero",
+   "detalle": "el motor devolvio 0 y no dejo el fichero que se le pidio (destino de varios ficheros o directorio)"
+  },
+  {
+   "formato": "evc",
+   "clase": "AVERROR_ENCODER_NOT_FOUND",
+   "detalle": "este ffmpeg NO trae el codificador"
+  },
+  {
+   "formato": "exif",
+   "clase": "metadato, no formato",
+   "detalle": "no es un destino de conversion: es un volcado de metadatos que solo existe si la ENTRADA lo trae"
+  },
+  {
+   "formato": "flm",
+   "clase": "AVERROR_INVALIDDATA",
+   "detalle": "el codificador ESTA y la entrada no le vale"
+  },
+  {
+   "formato": "gxf",
+   "clase": "EINVAL (-22)",
+   "detalle": "el codificador ESTA y la invocacion no cumplia las restricciones del formato"
+  },
+  {
+   "formato": "h261",
+   "clase": "EINVAL (-22)",
+   "detalle": "el codificador ESTA y la invocacion no cumplia las restricciones del formato"
+  },
+  {
+   "formato": "h263",
+   "clase": "EINVAL (-22)",
+   "detalle": "el codificador ESTA y la invocacion no cumplia las restricciones del formato"
+  },
+  {
+   "formato": "icc",
+   "clase": "metadato, no formato",
+   "detalle": "no es un destino de conversion: es un volcado de metadatos que solo existe si la ENTRADA lo trae"
+  },
+  {
+   "formato": "icm",
+   "clase": "metadato, no formato",
+   "detalle": "no es un destino de conversion: es un volcado de metadatos que solo existe si la ENTRADA lo trae"
+  },
+  {
+   "formato": "iptc",
+   "clase": "metadato, no formato",
+   "detalle": "no es un destino de conversion: es un volcado de metadatos que solo existe si la ENTRADA lo trae"
+  },
+  {
+   "formato": "iptctext",
+   "clase": "metadato, no formato",
+   "detalle": "no es un destino de conversion: es un volcado de metadatos que solo existe si la ENTRADA lo trae"
+  },
+  {
+   "formato": "iptcwtext",
+   "clase": "sin clasificar",
+   "detalle": "rc=1 "
+  },
+  {
+   "formato": "jpt",
+   "clase": "sin clasificar",
+   "detalle": "imagen: rc=1 al\\Temp\\claude\\D--Work-research-FileX\\0e6b04e1-651f-420c-a23c-4c6dd17f4821\\scratchpad\\f1\\tmp\\d0\\v567.jpt' @"
+  },
+  {
+   "formato": "js",
+   "clase": "EINVAL (-22)",
+   "detalle": "el codificador ESTA y la invocacion no cumplia las restricciones del formato"
+  },
+  {
+   "formato": "lbc",
+   "clase": "AVERROR_ENCODER_NOT_FOUND",
+   "detalle": "este ffmpeg NO trae el codificador"
+  },
+  {
+   "formato": "mask",
+   "clase": "sin clasificar",
+   "detalle": "imagen: rc=1 \\Temp\\claude\\D--Work-research-FileX\\0e6b04e1-651f-420c-a23c-4c6dd17f4821\\scratchpad\\f1\\tmp\\d0\\v609.mask' @ "
+  },
+  {
+   "formato": "matte",
+   "clase": "sin clasificar",
+   "detalle": "imagen: rc=1 mp\\claude\\D--Work-research-FileX\\0e6b04e1-651f-420c-a23c-4c6dd17f4821\\scratchpad\\f1\\tmp\\d0\\v623.matte' @ er"
+  },
+  {
+   "formato": "mlp",
+   "clase": "AVERROR_EXPERIMENTAL",
+   "detalle": "el codificador ESTA y pide `-strict -2`"
+  },
+  {
+   "formato": "mmf",
+   "clase": "EINVAL (-22)",
+   "detalle": "el codificador ESTA y la invocacion no cumplia las restricciones del formato"
+  },
+  {
+   "formato": "nia",
+   "clase": "el motor no lo sabe escribir",
+   "detalle": "el propio motor lo dice"
+  },
+  {
+   "formato": "nii",
+   "clase": "el motor no lo sabe escribir",
+   "detalle": "el propio motor lo dice"
+  },
+  {
+   "formato": "oeb",
+   "clase": "rc=0 y sin fichero",
+   "detalle": "el motor devolvio 0 y no dejo el fichero que se le pidio (destino de varios ficheros o directorio)"
+  },
+  {
+   "formato": "oma",
+   "clase": "AVERROR_ENCODER_NOT_FOUND",
+   "detalle": "este ffmpeg NO trae el codificador"
+  },
+  {
+   "formato": "pml",
+   "clase": "el motor no lo sabe escribir",
+   "detalle": "el propio motor lo dice"
+  },
+  {
+   "formato": "rco",
+   "clase": "EINVAL (-22)",
+   "detalle": "el codificador ESTA y la invocacion no cumplia las restricciones del formato"
+  },
+  {
+   "formato": "rcv",
+   "clase": "AVERROR_ENCODER_NOT_FOUND",
+   "detalle": "este ffmpeg NO trae el codificador"
+  },
+  {
+   "formato": "roq",
+   "clase": "EINVAL (-22)",
+   "detalle": "el codificador ESTA y la invocacion no cumplia las restricciones del formato"
+  },
+  {
+   "formato": "sup",
+   "clase": "EINVAL (-22)",
+   "detalle": "el codificador ESTA y la invocacion no cumplia las restricciones del formato"
+  },
+  {
+   "formato": "tco",
+   "clase": "EINVAL (-22)",
+   "detalle": "el codificador ESTA y la invocacion no cumplia las restricciones del formato"
+  },
+  {
+   "formato": "thd",
+   "clase": "AVERROR_EXPERIMENTAL",
+   "detalle": "el codificador ESTA y pide `-strict -2`"
+  },
+  {
+   "formato": "thumbnail",
+   "clase": "sin clasificar",
+   "detalle": "imagen: rc=1 Work-research-FileX\\0e6b04e1-651f-420c-a23c-4c6dd17f4821\\scratchpad\\f1\\tmp\\d0\\v1099.thumbnail' @ error/thum"
+  },
+  {
+   "formato": "tun",
+   "clase": "EINVAL (-22)",
+   "detalle": "el codificador ESTA y la invocacion no cumplia las restricciones del formato"
+  },
+  {
+   "formato": "vbn",
+   "clase": "EINVAL (-22)",
+   "detalle": "el codificador ESTA y la invocacion no cumplia las restricciones del formato"
+  },
+  {
+   "formato": "vc1",
+   "clase": "AVERROR_ENCODER_NOT_FOUND",
+   "detalle": "este ffmpeg NO trae el codificador"
+  },
+  {
+   "formato": "xface",
+   "clase": "EINVAL (-22)",
+   "detalle": "el codificador ESTA y la invocacion no cumplia las restricciones del formato"
+  }
+ ]
+}

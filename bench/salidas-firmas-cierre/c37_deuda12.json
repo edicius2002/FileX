@@ -1,0 +1,243 @@
+{
+ "pct": {
+  "n_muestras": 5,
+  "motores": [
+   "graphicsmagick",
+   "imagemagick"
+  ],
+  "tamanos": [
+   9996,
+   21986,
+   3236,
+   9996,
+   21986
+  ],
+  "prefijo_comun_n": 64,
+  "prefijo_comun_hex": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+  "prefijo_comun_ascii": "................................................................",
+  "cab0": "000000000000000000000000000000000000000000000000",
+  "firma_que_da_hoy": null,
+  "en_tabla": true,
+  "en_sin_firma": false
+ },
+ "pict": {
+  "n_muestras": 5,
+  "motores": [
+   "graphicsmagick",
+   "imagemagick"
+  ],
+  "tamanos": [
+   9996,
+   21986,
+   3236,
+   9996,
+   21986
+  ],
+  "prefijo_comun_n": 64,
+  "prefijo_comun_hex": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+  "prefijo_comun_ascii": "................................................................",
+  "cab0": "000000000000000000000000000000000000000000000000",
+  "firma_que_da_hoy": null,
+  "en_tabla": true,
+  "en_sin_firma": false
+ },
+ "pcd": {
+  "n_muestras": 5,
+  "motores": [
+   "graphicsmagick",
+   "imagemagick"
+  ],
+  "tamanos": [
+   788480,
+   788480,
+   788480,
+   788480,
+   788480
+  ],
+  "prefijo_comun_n": 64,
+  "prefijo_comun_hex": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0e0e0e0e0000000000000000010101010505050500000000000000000a0a0a0a",
+  "prefijo_comun_ascii": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ\u000e\u000e\u000e\u000e........\u0001\u0001\u0001\u0001\u0005\u0005\u0005\u0005........\n\n\n\n",
+  "cab0": "ffffffffffffffffffffffffffffffffffffffffffffffff",
+  "firma_que_da_hoy": null,
+  "en_tabla": true,
+  "en_sin_firma": false
+ },
+ "pcds": {
+  "n_muestras": 5,
+  "motores": [
+   "graphicsmagick",
+   "imagemagick"
+  ],
+  "tamanos": [
+   788480,
+   788480,
+   788480,
+   788480,
+   788480
+  ],
+  "prefijo_comun_n": 64,
+  "prefijo_comun_hex": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0e0e0e0e0000000000000000010101010505050500000000000000000a0a0a0a",
+  "prefijo_comun_ascii": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ\u000e\u000e\u000e\u000e........\u0001\u0001\u0001\u0001\u0005\u0005\u0005\u0005........\n\n\n\n",
+  "cab0": "ffffffffffffffffffffffffffffffffffffffffffffffff",
+  "firma_que_da_hoy": null,
+  "en_tabla": true,
+  "en_sin_firma": false
+ },
+ "3ds": {
+  "n_muestras": 2,
+  "motores": [
+   "assimp"
+  ],
+  "tamanos": [
+   565,
+   517
+  ],
+  "prefijo_comun_n": 2,
+  "prefijo_comun_hex": "4d4d",
+  "prefijo_comun_ascii": "MM",
+  "cab0": "4d4d350200003d3dc0010000ffaf9e00000000a018000000",
+  "firma_que_da_hoy": null,
+  "autovalidante": [
+   {
+    "motor": "assimp",
+    "bytes": 565,
+    "marca": "4d4d",
+    "longitud_declarada": 565,
+    "cuadra": true
+   },
+   {
+    "motor": "assimp",
+    "bytes": 517,
+    "marca": "4d4d",
+    "longitud_declarada": 517,
+    "cuadra": true
+   }
+  ],
+  "en_tabla": false,
+  "en_sin_firma": false
+ },
+ "a64": {
+  "n_muestras": 3,
+  "motores": [
+   "ffmpeg"
+  ],
+  "tamanos": [
+   4290,
+   13346,
+   8362
+  ],
+  "prefijo_comun_n": 2,
+  "prefijo_comun_hex": "0040",
+  "prefijo_comun_ascii": ".@",
+  "cab0": "0040d0c0d0c066a966a9ffffffffffffffffd0c0c0c0665a",
+  "firma_que_da_hoy": null,
+  "en_tabla": false,
+  "en_sin_firma": false
+ },
+ "apm": {
+  "n_muestras": 3,
+  "motores": [
+   "ffmpeg"
+  ],
+  "tamanos": [
+   11364,
+   22116,
+   15972
+  ],
+  "prefijo_comun_n": 4,
+  "prefijo_comun_hex": "00200100",
+  "prefijo_comun_ascii": ". \u0001.",
+  "cab0": "0020010044ac000088580100000404005000000076733132",
+  "firma_que_da_hoy": null,
+  "en_tabla": false,
+  "en_sin_firma": false
+ },
+ "aptx": {
+  "n_muestras": 3,
+  "motores": [
+   "ffmpeg"
+  ],
+  "tamanos": [
+   22528,
+   44032,
+   31744
+  ],
+  "prefijo_comun_n": 4,
+  "prefijo_comun_hex": "4bbf4bbf",
+  "prefijo_comun_ascii": "K¿K¿",
+  "cab0": "4bbf4bbfe000e000c07fc07ff87ff87f257f257f057f057f",
+  "firma_que_da_hoy": null,
+  "en_tabla": false,
+  "en_sin_firma": false
+ },
+ "aptxhd": {
+  "n_muestras": 3,
+  "motores": [
+   "ffmpeg"
+  ],
+  "tamanos": [
+   33792,
+   66048,
+   47616
+  ],
+  "prefijo_comun_n": 6,
+  "prefijo_comun_hex": "73beff73beff",
+  "prefijo_comun_ascii": "s¾ÿs¾ÿ",
+  "cab0": "73beff73befff80000f80000f001fff001ffff81ffff81ff",
+  "firma_que_da_hoy": null,
+  "en_tabla": false,
+  "en_sin_firma": false
+ },
+ "rso": {
+  "n_muestras": 3,
+  "motores": [
+   "ffmpeg"
+  ],
+  "tamanos": [
+   22536,
+   44040,
+   31752
+  ],
+  "prefijo_comun_n": 2,
+  "prefijo_comun_hex": "0100",
+  "prefijo_comun_ascii": "\u0001.",
+  "cab0": "01005800ac44000080818283848586878888898a8b8c8c8d",
+  "firma_que_da_hoy": null,
+  "en_tabla": false,
+  "en_sin_firma": false
+ },
+ "rb": {
+  "n_muestras": 2,
+  "motores": [
+   "calibre"
+  ],
+  "tamanos": [
+   674,
+   709
+  ],
+  "prefijo_comun_n": 28,
+  "prefijo_comun_hex": "b00cb00c02004e55564f000000000000000000000000000028010000",
+  "prefijo_comun_ascii": "°\f°\f\u0002.NUVO..............(\u0001..",
+  "cab0": "b00cb00c02004e55564f0000000000000000000000000000",
+  "firma_que_da_hoy": null,
+  "en_tabla": false,
+  "en_sin_firma": false
+ },
+ "fbxa": {
+  "n_muestras": 2,
+  "motores": [
+   "assimp"
+  ],
+  "tamanos": [
+   9157,
+   9157
+  ],
+  "prefijo_comun_n": 64,
+  "prefijo_comun_hex": "3b2046425820372e352e302070726f6a6563742066696c650a3b204372656174656420627920746865204f70656e20417373657420496d706f7274204c696272",
+  "prefijo_comun_ascii": "; FBX 7.5.0 project file\n; Created by the Open Asset Import Libr",
+  "cab0": "3b2046425820372e352e302070726f6a6563742066696c65",
+  "firma_que_da_hoy": null,
+  "en_tabla": false,
+  "en_sin_firma": false
+ }
+}
