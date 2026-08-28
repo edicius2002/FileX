@@ -1,0 +1,52 @@
+{
+ "F": [
+  {
+   "lado": "Windows",
+   "condicion_ok": true,
+   "marcador": "ABIERTO 65536",
+   "dir_borrado": false,
+   "fichero_borrado": false
+  },
+  {
+   "lado": "WSL2 (tenedor y borrado, los dos dentro)",
+   "condicion_ok": true,
+   "marcador": "ABIERTO 65536",
+   "rc_rm": 0,
+   "dir_borrado": true,
+   "fichero_borrado": true
+  }
+ ],
+ "G": [
+  {
+   "barrido": "ingenuo",
+   "condicion_ok": true,
+   "condicion": "el hijo vivo tenía su desechable con el fichero YA CERRADO",
+   "nada_abierto_dentro": true,
+   "desechable": "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n14-ventana\\filex-im8z0naq",
+   "sigue_el_directorio": false,
+   "sigue_el_fichero": false,
+   "lo_que_vio_el_hijo": "RESULTADO False False",
+   "parte": null
+  },
+  {
+   "barrido": "bueno",
+   "condicion_ok": true,
+   "condicion": "el hijo vivo tenía su desechable con el fichero YA CERRADO",
+   "nada_abierto_dentro": true,
+   "desechable": "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n14-ventana\\filex-43_5si9m",
+   "sigue_el_directorio": true,
+   "sigue_el_fichero": true,
+   "lo_que_vio_el_hijo": "RESULTADO True True",
+   "parte": {
+    "mirados": 1,
+    "vivos": 1,
+    "borrados": 0,
+    "bytes": 0,
+    "sin_candado_jovenes": 0,
+    "errores": 0,
+    "ms": 9.278,
+    "saltado": false
+   }
+  }
+ ]
+}

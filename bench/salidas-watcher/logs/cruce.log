@@ -1,0 +1,6 @@
+[tenedor=Windows] marcador='ABIERTO 42855' cond_ok=True
+[tenedor=WSL2] marcador='ABIERTO 42855' cond_ok=True
+{"tenedor": "Windows", "mira": "Windows", "condicion_ok": true, "primitivos": {"os.replace(p,p)": "ocupado", "_replace_err": "WinError 32", "open(p,'rb')": "libre"}}
+{"tenedor": "Windows", "mira": "WSL2", "condicion_ok": true, "primitivos": {"os.replace(p,p)": "libre", "open(p,'rb')": "libre", "fcntl.flock": "libre", "fcntl.lockf": "libre", "/proc/*/fd": "libre", "lsof -t": "libre", "fuser": "libre"}}
+{"tenedor": "WSL2", "mira": "WSL2", "condicion_ok": true, "primitivos": {"os.replace(p,p)": "libre", "open(p,'rb')": "libre", "fcntl.flock": "libre", "fcntl.lockf": "libre", "/proc/*/fd": "ocupado", "lsof -t": "ocupado", "fuser": "ocupado"}}
+{"tenedor": "WSL2", "mira": "Windows", "condicion_ok": true, "primitivos": {"os.replace(p,p)": "libre", "open(p,'rb')": "libre"}}

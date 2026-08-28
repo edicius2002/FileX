@@ -16,10 +16,18 @@ tienen que responder:
 
 1. **¿Cuándo está completo un fichero?** No se supone: se sondea. El watcher ve
    el fichero mientras se escribe, y convertir un PNG a medias produce basura
-   con `rc != 0` o, peor, con `rc == 0`. La respuesta implementada es
-   **estabilidad de `(tamaño, mtime_ns)` durante `N` sondeos consecutivos**,
-   con un segundo cerrojo opcional en Windows —`os.replace(p, p)` sobre el
-   propio fichero— cuya utilidad está MEDIDA en `bench/hito7-superficies.md` §3.
+   con `rc != 0` o, peor, con `rc == 0`. Son **tres** defensas, y ninguna basta
+   sola:
+
+   a. **estabilidad de `(tamaño, mtime_ns)`** durante `N` sondeos consecutivos;
+   b. **¿lo tiene alguien abierto?** — `os.replace(p, p)` en Windows y
+      `/proc/<pid>/fd` en POSIX, donde el hito 7 había dado por hecho que no
+      había equivalente **y sí lo hay** (N4);
+   c. **¿la cabecera declara más bytes de los que hay?** — para los formatos que
+      declaran su longitud (N5). Cuesta 0,07 ms y no recorre el fichero.
+
+   La (a) y la (b) están MEDIDAS en `bench/hito7-superficies.md` §3; la (b) en
+   POSIX y la (c) en `bench/watcher-y-desechables.md` §1 y §2.
 2. **¿Qué es «el mismo fichero»?** La identidad es
    `(ruta normalizada, tamaño, mtime_ns)`. Un renombrado es un fichero nuevo
    —tiene otro nombre y por tanto otra salida—, una reescritura en sitio
@@ -176,27 +184,186 @@ class Memoria:
             pass                                        # el disco no manda aquí
 
 
+#: Apaga el escaneo de `/proc` (N4). Existe por el mismo motivo que
+#: `FILEX_CERROJO_DESTINO`: poder medir el antes y el después **dentro de la
+#: misma tanda**, y que la prueba que falla sin el arreglo pueda fallar.
+_VAR_PROC = "FILEX_WATCHER_PROC"
+
+
+def _tenedores_posix(ruta: str) -> list[int] | None:
+    """Quién tiene ESTE inodo abierto, según `/proc/<pid>/fd`. `None` = no se pudo.
+
+    Es el equivalente POSIX que el hito 7 dio por inexistente sin mirar, y que
+    N4 ha **sondeado en ejecución** (R7), no deducido — `bench/watcher-y-desechables.md`
+    §1, WSL2 Ubuntu 6.18.33.2, cinco estados × siete primitivos:
+
+    * `os.replace(p,p)` y `open(p,'rb')` dan `libre` en **los cinco**: el
+      primitivo de Windows **no** existe aquí, y ahora eso está medido.
+    * `fcntl.flock` y `fcntl.lockf` son **cooperativos**: solo ven al escritor
+      que toma *el mismo* primitivo. Con control positivo (un escritor que sí
+      lo toma) `flock` dispara; sin él, no ve nada. Y en **tmpfs** `lockf` no ve
+      al que tiene el `flock` —son dos espacios de cerrojos distintos— mientras
+      que en **DrvFs** sí: la semántica del cerrojo cooperativo **depende del
+      sistema de ficheros**, otra razón para no deducirla.
+    * `/proc/*/fd`, `lsof` y `fuser` aciertan los cinco estados. Se elige
+      `/proc` porque cuesta **5,6 ms** frente a **110,6** de `lsof` (×19,7) y
+      **40,0** de `fuser`, y no depende de que estén instalados.
+
+    Se compara por **identidad** (`st_dev`+`st_ino`), no por el texto del
+    enlace: es la misma lección que `filex/nucleo.py::_identidad_destino`, donde
+    un enlace duro daba dos dueños del mismo fichero.
+
+    **Lo que NO cubre, MEDIDO y sin adornos:**
+
+    1. **Solo se ven los procesos cuyo `/proc/<pid>/fd` es legible**: 51 de 96
+       en la medida. Un escritor de **otro usuario** o de `root` es invisible, y
+       en Windows `os.replace(p,p)` los ve todos. La defensa POSIX es
+       estrictamente más débil, no equivalente.
+    2. **No cruza a Windows**, con control positivo en las dos direcciones: un
+       tenedor de Windows sale `libre` en los siete primitivos de WSL2, y un
+       tenedor de WSL2 sale `libre` en `os.replace(p,p)` de Windows.
+    3. **No distingue un LECTOR de un ESCRITOR**, exactamente igual que
+       `os.replace(p,p)` (trampa 33): un visor con el fichero abierto retrasa
+       la conversión. Se acepta a sabiendas, como allí.
+    """
+    if (os.environ.get(_VAR_PROC) or "1").strip() == "0":
+        return None
+    try:
+        st = os.stat(ruta)
+    except OSError:
+        return None
+    ident = (st.st_dev, st.st_ino)
+    if not st.st_ino:
+        return None                    # sistema de ficheros sin identidad
+    try:
+        entradas = os.listdir("/proc")
+    except OSError:
+        return None                    # no es Linux: no hay defensa que dar
+    yo = os.getpid()
+    tenedores: list[int] = []
+    for nombre in entradas:
+        if not nombre.isdigit():
+            continue
+        pid = int(nombre)
+        if pid == yo:
+            continue
+        d = "/proc/" + nombre + "/fd"
+        try:
+            fds = os.listdir(d)
+        except OSError:
+            # Otro usuario, o el proceso murió entre el `listdir` y esto. Es el
+            # límite 1: no se puede saber, y no se finge que sí.
+            continue
+        for f in fds:
+            try:
+                s = os.stat(os.path.join(d, f))
+            except OSError:
+                continue
+            if (s.st_dev, s.st_ino) == ident:
+                tenedores.append(pid)
+                break
+    return tenedores
+
+
 def _estable_en_disco(ruta: str) -> bool:
-    """Segundo cerrojo: ¿puede este proceso renombrar el fichero sobre sí mismo?
+    """Segundo cerrojo: ¿lo tiene alguien más abierto ahora mismo?
 
     En Windows, un fichero abierto por otro proceso sin `FILE_SHARE_DELETE`
     hace fallar el `MoveFileEx`, y `open(ruta, 'rb')` **no** falla: leer un
     fichero a medio escribir es perfectamente legal. Por eso el cerrojo es un
     renombrado y no una apertura.
 
-    En POSIX esto **siempre** da `True` —un `rename` sobre un fichero abierto es
-    legal—, así que ahí el único cerrojo real es la estabilidad de `stat`. Se
-    devuelve `True` para no inventar una defensa que no existe.
+    ~~En POSIX esto **siempre** da `True`.~~ **REFUTADO por N4**: el `rename`
+    sobre sí mismo efectivamente no sirve —está medido, 5 de 5 estados dan
+    `libre`—, pero eso no significa que no haya nada; significa que el
+    primitivo es otro. `/proc/<pid>/fd` responde bien los cinco estados por
+    **5,6 ms**. Los límites van en `_tenedores_posix`, y no son pequeños.
 
-    Su eficacia está MEDIDA, no supuesta: `bench/hito7-superficies.md` §3.2.
+    Su eficacia está MEDIDA, no supuesta: `bench/hito7-superficies.md` §3.2 y
+    `bench/watcher-y-desechables.md` §1.
     """
-    if os.name != "nt":
+    if os.name == "nt":
+        try:
+            os.replace(ruta, ruta)
+            return True
+        except OSError:
+            return False
+    tenedores = _tenedores_posix(ruta)
+    if tenedores is None:
+        # No se pudo mirar. Se devuelve `True` y NO se inventa una defensa: el
+        # watcher sigue teniendo la estabilidad de `stat`, que es lo que había.
         return True
+    return not tenedores
+
+
+#: Cuántos sondeos maduros seguidos puede un fichero salir «incompleto» por
+#: coherencia antes de que el watcher lo atienda igualmente. **No es un número
+#: de comodidad: sin él la defensa es una VETO PERPETUO** — un fichero truncado
+#: de verdad (el escritor murió a mitad) nunca vuelve a moverse, nunca se marca
+#: en la memoria, y el watcher lo re-sondea para siempre. Con paciencia, la
+#: defensa APLAZA; el veredicto lo sigue dando el contrato.
+PACIENCIA_POR_DEFECTO = 3
+
+
+def _coherencia_declarada(ruta: str) -> str:
+    """`completo` · `incompleto` · `sin_declaracion`. La tercera defensa (N5).
+
+    Responde al pendiente de `bench/hito7-superficies.md` §3.3 —*«repetir con un
+    formato sin suma de comprobación ni longitud declarada»*— y lo que se midió
+    (`bench/watcher-y-desechables.md` §2) reparte a los formatos en dos mundos,
+    no en uno:
+
+    * **Los que declaran su longitud** (RIFF/WAV, y PNG por su trozo `IEND`):
+      la cabecera dice cuántos bytes tiene que haber y el `stat` dice cuántos
+      hay. **17 de 17 estados truncados detectados, y 0 falsos positivos** sobre
+      los completos. Cuesta **0,07 ms** en un WAV de 705 KB porque lee 64 bytes
+      de cabecera y 12 de cola: **no recorre el fichero**.
+    * **Los que no declaran nada** (CSV, TSV, texto): devuelve
+      `sin_declaracion`, que **no es un aprobado**. Ahí no hay defensa que dar y
+      el residuo queda declarado en §2.4 del informe.
+
+    **El caso que obliga a la cláusula del relleno, MEDIDO:** el mismo `ffmpeg`
+    escribiendo un WAV **a una tubería** no puede volver atrás a rellenar el
+    tamaño y estampa `0xFFFFFFFF`. Sin tratarlo, esta defensa marcaría
+    `incompleto` un fichero **entero y correcto**. Con él, devuelve
+    `sin_declaracion`: un WAV de tubería no se puede comprobar así, y decirlo
+    es mejor que fingir que sí o que no.
+
+    **Lo que se midió y NO se implementa, a propósito:** la estructura de la
+    última línea de un CSV. Detecta 4 de 5 truncados, pero (a) cuesta **4,07 ms
+    en 142 KB** porque tiene que parsear el fichero entero para respetar las
+    comillas —es O(n), no O(1) como esta—, (b) **da dos falsos positivos
+    medidos** (un CSV completo sin salto de línea final, y —en su versión
+    ingenua por comas— el `patologico_bom.csv` del corpus, que tiene un salto
+    de línea DENTRO de un campo), y (c) **se le escapa justo el corte
+    interesante**: un CSV cortado en un fin de línea es indistinguible de uno
+    completo. Medir que algo no compensa también es un resultado.
+    """
     try:
-        os.replace(ruta, ruta)
-        return True
+        real = os.path.getsize(ruta)
+        with open(ruta, "rb") as fh:
+            cab = fh.read(64)
     except OSError:
-        return False
+        return "sin_declaracion"           # ya desapareció: no es asunto de aquí
+    if len(cab) < 12:
+        return "incompleto"
+
+    if cab[:4] == b"RIFF" and cab[8:12] in (b"WAVE", b"AVI ", b"WEBP"):
+        decl = int.from_bytes(cab[4:8], "little")
+        if decl in (0, 0xFFFFFFFF, 0x7FFFFFFF):
+            return "sin_declaracion"       # marcador de relleno de una tubería
+        return "incompleto" if real < decl + 8 else "completo"
+
+    if cab[:8] == b"\x89PNG\r\n\x1a\n":
+        try:
+            with open(ruta, "rb") as fh:
+                fh.seek(max(0, real - 12))
+                cola = fh.read(12)
+        except OSError:
+            return "sin_declaracion"
+        return "completo" if cola[4:8] == b"IEND" else "incompleto"
+
+    return "sin_declaracion"
 
 
 class Vigilante:
@@ -211,6 +378,8 @@ class Vigilante:
                  intervalo: float = INTERVALO_POR_DEFECTO,
                  estables: int = ESTABLES_POR_DEFECTO,
                  cerrojo: bool = True,
+                 coherencia: bool = True,
+                 paciencia: int = PACIENCIA_POR_DEFECTO,
                  parametros: dict | None = None,
                  timeout: float = TIMEOUT_WATCHER,
                  sobrescribir: bool = False,
@@ -225,6 +394,8 @@ class Vigilante:
         self.intervalo = intervalo
         self.estables = max(1, int(estables))
         self.cerrojo = cerrojo
+        self.coherencia = coherencia
+        self.paciencia = max(1, int(paciencia))
         self.parametros = dict(parametros or {})
         self.timeout = timeout
         self.sobrescribir = sobrescribir
@@ -233,10 +404,17 @@ class Vigilante:
         self.recursivo = recursivo
         self.conservar_extension = conservar_extension
         self._pendientes: dict[str, Visto] = {}
+        #: Cuántas veces seguidas ha salido `incompleto` cada fichero ya maduro.
+        self._impacientes: dict[str, int] = {}
         #: Contadores para la bitácora y para las pruebas. No son estadística:
         #: son la única forma de saber si el watcher está haciendo algo.
+        #: `aplazados` y `rendidos` son de N5 y **hay que mirar los dos**: un
+        #: `aplazados` alto con `rendidos` a cero es la defensa funcionando; con
+        #: `rendidos` alto es un fichero roto de verdad, que es otra cosa.
         self.contadores = {"vistos": 0, "maduros": 0, "atendidos": 0,
-                           "saltados": 0, "fallidos": 0}
+                           "saltados": 0, "fallidos": 0,
+                           "aplazados_incompletos": 0, "rendidos": 0,
+                           "aplazados_abiertos": 0}
 
     # ------------------------------------------------------------- arranque
 
@@ -314,10 +492,23 @@ class Vigilante:
             if self.cerrojo and not _estable_en_disco(h.ruta):
                 # El `stat` ya no se mueve pero el escritor sigue teniendo el
                 # fichero abierto. Se espera otro sondeo: no se descarta.
+                self.contadores["aplazados_abiertos"] += 1
                 continue
+            if self.coherencia and _coherencia_declarada(h.ruta) == "incompleto":
+                # Tercera defensa (N5): la cabecera declara más bytes de los que
+                # hay. Se APLAZA, no se veta — y la paciencia es lo que impide
+                # que un fichero truncado de verdad se quede fuera para siempre.
+                fallos = self._impacientes.get(clave, 0) + 1
+                self._impacientes[clave] = fallos
+                self.contadores["aplazados_incompletos"] += 1
+                if fallos < self.paciencia:
+                    continue
+                self.contadores["rendidos"] += 1
+            self._impacientes.pop(clave, None)
             listos.append(h)
         for muerto in [r for r in self._pendientes if r not in vivos]:
             del self._pendientes[muerto]
+            self._impacientes.pop(muerto, None)
         self.contadores["maduros"] += len(listos)
         return listos
 
@@ -465,7 +656,14 @@ def main(argv=None) -> int:
                    help="sondeos consecutivos con el mismo (tamaño, mtime) "
                         "antes de dar el fichero por completo")
     p.add_argument("--sin-cerrojo", action="store_true",
-                   help="no intentar el renombrado sobre sí mismo (Windows)")
+                   help="no comprobar si otro proceso tiene el fichero abierto "
+                        "(os.replace sobre sí mismo en Windows, /proc en POSIX)")
+    p.add_argument("--sin-coherencia", action="store_true",
+                   help="no comparar la longitud DECLARADA en la cabecera con "
+                        "los bytes que hay (WAV, PNG y demás RIFF)")
+    p.add_argument("--paciencia", type=int, default=PACIENCIA_POR_DEFECTO,
+                   help="sondeos maduros seguidos que puede salir 'incompleto' "
+                        "un fichero antes de atenderlo igualmente")
     p.add_argument("--recursivo", action="store_true")
     p.add_argument("--sobrescribir", action="store_true")
     p.add_argument("--conservar-extension", action="store_true",
@@ -498,7 +696,9 @@ def main(argv=None) -> int:
 
     v = Vigilante(fx, args.vigilar, args.salida, args.destino,
                   intervalo=args.intervalo, estables=args.estables,
-                  cerrojo=not args.sin_cerrojo, parametros=parametros,
+                  cerrojo=not args.sin_cerrojo,
+                  coherencia=not args.sin_coherencia, paciencia=args.paciencia,
+                  parametros=parametros,
                   timeout=args.timeout, sobrescribir=args.sobrescribir,
                   memoria=Memoria(args.memoria), recursivo=args.recursivo,
                   conservar_extension=args.conservar_extension)

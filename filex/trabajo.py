@@ -26,8 +26,29 @@ from __future__ import annotations
 import os
 import shutil
 import tempfile
+import time
+
+from . import cerrojo
 
 _VERIFICADOR = None
+
+#: El prefijo de los desechables. Es lo único que los identifica desde fuera, y
+#: por eso el barrido no puede tocar nada que no empiece por aquí.
+PREFIJO = "filex-"
+
+#: Cuántos segundos tiene que llevar ahí un desechable **sin candado** para que
+#: el barrido se atreva con él. Con candado la decisión es exacta y la edad no
+#: pinta nada; sin candado —un `filex` viejo, o uno cuyo candado se degradó— la
+#: edad es lo único que hay, y 24 h es holgado a propósito: el coste de dejar un
+#: directorio un día más es unos megas, y el de borrar el de otro es la trampa
+#: 26 con otro recurso.
+EDAD_SIN_CANDADO = 24 * 3600.0
+
+#: `FILEX_BARRER=0` lo apaga. Existe por el mismo motivo que
+#: `FILEX_CERROJO_DESTINO`: medir el antes y el después en la misma tanda.
+_VAR_BARRER = "FILEX_BARRER"
+
+_ya_barrido = False
 
 
 def _censar_dir(directorio: str) -> dict:
@@ -57,6 +78,155 @@ def _censar_dir(directorio: str) -> dict:
     return d
 
 
+def _nombre_candado(ruta: str) -> str:
+    """El nombre del candado que declara vivo a un desechable.
+
+    Se deriva de la ruta y **nada más**, para que quien encuentre el directorio
+    huérfano pueda calcularlo sin saber nada del que lo creó — en particular,
+    sin preguntar por su PID, que es lo que la trampa 31 declara imposible de
+    automatizar en esta máquina.
+    """
+    return "dir:" + os.path.normcase(os.path.abspath(ruta))
+
+
+def barrer_huerfanos(base: str | None = None, *,
+                     edad_sin_candado: float = EDAD_SIN_CANDADO,
+                     una_vez: bool = False) -> dict:
+    """N14 — borra los desechables que dejó un `filex` MUERTO. Y solo esos.
+
+    El fallo, MEDIDO de pasada por N-b (`bench/cerrojo-de-maquina.md` §4.1) y
+    cuantificado aquí (`bench/watcher-y-desechables.md` §3): `cerrar()` vive en
+    el `finally` de `convertir()`, y **un `taskkill /F` no ejecuta `finally`**.
+    Cada `filex` matado a mitad deja **un directorio por salto en vuelo** en
+    `%TEMP%`, con la salida a medias dentro. **El cerrojo se cura solo; R18 no.**
+
+    **Y el remedio esconde exactamente la trampa 26 con otro recurso:** un
+    barrido que borre el desechable de otro `filex` VIVO le quita el suelo a una
+    conversión en curso — con el agravante ya medido de que, si ese directorio
+    es el origen de un *bind mount*, Docker se queda respondiendo *«did not
+    receive an exit event»* (`bench/hito5-documental.md` §1). Así que el barrido
+    **tiene que saber si el dueño vive**, y lo sabe **sin preguntar por PID**:
+    cada desechable toma un `cerrojo.Candado` con el nombre de su propia ruta, y
+    el candado lo suelta el sistema operativo cuando el proceso muere.
+
+    Tres respuestas, y las tres son decisiones:
+
+    ================================  =========================================
+    Estado del desechable             Qué se hace
+    ================================  =========================================
+    candado TOMADO                    **nada**: el dueño está vivo
+    candado libre y su fichero existe  se borra: el dueño murió
+    sin fichero de candado             se borra **solo** si tiene más de
+                                      `edad_sin_candado` (un `filex` anterior a
+                                      esto, o uno cuyo candado se degradó)
+    ================================  =========================================
+
+    Devuelve el parte: `{mirados, vivos, borrados, bytes, sin_candado_jovenes,
+    errores, ms}`. Se devuelve y no se imprime: quien llama decide si lo enseña.
+    """
+    global _ya_barrido
+    t0 = time.perf_counter()
+    parte = {"mirados": 0, "vivos": 0, "borrados": 0, "bytes": 0,
+             "sin_candado_jovenes": 0, "errores": 0, "ms": 0.0,
+             "saltado": False}
+    if (os.environ.get(_VAR_BARRER) or "1").strip() == "0":
+        parte["saltado"] = True
+        return parte
+    if una_vez:
+        if _ya_barrido:
+            parte["saltado"] = True
+            return parte
+        _ya_barrido = True
+
+    base = base or tempfile.gettempdir()
+    ahora = time.time()
+    try:
+        entradas = list(os.scandir(base))
+    except OSError:
+        parte["errores"] += 1
+        parte["ms"] = round((time.perf_counter() - t0) * 1000, 3)
+        return parte
+
+    # **El directorio de candados EMPIEZA POR `filex-`**, así que el barrido lo
+    # veía como un desechable más — y lo habría borrado entero, llevándose por
+    # delante los candados de todos los destinos en curso de la máquina. Es la
+    # trampa 26 otra vez, cometida por el propio remedio, y salió en la primera
+    # celda de la sonda (`bench/watcher-y-desechables.md` §3.3). Se excluye por
+    # IDENTIDAD, no por nombre: quien mueva `FILEX_CERROJO_DIR` sigue protegido.
+    try:
+        prohibido = os.path.normcase(os.path.abspath(cerrojo.directorio()))
+    except OSError:
+        prohibido = ""
+
+    for e in entradas:
+        if not e.name.startswith(PREFIJO):
+            continue
+        if prohibido and os.path.normcase(os.path.abspath(e.path)) == prohibido:
+            continue
+        try:
+            if not e.is_dir(follow_symlinks=False):
+                continue
+        except OSError:
+            parte["errores"] += 1
+            continue
+        parte["mirados"] += 1
+        nombre = _nombre_candado(e.path)
+        # **El orden importa:** `esta_libre` toma y suelta el candado, y al
+        # hacerlo CREA el fichero. Preguntar por él después daría siempre `True`
+        # y el barrido perdería la distinción entre «murió su dueño» y «nunca
+        # tuvo candado» — que es justo la que decide si se aplica la edad.
+        hay_fichero = os.path.exists(cerrojo.fichero(nombre))
+        if not cerrojo.esta_libre(nombre):
+            parte["vivos"] += 1
+            continue
+        if not hay_fichero:
+            # No lo creó su dueño: lo acaba de crear `esta_libre`. Se deshace,
+            # o el barrido siguiente lo leería como «tenía candado y murió» y se
+            # saltaría la edad. En Windows falla si alguien lo tiene abierto,
+            # que es exactamente lo que hay que respetar.
+            try:
+                os.remove(cerrojo.fichero(nombre))
+            except OSError:
+                pass
+            try:
+                edad = ahora - os.stat(e.path).st_mtime
+            except OSError:
+                parte["errores"] += 1
+                continue
+            if edad < edad_sin_candado:
+                parte["sin_candado_jovenes"] += 1
+                continue
+        tam = _tamano_arbol(e.path)
+        shutil.rmtree(e.path, ignore_errors=True)
+        if os.path.exists(e.path):
+            parte["errores"] += 1
+            continue
+        parte["borrados"] += 1
+        parte["bytes"] += tam
+        # Y el fichero de candado del que se acaba de enterrar. Aquí SÍ es
+        # seguro también en POSIX —donde borrar el candado de otro sería una
+        # carrera— porque el nombre viene de un `mkdtemp` que no se repite:
+        # nadie va a volver a tomar el candado de un directorio que ya no está.
+        try:
+            os.remove(cerrojo.fichero(nombre))
+        except OSError:
+            pass
+
+    parte["ms"] = round((time.perf_counter() - t0) * 1000, 3)
+    return parte
+
+
+def _tamano_arbol(ruta: str) -> int:
+    total = 0
+    for raiz, _d, ficheros in os.walk(ruta):
+        for f in ficheros:
+            try:
+                total += os.stat(os.path.join(raiz, f)).st_size
+            except OSError:
+                pass
+    return total
+
+
 class DirectorioDeTrabajo:
     """Un directorio desechable por conversión, con censo de salida.
 
@@ -72,10 +242,18 @@ class DirectorioDeTrabajo:
     asumen que el motor escribe donde se le dice, y hay motores que no.
     """
 
-    def __init__(self, prefijo: str = "filex-") -> None:
+    def __init__(self, prefijo: str = PREFIJO) -> None:
         self.ruta = tempfile.mkdtemp(prefix=prefijo)
         self._censo_final: dict | None = None
         self._recogidos: list[str] = []
+        # N14: la señal de vida. No es exclusión —nadie más va a pedir ESTE
+        # `mkdtemp`, que es único por construcción—: es lo que le permite a
+        # `barrer_huerfanos` distinguir «el dueño murió» de «el dueño está
+        # convirtiendo ahora mismo», y lo hace **sin preguntar por PID**. Lo
+        # suelta el sistema operativo si nos matan, que es justo el caso.
+        self._vivo = cerrojo.Candado(_nombre_candado(self.ruta),
+                                     metadatos=self.ruta)
+        self._vivo.tomar()
 
     # ------------------------------------------------------------------ API
 
@@ -114,8 +292,22 @@ class DirectorioDeTrabajo:
 
     def cerrar(self) -> None:
         """Borra el directorio ENTERO. Lo que no se recogió, se pierde: es
-        exactamente lo que se quiere de un desechable."""
+        exactamente lo que se quiere de un desechable.
+
+        El candado de vida se suelta **después** del `rmtree`: si se soltara
+        antes, un barrido de otro proceso podría colarse entre las dos líneas y
+        borrar el directorio por debajo — que es el fallo que este candado
+        existe para impedir, cometido por su propio dueño.
+        """
         shutil.rmtree(self.ruta, ignore_errors=True)
+        try:
+            self._vivo.soltar()
+        except OSError:
+            pass
+        try:
+            os.remove(cerrojo.fichero(_nombre_candado(self.ruta)))
+        except OSError:
+            pass
 
     # -------------------------------------------------------------- contexto
 

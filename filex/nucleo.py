@@ -23,7 +23,7 @@ from dataclasses import dataclass, field
 from . import cerrojo, contrato, formatos, invocacion, motores as _motores
 from .confinamiento import Confinamiento, Denegado, nombre_seguro
 from .grafo import Arista, Camino, Decision, Grafo
-from .trabajo import DirectorioDeTrabajo
+from .trabajo import DirectorioDeTrabajo, barrer_huerfanos
 
 
 #: Las claves del pedido que deciden PÍXELES, y por tanto tienen que actuar en
@@ -340,6 +340,13 @@ class FileX:
     """
 
     def __init__(self, raices_lectura=None, raices_escritura=None) -> None:
+        # N14 — el barrido de desechables huérfanos, UNA vez por proceso y en el
+        # arranque. Va aquí y no en cada superficie por lo mismo que el cerrojo
+        # de destino: las cuatro tienen el agujero y se cierra en el sitio en el
+        # que las cuatro pasan. Es seguro porque sabe si el dueño vive
+        # (`filex/trabajo.py::barrer_huerfanos`); un barrido que no lo supiera
+        # sería la trampa 26 sobre otro recurso.
+        self.barrido = barrer_huerfanos(una_vez=True)
         self.motores = {m.nombre: m for m in _motores.sondear_todos()}
         self.grafo = Grafo()
         for m in self.motores.values():
