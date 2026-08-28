@@ -975,7 +975,18 @@ Detalle completo en `bench/sdk-mcp-capacidades.md` §3.6 y §5.2, y **la prueba 
 
 > **Y un contraste que hay que conocer antes de elegir el motor de OCR de esta arista — MEDIDO:** **el Tesseract 5.5.0 externo falla en `escaneado_d3` devolviendo un fichero de 0 BYTES, mientras el embebido en Ghostscript falla en el mismo documento ALUCINANDO al 165,8 %.** Mismo motor nominal, **dos modos de fallo opuestos según el envoltorio**; la diferencia tiene que estar en el preprocesado de cada uno. **Es material directo para la heurística de degradación severa: un motor que devuelve 0 bytes y otro que devuelve más texto que la referencia son la misma señal vista desde dos lados. PENDIENTE** de aislar la causa. *(Y `escaneado_d2` refuta la regla de ppp para Tesseract con n=1: **0,00 % a 150 ppp frente a 32,10 % a sus 100 nativos** — a este motor sobremuestrear le es obligatorio, no tolerable. Es la evidencia externa que sostiene el `k` por motor de §4.5.)*
 
-### Hito 2 — NVENC con sondeo y degradación
+### Hito 2 — NVENC con sondeo y degradación — **HECHO el 28/08/2026**
+
+> **Entregado por el agente H2** (`bench/hito2-nvenc.md`), con `filex/gpu.py`, `filex/motores.py` y `pruebas/test_hito2.py`. **Los dos primeros criterios se cumplen punta a punta por `FileX.convertir`, n=9:** `hevc_nvenc` sale por defecto en destino HEVC, y `av1_nvenc` se sondea, falla y **degrada a `libsvtav1` sin intervención** — el AV1 sale con sus dos pistas y lleva escrito dentro `filex.degradado_de=av1_nvenc rc=-542398533`.
+>
+> **El tercer criterio se reformula, y se dice por qué.** *«El desvío de bitrate queda registrado en los metadatos»* **no es implementable en una pasada**: el desvío no existe cuando se construye el `argv`. El fichero lleva **lo pedido**, y lo obtenido se deriva de él mismo. Y **no es una constante**: **+9,82 % a 8 Mbps y +24,59 % a 1 Mbps**.
+>
+> **Dos falsos negativos que habrían dejado el hito «hecho» y roto** (trampas 74 y 75): con `testsrc=size=64x64` los codificadores que **sí** funcionan devuelven `rc=-22` —es la **geometría**, mínimos 129×33 y 145×49—; y degradar el códec **no degrada sus banderas**: `libsvtav1` con `-maxrate` da 0 bytes.
+>
+> **Y la premisa de B6 queda REFUTADA** (trampa 76): `HUECOS.md` §4 declaraba el lote *«el único escenario donde el 8,39× decide algo»* y **el lote DILUYE** —×4,10 sobre 8 clips frente a **×7,68** sobre una conversión larga suelta—. La ganancia crece con la **duración**, no con el número de ficheros, y FileX solo añade 27,2 ms (+3,6 %) sobre el `ffmpeg` crudo.
+>
+> **Deuda declarada:** el contrato da `ok` al desvío de bitrate porque `verificador.py` **solo compara bitrate contra pistas de AUDIO** — no hay regla de vídeo (N24). Y el lock de GPU alrededor del *codificado* necesita una línea en `nucleo.py` que era de otro reparto: el parche y su coste (1 403,6 µs, 0,19 %) están en §6.5 del informe (N25).
+
 
 **Aceptación:** `hevc_nvenc` se usa por defecto cuando el destino es HEVC; `av1_nvenc` se sondea, falla, y degrada a `libsvtav1` **sin intervención**. El desvío de bitrate queda registrado en los metadatos de salida.
 
