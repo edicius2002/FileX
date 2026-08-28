@@ -1,0 +1,6 @@
+M1 os.rename sobre destino existente -> {'clase': 'FileExistsError', 'errno': 17, 'winerror': 183, 'texto': "[WinError 183] No se puede crear un archivo que ya existe: 'C:\\\\Users\\\\krato\\\\AppData\\\\Local\\\\Temp\\\\filex-ventana-mec-wlpylk2z\\\\m1_origen.bin' -> 'C:\\\\Users\\\\krato\\\\AppData\\\\Local\\\\Temp\\\\filex-ventana"}
+M1 shutil.move deja el destino en 1000 B (era 4014, el origen 1000)
+M2/M3 shutil_move: detección=ocupado resultado=PISÓ destino=13516 B err=None
+M2/M3 os_replace: detección=ocupado resultado=se negó destino=4014 B err=5
+M4 os.replace C: -> D:: falló 17 EXDEV=True
+M5 FILE_SHARE_NONE: asa=True tercero 0/12393 aberturas, os.replace propio -> {'clase': 'PermissionError', 'errno': 13, 'winerror': 5, 'texto': "[WinError 5] Acceso denegado: 'C:\\\\Users\\\\krato\\\\AppData\\\\Local\\\\Temp\\\\filex-ventana-mec-wlpylk2z\\\\m5\\\\origen.bin' -> 'C:\\\\Users\\\\krato\\\\AppData\\\\Local\\\\Temp\\\\filex-ventana-mec-wlpylk2z\\\\m5\\\\destino.b"}

@@ -1,0 +1,89 @@
+{
+ "cuando": "2026-08-28 07:23:35",
+ "python": "3.11.9",
+ "desechable": "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-ventana-mec-wlpylk2z",
+ "listado_antes": [],
+ "M1": {
+  "os_rename_sobre_existente": {
+   "clase": "FileExistsError",
+   "errno": 17,
+   "winerror": 183,
+   "texto": "[WinError 183] No se puede crear un archivo que ya existe: 'C:\\\\Users\\\\krato\\\\AppData\\\\Local\\\\Temp\\\\filex-ventana-mec-wlpylk2z\\\\m1_origen.bin' -> 'C:\\\\Users\\\\krato\\\\AppData\\\\Local\\\\Temp\\\\filex-ventana"
+  },
+  "shutil_move_hizo": "copy2 (el rename había fallado)",
+  "tam_destino_despues": 1000,
+  "origen_sigue": false
+ },
+ "shutil_move": {
+  "tercero_abrio": true,
+  "tam_del_tercero": 4014,
+  "deteccion_dice": "ocupado",
+  "deteccion_error": {
+   "clase": "PermissionError",
+   "errno": 13,
+   "winerror": 32,
+   "texto": "[WinError 32] El proceso no tiene acceso al archivo porque está siendo utilizado por otro proceso: 'C:\\\\Users\\\\krato\\\\AppData\\\\Local\\\\Temp\\\\filex-ventana-mec-wlpylk2z\\\\shutil_move\\\\destino.bin' -> 'C:"
+  },
+  "resultado": "PISÓ",
+  "tam_destino_despues": 13516
+ },
+ "os_replace": {
+  "tercero_abrio": true,
+  "tam_del_tercero": 4014,
+  "deteccion_dice": "ocupado",
+  "deteccion_error": {
+   "clase": "PermissionError",
+   "errno": 13,
+   "winerror": 32,
+   "texto": "[WinError 32] El proceso no tiene acceso al archivo porque está siendo utilizado por otro proceso: 'C:\\\\Users\\\\krato\\\\AppData\\\\Local\\\\Temp\\\\filex-ventana-mec-wlpylk2z\\\\os_replace\\\\destino.bin' -> 'C:\\"
+  },
+  "resultado": "se negó",
+  "error": {
+   "clase": "PermissionError",
+   "errno": 13,
+   "winerror": 5,
+   "texto": "[WinError 5] Acceso denegado: 'C:\\\\Users\\\\krato\\\\AppData\\\\Local\\\\Temp\\\\filex-ventana-mec-wlpylk2z\\\\os_replace\\\\origen.bin' -> 'C:\\\\Users\\\\krato\\\\AppData\\\\Local\\\\Temp\\\\filex-ventana-mec-wlpylk2z\\\\os_re"
+  },
+  "tam_destino_despues": 4014
+ },
+ "M4": {
+  "origen_unidad": "C:",
+  "destino_unidad": "D:",
+  "resultado": "falló",
+  "error": {
+   "clase": "OSError",
+   "errno": 18,
+   "winerror": 17,
+   "texto": "[WinError 17] El sistema no puede mover el archivo a otra unidad de disco: 'C:\\\\Users\\\\krato\\\\AppData\\\\Local\\\\Temp\\\\filex-ventana-mec-wlpylk2z\\\\m4_origen.bin' -> 'D:\\\\Work\\\\research\\\\FileX\\\\.claude\\\\w"
+  },
+  "es_EXDEV": true
+ },
+ "M5": {
+  "asa_conseguida": true,
+  "error_al_abrir": 0,
+  "tercero_intentos": 12393,
+  "tercero_aberturas": 0,
+  "tercero_errores": {
+   "PermissionError:None": 12393
+  },
+  "os_replace_con_mi_asa_abierta": {
+   "clase": "PermissionError",
+   "errno": 13,
+   "winerror": 5,
+   "texto": "[WinError 5] Acceso denegado: 'C:\\\\Users\\\\krato\\\\AppData\\\\Local\\\\Temp\\\\filex-ventana-mec-wlpylk2z\\\\m5\\\\origen.bin' -> 'C:\\\\Users\\\\krato\\\\AppData\\\\Local\\\\Temp\\\\filex-ventana-mec-wlpylk2z\\\\m5\\\\destino.b"
+  },
+  "shutil_move_con_mi_asa_abierta": {
+   "clase": "PermissionError",
+   "errno": 13,
+   "winerror": null,
+   "texto": "[Errno 13] Permission denied: 'C:\\\\Users\\\\krato\\\\AppData\\\\Local\\\\Temp\\\\filex-ventana-mec-wlpylk2z\\\\m5\\\\destino.bin'"
+  }
+ },
+ "listado_despues_del_desechable": [
+  "m1_destino.bin",
+  "m4_origen.bin",
+  "m5",
+  "os_replace",
+  "shutil_move"
+ ]
+}

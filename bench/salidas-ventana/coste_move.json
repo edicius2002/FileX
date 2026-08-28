@@ -1,0 +1,117 @@
+{
+ "cuando": "2026-08-28 07:50:22",
+ "n": 1500,
+ "cruza_volumen": true,
+ "volumen_base": "C:",
+ "volumen_otro": "D:",
+ "carga_B": 17530,
+ "testigos": {
+  "deriva_ini_ms": 16.7,
+  "deriva_fin_ms": 16.9,
+  "deriva": 1.01,
+  "proceso_ini_ms": 35.7,
+  "proceso_fin_ms": 28.9,
+  "limpia": true
+ },
+ "filas": [
+  {
+   "nombre": "1 os.replace  destino AUSENTE (mismo volumen)",
+   "n": 1500,
+   "mediana_us": 312.3,
+   "p10_us": 254.8,
+   "p90_us": 403.5,
+   "min_us": 200.0,
+   "max_us": 930478.4
+  },
+  {
+   "nombre": "2 os.replace  destino EXISTENTE (mismo volumen)",
+   "n": 1500,
+   "mediana_us": 382.0,
+   "p10_us": 322.8,
+   "p90_us": 486.9,
+   "min_us": 254.4,
+   "max_us": 23370.0
+  },
+  {
+   "nombre": "3 shutil.move destino AUSENTE (mismo volumen)",
+   "n": 1500,
+   "mediana_us": 365.6,
+   "p10_us": 293.4,
+   "p90_us": 509.6,
+   "min_us": 236.2,
+   "max_us": 40332.9
+  },
+  {
+   "nombre": "4 shutil.move destino EXISTENTE (mismo volumen)",
+   "n": 1500,
+   "mediana_us": 10041.1,
+   "p10_us": 8466.1,
+   "p90_us": 12158.6,
+   "min_us": 7630.7,
+   "max_us": 1175480.5
+  },
+  {
+   "nombre": "5 mover_a_destino cruzando volumen",
+   "n": 400,
+   "mediana_us": 9994.4,
+   "p10_us": 8635.1,
+   "p90_us": 11826.9,
+   "min_us": 7992.1,
+   "max_us": 37659.1
+  },
+  {
+   "nombre": "6 shutil.move     cruzando volumen",
+   "n": 400,
+   "mediana_us": 9282.1,
+   "p10_us": 8130.7,
+   "p90_us": 10725.8,
+   "min_us": 7617.1,
+   "max_us": 54514.4
+  },
+  {
+   "nombre": "7 mover_a_destino destino AUSENTE (mismo volumen)",
+   "n": 1500,
+   "mediana_us": 470.5,
+   "p10_us": 393.1,
+   "p90_us": 579.5,
+   "min_us": 343.2,
+   "max_us": 1986.0
+  },
+  {
+   "nombre": "8 mover_a_destino destino EXISTENTE (mismo volumen)",
+   "n": 1500,
+   "mediana_us": 556.5,
+   "p10_us": 466.0,
+   "p90_us": 725.1,
+   "min_us": 402.3,
+   "max_us": 15874.5
+  },
+  {
+   "nombre": "C1 detección sobre destino AUSENTE",
+   "n": 1500,
+   "mediana_us": 26.6,
+   "p10_us": 24.3,
+   "p90_us": 43.7,
+   "min_us": 23.5,
+   "max_us": 355.2
+  },
+  {
+   "nombre": "C2 detección sobre destino EXISTENTE",
+   "n": 1500,
+   "mediana_us": 193.4,
+   "p10_us": 156.1,
+   "p90_us": 245.8,
+   "min_us": 142.2,
+   "max_us": 86328.1
+  },
+  {
+   "nombre": "C3 os.makedirs(exist_ok) del directorio destino",
+   "n": 1500,
+   "mediana_us": 136.5,
+   "p10_us": 107.3,
+   "p90_us": 198.9,
+   "min_us": 103.5,
+   "max_us": 496.3
+  }
+ ]
+}
