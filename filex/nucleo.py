@@ -15,6 +15,7 @@ hasta que el contrato la ha juzgado.
 
 from __future__ import annotations
 
+import contextlib
 import errno
 import os
 import shutil
@@ -23,7 +24,7 @@ import threading
 import uuid
 from dataclasses import dataclass, field
 
-from . import cerrojo, contrato, formatos, invocacion, motores as _motores
+from . import cerrojo, contrato, formatos, gpu, invocacion, motores as _motores
 from .confinamiento import Confinamiento, Denegado, nombre_seguro
 from .grafo import Arista, Camino, Decision, Grafo
 from .trabajo import DirectorioDeTrabajo, barrer_huerfanos
@@ -409,6 +410,56 @@ def _move_seguro() -> bool:
 MOTIVO_OCUPADO = "otro proceso tiene abierta esa ruta de salida"
 MOTIVO_NO_ES_FICHERO = "la ruta de salida es un directorio que ya existe"
 
+def _espera_gpu() -> float:
+    """Tope de espera del lock de GPU alrededor del CODIFICADO, en segundos.
+
+    La misma variable de entorno y el mismo valor por defecto que usa
+    `gpu.Lock.__enter__`, para que una tanda mixta no tenga dos políticas —
+    pero se lee aquí, no allí, porque este camino no usa `__enter__`
+    (ver `_lock_gpu`).
+    """
+    return float(os.environ.get("FILEX_GPU_ESPERA", "900"))
+
+
+@contextlib.contextmanager
+def _lock_gpu(etiqueta: str, argv):
+    """N25 — el lock de GPU rodea al CODIFICADO, no solo al sondeo.
+
+    `bench/hito2-nvenc.md` §6.5 dejó el hueco acotado: `Motor` tiene tres asas
+    —`sondear()`, `orden()` y `parar()`— y **ninguna envuelve la ejecución**,
+    así que desde `motores.py` no hay forma honesta de sostener el lock entre
+    `orden()` y `ejecutar()`. Quien sí puede es este método, que llama a las
+    dos. El predicado es `gpu.usa_gpu(argv)`, **léxico y sobre el argv ya
+    construido**: es lo único que no depende de que cada punto de invocación se
+    acuerde de declarar que va a la tarjeta.
+
+    ⚠ **NO se usa `with gpu.Lock(...)`, y el motivo está MEDIDO** (N4,
+    `bench/bitrate-y-lock.md` §3, tanda limpia). `Lock.__enter__` llama a
+    `guardia()`, que lanza `nvidia-smi`: **46 859,8 µs**, frente a los
+    **1 341,1 µs** del par tomar/soltar. El parche literal de H2 cuesta
+    **47 482,6 µs por conversión**, **×35,4** los 1 403,6 µs que su propio
+    informe le atribuye — y contradice a su
+    §6.3, que dice que *«preguntar por la VRAM en cada conversión sería caro;
+    por eso la guardia se aplica al tomar el lock, una vez por tanda, y no por
+    fichero»*. Aquí la guardia se aplica **solo cuando el lock se toma de
+    verdad**: si quien llama ya lo tenía —un lote, `gpu.poseido()`— la
+    reentrada no vuelve a preguntar por la VRAM.
+    """
+    if not gpu.usa_gpu(argv):
+        # 0,9 µs para todo lo que no toca la tarjeta (MEDIDO, n=201).
+        yield None
+        return
+    ya = gpu.poseido()
+    l = gpu.Lock(etiqueta)
+    if not l.tomar(espera=_espera_gpu()):
+        raise gpu.GpuOcupada(f"no se pudo tomar el lock de GPU en {l.ruta}")
+    try:
+        if not ya:
+            l.aviso = gpu.guardia()
+        yield l
+    finally:
+        l.soltar()
+
 
 def _negativa(e: OSError, destino: str) -> OSError:
     """Traduce la negativa de `os.replace` al motivo VERDADERO.
@@ -699,7 +750,18 @@ class FileX:
 
         # El `cwd` del hijo va DENTRO del desechable. Validar la ruta de salida
         # NO basta: hay motores que escriben en el `cwd`.
-        r = invocacion.ejecutar(argv, timeout=timeout, cwd=t.ruta)
+        #
+        # N25: y va DENTRO del lock de GPU cuando el argv toca la tarjeta. El
+        # `GpuOcupada` se convierte en un `Salto` con motivo, no en una
+        # excepción que suba: quien pidió una conversión merece un veredicto,
+        # y la tarjeta ocupada es una respuesta, no un error del programa.
+        try:
+            with _lock_gpu(f"filex-{arista.motor}", argv):
+                r = invocacion.ejecutar(argv, timeout=timeout, cwd=t.ruta)
+        except gpu.GpuOcupada as e:
+            s.motivo = str(e)
+            s.ruta = dentro
+            return s
         s.rc, s.ms, s.err = r.rc, r.ms, r.err
         if r.agotado:
             # ANTES de que el `finally` borre el desechable. Borrar el origen de

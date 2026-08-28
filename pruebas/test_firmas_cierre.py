@@ -434,10 +434,16 @@ class LasTablasSePublicanConTamanoYConElementos(_ConFicheros):
         posibles = {x[2] for x in V.FIRMAS} | {x[2] for x in V.FIRMAS_LARGAS}
         posibles |= set(V.MARCAS_FTYP.values()) | {x[1] for x in V.MARCAS_TEXTO}
         posibles |= set(V.MIME_ZIP.values()) | {x[1] for x in V.OOXML}
+        # N4/N22: `mobi` estaba en la lista literal de abajo porque el despacho
+        # del byte 60 de PalmDB era una TUPLA en el cuerpo de `firma_real`, no
+        # una tabla. Ahora es `MARCAS_PALMDB` y se deriva, que es justo lo que
+        # esta prueba defiende: una entrada literal es una entrada que se
+        # queda atrás sola. (Único cambio de N4 en este fichero.)
+        posibles |= set(V.MARCAS_PALMDB.values())
         posibles |= {"pnm", "pam", "pfm", "pcx", "mpegts", "m2ts", "flujo_es",
                      "adts", "mpegaudio", "texto", "xml", "html", "svg", "3ds",
                      "webp", "wav", "avi", "midi", "riff", "wave64", "aiff",
-                     "iff", "isobmff", "zip", "cfb", "mobi"}
+                     "iff", "isobmff", "zip", "cfb"}
         aceptadas = set()
         for fs in V.EXT_A_FIRMAS.values():
             aceptadas |= set(fs)

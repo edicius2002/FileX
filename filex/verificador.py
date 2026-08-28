@@ -271,6 +271,38 @@ MARCAS_FTYP = {
     b"mj2s": "mj2", b"crx ": "isobmff",
 }
 
+# N22 — `.pdb` NO son «dos formatos que chocan»: es un CONTENEDOR (PalmDB) y su
+# marcador son los 8 bytes 60..67, que en PalmDB son `type` + `creator`.
+#
+# ⚠ EL MOTIVO POR EL QUE F1 LO DEJO FUERA ERA CORRECTO Y MEDIA LA COSA
+# EQUIVOCADA (trampa 58). `firmas-cierre.md` §8.8 descarta `gm:pdb` y
+# `calibre:pdb` porque *«el prefijo comun medido es la ruta del fichero, no un
+# marcador»*, y eso es literalmente cierto: los 32 PRIMEROS bytes de un PalmDB
+# son el NOMBRE, y los motores lo rellenan con el nombre del fichero -- el de
+# SALIDA en ImageMagick y GraphicsMagick (`im.pdb`, `gm.pdb`), el de ENTRADA en
+# Calibre (`s`). El censo de prefijos comunes estaba mirando los bytes 0..31. El
+# marcador si existe, 40 bytes mas adelante.
+#
+# MEDIDO el 28/08 en `filex-c13` (`bench/salidas-bitrate/muestras_pdb.py`), y no
+# son dos escritores sino cuatro con TRES valores distintos:
+#
+#   magick s.png im.pdb              -> vIMGView   (magick identify: PDB 64x48)
+#   gm convert s.png gm.pdb          -> vIMGView   (gm identify:     PDB 64x48)
+#   ebook-convert s.txt c.pdb        -> TEXtREAd   (ebook-meta:      Title: s)
+#   ebook-convert s.txt c.pdb -f ereader -> PNRdPPrs (ebook-meta:    Title: s)
+#   ebook-convert s.txt c.pdb -f ztxt    -> rc=1 y 0 bytes: aqui no lo escribe
+#
+# El arbitro no es quien escribio el fichero (trampa 71): `magick identify`
+# sobre el `.pdb` de Calibre responde `improper image header`.
+#
+# `BOOKMOBI` y `TEXtREAd` ya devolvian "mobi" y **siguen devolviendolo**: PalmDoc
+# no es MOBI, pero cambiarlo moveria clasificaciones que nadie ha pedido mover.
+# Se declara y no se toca.
+MARCAS_PALMDB = {
+    b"BOOKMOBI": "mobi", b"TEXtREAd": "mobi",
+    b"vIMGView": "palm_imagen", b"PNRdPPrs": "ereader",
+}
+
 # Los contenedores ZIP y OLE no son un formato: son un envase. La segunda pasada
 # lee el primer miembro (ODF/EPUB llevan `mimetype` sin comprimir en el byte 38)
 # o los nombres de los miembros (OOXML). Solo se paga en ficheros que ya son ZIP.
@@ -400,8 +432,10 @@ def firma_real(ruta: str) -> str:
         return _firma_cfb(ruta)
     # --- PalmDB: el marcador NO esta al principio, esta en el byte 60. El titulo
     # que va delante es contenido (calibre escribe "Unknown") y NO es firma.
-    if len(cab) >= 68 and cab[60:68] in (b"BOOKMOBI", b"TEXtREAd"):
-        return "mobi"
+    # N22: y el byte 60 no distingue dos formatos, sino al menos tres -- ver
+    # `MARCAS_PALMDB`, que es donde esta la medida.
+    if len(cab) >= 68 and cab[60:68] in MARCAS_PALMDB:
+        return MARCAS_PALMDB[cab[60:68]]
     # --- tabla de magicos ---
     for desp, magico, nombre in FIRMAS:
         if cab[desp:desp + len(magico)] == magico:
@@ -631,6 +665,13 @@ for _n, _f in (
     ("doc dot xls ppt wps wpt msg", {"cfb"}),
     ("djvu djv", {"djvu"}),
     ("mobi azw azw3 prc", {"mobi"}),
+    # N22: `.pdb` es un CONTENEDOR de Palm, no un formato, y la extension la
+    # escriben motores de DOS familias -- un visor de imagenes de Palm
+    # (ImageMagick y GraphicsMagick) y un libro (Calibre). El punto 1 se puede
+    # evaluar porque los tres tipos medidos tienen marcador en el byte 60; lo
+    # que NO se puede es decidir cual se pidio, y por eso el conjunto tiene los
+    # tres. Ver `MARCAS_PALMDB`.
+    ("pdb", {"mobi", "palm_imagen", "ereader"}),
     ("lit", {"lit"}),
     ("snb", {"snb"}),
     ("tcr", {"tcr"}),
@@ -3155,6 +3196,10 @@ CAT_POR_FIRMA = {
     "mobi": "documento", "lit": "documento", "snb": "documento",
     "tcr": "documento", "lrf": "documento", "epub": "documento",
     "rocketbook": "documento",
+    # N22, y sigue la trampa 70 hasta donde el valor se USA: `CAT_POR_FIRMA`
+    # elige la SONDA. `palm_imagen` va a `magick identify`, que lo lee de
+    # verdad (`PDB 64x48`, MEDIDO); `ereader` va con los demas libros.
+    "ereader": "documento", "palm_imagen": "imagen",
     "docx": "documento", "xlsx": "documento", "pptx": "documento",
     "odt": "documento", "ods": "documento", "odp": "documento",
     "odg": "documento", "cfb": "documento", "eps_binario": "documento",
@@ -3557,6 +3602,31 @@ def punto3_propiedades(sonda: dict, sonda_ent: dict | None, pedido: dict) -> lis
     return h
 
 
+#: Tolerancia de la regla V10 (bitrate de VIDEO pedido frente a obtenido).
+#
+# **Elegido por su tabla, no por su forma** (trampa 51), y la tabla es la de la
+# regla QUE SE PUEDE ESCRIBIR -- la del `desvio_contenedor`, no la de la verdad
+# de campo. 72 celdas legitimas (4 codificadores de CPU x 6 tasas x 3 fuentes)
+# y 12 patologicas, en `bench/salidas-bitrate/calibracion*.json`:
+#
+#   umbral | ABAJO (todas)  fp / atrapadas | ARRIBA (solo sin audio) fp / atrap.
+#     25 % |  10 de 72      /  6 de 6      |   4 de 24   /  2 de 2
+#     40 % |   3 de 72      /  6 de 6      |   3 de 24   /  2 de 2
+#     50 % |   1 de 72      /  6 de 6      |   1 de 24   /  2 de 2
+#     60 % |   0 de 72      /  6 de 6      |   0 de 24   /  2 de 2   <- MESETA
+#     75 % |   0 de 72      /  6 de 6      |   0 de 24   /  2 de 2   <- meseta
+#    100 % |   0 de 72      /  0 de 6      |   0 de 24   /  2 de 2
+#    150 % |   0 de 72      /  0 de 6      |   0 de 24   /  1 de 2
+#
+# Subir de 60 a 75 no atrapa ni una celda mas; bajar a 50 compra dos falsos
+# positivos por cero deteccion. **El borde de abajo de la meseta es 60 %.**
+#
+# **No hay meseta para un segundo nivel de `aviso` mas estricto**: por debajo de
+# 60 % todos los valores candidatos ya cuestan falsos positivos, asi que la
+# regla tiene UN nivel y no dos -- al reves que la de audio, que tiene 15/50.
+BITRATE_VIDEO_TOL = 0.60
+
+
 def punto4_pedido(sonda: dict, sonda_ent: dict | None, pedido: dict) -> list:
     """4. Propiedades PEDIDAS frente a OBTENIDAS.
 
@@ -3710,6 +3780,72 @@ def punto4_pedido(sonda: dict, sonda_ent: dict | None, pedido: dict) -> list:
     if c_o and c_e and c_o != c_e and not p.get("canales"):
         h.append(_hallazgo(4, "A2", "fallo", "numero de canales alterado sin pedirlo",
                            c_e, c_o))
+
+    # ---------- bitrate de VIDEO pedido (regla V10) ----------
+    # N24, y la primera mitad del hallazgo NO es la regla que faltaba: es que el
+    # DATO no existe. `bench/hito2-nvenc.md` §4.3 denuncio, con razon, que la
+    # regla de bitrate compara solo contra pistas de AUDIO
+    # (`x["tipo"] == "audio"`). Pero quitar ese filtro no habria arreglado nada:
+    # **ni la sonda en proceso ni `ffprobe -show_streams` publican el
+    # `bitrate_bps` de una pista de VIDEO** -- MEDIDO en mp4, mkv, webm y mov,
+    # 4 de 4 con `None`, y el codigo de `sondear_subproceso` solo asigna
+    # `bitrate_bps` en la rama de audio. Es la trampa 58: el hecho era cierto y
+    # la causa estaba un nivel mas abajo.
+    #
+    # Lo unico observable en proceso es el bitrate del CONTENEDOR
+    # (`bytes*8/duracion`), y de ahi sale la forma ASIMETRICA de esta regla:
+    #
+    #   * **Por abajo vale siempre.** El audio solo SUMA, asi que el bitrate del
+    #     contenedor es una cota SUPERIOR del de video: si el contenedor ya se
+    #     queda corto, el video se queda corto seguro. Ninguna pista de audio
+    #     puede fabricar un falso positivo en esta direccion.
+    #   * **Por arriba solo vale sin audio.** Con audio, el contenedor va
+    #     inflado por el, y el sesgo es del tamano del efecto que se busca:
+    #     MEDIDO, `patologico_2pistas.mkv -> .mp4` pidiendo 200 kbps de video
+    #     entrega 390 800 bps de contenedor -- **+95,4 %** en una conversion
+    #     perfectamente buena, porque las DOS pistas de audio son 128 kbps cada
+    #     una. Ahi se declara `informativo`, que es lo que este verificador hace
+    #     donde no se puede saber.
+    #
+    # Y LA ASIMETRIA NO ES PRUDENCIA, ES LO QUE DICE LA MEDIDA: sobre el
+    # `desvio_contenedor` las dos clases **SE SOLAPAN** -- legitimo hasta
+    # **+106,13 %** (`libsvtav1`, `2pistas -> mp4`, 200 kbps pedidos) y
+    # patologico desde **+82,13 %** --, asi que **no existe umbral bilateral**.
+    # Un 60 % a dos caras marcaria **4 celdas legitimas** de las 72.
+    #
+    # EL UMBRAL, por su tabla y no por su forma (trampa 51), sobre 72 celdas
+    # legitimas (4 codificadores de CPU x 6 tasas x 3 fuentes x 2 contenedores)
+    # y 12 patologicas: la meseta de 0 falsos positivos con 6 de 6 por abajo y
+    # 2 de 2 por arriba va de 60 % a 75 %, y **el borde de abajo es la
+    # respuesta**. Tabla completa en `bench/bitrate-y-lock.md` §2.
+    #
+    # Y lo que la regla NO es: **no atrapa el desvio de NVENC, y no debe.** Los
+    # +24,59 % a 1 Mbps de `hevc_nvenc` (H2 §4.3) son normales; el desvio
+    # legitimo llega a +56,30 % (`libsvtav1` sobre una fuente pequena) y a
+    # -54,83 % (`libvpx-vp9` pidiendo 8 Mbps a un 640x480 que no los llena).
+    # Una tolerancia del 15 % como la de audio daria 19 falsos positivos de 72
+    # incluso sobre la verdad de campo, y 38 de 72 sobre el contenedor.
+    if (p.get("bitrate_video_bps") and sonda.get("bitrate_bps")
+            and any(x.get("tipo") == "video" for x in sonda.get("pistas", []))):
+        pb, obt = p["bitrate_video_bps"], sonda["bitrate_bps"]
+        n_aud = sum(1 for x in sonda.get("pistas", []) if x.get("tipo") == "audio")
+        desv = (obt - pb) / pb
+        if desv < -BITRATE_VIDEO_TOL:
+            h.append(_hallazgo(4, "V10", "fallo",
+                               "el bitrate de video se queda muy por debajo del "
+                               "pedido (%+.1f %% sobre el contenedor, que es cota "
+                               "SUPERIOR del video)" % (desv * 100), pb, obt))
+        elif desv > BITRATE_VIDEO_TOL:
+            if n_aud == 0:
+                h.append(_hallazgo(4, "V10", "fallo",
+                                   "el bitrate de video se pasa muy por encima "
+                                   "del pedido (%+.1f %%)" % (desv * 100), pb, obt))
+            else:
+                h.append(_hallazgo(4, "V10", "informativo",
+                                   "bitrate por encima del pedido (%+.1f %% del "
+                                   "contenedor) NO evaluable: %d pista(s) de audio "
+                                   "inflan el contenedor y la sonda no publica su "
+                                   "bitrate" % (desv * 100, n_aud), pb, obt))
 
     # ---------- bitrate pedido ----------
     # El bitrate es una PETICION, no un contrato: el codificador AAC nativo de
