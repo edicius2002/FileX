@@ -1,0 +1,266 @@
+{
+ "dir": "C:\\Users\\krato\\AppData\\Local\\Temp\\filex_c19",
+ "censo_antes": {},
+ "censo_despues": {
+  "atenuado20.mp3": 193767,
+  "atenuado6.mp3": 193767,
+  "bueno.flac": 205668,
+  "bueno.mp3": 193767,
+  "entrada.wav": 1411278,
+  "malo.flac": 104549,
+  "malo.m4a": 194788,
+  "malo.mp3": 193767,
+  "malo.opus": 133067,
+  "mono.wav": 705678,
+  "mono2estereo.mp3": 193767
+ },
+ "no_declarados": [],
+ "filas": [
+  {
+   "salida": "bueno.mp3",
+   "entrada": "entrada.wav",
+   "contrato": "ok_parcial",
+   "contrato_cobertura_incompleta": [
+    "5_escritura"
+   ],
+   "contrato_hallazgos": [],
+   "fidelidad": "ok",
+   "fidelidad_reglas": [
+    "A7",
+    "V5"
+   ],
+   "fidelidad_hallazgos": [
+    {
+     "regla": "V5",
+     "severidad": "informativo",
+     "mensaje": "la entrada no trae etiquetas de idioma ni titulo en ninguna de sus 1 pistas: la regla no discrimina"
+    },
+    {
+     "regla": "A7",
+     "severidad": "informativo",
+     "mensaje": "los 2 canales conservan energia"
+    }
+   ]
+  },
+  {
+   "salida": "malo.mp3",
+   "entrada": "entrada.wav",
+   "contrato": "ok_parcial",
+   "contrato_cobertura_incompleta": [
+    "5_escritura"
+   ],
+   "contrato_hallazgos": [],
+   "fidelidad": "fallo",
+   "fidelidad_reglas": [
+    "A7",
+    "V5"
+   ],
+   "fidelidad_hallazgos": [
+    {
+     "regla": "V5",
+     "severidad": "informativo",
+     "mensaje": "la entrada no trae etiquetas de idioma ni titulo en ninguna de sus 1 pistas: la regla no discrimina"
+    },
+    {
+     "regla": "A7",
+     "severidad": "fallo",
+     "mensaje": "SE PIERDE UN CANAL DE AUDIO: canal 2, -21.07 dBFS en la entrada y -271.31 en la salida"
+    }
+   ]
+  },
+  {
+   "salida": "malo.opus",
+   "entrada": "entrada.wav",
+   "contrato": "ok_parcial",
+   "contrato_cobertura_incompleta": [
+    "5_escritura"
+   ],
+   "contrato_hallazgos": [],
+   "fidelidad": "fallo",
+   "fidelidad_reglas": [
+    "A7",
+    "V5"
+   ],
+   "fidelidad_hallazgos": [
+    {
+     "regla": "V5",
+     "severidad": "informativo",
+     "mensaje": "la entrada no trae etiquetas de idioma ni titulo en ninguna de sus 1 pistas: la regla no discrimina"
+    },
+    {
+     "regla": "A7",
+     "severidad": "fallo",
+     "mensaje": "SE PIERDE UN CANAL DE AUDIO: canal 2, -21.07 dBFS en la entrada y -168.44 en la salida"
+    }
+   ]
+  },
+  {
+   "salida": "malo.m4a",
+   "entrada": "entrada.wav",
+   "contrato": "ok_parcial",
+   "contrato_cobertura_incompleta": [
+    "5_escritura"
+   ],
+   "contrato_hallazgos": [],
+   "fidelidad": "fallo",
+   "fidelidad_reglas": [
+    "A7",
+    "V5"
+   ],
+   "fidelidad_hallazgos": [
+    {
+     "regla": "V5",
+     "severidad": "informativo",
+     "mensaje": "la entrada no trae etiquetas de idioma ni titulo en ninguna de sus 1 pistas: la regla no discrimina"
+    },
+    {
+     "regla": "A7",
+     "severidad": "fallo",
+     "mensaje": "SE PIERDE UN CANAL DE AUDIO: canal 2, -21.07 dBFS en la entrada y -inf en la salida"
+    }
+   ]
+  },
+  {
+   "salida": "malo.flac",
+   "entrada": "entrada.wav",
+   "contrato": "ok_parcial",
+   "contrato_cobertura_incompleta": [
+    "5_escritura"
+   ],
+   "contrato_hallazgos": [],
+   "fidelidad": "fallo",
+   "fidelidad_reglas": [
+    "A4",
+    "A7",
+    "V5"
+   ],
+   "fidelidad_hallazgos": [
+    {
+     "regla": "V5",
+     "severidad": "informativo",
+     "mensaje": "la entrada no trae etiquetas de idioma ni titulo en ninguna de sus 1 pistas: la regla no discrimina"
+    },
+    {
+     "regla": "A7",
+     "severidad": "fallo",
+     "mensaje": "SE PIERDE UN CANAL DE AUDIO: canal 2, -21.07 dBFS en la entrada y -inf en la salida"
+    },
+    {
+     "regla": "A4",
+     "severidad": "fallo",
+     "mensaje": "el PCM decodificado NO es identico"
+    }
+   ]
+  },
+  {
+   "salida": "bueno.flac",
+   "entrada": "entrada.wav",
+   "contrato": "ok_parcial",
+   "contrato_cobertura_incompleta": [
+    "5_escritura"
+   ],
+   "contrato_hallazgos": [],
+   "fidelidad": "ok",
+   "fidelidad_reglas": [
+    "A4",
+    "A7",
+    "V5"
+   ],
+   "fidelidad_hallazgos": [
+    {
+     "regla": "V5",
+     "severidad": "informativo",
+     "mensaje": "la entrada no trae etiquetas de idioma ni titulo en ninguna de sus 1 pistas: la regla no discrimina"
+    },
+    {
+     "regla": "A7",
+     "severidad": "informativo",
+     "mensaje": "los 2 canales conservan energia"
+    },
+    {
+     "regla": "A4",
+     "severidad": "informativo",
+     "mensaje": "PCM identico bit a bit"
+    }
+   ]
+  },
+  {
+   "salida": "atenuado20.mp3",
+   "entrada": "entrada.wav",
+   "contrato": "ok_parcial",
+   "contrato_cobertura_incompleta": [
+    "5_escritura"
+   ],
+   "contrato_hallazgos": [],
+   "fidelidad": "ok",
+   "fidelidad_reglas": [
+    "A7",
+    "V5"
+   ],
+   "fidelidad_hallazgos": [
+    {
+     "regla": "V5",
+     "severidad": "informativo",
+     "mensaje": "la entrada no trae etiquetas de idioma ni titulo en ninguna de sus 1 pistas: la regla no discrimina"
+    },
+    {
+     "regla": "A7",
+     "severidad": "informativo",
+     "mensaje": "los 2 canales conservan energia"
+    }
+   ]
+  },
+  {
+   "salida": "atenuado6.mp3",
+   "entrada": "entrada.wav",
+   "contrato": "ok_parcial",
+   "contrato_cobertura_incompleta": [
+    "5_escritura"
+   ],
+   "contrato_hallazgos": [],
+   "fidelidad": "ok",
+   "fidelidad_reglas": [
+    "A7",
+    "V5"
+   ],
+   "fidelidad_hallazgos": [
+    {
+     "regla": "V5",
+     "severidad": "informativo",
+     "mensaje": "la entrada no trae etiquetas de idioma ni titulo en ninguna de sus 1 pistas: la regla no discrimina"
+    },
+    {
+     "regla": "A7",
+     "severidad": "informativo",
+     "mensaje": "los 2 canales conservan energia"
+    }
+   ]
+  },
+  {
+   "salida": "mono2estereo.mp3",
+   "entrada": "mono.wav",
+   "contrato": "ok_parcial",
+   "contrato_cobertura_incompleta": [
+    "5_escritura"
+   ],
+   "contrato_hallazgos": [],
+   "fidelidad": "ok_parcial",
+   "fidelidad_reglas": [
+    "A7",
+    "V5"
+   ],
+   "fidelidad_hallazgos": [
+    {
+     "regla": "V5",
+     "severidad": "informativo",
+     "mensaje": "la entrada no trae etiquetas de idioma ni titulo en ninguna de sus 1 pistas: la regla no discrimina"
+    },
+    {
+     "regla": "A7",
+     "severidad": "informativo",
+     "mensaje": "el pedido cambia la energia por canal (canales): A7 no puede discriminar"
+    }
+   ]
+  }
+ ]
+}

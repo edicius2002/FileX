@@ -1,0 +1,523 @@
+{
+ "oro": {
+  "n": 53,
+  "familia": 3,
+  "se_mueven": 3,
+  "detalle_familia": [
+   "patologico_bom_csv-to-normalizado.csv",
+   "patologico_bom_csv-to.json",
+   "tipico_json-to.csv"
+  ],
+  "detalle_mueven": [
+   "patologico_bom_csv-to-normalizado.csv",
+   "patologico_bom_csv-to.json",
+   "tipico_json-to.csv"
+  ],
+  "filas": [
+   {
+    "salida": "tipico_flac-to.mp3",
+    "ext": ".mp3",
+    "punto1": "evaluado",
+    "veredicto": "ok",
+    "veredicto_estricto": "ok",
+    "se_mueve": false
+   },
+   {
+    "salida": "tipico_flac-to.opus",
+    "ext": ".opus",
+    "punto1": "evaluado",
+    "veredicto": "ok",
+    "veredicto_estricto": "ok",
+    "se_mueve": false
+   },
+   {
+    "salida": "tipico_flac-to.wav",
+    "ext": ".wav",
+    "punto1": "evaluado",
+    "veredicto": "ok",
+    "veredicto_estricto": "ok",
+    "se_mueve": false
+   },
+   {
+    "salida": "tipico_mp3-to.flac",
+    "ext": ".flac",
+    "punto1": "evaluado",
+    "veredicto": "ok",
+    "veredicto_estricto": "ok",
+    "se_mueve": false
+   },
+   {
+    "salida": "tipico_mp3-to.wav",
+    "ext": ".wav",
+    "punto1": "evaluado",
+    "veredicto": "ok",
+    "veredicto_estricto": "ok",
+    "se_mueve": false
+   },
+   {
+    "salida": "tipico_mp4-audio-copy.m4a",
+    "ext": ".m4a",
+    "punto1": "evaluado",
+    "veredicto": "ok",
+    "veredicto_estricto": "ok",
+    "se_mueve": false
+   },
+   {
+    "salida": "tipico_mp4-audio.flac",
+    "ext": ".flac",
+    "punto1": "evaluado",
+    "veredicto": "aviso",
+    "veredicto_estricto": "aviso",
+    "se_mueve": false
+   },
+   {
+    "salida": "tipico_mp4-audio.mp3",
+    "ext": ".mp3",
+    "punto1": "evaluado",
+    "veredicto": "ok",
+    "veredicto_estricto": "ok",
+    "se_mueve": false
+   },
+   {
+    "salida": "trivial_wav-to.flac",
+    "ext": ".flac",
+    "punto1": "evaluado",
+    "veredicto": "ok",
+    "veredicto_estricto": "ok",
+    "se_mueve": false
+   },
+   {
+    "salida": "trivial_wav-to.m4a",
+    "ext": ".m4a",
+    "punto1": "evaluado",
+    "veredicto": "ok",
+    "veredicto_estricto": "ok",
+    "se_mueve": false
+   },
+   {
+    "salida": "trivial_wav-to.mp3",
+    "ext": ".mp3",
+    "punto1": "evaluado",
+    "veredicto": "ok",
+    "veredicto_estricto": "ok",
+    "se_mueve": false
+   },
+   {
+    "salida": "trivial_wav-to.opus",
+    "ext": ".opus",
+    "punto1": "evaluado",
+    "veredicto": "ok",
+    "veredicto_estricto": "ok",
+    "se_mueve": false
+   },
+   {
+    "salida": "patologico_bom_csv-to-normalizado.csv",
+    "ext": ".csv",
+    "punto1": "familia",
+    "veredicto": "ok",
+    "veredicto_estricto": "ok_parcial",
+    "se_mueve": true
+   },
+   {
+    "salida": "patologico_bom_csv-to.json",
+    "ext": ".json",
+    "punto1": "familia",
+    "veredicto": "ok",
+    "veredicto_estricto": "ok_parcial",
+    "se_mueve": true
+   },
+   {
+    "salida": "tipico_json-to.csv",
+    "ext": ".csv",
+    "punto1": "familia",
+    "veredicto": "ok",
+    "veredicto_estricto": "ok_parcial",
+    "se_mueve": true
+   },
+   {
+    "salida": "16bit_tif-to-d16.png",
+    "ext": ".png",
+    "punto1": "evaluado",
+    "veredicto": "ok",
+    "veredicto_estricto": "ok",
+    "se_mueve": false
+   },
+   {
+    "salida": "16bit_tif-to-d8.png",
+    "ext": ".png",
+    "punto1": "evaluado",
+    "veredicto": "ok",
+    "veredicto_estricto": "ok",
+    "se_mueve": false
+   },
+   {
+    "salida": "16bit_tif-to-default.png",
+    "ext": ".png",
+    "punto1": "evaluado",
+    "veredicto": "ok",
+    "veredicto_estricto": "ok",
+    "se_mueve": false
+   },
+   {
+    "salida": "16bit_tif-to.jpg",
+    "ext": ".jpg",
+    "punto1": "evaluado",
+    "veredicto": "ok",
+    "veredicto_estricto": "ok",
+    "se_mueve": false
+   },
+   {
+    "salida": "16bit_tif-to.webp",
+    "ext": ".webp",
+    "punto1": "evaluado",
+    "veredicto": "ok",
+    "veredicto_estricto": "ok",
+    "se_mueve": false
+   },
+   {
+    "salida": "alpha_png-to-flat.jpg",
+    "ext": ".jpg",
+    "punto1": "evaluado",
+    "veredicto": "ok_parcial",
+    "veredicto_estricto": "ok_parcial",
+    "se_mueve": false
+   },
+   {
+    "salida": "alpha_png-to.avif",
+    "ext": ".avif",
+    "punto1": "evaluado",
+    "veredicto": "ok_parcial",
+    "veredicto_estricto": "ok_parcial",
+    "se_mueve": false
+   },
+   {
+    "salida": "alpha_png-to.jpg",
+    "ext": ".jpg",
+    "punto1": "evaluado",
+    "veredicto": "ok_parcial",
+    "veredicto_estricto": "ok_parcial",
+    "se_mueve": false
+   },
+   {
+    "salida": "alpha_png-to.png8.png",
+    "ext": ".png",
+    "punto1": "evaluado",
+    "veredicto": "ok_parcial",
+    "veredicto_estricto": "ok_parcial",
+    "se_mueve": false
+   },
+   {
+    "salida": "alpha_png-to.webp",
+    "ext": ".webp",
+    "punto1": "evaluado",
+    "veredicto": "ok_parcial",
+    "veredicto_estricto": "ok_parcial",
+    "se_mueve": false
+   },
+   {
+    "salida": "tipico_jpg-to.png",
+    "ext": ".png",
+    "punto1": "evaluado",
+    "veredicto": "ok",
+    "veredicto_estricto": "ok",
+    "se_mueve": false
+   },
+   {
+    "salida": "tipico_png-to.avif",
+    "ext": ".avif",
+    "punto1": "evaluado",
+    "veredicto": "ok_parcial",
+    "veredicto_estricto": "ok_parcial",
+    "se_mueve": false
+   },
+   {
+    "salida": "tipico_png-to.jpg",
+    "ext": ".jpg",
+    "punto1": "evaluado",
+    "veredicto": "ok_parcial",
+    "veredicto_estricto": "ok_parcial",
+    "se_mueve": false
+   },
+   {
+    "salida": "tipico_png-to.webp",
+    "ext": ".webp",
+    "punto1": "evaluado",
+    "veredicto": "ok_parcial",
+    "veredicto_estricto": "ok_parcial",
+    "se_mueve": false
+   },
+   {
+    "salida": "tipico_webp-to.jpg",
+    "ext": ".jpg",
+    "punto1": "evaluado",
+    "veredicto": "ok",
+    "veredicto_estricto": "ok",
+    "se_mueve": false
+   },
+   {
+    "salida": "tipico_webp-to.png",
+    "ext": ".png",
+    "punto1": "evaluado",
+    "veredicto": "ok",
+    "veredicto_estricto": "ok",
+    "se_mueve": false
+   },
+   {
+    "salida": "trivial_png-to-lossless.webp",
+    "ext": ".webp",
+    "punto1": "evaluado",
+    "veredicto": "ok",
+    "veredicto_estricto": "ok",
+    "se_mueve": false
+   },
+   {
+    "salida": "trivial_png-to.jpg",
+    "ext": ".jpg",
+    "punto1": "evaluado",
+    "veredicto": "ok",
+    "veredicto_estricto": "ok",
+    "se_mueve": false
+   },
+   {
+    "salida": "trivial_png-to.webp",
+    "ext": ".webp",
+    "punto1": "evaluado",
+    "veredicto": "ok",
+    "veredicto_estricto": "ok",
+    "se_mueve": false
+   },
+   {
+    "salida": "alpha_png-to.pdf",
+    "ext": ".pdf",
+    "punto1": "evaluado",
+    "veredicto": "ok_parcial",
+    "veredicto_estricto": "ok_parcial",
+    "se_mueve": false
+   },
+   {
+    "salida": "patologico_escaneado_pdf-to-p1.png",
+    "ext": ".png",
+    "punto1": "evaluado",
+    "veredicto": "ok",
+    "veredicto_estricto": "ok",
+    "se_mueve": false
+   },
+   {
+    "salida": "tipico_jpg-to.pdf",
+    "ext": ".pdf",
+    "punto1": "evaluado",
+    "veredicto": "aviso",
+    "veredicto_estricto": "aviso",
+    "se_mueve": false
+   },
+   {
+    "salida": "tipico_png-to-150dpi.pdf",
+    "ext": ".pdf",
+    "punto1": "evaluado",
+    "veredicto": "ok_parcial",
+    "veredicto_estricto": "ok_parcial",
+    "se_mueve": false
+   },
+   {
+    "salida": "tipico_png-to.pdf",
+    "ext": ".pdf",
+    "punto1": "evaluado",
+    "veredicto": "aviso",
+    "veredicto_estricto": "aviso",
+    "se_mueve": false
+   },
+   {
+    "salida": "tipico_texto_pdf-to-gs.pdf",
+    "ext": ".pdf",
+    "punto1": "evaluado",
+    "veredicto": "ok",
+    "veredicto_estricto": "ok",
+    "se_mueve": false
+   },
+   {
+    "salida": "tipico_texto_pdf-to-p1.jpg",
+    "ext": ".jpg",
+    "punto1": "evaluado",
+    "veredicto": "ok",
+    "veredicto_estricto": "ok",
+    "se_mueve": false
+   },
+   {
+    "salida": "tipico_texto_pdf-to-p1.png",
+    "ext": ".png",
+    "punto1": "evaluado",
+    "veredicto": "ok",
+    "veredicto_estricto": "ok",
+    "se_mueve": false
+   },
+   {
+    "salida": "tipico_texto_pdf-to.tif",
+    "ext": ".tif",
+    "punto1": "evaluado",
+    "veredicto": "ok",
+    "veredicto_estricto": "ok",
+    "se_mueve": false
+   },
+   {
+    "salida": "tipico_texto_rasterizado.pdf",
+    "ext": ".pdf",
+    "punto1": "evaluado",
+    "veredicto": "ok",
+    "veredicto_estricto": "ok",
+    "se_mueve": false
+   },
+   {
+    "salida": "trivial_pdf-to-p1.png",
+    "ext": ".png",
+    "punto1": "evaluado",
+    "veredicto": "ok",
+    "veredicto_estricto": "ok",
+    "se_mueve": false
+   },
+   {
+    "salida": "2pistas_mkv-to-COPY.mp4",
+    "ext": ".mp4",
+    "punto1": "evaluado",
+    "veredicto": "ok",
+    "veredicto_estricto": "ok",
+    "se_mueve": false
+   },
+   {
+    "salida": "2pistas_mkv-to-DEFAULT.mp4",
+    "ext": ".mp4",
+    "punto1": "evaluado",
+    "veredicto": "fallo",
+    "veredicto_estricto": "fallo",
+    "se_mueve": false
+   },
+   {
+    "salida": "2pistas_mkv-to-MAP0.mp4",
+    "ext": ".mp4",
+    "punto1": "evaluado",
+    "veredicto": "ok",
+    "veredicto_estricto": "ok",
+    "se_mueve": false
+   },
+   {
+    "salida": "tipico_mp4-to.mkv",
+    "ext": ".mkv",
+    "punto1": "evaluado",
+    "veredicto": "ok",
+    "veredicto_estricto": "ok",
+    "se_mueve": false
+   },
+   {
+    "salida": "tipico_mp4-to.webm",
+    "ext": ".webm",
+    "punto1": "evaluado",
+    "veredicto": "ok",
+    "veredicto_estricto": "ok",
+    "se_mueve": false
+   },
+   {
+    "salida": "trivial_mp4-to-naive.gif",
+    "ext": ".gif",
+    "punto1": "evaluado",
+    "veredicto": "ok",
+    "veredicto_estricto": "ok",
+    "se_mueve": false
+   },
+   {
+    "salida": "trivial_mp4-to-palette.gif",
+    "ext": ".gif",
+    "punto1": "evaluado",
+    "veredicto": "ok",
+    "veredicto_estricto": "ok",
+    "se_mueve": false
+   },
+   {
+    "salida": "trivial_mp4-to.webm",
+    "ext": ".webm",
+    "punto1": "evaluado",
+    "veredicto": "ok",
+    "veredicto_estricto": "ok",
+    "se_mueve": false
+   }
+  ]
+ },
+ "vocabulario": {
+  "ext_familia": [
+   ".assxml",
+   ".collada",
+   ".csljson",
+   ".csv",
+   ".dae",
+   ".dxf",
+   ".fb2",
+   ".fbx",
+   ".fxg",
+   ".geojson",
+   ".gimppath",
+   ".gltf",
+   ".gltf2",
+   ".htm",
+   ".html",
+   ".html4",
+   ".html5",
+   ".icml",
+   ".ipynb",
+   ".json",
+   ".jss",
+   ".lrc",
+   ".markdown",
+   ".md",
+   ".mpd",
+   ".opendocument",
+   ".opml",
+   ".scc",
+   ".sif",
+   ".srt",
+   ".sub",
+   ".tab",
+   ".text",
+   ".toml",
+   ".tsv",
+   ".ttml",
+   ".txt",
+   ".xhtml",
+   ".xml",
+   ".xmp",
+   ".yaml",
+   ".yml"
+  ],
+  "ext_oro": [
+   ".avif",
+   ".csv",
+   ".flac",
+   ".gif",
+   ".jpg",
+   ".json",
+   ".m4a",
+   ".mkv",
+   ".mp3",
+   ".mp4",
+   ".opus",
+   ".pdf",
+   ".png",
+   ".tif",
+   ".wav",
+   ".webm",
+   ".webp"
+  ],
+  "interseccion": [
+   ".csv",
+   ".json"
+  ]
+ },
+ "ancho": {
+  "n": 54,
+  "punto1": {
+   "evaluado": 8,
+   "familia": 0,
+   "no_aplica": 17,
+   "sin_vocabulario": 29
+  },
+  "se_mueven": 0,
+  "detalle": []
+ }
+}

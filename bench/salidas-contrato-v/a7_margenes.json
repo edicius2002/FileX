@@ -1,0 +1,135 @@
+{
+ "umbral_audible": [
+  {
+   "umbral_audible_dB": -40.0,
+   "celdas_legitimas": 123,
+   "peor_salida_dB": -41.35,
+   "peor_celda": "agresivo:mkv_2pistas/volumen_-20dB[c1]"
+  },
+  {
+   "umbral_audible_dB": -50.0,
+   "celdas_legitimas": 123,
+   "peor_salida_dB": -41.35,
+   "peor_celda": "agresivo:mkv_2pistas/volumen_-20dB[c1]"
+  },
+  {
+   "umbral_audible_dB": -60.0,
+   "celdas_legitimas": 132,
+   "peor_salida_dB": -51.52,
+   "peor_celda": "desigual30dB/mp38k[c2]"
+  },
+  {
+   "umbral_audible_dB": -70.0,
+   "celdas_legitimas": 132,
+   "peor_salida_dB": -51.52,
+   "peor_celda": "desigual30dB/mp38k[c2]"
+  },
+  {
+   "umbral_audible_dB": -80.0,
+   "celdas_legitimas": 132,
+   "peor_salida_dB": -51.52,
+   "peor_celda": "desigual30dB/mp38k[c2]"
+  },
+  {
+   "umbral_audible_dB": -90.0,
+   "celdas_legitimas": 132,
+   "peor_salida_dB": -51.52,
+   "peor_celda": "desigual30dB/mp38k[c2]"
+  },
+  {
+   "umbral_audible_dB": -100.0,
+   "celdas_legitimas": 141,
+   "peor_salida_dB": -Infinity,
+   "peor_celda": "derecho_-70dB/mp3q9[c2]"
+  }
+ ],
+ "punto_ciego_opus": [
+  {
+   "tasa": "6k",
+   "rms_salida": [
+    -27.43,
+    -27.43
+   ],
+   "A7_dispara": false
+  },
+  {
+   "tasa": "8k",
+   "rms_salida": [
+    -27.47,
+    -27.47
+   ],
+   "A7_dispara": false
+  },
+  {
+   "tasa": "12k",
+   "rms_salida": [
+    -27.13,
+    -27.13
+   ],
+   "A7_dispara": false
+  },
+  {
+   "tasa": "16k",
+   "rms_salida": [
+    -27.18,
+    -27.18
+   ],
+   "A7_dispara": false
+  },
+  {
+   "tasa": "24k",
+   "rms_salida": [
+    -21.52,
+    -47.28
+   ],
+   "A7_dispara": false
+  },
+  {
+   "tasa": "32k",
+   "rms_salida": [
+    -21.07,
+    -78.97
+   ],
+   "A7_dispara": false
+  },
+  {
+   "tasa": "48k",
+   "rms_salida": [
+    -21.09,
+    -168.26
+   ],
+   "A7_dispara": true
+  },
+  {
+   "tasa": "64k",
+   "rms_salida": [
+    -21.06,
+    -168.29
+   ],
+   "A7_dispara": true
+  },
+  {
+   "tasa": "96k",
+   "rms_salida": [
+    -21.07,
+    -168.44
+   ],
+   "A7_dispara": true
+  }
+ ],
+ "n_celdas_legitimas": 150,
+ "n_celdas_fallo": 8,
+ "desechable": "C:\\Users\\krato\\AppData\\Local\\Temp\\filex_a7_ciego",
+ "censo_antes": [],
+ "censo_despues": [
+  "silenciado_12k.opus",
+  "silenciado_16k.opus",
+  "silenciado_24k.opus",
+  "silenciado_32k.opus",
+  "silenciado_48k.opus",
+  "silenciado_64k.opus",
+  "silenciado_6k.opus",
+  "silenciado_8k.opus",
+  "silenciado_96k.opus"
+ ]
+}

@@ -556,11 +556,21 @@ for _n, _f in (
     EXT_A_FIRMAS.update(_ext(_n, _f))
 
 # Extensiones cuya comprobacion es de FAMILIA (texto / XML), no de formato.
+#
+# ⚠ AQUI FALTABA UN `.split()`, y el fallo era invisible porque el RECUENTO
+# salia bien — MEDIDO (bench/contrato-familia-resvg.md §5). Sin el, el bucle
+# recorre los CARACTERES de la cadena y `EXT_FAMILIA` quedaba en
+# {'. ', '.2', '.4', '.5', '.a', '.b', ... '.y'}: 28 entradas de UN caracter.
+# `bench/firmas-contrato.md` §4 publica «EXT_FAMILIA: 28 extensiones» y el 28
+# cuadraba -- por casualidad, porque esa cadena tiene 28 caracteres distintos.
+# Consecuencia medida: `punto1_estado` NUNCA devolvia `familia` y el hallazgo
+# G5 NUNCA se emitia, sobre las 53 del patron oro ni sobre las 54 salidas del
+# conjunto ancho. El nivel de familia era codigo muerto desde que se escribio.
 EXT_FAMILIA = set()
 for _n in ("csv json yaml yml toml txt text md markdown tab tsv srt lrc sub scc "
            "jss xml html htm xhtml html4 html5 ttml fb2 fxg collada dae xmp icml "
            "sif opml gltf gltf2 fbx ipynb geojson csljson dxf mpd assxml gimppath "
-           "opendocument"):
+           "opendocument").split():
     EXT_FAMILIA.add("." + _n)
 
 # ===========================================================================
@@ -3909,6 +3919,30 @@ PSNR_MIN_AVIF_CON_ALFA = 35.0
 # y el propio PNG de 8 bits (conversion impecable) se queda en 59,0 dB.
 PSNR_MIN_16BIT = 30.0
 
+# --- C21: EL SUELO DURO DE V8 ---------------------------------------------
+# PSNR_MIN_VIDEO responde a "¿se recodifico con mucha perdida?". No responde a
+# "¿es esto siquiera el mismo video?", y por eso un clip ENTERAMENTE NEGRO
+# salia con 5,39 dB y severidad `aviso` (bench/contrato-quinto-punto.md §5,
+# miembro 2 de la familia de `resvg`). El precedente de tener DOS umbrales en
+# la misma regla ya existe: I7 lleva un suelo de 20 dB desde
+# bench/verificador-fidelidad.md §2.3.
+#
+# El valor NO esta puesto a ojo, y la calibracion REFUTO el suelo que se
+# esperaba (bench/contrato-familia-resvg.md §3, 48 celdas + las 6 del patron
+# oro con video). Las dos clases SE SOLAPAN 15,66 dB:
+#   legitimas    10,10 .. 46,84 dB   (27 recodificaciones agresivas reales)
+#   patologicas   5,13 .. 25,76 dB   (negro, blanco, ruido, negativo, congelado)
+# Asi que ningun suelo las separa. Lo que si esta medido es cual es el mejor
+# compromiso: a 10 dB hay CERO falsos positivos sobre las 27 legitimas y sobre
+# las 6 del patron oro, y se atrapan 12 de las 15 celdas patologicas; subirlo a
+# 12, 15 o 18 dB **atrapa exactamente las mismas 12** y anade 3 falsos
+# positivos. Comprar cero deteccion con tres falsos positivos no es un cambio:
+# por eso el suelo es 10 y no 20 como el de I7.
+# Lo que el suelo NO atrapa queda dicho en el informe: el video CONGELADO
+# (22,78-25,76 dB) cae dentro del rango legitimo y ningun umbral de PSNR lo
+# separa.
+PSNR_SUELO_VIDEO = 10.0
+
 LOSSLESS_IMG = {"png", "tif", "tiff", "bmp"}
 CODEC_PCM_EXACTO = {"flac", "alac", "pcm_s16le", "pcm_s24le", "pcm_s32le", "pcm",
                     "wavpack", "tta"}
@@ -3959,6 +3993,51 @@ def _ffmpeg_md5_pcm(ruta: str, pista: int = 0):
         if l.startswith("MD5="):
             return l[4:].strip(), None
     return None, (err or out).strip()[:200]
+
+
+def _dbfs(texto: str):
+    """dBFS de una linea de astats. '-inf' es silencio digital exacto; 'nan'
+    aparece cuando el canal no tiene una sola muestra y NO es silencio: es
+    ausencia de dato, y se devuelve None para que la regla no opine."""
+    t = (texto or "").strip().lower()
+    if t in ("-inf", "inf"):
+        return float("-inf") if t.startswith("-") else float("inf")
+    try:
+        return float(t)
+    except ValueError:
+        return None
+
+
+def _ffmpeg_astats(ruta: str, pista: int = 0):
+    """A7: nivel RMS y de pico de CADA canal, en dBFS.
+
+    Es sonda EXTERNA a proposito. La energia por canal no esta en ninguna
+    cabecera —es la mitad de 'muestras' de la formulacion de
+    bench/contrato-quinto-punto.md §4.4— y leerla en proceso exigiria un
+    decodificador de mp3/aac/opus, que es justo lo que este verificador no
+    tiene ni quiere tener. Se piden SOLO las dos medidas que la regla usa
+    (`measure_overall=none`), que es lo que la abarata.
+    """
+    rc, out, err = _correr(["ffmpeg", "-hide_banner", "-nostdin", "-i", ruta,
+                            "-map", "0:a:%d" % pista, "-vn", "-sn",
+                            "-af", "astats=measure_overall=none:"
+                                   "measure_perchannel=Peak_level+RMS_level",
+                            "-f", "null", "-"])
+    canales, actual = [], None
+    for l in (err or "").splitlines():
+        l = l.split("] ", 1)[-1].strip()
+        if l.startswith("Channel:"):
+            actual = {"rms": None, "pico": None}
+            canales.append(actual)
+        elif actual is None:
+            continue
+        elif l.startswith("RMS level dB:"):
+            actual["rms"] = _dbfs(l.split(":", 1)[1])
+        elif l.startswith("Peak level dB:"):
+            actual["pico"] = _dbfs(l.split(":", 1)[1])
+    if not canales:
+        return None, (err or out).strip()[-200:]
+    return canales, None
 
 
 def _ffmpeg_pcm(ruta: str, limite: int = 96 << 20):
@@ -4696,6 +4775,13 @@ def fidelidad_video(salida, entrada, pedido, sonda, sonda_ent, ms):
         y = d.get("y")
         if y is None:
             h.append(_fid("V8", "informativo", "PSNR sin componente y", None, d))
+        elif y < PSNR_SUELO_VIDEO:
+            # C21. El suelo duro: por debajo de el ya no es una recodificacion
+            # agresiva, es otra imagen. Mismo patron que el suelo de 20 dB de I7.
+            h.append(_fid("V8", "fallo",
+                          "PSNR de luminancia POR DEBAJO DEL SUELO: la salida no "
+                          "es una recodificacion de la entrada",
+                          ">= %.0f dB" % PSNR_SUELO_VIDEO, y))
         elif y < PSNR_MIN_VIDEO:
             h.append(_fid("V8", "aviso", "PSNR de luminancia bajo",
                           ">= %.0f dB" % PSNR_MIN_VIDEO, y))
@@ -4705,14 +4791,107 @@ def fidelidad_video(salida, entrada, pedido, sonda, sonda_ent, ms):
     return h, cob
 
 
+# ===========================================================================
+# A7 — ENERGIA POR CANAL. El QUINTO miembro de la familia de `resvg` (C19).
+#
+# `bench/contrato-quinto-punto.md` §5 lo dejo escrito y este verificador lo
+# confirmo antes de tocarlo: audio estereo con UN CANAL SILENCIADO hacia un
+# destino CON PERDIDA no lo atrapa nadie. El contrato ve 2 canales, 44 100 Hz y
+# 8,000 s -- todo declarado y todo correcto -- y A4/A5 se retiran en la primera
+# linea porque el destino tiene perdida y no hay PCM que comparar. El MISMO
+# fallo hacia FLAC si lo atrapa A4: la cobertura dependia del DESTINO, no del
+# fallo.
+#
+# A7 vive en FIDELIDAD y no en el contrato, y la razon es la formulacion de
+# §4.4 aplicada tal cual: la energia de un canal no esta DECLARADA en ninguna
+# cabecera, solo existe como MUESTRAS. El numero que lo confirma esta en
+# `bench/contrato-familia-resvg.md` §2.4.
+#
+# LOS DOS UMBRALES SALEN DE 136 CELDAS MEDIDAS, no de la intuicion; las cifras
+# y los margenes estan en `bench/contrato-familia-resvg.md` §2.3.
+A7_AUDIBLE_DBFS = -60.0    # por encima de esto, el canal de ENTRADA lleva senal
+A7_SILENCIO_DBFS = -80.0   # por debajo de esto, el canal de SALIDA esta mudo
+
+# Claves del pedido que cambian la energia a proposito. Si el usuario pidio
+# cualquiera de ellas, A7 no puede opinar: no se declara aprobada, se declara
+# NO CUBIERTA. Es la misma disciplina que A4/A5 con `sample_rate`/`canales`.
+_A7_PEDIDO_MUEVE_ENERGIA = ("canales", "ac", "mezclar", "recortar", "volumen",
+                            "filtro_audio", "af", "solo_video")
+
+
+def _a7_energia_por_canal(salida, entrada, p, ms):
+    h, cob = [], {}
+    movidas = [k for k in _A7_PEDIDO_MUEVE_ENERGIA if p.get(k)]
+    if movidas:
+        cob["A7"] = False
+        h.append(_fid("A7", "informativo",
+                      "el pedido cambia la energia por canal (%s): A7 no puede "
+                      "discriminar" % ", ".join(movidas), None, None))
+        return h, cob
+    t0 = time.perf_counter()
+    ce, ee = _ffmpeg_astats(entrada)
+    cs, es = _ffmpeg_astats(salida)
+    ms["A7"] = (time.perf_counter() - t0) * 1000
+    if ce is None or cs is None:
+        cob["A7"] = False
+        h.append(_fid("A7", "informativo", "energia por canal no calculable",
+                      None, ee or es))
+        return h, cob
+    if len(ce) != len(cs):
+        # Cambiar el NUMERO de canales es una propiedad declarada: la juzga el
+        # punto 3 del contrato, que la lee de la cabecera y cuesta microsegundos.
+        # A7 no la duplica; dice que no es comparable y no se declara cubierta.
+        cob["A7"] = False
+        h.append(_fid("A7", "informativo",
+                      "el numero de canales cambia (%d -> %d): la energia por "
+                      "canal no es comparable" % (len(ce), len(cs)),
+                      len(ce), len(cs)))
+        return h, cob
+    cob["A7"] = True
+    mudos = []
+    for i, (a, b) in enumerate(zip(ce, cs)):
+        ra, rb = a.get("rms"), b.get("rms")
+        if ra is None or rb is None:
+            continue
+        if ra > A7_AUDIBLE_DBFS and rb <= A7_SILENCIO_DBFS:
+            mudos.append((i + 1, ra, rb))
+    if mudos:
+        h.append(_fid("A7", "fallo",
+                      "SE PIERDE UN CANAL DE AUDIO: " + "; ".join(
+                          "canal %d, %.2f dBFS en la entrada y %s en la salida"
+                          % (i, ra, _db(rb)) for i, ra, rb in mudos),
+                      "> %.0f dBFS" % A7_SILENCIO_DBFS,
+                      [_db(x[2]) for x in mudos]))
+    else:
+        h.append(_fid("A7", "informativo",
+                      "los %d canales conservan energia" % len(cs), None,
+                      [_db(x.get("rms")) for x in cs]))
+    return h, cob
+
+
+def _db(v):
+    """dBFS legible y SERIALIZABLE. `-inf` no es JSON valido en modo estricto y
+    estos hallazgos acaban en un fichero: se publica como texto."""
+    if v is None:
+        return None
+    if v in (float("-inf"), float("inf")):
+        return "-inf" if v < 0 else "inf"
+    return round(v, 2)
+
+
 def fidelidad_audio(salida, entrada, pedido, sonda, sonda_ent, ms):
     """A4/A5: el PCM decodificado debe ser identico bit a bit cuando el destino
-    es SIN PERDIDA y no se pidio remuestrear ni mezclar canales."""
+    es SIN PERDIDA y no se pidio remuestrear ni mezclar canales.
+    A7: ningun canal que llevaba senal puede salir MUDO, tenga o no perdida el
+    destino."""
     h = []
     cob = {}
     p = pedido.get("params", {})
     if sonda.get("n_audio", 0) < 1 or sonda_ent.get("n_audio", 0) < 1:
         return h, cob
+    hh, cc = _a7_energia_por_canal(salida, entrada, p, ms)
+    h.extend(hh)
+    cob.update(cc)
     cods = {_codec_norm(x.get("codec")) for x in sonda.get("pistas", [])
             if x.get("tipo") == "audio"}
     if not (cods & CODEC_PCM_EXACTO) and not p.get("copia"):
@@ -4981,7 +5160,7 @@ def fidelidad_vectorial(salida, entrada, pedido, sonda, sonda_ent, ms):
 
 
 REGLAS_FIDELIDAD = ("I3", "I6", "I7", "I8", "I9", "V2", "V5", "V6", "V8", "V9",
-                    "A4", "A5", "P2", "P6", "P9")
+                    "A4", "A5", "A7", "P2", "P6", "P9")
 
 
 def verificar_fidelidad(salida: str, pedido: dict | None = None,
