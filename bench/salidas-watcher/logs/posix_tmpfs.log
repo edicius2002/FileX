@@ -1,0 +1,11 @@
+# sonda_posix — 2026-08-28 01:08:17
+# uname=6.18.33.2-microsoft-standard-WSL2 python=3.14.4
+# dir=/tmp/filex-n4 etiqueta=tmpfs
+# censo /proc: {'pids': 96, 'fd_legibles': 51, 'fd_ilegibles': 45, 'yo': 1902561, 'uid': 1000}
+[A_quieto] sin hijo. condicion_ok=True
+[B_escribiendo] marcador='PAUSA' llego=True vivo=True bytes_en_disco=23573 lineas=['ABIERTO 0', 'PAUSA 23573']
+[C_solo_lee] marcador='ABIERTO' llego=True vivo=True bytes_en_disco=42855 lineas=['ABIERTO 42855']
+[D_ya_cerro] llego=True vivo=True lineas=['ABIERTO 0', 'CERRADO 42855']
+[E_escribiendo_con_flock] marcador='PAUSA' llego=True vivo=True bytes_en_disco=23573 lineas=['ABIERTO 0', 'PAUSA 23573']
+# coste: {"os.replace(p,p)": {"mediana_ms": 0.0034, "min_ms": 0.0032, "max_ms": 0.024, "n": 11}, "open(p,'rb')": {"mediana_ms": 0.017, "min_ms": 0.0099, "max_ms": 0.0452, "n": 11}, "fcntl.flock": {"mediana_ms": 0.0044, "min_ms": 0.0043, "max_ms": 0.0087, "n": 11}, "fcntl.lockf": {"mediana_ms": 0.0059, "min_ms": 0.0052, "max_ms": 0.0357, "n": 11}, "/proc/*/fd": {"mediana_ms": 5.6181, "min_ms": 4.6293, "max_ms": 7.6276, "n": 11}, "lsof -t": {"mediana_ms": 110.6187, "min_ms": 96.0455, "max_ms": 115.0262, "n": 11}, "fuser": {"mediana_ms": 40.032, "min_ms": 35.7987, "max_ms": 44.8238, "n": 11}}
+# testigos: {"deriva_ms": [10.66, 9.31], "nivel_ms": [5.39, 1.06], "deriva_ratio": 0.873, "nivel_ratio": 0.197, "etiqueta": "limpia"}

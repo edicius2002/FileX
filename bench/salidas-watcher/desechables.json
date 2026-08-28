@@ -1,0 +1,202 @@
+{
+ "temp": "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n14-privado",
+ "entrada": "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ae00d82508a52ef45\\corpus\\imagen\\patologico_16bit.tif",
+ "bytes_entrada": 72001016,
+ "desechables_al_empezar": [],
+ "A": {
+  "escena": "A_cuanto_se_deja",
+  "matados": 5,
+  "celdas_validas": 5,
+  "huerfanos": 5,
+  "bytes": 1295160,
+  "rutas": [
+   "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n14-privado\\filex-ls_llzsz",
+   "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n14-privado\\filex-r4dtsr2v",
+   "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n14-privado\\filex-rplclc31",
+   "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n14-privado\\filex-x4hv9d5_",
+   "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n14-privado\\filex-yeatcuqe"
+  ],
+  "celdas": [
+   {
+    "i": 0,
+    "arranco": true,
+    "rc_taskkill": 0,
+    "murio_a_mitad": true,
+    "desechable_en_vuelo": "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n14-privado\\filex-rplclc31",
+    "contenido_al_matar": [
+     "salida.webp"
+    ],
+    "condicion_ok": true,
+    "lineas": [
+     "LISTO 22604",
+     "ARRANCA"
+    ]
+   },
+   {
+    "i": 1,
+    "arranco": true,
+    "rc_taskkill": 0,
+    "murio_a_mitad": true,
+    "desechable_en_vuelo": "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n14-privado\\filex-r4dtsr2v",
+    "contenido_al_matar": [
+     "salida.webp"
+    ],
+    "condicion_ok": true,
+    "lineas": [
+     "LISTO 30144",
+     "ARRANCA"
+    ]
+   },
+   {
+    "i": 2,
+    "arranco": true,
+    "rc_taskkill": 0,
+    "murio_a_mitad": true,
+    "desechable_en_vuelo": "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n14-privado\\filex-x4hv9d5_",
+    "contenido_al_matar": [
+     "salida.webp"
+    ],
+    "condicion_ok": true,
+    "lineas": [
+     "LISTO 8380",
+     "ARRANCA"
+    ]
+   },
+   {
+    "i": 3,
+    "arranco": true,
+    "rc_taskkill": 0,
+    "murio_a_mitad": true,
+    "desechable_en_vuelo": "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n14-privado\\filex-ls_llzsz",
+    "contenido_al_matar": [
+     "salida.webp"
+    ],
+    "condicion_ok": true,
+    "lineas": [
+     "LISTO 13548",
+     "ARRANCA"
+    ]
+   },
+   {
+    "i": 4,
+    "arranco": true,
+    "rc_taskkill": 0,
+    "murio_a_mitad": true,
+    "desechable_en_vuelo": "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n14-privado\\filex-yeatcuqe",
+    "contenido_al_matar": [
+     "salida.webp"
+    ],
+    "condicion_ok": true,
+    "lineas": [
+     "LISTO 11576",
+     "ARRANCA"
+    ]
+   }
+  ]
+ },
+ "E": {
+  "escena": "E_control_negativo",
+  "condicion_ok": true,
+  "condicion": "hubo un huérfano nuevo que barrer",
+  "huerfanos": 1,
+  "siguen_tras_barrer": 1,
+  "parte": {
+   "mirados": 0,
+   "vivos": 0,
+   "borrados": 0,
+   "bytes": 0,
+   "sin_candado_jovenes": 0,
+   "errores": 0,
+   "ms": 0.0,
+   "saltado": true
+  }
+ },
+ "B": {
+  "escena": "B_barrido_bueno",
+  "condicion_ok": true,
+  "condicion": "había un filex vivo con su desechable creado y con contenido dentro",
+  "contenido_del_vivo": [
+   "salida.webp"
+  ],
+  "desechables_del_vivo": [
+   "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n14-privado\\filex-spl7hywm"
+  ],
+  "huerfanos_previos": 6,
+  "huerfanos_borrados": 6,
+  "el_vivo_sobrevivio": true,
+  "parte": {
+   "mirados": 7,
+   "vivos": 1,
+   "borrados": 6,
+   "bytes": 1295160,
+   "sin_candado_jovenes": 0,
+   "errores": 0,
+   "ms": 73.986,
+   "saltado": false
+  },
+  "quedan": 1
+ },
+ "C": {
+  "escena": "C_barrido_ingenuo",
+  "condicion_ok": true,
+  "condicion": "el vivo tenía su desechable con contenido cuando se lanzó el barrido ingenuo",
+  "desechable_de_la_victima": "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n14-privado\\filex-ynvl7tgz",
+  "censo_antes": [
+   "salida.webp"
+  ],
+  "censo_despues": [
+   "salida.webp"
+  ],
+  "ficheros_arrancados": 0,
+  "directorio_borrado_entero": false,
+  "salida_del_hijo": "FIN True ok",
+  "la_conversion_produjo_fichero": true
+ },
+ "D": {
+  "candado_vida_tomar_soltar_us": {
+   "mediana": 592.6,
+   "min": 432.8,
+   "max": 805.6,
+   "n": 11
+  },
+  "mkdtemp_rmtree_us": {
+   "mediana": 369.9,
+   "n": 11
+  },
+  "directorio_de_trabajo_completo_us": {
+   "mediana": 1134.6,
+   "n": 11
+  },
+  "barrido_ms_con_0_desechables": {
+   "mediana": 0.063,
+   "n": 11,
+   "mirados": 0,
+   "entradas_en_el_temp_de_la_sonda": 3
+  },
+  "barrido_ms_con_20_desechables": {
+   "mediana": 16.832,
+   "n": 11,
+   "mirados": 20,
+   "entradas_en_el_temp_de_la_sonda": 3
+  },
+  "temp_real": {
+   "ruta": "C:\\Users\\krato\\AppData\\Local\\Temp",
+   "entradas": 2526,
+   "desechables_filex": 978
+  }
+ },
+ "testigos": {
+  "deriva_ms": [
+   18.08,
+   18.2
+  ],
+  "nivel_ms": [
+   32.78,
+   27.15
+  ],
+  "deriva_ratio": 1.007,
+  "nivel_ratio": 0.828,
+  "etiqueta": "limpia"
+ },
+ "desechables_al_terminar": []
+}

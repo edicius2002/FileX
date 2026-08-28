@@ -1,0 +1,11 @@
+# sonda_posix — 2026-08-28 01:09:09
+# uname=6.18.33.2-microsoft-standard-WSL2 python=3.14.4
+# dir=/mnt/d/Work/research/FileX/.claude/worktrees/agent-ae00d82508a52ef45/bench/salidas-watcher/tmp-n4 etiqueta=drvfs_mnt_d
+# censo /proc: {'pids': 98, 'fd_legibles': 51, 'fd_ilegibles': 47, 'yo': 1903186, 'uid': 1000}
+[A_quieto] sin hijo. condicion_ok=True
+[B_escribiendo] marcador='PAUSA' llego=True vivo=True bytes_en_disco=23573 lineas=['ABIERTO 0', 'PAUSA 23573']
+[C_solo_lee] marcador='ABIERTO' llego=True vivo=True bytes_en_disco=42855 lineas=['ABIERTO 42855']
+[D_ya_cerro] llego=True vivo=True lineas=['ABIERTO 0', 'CERRADO 42855']
+[E_escribiendo_con_flock] marcador='PAUSA' llego=True vivo=True bytes_en_disco=23573 lineas=['ABIERTO 0', 'PAUSA 23573']
+# coste: {"os.replace(p,p)": {"mediana_ms": 1.5855, "min_ms": 1.1315, "max_ms": 2.082, "n": 11}, "open(p,'rb')": {"mediana_ms": 3.4187, "min_ms": 2.8076, "max_ms": 4.0298, "n": 11}, "fcntl.flock": {"mediana_ms": 2.5285, "min_ms": 2.238, "max_ms": 3.1552, "n": 11}, "fcntl.lockf": {"mediana_ms": 2.5413, "min_ms": 2.1419, "max_ms": 3.4298, "n": 11}, "/proc/*/fd": {"mediana_ms": 7.2105, "min_ms": 4.9993, "max_ms": 9.338, "n": 11}, "lsof -t": {"mediana_ms": 110.2583, "min_ms": 105.2877, "max_ms": 129.4047, "n": 11}, "fuser": {"mediana_ms": 44.4511, "min_ms": 39.7784, "max_ms": 48.0026, "n": 11}}
+# testigos: {"deriva_ms": [10.84, 13.15], "nivel_ms": [1.43, 1.25], "deriva_ratio": 1.213, "nivel_ratio": 0.875, "etiqueta": "limpia"}

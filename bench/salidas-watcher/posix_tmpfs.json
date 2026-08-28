@@ -1,0 +1,267 @@
+{
+ "etiqueta": "tmpfs",
+ "dir": "/tmp/filex-n4",
+ "python": "3.14.4",
+ "uname": "6.18.33.2-microsoft-standard-WSL2",
+ "origen": "/mnt/d/Work/research/FileX/.claude/worktrees/agent-ae00d82508a52ef45/corpus/imagen/tipico.png",
+ "bytes_origen": 42855,
+ "censo_proc": {
+  "pids": 96,
+  "fd_legibles": 51,
+  "fd_ilegibles": 45,
+  "yo": 1902561,
+  "uid": 1000
+ },
+ "escenas": [
+  {
+   "escena": "A_quieto",
+   "condicion_ok": true,
+   "condicion": "ningún proceso tiene el fichero abierto",
+   "primitivos": {
+    "os.replace(p,p)": {
+     "estado": "libre",
+     "detalle": ""
+    },
+    "open(p,'rb')": {
+     "estado": "libre",
+     "detalle": ""
+    },
+    "fcntl.flock": {
+     "estado": "libre",
+     "detalle": ""
+    },
+    "fcntl.lockf": {
+     "estado": "libre",
+     "detalle": ""
+    },
+    "/proc/*/fd": {
+     "estado": "libre",
+     "detalle": "pids=[] ilegibles=45/96"
+    },
+    "lsof -t": {
+     "estado": "libre",
+     "detalle": "rc=1 pids=[]"
+    },
+    "fuser": {
+     "estado": "libre",
+     "detalle": "rc=1 salida=''"
+    }
+   }
+  },
+  {
+   "escena": "B_escribiendo",
+   "condicion_ok": true,
+   "condicion": "hijo con marcador PAUSA y vivo",
+   "bytes_en_disco": 23573,
+   "lineas_hijo": [
+    "ABIERTO 0",
+    "PAUSA 23573"
+   ],
+   "primitivos": {
+    "os.replace(p,p)": {
+     "estado": "libre",
+     "detalle": ""
+    },
+    "open(p,'rb')": {
+     "estado": "libre",
+     "detalle": ""
+    },
+    "fcntl.flock": {
+     "estado": "libre",
+     "detalle": ""
+    },
+    "fcntl.lockf": {
+     "estado": "libre",
+     "detalle": ""
+    },
+    "/proc/*/fd": {
+     "estado": "ocupado",
+     "detalle": "pids=[1902566] ilegibles=45/97"
+    },
+    "lsof -t": {
+     "estado": "ocupado",
+     "detalle": "rc=0 pids=['1902566']"
+    },
+    "fuser": {
+     "estado": "ocupado",
+     "detalle": "rc=0 salida='1902566'"
+    }
+   }
+  },
+  {
+   "escena": "C_solo_lee",
+   "condicion_ok": true,
+   "condicion": "hijo con marcador ABIERTO y vivo",
+   "bytes_en_disco": 42855,
+   "lineas_hijo": [
+    "ABIERTO 42855"
+   ],
+   "primitivos": {
+    "os.replace(p,p)": {
+     "estado": "libre",
+     "detalle": ""
+    },
+    "open(p,'rb')": {
+     "estado": "libre",
+     "detalle": ""
+    },
+    "fcntl.flock": {
+     "estado": "libre",
+     "detalle": ""
+    },
+    "fcntl.lockf": {
+     "estado": "libre",
+     "detalle": ""
+    },
+    "/proc/*/fd": {
+     "estado": "ocupado",
+     "detalle": "pids=[1902570] ilegibles=45/97"
+    },
+    "lsof -t": {
+     "estado": "ocupado",
+     "detalle": "rc=0 pids=['1902570']"
+    },
+    "fuser": {
+     "estado": "ocupado",
+     "detalle": "rc=0 salida='1902570'"
+    }
+   }
+  },
+  {
+   "escena": "D_ya_cerro",
+   "condicion_ok": true,
+   "condicion": "hijo VIVO con el fichero ya cerrado",
+   "lineas_hijo": [
+    "ABIERTO 0",
+    "CERRADO 42855"
+   ],
+   "primitivos": {
+    "os.replace(p,p)": {
+     "estado": "libre",
+     "detalle": ""
+    },
+    "open(p,'rb')": {
+     "estado": "libre",
+     "detalle": ""
+    },
+    "fcntl.flock": {
+     "estado": "libre",
+     "detalle": ""
+    },
+    "fcntl.lockf": {
+     "estado": "libre",
+     "detalle": ""
+    },
+    "/proc/*/fd": {
+     "estado": "libre",
+     "detalle": "pids=[] ilegibles=45/97"
+    },
+    "lsof -t": {
+     "estado": "libre",
+     "detalle": "rc=1 pids=[]"
+    },
+    "fuser": {
+     "estado": "libre",
+     "detalle": "rc=1 salida=''"
+    }
+   }
+  },
+  {
+   "escena": "E_escribiendo_con_flock",
+   "condicion_ok": true,
+   "condicion": "hijo con marcador PAUSA y vivo",
+   "bytes_en_disco": 23573,
+   "lineas_hijo": [
+    "ABIERTO 0",
+    "PAUSA 23573"
+   ],
+   "primitivos": {
+    "os.replace(p,p)": {
+     "estado": "libre",
+     "detalle": ""
+    },
+    "open(p,'rb')": {
+     "estado": "libre",
+     "detalle": ""
+    },
+    "fcntl.flock": {
+     "estado": "ocupado",
+     "detalle": "BlockingIOError:11"
+    },
+    "fcntl.lockf": {
+     "estado": "libre",
+     "detalle": ""
+    },
+    "/proc/*/fd": {
+     "estado": "ocupado",
+     "detalle": "pids=[1902578] ilegibles=45/97"
+    },
+    "lsof -t": {
+     "estado": "ocupado",
+     "detalle": "rc=0 pids=['1902578']"
+    },
+    "fuser": {
+     "estado": "ocupado",
+     "detalle": "rc=0 salida='1902578'"
+    }
+   }
+  }
+ ],
+ "coste": {
+  "os.replace(p,p)": {
+   "mediana_ms": 0.0034,
+   "min_ms": 0.0032,
+   "max_ms": 0.024,
+   "n": 11
+  },
+  "open(p,'rb')": {
+   "mediana_ms": 0.017,
+   "min_ms": 0.0099,
+   "max_ms": 0.0452,
+   "n": 11
+  },
+  "fcntl.flock": {
+   "mediana_ms": 0.0044,
+   "min_ms": 0.0043,
+   "max_ms": 0.0087,
+   "n": 11
+  },
+  "fcntl.lockf": {
+   "mediana_ms": 0.0059,
+   "min_ms": 0.0052,
+   "max_ms": 0.0357,
+   "n": 11
+  },
+  "/proc/*/fd": {
+   "mediana_ms": 5.6181,
+   "min_ms": 4.6293,
+   "max_ms": 7.6276,
+   "n": 11
+  },
+  "lsof -t": {
+   "mediana_ms": 110.6187,
+   "min_ms": 96.0455,
+   "max_ms": 115.0262,
+   "n": 11
+  },
+  "fuser": {
+   "mediana_ms": 40.032,
+   "min_ms": 35.7987,
+   "max_ms": 44.8238,
+   "n": 11
+  }
+ },
+ "testigos": {
+  "deriva_ms": [
+   10.66,
+   9.31
+  ],
+  "nivel_ms": [
+   5.39,
+   1.06
+  ],
+  "deriva_ratio": 0.873,
+  "nivel_ratio": 0.197,
+  "etiqueta": "limpia"
+ }
+}
