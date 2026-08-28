@@ -88,15 +88,77 @@ def _papel_tercero(arg: dict) -> int:
     return 0
 
 
+def _papel_ventana_convertidor(arg: dict) -> int:
+    """Convierte, pero **abriendo la ventana a propósito** entre la detección
+    final y el `move`.
+
+    El gancho no cambia el comportamiento de FileX: llama a la detección de
+    verdad y, cuando esta ya ha dicho «libre», suelta al tercero y **espera su
+    acuse**. Esa espera es lo que hace la prueba determinista — la ventana real
+    dura 681,4 µs y el tercero la acierta 12 de 12 veces, pero una prueba de
+    regresión no puede depender de acertar nada.
+
+    Se engancha en la SEGUNDA llamada: `convertir()` detecta dos veces, y la
+    primera ocurre antes de que exista ventana ninguna. Enganchar en la primera
+    da 12 celdas verdes que no prueban nada (trampa 38).
+    """
+    fx = FileX(raices_lectura=[arg["--dir"]])
+    original = nucleo.destino_ocupado_por_un_tercero
+    estado = {"n": 0, "ventana": False}
+
+    def gancho(ruta):
+        r = original(ruta)
+        estado["n"] += 1
+        if estado["n"] >= 2 and not r:
+            open(arg["--centinela"], "w").close()
+            t0 = time.perf_counter()
+            while not os.path.exists(arg["--acuse"]):
+                if time.perf_counter() - t0 > 60:
+                    return r          # el tercero no llegó: la celda no vale
+                time.sleep(0.001)
+            estado["ventana"] = True
+        return r
+
+    nucleo.destino_ocupado_por_un_tercero = gancho
+    try:
+        conv = fx.convertir(arg["--entrada"], arg["--salida"], {}, timeout=TOPE)
+    finally:
+        nucleo.destino_ocupado_por_un_tercero = original
+    print(json.dumps({"ok": conv.ok, "motivo": conv.motivo,
+                      "la_ventana_se_abrio": estado["ventana"],
+                      "bytes": (os.path.getsize(arg["--salida"])
+                                if os.path.exists(arg["--salida"]) else None)},
+                     ensure_ascii=False), flush=True)
+    return 0
+
+
+def _papel_ventana_tercero(arg: dict) -> int:
+    """Espera al centinela y **entonces** abre el destino, dentro de la ventana."""
+    print("LISTO", flush=True)
+    t0 = time.perf_counter()
+    while not os.path.exists(arg["--centinela"]):
+        if time.perf_counter() - t0 > TOPE:
+            return 2
+    f = open(arg["--salida"], "r+b")
+    print("ABIERTO", flush=True)
+    open(arg["--acuse"], "w").close()
+    time.sleep(TOPE)
+    f.close()
+    return 0
+
+
 PAPELES = {"convertidor": _papel_convertidor, "reservador": _papel_reservador,
-           "tercero": _papel_tercero}
+           "tercero": _papel_tercero,
+           "ventana_convertidor": _papel_ventana_convertidor,
+           "ventana_tercero": _papel_ventana_tercero}
 
 
 # --------------------------------------------------------------------------
 # Utilidades del lado del padre
 # --------------------------------------------------------------------------
 
-def _lanzar(papel: str, modo: str = "maquina", **kw) -> subprocess.Popen:
+def _lanzar(papel: str, modo: str = "maquina", move: str = "1",
+            **kw) -> subprocess.Popen:
     argv = [sys.executable, os.path.abspath(__file__), "--papel", papel]
     for k, v in kw.items():
         argv += ["--" + k, str(v)]
@@ -104,6 +166,7 @@ def _lanzar(papel: str, modo: str = "maquina", **kw) -> subprocess.Popen:
         argv, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
         stdin=subprocess.DEVNULL, text=True, encoding="utf-8", errors="replace",
         cwd=RAIZ, env=dict(os.environ, FILEX_CERROJO_DESTINO=modo,
+                           FILEX_MOVE_SEGURO=move,
                            PYTHONIOENCODING="utf-8"))
 
 
@@ -271,7 +334,8 @@ class TerceroQueNoCoopera(_Base):
     negarse.
     """
 
-    def _convertir_con_tercero_delante(self, modo: str) -> tuple[dict, tuple]:
+    def _convertir_con_tercero_delante(self, modo: str,
+                                       move: str = "1") -> tuple[dict, tuple]:
         t = _lanzar("tercero", modo, salida=self.salida)
         self.vivos.append(t)
         self.assertEqual(t.stdout.readline().strip(), "OCUPADO")
@@ -279,8 +343,9 @@ class TerceroQueNoCoopera(_Base):
                  open(self.salida, "rb").read(14))
         go = os.path.join(self.dir, "GO")
         open(go, "w").close()
-        p = _lanzar("convertidor", modo, dir=self.dir, entrada=self.png,
-                    salida=self.salida, listo=os.path.join(self.dir, "l"), go=go)
+        p = _lanzar("convertidor", modo, move=move, dir=self.dir,
+                    entrada=self.png, salida=self.salida,
+                    listo=os.path.join(self.dir, "l"), go=go)
         self.vivos.append(p)
         out, err = p.communicate(timeout=TOPE)
         fila = _ultima_linea_json(out)
@@ -290,8 +355,16 @@ class TerceroQueNoCoopera(_Base):
     def test_sin_deteccion_filex_pisa_el_fichero_de_un_tercero(self):
         """El estado del hito 7, y **es el caso peor**: `shutil.move` sobre un
         destino que existe cae a `copy2`, que sobrescribe **en silencio**, y
-        FileX devuelve `ok`. MEDIDO: 4 014 B → 13 516 B."""
-        fila, antes = self._convertir_con_tercero_delante("proceso")
+        FileX devuelve `ok`. MEDIDO: 4 014 B → 13 516 B.
+
+        **Desde N12 hacen falta las DOS variables para reproducirlo**
+        (`FILEX_MOVE_SEGURO=0` además de `FILEX_CERROJO_DESTINO=proceso`), y
+        eso no es un remiendo de la prueba: es el hallazgo. Con solo la
+        primera, esta prueba pasó a rojo porque `os.replace` **ya se niega
+        aunque la detección esté apagada** — ver
+        `test_aun_sin_deteccion_el_move_seguro_protege_al_tercero`.
+        """
+        fila, antes = self._convertir_con_tercero_delante("proceso", move="0")
         self.assertTrue(fila["ok"])
         self.assertNotEqual(os.path.getsize(self.salida), antes[0],
                             "sin detección, el fichero del tercero se pisa")
@@ -303,6 +376,118 @@ class TerceroQueNoCoopera(_Base):
         self.assertEqual((os.path.getsize(self.salida),
                           open(self.salida, "rb").read(14)), antes,
                          "el fichero del tercero tiene que quedar intacto")
+
+    def test_aun_sin_deteccion_el_move_seguro_protege_al_tercero(self):
+        """N12: las dos mitades ya no son independientes, y esto lo mide.
+
+        Con la detección **apagada** (`proceso`) y el `move` seguro puesto,
+        FileX se niega igual: el `os.replace` final falla con `WinError 5`. La
+        detección previa deja de ser la única defensa y pasa a ser un atajo
+        —evita convertir 250 ms y, cruzando volúmenes, una copia entera—.
+        """
+        fila, antes = self._convertir_con_tercero_delante("proceso", move="1")
+        self.assertFalse(fila["ok"], "el `os.replace` tenía que negarse")
+        self.assertEqual((os.path.getsize(self.salida),
+                          open(self.salida, "rb").read(14)), antes)
+
+
+# ==========================================================================
+# 3 bis. N12 — la VENTANA entre la detección y el `move`
+# ==========================================================================
+
+@unittest.skipUnless(ES_WINDOWS, "la detección solo existe en Windows")
+class VentanaAntesDelMove(_Base):
+    """`bench/ventana-antes-del-move.md`: la detección es un INSTANTE.
+
+    `TerceroQueNoCoopera` prueba al ocupante que **ya estaba** cuando FileX
+    miró. Aquí el tercero llega **después de mirar y antes de mover**, que es
+    justo el hueco que `bench/cerrojo-de-maquina.md` §6.3 dejó PENDIENTE.
+
+    Las dos pruebas son la misma escena con `FILEX_MOVE_SEGURO` a 0 y a 1, y
+    **cada una comprueba `la_ventana_se_abrio` antes de mirar el resultado**:
+    sin eso, la de abajo pasaría igual si el tercero no hubiera llegado nunca
+    (trampa 38).
+    """
+
+    def _escena(self, move: str) -> tuple[dict, bytes]:
+        # El destino existe y NADIE lo tiene abierto: la detección de FileX va
+        # a decir «libre», y va a tener razón.
+        with open(self.salida, "wb") as f:
+            f.write(b"T" * 4014)
+        centinela = os.path.join(self.dir, "CENTINELA")
+        acuse = os.path.join(self.dir, "ACUSE")
+        t = _lanzar("ventana_tercero", salida=self.salida,
+                    centinela=centinela, acuse=acuse)
+        self.vivos.append(t)
+        self.assertEqual(t.stdout.readline().strip(), "LISTO")
+        p = _lanzar("ventana_convertidor", move=move, dir=self.dir,
+                    entrada=self.png, salida=self.salida,
+                    centinela=centinela, acuse=acuse)
+        self.vivos.append(p)
+        out, err = p.communicate(timeout=TOPE)
+        fila = _ultima_linea_json(out)
+        self.assertTrue(fila, f"{out!r} {err[-300:]!r}")
+        self.assertTrue(fila["la_ventana_se_abrio"],
+                        "el tercero no llegó a colarse: la celda no prueba nada")
+        with open(self.salida, "rb") as f:
+            return fila, f.read(4)
+
+    def test_con_shutil_move_el_tercero_de_la_ventana_es_atropellado(self):
+        """El estado anterior a N12. **12 de 12 celdas** del arnés acabaron
+        así: FileX dice `ok` y el fichero del tercero deja de existir, porque
+        `shutil.move` sobre un destino existente cae a `copy2`."""
+        fila, cabecera = self._escena("0")
+        self.assertTrue(fila["ok"], fila["motivo"])
+        self.assertNotEqual(cabecera, b"TTTT",
+                            "con shutil.move el fichero del tercero se pisa")
+
+    def test_con_os_replace_filex_se_niega_y_no_lo_toca(self):
+        """`os.replace` funde la detección y la acción en una sola llamada del
+        sistema, así que no queda ventana entre medias."""
+        fila, cabecera = self._escena("1")
+        self.assertFalse(fila["ok"])
+        self.assertIn("otro proceso tiene abierta", fila["motivo"])
+        self.assertEqual(cabecera, b"TTTT",
+                         "el fichero del tercero tiene que quedar intacto")
+        self.assertEqual(os.path.getsize(self.salida), 4014)
+
+    def test_el_move_seguro_es_el_defecto(self):
+        """Una defensa que hay que encender no es una defensa."""
+        entorno = dict(os.environ)
+        entorno.pop("FILEX_MOVE_SEGURO", None)
+        r = subprocess.run(
+            [sys.executable, "-c",
+             "import sys; sys.path.insert(0, r'%s');"
+             "from filex import nucleo; print(nucleo._move_seguro())" % RAIZ],
+            capture_output=True, text=True, timeout=60, env=entorno,
+            stdin=subprocess.DEVNULL)
+        self.assertEqual(r.stdout.strip(), "True")
+
+    def test_cruzar_volumen_no_se_confunde_con_ocupado(self):
+        """Trampa 43 en su versión de N12: «no se puede» y «está en otro disco»
+        llegan los dos como `OSError`, y solo el `errno` los separa —
+        `EACCES` (13) frente a `EXDEV` (18), MEDIDO."""
+        otro = os.environ.get("FILEX_VENTANA_OTRO_VOLUMEN") or os.path.join(
+            RAIZ, "bench", "salidas-ventana")
+        if (os.path.splitdrive(os.path.abspath(otro))[0].lower()
+                == os.path.splitdrive(os.path.abspath(self.dir))[0].lower()):
+            self.skipTest("no hay dos volúmenes distintos a mano")
+        origen = os.path.join(self.dir, "cruza.bin")
+        with open(origen, "wb") as f:
+            f.write(b"X" * 1234)
+        destino = os.path.join(otro, "filex-prueba-cruza.bin")
+        try:
+            nucleo.mover_a_destino(origen, destino)
+            self.assertEqual(os.path.getsize(destino), 1234)
+            self.assertFalse(os.path.exists(origen))
+            # Y no deja el temporal de la copia por ahí.
+            self.assertFalse([n for n in os.listdir(otro)
+                              if n.startswith(".filex-") and n.endswith(".parcial")])
+        finally:
+            try:
+                os.remove(destino)
+            except OSError:
+                pass
 
 
 # ==========================================================================

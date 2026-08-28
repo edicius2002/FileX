@@ -15,9 +15,12 @@ hasta que el contrato la ha juzgado.
 
 from __future__ import annotations
 
+import errno
 import os
+import shutil
 import sys
 import threading
+import uuid
 from dataclasses import dataclass, field
 
 from . import cerrojo, contrato, formatos, invocacion, motores as _motores
@@ -290,6 +293,127 @@ def destino_ocupado_por_un_tercero(ruta: str) -> bool:
     return False
 
 
+# --------------------------------------------------------------------------
+# N12 — la VENTANA entre la detección y el `move`, y por qué no se cierra con
+# el handle que decía el pendiente
+# --------------------------------------------------------------------------
+#
+# `bench/cerrojo-de-maquina.md` §6.3 dejó escrito: *«la detección es un
+# INSTANTE, no una vigilancia. Entre el `os.replace(p,p)` y el `shutil.move`
+# hay una ventana [...] quien llegue dentro de esa ventana pisa igual.
+# Cerrarlo del todo exigiría abrir el destino con `FILE_SHARE_NONE`»*.
+#
+# **La ventana existe, y no es de microsegundos: son 681,4 µs de mediana**
+# (n=15, testigos limpios; otra tanda dio 498,0 — el recorrido entre celdas es
+# de 451,6 a 1 148,2 µs, `bench/ventana-antes-del-move.md` §2). Con un tercero de verdad en
+# otro proceso, **12 de 12 celdas** acaban con FileX devolviendo `ok` sobre el
+# fichero de otro; y **sin ningún gancho de sincronización, 7 de 12**. No hacía
+# falta acertar nada fino: medio milisegundo es una eternidad.
+#
+# **Pero el remedio que proponía el pendiente es el caro y no es el bueno —
+# MEDIDO** (ídem §3, `sonda_mecanismo.json`). `CreateFileW` con
+# `dwShareMode=0` funciona (el tercero hizo **0 aberturas en 12 393 intentos**)
+# **y me excluye también a MÍ**: con esa asa abierta, mi propio `os.replace`
+# sobre el destino devuelve `WinError 5`. Es decir, quedarse el asa obliga a
+# **escribir el contenido a través de ella**, que convierte un `rename` en una
+# copia entera.
+#
+# **Lo que cierra la ventana es no tenerla: `os.replace` en vez de
+# `shutil.move`.** Sobre el mismo estado —destino existente, abierto por un
+# tercero— `shutil.move` **PISA** (4 014 B → 13 516 B, que son los números
+# exactos del hito 7) porque su `os.rename` falla con `WinError 183` y él cae a
+# `copy2`; `os.replace` **se niega con `WinError 5` y deja el fichero intacto**.
+# La detección y la acción pasan a ser **la misma llamada del sistema**, así
+# que no hay entre medias donde colarse.
+#
+# Cruzar volúmenes es el único caso en que sigue habiendo copia (el desechable
+# vive en `%TEMP%`, que puede estar en otra unidad que el destino), y se
+# distingue sin ambigüedad: `ERROR_NOT_SAME_DEVICE` llega como `errno.EXDEV`
+# (18) y «ocupado» como `EACCES` (13) — MEDIDO. Ahí la copia va a un **temporal
+# en el directorio de destino** y el paso final vuelve a ser un `os.replace`,
+# que es el que decide.
+#
+# **Lo que NO cubre**, sin adornos:
+#
+#   * **El tercero que escribe y CIERRA dentro de la ventana.** `os.replace`
+#     pisa un destino que existe y que nadie tiene abierto — tiene que hacerlo,
+#     porque eso es exactamente sobrescribir un destino legítimo. Es
+#     indistinguible desde aquí.
+#   * **POSIX.** Allí `os.replace` sobrescribe aunque el fichero esté abierto,
+#     igual que hoy. Lo que sí gana POSIX es la **atomicidad**: nunca queda un
+#     destino a medio escribir. La detección sigue sin existir (§6.5 de N-b).
+#   * **Después de escrito.** Lo que le pase a la salida un milisegundo más
+#     tarde no es de aquí; es el punto 7 de la lista de N-b y sigue igual.
+#   * **Un LECTOR sigue bastando para negarse.** El falso positivo de la trampa
+#     33 no mejora ni empeora: es el mismo primitivo.
+#   * **Si el destino es un DIRECTORIO existente**, `shutil.move` metía la
+#     salida dentro y `os.replace` se niega. Es un cambio de comportamiento, y
+#     negarse es lo correcto: nadie pidió esa ruta.
+
+
+class DestinoOcupado(OSError):
+    """El movimiento final se negó porque otro tiene el destino abierto.
+
+    Es una excepción y no un booleano a propósito: el que la lanza es el
+    `os.replace` que **ya ha decidido**, no una consulta previa que alguien
+    pueda ignorar.
+    """
+
+
+def _move_seguro() -> bool:
+    """`FILEX_MOVE_SEGURO=0` devuelve el `shutil.move` del hito 7.
+
+    Mismo motivo que `FILEX_CERROJO_DESTINO` y `FILEX_CERROJO_MUTEX`: poder
+    medir el antes y el después **dentro de la misma tanda**, y que una prueba
+    pueda fallar por el fallo que dice cubrir. El defecto es el seguro.
+    """
+    return (os.environ.get("FILEX_MOVE_SEGURO") or "1").strip() != "0"
+
+
+def mover_a_destino(origen: str, destino: str) -> str:
+    """Saca la salida del desechable al destino **sin ventana**.
+
+    Devuelve la ruta final. Lanza `DestinoOcupado` si un tercero lo tiene
+    abierto, y deja pasar `FileNotFoundError` tal cual: *«no está»* y *«no se
+    puede»* son dos cosas distintas (trampa 43), y aquí «no está» es un fallo
+    de programación nuestro, no un ocupante.
+    """
+    dir_destino = os.path.dirname(os.path.abspath(destino)) or "."
+    os.makedirs(dir_destino, exist_ok=True)
+    if not _move_seguro():
+        shutil.move(origen, destino)
+        return destino
+    try:
+        os.replace(origen, destino)
+        return destino
+    except FileNotFoundError:
+        raise
+    except OSError as e:
+        if e.errno != errno.EXDEV:
+            raise DestinoOcupado(e.errno, str(e), destino) from e
+
+    # Volúmenes distintos: hay copia, pero el paso que DECIDE sigue siendo un
+    # `os.replace`. El temporal va en el directorio de destino —no en el
+    # desechable— porque si no, el `replace` final volvería a cruzar volúmenes.
+    parcial = os.path.join(dir_destino, f".filex-{uuid.uuid4().hex}.parcial")
+    try:
+        shutil.copy2(origen, parcial)
+        os.replace(parcial, destino)
+    except OSError as e:
+        try:
+            os.remove(parcial)
+        except OSError:
+            pass
+        if isinstance(e, FileNotFoundError):
+            raise
+        raise DestinoOcupado(e.errno, str(e), destino) from e
+    try:
+        os.remove(origen)
+    except OSError:
+        pass  # el desechable se borra entero de todas formas
+    return destino
+
+
 @dataclass
 class Salto:
     arista: Arista
@@ -559,15 +683,29 @@ class FileX:
             # Aquí es donde ocurría el atropello: `shutil.move` sobre un
             # destino existente cae a `copy2`, que sobrescribe en silencio. El
             # candado excluye a los otros `filex`; esto es lo único que se puede
-            # hacer contra quien no lo toma, y es la ventana más estrecha
-            # posible. Sigue siendo un INSTANTE, no una vigilancia
-            # (`bench/lock-de-maquina.md` §5 punto 4).
+            # hacer contra quien no lo toma.
+            #
+            # **Se queda, aunque `mover_a_destino` ya no la necesite.** No es
+            # redundancia: cuando el desechable y el destino están en volúmenes
+            # distintos el movimiento final incluye una COPIA, y verlo aquí la
+            # ahorra entera. Lo que ha dejado de ser es la única defensa —antes
+            # de N12 había 681,4 µs entre esta línea y el `move`, y por ahí se
+            # colaron 12 de 12 terceros—.
             if destino_ocupado_por_un_tercero(destino_final):
                 s.veredicto = "fallo"
                 s.motivo = "otro proceso tiene abierta esa ruta de salida"
                 s.ruta = dentro
                 return s
-            t.recoger(nombre, destino_final)
+            try:
+                # N12: `mover_a_destino` en vez de `t.recoger`, que hace
+                # `shutil.move` y **pisa en silencio**. La detección y la acción
+                # son ahora la misma llamada del sistema.
+                mover_a_destino(t.destino(nombre), destino_final)
+            except DestinoOcupado:
+                s.veredicto = "fallo"
+                s.motivo = "otro proceso tiene abierta esa ruta de salida"
+                s.ruta = dentro
+                return s
             s.ruta = destino_final
         else:
             s.ruta = dentro  # el desechable vive hasta el final
