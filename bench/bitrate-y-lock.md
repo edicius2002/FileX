@@ -491,9 +491,11 @@ ganar un hallazgo `V10`. Es la regla nueva, no una regresión.
 | después | **`363 passed, 6 skipped, 1 failed`** (185,18 s) |
 
 348 + 16 nuevas = 364 = 363 + 1. `pruebas/test_bitrate_y_lock.py` añade **16
-pruebas**: 8 de N24 (incluida la del mecanismo —la sonda no publica el bitrate de
-vídeo— y la de que el desvío normal de NVENC no puede salir `fallo`, con las
-cuatro cifras de H2), 5 de N25 y 3 de N22.
+pruebas**: **7 de N24** (incluida la del mecanismo —la sonda no publica el
+bitrate de vídeo— y la de que el desvío normal de NVENC no puede salir `fallo`,
+con las cuatro cifras de H2), **5 de N25** (una de ellas sobre el AST, que falla
+contra `HEAD`, y otra que separa mi parche del de H2 comprobando que la guardia
+no se repite en la reentrada) y **4 de N22**.
 
 ### 7.1 El único rojo, y es el esperado
 
