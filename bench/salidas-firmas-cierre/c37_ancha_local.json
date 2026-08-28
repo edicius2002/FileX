@@ -1,0 +1,5994 @@
+{
+ "sha256_verificador_despues": "652729273eb0786d",
+ "escritos": 345,
+ "no_escribibles": 255,
+ "satelites": [
+  [
+   "ffmpeg",
+   "m3u8",
+   [
+    "v1010.ts"
+   ]
+  ],
+  [
+   "imagemagick",
+   "htm",
+   [
+    "v263.png",
+    "v263_map.shtml"
+   ]
+  ],
+  [
+   "imagemagick",
+   "html",
+   [
+    "v264.png",
+    "v264_map.shtml"
+   ]
+  ],
+  [
+   "imagemagick",
+   "mpc",
+   [
+    "v298.mpc"
+   ]
+  ]
+ ],
+ "antes": {
+  "n": 345,
+  "falsos_positivos": [],
+  "g6": [
+   "clipboard",
+   "data",
+   "flif",
+   "group4",
+   "histogram",
+   "inline",
+   "msl",
+   "mvg",
+   "null",
+   "pocketmod",
+   "sparse",
+   "vid"
+  ],
+  "cobertura": {
+   "evaluado": 245,
+   "sin_vocabulario": 31,
+   "no_aplica": 60,
+   "familia": 9
+  }
+ },
+ "despues": {
+  "n": 345,
+  "falsos_positivos": [],
+  "g6": [
+   "clipboard",
+   "data",
+   "flif",
+   "group4",
+   "histogram",
+   "inline",
+   "msl",
+   "mvg",
+   "null",
+   "pocketmod",
+   "sparse",
+   "vid"
+  ],
+  "cobertura": {
+   "evaluado": 249,
+   "sin_vocabulario": 25,
+   "no_aplica": 61,
+   "familia": 10
+  }
+ },
+ "cambios": [
+  {
+   "motor": "imagemagick",
+   "formato": "cip",
+   "cambia": {
+    "punto1": [
+     "sin_vocabulario",
+     "familia"
+    ],
+    "reglas": [
+     [
+      [
+       "G3",
+       "informativo"
+      ]
+     ],
+     [
+      [
+       "G5",
+       "informativo"
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "ftxt",
+   "cambia": {
+    "punto1": [
+     "sin_vocabulario",
+     "no_aplica"
+    ],
+    "reglas": [
+     [
+      [
+       "G3",
+       "informativo"
+      ]
+     ],
+     [
+      [
+       "G4",
+       "informativo"
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "pcd",
+   "cambia": {
+    "firma": [
+     "mpegaudio",
+     "pcd"
+    ],
+    "punto1": [
+     "sin_vocabulario",
+     "evaluado"
+    ],
+    "reglas": [
+     [
+      [
+       "G3",
+       "informativo"
+      ]
+     ],
+     []
+    ]
+   }
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "pcds",
+   "cambia": {
+    "firma": [
+     "mpegaudio",
+     "pcd"
+    ],
+    "punto1": [
+     "sin_vocabulario",
+     "evaluado"
+    ],
+    "reglas": [
+     [
+      [
+       "G3",
+       "informativo"
+      ]
+     ],
+     []
+    ]
+   }
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "pct",
+   "cambia": {
+    "firma": [
+     "desconocido",
+     "pict"
+    ],
+    "punto1": [
+     "sin_vocabulario",
+     "evaluado"
+    ],
+    "reglas": [
+     [
+      [
+       "G3",
+       "informativo"
+      ]
+     ],
+     []
+    ]
+   }
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "pict",
+   "cambia": {
+    "firma": [
+     "desconocido",
+     "pict"
+    ],
+    "punto1": [
+     "sin_vocabulario",
+     "evaluado"
+    ],
+    "reglas": [
+     [
+      [
+       "G3",
+       "informativo"
+      ]
+     ],
+     []
+    ]
+   }
+  }
+ ],
+ "no_escritos": [
+  {
+   "motor": "ffmpeg",
+   "formato": "302",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "output file, because at least one of its streams received no packets.\nsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "302",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "output file, because at least one of its streams received no packets.\nsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "302",
+   "modalidad": "imagen",
+   "rc": 4294967274,
+   "err": "ta/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0003\\v3.302.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "302",
+   "modalidad": "subtitulo",
+   "rc": 4294967274,
+   "err": "ta/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0003\\v3.302.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "3g2",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "st one of its streams received no packets.\nframe=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "3gp",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "st one of its streams received no packets.\nframe=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "ac4",
+   "modalidad": "video",
+   "rc": 3165764104,
+   "err": "a/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0009\\v9.ac4.\nError opening output files: Encoder not found\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "ac4",
+   "modalidad": "audio",
+   "rc": 3165764104,
+   "err": "a/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0009\\v9.ac4.\nError opening output files: Encoder not found\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "ac4",
+   "modalidad": "imagen",
+   "rc": 4294967274,
+   "err": "ta/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0009\\v9.ac4.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "ac4",
+   "modalidad": "subtitulo",
+   "rc": 4294967274,
+   "err": "ta/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0009\\v9.ac4.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "amr",
+   "modalidad": "video",
+   "rc": 4294967256,
+   "err": "output file, because at least one of its streams received no packets.\nsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "amv",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "st one of its streams received no packets.\nframe=    0 fps=0.0 q=1.6 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "amv",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "output file, because at least one of its streams received no packets.\nsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "amv",
+   "modalidad": "imagen",
+   "rc": 4294967274,
+   "err": "st one of its streams received no packets.\nframe=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "amv",
+   "modalidad": "subtitulo",
+   "rc": 4294967274,
+   "err": "a/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0018\\v18.amv.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "ass",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "a/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0024\\v24.ass.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "ass",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "a/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0024\\v24.ass.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "ass",
+   "modalidad": "imagen",
+   "rc": 4294967274,
+   "err": "a/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0024\\v24.ass.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "avs3",
+   "modalidad": "video",
+   "rc": 3165764104,
+   "err": "Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0034\\v34.avs3.\nError opening output files: Encoder not found\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "avs3",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0034\\v34.avs3.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "avs3",
+   "modalidad": "imagen",
+   "rc": 3165764104,
+   "err": "Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0034\\v34.avs3.\nError opening output files: Encoder not found\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "avs3",
+   "modalidad": "subtitulo",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0034\\v34.avs3.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "bit",
+   "modalidad": "video",
+   "rc": 3165764104,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0035\\v35.bit.\nError opening output files: Encoder not found\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "bit",
+   "modalidad": "audio",
+   "rc": 3165764104,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0035\\v35.bit.\nError opening output files: Encoder not found\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "bit",
+   "modalidad": "imagen",
+   "rc": 4294967274,
+   "err": "a/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0035\\v35.bit.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "bit",
+   "modalidad": "subtitulo",
+   "rc": 4294967274,
+   "err": "a/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0035\\v35.bit.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "bmp",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "l headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=73.9x elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "bmp",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "a/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0036\\v36.bmp.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "c2",
+   "modalidad": "video",
+   "rc": 3165764104,
+   "err": "a/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0037\\v37.c2.\nError opening output files: Encoder not found\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "c2",
+   "modalidad": "audio",
+   "rc": 3165764104,
+   "err": "a/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0037\\v37.c2.\nError opening output files: Encoder not found\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "c2",
+   "modalidad": "imagen",
+   "rc": 4294967274,
+   "err": "ta/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0037\\v37.c2.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "c2",
+   "modalidad": "subtitulo",
+   "rc": 4294967274,
+   "err": "ta/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0037\\v37.c2.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "cavs",
+   "modalidad": "video",
+   "rc": 3165764104,
+   "err": "Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0039\\v39.cavs.\nError opening output files: Encoder not found\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "cavs",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0039\\v39.cavs.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "cavs",
+   "modalidad": "imagen",
+   "rc": 3165764104,
+   "err": "Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0039\\v39.cavs.\nError opening output files: Encoder not found\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "cavs",
+   "modalidad": "subtitulo",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0039\\v39.cavs.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "chk",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "a/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0040\\v40.chk.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "chk",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "a/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0040\\v40.chk.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "chk",
+   "modalidad": "imagen",
+   "rc": 4294967274,
+   "err": "a/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0040\\v40.chk.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "chk",
+   "modalidad": "subtitulo",
+   "rc": 4294967274,
+   "err": "a/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0040\\v40.chk.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "cvg",
+   "modalidad": "video",
+   "rc": 3165764104,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0042\\v42.cvg.\nError opening output files: Encoder not found\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "cvg",
+   "modalidad": "audio",
+   "rc": 3165764104,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0042\\v42.cvg.\nError opening output files: Encoder not found\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "cvg",
+   "modalidad": "imagen",
+   "rc": 4294967274,
+   "err": "a/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0042\\v42.cvg.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "cvg",
+   "modalidad": "subtitulo",
+   "rc": 4294967274,
+   "err": "a/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0042\\v42.cvg.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "dnxhd",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "st one of its streams received no packets.\nframe=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "dnxhd",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0044\\v44.dnxhd.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "dnxhd",
+   "modalidad": "imagen",
+   "rc": 4294967274,
+   "err": "st one of its streams received no packets.\nframe=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "dnxhd",
+   "modalidad": "subtitulo",
+   "rc": 4294967274,
+   "err": "Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0044\\v44.dnxhd.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "dnxhr",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "st one of its streams received no packets.\nframe=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "dnxhr",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0045\\v45.dnxhr.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "dnxhr",
+   "modalidad": "imagen",
+   "rc": 4294967274,
+   "err": "st one of its streams received no packets.\nframe=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "dnxhr",
+   "modalidad": "subtitulo",
+   "rc": 4294967274,
+   "err": "Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0045\\v45.dnxhr.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "dpx",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "l headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=66.5x elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "dpx",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "a/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0046\\v46.dpx.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "dts",
+   "modalidad": "video",
+   "rc": 3561836632,
+   "err": "output file, because at least one of its streams received no packets.\nsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "dts",
+   "modalidad": "audio",
+   "rc": 3561836632,
+   "err": "output file, because at least one of its streams received no packets.\nsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "dts",
+   "modalidad": "imagen",
+   "rc": 4294967274,
+   "err": "a/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0048\\v48.dts.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "dts",
+   "modalidad": "subtitulo",
+   "rc": 4294967274,
+   "err": "a/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0048\\v48.dts.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "dv",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "st one of its streams received no packets.\nframe=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "dv",
+   "modalidad": "audio",
+   "rc": 3199971767,
+   "err": "output file, because at least one of its streams received no packets.\nsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "dv",
+   "modalidad": "imagen",
+   "rc": 4294967274,
+   "err": "st one of its streams received no packets.\nframe=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "dv",
+   "modalidad": "subtitulo",
+   "rc": 4294967274,
+   "err": "ta/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0049\\v49.dv.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "evc",
+   "modalidad": "video",
+   "rc": 3165764104,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0053\\v53.evc.\nError opening output files: Encoder not found\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "evc",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "a/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0053\\v53.evc.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "evc",
+   "modalidad": "imagen",
+   "rc": 3165764104,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0053\\v53.evc.\nError opening output files: Encoder not found\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "evc",
+   "modalidad": "subtitulo",
+   "rc": 4294967274,
+   "err": "a/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0053\\v53.evc.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "exr",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "l headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=51.5x elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "exr",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "a/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0054\\v54.exr.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "flm",
+   "modalidad": "video",
+   "rc": 3199971767,
+   "err": "st one of its streams received no packets.\nframe=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "flm",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "a/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0059\\v59.flm.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "flm",
+   "modalidad": "imagen",
+   "rc": 3199971767,
+   "err": "st one of its streams received no packets.\nframe=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "flm",
+   "modalidad": "subtitulo",
+   "rc": 4294967274,
+   "err": "a/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0059\\v59.flm.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "gsm",
+   "modalidad": "video",
+   "rc": 3165764104,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0063\\v63.gsm.\nError opening output files: Encoder not found\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "gsm",
+   "modalidad": "audio",
+   "rc": 3165764104,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0063\\v63.gsm.\nError opening output files: Encoder not found\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "gsm",
+   "modalidad": "imagen",
+   "rc": 4294967274,
+   "err": "a/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0063\\v63.gsm.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "gsm",
+   "modalidad": "subtitulo",
+   "rc": 4294967274,
+   "err": "a/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0063\\v63.gsm.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "gxf",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "st one of its streams received no packets.\nframe=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "gxf",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "output file, because at least one of its streams received no packets.\nsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "gxf",
+   "modalidad": "imagen",
+   "rc": 4294967274,
+   "err": "st one of its streams received no packets.\nframe=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "gxf",
+   "modalidad": "subtitulo",
+   "rc": 4294967274,
+   "err": "a/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0064\\v64.gxf.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "h261",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "st one of its streams received no packets.\nframe=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "h261",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0065\\v65.h261.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "h261",
+   "modalidad": "imagen",
+   "rc": 4294967274,
+   "err": "st one of its streams received no packets.\nframe=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "h261",
+   "modalidad": "subtitulo",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0065\\v65.h261.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "h263",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "st one of its streams received no packets.\nframe=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "h263",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0066\\v66.h263.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "h263",
+   "modalidad": "imagen",
+   "rc": 4294967274,
+   "err": "st one of its streams received no packets.\nframe=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "h263",
+   "modalidad": "subtitulo",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0066\\v66.h263.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "h266.mkv",
+   "modalidad": "video",
+   "rc": 3165764104,
+   "err": "l/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0071\\v71.h266.mkv.\nError opening output files: Encoder not found\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "hdr",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "l headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=55.3x elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "hdr",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "a/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0072\\v72.hdr.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "ico",
+   "modalidad": "video",
+   "rc": 4294967291,
+   "err": "ing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=       9KiB time=00:00:00.50 bitrate= 155.3kbits/s speed=65.8x elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "ico",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "a/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0074\\v74.ico.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "im1",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "l headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=64.8x elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "im1",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "a/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0075\\v75.im1.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "im24",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "l headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=61.5x elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "im24",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0076\\v76.im24.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "im8",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "l headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=69.4x elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "im8",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "a/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0077\\v77.im8.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "j2c",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "l headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=67.3x elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "j2c",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "a/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0082\\v82.j2c.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "j2k",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "l headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=69.4x elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "j2k",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "a/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0083\\v83.j2k.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "jls",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "l headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=56.2x elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "jls",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "a/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0084\\v84.jls.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "jp2",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "l headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=69.6x elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "jp2",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "a/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0085\\v85.jp2.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "jpeg",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "al headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=1.6 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=59.6x elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "jpeg",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0086\\v86.jpeg.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "jpg",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "al headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=1.6 Lsize=N/A time=00:00:00.40 bitrate=N/A speed=54.9x elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "jpg",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "a/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0087\\v87.jpg.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "js",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "ta/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0088\\v88.js.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "js",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "ta/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0088\\v88.js.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "js",
+   "modalidad": "imagen",
+   "rc": 4294967274,
+   "err": "ta/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0088\\v88.js.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "js",
+   "modalidad": "subtitulo",
+   "rc": 4294967274,
+   "err": "ta/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0088\\v88.js.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "jss",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "a/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0089\\v89.jss.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "jss",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "a/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0089\\v89.jss.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "jss",
+   "modalidad": "imagen",
+   "rc": 4294967274,
+   "err": "a/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0089\\v89.jss.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "jss",
+   "modalidad": "subtitulo",
+   "rc": 4294967274,
+   "err": "a/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0089\\v89.jss.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "jxl",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "l headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.20 bitrate=N/A speed=3.91x elapsed=0:00:00.05    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "jxl",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "a/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0090\\v90.jxl.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "lbc",
+   "modalidad": "video",
+   "rc": 3165764104,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0092\\v92.lbc.\nError opening output files: Encoder not found\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "lbc",
+   "modalidad": "audio",
+   "rc": 3165764104,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0092\\v92.lbc.\nError opening output files: Encoder not found\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "lbc",
+   "modalidad": "imagen",
+   "rc": 4294967274,
+   "err": "a/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0092\\v92.lbc.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "lbc",
+   "modalidad": "subtitulo",
+   "rc": 4294967274,
+   "err": "a/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0092\\v92.lbc.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "ljpg",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "st one of its streams received no packets.\nframe=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "ljpg",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0093\\v93.ljpg.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "lrc",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "a/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0095\\v95.lrc.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "lrc",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "a/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0095\\v95.lrc.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "lrc",
+   "modalidad": "imagen",
+   "rc": 4294967274,
+   "err": "a/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0095\\v95.lrc.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "m1v",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "st one of its streams received no packets.\nframe=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "m1v",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "a/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0096\\v96.m1v.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "mlp",
+   "modalidad": "video",
+   "rc": 3561836632,
+   "err": "output file, because at least one of its streams received no packets.\nsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "mlp",
+   "modalidad": "audio",
+   "rc": 3561836632,
+   "err": "output file, because at least one of its streams received no packets.\nsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "mlp",
+   "modalidad": "imagen",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0108\\v108.mlp.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "mlp",
+   "modalidad": "subtitulo",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0108\\v108.mlp.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "mpeg",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "st one of its streams received no packets.\nframe=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "mpg",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "st one of its streams received no packets.\nframe=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "mxf",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "st one of its streams received no packets.\nframe=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "mxf",
+   "modalidad": "audio",
+   "rc": 4294967295,
+   "err": "output file, because at least one of its streams received no packets.\nsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "oma",
+   "modalidad": "video",
+   "rc": 3165764104,
+   "err": "Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0126\\v126.oma.\nError opening output files: Encoder not found\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "oma",
+   "modalidad": "audio",
+   "rc": 3165764104,
+   "err": "Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0126\\v126.oma.\nError opening output files: Encoder not found\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "oma",
+   "modalidad": "imagen",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0126\\v126.oma.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "oma",
+   "modalidad": "subtitulo",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0126\\v126.oma.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "pam",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "l headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=69.8x elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "pam",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0128\\v128.pam.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "pbm",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "l headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=62.4x elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "pbm",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0129\\v129.pbm.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "pcx",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "l headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=71.3x elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "pcx",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0131\\v131.pcx.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "pfm",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "l headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=  62x elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "pfm",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0132\\v132.pfm.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "pgm",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "l headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=64.9x elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "pgm",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0133\\v133.pgm.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "pgmyuv",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "l headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed= 117x elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "pgmyuv",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "cal/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0134\\v134.pgmyuv.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "phm",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "l headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=65.3x elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "phm",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0135\\v135.phm.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "pix",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "l headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=73.1x elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "pix",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0136\\v136.pix.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "png",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "l headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=  45x elapsed=0:00:00.01    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "png",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0137\\v137.png.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "ppm",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "l headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=80.2x elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "ppm",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0138\\v138.ppm.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "qoi",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "l headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=60.3x elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "qoi",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0140\\v140.qoi.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "ras",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "l headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=70.9x elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "ras",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0142\\v142.ras.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "rco",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "output file, because at least one of its streams received no packets.\nsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "rcv",
+   "modalidad": "video",
+   "rc": 3165764104,
+   "err": "Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0144\\v144.rcv.\nError opening output files: Encoder not found\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "rcv",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0144\\v144.rcv.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "rcv",
+   "modalidad": "imagen",
+   "rc": 3165764104,
+   "err": "Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0144\\v144.rcv.\nError opening output files: Encoder not found\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "rcv",
+   "modalidad": "subtitulo",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0144\\v144.rcv.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "roq",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "t one of its streams received no packets.\nframe=    0 fps=0.0 q=-0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.03    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "roq",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "output file, because at least one of its streams received no packets.\nsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "rs",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "l headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=65.5x elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "rs",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "a/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0148\\v148.rs.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "scc",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0152\\v152.scc.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "scc",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0152\\v152.scc.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "scc",
+   "modalidad": "imagen",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0152\\v152.scc.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "scc",
+   "modalidad": "subtitulo",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0152\\v152.scc.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "sgi",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "l headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=67.1x elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "sgi",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0154\\v154.sgi.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "spx",
+   "modalidad": "video",
+   "rc": 3165764104,
+   "err": "Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0157\\v157.spx.\nError opening output files: Encoder not found\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "spx",
+   "modalidad": "audio",
+   "rc": 3165764104,
+   "err": "Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0157\\v157.spx.\nError opening output files: Encoder not found\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "spx",
+   "modalidad": "imagen",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0157\\v157.spx.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "spx",
+   "modalidad": "subtitulo",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0157\\v157.spx.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "srt",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0158\\v158.srt.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "srt",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0158\\v158.srt.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "srt",
+   "modalidad": "imagen",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0158\\v158.srt.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "ssa",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0159\\v159.ssa.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "ssa",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0159\\v159.ssa.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "ssa",
+   "modalidad": "imagen",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0159\\v159.ssa.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "sub",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0160\\v160.sub.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "sub",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0160\\v160.sub.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "sub",
+   "modalidad": "imagen",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0160\\v160.sub.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "sub",
+   "modalidad": "subtitulo",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0160\\v160.sub.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "sun",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "l headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=74.9x elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "sun",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0161\\v161.sun.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "sunras",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "l headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=67.3x elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "sunras",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "cal/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0162\\v162.sunras.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "sup",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0163\\v163.sup.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "sup",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0163\\v163.sup.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "sup",
+   "modalidad": "imagen",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0163\\v163.sup.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "sup",
+   "modalidad": "subtitulo",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0163\\v163.sup.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "tco",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "output file, because at least one of its streams received no packets.\nsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "tga",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "l headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=  67x elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "tga",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0167\\v167.tga.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "thd",
+   "modalidad": "video",
+   "rc": 3561836632,
+   "err": "output file, because at least one of its streams received no packets.\nsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "thd",
+   "modalidad": "audio",
+   "rc": 3561836632,
+   "err": "output file, because at least one of its streams received no packets.\nsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "thd",
+   "modalidad": "imagen",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0168\\v168.thd.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "thd",
+   "modalidad": "subtitulo",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0168\\v168.thd.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "tif",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "l headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=98.5x elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "tif",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0169\\v169.tif.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "tiff",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "l headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed= 107x elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "tiff",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0170\\v170.tiff.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "ttml",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0173\\v173.ttml.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "ttml",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0173\\v173.ttml.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "ttml",
+   "modalidad": "imagen",
+   "rc": 4294967274,
+   "err": "Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0173\\v173.ttml.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "tun",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "output file, because at least one of its streams received no packets.\nsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "tun",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "output file, because at least one of its streams received no packets.\nsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "tun",
+   "modalidad": "imagen",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0174\\v174.tun.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "tun",
+   "modalidad": "subtitulo",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0174\\v174.tun.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "vbn",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "coded(check -ss / -t / -frames parameters if used)\nframe=    0 fps=0.0 q=0.0 Lsize=N/A time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "vbn",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0179\\v179.vbn.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "vbn",
+   "modalidad": "imagen",
+   "rc": 4294967274,
+   "err": "coded(check -ss / -t / -frames parameters if used)\nframe=    0 fps=0.0 q=0.0 Lsize=N/A time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "vbn",
+   "modalidad": "subtitulo",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0179\\v179.vbn.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "vc1",
+   "modalidad": "video",
+   "rc": 3165764104,
+   "err": "Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0180\\v180.vc1.\nError opening output files: Encoder not found\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "vc1",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0180\\v180.vc1.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "vc1",
+   "modalidad": "imagen",
+   "rc": 3165764104,
+   "err": "Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0180\\v180.vc1.\nError opening output files: Encoder not found\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "vc1",
+   "modalidad": "subtitulo",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0180\\v180.vc1.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "vtt",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0184\\v184.vtt.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "vtt",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0184\\v184.vtt.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "vtt",
+   "modalidad": "imagen",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0184\\v184.vtt.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "wbmp",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "l headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=68.4x elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "wbmp",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0188\\v188.wbmp.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "xbm",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "l headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=57.6x elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "xbm",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0195\\v195.xbm.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "xface",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "coded(check -ss / -t / -frames parameters if used)\nframe=    0 fps=0.0 q=0.0 Lsize=N/A time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "xface",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "ocal/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0196\\v196.xface.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "xface",
+   "modalidad": "imagen",
+   "rc": 4294967274,
+   "err": "coded(check -ss / -t / -frames parameters if used)\nframe=    0 fps=0.0 q=0.0 Lsize=N/A time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "xface",
+   "modalidad": "subtitulo",
+   "rc": 4294967274,
+   "err": "ocal/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0196\\v196.xface.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "xml",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0197\\v197.xml.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "xml",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0197\\v197.xml.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "xml",
+   "modalidad": "imagen",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0197\\v197.xml.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "xml",
+   "modalidad": "subtitulo",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0197\\v197.xml.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "xwd",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "l headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=72.4x elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "xwd",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0198\\v198.xwd.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "y",
+   "modalidad": "video",
+   "rc": 4294967274,
+   "err": "l headers:0KiB muxing overhead: unknown\nframe=    2 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.50 bitrate=N/A speed=89.1x elapsed=0:00:00.00    \nConversion failed!\n"
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "y",
+   "modalidad": "audio",
+   "rc": 4294967274,
+   "err": "ta/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0199\\v199.y.\nError opening output files: Invalid argument\n"
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "clip",
+   "modalidad": "imagen",
+   "rc": 1,
+   "err": "o/AppData/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0222\\v222.clip' @ error/clip.c/WriteCLIPImage/234.\n"
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "jpt",
+   "modalidad": "imagen",
+   "rc": 1,
+   "err": "ato/AppData/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0283\\v283.jpt' @ error/jp2.c/WriteJP2Image/1271.\n"
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "mask",
+   "modalidad": "imagen",
+   "rc": 1,
+   "err": "o/AppData/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0289\\v289.mask' @ error/mask.c/WriteMASKImage/353.\n"
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "matte",
+   "modalidad": "imagen",
+   "rc": 1,
+   "err": "ppData/Local/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0291\\v291.matte' @ error/matte.c/WriteMATTEImage/180.\n"
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "thumbnail",
+   "modalidad": "imagen",
+   "rc": 1,
+   "err": "/Temp/claude/D--Work-research-FileX/01b89f8d-cf1d-46e6-a799-e30ab2d26676/scratchpad/F2_ANCHA\\w0359\\v359.thumbnail' @ error/thumbnail.c/WriteTHUMBNAILImage/187.\n"
+  }
+ ],
+ "filas_despues": [
+  {
+   "motor": "ffmpeg",
+   "formato": "264",
+   "modalidad": "video",
+   "firma": "flujo_es",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "265",
+   "modalidad": "video",
+   "firma": "flujo_es",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "266",
+   "modalidad": "video",
+   "firma": "flujo_es",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "3g2",
+   "modalidad": "audio",
+   "firma": "3gp",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "3gp",
+   "modalidad": "audio",
+   "firma": "3gp",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "a64",
+   "modalidad": "video",
+   "firma": "desconocido",
+   "punto1": "sin_vocabulario",
+   "reglas": [
+    [
+     "G3",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "aac",
+   "modalidad": "video",
+   "firma": "adts",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "ac3",
+   "modalidad": "video",
+   "firma": "ac3",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "adts",
+   "modalidad": "video",
+   "firma": "adts",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "adx",
+   "modalidad": "video",
+   "firma": "adx",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "afc",
+   "modalidad": "video",
+   "firma": "aiff",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "aif",
+   "modalidad": "video",
+   "firma": "aiff",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "aifc",
+   "modalidad": "video",
+   "firma": "aiff",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "aiff",
+   "modalidad": "video",
+   "firma": "aiff",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "al",
+   "modalidad": "video",
+   "firma": "desconocido",
+   "punto1": "no_aplica",
+   "reglas": [
+    [
+     "G4",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "amr",
+   "modalidad": "audio",
+   "firma": "amr",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "apm",
+   "modalidad": "video",
+   "firma": "desconocido",
+   "punto1": "sin_vocabulario",
+   "reglas": [
+    [
+     "G3",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "apng",
+   "modalidad": "video",
+   "firma": "png",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "aptx",
+   "modalidad": "video",
+   "firma": "desconocido",
+   "punto1": "sin_vocabulario",
+   "reglas": [
+    [
+     "G3",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "aptxhd",
+   "modalidad": "video",
+   "firma": "desconocido",
+   "punto1": "sin_vocabulario",
+   "reglas": [
+    [
+     "G3",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "asf",
+   "modalidad": "video",
+   "firma": "asf",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "ass",
+   "modalidad": "subtitulo",
+   "firma": "ass",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "ast",
+   "modalidad": "video",
+   "firma": "ast",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "au",
+   "modalidad": "video",
+   "firma": "au",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "aud",
+   "modalidad": "video",
+   "firma": "desconocido",
+   "punto1": "no_aplica",
+   "reglas": [
+    [
+     "G4",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "av1.mkv",
+   "modalidad": "video",
+   "firma": "matroska",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "av1.mp4",
+   "modalidad": "video",
+   "firma": "mp4",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "avi",
+   "modalidad": "video",
+   "firma": "avi",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "avif",
+   "modalidad": "video",
+   "firma": "avif",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "avs",
+   "modalidad": "video",
+   "firma": "flujo_es",
+   "punto1": "no_aplica",
+   "reglas": [
+    [
+     "G4",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "avs2",
+   "modalidad": "video",
+   "firma": "flujo_es",
+   "punto1": "sin_vocabulario",
+   "reglas": [
+    [
+     "G3",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "bmp",
+   "modalidad": "imagen",
+   "firma": "bmp",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "caf",
+   "modalidad": "video",
+   "firma": "caf",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "cpk",
+   "modalidad": "video",
+   "firma": "cpk",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "dfpwm",
+   "modalidad": "video",
+   "firma": "desconocido",
+   "punto1": "no_aplica",
+   "reglas": [
+    [
+     "G4",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "dpx",
+   "modalidad": "imagen",
+   "firma": "dpx",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "drc",
+   "modalidad": "video",
+   "firma": "dirac",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "dvd",
+   "modalidad": "video",
+   "firma": "mpegps",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "eac3",
+   "modalidad": "video",
+   "firma": "ac3",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "ec3",
+   "modalidad": "video",
+   "firma": "ac3",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "exr",
+   "modalidad": "imagen",
+   "firma": "exr",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "f4v",
+   "modalidad": "video",
+   "firma": "mp4",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "ffmeta",
+   "modalidad": "video",
+   "firma": "ffmetadata",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "fits",
+   "modalidad": "video",
+   "firma": "fits",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "flac",
+   "modalidad": "video",
+   "firma": "flac",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "flv",
+   "modalidad": "video",
+   "firma": "flv",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "g722",
+   "modalidad": "video",
+   "firma": "texto",
+   "punto1": "no_aplica",
+   "reglas": [
+    [
+     "G4",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "gif",
+   "modalidad": "video",
+   "firma": "gif",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "h264.mkv",
+   "modalidad": "video",
+   "firma": "matroska",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "h264.mp4",
+   "modalidad": "video",
+   "firma": "mp4",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "h265.mkv",
+   "modalidad": "video",
+   "firma": "matroska",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "h265.mp4",
+   "modalidad": "video",
+   "firma": "mp4",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "h266.mkv",
+   "modalidad": "audio",
+   "firma": "matroska",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "hdr",
+   "modalidad": "imagen",
+   "firma": "radiance",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "hevc",
+   "modalidad": "video",
+   "firma": "flujo_es",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "ico",
+   "modalidad": "imagen",
+   "firma": "ico",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "im1",
+   "modalidad": "imagen",
+   "firma": "sunras",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "im24",
+   "modalidad": "imagen",
+   "firma": "sunras",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "im8",
+   "modalidad": "imagen",
+   "firma": "sunras",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "ircam",
+   "modalidad": "video",
+   "firma": "ircam",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "isma",
+   "modalidad": "video",
+   "firma": "mp4",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "ismv",
+   "modalidad": "video",
+   "firma": "mp4",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "ivf",
+   "modalidad": "video",
+   "firma": "ivf",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "j2c",
+   "modalidad": "imagen",
+   "firma": "jpeg2000",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "j2k",
+   "modalidad": "imagen",
+   "firma": "jpeg2000",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "jls",
+   "modalidad": "imagen",
+   "firma": "jpeg",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "jp2",
+   "modalidad": "imagen",
+   "firma": "jpeg2000",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "jpeg",
+   "modalidad": "imagen",
+   "firma": "jpeg",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "jpg",
+   "modalidad": "imagen",
+   "firma": "jpeg",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "jxl",
+   "modalidad": "imagen",
+   "firma": "jxl",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "latm",
+   "modalidad": "video",
+   "firma": "desconocido",
+   "punto1": "no_aplica",
+   "reglas": [
+    [
+     "G4",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "ljpg",
+   "modalidad": "imagen",
+   "firma": "jpeg",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "loas",
+   "modalidad": "video",
+   "firma": "desconocido",
+   "punto1": "no_aplica",
+   "reglas": [
+    [
+     "G4",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "lrc",
+   "modalidad": "subtitulo",
+   "firma": "texto",
+   "punto1": "familia",
+   "reglas": [
+    [
+     "G5",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "m1v",
+   "modalidad": "imagen",
+   "firma": "mpegvideo",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "m2a",
+   "modalidad": "video",
+   "firma": "mpegaudio",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "m2t",
+   "modalidad": "video",
+   "firma": "mpegts",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "m2ts",
+   "modalidad": "video",
+   "firma": "m2ts",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "m2v",
+   "modalidad": "video",
+   "firma": "mpegvideo",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "m3u8",
+   "modalidad": "video",
+   "firma": "m3u8",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "m4a",
+   "modalidad": "video",
+   "firma": "mp4",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "m4b",
+   "modalidad": "video",
+   "firma": "mp4",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "m4v",
+   "modalidad": "video",
+   "firma": "mp4",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "mjpeg",
+   "modalidad": "video",
+   "firma": "jpeg",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "mjpg",
+   "modalidad": "video",
+   "firma": "jpeg",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "mkv",
+   "modalidad": "video",
+   "firma": "matroska",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "mmf",
+   "modalidad": "video",
+   "firma": "desconocido",
+   "punto1": "sin_vocabulario",
+   "reglas": [
+    [
+     "G3",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "mov",
+   "modalidad": "video",
+   "firma": "mov",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "mp2",
+   "modalidad": "video",
+   "firma": "mpegaudio",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "mp3",
+   "modalidad": "video",
+   "firma": "mp3",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "mp4",
+   "modalidad": "video",
+   "firma": "mp4",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "mpa",
+   "modalidad": "video",
+   "firma": "mpegaudio",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "mpd",
+   "modalidad": "video",
+   "firma": "xml",
+   "punto1": "familia",
+   "reglas": [
+    [
+     "G5",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "mpeg",
+   "modalidad": "audio",
+   "firma": "mpegps",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "mpg",
+   "modalidad": "audio",
+   "firma": "mpegps",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "msbc",
+   "modalidad": "video",
+   "firma": "desconocido",
+   "punto1": "no_aplica",
+   "reglas": [
+    [
+     "G4",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "mts",
+   "modalidad": "video",
+   "firma": "mpegts",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "mxf",
+   "modalidad": "imagen",
+   "firma": "mxf",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "nut",
+   "modalidad": "video",
+   "firma": "nut",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "obu",
+   "modalidad": "video",
+   "firma": "av1obu",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "oga",
+   "modalidad": "video",
+   "firma": "ogg",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "ogg",
+   "modalidad": "video",
+   "firma": "ogg",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "ogv",
+   "modalidad": "video",
+   "firma": "ogg",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "opus",
+   "modalidad": "video",
+   "firma": "ogg",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "pam",
+   "modalidad": "imagen",
+   "firma": "pam",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "pbm",
+   "modalidad": "imagen",
+   "firma": "pnm",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "pcm",
+   "modalidad": "video",
+   "firma": "alp",
+   "punto1": "no_aplica",
+   "reglas": [
+    [
+     "G4",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "pcx",
+   "modalidad": "imagen",
+   "firma": "pcx",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "pfm",
+   "modalidad": "imagen",
+   "firma": "pfm",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "pgm",
+   "modalidad": "imagen",
+   "firma": "pnm",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "pgmyuv",
+   "modalidad": "imagen",
+   "firma": "pnm",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "phm",
+   "modalidad": "imagen",
+   "firma": "pfm",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "pix",
+   "modalidad": "imagen",
+   "firma": "desconocido",
+   "punto1": "no_aplica",
+   "reglas": [
+    [
+     "G4",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "png",
+   "modalidad": "imagen",
+   "firma": "png",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "ppm",
+   "modalidad": "imagen",
+   "firma": "pnm",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "psp",
+   "modalidad": "video",
+   "firma": "mp4",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "qoi",
+   "modalidad": "imagen",
+   "firma": "qoi",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "ra",
+   "modalidad": "video",
+   "firma": "realmedia",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "ras",
+   "modalidad": "imagen",
+   "firma": "sunras",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "rco",
+   "modalidad": "audio",
+   "firma": "desconocido",
+   "punto1": "sin_vocabulario",
+   "reglas": [
+    [
+     "G3",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "rgb",
+   "modalidad": "video",
+   "firma": "desconocido",
+   "punto1": "no_aplica",
+   "reglas": [
+    [
+     "G4",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "rm",
+   "modalidad": "video",
+   "firma": "realmedia",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "roq",
+   "modalidad": "imagen",
+   "firma": "desconocido",
+   "punto1": "sin_vocabulario",
+   "reglas": [
+    [
+     "G3",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "rs",
+   "modalidad": "imagen",
+   "firma": "sunras",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "rso",
+   "modalidad": "video",
+   "firma": "desconocido",
+   "punto1": "sin_vocabulario",
+   "reglas": [
+    [
+     "G3",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "sb",
+   "modalidad": "video",
+   "firma": "desconocido",
+   "punto1": "no_aplica",
+   "reglas": [
+    [
+     "G4",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "sbc",
+   "modalidad": "video",
+   "firma": "desconocido",
+   "punto1": "no_aplica",
+   "reglas": [
+    [
+     "G4",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "sf",
+   "modalidad": "video",
+   "firma": "ircam",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "sgi",
+   "modalidad": "imagen",
+   "firma": "sgi",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "sox",
+   "modalidad": "video",
+   "firma": "sox",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "spdif",
+   "modalidad": "video",
+   "firma": "spdif",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "srt",
+   "modalidad": "subtitulo",
+   "firma": "texto",
+   "punto1": "familia",
+   "reglas": [
+    [
+     "G5",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "ssa",
+   "modalidad": "subtitulo",
+   "firma": "ass",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "sun",
+   "modalidad": "imagen",
+   "firma": "sunras",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "sunras",
+   "modalidad": "imagen",
+   "firma": "sunras",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "sw",
+   "modalidad": "video",
+   "firma": "desconocido",
+   "punto1": "no_aplica",
+   "reglas": [
+    [
+     "G4",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "swf",
+   "modalidad": "video",
+   "firma": "swf",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "tco",
+   "modalidad": "audio",
+   "firma": "desconocido",
+   "punto1": "sin_vocabulario",
+   "reglas": [
+    [
+     "G3",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "tga",
+   "modalidad": "imagen",
+   "firma": "cur",
+   "punto1": "no_aplica",
+   "reglas": [
+    [
+     "G4",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "tif",
+   "modalidad": "imagen",
+   "firma": "tiff",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "tiff",
+   "modalidad": "imagen",
+   "firma": "tiff",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "ts",
+   "modalidad": "video",
+   "firma": "mpegts",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "tta",
+   "modalidad": "video",
+   "firma": "tta",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "ttml",
+   "modalidad": "subtitulo",
+   "firma": "xml",
+   "punto1": "familia",
+   "reglas": [
+    [
+     "G5",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "ub",
+   "modalidad": "video",
+   "firma": "texto",
+   "punto1": "no_aplica",
+   "reglas": [
+    [
+     "G4",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "ul",
+   "modalidad": "video",
+   "firma": "texto",
+   "punto1": "no_aplica",
+   "reglas": [
+    [
+     "G4",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "uw",
+   "modalidad": "video",
+   "firma": "desconocido",
+   "punto1": "no_aplica",
+   "reglas": [
+    [
+     "G4",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "vag",
+   "modalidad": "video",
+   "firma": "vag",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "vc2",
+   "modalidad": "video",
+   "firma": "dirac",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "vob",
+   "modalidad": "video",
+   "firma": "mpegps",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "voc",
+   "modalidad": "video",
+   "firma": "voc",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "vtt",
+   "modalidad": "subtitulo",
+   "firma": "vtt",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "vvc",
+   "modalidad": "video",
+   "firma": "flujo_es",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "w64",
+   "modalidad": "video",
+   "firma": "wave64",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "wav",
+   "modalidad": "video",
+   "firma": "wav",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "wbmp",
+   "modalidad": "imagen",
+   "firma": "desconocido",
+   "punto1": "no_aplica",
+   "reglas": [
+    [
+     "G4",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "webm",
+   "modalidad": "video",
+   "firma": "matroska",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "webp",
+   "modalidad": "video",
+   "firma": "webp",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "wma",
+   "modalidad": "video",
+   "firma": "asf",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "wmv",
+   "modalidad": "video",
+   "firma": "asf",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "wtv",
+   "modalidad": "video",
+   "firma": "wtv",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "wv",
+   "modalidad": "video",
+   "firma": "wavpack",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "xbm",
+   "modalidad": "imagen",
+   "firma": "xbm",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "xwd",
+   "modalidad": "imagen",
+   "firma": "xwd",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "y",
+   "modalidad": "imagen",
+   "firma": "desconocido",
+   "punto1": "no_aplica",
+   "reglas": [
+    [
+     "G4",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "y4m",
+   "modalidad": "video",
+   "firma": "y4m",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "ffmpeg",
+   "formato": "yuv",
+   "modalidad": "video",
+   "firma": "desconocido",
+   "punto1": "no_aplica",
+   "reglas": [
+    [
+     "G4",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "aai",
+   "modalidad": "imagen",
+   "firma": "desconocido",
+   "punto1": "no_aplica",
+   "reglas": [
+    [
+     "G4",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "ai",
+   "modalidad": "imagen",
+   "firma": "pdf",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "apng",
+   "modalidad": "imagen",
+   "firma": "png",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "art",
+   "modalidad": "imagen",
+   "firma": "desconocido",
+   "punto1": "no_aplica",
+   "reglas": [
+    [
+     "G4",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "ashlar",
+   "modalidad": "imagen",
+   "firma": "miff",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "avif",
+   "modalidad": "imagen",
+   "firma": "avif",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "avs",
+   "modalidad": "imagen",
+   "firma": "desconocido",
+   "punto1": "no_aplica",
+   "reglas": [
+    [
+     "G4",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "bayer",
+   "modalidad": "imagen",
+   "firma": "desconocido",
+   "punto1": "no_aplica",
+   "reglas": [
+    [
+     "G4",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "bayera",
+   "modalidad": "imagen",
+   "firma": "desconocido",
+   "punto1": "no_aplica",
+   "reglas": [
+    [
+     "G4",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "bgr",
+   "modalidad": "imagen",
+   "firma": "desconocido",
+   "punto1": "no_aplica",
+   "reglas": [
+    [
+     "G4",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "bgra",
+   "modalidad": "imagen",
+   "firma": "desconocido",
+   "punto1": "no_aplica",
+   "reglas": [
+    [
+     "G4",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "bgro",
+   "modalidad": "imagen",
+   "firma": "desconocido",
+   "punto1": "no_aplica",
+   "reglas": [
+    [
+     "G4",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "bmp",
+   "modalidad": "imagen",
+   "firma": "bmp",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "bmp2",
+   "modalidad": "imagen",
+   "firma": "bmp",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "bmp3",
+   "modalidad": "imagen",
+   "firma": "bmp",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "brf",
+   "modalidad": "imagen",
+   "firma": "brf",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "cal",
+   "modalidad": "imagen",
+   "firma": "cals",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "cals",
+   "modalidad": "imagen",
+   "firma": "cals",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "cin",
+   "modalidad": "imagen",
+   "firma": "cineon",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "cip",
+   "modalidad": "imagen",
+   "firma": "texto",
+   "punto1": "familia",
+   "reglas": [
+    [
+     "G5",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "clipboard",
+   "modalidad": "imagen",
+   "firma": "png",
+   "punto1": "sin_vocabulario",
+   "reglas": [
+    [
+     "G3",
+     "informativo"
+    ],
+    [
+     "G6",
+     "aviso"
+    ]
+   ],
+   "fallo": false,
+   "g6": true
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "cmyk",
+   "modalidad": "imagen",
+   "firma": "desconocido",
+   "punto1": "no_aplica",
+   "reglas": [
+    [
+     "G4",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "cmyka",
+   "modalidad": "imagen",
+   "firma": "desconocido",
+   "punto1": "no_aplica",
+   "reglas": [
+    [
+     "G4",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "cur",
+   "modalidad": "imagen",
+   "firma": "ico",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "data",
+   "modalidad": "imagen",
+   "firma": "png",
+   "punto1": "sin_vocabulario",
+   "reglas": [
+    [
+     "G3",
+     "informativo"
+    ],
+    [
+     "G6",
+     "aviso"
+    ]
+   ],
+   "fallo": false,
+   "g6": true
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "dcx",
+   "modalidad": "imagen",
+   "firma": "dcx",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "dds",
+   "modalidad": "imagen",
+   "firma": "dds",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "dpx",
+   "modalidad": "imagen",
+   "firma": "dpx",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "dxt1",
+   "modalidad": "imagen",
+   "firma": "dds",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "dxt5",
+   "modalidad": "imagen",
+   "firma": "dds",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "epdf",
+   "modalidad": "imagen",
+   "firma": "pdf",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "epi",
+   "modalidad": "imagen",
+   "firma": "postscript",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "eps",
+   "modalidad": "imagen",
+   "firma": "postscript",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "eps2",
+   "modalidad": "imagen",
+   "firma": "postscript",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "eps3",
+   "modalidad": "imagen",
+   "firma": "postscript",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "epsf",
+   "modalidad": "imagen",
+   "firma": "postscript",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "epsi",
+   "modalidad": "imagen",
+   "firma": "postscript",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "ept",
+   "modalidad": "imagen",
+   "firma": "eps_binario",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "ept2",
+   "modalidad": "imagen",
+   "firma": "eps_binario",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "ept3",
+   "modalidad": "imagen",
+   "firma": "eps_binario",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "exr",
+   "modalidad": "imagen",
+   "firma": "exr",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "farbfeld",
+   "modalidad": "imagen",
+   "firma": "farbfeld",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "fax",
+   "modalidad": "imagen",
+   "firma": "desconocido",
+   "punto1": "no_aplica",
+   "reglas": [
+    [
+     "G4",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "ff",
+   "modalidad": "imagen",
+   "firma": "farbfeld",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "fits",
+   "modalidad": "imagen",
+   "firma": "fits",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "fl32",
+   "modalidad": "imagen",
+   "firma": "fl32",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "flif",
+   "modalidad": "imagen",
+   "firma": "png",
+   "punto1": "sin_vocabulario",
+   "reglas": [
+    [
+     "G3",
+     "informativo"
+    ],
+    [
+     "G6",
+     "aviso"
+    ]
+   ],
+   "fallo": false,
+   "g6": true
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "flv",
+   "modalidad": "imagen",
+   "firma": "flv",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "fts",
+   "modalidad": "imagen",
+   "firma": "fits",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "ftxt",
+   "modalidad": "imagen",
+   "firma": "texto",
+   "punto1": "no_aplica",
+   "reglas": [
+    [
+     "G4",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "g3",
+   "modalidad": "imagen",
+   "firma": "desconocido",
+   "punto1": "no_aplica",
+   "reglas": [
+    [
+     "G4",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "g4",
+   "modalidad": "imagen",
+   "firma": "desconocido",
+   "punto1": "no_aplica",
+   "reglas": [
+    [
+     "G4",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "gif",
+   "modalidad": "imagen",
+   "firma": "gif",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "gif87",
+   "modalidad": "imagen",
+   "firma": "gif",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "gray",
+   "modalidad": "imagen",
+   "firma": "desconocido",
+   "punto1": "no_aplica",
+   "reglas": [
+    [
+     "G4",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "graya",
+   "modalidad": "imagen",
+   "firma": "desconocido",
+   "punto1": "no_aplica",
+   "reglas": [
+    [
+     "G4",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "group4",
+   "modalidad": "imagen",
+   "firma": "png",
+   "punto1": "no_aplica",
+   "reglas": [
+    [
+     "G4",
+     "informativo"
+    ],
+    [
+     "G6",
+     "aviso"
+    ]
+   ],
+   "fallo": false,
+   "g6": true
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "hdr",
+   "modalidad": "imagen",
+   "firma": "radiance",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "histogram",
+   "modalidad": "imagen",
+   "firma": "png",
+   "punto1": "sin_vocabulario",
+   "reglas": [
+    [
+     "G3",
+     "informativo"
+    ],
+    [
+     "G6",
+     "aviso"
+    ]
+   ],
+   "fallo": false,
+   "g6": true
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "hrz",
+   "modalidad": "imagen",
+   "firma": "desconocido",
+   "punto1": "no_aplica",
+   "reglas": [
+    [
+     "G4",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "htm",
+   "modalidad": "imagen",
+   "firma": "html",
+   "punto1": "familia",
+   "reglas": [
+    [
+     "G5",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "html",
+   "modalidad": "imagen",
+   "firma": "html",
+   "punto1": "familia",
+   "reglas": [
+    [
+     "G5",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "icb",
+   "modalidad": "imagen",
+   "firma": "cur",
+   "punto1": "no_aplica",
+   "reglas": [
+    [
+     "G4",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "ico",
+   "modalidad": "imagen",
+   "firma": "ico",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "icon",
+   "modalidad": "imagen",
+   "firma": "ico",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "info",
+   "modalidad": "imagen",
+   "firma": "texto",
+   "punto1": "sin_vocabulario",
+   "reglas": [
+    [
+     "G3",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "inline",
+   "modalidad": "imagen",
+   "firma": "png",
+   "punto1": "sin_vocabulario",
+   "reglas": [
+    [
+     "G3",
+     "informativo"
+    ],
+    [
+     "G6",
+     "aviso"
+    ]
+   ],
+   "fallo": false,
+   "g6": true
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "ipl",
+   "modalidad": "imagen",
+   "firma": "ipl",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "isobrl",
+   "modalidad": "imagen",
+   "firma": "desconocido",
+   "punto1": "no_aplica",
+   "reglas": [
+    [
+     "G4",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "isobrl6",
+   "modalidad": "imagen",
+   "firma": "desconocido",
+   "punto1": "no_aplica",
+   "reglas": [
+    [
+     "G4",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "j2c",
+   "modalidad": "imagen",
+   "firma": "jpeg2000",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "j2k",
+   "modalidad": "imagen",
+   "firma": "jpeg2000",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "jng",
+   "modalidad": "imagen",
+   "firma": "jng",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "jp2",
+   "modalidad": "imagen",
+   "firma": "jpeg2000",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "jpc",
+   "modalidad": "imagen",
+   "firma": "jpeg2000",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "jpe",
+   "modalidad": "imagen",
+   "firma": "jpeg",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "jpeg",
+   "modalidad": "imagen",
+   "firma": "jpeg",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "jpg",
+   "modalidad": "imagen",
+   "firma": "jpeg",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "jpm",
+   "modalidad": "imagen",
+   "firma": "jpeg2000",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "jps",
+   "modalidad": "imagen",
+   "firma": "jpeg",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "json",
+   "modalidad": "imagen",
+   "firma": "texto",
+   "punto1": "familia",
+   "reglas": [
+    [
+     "G5",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "jxl",
+   "modalidad": "imagen",
+   "firma": "jxl",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "m2v",
+   "modalidad": "imagen",
+   "firma": "mpegvideo",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "m4v",
+   "modalidad": "imagen",
+   "firma": "mp4",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "map",
+   "modalidad": "imagen",
+   "firma": "desconocido",
+   "punto1": "no_aplica",
+   "reglas": [
+    [
+     "G4",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "mat",
+   "modalidad": "imagen",
+   "firma": "mat",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "miff",
+   "modalidad": "imagen",
+   "firma": "miff",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "mkv",
+   "modalidad": "imagen",
+   "firma": "matroska",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "mng",
+   "modalidad": "imagen",
+   "firma": "mng",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "mono",
+   "modalidad": "imagen",
+   "firma": "desconocido",
+   "punto1": "no_aplica",
+   "reglas": [
+    [
+     "G4",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "mov",
+   "modalidad": "imagen",
+   "firma": "mov",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "mp4",
+   "modalidad": "imagen",
+   "firma": "mp4",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "mpc",
+   "modalidad": "imagen",
+   "firma": "desconocido",
+   "punto1": "sin_vocabulario",
+   "reglas": [
+    [
+     "G3",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "mpeg",
+   "modalidad": "imagen",
+   "firma": "mpegps",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "mpg",
+   "modalidad": "imagen",
+   "firma": "mpegps",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "msl",
+   "modalidad": "imagen",
+   "firma": "png",
+   "punto1": "sin_vocabulario",
+   "reglas": [
+    [
+     "G3",
+     "informativo"
+    ],
+    [
+     "G6",
+     "aviso"
+    ]
+   ],
+   "fallo": false,
+   "g6": true
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "msvg",
+   "modalidad": "imagen",
+   "firma": "svg",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "mtv",
+   "modalidad": "imagen",
+   "firma": "desconocido",
+   "punto1": "no_aplica",
+   "reglas": [
+    [
+     "G4",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "mvg",
+   "modalidad": "imagen",
+   "firma": "png",
+   "punto1": "sin_vocabulario",
+   "reglas": [
+    [
+     "G3",
+     "informativo"
+    ],
+    [
+     "G6",
+     "aviso"
+    ]
+   ],
+   "fallo": false,
+   "g6": true
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "null",
+   "modalidad": "imagen",
+   "firma": "png",
+   "punto1": "sin_vocabulario",
+   "reglas": [
+    [
+     "G3",
+     "informativo"
+    ],
+    [
+     "G6",
+     "aviso"
+    ]
+   ],
+   "fallo": false,
+   "g6": true
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "otb",
+   "modalidad": "imagen",
+   "firma": "desconocido",
+   "punto1": "no_aplica",
+   "reglas": [
+    [
+     "G4",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "pal",
+   "modalidad": "imagen",
+   "firma": "desconocido",
+   "punto1": "no_aplica",
+   "reglas": [
+    [
+     "G4",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "palm",
+   "modalidad": "imagen",
+   "firma": "desconocido",
+   "punto1": "no_aplica",
+   "reglas": [
+    [
+     "G4",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "pam",
+   "modalidad": "imagen",
+   "firma": "pam",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "pbm",
+   "modalidad": "imagen",
+   "firma": "pnm",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "pcd",
+   "modalidad": "imagen",
+   "firma": "pcd",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "pcds",
+   "modalidad": "imagen",
+   "firma": "pcd",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "pcl",
+   "modalidad": "imagen",
+   "firma": "pcl",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "pct",
+   "modalidad": "imagen",
+   "firma": "pict",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "pcx",
+   "modalidad": "imagen",
+   "firma": "pcx",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "pdb",
+   "modalidad": "imagen",
+   "firma": "desconocido",
+   "punto1": "sin_vocabulario",
+   "reglas": [
+    [
+     "G3",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "pdf",
+   "modalidad": "imagen",
+   "firma": "pdf",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "pdfa",
+   "modalidad": "imagen",
+   "firma": "pdf",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "pfm",
+   "modalidad": "imagen",
+   "firma": "pfm",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "pgm",
+   "modalidad": "imagen",
+   "firma": "pnm",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "pgx",
+   "modalidad": "imagen",
+   "firma": "pgx",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "phm",
+   "modalidad": "imagen",
+   "firma": "pfm",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "picon",
+   "modalidad": "imagen",
+   "firma": "xpm",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "pict",
+   "modalidad": "imagen",
+   "firma": "pict",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "pjpeg",
+   "modalidad": "imagen",
+   "firma": "jpeg",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "png",
+   "modalidad": "imagen",
+   "firma": "png",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "png00",
+   "modalidad": "imagen",
+   "firma": "png",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "png24",
+   "modalidad": "imagen",
+   "firma": "png",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "png32",
+   "modalidad": "imagen",
+   "firma": "png",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "png48",
+   "modalidad": "imagen",
+   "firma": "png",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "png64",
+   "modalidad": "imagen",
+   "firma": "png",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "png8",
+   "modalidad": "imagen",
+   "firma": "png",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "pnm",
+   "modalidad": "imagen",
+   "firma": "pnm",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "pocketmod",
+   "modalidad": "imagen",
+   "firma": "png",
+   "punto1": "sin_vocabulario",
+   "reglas": [
+    [
+     "G3",
+     "informativo"
+    ],
+    [
+     "G6",
+     "aviso"
+    ]
+   ],
+   "fallo": false,
+   "g6": true
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "ppm",
+   "modalidad": "imagen",
+   "firma": "pnm",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "ps",
+   "modalidad": "imagen",
+   "firma": "postscript",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "ps2",
+   "modalidad": "imagen",
+   "firma": "postscript",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "ps3",
+   "modalidad": "imagen",
+   "firma": "postscript",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "psb",
+   "modalidad": "imagen",
+   "firma": "psd",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "psd",
+   "modalidad": "imagen",
+   "firma": "psd",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "ptif",
+   "modalidad": "imagen",
+   "firma": "tiff",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "qoi",
+   "modalidad": "imagen",
+   "firma": "qoi",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "ras",
+   "modalidad": "imagen",
+   "firma": "sunras",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "rgb",
+   "modalidad": "imagen",
+   "firma": "desconocido",
+   "punto1": "no_aplica",
+   "reglas": [
+    [
+     "G4",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "rgba",
+   "modalidad": "imagen",
+   "firma": "desconocido",
+   "punto1": "no_aplica",
+   "reglas": [
+    [
+     "G4",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "rgbo",
+   "modalidad": "imagen",
+   "firma": "desconocido",
+   "punto1": "no_aplica",
+   "reglas": [
+    [
+     "G4",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "rgf",
+   "modalidad": "imagen",
+   "firma": "desconocido",
+   "punto1": "no_aplica",
+   "reglas": [
+    [
+     "G4",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "rsvg",
+   "modalidad": "imagen",
+   "firma": "svg",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "sgi",
+   "modalidad": "imagen",
+   "firma": "sgi",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "shtml",
+   "modalidad": "imagen",
+   "firma": "texto",
+   "punto1": "sin_vocabulario",
+   "reglas": [
+    [
+     "G3",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "six",
+   "modalidad": "imagen",
+   "firma": "sixel",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "sixel",
+   "modalidad": "imagen",
+   "firma": "sixel",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "sparse",
+   "modalidad": "imagen",
+   "firma": "png",
+   "punto1": "sin_vocabulario",
+   "reglas": [
+    [
+     "G3",
+     "informativo"
+    ],
+    [
+     "G6",
+     "aviso"
+    ]
+   ],
+   "fallo": false,
+   "g6": true
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "strimg",
+   "modalidad": "imagen",
+   "firma": "desconocido",
+   "punto1": "no_aplica",
+   "reglas": [
+    [
+     "G4",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "sun",
+   "modalidad": "imagen",
+   "firma": "sunras",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "svg",
+   "modalidad": "imagen",
+   "firma": "svg",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "svgz",
+   "modalidad": "imagen",
+   "firma": "gzip",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "tga",
+   "modalidad": "imagen",
+   "firma": "cur",
+   "punto1": "no_aplica",
+   "reglas": [
+    [
+     "G4",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "tiff",
+   "modalidad": "imagen",
+   "firma": "tiff",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "tiff64",
+   "modalidad": "imagen",
+   "firma": "bigtiff",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "txt",
+   "modalidad": "imagen",
+   "firma": "im_texto",
+   "punto1": "familia",
+   "reglas": [
+    [
+     "G5",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "ubrl",
+   "modalidad": "imagen",
+   "firma": "brf",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "ubrl6",
+   "modalidad": "imagen",
+   "firma": "brf",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "uil",
+   "modalidad": "imagen",
+   "firma": "uil",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "uyvy",
+   "modalidad": "imagen",
+   "firma": "desconocido",
+   "punto1": "no_aplica",
+   "reglas": [
+    [
+     "G4",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "vda",
+   "modalidad": "imagen",
+   "firma": "cur",
+   "punto1": "no_aplica",
+   "reglas": [
+    [
+     "G4",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "vicar",
+   "modalidad": "imagen",
+   "firma": "vicar",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "vid",
+   "modalidad": "imagen",
+   "firma": "png",
+   "punto1": "sin_vocabulario",
+   "reglas": [
+    [
+     "G3",
+     "informativo"
+    ],
+    [
+     "G6",
+     "aviso"
+    ]
+   ],
+   "fallo": false,
+   "g6": true
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "viff",
+   "modalidad": "imagen",
+   "firma": "viff",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "vips",
+   "modalidad": "imagen",
+   "firma": "vips",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "vst",
+   "modalidad": "imagen",
+   "firma": "cur",
+   "punto1": "no_aplica",
+   "reglas": [
+    [
+     "G4",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "wbmp",
+   "modalidad": "imagen",
+   "firma": "desconocido",
+   "punto1": "no_aplica",
+   "reglas": [
+    [
+     "G4",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "webm",
+   "modalidad": "imagen",
+   "firma": "matroska",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "webp",
+   "modalidad": "imagen",
+   "firma": "webp",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "wmv",
+   "modalidad": "imagen",
+   "firma": "asf",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "wpg",
+   "modalidad": "imagen",
+   "firma": "wpg",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "xbm",
+   "modalidad": "imagen",
+   "firma": "xbm",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "xpm",
+   "modalidad": "imagen",
+   "firma": "xpm",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "xv",
+   "modalidad": "imagen",
+   "firma": "viff",
+   "punto1": "evaluado",
+   "reglas": [],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "yaml",
+   "modalidad": "imagen",
+   "firma": "texto",
+   "punto1": "familia",
+   "reglas": [
+    [
+     "G5",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "ycbcr",
+   "modalidad": "imagen",
+   "firma": "desconocido",
+   "punto1": "no_aplica",
+   "reglas": [
+    [
+     "G4",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "ycbcra",
+   "modalidad": "imagen",
+   "firma": "desconocido",
+   "punto1": "no_aplica",
+   "reglas": [
+    [
+     "G4",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  },
+  {
+   "motor": "imagemagick",
+   "formato": "yuv",
+   "modalidad": "imagen",
+   "firma": "desconocido",
+   "punto1": "no_aplica",
+   "reglas": [
+    [
+     "G4",
+     "informativo"
+    ]
+   ],
+   "fallo": false,
+   "g6": false
+  }
+ ]
+}

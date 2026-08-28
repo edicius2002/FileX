@@ -1,0 +1,711 @@
+{
+ "filas": [
+  {
+   "motor": "graphicsmagick",
+   "destino": "mpc",
+   "semilla": "a1.png",
+   "rc": 0,
+   "err": "",
+   "estado": "escrito",
+   "bytes": 393,
+   "como": "exacta",
+   "cab_hex": "69643d4d616769636b43616368650a7175616e74756d2d64657074683d31360a636c6173733d446972656374436c61737320206d617474653d46616c73650a63",
+   "cab_txt": "id=MagickCache.quantum-depth=16.class=DirectClass  matte=False.c",
+   "firma_real": "desconocido",
+   "punto1_estado": "evaluado",
+   "testigos": {
+    "magick": "rc=1 identify: improper image header `/tmp/c30/tmp/t0/v0.mpc' @ error/mpc.c/ReadMPCImage/804. ",
+    "gm": "/tmp/c30/tmp/t0/v0.mpc MPC 64x48+0+0 DirectClass 16-bit 393 0.000u 0m:0.000002s\n",
+    "file": "rc=127"
+   },
+   "ficheros": [
+    "v0.cache",
+    "v0.mpc"
+   ],
+   "hallazgos": [
+    [
+     "G3",
+     "fallo",
+     "mpc|musepack"
+    ]
+   ]
+  },
+  {
+   "motor": "graphicsmagick",
+   "destino": "mpc",
+   "semilla": "a2.png",
+   "rc": 0,
+   "err": "",
+   "estado": "escrito",
+   "bytes": 395,
+   "como": "exacta",
+   "cab_hex": "69643d4d616769636b43616368650a7175616e74756d2d64657074683d31360a636c6173733d446972656374436c61737320206d617474653d46616c73650a63",
+   "cab_txt": "id=MagickCache.quantum-depth=16.class=DirectClass  matte=False.c",
+   "firma_real": "desconocido",
+   "punto1_estado": "evaluado",
+   "testigos": {
+    "magick": "rc=1 identify: improper image header `/tmp/c30/tmp/t1/w7919.mpc' @ error/mpc.c/ReadMPCImage/804. ",
+    "gm": "/tmp/c30/tmp/t1/w7919.mpc MPC 100x70+0+0 DirectClass 16-bit 395 0.000u 0m:0.000002s\n",
+    "file": "rc=127"
+   },
+   "ficheros": [
+    "w7919.cache",
+    "w7919.mpc"
+   ],
+   "hallazgos": [
+    [
+     "G3",
+     "fallo",
+     "mpc|musepack"
+    ]
+   ]
+  },
+  {
+   "motor": "graphicsmagick",
+   "destino": "mpc",
+   "semilla": "a3.png",
+   "rc": 0,
+   "err": "",
+   "estado": "escrito",
+   "bytes": 393546,
+   "como": "exacta",
+   "cab_hex": "69643d4d616769636b43616368650a7175616e74756d2d64657074683d31360a636c6173733d50736575646f436c6173732020636f6c6f72733d363535333620",
+   "cab_txt": "id=MagickCache.quantum-depth=16.class=PseudoClass  colors=65536 ",
+   "firma_real": "desconocido",
+   "punto1_estado": "evaluado",
+   "testigos": {
+    "magick": "rc=1 identify: improper image header `/tmp/c30/tmp/t2/z15838.mpc' @ error/mpc.c/ReadMPCImage/804. ",
+    "gm": "/tmp/c30/tmp/t2/z15838.mpc MPC 80x120+0+0 PseudoClass 65536c 16-bit 384.3Ki 0.000u 0m:0.000002s\n",
+    "file": "rc=127"
+   },
+   "ficheros": [
+    "z15838.cache",
+    "z15838.mpc"
+   ],
+   "hallazgos": [
+    [
+     "G3",
+     "fallo",
+     "mpc|musepack"
+    ]
+   ]
+  },
+  {
+   "motor": "graphicsmagick",
+   "destino": "pcx",
+   "semilla": "a1.png",
+   "rc": 0,
+   "err": "",
+   "estado": "escrito",
+   "bytes": 10113,
+   "como": "exacta",
+   "cab_hex": "0a050008000000003f002f0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+   "cab_txt": "........?./.....................................................",
+   "firma_real": "desconocido",
+   "punto1_estado": "evaluado",
+   "testigos": {
+    "magick": "PCX 64x48 8-bit",
+    "gm": "/tmp/c30/tmp/t0/v7.pcx PCX 64x48+0+0 DirectClass 8-bit 9.9Ki 0.000u 0m:0.000002s\n",
+    "file": "rc=127"
+   },
+   "ficheros": [
+    "v7.pcx"
+   ],
+   "hallazgos": [
+    [
+     "G3",
+     "fallo",
+     "pcx"
+    ]
+   ]
+  },
+  {
+   "motor": "graphicsmagick",
+   "destino": "pcx",
+   "semilla": "a2.png",
+   "rc": 0,
+   "err": "",
+   "estado": "escrito",
+   "bytes": 21897,
+   "como": "exacta",
+   "cab_hex": "0a050008000000006300450000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+   "cab_txt": "........c.E.....................................................",
+   "firma_real": "desconocido",
+   "punto1_estado": "evaluado",
+   "testigos": {
+    "magick": "PCX 100x70 8-bit",
+    "gm": "/tmp/c30/tmp/t1/w7926.pcx PCX 100x70+0+0 DirectClass 8-bit 21.4Ki 0.000u 0m:0.000002s\n",
+    "file": "rc=127"
+   },
+   "ficheros": [
+    "w7926.pcx"
+   ],
+   "hallazgos": [
+    [
+     "G3",
+     "fallo",
+     "pcx"
+    ]
+   ]
+  },
+  {
+   "motor": "graphicsmagick",
+   "destino": "pcx",
+   "semilla": "a3.png",
+   "rc": -6,
+   "err": "gm convert: abort due to signal 11 (SIGSEGV) \"Segmentation Fault\"... ",
+   "estado": "escrito",
+   "bytes": 0,
+   "como": "exacta",
+   "cab_hex": "",
+   "cab_txt": "",
+   "firma_real": "vacio",
+   "punto1_estado": "evaluado",
+   "testigos": {
+    "magick": "rc=1 identify: improper image header `/tmp/c30/tmp/t2/z15845.pcx' @ error/pcx.c/ReadPCXImage/321. ",
+    "gm": "rc=1 gm identify: Unexpected end-of-file (/tmp/c30/tmp/t2/z15845.pcx). gm identify: Request did not return an image. ",
+    "file": "rc=127"
+   },
+   "ficheros": [
+    "z15845.pcx"
+   ],
+   "hallazgos": [
+    [
+     "G1",
+     "fallo",
+     "> 0 bytes"
+    ]
+   ]
+  },
+  {
+   "motor": "graphicsmagick",
+   "destino": "x",
+   "semilla": "a1.png",
+   "rc": 0,
+   "err": "",
+   "estado": "escrito",
+   "bytes": 18742,
+   "como": "exacta",
+   "cab_hex": "89504e470d0a1a0a0000000d49484452000000400000003010020000007eb9370b000000206348524d00007a26000080840000fa00000080e8000075300000ea",
+   "cab_txt": ".PNG........IHDR...@...0.....~.7.... cHRM..z&..............u0...",
+   "firma_real": "png",
+   "punto1_estado": "evaluado",
+   "testigos": {
+    "magick": "PNG 64x48 16-bit",
+    "gm": "/tmp/c30/tmp/t0/v14.x PNG 64x48+0+0 DirectClass 16-bit 18.3Ki 0.000u 0m:0.000004s\n",
+    "file": "rc=127"
+   },
+   "ficheros": [
+    "v14.x"
+   ],
+   "hallazgos": [
+    [
+     "G3",
+     "fallo",
+     "directx_x"
+    ]
+   ]
+  },
+  {
+   "motor": "graphicsmagick",
+   "destino": "x",
+   "semilla": "a2.png",
+   "rc": 0,
+   "err": "",
+   "estado": "escrito",
+   "bytes": 42349,
+   "como": "exacta",
+   "cab_hex": "89504e470d0a1a0a0000000d4948445200000064000000461002000000e5747a7d000000206348524d00007a26000080840000fa00000080e8000075300000ea",
+   "cab_txt": ".PNG........IHDR...d...F......tz}... cHRM..z&..............u0...",
+   "firma_real": "png",
+   "punto1_estado": "evaluado",
+   "testigos": {
+    "magick": "PNG 100x70 16-bit",
+    "gm": "/tmp/c30/tmp/t1/w7933.x PNG 100x70+0+0 DirectClass 16-bit 41.4Ki 0.000u 0m:0.000002s\n",
+    "file": "rc=127"
+   },
+   "ficheros": [
+    "w7933.x"
+   ],
+   "hallazgos": [
+    [
+     "G3",
+     "fallo",
+     "directx_x"
+    ]
+   ]
+  },
+  {
+   "motor": "graphicsmagick",
+   "destino": "x",
+   "semilla": "a3.png",
+   "rc": 0,
+   "err": "",
+   "estado": "escrito",
+   "bytes": 19538,
+   "como": "exacta",
+   "cab_hex": "89504e470d0a1a0a0000000d49484452000000500000007810000000001015f66900004b834944415478da01784b87b4037d9f9981514012c094ae6921a76194",
+   "cab_txt": ".PNG........IHDR...P...x........i..K.IDATx..xK...}...Q@....i!.a.",
+   "firma_real": "png",
+   "punto1_estado": "evaluado",
+   "testigos": {
+    "magick": "PNG 80x120 16-bit",
+    "gm": "/tmp/c30/tmp/t2/z15852.x PNG 80x120+0+0 PseudoClass 65536c 16-bit 19.1Ki 0.000u 0m:0.000011s\n",
+    "file": "rc=127"
+   },
+   "ficheros": [
+    "z15852.x"
+   ],
+   "hallazgos": [
+    [
+     "G3",
+     "fallo",
+     "directx_x"
+    ]
+   ]
+  },
+  {
+   "motor": "vips",
+   "destino": "mat",
+   "semilla": "a1.png",
+   "rc": 0,
+   "err": "",
+   "estado": "escrito",
+   "bytes": 18391,
+   "como": "exacta",
+   "cab_hex": "36342034380a35373834372035323136382035303139342032363030352033323137342031343638362033353433352032393830372034373038392035323832",
+   "cab_txt": "64 48.57847 52168 50194 26005 32174 14686 35435 29807 47089 5282",
+   "firma_real": "texto",
+   "punto1_estado": "evaluado",
+   "testigos": {
+    "magick": "rc=1 identify: improper image header `/tmp/c30/tmp/t0/v21.mat' @ error/mat.c/ReadMATImage/1513. ",
+    "gm": "rc=1 gm identify: Improper image header (/tmp/c30/tmp/t0/v21.mat). gm identify: Request did not return an image. ",
+    "file": "rc=127"
+   },
+   "ficheros": [
+    "v21.mat"
+   ],
+   "hallazgos": [
+    [
+     "G3",
+     "fallo",
+     "mat"
+    ]
+   ]
+  },
+  {
+   "motor": "vips",
+   "destino": "mat",
+   "semilla": "a2.png",
+   "rc": 0,
+   "err": "",
+   "estado": "escrito",
+   "bytes": 41876,
+   "como": "exacta",
+   "cab_hex": "3130302037300a353137303120353535393820343130343220323936333520323530383520333230373920313739373220323238373520313938333520333635",
+   "cab_txt": "100 70.51701 55598 41042 29635 25085 32079 17972 22875 19835 365",
+   "firma_real": "texto",
+   "punto1_estado": "evaluado",
+   "testigos": {
+    "magick": "rc=1 identify: improper image header `/tmp/c30/tmp/t1/w7940.mat' @ error/mat.c/ReadMATImage/1513. ",
+    "gm": "rc=1 gm identify: Improper image header (/tmp/c30/tmp/t1/w7940.mat). gm identify: Request did not return an image. ",
+    "file": "rc=127"
+   },
+   "ficheros": [
+    "w7940.mat"
+   ],
+   "hallazgos": [
+    [
+     "G3",
+     "fallo",
+     "mat"
+    ]
+   ]
+  },
+  {
+   "motor": "vips",
+   "destino": "mat",
+   "semilla": "a3.png",
+   "rc": 0,
+   "err": "",
+   "estado": "escrito",
+   "bytes": 55935,
+   "como": "exacta",
+   "cab_hex": "3830203132300a333231353920353532343820343832393620323836393220353234303820353331313720333734332033393731312031303131362031373334",
+   "cab_txt": "80 120.32159 55248 48296 28692 52408 53117 3743 39711 10116 1734",
+   "firma_real": "texto",
+   "punto1_estado": "evaluado",
+   "testigos": {
+    "magick": "rc=1 identify: improper image header `/tmp/c30/tmp/t2/z15859.mat' @ error/mat.c/ReadMATImage/1513. ",
+    "gm": "rc=1 gm identify: Improper image header (/tmp/c30/tmp/t2/z15859.mat). gm identify: Request did not return an image. ",
+    "file": "rc=127"
+   },
+   "ficheros": [
+    "z15859.mat"
+   ],
+   "hallazgos": [
+    [
+     "G3",
+     "fallo",
+     "mat"
+    ]
+   ]
+  },
+  {
+   "motor": "vips",
+   "destino": "vips",
+   "semilla": "a1.png",
+   "rc": 0,
+   "err": "",
+   "estado": "escrito",
+   "bytes": 21002,
+   "como": "exacta",
+   "cab_hex": "b6a6f20840000000300000000300000010000000020000000000000019000000de5f3540de5f3540000000000000000000000000000000000000000000000000",
+   "cab_txt": "....@...0........................_5@._5@........................",
+   "firma_real": "desconocido",
+   "punto1_estado": "evaluado",
+   "testigos": {
+    "magick": "VIPS 64x48 16-bit",
+    "gm": "rc=1 ify: No decode delegate for this image format (/tmp/c30/tmp/t0/v28.vips). gm identify: Request did not return an image. ",
+    "file": "rc=127"
+   },
+   "ficheros": [
+    "v28.vips"
+   ],
+   "hallazgos": [
+    [
+     "G3",
+     "fallo",
+     "vips"
+    ]
+   ]
+  },
+  {
+   "motor": "vips",
+   "destino": "vips",
+   "semilla": "a2.png",
+   "rc": 0,
+   "err": "",
+   "estado": "escrito",
+   "bytes": 44572,
+   "como": "exacta",
+   "cab_hex": "b6a6f20864000000460000000300000010000000020000000000000019000000de5f3540de5f3540000000000000000000000000000000000000000000000000",
+   "cab_txt": "....d...F........................_5@._5@........................",
+   "firma_real": "desconocido",
+   "punto1_estado": "evaluado",
+   "testigos": {
+    "magick": "VIPS 100x70 16-bit",
+    "gm": "rc=1 y: No decode delegate for this image format (/tmp/c30/tmp/t1/w7947.vips). gm identify: Request did not return an image. ",
+    "file": "rc=127"
+   },
+   "ficheros": [
+    "w7947.vips"
+   ],
+   "hallazgos": [
+    [
+     "G3",
+     "fallo",
+     "vips"
+    ]
+   ]
+  },
+  {
+   "motor": "vips",
+   "destino": "vips",
+   "semilla": "a3.png",
+   "rc": 0,
+   "err": "",
+   "estado": "escrito",
+   "bytes": 21764,
+   "como": "exacta",
+   "cab_hex": "b6a6f2085000000078000000010000001000000002000000000000001a000000de5f3540de5f3540000000000000000000000000000000000000000000000000",
+   "cab_txt": "....P...x........................_5@._5@........................",
+   "firma_real": "desconocido",
+   "punto1_estado": "evaluado",
+   "testigos": {
+    "magick": "VIPS 80x120 16-bit",
+    "gm": "rc=1 : No decode delegate for this image format (/tmp/c30/tmp/t2/z15866.vips). gm identify: Request did not return an image. ",
+    "file": "rc=127"
+   },
+   "ficheros": [
+    "z15866.vips"
+   ],
+   "hallazgos": [
+    [
+     "G3",
+     "fallo",
+     "vips"
+    ]
+   ]
+  },
+  {
+   "motor": "pandoc",
+   "destino": "rtf",
+   "semilla": "m1.md",
+   "rc": 0,
+   "err": "",
+   "estado": "escrito",
+   "bytes": 275,
+   "como": "exacta",
+   "cab_hex": "7b5c70617264205c716c205c6630205c7361313830205c6c6930205c666930205c6f75746c696e656c6576656c30205c62205c6673333620546974756c6f2075",
+   "cab_txt": "{\\pard \\ql \\f0 \\sa180 \\li0 \\fi0 \\outlinelevel0 \\b \\fs36 Titulo u",
+   "firma_real": "texto",
+   "punto1_estado": "evaluado",
+   "testigos": {
+    "magick": "rc=1 identify: no decode delegate for this image format `/tmp/c30/tmp/t0/v35.rtf' @ error/constitute.c/ReadImage/753. ",
+    "gm": "rc=1 tify: No decode delegate for this image format (/tmp/c30/tmp/t0/v35.rtf). gm identify: Request did not return an image. ",
+    "file": "rc=127"
+   },
+   "ficheros": [
+    "v35.rtf"
+   ],
+   "hallazgos": [
+    [
+     "G3",
+     "fallo",
+     "rtf"
+    ]
+   ]
+  },
+  {
+   "motor": "pandoc",
+   "destino": "rtf",
+   "semilla": "m2.md",
+   "rc": 0,
+   "err": "",
+   "estado": "escrito",
+   "bytes": 802,
+   "como": "exacta",
+   "cab_hex": "7b5c70617264205c716c205c6630205c7361313830205c6c6930205c666930205c6f75746c696e656c6576656c31205c62205c66733332204f74726f20646f63",
+   "cab_txt": "{\\pard \\ql \\f0 \\sa180 \\li0 \\fi0 \\outlinelevel1 \\b \\fs32 Otro doc",
+   "firma_real": "texto",
+   "punto1_estado": "evaluado",
+   "testigos": {
+    "magick": "rc=1 identify: no decode delegate for this image format `/tmp/c30/tmp/t1/w7954.rtf' @ error/constitute.c/ReadImage/753. ",
+    "gm": "rc=1 fy: No decode delegate for this image format (/tmp/c30/tmp/t1/w7954.rtf). gm identify: Request did not return an image. ",
+    "file": "rc=127"
+   },
+   "ficheros": [
+    "w7954.rtf"
+   ],
+   "hallazgos": [
+    [
+     "G3",
+     "fallo",
+     "rtf"
+    ]
+   ]
+  },
+  {
+   "motor": "pandoc",
+   "destino": "rtf",
+   "semilla": "m3.md",
+   "rc": 0,
+   "err": "",
+   "estado": "escrito",
+   "bytes": 402,
+   "como": "exacta",
+   "cab_hex": "7b5c70617264205c716c205c6630205c7361313830205c6c6930205c666930204573746120746572636572612073656d696c6c6120656d7069657a6120706f72",
+   "cab_txt": "{\\pard \\ql \\f0 \\sa180 \\li0 \\fi0 Esta tercera semilla empieza por",
+   "firma_real": "texto",
+   "punto1_estado": "evaluado",
+   "testigos": {
+    "magick": "rc=1 identify: no decode delegate for this image format `/tmp/c30/tmp/t2/z15873.rtf' @ error/constitute.c/ReadImage/753. ",
+    "gm": "rc=1 y: No decode delegate for this image format (/tmp/c30/tmp/t2/z15873.rtf). gm identify: Request did not return an image. ",
+    "file": "rc=127"
+   },
+   "ficheros": [
+    "z15873.rtf"
+   ],
+   "hallazgos": [
+    [
+     "G3",
+     "fallo",
+     "rtf"
+    ]
+   ]
+  },
+  {
+   "motor": "graphicsmagick",
+   "destino": "png",
+   "semilla": "a1.png",
+   "rc": 0,
+   "err": "",
+   "estado": "escrito",
+   "bytes": 18742,
+   "como": "exacta",
+   "cab_hex": "89504e470d0a1a0a0000000d49484452000000400000003010020000007eb9370b000000206348524d00007a26000080840000fa00000080e8000075300000ea",
+   "cab_txt": ".PNG........IHDR...@...0.....~.7.... cHRM..z&..............u0...",
+   "firma_real": "png",
+   "punto1_estado": "evaluado",
+   "testigos": {
+    "magick": "PNG 64x48 16-bit",
+    "gm": "/tmp/c30/tmp/t0/v42.png PNG 64x48+0+0 DirectClass 16-bit 18.3Ki 0.000u 0m:0.000002s\n",
+    "file": "rc=127"
+   },
+   "ficheros": [
+    "v42.png"
+   ],
+   "hallazgos": []
+  },
+  {
+   "motor": "graphicsmagick",
+   "destino": "png",
+   "semilla": "a2.png",
+   "rc": 0,
+   "err": "",
+   "estado": "escrito",
+   "bytes": 42349,
+   "como": "exacta",
+   "cab_hex": "89504e470d0a1a0a0000000d4948445200000064000000461002000000e5747a7d000000206348524d00007a26000080840000fa00000080e8000075300000ea",
+   "cab_txt": ".PNG........IHDR...d...F......tz}... cHRM..z&..............u0...",
+   "firma_real": "png",
+   "punto1_estado": "evaluado",
+   "testigos": {
+    "magick": "PNG 100x70 16-bit",
+    "gm": "/tmp/c30/tmp/t1/w7961.png PNG 100x70+0+0 DirectClass 16-bit 41.4Ki 0.000u 0m:0.000008s\n",
+    "file": "rc=127"
+   },
+   "ficheros": [
+    "w7961.png"
+   ],
+   "hallazgos": []
+  },
+  {
+   "motor": "graphicsmagick",
+   "destino": "png",
+   "semilla": "a3.png",
+   "rc": 0,
+   "err": "",
+   "estado": "escrito",
+   "bytes": 19538,
+   "como": "exacta",
+   "cab_hex": "89504e470d0a1a0a0000000d49484452000000500000007810000000001015f66900004b834944415478da01784b87b4037d9f9981514012c094ae6921a76194",
+   "cab_txt": ".PNG........IHDR...P...x........i..K.IDATx..xK...}...Q@....i!.a.",
+   "firma_real": "png",
+   "punto1_estado": "evaluado",
+   "testigos": {
+    "magick": "PNG 80x120 16-bit",
+    "gm": "/tmp/c30/tmp/t2/z15880.png PNG 80x120+0+0 PseudoClass 65536c 16-bit 19.1Ki 0.000u 0m:0.000003s\n",
+    "file": "rc=127"
+   },
+   "ficheros": [
+    "z15880.png"
+   ],
+   "hallazgos": []
+  },
+  {
+   "motor": "pandoc",
+   "destino": "docx",
+   "semilla": "m1.md",
+   "rc": 0,
+   "err": "",
+   "estado": "escrito",
+   "bytes": 10706,
+   "como": "exacta",
+   "cab_hex": "504b030414000208080053741c5d0868bace830100008d070000130000005b436f6e74656e745f54797065735d2e786d6cb595cb4ec33010457f25ca16256e59",
+   "cab_txt": "PK........St.].h..............[Content_Types].xml...N.0.E.%..%nY",
+   "firma_real": "docx",
+   "punto1_estado": "evaluado",
+   "testigos": {
+    "magick": "convert /tmp/magick-1LfrIJjrReoXjIuEdS_Fcyv_iMMYWEp9 as a Writer document -> /tmp/magick-1LfrIJjrReoXjIuEdS_Fcyv_iMMYWEp",
+    "gm": "rc=1 ify: No decode delegate for this image format (/tmp/c30/tmp/t0/v49.docx). gm identify: Request did not return an image. ",
+    "file": "rc=127"
+   },
+   "ficheros": [
+    "v49.docx"
+   ],
+   "hallazgos": []
+  },
+  {
+   "motor": "pandoc",
+   "destino": "docx",
+   "semilla": "m2.md",
+   "rc": 0,
+   "err": "",
+   "estado": "escrito",
+   "bytes": 10649,
+   "como": "exacta",
+   "cab_hex": "504b030414000208080055741c5d0868bace830100008d070000130000005b436f6e74656e745f54797065735d2e786d6cb595cb4ec33010457f25ca16256e59",
+   "cab_txt": "PK........Ut.].h..............[Content_Types].xml...N.0.E.%..%nY",
+   "firma_real": "docx",
+   "punto1_estado": "evaluado",
+   "testigos": {
+    "magick": "convert /tmp/magick-Nf1YQX3J0LNX6rWCi2WzL7pJTqU4ir9x as a Writer document -> /tmp/magick-Nf1YQX3J0LNX6rWCi2WzL7pJTqU4ir9",
+    "gm": "rc=1 y: No decode delegate for this image format (/tmp/c30/tmp/t1/w7968.docx). gm identify: Request did not return an image. ",
+    "file": "rc=127"
+   },
+   "ficheros": [
+    "w7968.docx"
+   ],
+   "hallazgos": []
+  },
+  {
+   "motor": "pandoc",
+   "destino": "docx",
+   "semilla": "m3.md",
+   "rc": 0,
+   "err": "",
+   "estado": "escrito",
+   "bytes": 10540,
+   "como": "exacta",
+   "cab_hex": "504b030414000208080055741c5d0868bace830100008d070000130000005b436f6e74656e745f54797065735d2e786d6cb595cb4ec33010457f25ca16256e59",
+   "cab_txt": "PK........Ut.].h..............[Content_Types].xml...N.0.E.%..%nY",
+   "firma_real": "docx",
+   "punto1_estado": "evaluado",
+   "testigos": {
+    "magick": "convert /tmp/magick-r72QmUCGbxwG51kbiz3dVpSJZmeRmiHs as a Writer document -> /tmp/magick-r72QmUCGbxwG51kbiz3dVpSJZmeRmiH",
+    "gm": "rc=1 : No decode delegate for this image format (/tmp/c30/tmp/t2/z15887.docx). gm identify: Request did not return an image. ",
+    "file": "rc=127"
+   },
+   "ficheros": [
+    "z15887.docx"
+   ],
+   "hallazgos": []
+  }
+ ],
+ "sondas": {
+  "vips_version": {
+   "rc": 0,
+   "out": "vips-8.18.3\n",
+   "err": ""
+  },
+  "gm_version": {
+   "rc": 0,
+   "out": "GraphicsMagick 1.3.46 2025-10-29 Q16 http://www.GraphicsMagick.org/\nCopyright (C) 2002-2025 GraphicsMagick Group.\nAdditional copyrights and licenses apply to this software.\nSee http://www.GraphicsMagick.org/www/Copyright.html for details.\n\nFeature Support:\n  Native Thread Safe         yes\n  Large Fi",
+   "err": ""
+  },
+  "pandoc_version": {
+   "rc": 0,
+   "out": "pandoc 3.9.0.2\nFeatures: -server +lua\nScripting engine: Lua 5.4\nUser data directory: /root/.local/share/pandoc\nCopyright (C) 2006-2025 John MacFarlane. Web:  https://pandoc.org\nThis is free software; see the source for copying conditions. There is no\nwarranty, not even for merchantability or fitness",
+   "err": ""
+  },
+  "pandoc_rtf_standalone": {
+   "rc": 0,
+   "out": "",
+   "err": ""
+  },
+  "pandoc_rtf_standalone_cab": {
+   "hex": "7b5c727466315c616e73695c64656666307b5c666f6e7474626c7b5c6630205c6673776973732048656c7665746963613b7d7b5c6631205c666d6f6465726e20",
+   "txt": "{\\rtf1\\ansi\\deff0{\\fonttbl{\\f0 \\fswiss Helvetica;}{\\f1 \\fmodern ",
+   "firma_real": "rtf"
+  },
+  "firmas_vips_en_tabla": [
+   [
+    0,
+    "69643d4d616769636b506978656c4361636865",
+    "mpc"
+   ],
+   [
+    0,
+    "4d41544c414220352e30",
+    "mat"
+   ],
+   [
+    0,
+    "08f2a6b6",
+    "vips"
+   ]
+  ]
+ }
+}

@@ -1,0 +1,65 @@
+{
+ "n_ficheros": 78,
+ "n": 9,
+ "bytes_totales": 273522881,
+ "A_primitivo": {
+  "vuelta1": {
+   "read_512_ms": 5.9225,
+   "read_2056_ms": 5.4599,
+   "delta_us_por_fichero": -5.93
+  },
+  "vuelta2": {
+   "read_512_ms": 5.6971,
+   "read_2056_ms": 5.9469,
+   "delta_us_por_fichero": 3.2
+  },
+  "signo_se_conserva": false
+ },
+ "B_firma_real": {
+  "vuelta1": {
+   "head_ms": 6.178,
+   "arbol_ms": 6.8706,
+   "delta_us_por_fichero": 8.88,
+   "ratio": 1.112
+  },
+  "vuelta2": {
+   "head_ms": 6.7326,
+   "arbol_ms": 6.9507,
+   "delta_us_por_fichero": 2.8,
+   "ratio": 1.032
+  },
+  "signo_se_conserva": true
+ },
+ "C_disparo": {
+  "firmas_censo_local.json": {
+   "n_destinos": 403,
+   "dispara": [
+    "imagemagick:pcd",
+    "imagemagick:pcds",
+    "imagemagick:pct",
+    "imagemagick:pict"
+   ],
+   "porcentaje": 0.993
+  },
+  "firmas_censo_contenedor.json": {
+   "n_destinos": 331,
+   "dispara": [
+    "graphicsmagick:pcd",
+    "graphicsmagick:pcds",
+    "graphicsmagick:pct",
+    "graphicsmagick:pict"
+   ],
+   "porcentaje": 1.208
+  }
+ },
+ "testigos": {
+  "cpu_ms_antes": 206.7,
+  "cpu_ms_despues": 195.1,
+  "deriva": 0.944,
+  "proc_ms_antes": 35.9,
+  "proc_ms_despues": 32.5,
+  "nivel": 1.104,
+  "tope_agotado": false,
+  "etiqueta": "limpia"
+ }
+}

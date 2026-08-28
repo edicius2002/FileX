@@ -72,7 +72,33 @@ TIMEOUT = 60  # segundos: ninguna sonda externa puede colgarse
 #      nombres distintos por eso.
 # ===========================================================================
 
-_NCAB = 512   # bytes de cabecera que se leen. Un solo read, una sola pagina.
+_NCAB = 512   # VENTANA DE DECISION: la que ven todas las heuristicas de abajo.
+              # NO se ensancha. Ensancharla endurece la heuristica de texto del
+              # final de `firma_real` (exigiria que fuesen imprimibles MAS bytes)
+              # y eso movería clasificaciones que nadie ha pedido mover.
+_NCAB_LARGO = 2056
+# VENTANA DE LECTURA: un solo `read`, y de los bytes 512..2055 solo miran los
+# marcadores de FIRMAS_LARGAS. Leerlos NO cuesta: `open+read(2056)` y
+# `open+read(512)` sobre los mismos 78 ficheros dan 64,75 y 77,9 us por fichero
+# -- la diferencia sale NEGATIVA, o sea por debajo del suelo de la tanda
+# (MEDIDO, bench/firmas-cierre.md sec.2.3). El pendiente 2 de firmas-contrato.md
+# proponia leer mas alla del 512 "solo cuando la extension lo pide"; la puerta
+# por extension no se paga en tiempo, y en cambio le costaria a `firma_real` su
+# invariante -- que la extension NO decide la respuesta. Se lee siempre.
+
+# Marcadores que viven MAS ALLA del byte 512. Se prueban despues de FIRMAS (los
+# literales del byte 0 siguen mandando) y ANTES de los predicados, que es donde
+# esta el dano: el relleno 0xFF de los 2 KB de cabecera de un PCD casa con el
+# sincronismo de trama de audio MPEG y hoy un `.pcd` legitimo sale `mpegaudio`.
+# Los dos salen del censo de tres semillas de sec.2.1 del informe, no de leer
+# una especificacion.
+FIRMAS_LARGAS = [
+    # PICT: 512 B de cabecera de aplicacion, 2 de tamano, 8 de rectangulo, y en
+    # el 522 el opcode de version 2 (`0011 02FF`) + el de cabecera (`0C00`).
+    (522, b"\x00\x11\x02\xff\x0c\x00", "pict"),
+    # Photo CD: 2 KB de relleno y el identificador en el 0x800.
+    (2048, b"PCD_IPI", "pcd"),
+]
 
 # (desplazamiento, bytes, formato). Orden importante: lo mas especifico antes.
 FIRMAS = [
@@ -115,6 +141,12 @@ FIRMAS = [
     (0, b"farbfeld", "farbfeld"),
     (0, b"id=ImageMagick", "miff"),
     (0, b"id=MagickPixelCache", "mpc"),
+    # C30: GraphicsMagick escribe `id=MagickCache`, no `id=MagickPixelCache`.
+    # El vocabulario se censo con ImageMagick y dio un FALSO POSITIVO sobre las
+    # 3 celdas de `gm -> .mpc` dentro del contenedor: `gm identify` las lee como
+    # `MPC 64x48 DirectClass 16-bit`. Es el aviso de que un vocabulario censado
+    # con UN escritor describe a ese escritor.
+    (0, b"id=MagickCache", "mpc"),
     (0, b"\xab\x01\x01\x03", "viff"),
     (0, b"\xff\x57\x50\x43", "wpg"),
     (0, b"SIMPLE  =", "fits"),
@@ -127,7 +159,12 @@ FIRMAS = [
     (0, b"PG ML", "pgx"),
     (0, b"\x1bP", "sixel"),
     (0, b"\x1bE\x1b", "pcl"),
+    # C30: el magico de VIPS es de ENDIANNESS y la tabla traia media. `vips`
+    # 8.18.3 sobre x86 escribe `b6 a6 f2 08`, y las 3 celdas de `vips -> .vips`
+    # del contenedor salian `fallo` sobre una salida que `magick identify` lee
+    # como `VIPS 64x48 16-bit`. Las dos formas son el mismo formato.
     (0, b"\x08\xf2\xa6\xb6", "vips"),
+    (0, b"\xb6\xa6\xf2\x08", "vips"),
     (4, b"\x00\x00\x00\x07\x00\x00\x00\x02", "xwd"),   # version 7 + ZPixmap
     # --- audio ---
     (0, b"fLaC", "flac"),
@@ -152,6 +189,14 @@ FIRMAS = [
     (0, b"FL32", "fl32"),
     (0, b"\x80\x00\x00\x20\x03", "adx"),
     (0, b"\x0b\x77", "ac3"),                           # ac3 y eac3 comparten sync
+    # C28: dos de los 56 que el censo dio por «no se pudo escribir con ningun
+    # motor disponible». No hacia falta ningun corpus: hacia falta la bandera
+    # `-strict -2` (DTS es experimental en este ffmpeg) y un perfil valido
+    # (DNxHD exige 1920x1080 y una tasa de su tabla). Escritos con dos semillas
+    # cada uno, prefijo comun de 20 y 64 bytes -- MEDIDO,
+    # bench/salidas-firmas-cierre/c28_prueba21.json.
+    (0, b"\x7f\xfe\x80\x01", "dts"),                   # sync word de DTS
+    (0, b"\x00\x00\x02\x80\x01\x01", "dnxhd"),
     # --- video y contenedores ---
     (0, b"\x1a\x45\xdf\xa3", "matroska"),
     (0, b"0&\xb2u\x8ef\xcf\x11", "asf"),
@@ -194,6 +239,12 @@ FIRMAS = [
     (0, b"SNBP000B", "snb"),
     (0, b"!!8-Bit!!", "tcr"),
     (0, b"L\x00R\x00F\x00", "lrf"),
+    # Rocket eBook. `firmas-contrato.md` sec.3.2 lo mete en el saco de
+    # «marcadores de 2 a 6 bytes... mucho riesgo de colision», y sobre ESTE es
+    # falso: las dos muestras de Calibre del censo comparten 28 bytes, y los
+    # diez primeros son `B0 0C B0 0C 02 00` mas el literal `NUVO`. Diez bytes
+    # no son dos. MEDIDO, n=2 (Calibre es el unico escritor que lo declara).
+    (0, b"\xb0\x0c\xb0\x0c\x02\x00NUVO", "rocketbook"),
     # --- 3D y varios ---
     (0, b"glTF", "glb"),
     (0, b"ply\n", "ply"),
@@ -318,11 +369,19 @@ def firma_real(ruta: str) -> str:
     """Formato real por bytes magicos. Ningun subproceso, ninguna extension."""
     try:
         with open(ruta, "rb") as fh:
-            cab = fh.read(_NCAB)
+            crudo = fh.read(_NCAB_LARGO)
+            # El TAMANO solo se pide cuando puede decidir algo: hoy, el chunk
+            # principal de 3DS, que declara la longitud total del fichero. Un
+            # `fstat` sobre un descriptor ya abierto es una llamada, y con la
+            # guarda de los dos bytes no lo paga practicamente nadie.
+            tam = os.fstat(fh.fileno()).st_size if crudo[:2] == b"MM" else -1
     except OSError:
         return "ilegible"
-    if not cab:
+    if not crudo:
         return "vacio"
+    # La ventana de DECISION sigue siendo de 512 B: los bytes 512..2055 solo los
+    # mira FIRMAS_LARGAS, mas abajo. Un `read` para las dos.
+    cab = crudo[:_NCAB]
     # --- envases que comparten cabecera: hay que desambiguar el subtipo ---
     if cab[:4] == b"RIFF" and len(cab) >= 12:
         return {b"WEBP": "webp", b"WAVE": "wav", b"AVI ": "avi",
@@ -347,7 +406,29 @@ def firma_real(ruta: str) -> str:
     for desp, magico, nombre in FIRMAS:
         if cab[desp:desp + len(magico)] == magico:
             return nombre
+    # --- marcadores mas alla del byte 512 ---
+    # EL SITIO IMPORTA, y se eligio midiendo, no por gusto: van DESPUES de FIRMAS
+    # para que un literal del byte 0 —curado con el censo— siga mandando, y ANTES
+    # de los predicados porque el predicado `FF Ex` de audio MPEG es justo el que
+    # se traga hoy un PCD entero. Ninguna muestra de las 78 del corpus ni de las
+    # 53 del patron oro casa aqui (MEDIDO, bench/firmas-cierre.md sec.2.4).
+    for desp, magico, nombre in FIRMAS_LARGAS:
+        if crudo[desp:desp + len(magico)] == magico:
+            return nombre
     # --- casos con predicado, no con literal ---
+    # 3DS: el tercero de la deuda de firmas, y el que cambia de categoria al
+    # medirlo. `firmas-contrato.md` sec.3.2 lo descarta porque «su marcador son
+    # DOS bytes, `MM`, que chocan con el `MM\x00*` de TIFF: anadirlo compraria un
+    # formato y arriesgaria todos los TIFF». Las dos mitades se caen solas:
+    #  (a) TIFF y BigTIFF son literales de FIRMAS y ya se han resuelto ARRIBA,
+    #      asi que llegar aqui significa que no era un TIFF;
+    #  (b) el marcador no es de dos bytes: el chunk principal 0x4D4D DECLARA en
+    #      sus cuatro bytes siguientes (LE) la longitud TOTAL del fichero, y eso
+    #      lo hace AUTOVALIDANTE. MEDIDO 2 de 2 sobre las muestras de assimp del
+    #      censo: 565 y 517 bytes declarados y 565 y 517 en el disco.
+    if (tam >= 6 and crudo[:2] == b"MM"
+            and int.from_bytes(crudo[2:6], "little") == tam):
+        return "3ds"
     # PNM/PAM/PFM: familia P1..P7. El marcador es 'P' + digito/letra + blanco.
     if cab[:1] == b"P" and len(cab) >= 3:
         if cab[1:2] in b"123456" and cab[2:3] in b" \t\r\n":
@@ -356,9 +437,14 @@ def firma_real(ruta: str) -> str:
             return "pam"
         if cab[1:2] in b"FfHh" and cab[2:3] in b" \t\r\n":
             return "pfm"
-    # PCX: 0x0A, version 0-5, codificacion 1, bits 1/2/4/8.
+    # PCX: 0x0A, version 0-5, codificacion 0 o 1, bits 1/2/4/8.
+    # C30: el predicado exigia `cab[2] == 1` (RLE) porque el censo se hizo con
+    # ImageMagick, y GraphicsMagick escribe PCX SIN COMPRIMIR: byte 2 = 0x00.
+    # Dos celdas legitimas del contenedor daban `fallo` (`0a 05 00 08 ...`, que
+    # `magick identify` lee como `PCX 64x48 8-bit`). La codificacion es un campo
+    # del formato, no parte del marcador.
     if (len(cab) >= 4 and cab[0] == 0x0A and cab[1] in (0, 2, 3, 4, 5)
-            and cab[2] == 1 and cab[3] in (1, 2, 4, 8)):
+            and cab[2] in (0, 1) and cab[3] in (1, 2, 4, 8)):
         return "pcx"
     # MPEG-TS: paquetes de 188 bytes que empiezan por 0x47. m2ts lleva 4 de cabecera.
     if len(cab) > 188 and cab[0] == 0x47 and cab[188] == 0x47:
@@ -435,13 +521,31 @@ for _n, _f in (
     ("ipl", {"ipl"}),
     ("wmf", {"wmf"}),
     ("xcf", {"xcf"}),
-    ("mat", {"mat"}),
+    # COLISION DE EXTENSION DECLARADA, como la de `.avs`: en esta maquina hay
+    # DOS escritores de `.mat` y escriben DOS formatos. ImageMagick escribe un
+    # MATLAB 5.0 binario; `vips` escribe su MATRIZ ASCII (`64 48\n57847 ...`,
+    # que `vipsheader` lee como `64x48 double, 1 band, matrixload`). Ninguna
+    # firma puede decidir cual se pidio, asi que se aceptan las dos y se dice.
+    # C30: sin esto, las 3 celdas de `vips -> .mat` eran un falso positivo.
+    ("mat", {"mat", "texto"}),
     ("cal cals", {"cals"}),
     ("pgx", {"pgx"}),
     ("six sixel", {"sixel"}),
     ("pcl", {"pcl"}),
     ("jbig jbg bie", {"jbig"}),
     ("vips", {"vips"}),
+    # F2: los dos accionables de la deuda de firmas (firmas-contrato.md sec.3.2).
+    # Su marcador vive mas alla del byte 512 y por eso estaban fuera; la sonda ya
+    # lo lee (FIRMAS_LARGAS). `.pcds` es el mismo escritor de Photo CD que `.pcd`
+    # -- MEDIDO: mismos 788 480 B y el mismo `PCD_IPI` en el 0x800.
+    # (`.pic` NO entra: `magick -list format` no declara ningun PIC en esta build,
+    # asi que no hay escritor con el que censarlo. Sin muestra, no hay entrada.)
+    ("pict pct", {"pict"}),
+    ("pcd pcds", {"pcd"}),
+    # y los otros dos de la deuda que el dato deja accionables (sec.2.6 del
+    # informe): 3DS por autovalidacion y Rocket eBook por longitud de marcador.
+    ("3ds", {"3ds"}),
+    ("rb", {"rocketbook"}),
     ("mng", {"mng"}),
     ("jng", {"jng"}),
     ("pbm pgm ppm pnm pgmyuv", {"pnm"}),
@@ -500,6 +604,8 @@ for _n, _f in (
     # sobre una salida legitima en la validacion de _valida_tabla.py.
     ("264 h264 265 h265 hevc 266 h266 vvc av1 265m", {"flujo_es"}),
     ("obu", {"av1obu"}),
+    ("dts", {"dts"}),
+    ("dnxhd dnxhr", {"dnxhd"}),
     ("y4m", {"y4m"}),
     ("m3u8", {"m3u8"}),
     ("ffmeta", {"ffmetadata"}),
@@ -532,16 +638,48 @@ for _n, _f in (
     ("svg rsvg msvg", {"svg", "xml"}),
     ("svgz", {"gzip"}),
     ("html htm xhtml html4 html5", {"html", "xml", "texto"}),
+    # F2 / C28: los cinco «formatos» de diapositivas de pandoc son HTML —o un
+    # FRAGMENTO de HTML: el censo mide `<section id="` y `<div id="`—. El censo
+    # los dejo en `0_indeterminado` con el motivo «el prefijo es el banner del
+    # escritor», y eso es cierto del prefijo y falso del formato: aqui no hace
+    # falta un segundo escritor, hace falta la excepcion 5 de F1, que es el
+    # nivel de FAMILIA. Van tambien a EXT_FAMILIA, mas abajo.
+    ("revealjs s5 slidy slideous dzslides", {"html", "xml", "texto"}),
+    # `chunkedhtml` no es texto: pandoc entrega un ZIP (prefijo comun de 14 B
+    # que empieza por `PK\x03\x04`). Clasificarlo como banner fue un error de
+    # lectura del censo, no un limite del formato.
+    ("chunkedhtml", {"zip"}),
     ("xml ttml fb2 fxg collada dae xmp icml sif opml mpd assxml gimppath "
      "opendocument", {"xml", "svg", "html", "texto"}),
     ("vtt", {"vtt"}),
     ("ass ssa", {"ass"}),
+    # F2 / C28: las otras dos firmas huerfanas del mismo tipo que `stl_ascii`.
+    # `#FIG ` y `GIMP Palette` tambien estaban ya en MARCAS_TEXTO.
+    ("xfig fig", {"xfig"}),
+    ("gpl", {"gimp_paleta"}),
+    # HP-GL y el XML de telefono Cisco: el prefijo que el censo llamo banner
+    # (`IN;` y `<CiscoIPPhoneImage>`) es de la especificacion, pero tres bytes de
+    # ASCII no se meten en la tabla global de magicos. Nivel de FAMILIA.
+    ("hpgl", {"texto"}),
+    ("cip", {"texto", "xml"}),
     # ---------------- 3D ----------------
     ("glb glb2 gltf gltf2", {"glb", "texto"}),
     ("ply plyb", {"ply"}),
     ("assbin", {"assbin"}),
     ("stlb", {"stl_binario"}),
+    # F2 / C28: `solid ` esta en MARCAS_TEXTO desde que se escribio la tabla, o
+    # sea que `firma_real` acertaba con un STL ASCII y NINGUNA extension lo
+    # aceptaba: el punto 1 salia `sin_vocabulario` sobre un formato que la sonda
+    # identifica bien. Lo que faltaba no era el marcador, era esta fila.
+    ("stl", {"stl_ascii", "stl_binario"}),
+    ("assjson", {"texto"}),
     ("fbx", {"fbx", "texto"}),
+    # `fbxa` es el FBX en ASCII, el quinto de la deuda de firmas. Su prefijo
+    # (`; FBX 7.5.0 project file`) lleva la VERSION dentro, asi que no es un
+    # literal que se pueda meter en la tabla de magicos; lo comprobable es la
+    # familia. Y un aviso de metodo: las dos muestras del censo pesan 9 157 B
+    # las DOS, o sea que ahi hay n=1 disfrazado de n=2 (PENDIENTE).
+    ("fbxa", {"texto"}),
     ("stp step", {"step"}),
     ("x", {"directx_x"}),
     # ---------------- datos ----------------
@@ -570,7 +708,10 @@ EXT_FAMILIA = set()
 for _n in ("csv json yaml yml toml txt text md markdown tab tsv srt lrc sub scc "
            "jss xml html htm xhtml html4 html5 ttml fb2 fxg collada dae xmp icml "
            "sif opml gltf gltf2 fbx ipynb geojson csljson dxf mpd assxml gimppath "
-           "opendocument").split():
+           "opendocument "
+           # F2 / C28: los cinco de pandoc son HTML y `assjson` es JSON; lo
+           # comprobable es la FAMILIA, no que sea reveal.js y no slidy.
+           "revealjs s5 slidy slideous dzslides assjson hpgl cip fbxa").split():
     EXT_FAMILIA.add("." + _n)
 
 # ===========================================================================
@@ -610,6 +751,21 @@ for _n, _mot in (
      "jira haddock xwiki zimwiki dokuwiki plain man ms me asciidoc asciidoctor "
      "asciidoc_legacy djot markua opml texinfo tex latex context beamer "
      "biblatex bibtex", "texto plano: no hay marcador de formato"),
+    # F2 / C28: aqui SI se sostiene el motivo del censo. El prefijo comun de las
+    # dos muestras es un COMENTARIO del escritor —`# File produced by Open Asset
+    # Import Library`, `/*####...`, `#### Scene metadata:`— y otro escritor del
+    # mismo formato no lo pondria. `ftxt` es el volcado de pixeles de
+    # ImageMagick sin cabecera: su `0,0:` son las coordenadas del primer pixel,
+    # cuatro bytes de contenido. Ninguno tiene un segundo escritor con el que
+    # comprobarlo: 0 de 17 entre los 20 adaptadores de esta maquina y del
+    # contenedor (MEDIDO, bench/firmas-cierre.md sec.4.2). Declararlo
+    # `no_aplica` es la respuesta honesta; dejarlo `sin_vocabulario` decia que
+    # era deuda nuestra, y no lo es.
+    ("obj objnomtl pbrt pov",
+     "el prefijo comun de las muestras es el BANNER del escritor (un comentario "
+     "con su nombre y su version), no un marcador del formato: otro escritor del "
+     "mismo formato no lo pondria"),
+    ("ftxt", "volcado de pixeles sin cabecera: el prefijo son las coordenadas"),
 ):
     for _e in _n.split():
         EXT_SIN_FIRMA.setdefault("." + _e, _mot)
@@ -2983,10 +3139,13 @@ CAT_POR_FIRMA = {
     "pgx": "imagen", "sixel": "imagen", "jbig": "imagen", "vips": "imagen",
     "mng": "imagen", "jng": "imagen", "pnm": "imagen", "pam": "imagen",
     "pfm": "imagen", "xpm": "imagen", "xbm": "imagen",
+    # --- F2, marcadores mas alla del byte 512 (FIRMAS_LARGAS) ---
+    "pict": "imagen", "pcd": "imagen",
     "mpegaudio": "av", "adts": "av", "ac3": "av", "wave64": "av", "aiff": "av",
     "au": "av", "caf": "av", "wavpack": "av", "tta": "av", "ape": "av",
     "musepack": "av", "voc": "av", "sox": "av", "ircam": "av", "midi": "av",
     "amr": "av", "adx": "av", "ast": "av", "vag": "av", "fl32": "av",
+    "dts": "av", "dnxhd": "av",
     "avi": "av", "asf": "av", "flv": "av", "realmedia": "av", "mxf": "av",
     "nut": "av", "ivf": "av", "swf": "av", "dirac": "av", "wtv": "av",
     "mpegps": "av", "mpegvideo": "av", "mpegts": "av", "m2ts": "av",
@@ -2995,6 +3154,7 @@ CAT_POR_FIRMA = {
     "html": "documento", "svg": "documento", "djvu": "documento",
     "mobi": "documento", "lit": "documento", "snb": "documento",
     "tcr": "documento", "lrf": "documento", "epub": "documento",
+    "rocketbook": "documento",
     "docx": "documento", "xlsx": "documento", "pptx": "documento",
     "odt": "documento", "ods": "documento", "odp": "documento",
     "odg": "documento", "cfb": "documento", "eps_binario": "documento",
