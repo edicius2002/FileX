@@ -7,104 +7,103 @@
   "huella": {
     "motor": "f750a96c5bcb196a",
     "invocacion": "3a2c16603bb46673",
-    "contrato": "5761de1dcf0ab811"
+    "contrato": "38626025e73df9e1"
   },
-  "nota_resellado": "Resellado el 2026-08-28 por CAMBIO DE ALGORITMO de la huella, NO por resondeo: `filex/huella.py` pasa a hashear tambien las tablas de modulo que un bucle de nivel superior puebla y las constantes de modulo que las clases de motor leen (trampa 49). El codigo medido es el mismo: antes de resellar, las huellas de aqui coincidian con las del algoritmo anterior sobre este mismo arbol, y esa comprobacion es la que autoriza el resellado. Ver `bench/huella-y-tablas.md` sec.5 y `bench/salidas-huella/resellado.json`.",
   "nota_huella": "Resondeado y sellado el 2026-08-28: estas medidas se tomaron con el codigo cuya huella esta arriba, no con uno anterior. Cierra el pendiente que dejo `bench/deuda-sondeo.md` 3.3, donde el sellado era ARGUMENTADO y no MEDIDO porque `verificador.py` habia cambiado despues de escribirse los ficheros.",
   "aristas": {
     "docx>odt": {
       "estado": "real",
-      "ms": 691.5,
+      "ms": 672.0,
       "motivo": "7203 B, 515 caracteres, contrato ok_parcial",
       "caso": "S10"
     },
     "docx>tex": {
       "estado": "real",
-      "ms": 589.3,
+      "ms": 720.4,
       "motivo": "2698 B, 2649 caracteres, contrato ok",
       "caso": "Q13"
     },
     "epub>docx": {
       "estado": "real",
-      "ms": 818.3,
-      "motivo": "10993 B, 635 caracteres, contrato ok_parcial",
+      "ms": 692.9,
+      "motivo": "10992 B, 635 caracteres, contrato ok_parcial",
       "caso": "S11"
     },
     "epub>txt": {
       "estado": "real",
-      "ms": 627.5,
+      "ms": 630.7,
       "motivo": "566 B, 514 caracteres, contrato ok",
       "caso": "S12"
     },
     "html>epub": {
       "estado": "real",
-      "ms": 1898.9,
-      "motivo": "5281 B, 554 caracteres, contrato ok_parcial",
+      "ms": 701.7,
+      "motivo": "5285 B, 554 caracteres, contrato ok_parcial",
       "caso": "S07"
     },
     "html>odt": {
       "estado": "real",
-      "ms": 702.9,
+      "ms": 678.8,
       "motivo": "7286 B, 543 caracteres, contrato ok_parcial",
       "caso": "S08"
     },
     "html>rtf": {
       "estado": "real",
-      "ms": 584.7,
+      "ms": 685.3,
       "motivo": "1756 B, 1754 caracteres, contrato ok",
       "caso": "S09"
     },
     "md>pptx": {
       "estado": "real",
-      "ms": 681.3,
+      "ms": 680.8,
       "motivo": "28170 B, 2218 caracteres, contrato ok_parcial",
       "caso": "Q02"
     },
     "md>rtf": {
       "estado": "real",
-      "ms": 608.9,
+      "ms": 651.0,
       "motivo": "1700 B, 1698 caracteres, contrato ok",
       "caso": "S15"
     },
     "md>tex": {
       "estado": "real",
-      "ms": 637.0,
+      "ms": 712.9,
       "motivo": "2748 B, 2699 caracteres, contrato ok",
       "caso": "Q12"
     },
     "pptx>md": {
       "estado": "real",
-      "ms": 1472.1,
+      "ms": 743.3,
       "motivo": "549 B, 499 caracteres, contrato ok",
       "caso": "Q17"
     },
     "rtf>html": {
       "estado": "real",
-      "ms": 2707.3,
+      "ms": 723.7,
       "motivo": "4324 B, 3133 caracteres, contrato ok",
       "caso": "S14"
     },
     "rtf>md": {
       "estado": "real",
-      "ms": 565.1,
+      "ms": 605.7,
       "motivo": "471 B, 466 caracteres, contrato ok",
       "caso": "S13"
     },
     "tex>docx": {
       "estado": "real",
-      "ms": 1603.0,
-      "motivo": "10772 B, 394 caracteres, contrato ok_parcial",
+      "ms": 718.4,
+      "motivo": "10771 B, 394 caracteres, contrato ok_parcial",
       "caso": "Q14"
     },
     "tex>html": {
       "estado": "real",
-      "ms": 593.1,
+      "ms": 669.4,
       "motivo": "4651 B, 2939 caracteres, contrato ok",
       "caso": "Q15"
     },
     "tex>pdf": {
       "estado": "real",
-      "ms": 4979.4,
+      "ms": 5454.5,
       "motivo": "9756 B, 268 caracteres, contrato aviso",
       "caso": "Q16"
     }
