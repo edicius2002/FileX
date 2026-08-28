@@ -1,0 +1,33 @@
+Input #0, lavfi, from 'testsrc=size=320x240:rate=25':
+  Duration: N/A, start: 0.000000, bitrate: N/A
+  Stream #0:0: Video: wrapped_avframe, rgb24, 320x240 [SAR 1:1 DAR 4:3], 25 fps, 25 tbr, 25 tbn
+Stream mapping:
+  Stream #0:0 -> #0:0 (wrapped_avframe (native) -> av1 (libsvtav1))
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.1.0-76-g724d061f
+Svt[info]: SVT [build]  :	GCC 15.2.0	 64 bit
+Svt[info]: LIB Build date: Sep 17 2025 23:55:36
+Svt[info]: -------------------------------------------
+Svt[info]: Level of Parallelism: 5
+Svt[info]: Number of PPCS 140
+Svt[info]: [asm level on system : up to avx2]
+Svt[info]: [asm level selected : up to avx2]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 320 / 240 / 25 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 8 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 161 / 32 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 35 
+Svt[info]: SVT [config]: AQ mode / Variance Boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 				: 0 / 0
+Svt[info]: SVT [config]: QP scale compress strength 					: 0
+Svt[info]: -------------------------------------------
+Output #0, matroska, to 'sal_libsvtav1.mkv':
+  Metadata:
+    encoder         : Lavf62.6.100
+  Stream #0:0: Video: av1 (AV01 / 0x31305641), yuv420p(tv, progressive), 320x240 [SAR 1:1 DAR 4:3], q=2-31, 25 fps, 1k tbn
+    Metadata:
+      encoder         : Lavc62.15.100 libsvtav1
+[out#0/matroska @ 0000027d30cdfbc0] video:7KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 10.168252%
+frame=   25 fps=0.0 q=21.0 Lsize=       7KiB time=00:00:00.96 bitrate=  62.8kbits/s speed=5.18x elapsed=0:00:00.18    

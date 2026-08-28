@@ -1,0 +1,105 @@
+{
+ "cuando": "2026-08-28 11:24:28",
+ "n7_interop": [
+  {
+   "primitivo": "cerrojo.Candado (rango de bytes)",
+   "sh_con_nadie": true,
+   "sh_contra_sh": true,
+   "py_dentro_sh_bloqueado": true,
+   "py_deja_fichero": true,
+   "sh_dentro_py_bloqueado": false,
+   "sh_muerto_py_pasa": true,
+   "excluye_de_verdad": false
+  },
+  {
+   "primitivo": "gpu.Lock (O_CREAT|O_EXCL)",
+   "sh_con_nadie": true,
+   "sh_contra_sh": true,
+   "py_dentro_sh_bloqueado": true,
+   "py_deja_fichero": true,
+   "sh_dentro_py_bloqueado": true,
+   "sh_muerto_py_pasa": true,
+   "excluye_de_verdad": true
+  }
+ ],
+ "n7_wsl2": {
+  "bash": "C:\\Windows\\System32\\bash.exe",
+  "sh_con_nadie": false,
+  "py_dentro_sh_bloqueado": true
+ },
+ "n7_coste_us": {
+  "gpu.Lock": {
+   "n": 21,
+   "mediana_us": 1403.6,
+   "min_us": 1202.5,
+   "max_us": 2143.0
+  },
+  "cerrojo.Candado": {
+   "n": 21,
+   "mediana_us": 625.3,
+   "min_us": 560.7,
+   "max_us": 1014.0
+  }
+ },
+ "n7_guardia_ms": {
+  "n": 9,
+  "mediana_ms": 46.3,
+  "min_ms": 31.6,
+  "max_ms": 48.7
+ },
+ "n7_huerfano": {
+  "recogido": true,
+  "ms": 122.3
+ },
+ "n7_no_roba_vivo": true,
+ "sobrecoste": {
+  "nvenc": {
+   "n": 9,
+   "crudo_ms": 753.5,
+   "filex_ms": 780.7,
+   "sobrecoste_ms": 27.2,
+   "sobrecoste_pct": 3.6
+  },
+  "cpu": {
+   "n": 9,
+   "crudo_ms": 4047.4,
+   "filex_ms": 4488.8,
+   "sobrecoste_ms": 441.4,
+   "sobrecoste_pct": 10.9
+  },
+  "ganancia_crudo": 5.371,
+  "ganancia_filex": 5.75
+ },
+ "ganancia_por_duracion": [
+  {
+   "duracion_s": 1,
+   "nvenc": 660.4,
+   "cpu": 3871.5,
+   "ganancia": 5.86
+  },
+  {
+   "duracion_s": 2,
+   "nvenc": 753.1,
+   "cpu": 2158.6,
+   "ganancia": 2.87
+  },
+  {
+   "duracion_s": 5,
+   "nvenc": 775.1,
+   "cpu": 3934.1,
+   "ganancia": 5.08
+  },
+  {
+   "duracion_s": 10,
+   "nvenc": 1184.9,
+   "cpu": 8347.4,
+   "ganancia": 7.04
+  },
+  {
+   "duracion_s": 20,
+   "nvenc": 1932.5,
+   "cpu": 15202.3,
+   "ganancia": 7.87
+  }
+ ]
+}

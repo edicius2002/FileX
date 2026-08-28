@@ -31,11 +31,92 @@ from __future__ import annotations
 import os
 from dataclasses import dataclass, field
 
-from . import formatos, invocacion, sondeo
+from . import formatos, gpu, invocacion, sondeo
 from .grafo import REAL, SIN_SONDEAR, Arista
 
 #: El patrón oro midió con 4 hilos. Se conserva para que las cifras comparen.
 HILOS = "4"
+
+#: Hito 2 — qué codificador se pide y con qué se degrada cuando el de la
+#: tarjeta no existe. **El orden es la preferencia**, y la lista se recorre
+#: SONDEANDO, no leyendo `ffmpeg -encoders`: `av1_nvenc` aparece listado, tiene
+#: página de ayuda completa con sus formatos de píxel y sus AVOptions, y falla
+#: al abrir el codificador con `No capable devices found`.
+#:
+#: `hevc` es la única fila donde la GPU se paga de verdad: `hevc_nvenc` cuesta
+#: lo mismo que `h264_nvenc` mientras `libx265` es 3× más lento que `libx264`
+#: (`HUECOS.md` §4). En `h264` la ventaja medida es de 2,74–2,98× y en `av1` no
+#: hay ventaja ninguna, porque no hay codificador.
+CODECS_VIDEO: dict[str, tuple[str, ...]] = {
+    "hevc": ("hevc_nvenc", "libx265"),
+    "av1": ("av1_nvenc", "libsvtav1"),
+    "h264": ("h264_nvenc", "libx264"),
+    "vp9": ("libvpx-vp9",),
+}
+
+#: Alias de lo que un usuario escribe.
+ALIAS_CODEC = {"h265": "hevc", "x265": "hevc", "265": "hevc",
+               "x264": "h264", "avc": "h264", "264": "h264",
+               "av01": "av1", "vp09": "vp9"}
+
+#: **El control de tasa es del CODIFICADOR, no de la petición — MEDIDO, y es el
+#: fallo que casi se publica como «hito 2 cumplido».** Degradar `av1_nvenc` a
+#: `libsvtav1` cambiando solo el nombre del códec produce
+#: `Svt[error]: Max Bitrate only supported with CRF mode`, `rc=-22` y un fichero
+#: de **0 bytes**: SVT-AV1 no acepta `-maxrate`/`-bufsize` fuera de modo CRF,
+#: mientras `hevc_nvenc` y `libx265` sí. La degradación que solo cambia el
+#: códec **sustituye un fallo por otro**.
+#:
+#: Cada fila es `(banderas de bitrate objetivo, banderas de calidad constante)`,
+#: y las dos están SONDEADAS en ejecución (`bench/salidas-hito2/matriz_tasa.json`,
+#: 10 de 10 celdas): esta tabla no se deduce del manual de nadie.
+_TASA = {
+    # NVENC: `-rc vbr` con techo. Acota lo que se puede acotar desde el argv;
+    # el desvío que queda se DECLARA (§4).
+    "nvenc": (lambda b: ["-b:v", str(b), "-maxrate", str(int(b * 1.5)),
+                         "-bufsize", str(b * 2), "-rc", "vbr"],
+              lambda q: ["-rc", "vbr", "-cq", str(q), "-b:v", "0"]),
+    # x264/x265: ABR con techo, o CRF.
+    "x26x": (lambda b: ["-b:v", str(b), "-maxrate", str(int(b * 1.5)),
+                        "-bufsize", str(b * 2)],
+             lambda q: ["-crf", str(q)]),
+    # SVT-AV1: ABR **a secas**. Un `-maxrate` aquí es un fichero de 0 bytes.
+    "svtav1": (lambda b: ["-b:v", str(b)],
+               lambda q: ["-crf", str(q)]),
+    # VP9: el CRF exige `-b:v 0` o se interpreta como techo y no como calidad.
+    "vpx": (lambda b: ["-b:v", str(b)],
+            lambda q: ["-crf", str(q), "-b:v", "0", "-row-mt", "1"]),
+}
+
+#: Qué familia de control de tasa le toca a cada codificador concreto.
+FAMILIA_TASA = {
+    "hevc_nvenc": "nvenc", "h264_nvenc": "nvenc", "av1_nvenc": "nvenc",
+    "libx265": "x26x", "libx264": "x26x",
+    "libsvtav1": "svtav1", "libvpx-vp9": "vpx",
+}
+
+
+def codec_normaliza(nombre: str) -> str:
+    n = (nombre or "").strip().lower()
+    return ALIAS_CODEC.get(n, n)
+
+
+def _a_bps(v) -> int:
+    """`'2000k'`, `'2M'`, `2000000` -> bits por segundo.
+
+    Se normaliza **aquí y una vez**: el bitrate viaja al argv, a `decidido`, a
+    los metadatos del fichero y al contrato, y cuatro sitios con cuatro
+    unidades distintas es exactamente cómo se publica un desvío que no existe.
+    """
+    if isinstance(v, (int, float)):
+        return int(v)
+    s = str(v).strip().lower().replace("bps", "").replace("bit/s", "").strip()
+    mult = 1
+    if s.endswith("k"):
+        mult, s = 1000, s[:-1]
+    elif s.endswith("m"):
+        mult, s = 1000000, s[:-1]
+    return int(float(s) * mult)
 
 
 @dataclass
@@ -285,6 +366,98 @@ class FFmpeg(Motor):
                               evidencia=f"referencia.json:{ev}" if ev else ""))
         return out
 
+    # ---------------------------------------------------------- hito 2 -----
+    def elegir_codec(self, familia: str) -> dict:
+        """Sondea la familia pedida y devuelve QUÉ se va a usar y POR QUÉ.
+
+        **Sin intervención**: nadie configura nada, nadie lee un listado. Se
+        prueba el codificador de la tarjeta, y si no abre se pasa al siguiente
+        de `CODECS_VIDEO`. `av1_nvenc` es el caso del criterio del hito 2 y sale
+        degradado a `libsvtav1` **con el `rc` que lo degradó**, porque un 0 de
+        bytes sin `rc` no distingue una tarjeta incapaz de un proceso que no
+        arrancó (trampa 25).
+
+        Un motor NO decide sobre la tarjeta sin la guardia de VRAM: `capacidad`
+        toma el lock de máquina y aplica `GPU_GUARD` antes de medir nada.
+        """
+        fam = codec_normaliza(familia)
+        cands = CODECS_VIDEO.get(fam)
+        if not cands:
+            raise ValueError(f"códec de vídeo no soportado: '{familia}'")
+        info = {"codec_video": fam, "codec_video_real": "", "nvenc": False,
+                "degradado_de": "", "degradado_rc": 0, "degradado_motivo": ""}
+        for cand in cands:
+            if "nvenc" not in cand:
+                info["codec_video_real"] = cand
+                return info
+            try:
+                ok, rc, motivo = gpu.capacidad(cand)
+            except gpu.GpuOcupada as e:
+                ok, rc, motivo = False, 0, str(e)
+            if ok:
+                info["codec_video_real"] = cand
+                info["nvenc"] = True
+                return info
+            # Se anota el PRIMER rechazo, que es el del codificador preferido.
+            if not info["degradado_de"]:
+                info["degradado_de"] = cand
+                info["degradado_rc"] = rc
+                info["degradado_motivo"] = motivo
+        # Ningún candidato: la familia solo tenía NVENC y no funciona.
+        raise ValueError(f"no hay codificador disponible para '{fam}'")
+
+    def _video_codec(self, pedido: dict, decidido: dict) -> list[str]:
+        """Las banderas de vídeo, y lo que el motor decidió por su cuenta.
+
+        Todo lo elegido aquí va a `decidido`, que el núcleo mete en
+        `pedido['params']`: si el motor elige y no lo dice, el punto 4 del
+        contrato lo llama «propiedad no solicitada» — y tiene razón.
+        """
+        info = self.elegir_codec(pedido["codec_video"])
+        decidido.update(info)
+        cv = info["codec_video_real"]
+        argv = ["-c:v", cv]
+
+        # Las banderas de tasa son del CODIFICADOR REAL, el que se va a usar
+        # tras la degradación — no del que se pidió. Cogerlas del pedido es lo
+        # que dejaba `libsvtav1` con un `-maxrate` que no admite.
+        por_bitrate, por_calidad = _TASA[FAMILIA_TASA[cv]]
+        decidido["familia_tasa"] = FAMILIA_TASA[cv]
+
+        br = pedido.get("bitrate_video")
+        if br:
+            bps = _a_bps(br)
+            # `bitrate_video_bps`, NO `bitrate_bps`: esa clave la lee la regla
+            # de bitrate del contrato, que solo mira PISTAS DE AUDIO. Meter
+            # aquí el bitrate de vídeo haría que la pista de audio de 128 kbps
+            # se comparase con 2 000 kbps y saliera `fallo`.
+            decidido["bitrate_video_bps"] = bps
+            argv += por_bitrate(bps)
+        else:
+            # Sin bitrate pedido, calidad constante. Cada codificador tiene su
+            # escala y NO son la misma: `-cq` en NVENC, `-crf` en x265, SVT-AV1
+            # y VP9. El número que llega es el que pidió quien llama.
+            q = int(pedido.get("crf", 28 if info["codec_video"] == "hevc" else 30))
+            argv += por_calidad(q)
+            decidido["calidad_constante"] = q
+        return argv
+
+    def _metadatos(self, decidido: dict) -> list[str]:
+        """Lo que el fichero de salida lleva escrito sobre su propia conversión.
+
+        MEDIDO: Matroska conserva las etiquetas arbitrarias; **MP4 no** —solo
+        acepta un puñado de claves del átomo `ilst`—, así que la clave que
+        sobrevive en los dos es `comment`. Se escribe una sola línea legible,
+        no seis etiquetas que tres formatos tirarían en silencio.
+        """
+        trozos = [f"filex.codec={decidido.get('codec_video_real', '')}"]
+        if decidido.get("bitrate_video_bps"):
+            trozos.append(f"filex.bitrate_pedido_bps={decidido['bitrate_video_bps']}")
+        if decidido.get("degradado_de"):
+            trozos.append(f"filex.degradado_de={decidido['degradado_de']}"
+                          f" rc={decidido.get('degradado_rc', 0)}")
+        return ["-metadata", "comment=" + "; ".join(trozos)]
+
     def orden(self, entrada: str, salida: str, pedido: dict,
               *, timeout: float | None = None):
         d = formatos.normaliza(os.path.splitext(salida)[1])
@@ -336,6 +509,19 @@ class FFmpeg(Motor):
                 argv += ["-c:a", codec]
             if fo is not None and fo.perdida:
                 argv += ["-b:a", str(pedido.get("bitrate_audio", "192k"))]
+        elif pedido.get("codec_video"):
+            # ---- hito 2: NVENC con sondeo y degradación ---------------------
+            argv += self._video_codec(pedido, decidido)
+            argv += ["-c:a", "libopus" if d == "webm" else "aac",
+                     "-b:a", str(pedido.get("bitrate_audio",
+                                            "96k" if d == "webm" else "128k"))]
+            # El desvío de bitrate se registra en los METADATOS DE SALIDA. Lo
+            # que se puede escribir en UNA pasada es lo pedido y con qué se
+            # codificó; el bitrate obtenido no existe todavía cuando se
+            # construye este argv, y se lee del propio fichero después
+            # (`bitrate = bytes*8/duración`). Con las dos mitades EN EL FICHERO,
+            # el desvío es computable sin consultar a FileX.
+            argv += self._metadatos(decidido)
         else:
             if d == "webm":
                 argv += ["-c:v", "libvpx-vp9", "-crf", str(pedido.get("crf", 33)),

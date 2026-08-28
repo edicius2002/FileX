@@ -1,0 +1,226 @@
+[
+ {
+  "codec": "av1_nvenc",
+  "familia": "nvenc",
+  "modo": "bitrate",
+  "rc": -542398533,
+  "bytes": 0,
+  "ok": false,
+  "flags": [
+   "-b:v",
+   "2000000",
+   "-maxrate",
+   "3000000",
+   "-bufsize",
+   "4000000",
+   "-rc",
+   "vbr"
+  ],
+  "error": "[vost#0:0/av1_nvenc @ 0000028574badb40] [enc:av1_nvenc @ 0000028574c93700] Error while opening encoder - maybe"
+ },
+ {
+  "codec": "av1_nvenc",
+  "familia": "nvenc",
+  "modo": "calidad",
+  "rc": -542398533,
+  "bytes": 0,
+  "ok": false,
+  "flags": [
+   "-rc",
+   "vbr",
+   "-cq",
+   "30",
+   "-b:v",
+   "0"
+  ],
+  "error": "[vost#0:0/av1_nvenc @ 0000020010daecc0] [enc:av1_nvenc @ 0000020010d940c0] Error while opening encoder - maybe"
+ },
+ {
+  "codec": "h264_nvenc",
+  "familia": "nvenc",
+  "modo": "bitrate",
+  "rc": 0,
+  "bytes": 1453851,
+  "ok": true,
+  "flags": [
+   "-b:v",
+   "2000000",
+   "-maxrate",
+   "3000000",
+   "-bufsize",
+   "4000000",
+   "-rc",
+   "vbr"
+  ],
+  "error": ""
+ },
+ {
+  "codec": "h264_nvenc",
+  "familia": "nvenc",
+  "modo": "calidad",
+  "rc": 0,
+  "bytes": 443738,
+  "ok": true,
+  "flags": [
+   "-rc",
+   "vbr",
+   "-cq",
+   "30",
+   "-b:v",
+   "0"
+  ],
+  "error": ""
+ },
+ {
+  "codec": "hevc_nvenc",
+  "familia": "nvenc",
+  "modo": "bitrate",
+  "rc": 0,
+  "bytes": 1428416,
+  "ok": true,
+  "flags": [
+   "-b:v",
+   "2000000",
+   "-maxrate",
+   "3000000",
+   "-bufsize",
+   "4000000",
+   "-rc",
+   "vbr"
+  ],
+  "error": ""
+ },
+ {
+  "codec": "hevc_nvenc",
+  "familia": "nvenc",
+  "modo": "calidad",
+  "rc": 0,
+  "bytes": 417845,
+  "ok": true,
+  "flags": [
+   "-rc",
+   "vbr",
+   "-cq",
+   "30",
+   "-b:v",
+   "0"
+  ],
+  "error": ""
+ },
+ {
+  "codec": "libsvtav1",
+  "familia": "svtav1",
+  "modo": "bitrate",
+  "rc": 0,
+  "bytes": 1688676,
+  "ok": true,
+  "flags": [
+   "-b:v",
+   "2000000"
+  ],
+  "error": ""
+ },
+ {
+  "codec": "libsvtav1",
+  "familia": "svtav1",
+  "modo": "calidad",
+  "rc": 0,
+  "bytes": 668344,
+  "ok": true,
+  "flags": [
+   "-crf",
+   "30"
+  ],
+  "error": ""
+ },
+ {
+  "codec": "libvpx-vp9",
+  "familia": "vpx",
+  "modo": "bitrate",
+  "rc": 0,
+  "bytes": 800759,
+  "ok": true,
+  "flags": [
+   "-b:v",
+   "2000000"
+  ],
+  "error": ""
+ },
+ {
+  "codec": "libvpx-vp9",
+  "familia": "vpx",
+  "modo": "calidad",
+  "rc": 0,
+  "bytes": 617835,
+  "ok": true,
+  "flags": [
+   "-crf",
+   "30",
+   "-b:v",
+   "0",
+   "-row-mt",
+   "1"
+  ],
+  "error": ""
+ },
+ {
+  "codec": "libx264",
+  "familia": "x26x",
+  "modo": "bitrate",
+  "rc": 0,
+  "bytes": 1116487,
+  "ok": true,
+  "flags": [
+   "-b:v",
+   "2000000",
+   "-maxrate",
+   "3000000",
+   "-bufsize",
+   "4000000"
+  ],
+  "error": ""
+ },
+ {
+  "codec": "libx264",
+  "familia": "x26x",
+  "modo": "calidad",
+  "rc": 0,
+  "bytes": 229036,
+  "ok": true,
+  "flags": [
+   "-crf",
+   "30"
+  ],
+  "error": ""
+ },
+ {
+  "codec": "libx265",
+  "familia": "x26x",
+  "modo": "bitrate",
+  "rc": 0,
+  "bytes": 1215222,
+  "ok": true,
+  "flags": [
+   "-b:v",
+   "2000000",
+   "-maxrate",
+   "3000000",
+   "-bufsize",
+   "4000000"
+  ],
+  "error": ""
+ },
+ {
+  "codec": "libx265",
+  "familia": "x26x",
+  "modo": "calidad",
+  "rc": 0,
+  "bytes": 267281,
+  "ok": true,
+  "flags": [
+   "-crf",
+   "30"
+  ],
+  "error": ""
+ }
+]

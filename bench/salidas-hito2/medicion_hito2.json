@@ -1,0 +1,252 @@
+{
+ "secciones": [
+  "suelta",
+  "bitrate",
+  "lote"
+ ],
+ "tmp": "C:\\Users\\krato\\AppData\\Local\\Temp\\h2-medir-bgq9onrs",
+ "python": "3.11.9",
+ "cuando": "2026-08-28 11:02:07",
+ "aviso_guardia": "",
+ "lock": {
+  "ruta": "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-gpu.lock",
+  "dueno": "H2-campana-hito2",
+  "vram_libre_mib": 10554
+ },
+ "capacidad": {
+  "hevc_nvenc": [
+   true,
+   0,
+   ""
+  ],
+  "h264_nvenc": [
+   true,
+   0,
+   ""
+  ],
+  "av1_nvenc": [
+   false,
+   -542398533,
+   "la tarjeta no tiene ese codificador"
+  ]
+ },
+ "vram": {
+  "muestras": 9,
+  "pico_usado_mib": 1684,
+  "min_usado_mib": 1473,
+  "libre_antes_mib": 10643,
+  "reposo_usado_mib": [
+   1473,
+   1473,
+   1473,
+   1473,
+   1473
+  ],
+  "coste_propio_mib": 211,
+  "ok": true
+ },
+ "ruido": {
+  "etiqueta": "limpia",
+  "razones": [],
+  "deriva_ratio": 0.984,
+  "proceso_ms": [
+   27.56,
+   29.81
+  ],
+  "antes": {
+   "deriva": 12.818,
+   "proceso": 27.56,
+   "tope": false
+  },
+  "despues": {
+   "deriva": 12.611,
+   "proceso": 29.81,
+   "tope": false
+  }
+ },
+ "lock_libre_al_final": true,
+ "suelta": [
+  {
+   "etiqueta": "hevc_gpu",
+   "n": 9,
+   "mediana_ms": 1899.7,
+   "min_ms": 1890.7,
+   "max_ms": 2145.3,
+   "bytes": 5766274,
+   "comment": "filex.codec=hevc_nvenc; filex.bitrate_pedido_bps=2000000",
+   "bitrate_video_real_bps": 2302135,
+   "codecs": [
+    "hevc",
+    "aac"
+   ],
+   "pistas": 2
+  },
+  {
+   "etiqueta": "hevc_cpu",
+   "n": 9,
+   "mediana_ms": 14588.6,
+   "min_ms": 12428.3,
+   "max_ms": 17586.9,
+   "bytes": 5302898,
+   "comment": "filex.codec=libx265; filex.bitrate_pedido_bps=2000000; filex.degradado_de=hevc_nvenc rc=0",
+   "bitrate_video_real_bps": 2117136,
+   "codecs": [
+    "hevc",
+    "aac"
+   ],
+   "pistas": 2
+  },
+  {
+   "etiqueta": "av1_pedido",
+   "n": 9,
+   "mediana_ms": 8697.8,
+   "min_ms": 7615.7,
+   "max_ms": 10053.2,
+   "bytes": 5452547,
+   "comment": "filex.codec=libsvtav1; filex.bitrate_pedido_bps=2000000; filex.degradado_de=av1_nvenc rc=-542398533",
+   "bitrate_video_real_bps": 2176882,
+   "codecs": [
+    "av1",
+    "aac"
+   ],
+   "pistas": 2
+  }
+ ],
+ "bitrate": [
+  {
+   "via": "nvenc",
+   "pedido_bps": 1000000,
+   "real_bps": 1245937,
+   "desvio_pct": 24.59,
+   "comment": "filex.codec=hevc_nvenc; filex.bitrate_pedido_bps=1000000",
+   "veredicto": "ok",
+   "hallazgos": [
+    "N9"
+   ]
+  },
+  {
+   "via": "cpu",
+   "pedido_bps": 1000000,
+   "real_bps": 1103453,
+   "desvio_pct": 10.35,
+   "comment": "filex.codec=libx265; filex.bitrate_pedido_bps=1000000; filex.degradado_de=hevc_nvenc rc=0",
+   "veredicto": "ok",
+   "hallazgos": [
+    "N9"
+   ]
+  },
+  {
+   "via": "nvenc",
+   "pedido_bps": 2000000,
+   "real_bps": 2302135,
+   "desvio_pct": 15.11,
+   "comment": "filex.codec=hevc_nvenc; filex.bitrate_pedido_bps=2000000",
+   "veredicto": "ok",
+   "hallazgos": [
+    "N9"
+   ]
+  },
+  {
+   "via": "cpu",
+   "pedido_bps": 2000000,
+   "real_bps": 2118408,
+   "desvio_pct": 5.92,
+   "comment": "filex.codec=libx265; filex.bitrate_pedido_bps=2000000; filex.degradado_de=hevc_nvenc rc=0",
+   "veredicto": "ok",
+   "hallazgos": [
+    "N9"
+   ]
+  },
+  {
+   "via": "nvenc",
+   "pedido_bps": 4000000,
+   "real_bps": 4422089,
+   "desvio_pct": 10.55,
+   "comment": "filex.codec=hevc_nvenc; filex.bitrate_pedido_bps=4000000",
+   "veredicto": "ok",
+   "hallazgos": [
+    "N9"
+   ]
+  },
+  {
+   "via": "cpu",
+   "pedido_bps": 4000000,
+   "real_bps": 4144073,
+   "desvio_pct": 3.6,
+   "comment": "filex.codec=libx265; filex.bitrate_pedido_bps=4000000; filex.degradado_de=hevc_nvenc rc=0",
+   "veredicto": "ok",
+   "hallazgos": [
+    "N9"
+   ]
+  },
+  {
+   "via": "nvenc",
+   "pedido_bps": 8000000,
+   "real_bps": 8785354,
+   "desvio_pct": 9.82,
+   "comment": "filex.codec=hevc_nvenc; filex.bitrate_pedido_bps=8000000",
+   "veredicto": "ok",
+   "hallazgos": [
+    "N9"
+   ]
+  },
+  {
+   "via": "cpu",
+   "pedido_bps": 8000000,
+   "real_bps": 8167678,
+   "desvio_pct": 2.1,
+   "comment": "filex.codec=libx265; filex.bitrate_pedido_bps=8000000; filex.degradado_de=hevc_nvenc rc=0",
+   "veredicto": "ok",
+   "hallazgos": [
+    "N9"
+   ]
+  }
+ ],
+ "b6_ganancia": 4.425,
+ "lote": [
+  {
+   "etiqueta": "lote_gpu",
+   "n": 3,
+   "mediana_ms": 7145.1,
+   "min_ms": 6946.0,
+   "max_ms": 7637.0,
+   "convertidos": 8,
+   "fallidos": 0,
+   "detalle_fallos": [],
+   "bytes_entrada": 39920528,
+   "bytes_salida": 12939491,
+   "pistas_por_salida": {
+    "clip00.mkv": 2,
+    "clip01.mkv": 2,
+    "clip02.mkv": 2,
+    "clip03.mkv": 2,
+    "clip04.mkv": 1,
+    "clip05.mkv": 3,
+    "clip06.mkv": 3,
+    "clip07.mkv": 2
+   }
+  },
+  {
+   "etiqueta": "lote_cpu",
+   "n": 3,
+   "mediana_ms": 31619.5,
+   "min_ms": 30980.9,
+   "max_ms": 32489.1,
+   "convertidos": 8,
+   "fallidos": 0,
+   "detalle_fallos": [],
+   "bytes_entrada": 39920528,
+   "bytes_salida": 10540223,
+   "pistas_por_salida": {
+    "clip00.mkv": 2,
+    "clip01.mkv": 2,
+    "clip02.mkv": 2,
+    "clip03.mkv": 2,
+    "clip04.mkv": 1,
+    "clip05.mkv": 3,
+    "clip06.mkv": 3,
+    "clip07.mkv": 2
+   }
+  }
+ ]
+}

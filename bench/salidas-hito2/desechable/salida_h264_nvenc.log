@@ -1,0 +1,15 @@
+Input #0, lavfi, from 'testsrc=size=320x240:rate=25':
+  Duration: N/A, start: 0.000000, bitrate: N/A
+  Stream #0:0: Video: wrapped_avframe, rgb24, 320x240 [SAR 1:1 DAR 4:3], 25 fps, 25 tbr, 25 tbn
+Stream mapping:
+  Stream #0:0 -> #0:0 (wrapped_avframe (native) -> h264 (h264_nvenc))
+Output #0, matroska, to 'sal_h264_nvenc.mkv':
+  Metadata:
+    encoder         : Lavf62.6.100
+  Stream #0:0: Video: h264 (High 4:4:4 Predictive) (H264 / 0x34363248), gbrp(pc, gbr/unknown/unknown, progressive), 320x240 [SAR 1:1 DAR 4:3], q=2-31, 2000 kb/s, 25 fps, 1k tbn
+    Metadata:
+      encoder         : Lavc62.15.100 h264_nvenc
+    Side data:
+      CPB properties: bitrate max/min/avg: 0/0/2000000 buffer size: 4000000 vbv_delay: N/A
+[out#0/matroska @ 000001dbe97eef00] video:95KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.846373%
+frame=   25 fps=0.0 q=1.0 Lsize=      96KiB time=00:00:00.88 bitrate= 895.8kbits/s speed=5.04x elapsed=0:00:00.17    

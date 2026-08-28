@@ -1,0 +1,33 @@
+[H2] desechable: C:\Users\krato\AppData\Local\Temp\h2-medir-bgq9onrs
+[H2] R21 censo ANTES: []
+[H2] lock tomado en C:\Users\krato\AppData\Local\Temp\filex-gpu.lock (dueno=H2-campana-hito2); libre=10554 MiB; aviso=''
+[H2] capacidades sondeadas: {'hevc_nvenc': (True, 0, ''), 'h264_nvenc': (True, 0, ''), 'av1_nvenc': (False, -542398533, 'la tarjeta no tiene ese codificador')}
+
+=== suelta ===
+  hevc_gpu     n=9 mediana=   1899.7 ms     5766274 B  pistas=2
+      comment=filex.codec=hevc_nvenc; filex.bitrate_pedido_bps=2000000
+  hevc_cpu     n=9 mediana=  14588.6 ms     5302898 B  pistas=2
+      comment=filex.codec=libx265; filex.bitrate_pedido_bps=2000000; filex.degradado_de=hevc_nvenc rc=0
+  av1_pedido   n=9 mediana=   8697.8 ms     5452547 B  pistas=2
+      comment=filex.codec=libsvtav1; filex.bitrate_pedido_bps=2000000; filex.degradado_de=av1_nvenc rc=-542398533
+
+=== bitrate ===
+  nvenc  pedido= 1000000 real= 1245937 desvio= +24.59 %  veredicto=ok
+  cpu    pedido= 1000000 real= 1103453 desvio= +10.35 %  veredicto=ok
+  nvenc  pedido= 2000000 real= 2302135 desvio= +15.11 %  veredicto=ok
+  cpu    pedido= 2000000 real= 2118408 desvio=  +5.92 %  veredicto=ok
+  nvenc  pedido= 4000000 real= 4422089 desvio= +10.55 %  veredicto=ok
+  cpu    pedido= 4000000 real= 4144073 desvio=  +3.60 %  veredicto=ok
+  nvenc  pedido= 8000000 real= 8785354 desvio=  +9.82 %  veredicto=ok
+  cpu    pedido= 8000000 real= 8167678 desvio=  +2.10 %  veredicto=ok
+
+=== lote ===
+  carpeta: 8 ficheros, 39920528 B
+  lote_gpu  n=3 mediana=    7145.1 ms  ok=8 fallos=0
+  lote_cpu  n=3 mediana=   31619.5 ms  ok=8 fallos=0
+  --> B6: GPU x4.425 sobre CPU en LOTE
+
+[H2] ruido: limpia []
+[H2] lock libre al terminar: True
+[H2] R21 censo DESPUES: 6 entradas
+-> D:\Work\research\FileX\.claude\worktrees\agent-aad9b98ac08e19678\bench\salidas-hito2\medicion_hito2.json
