@@ -1,0 +1,146 @@
+{
+ "legado": {
+  "n": 1295,
+  "con_acento": 65,
+  "acentos": 106,
+  "con_punt": 911,
+  "punt": 2157,
+  "delta0": 1281,
+  "ejemplos": [
+   {
+    "rel": "salidas-ocrmypdf/sidecar/base__escaneado_d2.txt",
+    "acentos": 1,
+    "cer_ciego": 30.3797,
+    "cer_d4ac": 30.3797,
+    "delta": 0.0
+   },
+   {
+    "rel": "salidas-ocrmypdf/sidecar/clean_os300__escaneado_d3.txt",
+    "acentos": 2,
+    "cer_ciego": 78.481,
+    "cer_d4ac": 79.7468,
+    "delta": 1.2658
+   },
+   {
+    "rel": "salidas-ocrmypdf/sidecar/clean__escaneado_d2.txt",
+    "acentos": 1,
+    "cer_ciego": 30.3797,
+    "cer_d4ac": 30.3797,
+    "delta": 0.0
+   },
+   {
+    "rel": "salidas-ocrmypdf/sidecar/deskew_os300__escaneado_d3.txt",
+    "acentos": 2,
+    "cer_ciego": 78.481,
+    "cer_d4ac": 79.7468,
+    "delta": 1.2658
+   },
+   {
+    "rel": "salidas-ocrmypdf/sidecar/deskew__escaneado_d2.txt",
+    "acentos": 1,
+    "cer_ciego": 30.3797,
+    "cer_d4ac": 30.3797,
+    "delta": 0.0
+   },
+   {
+    "rel": "salidas-ocrmypdf/sidecar/os300__escaneado_d3.txt",
+    "acentos": 2,
+    "cer_ciego": 78.481,
+    "cer_d4ac": 79.7468,
+    "delta": 1.2658
+   }
+  ]
+ },
+ "d4": {
+  "n": 1604,
+  "con_acento": 1496,
+  "acentos": 28965,
+  "con_punt": 1545,
+  "punt": 13476,
+  "delta0": 148,
+  "ejemplos": [
+   {
+    "rel": "salidas-corpus-d4/texto/docling_onnxruntime_cpu_f4_cpu_onnxruntime__nativo__escaneado_d4.txt",
+    "acentos": 17,
+    "cer_ciego": 36.2416,
+    "cer_d4ac": 36.9128,
+    "delta": 0.6712
+   },
+   {
+    "rel": "salidas-corpus-d4/texto/docling_torch_cpu_f4_cpu_torch__nativo__escaneado_d4.txt",
+    "acentos": 17,
+    "cer_ciego": 36.2416,
+    "cer_d4ac": 36.9128,
+    "delta": 0.6712
+   },
+   {
+    "rel": "salidas-corpus-d4/texto/docling_torch_cuda_criba__nativo__abl_d4d_ang0.txt",
+    "acentos": 19,
+    "cer_ciego": 35.906,
+    "cer_d4ac": 36.2416,
+    "delta": 0.3356
+   },
+   {
+    "rel": "salidas-corpus-d4/texto/docling_torch_cuda_criba__nativo__abl_d4d_blur12.txt",
+    "acentos": 19,
+    "cer_ciego": 30.0336,
+    "cer_d4ac": 30.3691,
+    "delta": 0.3355
+   },
+   {
+    "rel": "salidas-corpus-d4/texto/docling_torch_cuda_criba__nativo__abl_d4d_jq45.txt",
+    "acentos": 19,
+    "cer_ciego": 34.0604,
+    "cer_d4ac": 34.396,
+    "delta": 0.3356
+   },
+   {
+    "rel": "salidas-corpus-d4/texto/docling_torch_cuda_criba__nativo__abl_d4d_niv20.txt",
+    "acentos": 20,
+    "cer_ciego": 35.2349,
+    "cer_d4ac": 35.4027,
+    "delta": 0.1678
+   }
+  ]
+ },
+ "tipico": {
+  "n": 15,
+  "con_acento": 0,
+  "acentos": 0,
+  "con_punt": 15,
+  "punt": 29,
+  "delta0": 0,
+  "ejemplos": []
+ },
+ "acentos_gs": {
+  "n": 3,
+  "con_acento": 3,
+  "acentos": 23,
+  "con_punt": 3,
+  "punt": 15,
+  "delta0": 2,
+  "ejemplos": [
+   {
+    "rel": "salidas-verificador-gs/ocr/acentos_eng.txt",
+    "acentos": 1,
+    "cer_ciego": 9.1837,
+    "cer_d4ac": 16.3265,
+    "delta": 7.1428
+   },
+   {
+    "rel": "salidas-verificador-gs/ocr/acentos_spa-eng.txt",
+    "acentos": 11,
+    "cer_ciego": 2.0408,
+    "cer_d4ac": 2.0408,
+    "delta": 0.0
+   },
+   {
+    "rel": "salidas-verificador-gs/ocr/acentos_spa.txt",
+    "acentos": 11,
+    "cer_ciego": 2.0408,
+    "cer_d4ac": 2.0408,
+    "delta": 0.0
+   }
+  ]
+ }
+}
