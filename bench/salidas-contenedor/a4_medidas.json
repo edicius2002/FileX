@@ -1,0 +1,537 @@
+{
+ "n": 9,
+ "imagen": "ghcr.io/c4illin/convertx:latest",
+ "censo_antes": [
+  "filex-convertx\tUp 40 hours",
+  "filex-snapotter\tUp 40 hours (healthy)",
+  "filex-snapotter-pg\tUp 40 hours (healthy)",
+  "filex-snapotter-redis\tUp 40 hours (healthy)",
+  "filex-gotenberg8\tUp 40 hours (healthy)",
+  "filex-gotenberg\tExited (255) 3 weeks ago"
+ ],
+ "M6_coste_normal": {
+  "n": 2001,
+  "acuñar_el_nombre_us": 2.9,
+  "_argv_docker_completo_us": 4.0
+ },
+ "M1_solo_el_cliente": [
+  {
+   "i": 0,
+   "arranco": true,
+   "ms_matar_cliente": 192.09,
+   "contenedor_vivo_2s_despues": true
+  },
+  {
+   "i": 1,
+   "arranco": true,
+   "ms_matar_cliente": 188.25,
+   "contenedor_vivo_2s_despues": true
+  },
+  {
+   "i": 2,
+   "arranco": true,
+   "ms_matar_cliente": 195.02,
+   "contenedor_vivo_2s_despues": true
+  },
+  {
+   "i": 3,
+   "arranco": true,
+   "ms_matar_cliente": 185.32,
+   "contenedor_vivo_2s_despues": true
+  },
+  {
+   "i": 4,
+   "arranco": true,
+   "ms_matar_cliente": 192.74,
+   "contenedor_vivo_2s_despues": true
+  },
+  {
+   "i": 5,
+   "arranco": true,
+   "ms_matar_cliente": 179.2,
+   "contenedor_vivo_2s_despues": true
+  },
+  {
+   "i": 6,
+   "arranco": true,
+   "ms_matar_cliente": 199.55,
+   "contenedor_vivo_2s_despues": true
+  },
+  {
+   "i": 7,
+   "arranco": true,
+   "ms_matar_cliente": 167.52,
+   "contenedor_vivo_2s_despues": true
+  },
+  {
+   "i": 8,
+   "arranco": true,
+   "ms_matar_cliente": 173.93,
+   "contenedor_vivo_2s_despues": true
+  }
+ ],
+ "M2_por_nombre_declarado": [
+  {
+   "i": 0,
+   "arranco": true,
+   "habia_asa": true,
+   "ms_cancelar": 343.78,
+   "contenedor_muerto": true,
+   "cliente_muerto": true,
+   "motivo": "cancelado"
+  },
+  {
+   "i": 1,
+   "arranco": true,
+   "habia_asa": true,
+   "ms_cancelar": 343.57,
+   "contenedor_muerto": true,
+   "cliente_muerto": true,
+   "motivo": "cancelado"
+  },
+  {
+   "i": 2,
+   "arranco": true,
+   "habia_asa": true,
+   "ms_cancelar": 332.88,
+   "contenedor_muerto": true,
+   "cliente_muerto": true,
+   "motivo": "cancelado"
+  },
+  {
+   "i": 3,
+   "arranco": true,
+   "habia_asa": true,
+   "ms_cancelar": 347.19,
+   "contenedor_muerto": true,
+   "cliente_muerto": true,
+   "motivo": "cancelado"
+  },
+  {
+   "i": 4,
+   "arranco": true,
+   "habia_asa": true,
+   "ms_cancelar": 344.08,
+   "contenedor_muerto": true,
+   "cliente_muerto": true,
+   "motivo": "cancelado"
+  },
+  {
+   "i": 5,
+   "arranco": true,
+   "habia_asa": true,
+   "ms_cancelar": 385.07,
+   "contenedor_muerto": true,
+   "cliente_muerto": true,
+   "motivo": "cancelado"
+  },
+  {
+   "i": 6,
+   "arranco": true,
+   "habia_asa": true,
+   "ms_cancelar": 377.42,
+   "contenedor_muerto": true,
+   "cliente_muerto": true,
+   "motivo": "cancelado"
+  },
+  {
+   "i": 7,
+   "arranco": true,
+   "habia_asa": true,
+   "ms_cancelar": 359.46,
+   "contenedor_muerto": true,
+   "cliente_muerto": true,
+   "motivo": "cancelado"
+  },
+  {
+   "i": 8,
+   "arranco": true,
+   "habia_asa": true,
+   "ms_cancelar": 335.02,
+   "contenedor_muerto": true,
+   "cliente_muerto": true,
+   "motivo": "cancelado"
+  }
+ ],
+ "M3_coste_de_identificar": {
+  "n": 9,
+  "contenedores_en_la_maquina": 6,
+  "deduccion_por_montajes_ms": 217.35,
+  "declaracion_por_nombre_ms": 0.01,
+  "aciertos_deduccion": 9,
+  "aciertos_declaracion": 9,
+  "veces": 21735.0
+ },
+ "M4_carrera_de_arranque": [
+  {
+   "i": 0,
+   "ms_cancelar": 812.12,
+   "habia_asa": true,
+   "huerfano": false,
+   "existia_al_cancelar": false,
+   "motivo": "cancelado"
+  },
+  {
+   "i": 1,
+   "ms_cancelar": 683.74,
+   "habia_asa": true,
+   "huerfano": false,
+   "existia_al_cancelar": false,
+   "motivo": "cancelado"
+  },
+  {
+   "i": 2,
+   "ms_cancelar": 790.09,
+   "habia_asa": true,
+   "huerfano": false,
+   "existia_al_cancelar": false,
+   "motivo": "cancelado"
+  },
+  {
+   "i": 3,
+   "ms_cancelar": 1515.45,
+   "habia_asa": true,
+   "huerfano": false,
+   "existia_al_cancelar": false,
+   "motivo": "cancelado"
+  },
+  {
+   "i": 4,
+   "ms_cancelar": 679.72,
+   "habia_asa": true,
+   "huerfano": false,
+   "existia_al_cancelar": false,
+   "motivo": "cancelado"
+  },
+  {
+   "i": 5,
+   "ms_cancelar": 711.38,
+   "habia_asa": true,
+   "huerfano": false,
+   "existia_al_cancelar": false,
+   "motivo": "cancelado"
+  },
+  {
+   "i": 6,
+   "ms_cancelar": 686.15,
+   "habia_asa": true,
+   "huerfano": false,
+   "existia_al_cancelar": false,
+   "motivo": "cancelado"
+  },
+  {
+   "i": 7,
+   "ms_cancelar": 0.01,
+   "habia_asa": false,
+   "huerfano": false,
+   "existia_al_cancelar": false,
+   "motivo": "cancelado"
+  },
+  {
+   "i": 8,
+   "ms_cancelar": 764.59,
+   "habia_asa": true,
+   "huerfano": false,
+   "existia_al_cancelar": false,
+   "motivo": "cancelado"
+  }
+ ],
+ "M5_vecino": [
+  {
+   "i": 0,
+   "arrancaron_los_dos": true,
+   "cancelado_muerto": true,
+   "vecino_vivo": true
+  },
+  {
+   "i": 1,
+   "arrancaron_los_dos": true,
+   "cancelado_muerto": true,
+   "vecino_vivo": true
+  },
+  {
+   "i": 2,
+   "arrancaron_los_dos": true,
+   "cancelado_muerto": true,
+   "vecino_vivo": true
+  },
+  {
+   "i": 3,
+   "arrancaron_los_dos": true,
+   "cancelado_muerto": true,
+   "vecino_vivo": true
+  },
+  {
+   "i": 4,
+   "arrancaron_los_dos": true,
+   "cancelado_muerto": true,
+   "vecino_vivo": true
+  },
+  {
+   "i": 5,
+   "arrancaron_los_dos": true,
+   "cancelado_muerto": true,
+   "vecino_vivo": true
+  },
+  {
+   "i": 6,
+   "arrancaron_los_dos": true,
+   "cancelado_muerto": true,
+   "vecino_vivo": true
+  },
+  {
+   "i": 7,
+   "arrancaron_los_dos": true,
+   "cancelado_muerto": true,
+   "vecino_vivo": true
+  },
+  {
+   "i": 8,
+   "arrancaron_los_dos": true,
+   "cancelado_muerto": true,
+   "vecino_vivo": true
+  }
+ ],
+ "M7_espera_frente_a_barrido": {
+  "sin_nada": [
+   {
+    "i": 0,
+    "brazo": "sin_nada",
+    "ms_cancelar": 261.82,
+    "existia_al_cancelar": false,
+    "huerfano": true,
+    "estado": "Up 20 seconds"
+   },
+   {
+    "i": 1,
+    "brazo": "sin_nada",
+    "ms_cancelar": 274.16,
+    "existia_al_cancelar": false,
+    "huerfano": true,
+    "estado": "Up 20 seconds"
+   },
+   {
+    "i": 2,
+    "brazo": "sin_nada",
+    "ms_cancelar": 241.71,
+    "existia_al_cancelar": false,
+    "huerfano": true,
+    "estado": "Up 20 seconds"
+   },
+   {
+    "i": 3,
+    "brazo": "sin_nada",
+    "ms_cancelar": 256.75,
+    "existia_al_cancelar": false,
+    "huerfano": true,
+    "estado": "Up 20 seconds"
+   },
+   {
+    "i": 4,
+    "brazo": "sin_nada",
+    "ms_cancelar": 245.75,
+    "existia_al_cancelar": false,
+    "huerfano": true,
+    "estado": "Up 20 seconds"
+   },
+   {
+    "i": 5,
+    "brazo": "sin_nada",
+    "ms_cancelar": 266.76,
+    "existia_al_cancelar": false,
+    "huerfano": true,
+    "estado": "Up 20 seconds"
+   },
+   {
+    "i": 6,
+    "brazo": "sin_nada",
+    "ms_cancelar": 239.99,
+    "existia_al_cancelar": false,
+    "huerfano": true,
+    "estado": "Up 20 seconds"
+   },
+   {
+    "i": 7,
+    "brazo": "sin_nada",
+    "ms_cancelar": 240.62,
+    "existia_al_cancelar": false,
+    "huerfano": true,
+    "estado": "Up 20 seconds"
+   },
+   {
+    "i": 8,
+    "brazo": "sin_nada",
+    "ms_cancelar": 312.19,
+    "existia_al_cancelar": false,
+    "huerfano": true,
+    "estado": "Up 20 seconds"
+   }
+  ],
+  "solo_barrido": [
+   {
+    "i": 0,
+    "brazo": "solo_barrido",
+    "ms_cancelar": 572.75,
+    "existia_al_cancelar": false,
+    "huerfano": false,
+    "estado": ""
+   },
+   {
+    "i": 1,
+    "brazo": "solo_barrido",
+    "ms_cancelar": 537.44,
+    "existia_al_cancelar": false,
+    "huerfano": false,
+    "estado": ""
+   },
+   {
+    "i": 2,
+    "brazo": "solo_barrido",
+    "ms_cancelar": 565.61,
+    "existia_al_cancelar": false,
+    "huerfano": false,
+    "estado": ""
+   },
+   {
+    "i": 3,
+    "brazo": "solo_barrido",
+    "ms_cancelar": 498.83,
+    "existia_al_cancelar": false,
+    "huerfano": false,
+    "estado": ""
+   },
+   {
+    "i": 4,
+    "brazo": "solo_barrido",
+    "ms_cancelar": 586.43,
+    "existia_al_cancelar": false,
+    "huerfano": false,
+    "estado": ""
+   },
+   {
+    "i": 5,
+    "brazo": "solo_barrido",
+    "ms_cancelar": 512.84,
+    "existia_al_cancelar": false,
+    "huerfano": false,
+    "estado": ""
+   },
+   {
+    "i": 6,
+    "brazo": "solo_barrido",
+    "ms_cancelar": 0.01,
+    "existia_al_cancelar": false,
+    "huerfano": false,
+    "estado": ""
+   },
+   {
+    "i": 7,
+    "brazo": "solo_barrido",
+    "ms_cancelar": 520.25,
+    "existia_al_cancelar": false,
+    "huerfano": false,
+    "estado": ""
+   },
+   {
+    "i": 8,
+    "brazo": "solo_barrido",
+    "ms_cancelar": 0.01,
+    "existia_al_cancelar": false,
+    "huerfano": false,
+    "estado": ""
+   }
+  ],
+  "solo_espera": [
+   {
+    "i": 0,
+    "brazo": "solo_espera",
+    "ms_cancelar": 741.77,
+    "existia_al_cancelar": false,
+    "huerfano": false,
+    "estado": ""
+   },
+   {
+    "i": 1,
+    "brazo": "solo_espera",
+    "ms_cancelar": 674.21,
+    "existia_al_cancelar": false,
+    "huerfano": false,
+    "estado": ""
+   },
+   {
+    "i": 2,
+    "brazo": "solo_espera",
+    "ms_cancelar": 685.75,
+    "existia_al_cancelar": false,
+    "huerfano": false,
+    "estado": ""
+   },
+   {
+    "i": 3,
+    "brazo": "solo_espera",
+    "ms_cancelar": 638.86,
+    "existia_al_cancelar": false,
+    "huerfano": false,
+    "estado": ""
+   },
+   {
+    "i": 4,
+    "brazo": "solo_espera",
+    "ms_cancelar": 679.69,
+    "existia_al_cancelar": false,
+    "huerfano": false,
+    "estado": ""
+   },
+   {
+    "i": 5,
+    "brazo": "solo_espera",
+    "ms_cancelar": 738.47,
+    "existia_al_cancelar": false,
+    "huerfano": false,
+    "estado": ""
+   },
+   {
+    "i": 6,
+    "brazo": "solo_espera",
+    "ms_cancelar": 0.01,
+    "existia_al_cancelar": false,
+    "huerfano": false,
+    "estado": ""
+   },
+   {
+    "i": 7,
+    "brazo": "solo_espera",
+    "ms_cancelar": 861.74,
+    "existia_al_cancelar": false,
+    "huerfano": false,
+    "estado": ""
+   },
+   {
+    "i": 8,
+    "brazo": "solo_espera",
+    "ms_cancelar": 704.77,
+    "existia_al_cancelar": false,
+    "huerfano": false,
+    "estado": ""
+   }
+  ]
+ },
+ "testigos": {
+  "deriva_antes_ms": 149.25,
+  "deriva_despues_ms": 145.96,
+  "deriva": 0.978,
+  "nivel_antes_ms": 34.18,
+  "nivel_despues_ms": 34.15,
+  "testigo_agotado": false,
+  "etiqueta": "SUCIA"
+ },
+ "censo_despues": [
+  "filex-convertx\tUp 40 hours",
+  "filex-snapotter\tUp 40 hours (healthy)",
+  "filex-snapotter-pg\tUp 40 hours (healthy)",
+  "filex-snapotter-redis\tUp 40 hours (healthy)",
+  "filex-gotenberg8\tUp 40 hours (healthy)",
+  "filex-gotenberg\tExited (255) 3 weeks ago"
+ ],
+ "huerfanos_de_filex": []
+}

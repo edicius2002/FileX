@@ -1,0 +1,120 @@
+{
+ "imagen": "alpine:latest",
+ "censo_antes": [
+  "19a7a940a15d\tfilex-convertx\tghcr.io/c4illin/convertx:latest\tUp 41 hours",
+  "e446d1d7ad78\tfilex-snapotter\tsnapotter/snapotter:latest\tUp 41 hours (healthy)",
+  "851f149b14b4\tfilex-snapotter-pg\tpostgres:17-alpine\tUp 41 hours (healthy)",
+  "c0a97b977b80\tfilex-snapotter-redis\tredis:8-alpine\tUp 41 hours (healthy)",
+  "6efb0c4e8fac\tfilex-gotenberg8\tgotenberg/gotenberg:8\tUp 41 hours (healthy)",
+  "46782478dc5a\tfilex-gotenberg\tfilex/gotenberg:snapshot\tExited (255) 3 weeks ago"
+ ],
+ "S1_nombre_unico": {
+  "nombre": "filexq-sonda-6aea4beab300",
+  "rc_segundo": 125,
+  "err_segundo": "docker: Error response from daemon: Conflict. The container name \"/filexq-sonda-6aea4beab300\" is already in use by container \"c91bb65d2c366d7e81a1eeffbd5af4cc8e3a76bc25e8746caf8b24872cb45e4e\". You have to remove (or rename) that container to be able to reuse that name.\n\nRun 'docker run --help' for m",
+  "rechaza_duplicado": true
+ },
+ "S2_kill_por_nombre": {
+  "nombre": "filexq-sonda-418adf650dee",
+  "rc_kill": 0,
+  "ms_kill": 288.7,
+  "err_kill": "",
+  "vivo_despues": false
+ },
+ "S3_cidfile": {
+  "ms_fichero_existe": 120.7,
+  "ms_fichero_con_id": 248.3,
+  "ms_nombre_matable": 558.8,
+  "id_len": 64,
+  "id_prefijo": "2e55f5e1a328",
+  "rc_si_el_cidfile_existe": 125,
+  "rechaza_si_existe": true,
+  "err_si_existe": "docker: container ID file found, make sure the other container isn't running or delete C:\\Users\\krato\\AppData\\Local\\Temp\\filexq-cid-2b1v8ay1\\cid\n\nRun 'docker run --help' for more information",
+  "cidfile_sobrevive_al_rm": true
+ },
+ "S4_carrera_arranque": [
+  {
+   "i": 0,
+   "ms_nombre": 752.4,
+   "ms_cidfile": 337.1,
+   "ms_montaje": 985.4
+  },
+  {
+   "i": 1,
+   "ms_nombre": 756.9,
+   "ms_cidfile": 355.6,
+   "ms_montaje": 994.2
+  },
+  {
+   "i": 2,
+   "ms_nombre": 795.2,
+   "ms_cidfile": 349.5,
+   "ms_montaje": 1020.2
+  },
+  {
+   "i": 3,
+   "ms_nombre": 790.8,
+   "ms_cidfile": 708.0,
+   "ms_montaje": 1030.3
+  },
+  {
+   "i": 4,
+   "ms_nombre": 1041.1,
+   "ms_cidfile": 667.6,
+   "ms_montaje": 1267.3
+  },
+  {
+   "i": 5,
+   "ms_nombre": 742.9,
+   "ms_cidfile": 352.5,
+   "ms_montaje": 964.5
+  },
+  {
+   "i": 6,
+   "ms_nombre": 789.3,
+   "ms_cidfile": 344.2,
+   "ms_montaje": 684.4
+  },
+  {
+   "i": 7,
+   "ms_nombre": 714.6,
+   "ms_cidfile": 329.3,
+   "ms_montaje": 951.5
+  },
+  {
+   "i": 8,
+   "ms_nombre": 812.3,
+   "ms_cidfile": 380.8,
+   "ms_montaje": 693.8
+  }
+ ],
+ "S5_kill_sin_cliente": {
+  "vivo_tras_matar_al_cliente": true,
+  "rc_kill_por_nombre": 0,
+  "ms_kill": 283.9,
+  "err": "",
+  "vivo_despues_del_kill": false
+ },
+ "S6_creado_y_no_arrancado": {
+  "rc_create": 0,
+  "err_create": "",
+  "lo_lista_docker_ps": false,
+  "lo_lista_docker_ps_a": true,
+  "estado": "Created",
+  "rc_kill": 1,
+  "err_kill": "Error response from daemon: cannot kill container: filexq-sonda-f5d83a6159d9: container 3ede6af4f0cd1255f9212db115361067d88ff560d840c4cfd40d5a7f6caf3642 is not running",
+  "ms_kill": 58.8,
+  "rc_rm_f": 0,
+  "err_rm_f": "",
+  "ms_rm_f": 120.3,
+  "queda_despues": false
+ },
+ "censo_despues": [
+  "19a7a940a15d\tfilex-convertx\tghcr.io/c4illin/convertx:latest\tUp 41 hours",
+  "e446d1d7ad78\tfilex-snapotter\tsnapotter/snapotter:latest\tUp 41 hours (healthy)",
+  "851f149b14b4\tfilex-snapotter-pg\tpostgres:17-alpine\tUp 41 hours (healthy)",
+  "c0a97b977b80\tfilex-snapotter-redis\tredis:8-alpine\tUp 41 hours (healthy)",
+  "6efb0c4e8fac\tfilex-gotenberg8\tgotenberg/gotenberg:8\tUp 41 hours (healthy)",
+  "46782478dc5a\tfilex-gotenberg\tfilex/gotenberg:snapshot\tExited (255) 3 weeks ago"
+ ]
+}

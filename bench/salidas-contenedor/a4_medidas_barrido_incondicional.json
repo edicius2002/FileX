@@ -1,0 +1,313 @@
+{
+ "n": 9,
+ "imagen": "ghcr.io/c4illin/convertx:latest",
+ "censo_antes": [
+  "filex-convertx\tUp 40 hours",
+  "filex-snapotter\tUp 40 hours (healthy)",
+  "filex-snapotter-pg\tUp 40 hours (healthy)",
+  "filex-snapotter-redis\tUp 40 hours (healthy)",
+  "filex-gotenberg8\tUp 40 hours (healthy)",
+  "filex-gotenberg\tExited (255) 3 weeks ago"
+ ],
+ "M6_coste_normal": {
+  "n": 2001,
+  "acuñar_el_nombre_us": 3.5,
+  "_argv_docker_completo_us": 4.7
+ },
+ "M1_solo_el_cliente": [
+  {
+   "i": 0,
+   "arranco": true,
+   "ms_matar_cliente": 246.97,
+   "contenedor_vivo_2s_despues": true
+  },
+  {
+   "i": 1,
+   "arranco": true,
+   "ms_matar_cliente": 204.12,
+   "contenedor_vivo_2s_despues": true
+  },
+  {
+   "i": 2,
+   "arranco": true,
+   "ms_matar_cliente": 200.29,
+   "contenedor_vivo_2s_despues": true
+  },
+  {
+   "i": 3,
+   "arranco": true,
+   "ms_matar_cliente": 209.13,
+   "contenedor_vivo_2s_despues": true
+  },
+  {
+   "i": 4,
+   "arranco": true,
+   "ms_matar_cliente": 240.17,
+   "contenedor_vivo_2s_despues": true
+  },
+  {
+   "i": 5,
+   "arranco": true,
+   "ms_matar_cliente": 230.47,
+   "contenedor_vivo_2s_despues": true
+  },
+  {
+   "i": 6,
+   "arranco": true,
+   "ms_matar_cliente": 217.99,
+   "contenedor_vivo_2s_despues": true
+  },
+  {
+   "i": 7,
+   "arranco": true,
+   "ms_matar_cliente": 207.02,
+   "contenedor_vivo_2s_despues": true
+  },
+  {
+   "i": 8,
+   "arranco": true,
+   "ms_matar_cliente": 223.8,
+   "contenedor_vivo_2s_despues": true
+  }
+ ],
+ "M2_por_nombre_declarado": [
+  {
+   "i": 0,
+   "arranco": true,
+   "habia_asa": true,
+   "ms_cancelar": 804.46,
+   "contenedor_muerto": true,
+   "cliente_muerto": true,
+   "motivo": "cancelado"
+  },
+  {
+   "i": 1,
+   "arranco": true,
+   "habia_asa": true,
+   "ms_cancelar": 872.18,
+   "contenedor_muerto": true,
+   "cliente_muerto": true,
+   "motivo": "cancelado"
+  },
+  {
+   "i": 2,
+   "arranco": true,
+   "habia_asa": true,
+   "ms_cancelar": 611.4,
+   "contenedor_muerto": true,
+   "cliente_muerto": true,
+   "motivo": "cancelado"
+  },
+  {
+   "i": 3,
+   "arranco": true,
+   "habia_asa": true,
+   "ms_cancelar": 5862.05,
+   "contenedor_muerto": true,
+   "cliente_muerto": true,
+   "motivo": "cancelado"
+  },
+  {
+   "i": 4,
+   "arranco": true,
+   "habia_asa": true,
+   "ms_cancelar": 560.65,
+   "contenedor_muerto": true,
+   "cliente_muerto": true,
+   "motivo": "cancelado"
+  },
+  {
+   "i": 5,
+   "arranco": true,
+   "habia_asa": true,
+   "ms_cancelar": 454.84,
+   "contenedor_muerto": true,
+   "cliente_muerto": true,
+   "motivo": "cancelado"
+  },
+  {
+   "i": 6,
+   "arranco": true,
+   "habia_asa": true,
+   "ms_cancelar": 603.35,
+   "contenedor_muerto": true,
+   "cliente_muerto": true,
+   "motivo": "cancelado"
+  },
+  {
+   "i": 7,
+   "arranco": true,
+   "habia_asa": true,
+   "ms_cancelar": 509.0,
+   "contenedor_muerto": true,
+   "cliente_muerto": true,
+   "motivo": "cancelado"
+  },
+  {
+   "i": 8,
+   "arranco": true,
+   "habia_asa": true,
+   "ms_cancelar": 501.31,
+   "contenedor_muerto": true,
+   "cliente_muerto": true,
+   "motivo": "cancelado"
+  }
+ ],
+ "M3_coste_de_identificar": {
+  "n": 9,
+  "contenedores_en_la_maquina": 6,
+  "deduccion_por_montajes_ms": 272.69,
+  "declaracion_por_nombre_ms": 0.02,
+  "aciertos_deduccion": 9,
+  "aciertos_declaracion": 9,
+  "veces": 13634.5
+ },
+ "M4_carrera_de_arranque": [
+  {
+   "i": 0,
+   "ms_cancelar": 1053.93,
+   "habia_asa": true,
+   "huerfano": false,
+   "existia_al_cancelar": false,
+   "motivo": "cancelado"
+  },
+  {
+   "i": 1,
+   "ms_cancelar": 3801.9,
+   "habia_asa": true,
+   "huerfano": false,
+   "existia_al_cancelar": false,
+   "motivo": "cancelado"
+  },
+  {
+   "i": 2,
+   "ms_cancelar": 2399.65,
+   "habia_asa": true,
+   "huerfano": false,
+   "existia_al_cancelar": false,
+   "motivo": "cancelado"
+  },
+  {
+   "i": 3,
+   "ms_cancelar": 772.47,
+   "habia_asa": true,
+   "huerfano": false,
+   "existia_al_cancelar": false,
+   "motivo": "cancelado"
+  },
+  {
+   "i": 4,
+   "ms_cancelar": 737.17,
+   "habia_asa": true,
+   "huerfano": false,
+   "existia_al_cancelar": false,
+   "motivo": "cancelado"
+  },
+  {
+   "i": 5,
+   "ms_cancelar": 836.21,
+   "habia_asa": true,
+   "huerfano": false,
+   "existia_al_cancelar": false,
+   "motivo": "cancelado"
+  },
+  {
+   "i": 6,
+   "ms_cancelar": 789.5,
+   "habia_asa": true,
+   "huerfano": false,
+   "existia_al_cancelar": false,
+   "motivo": "cancelado"
+  },
+  {
+   "i": 7,
+   "ms_cancelar": 864.55,
+   "habia_asa": true,
+   "huerfano": false,
+   "existia_al_cancelar": false,
+   "motivo": "cancelado"
+  },
+  {
+   "i": 8,
+   "ms_cancelar": 752.45,
+   "habia_asa": true,
+   "huerfano": false,
+   "existia_al_cancelar": false,
+   "motivo": "cancelado"
+  }
+ ],
+ "M5_vecino": [
+  {
+   "i": 0,
+   "arrancaron_los_dos": true,
+   "cancelado_muerto": true,
+   "vecino_vivo": true
+  },
+  {
+   "i": 1,
+   "arrancaron_los_dos": true,
+   "cancelado_muerto": true,
+   "vecino_vivo": true
+  },
+  {
+   "i": 2,
+   "arrancaron_los_dos": true,
+   "cancelado_muerto": true,
+   "vecino_vivo": true
+  },
+  {
+   "i": 3,
+   "arrancaron_los_dos": true,
+   "cancelado_muerto": true,
+   "vecino_vivo": true
+  },
+  {
+   "i": 4,
+   "arrancaron_los_dos": true,
+   "cancelado_muerto": true,
+   "vecino_vivo": true
+  },
+  {
+   "i": 5,
+   "arrancaron_los_dos": false,
+   "cancelado_muerto": true,
+   "vecino_vivo": true
+  },
+  {
+   "i": 6,
+   "arrancaron_los_dos": true,
+   "cancelado_muerto": true,
+   "vecino_vivo": true
+  },
+  {
+   "i": 7,
+   "arrancaron_los_dos": true,
+   "cancelado_muerto": true,
+   "vecino_vivo": true
+  },
+  {
+   "i": 8,
+   "arrancaron_los_dos": true,
+   "cancelado_muerto": true,
+   "vecino_vivo": true
+  }
+ ],
+ "testigos": {
+  "deriva_antes_ms": 159.78,
+  "deriva_despues_ms": 174.19,
+  "deriva": 1.09,
+  "nivel_antes_ms": 38.33,
+  "nivel_despues_ms": 44.02,
+  "testigo_agotado": false,
+  "etiqueta": "SUCIA"
+ },
+ "censo_despues": [
+  "filex-convertx\tUp 40 hours",
+  "filex-snapotter\tUp 40 hours (healthy)",
+  "filex-snapotter-pg\tUp 40 hours (healthy)",
+  "filex-snapotter-redis\tUp 40 hours (healthy)",
+  "filex-gotenberg8\tUp 40 hours (healthy)",
+  "filex-gotenberg\tExited (255) 3 weeks ago"
+ ],
+ "huerfanos_de_filex": []
+}

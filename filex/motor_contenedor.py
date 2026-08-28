@@ -90,6 +90,7 @@ from __future__ import annotations
 import json
 import os
 import tempfile
+import threading
 
 from . import formatos, invocacion
 from .grafo import NOMINAL, REAL, SIN_SONDEAR, Arista
@@ -143,6 +144,22 @@ TIMEOUT_DENTRO = 110
 #: tiene que disparar PRIMERO: si dispara el de fuera, se mata al cliente de
 #: Docker y el contenedor sigue vivo — MEDIDO, 37 minutos.
 MARGEN_TOPE = 10
+
+#: **El contenedor que este HILO tiene lanzado ahora mismo** (a4).
+#:
+#: `Motor.parar()` no recibe argumentos y la instancia del motor es ÚNICA para
+#: todo el proceso —`nucleo._un_salto` hace `self.motores[arista.motor]`—, así
+#: que guardar el nombre en `self` haría que dos conversiones simultáneas se
+#: pisaran el identificador y una parara el contenedor de la otra: la trampa 26
+#: con un tercer recurso. Guardarlo por HILO no: un trabajo corre entero en su
+#: propio hilo (`servicio.py` lanza `threading.Thread(target=corre, …)`), que es
+#: la misma observación con la que N-a resolvió C34.
+#:
+#: Y lo escribe `_argv_docker`, que es el ÚNICO sitio donde se construye un
+#: `docker run` de un motor: no hay una vía que se lo salte, y por eso no es
+#: «un valor que hay que acordarse de fijar» —el defecto que este mismo fichero
+#: ya documentó con `self._tope_dentro`—.
+_HILO = threading.local()
 
 
 # --------------------------------------------------------------- caché de sonda
@@ -260,8 +277,12 @@ def _sondear_binarios(imagen: str, imagen_id: str) -> tuple:
     if isinstance(guardado, list):
         return tuple(guardado)
     guion = "; ".join(f"command -v {b} >/dev/null 2>&1 && echo {b}" for b in BINARIOS)
+    # También la sonda lleva nombre. Pasa por `invocacion.ejecutar`, así que
+    # está en el registro por hilo y es cancelable; sin `--name` su contenedor
+    # sería el único de FileX que una cancelación no podría alcanzar.
     r = invocacion.ejecutar(
         ["docker", "run", "--rm", "--init", "--network", "none",
+         "--name", invocacion.nombre_de_contenedor(),
          "--entrypoint", "sh", imagen, "-c", guion],
         timeout=TIMEOUT_SONDA_IMAGEN)
     if not r.ok:
@@ -403,8 +424,17 @@ class _EnContenedor:
             # `--mount` separa sus opciones por comas y no las escapa. Mejor
             # negarse que montar otra cosa.
             raise ValueError("ruta con coma: el motor en contenedor no la admite")
+        # a4: **la orden DECLARA qué contenedor es.** Hasta hoy había que
+        # deducirlo del origen del bind mount de escritura leyendo `docker ps` +
+        # `docker inspect` de toda la máquina (`bench/cancelacion-y-servicio.md`
+        # §4.4 lo dejó escrito como residuo). El nombre lo acuña `invocacion`,
+        # que es quien lo va a leer de vuelta, y se guarda por hilo para que
+        # `parar()` —que no recibe argumentos— sepa a quién parar.
+        nombre = invocacion.nombre_de_contenedor()
+        _HILO.contenedor = nombre
         return [
             self.binario, "run", "--rm", "--init",
+            "--name", nombre,
             "--network", "none",
             # El tope va DENTRO: matar el `docker run` no mata el contenedor.
             "--entrypoint", "timeout",
@@ -422,6 +452,40 @@ class _EnContenedor:
             # nunca el de dentro y volveríamos al contenedor huérfano.
             "-k", "5", str(TIMEOUT_DENTRO if tope is None else tope),
         ] + cmd
+
+    # ----------------------------------------------------------------- parar
+
+    def parar(self) -> None:
+        """**El gancho que estaba muerto.** `Motor.parar()` era un `return None`
+        que ninguna subclase sobrescribía (`bench/cancelacion-y-servicio.md`
+        §4.4), justo en la única familia de motores que lo necesita.
+
+        `nucleo._un_salto` lo llama cuando la invocación se agotó y **antes** de
+        que el `finally` borre el desechable, y el orden es todo el asunto:
+        borrar el origen de un bind mount vivo deja al contenedor en el estado
+        del que `docker rm -f` responde *«did not receive an exit event»* —
+        MEDIDO, `CLAUDE.md` §3.
+
+        Para el contenedor de ESTE hilo, que es el que acaba de construir
+        `_argv_docker`. Con la instancia compartida entre conversiones no se
+        podía: el motor es único por proceso y el contenedor no. Y se limpia la
+        marca al usarla, para que una segunda llamada no apunte a un nombre que
+        ya no es de nadie.
+
+        No es un camino caliente: solo corre cuando la invocación se agotó. En
+        el camino normal el `timeout -k 5` de DENTRO ya mató al motor y `--rm`
+        limpió el contenedor.
+        """
+        nombre = getattr(_HILO, "contenedor", "")
+        _HILO.contenedor = ""
+        if not nombre:
+            return
+        # `kill` para el que corre; `rm -f` para el que se creó y no llegó a
+        # arrancar, que `docker ps` no lista. Los dos son seguros porque el
+        # nombre lo acuñó FileX y el demonio garantiza que es único — MEDIDO
+        # (`bench/salidas-contenedor/sonda_id.json`, S1).
+        invocacion.matar_contenedor(nombre)
+        invocacion.barrer_contenedor(nombre)
 
 
 # ------------------------------------------------------------- LibreOffice
