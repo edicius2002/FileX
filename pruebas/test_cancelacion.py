@@ -248,49 +248,119 @@ IMAGEN = "ghcr.io/c4illin/convertx:latest"
 
 
 class ContenedorPuro(unittest.TestCase):
-    """Lo que se puede comprobar sin levantar un demonio."""
+    """Lo que se puede comprobar sin levantar un demonio.
 
-    def test_la_entrada_readonly_no_identifica_al_contenedor(self):
-        """Solo cuenta el montaje de ESCRITURA: el desechable de R18.
+    **a4 sustituyó la deducción por la declaración.** Hasta hoy el contenedor se
+    identificaba por el origen de su bind mount de escritura, y estas pruebas
+    afirmaban que el montaje `readonly` de la entrada NO contaba —porque dos
+    conversiones del mismo fichero lo comparten y cancelar una habría matado el
+    contenedor de la otra, la trampa 26 con otro recurso—. Con `--name` esa
+    familia de fallos ya no existe: el identificador no se comparte nunca. Lo
+    que se comprueba ahora es lo que la sustituye.
+    """
 
-        La entrada va montada `readonly` y es un fichero del usuario. Dos
-        conversiones del mismo fichero a la vez lo comparten, así que contarlo
-        haría que cancelar una matara el contenedor de la otra — la trampa 26
-        otra vez, con otro recurso compartido.
+    def test_la_orden_DECLARA_el_contenedor_en_vez_de_dejarlo_adivinar(self):
+        from filex.motor_contenedor import LibreOfficeEnContenedor
+        m = LibreOfficeEnContenedor()
+        m.imagen = "imagen-de-prueba"
+        argv = m._argv_docker("D:/tmp/e.docx", "D:/tmp/t", "e.docx", ["soffice"])
+        self.assertIn("--name", argv)
+        nombre = argv[argv.index("--name") + 1]
+        self.assertTrue(nombre.startswith(invocacion.PREFIJO_CONTENEDOR), nombre)
+        # Y se lee de vuelta desde el propio argv: cero lecturas del demonio.
+        self.assertEqual(invocacion._nombre_contenedor_de(argv), nombre)
+
+    def test_cada_invocacion_acuña_un_nombre_DISTINTO(self):
+        """Un nombre constante mataría el contenedor del vecino, que es justo
+        el fallo que la entrada `readonly` habría causado."""
+        from filex.motor_contenedor import LibreOfficeEnContenedor
+        m = LibreOfficeEnContenedor()
+        m.imagen = "imagen-de-prueba"
+        nombres = set()
+        for _ in range(50):
+            a = m._argv_docker("D:/tmp/e.docx", "D:/tmp/t", "e.docx", ["soffice"])
+            nombres.add(a[a.index("--name") + 1])
+        self.assertEqual(len(nombres), 50)
+
+    def test_solo_se_acepta_un_nombre_ACUÑADO_POR_FILEX(self):
+        """La cancelación no puede apuntar a un contenedor ajeno.
+
+        Con la deducción por montajes esta garantía la daba una convención (el
+        filtro de `readonly`); ahora es un predicado sobre el identificador. Un
+        `--name` que llegara dentro de la orden del motor o de datos del usuario
+        no lo cumple y no se toca.
         """
-        argv = ["docker", "run", "--rm", "--mount",
-                "type=bind,source=D:/tmp/a,target=/trabajo",
-                "--mount", "type=bind,source=D:/tmp/b.png,target=/ent/x.png,readonly",
-                "imagen"]
-        f = invocacion._fuentes_de_montaje(argv)
-        self.assertEqual(f, [os.path.normcase(os.path.normpath("D:/tmp/a"))])
+        for ajeno in ("filex-convertx", "postgres", "filex-snapotter",
+                      "filex--", "filex-zz-" + "a" * 32, ""):
+            argv = ["docker", "run", "--name", ajeno, "img"]
+            self.assertEqual(invocacion._nombre_contenedor_de(argv), "", ajeno)
+            self.assertEqual(invocacion._matar_contenedor_de(argv), [], ajeno)
+            self.assertFalse(invocacion.matar_contenedor(ajeno), ajeno)
+            self.assertFalse(invocacion.barrer_contenedor(ajeno), ajeno)
 
     def test_un_motor_nativo_no_dispara_la_caza_de_contenedores(self):
-        """Coste cero en el camino normal: si no es `docker run`, no hay censo."""
-        self.assertEqual(invocacion._matar_contenedor_de(
-            ["ffmpeg", "-i", "a.mp4", "b.webm"]), [])
-        self.assertEqual(invocacion._matar_contenedor_de(
-            ["docker", "ps", "-q"]), [])
-        self.assertEqual(invocacion._matar_contenedor_de([]), [])
+        """Coste cero en el camino normal: si no es `docker run`, no se mira."""
+        for argv in (["ffmpeg", "-i", "a.mp4", "b.webm"],
+                     ["docker", "ps", "-q"], []):
+            self.assertEqual(invocacion._matar_contenedor_de(argv), [])
+            self.assertEqual(invocacion._barrer_contenedor_de(argv), [])
+
+    def test_el_gancho_parar_ya_NO_esta_muerto(self):
+        """`Motor.parar()` era un `return None` que ninguna subclase
+        sobrescribía (`bench/cancelacion-y-servicio.md` §4.4), justo en la única
+        familia de motores que lo necesita."""
+        from filex import motores
+        from filex.motor_contenedor import (CalibreEnContenedor,
+                                            LibreOfficeEnContenedor,
+                                            PandocEnContenedor)
+        for cls in (LibreOfficeEnContenedor, PandocEnContenedor,
+                    CalibreEnContenedor):
+            self.assertIsNot(cls.parar, motores.Motor.parar, cls.__name__)
+
+    def test_parar_sin_contenedor_en_este_hilo_no_hace_nada(self):
+        """Un `parar()` sin `orden()` previa no puede tocar a nadie: el
+        peor caso de un valor por hilo tiene que ser inocuo, no ajeno."""
+        import filex.motor_contenedor as mc
+        from filex.motor_contenedor import LibreOfficeEnContenedor
+        mc._HILO.contenedor = ""
+        tocados = []
+        guardado = invocacion.matar_contenedor
+        invocacion.matar_contenedor = lambda n: tocados.append(n)
+        try:
+            LibreOfficeEnContenedor().parar()
+        finally:
+            invocacion.matar_contenedor = guardado
+        self.assertEqual(tocados, [])
 
 
 @unittest.skipUnless(_hay_docker(), "no hay demonio de docker")
 class ContenedorReal(unittest.TestCase):
 
-    def test_cancelar_mata_el_contenedor_y_no_solo_el_cliente(self):
-        """MEDIDO en `CLAUDE.md` §3: matar el `docker run` NO mata el
-        contenedor, y `--rm` tampoco — tres `soffice` sobrevivieron 37 minutos.
-
-        Esta prueba mata el cliente igual que antes **y además** el contenedor,
-        identificándolo por el origen de su bind mount.
-        """
-        d = tempfile.mkdtemp(prefix="c34-doc-")
-        argv = ["docker", "run", "--rm", "--init", "--network", "none",
+    @staticmethod
+    def _argv(nombre: str, d: str, orden: str = "sleep 120") -> list[str]:
+        return ["docker", "run", "--rm", "--init", "--network", "none",
+                "--name", nombre,
                 "--mount", f"type=bind,source={d.replace(os.sep, '/')},target=/trabajo",
-                "-w", "/trabajo", "--entrypoint", "sh", IMAGEN,
-                "-c", "sleep 120"]
-        caja = {}
-        lanzado = threading.Event()
+                "-w", "/trabajo", "--entrypoint", "sh", IMAGEN, "-c", orden]
+
+    @staticmethod
+    def _existe(nombre: str) -> bool:
+        """`-a`: un contenedor CREADO Y NO ARRANCADO no sale en `docker ps`.
+
+        Ése es el estado que la deducción por montajes no podía ver nunca, y el
+        que dejó 1 huérfano de 9 en la primera tanda de N-a.
+        """
+        salida = invocacion._docker(
+            ["ps", "-a", "-q", "--filter", f"name=^{nombre}$"])
+        return bool(salida.strip())
+
+    @staticmethod
+    def _vivo(nombre: str) -> bool:
+        return bool(invocacion._docker(
+            ["ps", "-q", "--filter", f"name=^{nombre}$"]).strip())
+
+    def _lanza(self, argv):
+        caja, lanzado = {}, threading.Event()
 
         def corre():
             lanzado.set()
@@ -299,34 +369,134 @@ class ContenedorReal(unittest.TestCase):
 
         h = threading.Thread(target=corre, daemon=True)
         h.start()
+        self.assertTrue(lanzado.wait(PACIENCIA))
+        return h, caja
+
+    def test_cancelar_mata_el_contenedor_y_no_solo_el_cliente(self):
+        """MEDIDO en `CLAUDE.md` §3: matar el `docker run` NO mata el
+        contenedor, y `--rm` tampoco — tres `soffice` sobrevivieron 37 minutos.
+
+        Igual que antes del a4, pero identificando al contenedor por el
+        **nombre que la orden declara** en vez de deducirlo del bind mount.
+        """
+        d = tempfile.mkdtemp(prefix="a4-doc-")
+        nombre = invocacion.nombre_de_contenedor()
+        argv = self._argv(nombre, d)
+        h, _ = self._lanza(argv)
         try:
-            self.assertTrue(lanzado.wait(PACIENCIA))
-            fuentes = set(invocacion._fuentes_de_montaje(argv))
-            self.assertTrue(_espera(lambda: self._vivos(fuentes), tope=60),
+            self.assertTrue(_espera(lambda: self._vivo(nombre), tope=60),
                             "el contenedor no llegó a arrancar")
             self.assertTrue(invocacion.cancelar_hilo(h.ident))
             h.join(timeout=PACIENCIA)
             self.assertFalse(h.is_alive(), "el cliente de docker no murió")
-            self.assertFalse(self._vivos(fuentes),
+            self.assertFalse(self._existe(nombre),
                              "el cliente murió y el CONTENEDOR siguió vivo")
         finally:
             invocacion.cancelar_hilo(h.ident)
+            invocacion.barrer_contenedor(nombre)
             h.join(timeout=PACIENCIA)
             shutil.rmtree(d, ignore_errors=True)
 
-    @staticmethod
-    def _vivos(fuentes: set) -> bool:
-        ids = [x for x in invocacion._docker(["ps", "-q"]).split() if x]
-        if not ids:
-            return False
-        det = invocacion._docker(["inspect", "--format",
-                                  "{{range .Mounts}}{{.Source}}\t{{end}}"] + ids)
-        for linea in det.splitlines():
-            m = {os.path.normcase(os.path.normpath(c))
-                 for c in linea.strip().split("\t") if c}
-            if m & fuentes:
-                return True
-        return False
+    def test_cancelar_una_conversion_NO_toca_el_contenedor_de_la_de_al_lado(self):
+        """Lo que N-a no pudo comprobar, y el fallo que la deducción rozaba.
+
+        Con la entrada `readonly` contando como identificador, dos conversiones
+        **del mismo fichero de entrada** habrían compartido el `.Mounts.Source`
+        y cancelar una habría matado las dos. Aquí las dos comparten hasta el
+        directorio de trabajo —el peor caso imaginable, que en producción no
+        ocurre porque el desechable de R18 es privado— y aun así solo muere la
+        cancelada: el identificador es del CONTENEDOR, no de un recurso.
+        """
+        d = tempfile.mkdtemp(prefix="a4-vecino-")
+        n1, n2 = invocacion.nombre_de_contenedor(), invocacion.nombre_de_contenedor()
+        h1, _ = self._lanza(self._argv(n1, d))
+        h2, _ = self._lanza(self._argv(n2, d))
+        try:
+            self.assertTrue(_espera(lambda: self._vivo(n1) and self._vivo(n2),
+                                    tope=90), "no arrancaron los dos")
+            self.assertTrue(invocacion.cancelar_hilo(h1.ident))
+            h1.join(timeout=PACIENCIA)
+            self.assertFalse(self._existe(n1), "no murió el cancelado")
+            self.assertTrue(self._vivo(n2),
+                            "cancelar una conversión mató el contenedor de la otra")
+        finally:
+            for h, n in ((h1, n1), (h2, n2)):
+                invocacion.cancelar_hilo(h.ident)
+                invocacion.barrer_contenedor(n)
+                h.join(timeout=PACIENCIA)
+            shutil.rmtree(d, ignore_errors=True)
+
+    def test_cancelar_EN_EL_ARRANQUE_no_deja_huerfano(self):
+        """La carrera que costó 1 de 9 (`bench/cancelacion-y-servicio.md` §3).
+
+        Se cancela **sin esperar** a que el contenedor exista: el cliente puede
+        estar aún negociando con el demonio, o haber creado el contenedor sin
+        arrancarlo — estado que `docker ps` no lista. Se comprueba con `ps -a`,
+        que es lo único que lo ve.
+        """
+        d = tempfile.mkdtemp(prefix="a4-carrera-")
+        nombre = invocacion.nombre_de_contenedor()
+        h, _ = self._lanza(self._argv(nombre, d))
+        try:
+            invocacion.cancelar_hilo(h.ident)      # sin esperar a nada
+            h.join(timeout=PACIENCIA)
+            # Al demonio hay que darle margen: `--rm` borra de forma ASÍNCRONA
+            # (diagnóstico de S3 en `bench/sondeo-documental.md`), y una prueba
+            # que compite con el demonio no mide lo que dice medir.
+            self.assertTrue(_espera(lambda: not self._existe(nombre), tope=30),
+                            "quedó un contenedor huérfano del arranque")
+        finally:
+            invocacion.cancelar_hilo(h.ident)
+            invocacion.barrer_contenedor(nombre)
+            h.join(timeout=PACIENCIA)
+            shutil.rmtree(d, ignore_errors=True)
+
+    def test_parar_para_el_contenedor_cuando_el_tope_de_FUERA_dispara(self):
+        """`_EnContenedor.parar()` de verdad, por la vía exacta del núcleo.
+
+        `nucleo._un_salto` hace, en este orden: `ejecutar(...)`, y si
+        `r.agotado`, `motor.parar()` **antes** de que el `finally` borre el
+        desechable. Aquí se reproduce entero, y de paso se vuelve a medir el
+        hallazgo que lo justifica: cuando dispara el tope de FUERA, el
+        `_matar_arbol` mata al cliente y **el contenedor sigue vivo** — que es
+        el estado que `Motor.parar()`, siendo un `return None`, no arreglaba.
+        """
+        import filex.motor_contenedor as mc
+        from filex.motor_contenedor import LibreOfficeEnContenedor
+        motor = LibreOfficeEnContenedor()
+        motor.binario, motor.imagen = "docker", IMAGEN
+        d = tempfile.mkdtemp(prefix="a4-parar-")
+        caja, fin = {}, threading.Event()
+
+        def corre():
+            # `_argv_docker` es el único sitio que acuña el nombre, y lo deja
+            # en el hilo. El tope de DENTRO es enorme (300 s) a propósito: el
+            # que tiene que disparar aquí es el de fuera.
+            argv = motor._argv_docker(os.path.join(d, "e.docx"), d, "e.docx",
+                                      ["sh", "-c", "sleep 120"], 300)
+            caja["nombre"] = mc._HILO.contenedor
+            caja["r"] = invocacion.ejecutar(argv, timeout=12.0, cwd=d)
+            caja["vivo_tras_agotarse"] = self._vivo(caja["nombre"])
+            if caja["r"].agotado:
+                motor.parar()              # <- exactamente lo que hace el núcleo
+            invocacion.olvidar_hilo()
+            fin.set()
+
+        h = threading.Thread(target=corre, daemon=True)
+        h.start()
+        try:
+            self.assertTrue(fin.wait(PACIENCIA * 3), "el salto no terminó")
+            self.assertTrue(caja["r"].agotado, "no disparó el tope de fuera")
+            self.assertTrue(caja["vivo_tras_agotarse"],
+                            "matar el cliente ya mataba el contenedor: la "
+                            "premisa de esta prueba dejó de valer")
+            self.assertTrue(_espera(lambda: not self._existe(caja["nombre"]),
+                                    tope=30),
+                            "parar() no paró el contenedor")
+        finally:
+            invocacion.barrer_contenedor(caja.get("nombre", ""))
+            h.join(timeout=PACIENCIA)
+            shutil.rmtree(d, ignore_errors=True)
 
 
 # ==========================================================================

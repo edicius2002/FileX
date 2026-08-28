@@ -30,11 +30,13 @@ tocan ffmpeg cuelgan la sesión entera cuando la salida ya existe.
 from __future__ import annotations
 
 import os
+import re
 import shutil
 import subprocess
 import sys
 import threading
 import time
+import uuid
 from dataclasses import dataclass, field
 
 #: Ninguna invocación puede quedarse sin tope. `CLAUDE.md` §3: «no dejes
@@ -51,6 +53,62 @@ TIMEOUT_MATAR = 10.0
 ESPERA_CONTENEDOR = 3.0
 
 _ES_WINDOWS = sys.platform == "win32"
+
+
+# --------------------------------------------------------------------------
+# a4 — el contenedor se DECLARA, no se adivina
+# --------------------------------------------------------------------------
+#
+# N-a cerró C34 identificando el contenedor por el **origen de su bind mount de
+# escritura** (`bench/cancelacion-y-servicio.md` §4.4). Funcionaba —contenedor
+# muerto 9 de 9— y ella misma declaró el residuo: *«el identificador sigue
+# siendo indirecto; se deduce del bind mount porque la orden no lo declara»*.
+#
+# Aquí la orden lo declara: `_argv_docker` pone un `--name` acuñado por
+# `nombre_de_contenedor()`, y este módulo lo lee del propio `argv`. Lo que
+# cambia no es el resultado, son cuatro propiedades:
+#
+# 1. **Cero lecturas del demonio para IDENTIFICAR.** La deducción necesitaba
+#    `docker ps -q` + `docker inspect` de TODOS los contenedores de la máquina;
+#    el nombre está en `argv[i+1]`.
+# 2. **No depende de que `.Mounts.Source` devuelva la ruta de Windows literal.**
+#    Eso está MEDIDO en esta máquina, pero es un detalle de implementación de un
+#    tercero.
+# 3. **La unicidad la impone el DEMONIO, no el generador** — MEDIDO
+#    (`bench/salidas-contenedor/sonda_id.json`, S1): un segundo `docker run` con
+#    el mismo `--name` sale con `rc=125` y *«Conflict. The container name … is
+#    already in use»*. Una colisión sería un error visible, nunca un atropello
+#    silencioso, que es la forma de la trampa 26.
+# 4. **Alcanza al contenedor CREADO Y NO ARRANCADO**, que `docker ps` no lista y
+#    la deducción por montajes no podía ver nunca. Es el huérfano que le costó a
+#    N-a 1 de 9 en su primera tanda. Ver `_barrer_contenedor_de`.
+#
+# Y una propiedad de seguridad que no estaba antes: `_nombre_contenedor_de`
+# **solo acepta un nombre con la forma que acuña FileX**. La cancelación no
+# puede apuntar jamás a un contenedor que FileX no haya lanzado, aunque un
+# `--name` llegara dentro de la orden del motor o de datos del usuario. Con la
+# deducción por montajes esa garantía no existía: la daba el filtro de
+# `readonly`, que es una convención, no un predicado sobre el identificador.
+
+#: Prefijo de todo contenedor lanzado por FileX. Es lo que hace **censable** un
+#: huérfano: `docker ps -a --filter name=filex-` los separa de los del usuario.
+PREFIJO_CONTENEDOR = "filex-"
+
+#: `filex-<pid en hex>-<uuid4>`. El PID no es decoración: `CLAUDE.md` §4.31 dice
+#: que en esta máquina lo único atribuible de un proceso es su línea de órdenes;
+#: aquí el propio nombre del contenedor dice qué proceso `filex` lo lanzó, que es
+#: lo que hoy no se puede saber de un huérfano.
+_RE_NOMBRE = re.compile(r"^filex-[0-9a-f]{1,8}-[0-9a-f]{32}$")
+
+
+def nombre_de_contenedor() -> str:
+    """Acuña un nombre de contenedor único. **El único sitio que lo hace.**
+
+    El formato lo conoce este módulo y nadie más: quien acuña y quien valida
+    son la misma pieza, así que no pueden divergir. `motor_contenedor.py` lo
+    llama y lo pone en el `argv`; `_nombre_contenedor_de` lo lee de vuelta.
+    """
+    return f"{PREFIJO_CONTENEDOR}{os.getpid():x}-{uuid.uuid4().hex}"
 
 
 @dataclass
@@ -156,12 +214,29 @@ def cancelar_hilo(ident: int | None = None) -> bool:
     # `timeout -k 5` de dentro dispara 10 s ANTES que el de fuera—; en el de la
     # CANCELACIÓN no había nada, y la distancia puede ser de minutos.
     # `espera_s`: ver `_matar_contenedor_de`. Cancelar puede llegar ANTES de que
-    # el demonio haya creado el contenedor, y entonces la primera barrida no ve
-    # nada. MEDIDO: 1 de 9 cancelaciones de un salto en contenedor dejaba un
-    # huérfano por esa carrera. Se barre mientras el cliente siga vivo, que es
-    # justo la ventana en la que el desechable todavía no se ha borrado.
-    _matar_contenedor_de(argv, espera_s=ESPERA_CONTENEDOR, vivo=lambda: proc.poll() is None)
+    # el demonio haya arrancado el contenedor, y entonces el primer `docker
+    # kill` falla. **Declarar el nombre NO cierra esa ventana** —el nombre no
+    # existe hasta que el contenedor existe—, así que la espera de N-a sigue
+    # haciendo falta entera. MEDIDO (`bench/contenedor-parar.md` §4, M7):
+    # cancelando con el cliente ya corriendo y el contenedor todavía no,
+    # **sin espera ni barrido quedan 9 huérfanos de 9**; con cualquiera de las
+    # dos, 0 de 9. Se insiste mientras el cliente siga vivo, que es la ventana
+    # en la que el desechable todavía no se ha borrado.
+    muertos = _matar_contenedor_de(
+        argv, espera_s=ESPERA_CONTENEDOR, vivo=lambda: proc.poll() is None)
     _matar_arbol(proc)
+    # Y el barrido DESPUÉS de matar al cliente, que es el orden contrario al de
+    # arriba y por un motivo distinto: el cliente puede haber CREADO el
+    # contenedor sin llegar a arrancarlo, y en ese estado `docker ps` no lo
+    # lista y `docker kill` no lo alcanza. Solo es posible porque el nombre lo
+    # acuñó FileX: ver `_barrer_contenedor_de`.
+    #
+    # **Solo si el `kill` NO lo consiguió**, que es exactamente cuando el estado
+    # raro puede existir: si el contenedor llegó a correr y se mató, `--rm` lo
+    # limpia solo, y un `docker rm -f` de más costaría otra ida y vuelta al
+    # demonio (~240 ms MEDIDOS) en el caso frecuente para no cambiar nada.
+    if not muertos:
+        _barrer_contenedor_de(argv)
     return True
 
 
@@ -185,33 +260,33 @@ def en_vuelo() -> int:
         return len(_EN_VUELO)
 
 
-def _fuentes_de_montaje(argv: list[str]) -> list[str]:
-    """Las `source=` **de escritura** de los `--mount` de un `docker run`.
+def _nombre_contenedor_de(argv: list[str]) -> str:
+    """El `--name` que la ORDEN declara, si tiene la forma que acuña FileX.
 
-    Es lo ÚNICO que identifica al contenedor de esta conversión sin cambiar la
-    orden: el directorio desechable de R18 es privado de cada salto. La
-    alternativa limpia —`--cidfile`— vive en `filex/motor_contenedor.py`, y
-    queda PENDIENTE (ver el informe).
+    Sustituye a la deducción por el origen del bind mount de escritura que
+    cerró C34 (`bench/cancelacion-y-servicio.md` §3). Aquella funcionaba pero
+    era indirecta: contaba con que Docker devolviera la ruta de Windows literal
+    en `.Mounts.Source`, y tenía que EXCLUIR los montajes `readonly` a mano
+    porque la entrada es un fichero del usuario que dos conversiones del mismo
+    fichero comparten — contarla habría matado el contenedor del vecino, que es
+    la trampa 26 con otro recurso.
 
-    **Los montajes `readonly` NO cuentan, y esto no es un detalle.** Un motor en
-    contenedor monta dos cosas: el desechable (escritura, único por conversión)
-    y la ENTRADA en solo lectura, que es un fichero del corpus del usuario. Dos
-    conversiones simultáneas del mismo fichero comparten la segunda, así que
-    contarla convertiría la cancelación en un arma contra el trabajo del
-    vecino — la misma familia que la trampa 26, con el destino compartido.
+    **El filtro por `_RE_NOMBRE` es la mitad del arreglo, no una comprobación
+    de higiene.** Sin él, un `--name` que llegara dentro de la orden del motor
+    —o de datos del usuario— convertiría `cancelar_hilo` en un arma contra un
+    contenedor ajeno. Con él, la cancelación **solo puede apuntar a un nombre
+    que este módulo acuñó**, y esa garantía es sobre el identificador, no sobre
+    una convención de montaje.
     """
-    fuentes = []
     for i, a in enumerate(argv):
-        if a != "--mount" or i + 1 >= len(argv):
-            continue
-        opciones = [t.strip() for t in argv[i + 1].split(",")]
-        if "readonly" in opciones or "ro=true" in opciones or "ro" in opciones:
-            continue
-        for trozo in opciones:
-            k, _, v = trozo.partition("=")
-            if k.strip() in ("source", "src") and v:
-                fuentes.append(os.path.normcase(os.path.normpath(v)))
-    return fuentes
+        candidato = ""
+        if a == "--name" and i + 1 < len(argv):
+            candidato = argv[i + 1]
+        elif a.startswith("--name="):
+            candidato = a[len("--name="):]
+        if candidato and _RE_NOMBRE.match(candidato):
+            return candidato
+    return ""
 
 
 def _docker(sub: list[str]) -> str:
@@ -226,57 +301,112 @@ def _docker(sub: list[str]) -> str:
         return ""
 
 
+def _docker_ok(sub: list[str]) -> bool:
+    """Como `_docker`, pero lo que interesa es el `rc`, no la salida.
+
+    Va aparte para no cambiarle la firma a `_docker`, del que cuelgan arneses
+    ya publicados. Y hace falta un `rc`: `docker kill` sobre un contenedor que
+    todavía no existe **falla**, y ése es justo el estado que hay que reintentar
+    (la carrera de arranque). Sin mirar el `rc` no se distingue de haberlo
+    matado — la trampa 25 en su versión de Docker.
+    """
+    try:
+        p = subprocess.run(["docker"] + sub, stdin=subprocess.DEVNULL,
+                           capture_output=True, text=True, errors="replace",
+                           timeout=TIMEOUT_MATAR, check=False)
+        return p.returncode == 0
+    except Exception:
+        return False
+
+
+def matar_contenedor(nombre: str) -> bool:
+    """`docker kill` de un contenedor **acuñado por FileX**. Devuelve si murió.
+
+    Rechaza cualquier nombre que no tenga la forma de `nombre_de_contenedor()`:
+    el punto de este cambio es que el identificador esté declarado y sea
+    inconfundible, no que haya una vía genérica para matar contenedores.
+    """
+    if not nombre or not _RE_NOMBRE.match(nombre):
+        return False
+    return _docker_ok(["kill", nombre])
+
+
+def barrer_contenedor(nombre: str) -> bool:
+    """`docker rm -f` de un contenedor **acuñado por FileX**. Devuelve si lo había.
+
+    Alcanza el estado que `matar_contenedor` no alcanza: **creado y no
+    arrancado**. Ver `_barrer_contenedor_de` para por qué ese estado existe y
+    por qué antes no había forma de nombrarlo.
+    """
+    if not nombre or not _RE_NOMBRE.match(nombre):
+        return False
+    return _docker_ok(["rm", "-f", nombre])
+
+
 def _matar_contenedor_de(argv: list[str], *, espera_s: float = 0.0,
                          vivo=None) -> list[str]:
     """Mata el contenedor que lanzó `argv`, si `argv` era un `docker run`.
 
-    Se identifica por el **origen del bind mount de escritura**, que Docker
-    devuelve literalmente en `.Mounts.Source` —MEDIDO en esta máquina: la ruta
-    de Windows con barras normales vuelve tal cual, sin traducir a
-    `/run/desktop/...`—. Devuelve los identificadores matados, para el log y
-    para las pruebas.
+    Se identifica por el **`--name` que la propia orden declara**. Devuelve los
+    nombres matados, para el log y para las pruebas.
 
-    `espera_s` cubre la CARRERA DE ARRANQUE: entre que el cliente se lanza y
-    que el demonio crea el contenedor pasan cientos de milisegundos, y en esa
-    ventana `docker ps` **no lo ve**. Cancelar ahí mataba al cliente y dejaba
-    nacer al huérfano — MEDIDO: 1 de 9. Se reintenta mientras `vivo()` diga que
-    el cliente sigue en pie, porque es exactamente la ventana en la que el
-    contenedor todavía puede aparecer y el desechable aún no se ha borrado.
+    `espera_s` cubre la CARRERA DE ARRANQUE, que **no desaparece por declarar el
+    nombre**: entre que el cliente se lanza y que el demonio arranca el
+    contenedor pasan cientos de milisegundos —MEDIDO, mediana 686,1 ms
+    (`sonda_id.json`, S4)—, y en esa ventana `docker kill` responde con error.
+    Cancelar ahí mataba al cliente y dejaba nacer al huérfano: 1 de 9 en la
+    primera tanda de N-a. Se reintenta mientras `vivo()` diga que el cliente
+    sigue en pie, porque mientras el cliente vive el contenedor todavía puede
+    aparecer. Tope, no bucle de reintento.
+
+    Lo que el nombre SÍ añade es el cierre de la ventana que quedaba abierta:
+    ver `_barrer_contenedor_de`.
     """
     if not argv:
         return []
     binario = os.path.splitext(os.path.basename(argv[0]))[0].lower()
     if binario != "docker" or "run" not in argv[1:3]:
         return []
-    fuentes = set(_fuentes_de_montaje(argv))
-    if not fuentes:
+    nombre = _nombre_contenedor_de(argv)
+    if not nombre:
         return []
     limite = time.perf_counter() + max(espera_s, 0.0)
     while True:
-        victimas = _victimas(fuentes)
-        if victimas:
-            _docker(["kill"] + victimas)
-            return victimas
+        if matar_contenedor(nombre):
+            return [nombre]
         if time.perf_counter() >= limite or (vivo is not None and not vivo()):
             return []
         time.sleep(0.15)
 
 
-def _victimas(fuentes: set) -> list[str]:
-    ids = [x for x in _docker(["ps", "-q"]).split() if x]
-    if not ids:
+def _barrer_contenedor_de(argv: list[str]) -> list[str]:
+    """`docker rm -f` del nombre declarado, DESPUÉS de matar al cliente.
+
+    Cierra el único agujero que la deducción por montajes no podía cerrar. El
+    cliente de `docker run` hace dos cosas: **crear** el contenedor y
+    **arrancarlo**. Si el `taskkill` cae entre las dos, queda un contenedor
+    creado y no arrancado: **`docker ps` no lo lista** —solo lista los que
+    corren—, así que ni el barrido de montajes ni `docker kill` lo alcanzan, y
+    con el desechable ya borrado por el `finally` del núcleo tampoco quedaba
+    forma de nombrarlo. Es exactamente el huérfano medido de 1 de 9.
+
+    `docker rm -f` sí alcanza a un contenedor creado, y aquí es seguro por una
+    razón que antes no existía: **el nombre lo acuñó FileX y es único por
+    invocación** —la unicidad la impone el demonio, MEDIDO (S1)—, así que este
+    barrido no puede tocar el contenedor de otra conversión ni el del usuario.
+    Con la deducción por montajes un barrido así habría sido impensable.
+
+    Un solo intento y sin espera: si no hay nada, `docker rm` falla y ya está.
+    """
+    if not argv:
         return []
-    detalle = _docker(["inspect", "--format",
-                       "{{.Id}}\t{{range .Mounts}}{{.Source}}\t{{end}}"] + ids)
-    fuera = []
-    for linea in detalle.splitlines():
-        campos = [c for c in linea.strip().split("\t") if c]
-        if not campos:
-            continue
-        montajes = {os.path.normcase(os.path.normpath(c)) for c in campos[1:]}
-        if montajes & fuentes:
-            fuera.append(campos[0])
-    return fuera
+    binario = os.path.splitext(os.path.basename(argv[0]))[0].lower()
+    if binario != "docker" or "run" not in argv[1:3]:
+        return []
+    nombre = _nombre_contenedor_de(argv)
+    if not nombre:
+        return []
+    return [nombre] if barrer_contenedor(nombre) else []
 
 
 def _matar_arbol(proc: subprocess.Popen) -> None:
@@ -385,8 +515,12 @@ def ejecutar(
         if not tarde:
             _EN_VUELO[ident] = (proc, list(argv))
     if tarde:
-        _matar_contenedor_de(argv)      # el contenedor primero; ver cancelar_hilo
+        # El contenedor primero y el cliente después; ver `cancelar_hilo`. Y el
+        # barrido solo si el `kill` no lo consiguió, por el mismo motivo.
+        muertos = _matar_contenedor_de(argv)
         _matar_arbol(proc)
+        if not muertos:
+            _barrer_contenedor_de(argv)
 
     try:
         salida, err = proc.communicate(timeout=timeout)
