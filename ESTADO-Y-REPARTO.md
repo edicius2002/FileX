@@ -82,6 +82,15 @@
 
 | Fecha | Informe | Qué cierra |
 |---|---|---|
+| 28/08 | **`bench/metrica-ocr.md`** (W) | **A7.** La métrica de OCR canónica pasa a ser la **acentuada**. Cuesta **4 celdas de 628, 0 inversiones**. Y *«el evaluador acentuado»* eran **DOS métricas**: la otra habría cambiado el ganador en **21 familias** |
+| 28/08 | **`bench/contrato-familia-resvg.md`** (V) | **C19, C21, C29** y la respuesta medida a **C27**. La regla **A7** de fidelidad, el suelo de V8 —**refutado y puesto igualmente**— y el defecto que nadie había visto: **`EXT_FAMILIA` era código muerto** |
+| 28/08 | **`bench/watcher-y-desechables.md`** (U) | **N4, N5, N14.** *«En POSIX no hay equivalente»* era una deducción **y era falsa**; el residuo de N5 hubo que **fabricarlo**; y **978 desechables huérfanos en cinco horas** |
+| 28/08 | **`bench/cancelacion-entre-procesos.md`** (T) | **N10, N11, N13.** Cancelar entre procesos **de nunca a 456,8 ms**, y el mutex de la ronda anterior **se soltaba por accidente** |
+| 28/08 | **`bench/contenedor-parar.md`** (Q) | **a4.** La orden **declara** el contenedor con `--name`: identificarlo pasa de 217,35 ms a **0,01**. Descarta `--cidfile` **sonándolo**, y encuentra el estado `Created`, que `docker ps` no lista |
+| 28/08 | **`bench/cerrojo-unico.md`** (P) | **b1, b4.** `filex/cerrojo.py`, y el mutex `Global\` **refuta que hiciera falta elevar**. La trampa estaba dentro de la vía buena: la **DACL por defecto** no incluye a «Everyone» |
+| 27/08 | **`bench/cerrojo-de-maquina.md`** (N-b) | **N1.** El cerrojo de destino entre procesos — y **la exclusión sola no bastaba**: FileX pisaba el fichero abierto de un tercero devolviendo `ok` |
+| 27/08 | **`bench/cancelacion-y-servicio.md`** (N-a) | **C34, N6.** El asa del `Popen` **no se devuelve, se hace alcanzable**; `mcp.py` baja un **40,2 %** |
+| 23/08 | **`bench/deuda-sondeo.md`** (D1) | **N3**, y **N2 refutada**: la huella del código, la **sexta dimensión** de la arista. 0 de 129 pruebas dependían del sondeo en disco |
 | 23/08 (en curso) | **`bench/phys-multimotor.md`** (G4) | **El `pHYs` fuera de Tesseract.** Veredicto provisional: PaddleOCR, RapidOCR y EasyOCR son **inmunes** (300 celdas, un solo `md5` por fila motor×documento). **NO ESTÁ CERRADO: hay un agente escribiéndolo ahora** |
 | 23/08 08:30 | **`bench/lock-de-maquina.md`** (L1) | **C26**: el lock de GPU pasa a `%TEMP%`, deja de quedarse huérfano y **detecta al ocupante que no coopera**. Más este barrido del inventario |
 | 23/08 | **`bench/hito7-superficies.md`** (H7) | **Hito 7**: watcher + API HTTP + la prueba de R10. **Y el fallo que nadie veía: tres conversiones a la misma ruta de salida devolvían las tres `ok`** |
@@ -116,6 +125,14 @@
 | 20/08 23:00 | `bench/sdk-mcp-capacidades.md` | Las tres eras de protocolo MCP |
 | 20/08 22:48 | `bench/confinamiento-multimedia.md` | — |
 | 20/08 22:08 | `bench/mcp-refs-multimedia.md` | — |
+| 21/08 03:07 | `bench/gpu-fase2.md` | El carril GPU, fase 2: ¿es alcanzable el OCR en GPU? **Sustituido en su §5 por `ocr-ppp-nativos.md`**, y **hoy no es auditable** (N17): sus salidas de texto ya no existen |
+| 20/08 | `bench/gpu-fase1.md` | El carril GPU, fase 1. Único material sobre **surya** (B4): *«NO FUNCIONA en GPU en esta máquina»* |
+| 20/08 | `bench/referencia-nativa.md` | **El patrón oro**: qué producen `ffmpeg`, `magick` y `gswin64c` nativos. Es el que no se toca |
+| 20/08 | `bench/mcp-ergonomia.md` | Ergonomía MCP medida: `markitdown-mcp` frente a `docling-mcp` |
+| 20/08 | `bench/mcp-refs-confinamiento.md` | Confinamiento y mensaje de error al modelo, sobre la referencia oficial del protocolo |
+| 19/08 | `bench/competidores.md` | Cara a cara real: SnapOtter frente a ConvertX, **96 invocaciones**. De aquí salen los tres fallos que el hito 3 reproduce |
+| 19/08 | `bench/docker.md` | El entorno Docker de los competidores: los tres servicios en pie |
+| 19/08 | `bench/results.md` | Fase 2, mediciones en la máquina real. El primero de todos |
 
 ---
 
@@ -197,8 +214,8 @@ Agrupado por **el recurso que lo limita**, que es lo que decide el reparto. Cada
 >
 > | Emoji | Significa | Cuántos hoy |
 > |---|---|---|
-> | 🟢 | **CERRADO** con informe que lo prueba | **49** |
-> | 🟡 | **EN CURSO o PARCIAL** (una mitad cerrada, o hay un agente dentro) | **5** |
+> | 🟢 | **CERRADO** con informe que lo prueba | **50** |
+> | 🟡 | **EN CURSO o PARCIAL** (una mitad cerrada, o hay un agente dentro) | **4** |
 > | 🔴 | **ABIERTO** | **35** |
 > | ⚫ | **histórico**: la fila se conserva porque documenta una refutación, pero **no cuenta** | **6** |
 >
@@ -228,7 +245,7 @@ Agrupado por **el recurso que lo limita**, que es lo que decide el reparto. Cada
 | ~~**A8**~~ | Integrar `ppp-y-normalizacion.md`, `invocacion-aristas.md` y `contrato-quinto-punto.md` en los maestros | 🟢 **CERRADO** por D3 (`bench/consolidacion-3-21ago.md`) |
 | **A5** | ✅ **CERRADO el 22/08/2026: commit `1fb5024` ejecutado**, 1.799 ficheros, +271.130/−210, los 6 PDF de `d4` por Git LFS y los ~30 binarios regenerables de `salidas-aristas/` excluidos por `.gitignore` con su `MANIFIESTO.md`. Entran los doce informes. Se recuperó además `PRUEBAS-MCP-REFS.md`, que solo existía en las ramas `ccb/w1..w3`, ya borradas. ~~**SIGUE ABIERTO, y es lo más urgente del inventario** — no se ha ejecutado ni `git add` ni `git commit`. **Van SIETE agentes sin commit y `git status` tiene 44 entradas.** La lista vigente está en `bench/consolidacion-3-21ago.md` §6~~ | 🟢 **CERRADO** |
 | **A7** | **Decidir si la métrica de OCR canónica del proyecto pasa a ser la acentuada.** Hoy `bench/scripts/ocr_eval.py` sigue intacto y sigue siendo ciego; hay **dos copias** con acentos (`ocr_eval_d4.py`, `ocr_eval_tildes.py`) y ninguna es la oficial. **Actualizado el 23/08: de hecho ya está decidido y nadie lo ha escrito.** Cuatro informes seguidos —`corpus-d5.md`, `psm-y-rasterizador.md`, `k-por-motor.md` §1.2 y `phys-multimotor.md`— **declaran que no abren `ocr_eval.py` porque es ciego** y copian `ocr_eval_d4.py` byte a byte con su `sha256`. ~~Lo que falta es **el acto formal**~~ — **HECHO el 28/08 por W** (`bench/metrica-ocr.md`): la canónica es la acentuada, la vía ciega vive tras `--ciego` y `evaluar()` devuelve la clave `metrica` en cada celda. **Cuesta 4 celdas de 628 y 0 inversiones de orden.** Y el censo desmiente el enunciado: no eran tres copias sino **13 ficheros, 5 `md5`, tres implementaciones**, con la «no oficial» usada por 14 arneses frente a 5 | 🟢 **CERRADO** |
-| **A9** | **Registrar en este inventario el trabajo del 22 y 23/08.** **Quince informes de `bench/` no tenían una sola cita aquí**, y ocho son de esos dos días: los cuatro hitos (`hito3-mudanza`, `hito4-mcp`, `hito5-documental`, `hito7-superficies`), los tres sondeos (`sondeo-imagemagick`, `sondeo-ffmpeg`, `sondeo-documental`) y `consolidacion-4-22ago`. ~~**La §1 ya está corregida (23/08, L1)**~~ — **no lo estaba: seguía diciendo «un solo commit»; corregida de verdad el 27/08.** Los pendientes que abren esos ocho sí están repartidos en la §3.N. **Lo que queda es que `bench/deuda-sondeo.md` (D1, 23/08) tampoco tenía cita aquí** | 🟡 **PARCIAL** |
+| **A9** | **Registrar en este inventario el trabajo del 22 y 23/08.** **Quince informes de `bench/` no tenían una sola cita aquí**, y ocho son de esos dos días: los cuatro hitos (`hito3-mudanza`, `hito4-mcp`, `hito5-documental`, `hito7-superficies`), los tres sondeos (`sondeo-imagemagick`, `sondeo-ffmpeg`, `sondeo-documental`) y `consolidacion-4-22ago`. ~~**La §1 ya está corregida (23/08, L1)**~~ — **no lo estaba: seguía diciendo «un solo commit»; corregida de verdad el 27/08.** Los pendientes que abren esos ocho sí están repartidos en la §3.N. **CERRADO el 28/08: el índice de §1 cubre ya los 51 informes de `bench/`, comprobado a máquina.** Faltaban **17**, y solo nueve eran de las rondas: los otros ocho —`competidores`, `docker`, `results`, `gpu-fase1`, `gpu-fase2`, `referencia-nativa`, `mcp-ergonomia`, `mcp-refs-confinamiento`— llevaban sin citar **desde antes del primer barrido**, incluido el del **patrón oro**. El barrido del 23/08 dijo «faltan dieciséis» y tampoco los vio | 🟢 **CERRADO** |
 
 ### B · Requieren GPU — **estrictamente uno a la vez** (lock exclusivo)
 
