@@ -572,6 +572,125 @@ class AliasDeRuta(_Base):
             shutil.rmtree(largo_dir, ignore_errors=True)
 
 
+# ==========================================================================
+# 6. N20 — un destino que es un DIRECTORIO
+# ==========================================================================
+
+class DestinoQueEsDirectorio(_Base):
+    """`bench/fidelidad-y-nucleo.md` §3: FileX **se negaba, y mentía al decir
+    por qué**.
+
+    El punto 5 de «lo que no cubre» de N12 lo dejó anotado: `os.replace` se
+    niega ante un destino que es un directorio, y **negarse es lo correcto**;
+    lo que estaba mal era el motivo, porque el `errno` es el MISMO que el del
+    ocupante de verdad (`EACCES`/`WinError 5`, MEDIDO) y los dos caían en
+    `DestinoOcupado`. Es la trampa 44: un campo honesto —«fallo»— al lado de
+    una frase falsa —«otro proceso tiene abierta esa ruta»—.
+    """
+
+    def setUp(self):
+        super().setUp()
+        self.fx = FileX(raices_lectura=[self.dir])
+        # El destino existe y es un DIRECTORIO. Nadie lo tiene abierto.
+        os.makedirs(self.salida)
+
+    def test_el_motivo_no_habla_de_otro_proceso(self):
+        """**La prueba que se pone roja sin el arreglo**: antes decía
+        literalmente «otro proceso tiene abierta esa ruta de salida», y no
+        había ningún otro proceso."""
+        conv = self.fx.convertir(self.png, self.salida, {})
+        self.assertFalse(conv.ok)
+        self.assertEqual(conv.motivo, nucleo.MOTIVO_NO_ES_FICHERO)
+        self.assertNotIn("otro proceso", conv.motivo)
+
+    def test_se_rechaza_antes_de_convertir(self):
+        """Y por el mismo motivo que la detección temprana del ocupante: si va
+        a acabar en `fallo`, no hay que gastar los ~250 ms del motor. Se ve en
+        que no hay ni un salto."""
+        conv = self.fx.convertir(self.png, self.salida, {})
+        self.assertFalse(conv.ok)
+        self.assertEqual(conv.saltos, [])
+
+    def test_no_mete_la_salida_dentro_del_directorio(self):
+        """`shutil.move` metía el fichero DENTRO. Nadie pidió esa ruta."""
+        self.fx.convertir(self.png, self.salida, {})
+        self.assertEqual(os.listdir(self.salida), [])
+
+    def test_la_deteccion_de_ocupante_no_ve_el_directorio(self):
+        """Por qué hace falta una comprobación aparte y no vale la de N12:
+        `os.replace(DIR, DIR)` **funciona**, así que la detección devuelve
+        `False` — y tiene razón, nadie lo tiene abierto (MEDIDO, caso A2 de
+        `bench/salidas-fidelidad-n/sonda_destino_dir.json`)."""
+        self.assertFalse(nucleo.destino_ocupado_por_un_tercero(self.salida))
+
+    def test_mover_a_destino_distingue_las_dos_negativas(self):
+        """Las dos excepciones son distintas **y las dos siguen siendo
+        `OSError`**: quien solo quiera saber que no se pudo, no se entera."""
+        origen = os.path.join(self.dir, "x.bin")
+        with open(origen, "wb") as f:
+            f.write(b"X" * 16)
+        with self.assertRaises(nucleo.DestinoNoEsFichero):
+            nucleo.mover_a_destino(origen, self.salida)
+        self.assertTrue(os.path.exists(origen), "no se ha movido nada")
+        self.assertFalse(issubclass(nucleo.DestinoNoEsFichero,
+                                    nucleo.DestinoOcupado),
+                         "un `except DestinoOcupado` no puede tragarse el otro")
+        self.assertTrue(issubclass(nucleo.DestinoNoEsFichero, OSError))
+
+
+# ==========================================================================
+# 7. N19 — `DirectorioDeTrabajo.recoger`, el mismo agujero un nivel más abajo
+# ==========================================================================
+
+class RecogerNoPisa(_Base):
+    """`bench/fidelidad-y-nucleo.md` §4.
+
+    `recoger()` es **pública** y la usan arneses de `bench/`. Hacía
+    `shutil.move`, que sobre un destino existente cae a `copy2` y pisa en
+    silencio (trampa 33) — y pisaba **incluso el fichero que otro proceso tenía
+    abierto**, que es más de lo que decía el pendiente que la señaló.
+    """
+
+    def _recoger(self, destino):
+        from filex.trabajo import DirectorioDeTrabajo
+
+        t = DirectorioDeTrabajo()
+        try:
+            with open(t.destino("s.bin"), "wb") as f:
+                f.write(b"NUEVO" * 4)
+            return t.recoger("s.bin", destino)
+        finally:
+            t.cerrar()
+
+    @unittest.skipUnless(ES_WINDOWS, "la detección solo existe en Windows")
+    def test_no_pisa_el_fichero_de_un_tercero(self):
+        """**La prueba que se pone roja sin el arreglo.** Con `shutil.move` la
+        víctima pasaba de 88 B a 20 B y no saltaba ninguna excepción."""
+        t = _lanzar("tercero", "maquina", salida=self.salida)
+        self.vivos.append(t)
+        self.assertEqual(t.stdout.readline().strip(), "OCUPADO")
+        antes = os.path.getsize(self.salida)
+        with self.assertRaises(nucleo.DestinoOcupado):
+            self._recoger(self.salida)
+        self.assertEqual(os.path.getsize(self.salida), antes,
+                         "recoger() pisó el fichero de un tercero")
+
+    def test_a_un_directorio_no_mete_dentro(self):
+        """La otra mitad de N20, a este nivel: `shutil.move` metía la salida
+        dentro del directorio; `mover_a_destino` se niega y lo dice bien."""
+        os.makedirs(self.salida)
+        with self.assertRaises(nucleo.DestinoNoEsFichero):
+            self._recoger(self.salida)
+        self.assertEqual(os.listdir(self.salida), [])
+
+    def test_el_caso_normal_sigue_funcionando(self):
+        """Un arreglo que rompe el 99 % para cubrir el 1 % no es un arreglo:
+        el destino que NO existe se recoge igual que siempre."""
+        destino = os.path.join(self.dsal, "recogido.bin")
+        self.assertEqual(self._recoger(destino), destino)
+        self.assertEqual(os.path.getsize(destino), 20)
+
+
 def main() -> int:
     if "--papel" in sys.argv:
         i = sys.argv.index("--papel")

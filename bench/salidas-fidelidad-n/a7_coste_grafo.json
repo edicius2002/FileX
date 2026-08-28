@@ -1,0 +1,70 @@
+{
+ "cuando": "2026-08-28 11:18:11",
+ "n": 15,
+ "dur_s": 8.0,
+ "sr": 48000,
+ "testigos": {
+  "deriva_ms": [
+   17.5,
+   19.7
+  ],
+  "deriva_ratio": 1.12,
+  "proceso_ms": [
+   42.3,
+   35.9
+  ]
+ },
+ "filas": {
+  "astats_entrada": {
+   "mediana": 96.23,
+   "p90": 101.05,
+   "min": 84.87,
+   "max": 113.37,
+   "n": 15
+  },
+  "astats_salida": {
+   "mediana": 70.01,
+   "p90": 74.52,
+   "min": 56.13,
+   "max": 80.46,
+   "n": 15
+  },
+  "grafo_una_invocacion": {
+   "mediana": 164.04,
+   "p90": 171.46,
+   "min": 147.98,
+   "max": 179.98,
+   "n": 15
+  },
+  "via_N16_numpy": {
+   "mediana": 231.85,
+   "p90": 261.38,
+   "min": 192.04,
+   "max": 284.33,
+   "n": 15
+  },
+  "CONTROL_astats_completo_entrada": {
+   "mediana": 135.2,
+   "p90": 140.76,
+   "min": 119.16,
+   "max": 144.88,
+   "n": 15
+  },
+  "CONTROL_astats_completo_salida": {
+   "mediana": 330.69,
+   "p90": 336.89,
+   "min": 311.94,
+   "max": 347.73,
+   "n": 15
+  }
+ },
+ "A7_hoy_dos_astats_ms": 166.24,
+ "grafo_frente_a_A7_hoy": 0.987,
+ "via_N16_frente_a_A7_hoy": 1.395,
+ "control_astats_completo_ms": 465.89,
+ "censo_antes": [],
+ "censo_despues": [
+  "sal.opus",
+  "src.wav"
+ ]
+}

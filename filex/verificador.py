@@ -4972,6 +4972,44 @@ def fidelidad_video(salida, entrada, pedido, sonda, sonda_ent, ms):
 A7_AUDIBLE_DBFS = -60.0    # por encima de esto, el canal de ENTRADA lleva senal
 A7_SILENCIO_DBFS = -80.0   # por debajo de esto, el canal de SALIDA esta mudo
 
+# ---------------------------------------------------------------------------
+# N18 — el punto ciego de A7 ES DE OPUS, no de bitrate, y se DECLARA
+# ---------------------------------------------------------------------------
+#
+# `bench/contrato-familia-resvg.md` §2.5 lo llamo *«el punto ciego de A7 a
+# bitrate bajo»*: por debajo de 48 kb/s Opus rellena el canal mudo con una copia
+# del otro, la salida ya no tiene un canal silenciado, y A7 no puede opinar.
+#
+# **El nombre estaba mal, y el nombre importa porque decide donde se declara —
+# MEDIDO** (`bench/fidelidad-y-nucleo.md` §2.4, 264 celdas: 8 fuentes x 14
+# destinos x 2 clases). Sobre el MISMO fallo y a la MISMA tasa de 32 kb/s:
+#
+#     libopus 32k  -> A7 atrapa 1 de 6      libopus 16k/8k/6k -> 0 de 6
+#     libmp3lame 32k -> A7 atrapa 6 de 6    aac 32k -> 6 de 6
+#     mp3 -q:a 9   -> 6 de 6                flac / wav -> 6 de 6
+#
+# No es la tasa: es que **Opus colapsa el estereo a mono** y los demas no. Es la
+# trampa 53 otra vez —la cobertura de una regla de fidelidad depende del
+# DESTINO— y por eso el remedio no es un umbral nuevo sino DECIRLO: donde A7
+# provablemente no ve, `cobertura` vale `False`, que es la disciplina que este
+# verificador ya aplica cuando el pedido mueve la energia. Un `ok` de A7 sobre
+# un Opus estereo de 8 kb/s era un aprobado que nadie habia examinado.
+#
+# **La tasa hay que DEDUCIRLA, y eso tambien esta medido:** sobre un `.opus`
+# (Ogg) la sonda devuelve `bitrate_bps = None` —ffprobe no publica el `bit_rate`
+# del flujo—, asi que una condicion basada en el campo no dispararia nunca en el
+# unico formato al que apunta. Se deriva de `8 * bytes / duracion`, que en un
+# fichero SOLO DE AUDIO es la tasa del contenedor y difiere de la pedida en un
+# margen holgado frente al escalon. En un contenedor con video no se puede
+# deducir y A7 se queda como esta: declarar un punto ciego que no se ha medido
+# seria inventarselo.
+A7_OPUS_CIEGO_BPS = 48000
+
+#: Cuantos canales hacen falta para que el colapso a mono pueda ESCONDER algo.
+#: Con uno solo no hay de donde copiar: un mono silenciado sale silencioso y A7
+#: lo ve. Por eso las salidas Opus del patron oro —las dos son MONO— no cambian.
+A7_CIEGO_MIN_CANALES = 2
+
 # Claves del pedido que cambian la energia a proposito. Si el usuario pidio
 # cualquiera de ellas, A7 no puede opinar: no se declara aprobada, se declara
 # NO CUBIERTA. Es la misma disciplina que A4/A5 con `sample_rate`/`canales`.
@@ -4979,7 +5017,7 @@ _A7_PEDIDO_MUEVE_ENERGIA = ("canales", "ac", "mezclar", "recortar", "volumen",
                             "filtro_audio", "af", "solo_video")
 
 
-def _a7_energia_por_canal(salida, entrada, p, ms):
+def _a7_energia_por_canal(salida, entrada, p, ms, sonda):
     h, cob = [], {}
     movidas = [k for k in _A7_PEDIDO_MUEVE_ENERGIA if p.get(k)]
     if movidas:
@@ -5007,7 +5045,17 @@ def _a7_energia_por_canal(salida, entrada, p, ms):
                       "canal no es comparable" % (len(ce), len(cs)),
                       len(ce), len(cs)))
         return h, cob
-    cob["A7"] = True
+    # N18: donde A7 provablemente NO VE, no se declara aprobada. El escalon de
+    # silencio se sigue evaluando —un fallo encontrado es un fallo, y a 32 kb/s
+    # todavia atrapa 1 de 6—; lo que cambia es que su SILENCIO deja de contar
+    # como aprobado.
+    ciego = _a7_punto_ciego(salida, sonda, cs)
+    cob["A7"] = not ciego
+    if ciego:
+        h.append(_fid("A7", "informativo",
+                      "punto ciego MEDIDO: %s. A7 mira la energia por canal y "
+                      "aqui el canal perdido ya no sale mudo, sale relleno; no "
+                      "se declara aprobada" % ciego, None, None))
     mudos = []
     for i, (a, b) in enumerate(zip(ce, cs)):
         ra, rb = a.get("rms"), b.get("rms")
@@ -5027,6 +5075,52 @@ def _a7_energia_por_canal(salida, entrada, p, ms):
                       "los %d canales conservan energia" % len(cs), None,
                       [_db(x.get("rms")) for x in cs]))
     return h, cob
+
+
+def _a7_tasa_efectiva(ruta: str, sonda: dict):
+    """Bits por segundo de la pista de audio, o `None` si no se puede saber.
+
+    Se prefiere lo que declare la sonda. Si no lo declara —y no lo declara en
+    un `.opus`, MEDIDO: `bitrate_bps = None` en las dos salidas Opus del patron
+    oro— se deriva del TAMANO, pero **solo en un fichero sin video**: en un
+    contenedor con imagen el tamano no es del audio y deducirlo seria inventar.
+    """
+    for x in sonda.get("pistas", []):
+        if x.get("tipo") == "audio" and x.get("bitrate_bps"):
+            return float(x["bitrate_bps"])
+    if sonda.get("n_video", 0):
+        return None
+    dur = sonda.get("duracion_s")
+    try:
+        tam = os.path.getsize(ruta)
+    except OSError:
+        return None
+    return (8.0 * tam / dur) if dur and dur > 0 else None
+
+
+def _a7_punto_ciego(salida: str, sonda: dict, canales_salida) -> str:
+    """El motivo del punto ciego, o `""` si A7 puede opinar.
+
+    UN solo caso, y es el unico que esta MEDIDO: `libopus` con dos o mas
+    canales por debajo de `A7_OPUS_CIEGO_BPS`. No se generaliza a «cualquier
+    codec a tasa baja» porque la medida dice justo lo contrario — mp3 y aac a
+    32 kb/s atrapan 6 de 6 sobre el mismo fallo.
+    """
+    if len(canales_salida) < A7_CIEGO_MIN_CANALES:
+        return ""
+    cod = ""
+    for x in sonda.get("pistas", []):
+        if x.get("tipo") == "audio":
+            cod = (x.get("codec") or "").lower()
+            break
+    if "opus" not in cod:
+        return ""
+    tasa = _a7_tasa_efectiva(salida, sonda)
+    if tasa is None or tasa >= A7_OPUS_CIEGO_BPS:
+        return ""
+    return ("Opus estereo a ~%.0f kb/s colapsa el estereo a mono (a 32 kb/s A7 "
+            "atrapa 1 de 6 y por debajo 0 de 6, frente a 6 de 6 de mp3 y aac a "
+            "la misma tasa)" % (tasa / 1000.0))
 
 
 def _db(v):
@@ -5049,7 +5143,7 @@ def fidelidad_audio(salida, entrada, pedido, sonda, sonda_ent, ms):
     p = pedido.get("params", {})
     if sonda.get("n_audio", 0) < 1 or sonda_ent.get("n_audio", 0) < 1:
         return h, cob
-    hh, cc = _a7_energia_por_canal(salida, entrada, p, ms)
+    hh, cc = _a7_energia_por_canal(salida, entrada, p, ms, sonda)
     h.extend(hh)
     cob.update(cc)
     cods = {_codec_norm(x.get("codec")) for x in sonda.get("pistas", [])

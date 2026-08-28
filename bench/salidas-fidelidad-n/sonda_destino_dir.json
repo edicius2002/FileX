@@ -1,0 +1,63 @@
+{
+ "plataforma": "win32",
+ "casos": [
+  {
+   "excepcion": "PermissionError",
+   "errno": 13,
+   "winerror": 5,
+   "texto": "[WinError 5] Acceso denegado: 'C:\\\\Users\\\\krato\\\\AppData\\\\Local\\\\Temp\\\\filex-n20-bu1ldq0l\\\\salida.bin' -> 'C:\\\\Users\\\\krato\\\\AppData\\\\Local\\\\Temp\\\\filex-n20-bu1",
+   "caso": "A1 os.replace(fichero, DIRECTORIO existente)"
+  },
+  {
+   "excepcion": null,
+   "caso": "A2 os.replace(DIR, DIR)  <- la deteccion previa"
+  },
+  {
+   "excepcion": "PermissionError",
+   "errno": 13,
+   "winerror": 5,
+   "texto": "[WinError 5] Acceso denegado: 'C:\\\\Users\\\\krato\\\\AppData\\\\Local\\\\Temp\\\\filex-n20-bu1ldq0l\\\\salida.bin' -> 'C:\\\\Users\\\\krato\\\\AppData\\\\Local\\\\Temp\\\\filex-n20-bu1",
+   "caso": "A3 os.replace(fichero, fichero ABIERTO por un tercero)"
+  },
+  {
+   "excepcion": "DestinoNoEsFichero",
+   "errno": 13,
+   "winerror": null,
+   "texto": "[Errno 13] [WinError 5] Acceso denegado: 'C:\\\\Users\\\\krato\\\\AppData\\\\Local\\\\Temp\\\\filex-n20-bu1ldq0l\\\\salida.bin' -> 'C:\\\\Users\\\\krato\\\\AppData\\\\Local\\\\Temp\\\\fi",
+   "caso": "B1 mover_a_destino -> DIRECTORIO existente"
+  },
+  {
+   "excepcion": "DestinoOcupado",
+   "errno": 13,
+   "winerror": null,
+   "texto": "[Errno 13] [WinError 5] Acceso denegado: 'C:\\\\Users\\\\krato\\\\AppData\\\\Local\\\\Temp\\\\filex-n20-bu1ldq0l\\\\salida.bin' -> 'C:\\\\Users\\\\krato\\\\AppData\\\\Local\\\\Temp\\\\fi",
+   "caso": "B2 mover_a_destino -> fichero ABIERTO por un tercero"
+  },
+  {
+   "excepcion": null,
+   "caso": "C1 recoger() sobre un destino EXISTENTE",
+   "tam_destino_antes": 88,
+   "tam_destino_despues": 20,
+   "piso": true
+  },
+  {
+   "excepcion": "DestinoOcupado",
+   "errno": 13,
+   "winerror": null,
+   "texto": "[Errno 13] [WinError 5] Acceso denegado: 'C:\\\\Users\\\\krato\\\\AppData\\\\Local\\\\Temp\\\\filex-ajsavu2b\\\\s2.bin' -> 'C:\\\\Users\\\\krato\\\\AppData\\\\Local\\\\Temp\\\\filex-n20-",
+   "caso": "C2 recoger() con el destino ABIERTO por un tercero",
+   "tam_destino_antes": 88,
+   "tam_destino_despues": 88,
+   "piso": false
+  }
+ ],
+ "deteccion_dice_ocupado_sobre_dir": false,
+ "censo_antes": [],
+ "censo_despues": [
+  "ocupado.bin",
+  "salida.bin",
+  "soy_un_directorio",
+  "victima.bin",
+  "victima2.bin"
+ ]
+}
