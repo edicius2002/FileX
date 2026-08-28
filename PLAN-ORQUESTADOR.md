@@ -1022,7 +1022,18 @@ Detalle completo en `bench/sdk-mcp-capacidades.md` §3.6 y §5.2, y **la prueba 
 
 **Aceptación:** `docx/xlsx/pptx/odt → pdf` vía contenedor, con las 132 extensiones importadas y filtradas. Degrada con un mensaje claro si el contenedor no está levantado.
 
-### Hito 6 — Sidecar de IA
+### Hito 6 — Sidecar de IA — **HECHO el 28/08/2026, con el criterio REESCRITO y verificado**
+
+> **Entregado por el agente S6** (`bench/hito6-sidecar.md`, `filex/sidecar.py`, 52 pruebas). Stdlib, **cero dependencias nuevas**: TTL, LRU por VRAM, admisión por la recta `min(ordenada + pendiente × Mpx, tope)` **antes de cada página**, reciclado matando y relanzando, **un trabajador por (motor, dispositivo)**.
+>
+> **El criterio viejo no era inverificable solo por el número: su premisa MATABA EL PROCESO.** Con `faster-whisper` cargado antes que RapidOCR, **10 de 10** mueren con `rc=0xC0000409` **sin excepción que capturar** — dos `cudnn64_9.dll` distintas en `.venv-ai`, y decide la primera. Invirtiendo el orden, 0 de 10 (trampa 82). **«Dos modelos residentes» tenía que decir en cuántos PROCESOS**, y la respuesta segura —uno por motor— cuesta +98 MiB.
+>
+> **Y una variable que ninguna versión del criterio nombraba: la DURACIÓN del audio mueve la VRAM** (+1 054 MiB de 11 s a 308 s). Es la trampa 68 en el modelo de audio.
+>
+> **Perfiles medidos contra el techo de 8 909 MiB:** `distil` + RapidOCR + NVENC hasta **8,882 Mpx** → **7 187, CUMPLE**; con `large-v3` y audio de 11 s → 8 917, **incumple por 8 MiB**; con audio de 308 s → 9 531. Precisión: **distancia de edición 0 en los tres documentos**, métrica `acentos`, con el propio sidecar. **`d3` y `escaneado_d4` quedan FUERA del criterio y no se prometen.**
+>
+> **Contra lo esperado: el orden del lote es del MOTOR.** Descendente gana 5 350 MiB en EasyOCR y **pierde 77 en RapidOCR** (5 de 5 con el mismo signo); se fija por **mínimo arrepentimiento**, como el `k`.
+
 
 **Qué:** proceso Python persistente con registro LRU por VRAM y TTL. faster-whisper (`distil` ≤30 s, `large-v3` por encima) y Docling con RapidOCR en `backend="torch"`.
 
