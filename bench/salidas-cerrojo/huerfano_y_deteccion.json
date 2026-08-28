@@ -1,0 +1,63 @@
+{
+ "A_desechables_fugados": 1,
+ "A_huerfano": {
+  "candado_existia_antes_de_matar": true,
+  "contenido_del_candado": "13968\t1787885017\td:\\work\\research\\filex\\.claude\\worktrees\\agent-a0ae155415b5d6fc0\\bench\\salidas-cerrojo\\desechable\\huerf",
+  "murio_a_mitad": true,
+  "fichero_de_candado_sobrevive_al_taskkill": true,
+  "el_siguiente_lo_toma": true,
+  "recuperacion_us": 551.9,
+  "conversion_siguiente": {
+   "ok": true,
+   "motivo": "",
+   "veredicto": "ok_parcial",
+   "ms": 361.5
+  },
+  "ficheros_en_destino": [
+   "s.webp"
+  ]
+ },
+ "B_tercero[proceso]": {
+  "filex": {
+   "ok": true,
+   "motivo": "",
+   "veredicto": "ok_parcial",
+   "ms": 329.1
+  },
+  "antes": [
+   4014,
+   "65701abe709119c2"
+  ],
+  "despues": [
+   13516,
+   "fc2234fdc39cb987"
+  ],
+  "pisado": true
+ },
+ "B_tercero[maquina]": {
+  "filex": {
+   "ok": false,
+   "motivo": "otro proceso tiene abierta esa ruta de salida",
+   "veredicto": "fallo",
+   "ms": 6.7
+  },
+  "antes": [
+   4014,
+   "65701abe709119c2"
+  ],
+  "despues": [
+   4014,
+   "65701abe709119c2"
+  ],
+  "pisado": false
+ },
+ "B_control_sin_tercero": {
+  "filex": {
+   "ok": true,
+   "motivo": "",
+   "veredicto": "ok_parcial",
+   "ms": 390.4
+  },
+  "bytes": 13516
+ }
+}

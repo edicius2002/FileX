@@ -1,0 +1,29 @@
+ruta = C:\Users\krato\AppData\Local\Temp\filex-sonda-primitivos.lock
+== 0. con el fichero LIBRE (nadie lo tiene abierto) ==
+  os.replace(p, p) sobre fichero libre       -> OK
+  os.remove(p) sobre fichero libre           -> OK
+
+== 1. arranco un hijo que toma el candado y se duerme ==
+  HIJO: candado tomado   (pid del hijo: 27884)
+
+== 2. desde el PADRE, con el hijo vivo ==
+  msvcrt.locking / flock (candado ajeno vivo) -> OSError winerror=None errno=13 Permission denied
+  (el intento costó 54.1 us)
+  os.open(O_CREAT|O_EXCL) sobre el mismo fichero -> OSError winerror=None errno=17 File exists
+  os.replace(p, p) con el hijo teniéndolo abierto -> OSError winerror=32 errno=13 El proceso no tiene acceso al archivo porque está siendo utilizado por otro proceso
+  os.remove(p) con el hijo teniéndolo abierto -> OSError winerror=32 errno=13 El proceso no tiene acceso al archivo porque está siendo utilizado por otro proceso
+  metadatos legibles desde fuera: b'pid=27884\r\n'
+
+== 3. mato al hijo con taskkill /F (no ejecuta ningún `finally`) ==
+  hijo muerto, rc=1; el fichero sigue: True
+
+== 4. desde el PADRE, con el dueño MUERTO ==
+  msvcrt.locking / flock (dueño muerto)      -> OK
+  (recuperación en 22.1 us)
+  os.replace(p, p) con el dueño muerto       -> OK
+
+== 5. ¿el detector distingue LECTOR de ESCRITOR? ==
+  HIJO: abierto para lectura   (pid 26864)
+  os.replace(p, p) con un LECTOR abierto     -> OSError winerror=32 errno=13 El proceso no tiene acceso al archivo porque está siendo utilizado por otro proceso
+
+RESUMEN: candado ajeno vivo bloquea = True; se recupera solo al morir el dueño = True; el detector también dispara con un LECTOR = True

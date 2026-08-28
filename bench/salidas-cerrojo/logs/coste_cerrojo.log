@@ -1,0 +1,50 @@
+{
+ "reservar+soltar[proceso]": {
+  "n": 20000,
+  "mediana_us": 223.0,
+  "p90_us": 356.0,
+  "max_us": 13759.8,
+  "porcentaje_de_una_conversion": 0.05696
+ },
+ "reservar+soltar[maquina]": {
+  "n": 20000,
+  "mediana_us": 936.2,
+  "p90_us": 1344.9,
+  "max_us": 712343.1,
+  "porcentaje_de_una_conversion": 0.23913
+ },
+ "reservar+soltar[ninguno]": {
+  "n": 20000,
+  "mediana_us": 271.1,
+  "p90_us": 399.6,
+  "max_us": 14118.9
+ },
+ "deteccion[destino existe]": {
+  "n": 20000,
+  "mediana_us": 138.7,
+  "p90_us": 208.8,
+  "max_us": 5920.1
+ },
+ "deteccion[destino no existe]": {
+  "n": 20000,
+  "mediana_us": 20.2,
+  "p90_us": 26.6,
+  "max_us": 1387.2
+ },
+ "conversion png->webp": {
+  "n": 11,
+  "mediana_ms": 391.5,
+  "p90_ms": 414.0
+ },
+ "_testigos": {
+  "deriva_monohilo": 0.97,
+  "nivel_proceso_ms": [
+   38.1,
+   32.3
+  ],
+  "testigo_agotado": false,
+  "etiqueta": "limpia"
+ },
+ "coste_total_por_conversion_us": 976.6,
+ "coste_total_porcentaje": 0.24945
+}

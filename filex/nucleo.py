@@ -15,8 +15,12 @@ hasta que el contrato la ha juzgado.
 
 from __future__ import annotations
 
+import hashlib
 import os
+import sys
+import tempfile
 import threading
+import time
 from dataclasses import dataclass, field
 
 from . import contrato, formatos, invocacion, motores as _motores
@@ -63,27 +67,246 @@ def _pedido_intermedio(pedido: dict) -> dict:
 # watcher tenían exactamente el mismo agujero y se cierra en el mismo sitio para
 # los cuatro.
 #
-# **Alcance declarado, sin adornos: es un cerrojo DE PROCESO.** Dos procesos
-# `filex` distintos —una API y un watcher, por ejemplo— siguen pudiendo pisarse.
-# Cerrarlo entre procesos necesita un cerrojo de fichero o un mutex con nombre,
-# igual que el `gpu_acquire` de `bench/`, y queda **PENDIENTE**.
+# **Alcance declarado, sin adornos: era un cerrojo DE PROCESO.** Dos procesos
+# `filex` distintos —una API y un watcher, por ejemplo— seguían pudiendo
+# pisarse. **CERRADO el 23/08 (N1, `bench/cerrojo-de-maquina.md`)**: el fallo
+# está reproducido entre procesos de verdad —3 procesos, 3 entradas distintas,
+# un destino: **3 `ok` y 1 fichero**— y ahora la reserva tiene DOS mitades, que
+# es la lección que dejó escrita `bench/lock-de-maquina.md` para el lock de GPU:
+#
+#   1. **EXCLUSIÓN**, para quien coopera: un candado de fichero por destino en
+#      `%TEMP%/filex-destinos/`, tomado con `msvcrt.locking` (Windows) o
+#      `fcntl.flock` (POSIX). Excluye a cualquier otro proceso `filex` del
+#      mismo usuario, esté en el worktree que esté.
+#   2. **DETECCIÓN**, para quien NO coopera: un `chrome.exe` descargando sobre
+#      esa misma ruta no va a tomar nunca nuestro candado. Lo único que se
+#      puede hacer con él es **verlo y negarse**, con el mismo primitivo de la
+#      trampa 27 —`os.replace(p, p)`, el único cerrojo real en Windows—, justo
+#      antes del `shutil.move` que sería el atropello.
+#
+# **Mover el fichero de sitio no habría bastado**, igual que no bastó para la
+# GPU: un lock excluye a quien lo toma. La mitad que cierra el caso ajeno es la
+# segunda.
+#
+# Lo que este cerrojo **NO** cubre está en `bench/cerrojo-de-maquina.md` §6, y
+# lo más importante es que **`%TEMP%` es POR USUARIO**: dos usuarios de Windows
+# distintos, o el `/tmp` de la VM de WSL2, tendrían candados distintos.
 _DESTINOS_EN_CURSO: set[str] = set()
 _CERROJO_DESTINOS = threading.Lock()
 
+#: Descriptores del candado de fichero, por clave de destino. Solo se tocan con
+#: `_CERROJO_DESTINOS` cogido.
+_FDS_DESTINO: dict[str, int] = {}
+
+_ES_WINDOWS = sys.platform == "win32"
+
+#: El byte que se bloquea, MUY lejos del principio del fichero: así los
+#: metadatos (quién lo tiene, desde cuándo, qué ruta) **siguen siendo legibles
+#: desde otro proceso** mientras el candado está tomado. MEDIDO
+#: (`bench/salidas-cerrojo/logs/sonda_primitivos.log`, paso 2).
+_OFFSET_CERROJO = 1 << 30
+
+#: Qué se declara cuando la infraestructura del candado no está disponible.
+#: Degradar EN SILENCIO es el fallo de la trampa 13 (`onnxruntime` cayendo a
+#: CPU sin un error): si el candado de máquina no se puede tomar, la conversión
+#: sigue con el cerrojo de proceso **y lo dice en el aviso**.
+_AVISO_SIN_CERROJO = ("cerrojo de máquina no disponible ({}): la exclusión es "
+                      "solo de proceso")
+
+_dir_cerrojos_cache: str | None = None
+_aviso_cerrojo: str = ""
+
+
+def _modo_cerrojo() -> str:
+    """`maquina` (defecto) · `proceso` (el estado del hito 7) · `ninguno`.
+
+    Existe para poder MEDIR el antes y el después **dentro de la misma tanda**
+    —las cifras absolutas de tandas distintas no son comparables— y para que
+    quien tenga un `%TEMP%` inservible pueda seguir. El valor por defecto es el
+    seguro; los otros dos hay que pedirlos a mano.
+    """
+    return (os.environ.get("FILEX_CERROJO_DESTINO") or "maquina").strip().lower()
+
+
+def _dir_cerrojos() -> str:
+    global _dir_cerrojos_cache
+    if _dir_cerrojos_cache is None:
+        d = os.environ.get("FILEX_CERROJO_DIR") or os.path.join(
+            tempfile.gettempdir(), "filex-destinos")
+        os.makedirs(d, exist_ok=True)
+        _dir_cerrojos_cache = d
+    return _dir_cerrojos_cache
+
+
+def _clave_destino(ruta: str) -> str:
+    """La identidad del destino. **Y `abspath` NO basta — MEDIDO.**
+
+    R3 (`normcase`) cierra el cambio de caja, que es lo que probaba el hito 7.
+    No cierra el **alias de ruta**, y en Windows los hay de sobra: el nombre
+    corto 8.3, un `subst`, un enlace de directorio, una UNC. Sobre esta máquina
+    (`bench/cerrojo-de-maquina.md` §6.1), con `abspath` a secas:
+
+        C:\\...\\Temp\\filex-aliaslargisimo-t0huurpm\\salida.webp   -> reserva OK
+        C:\\...\\Temp\\FI09A7~1\\salida.webp                        -> reserva OK
+
+    **Dos dueños del mismo fichero**, que es exactamente lo que este cerrojo
+    viene a impedir. Se resuelve el DIRECTORIO —que existe y es estable— y se
+    le vuelve a pegar el nombre. Resolver la ruta ENTERA sería más fuerte
+    (cerraría también un destino que fuese un enlace a otro fichero) y es lo
+    que **no** se hace, a propósito: el destino puede no existir al reservar y
+    sí existir al soltar, y una clave que se mueve entre las dos llamadas deja
+    el candado tomado para siempre. **PENDIENTE**, declarado en §6.2.
+    """
+    a = os.path.abspath(ruta)
+    d, n = os.path.split(a)
+    try:
+        d = os.path.realpath(d)
+    except OSError:
+        pass
+    return os.path.normcase(os.path.join(d, n))
+
+
+def _fichero_cerrojo(clave: str) -> str:
+    # El nombre es un resumen, no la ruta: una ruta de 200 caracteres no cabe
+    # como nombre de fichero, y además el directorio de candados es común a
+    # todos los destinos, así que no debe filtrar a qué ficheros ajenos está
+    # accediendo otro usuario del mismo `%TEMP%`.
+    h = hashlib.sha256(clave.encode("utf-8", "surrogatepass")).hexdigest()[:32]
+    return os.path.join(_dir_cerrojos(), h + ".lock")
+
+
+def _bloquear_fd(fd: int) -> None:
+    """Candado de rango de bytes, no bloqueante. Lo suelta el SISTEMA.
+
+    Esa es la razón de elegirlo frente a un `O_CREAT|O_EXCL`: MEDIDO
+    (`sonda_primitivos.log`), matar al dueño con `taskkill /F` —que no ejecuta
+    ningún `finally`— deja el candado **libre en 22,1 µs**, mientras que un
+    `O_EXCL` deja un huérfano para siempre y obliga a un censo de PID que en
+    esta máquina ya se sabe que no se puede hacer bien (trampa 31).
+    """
+    if _ES_WINDOWS:
+        import msvcrt
+
+        os.lseek(fd, _OFFSET_CERROJO, os.SEEK_SET)
+        msvcrt.locking(fd, msvcrt.LK_NBLCK, 1)
+    else:
+        import fcntl
+
+        fcntl.flock(fd, fcntl.LOCK_EX | fcntl.LOCK_NB)
+
+
+def _tomar_candado(clave: str) -> tuple[int | None, str]:
+    """`(fd, aviso)`. `fd is None` = lo tiene otro proceso. `aviso` = degradado."""
+    try:
+        ruta_lock = _fichero_cerrojo(clave)
+        fd = os.open(ruta_lock, os.O_RDWR | os.O_CREAT, 0o600)
+    except OSError as e:
+        return -1, _AVISO_SIN_CERROJO.format(e.__class__.__name__)
+    try:
+        _bloquear_fd(fd)
+    except OSError:
+        os.close(fd)
+        return None, ""
+    try:
+        os.ftruncate(fd, 0)
+        os.lseek(fd, 0, os.SEEK_SET)
+        os.write(fd, f"{os.getpid()}\t{int(time.time())}\t{clave}\n".encode(
+            "utf-8", "surrogatepass"))
+    except OSError:
+        pass  # los metadatos son para el humano; la exclusión ya está tomada
+    return fd, ""
+
+
+def _soltar_candado(fd: int, clave: str) -> None:
+    if fd < 0:
+        return
+    try:
+        if _ES_WINDOWS:
+            import msvcrt
+
+            os.lseek(fd, _OFFSET_CERROJO, os.SEEK_SET)
+            msvcrt.locking(fd, msvcrt.LK_UNLCK, 1)
+        else:
+            import fcntl
+
+            fcntl.flock(fd, fcntl.LOCK_UN)
+    except OSError:
+        pass
+    try:
+        os.close(fd)
+    except OSError:
+        pass
+    if _ES_WINDOWS:
+        # Barrer el fichero para que `%TEMP%/filex-destinos` no crezca sin
+        # límite. **Solo en Windows, y no es pereza:** aquí un fichero abierto
+        # por cualquiera no se puede borrar (MEDIDO, `sonda_primitivos.log`
+        # paso 2), así que un borrado que TIENE ÉXITO demuestra que nadie lo
+        # tenía. En POSIX el borrado siempre funciona y abriría la carrera
+        # clásica de «borro el candado de otro», así que allí el fichero se
+        # queda.
+        try:
+            os.remove(_fichero_cerrojo(clave))
+        except OSError:
+            pass
+
 
 def _reservar_destino(ruta: str) -> bool:
-    clave = os.path.normcase(os.path.abspath(ruta))
+    """Nadie más —ni en este proceso ni en otro— puede estar escribiendo aquí."""
+    global _aviso_cerrojo
+    clave = _clave_destino(ruta)
     with _CERROJO_DESTINOS:
         if clave in _DESTINOS_EN_CURSO:
             return False
         _DESTINOS_EN_CURSO.add(clave)
+    if _modo_cerrojo() != "maquina":
         return True
+    fd, aviso = _tomar_candado(clave)
+    if fd is None:
+        with _CERROJO_DESTINOS:
+            _DESTINOS_EN_CURSO.discard(clave)
+        return False
+    _aviso_cerrojo = aviso
+    with _CERROJO_DESTINOS:
+        _FDS_DESTINO[clave] = fd
+    return True
 
 
 def _soltar_destino(ruta: str) -> None:
-    clave = os.path.normcase(os.path.abspath(ruta))
+    clave = _clave_destino(ruta)
     with _CERROJO_DESTINOS:
         _DESTINOS_EN_CURSO.discard(clave)
+        fd = _FDS_DESTINO.pop(clave, None)
+    if fd is not None:
+        _soltar_candado(fd, clave)
+
+
+def destino_ocupado_por_un_tercero(ruta: str) -> bool:
+    """La mitad de DETECCIÓN: ¿hay alguien más con ese fichero abierto AHORA?
+
+    Es la trampa 27 usada al revés. `open(p,'rb')` funciona en los cuatro
+    estados y no prueba nada; `os.replace(p, p)` falla con `WinError 32` en
+    cuanto otro proceso tiene el fichero abierto, y **es el único cerrojo real
+    en Windows**.
+
+    Dos límites MEDIDOS que hay que declarar (`sonda_primitivos.log` §5, y
+    `bench/cerrojo-de-maquina.md` §5):
+
+    * **No distingue un LECTOR de un ESCRITOR.** Un visor con la salida abierta
+      dispara el mismo `WinError 32` que un escritor. Es un falso positivo
+      posible, y se prefiere a sobrescribir el fichero de alguien.
+    * **En POSIX devuelve siempre `False`**: allí `os.replace(p, p)` es un
+      no-op que siempre funciona. Es el mismo pendiente que `_estable_en_disco`
+      del watcher (`hito7-superficies.md` §7.3).
+    """
+    if not _ES_WINDOWS or _modo_cerrojo() != "maquina":
+        return False
+    try:
+        os.replace(ruta, ruta)
+    except FileNotFoundError:
+        return False  # no existe: nadie lo está escribiendo
+    except OSError:
+        return True
+    return False
 
 
 @dataclass
@@ -235,6 +458,16 @@ class FileX:
             # sería un fallo es devolver `ok` como se hacía hasta el hito 7.
             conv.motivo = "otra conversión está escribiendo ya esa ruta de salida"
             return conv
+        if _aviso_cerrojo:
+            conv.aviso = (conv.aviso + "; " + _aviso_cerrojo) if conv.aviso else _aviso_cerrojo
+
+        # Mitad de DETECCIÓN, primera pasada: si el destino YA lo tiene abierto
+        # alguien que no pasa por FileX, más vale saberlo antes de gastar 250 ms
+        # en convertir para acabar negándose igual.
+        if destino_ocupado_por_un_tercero(sal_abs):
+            _soltar_destino(sal_abs)
+            conv.motivo = "otro proceso tiene abierta esa ruta de salida"
+            return conv
 
         actual = ent_abs
         temporales: list[DirectorioDeTrabajo] = []
@@ -334,6 +567,18 @@ class FileX:
             return s
 
         if ultimo:
+            # Mitad de DETECCIÓN, segunda pasada — **y es la que importa.**
+            # Aquí es donde ocurría el atropello: `shutil.move` sobre un
+            # destino existente cae a `copy2`, que sobrescribe en silencio. El
+            # candado excluye a los otros `filex`; esto es lo único que se puede
+            # hacer contra quien no lo toma, y es la ventana más estrecha
+            # posible. Sigue siendo un INSTANTE, no una vigilancia
+            # (`bench/lock-de-maquina.md` §5 punto 4).
+            if destino_ocupado_por_un_tercero(destino_final):
+                s.veredicto = "fallo"
+                s.motivo = "otro proceso tiene abierta esa ruta de salida"
+                s.ruta = dentro
+                return s
             t.recoger(nombre, destino_final)
             s.ruta = destino_final
         else:

@@ -1,0 +1,16 @@
+
+===== A. EL DUEÑO MUERE A MITAD DE LA CONVERSIÓN =====
+  candado tomado por el que va a morir: True  -> '13968\t1787885017\td:\\work\\research\\filex\\.claude\\worktrees\\agent-a0ae155415b5d6fc0\\bench\\salidas-cerrojo\\desechable\\huerf'
+  muerto con taskkill /F (rc=1); murió a mitad de la conversión: True (dijo '')
+  el fichero de candado sigue ahí: True
+  el SIGUIENTE toma el candado: True   en 551.9 us
+  y CONVIERTE de verdad: {'ok': True, 'motivo': '', 'veredicto': 'ok_parcial', 'ms': 361.5}
+  en el destino: ['s.webp']
+  desechables de R18 que el taskkill dejó sin borrar: 1
+
+===== B. UN TERCERO QUE NO TOMA EL CANDADO =====
+  [proceso ] filex dice {'ok': True, 'motivo': '', 'veredicto': 'ok_parcial', 'ms': 329.1}
+  [proceso ] el fichero del tercero: antes (4014, '65701abe709119c2') -> después (13516, 'fc2234fdc39cb987')   PISADO=True
+  [maquina ] filex dice {'ok': False, 'motivo': 'otro proceso tiene abierta esa ruta de salida', 'veredicto': 'fallo', 'ms': 6.7}
+  [maquina ] el fichero del tercero: antes (4014, '65701abe709119c2') -> después (4014, '65701abe709119c2')   PISADO=False
+  [CONTROL ] sin tercero delante: {'ok': True, 'motivo': '', 'veredicto': 'ok_parcial', 'ms': 390.4}  bytes=13516

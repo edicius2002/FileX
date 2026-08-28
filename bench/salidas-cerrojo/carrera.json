@@ -1,0 +1,190 @@
+[
+ {
+  "modo": "proceso",
+  "etiqueta": "ANTES — solo el cerrojo de proceso del hito 7",
+  "filas": [
+   {
+    "pid": 30040,
+    "entrada": "tipico.png",
+    "bytes_entrada": 42855,
+    "ok": true,
+    "veredicto": "ok_parcial",
+    "motivo": "",
+    "aviso": "",
+    "bytes_declarados": 13516,
+    "sha_declarado": "fc2234fdc39cb987",
+    "ms": 309.5
+   },
+   {
+    "pid": 21016,
+    "entrada": "tipico.jpg",
+    "bytes_entrada": 87954,
+    "ok": true,
+    "veredicto": "ok",
+    "motivo": "",
+    "aviso": "",
+    "bytes_declarados": 14402,
+    "sha_declarado": "f03f6604a420ec42",
+    "ms": 208.6
+   },
+   {
+    "pid": 34724,
+    "entrada": "patologico_16bit.tif",
+    "bytes_entrada": 72001016,
+    "ok": true,
+    "veredicto": "ok",
+    "motivo": "",
+    "aviso": "",
+    "bytes_declarados": 647580,
+    "sha_declarado": "dc117310b229bc4c",
+    "ms": 1419.3
+   }
+  ],
+  "bytes_en_disco": 647580,
+  "sha_en_disco": "dc117310b229bc4c",
+  "exitos": 3,
+  "exitos_mentirosos": 2,
+  "ficheros_en_destino": 1
+ },
+ {
+  "modo": "maquina",
+  "etiqueta": "DESPUÉS — cerrojo de máquina (pasada 1/3)",
+  "filas": [
+   {
+    "pid": 1048,
+    "entrada": "tipico.png",
+    "bytes_entrada": 42855,
+    "ok": false,
+    "veredicto": "fallo",
+    "motivo": "otra conversión está escribiendo ya esa ruta de salida",
+    "aviso": "",
+    "bytes_declarados": null,
+    "sha_declarado": null,
+    "ms": 13.4
+   },
+   {
+    "pid": 5716,
+    "entrada": "tipico.jpg",
+    "bytes_entrada": 87954,
+    "ok": false,
+    "veredicto": "fallo",
+    "motivo": "otra conversión está escribiendo ya esa ruta de salida",
+    "aviso": "",
+    "bytes_declarados": null,
+    "sha_declarado": null,
+    "ms": 13.9
+   },
+   {
+    "pid": 20112,
+    "entrada": "patologico_16bit.tif",
+    "bytes_entrada": 72001016,
+    "ok": true,
+    "veredicto": "ok",
+    "motivo": "",
+    "aviso": "",
+    "bytes_declarados": 647580,
+    "sha_declarado": "dc117310b229bc4c",
+    "ms": 1259.1
+   }
+  ],
+  "bytes_en_disco": 647580,
+  "sha_en_disco": "dc117310b229bc4c",
+  "exitos": 1,
+  "exitos_mentirosos": 0,
+  "ficheros_en_destino": 1
+ },
+ {
+  "modo": "maquina",
+  "etiqueta": "DESPUÉS — cerrojo de máquina (pasada 2/3)",
+  "filas": [
+   {
+    "pid": 20160,
+    "entrada": "tipico.png",
+    "bytes_entrada": 42855,
+    "ok": false,
+    "veredicto": "fallo",
+    "motivo": "otra conversión está escribiendo ya esa ruta de salida",
+    "aviso": "",
+    "bytes_declarados": null,
+    "sha_declarado": null,
+    "ms": 15.8
+   },
+   {
+    "pid": 5152,
+    "entrada": "tipico.jpg",
+    "bytes_entrada": 87954,
+    "ok": false,
+    "veredicto": "fallo",
+    "motivo": "otra conversión está escribiendo ya esa ruta de salida",
+    "aviso": "",
+    "bytes_declarados": null,
+    "sha_declarado": null,
+    "ms": 15.7
+   },
+   {
+    "pid": 5340,
+    "entrada": "patologico_16bit.tif",
+    "bytes_entrada": 72001016,
+    "ok": true,
+    "veredicto": "ok",
+    "motivo": "",
+    "aviso": "",
+    "bytes_declarados": 647580,
+    "sha_declarado": "dc117310b229bc4c",
+    "ms": 1364.9
+   }
+  ],
+  "bytes_en_disco": 647580,
+  "sha_en_disco": "dc117310b229bc4c",
+  "exitos": 1,
+  "exitos_mentirosos": 0,
+  "ficheros_en_destino": 1
+ },
+ {
+  "modo": "maquina",
+  "etiqueta": "DESPUÉS — cerrojo de máquina (pasada 3/3)",
+  "filas": [
+   {
+    "pid": 21460,
+    "entrada": "tipico.png",
+    "bytes_entrada": 42855,
+    "ok": true,
+    "veredicto": "ok_parcial",
+    "motivo": "",
+    "aviso": "",
+    "bytes_declarados": 13516,
+    "sha_declarado": "fc2234fdc39cb987",
+    "ms": 282.0
+   },
+   {
+    "pid": 30092,
+    "entrada": "tipico.jpg",
+    "bytes_entrada": 87954,
+    "ok": false,
+    "veredicto": "fallo",
+    "motivo": "otra conversión está escribiendo ya esa ruta de salida",
+    "aviso": "",
+    "bytes_declarados": null,
+    "sha_declarado": null,
+    "ms": 10.8
+   },
+   {
+    "pid": 7484,
+    "entrada": "patologico_16bit.tif",
+    "bytes_entrada": 72001016,
+    "ok": false,
+    "veredicto": "fallo",
+    "motivo": "otra conversión está escribiendo ya esa ruta de salida",
+    "aviso": "",
+    "bytes_declarados": null,
+    "sha_declarado": null,
+    "ms": 10.7
+   }
+  ],
+  "bytes_en_disco": 13516,
+  "sha_en_disco": "fc2234fdc39cb987",
+  "exitos": 1,
+  "exitos_mentirosos": 0,
+  "ficheros_en_destino": 1
+ }
+]

@@ -1068,7 +1068,15 @@ class ApiConcurrencia(unittest.TestCase):
 
 
 class NucleoDestinoEnCurso(unittest.TestCase):
-    """El cerrojo de destino, probado donde vive: en el núcleo, no en la API."""
+    """El cerrojo de destino, probado donde vive: en el núcleo, no en la API.
+
+    **Lo que estas cuatro pruebas NO pueden ver, y hay que decirlo:** todas
+    corren dentro de UN proceso, así que pasaban al 100 % mientras el agujero
+    entre procesos seguía abierto (el hito 7 lo dejó declarado como PENDIENTE).
+    Cerrado el 23/08 por N1 (`bench/cerrojo-de-maquina.md`); lo que lo prueba
+    está en `pruebas/test_cerrojo.py`, que lanza `subprocess` de verdad, porque
+    **un hilo no es un proceso** y ninguna prueba de hilos podía distinguirlo.
+    """
 
     def setUp(self):
         self.dir = tempfile.mkdtemp(prefix="filex-h7r-")
@@ -1110,6 +1118,24 @@ class NucleoDestinoEnCurso(unittest.TestCase):
         self.assertFalse(conv.ok)
         self.assertTrue(_nucleo._reservar_destino(sal))
         _nucleo._soltar_destino(sal)
+
+    def test_la_reserva_toma_ademas_un_candado_de_fichero(self):
+        """N1: la reserva dejó de ser solo un `set` en memoria.
+
+        Aquí solo se comprueba la ESTRUCTURA —que existe el fichero de candado
+        mientras la reserva está viva y que desaparece al soltarla—, porque la
+        exclusión real solo se puede probar con otro proceso y eso vive en
+        `pruebas/test_cerrojo.py`.
+        """
+        sal = os.path.join(self.dir, "z.webp")
+        lock = _nucleo._fichero_cerrojo(_nucleo._clave_destino(sal))
+        self.assertTrue(_nucleo._reservar_destino(sal))
+        try:
+            self.assertTrue(os.path.exists(lock))
+        finally:
+            _nucleo._soltar_destino(sal)
+        if os.name == "nt":
+            self.assertFalse(os.path.exists(lock))
 
 
 if __name__ == "__main__":

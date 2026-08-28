@@ -1,0 +1,36 @@
+Las tres entradas del hito 7 §5.3, tres PROCESOS, un destino:
+  tipico.png                  42855 B
+  tipico.jpg                  87954 B
+  patologico_16bit.tif     72001016 B
+
+===== ANTES — solo el cerrojo de proceso del hito 7  (FILEX_CERROJO_DESTINO=proceso) =====
+  arranque de los 3 procesos hasta la cita: 0.8 s
+  pid  30040  tipico.png             ok  declara=   13516 B  sha=fc2234fdc39cb987    309.5 ms  
+  pid  21016  tipico.jpg             ok  declara=   14402 B  sha=f03f6604a420ec42    208.6 ms  
+  pid  34724  patologico_16bit.tif   ok  declara=  647580 B  sha=dc117310b229bc4c   1419.3 ms  
+  EN EL DISCO: 647580 B  sha=dc117310b229bc4c
+  éxitos=3   éxitos que describen un fichero que NO está: 2
+
+===== DESPUÉS — cerrojo de máquina (pasada 1/3)  (FILEX_CERROJO_DESTINO=maquina) =====
+  arranque de los 3 procesos hasta la cita: 1.0 s
+  pid   1048  tipico.png             NO  declara=    None B  sha=None     13.4 ms  otra conversión está escribiendo ya esa ruta de sali
+  pid   5716  tipico.jpg             NO  declara=    None B  sha=None     13.9 ms  otra conversión está escribiendo ya esa ruta de sali
+  pid  20112  patologico_16bit.tif   ok  declara=  647580 B  sha=dc117310b229bc4c   1259.1 ms  
+  EN EL DISCO: 647580 B  sha=dc117310b229bc4c
+  éxitos=1   éxitos que describen un fichero que NO está: 0
+
+===== DESPUÉS — cerrojo de máquina (pasada 2/3)  (FILEX_CERROJO_DESTINO=maquina) =====
+  arranque de los 3 procesos hasta la cita: 1.1 s
+  pid  20160  tipico.png             NO  declara=    None B  sha=None     15.8 ms  otra conversión está escribiendo ya esa ruta de sali
+  pid   5152  tipico.jpg             NO  declara=    None B  sha=None     15.7 ms  otra conversión está escribiendo ya esa ruta de sali
+  pid   5340  patologico_16bit.tif   ok  declara=  647580 B  sha=dc117310b229bc4c   1364.9 ms  
+  EN EL DISCO: 647580 B  sha=dc117310b229bc4c
+  éxitos=1   éxitos que describen un fichero que NO está: 0
+
+===== DESPUÉS — cerrojo de máquina (pasada 3/3)  (FILEX_CERROJO_DESTINO=maquina) =====
+  arranque de los 3 procesos hasta la cita: 0.8 s
+  pid  21460  tipico.png             ok  declara=   13516 B  sha=fc2234fdc39cb987    282.0 ms  
+  pid  30092  tipico.jpg             NO  declara=    None B  sha=None     10.8 ms  otra conversión está escribiendo ya esa ruta de sali
+  pid   7484  patologico_16bit.tif   NO  declara=    None B  sha=None     10.7 ms  otra conversión está escribiendo ya esa ruta de sali
+  EN EL DISCO: 13516 B  sha=fc2234fdc39cb987
+  éxitos=1   éxitos que describen un fichero que NO está: 0
