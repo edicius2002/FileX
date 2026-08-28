@@ -36,6 +36,15 @@ Suite: **256 passed, 6 skipped** *(base 251 + 6; +4 de `VentanaAntesDelMove` y
 +1 de `TerceroQueNoCoopera`. **Cero movimientos en las 251 anteriores**, salvo
 una que se puso roja y se actualizó — y el motivo es el hallazgo de §7)*.
 
+**Y con el tiempo que sobró, N16 — solo medición, sin tocar
+`filex/verificador.py`:** el punto ciego de A7 a bitrate bajo **se cierra
+entero**, pero no con la señal que proponía el pendiente. La ventaja cruzada
+—`corr(Rsal,Lent) − corr(Rsal,Rent)`— **no separa** (hueco −0,7983); el término
+simple **`corr(Rsal, Rent)` sí**, en las **nueve** tasas, con una meseta de
+umbral de **0,008 a 0,13** en la que atrapa **27 de 27 con 0 falsos positivos de
+45**, frente a las **9 de 27** que atrapa A7 hoy. Cuesta **183,1 ms** donde A7
+gasta ya **364,0**. Detalle en §8 bis.
+
 ---
 
 ## 1. De dónde sale la fila, y qué decía exactamente
@@ -338,19 +347,164 @@ entra en ninguno de los tres componentes.
 
 ---
 
+## 8 bis. N16 — el punto ciego de A7 a bitrate bajo: **la señal existe, y no es la propuesta**
+
+*(Medición pura. **No se ha tocado `filex/verificador.py`**, que es de otro
+reparto. Lo que sigue es una propuesta con sus números, no un cambio.)*
+
+`bench/contrato-familia-resvg.md` §2.5 dejó el punto ciego medido —por debajo de
+48 kb/s Opus rellena el canal mudo con una copia del otro y A7, que mira RMS por
+canal, no puede opinar; a 32 kb/s falla por **1,03 dB**— y su pendiente 2 propone
+*«comparar la CORRELACIÓN entre canales de entrada y salida. Sin medir.»*
+
+`bench/salidas-ventana/a7_bitrate_bajo.py`: **90 celdas**, 5 fuentes × 9 tasas ×
+2 clases, todas deterministas.
+
+### 8bis.1 La hipótesis del pendiente se cae — **MEDIDO**
+
+La forma natural de la propuesta es la **ventaja cruzada**: si el derecho se
+perdió y Opus lo rellenó copiando el izquierdo, el derecho de la salida debería
+parecerse al **izquierdo** de la entrada.
+
+    ventaja = corr(Rsal, Lent) − corr(Rsal, Rent)
+
+**No separa nada:** malas en `[−0,0001 , 1,0266]`, buenas en `[−1,0414 , 0,7982]`,
+**hueco −0,7983**. El motivo es la trampa 50 otra vez: a tasa baja **Opus colapsa
+el estéreo a mono también en la conversión buena**, así que `Rsal ≈ Lsal ≈ Lent`
+en las dos clases y el término cruzado sube en las dos.
+
+Las otras dos señales «obvias» tampoco: «¿es mono la salida?» (`RMS(L−R)` frente
+a la mezcla) da **hueco −∞**, y `corr(Lsal, Rsal)` da **−0,9963**.
+
+### 8bis.2 Lo que sí separa es el término SIMPLE — **MEDIDO**
+
+**`corr(Rsal, Rent)` a secas**, con la salida alineada a la entrada:
+
+| Tasa | peor MALA | mejor BUENA | hueco | A7 hoy |
+|---|---:|---:|---:|---|
+| 6k | +0,0029 | +0,1341 | **+0,1312** | 0 / 3 |
+| 8k | +0,0059 | +0,1552 | **+0,1493** | 0 / 3 |
+| 12k | +0,0054 | +0,1653 | **+0,1599** | 0 / 3 |
+| 16k | +0,0048 | +0,1706 | **+0,1658** | 0 / 3 |
+| 24k | +0,0069 | +0,7625 | **+0,7556** | 0 / 3 |
+| 32k | +0,0009 | +0,9661 | **+0,9652** | 0 / 3 |
+| 48k | +0,0048 | +0,9735 | +0,9687 | 3 / 3 |
+| 64k | +0,0051 | +0,9954 | +0,9903 | 3 / 3 |
+| 96k | +0,0044 | +0,9976 | +0,9932 | 3 / 3 |
+
+**Las nueve tasas separan.** A7 hoy atrapa **9 de 27**; la señal, **27 de 27**.
+
+**La meseta, tabulada antes de elegir el umbral** (trampa 51):
+
+| Umbral | atrapa | falsos positivos |
+|---:|---:|---:|
+| < 0,002 | 15 / 27 | 0 / 45 |
+| < 0,005 | 23 / 27 | 0 / 45 |
+| **< 0,008 … < 0,13** | **27 / 27** | **0 / 45** |
+| < 0,15 | 27 / 27 | 1 / 45 |
+| < 0,20 | 27 / 27 | 4 / 45 |
+| < 0,70 | 27 / 27 | 12 / 45 |
+
+La meseta va de **0,008 a 0,13** y es plana entera. El borde de abajo está a un
+pelo del peor caso malo (0,0069), así que **el valor que se propondría es 0,05**
+—cerca del centro geométrico de la meseta, √(0,008 × 0,13) ≈ 0,032— y no su
+borde: aquí «el borde de abajo de la meseta» de la trampa 51 dejaría **1,4 dB**
+de margen y el centro deja un factor **×7**.
+
+### 8bis.3 La tercera clase que no estaba en el enunciado
+
+De las 90 celdas, 45 son buenas, **27 son malas que PIERDEN algo** y **18 son
+malas que no pierden nada**: si los dos canales de la entrada ya eran iguales,
+rellenar el derecho con una copia del izquierdo no destruye información. Contarlas
+como «malas» inventaría un solape que no existe, así que se separan por
+`corr(Lent,Rent) < 0,90`, que es un dato **de la entrada** y por tanto conocido
+antes de juzgar la salida.
+
+La señal toca **8 de esas 18**, y **no son falsos positivos**: son las de ≥32 kb/s,
+donde el canal derecho sale de verdad mudo (**−77,75 a −300,22 dBFS**). A7 ya
+atrapa 6 de las 8; las 2 que se le escapan son justo las de **32 kb/s**, es decir
+**el caso que fallaba por 1,03 dB**. La señal lo cierra **sin tocar el umbral de
+−80 dBFS**, que era la objeción del informe original.
+
+### 8bis.4 El coste — **MEDIDO, trozo aislado**, sobre 8,0 s de estéreo a 48 kHz
+
+`a7_coste_senal.py`, n=15 por fila, tanda limpia (deriva 1,09, testigo de proceso
+29,9 → 30,1 ms).
+
+| Trozo | mediana | p90 |
+|---|---:|---:|
+| decodificar la ENTRADA a PCM | 69,75 ms | 77,83 |
+| decodificar la SALIDA a PCM | 54,60 ms | 57,27 |
+| **alinear por FFT + 3 correlaciones** | **58,72 ms** | 73,04 |
+| *(alinear a fuerza bruta, el del arnés)* | *1 813,69 ms* | 1 862,30 |
+| *control* — `astats` de la entrada (lo que A7 hace hoy) | 102,78 ms | 108,20 |
+| *control* — `astats` de la salida (lo que A7 hace hoy) | 261,26 ms | 276,84 |
+
+**Las dos lecturas, y hay que dar las dos:**
+
+* **Si se AÑADE** a lo que A7 hace hoy: **+183,1 ms** sobre los 364,0 que ya
+  gasta, un **+50,3 %** de la regla.
+* **Si SUSTITUYE** a los dos `astats` —el RMS por canal sale del mismo PCM que hay
+  que decodificar igual—: **183,1 ms frente a 364,0. La mitad.** Esta es la
+  propuesta.
+
+### 8bis.5 Dos avisos, y el segundo casi tumba el resultado
+
+1. **El único fichero estéreo del corpus es prácticamente mono.**
+   `corpus/audio/habla_jfk.flac` tiene **`corr(L,R) = 0,9997`**; los otros cuatro
+   son mono. **A7 nunca se ha calibrado contra un estéreo de verdad**, y las
+   cuatro fuentes de canales desiguales de esta tanda hubo que fabricarlas.
+   Es la trampa 50 en su forma de corpus: si no varías la entrada, mides tu
+   entrada.
+2. **La primera pasada concluyó que a 6 y 8 kb/s NO había señal, y era del
+   arnés.** El alineamiento por barrido a **paso 8** se salta el óptimo: sobre el
+   mismo par devuelve desfase 0 donde la FFT devuelve −2, y con ese desfase la
+   correlación de una salida buena sube de **0,9415 a 0,9718**. Redondear el
+   alineamiento **subestima solo el lado bueno**, que es justo el que fija el
+   hueco: con paso 8, 6k y 8k salían solapadas (−0,0165 y −0,0191) y el titular
+   iba a ser *«el punto ciego se reduce de seis tasas a dos»*. Con la alineación
+   correcta **se cierra entero**. El control positivo que lo destapó está en
+   `a7_coste_senal.json`.
+
+### 8bis.6 Lo que NO se ha medido
+
+* **Otros códecs.** Todo esto es `libopus`. Un MP3 o un AAC a tasa baja pueden
+  hacer otra cosa (`joint stereo` no es lo mismo que el colapso a mono de Opus).
+* **Fuentes reales de canales desiguales.** Las cuatro son fabricadas por el
+  arnés; el corpus no tiene ninguna (aviso 1).
+* **El canal IZQUIERDO perdido**, y las pistas más allá de la 0 — que es el
+  pendiente 3 del informe original y sigue igual.
+* **Qué pasa cuando el pedido cambia la energía a propósito.** A7 ya se retira en
+  ese caso (`_A7_PEDIDO_MUEVE_ENERGIA`) y la señal tendría que retirarse igual.
+
+---
+
 ## 9. Propuestas para `CLAUDE.md` — **NO APLICADAS** (van AL FINAL, nunca en medio)
 
-> **62. El reloj que compara dos procesos en Windows no es el que parece, y el
-> obvio tiene un tic de 15,625 ms — MEDIDO** (`bench/ventana-antes-del-move.md`
-> §2.1). `time.time_ns()` es comparable entre procesos y **no puede medir nada
-> por debajo de 15 ms**: midiendo una ventana de medio milisegundo devolvió
-> celdas de **0 ns** y de **1 000 100 ns**, y la primera pasada publicó «~1 ms de
-> mediana», que era el tamaño del tic. `time.perf_counter_ns()` da 100 ns y **en
-> Windows es `QueryPerformanceCounter` crudo, sin origen por proceso** —
-> comprobado en ejecución, `perf_counter_ns() − QPC×100 = 600 ns` con `QPF =
-> 10 MHz`—, así que **sí sirve entre procesos** aunque la documentación solo lo
-> garantice dentro de uno. **Antes de cronometrar algo, pregúntale al reloj su
-> resolución**: `time.get_clock_info(...)` la dice y no cuesta nada.
+> **62. La REJILLA del instrumento puede ser más gruesa que el efecto, y entonces
+> lo que publicas es la rejilla — MEDIDO, dos veces en el mismo día**
+> (`bench/ventana-antes-del-move.md` §2.1 y §8bis.5).
+>
+> * **El reloj.** `time.time_ns()` es lo obvio para comparar dos procesos y **en
+>   esta máquina tiene un tic de 15,625 ms** (`time.get_clock_info('time')
+>   .resolution`). Midiendo una ventana de medio milisegundo devolvió celdas de
+>   **0 ns** y de **1 000 100 ns**, y la primera pasada publicó «~1 ms de
+>   mediana», que era el tamaño del tic y no el de la ventana.
+>   `time.perf_counter_ns()` da 100 ns y **en Windows es
+>   `QueryPerformanceCounter` crudo, sin origen por proceso** —sondeado:
+>   `perf_counter_ns() − QPC×100 = 600 ns` con `QPF = 10 MHz`—, así que **sí
+>   sirve entre procesos** aunque la documentación solo lo garantice dentro de
+>   uno.
+> * **El alineamiento.** Buscar el desfase entre dos audios con un barrido a
+>   **paso 8** se salta el óptimo: donde una FFT da −2 muestras, el barrido da 0,
+>   y la correlación de una conversión BUENA baja de **0,9718 a 0,9415**. Como el
+>   error solo aprieta el lado bueno, **fabricó un solape que no existía** y la
+>   conclusión iba a ser «a 6 y 8 kb/s no hay señal».
+>
+> **Antes de cronometrar o de correlacionar, pregúntale a tu instrumento su
+> resolución y compárala con el efecto que buscas.** `get_clock_info` la dice y
+> no cuesta nada; para lo demás, mide la versión fina una vez como control
+> positivo — si da otro número, la gruesa no era la misma medida.
 
 > **63. `os.replace` no es «`os.rename` que sobrescribe»: es la DETECCIÓN y la
 > ACCIÓN en una sola llamada, y por eso no deja ventana — MEDIDO** (ídem §3).
@@ -395,5 +549,5 @@ entra en ninguno de los tres componentes.
 | `filex/nucleo.py` | `mover_a_destino`, `DestinoOcupado`, `_move_seguro`, y la llamada en `_un_salto`. |
 | `pruebas/test_cerrojo.py` | `VentanaAntesDelMove` (4) + `test_aun_sin_deteccion...` (1); `TerceroQueNoCoopera` actualizada. |
 | `bench/salidas-ventana/MANIFIESTO.md` | Las órdenes exactas que reproducen todo esto. |
-| `bench/salidas-ventana/*.py` | `tercero.py`, `sonda_mecanismo.py`, `medir_ventana.py`, `coste_move.py`. |
+| `bench/salidas-ventana/*.py` | N12: `tercero.py`, `sonda_mecanismo.py`, `medir_ventana.py`, `coste_move.py`. N16: `a7_bitrate_bajo.py`, `a7_coste_senal.py`. |
 | `bench/salidas-ventana/*.json` · `logs/` | Las salidas. Todo texto; los binarios viven en desechables que se borran. |

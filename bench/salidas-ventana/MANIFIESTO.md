@@ -15,6 +15,8 @@ Informe: `bench/ventana-antes-del-move.md`.
 | `sonda_mecanismo.py` | Sondeo **en ejecución** de las cinco piezas del movimiento: `shutil.move`, `os.replace`, el `errno` de cruzar volúmenes y `CreateFileW` con `FILE_SHARE_NONE`. Sin carreras: todos los estados se construyen a mano. |
 | `medir_ventana.py` | La ventana: duración (modo A), reproducción sincronizada (modo B) y control sin gancho (modo C). |
 | `coste_move.py` | Lo que cuesta el arreglo, **medido aislado** (trampa 36). |
+| `a7_bitrate_bajo.py` | **N16**, solo medición: ¿hay señal que separe el canal perdido por debajo de 48 kb/s? 90 celdas, 5 fuentes × 9 tasas × 2 clases. |
+| `a7_coste_senal.py` | Lo que costaría esa señal, contra lo que A7 gasta hoy. |
 
 ## Cómo se reproduce, exactamente
 
@@ -38,6 +40,9 @@ FILEX_MOVE_SEGURO=0 python bench/salidas-ventana/medir_ventana.py --modo C --esc
 python bench/salidas-ventana/medir_ventana.py --modo C --escenario E2 --n 40 --etiqueta despues
 
 python bench/salidas-ventana/coste_move.py          # FILEX_N=1500 por defecto
+
+python bench/salidas-ventana/a7_bitrate_bajo.py     # N16 — necesita numpy y libopus
+python bench/salidas-ventana/a7_coste_senal.py      # N16 — el coste, n=15
 ```
 
 `FILEX_MOVE_SEGURO=0` devuelve el `shutil.move` anterior a N12; es la única
@@ -56,6 +61,12 @@ rutas en el mismo disco, las filas 5 y 6 no se emiten.
 | `ventana_B*.json` | Reproducción con centinela. `la_ventana_se_abrio` por celda. |
 | `ventana_C*.json` | Control sin gancho, n=40. |
 | `coste_move.json` | 11 filas aisladas, n=1 500 (400 al cruzar volumen). |
+| `a7_bitrate_bajo.json` · `logs/a7_bitrate_bajo.log` | N16: las 90 celdas, el hueco por tasa y la meseta de umbral. |
+| `a7_coste_senal.json` | N16: el coste de la señal frente al de A7, con el control positivo del alineamiento. |
+
+`a7_bitrate_bajo.py` fabrica sus cinco fuentes a partir de `corpus/audio/`
+(`habla_jfk.flac`, `habla_largo.flac`, `tipico.flac`) dentro de un desechable, y
+lo borra al terminar. **No versiona ni un byte de audio.**
 
 **Dos tandas se descartaron y no están aquí**, porque el arnés que las produjo
 estaba mal y hay que decirlo:

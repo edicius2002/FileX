@@ -1,0 +1,82 @@
+{
+ "cuando": "2026-08-28 08:27:43",
+ "dur_s": 8.0,
+ "sr": 48000,
+ "censo_antes": [],
+ "censo_despues": [
+  "ent.wav",
+  "sal.opus"
+ ],
+ "testigos": {
+  "deriva": 1.09,
+  "proceso_ini_ms": 29.9,
+  "proceso_fin_ms": 30.1,
+  "limpia": true
+ },
+ "control_positivo": {
+  "desfase_fuerza_bruta": 0,
+  "desfase_fft": -2,
+  "misma_senal": false,
+  "senal_fuerza_bruta": [
+   0.9415,
+   0.9413,
+   0.9997
+  ],
+  "senal_fft": [
+   0.9718,
+   0.9715,
+   0.9997
+  ]
+ },
+ "filas": {
+  "1 decodificar la ENTRADA a PCM": {
+   "mediana_ms": 69.75,
+   "p90_ms": 77.83,
+   "min_ms": 66.95,
+   "max_ms": 78.05,
+   "n": 15
+  },
+  "2 decodificar la SALIDA a PCM": {
+   "mediana_ms": 54.6,
+   "p90_ms": 57.27,
+   "min_ms": 51.07,
+   "max_ms": 57.85,
+   "n": 15
+  },
+  "3 alinear + 3 correlaciones": {
+   "mediana_ms": 1813.69,
+   "p90_ms": 1862.3,
+   "min_ms": 1746.32,
+   "max_ms": 1916.63,
+   "n": 15
+  },
+  "3b solo las 3 correlaciones (sin alinear)": {
+   "mediana_ms": 19.66,
+   "p90_ms": 22.46,
+   "min_ms": 17.42,
+   "max_ms": 22.8,
+   "n": 15
+  },
+  "3c alinear por FFT + 3 correlaciones": {
+   "mediana_ms": 58.72,
+   "p90_ms": 73.04,
+   "min_ms": 45.89,
+   "max_ms": 73.68,
+   "n": 15
+  },
+  "C1 astats de la ENTRADA (lo que A7 hace hoy)": {
+   "mediana_ms": 102.78,
+   "p90_ms": 108.2,
+   "min_ms": 97.81,
+   "max_ms": 114.04,
+   "n": 15
+  },
+  "C2 astats de la SALIDA (lo que A7 hace hoy)": {
+   "mediana_ms": 261.26,
+   "p90_ms": 276.84,
+   "min_ms": 227.32,
+   "max_ms": 278.84,
+   "n": 15
+  }
+ }
+}
