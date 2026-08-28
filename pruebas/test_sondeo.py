@@ -21,6 +21,7 @@ calcula sobre TEXTO; el sellado se comprueba sobre JSON.
 
 from __future__ import annotations
 
+import ast
 import copy
 import json
 import os
@@ -190,6 +191,189 @@ class AlcanceDelContrato(unittest.TestCase):
         for fuera in ("fidelidad_audio", "fidelidad_video", "fidelidad_imagen",
                       "verificar_fidelidad", "main", "_imprimir"):
             self.assertNotIn(fuera, n, f"{fuera} NO decide la arista y entró")
+
+
+# --------------------------------------------------------------------------
+# 3 bis. Las TABLAS de datos que deciden un veredicto (trampa 49)
+# --------------------------------------------------------------------------
+
+
+class TablasDeDatos(unittest.TestCase):
+    """*Las tablas que deciden un veredicto van en la huella, o la huella
+    miente por omisión.*
+
+    La frontera NO era «tabla contra llamada» —`_tabla()` registra los `Assign`
+    desde el primer día, y `FIRMAS`, `MARCAS_FTYP` y `EXT_TABULARES` sí
+    caducaban—: era **el sitio del valor**. Una tabla declarada vacía y poblada
+    por un `for` de nivel superior se hasheaba vacía, y arreglar `EXT_FAMILIA`
+    movió 3 de las 53 salidas del patrón oro sin caducar una sola arista.
+
+    Toda prueba de este bloque va sobre el **AST** y sobre huellas, nunca sobre
+    texto (trampa 42)."""
+
+    FUENTE = textwrap.dedent('''
+        TABLA = set()
+        for _n in "csv json yaml".split():
+            TABLA.add("." + _n)
+
+        DICCIONARIO = {}
+        for _k in ("a", "b"):
+            DICCIONARIO[_k] = 1
+
+        LEJOS = set()
+        for _z in ("p", "q"):
+            LEJOS.add(_z)
+
+        def verificar(x):
+            return x in TABLA and x in DICCIONARIO
+    ''')
+
+    def h(self, fuente):
+        return huella.de_alcance(fuente, ("verificar",))
+
+    def test_una_tabla_poblada_por_un_bucle_ESTA_en_el_cierre(self):
+        n = huella.nombres_alcanzados(self.FUENTE, ("verificar",))
+        self.assertIn("TABLA", n)
+        self.assertIn("DICCIONARIO", n)
+
+    def test_tocar_el_BUCLE_que_puebla_la_tabla_SI_caduca_el_sondeo(self):
+        # Es la prueba que faltaba: el `Assign` inicial no cambia (`set()`
+        # sigue siendo `set()`) y aun así la huella tiene que moverse.
+        otra = self.FUENTE.replace('"csv json yaml"', '"csv json toml"')
+        self.assertNotEqual(self.h(self.FUENTE), self.h(otra))
+
+    def test_tocar_el_bucle_de_un_DICCIONARIO_tambien_caduca(self):
+        otra = self.FUENTE.replace('DICCIONARIO[_k] = 1', 'DICCIONARIO[_k] = 2')
+        self.assertNotEqual(self.h(self.FUENTE), self.h(otra))
+
+    def test_el_bucle_de_lo_NO_alcanzado_sigue_sin_caducar_nada(self):
+        # La granularidad no se pierde: un bucle de nivel superior que puebla
+        # una tabla que `verificar()` no consulta no caduca nada.
+        otra = self.FUENTE.replace('("p", "q")', '("p", "r")')
+        self.assertEqual(self.h(self.FUENTE), self.h(otra))
+
+    def test_el_ORDEN_de_los_bucles_importa(self):
+        # `EXT_SIN_FIRMA` se llena en un bucle y se poda en el siguiente:
+        # permutarlos cambia la tabla, así que tiene que cambiar la huella.
+        src = textwrap.dedent('''
+            T = {"a": 1}
+            for _ in (0,):
+                T["b"] = 2
+            for _ in (0,):
+                T.pop("a", None)
+
+            def verificar(x):
+                return T
+        ''')
+        ls = textwrap.dedent(src).strip("\n").split("\n")
+        permutado = "\n".join(ls[:1] + ls[3:5] + ls[1:3] + ls[5:])
+        # Un `SyntaxError` daría `nocompila:…`, que también es distinto: la
+        # prueba pasaría por la razón equivocada (trampa 38). Se comprueba que
+        # las dos fuentes COMPILAN antes de comparar.
+        for f in (src, permutado):
+            ast.parse(textwrap.dedent(f))
+        self.assertNotEqual(huella.de_alcance(src, ("verificar",)),
+                            huella.de_alcance(permutado, ("verificar",)))
+
+    # ---- y ahora sobre el verificador de verdad ----
+
+    #: Las cinco que nombra la trampa 49, más la que el docstring de
+    #: `deuda-sondeo.md` sec.2.3 daba por cubierta. Se muta un elemento REAL de
+    #: cada una: un recuento correcto no prueba un contenido correcto
+    #: (trampa 48), y una tabla que existe no prueba una tabla que se hashea.
+    MUTACIONES = [
+        ("EXT_FAMILIA", 'EXT_FAMILIA.add("." + _n)',
+         'EXT_FAMILIA.add(".zz" + _n)'),
+        ("EXT_A_FIRMAS", "EXT_A_FIRMAS.update(_ext(_n, _f))",
+         "EXT_A_FIRMAS.update(_ext(_n, _f)) or None"),
+        ("EXT_SIN_FIRMA", 'EXT_SIN_FIRMA.setdefault("." + _e, _mot)',
+         'EXT_SIN_FIRMA.setdefault(".zz" + _e, _mot)'),
+        ("FIRMAS", 'b"\\x89PNG\\r\\n\\x1a\\n", "png"',
+         'b"\\x89ZZZ\\r\\n\\x1a\\n", "png"'),
+        ("MARCAS_FTYP", 'b"isom": "mp4"', 'b"zzzm": "mp4"'),
+        ("EXT_TABULARES", '".csv", ".tsv"', '".zzz", ".tsv"'),
+    ]
+
+    def test_las_seis_tablas_reales_del_verificador_caducan_el_sondeo(self):
+        with open(os.path.join(RAIZ, "filex", "verificador.py"),
+                  encoding="utf-8") as fh:
+            src = fh.read()
+        base = huella.de_alcance(src, huella.ENTRADAS_CONTRATO)
+        for nombre, viejo, nuevo in self.MUTACIONES:
+            with self.subTest(tabla=nombre):
+                self.assertIn(viejo, src,
+                              f"{nombre}: la prueba se quedó obsoleta, no el "
+                              f"código — busca el elemento en verificador.py")
+                otro = src.replace(viejo, nuevo, 1)
+                self.assertNotEqual(
+                    base, huella.de_alcance(otro, huella.ENTRADAS_CONTRATO),
+                    f"{nombre} DECIDE el veredicto de aristas reales y no "
+                    f"mueve la huella: la huella miente por omisión")
+
+    def test_las_seis_tablas_llevan_su_CONTENIDO_no_solo_su_tamano(self):
+        # Trampa 48: `EXT_FAMILIA` tenía el recuento bueno y el contenido malo.
+        # Dos elementos de cada una, comprobados de verdad.
+        from filex import verificador as v
+        for tabla, dos in ((v.EXT_FAMILIA, (".csv", ".gltf")),
+                           (v.EXT_A_FIRMAS, (".png", ".mp4")),
+                           (v.EXT_SIN_FIRMA, (".rgb", ".g4")),
+                           (v.EXT_TABULARES, (".csv", ".ndjson")),
+                           (v.MARCAS_FTYP, (b"isom", b"avif"))):
+            for e in dos:
+                self.assertIn(e, tabla)
+        self.assertTrue(any(f[2] == "png" for f in v.FIRMAS))
+
+    def test_el_componente_MOTOR_ve_las_constantes_de_MODULO(self):
+        """El mismo agujero, en el otro componente: `MARGEN_TOPE` y
+        `TIMEOUT_DENTRO` fijan el tope que corre DENTRO del contenedor, que
+        decide el `rc` de toda arista documental, y no movían nada."""
+        src = textwrap.dedent('''
+            TOPE = 30
+
+            def entorno():
+                return {"A": "1"}
+
+            class M:
+                def orden(self):
+                    return ["x", str(TOPE), entorno()["A"]]
+        ''')
+        base = huella.de_clase_en_fuente(src, "M")
+        self.assertNotEqual(base, huella.de_clase_en_fuente(
+            src.replace("TOPE = 30", "TOPE = 60"), "M"))
+        self.assertNotEqual(base, huella.de_clase_en_fuente(
+            src.replace('return {"A": "1"}', 'return {"A": "2"}'), "M"))
+        # y el ruido sigue sin caducar
+        self.assertEqual(base, huella.de_clase_en_fuente(
+            src.replace("TOPE = 30", "TOPE = 30  # comentario"), "M"))
+
+    def test_las_constantes_reales_de_los_motores_caducan_su_huella(self):
+        for fichero, clase, viejo, nuevo in (
+                ("motores.py", "ImageMagick", "HILOS = ", "HILOS = 999  #"),
+                ("motor_contenedor.py", "_EnContenedor",
+                 "MARGEN_TOPE = ", "MARGEN_TOPE = 999.0  #"),
+                ("motor_contenedor.py", "_EnContenedor",
+                 "TIMEOUT_DENTRO = ", "TIMEOUT_DENTRO = 999  #")):
+            with self.subTest(constante=viejo.strip().rstrip("=")):
+                with open(os.path.join(RAIZ, "filex", fichero),
+                          encoding="utf-8") as fh:
+                    src = fh.read()
+                self.assertIn(viejo, src)
+                self.assertNotEqual(
+                    huella.de_clase_en_fuente(src, clase),
+                    huella.de_clase_en_fuente(src.replace(viejo, nuevo, 1),
+                                              clase))
+
+    def test_el_cierre_de_una_clase_NO_se_traga_el_fichero_entero(self):
+        """La granularidad por motor tiene que sobrevivir al arreglo: si el
+        cierre de cada clase alcanzase todo, tocar ffmpeg caducaría
+        ImageMagick, que es justo lo que la huella de FICHERO hacía mal."""
+        with open(os.path.join(RAIZ, "filex", "motores.py"),
+                  encoding="utf-8") as fh:
+            src = fh.read()
+        a = huella.nombres_alcanzados(src, ("ImageMagick",))
+        self.assertNotIn("Ghostscript", a)
+        self.assertNotIn("FFmpeg", a)
+        self.assertIn("HILOS", a)
 
 
 # --------------------------------------------------------------------------

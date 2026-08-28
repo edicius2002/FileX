@@ -47,6 +47,53 @@ separado:
     arreglando—: **la fidelidad no decide la arista**, `verificar()` no la
     llama, y el cierre de llamadas lo dice solo.
 
+EL AGUJERO DE LAS TABLAS, Y DÓNDE ESTABA DE VERDAD LA FRONTERA
+--------------------------------------------------------------
+
+La trampa 49 lo denunció así: *«`EXT_A_FIRMAS`, `EXT_FAMILIA`, `EXT_SIN_FIRMA`,
+`FIRMAS` y `MARCAS_FTYP` son tablas de módulo, no llamadas»*, y arreglar
+`EXT_FAMILIA` movió 3 de las 53 salidas del patrón oro **sin caducar ni una
+arista**. Y §2.3 de `bench/deuda-sondeo.md` decía lo contrario: *«el cierre
+incluye las constantes de módulo»*, con `EXT_TABULARES` de ejemplo.
+
+**Los dos tenían razón a medias, y la frontera no era la que ninguno decía —
+MEDIDO** (`bench/huella-y-tablas.md` §2, mutando el fuente y mirando si la
+huella se mueve, no deduciendo):
+
+* **Las cinco tablas SÍ estaban en el cierre.** `_tabla()` registra los
+  `Assign` de nivel superior desde el primer día, así que el problema nunca fue
+  «tabla contra llamada».
+* De las cinco, **`FIRMAS` y `MARCAS_FTYP` SÍ caducaban** —son literales
+  completos, como `EXT_TABULARES`— y **`EXT_A_FIRMAS`, `EXT_FAMILIA` y
+  `EXT_SIN_FIRMA` no**. El agujero era de **3 de 5**, no de 5 de 5.
+* **La frontera es el SITIO DEL VALOR, no su tipo:** las tres ciegas se
+  declaran vacías (`EXT_FAMILIA = set()`) y las puebla un ``for`` de nivel
+  superior. `_tabla()` solo miraba `FunctionDef`, `ClassDef` y `Assign`, así
+  que hasheaba el `set()` y **las 196 líneas de las cinco sentencias
+  ejecutables de nivel superior de `verificador.py` eran invisibles**.
+
+**Y el mismo agujero estaba en el componente `motor`, sin que nadie lo mirara**
+(ídem §3): `cadena_de_clase()` hasheaba solo las `ClassDef`, así que `HILOS` en
+`motores.py` y `MARGEN_TOPE`, `TIMEOUT_DENTRO`, `_HILO` y la función
+`entorno()` en `motor_contenedor.py` —el tope que corre DENTRO del contenedor,
+que decide el `rc` de toda arista documental— no movían nada.
+
+**El arreglo es uno solo para los dos, y es el cierre de nombres:**
+
+* `_tabla()` devuelve ahora **una lista de nodos por nombre**, y adjunta cada
+  sentencia ejecutable de nivel superior (``for``, ``if``, ``while``, ``with``,
+  ``try``) a **los nombres de módulo que MUTA** — conservador igual que
+  `_referidos()`: destino de asignación, `del`, subíndice o receptor de un
+  método.
+* `cadena_de_clase()` hashea el **cierre desde el nombre de la clase**, no la
+  `ClassDef` suelta. Es la misma maquinaria de `de_alcance()` con otra entrada.
+
+**Y no cuesta granularidad — MEDIDO** (ídem §3.2): en `motores.py` cada motor
+alcanza **3 de 8** nombres de nivel superior y los tres nativos siguen sin
+verse entre sí; en `motor_contenedor.py` alcanzan **15 de 17**, pero los dos
+que sobran son las clases hermanas y **los tres documentales ya compartían la
+base entera por MRO**, así que ahí no había granularidad que perder.
+
 LO QUE ESTA HUELLA **NO** PROTEGE — declararlo es parte del diseño
 -----------------------------------------------------------------
 
@@ -62,10 +109,17 @@ LO QUE ESTA HUELLA **NO** PROTEGE — declararlo es parte del diseño
    biblioteca cambia el resultado y la huella no se entera. Para eso está el
    `build`, y `build` es del MOTOR, no del intérprete: **queda PENDIENTE**.
 4. **No ve los DATOS.** `bench/salidas-referencia/referencia.json` y el corpus
-   pueden cambiar bajo una medida sin mover la huella.
+   pueden cambiar bajo una medida sin mover la huella. **Esto NO cambia** con
+   el arreglo de las tablas: una tabla en el código entra; un JSON de datos
+   sigue fuera.
 5. **Un fichero sin `huella` se aplica igual.** Es la regla de legado, y es
    deliberada: degradar por prudencia costaba 153 aristas medidas con este
    mismo código. Se aplica **y se declara** en `sondeo.diagnostico()`.
+6. **Una sentencia ejecutable de nivel superior que no muta NINGÚN nombre de
+   módulo sigue fuera** — y es a propósito. El único caso en `verificador.py`
+   es `if __name__ == "__main__": main()`; meterlo caducaría las 215 aristas
+   cada vez que se toque el CLI, que es ruido puro. Si algún día una de esas
+   sentencias muta un objeto IMPORTADO, cae en la limitación 3.
 """
 
 from __future__ import annotations
@@ -152,6 +206,13 @@ def de_modulo(mod) -> str:
 def _clases_de_fichero(ruta: str) -> dict:
     """`{nombre: huella}` de las clases de nivel superior de un módulo.
 
+    La huella de cada clase es la de su **cierre de nombres**, no la de su
+    `ClassDef` suelta: si no, `MARGEN_TOPE` y `TIMEOUT_DENTRO` —el tope que
+    corre DENTRO del contenedor, que decide el `rc` de toda arista
+    documental— y la función `entorno()` cambian sin mover la huella (MEDIDO,
+    §3 del informe). Es el mismo agujero de la trampa 49 en el otro
+    componente, y se cierra con la misma maquinaria.
+
     Se parsea el FICHERO una vez y se cachea. `inspect.getsource` por clase
     vuelve a barrer el fichero entero cada vez, y con seis motores repartidos en
     dos módulos eso se notaba en el arranque.
@@ -166,10 +227,10 @@ def _clases_de_fichero(ruta: str) -> dict:
     except (OSError, SyntaxError):
         _CACHE[k] = fuera
         return fuera
+    tabla = _tabla(arbol)
     for n in arbol.body:
         if isinstance(n, ast.ClassDef):
-            fuera[n.name] = _sha(ast.dump(_limpio(n), annotate_fields=True,
-                                          include_attributes=False))
+            fuera[n.name] = _sello(tabla, _cierre(tabla, (n.name,)))
     _CACHE[k] = fuera
     return fuera
 
@@ -215,39 +276,73 @@ def de_clase_en_fuente(fuente: str, nombre: str) -> str:
     `motores.py` a mitad de una prueba.
     """
     arbol = ast.parse(textwrap.dedent(fuente))
+    tabla = _tabla(arbol)
     for n in arbol.body:
         if isinstance(n, ast.ClassDef) and n.name == nombre:
-            return _sha("|".join([
-                f"{nombre}=" + _sha(ast.dump(_limpio(n), annotate_fields=True,
-                                             include_attributes=False))]))
+            return _sha(_sello(tabla, _cierre(tabla, (nombre,))))
     return "sin_clase"
 
 
 # ------------------------------------------------- cierre de llamadas (alcance)
 
 
-def _tabla(arbol: ast.Module) -> dict:
-    """Nombres de nivel superior → nodo. Funciones, clases **y constantes**.
+#: Sentencias de nivel superior que NO aportan valor a ningún nombre: nunca se
+#: adjuntan a nadie. El docstring del módulo es un `Expr`.
+_INERTES = (ast.Import, ast.ImportFrom, ast.Expr, ast.Pass)
 
-    Las constantes entran porque deciden: `EXT_TABULARES` es una constante de
-    módulo nueva, y su llegada cambió el veredicto de 8 aristas (commit
-    9f99cae).
+
+def _mutados(nodo: ast.AST) -> set:
+    """Nombres que una sentencia de nivel superior puede MUTAR.
+
+    Conservador a propósito, igual que `_referidos()`: todo `Name` que aparezca
+    como destino de asignación o de `del` (contextos `Store`/`Del`), y todo
+    `X` que reciba una llamada a método (`X.add(...)`, `X.update(...)`) o un
+    subíndice. Sobra alguno —la variable de un `for` de módulo entra— y eso no
+    hace daño: un nombre de más solo puede añadir sensibilidad, y un nombre de
+    menos deja pasar un cambio que sí decide, que es el fallo que este módulo
+    existe para no cometer.
     """
-    t = {}
+    fuera: set = set()
+    for n in ast.walk(nodo):
+        if isinstance(n, ast.Name) and isinstance(n.ctx, (ast.Store, ast.Del)):
+            fuera.add(n.id)
+        elif isinstance(n, (ast.Attribute, ast.Subscript)):
+            if isinstance(n.value, ast.Name):
+                fuera.add(n.value.id)
+    return fuera
+
+
+def _tabla(arbol: ast.Module) -> dict:
+    """Nombres de nivel superior → **lista** de nodos que los definen.
+
+    Funciones, clases, constantes **y las sentencias ejecutables de nivel
+    superior que las pueblan**. Lo tercero es el arreglo de la trampa 49: sin
+    ello `EXT_FAMILIA = set()` se hasheaba vacío y el `for` que la llena —42
+    extensiones que deciden el punto 1— no movía nada (MEDIDO, §2 del informe).
+
+    Es una lista y no un nodo porque un nombre puede tener varias: la
+    asignación inicial más cada bucle que lo modifica. `EXT_SIN_FIRMA` tiene
+    tres.
+    """
+    t: dict = {}
     for n in arbol.body:
         if isinstance(n, (ast.FunctionDef, ast.AsyncFunctionDef, ast.ClassDef)):
-            t[n.name] = n
+            t.setdefault(n.name, []).append(n)
         elif isinstance(n, ast.Assign):
             for d in n.targets:
                 if isinstance(d, ast.Name):
-                    t[d.id] = n
+                    t.setdefault(d.id, []).append(n)
         elif isinstance(n, ast.AnnAssign) and isinstance(n.target, ast.Name):
-            t[n.target.id] = n
+            t.setdefault(n.target.id, []).append(n)
+        elif not isinstance(n, _INERTES):
+            for nombre in _mutados(n):
+                t.setdefault(nombre, []).append(n)
     return t
 
 
-def _referidos(nodo: ast.AST) -> set:
-    return {n.id for n in ast.walk(nodo) if isinstance(n, ast.Name)}
+def _referidos(nodos: list) -> set:
+    return {n.id for nodo in nodos for n in ast.walk(nodo)
+            if isinstance(n, ast.Name)}
 
 
 def nombres_alcanzados(fuente: str, entradas=ENTRADAS_CONTRATO) -> set:
@@ -289,14 +384,26 @@ def de_alcance(fuente: str, entradas=ENTRADAS_CONTRATO) -> str:
         tabla = _tabla(ast.parse(textwrap.dedent(fuente)))
     except SyntaxError:
         return "nocompila:" + _sha(fuente)
-    nombres = sorted(_cierre(tabla, entradas))
+    return _sello(tabla, _cierre(tabla, entradas))
+
+
+def _sello(tabla: dict, nombres) -> str:
+    """`sha` de los nodos de `nombres`, por nombre y en orden de NOMBRE.
+
+    Dentro de un nombre los nodos van en su orden de aparición en el fichero,
+    que es el orden en que se ejecutan y por tanto el que decide el valor
+    final: `EXT_SIN_FIRMA` se llena en un bucle y se poda en el siguiente, y
+    permutarlos cambiaría la tabla.
+    """
+    nombres = sorted(nombres)
     if not nombres:
         return "sin_alcance"
     trozos = []
     for n in nombres:
-        nodo = _limpio(tabla[n])
-        trozos.append(f"{n}=" + _sha(ast.dump(nodo, annotate_fields=True,
-                                              include_attributes=False)))
+        partes = [_sha(ast.dump(_limpio(nodo), annotate_fields=True,
+                                include_attributes=False))
+                  for nodo in tabla[n]]
+        trozos.append(f"{n}=" + ",".join(partes))
     return _sha("|".join(trozos))
 
 

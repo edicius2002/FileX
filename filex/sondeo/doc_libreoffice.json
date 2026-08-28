@@ -5,10 +5,11 @@
   "informe": "bench/sondeo-documental.md",
   "nota": "n=1 por arista, tanda SUCIA (sesión remota activa) y con dos agentes más trabajando: los ms desempatan dentro de este informe, NO se comparan con los de otro. El `build` lleva el ID de la imagen: en otra máquina esto no se aplica.",
   "huella": {
-    "motor": "1bff3e5f4b6bb247",
+    "motor": "ffe3c41451f77538",
     "invocacion": "3a2c16603bb46673",
-    "contrato": "6af6b556299be217"
+    "contrato": "5761de1dcf0ab811"
   },
+  "nota_resellado": "Resellado el 2026-08-28 por CAMBIO DE ALGORITMO de la huella, NO por resondeo: `filex/huella.py` pasa a hashear tambien las tablas de modulo que un bucle de nivel superior puebla y las constantes de modulo que las clases de motor leen (trampa 49). El codigo medido es el mismo: antes de resellar, las huellas de aqui coincidian con las del algoritmo anterior sobre este mismo arbol, y esa comprobacion es la que autoriza el resellado. Ver `bench/huella-y-tablas.md` sec.5 y `bench/salidas-huella/resellado.json`.",
   "nota_huella": "Resondeado y sellado el 2026-08-28: estas medidas se tomaron con el codigo cuya huella esta arriba, no con uno anterior. Cierra el pendiente que dejo `bench/deuda-sondeo.md` 3.3, donde el sellado era ARGUMENTADO y no MEDIDO porque `verificador.py` habia cambiado despues de escribirse los ficheros.",
   "aristas": {
     "csv>pdf": {

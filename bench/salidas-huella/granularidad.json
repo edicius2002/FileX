@@ -1,0 +1,78 @@
+{
+ "verificador_py_lineas": 5421,
+ "opciones": {
+  "fichero_entero": {
+   "nombres": 179,
+   "lineas_cubiertas": 5421,
+   "un_comentario_caduca": true,
+   "aristas_que_caducaria_un_comentario": 215
+  },
+  "cierre_VIEJO": {
+   "nombres": 114,
+   "lineas_cubiertas": 3181,
+   "un_comentario_caduca": false,
+   "aristas_que_caducaria_un_comentario": 0
+  },
+  "cierre_NUEVO": {
+   "nombres": 119,
+   "lineas_cubiertas": 3377,
+   "un_comentario_caduca": false,
+   "aristas_que_caducaria_un_comentario": 0
+  }
+ },
+ "sentencias_ejecutables_nivel_superior": [
+  {
+   "tipo": "For",
+   "lineas": "398-556",
+   "n_lineas": 159,
+   "muta": [
+    "EXT_A_FIRMAS",
+    "_f",
+    "_n"
+   ],
+   "entra_en_el_cierre": true
+  },
+  {
+   "tipo": "For",
+   "lineas": "570-574",
+   "n_lineas": 5,
+   "muta": [
+    "EXT_FAMILIA",
+    "_n"
+   ],
+   "entra_en_el_cierre": true
+  },
+  {
+   "tipo": "For",
+   "lineas": "589-615",
+   "n_lineas": 27,
+   "muta": [
+    "EXT_SIN_FIRMA",
+    "_e",
+    "_mot",
+    "_n"
+   ],
+   "entra_en_el_cierre": true
+  },
+  {
+   "tipo": "For",
+   "lineas": "617-619",
+   "n_lineas": 3,
+   "muta": [
+    "EXT_SIN_FIRMA",
+    "_e"
+   ],
+   "entra_en_el_cierre": true
+  },
+  {
+   "tipo": "If",
+   "lineas": "5419-5420",
+   "n_lineas": 2,
+   "muta": [
+    "sys"
+   ],
+   "entra_en_el_cierre": false
+  }
+ ],
+ "lineas_que_el_arreglo_ANADE": 196
+}
