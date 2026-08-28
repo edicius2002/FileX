@@ -1,63 +1,63 @@
 {
- "motor": "doc_calibre",
- "build": "doc_calibre 29.4.3 · filex-c13@6d359bad483e",
- "fecha": "2026-08-22",
- "informe": "bench/sondeo-documental.md",
- "nota": "n=1 por arista, tanda SUCIA (sesión remota activa) y con dos agentes más trabajando: los ms desempatan dentro de este informe, NO se comparan con los de otro. El `build` lleva el ID de la imagen: en otra máquina esto no se aplica.",
- "huella": {
-  "motor": "dda90b2e29152094",
-  "invocacion": "de4a69976377acb8",
-  "contrato": "6af6b556299be217"
- },
- "nota_huella": "Sellado el 2026-08-23 por D1 con la huella del codigo vigente, NO resondeado. Estas medidas se tomaron con este mismo codigo: `motores.py`/`motor_contenedor.py` e `invocacion.py` no han cambiado desde que se midieron, y el unico cambio posterior del contrato (9f99cae, sobre `_datos` y `_pdf`) es MONOTONAMENTE MAS PERMISIVO -solo convierte `fallo` en `aviso`/`ok`-, asi que ningun `real` de aqui puede ser falso por su causa. Razonamiento y controles en `bench/deuda-sondeo.md` 3.3.",
- "aristas": {
-  "azw3>epub": {
-   "estado": "real",
-   "ms": 5227.2,
-   "motivo": "18602 B, 564 caracteres, contrato ok_parcial",
-   "caso": "S17"
+  "motor": "doc_calibre",
+  "build": "doc_calibre 29.4.3 · filex-c13@6d359bad483e",
+  "fecha": "2026-08-28",
+  "informe": "bench/sondeo-documental.md",
+  "nota": "n=1 por arista, tanda SUCIA (sesión remota activa) y con dos agentes más trabajando: los ms desempatan dentro de este informe, NO se comparan con los de otro. El `build` lleva el ID de la imagen: en otra máquina esto no se aplica.",
+  "huella": {
+    "motor": "3da2baca1ac6a142",
+    "invocacion": "a7d20dd250f5f00a",
+    "contrato": "6af6b556299be217"
   },
-  "azw3>pdf": {
-   "estado": "real",
-   "ms": 20208.5,
-   "motivo": "27387 B, 456 caracteres, contrato ok",
-   "caso": "S19"
-  },
-  "epub>epub": {
-   "estado": "real",
-   "ms": 9636.6,
-   "motivo": "20209 B, 564 caracteres, contrato ok_parcial",
-   "caso": "S22"
-  },
-  "md>epub": {
-   "estado": "real",
-   "ms": 40279.3,
-   "motivo": "11851 B, 558 caracteres, contrato ok_parcial",
-   "caso": "S21"
-  },
-  "mobi>azw3": {
-   "estado": "real",
-   "ms": 4948.7,
-   "motivo": "12614 B, 12603 caracteres, contrato ok_parcial; sonda de texto CIEGA (comprime el texto), verificado por ida y vuelta a epub en d2.json §C",
-   "caso": "S23"
-  },
-  "mobi>epub": {
-   "estado": "real",
-   "ms": 6769.7,
-   "motivo": "18336 B, 610 caracteres, contrato ok_parcial",
-   "caso": "S16"
-  },
-  "mobi>pdf": {
-   "estado": "real",
-   "ms": 14487.2,
-   "motivo": "31178 B, 488 caracteres, contrato ok",
-   "caso": "S18"
-  },
-  "txt>epub": {
-   "estado": "real",
-   "ms": 36783.9,
-   "motivo": "26406 B, 484 caracteres, contrato ok_parcial",
-   "caso": "S20"
+  "nota_huella": "Resondeado y sellado el 2026-08-28: estas medidas se tomaron con el codigo cuya huella esta arriba, no con uno anterior. Cierra el pendiente que dejo `bench/deuda-sondeo.md` 3.3, donde el sellado era ARGUMENTADO y no MEDIDO porque `verificador.py` habia cambiado despues de escribirse los ficheros.",
+  "aristas": {
+    "azw3>epub": {
+      "estado": "real",
+      "ms": 4294.8,
+      "motivo": "17781 B, 564 caracteres, contrato ok_parcial",
+      "caso": "S17"
+    },
+    "azw3>pdf": {
+      "estado": "real",
+      "ms": 5642.5,
+      "motivo": "27387 B, 456 caracteres, contrato ok",
+      "caso": "S19"
+    },
+    "epub>epub": {
+      "estado": "real",
+      "ms": 3380.3,
+      "motivo": "20228 B, 564 caracteres, contrato ok_parcial",
+      "caso": "S22"
+    },
+    "md>epub": {
+      "estado": "real",
+      "ms": 4097.9,
+      "motivo": "12375 B, 558 caracteres, contrato ok_parcial",
+      "caso": "S21"
+    },
+    "mobi>azw3": {
+      "estado": "real",
+      "ms": 2967.5,
+      "motivo": "12614 B, 12603 caracteres, contrato ok_parcial; sonda de texto CIEGA (comprime el texto), verificado por ida y vuelta a epub en d2.json §C",
+      "caso": "S23"
+    },
+    "mobi>epub": {
+      "estado": "real",
+      "ms": 5494.0,
+      "motivo": "19155 B, 610 caracteres, contrato ok_parcial",
+      "caso": "S16"
+    },
+    "mobi>pdf": {
+      "estado": "real",
+      "ms": 7403.3,
+      "motivo": "31178 B, 488 caracteres, contrato ok",
+      "caso": "S18"
+    },
+    "txt>epub": {
+      "estado": "real",
+      "ms": 7145.7,
+      "motivo": "23721 B, 484 caracteres, contrato ok_parcial",
+      "caso": "S20"
+    }
   }
- }
 }

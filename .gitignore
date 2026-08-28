@@ -99,3 +99,6 @@ bench/salidas-quinto-punto/fixtures/*.png
 
 # El lock de GPU es estado de ejecucion, no evidencia. Nunca se versiona.
 bench/.gpu.lock
+
+# Worktrees de agentes: son copias de trabajo, no contenido del repositorio.
+.claude/worktrees/

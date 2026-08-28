@@ -1,395 +1,395 @@
 {
- "motor": "imagemagick",
- "build": "imagemagick 7.1.2-21",
- "fecha": "2026-08-22",
- "informe": "bench/sondeo-imagemagick.md",
- "huella": {
-  "motor": "9021aa532cdfdc5a",
-  "invocacion": "de4a69976377acb8",
-  "contrato": "6af6b556299be217"
- },
- "nota_huella": "Sellado el 2026-08-23 por D1 con la huella del codigo vigente, NO resondeado. Estas medidas se tomaron con este mismo codigo: `motores.py`/`motor_contenedor.py` e `invocacion.py` no han cambiado desde que se midieron, y el unico cambio posterior del contrato (9f99cae, sobre `_datos` y `_pdf`) es MONOTONAMENTE MAS PERMISIVO -solo convierte `fallo` en `aviso`/`ok`-, asi que ningun `real` de aqui puede ser falso por su causa. Razonamiento y controles en `bench/deuda-sondeo.md` 3.3.",
- "aristas": {
-  "avif>bmp": {
-   "estado": "real",
-   "ms": 179.7,
-   "semilla": "A",
-   "veredicto": "ok_parcial"
+  "motor": "imagemagick",
+  "build": "imagemagick 7.1.2-21",
+  "fecha": "2026-08-28",
+  "informe": "bench/sondeo-imagemagick.md",
+  "huella": {
+    "motor": "9021aa532cdfdc5a",
+    "invocacion": "a7d20dd250f5f00a",
+    "contrato": "6af6b556299be217"
   },
-  "avif>gif": {
-   "estado": "real",
-   "ms": 1922.7,
-   "semilla": "A",
-   "veredicto": "ok_parcial"
-  },
-  "avif>ico": {
-   "estado": "real",
-   "ms": 38.3,
-   "semilla": "D-256px",
-   "veredicto": "ok_parcial",
-   "motivo": "real solo hasta 256 px de lado; 257-512 px devuelve rc=0 y escribe ancho&0xFF en el ICONDIRENTRY (Pillow lee 320x180 como 64x180); >=513 px, rc=1"
-  },
-  "avif>jpg": {
-   "estado": "real",
-   "ms": 270.2,
-   "semilla": "A",
-   "veredicto": "ok_parcial"
-  },
-  "avif>pdf": {
-   "estado": "real",
-   "ms": 340.5,
-   "semilla": "A",
-   "veredicto": "ok_parcial"
-  },
-  "avif>png": {
-   "estado": "real",
-   "ms": 485.8,
-   "semilla": "A",
-   "veredicto": "ok_parcial"
-  },
-  "avif>tif": {
-   "estado": "real",
-   "ms": 270.9,
-   "semilla": "A",
-   "veredicto": "ok_parcial"
-  },
-  "avif>webp": {
-   "estado": "real",
-   "ms": 310.0,
-   "semilla": "A",
-   "veredicto": "ok_parcial"
-  },
-  "bmp>avif": {
-   "estado": "real",
-   "ms": 700.8,
-   "semilla": "A",
-   "veredicto": "ok"
-  },
-  "bmp>gif": {
-   "estado": "real",
-   "ms": 815.3,
-   "semilla": "A",
-   "veredicto": "ok"
-  },
-  "bmp>ico": {
-   "estado": "real",
-   "ms": 26.1,
-   "semilla": "D-256px",
-   "veredicto": "ok_parcial",
-   "motivo": "real solo hasta 256 px de lado; 257-512 px devuelve rc=0 y escribe ancho&0xFF en el ICONDIRENTRY (Pillow lee 320x180 como 64x180); >=513 px, rc=1"
-  },
-  "bmp>jpg": {
-   "estado": "real",
-   "ms": 229.3,
-   "semilla": "A",
-   "veredicto": "ok"
-  },
-  "bmp>pdf": {
-   "estado": "real",
-   "ms": 355.2,
-   "semilla": "A",
-   "veredicto": "ok",
-   "motivo": "real en pixeles (RMSE 0,0032) y con la PAGINA MAL: -density hereda PixelsPerCentimeter del BMP y da 362,8x204,1 pt donde el resto da 921,6x518,4"
-  },
-  "bmp>png": {
-   "estado": "real",
-   "ms": 389.4,
-   "semilla": "A",
-   "veredicto": "ok"
-  },
-  "bmp>tif": {
-   "estado": "real",
-   "ms": 123.7,
-   "semilla": "A",
-   "veredicto": "ok"
-  },
-  "bmp>webp": {
-   "estado": "real",
-   "ms": 278.8,
-   "semilla": "A",
-   "veredicto": "ok"
-  },
-  "gif>avif": {
-   "estado": "real",
-   "ms": 1075.3,
-   "semilla": "A",
-   "veredicto": "ok_parcial"
-  },
-  "gif>bmp": {
-   "estado": "real",
-   "ms": 77.9,
-   "semilla": "A",
-   "veredicto": "ok_parcial"
-  },
-  "gif>ico": {
-   "estado": "real",
-   "ms": 27.3,
-   "semilla": "D-256px",
-   "veredicto": "ok_parcial",
-   "motivo": "real solo hasta 256 px de lado; 257-512 px devuelve rc=0 y escribe ancho&0xFF en el ICONDIRENTRY (Pillow lee 320x180 como 64x180); >=513 px, rc=1"
-  },
-  "gif>jpg": {
-   "estado": "real",
-   "ms": 233.4,
-   "semilla": "A",
-   "veredicto": "ok_parcial"
-  },
-  "gif>pdf": {
-   "estado": "real",
-   "ms": 275.5,
-   "semilla": "A",
-   "veredicto": "ok_parcial"
-  },
-  "gif>png": {
-   "estado": "real",
-   "ms": 538.6,
-   "semilla": "A",
-   "veredicto": "ok_parcial",
-   "motivo": "real y exacto (RMSE 0,000000); con un GIF de 2 colores el PNG sale a 2 bits de indice y el contrato lo declara fallo por I4"
-  },
-  "gif>tif": {
-   "estado": "real",
-   "ms": 175.0,
-   "semilla": "A",
-   "veredicto": "ok_parcial"
-  },
-  "gif>webp": {
-   "estado": "real",
-   "ms": 271.3,
-   "semilla": "A",
-   "veredicto": "ok_parcial"
-  },
-  "ico>avif": {
-   "estado": "real",
-   "ms": 77.6,
-   "semilla": "A",
-   "veredicto": "ok"
-  },
-  "ico>bmp": {
-   "estado": "real",
-   "ms": 32.1,
-   "semilla": "A",
-   "veredicto": "ok_parcial"
-  },
-  "ico>gif": {
-   "estado": "real",
-   "ms": 81.4,
-   "semilla": "A",
-   "veredicto": "ok"
-  },
-  "ico>jpg": {
-   "estado": "real",
-   "ms": 39.9,
-   "semilla": "A",
-   "veredicto": "ok"
-  },
-  "ico>pdf": {
-   "estado": "real",
-   "ms": 38.3,
-   "semilla": "A",
-   "veredicto": "ok"
-  },
-  "ico>png": {
-   "estado": "real",
-   "ms": 33.6,
-   "semilla": "A",
-   "veredicto": "ok"
-  },
-  "ico>tif": {
-   "estado": "real",
-   "ms": 30.4,
-   "semilla": "A",
-   "veredicto": "ok"
-  },
-  "ico>webp": {
-   "estado": "real",
-   "ms": 31.4,
-   "semilla": "A",
-   "veredicto": "ok"
-  },
-  "jpg>avif": {
-   "estado": "real",
-   "ms": 516.2,
-   "semilla": "A",
-   "veredicto": "ok"
-  },
-  "jpg>bmp": {
-   "estado": "real",
-   "ms": 86.1,
-   "semilla": "A",
-   "veredicto": "ok_parcial"
-  },
-  "jpg>gif": {
-   "estado": "real",
-   "ms": 741.9,
-   "semilla": "A",
-   "veredicto": "ok"
-  },
-  "jpg>ico": {
-   "estado": "real",
-   "ms": 28.8,
-   "semilla": "D-256px",
-   "veredicto": "ok_parcial",
-   "motivo": "real solo hasta 256 px de lado; 257-512 px devuelve rc=0 y escribe ancho&0xFF en el ICONDIRENTRY (Pillow lee 320x180 como 64x180); >=513 px, rc=1"
-  },
-  "jpg>pdf": {
-   "estado": "real",
-   "ms": 215.0,
-   "semilla": "A",
-   "veredicto": "ok"
-  },
-  "jpg>png": {
-   "estado": "real",
-   "ms": 336.4,
-   "semilla": "A",
-   "veredicto": "ok"
-  },
-  "jpg>tif": {
-   "estado": "real",
-   "ms": 83.4,
-   "semilla": "A",
-   "veredicto": "ok"
-  },
-  "jpg>webp": {
-   "estado": "real",
-   "ms": 208.1,
-   "semilla": "A",
-   "veredicto": "ok"
-  },
-  "png>bmp": {
-   "estado": "real",
-   "ms": 194.8,
-   "semilla": "A",
-   "veredicto": "ok_parcial"
-  },
-  "png>gif": {
-   "estado": "real",
-   "ms": 888.4,
-   "semilla": "A",
-   "veredicto": "ok_parcial"
-  },
-  "png>ico": {
-   "estado": "real",
-   "ms": 30.7,
-   "semilla": "D-256px",
-   "veredicto": "ok_parcial",
-   "motivo": "real solo hasta 256 px de lado; 257-512 px devuelve rc=0 y escribe ancho&0xFF en el ICONDIRENTRY (Pillow lee 320x180 como 64x180); >=513 px, rc=1"
-  },
-  "png>tif": {
-   "estado": "real",
-   "ms": 193.5,
-   "semilla": "A",
-   "veredicto": "ok_parcial"
-  },
-  "svg>jpg": {
-   "estado": "real",
-   "ms": 82.9,
-   "semilla": "A",
-   "veredicto": "ok"
-  },
-  "svg>png": {
-   "estado": "real",
-   "ms": 92.2,
-   "semilla": "A",
-   "veredicto": "ok"
-  },
-  "svg>webp": {
-   "estado": "real",
-   "ms": 87.7,
-   "semilla": "A",
-   "veredicto": "ok"
-  },
-  "tif>avif": {
-   "estado": "real",
-   "ms": 939.2,
-   "semilla": "A",
-   "veredicto": "ok_parcial"
-  },
-  "tif>bmp": {
-   "estado": "real",
-   "ms": 292.2,
-   "semilla": "A",
-   "veredicto": "ok_parcial"
-  },
-  "tif>gif": {
-   "estado": "real",
-   "ms": 877.8,
-   "semilla": "A",
-   "veredicto": "ok_parcial"
-  },
-  "tif>ico": {
-   "estado": "real",
-   "ms": 30.9,
-   "semilla": "D-256px",
-   "veredicto": "ok_parcial",
-   "motivo": "real solo hasta 256 px de lado; 257-512 px devuelve rc=0 y escribe ancho&0xFF en el ICONDIRENTRY (Pillow lee 320x180 como 64x180); >=513 px, rc=1"
-  },
-  "tif>jpg": {
-   "estado": "real",
-   "ms": 236.6,
-   "semilla": "A",
-   "veredicto": "ok_parcial"
-  },
-  "tif>pdf": {
-   "estado": "real",
-   "ms": 209.6,
-   "semilla": "A",
-   "veredicto": "ok_parcial"
-  },
-  "tif>webp": {
-   "estado": "real",
-   "ms": 306.8,
-   "semilla": "A",
-   "veredicto": "ok_parcial"
-  },
-  "webp>avif": {
-   "estado": "real",
-   "ms": 579.1,
-   "semilla": "A",
-   "veredicto": "ok"
-  },
-  "webp>bmp": {
-   "estado": "real",
-   "ms": 87.6,
-   "semilla": "A",
-   "veredicto": "ok_parcial"
-  },
-  "webp>gif": {
-   "estado": "real",
-   "ms": 771.3,
-   "semilla": "A",
-   "veredicto": "ok"
-  },
-  "webp>ico": {
-   "estado": "real",
-   "ms": 31.3,
-   "semilla": "D-256px",
-   "veredicto": "ok_parcial",
-   "motivo": "real solo hasta 256 px de lado; 257-512 px devuelve rc=0 y escribe ancho&0xFF en el ICONDIRENTRY (Pillow lee 320x180 como 64x180); >=513 px, rc=1"
-  },
-  "webp>jpg": {
-   "estado": "real",
-   "ms": 177.8,
-   "semilla": "A",
-   "veredicto": "ok"
-  },
-  "webp>pdf": {
-   "estado": "real",
-   "ms": 220.3,
-   "semilla": "A",
-   "veredicto": "ok"
-  },
-  "webp>png": {
-   "estado": "real",
-   "ms": 331.4,
-   "semilla": "A",
-   "veredicto": "ok"
-  },
-  "webp>tif": {
-   "estado": "real",
-   "ms": 100.7,
-   "semilla": "A",
-   "veredicto": "ok"
+  "nota_huella": "Resondeado y sellado el 2026-08-28: estas medidas se tomaron con el codigo cuya huella esta arriba, no con uno anterior. Cierra el pendiente que dejo `bench/deuda-sondeo.md` 3.3, donde el sellado era ARGUMENTADO y no MEDIDO porque `verificador.py` habia cambiado despues de escribirse los ficheros.",
+  "aristas": {
+    "avif>bmp": {
+      "estado": "real",
+      "ms": 185.8,
+      "semilla": "A",
+      "veredicto": "ok_parcial"
+    },
+    "avif>gif": {
+      "estado": "real",
+      "ms": 1722.5,
+      "semilla": "A",
+      "veredicto": "ok_parcial"
+    },
+    "avif>ico": {
+      "estado": "real",
+      "ms": 39.9,
+      "semilla": "D-256px",
+      "veredicto": "ok_parcial",
+      "motivo": "real solo hasta 256 px de lado; 257-512 px devuelve rc=0 y escribe ancho&0xFF en el ICONDIRENTRY (Pillow lee 320x180 como 64x180); >=513 px, rc=1"
+    },
+    "avif>jpg": {
+      "estado": "real",
+      "ms": 250.7,
+      "semilla": "A",
+      "veredicto": "ok_parcial"
+    },
+    "avif>pdf": {
+      "estado": "real",
+      "ms": 303.0,
+      "semilla": "A",
+      "veredicto": "ok_parcial"
+    },
+    "avif>png": {
+      "estado": "real",
+      "ms": 401.2,
+      "semilla": "A",
+      "veredicto": "ok_parcial"
+    },
+    "avif>tif": {
+      "estado": "real",
+      "ms": 238.1,
+      "semilla": "A",
+      "veredicto": "ok_parcial"
+    },
+    "avif>webp": {
+      "estado": "real",
+      "ms": 331.8,
+      "semilla": "A",
+      "veredicto": "ok_parcial"
+    },
+    "bmp>avif": {
+      "estado": "real",
+      "ms": 741.1,
+      "semilla": "A",
+      "veredicto": "ok"
+    },
+    "bmp>gif": {
+      "estado": "real",
+      "ms": 820.9,
+      "semilla": "A",
+      "veredicto": "ok"
+    },
+    "bmp>ico": {
+      "estado": "real",
+      "ms": 28.1,
+      "semilla": "D-256px",
+      "veredicto": "ok_parcial",
+      "motivo": "real solo hasta 256 px de lado; 257-512 px devuelve rc=0 y escribe ancho&0xFF en el ICONDIRENTRY (Pillow lee 320x180 como 64x180); >=513 px, rc=1"
+    },
+    "bmp>jpg": {
+      "estado": "real",
+      "ms": 182.7,
+      "semilla": "A",
+      "veredicto": "ok"
+    },
+    "bmp>pdf": {
+      "estado": "real",
+      "ms": 220.8,
+      "semilla": "A",
+      "veredicto": "ok",
+      "motivo": "real en pixeles (RMSE 0,0032) y con la PAGINA MAL: -density hereda PixelsPerCentimeter del BMP y da 362,8x204,1 pt donde el resto da 921,6x518,4"
+    },
+    "bmp>png": {
+      "estado": "real",
+      "ms": 398.4,
+      "semilla": "A",
+      "veredicto": "ok"
+    },
+    "bmp>tif": {
+      "estado": "real",
+      "ms": 117.7,
+      "semilla": "A",
+      "veredicto": "ok"
+    },
+    "bmp>webp": {
+      "estado": "real",
+      "ms": 252.6,
+      "semilla": "A",
+      "veredicto": "ok"
+    },
+    "gif>avif": {
+      "estado": "real",
+      "ms": 888.9,
+      "semilla": "A",
+      "veredicto": "ok_parcial"
+    },
+    "gif>bmp": {
+      "estado": "real",
+      "ms": 88.6,
+      "semilla": "A",
+      "veredicto": "ok_parcial"
+    },
+    "gif>ico": {
+      "estado": "real",
+      "ms": 29.1,
+      "semilla": "D-256px",
+      "veredicto": "ok_parcial",
+      "motivo": "real solo hasta 256 px de lado; 257-512 px devuelve rc=0 y escribe ancho&0xFF en el ICONDIRENTRY (Pillow lee 320x180 como 64x180); >=513 px, rc=1"
+    },
+    "gif>jpg": {
+      "estado": "real",
+      "ms": 226.8,
+      "semilla": "A",
+      "veredicto": "ok_parcial"
+    },
+    "gif>pdf": {
+      "estado": "real",
+      "ms": 247.6,
+      "semilla": "A",
+      "veredicto": "ok_parcial"
+    },
+    "gif>png": {
+      "estado": "real",
+      "ms": 508.8,
+      "semilla": "A",
+      "veredicto": "ok_parcial",
+      "motivo": "real y exacto (RMSE 0,000000); con un GIF de 2 colores el PNG sale a 2 bits de indice y el contrato lo declara fallo por I4"
+    },
+    "gif>tif": {
+      "estado": "real",
+      "ms": 85.8,
+      "semilla": "A",
+      "veredicto": "ok_parcial"
+    },
+    "gif>webp": {
+      "estado": "real",
+      "ms": 246.7,
+      "semilla": "A",
+      "veredicto": "ok_parcial"
+    },
+    "ico>avif": {
+      "estado": "real",
+      "ms": 70.2,
+      "semilla": "A",
+      "veredicto": "ok"
+    },
+    "ico>bmp": {
+      "estado": "real",
+      "ms": 29.9,
+      "semilla": "A",
+      "veredicto": "ok_parcial"
+    },
+    "ico>gif": {
+      "estado": "real",
+      "ms": 92.7,
+      "semilla": "A",
+      "veredicto": "ok"
+    },
+    "ico>jpg": {
+      "estado": "real",
+      "ms": 33.5,
+      "semilla": "A",
+      "veredicto": "ok"
+    },
+    "ico>pdf": {
+      "estado": "real",
+      "ms": 33.3,
+      "semilla": "A",
+      "veredicto": "ok"
+    },
+    "ico>png": {
+      "estado": "real",
+      "ms": 139.3,
+      "semilla": "A",
+      "veredicto": "ok"
+    },
+    "ico>tif": {
+      "estado": "real",
+      "ms": 32.0,
+      "semilla": "A",
+      "veredicto": "ok"
+    },
+    "ico>webp": {
+      "estado": "real",
+      "ms": 32.7,
+      "semilla": "A",
+      "veredicto": "ok"
+    },
+    "jpg>avif": {
+      "estado": "real",
+      "ms": 550.0,
+      "semilla": "A",
+      "veredicto": "ok"
+    },
+    "jpg>bmp": {
+      "estado": "real",
+      "ms": 96.3,
+      "semilla": "A",
+      "veredicto": "ok_parcial"
+    },
+    "jpg>gif": {
+      "estado": "real",
+      "ms": 757.9,
+      "semilla": "A",
+      "veredicto": "ok"
+    },
+    "jpg>ico": {
+      "estado": "real",
+      "ms": 30.1,
+      "semilla": "D-256px",
+      "veredicto": "ok_parcial",
+      "motivo": "real solo hasta 256 px de lado; 257-512 px devuelve rc=0 y escribe ancho&0xFF en el ICONDIRENTRY (Pillow lee 320x180 como 64x180); >=513 px, rc=1"
+    },
+    "jpg>pdf": {
+      "estado": "real",
+      "ms": 140.2,
+      "semilla": "A",
+      "veredicto": "ok"
+    },
+    "jpg>png": {
+      "estado": "real",
+      "ms": 386.6,
+      "semilla": "A",
+      "veredicto": "ok"
+    },
+    "jpg>tif": {
+      "estado": "real",
+      "ms": 99.3,
+      "semilla": "A",
+      "veredicto": "ok"
+    },
+    "jpg>webp": {
+      "estado": "real",
+      "ms": 222.0,
+      "semilla": "A",
+      "veredicto": "ok"
+    },
+    "png>bmp": {
+      "estado": "real",
+      "ms": 221.8,
+      "semilla": "A",
+      "veredicto": "ok_parcial"
+    },
+    "png>gif": {
+      "estado": "real",
+      "ms": 920.5,
+      "semilla": "A",
+      "veredicto": "ok_parcial"
+    },
+    "png>ico": {
+      "estado": "real",
+      "ms": 32.8,
+      "semilla": "D-256px",
+      "veredicto": "ok_parcial",
+      "motivo": "real solo hasta 256 px de lado; 257-512 px devuelve rc=0 y escribe ancho&0xFF en el ICONDIRENTRY (Pillow lee 320x180 como 64x180); >=513 px, rc=1"
+    },
+    "png>tif": {
+      "estado": "real",
+      "ms": 288.4,
+      "semilla": "A",
+      "veredicto": "ok_parcial"
+    },
+    "svg>jpg": {
+      "estado": "real",
+      "ms": 191.6,
+      "semilla": "A",
+      "veredicto": "ok"
+    },
+    "svg>png": {
+      "estado": "real",
+      "ms": 97.6,
+      "semilla": "A",
+      "veredicto": "ok"
+    },
+    "svg>webp": {
+      "estado": "real",
+      "ms": 88.0,
+      "semilla": "A",
+      "veredicto": "ok"
+    },
+    "tif>avif": {
+      "estado": "real",
+      "ms": 914.7,
+      "semilla": "A",
+      "veredicto": "ok_parcial"
+    },
+    "tif>bmp": {
+      "estado": "real",
+      "ms": 167.5,
+      "semilla": "A",
+      "veredicto": "ok_parcial"
+    },
+    "tif>gif": {
+      "estado": "real",
+      "ms": 831.0,
+      "semilla": "A",
+      "veredicto": "ok_parcial"
+    },
+    "tif>ico": {
+      "estado": "real",
+      "ms": 30.4,
+      "semilla": "D-256px",
+      "veredicto": "ok_parcial",
+      "motivo": "real solo hasta 256 px de lado; 257-512 px devuelve rc=0 y escribe ancho&0xFF en el ICONDIRENTRY (Pillow lee 320x180 como 64x180); >=513 px, rc=1"
+    },
+    "tif>jpg": {
+      "estado": "real",
+      "ms": 241.7,
+      "semilla": "A",
+      "veredicto": "ok_parcial"
+    },
+    "tif>pdf": {
+      "estado": "real",
+      "ms": 202.0,
+      "semilla": "A",
+      "veredicto": "ok_parcial"
+    },
+    "tif>webp": {
+      "estado": "real",
+      "ms": 285.2,
+      "semilla": "A",
+      "veredicto": "ok_parcial"
+    },
+    "webp>avif": {
+      "estado": "real",
+      "ms": 575.5,
+      "semilla": "A",
+      "veredicto": "ok"
+    },
+    "webp>bmp": {
+      "estado": "real",
+      "ms": 94.0,
+      "semilla": "A",
+      "veredicto": "ok_parcial"
+    },
+    "webp>gif": {
+      "estado": "real",
+      "ms": 806.7,
+      "semilla": "A",
+      "veredicto": "ok"
+    },
+    "webp>ico": {
+      "estado": "real",
+      "ms": 30.3,
+      "semilla": "D-256px",
+      "veredicto": "ok_parcial",
+      "motivo": "real solo hasta 256 px de lado; 257-512 px devuelve rc=0 y escribe ancho&0xFF en el ICONDIRENTRY (Pillow lee 320x180 como 64x180); >=513 px, rc=1"
+    },
+    "webp>jpg": {
+      "estado": "real",
+      "ms": 196.7,
+      "semilla": "A",
+      "veredicto": "ok"
+    },
+    "webp>pdf": {
+      "estado": "real",
+      "ms": 334.0,
+      "semilla": "A",
+      "veredicto": "ok"
+    },
+    "webp>png": {
+      "estado": "real",
+      "ms": 332.0,
+      "semilla": "A",
+      "veredicto": "ok"
+    },
+    "webp>tif": {
+      "estado": "real",
+      "ms": 98.5,
+      "semilla": "A",
+      "veredicto": "ok"
+    }
   }
- }
 }

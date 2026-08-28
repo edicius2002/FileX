@@ -1,111 +1,111 @@
 {
- "motor": "doc_pandoc",
- "build": "doc_pandoc 29.4.3 · filex-c13@6d359bad483e",
- "fecha": "2026-08-22",
- "informe": "bench/sondeo-documental.md",
- "nota": "n=1 por arista, tanda SUCIA (sesión remota activa) y con dos agentes más trabajando: los ms desempatan dentro de este informe, NO se comparan con los de otro. El `build` lleva el ID de la imagen: en otra máquina esto no se aplica.",
- "huella": {
-  "motor": "9f5c1c380dc78847",
-  "invocacion": "de4a69976377acb8",
-  "contrato": "6af6b556299be217"
- },
- "nota_huella": "Sellado el 2026-08-23 por D1 con la huella del codigo vigente, NO resondeado. Estas medidas se tomaron con este mismo codigo: `motores.py`/`motor_contenedor.py` e `invocacion.py` no han cambiado desde que se midieron, y el unico cambio posterior del contrato (9f99cae, sobre `_datos` y `_pdf`) es MONOTONAMENTE MAS PERMISIVO -solo convierte `fallo` en `aviso`/`ok`-, asi que ningun `real` de aqui puede ser falso por su causa. Razonamiento y controles en `bench/deuda-sondeo.md` 3.3.",
- "aristas": {
-  "docx>odt": {
-   "estado": "real",
-   "ms": 3453.7,
-   "motivo": "7203 B, 515 caracteres, contrato ok_parcial",
-   "caso": "S10"
+  "motor": "doc_pandoc",
+  "build": "doc_pandoc 29.4.3 · filex-c13@6d359bad483e",
+  "fecha": "2026-08-28",
+  "informe": "bench/sondeo-documental.md",
+  "nota": "n=1 por arista, tanda SUCIA (sesión remota activa) y con dos agentes más trabajando: los ms desempatan dentro de este informe, NO se comparan con los de otro. El `build` lleva el ID de la imagen: en otra máquina esto no se aplica.",
+  "huella": {
+    "motor": "a456af70d46d7aac",
+    "invocacion": "a7d20dd250f5f00a",
+    "contrato": "6af6b556299be217"
   },
-  "docx>tex": {
-   "estado": "real",
-   "ms": 1709.9,
-   "motivo": "2698 B, 2649 caracteres, centinela OK; el contrato marca fallo ['D2'] — falso positivo del verificador sobre texto plano, que sondea como CSV (d2.json §A)",
-   "caso": "Q13"
-  },
-  "epub>docx": {
-   "estado": "real",
-   "ms": 1680.2,
-   "motivo": "10993 B, 635 caracteres, contrato ok_parcial",
-   "caso": "S11"
-  },
-  "epub>txt": {
-   "estado": "real",
-   "ms": 938.2,
-   "motivo": "566 B, 514 caracteres, centinela OK; el contrato marca fallo ['D2'] — falso positivo del verificador sobre texto plano, que sondea como CSV (d2.json §A)",
-   "caso": "S12"
-  },
-  "html>epub": {
-   "estado": "real",
-   "ms": 5869.1,
-   "motivo": "5286 B, 554 caracteres, contrato ok_parcial",
-   "caso": "S07"
-  },
-  "html>odt": {
-   "estado": "real",
-   "ms": 1149.9,
-   "motivo": "7286 B, 543 caracteres, contrato ok_parcial",
-   "caso": "S08"
-  },
-  "html>rtf": {
-   "estado": "real",
-   "ms": 1044.4,
-   "motivo": "1756 B, 1754 caracteres, contrato ok",
-   "caso": "S09"
-  },
-  "md>pptx": {
-   "estado": "real",
-   "ms": 2069.4,
-   "motivo": "28170 B, 2218 caracteres, contrato ok_parcial",
-   "caso": "Q02"
-  },
-  "md>rtf": {
-   "estado": "real",
-   "ms": 989.5,
-   "motivo": "1700 B, 1698 caracteres, contrato ok",
-   "caso": "S15"
-  },
-  "md>tex": {
-   "estado": "real",
-   "ms": 1989.4,
-   "motivo": "2748 B, 2699 caracteres, centinela OK; el contrato marca fallo ['D1', 'D2', 'D4'] — falso positivo del verificador sobre texto plano, que sondea como CSV (d2.json §A)",
-   "caso": "Q12"
-  },
-  "pptx>md": {
-   "estado": "real",
-   "ms": 3356.9,
-   "motivo": "549 B, 499 caracteres, centinela OK; el contrato marca fallo ['D2'] — falso positivo del verificador sobre texto plano, que sondea como CSV (d2.json §A)",
-   "caso": "Q17"
-  },
-  "rtf>html": {
-   "estado": "real",
-   "ms": 2663.2,
-   "motivo": "4324 B, 3133 caracteres, contrato ok",
-   "caso": "S14"
-  },
-  "rtf>md": {
-   "estado": "real",
-   "ms": 877.7,
-   "motivo": "471 B, 466 caracteres, centinela OK; el contrato marca fallo ['D2'] — falso positivo del verificador sobre texto plano, que sondea como CSV (d2.json §A)",
-   "caso": "S13"
-  },
-  "tex>docx": {
-   "estado": "real",
-   "ms": 3868.4,
-   "motivo": "10771 B, 394 caracteres, contrato ok_parcial",
-   "caso": "Q14"
-  },
-  "tex>html": {
-   "estado": "real",
-   "ms": 4793.5,
-   "motivo": "4651 B, 2939 caracteres, contrato ok",
-   "caso": "Q15"
-  },
-  "tex>pdf": {
-   "estado": "real",
-   "ms": 44598.3,
-   "motivo": "9754 B, 268 caracteres, centinela OK; el contrato marca fallo P1 «el PDF no declara ninguna pagina» — el contador busca /Type/Page en bytes crudos y xelatex los comprime en flujos de objetos (d2.json §B, con control)",
-   "caso": "Q16"
+  "nota_huella": "Resondeado y sellado el 2026-08-28: estas medidas se tomaron con el codigo cuya huella esta arriba, no con uno anterior. Cierra el pendiente que dejo `bench/deuda-sondeo.md` 3.3, donde el sellado era ARGUMENTADO y no MEDIDO porque `verificador.py` habia cambiado despues de escribirse los ficheros.",
+  "aristas": {
+    "docx>odt": {
+      "estado": "real",
+      "ms": 736.1,
+      "motivo": "7203 B, 515 caracteres, contrato ok_parcial",
+      "caso": "S10"
+    },
+    "docx>tex": {
+      "estado": "real",
+      "ms": 729.8,
+      "motivo": "2698 B, 2649 caracteres, contrato ok",
+      "caso": "Q13"
+    },
+    "epub>docx": {
+      "estado": "real",
+      "ms": 873.4,
+      "motivo": "10992 B, 635 caracteres, contrato ok_parcial",
+      "caso": "S11"
+    },
+    "epub>txt": {
+      "estado": "real",
+      "ms": 1092.3,
+      "motivo": "566 B, 514 caracteres, contrato ok",
+      "caso": "S12"
+    },
+    "html>epub": {
+      "estado": "real",
+      "ms": 1324.4,
+      "motivo": "5284 B, 554 caracteres, contrato ok_parcial",
+      "caso": "S07"
+    },
+    "html>odt": {
+      "estado": "real",
+      "ms": 2043.3,
+      "motivo": "7286 B, 543 caracteres, contrato ok_parcial",
+      "caso": "S08"
+    },
+    "html>rtf": {
+      "estado": "real",
+      "ms": 676.0,
+      "motivo": "1756 B, 1754 caracteres, contrato ok",
+      "caso": "S09"
+    },
+    "md>pptx": {
+      "estado": "real",
+      "ms": 962.0,
+      "motivo": "28169 B, 2218 caracteres, contrato ok_parcial",
+      "caso": "Q02"
+    },
+    "md>rtf": {
+      "estado": "real",
+      "ms": 780.0,
+      "motivo": "1700 B, 1698 caracteres, contrato ok",
+      "caso": "S15"
+    },
+    "md>tex": {
+      "estado": "real",
+      "ms": 721.7,
+      "motivo": "2748 B, 2699 caracteres, contrato ok",
+      "caso": "Q12"
+    },
+    "pptx>md": {
+      "estado": "real",
+      "ms": 676.2,
+      "motivo": "549 B, 499 caracteres, contrato ok",
+      "caso": "Q17"
+    },
+    "rtf>html": {
+      "estado": "real",
+      "ms": 1002.6,
+      "motivo": "4324 B, 3133 caracteres, contrato ok",
+      "caso": "S14"
+    },
+    "rtf>md": {
+      "estado": "real",
+      "ms": 914.1,
+      "motivo": "471 B, 466 caracteres, contrato ok",
+      "caso": "S13"
+    },
+    "tex>docx": {
+      "estado": "real",
+      "ms": 706.5,
+      "motivo": "10771 B, 394 caracteres, contrato ok_parcial",
+      "caso": "Q14"
+    },
+    "tex>html": {
+      "estado": "real",
+      "ms": 730.7,
+      "motivo": "4651 B, 2939 caracteres, contrato ok",
+      "caso": "Q15"
+    },
+    "tex>pdf": {
+      "estado": "real",
+      "ms": 5610.0,
+      "motivo": "9754 B, 268 caracteres, contrato aviso",
+      "caso": "Q16"
+    }
   }
- }
 }
