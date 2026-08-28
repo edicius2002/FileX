@@ -1,0 +1,2399 @@
+{
+ "total": {
+  "inv": 229,
+  "roto": 641,
+  "creado": 126,
+  "pares": 21544,
+  "fam_inv": 56,
+  "fam_argmin": 100
+ },
+ "por_informe": {
+  "ocr-ppp-nativos.md": {
+   "fam": 78,
+   "inv": 4,
+   "pares": 2084,
+   "argmin": 21,
+   "roto": 244
+  },
+  "ocrmypdf.md": {
+   "fam": 154,
+   "inv": 2,
+   "pares": 2448,
+   "argmin": 10,
+   "roto": 102
+  },
+  "corpus-d4.md": {
+   "fam": 58,
+   "inv": 108,
+   "pares": 5237,
+   "argmin": 5,
+   "roto": 64
+  },
+  "corpus-d5.md": {
+   "fam": 161,
+   "inv": 10,
+   "pares": 419,
+   "argmin": 17,
+   "roto": 18
+  },
+  "k-por-motor.md": {
+   "fam": 80,
+   "inv": 37,
+   "pares": 3022,
+   "argmin": 19,
+   "roto": 70
+  },
+  "ppp-y-normalizacion.md": {
+   "fam": 93,
+   "inv": 35,
+   "pares": 2297,
+   "argmin": 12,
+   "roto": 90
+  },
+  "psm-y-rasterizador.md": {
+   "fam": 185,
+   "inv": 28,
+   "pares": 3373,
+   "argmin": 15,
+   "roto": 53
+  },
+  "phys-multimotor.md": {
+   "fam": 234,
+   "inv": 5,
+   "pares": 2664,
+   "argmin": 1,
+   "roto": 0
+  }
+ },
+ "detalles": [
+  {
+   "informe": "ocr-ppp-nativos.md",
+   "doc": "escaneado_d1",
+   "eje_pos": 0,
+   "patron": "*__extg__escaneado_d1",
+   "n": 7,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "doclingimg_torch_cuda",
+    "easyocr_cuda",
+    "easyocr_cuda_t",
+    "paddleocr_cuda",
+    "paddleocr_cuda_t",
+    "rapidocr_cuda",
+    "rapidocr_cuda_t"
+   ],
+   "ganador_acentuada": [
+    "doclingimg_torch_cuda",
+    "paddleocr_cuda",
+    "paddleocr_cuda_t",
+    "rapidocr_cuda",
+    "rapidocr_cuda_t"
+   ]
+  },
+  {
+   "informe": "ocr-ppp-nativos.md",
+   "doc": "escaneado_d1",
+   "eje_pos": 0,
+   "patron": "*__ext__escaneado_d1",
+   "n": 7,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "doclingimg_torch_cuda",
+    "easyocr_cuda",
+    "easyocr_cuda_t",
+    "paddleocr_cuda",
+    "paddleocr_cuda_t",
+    "rapidocr_cuda",
+    "rapidocr_cuda_t"
+   ],
+   "ganador_acentuada": [
+    "doclingimg_torch_cuda",
+    "paddleocr_cuda",
+    "paddleocr_cuda_t",
+    "rapidocr_cuda",
+    "rapidocr_cuda_t"
+   ]
+  },
+  {
+   "informe": "ocr-ppp-nativos.md",
+   "doc": "escaneado_d1",
+   "eje_pos": 0,
+   "patron": "*__ppp125__escaneado_d1",
+   "n": 7,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "docling_torch_cuda",
+    "easyocr_cuda",
+    "easyocr_cuda_t",
+    "paddleocr_cuda",
+    "paddleocr_cuda_t",
+    "rapidocr_cuda",
+    "rapidocr_cuda_t"
+   ],
+   "ganador_acentuada": [
+    "docling_torch_cuda",
+    "paddleocr_cuda",
+    "paddleocr_cuda_t",
+    "rapidocr_cuda",
+    "rapidocr_cuda_t"
+   ]
+  },
+  {
+   "informe": "ocr-ppp-nativos.md",
+   "doc": "patologico_escaneado",
+   "eje_pos": 0,
+   "patron": "*__ppp125__patologico_escaneado",
+   "n": 7,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "docling_torch_cuda",
+    "easyocr_cuda",
+    "easyocr_cuda_t",
+    "paddleocr_cuda",
+    "paddleocr_cuda_t"
+   ],
+   "ganador_acentuada": [
+    "docling_torch_cuda",
+    "paddleocr_cuda",
+    "paddleocr_cuda_t"
+   ]
+  },
+  {
+   "informe": "ocr-ppp-nativos.md",
+   "doc": "escaneado_d1",
+   "eje_pos": 0,
+   "patron": "*__ppp150__escaneado_d1",
+   "n": 7,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "docling_torch_cuda",
+    "easyocr_cuda",
+    "easyocr_cuda_t",
+    "paddleocr_cuda",
+    "paddleocr_cuda_t",
+    "rapidocr_cuda",
+    "rapidocr_cuda_t"
+   ],
+   "ganador_acentuada": [
+    "docling_torch_cuda",
+    "paddleocr_cuda",
+    "paddleocr_cuda_t",
+    "rapidocr_cuda",
+    "rapidocr_cuda_t"
+   ]
+  },
+  {
+   "informe": "ocr-ppp-nativos.md",
+   "doc": "escaneado_d1",
+   "eje_pos": 0,
+   "patron": "*__ppp175__escaneado_d1",
+   "n": 7,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "docling_torch_cuda",
+    "easyocr_cuda",
+    "easyocr_cuda_t",
+    "paddleocr_cuda",
+    "paddleocr_cuda_t",
+    "rapidocr_cuda",
+    "rapidocr_cuda_t"
+   ],
+   "ganador_acentuada": [
+    "docling_torch_cuda",
+    "paddleocr_cuda",
+    "paddleocr_cuda_t",
+    "rapidocr_cuda",
+    "rapidocr_cuda_t"
+   ]
+  },
+  {
+   "informe": "ocr-ppp-nativos.md",
+   "doc": "escaneado_d2",
+   "eje_pos": 0,
+   "patron": "*__ppp175__escaneado_d2",
+   "n": 7,
+   "inversiones": 4,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "docling_torch_cuda",
+    "paddleocr_cuda",
+    "paddleocr_cuda_t"
+   ],
+   "ganador_acentuada": [
+    "docling_torch_cuda"
+   ]
+  },
+  {
+   "informe": "ocr-ppp-nativos.md",
+   "doc": "escaneado_d3",
+   "eje_pos": 0,
+   "patron": "*__ppp200__escaneado_d3",
+   "n": 7,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "docling_torch_cuda"
+   ],
+   "ganador_acentuada": [
+    "docling_torch_cuda",
+    "easyocr_cuda",
+    "easyocr_cuda_t"
+   ]
+  },
+  {
+   "informe": "ocr-ppp-nativos.md",
+   "doc": "escaneado_d1",
+   "eje_pos": 0,
+   "patron": "*__ppp250__escaneado_d1",
+   "n": 7,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "docling_torch_cuda",
+    "easyocr_cuda",
+    "easyocr_cuda_t",
+    "paddleocr_cuda",
+    "paddleocr_cuda_t",
+    "rapidocr_cuda",
+    "rapidocr_cuda_t"
+   ],
+   "ganador_acentuada": [
+    "docling_torch_cuda",
+    "paddleocr_cuda",
+    "paddleocr_cuda_t",
+    "rapidocr_cuda",
+    "rapidocr_cuda_t"
+   ]
+  },
+  {
+   "informe": "ocr-ppp-nativos.md",
+   "doc": "escaneado_d2",
+   "eje_pos": 0,
+   "patron": "*__ppp250__escaneado_d2",
+   "n": 7,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "docling_torch_cuda",
+    "paddleocr_cuda",
+    "paddleocr_cuda_t",
+    "rapidocr_cuda",
+    "rapidocr_cuda_t"
+   ],
+   "ganador_acentuada": [
+    "docling_torch_cuda",
+    "rapidocr_cuda",
+    "rapidocr_cuda_t"
+   ]
+  },
+  {
+   "informe": "ocr-ppp-nativos.md",
+   "doc": "patologico_escaneado",
+   "eje_pos": 0,
+   "patron": "*__ppp250__patologico_escaneado",
+   "n": 7,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "docling_torch_cuda",
+    "easyocr_cuda",
+    "easyocr_cuda_t",
+    "paddleocr_cuda",
+    "paddleocr_cuda_t",
+    "rapidocr_cuda",
+    "rapidocr_cuda_t"
+   ],
+   "ganador_acentuada": [
+    "docling_torch_cuda",
+    "paddleocr_cuda",
+    "paddleocr_cuda_t",
+    "rapidocr_cuda",
+    "rapidocr_cuda_t"
+   ]
+  },
+  {
+   "informe": "ocr-ppp-nativos.md",
+   "doc": "escaneado_d1",
+   "eje_pos": 0,
+   "patron": "*__ppp300__escaneado_d1",
+   "n": 7,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "docling_torch_cuda",
+    "easyocr_cuda",
+    "easyocr_cuda_t",
+    "paddleocr_cuda",
+    "paddleocr_cuda_t",
+    "rapidocr_cuda",
+    "rapidocr_cuda_t"
+   ],
+   "ganador_acentuada": [
+    "docling_torch_cuda",
+    "paddleocr_cuda",
+    "paddleocr_cuda_t",
+    "rapidocr_cuda",
+    "rapidocr_cuda_t"
+   ]
+  },
+  {
+   "informe": "ocr-ppp-nativos.md",
+   "doc": "escaneado_d2",
+   "eje_pos": 0,
+   "patron": "*__ppp300__escaneado_d2",
+   "n": 7,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "docling_torch_cuda",
+    "paddleocr_cuda",
+    "paddleocr_cuda_t",
+    "rapidocr_cuda",
+    "rapidocr_cuda_t"
+   ],
+   "ganador_acentuada": [
+    "docling_torch_cuda",
+    "rapidocr_cuda",
+    "rapidocr_cuda_t"
+   ]
+  },
+  {
+   "informe": "ocr-ppp-nativos.md",
+   "doc": "patologico_escaneado",
+   "eje_pos": 0,
+   "patron": "*__ppp75__patologico_escaneado",
+   "n": 7,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "docling_torch_cuda",
+    "easyocr_cuda",
+    "easyocr_cuda_t",
+    "paddleocr_cuda",
+    "paddleocr_cuda_t",
+    "rapidocr_cuda",
+    "rapidocr_cuda_t"
+   ],
+   "ganador_acentuada": [
+    "docling_torch_cuda",
+    "paddleocr_cuda",
+    "paddleocr_cuda_t",
+    "rapidocr_cuda",
+    "rapidocr_cuda_t"
+   ]
+  },
+  {
+   "informe": "ocr-ppp-nativos.md",
+   "doc": "escaneado_d1",
+   "eje_pos": 1,
+   "patron": "easyocr_cuda_t__*__escaneado_d1",
+   "n": 10,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "ext",
+    "extg",
+    "ppp125",
+    "ppp150",
+    "ppp175",
+    "ppp200",
+    "ppp250",
+    "ppp300"
+   ],
+   "ganador_acentuada": [
+    "ppp200"
+   ]
+  },
+  {
+   "informe": "ocr-ppp-nativos.md",
+   "doc": "patologico_escaneado",
+   "eje_pos": 1,
+   "patron": "easyocr_cuda_t__*__patologico_escaneado",
+   "n": 10,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "ext",
+    "extg",
+    "ppp100",
+    "ppp125",
+    "ppp150",
+    "ppp175",
+    "ppp200",
+    "ppp250",
+    "ppp300",
+    "ppp75"
+   ],
+   "ganador_acentuada": [
+    "ext",
+    "extg",
+    "ppp100",
+    "ppp150",
+    "ppp175",
+    "ppp200",
+    "ppp300"
+   ]
+  },
+  {
+   "informe": "ocr-ppp-nativos.md",
+   "doc": "escaneado_d1",
+   "eje_pos": 1,
+   "patron": "easyocr_cuda__*__escaneado_d1",
+   "n": 10,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "ext",
+    "extg",
+    "ppp125",
+    "ppp150",
+    "ppp175",
+    "ppp200",
+    "ppp250",
+    "ppp300"
+   ],
+   "ganador_acentuada": [
+    "ppp200"
+   ]
+  },
+  {
+   "informe": "ocr-ppp-nativos.md",
+   "doc": "patologico_escaneado",
+   "eje_pos": 1,
+   "patron": "easyocr_cuda__*__patologico_escaneado",
+   "n": 10,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "ext",
+    "extg",
+    "ppp100",
+    "ppp125",
+    "ppp150",
+    "ppp175",
+    "ppp200",
+    "ppp250",
+    "ppp300",
+    "ppp75"
+   ],
+   "ganador_acentuada": [
+    "ext",
+    "extg",
+    "ppp100",
+    "ppp150",
+    "ppp175",
+    "ppp200",
+    "ppp300"
+   ]
+  },
+  {
+   "informe": "ocr-ppp-nativos.md",
+   "doc": "escaneado_d3",
+   "eje_pos": 1,
+   "patron": "paddleocr_cuda_rodilla__*__escaneado_d3",
+   "n": 4,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "ppp130"
+   ],
+   "ganador_acentuada": [
+    "ppp110",
+    "ppp130",
+    "ppp140"
+   ]
+  },
+  {
+   "informe": "ocr-ppp-nativos.md",
+   "doc": "escaneado_d2",
+   "eje_pos": 1,
+   "patron": "paddleocr_cuda_t__*__escaneado_d2",
+   "n": 10,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "ext",
+    "extg",
+    "ppp100",
+    "ppp125",
+    "ppp150",
+    "ppp175",
+    "ppp200",
+    "ppp250",
+    "ppp300",
+    "ppp75"
+   ],
+   "ganador_acentuada": [
+    "ext",
+    "extg",
+    "ppp100",
+    "ppp125",
+    "ppp150",
+    "ppp200",
+    "ppp75"
+   ]
+  },
+  {
+   "informe": "ocr-ppp-nativos.md",
+   "doc": "escaneado_d2",
+   "eje_pos": 1,
+   "patron": "paddleocr_cuda__*__escaneado_d2",
+   "n": 10,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "ext",
+    "extg",
+    "ppp100",
+    "ppp125",
+    "ppp150",
+    "ppp175",
+    "ppp200",
+    "ppp250",
+    "ppp300",
+    "ppp75"
+   ],
+   "ganador_acentuada": [
+    "ext",
+    "extg",
+    "ppp100",
+    "ppp125",
+    "ppp150",
+    "ppp200",
+    "ppp75"
+   ]
+  },
+  {
+   "informe": "ocrmypdf.md",
+   "doc": "escaneado_d2",
+   "eje_pos": 1,
+   "patron": "paddleocr_cuda_m__*__escaneado_d2",
+   "n": 17,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "m_ppp100",
+    "m_ppp100_ds",
+    "m_ppp125",
+    "m_ppp125_ds",
+    "m_ppp150",
+    "m_ppp150_ds",
+    "m_ppp175",
+    "m_ppp175_ds",
+    "m_ppp200",
+    "m_ppp200_ds",
+    "m_ppp250",
+    "m_ppp250_ds",
+    "m_ppp300",
+    "m_ppp300_ds",
+    "m_ppp75",
+    "m_ppp75_ds",
+    "nat"
+   ],
+   "ganador_acentuada": [
+    "m_ppp100",
+    "m_ppp100_ds",
+    "m_ppp125",
+    "m_ppp125_ds",
+    "m_ppp150",
+    "m_ppp175_ds",
+    "m_ppp200",
+    "m_ppp200_ds",
+    "m_ppp300_ds",
+    "m_ppp75",
+    "m_ppp75_ds",
+    "nat"
+   ]
+  },
+  {
+   "informe": "ocrmypdf.md",
+   "doc": "escaneado_d3",
+   "eje_pos": 1,
+   "patron": "paddleocr_cuda_m__*__escaneado_d3",
+   "n": 17,
+   "inversiones": 1,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "m_ppp100",
+    "m_ppp125_ds",
+    "m_ppp175_ds",
+    "nat"
+   ],
+   "ganador_acentuada": [
+    "m_ppp100",
+    "m_ppp125_ds",
+    "nat"
+   ]
+  },
+  {
+   "informe": "ocrmypdf.md",
+   "doc": "escaneado_d2",
+   "eje_pos": 0,
+   "patron": "*__m_ppp150_ds__escaneado_d2",
+   "n": 2,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "paddleocr_cuda_m",
+    "rapidocr_cuda_m"
+   ],
+   "ganador_acentuada": [
+    "rapidocr_cuda_m"
+   ]
+  },
+  {
+   "informe": "ocrmypdf.md",
+   "doc": "escaneado_d2",
+   "eje_pos": 0,
+   "patron": "*__m_ppp175__escaneado_d2",
+   "n": 2,
+   "inversiones": 1,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "paddleocr_cuda_m"
+   ],
+   "ganador_acentuada": [
+    "rapidocr_cuda_m"
+   ]
+  },
+  {
+   "informe": "ocrmypdf.md",
+   "doc": "escaneado_d2",
+   "eje_pos": 0,
+   "patron": "*__m_ppp250_ds__escaneado_d2",
+   "n": 2,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "paddleocr_cuda_m",
+    "rapidocr_cuda_m"
+   ],
+   "ganador_acentuada": [
+    "rapidocr_cuda_m"
+   ]
+  },
+  {
+   "informe": "ocrmypdf.md",
+   "doc": "escaneado_d2",
+   "eje_pos": 0,
+   "patron": "*__m_ppp250__escaneado_d2",
+   "n": 2,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "paddleocr_cuda_m",
+    "rapidocr_cuda_m"
+   ],
+   "ganador_acentuada": [
+    "rapidocr_cuda_m"
+   ]
+  },
+  {
+   "informe": "ocrmypdf.md",
+   "doc": "escaneado_d2",
+   "eje_pos": 0,
+   "patron": "*__m_ppp300__escaneado_d2",
+   "n": 2,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "paddleocr_cuda_m",
+    "rapidocr_cuda_m"
+   ],
+   "ganador_acentuada": [
+    "rapidocr_cuda_m"
+   ]
+  },
+  {
+   "informe": "ocrmypdf.md",
+   "doc": "escaneado_d2",
+   "eje_pos": 1,
+   "patron": "paddleocr_cuda__*__escaneado_d2",
+   "n": 16,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "base",
+    "clean",
+    "clean_os300",
+    "ctrlmagickdeskew",
+    "ctrlppp100",
+    "ctrlppp150",
+    "ctrlppp200",
+    "ctrlppp300",
+    "ctrlppp400",
+    "ctrlppp600",
+    "deskew",
+    "deskew_os300",
+    "os300",
+    "os400",
+    "rotate",
+    "todo"
+   ],
+   "ganador_acentuada": [
+    "base",
+    "clean",
+    "clean_os300",
+    "ctrlmagickdeskew",
+    "ctrlppp100",
+    "ctrlppp150",
+    "ctrlppp200",
+    "ctrlppp600",
+    "deskew",
+    "deskew_os300",
+    "os300",
+    "os400",
+    "rotate",
+    "todo"
+   ]
+  },
+  {
+   "informe": "ocrmypdf.md",
+   "doc": "escaneado_d2",
+   "eje_pos": 0,
+   "patron": "*__ctrlppp300__escaneado_d2",
+   "n": 2,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "paddleocr_cuda",
+    "rapidocr_cuda"
+   ],
+   "ganador_acentuada": [
+    "rapidocr_cuda"
+   ]
+  },
+  {
+   "informe": "ocrmypdf.md",
+   "doc": "escaneado_d2",
+   "eje_pos": 0,
+   "patron": "*__ctrlppp400__escaneado_d2",
+   "n": 2,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "paddleocr_cuda",
+    "rapidocr_cuda"
+   ],
+   "ganador_acentuada": [
+    "rapidocr_cuda"
+   ]
+  },
+  {
+   "informe": "corpus-d4.md",
+   "doc": "escaneado_d4",
+   "eje_pos": 0,
+   "patron": "*__ppp200__escaneado_d4",
+   "n": 61,
+   "inversiones": 21,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "paddleocr_cuda_f3_detM_recS"
+   ],
+   "ganador_acentuada": [
+    "paddleocr_cuda_f3_v5_latin"
+   ]
+  },
+  {
+   "informe": "corpus-d4.md",
+   "doc": "escaneado_d4c",
+   "eje_pos": 0,
+   "patron": "*__ppp200__escaneado_d4c",
+   "n": 56,
+   "inversiones": 87,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "paddleocr_cuda_criba",
+    "paddleocr_cuda_f3_detS_recM",
+    "paddleocr_cuda_f3_lang_en",
+    "paddleocr_cuda_f3_lang_es",
+    "paddleocr_cuda_f3_v6med",
+    "paddleocr_cuda_f3d_v6med_box05",
+    "paddleocr_cuda_f3d_v6med_lim736",
+    "paddleocr_cuda_t",
+    "paddleocr_cuda_vram"
+   ],
+   "ganador_acentuada": [
+    "paddleocr_cuda_criba",
+    "paddleocr_cuda_f3_lang_en",
+    "paddleocr_cuda_f3_lang_es",
+    "paddleocr_cuda_f3_v6med",
+    "paddleocr_cuda_f3d_v6med_box05",
+    "paddleocr_cuda_f3d_v6med_lim736",
+    "paddleocr_cuda_t",
+    "paddleocr_cuda_vram"
+   ]
+  },
+  {
+   "informe": "corpus-d4.md",
+   "doc": "escaneado_d2",
+   "eje_pos": 0,
+   "patron": "*__ppp200__escaneado_d2",
+   "n": 6,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "paddleocr_cpu_f4_cpu",
+    "paddleocr_cuda_f4_cuda",
+    "rapidocr_cpu_f4corr_cpu",
+    "rapidocr_cuda_f4corr_cuda"
+   ],
+   "ganador_acentuada": [
+    "paddleocr_cpu_f4_cpu",
+    "paddleocr_cuda_f4_cuda"
+   ]
+  },
+  {
+   "informe": "corpus-d4.md",
+   "doc": "escaneado_d2",
+   "eje_pos": 1,
+   "patron": "rapidocr_cpu_f4corr_cpu__*__escaneado_d2",
+   "n": 2,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "ppp100",
+    "ppp200"
+   ],
+   "ganador_acentuada": [
+    "ppp100"
+   ]
+  },
+  {
+   "informe": "corpus-d4.md",
+   "doc": "escaneado_d2",
+   "eje_pos": 1,
+   "patron": "rapidocr_cuda_f4corr_cuda__*__escaneado_d2",
+   "n": 2,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "ppp100",
+    "ppp200"
+   ],
+   "ganador_acentuada": [
+    "ppp100"
+   ]
+  },
+  {
+   "informe": "corpus-d5.md",
+   "doc": "escaneado_d4c",
+   "eje_pos": 3,
+   "patron": "escaneado_d4c__magick__ppp200__*__eng",
+   "n": 3,
+   "inversiones": 1,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "psm11"
+   ],
+   "ganador_acentuada": [
+    "psm3"
+   ]
+  },
+  {
+   "informe": "corpus-d5.md",
+   "doc": "escaneado_d4",
+   "eje_pos": 4,
+   "patron": "escaneado_d4__magick__ppp200__psm3__*",
+   "n": 2,
+   "inversiones": 1,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "eng"
+   ],
+   "ganador_acentuada": [
+    "spa"
+   ]
+  },
+  {
+   "informe": "corpus-d5.md",
+   "doc": "escaneado_d5a",
+   "eje_pos": 3,
+   "patron": "escaneado_d5a__gs__ppp90__*__spa",
+   "n": 2,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "psm11",
+    "psm3"
+   ],
+   "ganador_acentuada": [
+    "psm3"
+   ]
+  },
+  {
+   "informe": "corpus-d5.md",
+   "doc": "escaneado_d5a",
+   "eje_pos": 2,
+   "patron": "escaneado_d5a__magick__*__psm11__spa",
+   "n": 7,
+   "inversiones": 1,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "ppp150"
+   ],
+   "ganador_acentuada": [
+    "ppp125"
+   ]
+  },
+  {
+   "informe": "corpus-d5.md",
+   "doc": "escaneado_d5a",
+   "eje_pos": 2,
+   "patron": "escaneado_d5a__magick__*__psm3__spa",
+   "n": 7,
+   "inversiones": 2,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "ppp150",
+    "ppp200"
+   ],
+   "ganador_acentuada": [
+    "ppp125"
+   ]
+  },
+  {
+   "informe": "corpus-d5.md",
+   "doc": "escaneado_d5a",
+   "eje_pos": 3,
+   "patron": "escaneado_d5a__magick__ppp90__*__eng",
+   "n": 3,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "psm11",
+    "psm3"
+   ],
+   "ganador_acentuada": [
+    "psm3"
+   ]
+  },
+  {
+   "informe": "corpus-d5.md",
+   "doc": "escaneado_d5a",
+   "eje_pos": 3,
+   "patron": "escaneado_d5a__magick__ppp90__*__spa",
+   "n": 3,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "psm11",
+    "psm3"
+   ],
+   "ganador_acentuada": [
+    "psm3"
+   ]
+  },
+  {
+   "informe": "corpus-d5.md",
+   "doc": "escaneado_d5c",
+   "eje_pos": 2,
+   "patron": "escaneado_d5c__magick__*__psm11__spa",
+   "n": 8,
+   "inversiones": 1,
+   "argmin_cambia": false,
+   "ganador_ciega": [
+    "ppp125"
+   ],
+   "ganador_acentuada": [
+    "ppp125"
+   ]
+  },
+  {
+   "informe": "corpus-d5.md",
+   "doc": "escaneado_d5c",
+   "eje_pos": 3,
+   "patron": "escaneado_d5c__magick__ppp100__*__spa",
+   "n": 2,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "psm11",
+    "psm3"
+   ],
+   "ganador_acentuada": [
+    "psm3"
+   ]
+  },
+  {
+   "informe": "corpus-d5.md",
+   "doc": "escaneado_d5c",
+   "eje_pos": 2,
+   "patron": "escaneado_d5c__magick__*__psm3__spa",
+   "n": 8,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "ppp125",
+    "ppp150",
+    "ppp200"
+   ],
+   "ganador_acentuada": [
+    "ppp125"
+   ]
+  },
+  {
+   "informe": "corpus-d5.md",
+   "doc": "escaneado_d5",
+   "eje_pos": 2,
+   "patron": "escaneado_d5__magick__*__psm11__spa",
+   "n": 8,
+   "inversiones": 1,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "ppp125"
+   ],
+   "ganador_acentuada": [
+    "ppp100"
+   ]
+  },
+  {
+   "informe": "corpus-d5.md",
+   "doc": "escaneado_d5",
+   "eje_pos": 2,
+   "patron": "escaneado_d5__magick__*__psm3__spa",
+   "n": 8,
+   "inversiones": 2,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "ppp125"
+   ],
+   "ganador_acentuada": [
+    "ppp150"
+   ]
+  },
+  {
+   "informe": "corpus-d5.md",
+   "doc": "escaneado_d5",
+   "eje_pos": 3,
+   "patron": "escaneado_d5__magick__ppp200__*__spa",
+   "n": 2,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "psm11",
+    "psm3"
+   ],
+   "ganador_acentuada": [
+    "psm3"
+   ]
+  },
+  {
+   "informe": "corpus-d5.md",
+   "doc": "escaneado_d5",
+   "eje_pos": 3,
+   "patron": "escaneado_d5__magick__ppp300__*__spa",
+   "n": 2,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "psm11",
+    "psm3"
+   ],
+   "ganador_acentuada": [
+    "psm11"
+   ]
+  },
+  {
+   "informe": "corpus-d5.md",
+   "doc": "escaneado_d5",
+   "eje_pos": 3,
+   "patron": "escaneado_d5__magick__ppp90__*__spa",
+   "n": 2,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "psm11",
+    "psm3"
+   ],
+   "ganador_acentuada": [
+    "psm3"
+   ]
+  },
+  {
+   "informe": "corpus-d5.md",
+   "doc": "realista_d5a",
+   "eje_pos": 3,
+   "patron": "realista_d5a__gs__ppp200__*__spa",
+   "n": 2,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "psm11",
+    "psm3"
+   ],
+   "ganador_acentuada": [
+    "psm3"
+   ]
+  },
+  {
+   "informe": "corpus-d5.md",
+   "doc": "realista_d5a",
+   "eje_pos": 3,
+   "patron": "realista_d5a__magick__ppp200__*__eng",
+   "n": 3,
+   "inversiones": 1,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "psm11"
+   ],
+   "ganador_acentuada": [
+    "psm3"
+   ]
+  },
+  {
+   "informe": "corpus-d5.md",
+   "doc": "realista_d5a",
+   "eje_pos": 3,
+   "patron": "realista_d5a__magick__ppp200__*__spa",
+   "n": 3,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "psm11",
+    "psm3"
+   ],
+   "ganador_acentuada": [
+    "psm3"
+   ]
+  },
+  {
+   "informe": "k-por-motor.md",
+   "doc": "escaneado_d4c",
+   "eje_pos": 0,
+   "patron": "*__k1500__escaneado_d4c",
+   "n": 9,
+   "inversiones": 2,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "paddleocr_cuda_G_pd6med_150"
+   ],
+   "ganador_acentuada": [
+    "docling_torch_cuda_C_dl_R6_150",
+    "rapidocr_cuda_A_ro6sm_R6_150"
+   ]
+  },
+  {
+   "informe": "k-por-motor.md",
+   "doc": "escaneado_d4",
+   "eje_pos": 0,
+   "patron": "*__k0500__escaneado_d4",
+   "n": 9,
+   "inversiones": 1,
+   "argmin_cambia": false,
+   "ganador_ciega": [
+    "paddleocr_cuda_A_pd6med"
+   ],
+   "ganador_acentuada": [
+    "paddleocr_cuda_A_pd6med"
+   ]
+  },
+  {
+   "informe": "k-por-motor.md",
+   "doc": "escaneado_d4",
+   "eje_pos": 1,
+   "patron": "docling_torch_cuda_C_dl_def__*__escaneado_d4",
+   "n": 10,
+   "inversiones": 3,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "k1400",
+    "k1600",
+    "k1800"
+   ],
+   "ganador_acentuada": [
+    "k1125"
+   ]
+  },
+  {
+   "informe": "k-por-motor.md",
+   "doc": "escaneado_d4c",
+   "eje_pos": 1,
+   "patron": "docling_torch_cuda_C_dl_def__*__escaneado_d4c",
+   "n": 10,
+   "inversiones": 2,
+   "argmin_cambia": false,
+   "ganador_ciega": [
+    "k0500"
+   ],
+   "ganador_acentuada": [
+    "k0500"
+   ]
+  },
+  {
+   "informe": "k-por-motor.md",
+   "doc": "escaneado_d4c",
+   "eje_pos": 0,
+   "patron": "*__k0625__escaneado_d4c",
+   "n": 9,
+   "inversiones": 2,
+   "argmin_cambia": false,
+   "ganador_ciega": [
+    "paddleocr_cuda_A_pd6med"
+   ],
+   "ganador_acentuada": [
+    "paddleocr_cuda_A_pd6med"
+   ]
+  },
+  {
+   "informe": "k-por-motor.md",
+   "doc": "patologico_escaneado",
+   "eje_pos": 0,
+   "patron": "*__k0625__patologico_escaneado",
+   "n": 9,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "docling_torch_cuda_C_dl_R6",
+    "docling_torch_cuda_C_dl_def",
+    "easyocr_cuda_B_easy",
+    "paddleocr_cuda_A_pd6med",
+    "rapidocr_cuda_A_ro6sm_R6",
+    "rapidocr_cuda_A_ro6sm_def",
+    "tesseract_cpu_D_tess_spa",
+    "tesseract_cpu_I_tess11_spa"
+   ],
+   "ganador_acentuada": [
+    "docling_torch_cuda_C_dl_R6",
+    "docling_torch_cuda_C_dl_def",
+    "paddleocr_cuda_A_pd6med",
+    "rapidocr_cuda_A_ro6sm_R6",
+    "rapidocr_cuda_A_ro6sm_def",
+    "tesseract_cpu_D_tess_spa",
+    "tesseract_cpu_I_tess11_spa"
+   ]
+  },
+  {
+   "informe": "k-por-motor.md",
+   "doc": "escaneado_d4c",
+   "eje_pos": 0,
+   "patron": "*__k0750__escaneado_d4c",
+   "n": 9,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "docling_torch_cuda_C_dl_R6",
+    "rapidocr_cuda_A_ro6sm_R6"
+   ],
+   "ganador_acentuada": [
+    "docling_torch_cuda_C_dl_R6"
+   ]
+  },
+  {
+   "informe": "k-por-motor.md",
+   "doc": "escaneado_d4c",
+   "eje_pos": 0,
+   "patron": "*__k0875__escaneado_d4c",
+   "n": 9,
+   "inversiones": 1,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "paddleocr_cuda_A_pd6med"
+   ],
+   "ganador_acentuada": [
+    "docling_torch_cuda_C_dl_R6"
+   ]
+  },
+  {
+   "informe": "k-por-motor.md",
+   "doc": "escaneado_d4",
+   "eje_pos": 0,
+   "patron": "*__k1000__escaneado_d4",
+   "n": 9,
+   "inversiones": 1,
+   "argmin_cambia": false,
+   "ganador_ciega": [
+    "rapidocr_cuda_A_ro6sm_R6"
+   ],
+   "ganador_acentuada": [
+    "rapidocr_cuda_A_ro6sm_R6"
+   ]
+  },
+  {
+   "informe": "k-por-motor.md",
+   "doc": "escaneado_d4c",
+   "eje_pos": 0,
+   "patron": "*__k1000__escaneado_d4c",
+   "n": 9,
+   "inversiones": 1,
+   "argmin_cambia": false,
+   "ganador_ciega": [
+    "paddleocr_cuda_A_pd6med"
+   ],
+   "ganador_acentuada": [
+    "paddleocr_cuda_A_pd6med"
+   ]
+  },
+  {
+   "informe": "k-por-motor.md",
+   "doc": "escaneado_d4c",
+   "eje_pos": 0,
+   "patron": "*__k1125__escaneado_d4c",
+   "n": 9,
+   "inversiones": 2,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "paddleocr_cuda_A_pd6med"
+   ],
+   "ganador_acentuada": [
+    "docling_torch_cuda_C_dl_R6",
+    "rapidocr_cuda_A_ro6sm_R6"
+   ]
+  },
+  {
+   "informe": "k-por-motor.md",
+   "doc": "escaneado_d4c",
+   "eje_pos": 0,
+   "patron": "*__k1250__escaneado_d4c",
+   "n": 9,
+   "inversiones": 3,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "paddleocr_cuda_A_pd6med"
+   ],
+   "ganador_acentuada": [
+    "docling_torch_cuda_C_dl_R6"
+   ]
+  },
+  {
+   "informe": "k-por-motor.md",
+   "doc": "patologico_escaneado",
+   "eje_pos": 0,
+   "patron": "*__k1250__patologico_escaneado",
+   "n": 9,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "docling_torch_cuda_C_dl_R6",
+    "docling_torch_cuda_C_dl_def",
+    "easyocr_cuda_H_easy_1250",
+    "paddleocr_cuda_A_pd6med",
+    "rapidocr_cuda_A_ro5mob_def",
+    "rapidocr_cuda_A_ro6sm_R6",
+    "rapidocr_cuda_A_ro6sm_def",
+    "tesseract_cpu_D_tess_spa",
+    "tesseract_cpu_I_tess11_spa"
+   ],
+   "ganador_acentuada": [
+    "docling_torch_cuda_C_dl_R6",
+    "docling_torch_cuda_C_dl_def",
+    "paddleocr_cuda_A_pd6med",
+    "rapidocr_cuda_A_ro5mob_def",
+    "rapidocr_cuda_A_ro6sm_R6",
+    "rapidocr_cuda_A_ro6sm_def",
+    "tesseract_cpu_D_tess_spa",
+    "tesseract_cpu_I_tess11_spa"
+   ]
+  },
+  {
+   "informe": "k-por-motor.md",
+   "doc": "escaneado_d4c",
+   "eje_pos": 0,
+   "patron": "*__k1400__escaneado_d4c",
+   "n": 9,
+   "inversiones": 2,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "paddleocr_cuda_A_pd6med"
+   ],
+   "ganador_acentuada": [
+    "docling_torch_cuda_C_dl_R6"
+   ]
+  },
+  {
+   "informe": "k-por-motor.md",
+   "doc": "escaneado_d4c",
+   "eje_pos": 0,
+   "patron": "*__k1600__escaneado_d4c",
+   "n": 9,
+   "inversiones": 1,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "paddleocr_cuda_D_pd6med_1600"
+   ],
+   "ganador_acentuada": [
+    "docling_torch_cuda_C_dl_R6"
+   ]
+  },
+  {
+   "informe": "k-por-motor.md",
+   "doc": "escaneado_d4",
+   "eje_pos": 0,
+   "patron": "*__k1800__escaneado_d4",
+   "n": 9,
+   "inversiones": 1,
+   "argmin_cambia": false,
+   "ganador_ciega": [
+    "docling_torch_cuda_C_dl_R6"
+   ],
+   "ganador_acentuada": [
+    "docling_torch_cuda_C_dl_R6"
+   ]
+  },
+  {
+   "informe": "k-por-motor.md",
+   "doc": "escaneado_d4c",
+   "eje_pos": 0,
+   "patron": "*__k1800__escaneado_d4c",
+   "n": 9,
+   "inversiones": 2,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "paddleocr_cuda_D_pd6med_1800"
+   ],
+   "ganador_acentuada": [
+    "docling_torch_cuda_C_dl_R6"
+   ]
+  },
+  {
+   "informe": "k-por-motor.md",
+   "doc": "escaneado_d3",
+   "eje_pos": 1,
+   "patron": "docling_torch_cuda_C_dl_R6__*__escaneado_d3",
+   "n": 10,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "k0500",
+    "k0625"
+   ],
+   "ganador_acentuada": [
+    "k0500",
+    "k0625",
+    "k0875"
+   ]
+  },
+  {
+   "informe": "k-por-motor.md",
+   "doc": "escaneado_d4",
+   "eje_pos": 1,
+   "patron": "docling_torch_cuda_C_dl_R6__*__escaneado_d4",
+   "n": 10,
+   "inversiones": 2,
+   "argmin_cambia": false,
+   "ganador_ciega": [
+    "k0875"
+   ],
+   "ganador_acentuada": [
+    "k0875"
+   ]
+  },
+  {
+   "informe": "k-por-motor.md",
+   "doc": "escaneado_d4c",
+   "eje_pos": 1,
+   "patron": "docling_torch_cuda_C_dl_R6__*__escaneado_d4c",
+   "n": 10,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "k0750",
+    "k0875",
+    "k1125"
+   ],
+   "ganador_acentuada": [
+    "k0750",
+    "k0875"
+   ]
+  },
+  {
+   "informe": "k-por-motor.md",
+   "doc": "patologico_escaneado",
+   "eje_pos": 1,
+   "patron": "easyocr_cuda_B_easy__*__patologico_escaneado",
+   "n": 4,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "k0500",
+    "k0625",
+    "k0750",
+    "k0875"
+   ],
+   "ganador_acentuada": [
+    "k0500",
+    "k0750",
+    "k0875"
+   ]
+  },
+  {
+   "informe": "k-por-motor.md",
+   "doc": "escaneado_d4c",
+   "eje_pos": 1,
+   "patron": "paddleocr_cuda_A_pd6med__*__escaneado_d4c",
+   "n": 8,
+   "inversiones": 5,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "k0875",
+    "k1000",
+    "k1125",
+    "k1250",
+    "k1400"
+   ],
+   "ganador_acentuada": [
+    "k1000"
+   ]
+  },
+  {
+   "informe": "k-por-motor.md",
+   "doc": "escaneado_d4c",
+   "eje_pos": 1,
+   "patron": "rapidocr_cuda_A_ro5mob_def__*__escaneado_d4c",
+   "n": 10,
+   "inversiones": 1,
+   "argmin_cambia": false,
+   "ganador_ciega": [
+    "k1600"
+   ],
+   "ganador_acentuada": [
+    "k1600"
+   ]
+  },
+  {
+   "informe": "k-por-motor.md",
+   "doc": "escaneado_d4",
+   "eje_pos": 1,
+   "patron": "rapidocr_cuda_A_ro6sm_def__*__escaneado_d4",
+   "n": 10,
+   "inversiones": 2,
+   "argmin_cambia": false,
+   "ganador_ciega": [
+    "k1250"
+   ],
+   "ganador_acentuada": [
+    "k1250"
+   ]
+  },
+  {
+   "informe": "k-por-motor.md",
+   "doc": "escaneado_d3",
+   "eje_pos": 1,
+   "patron": "rapidocr_cuda_A_ro6sm_R6__*__escaneado_d3",
+   "n": 10,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "k1250"
+   ],
+   "ganador_acentuada": [
+    "k1000",
+    "k1250"
+   ]
+  },
+  {
+   "informe": "k-por-motor.md",
+   "doc": "escaneado_d4",
+   "eje_pos": 1,
+   "patron": "rapidocr_cuda_A_ro6sm_R6__*__escaneado_d4",
+   "n": 10,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "k0750",
+    "k1000"
+   ],
+   "ganador_acentuada": [
+    "k0750"
+   ]
+  },
+  {
+   "informe": "k-por-motor.md",
+   "doc": "escaneado_d4c",
+   "eje_pos": 1,
+   "patron": "rapidocr_cuda_A_ro6sm_R6__*__escaneado_d4c",
+   "n": 10,
+   "inversiones": 1,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "k0750",
+    "k0875",
+    "k1125"
+   ],
+   "ganador_acentuada": [
+    "k1125"
+   ]
+  },
+  {
+   "informe": "k-por-motor.md",
+   "doc": "escaneado_d4",
+   "eje_pos": 1,
+   "patron": "tesseract_cpu_D_tess_spa__*__escaneado_d4",
+   "n": 10,
+   "inversiones": 1,
+   "argmin_cambia": false,
+   "ganador_ciega": [
+    "k0875"
+   ],
+   "ganador_acentuada": [
+    "k0875"
+   ]
+  },
+  {
+   "informe": "k-por-motor.md",
+   "doc": "escaneado_d4c",
+   "eje_pos": 1,
+   "patron": "tesseract_cpu_D_tess_spa__*__escaneado_d4c",
+   "n": 10,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "k1000",
+    "k1400"
+   ],
+   "ganador_acentuada": [
+    "k1400"
+   ]
+  },
+  {
+   "informe": "k-por-motor.md",
+   "doc": "escaneado_d4",
+   "eje_pos": 1,
+   "patron": "tesseract_cpu_I_tess11_spa__*__escaneado_d4",
+   "n": 11,
+   "inversiones": 1,
+   "argmin_cambia": false,
+   "ganador_ciega": [
+    "k1000"
+   ],
+   "ganador_acentuada": [
+    "k1000"
+   ]
+  },
+  {
+   "informe": "ppp-y-normalizacion.md",
+   "doc": "escaneado_d4",
+   "eje_pos": 0,
+   "patron": "*__ppp0200__escaneado_d4",
+   "n": 17,
+   "inversiones": 6,
+   "argmin_cambia": false,
+   "ganador_ciega": [
+    "rapidocr_cuda_A_ro6sm_R6",
+    "rapidocr_cuda_D_ro6sm_R6",
+    "rapidocr_cuda_E_vram"
+   ],
+   "ganador_acentuada": [
+    "rapidocr_cuda_A_ro6sm_R6",
+    "rapidocr_cuda_D_ro6sm_R6",
+    "rapidocr_cuda_E_vram"
+   ]
+  },
+  {
+   "informe": "ppp-y-normalizacion.md",
+   "doc": "escaneado_d4",
+   "eje_pos": 0,
+   "patron": "*__ppp0100__escaneado_d4",
+   "n": 9,
+   "inversiones": 1,
+   "argmin_cambia": false,
+   "ganador_ciega": [
+    "paddleocr_cuda_A_pd6med",
+    "paddleocr_cuda_E_vram"
+   ],
+   "ganador_acentuada": [
+    "paddleocr_cuda_A_pd6med",
+    "paddleocr_cuda_E_vram"
+   ]
+  },
+  {
+   "informe": "ppp-y-normalizacion.md",
+   "doc": "escaneado_d4",
+   "eje_pos": 1,
+   "patron": "docling_torch_cuda_E_ppp_R6__*__escaneado_d4",
+   "n": 10,
+   "inversiones": 1,
+   "argmin_cambia": false,
+   "ganador_ciega": [
+    "ppp0175"
+   ],
+   "ganador_acentuada": [
+    "ppp0175"
+   ]
+  },
+  {
+   "informe": "ppp-y-normalizacion.md",
+   "doc": "escaneado_d4",
+   "eje_pos": 1,
+   "patron": "docling_torch_cuda_E_ppp__*__escaneado_d4",
+   "n": 10,
+   "inversiones": 2,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "ppp0280",
+    "ppp0320"
+   ],
+   "ganador_acentuada": [
+    "ppp0225"
+   ]
+  },
+  {
+   "informe": "ppp-y-normalizacion.md",
+   "doc": "escaneado_d4",
+   "eje_pos": 1,
+   "patron": "easyocr_cuda_E_vram__*__escaneado_d4",
+   "n": 17,
+   "inversiones": 3,
+   "argmin_cambia": false,
+   "ganador_ciega": [
+    "ppp0360"
+   ],
+   "ganador_acentuada": [
+    "ppp0360"
+   ]
+  },
+  {
+   "informe": "ppp-y-normalizacion.md",
+   "doc": "escaneado_d4f",
+   "eje_pos": 1,
+   "patron": "paddleocr_cuda_B_pd6med__*__escaneado_d4f",
+   "n": 7,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "ppp0150",
+    "ppp0200",
+    "ppp0240",
+    "ppp0280",
+    "ppp0336",
+    "ppp0400"
+   ],
+   "ganador_acentuada": [
+    "ppp0200",
+    "ppp0240",
+    "ppp0400"
+   ]
+  },
+  {
+   "informe": "ppp-y-normalizacion.md",
+   "doc": "escaneado_d4c",
+   "eje_pos": 1,
+   "patron": "paddleocr_cuda_B_pd6med__*__escaneado_d4c",
+   "n": 5,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "ppp0200",
+    "ppp0250",
+    "ppp0280",
+    "ppp0320"
+   ],
+   "ganador_acentuada": [
+    "ppp0200"
+   ]
+  },
+  {
+   "informe": "ppp-y-normalizacion.md",
+   "doc": "escaneado_d4f",
+   "eje_pos": 0,
+   "patron": "*__ppp0150__escaneado_d4f",
+   "n": 3,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "paddleocr_cuda_B_pd6med"
+   ],
+   "ganador_acentuada": [
+    "paddleocr_cuda_B_pd6med",
+    "rapidocr_cuda_B_ro6sm_R6"
+   ]
+  },
+  {
+   "informe": "ppp-y-normalizacion.md",
+   "doc": "escaneado_d4f",
+   "eje_pos": 0,
+   "patron": "*__ppp0200__escaneado_d4f",
+   "n": 3,
+   "inversiones": 1,
+   "argmin_cambia": false,
+   "ganador_ciega": [
+    "paddleocr_cuda_B_pd6med"
+   ],
+   "ganador_acentuada": [
+    "paddleocr_cuda_B_pd6med"
+   ]
+  },
+  {
+   "informe": "ppp-y-normalizacion.md",
+   "doc": "escaneado_d4c",
+   "eje_pos": 0,
+   "patron": "*__ppp0250__escaneado_d4c",
+   "n": 3,
+   "inversiones": 1,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "paddleocr_cuda_B_pd6med"
+   ],
+   "ganador_acentuada": [
+    "rapidocr_cuda_B_ro6sm_R6"
+   ]
+  },
+  {
+   "informe": "ppp-y-normalizacion.md",
+   "doc": "escaneado_d4f",
+   "eje_pos": 0,
+   "patron": "*__ppp0400__escaneado_d4f",
+   "n": 3,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "paddleocr_cuda_B_pd6med",
+    "rapidocr_cuda_B_ro6sm_R6"
+   ],
+   "ganador_acentuada": [
+    "rapidocr_cuda_B_ro6sm_R6"
+   ]
+  },
+  {
+   "informe": "ppp-y-normalizacion.md",
+   "doc": "tipico",
+   "eje_pos": 0,
+   "patron": "*__ppp0150__tipico_texto",
+   "n": 5,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "rapidocr_cuda_D_ro5mob_R6",
+    "rapidocr_cuda_D_ro5mob_def",
+    "rapidocr_cuda_D_ro6sm_R6",
+    "rapidocr_cuda_D_ro6sm_def"
+   ],
+   "ganador_acentuada": [
+    "rapidocr_cuda_D_ro5mob_R6",
+    "rapidocr_cuda_D_ro6sm_R6",
+    "rapidocr_cuda_D_ro6sm_def"
+   ]
+  },
+  {
+   "informe": "ppp-y-normalizacion.md",
+   "doc": "escaneado_d4b",
+   "eje_pos": 0,
+   "patron": "*__ppp0200__escaneado_d4b",
+   "n": 5,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "paddleocr_cuda_D_pd6med",
+    "rapidocr_cuda_D_ro6sm_R6",
+    "rapidocr_cuda_D_ro6sm_def"
+   ],
+   "ganador_acentuada": [
+    "paddleocr_cuda_D_pd6med"
+   ]
+  },
+  {
+   "informe": "ppp-y-normalizacion.md",
+   "doc": "escaneado_d4",
+   "eje_pos": 1,
+   "patron": "paddleocr_cuda_E_vram__*__escaneado_d4",
+   "n": 17,
+   "inversiones": 1,
+   "argmin_cambia": false,
+   "ganador_ciega": [
+    "ppp0270"
+   ],
+   "ganador_acentuada": [
+    "ppp0270"
+   ]
+  },
+  {
+   "informe": "ppp-y-normalizacion.md",
+   "doc": "escaneado_d4",
+   "eje_pos": 1,
+   "patron": "rapidocr_cuda_A_ro5mob_def__*__escaneado_d4",
+   "n": 17,
+   "inversiones": 13,
+   "argmin_cambia": false,
+   "ganador_ciega": [
+    "ppp0100"
+   ],
+   "ganador_acentuada": [
+    "ppp0100"
+   ]
+  },
+  {
+   "informe": "ppp-y-normalizacion.md",
+   "doc": "escaneado_d4",
+   "eje_pos": 1,
+   "patron": "rapidocr_cuda_A_ro6sm_def__*__escaneado_d4",
+   "n": 17,
+   "inversiones": 5,
+   "argmin_cambia": false,
+   "ganador_ciega": [
+    "ppp0250"
+   ],
+   "ganador_acentuada": [
+    "ppp0250"
+   ]
+  },
+  {
+   "informe": "ppp-y-normalizacion.md",
+   "doc": "escaneado_d4",
+   "eje_pos": 1,
+   "patron": "rapidocr_cuda_A_ro6sm_R6__*__escaneado_d4",
+   "n": 17,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "ppp0150",
+    "ppp0200"
+   ],
+   "ganador_acentuada": [
+    "ppp0150"
+   ]
+  },
+  {
+   "informe": "ppp-y-normalizacion.md",
+   "doc": "escaneado_d3",
+   "eje_pos": 1,
+   "patron": "rapidocr_cuda_B_ro6sm_R6__*__escaneado_d3",
+   "n": 7,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "ppp0125"
+   ],
+   "ganador_acentuada": [
+    "ppp0100",
+    "ppp0125"
+   ]
+  },
+  {
+   "informe": "ppp-y-normalizacion.md",
+   "doc": "escaneado_d4f",
+   "eje_pos": 1,
+   "patron": "rapidocr_cuda_B_ro6sm_R6__*__escaneado_d4f",
+   "n": 7,
+   "inversiones": 1,
+   "argmin_cambia": false,
+   "ganador_ciega": [
+    "ppp0400"
+   ],
+   "ganador_acentuada": [
+    "ppp0400"
+   ]
+  },
+  {
+   "informe": "ppp-y-normalizacion.md",
+   "doc": "escaneado_d4c",
+   "eje_pos": 1,
+   "patron": "rapidocr_cuda_B_ro6sm_R6__*__escaneado_d4c",
+   "n": 5,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "ppp0150"
+   ],
+   "ganador_acentuada": [
+    "ppp0150",
+    "ppp0250"
+   ]
+  },
+  {
+   "informe": "ppp-y-normalizacion.md",
+   "doc": "escaneado_d4",
+   "eje_pos": 1,
+   "patron": "rapidocr_cuda_E_vram__*__escaneado_d4",
+   "n": 17,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "ppp0150",
+    "ppp0200"
+   ],
+   "ganador_acentuada": [
+    "ppp0150"
+   ]
+  },
+  {
+   "informe": "psm-y-rasterizador.md",
+   "doc": "escaneado_d3",
+   "eje_pos": 0,
+   "patron": "*__im__k1000__escaneado_d3__psm11",
+   "n": 9,
+   "inversiones": 6,
+   "argmin_cambia": false,
+   "ganador_ciega": [
+    "D_dpi100"
+   ],
+   "ganador_acentuada": [
+    "D_dpi100"
+   ]
+  },
+  {
+   "informe": "psm-y-rasterizador.md",
+   "doc": "escaneado_d4f",
+   "eje_pos": 0,
+   "patron": "*__im__k1000__escaneado_d4f__psm03",
+   "n": 8,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "A_psm_barrido",
+    "D_dpi0",
+    "D_dpi150",
+    "D_dpi200",
+    "D_dpi300",
+    "D_dpi400",
+    "D_dpi70"
+   ],
+   "ganador_acentuada": [
+    "A_psm_barrido",
+    "D_dpi0",
+    "D_dpi100",
+    "D_dpi150",
+    "D_dpi200",
+    "D_dpi300",
+    "D_dpi400",
+    "D_dpi70"
+   ]
+  },
+  {
+   "informe": "psm-y-rasterizador.md",
+   "doc": "escaneado_d2",
+   "eje_pos": 2,
+   "patron": "B_inter_ppi__im_ppi__*__escaneado_d2__psm03",
+   "n": 11,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "k1125",
+    "k1250",
+    "k1400",
+    "k1500",
+    "k1600",
+    "k1800"
+   ],
+   "ganador_acentuada": [
+    "k1250",
+    "k1400",
+    "k1500",
+    "k1600",
+    "k1800"
+   ]
+  },
+  {
+   "informe": "psm-y-rasterizador.md",
+   "doc": "escaneado_d2",
+   "eje_pos": 2,
+   "patron": "B_inter_ppi__im_ppi__*__escaneado_d2__psm04",
+   "n": 11,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "k1125",
+    "k1250",
+    "k1400",
+    "k1500",
+    "k1600",
+    "k1800"
+   ],
+   "ganador_acentuada": [
+    "k1250",
+    "k1400",
+    "k1500",
+    "k1600",
+    "k1800"
+   ]
+  },
+  {
+   "informe": "psm-y-rasterizador.md",
+   "doc": "escaneado_d2",
+   "eje_pos": 2,
+   "patron": "B_inter_ppi__im_ppi__*__escaneado_d2__psm11",
+   "n": 11,
+   "inversiones": 2,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "k0750",
+    "k1125",
+    "k1250",
+    "k1400",
+    "k1600"
+   ],
+   "ganador_acentuada": [
+    "k1250",
+    "k1400",
+    "k1600"
+   ]
+  },
+  {
+   "informe": "psm-y-rasterizador.md",
+   "doc": "escaneado_d2",
+   "eje_pos": 2,
+   "patron": "B_inter_ppi__im_ppi__*__escaneado_d2__psm12",
+   "n": 11,
+   "inversiones": 2,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "k0750",
+    "k1125",
+    "k1250",
+    "k1400",
+    "k1600"
+   ],
+   "ganador_acentuada": [
+    "k1250",
+    "k1400",
+    "k1600"
+   ]
+  },
+  {
+   "informe": "psm-y-rasterizador.md",
+   "doc": "escaneado_d3",
+   "eje_pos": 4,
+   "patron": "B_inter_ppi__im_ppi__k0500__escaneado_d3__*",
+   "n": 5,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "psm06",
+    "psm11"
+   ],
+   "ganador_acentuada": [
+    "psm06"
+   ]
+  },
+  {
+   "informe": "psm-y-rasterizador.md",
+   "doc": "escaneado_d4c",
+   "eje_pos": 2,
+   "patron": "B_inter_ppi__im_ppi__*__escaneado_d4c__psm03",
+   "n": 11,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "k1000",
+    "k1400"
+   ],
+   "ganador_acentuada": [
+    "k1400"
+   ]
+  },
+  {
+   "informe": "psm-y-rasterizador.md",
+   "doc": "escaneado_d4c",
+   "eje_pos": 2,
+   "patron": "B_inter_ppi__im_ppi__*__escaneado_d4c__psm04",
+   "n": 11,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "k1000",
+    "k1400"
+   ],
+   "ganador_acentuada": [
+    "k1400"
+   ]
+  },
+  {
+   "informe": "psm-y-rasterizador.md",
+   "doc": "escaneado_d4c",
+   "eje_pos": 2,
+   "patron": "B_inter_ppi__im_ppi__*__escaneado_d4c__psm06",
+   "n": 11,
+   "inversiones": 3,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "k1400"
+   ],
+   "ganador_acentuada": [
+    "k1000",
+    "k1400"
+   ]
+  },
+  {
+   "informe": "psm-y-rasterizador.md",
+   "doc": "escaneado_d4c",
+   "eje_pos": 4,
+   "patron": "B_inter_ppi__im_ppi__k0625__escaneado_d4c__*",
+   "n": 5,
+   "inversiones": 2,
+   "argmin_cambia": false,
+   "ganador_ciega": [
+    "psm03",
+    "psm04"
+   ],
+   "ganador_acentuada": [
+    "psm03",
+    "psm04"
+   ]
+  },
+  {
+   "informe": "psm-y-rasterizador.md",
+   "doc": "escaneado_d3",
+   "eje_pos": 4,
+   "patron": "C_inter_im__im__k0500__escaneado_d3__*",
+   "n": 3,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "psm06",
+    "psm11"
+   ],
+   "ganador_acentuada": [
+    "psm06"
+   ]
+  },
+  {
+   "informe": "psm-y-rasterizador.md",
+   "doc": "escaneado_d4",
+   "eje_pos": 2,
+   "patron": "C_inter_im__im__*__escaneado_d4__psm03",
+   "n": 11,
+   "inversiones": 1,
+   "argmin_cambia": false,
+   "ganador_ciega": [
+    "k0875"
+   ],
+   "ganador_acentuada": [
+    "k0875"
+   ]
+  },
+  {
+   "informe": "psm-y-rasterizador.md",
+   "doc": "escaneado_d4",
+   "eje_pos": 2,
+   "patron": "C_inter_im__im__*__escaneado_d4__psm11",
+   "n": 11,
+   "inversiones": 1,
+   "argmin_cambia": false,
+   "ganador_ciega": [
+    "k1000"
+   ],
+   "ganador_acentuada": [
+    "k1000"
+   ]
+  },
+  {
+   "informe": "psm-y-rasterizador.md",
+   "doc": "escaneado_d4e",
+   "eje_pos": 2,
+   "patron": "E_curva_ppi__im_ppi__*__escaneado_d4e__psm11",
+   "n": 11,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "k0500",
+    "k0625"
+   ],
+   "ganador_acentuada": [
+    "k0625"
+   ]
+  },
+  {
+   "informe": "psm-y-rasterizador.md",
+   "doc": "escaneado_d4f",
+   "eje_pos": 2,
+   "patron": "E_curva_ppi__im_ppi__*__escaneado_d4f__psm03",
+   "n": 10,
+   "inversiones": 1,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "k1250"
+   ],
+   "ganador_acentuada": [
+    "k1250",
+    "k1400"
+   ]
+  },
+  {
+   "informe": "psm-y-rasterizador.md",
+   "doc": "escaneado_d4f",
+   "eje_pos": 2,
+   "patron": "E_curva_ppi__im_ppi__*__escaneado_d4f__psm06",
+   "n": 10,
+   "inversiones": 9,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "k1250"
+   ],
+   "ganador_acentuada": [
+    "k0625"
+   ]
+  },
+  {
+   "informe": "psm-y-rasterizador.md",
+   "doc": "escaneado_d4f",
+   "eje_pos": 2,
+   "patron": "E_curva_ppi__im_ppi__*__escaneado_d4f__psm11",
+   "n": 10,
+   "inversiones": 1,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "k1000",
+    "k1600"
+   ],
+   "ganador_acentuada": [
+    "k1000"
+   ]
+  },
+  {
+   "informe": "psm-y-rasterizador.md",
+   "doc": "escaneado_d4e",
+   "eje_pos": 4,
+   "patron": "E_curva_ppi__im_ppi__k0625__escaneado_d4e__*",
+   "n": 3,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "psm06"
+   ],
+   "ganador_acentuada": [
+    "psm06",
+    "psm11"
+   ]
+  },
+  {
+   "informe": "phys-multimotor.md",
+   "doc": "escaneado_d3",
+   "eje_pos": 3,
+   "patron": "A_tess__escaneado_d3__k1000__*__psm11",
+   "n": 8,
+   "inversiones": 5,
+   "argmin_cambia": false,
+   "ganador_ciega": [
+    "p0100"
+   ],
+   "ganador_acentuada": [
+    "p0100"
+   ]
+  },
+  {
+   "informe": "phys-multimotor.md",
+   "doc": "escaneado_d4f",
+   "eje_pos": 3,
+   "patron": "A_tess__escaneado_d4f__k1000__*__psm03",
+   "n": 9,
+   "inversiones": 0,
+   "argmin_cambia": true,
+   "ganador_ciega": [
+    "ninguno",
+    "p0070",
+    "p0150",
+    "p0200",
+    "p0240",
+    "p0300",
+    "p0400",
+    "sin"
+   ],
+   "ganador_acentuada": [
+    "ninguno",
+    "p0070",
+    "p0100",
+    "p0150",
+    "p0200",
+    "p0240",
+    "p0300",
+    "p0400",
+    "sin"
+   ]
+  }
+ ]
+}
