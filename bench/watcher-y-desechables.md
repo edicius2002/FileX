@@ -486,13 +486,21 @@ lo toma y lo suelta. Consecuencias que hay que decir:
    se repite, así que nadie va a volver a tomarlo). Los demás `.lock` de
    `filex-destinos` —los de destinos, ~120 B cada uno— siguen **PENDIENTE**, y no
    son míos.
-3. **La guarda de 24 h es una suposición sin medir.** Se eligió holgada porque
+3. ⚠ **Los 978 huérfanos que hay HOY no los va a barrer nadie hasta mañana**, y
+   eso es correcto aunque no lo parezca: los dejó un `filex` **anterior a este
+   candado**, así que no tienen fichero de candado y caen en la tercera fila de
+   la tabla — la de la edad, 24 h. Es la guarda haciendo su trabajo: desde
+   fuera, un desechable sin candado de un `filex` viejo y uno de un `filex` vivo
+   cuyo candado se degradó son **indistinguibles**, y el barrido prefiere
+   esperar. **El barrido cierra el problema hacia adelante, no hacia atrás**;
+   la deuda ya acumulada se va sola en un día, o a mano.
+4. **La guarda de 24 h es una suposición sin medir.** Se eligió holgada porque
    el coste de esperar son unos megas y el de equivocarse es la conversión de
    otro. **PENDIENTE**: no hay dato que diga que 24 sea mejor que 1 o que 72.
-4. **No hay barrido periódico**, solo al arrancar. Un proceso de vida larga —la
+5. **No hay barrido periódico**, solo al arrancar. Un proceso de vida larga —la
    API, el watcher— acumula sus propios huérfanos si le matan hijos, y no volverá
    a barrer hasta que reinicie. **PENDIENTE**, declarado.
-5. **Un desechable de un `filex` que arrancó con `FILEX_BARRER=0` y murió** es
+6. **Un desechable de un `filex` que arrancó con `FILEX_BARRER=0` y murió** es
    indistinguible de uno normal: tiene su candado, el candado está libre, se
    barre. Eso está bien. Lo que no se cubre es el revés: **un `filex` vivo cuyo
    candado se degradó** (`cerrojo` sin ninguna de las dos mitades) queda sin
