@@ -1,5 +1,23 @@
 """Arnés de C34: cuánto tarda una cancelación en surtir efecto, antes y después.
 
+⚠ **M3 y M5 ya NO CORREN, y es deliberado que no se hayan parcheado**
+(28/08, orquestador). Llamaban a `invocacion._fuentes_de_montaje`, que
+identificaba el contenedor DEDUCIÉNDOLO del origen del bind mount. El agente Q
+borró esa función al cerrar a4: hoy la orden **declara** el contenedor con un
+`--name` único y se mata con `invocacion.matar_contenedor()`
+(`bench/contenedor-parar.md`).
+
+No es una sustitución de una línea: este arnés construye su propio `argv` de
+`docker run` **sin `--name`**, así que revivirlo es rediseñarlo. Y no hace falta,
+porque **las dos medidas están reproducidas por la vía nueva y salen mejor**:
+`bench/salidas-contenedor/arnes_contenedor.py` da contenedor muerto 9 de 9 en
+344,08 ms (aquí eran 527,2) y añade la prueba que este arnés no podía hacer —que
+matar una conversión no toca el contenedor del vecino—. **Las cifras de este
+fichero siguen siendo válidas y están en `c34_medidas.json`**: lo que caducó es
+el código que las tomaba, no el dato.
+
+M1, M2, M4 y M6 no dependen de esa función y siguen corriendo.
+
 Uso:
 
     python bench/salidas-cancelacion/arnes_cancelacion.py [--n 9]
