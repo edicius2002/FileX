@@ -24,8 +24,10 @@ alta cuando el canal se ha perdido, y ~0 o negativa cuando se ha conservado.
 
 * **Trampa 50 — varía la entrada.** Con una fuente cuyos canales sean IGUALES,
   `corr(Rsal, Lent) == corr(Rsal, Rent)` por construcción y la señal no puede
-  existir. Se miden tres fuentes: canales muy distintos, canales desiguales
-  reales y canales idénticos.
+  existir. Se miden **cinco** fuentes: canales muy distintos (voz / tono), los
+  dos canales de una grabación real, mono duplicado, la misma voz retrasada y
+  filtrada, y dos voces distintas. **Cuatro de las cinco hay que fabricarlas:
+  el único fichero estéreo del corpus tiene `corr(L,R) = 0,9997`.**
 * **Trampa 51 — tabula qué atrapa y qué rompe en cada umbral candidato**, y
   pregunta primero si el hueco existe, no dónde está.
 """
