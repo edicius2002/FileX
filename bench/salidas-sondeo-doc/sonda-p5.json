@@ -17,7 +17,7 @@
    "--mount",
    "type=bind,source=D:/Work/research/FileX/bench/salidas-sondeo-doc/entradas/entrada.csv,target=/ent/salida.csv,readonly",
    "--mount",
-   "type=bind,source=C:/Users/krato/AppData/Local/Temp/filex-s3p5-8zjh6bh6,target=/trabajo",
+   "type=bind,source=C:/Users/krato/AppData/Local/Temp/filex-s3p5-jcvcgpyx,target=/trabajo",
    "-w",
    "/trabajo",
    "-e",
@@ -36,7 +36,7 @@
    "/ent/salida.csv"
   ],
   "rc": 0,
-  "ms": 2425.3,
+  "ms": 3027.9,
   "agotado": false,
   "motivo": "ok",
   "err_cola": "",
@@ -61,7 +61,7 @@
    }
   ],
   "bytes": 5790,
-  "sha256": "4de63d9ae728871b6c8ce04846e51875dbe504fb432210976a8a20afdb779f2d",
+  "sha256": "276cb2b19fd9e2107113ff394e1920c06ef286b2467b413de173e7e418926c4c",
   "caracteres": 338,
   "centinela": true,
   "tabla_ax1": true
@@ -84,7 +84,7 @@
    "--mount",
    "type=bind,source=D:/Work/research/FileX/bench/salidas-hito5/entradas/entrada.md,target=/ent/salida.md,readonly",
    "--mount",
-   "type=bind,source=C:/Users/krato/AppData/Local/Temp/filex-s3p5-69kjn20w,target=/trabajo",
+   "type=bind,source=C:/Users/krato/AppData/Local/Temp/filex-s3p5-y_7z0e2h,target=/trabajo",
    "-w",
    "/trabajo",
    "-e",
@@ -99,12 +99,12 @@
    "/trabajo/salida.pptx"
   ],
   "rc": 0,
-  "ms": 962.0,
+  "ms": 681.3,
   "agotado": false,
   "motivo": "ok",
   "err_cola": "",
   "censo": {
-   "salida.pptx": 28169
+   "salida.pptx": 28170
   },
   "sobrantes": {},
   "contrato": "ok_parcial",
@@ -120,11 +120,11 @@
    {
     "regla": "N9",
     "sev": "informativo",
-    "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (28169 de 28169 B)"
+    "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (28170 de 28170 B)"
    }
   ],
-  "bytes": 28169,
-  "sha256": "41dd9234f41f307ee4211312e1f383a3dea298c8f0f44d9ab74b7d7b0cd4f3eb",
+  "bytes": 28170,
+  "sha256": "c9ecf14076d2b72f4a309f3e31e451c973c79546b80262fc0b19e5d3cb17614b",
   "caracteres": 2218,
   "centinela": true,
   "tabla_ax1": true
@@ -147,7 +147,7 @@
    "--mount",
    "type=bind,source=D:/Work/research/FileX/bench/salidas-sondeo-doc/entradas/entrada.xlsx,target=/ent/salida.xlsx,readonly",
    "--mount",
-   "type=bind,source=C:/Users/krato/AppData/Local/Temp/filex-s3p5-oyvwhlxt,target=/trabajo",
+   "type=bind,source=C:/Users/krato/AppData/Local/Temp/filex-s3p5-ud5u6ccr,target=/trabajo",
    "-w",
    "/trabajo",
    "-e",
@@ -166,7 +166,7 @@
    "/ent/salida.xlsx"
   ],
   "rc": 0,
-  "ms": 2155.4,
+  "ms": 1889.9,
   "agotado": false,
   "motivo": "ok",
   "err_cola": "",
@@ -191,7 +191,7 @@
    }
   ],
   "bytes": 27403,
-  "sha256": "5df93606ba2efbe82bcf8e960c2783c8bae75a99f917e4d3cdf513e9e31ecc8e",
+  "sha256": "687fce33051879e13e3a7d69bf0ca3a69b09967f759c8c1a6c240e94529f8a8d",
   "caracteres": 119,
   "centinela": true,
   "tabla_ax1": true
@@ -214,7 +214,7 @@
    "--mount",
    "type=bind,source=D:/Work/research/FileX/bench/salidas-sondeo-doc/entradas/entrada.xlsx,target=/ent/salida.xlsx,readonly",
    "--mount",
-   "type=bind,source=C:/Users/krato/AppData/Local/Temp/filex-s3p5-_vb1q12c,target=/trabajo",
+   "type=bind,source=C:/Users/krato/AppData/Local/Temp/filex-s3p5-4zk07_oi,target=/trabajo",
    "-w",
    "/trabajo",
    "-e",
@@ -233,7 +233,7 @@
    "/ent/salida.xlsx"
   ],
   "rc": 0,
-  "ms": 2209.1,
+  "ms": 1841.2,
   "agotado": false,
   "motivo": "ok",
   "err_cola": "",
@@ -251,6 +251,11 @@
    "5_escritura": true
   },
   "hallazgos": [
+   {
+    "regla": "G5",
+    "sev": "informativo",
+    "msg": "marcador de FAMILIA, no de formato: se comprueba que es texto, no que sea .csv"
+   },
    {
     "regla": "N9",
     "sev": "informativo",
@@ -281,7 +286,7 @@
    "--mount",
    "type=bind,source=D:/Work/research/FileX/bench/salidas-sondeo-doc/entradas/entrada.xlsx,target=/ent/salida.xlsx,readonly",
    "--mount",
-   "type=bind,source=C:/Users/krato/AppData/Local/Temp/filex-s3p5-kq31e0wf,target=/trabajo",
+   "type=bind,source=C:/Users/krato/AppData/Local/Temp/filex-s3p5-76f9yklh,target=/trabajo",
    "-w",
    "/trabajo",
    "-e",
@@ -300,7 +305,7 @@
    "/ent/salida.xlsx"
   ],
   "rc": 0,
-  "ms": 2125.7,
+  "ms": 1825.5,
   "agotado": false,
   "motivo": "ok",
   "err_cola": "",
@@ -318,6 +323,11 @@
    "5_escritura": true
   },
   "hallazgos": [
+   {
+    "regla": "G5",
+    "sev": "informativo",
+    "msg": "marcador de FAMILIA, no de formato: se comprueba que es html|texto|xml, no que sea .html"
+   },
    {
     "regla": "N9",
     "sev": "informativo",
@@ -348,7 +358,7 @@
    "--mount",
    "type=bind,source=D:/Work/research/FileX/bench/salidas-sondeo-doc/entradas/entrada.csv,target=/ent/salida.csv,readonly",
    "--mount",
-   "type=bind,source=C:/Users/krato/AppData/Local/Temp/filex-s3p5-g02os8w6,target=/trabajo",
+   "type=bind,source=C:/Users/krato/AppData/Local/Temp/filex-s3p5-3h7lv1fb,target=/trabajo",
    "-w",
    "/trabajo",
    "-e",
@@ -367,7 +377,7 @@
    "/ent/salida.csv"
   ],
   "rc": 0,
-  "ms": 2132.5,
+  "ms": 1762.8,
   "agotado": false,
   "motivo": "ok",
   "err_cola": "",
@@ -392,7 +402,7 @@
    }
   ],
   "bytes": 20944,
-  "sha256": "42a36b52c7fe16c2a45cb43fabcb9d8c6e6e19c5a3b04b49dccbaa9b773842f0",
+  "sha256": "f05120d79ff16b530762043b3458df8de7901a33cf37b9492ca1a61c27c58315",
   "caracteres": 119,
   "centinela": true,
   "tabla_ax1": true
@@ -415,7 +425,7 @@
    "--mount",
    "type=bind,source=D:/Work/research/FileX/bench/salidas-sondeo-doc/entradas/entrada.pptx,target=/ent/salida.pptx,readonly",
    "--mount",
-   "type=bind,source=C:/Users/krato/AppData/Local/Temp/filex-s3p5-tp30kffj,target=/trabajo",
+   "type=bind,source=C:/Users/krato/AppData/Local/Temp/filex-s3p5-ck6tfcf_,target=/trabajo",
    "-w",
    "/trabajo",
    "-e",
@@ -434,7 +444,7 @@
    "/ent/salida.pptx"
   ],
   "rc": 0,
-  "ms": 3686.2,
+  "ms": 2254.7,
   "agotado": false,
   "motivo": "ok",
   "err_cola": "",
@@ -459,7 +469,7 @@
    }
   ],
   "bytes": 24534,
-  "sha256": "5a0a554464dbb6c69095f38f0c15e4f0d4f956145f4538d185f4beee2b90e7b1",
+  "sha256": "f4a7a1401f41888748bac78f1c159a3ee5e940c2b7c7cb23ee91c7842639a676",
   "caracteres": 456,
   "centinela": true,
   "tabla_ax1": true
@@ -482,7 +492,7 @@
    "--mount",
    "type=bind,source=D:/Work/research/FileX/bench/salidas-sondeo-doc/entradas/entrada.pptx,target=/ent/salida.pptx,readonly",
    "--mount",
-   "type=bind,source=C:/Users/krato/AppData/Local/Temp/filex-s3p5-dqun_sfq,target=/trabajo",
+   "type=bind,source=C:/Users/krato/AppData/Local/Temp/filex-s3p5-s5u6uy5b,target=/trabajo",
    "-w",
    "/trabajo",
    "-e",
@@ -501,12 +511,12 @@
    "/ent/salida.pptx"
   ],
   "rc": 0,
-  "ms": 3282.4,
+  "ms": 2501.2,
   "agotado": false,
   "motivo": "ok",
   "err_cola": "",
   "censo": {
-   "salida.odp": 32669
+   "salida.odp": 32670
   },
   "sobrantes": {},
   "contrato": "ok_parcial",
@@ -522,11 +532,11 @@
    {
     "regla": "N9",
     "sev": "informativo",
-    "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (32669 de 32669 B)"
+    "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (32670 de 32670 B)"
    }
   ],
-  "bytes": 32669,
-  "sha256": "b1447c355cab1e54d0f32b3bda8342fe98df9e2d7bd93a2471c9d357c26bba6c",
+  "bytes": 32670,
+  "sha256": "bf06b1f1ec8d2702a89b7fccf721af688510655d8ad2c7ea07bb7d18902da339",
   "caracteres": 2825,
   "centinela": true,
   "tabla_ax1": true
@@ -549,7 +559,7 @@
    "--mount",
    "type=bind,source=D:/Work/research/FileX/bench/salidas-sondeo-doc/entradas/entrada.pptx,target=/ent/salida.pptx,readonly",
    "--mount",
-   "type=bind,source=C:/Users/krato/AppData/Local/Temp/filex-s3p5-m0xqurze,target=/trabajo",
+   "type=bind,source=C:/Users/krato/AppData/Local/Temp/filex-s3p5-t0mn18ro,target=/trabajo",
    "-w",
    "/trabajo",
    "-e",
@@ -568,7 +578,7 @@
    "/ent/salida.pptx"
   ],
   "rc": 0,
-  "ms": 2664.7,
+  "ms": 2102.1,
   "agotado": false,
   "motivo": "ok",
   "err_cola": "",
@@ -616,7 +626,7 @@
    "--mount",
    "type=bind,source=D:/Work/research/FileX/bench/salidas-sondeo-doc/entradas/entrada.svg,target=/ent/salida.svg,readonly",
    "--mount",
-   "type=bind,source=C:/Users/krato/AppData/Local/Temp/filex-s3p5-b02nz1fu,target=/trabajo",
+   "type=bind,source=C:/Users/krato/AppData/Local/Temp/filex-s3p5-lg0vnmh4,target=/trabajo",
    "-w",
    "/trabajo",
    "-e",
@@ -635,7 +645,7 @@
    "/ent/salida.svg"
   ],
   "rc": 0,
-  "ms": 1866.7,
+  "ms": 1647.7,
   "agotado": false,
   "motivo": "ok",
   "err_cola": "",
@@ -660,7 +670,7 @@
    }
   ],
   "bytes": 12500,
-  "sha256": "6145d37b0754b1dd1c7ee9f351e2c35fd5f5fb8929988c1e94c03836f8096179",
+  "sha256": "0fc7b4a1476440cfde935936803b7a75e30e6a78244a70b99cffd555bd36e7b8",
   "caracteres": 44,
   "centinela": true,
   "tabla_ax1": true
@@ -683,7 +693,7 @@
    "--mount",
    "type=bind,source=D:/Work/research/FileX/bench/salidas-sondeo-doc/entradas/entrada.svg,target=/ent/salida.svg,readonly",
    "--mount",
-   "type=bind,source=C:/Users/krato/AppData/Local/Temp/filex-s3p5-9foesr54,target=/trabajo",
+   "type=bind,source=C:/Users/krato/AppData/Local/Temp/filex-s3p5-4byhoddx,target=/trabajo",
    "-w",
    "/trabajo",
    "-e",
@@ -702,7 +712,7 @@
    "/ent/salida.svg"
   ],
   "rc": 0,
-  "ms": 1923.3,
+  "ms": 1635.0,
   "agotado": false,
   "motivo": "ok",
   "err_cola": "",
@@ -750,7 +760,7 @@
    "--mount",
    "type=bind,source=D:/Work/research/FileX/bench/salidas-hito5/entradas/entrada.md,target=/ent/salida.md,readonly",
    "--mount",
-   "type=bind,source=C:/Users/krato/AppData/Local/Temp/filex-s3p5-jxb9tcl0,target=/trabajo",
+   "type=bind,source=C:/Users/krato/AppData/Local/Temp/filex-s3p5-72q4efw3,target=/trabajo",
    "-w",
    "/trabajo",
    "-e",
@@ -766,7 +776,7 @@
    "/trabajo/salida.tex"
   ],
   "rc": 0,
-  "ms": 721.7,
+  "ms": 637.0,
   "agotado": false,
   "motivo": "ok",
   "err_cola": "",
@@ -819,7 +829,7 @@
    "--mount",
    "type=bind,source=D:/Work/research/FileX/bench/salidas-hito5/entradas/entrada.docx,target=/ent/salida.docx,readonly",
    "--mount",
-   "type=bind,source=C:/Users/krato/AppData/Local/Temp/filex-s3p5-wvv_4n2f,target=/trabajo",
+   "type=bind,source=C:/Users/krato/AppData/Local/Temp/filex-s3p5-9oxd5s6c,target=/trabajo",
    "-w",
    "/trabajo",
    "-e",
@@ -835,7 +845,7 @@
    "/trabajo/salida.tex"
   ],
   "rc": 0,
-  "ms": 729.8,
+  "ms": 589.3,
   "agotado": false,
   "motivo": "ok",
   "err_cola": "",
@@ -888,7 +898,7 @@
    "--mount",
    "type=bind,source=D:/Work/research/FileX/bench/salidas-sondeo-doc/entradas/entrada.tex,target=/ent/salida.tex,readonly",
    "--mount",
-   "type=bind,source=C:/Users/krato/AppData/Local/Temp/filex-s3p5-5efoinsp,target=/trabajo",
+   "type=bind,source=C:/Users/krato/AppData/Local/Temp/filex-s3p5-ia7mekxe,target=/trabajo",
    "-w",
    "/trabajo",
    "-e",
@@ -903,12 +913,12 @@
    "/trabajo/salida.docx"
   ],
   "rc": 0,
-  "ms": 706.5,
+  "ms": 1603.0,
   "agotado": false,
   "motivo": "ok",
   "err_cola": "",
   "censo": {
-   "salida.docx": 10771
+   "salida.docx": 10772
   },
   "sobrantes": {},
   "contrato": "ok_parcial",
@@ -924,11 +934,11 @@
    {
     "regla": "N9",
     "sev": "informativo",
-    "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (10771 de 10771 B)"
+    "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (10772 de 10772 B)"
    }
   ],
-  "bytes": 10771,
-  "sha256": "0873c728376283eb334e1c091d5f56c684fffb339fa0b0716171c5ed048a8912",
+  "bytes": 10772,
+  "sha256": "aa678b6f44fb34f25a4572c4af8e58d798fe5e928a72316a51ed0a5556da450c",
   "caracteres": 394,
   "centinela": true,
   "tabla_ax1": true
@@ -951,7 +961,7 @@
    "--mount",
    "type=bind,source=D:/Work/research/FileX/bench/salidas-sondeo-doc/entradas/entrada.tex,target=/ent/salida.tex,readonly",
    "--mount",
-   "type=bind,source=C:/Users/krato/AppData/Local/Temp/filex-s3p5-arrly5g0,target=/trabajo",
+   "type=bind,source=C:/Users/krato/AppData/Local/Temp/filex-s3p5-zxylaieg,target=/trabajo",
    "-w",
    "/trabajo",
    "-e",
@@ -967,7 +977,7 @@
    "/trabajo/salida.html"
   ],
   "rc": 0,
-  "ms": 730.7,
+  "ms": 593.1,
   "agotado": false,
   "motivo": "ok",
   "err_cola": "",
@@ -985,6 +995,11 @@
    "5_escritura": true
   },
   "hallazgos": [
+   {
+    "regla": "G5",
+    "sev": "informativo",
+    "msg": "marcador de FAMILIA, no de formato: se comprueba que es html|texto|xml, no que sea .html"
+   },
    {
     "regla": "N9",
     "sev": "informativo",
@@ -1015,7 +1030,7 @@
    "--mount",
    "type=bind,source=D:/Work/research/FileX/bench/salidas-sondeo-doc/entradas/entrada.tex,target=/ent/salida.tex,readonly",
    "--mount",
-   "type=bind,source=C:/Users/krato/AppData/Local/Temp/filex-s3p5-1k0kt2c4,target=/trabajo",
+   "type=bind,source=C:/Users/krato/AppData/Local/Temp/filex-s3p5-wlj15gp1,target=/trabajo",
    "-w",
    "/trabajo",
    "-e",
@@ -1031,12 +1046,12 @@
    "/trabajo/salida.pdf"
   ],
   "rc": 0,
-  "ms": 5610.0,
+  "ms": 4979.4,
   "agotado": false,
   "motivo": "ok",
   "err_cola": "n: to convert a .tex file to PDF, you get better results by using pdflatex (or lualatex or xelatex) directly, try `pdflatex /ent/salida.tex` instead of `pandoc /ent/salida.tex -o /trabajo/salida.pdf`.",
   "censo": {
-   "salida.pdf": 9754
+   "salida.pdf": 9756
   },
   "sobrantes": {},
   "contrato": "aviso",
@@ -1057,11 +1072,11 @@
    {
     "regla": "N9",
     "sev": "informativo",
-    "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (9754 de 9754 B)"
+    "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (9756 de 9756 B)"
    }
   ],
-  "bytes": 9754,
-  "sha256": "d2676222ec7c7214828b6481c5e69abfd8382ad4c7c5259933495aabc766df90",
+  "bytes": 9756,
+  "sha256": "7a016ee1ea2cde4b250676c53fc079ab5114abc949b260a199672e2877206c61",
   "caracteres": 268,
   "centinela": true,
   "tabla_ax1": true
@@ -1084,7 +1099,7 @@
    "--mount",
    "type=bind,source=D:/Work/research/FileX/bench/salidas-sondeo-doc/entradas/entrada.pptx,target=/ent/salida.pptx,readonly",
    "--mount",
-   "type=bind,source=C:/Users/krato/AppData/Local/Temp/filex-s3p5-99upijij,target=/trabajo",
+   "type=bind,source=C:/Users/krato/AppData/Local/Temp/filex-s3p5-rwolrf4j,target=/trabajo",
    "-w",
    "/trabajo",
    "-e",
@@ -1099,7 +1114,7 @@
    "/trabajo/salida.md"
   ],
   "rc": 0,
-  "ms": 676.2,
+  "ms": 1472.1,
   "agotado": false,
   "motivo": "ok",
   "err_cola": "",
@@ -1117,6 +1132,11 @@
    "5_escritura": true
   },
   "hallazgos": [
+   {
+    "regla": "G5",
+    "sev": "informativo",
+    "msg": "marcador de FAMILIA, no de formato: se comprueba que es im_texto|texto, no que sea .md"
+   },
    {
     "regla": "N9",
     "sev": "informativo",
