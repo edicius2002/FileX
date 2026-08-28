@@ -26,10 +26,10 @@ Todos los guiones toman el lock de GPU de `bench/lib/harness.sh` y lo sueltan.
 | `python bench/salidas-hito2/medir_b6_batch.py` | `medicion_b6_batch.json` | ~5 min |
 | `python bench/salidas-hito2/medir_huella.py` | `huella_impacto.json` | ~3 s |
 
-Los tres `dbg_*.py` son las sondas que destaparon que **`bash` a secas desde
-Python es el `bash.exe` de WSL2 y no el Git Bash** (§5.1). Se conservan porque
-sin ellas ese hallazgo no es reproducible:
-`python bench/salidas-hito2/dbg_quebash.py`.
+Los dos `dbg_*.py` son las sondas que destaparon que **`bash` a secas desde
+Python es el `bash.exe` de WSL2 y no el Git Bash** (`hito2-nvenc.md` §6.2). Se
+conservan porque sin ellas ese hallazgo no es reproducible:
+`python bench/salidas-hito2/dbg_quebash.py` da las dos filas de `uname -a`.
 
 ## Binarios BORRADOS, con su `sha256`
 
