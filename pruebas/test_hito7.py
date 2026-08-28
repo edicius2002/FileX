@@ -49,7 +49,7 @@ from filex import cli as _cli  # noqa: E402
 from filex import confinamiento as _conf  # noqa: E402
 from filex import nucleo as _nucleo  # noqa: E402
 from filex import watcher as _watch  # noqa: E402
-from filex.mcp import Servicio, Trabajos  # noqa: E402
+from filex.servicio import Servicio, Trabajos  # noqa: E402
 from filex.nucleo import FileX  # noqa: E402
 from filex.watcher import Huella, Memoria, Vigilante  # noqa: E402
 
@@ -221,8 +221,17 @@ class R10Estructural(unittest.TestCase):
 
         Esa clase se separó del protocolo en el hito 4 «para poder probarla sin
         levantar un servidor», y el hito 7 descubre para qué servía de verdad.
+
+        **La afirmación no cambia; su dirección sí (N6).** Hasta la mudanza esto
+        exigía `from .mcp import ...`, que probaba lo mismo con una forma que era
+        en sí un defecto: la API importaba del módulo del PROTOCOLO. Ahora el
+        servicio vive en `filex/servicio.py` y lo que se exige es lo de siempre
+        —que la API no reimplemente el núcleo— por la puerta correcta. Que nadie
+        siga entrando por `.mcp` lo comprueba `pruebas/test_cancelacion.py`.
         """
-        self.assertIn("from .mcp import Servicio, Trabajos", self._fuente("api"))
+        self.assertIn("from .servicio import Servicio, Trabajos",
+                      self._fuente("api"))
+        self.assertNotIn("from .mcp import", self._fuente("api"))
         # Y el detalle que lo resume: **`filex/api.py` no importa `os`.** La
         # superficie que recibe rutas por la red no toca el módulo de rutas.
         import ast

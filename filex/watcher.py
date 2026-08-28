@@ -56,7 +56,7 @@ from dataclasses import dataclass, field
 
 from . import formatos
 from .confinamiento import Denegado
-from .mcp import COMPLETADO, FALLIDO, Trabajos
+from .servicio import COMPLETADO, FALLIDO, Trabajos
 from .nucleo import FileX
 
 # **`subprocess` no se importa aquí, igual que en `filex/mcp.py`, y tampoco es
