@@ -28,7 +28,8 @@ Salidas y arneses: `bench/salidas-hito6/` · Código: `filex/sidecar.py`,
    por separado suman **3 784 MiB** y medidos a la vez, en dos procesos, dan
    **3 739**: **−45 MiB, el 1,2 %**, con el signo replicado en una segunda tanda
    (−9). **Sumar cifras medidas por separado es CONSERVADOR**, que es lo que
-   hace falta de un presupuesto (§3.1).
+   hace falta de un presupuesto. **Pero el margen es del PERFIL, no del
+   sistema:** con `large-v3` la misma suma sobreestima el **7,2 %** (§3.1, §6 V7).
 3. **MEDIDO — la arquitectura robusta cuesta +106 MiB (×1,029).** Los dos
    modelos en un proceso (con el orden bueno) gastan **3 633 MiB**; en dos
    procesos, **3 739**. Menos del 3 % a cambio de quitar de en medio un fallo
@@ -299,8 +300,14 @@ repite la tanda y mira si el signo se conserva»*—, en otra tanda independient
 > arquitectura de dos procesos, sumar las partes **sobreestima entre el 0,2 % y
 > el 1,2 %**; en un proceso, entre el 2,9 % y el 4,0 %. **Un presupuesto que
 > suma cifras medidas por separado es, por tanto, CONSERVADOR**, que es lo que
-> hace falta de un presupuesto. Lo que era una hipótesis ya es un número, y el
-> número es pequeño.
+> hace falta de un presupuesto. Lo que era una hipótesis ya es un número.
+
+**Y el número no es una constante: es del PERFIL** (§6, V7). Con `large-v3` en
+vez de `distil`, la misma suma sobreestima el **7,2 %**. El **signo** se conserva
+en los tres perfiles medidos —la suma siempre va por encima—, así que sigue
+valiendo como **cota superior**; lo que no vale es publicar «el 1 %» como si
+fuera una propiedad del sistema. Es el aviso de la trampa 78 en otro eje:
+**varía el componente antes de creerte la constante.**
 
 ### 3.2 El precio de la arquitectura robusta
 
