@@ -1,0 +1,63 @@
+{
+  "meta": {
+    "etiqueta": "C_ro5mob_def_cpu_i7",
+    "motor": "rapidocr",
+    "dispositivo": "cpu",
+    "fase": "frio",
+    "via_entrada": "ruta",
+    "reloj": {
+      "perf_counter": 1e-07,
+      "time": 0.015625
+    },
+    "vram_base_MiB": 1418,
+    "vram_libre_base_MiB": 10698,
+    "testigo_mono_ini_ms": 25.86,
+    "testigo_proc_ini_ms": 29.76,
+    "onnxruntime": "1.22.0",
+    "R6": "0",
+    "det_efectivo": {
+      "mean": "[0.5, 0.5, 0.5]",
+      "std": "[0.5, 0.5, 0.5]"
+    },
+    "providers": [
+      "CPUExecutionProvider"
+    ],
+    "import_s": 3.656,
+    "carga_modelo_s": 0.474,
+    "arranque_frio_s": 4.13,
+    "vram_tras_carga_MiB": 1418
+  },
+  "celdas": [
+    {
+      "paso": 1,
+      "img": "escaneado_d4_r150.png",
+      "mpx": 1.248,
+      "nota": "unica pagina del proceso frio",
+      "ms": 1262.1,
+      "chars": 378,
+      "error": null,
+      "vram_antes_MiB": 1418,
+      "vram_despues_MiB": 1418,
+      "vram_libre_MiB": 10698,
+      "delta_sobre_base_MiB": 0,
+      "mpx_acumulados": 1.248,
+      "mpx_maximo": 1.248,
+      "paginas_hasta_ahora": 1,
+      "salida": "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-a4c547156ef35c38f\\bench\\salidas-ocr-produccion\\texto\\C_ro5mob_def_cpu_i7__01_escaneado_d4_r150.txt"
+    }
+  ],
+  "fin": {
+    "evento": "fin",
+    "etiqueta": "C_ro5mob_def_cpu_i7",
+    "vram_final_MiB": 1418,
+    "vram_libre_final_MiB": 10698,
+    "vram_base_MiB": 1418,
+    "pico_delta_MiB": 0,
+    "celdas_con_error": 0,
+    "testigo_mono_fin_ms": 35.44,
+    "testigo_proc_fin_ms": 31.44,
+    "deriva": 1.37,
+    "nivel": 1.06,
+    "tanda": "SUCIA"
+  }
+}

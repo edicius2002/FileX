@@ -1,0 +1,64 @@
+{
+  "meta": {
+    "etiqueta": "humo_rapidocr",
+    "motor": "rapidocr",
+    "dispositivo": "cuda",
+    "fase": "frio",
+    "via_entrada": "ruta",
+    "reloj": {
+      "perf_counter": 1e-07,
+      "time": 0.015625
+    },
+    "vram_base_MiB": 1763,
+    "vram_libre_base_MiB": 10353,
+    "testigo_mono_ini_ms": 34.31,
+    "testigo_proc_ini_ms": 44.64,
+    "onnxruntime": "1.22.0",
+    "R6": "1",
+    "det_efectivo": {
+      "mean": "[0.485, 0.456, 0.406]",
+      "std": "[0.229, 0.224, 0.225]"
+    },
+    "providers": [
+      "CUDAExecutionProvider",
+      "CPUExecutionProvider"
+    ],
+    "import_s": 6.384,
+    "carga_modelo_s": 2.36,
+    "arranque_frio_s": 8.744,
+    "vram_tras_carga_MiB": 1939
+  },
+  "celdas": [
+    {
+      "paso": 1,
+      "img": "escaneado_d4_r150.png",
+      "mpx": 1.248,
+      "nota": "unica pagina del proceso frio",
+      "ms": 2415.8,
+      "chars": 532,
+      "error": null,
+      "vram_antes_MiB": 1939,
+      "vram_despues_MiB": 2443,
+      "vram_libre_MiB": 9673,
+      "delta_sobre_base_MiB": 680,
+      "mpx_acumulados": 1.248,
+      "mpx_maximo": 1.248,
+      "paginas_hasta_ahora": 1,
+      "salida": "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-a4c547156ef35c38f\\bench\\salidas-ocr-produccion\\texto\\humo_rapidocr__01_escaneado_d4_r150.txt"
+    }
+  ],
+  "fin": {
+    "evento": "fin",
+    "etiqueta": "humo_rapidocr",
+    "vram_final_MiB": 2443,
+    "vram_libre_final_MiB": 9673,
+    "vram_base_MiB": 1763,
+    "pico_delta_MiB": 680,
+    "celdas_con_error": 0,
+    "testigo_mono_fin_ms": 32.45,
+    "testigo_proc_fin_ms": 31.58,
+    "deriva": 0.95,
+    "nivel": 0.71,
+    "tanda": "limpia"
+  }
+}

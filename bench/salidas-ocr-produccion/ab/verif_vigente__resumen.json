@@ -1,0 +1,62 @@
+{
+  "meta": {
+    "etiqueta": "verif_vigente",
+    "motor": "rapidocr",
+    "dispositivo": "cpu",
+    "via_entrada": "ruta",
+    "vram_base_MiB": 1420,
+    "img_dir": "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-a4c547156ef35c38f\\bench\\salidas-ocr-produccion\\img_b11",
+    "docs": [
+      "escaneado_d3"
+    ],
+    "reps": 1,
+    "onnxruntime": "1.22.0",
+    "import_s": 3.02,
+    "config": {
+      "legado": false,
+      "ocr_version": "PP-OCRv6",
+      "model_type": "small",
+      "R6": "1"
+    },
+    "det_efectivo": {
+      "mean": "[0.485, 0.456, 0.406]",
+      "std": "[0.229, 0.224, 0.225]",
+      "thresh": 0.2,
+      "box_thresh": 0.45,
+      "unclip_ratio": 1.4,
+      "max_candidates": 3000,
+      "limit_side_len": 736,
+      "limit_type": "min"
+    },
+    "providers": [
+      "CPUExecutionProvider"
+    ],
+    "pesos": {
+      "text_det": "PP-OCRv6_det_small.onnx",
+      "text_cls": "ch_ppocr_mobile_v2.0_cls_mobile.onnx",
+      "text_rec": "PP-OCRv6_rec_small.onnx"
+    },
+    "construccion_s": 0.308,
+    "carga_s": 3.33,
+    "vram_tras_carga_MiB": 1420
+  },
+  "docs": [
+    {
+      "archivo": "escaneado_d3",
+      "ok": true,
+      "ms_mediana": 278.4,
+      "ms_min": 278.4,
+      "ms_max": 278.4,
+      "n": 1,
+      "chars": 80,
+      "salida": "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-a4c547156ef35c38f\\bench\\salidas-ocr-produccion\\ab\\verif_vigente__escaneado_d3.txt"
+    }
+  ],
+  "fin": {
+    "evento": "fin",
+    "vram_pico_MiB": 1420,
+    "vram_base_MiB": 1420,
+    "coste_propio_MiB": 0,
+    "docs_con_error": 0
+  }
+}

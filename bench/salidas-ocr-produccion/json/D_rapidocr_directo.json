@@ -1,0 +1,115 @@
+{
+  "meta": {
+    "etiqueta": "D_rapidocr_directo",
+    "motor": "rapidocr",
+    "dispositivo": "cuda",
+    "fase": "directo",
+    "via_entrada": "ruta",
+    "reloj": {
+      "perf_counter": 1e-07,
+      "time": 0.015625
+    },
+    "vram_base_MiB": 1236,
+    "vram_libre_base_MiB": 10921,
+    "testigo_mono_ini_ms": 34.06,
+    "testigo_proc_ini_ms": 39.63,
+    "onnxruntime": "1.22.0",
+    "R6": "1",
+    "det_efectivo": {
+      "mean": "[0.485, 0.456, 0.406]",
+      "std": "[0.229, 0.224, 0.225]"
+    },
+    "providers": [
+      "CUDAExecutionProvider",
+      "CPUExecutionProvider"
+    ],
+    "import_s": 4.997,
+    "carga_modelo_s": 0.709,
+    "arranque_frio_s": 5.706,
+    "vram_tras_carga_MiB": 1371
+  },
+  "celdas": [
+    {
+      "paso": 1,
+      "img": "escaneado_d4_r400.png",
+      "mpx": 8.882,
+      "nota": "directo al mayor",
+      "ms": 1868.8,
+      "chars": 483,
+      "error": null,
+      "vram_antes_MiB": 1371,
+      "vram_despues_MiB": 2723,
+      "vram_libre_MiB": 9393,
+      "delta_sobre_base_MiB": 1487,
+      "mpx_acumulados": 8.882,
+      "mpx_maximo": 8.882,
+      "paginas_hasta_ahora": 1,
+      "salida": "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-a4c547156ef35c38f\\bench\\salidas-ocr-produccion\\texto\\D_rapidocr_directo__01_escaneado_d4_r400.txt"
+    },
+    {
+      "paso": 2,
+      "img": "escaneado_d4_r400.png",
+      "mpx": 8.882,
+      "nota": "directo al mayor",
+      "ms": 967.2,
+      "chars": 483,
+      "error": null,
+      "vram_antes_MiB": 2723,
+      "vram_despues_MiB": 2723,
+      "vram_libre_MiB": 9393,
+      "delta_sobre_base_MiB": 1487,
+      "mpx_acumulados": 17.764,
+      "mpx_maximo": 8.882,
+      "paginas_hasta_ahora": 2,
+      "salida": "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-a4c547156ef35c38f\\bench\\salidas-ocr-produccion\\texto\\D_rapidocr_directo__02_escaneado_d4_r400.txt"
+    },
+    {
+      "paso": 3,
+      "img": "escaneado_d2_r100.png",
+      "mpx": 0.55,
+      "nota": "vuelta a la mas pequena",
+      "ms": 472.1,
+      "chars": 81,
+      "error": null,
+      "vram_antes_MiB": 2723,
+      "vram_despues_MiB": 2762,
+      "vram_libre_MiB": 9351,
+      "delta_sobre_base_MiB": 1526,
+      "mpx_acumulados": 18.314,
+      "mpx_maximo": 8.882,
+      "paginas_hasta_ahora": 3,
+      "salida": "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-a4c547156ef35c38f\\bench\\salidas-ocr-produccion\\texto\\D_rapidocr_directo__03_escaneado_d2_r100.txt"
+    },
+    {
+      "paso": 4,
+      "img": "escaneado_d2_r100.png",
+      "mpx": 0.55,
+      "nota": "vuelta a la mas pequena",
+      "ms": 99.5,
+      "chars": 81,
+      "error": null,
+      "vram_antes_MiB": 2765,
+      "vram_despues_MiB": 2723,
+      "vram_libre_MiB": 9393,
+      "delta_sobre_base_MiB": 1487,
+      "mpx_acumulados": 18.864,
+      "mpx_maximo": 8.882,
+      "paginas_hasta_ahora": 4,
+      "salida": "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-a4c547156ef35c38f\\bench\\salidas-ocr-produccion\\texto\\D_rapidocr_directo__04_escaneado_d2_r100.txt"
+    }
+  ],
+  "fin": {
+    "evento": "fin",
+    "etiqueta": "D_rapidocr_directo",
+    "vram_final_MiB": 2723,
+    "vram_libre_final_MiB": 9393,
+    "vram_base_MiB": 1236,
+    "pico_delta_MiB": 1526,
+    "celdas_con_error": 0,
+    "testigo_mono_fin_ms": 36.88,
+    "testigo_proc_fin_ms": 35.59,
+    "deriva": 1.08,
+    "nivel": 0.9,
+    "tanda": "limpia"
+  }
+}

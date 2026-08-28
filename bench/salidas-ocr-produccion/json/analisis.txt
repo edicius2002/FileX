@@ -1,0 +1,56 @@
+# 1-2. ¿Crece con las PAGINAS o con los Mpx ACUMULADOS?
+
+| motor | paginas | Mpx acum. final | delta 1a (MiB) | delta ultima | recorrido | pendiente MiB/pagina |
+|---|---:|---:|---:|---:|---:|---:|
+| easyocr | 20 | 24.968 | 1187 | 1187 | 42 | +0.05 |
+| paddleocr | 20 | 24.968 | 936 | 1147 | 41 | +0.43 |
+| rapidocr | 20 | 24.968 | 689 | 949 | 39 | +0.27 |
+
+# 3. ¿Crece con los Mpx del documento MAYOR?
+
+| motor | puntos (Mpx -> MiB) | MiB/Mpx | ordenada | r2 |
+|---|---|---:|---:|---:|
+| easyocr | 0.55->682 · 1.25->1636 · 2.22->3298 · 4.35->6571 · 8.88->9646 | 1080 | 641 | 0.9571 |
+| paddleocr | 0.55->608 · 1.25->1118 · 2.22->1830 · 4.35->3236 · 8.88->6626 | 719 | 202 | 0.9995 |
+| rapidocr | 0.55->556 · 1.25->688 · 2.22->944 · 4.35->1456 · 8.88->1456 | 109 | 643 | 0.7581 |
+
+# 4. El CAMINO: mismo documento mayor (8,88 Mpx), dos rutas
+
+| motor | en escalera (MiB) | directo (MiB) | diferencia | ratio |
+|---|---:|---:|---:|---:|
+| easyocr | 9646 | 4296 | +5350 | x2.25 |
+| paddleocr | 6626 | 4887 | +1739 | x1.36 |
+| rapidocr | 1456 | 1487 | -31 | x0.98 |
+
+# 5. Coste del reciclado: arranque en frio, un proceso por repeticion
+
+| configuracion | n | import s | construccion s | **frio s** | 1a pagina ms |
+|---|---:|---:|---:|---:|---:|
+| C_easyocr_cpu | 9 | 4.379 | 2.190 | **6.583** | 5730.0 |
+| C_easyocr_cuda | 9 | 4.363 | 2.354 | **6.743** | 1061.2 |
+| C_paddleocr_cpu | 9 | 3.681 | 2.018 | **5.646** | 4723.5 |
+| C_paddleocr_cuda | 9 | 4.073 | 2.956 | **7.048** | 848.5 |
+| C_ro5mob_def_cpu | 9 | 3.810 | 0.398 | **4.194** | 1262.1 |
+| C_ro5mob_def_cuda | 9 | 3.657 | 0.715 | **4.308** | 961.6 |
+| C_ro6small_R6_cpu | 9 | 3.613 | 0.374 | **3.987** | 1206.0 |
+| C_ro6small_R6_cuda | 9 | 3.575 | 0.537 | **4.085** | 1038.5 |
+
+# 6. Amortizacion: cada cuantas paginas sale a cuenta reciclar
+
+| motor | frio s (GPU) | ms/pagina estacionario | paginas para +10 % | +25 % | +50 % | +100 % |
+|---|---:|---:|---:|---:|---:|---:|
+| easyocr | 6.74 | 750.4 | 89.9 | 35.9 | 18.0 | 9.0 |
+| paddleocr | 7.05 | 307.9 | 228.9 | 91.6 | 45.8 | 22.9 |
+| rapidocr | 4.08 | 310.8 | 131.4 | 52.6 | 26.3 | 13.1 |
+
+# 7. Umbral operativo: cuantos Mpx caben en la VRAM libre que queda
+
+Con el modelo lineal de la seccion 3, `Mpx_max_seguro = (VRAM_libre - margen - ordenada) / (MiB/Mpx)`.
+
+| motor | MiB/Mpx | ordenada | Mpx con 6000 MiB libres | con 4000 | con 2000 |
+|---|---:|---:|---:|---:|---:|
+| easyocr | 1080 | 641 | 4.50 | 2.65 | 0.80 |
+| paddleocr | 719 | 202 | 7.37 | 4.59 | 1.80 |
+| rapidocr | 109 | 643 | 44.41 | 26.12 | 7.84 |
+
+(margen de seguridad 500 MiB; RapidOCR satura y su recta es una cota superior floja: por encima de ~4,4 Mpx no crece)

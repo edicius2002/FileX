@@ -1,0 +1,64 @@
+{
+  "meta": {
+    "etiqueta": "C_ro5mob_def_cuda_i2",
+    "motor": "rapidocr",
+    "dispositivo": "cuda",
+    "fase": "frio",
+    "via_entrada": "ruta",
+    "reloj": {
+      "perf_counter": 1e-07,
+      "time": 0.015625
+    },
+    "vram_base_MiB": 1454,
+    "vram_libre_base_MiB": 10662,
+    "testigo_mono_ini_ms": 27.51,
+    "testigo_proc_ini_ms": 30.3,
+    "onnxruntime": "1.22.0",
+    "R6": "0",
+    "det_efectivo": {
+      "mean": "[0.5, 0.5, 0.5]",
+      "std": "[0.5, 0.5, 0.5]"
+    },
+    "providers": [
+      "CUDAExecutionProvider",
+      "CPUExecutionProvider"
+    ],
+    "import_s": 3.355,
+    "carga_modelo_s": 0.635,
+    "arranque_frio_s": 3.99,
+    "vram_tras_carga_MiB": 1626
+  },
+  "celdas": [
+    {
+      "paso": 1,
+      "img": "escaneado_d4_r150.png",
+      "mpx": 1.248,
+      "nota": "unica pagina del proceso frio",
+      "ms": 885.3,
+      "chars": 378,
+      "error": null,
+      "vram_antes_MiB": 1626,
+      "vram_despues_MiB": 2162,
+      "vram_libre_MiB": 9954,
+      "delta_sobre_base_MiB": 708,
+      "mpx_acumulados": 1.248,
+      "mpx_maximo": 1.248,
+      "paginas_hasta_ahora": 1,
+      "salida": "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-a4c547156ef35c38f\\bench\\salidas-ocr-produccion\\texto\\C_ro5mob_def_cuda_i2__01_escaneado_d4_r150.txt"
+    }
+  ],
+  "fin": {
+    "evento": "fin",
+    "etiqueta": "C_ro5mob_def_cuda_i2",
+    "vram_final_MiB": 2162,
+    "vram_libre_final_MiB": 9954,
+    "vram_base_MiB": 1454,
+    "pico_delta_MiB": 708,
+    "celdas_con_error": 0,
+    "testigo_mono_fin_ms": 25.06,
+    "testigo_proc_fin_ms": 30.7,
+    "deriva": 0.91,
+    "nivel": 1.01,
+    "tanda": "limpia"
+  }
+}
