@@ -33,6 +33,32 @@ construido: "he puesto ImageNet" es una intencion, no una medida.
 Este fichero NO evalua precision: la metrica vive en `bench/scripts/ocr_eval.py`
 (canonica ACENTUADA desde el 2026-08-28). Aqui solo se producen los .txt.
 
+=============================================================================
+CAMBIO DEL 2026-08-28 (N23, agente S6, informe `bench/hito6-sidecar.md`)
+=============================================================================
+**LOS DOS TESTIGOS DE RUIDO, QUE ESTE ARNES NO TENIA.** Su propio autor lo
+declaro: *«`ocr_motor.py` no los lleva y se declara»* (`ocr-produccion-sidecar.md`
+§10). Sin ellos, los milisegundos de este fichero valen como cifra RELATIVA
+dentro de una tanda y nada mas — y ni siquiera eso, porque una tanda que
+coincidio con una descarga dio un error de 7,4x sin que nadie lo viera.
+
+Van los dos, porque uno solo no basta:
+
+* **deriva** — bucle monohilo de Python, antes y despues. Ve si la maquina se
+  ha ido moviendo DENTRO de la tanda.
+* **nivel** — un lanzamiento de proceso (`ffprobe -version`). Ve la carga de la
+  maquina, que es a lo que el monohilo es ciego: con 12 nucleos cabe en uno
+  libre y etiqueto `limpia` una tanda que salio x6,8 sobre su propio control.
+
+**Y el testigo lleva TOPE PROPIO** (20 s, devolviendo el tope y marcando
+`SUCIA`): en el caso P3 `ffprobe -version` agoto un timeout de 60 s y **tumbo la
+medicion que venia a vigilar**. Un testigo que puede tumbar la medicion no es un
+testigo.
+
+El veredicto va en `meta["ruido"]` y en el resumen `.json`, con los cuatro
+numeros dentro: la etiqueta sola no vale, porque con la sesion de escritorio
+remoto activa **todo sale SUCIA** de forma estructural.
+
 uso: ocr_motor.py <easyocr|rapidocr|paddleocr> <cpu|cuda> [etiqueta]
 env: REPS (9), IMG, OUT, DOCS, RO_LEGADO, RO_VER, RO_TIPO, RO_NORM
 """
@@ -90,6 +116,61 @@ else:
 os.makedirs(OUT, exist_ok=True)
 
 
+# --- N23: los dos testigos de ruido, con tope propio --------------------------
+# Auto-contenidos a proposito: `bench/scripts/` no puede depender del directorio
+# de salidas de ningun agente. La misma logica vive en
+# `bench/salidas-hito6/testigos.py`, y la duplicacion se declara alli.
+TESTIGO_TOPE_S = 20.0
+TESTIGO_DERIVA_MAX = 1.30
+TESTIGO_NIVEL_MAX = 2.00
+
+
+def testigo_deriva(vueltas=300_000):
+    """Bucle monohilo. Milisegundos. Ve la DERIVA dentro de la tanda."""
+    t = time.perf_counter()
+    x = 0
+    for i in range(vueltas):
+        x = (x + i) % 1_000_003
+    return (time.perf_counter() - t) * 1000.0
+
+
+def testigo_nivel():
+    """Lanzamiento de proceso. `(ms, agotado)`. Ve el NIVEL de carga.
+
+    Con el tope agotado devuelve el tope y marca la tanda, en vez de propagar la
+    excepcion: el testigo informa, no decide.
+    """
+    t = time.perf_counter()
+    try:
+        subprocess.run(["ffprobe", "-version"], stdin=subprocess.DEVNULL,
+                       stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+                       timeout=TESTIGO_TOPE_S)
+    except subprocess.TimeoutExpired:
+        return TESTIGO_TOPE_S * 1000.0, True
+    except OSError:
+        return -1.0, False
+    return (time.perf_counter() - t) * 1000.0, False
+
+
+def veredicto_ruido(d_ini, d_fin, n_ini, n_fin, agotado):
+    """`limpia` / `SUCIA` **con los cuatro numeros dentro**: la etiqueta sola no
+    vale, porque con la sesion remota activa todo sale SUCIA por construccion."""
+    r_der = (d_fin / d_ini) if d_ini > 0 else -1.0
+    r_niv = (n_fin / n_ini) if n_ini > 0 else -1.0
+    motivos = []
+    if agotado:
+        motivos.append(f"el testigo de nivel agoto su tope de {TESTIGO_TOPE_S} s")
+    if r_der > TESTIGO_DERIVA_MAX:
+        motivos.append(f"deriva x{r_der:.2f} > {TESTIGO_DERIVA_MAX}")
+    if r_niv > TESTIGO_NIVEL_MAX:
+        motivos.append(f"nivel x{r_niv:.2f} > {TESTIGO_NIVEL_MAX}")
+    return {"deriva_ini_ms": round(d_ini, 1), "deriva_fin_ms": round(d_fin, 1),
+            "deriva_ratio": round(r_der, 3),
+            "nivel_ini_ms": round(n_ini, 1), "nivel_fin_ms": round(n_fin, 1),
+            "nivel_ratio": round(r_niv, 3), "nivel_agotado": agotado,
+            "etiqueta": "SUCIA" if motivos else "limpia", "motivos": motivos}
+
+
 def vram():
     try:
         return int(subprocess.run(
@@ -100,10 +181,18 @@ def vram():
         return -1
 
 
+# Los testigos, ANTES de tocar nada. Y la resolucion del reloj con el que se va
+# a cronometrar: preguntarsela al instrumento cuesta cero y evita publicar el
+# tamano del tic como si fuera una medida (trampa 62).
+_d_ini = testigo_deriva()
+_n_ini, _ag1 = testigo_nivel()
+
 base_vram = vram()
 meta = {"etiqueta": etiqueta, "motor": motor, "dispositivo": dispositivo,
         "via_entrada": "ruta", "vram_base_MiB": base_vram,
-        "img_dir": IMG, "docs": DOCS, "reps": REPS}
+        "img_dir": IMG, "docs": DOCS, "reps": REPS,
+        "reloj": "perf_counter",
+        "reloj_resolucion_s": time.get_clock_info("perf_counter").resolution}
 
 # ---------------------------------------------------------------- carga del motor
 # `carga_s` se desglosa en import y construccion: para una CLI que convierte un
@@ -254,10 +343,15 @@ for nombre in DOCS:
     print(json.dumps(e, ensure_ascii=False))
     sys.stdout.flush()
 
+_d_fin = testigo_deriva()
+_n_fin, _ag2 = testigo_nivel()
+ruido = veredicto_ruido(_d_ini, _d_fin, _n_ini, _n_fin, _ag1 or _ag2)
+
 fin = {"evento": "fin", "vram_pico_MiB": pico, "vram_base_MiB": base_vram,
        "coste_propio_MiB": pico - base_vram,
-       "docs_con_error": sum(1 for e in res if not e.get("ok"))}
+       "docs_con_error": sum(1 for e in res if not e.get("ok")),
+       "ruido": ruido}
 print(json.dumps(fin, ensure_ascii=False))
-json.dump({"meta": meta, "docs": res, "fin": fin},
+json.dump({"meta": meta, "docs": res, "fin": fin, "ruido": ruido},
           open(os.path.join(OUT, f"{etiqueta}__resumen.json"), "w", encoding="utf-8"),
           ensure_ascii=False, indent=2)

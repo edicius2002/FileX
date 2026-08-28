@@ -1,0 +1,70 @@
+{
+  "meta": {
+    "fase": "solo_ocr",
+    "etiqueta": "A_solo_ocr_00",
+    "dispositivo": "cuda",
+    "whisper": "distil-large-v3",
+    "img": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+    "audio": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+    "video": "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-aab599dce013e0f81\\corpus\\video\\fuente_4k.mp4",
+    "vram_base_MiB": 1665,
+    "cadencia_s": 0.25,
+    "reloj_resolucion_s": 1e-07,
+    "reloj": "perf_counter",
+    "via_entrada_ocr": "ruta",
+    "python": "D:\\Work\\research\\FileX\\.venv-ai\\Scripts\\python.exe",
+    "import_ocr_s": 2.844,
+    "torch_cuda": true,
+    "construccion_ocr_s": 0.868,
+    "providers": [
+      "CUDAExecutionProvider",
+      "CPUExecutionProvider"
+    ]
+  },
+  "hitos": [
+    {
+      "hito": "ocr_cargado",
+      "t_s": 3.778,
+      "vram_usada_MiB": 1841,
+      "pico_MiB": 1841
+    },
+    {
+      "hito": "ocr_hecho",
+      "t_s": 4.865,
+      "vram_usada_MiB": 3193,
+      "pico_MiB": 3193
+    },
+    {
+      "hito": "ocr_hecho_2",
+      "t_s": 5.462,
+      "vram_usada_MiB": 3193,
+      "pico_MiB": 3193
+    }
+  ],
+  "fin": {
+    "evento": "fin",
+    "fase": "solo_ocr",
+    "etiqueta": "A_solo_ocr_00",
+    "vram_base_MiB": 1665,
+    "vram_pico_MiB": 3193,
+    "coste_propio_MiB": 1528,
+    "muestras_vram": 15,
+    "total_s": 5.51,
+    "salida": {
+      "ocr_ms": 1048.7,
+      "ocr_chars": 483,
+      "ocr2_ms": 555.6
+    },
+    "ruido": {
+      "deriva_ini_ms": 18.8,
+      "deriva_fin_ms": 18.0,
+      "deriva_ratio": 0.962,
+      "nivel_ini_ms": 29.2,
+      "nivel_fin_ms": 24.9,
+      "nivel_ratio": 0.853,
+      "nivel_agotado": false,
+      "etiqueta": "limpia",
+      "motivos": []
+    }
+  }
+}

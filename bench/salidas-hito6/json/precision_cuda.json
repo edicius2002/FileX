@@ -1,0 +1,107 @@
+{
+  "dispositivo": "cuda",
+  "motor": "rapidocr PP-OCRv6 small + R6",
+  "metrica_canonica": "acentos",
+  "referencia": "DOCUMENTO ESCANEADO Texto que solo existe como pixeles. Debe recuperarse con OCR.",
+  "referencia_len": 81,
+  "filas": [
+    {
+      "doc": "patologico_escaneado",
+      "ppp_nativos": 200,
+      "mpx": 2.319,
+      "dispositivo": "cuda",
+      "via_entrada": "ruta",
+      "ok": true,
+      "chars": 81,
+      "cer_pct": 0.0,
+      "metrica": "acentos",
+      "cer_acentos_pct": 0.0,
+      "cer_ciego_pct": 0.0,
+      "distancia": 0,
+      "frases_exactas": 3,
+      "ref_len": 79,
+      "decision": {
+        "veredicto": "admitir",
+        "motivo": "896 + 500 de margen <= 10414 libres",
+        "coste_previsto_MiB": 896,
+        "libre_MiB": 10414,
+        "margen_MiB": 500,
+        "mpx": 2.319,
+        "motor": "rapidocr",
+        "mpx_admisibles": null
+      },
+      "ms": 883.1
+    },
+    {
+      "doc": "escaneado_d1",
+      "ppp_nativos": 150,
+      "mpx": 1.261,
+      "dispositivo": "cuda",
+      "via_entrada": "ruta",
+      "ok": true,
+      "chars": 81,
+      "cer_pct": 0.0,
+      "metrica": "acentos",
+      "cer_acentos_pct": 0.0,
+      "cer_ciego_pct": 0.0,
+      "distancia": 0,
+      "frases_exactas": 3,
+      "ref_len": 79,
+      "decision": {
+        "veredicto": "admitir",
+        "motivo": "780 + 500 de margen <= 9520 libres",
+        "coste_previsto_MiB": 780,
+        "libre_MiB": 9520,
+        "margen_MiB": 500,
+        "mpx": 1.261,
+        "motor": "rapidocr",
+        "mpx_admisibles": null
+      },
+      "ms": 310.8
+    },
+    {
+      "doc": "escaneado_d2",
+      "ppp_nativos": 100,
+      "mpx": 0.55,
+      "dispositivo": "cuda",
+      "via_entrada": "ruta",
+      "ok": true,
+      "chars": 81,
+      "cer_pct": 0.0,
+      "metrica": "acentos",
+      "cer_acentos_pct": 0.0,
+      "cer_ciego_pct": 0.0,
+      "distancia": 0,
+      "frases_exactas": 3,
+      "ref_len": 79,
+      "decision": {
+        "veredicto": "admitir",
+        "motivo": "703 + 500 de margen <= 9516 libres",
+        "coste_previsto_MiB": 703,
+        "libre_MiB": 9516,
+        "margen_MiB": 500,
+        "mpx": 0.55,
+        "motor": "rapidocr",
+        "mpx_admisibles": null
+      },
+      "ms": 595.0
+    }
+  ],
+  "estado_final": {
+    "residentes": [
+      {
+        "motor": "rapidocr",
+        "dispositivo": "cuda",
+        "paginas": 3,
+        "mpx_max_visto": 2.319,
+        "reciclados": 0,
+        "inactivo_s": 0.0,
+        "vivo": true
+      }
+    ],
+    "vram_libre_MiB": 9557,
+    "ttl_s": 999,
+    "margen_MiB": 500
+  },
+  "distancia_0_en_los_tres": true
+}

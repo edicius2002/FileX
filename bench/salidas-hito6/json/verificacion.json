@@ -1,0 +1,115 @@
+{
+  "maquina": {
+    "vram_libre_inicial_MiB": 10410,
+    "python_ocr": "D:/Work/research/FileX/.venv-ai/Scripts/python.exe",
+    "vram_libre_final_MiB": 10470,
+    "lock_libre_al_salir": true
+  },
+  "constantes": {
+    "MARGEN_MIB": 500,
+    "TTL_S": 300.0
+  },
+  "pruebas": [
+    {
+      "prueba": "V1_ttl_devuelve_vram",
+      "antes_MiB": 1709,
+      "con_modelo_MiB": 3202,
+      "tras_ttl_MiB": 1650,
+      "retenido_MiB": 1493,
+      "devuelto_MiB": 1552,
+      "caducados": [
+        [
+          "rapidocr",
+          "cuda"
+        ]
+      ],
+      "residentes": 0,
+      "ocr_ok": true,
+      "ocr_chars": 483
+    },
+    {
+      "prueba": "V2_orden_del_lote",
+      "descendente": {
+        "pico_MiB": 3214,
+        "base_MiB": 1650,
+        "propio_MiB": 1564,
+        "ok": true,
+        "chars": [
+          483,
+          451,
+          543,
+          532,
+          436
+        ]
+      },
+      "ascendente": {
+        "pico_MiB": 3102,
+        "base_MiB": 1634,
+        "propio_MiB": 1468,
+        "ok": true,
+        "chars": [
+          436,
+          532,
+          543,
+          451,
+          483
+        ]
+      },
+      "ratio_asc_sobre_desc": 0.939
+    },
+    {
+      "prueba": "V3_rechazo_antes_de_cargar",
+      "rechazada": true,
+      "decision": {
+        "veredicto": "rechazar",
+        "motivo": "10234 + 500 > 900 MiB aun reciclando: esta pagina no cabe en esta maquina",
+        "coste_previsto_MiB": 10234,
+        "libre_MiB": 900,
+        "margen_MiB": 500,
+        "mpx": 8.882,
+        "motor": "easyocr",
+        "mpx_admisibles": 0.0
+      },
+      "residentes": 0,
+      "vram_movida_MiB": 0
+    },
+    {
+      "prueba": "V4_reciclado",
+      "con_modelo_MiB": 3164,
+      "tras_MiB": 1820,
+      "coste_s": 5.842,
+      "pid_antes": 29156,
+      "pid_despues": 33240,
+      "pid_distinto": true,
+      "mpx_max_visto_tras": 0.0,
+      "reciclados": 1
+    },
+    {
+      "prueba": "V5_presupuesto_declarado",
+      "perfil": "distil-large-v3 + RapidOCR/PP-OCRv6 small + NVENC",
+      "escritorio_MiB": 3448,
+      "audio_MiB": 1847,
+      "ocr_MiB": 1526,
+      "nvenc_MiB": 743,
+      "mpx_max": 8.882,
+      "motor": "rapidocr",
+      "total_MiB": 7564,
+      "techo_MiB": 8909,
+      "tarjeta_MiB": 12288,
+      "cumple_techo": true,
+      "cabe_en_tarjeta": true,
+      "aditividad_supuesta": true
+    }
+  ],
+  "ruido": {
+    "deriva_ini_ms": 16.1,
+    "deriva_fin_ms": 17.8,
+    "deriva_ratio": 1.102,
+    "nivel_ini_ms": 29.2,
+    "nivel_fin_ms": 33.9,
+    "nivel_ratio": 1.158,
+    "nivel_agotado": false,
+    "etiqueta": "limpia",
+    "motivos": []
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "meta": {
+    "fase": "dos_procesos",
+    "etiqueta": "H_dos_procesos_02",
+    "dispositivo": "cuda",
+    "whisper": "large-v3",
+    "img": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+    "audio": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_largo.flac",
+    "video": "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-aab599dce013e0f81\\corpus\\video\\fuente_4k.mp4",
+    "vram_base_MiB": 1650,
+    "cadencia_s": 0.25,
+    "reloj_resolucion_s": 1e-07,
+    "reloj": "perf_counter",
+    "via_entrada_ocr": "ruta",
+    "python": "D:\\Work\\research\\FileX\\.venv-ai\\Scripts\\python.exe",
+    "trabajador": {
+      "evento": "listo",
+      "motor": "rapidocr",
+      "dispositivo": "cuda",
+      "via_entrada": "ruta",
+      "pid": 30132,
+      "import_s": 3.088,
+      "providers": [
+        "CUDAExecutionProvider",
+        "CPUExecutionProvider"
+      ],
+      "construccion_s": 0.713,
+      "carga_s": 3.802
+    },
+    "trabajador_arranque_s": 3.859,
+    "import_audio_s": 4.045,
+    "construccion_audio_s": 4.946
+  },
+  "hitos": [
+    {
+      "hito": "ocr_cargado_fuera",
+      "t_s": 3.945,
+      "vram_usada_MiB": 1810,
+      "pico_MiB": 1810
+    },
+    {
+      "hito": "audio_cargado",
+      "t_s": 12.986,
+      "vram_usada_MiB": 4885,
+      "pico_MiB": 4885
+    },
+    {
+      "hito": "nvenc_lanzado",
+      "t_s": 13.047,
+      "vram_usada_MiB": 4885,
+      "pico_MiB": 4885
+    },
+    {
+      "hito": "ocr_hecho",
+      "t_s": 14.708,
+      "vram_usada_MiB": 6688,
+      "pico_MiB": 6688
+    },
+    {
+      "hito": "audio_hecho",
+      "t_s": 144.451,
+      "vram_usada_MiB": 6399,
+      "pico_MiB": 7786
+    },
+    {
+      "hito": "nvenc_hecho",
+      "t_s": 144.497,
+      "vram_usada_MiB": 6399,
+      "pico_MiB": 7786
+    },
+    {
+      "hito": "ocr_hecho_2",
+      "t_s": 145.217,
+      "vram_usada_MiB": 6399,
+      "pico_MiB": 7786
+    },
+    {
+      "hito": "trabajador_cerrado",
+      "t_s": 146.034,
+      "vram_usada_MiB": 4873,
+      "pico_MiB": 7786
+    }
+  ],
+  "fin": {
+    "evento": "fin",
+    "fase": "dos_procesos",
+    "etiqueta": "H_dos_procesos_02",
+    "vram_base_MiB": 1650,
+    "vram_pico_MiB": 7786,
+    "coste_propio_MiB": 6136,
+    "muestras_vram": 480,
+    "total_s": 146.1,
+    "salida": {
+      "ocr_ms": 1603.4,
+      "ocr_chars": 483,
+      "audio_ms": 129699.4,
+      "audio_chars": 3077,
+      "audio_duracion_s": 308.0,
+      "nvenc_rc": 0,
+      "nvenc_ok": true,
+      "ocr2_ms": 675.1,
+      "sobrantes_trabajador": []
+    },
+    "ruido": {
+      "deriva_ini_ms": 18.7,
+      "deriva_fin_ms": 19.7,
+      "deriva_ratio": 1.054,
+      "nivel_ini_ms": 34.8,
+      "nivel_fin_ms": 44.9,
+      "nivel_ratio": 1.29,
+      "nivel_agotado": false,
+      "etiqueta": "limpia",
+      "motivos": []
+    }
+  }
+}

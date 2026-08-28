@@ -1,0 +1,7 @@
+{"parcial": {"modo": "orden_audio", "python": "D:\\Work\\research\\FileX\\.venv-ai\\Scripts\\python.exe", "antes": {"total_modulos": 32, "cudnn": []}, "tras_audio": {"total_modulos": 203, "cudnn": ["D:\\Work\\research\\FileX\\.venv-ai\\Lib\\site-packages\\ctranslate2\\cudnn64_9.dll", "D:\\Work\\research\\FileX\\.venv-ai\\Lib\\site-packages\\torch\\lib\\cudnn64_9.dll", "D:\\Work\\research\\FileX\\.venv-ai\\Lib\\site-packages\\torch\\lib\\cudnn_adv64_9.dll", "D:\\Work\\research\\FileX\\.venv-ai\\Lib\\site-packages\\torch\\lib\\cudnn_cnn64_9.dll", "D:\\Work\\research\\FileX\\.venv-ai\\Lib\\site-packages\\torch\\lib\\cudnn_engines_precompiled64_9.dll", "D:\\Work\\research\\FileX\\.venv-ai\\Lib\\site-packages\\torch\\lib\\cudnn_engines_runtime_compiled64_9.dll", "D:\\Work\\research\\FileX\\.venv-ai\\Lib\\site-packages\\torch\\lib\\cudnn_graph64_9.dll", "D:\\Work\\research\\FileX\\.venv-ai\\Lib\\site-packages\\torch\\lib\\cudnn_heuristic64_9.dll", "D:\\Work\\research\\FileX\\.venv-ai\\Lib\\site-packages\\torch\\lib\\cudnn_ops64_9.dll"]}}}
+
+---STDERR---
+[32m[INFO] 2026-08-28 13:00:33,301 [RapidOCR] base.py:23: Using engine_name: onnxruntime[0m
+[32m[INFO] 2026-08-28 13:00:33,524 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_det_small.onnx[0m
+[32m[INFO] 2026-08-28 13:00:33,525 [RapidOCR] main.py:63: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_det_small.onnx[0m
+Could not load symbol cudnnGetLibConfig. Error code 127

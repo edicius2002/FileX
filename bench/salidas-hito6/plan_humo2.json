@@ -1,0 +1,22 @@
+{
+  "etiqueta": "S6-D-humo2",
+  "python": "D:/Work/research/FileX/.venv-ai/Scripts/python.exe",
+  "corridas": [
+    {
+      "fase": "coresidente_inv",
+      "etiqueta": "D_inv_00",
+      "timeout": 900,
+      "env": {
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "dos_procesos",
+      "etiqueta": "D_dos_00",
+      "timeout": 900,
+      "env": {
+        "HF_HUB_OFFLINE": "1"
+      }
+    }
+  ]
+}

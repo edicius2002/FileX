@@ -1,0 +1,10 @@
+{
+  "etiqueta": "S6-humo",
+  "python": "D:/Work/research/FileX/.venv-ai/Scripts/python.exe",
+  "corridas": [
+    {"fase": "base", "etiqueta": "humo_base", "timeout": 300},
+    {"fase": "solo_nvenc", "etiqueta": "humo_nvenc", "timeout": 600},
+    {"fase": "solo_ocr", "etiqueta": "humo_ocr", "timeout": 900},
+    {"fase": "solo_audio", "etiqueta": "humo_audio", "timeout": 900}
+  ]
+}

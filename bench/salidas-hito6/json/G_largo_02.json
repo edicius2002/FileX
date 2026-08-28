@@ -1,0 +1,59 @@
+{
+  "meta": {
+    "fase": "solo_audio",
+    "etiqueta": "G_largo_02",
+    "dispositivo": "cuda",
+    "whisper": "large-v3",
+    "img": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+    "audio": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_largo.flac",
+    "video": "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-aab599dce013e0f81\\corpus\\video\\fuente_4k.mp4",
+    "vram_base_MiB": 1706,
+    "cadencia_s": 0.25,
+    "reloj_resolucion_s": 1e-07,
+    "reloj": "perf_counter",
+    "via_entrada_ocr": "ruta",
+    "python": "D:\\Work\\research\\FileX\\.venv-ai\\Scripts\\python.exe",
+    "import_audio_s": 4.216,
+    "construccion_audio_s": 4.726
+  },
+  "hitos": [
+    {
+      "hito": "audio_cargado",
+      "t_s": 8.999,
+      "vram_usada_MiB": 4776,
+      "pico_MiB": 4776
+    },
+    {
+      "hito": "audio_hecho",
+      "t_s": 128.378,
+      "vram_usada_MiB": 4941,
+      "pico_MiB": 6240
+    }
+  ],
+  "fin": {
+    "evento": "fin",
+    "fase": "solo_audio",
+    "etiqueta": "G_largo_02",
+    "vram_base_MiB": 1706,
+    "vram_pico_MiB": 6240,
+    "coste_propio_MiB": 4534,
+    "muestras_vram": 424,
+    "total_s": 128.44,
+    "salida": {
+      "audio_ms": 119340.9,
+      "audio_chars": 3066,
+      "audio_duracion_s": 308.0
+    },
+    "ruido": {
+      "deriva_ini_ms": 21.1,
+      "deriva_fin_ms": 20.7,
+      "deriva_ratio": 0.98,
+      "nivel_ini_ms": 34.8,
+      "nivel_fin_ms": 36.7,
+      "nivel_ratio": 1.056,
+      "nivel_agotado": false,
+      "etiqueta": "limpia",
+      "motivos": []
+    }
+  }
+}

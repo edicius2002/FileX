@@ -1,0 +1,666 @@
+{
+  "etiqueta": "S6-F-factorial",
+  "python": "D:/Work/research/FileX/.venv-ai/Scripts/python.exe",
+  "corridas": [
+    {
+      "fase": "base",
+      "etiqueta": "F_base_00",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "solo_nvenc",
+      "etiqueta": "F_solo_nvenc_00",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "solo_ocr",
+      "etiqueta": "F_solo_ocr_00",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "solo_audio",
+      "etiqueta": "F_solo_audio_00",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "coresidente_inv",
+      "etiqueta": "F_coresidente_inv_00",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "dos_procesos",
+      "etiqueta": "F_dos_procesos_00",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "base",
+      "etiqueta": "F_base_01",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "solo_nvenc",
+      "etiqueta": "F_solo_nvenc_01",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "solo_ocr",
+      "etiqueta": "F_solo_ocr_01",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "solo_audio",
+      "etiqueta": "F_solo_audio_01",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "coresidente_inv",
+      "etiqueta": "F_coresidente_inv_01",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "dos_procesos",
+      "etiqueta": "F_dos_procesos_01",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "base",
+      "etiqueta": "F_base_02",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "solo_nvenc",
+      "etiqueta": "F_solo_nvenc_02",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "solo_ocr",
+      "etiqueta": "F_solo_ocr_02",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "solo_audio",
+      "etiqueta": "F_solo_audio_02",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "coresidente_inv",
+      "etiqueta": "F_coresidente_inv_02",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "dos_procesos",
+      "etiqueta": "F_dos_procesos_02",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "base",
+      "etiqueta": "F_base_03",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "solo_nvenc",
+      "etiqueta": "F_solo_nvenc_03",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "solo_ocr",
+      "etiqueta": "F_solo_ocr_03",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "solo_audio",
+      "etiqueta": "F_solo_audio_03",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "coresidente_inv",
+      "etiqueta": "F_coresidente_inv_03",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "dos_procesos",
+      "etiqueta": "F_dos_procesos_03",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "base",
+      "etiqueta": "F_base_04",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "solo_nvenc",
+      "etiqueta": "F_solo_nvenc_04",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "solo_ocr",
+      "etiqueta": "F_solo_ocr_04",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "solo_audio",
+      "etiqueta": "F_solo_audio_04",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "coresidente_inv",
+      "etiqueta": "F_coresidente_inv_04",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "dos_procesos",
+      "etiqueta": "F_dos_procesos_04",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "base",
+      "etiqueta": "F_base_05",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "solo_nvenc",
+      "etiqueta": "F_solo_nvenc_05",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "solo_ocr",
+      "etiqueta": "F_solo_ocr_05",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "solo_audio",
+      "etiqueta": "F_solo_audio_05",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "coresidente_inv",
+      "etiqueta": "F_coresidente_inv_05",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "dos_procesos",
+      "etiqueta": "F_dos_procesos_05",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "base",
+      "etiqueta": "F_base_06",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "solo_nvenc",
+      "etiqueta": "F_solo_nvenc_06",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "solo_ocr",
+      "etiqueta": "F_solo_ocr_06",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "solo_audio",
+      "etiqueta": "F_solo_audio_06",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "coresidente_inv",
+      "etiqueta": "F_coresidente_inv_06",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "dos_procesos",
+      "etiqueta": "F_dos_procesos_06",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "base",
+      "etiqueta": "F_base_07",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "solo_nvenc",
+      "etiqueta": "F_solo_nvenc_07",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "solo_ocr",
+      "etiqueta": "F_solo_ocr_07",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "solo_audio",
+      "etiqueta": "F_solo_audio_07",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "coresidente_inv",
+      "etiqueta": "F_coresidente_inv_07",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "dos_procesos",
+      "etiqueta": "F_dos_procesos_07",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "base",
+      "etiqueta": "F_base_08",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "solo_nvenc",
+      "etiqueta": "F_solo_nvenc_08",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "solo_ocr",
+      "etiqueta": "F_solo_ocr_08",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "solo_audio",
+      "etiqueta": "F_solo_audio_08",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "coresidente_inv",
+      "etiqueta": "F_coresidente_inv_08",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "dos_procesos",
+      "etiqueta": "F_dos_procesos_08",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "base",
+      "etiqueta": "F_base_09",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "solo_nvenc",
+      "etiqueta": "F_solo_nvenc_09",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "solo_ocr",
+      "etiqueta": "F_solo_ocr_09",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "solo_audio",
+      "etiqueta": "F_solo_audio_09",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "coresidente_inv",
+      "etiqueta": "F_coresidente_inv_09",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "dos_procesos",
+      "etiqueta": "F_dos_procesos_09",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{"meta": {"fase": "dos_procesos", "etiqueta": "E_dos_procesos_04", "dispositivo": "cuda", "whisper": "distil-large-v3", "img": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png", "audio": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac", "video": "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-aab599dce013e0f81\\corpus\\video\\fuente_4k.mp4", "vram_base_MiB": 1634, "cadencia_s": 0.25, "reloj_resolucion_s": 1e-07, "reloj": "perf_counter", "via_entrada_ocr": "ruta", "python": "D:\\Work\\research\\FileX\\.venv-ai\\Scripts\\python.exe"}}
+Traceback (most recent call last):
+  File "D:\Work\research\FileX\.claude\worktrees\agent-aab599dce013e0f81\bench\salidas-hito6\coresidencia.py", line 320, in <module>
+    main()
+  File "D:\Work\research\FileX\.claude\worktrees\agent-aab599dce013e0f81\bench\salidas-hito6\coresidencia.py", line 213, in main
+    trabajador.arrancar()
+  File "D:\Work\research\FileX\.claude\worktrees\agent-aab599dce013e0f81\filex\sidecar.py", line 401, in arrancar
+    self._drenar_stderr()
+    ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Trabajador' object has no attribute '_drenar_stderr'

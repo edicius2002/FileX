@@ -1,0 +1,14 @@
+{"meta": {"fase": "solo_ocr", "etiqueta": "E_solo_ocr_00", "dispositivo": "cuda", "whisper": "distil-large-v3", "img": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png", "audio": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac", "video": "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-aab599dce013e0f81\\corpus\\video\\fuente_4k.mp4", "vram_base_MiB": 1624, "cadencia_s": 0.25, "reloj_resolucion_s": 1e-07, "reloj": "perf_counter", "via_entrada_ocr": "ruta", "python": "D:\\Work\\research\\FileX\\.venv-ai\\Scripts\\python.exe"}}
+[32m[INFO] 2026-08-28 12:40:03,240 [RapidOCR] base.py:23: Using engine_name: onnxruntime[0m
+[32m[INFO] 2026-08-28 12:40:03,506 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_det_small.onnx[0m
+[32m[INFO] 2026-08-28 12:40:03,506 [RapidOCR] main.py:63: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_det_small.onnx[0m
+[32m[INFO] 2026-08-28 12:40:03,735 [RapidOCR] base.py:23: Using engine_name: onnxruntime[0m
+[32m[INFO] 2026-08-28 12:40:03,737 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ppocr_mobile_v2.0_cls_mobile.onnx[0m
+[32m[INFO] 2026-08-28 12:40:03,737 [RapidOCR] main.py:63: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\ch_ppocr_mobile_v2.0_cls_mobile.onnx[0m
+[32m[INFO] 2026-08-28 12:40:03,786 [RapidOCR] base.py:23: Using engine_name: onnxruntime[0m
+[32m[INFO] 2026-08-28 12:40:03,804 [RapidOCR] download_file.py:60: File exists and is valid: D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_rec_small.onnx[0m
+[32m[INFO] 2026-08-28 12:40:03,804 [RapidOCR] main.py:63: Using D:\Work\research\FileX\.venv-ai\Lib\site-packages\rapidocr\models\PP-OCRv6_rec_small.onnx[0m
+{"hito": "ocr_cargado", "t_s": 3.581, "vram_usada_MiB": 1802, "pico_MiB": 1802}
+{"hito": "ocr_hecho", "t_s": 4.758, "vram_usada_MiB": 3154, "pico_MiB": 3154}
+{"hito": "ocr_hecho_2", "t_s": 5.441, "vram_usada_MiB": 3195, "pico_MiB": 3195}
+{"evento": "fin", "fase": "solo_ocr", "etiqueta": "E_solo_ocr_00", "vram_base_MiB": 1624, "vram_pico_MiB": 3195, "coste_propio_MiB": 1571, "muestras_vram": 16, "total_s": 5.52, "salida": {"ocr_ms": 1131.7, "ocr_chars": 483, "ocr2_ms": 633.8}, "ruido": {"deriva_ini_ms": 18.6, "deriva_fin_ms": 23.8, "deriva_ratio": 1.281, "nivel_ini_ms": 33.5, "nivel_fin_ms": 28.0, "nivel_ratio": 0.838, "nivel_agotado": false, "etiqueta": "limpia", "motivos": []}}

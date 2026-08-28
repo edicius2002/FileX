@@ -1,0 +1,96 @@
+{
+  "etiqueta": "S6-C-controles",
+  "python": "D:/Work/research/FileX/.venv-ai/Scripts/python.exe",
+  "corridas": [
+    {
+      "fase": "solo_audio",
+      "etiqueta": "C_audio_largo_distil_00",
+      "timeout": 1200,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_largo.flac",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "solo_ocr",
+      "etiqueta": "C_ocr_2mpx_00",
+      "timeout": 900,
+      "env": {
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r200.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "dos_procesos",
+      "etiqueta": "C_core_2mpx_00",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r200.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "solo_audio",
+      "etiqueta": "C_audio_largo_distil_01",
+      "timeout": 1200,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_largo.flac",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "solo_ocr",
+      "etiqueta": "C_ocr_2mpx_01",
+      "timeout": 900,
+      "env": {
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r200.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "dos_procesos",
+      "etiqueta": "C_core_2mpx_01",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r200.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "solo_audio",
+      "etiqueta": "C_audio_largo_distil_02",
+      "timeout": 1200,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_largo.flac",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "solo_ocr",
+      "etiqueta": "C_ocr_2mpx_02",
+      "timeout": 900,
+      "env": {
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r200.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    },
+    {
+      "fase": "dos_procesos",
+      "etiqueta": "C_core_2mpx_02",
+      "timeout": 900,
+      "env": {
+        "H6_WHISPER": "distil-large-v3",
+        "H6_AUDIO": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+        "H6_IMG": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r200.png",
+        "HF_HUB_OFFLINE": "1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "reps": 5,
+  "filas": [
+    {
+      "rep": 0,
+      "orden": "descendente",
+      "propio_MiB": 1574,
+      "base_MiB": 1638,
+      "pico_MiB": 3212,
+      "ok": true
+    },
+    {
+      "rep": 0,
+      "orden": "ascendente",
+      "propio_MiB": 1498,
+      "base_MiB": 1638,
+      "pico_MiB": 3136,
+      "ok": true
+    },
+    {
+      "rep": 1,
+      "orden": "descendente",
+      "propio_MiB": 1532,
+      "base_MiB": 1638,
+      "pico_MiB": 3170,
+      "ok": true
+    },
+    {
+      "rep": 1,
+      "orden": "ascendente",
+      "propio_MiB": 1448,
+      "base_MiB": 1638,
+      "pico_MiB": 3086,
+      "ok": true
+    },
+    {
+      "rep": 2,
+      "orden": "descendente",
+      "propio_MiB": 1528,
+      "base_MiB": 1638,
+      "pico_MiB": 3166,
+      "ok": true
+    },
+    {
+      "rep": 2,
+      "orden": "ascendente",
+      "propio_MiB": 1455,
+      "base_MiB": 1638,
+      "pico_MiB": 3093,
+      "ok": true
+    },
+    {
+      "rep": 3,
+      "orden": "descendente",
+      "propio_MiB": 1578,
+      "base_MiB": 1636,
+      "pico_MiB": 3214,
+      "ok": true
+    },
+    {
+      "rep": 3,
+      "orden": "ascendente",
+      "propio_MiB": 1457,
+      "base_MiB": 1636,
+      "pico_MiB": 3093,
+      "ok": true
+    },
+    {
+      "rep": 4,
+      "orden": "descendente",
+      "propio_MiB": 1529,
+      "base_MiB": 1636,
+      "pico_MiB": 3165,
+      "ok": true
+    },
+    {
+      "rep": 4,
+      "orden": "ascendente",
+      "propio_MiB": 1453,
+      "base_MiB": 1674,
+      "pico_MiB": 3127,
+      "ok": true
+    }
+  ],
+  "ruido": {
+    "deriva_ini_ms": 18.5,
+    "deriva_fin_ms": 17.5,
+    "deriva_ratio": 0.946,
+    "nivel_ini_ms": 32.2,
+    "nivel_fin_ms": 28.5,
+    "nivel_ratio": 0.883,
+    "nivel_agotado": false,
+    "etiqueta": "limpia",
+    "motivos": []
+  },
+  "ruido_instrumento_MiB": 43,
+  "descendente": {
+    "n": 5,
+    "mediana": 1532,
+    "min": 1528,
+    "max": 1578,
+    "recorrido": 50
+  },
+  "ascendente": {
+    "n": 5,
+    "mediana": 1455,
+    "min": 1448,
+    "max": 1498,
+    "recorrido": 50
+  },
+  "diferencia_asc_menos_desc_MiB": -77,
+  "signos_por_repeticion": [
+    -1,
+    -1,
+    -1,
+    -1,
+    -1
+  ],
+  "signo_se_conserva": true,
+  "supera_el_ruido": true
+}

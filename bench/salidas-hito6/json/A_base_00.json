@@ -1,0 +1,40 @@
+{
+  "meta": {
+    "fase": "base",
+    "etiqueta": "A_base_00",
+    "dispositivo": "cuda",
+    "whisper": "distil-large-v3",
+    "img": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png",
+    "audio": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac",
+    "video": "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-aab599dce013e0f81\\corpus\\video\\fuente_4k.mp4",
+    "vram_base_MiB": 1665,
+    "cadencia_s": 0.25,
+    "reloj_resolucion_s": 1e-07,
+    "reloj": "perf_counter",
+    "via_entrada_ocr": "ruta",
+    "python": "D:\\Work\\research\\FileX\\.venv-ai\\Scripts\\python.exe"
+  },
+  "hitos": [],
+  "fin": {
+    "evento": "fin",
+    "fase": "base",
+    "etiqueta": "A_base_00",
+    "vram_base_MiB": 1665,
+    "vram_pico_MiB": 1665,
+    "coste_propio_MiB": 0,
+    "muestras_vram": 1,
+    "total_s": 0.09,
+    "salida": {},
+    "ruido": {
+      "deriva_ini_ms": 18.7,
+      "deriva_fin_ms": 17.3,
+      "deriva_ratio": 0.927,
+      "nivel_ini_ms": 27.4,
+      "nivel_fin_ms": 24.0,
+      "nivel_ratio": 0.877,
+      "nivel_agotado": false,
+      "etiqueta": "limpia",
+      "motivos": []
+    }
+  }
+}

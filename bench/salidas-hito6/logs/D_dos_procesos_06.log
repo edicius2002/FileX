@@ -1,0 +1,10 @@
+{"meta": {"fase": "dos_procesos", "etiqueta": "D_dos_procesos_06", "dispositivo": "cuda", "whisper": "distil-large-v3", "img": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/bench/salidas-hito6/img/escaneado_d4_r400.png", "audio": "D:/Work/research/FileX/.claude/worktrees/agent-aab599dce013e0f81/corpus/audio/habla_jfk.flac", "video": "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-aab599dce013e0f81\\corpus\\video\\fuente_4k.mp4", "vram_base_MiB": 1625, "cadencia_s": 0.25, "reloj_resolucion_s": 1e-07, "reloj": "perf_counter", "via_entrada_ocr": "ruta", "python": "D:\\Work\\research\\FileX\\.venv-ai\\Scripts\\python.exe"}}
+{"hito": "ocr_cargado_fuera", "t_s": 4.007, "vram_usada_MiB": 1805, "pico_MiB": 1805}
+{"hito": "audio_cargado", "t_s": 10.753, "vram_usada_MiB": 3410, "pico_MiB": 3410}
+{"hito": "nvenc_lanzado", "t_s": 10.818, "vram_usada_MiB": 3410, "pico_MiB": 3410}
+{"hito": "ocr_hecho", "t_s": 12.777, "vram_usada_MiB": 5263, "pico_MiB": 5263}
+{"hito": "audio_hecho", "t_s": 13.862, "vram_usada_MiB": 5335, "pico_MiB": 5335}
+{"hito": "nvenc_hecho", "t_s": 14.634, "vram_usada_MiB": 4876, "pico_MiB": 5335}
+{"hito": "ocr_hecho_2", "t_s": 15.436, "vram_usada_MiB": 4876, "pico_MiB": 5335}
+{"hito": "trabajador_cerrado", "t_s": 16.167, "vram_usada_MiB": 3343, "pico_MiB": 5335}
+{"evento": "fin", "fase": "dos_procesos", "etiqueta": "D_dos_procesos_06", "vram_base_MiB": 1625, "vram_pico_MiB": 5335, "coste_propio_MiB": 3710, "muestras_vram": 51, "total_s": 16.23, "salida": {"ocr_ms": 1898.8, "ocr_chars": 483, "audio_ms": 1033.7, "audio_chars": 110, "audio_duracion_s": 11.0, "nvenc_rc": 0, "nvenc_ok": true, "ocr2_ms": 759.1, "sobrantes_trabajador": []}, "ruido": {"deriva_ini_ms": 27.0, "deriva_fin_ms": 26.6, "deriva_ratio": 0.985, "nivel_ini_ms": 39.1, "nivel_fin_ms": 33.4, "nivel_ratio": 0.854, "nivel_agotado": false, "etiqueta": "limpia", "motivos": []}}
