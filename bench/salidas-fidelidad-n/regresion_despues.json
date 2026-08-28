@@ -1,0 +1,844 @@
+{
+ "n": 53,
+ "total_ms": 50249.7,
+ "falsos_positivos": [],
+ "falsos_negativos": [],
+ "contrato": {
+  "ok": 39,
+  "aviso": 3,
+  "ok_parcial": 10,
+  "fallo": 1
+ },
+ "fidelidad": {
+  "ok": 37,
+  "aviso": 8,
+  "ok_parcial": 8,
+  "fallo": 0
+ },
+ "filas": [
+  {
+   "salida": "tipico_flac-to.mp3",
+   "cat": "audio",
+   "esperado": "ok",
+   "contrato": "ok",
+   "punto1": "evaluado",
+   "contrato_sin_cubrir": [],
+   "contrato_reglas": [],
+   "fidelidad": "ok",
+   "fidelidad_cobertura": {
+    "A7": true,
+    "V5": true
+   },
+   "fidelidad_reglas": []
+  },
+  {
+   "salida": "tipico_flac-to.opus",
+   "cat": "audio",
+   "esperado": "ok",
+   "contrato": "ok",
+   "punto1": "evaluado",
+   "contrato_sin_cubrir": [],
+   "contrato_reglas": [],
+   "fidelidad": "ok",
+   "fidelidad_cobertura": {
+    "A7": true,
+    "V5": true
+   },
+   "fidelidad_reglas": []
+  },
+  {
+   "salida": "tipico_flac-to.wav",
+   "cat": "audio",
+   "esperado": "ok",
+   "contrato": "ok",
+   "punto1": "evaluado",
+   "contrato_sin_cubrir": [],
+   "contrato_reglas": [],
+   "fidelidad": "ok",
+   "fidelidad_cobertura": {
+    "A4": true,
+    "A7": true
+   },
+   "fidelidad_reglas": []
+  },
+  {
+   "salida": "tipico_mp3-to.flac",
+   "cat": "audio",
+   "esperado": "ok",
+   "contrato": "ok",
+   "punto1": "evaluado",
+   "contrato_sin_cubrir": [],
+   "contrato_reglas": [],
+   "fidelidad": "aviso",
+   "fidelidad_cobertura": {
+    "A4": true,
+    "A7": true,
+    "V5": true
+   },
+   "fidelidad_reglas": [
+    "A4"
+   ]
+  },
+  {
+   "salida": "tipico_mp3-to.wav",
+   "cat": "audio",
+   "esperado": "ok",
+   "contrato": "ok",
+   "punto1": "evaluado",
+   "contrato_sin_cubrir": [],
+   "contrato_reglas": [],
+   "fidelidad": "ok",
+   "fidelidad_cobertura": {
+    "A4": true,
+    "A7": true
+   },
+   "fidelidad_reglas": []
+  },
+  {
+   "salida": "tipico_mp4-audio-copy.m4a",
+   "cat": "audio",
+   "esperado": "ok",
+   "contrato": "ok",
+   "punto1": "evaluado",
+   "contrato_sin_cubrir": [],
+   "contrato_reglas": [],
+   "fidelidad": "ok",
+   "fidelidad_cobertura": {
+    "A5": true,
+    "A7": true,
+    "V5": true
+   },
+   "fidelidad_reglas": []
+  },
+  {
+   "salida": "tipico_mp4-audio.flac",
+   "cat": "audio",
+   "esperado": "ok",
+   "contrato": "aviso",
+   "punto1": "evaluado",
+   "contrato_sin_cubrir": [],
+   "contrato_reglas": [
+    "A6"
+   ],
+   "fidelidad": "aviso",
+   "fidelidad_cobertura": {
+    "A5": true,
+    "A7": true,
+    "V5": true
+   },
+   "fidelidad_reglas": [
+    "A5"
+   ]
+  },
+  {
+   "salida": "tipico_mp4-audio.mp3",
+   "cat": "audio",
+   "esperado": "ok",
+   "contrato": "ok",
+   "punto1": "evaluado",
+   "contrato_sin_cubrir": [],
+   "contrato_reglas": [],
+   "fidelidad": "ok",
+   "fidelidad_cobertura": {
+    "A7": true,
+    "V5": true
+   },
+   "fidelidad_reglas": []
+  },
+  {
+   "salida": "trivial_wav-to.flac",
+   "cat": "audio",
+   "esperado": "ok",
+   "contrato": "ok",
+   "punto1": "evaluado",
+   "contrato_sin_cubrir": [],
+   "contrato_reglas": [],
+   "fidelidad": "ok",
+   "fidelidad_cobertura": {
+    "A4": true,
+    "A7": true,
+    "V5": true
+   },
+   "fidelidad_reglas": []
+  },
+  {
+   "salida": "trivial_wav-to.m4a",
+   "cat": "audio",
+   "esperado": "ok",
+   "contrato": "ok",
+   "punto1": "evaluado",
+   "contrato_sin_cubrir": [],
+   "contrato_reglas": [],
+   "fidelidad": "ok",
+   "fidelidad_cobertura": {
+    "A7": true,
+    "V5": true
+   },
+   "fidelidad_reglas": []
+  },
+  {
+   "salida": "trivial_wav-to.mp3",
+   "cat": "audio",
+   "esperado": "ok",
+   "contrato": "ok",
+   "punto1": "evaluado",
+   "contrato_sin_cubrir": [],
+   "contrato_reglas": [],
+   "fidelidad": "ok",
+   "fidelidad_cobertura": {
+    "A7": true,
+    "V5": true
+   },
+   "fidelidad_reglas": []
+  },
+  {
+   "salida": "trivial_wav-to.opus",
+   "cat": "audio",
+   "esperado": "ok",
+   "contrato": "ok",
+   "punto1": "evaluado",
+   "contrato_sin_cubrir": [],
+   "contrato_reglas": [],
+   "fidelidad": "ok",
+   "fidelidad_cobertura": {
+    "A7": true,
+    "V5": true
+   },
+   "fidelidad_reglas": []
+  },
+  {
+   "salida": "patologico_bom_csv-to-normalizado.csv",
+   "cat": "datos",
+   "esperado": "ok",
+   "contrato": "ok",
+   "punto1": "familia",
+   "contrato_sin_cubrir": [],
+   "contrato_reglas": [],
+   "fidelidad": "ok_parcial",
+   "fidelidad_cobertura": {},
+   "fidelidad_reglas": []
+  },
+  {
+   "salida": "patologico_bom_csv-to.json",
+   "cat": "datos",
+   "esperado": "ok",
+   "contrato": "ok",
+   "punto1": "familia",
+   "contrato_sin_cubrir": [],
+   "contrato_reglas": [],
+   "fidelidad": "ok_parcial",
+   "fidelidad_cobertura": {},
+   "fidelidad_reglas": []
+  },
+  {
+   "salida": "tipico_json-to.csv",
+   "cat": "datos",
+   "esperado": "ok",
+   "contrato": "ok",
+   "punto1": "familia",
+   "contrato_sin_cubrir": [],
+   "contrato_reglas": [],
+   "fidelidad": "ok_parcial",
+   "fidelidad_cobertura": {},
+   "fidelidad_reglas": []
+  },
+  {
+   "salida": "16bit_tif-to-d16.png",
+   "cat": "imagen",
+   "esperado": "ok",
+   "contrato": "ok",
+   "punto1": "evaluado",
+   "contrato_sin_cubrir": [],
+   "contrato_reglas": [],
+   "fidelidad": "ok",
+   "fidelidad_cobertura": {
+    "I6": true
+   },
+   "fidelidad_reglas": []
+  },
+  {
+   "salida": "16bit_tif-to-d8.png",
+   "cat": "imagen",
+   "esperado": "ok",
+   "contrato": "ok",
+   "punto1": "evaluado",
+   "contrato_sin_cubrir": [],
+   "contrato_reglas": [],
+   "fidelidad": "ok",
+   "fidelidad_cobertura": {
+    "I7": true
+   },
+   "fidelidad_reglas": []
+  },
+  {
+   "salida": "16bit_tif-to-default.png",
+   "cat": "imagen",
+   "esperado": "ok",
+   "contrato": "ok",
+   "punto1": "evaluado",
+   "contrato_sin_cubrir": [],
+   "contrato_reglas": [],
+   "fidelidad": "ok",
+   "fidelidad_cobertura": {
+    "I6": true
+   },
+   "fidelidad_reglas": []
+  },
+  {
+   "salida": "16bit_tif-to.jpg",
+   "cat": "imagen",
+   "esperado": "ok",
+   "contrato": "ok",
+   "punto1": "evaluado",
+   "contrato_sin_cubrir": [],
+   "contrato_reglas": [],
+   "fidelidad": "ok",
+   "fidelidad_cobertura": {
+    "I3": true,
+    "I7": true
+   },
+   "fidelidad_reglas": []
+  },
+  {
+   "salida": "16bit_tif-to.webp",
+   "cat": "imagen",
+   "esperado": "ok",
+   "contrato": "ok",
+   "punto1": "evaluado",
+   "contrato_sin_cubrir": [],
+   "contrato_reglas": [],
+   "fidelidad": "ok",
+   "fidelidad_cobertura": {
+    "I7": true
+   },
+   "fidelidad_reglas": []
+  },
+  {
+   "salida": "alpha_png-to-flat.jpg",
+   "cat": "imagen",
+   "esperado": "ok",
+   "contrato": "ok_parcial",
+   "punto1": "evaluado",
+   "contrato_sin_cubrir": [
+    "4_alfa"
+   ],
+   "contrato_reglas": [],
+   "fidelidad": "ok",
+   "fidelidad_cobertura": {
+    "I7": true
+   },
+   "fidelidad_reglas": []
+  },
+  {
+   "salida": "alpha_png-to.avif",
+   "cat": "imagen",
+   "esperado": "ok",
+   "contrato": "ok_parcial",
+   "punto1": "evaluado",
+   "contrato_sin_cubrir": [
+    "4_alfa"
+   ],
+   "contrato_reglas": [],
+   "fidelidad": "aviso",
+   "fidelidad_cobertura": {
+    "I7": true,
+    "I8": true
+   },
+   "fidelidad_reglas": [
+    "I8"
+   ]
+  },
+  {
+   "salida": "alpha_png-to.jpg",
+   "cat": "imagen",
+   "esperado": "aviso",
+   "contrato": "ok_parcial",
+   "punto1": "evaluado",
+   "contrato_sin_cubrir": [
+    "4_alfa"
+   ],
+   "contrato_reglas": [],
+   "fidelidad": "aviso",
+   "fidelidad_cobertura": {
+    "I3": true,
+    "I7": true
+   },
+   "fidelidad_reglas": [
+    "I3",
+    "I7"
+   ]
+  },
+  {
+   "salida": "alpha_png-to.png8.png",
+   "cat": "imagen",
+   "esperado": "ok",
+   "contrato": "ok_parcial",
+   "punto1": "evaluado",
+   "contrato_sin_cubrir": [
+    "4_alfa"
+   ],
+   "contrato_reglas": [],
+   "fidelidad": "ok",
+   "fidelidad_cobertura": {
+    "I6": true
+   },
+   "fidelidad_reglas": []
+  },
+  {
+   "salida": "alpha_png-to.webp",
+   "cat": "imagen",
+   "esperado": "ok",
+   "contrato": "ok_parcial",
+   "punto1": "evaluado",
+   "contrato_sin_cubrir": [
+    "4_alfa"
+   ],
+   "contrato_reglas": [],
+   "fidelidad": "aviso",
+   "fidelidad_cobertura": {
+    "I7": true,
+    "I8": true
+   },
+   "fidelidad_reglas": [
+    "I8"
+   ]
+  },
+  {
+   "salida": "tipico_jpg-to.png",
+   "cat": "imagen",
+   "esperado": "ok",
+   "contrato": "ok",
+   "punto1": "evaluado",
+   "contrato_sin_cubrir": [],
+   "contrato_reglas": [],
+   "fidelidad": "ok",
+   "fidelidad_cobertura": {
+    "I6": true
+   },
+   "fidelidad_reglas": []
+  },
+  {
+   "salida": "tipico_png-to.avif",
+   "cat": "imagen",
+   "esperado": "ok",
+   "contrato": "ok_parcial",
+   "punto1": "evaluado",
+   "contrato_sin_cubrir": [
+    "4_alfa"
+   ],
+   "contrato_reglas": [],
+   "fidelidad": "ok",
+   "fidelidad_cobertura": {
+    "I7": true
+   },
+   "fidelidad_reglas": []
+  },
+  {
+   "salida": "tipico_png-to.jpg",
+   "cat": "imagen",
+   "esperado": "ok",
+   "contrato": "ok_parcial",
+   "punto1": "evaluado",
+   "contrato_sin_cubrir": [
+    "4_alfa"
+   ],
+   "contrato_reglas": [],
+   "fidelidad": "ok",
+   "fidelidad_cobertura": {
+    "I3": true,
+    "I7": true
+   },
+   "fidelidad_reglas": []
+  },
+  {
+   "salida": "tipico_png-to.webp",
+   "cat": "imagen",
+   "esperado": "ok",
+   "contrato": "ok_parcial",
+   "punto1": "evaluado",
+   "contrato_sin_cubrir": [
+    "4_alfa"
+   ],
+   "contrato_reglas": [],
+   "fidelidad": "ok",
+   "fidelidad_cobertura": {
+    "I7": true
+   },
+   "fidelidad_reglas": []
+  },
+  {
+   "salida": "tipico_webp-to.jpg",
+   "cat": "imagen",
+   "esperado": "ok",
+   "contrato": "ok",
+   "punto1": "evaluado",
+   "contrato_sin_cubrir": [],
+   "contrato_reglas": [],
+   "fidelidad": "ok",
+   "fidelidad_cobertura": {
+    "I3": true,
+    "I7": true
+   },
+   "fidelidad_reglas": []
+  },
+  {
+   "salida": "tipico_webp-to.png",
+   "cat": "imagen",
+   "esperado": "ok",
+   "contrato": "ok",
+   "punto1": "evaluado",
+   "contrato_sin_cubrir": [],
+   "contrato_reglas": [],
+   "fidelidad": "ok",
+   "fidelidad_cobertura": {
+    "I6": true
+   },
+   "fidelidad_reglas": []
+  },
+  {
+   "salida": "trivial_png-to-lossless.webp",
+   "cat": "imagen",
+   "esperado": "ok",
+   "contrato": "ok",
+   "punto1": "evaluado",
+   "contrato_sin_cubrir": [],
+   "contrato_reglas": [],
+   "fidelidad": "ok",
+   "fidelidad_cobertura": {
+    "I7": true
+   },
+   "fidelidad_reglas": []
+  },
+  {
+   "salida": "trivial_png-to.jpg",
+   "cat": "imagen",
+   "esperado": "ok",
+   "contrato": "ok",
+   "punto1": "evaluado",
+   "contrato_sin_cubrir": [],
+   "contrato_reglas": [],
+   "fidelidad": "ok",
+   "fidelidad_cobertura": {
+    "I3": true,
+    "I7": true
+   },
+   "fidelidad_reglas": []
+  },
+  {
+   "salida": "trivial_png-to.webp",
+   "cat": "imagen",
+   "esperado": "ok",
+   "contrato": "ok",
+   "punto1": "evaluado",
+   "contrato_sin_cubrir": [],
+   "contrato_reglas": [],
+   "fidelidad": "aviso",
+   "fidelidad_cobertura": {
+    "I7": true,
+    "I8": true
+   },
+   "fidelidad_reglas": [
+    "I8"
+   ]
+  },
+  {
+   "salida": "alpha_png-to.pdf",
+   "cat": "pdf",
+   "esperado": "ok",
+   "contrato": "ok_parcial",
+   "punto1": "evaluado",
+   "contrato_sin_cubrir": [
+    "4_alfa"
+   ],
+   "contrato_reglas": [],
+   "fidelidad": "ok",
+   "fidelidad_cobertura": {
+    "P6": true
+   },
+   "fidelidad_reglas": []
+  },
+  {
+   "salida": "patologico_escaneado_pdf-to-p1.png",
+   "cat": "pdf",
+   "esperado": "ok",
+   "contrato": "ok",
+   "punto1": "evaluado",
+   "contrato_sin_cubrir": [],
+   "contrato_reglas": [],
+   "fidelidad": "ok_parcial",
+   "fidelidad_cobertura": {},
+   "fidelidad_reglas": []
+  },
+  {
+   "salida": "tipico_jpg-to.pdf",
+   "cat": "pdf",
+   "esperado": "aviso",
+   "contrato": "aviso",
+   "punto1": "evaluado",
+   "contrato_sin_cubrir": [],
+   "contrato_reglas": [
+    "P7"
+   ],
+   "fidelidad": "ok",
+   "fidelidad_cobertura": {
+    "P6": true
+   },
+   "fidelidad_reglas": []
+  },
+  {
+   "salida": "tipico_png-to-150dpi.pdf",
+   "cat": "pdf",
+   "esperado": "ok",
+   "contrato": "ok_parcial",
+   "punto1": "evaluado",
+   "contrato_sin_cubrir": [
+    "4_alfa"
+   ],
+   "contrato_reglas": [],
+   "fidelidad": "ok",
+   "fidelidad_cobertura": {
+    "P6": true
+   },
+   "fidelidad_reglas": []
+  },
+  {
+   "salida": "tipico_png-to.pdf",
+   "cat": "pdf",
+   "esperado": "aviso",
+   "contrato": "aviso",
+   "punto1": "evaluado",
+   "contrato_sin_cubrir": [
+    "4_alfa"
+   ],
+   "contrato_reglas": [
+    "P7"
+   ],
+   "fidelidad": "ok",
+   "fidelidad_cobertura": {
+    "P6": true
+   },
+   "fidelidad_reglas": []
+  },
+  {
+   "salida": "tipico_texto_pdf-to-gs.pdf",
+   "cat": "pdf",
+   "esperado": "ok",
+   "contrato": "ok",
+   "punto1": "evaluado",
+   "contrato_sin_cubrir": [],
+   "contrato_reglas": [],
+   "fidelidad": "ok",
+   "fidelidad_cobertura": {
+    "P2": true,
+    "P6": true,
+    "P9": true
+   },
+   "fidelidad_reglas": []
+  },
+  {
+   "salida": "tipico_texto_pdf-to-p1.jpg",
+   "cat": "pdf",
+   "esperado": "ok",
+   "contrato": "ok",
+   "punto1": "evaluado",
+   "contrato_sin_cubrir": [],
+   "contrato_reglas": [],
+   "fidelidad": "ok_parcial",
+   "fidelidad_cobertura": {},
+   "fidelidad_reglas": []
+  },
+  {
+   "salida": "tipico_texto_pdf-to-p1.png",
+   "cat": "pdf",
+   "esperado": "ok",
+   "contrato": "ok",
+   "punto1": "evaluado",
+   "contrato_sin_cubrir": [],
+   "contrato_reglas": [],
+   "fidelidad": "ok_parcial",
+   "fidelidad_cobertura": {},
+   "fidelidad_reglas": []
+  },
+  {
+   "salida": "tipico_texto_pdf-to.tif",
+   "cat": "pdf",
+   "esperado": "ok",
+   "contrato": "ok",
+   "punto1": "evaluado",
+   "contrato_sin_cubrir": [],
+   "contrato_reglas": [],
+   "fidelidad": "ok_parcial",
+   "fidelidad_cobertura": {},
+   "fidelidad_reglas": []
+  },
+  {
+   "salida": "tipico_texto_rasterizado.pdf",
+   "cat": "pdf",
+   "esperado": "ok",
+   "contrato": "ok",
+   "punto1": "evaluado",
+   "contrato_sin_cubrir": [],
+   "contrato_reglas": [],
+   "fidelidad": "ok",
+   "fidelidad_cobertura": {
+    "P6": true
+   },
+   "fidelidad_reglas": []
+  },
+  {
+   "salida": "trivial_pdf-to-p1.png",
+   "cat": "pdf",
+   "esperado": "ok",
+   "contrato": "ok",
+   "punto1": "evaluado",
+   "contrato_sin_cubrir": [],
+   "contrato_reglas": [],
+   "fidelidad": "ok_parcial",
+   "fidelidad_cobertura": {},
+   "fidelidad_reglas": []
+  },
+  {
+   "salida": "2pistas_mkv-to-COPY.mp4",
+   "cat": "video",
+   "esperado": "ok",
+   "contrato": "ok",
+   "punto1": "evaluado",
+   "contrato_sin_cubrir": [],
+   "contrato_reglas": [],
+   "fidelidad": "ok",
+   "fidelidad_cobertura": {
+    "A4": true,
+    "A7": true,
+    "V2": true,
+    "V5": true,
+    "V6": true,
+    "V8": true
+   },
+   "fidelidad_reglas": []
+  },
+  {
+   "salida": "2pistas_mkv-to-DEFAULT.mp4",
+   "cat": "video",
+   "esperado": "fallo",
+   "contrato": "fallo",
+   "punto1": "evaluado",
+   "contrato_sin_cubrir": [],
+   "contrato_reglas": [
+    "V3"
+   ],
+   "fidelidad": "ok",
+   "fidelidad_cobertura": {
+    "A7": true,
+    "V2": true,
+    "V5": true,
+    "V6": true,
+    "V8": true
+   },
+   "fidelidad_reglas": []
+  },
+  {
+   "salida": "2pistas_mkv-to-MAP0.mp4",
+   "cat": "video",
+   "esperado": "ok",
+   "contrato": "ok",
+   "punto1": "evaluado",
+   "contrato_sin_cubrir": [],
+   "contrato_reglas": [],
+   "fidelidad": "ok",
+   "fidelidad_cobertura": {
+    "A7": true,
+    "V2": true,
+    "V5": true,
+    "V6": true,
+    "V8": true
+   },
+   "fidelidad_reglas": []
+  },
+  {
+   "salida": "tipico_mp4-to.mkv",
+   "cat": "video",
+   "esperado": "ok",
+   "contrato": "ok",
+   "punto1": "evaluado",
+   "contrato_sin_cubrir": [],
+   "contrato_reglas": [],
+   "fidelidad": "ok",
+   "fidelidad_cobertura": {
+    "A4": true,
+    "A7": true,
+    "V2": true,
+    "V5": true,
+    "V6": true,
+    "V8": true
+   },
+   "fidelidad_reglas": []
+  },
+  {
+   "salida": "tipico_mp4-to.webm",
+   "cat": "video",
+   "esperado": "ok",
+   "contrato": "ok",
+   "punto1": "evaluado",
+   "contrato_sin_cubrir": [],
+   "contrato_reglas": [],
+   "fidelidad": "ok",
+   "fidelidad_cobertura": {
+    "A7": true,
+    "V2": true,
+    "V5": true,
+    "V6": true,
+    "V8": true
+   },
+   "fidelidad_reglas": []
+  },
+  {
+   "salida": "trivial_mp4-to-naive.gif",
+   "cat": "video",
+   "esperado": "aviso",
+   "contrato": "ok",
+   "punto1": "evaluado",
+   "contrato_sin_cubrir": [],
+   "contrato_reglas": [],
+   "fidelidad": "aviso",
+   "fidelidad_cobertura": {
+    "V9": true
+   },
+   "fidelidad_reglas": [
+    "V9"
+   ]
+  },
+  {
+   "salida": "trivial_mp4-to-palette.gif",
+   "cat": "video",
+   "esperado": "ok",
+   "contrato": "ok",
+   "punto1": "evaluado",
+   "contrato_sin_cubrir": [],
+   "contrato_reglas": [],
+   "fidelidad": "ok",
+   "fidelidad_cobertura": {
+    "V9": true
+   },
+   "fidelidad_reglas": []
+  },
+  {
+   "salida": "trivial_mp4-to.webm",
+   "cat": "video",
+   "esperado": "ok",
+   "contrato": "ok",
+   "punto1": "evaluado",
+   "contrato_sin_cubrir": [],
+   "contrato_reglas": [],
+   "fidelidad": "aviso",
+   "fidelidad_cobertura": {
+    "V2": true,
+    "V5": true,
+    "V6": true,
+    "V8": true
+   },
+   "fidelidad_reglas": [
+    "V8"
+   ]
+  }
+ ]
+}

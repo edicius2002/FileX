@@ -283,10 +283,32 @@ class DirectorioDeTrabajo:
         return {n: t for n, t in cen.items() if n not in dec}
 
     def recoger(self, nombre: str, destino_final: str) -> str:
-        """Mueve una salida real fuera del desechable, antes de borrarlo."""
+        """Mueve una salida real fuera del desechable, antes de borrarlo.
+
+        **N19 — era el mismo agujero que N12 cerró en el `move`, un nivel más
+        abajo, y peor de lo que decía el pendiente que lo señaló — MEDIDO**
+        (`bench/salidas-fidelidad-n/sonda_destino_dir.json`, casos C1 y C2).
+        Con `shutil.move` esta función no solo **pisaba un destino existente**
+        (88 B → 20 B, sin excepción): pisaba también **el fichero que otro
+        proceso tenía ABIERTO** (88 B → 20 B otra vez), que es exactamente el
+        atropello de la trampa 33 —`shutil.move` sobre un destino que existe no
+        hace `rename`, cae a `copy2` y sobrescribe en silencio—.
+
+        **Y le vale la misma solución**, porque la forma del problema es la
+        misma: `mover_a_destino` hace la detección y la acción en una sola
+        llamada del sistema (trampa 63). Es una función **pública** y la usan
+        arneses de `bench/`; heredaba el fallo sin que nadie la llamase desde
+        producción.
+
+        El `import` es LOCAL a propósito: `filex.nucleo` importa este módulo, así
+        que a nivel de módulo sería un ciclo. En tiempo de llamada no lo hay
+        —`trabajo` está entero en `sys.modules` antes de que nadie pueda llamar
+        aquí— y cuesta una búsqueda en `sys.modules`.
+        """
+        from .nucleo import mover_a_destino
+
         origen = self.destino(nombre)
-        os.makedirs(os.path.dirname(os.path.abspath(destino_final)) or ".", exist_ok=True)
-        shutil.move(origen, destino_final)
+        mover_a_destino(origen, destino_final)
         self._recogidos.append(destino_final)
         return destino_final
 

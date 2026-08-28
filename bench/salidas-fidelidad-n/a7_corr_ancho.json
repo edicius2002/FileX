@@ -1,0 +1,10061 @@
+{
+ "cuando": "2026-08-28 10:56:39",
+ "sr": 48000,
+ "dur_s": 8.0,
+ "n_filas": 264,
+ "ms_total": 107772.4,
+ "censo_antes": [],
+ "censo_despues": 280,
+ "tabla_umbral": [
+  {
+   "umbral": 0.002,
+   "atrapa": 77,
+   "de": 84,
+   "fp_buenas": 6,
+   "de_buenas": 112,
+   "fp_brutales": 5,
+   "de_brutales": 40,
+   "toca_sin_perdida": 18
+  },
+  {
+   "umbral": 0.005,
+   "atrapa": 82,
+   "de": 84,
+   "fp_buenas": 6,
+   "de_buenas": 112,
+   "fp_brutales": 5,
+   "de_brutales": 40,
+   "toca_sin_perdida": 19
+  },
+  {
+   "umbral": 0.008,
+   "atrapa": 84,
+   "de": 84,
+   "fp_buenas": 6,
+   "de_buenas": 112,
+   "fp_brutales": 5,
+   "de_brutales": 40,
+   "toca_sin_perdida": 20
+  },
+  {
+   "umbral": 0.01,
+   "atrapa": 84,
+   "de": 84,
+   "fp_buenas": 6,
+   "de_buenas": 112,
+   "fp_brutales": 5,
+   "de_brutales": 40,
+   "toca_sin_perdida": 21
+  },
+  {
+   "umbral": 0.02,
+   "atrapa": 84,
+   "de": 84,
+   "fp_buenas": 6,
+   "de_buenas": 112,
+   "fp_brutales": 5,
+   "de_brutales": 40,
+   "toca_sin_perdida": 22
+  },
+  {
+   "umbral": 0.05,
+   "atrapa": 84,
+   "de": 84,
+   "fp_buenas": 6,
+   "de_buenas": 112,
+   "fp_brutales": 5,
+   "de_brutales": 40,
+   "toca_sin_perdida": 22
+  },
+  {
+   "umbral": 0.08,
+   "atrapa": 84,
+   "de": 84,
+   "fp_buenas": 6,
+   "de_buenas": 112,
+   "fp_brutales": 5,
+   "de_brutales": 40,
+   "toca_sin_perdida": 22
+  },
+  {
+   "umbral": 0.1,
+   "atrapa": 84,
+   "de": 84,
+   "fp_buenas": 6,
+   "de_buenas": 112,
+   "fp_brutales": 5,
+   "de_brutales": 40,
+   "toca_sin_perdida": 22
+  },
+  {
+   "umbral": 0.13,
+   "atrapa": 84,
+   "de": 84,
+   "fp_buenas": 7,
+   "de_buenas": 112,
+   "fp_brutales": 6,
+   "de_brutales": 40,
+   "toca_sin_perdida": 22
+  },
+  {
+   "umbral": 0.15,
+   "atrapa": 84,
+   "de": 84,
+   "fp_buenas": 8,
+   "de_buenas": 112,
+   "fp_brutales": 8,
+   "de_brutales": 40,
+   "toca_sin_perdida": 22
+  },
+  {
+   "umbral": 0.2,
+   "atrapa": 84,
+   "de": 84,
+   "fp_buenas": 12,
+   "de_buenas": 112,
+   "fp_brutales": 12,
+   "de_brutales": 40,
+   "toca_sin_perdida": 22
+  },
+  {
+   "umbral": 0.3,
+   "atrapa": 84,
+   "de": 84,
+   "fp_buenas": 14,
+   "de_buenas": 112,
+   "fp_brutales": 16,
+   "de_brutales": 40,
+   "toca_sin_perdida": 22
+  },
+  {
+   "umbral": 0.5,
+   "atrapa": 84,
+   "de": 84,
+   "fp_buenas": 18,
+   "de_buenas": 112,
+   "fp_brutales": 16,
+   "de_brutales": 40,
+   "toca_sin_perdida": 22
+  }
+ ],
+ "por_destino": [
+  {
+   "destino": "opus_6k",
+   "con_perdida": true,
+   "n_malas": 6,
+   "n_buenas": 8,
+   "peor_mala": 0.0029,
+   "mejor_buena": -0.0386,
+   "hueco": -0.0415,
+   "A7_hoy_atrapa": 0
+  },
+  {
+   "destino": "opus_8k",
+   "con_perdida": true,
+   "n_malas": 6,
+   "n_buenas": 8,
+   "peor_mala": 0.0059,
+   "mejor_buena": -0.0356,
+   "hueco": -0.0415,
+   "A7_hoy_atrapa": 0
+  },
+  {
+   "destino": "opus_16k",
+   "con_perdida": true,
+   "n_malas": 6,
+   "n_buenas": 8,
+   "peor_mala": 0.0048,
+   "mejor_buena": -0.035,
+   "hueco": -0.0398,
+   "A7_hoy_atrapa": 0
+  },
+  {
+   "destino": "opus_32k",
+   "con_perdida": true,
+   "n_malas": 6,
+   "n_buenas": 8,
+   "peor_mala": 0.0056,
+   "mejor_buena": 0.1894,
+   "hueco": 0.1838,
+   "A7_hoy_atrapa": 1
+  },
+  {
+   "destino": "opus_96k",
+   "con_perdida": true,
+   "n_malas": 6,
+   "n_buenas": 8,
+   "peor_mala": 0.0044,
+   "mejor_buena": 0.6001,
+   "hueco": 0.5957,
+   "A7_hoy_atrapa": 6
+  },
+  {
+   "destino": "mp3_32k",
+   "con_perdida": true,
+   "n_malas": 6,
+   "n_buenas": 8,
+   "peor_mala": 0.0,
+   "mejor_buena": 0.2768,
+   "hueco": 0.2768,
+   "A7_hoy_atrapa": 6
+  },
+  {
+   "destino": "mp3_64k",
+   "con_perdida": true,
+   "n_malas": 6,
+   "n_buenas": 8,
+   "peor_mala": 0.0,
+   "mejor_buena": 0.4336,
+   "hueco": 0.4336,
+   "A7_hoy_atrapa": 6
+  },
+  {
+   "destino": "mp3_192k",
+   "con_perdida": true,
+   "n_malas": 6,
+   "n_buenas": 8,
+   "peor_mala": 0.0,
+   "mejor_buena": 0.8284,
+   "hueco": 0.8284,
+   "A7_hoy_atrapa": 6
+  },
+  {
+   "destino": "mp3_q9",
+   "con_perdida": true,
+   "n_malas": 6,
+   "n_buenas": 8,
+   "peor_mala": 0.0,
+   "mejor_buena": 0.5044,
+   "hueco": 0.5044,
+   "A7_hoy_atrapa": 6
+  },
+  {
+   "destino": "aac_32k",
+   "con_perdida": true,
+   "n_malas": 6,
+   "n_buenas": 8,
+   "peor_mala": 0.0,
+   "mejor_buena": 0.3397,
+   "hueco": 0.3397,
+   "A7_hoy_atrapa": 6
+  },
+  {
+   "destino": "aac_64k",
+   "con_perdida": true,
+   "n_malas": 6,
+   "n_buenas": 8,
+   "peor_mala": 0.0,
+   "mejor_buena": 0.4782,
+   "hueco": 0.4782,
+   "A7_hoy_atrapa": 6
+  },
+  {
+   "destino": "aac_192k",
+   "con_perdida": true,
+   "n_malas": 6,
+   "n_buenas": 8,
+   "peor_mala": 0.0,
+   "mejor_buena": 0.7014,
+   "hueco": 0.7014,
+   "A7_hoy_atrapa": 6
+  },
+  {
+   "destino": "flac",
+   "con_perdida": false,
+   "n_malas": 6,
+   "n_buenas": 8,
+   "peor_mala": 0.0,
+   "mejor_buena": 1.0,
+   "hueco": 1.0,
+   "A7_hoy_atrapa": 6
+  },
+  {
+   "destino": "wav",
+   "con_perdida": false,
+   "n_malas": 6,
+   "n_buenas": 8,
+   "peor_mala": 0.0,
+   "mejor_buena": 1.0,
+   "hueco": 1.0,
+   "A7_hoy_atrapa": 6
+  }
+ ],
+ "acuerdo_pcm_astats": {
+  "n_canales_comparados": 528,
+  "max_abs_dB": 0.0011,
+  "mediana_dB": 0.0,
+  "discordes": [],
+  "detalle": [
+   {
+    "fichero": "distintos_buena_opus_6k.opus",
+    "astats": [
+     -22.429032,
+     -22.429032
+    ],
+    "pcm": [
+     -22.43,
+     -22.43
+    ],
+    "dif_dB": [
+     0.0001,
+     0.0001
+    ]
+   },
+   {
+    "fichero": "distintos_mala_opus_6k.opus",
+    "astats": [
+     -23.070916,
+     -23.070916
+    ],
+    "pcm": [
+     -23.07,
+     -23.07
+    ],
+    "dif_dB": [
+     0.0001,
+     0.0001
+    ]
+   },
+   {
+    "fichero": "distintos_buena_opus_8k.opus",
+    "astats": [
+     -22.716936,
+     -22.716936
+    ],
+    "pcm": [
+     -22.72,
+     -22.72
+    ],
+    "dif_dB": [
+     0.0001,
+     0.0001
+    ]
+   },
+   {
+    "fichero": "distintos_mala_opus_8k.opus",
+    "astats": [
+     -23.017992,
+     -23.017992
+    ],
+    "pcm": [
+     -23.02,
+     -23.02
+    ],
+    "dif_dB": [
+     0.0001,
+     0.0001
+    ]
+   },
+   {
+    "fichero": "distintos_buena_opus_16k.opus",
+    "astats": [
+     -22.353784,
+     -22.353784
+    ],
+    "pcm": [
+     -22.35,
+     -22.35
+    ],
+    "dif_dB": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "distintos_mala_opus_16k.opus",
+    "astats": [
+     -22.487016,
+     -22.487016
+    ],
+    "pcm": [
+     -22.49,
+     -22.49
+    ],
+    "dif_dB": [
+     -0.0,
+     -0.0
+    ]
+   },
+   {
+    "fichero": "distintos_buena_opus_32k.opus",
+    "astats": [
+     -16.42903,
+     -31.593041
+    ],
+    "pcm": [
+     -16.43,
+     -31.59
+    ],
+    "dif_dB": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "distintos_mala_opus_32k.opus",
+    "astats": [
+     -16.425768,
+     -77.746362
+    ],
+    "pcm": [
+     -16.43,
+     -77.75
+    ],
+    "dif_dB": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "distintos_buena_opus_96k.opus",
+    "astats": [
+     -16.386515,
+     -31.529156
+    ],
+    "pcm": [
+     -16.39,
+     -31.53
+    ],
+    "dif_dB": [
+     -0.0,
+     -0.0
+    ]
+   },
+   {
+    "fichero": "distintos_mala_opus_96k.opus",
+    "astats": [
+     -16.385567,
+     -300.465055
+    ],
+    "pcm": [
+     -16.39,
+     -300.47
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "distintos_buena_mp3_32k.mp3",
+    "astats": [
+     -16.827404,
+     -31.958475
+    ],
+    "pcm": [
+     -16.83,
+     -31.96
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "distintos_mala_mp3_32k.mp3",
+    "astats": [
+     -16.820384,
+     null
+    ],
+    "pcm": [
+     -16.82,
+     null
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "distintos_buena_mp3_64k.mp3",
+    "astats": [
+     -16.814188,
+     -31.975807
+    ],
+    "pcm": [
+     -16.81,
+     -31.98
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "distintos_mala_mp3_64k.mp3",
+    "astats": [
+     -16.822115,
+     null
+    ],
+    "pcm": [
+     -16.82,
+     null
+    ],
+    "dif_dB": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "distintos_buena_mp3_192k.mp3",
+    "astats": [
+     -16.63998,
+     -31.795703
+    ],
+    "pcm": [
+     -16.64,
+     -31.8
+    ],
+    "dif_dB": [
+     0.0,
+     -0.0
+    ]
+   },
+   {
+    "fichero": "distintos_mala_mp3_192k.mp3",
+    "astats": [
+     -16.639905,
+     null
+    ],
+    "pcm": [
+     -16.64,
+     null
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "distintos_buena_mp3_q9.mp3",
+    "astats": [
+     -16.370082,
+     -31.893106
+    ],
+    "pcm": [
+     -16.37,
+     -31.89
+    ],
+    "dif_dB": [
+     -0.0,
+     -0.0
+    ]
+   },
+   {
+    "fichero": "distintos_mala_mp3_q9.mp3",
+    "astats": [
+     -16.370082,
+     null
+    ],
+    "pcm": [
+     -16.37,
+     null
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "distintos_buena_aac_32k.m4a",
+    "astats": [
+     -15.394308,
+     -31.019785
+    ],
+    "pcm": [
+     -15.39,
+     -31.02
+    ],
+    "dif_dB": [
+     -0.0,
+     -0.0
+    ]
+   },
+   {
+    "fichero": "distintos_mala_aac_32k.m4a",
+    "astats": [
+     -16.432774,
+     null
+    ],
+    "pcm": [
+     -16.43,
+     null
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "distintos_buena_aac_64k.m4a",
+    "astats": [
+     -16.475712,
+     -31.561918
+    ],
+    "pcm": [
+     -16.48,
+     -31.56
+    ],
+    "dif_dB": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "distintos_mala_aac_64k.m4a",
+    "astats": [
+     -16.426875,
+     null
+    ],
+    "pcm": [
+     -16.43,
+     null
+    ],
+    "dif_dB": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "distintos_buena_aac_192k.m4a",
+    "astats": [
+     -16.385463,
+     -31.54387
+    ],
+    "pcm": [
+     -16.39,
+     -31.54
+    ],
+    "dif_dB": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "distintos_mala_aac_192k.m4a",
+    "astats": [
+     -16.378415,
+     null
+    ],
+    "pcm": [
+     -16.38,
+     null
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "distintos_buena_flac.flac",
+    "astats": [
+     -16.374987,
+     -31.531392
+    ],
+    "pcm": [
+     -16.38,
+     -31.53
+    ],
+    "dif_dB": [
+     -0.0003,
+     -0.0003
+    ]
+   },
+   {
+    "fichero": "distintos_mala_flac.flac",
+    "astats": [
+     -16.374987,
+     null
+    ],
+    "pcm": [
+     -16.38,
+     null
+    ],
+    "dif_dB": [
+     -0.0003,
+     0.0
+    ]
+   },
+   {
+    "fichero": "distintos_buena_wav.wav",
+    "astats": [
+     -16.374987,
+     -31.531392
+    ],
+    "pcm": [
+     -16.38,
+     -31.53
+    ],
+    "dif_dB": [
+     -0.0003,
+     -0.0003
+    ]
+   },
+   {
+    "fichero": "distintos_mala_wav.wav",
+    "astats": [
+     -16.374987,
+     null
+    ],
+    "pcm": [
+     -16.38,
+     null
+    ],
+    "dif_dB": [
+     -0.0003,
+     0.0
+    ]
+   },
+   {
+    "fichero": "distintos_buena_brutal_brutal_lowpass500.mp3",
+    "astats": [
+     -23.062157,
+     -34.023788
+    ],
+    "pcm": [
+     -23.06,
+     -34.02
+    ],
+    "dif_dB": [
+     0.0002,
+     0.0002
+    ]
+   },
+   {
+    "fichero": "distintos_buena_brutal_brutal_highpass3k.mp3",
+    "astats": [
+     -32.3441,
+     -65.760936
+    ],
+    "pcm": [
+     -32.34,
+     -65.76
+    ],
+    "dif_dB": [
+     0.0002,
+     -0.0011
+    ]
+   },
+   {
+    "fichero": "distintos_buena_brutal_brutal_8khz.opus",
+    "astats": [
+     -22.645312,
+     -22.645312
+    ],
+    "pcm": [
+     -22.65,
+     -22.65
+    ],
+    "dif_dB": [
+     0.0001,
+     0.0001
+    ]
+   },
+   {
+    "fichero": "distintos_buena_brutal_brutal_aformat_u8.wav",
+    "astats": [
+     -16.370797,
+     -31.526897
+    ],
+    "pcm": [
+     -16.37,
+     -31.53
+    ],
+    "dif_dB": [
+     -0.0003,
+     -0.0003
+    ]
+   },
+   {
+    "fichero": "distintos_buena_brutal_brutal_opus6k_mono_a_estereo.opus",
+    "astats": [
+     -22.39018,
+     -22.39018
+    ],
+    "pcm": [
+     -22.39,
+     -22.39
+    ],
+    "dif_dB": [
+     0.0001,
+     0.0001
+    ]
+   },
+   {
+    "fichero": "reales_buena_opus_6k.opus",
+    "astats": [
+     -17.299205,
+     -17.299205
+    ],
+    "pcm": [
+     -17.3,
+     -17.3
+    ],
+    "dif_dB": [
+     0.0001,
+     0.0001
+    ]
+   },
+   {
+    "fichero": "reales_mala_opus_6k.opus",
+    "astats": [
+     -23.070916,
+     -23.070916
+    ],
+    "pcm": [
+     -23.07,
+     -23.07
+    ],
+    "dif_dB": [
+     0.0001,
+     0.0001
+    ]
+   },
+   {
+    "fichero": "reales_buena_opus_8k.opus",
+    "astats": [
+     -17.345252,
+     -17.345252
+    ],
+    "pcm": [
+     -17.35,
+     -17.35
+    ],
+    "dif_dB": [
+     0.0001,
+     0.0001
+    ]
+   },
+   {
+    "fichero": "reales_mala_opus_8k.opus",
+    "astats": [
+     -23.017992,
+     -23.017992
+    ],
+    "pcm": [
+     -23.02,
+     -23.02
+    ],
+    "dif_dB": [
+     0.0001,
+     0.0001
+    ]
+   },
+   {
+    "fichero": "reales_buena_opus_16k.opus",
+    "astats": [
+     -16.908292,
+     -16.908292
+    ],
+    "pcm": [
+     -16.91,
+     -16.91
+    ],
+    "dif_dB": [
+     -0.0,
+     -0.0
+    ]
+   },
+   {
+    "fichero": "reales_mala_opus_16k.opus",
+    "astats": [
+     -22.487016,
+     -22.487016
+    ],
+    "pcm": [
+     -22.49,
+     -22.49
+    ],
+    "dif_dB": [
+     -0.0,
+     -0.0
+    ]
+   },
+   {
+    "fichero": "reales_buena_opus_32k.opus",
+    "astats": [
+     -16.394395,
+     -16.401714
+    ],
+    "pcm": [
+     -16.39,
+     -16.4
+    ],
+    "dif_dB": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "reales_mala_opus_32k.opus",
+    "astats": [
+     -16.425768,
+     -77.746362
+    ],
+    "pcm": [
+     -16.43,
+     -77.75
+    ],
+    "dif_dB": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "reales_buena_opus_96k.opus",
+    "astats": [
+     -16.351047,
+     -16.329614
+    ],
+    "pcm": [
+     -16.35,
+     -16.33
+    ],
+    "dif_dB": [
+     -0.0,
+     -0.0
+    ]
+   },
+   {
+    "fichero": "reales_mala_opus_96k.opus",
+    "astats": [
+     -16.385567,
+     -300.465055
+    ],
+    "pcm": [
+     -16.39,
+     -300.47
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "reales_buena_mp3_32k.mp3",
+    "astats": [
+     -16.824244,
+     -16.808666
+    ],
+    "pcm": [
+     -16.82,
+     -16.81
+    ],
+    "dif_dB": [
+     0.0,
+     -0.0
+    ]
+   },
+   {
+    "fichero": "reales_mala_mp3_32k.mp3",
+    "astats": [
+     -16.820384,
+     null
+    ],
+    "pcm": [
+     -16.82,
+     null
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "reales_buena_mp3_64k.mp3",
+    "astats": [
+     -16.823275,
+     -16.808656
+    ],
+    "pcm": [
+     -16.82,
+     -16.81
+    ],
+    "dif_dB": [
+     -0.0,
+     -0.0
+    ]
+   },
+   {
+    "fichero": "reales_mala_mp3_64k.mp3",
+    "astats": [
+     -16.822115,
+     null
+    ],
+    "pcm": [
+     -16.82,
+     null
+    ],
+    "dif_dB": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "reales_buena_mp3_192k.mp3",
+    "astats": [
+     -16.639648,
+     -16.625039
+    ],
+    "pcm": [
+     -16.64,
+     -16.63
+    ],
+    "dif_dB": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "reales_mala_mp3_192k.mp3",
+    "astats": [
+     -16.639905,
+     null
+    ],
+    "pcm": [
+     -16.64,
+     null
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "reales_buena_mp3_q9.mp3",
+    "astats": [
+     -16.361285,
+     -16.342763
+    ],
+    "pcm": [
+     -16.36,
+     -16.34
+    ],
+    "dif_dB": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "reales_mala_mp3_q9.mp3",
+    "astats": [
+     -16.370082,
+     null
+    ],
+    "pcm": [
+     -16.37,
+     null
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "reales_buena_aac_32k.m4a",
+    "astats": [
+     -16.379478,
+     -16.370606
+    ],
+    "pcm": [
+     -16.38,
+     -16.37
+    ],
+    "dif_dB": [
+     -0.0,
+     -0.0
+    ]
+   },
+   {
+    "fichero": "reales_mala_aac_32k.m4a",
+    "astats": [
+     -16.432774,
+     null
+    ],
+    "pcm": [
+     -16.43,
+     null
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "reales_buena_aac_64k.m4a",
+    "astats": [
+     -16.404264,
+     -16.394738
+    ],
+    "pcm": [
+     -16.4,
+     -16.39
+    ],
+    "dif_dB": [
+     0.0,
+     -0.0
+    ]
+   },
+   {
+    "fichero": "reales_mala_aac_64k.m4a",
+    "astats": [
+     -16.426875,
+     null
+    ],
+    "pcm": [
+     -16.43,
+     null
+    ],
+    "dif_dB": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "reales_buena_aac_192k.m4a",
+    "astats": [
+     -16.377946,
+     -16.363413
+    ],
+    "pcm": [
+     -16.38,
+     -16.36
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "reales_mala_aac_192k.m4a",
+    "astats": [
+     -16.378415,
+     null
+    ],
+    "pcm": [
+     -16.38,
+     null
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "reales_buena_flac.flac",
+    "astats": [
+     -16.374987,
+     -16.360371
+    ],
+    "pcm": [
+     -16.38,
+     -16.36
+    ],
+    "dif_dB": [
+     -0.0003,
+     -0.0003
+    ]
+   },
+   {
+    "fichero": "reales_mala_flac.flac",
+    "astats": [
+     -16.374987,
+     null
+    ],
+    "pcm": [
+     -16.38,
+     null
+    ],
+    "dif_dB": [
+     -0.0003,
+     0.0
+    ]
+   },
+   {
+    "fichero": "reales_buena_wav.wav",
+    "astats": [
+     -16.374987,
+     -16.360371
+    ],
+    "pcm": [
+     -16.38,
+     -16.36
+    ],
+    "dif_dB": [
+     -0.0003,
+     -0.0003
+    ]
+   },
+   {
+    "fichero": "reales_mala_wav.wav",
+    "astats": [
+     -16.374987,
+     null
+    ],
+    "pcm": [
+     -16.38,
+     null
+    ],
+    "dif_dB": [
+     -0.0003,
+     0.0
+    ]
+   },
+   {
+    "fichero": "reales_buena_brutal_brutal_lowpass500.mp3",
+    "astats": [
+     -23.06014,
+     -23.034476
+    ],
+    "pcm": [
+     -23.06,
+     -23.03
+    ],
+    "dif_dB": [
+     0.0002,
+     0.0002
+    ]
+   },
+   {
+    "fichero": "reales_buena_brutal_brutal_highpass3k.mp3",
+    "astats": [
+     -32.333468,
+     -32.334354
+    ],
+    "pcm": [
+     -32.33,
+     -32.33
+    ],
+    "dif_dB": [
+     0.0002,
+     0.0002
+    ]
+   },
+   {
+    "fichero": "reales_buena_brutal_brutal_8khz.opus",
+    "astats": [
+     -17.117262,
+     -17.117262
+    ],
+    "pcm": [
+     -17.12,
+     -17.12
+    ],
+    "dif_dB": [
+     0.0001,
+     0.0001
+    ]
+   },
+   {
+    "fichero": "reales_buena_brutal_brutal_aformat_u8.wav",
+    "astats": [
+     -16.370797,
+     -16.356943
+    ],
+    "pcm": [
+     -16.37,
+     -16.36
+    ],
+    "dif_dB": [
+     -0.0003,
+     -0.0003
+    ]
+   },
+   {
+    "fichero": "reales_buena_brutal_brutal_opus6k_mono_a_estereo.opus",
+    "astats": [
+     -17.422499,
+     -17.422499
+    ],
+    "pcm": [
+     -17.42,
+     -17.42
+    ],
+    "dif_dB": [
+     0.0001,
+     0.0001
+    ]
+   },
+   {
+    "fichero": "identicos_buena_opus_6k.opus",
+    "astats": [
+     -21.423469,
+     -21.423469
+    ],
+    "pcm": [
+     -21.42,
+     -21.42
+    ],
+    "dif_dB": [
+     0.0001,
+     0.0001
+    ]
+   },
+   {
+    "fichero": "identicos_mala_opus_6k.opus",
+    "astats": [
+     -27.428555,
+     -27.428555
+    ],
+    "pcm": [
+     -27.43,
+     -27.43
+    ],
+    "dif_dB": [
+     0.0001,
+     0.0001
+    ]
+   },
+   {
+    "fichero": "identicos_buena_opus_8k.opus",
+    "astats": [
+     -21.4174,
+     -21.4174
+    ],
+    "pcm": [
+     -21.42,
+     -21.42
+    ],
+    "dif_dB": [
+     0.0001,
+     0.0001
+    ]
+   },
+   {
+    "fichero": "identicos_mala_opus_8k.opus",
+    "astats": [
+     -27.47098,
+     -27.47098
+    ],
+    "pcm": [
+     -27.47,
+     -27.47
+    ],
+    "dif_dB": [
+     0.0001,
+     0.0001
+    ]
+   },
+   {
+    "fichero": "identicos_buena_opus_16k.opus",
+    "astats": [
+     -21.233431,
+     -21.233431
+    ],
+    "pcm": [
+     -21.23,
+     -21.23
+    ],
+    "dif_dB": [
+     -0.0,
+     -0.0
+    ]
+   },
+   {
+    "fichero": "identicos_mala_opus_16k.opus",
+    "astats": [
+     -27.178797,
+     -27.178797
+    ],
+    "pcm": [
+     -27.18,
+     -27.18
+    ],
+    "dif_dB": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "identicos_buena_opus_32k.opus",
+    "astats": [
+     -21.000345,
+     -21.000345
+    ],
+    "pcm": [
+     -21.0,
+     -21.0
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "identicos_mala_opus_32k.opus",
+    "astats": [
+     -21.069644,
+     -78.971289
+    ],
+    "pcm": [
+     -21.07,
+     -78.97
+    ],
+    "dif_dB": [
+     -0.0,
+     -0.0
+    ]
+   },
+   {
+    "fichero": "identicos_buena_opus_96k.opus",
+    "astats": [
+     -21.085679,
+     -21.085679
+    ],
+    "pcm": [
+     -21.09,
+     -21.09
+    ],
+    "dif_dB": [
+     -0.0,
+     -0.0
+    ]
+   },
+   {
+    "fichero": "identicos_mala_opus_96k.opus",
+    "astats": [
+     -21.073974,
+     -168.436193
+    ],
+    "pcm": [
+     -21.07,
+     -168.44
+    ],
+    "dif_dB": [
+     0.0,
+     -0.0
+    ]
+   },
+   {
+    "fichero": "identicos_buena_mp3_32k.mp3",
+    "astats": [
+     -21.519441,
+     -21.519441
+    ],
+    "pcm": [
+     -21.52,
+     -21.52
+    ],
+    "dif_dB": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "identicos_mala_mp3_32k.mp3",
+    "astats": [
+     -21.519912,
+     null
+    ],
+    "pcm": [
+     -21.52,
+     null
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "identicos_buena_mp3_64k.mp3",
+    "astats": [
+     -21.518825,
+     -21.518825
+    ],
+    "pcm": [
+     -21.52,
+     -21.52
+    ],
+    "dif_dB": [
+     -0.0,
+     -0.0
+    ]
+   },
+   {
+    "fichero": "identicos_mala_mp3_64k.mp3",
+    "astats": [
+     -21.518862,
+     null
+    ],
+    "pcm": [
+     -21.52,
+     null
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "identicos_buena_mp3_192k.mp3",
+    "astats": [
+     -21.337788,
+     -21.337788
+    ],
+    "pcm": [
+     -21.34,
+     -21.34
+    ],
+    "dif_dB": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "identicos_mala_mp3_192k.mp3",
+    "astats": [
+     -21.337844,
+     null
+    ],
+    "pcm": [
+     -21.34,
+     null
+    ],
+    "dif_dB": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "identicos_buena_mp3_q9.mp3",
+    "astats": [
+     -21.067964,
+     -21.067964
+    ],
+    "pcm": [
+     -21.07,
+     -21.07
+    ],
+    "dif_dB": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "identicos_mala_mp3_q9.mp3",
+    "astats": [
+     -20.916925,
+     null
+    ],
+    "pcm": [
+     -20.92,
+     null
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "identicos_buena_aac_32k.m4a",
+    "astats": [
+     -21.121466,
+     -21.121466
+    ],
+    "pcm": [
+     -21.12,
+     -21.12
+    ],
+    "dif_dB": [
+     -0.0,
+     -0.0
+    ]
+   },
+   {
+    "fichero": "identicos_mala_aac_32k.m4a",
+    "astats": [
+     -21.082224,
+     null
+    ],
+    "pcm": [
+     -21.08,
+     null
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "identicos_buena_aac_64k.m4a",
+    "astats": [
+     -21.104873,
+     -21.104873
+    ],
+    "pcm": [
+     -21.1,
+     -21.1
+    ],
+    "dif_dB": [
+     -0.0,
+     -0.0
+    ]
+   },
+   {
+    "fichero": "identicos_mala_aac_64k.m4a",
+    "astats": [
+     -21.079635,
+     null
+    ],
+    "pcm": [
+     -21.08,
+     null
+    ],
+    "dif_dB": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "identicos_buena_aac_192k.m4a",
+    "astats": [
+     -21.083878,
+     -21.083878
+    ],
+    "pcm": [
+     -21.08,
+     -21.08
+    ],
+    "dif_dB": [
+     -0.0,
+     -0.0
+    ]
+   },
+   {
+    "fichero": "identicos_mala_aac_192k.m4a",
+    "astats": [
+     -21.077374,
+     null
+    ],
+    "pcm": [
+     -21.08,
+     null
+    ],
+    "dif_dB": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "identicos_buena_flac.flac",
+    "astats": [
+     -21.073756,
+     -21.073756
+    ],
+    "pcm": [
+     -21.07,
+     -21.07
+    ],
+    "dif_dB": [
+     -0.0003,
+     -0.0003
+    ]
+   },
+   {
+    "fichero": "identicos_mala_flac.flac",
+    "astats": [
+     -21.073756,
+     null
+    ],
+    "pcm": [
+     -21.07,
+     null
+    ],
+    "dif_dB": [
+     -0.0003,
+     0.0
+    ]
+   },
+   {
+    "fichero": "identicos_buena_wav.wav",
+    "astats": [
+     -21.073756,
+     -21.073756
+    ],
+    "pcm": [
+     -21.07,
+     -21.07
+    ],
+    "dif_dB": [
+     -0.0003,
+     -0.0003
+    ]
+   },
+   {
+    "fichero": "identicos_mala_wav.wav",
+    "astats": [
+     -21.073756,
+     null
+    ],
+    "pcm": [
+     -21.07,
+     null
+    ],
+    "dif_dB": [
+     -0.0003,
+     0.0
+    ]
+   },
+   {
+    "fichero": "identicos_buena_brutal_brutal_lowpass500.mp3",
+    "astats": [
+     -23.562108,
+     -23.562108
+    ],
+    "pcm": [
+     -23.56,
+     -23.56
+    ],
+    "dif_dB": [
+     0.0003,
+     0.0003
+    ]
+   },
+   {
+    "fichero": "identicos_buena_brutal_brutal_highpass3k.mp3",
+    "astats": [
+     -55.153218,
+     -55.153218
+    ],
+    "pcm": [
+     -55.15,
+     -55.15
+    ],
+    "dif_dB": [
+     -0.0,
+     -0.0
+    ]
+   },
+   {
+    "fichero": "identicos_buena_brutal_brutal_8khz.opus",
+    "astats": [
+     -21.185969,
+     -21.185969
+    ],
+    "pcm": [
+     -21.19,
+     -21.19
+    ],
+    "dif_dB": [
+     0.0001,
+     0.0001
+    ]
+   },
+   {
+    "fichero": "identicos_buena_brutal_brutal_aformat_u8.wav",
+    "astats": [
+     -21.114669,
+     -21.114669
+    ],
+    "pcm": [
+     -21.11,
+     -21.11
+    ],
+    "dif_dB": [
+     -0.0003,
+     -0.0003
+    ]
+   },
+   {
+    "fichero": "identicos_buena_brutal_brutal_opus6k_mono_a_estereo.opus",
+    "astats": [
+     -21.423469,
+     -21.423469
+    ],
+    "pcm": [
+     -21.42,
+     -21.42
+    ],
+    "dif_dB": [
+     0.0001,
+     0.0001
+    ]
+   },
+   {
+    "fichero": "desfasados_buena_opus_6k.opus",
+    "astats": [
+     -20.210428,
+     -20.210428
+    ],
+    "pcm": [
+     -20.21,
+     -20.21
+    ],
+    "dif_dB": [
+     0.0001,
+     0.0001
+    ]
+   },
+   {
+    "fichero": "desfasados_mala_opus_6k.opus",
+    "astats": [
+     -23.070916,
+     -23.070916
+    ],
+    "pcm": [
+     -23.07,
+     -23.07
+    ],
+    "dif_dB": [
+     0.0001,
+     0.0001
+    ]
+   },
+   {
+    "fichero": "desfasados_buena_opus_8k.opus",
+    "astats": [
+     -20.147206,
+     -20.147206
+    ],
+    "pcm": [
+     -20.15,
+     -20.15
+    ],
+    "dif_dB": [
+     0.0001,
+     0.0001
+    ]
+   },
+   {
+    "fichero": "desfasados_mala_opus_8k.opus",
+    "astats": [
+     -23.017992,
+     -23.017992
+    ],
+    "pcm": [
+     -23.02,
+     -23.02
+    ],
+    "dif_dB": [
+     0.0001,
+     0.0001
+    ]
+   },
+   {
+    "fichero": "desfasados_buena_opus_16k.opus",
+    "astats": [
+     -19.691779,
+     -19.691779
+    ],
+    "pcm": [
+     -19.69,
+     -19.69
+    ],
+    "dif_dB": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "desfasados_mala_opus_16k.opus",
+    "astats": [
+     -22.487016,
+     -22.487016
+    ],
+    "pcm": [
+     -22.49,
+     -22.49
+    ],
+    "dif_dB": [
+     -0.0,
+     -0.0
+    ]
+   },
+   {
+    "fichero": "desfasados_buena_opus_32k.opus",
+    "astats": [
+     -16.77067,
+     -16.726514
+    ],
+    "pcm": [
+     -16.77,
+     -16.73
+    ],
+    "dif_dB": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "desfasados_mala_opus_32k.opus",
+    "astats": [
+     -16.425768,
+     -77.746362
+    ],
+    "pcm": [
+     -16.43,
+     -77.75
+    ],
+    "dif_dB": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "desfasados_buena_opus_96k.opus",
+    "astats": [
+     -16.392075,
+     -16.508431
+    ],
+    "pcm": [
+     -16.39,
+     -16.51
+    ],
+    "dif_dB": [
+     -0.0,
+     -0.0
+    ]
+   },
+   {
+    "fichero": "desfasados_mala_opus_96k.opus",
+    "astats": [
+     -16.385567,
+     -300.465055
+    ],
+    "pcm": [
+     -16.39,
+     -300.47
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "desfasados_buena_mp3_32k.mp3",
+    "astats": [
+     -16.836818,
+     -16.909217
+    ],
+    "pcm": [
+     -16.84,
+     -16.91
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "desfasados_mala_mp3_32k.mp3",
+    "astats": [
+     -16.820384,
+     null
+    ],
+    "pcm": [
+     -16.82,
+     null
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "desfasados_buena_mp3_64k.mp3",
+    "astats": [
+     -16.79529,
+     -16.957563
+    ],
+    "pcm": [
+     -16.8,
+     -16.96
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "desfasados_mala_mp3_64k.mp3",
+    "astats": [
+     -16.822115,
+     null
+    ],
+    "pcm": [
+     -16.82,
+     null
+    ],
+    "dif_dB": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "desfasados_buena_mp3_192k.mp3",
+    "astats": [
+     -16.64044,
+     -16.761946
+    ],
+    "pcm": [
+     -16.64,
+     -16.76
+    ],
+    "dif_dB": [
+     -0.0,
+     -0.0
+    ]
+   },
+   {
+    "fichero": "desfasados_mala_mp3_192k.mp3",
+    "astats": [
+     -16.639905,
+     null
+    ],
+    "pcm": [
+     -16.64,
+     null
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "desfasados_buena_mp3_q9.mp3",
+    "astats": [
+     -16.370784,
+     -16.489262
+    ],
+    "pcm": [
+     -16.37,
+     -16.49
+    ],
+    "dif_dB": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "desfasados_mala_mp3_q9.mp3",
+    "astats": [
+     -16.370082,
+     null
+    ],
+    "pcm": [
+     -16.37,
+     null
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "desfasados_buena_aac_32k.m4a",
+    "astats": [
+     -15.967635,
+     -16.049903
+    ],
+    "pcm": [
+     -15.97,
+     -16.05
+    ],
+    "dif_dB": [
+     -0.0,
+     -0.0
+    ]
+   },
+   {
+    "fichero": "desfasados_mala_aac_32k.m4a",
+    "astats": [
+     -16.432774,
+     null
+    ],
+    "pcm": [
+     -16.43,
+     null
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "desfasados_buena_aac_64k.m4a",
+    "astats": [
+     -16.446809,
+     -16.594492
+    ],
+    "pcm": [
+     -16.45,
+     -16.59
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "desfasados_mala_aac_64k.m4a",
+    "astats": [
+     -16.426875,
+     null
+    ],
+    "pcm": [
+     -16.43,
+     null
+    ],
+    "dif_dB": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "desfasados_buena_aac_192k.m4a",
+    "astats": [
+     -16.391002,
+     -16.509932
+    ],
+    "pcm": [
+     -16.39,
+     -16.51
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "desfasados_mala_aac_192k.m4a",
+    "astats": [
+     -16.378415,
+     null
+    ],
+    "pcm": [
+     -16.38,
+     null
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "desfasados_buena_flac.flac",
+    "astats": [
+     -16.374987,
+     -16.497149
+    ],
+    "pcm": [
+     -16.38,
+     -16.5
+    ],
+    "dif_dB": [
+     -0.0003,
+     -0.0003
+    ]
+   },
+   {
+    "fichero": "desfasados_mala_flac.flac",
+    "astats": [
+     -16.374987,
+     null
+    ],
+    "pcm": [
+     -16.38,
+     null
+    ],
+    "dif_dB": [
+     -0.0003,
+     0.0
+    ]
+   },
+   {
+    "fichero": "desfasados_buena_wav.wav",
+    "astats": [
+     -16.374987,
+     -16.497149
+    ],
+    "pcm": [
+     -16.38,
+     -16.5
+    ],
+    "dif_dB": [
+     -0.0003,
+     -0.0003
+    ]
+   },
+   {
+    "fichero": "desfasados_mala_wav.wav",
+    "astats": [
+     -16.374987,
+     null
+    ],
+    "pcm": [
+     -16.38,
+     null
+    ],
+    "dif_dB": [
+     -0.0003,
+     0.0
+    ]
+   },
+   {
+    "fichero": "desfasados_buena_brutal_brutal_lowpass500.mp3",
+    "astats": [
+     -23.061392,
+     -23.064866
+    ],
+    "pcm": [
+     -23.06,
+     -23.06
+    ],
+    "dif_dB": [
+     0.0002,
+     0.0002
+    ]
+   },
+   {
+    "fichero": "desfasados_buena_brutal_brutal_highpass3k.mp3",
+    "astats": [
+     -32.341486,
+     -33.281547
+    ],
+    "pcm": [
+     -32.34,
+     -33.28
+    ],
+    "dif_dB": [
+     0.0002,
+     0.0002
+    ]
+   },
+   {
+    "fichero": "desfasados_buena_brutal_brutal_8khz.opus",
+    "astats": [
+     -19.968941,
+     -19.968941
+    ],
+    "pcm": [
+     -19.97,
+     -19.97
+    ],
+    "dif_dB": [
+     0.0001,
+     0.0001
+    ]
+   },
+   {
+    "fichero": "desfasados_buena_brutal_brutal_aformat_u8.wav",
+    "astats": [
+     -16.370797,
+     -16.493197
+    ],
+    "pcm": [
+     -16.37,
+     -16.49
+    ],
+    "dif_dB": [
+     -0.0003,
+     -0.0003
+    ]
+   },
+   {
+    "fichero": "desfasados_buena_brutal_brutal_opus6k_mono_a_estereo.opus",
+    "astats": [
+     -20.242466,
+     -20.242466
+    ],
+    "pcm": [
+     -20.24,
+     -20.24
+    ],
+    "dif_dB": [
+     0.0001,
+     0.0001
+    ]
+   },
+   {
+    "fichero": "dos_voces_buena_opus_6k.opus",
+    "astats": [
+     -20.30846,
+     -20.30846
+    ],
+    "pcm": [
+     -20.31,
+     -20.31
+    ],
+    "dif_dB": [
+     0.0001,
+     0.0001
+    ]
+   },
+   {
+    "fichero": "dos_voces_mala_opus_6k.opus",
+    "astats": [
+     -23.070916,
+     -23.070916
+    ],
+    "pcm": [
+     -23.07,
+     -23.07
+    ],
+    "dif_dB": [
+     0.0001,
+     0.0001
+    ]
+   },
+   {
+    "fichero": "dos_voces_buena_opus_8k.opus",
+    "astats": [
+     -20.550352,
+     -20.550352
+    ],
+    "pcm": [
+     -20.55,
+     -20.55
+    ],
+    "dif_dB": [
+     0.0001,
+     0.0001
+    ]
+   },
+   {
+    "fichero": "dos_voces_mala_opus_8k.opus",
+    "astats": [
+     -23.017992,
+     -23.017992
+    ],
+    "pcm": [
+     -23.02,
+     -23.02
+    ],
+    "dif_dB": [
+     0.0001,
+     0.0001
+    ]
+   },
+   {
+    "fichero": "dos_voces_buena_opus_16k.opus",
+    "astats": [
+     -19.69894,
+     -19.69894
+    ],
+    "pcm": [
+     -19.7,
+     -19.7
+    ],
+    "dif_dB": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "dos_voces_mala_opus_16k.opus",
+    "astats": [
+     -22.487016,
+     -22.487016
+    ],
+    "pcm": [
+     -22.49,
+     -22.49
+    ],
+    "dif_dB": [
+     -0.0,
+     -0.0
+    ]
+   },
+   {
+    "fichero": "dos_voces_buena_opus_32k.opus",
+    "astats": [
+     -16.457307,
+     -16.428861
+    ],
+    "pcm": [
+     -16.46,
+     -16.43
+    ],
+    "dif_dB": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "dos_voces_mala_opus_32k.opus",
+    "astats": [
+     -16.425768,
+     -77.746362
+    ],
+    "pcm": [
+     -16.43,
+     -77.75
+    ],
+    "dif_dB": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "dos_voces_buena_opus_96k.opus",
+    "astats": [
+     -16.36662,
+     -16.420795
+    ],
+    "pcm": [
+     -16.37,
+     -16.42
+    ],
+    "dif_dB": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "dos_voces_mala_opus_96k.opus",
+    "astats": [
+     -16.385567,
+     -300.465055
+    ],
+    "pcm": [
+     -16.39,
+     -300.47
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "dos_voces_buena_mp3_32k.mp3",
+    "astats": [
+     -16.859179,
+     -16.901194
+    ],
+    "pcm": [
+     -16.86,
+     -16.9
+    ],
+    "dif_dB": [
+     -0.0,
+     -0.0
+    ]
+   },
+   {
+    "fichero": "dos_voces_mala_mp3_32k.mp3",
+    "astats": [
+     -16.820384,
+     null
+    ],
+    "pcm": [
+     -16.82,
+     null
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "dos_voces_buena_mp3_64k.mp3",
+    "astats": [
+     -16.813353,
+     -16.860836
+    ],
+    "pcm": [
+     -16.81,
+     -16.86
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "dos_voces_mala_mp3_64k.mp3",
+    "astats": [
+     -16.822115,
+     null
+    ],
+    "pcm": [
+     -16.82,
+     null
+    ],
+    "dif_dB": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "dos_voces_buena_mp3_192k.mp3",
+    "astats": [
+     -16.640465,
+     -16.681684
+    ],
+    "pcm": [
+     -16.64,
+     -16.68
+    ],
+    "dif_dB": [
+     -0.0,
+     -0.0
+    ]
+   },
+   {
+    "fichero": "dos_voces_mala_mp3_192k.mp3",
+    "astats": [
+     -16.639905,
+     null
+    ],
+    "pcm": [
+     -16.64,
+     null
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "dos_voces_buena_mp3_q9.mp3",
+    "astats": [
+     -16.370883,
+     -16.415534
+    ],
+    "pcm": [
+     -16.37,
+     -16.42
+    ],
+    "dif_dB": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "dos_voces_mala_mp3_q9.mp3",
+    "astats": [
+     -16.370082,
+     null
+    ],
+    "pcm": [
+     -16.37,
+     null
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "dos_voces_buena_aac_32k.m4a",
+    "astats": [
+     -15.521669,
+     -15.508554
+    ],
+    "pcm": [
+     -15.52,
+     -15.51
+    ],
+    "dif_dB": [
+     0.0,
+     -0.0
+    ]
+   },
+   {
+    "fichero": "dos_voces_mala_aac_32k.m4a",
+    "astats": [
+     -16.432774,
+     null
+    ],
+    "pcm": [
+     -16.43,
+     null
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "dos_voces_buena_aac_64k.m4a",
+    "astats": [
+     -16.298931,
+     -16.524132
+    ],
+    "pcm": [
+     -16.3,
+     -16.52
+    ],
+    "dif_dB": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "dos_voces_mala_aac_64k.m4a",
+    "astats": [
+     -16.426875,
+     null
+    ],
+    "pcm": [
+     -16.43,
+     null
+    ],
+    "dif_dB": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "dos_voces_buena_aac_192k.m4a",
+    "astats": [
+     -16.393838,
+     -16.439101
+    ],
+    "pcm": [
+     -16.39,
+     -16.44
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "dos_voces_mala_aac_192k.m4a",
+    "astats": [
+     -16.378415,
+     null
+    ],
+    "pcm": [
+     -16.38,
+     null
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "dos_voces_buena_flac.flac",
+    "astats": [
+     -16.374987,
+     -16.416661
+    ],
+    "pcm": [
+     -16.38,
+     -16.42
+    ],
+    "dif_dB": [
+     -0.0003,
+     -0.0003
+    ]
+   },
+   {
+    "fichero": "dos_voces_mala_flac.flac",
+    "astats": [
+     -16.374987,
+     null
+    ],
+    "pcm": [
+     -16.38,
+     null
+    ],
+    "dif_dB": [
+     -0.0003,
+     0.0
+    ]
+   },
+   {
+    "fichero": "dos_voces_buena_wav.wav",
+    "astats": [
+     -16.374987,
+     -16.416661
+    ],
+    "pcm": [
+     -16.38,
+     -16.42
+    ],
+    "dif_dB": [
+     -0.0003,
+     -0.0003
+    ]
+   },
+   {
+    "fichero": "dos_voces_mala_wav.wav",
+    "astats": [
+     -16.374987,
+     null
+    ],
+    "pcm": [
+     -16.38,
+     null
+    ],
+    "dif_dB": [
+     -0.0003,
+     0.0
+    ]
+   },
+   {
+    "fichero": "dos_voces_buena_brutal_brutal_lowpass500.mp3",
+    "astats": [
+     -23.06407,
+     -22.458581
+    ],
+    "pcm": [
+     -23.06,
+     -22.46
+    ],
+    "dif_dB": [
+     0.0002,
+     0.0002
+    ]
+   },
+   {
+    "fichero": "dos_voces_buena_brutal_brutal_highpass3k.mp3",
+    "astats": [
+     -32.364038,
+     -33.773126
+    ],
+    "pcm": [
+     -32.36,
+     -33.77
+    ],
+    "dif_dB": [
+     0.0002,
+     0.0002
+    ]
+   },
+   {
+    "fichero": "dos_voces_buena_brutal_brutal_8khz.opus",
+    "astats": [
+     -20.264236,
+     -20.264236
+    ],
+    "pcm": [
+     -20.26,
+     -20.26
+    ],
+    "dif_dB": [
+     0.0001,
+     0.0001
+    ]
+   },
+   {
+    "fichero": "dos_voces_buena_brutal_brutal_aformat_u8.wav",
+    "astats": [
+     -16.370797,
+     -16.412612
+    ],
+    "pcm": [
+     -16.37,
+     -16.41
+    ],
+    "dif_dB": [
+     -0.0003,
+     -0.0003
+    ]
+   },
+   {
+    "fichero": "dos_voces_buena_brutal_brutal_opus6k_mono_a_estereo.opus",
+    "astats": [
+     -20.411163,
+     -20.411163
+    ],
+    "pcm": [
+     -20.41,
+     -20.41
+    ],
+    "dif_dB": [
+     0.0001,
+     0.0001
+    ]
+   },
+   {
+    "fichero": "ruido_buena_opus_6k.opus",
+    "astats": [
+     -29.798287,
+     -29.798287
+    ],
+    "pcm": [
+     -29.8,
+     -29.8
+    ],
+    "dif_dB": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "ruido_mala_opus_6k.opus",
+    "astats": [
+     -31.307137,
+     -31.307137
+    ],
+    "pcm": [
+     -31.31,
+     -31.31
+    ],
+    "dif_dB": [
+     0.0001,
+     0.0001
+    ]
+   },
+   {
+    "fichero": "ruido_buena_opus_8k.opus",
+    "astats": [
+     -31.717304,
+     -31.717304
+    ],
+    "pcm": [
+     -31.72,
+     -31.72
+    ],
+    "dif_dB": [
+     0.0001,
+     0.0001
+    ]
+   },
+   {
+    "fichero": "ruido_mala_opus_8k.opus",
+    "astats": [
+     -33.65003,
+     -33.65003
+    ],
+    "pcm": [
+     -33.65,
+     -33.65
+    ],
+    "dif_dB": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "ruido_buena_opus_16k.opus",
+    "astats": [
+     -24.969382,
+     -24.969382
+    ],
+    "pcm": [
+     -24.97,
+     -24.97
+    ],
+    "dif_dB": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "ruido_mala_opus_16k.opus",
+    "astats": [
+     -25.57114,
+     -25.57114
+    ],
+    "pcm": [
+     -25.57,
+     -25.57
+    ],
+    "dif_dB": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "ruido_buena_opus_32k.opus",
+    "astats": [
+     -18.393157,
+     -27.411162
+    ],
+    "pcm": [
+     -18.39,
+     -27.41
+    ],
+    "dif_dB": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "ruido_mala_opus_32k.opus",
+    "astats": [
+     -18.645294,
+     -80.377088
+    ],
+    "pcm": [
+     -18.65,
+     -80.38
+    ],
+    "dif_dB": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "ruido_buena_opus_96k.opus",
+    "astats": [
+     -17.51534,
+     -26.699133
+    ],
+    "pcm": [
+     -17.52,
+     -26.7
+    ],
+    "dif_dB": [
+     -0.0,
+     -0.0
+    ]
+   },
+   {
+    "fichero": "ruido_mala_opus_96k.opus",
+    "astats": [
+     -17.69642,
+     -168.177527
+    ],
+    "pcm": [
+     -17.7,
+     -168.18
+    ],
+    "dif_dB": [
+     -0.0,
+     -0.0
+    ]
+   },
+   {
+    "fichero": "ruido_buena_mp3_32k.mp3",
+    "astats": [
+     -26.149201,
+     -27.455485
+    ],
+    "pcm": [
+     -26.15,
+     -27.46
+    ],
+    "dif_dB": [
+     0.0,
+     -0.0
+    ]
+   },
+   {
+    "fichero": "ruido_mala_mp3_32k.mp3",
+    "astats": [
+     -23.177859,
+     null
+    ],
+    "pcm": [
+     -23.18,
+     null
+    ],
+    "dif_dB": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "ruido_buena_mp3_64k.mp3",
+    "astats": [
+     -22.097611,
+     -27.146923
+    ],
+    "pcm": [
+     -22.1,
+     -27.15
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "ruido_mala_mp3_64k.mp3",
+    "astats": [
+     -20.179951,
+     null
+    ],
+    "pcm": [
+     -20.18,
+     null
+    ],
+    "dif_dB": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "ruido_buena_mp3_192k.mp3",
+    "astats": [
+     -17.85766,
+     -26.611447
+    ],
+    "pcm": [
+     -17.86,
+     -26.61
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "ruido_mala_mp3_192k.mp3",
+    "astats": [
+     -18.146245,
+     null
+    ],
+    "pcm": [
+     -18.15,
+     null
+    ],
+    "dif_dB": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "ruido_buena_mp3_q9.mp3",
+    "astats": [
+     -21.277329,
+     -26.792084
+    ],
+    "pcm": [
+     -21.28,
+     -26.79
+    ],
+    "dif_dB": [
+     -0.0,
+     -0.0
+    ]
+   },
+   {
+    "fichero": "ruido_mala_mp3_q9.mp3",
+    "astats": [
+     -21.277329,
+     null
+    ],
+    "pcm": [
+     -21.28,
+     null
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "ruido_buena_aac_32k.m4a",
+    "astats": [
+     -23.546673,
+     -26.321165
+    ],
+    "pcm": [
+     -23.55,
+     -26.32
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "ruido_mala_aac_32k.m4a",
+    "astats": [
+     -24.759059,
+     null
+    ],
+    "pcm": [
+     -24.76,
+     null
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "ruido_buena_aac_64k.m4a",
+    "astats": [
+     -19.149823,
+     -26.253437
+    ],
+    "pcm": [
+     -19.15,
+     -26.25
+    ],
+    "dif_dB": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "ruido_mala_aac_64k.m4a",
+    "astats": [
+     -19.839785,
+     null
+    ],
+    "pcm": [
+     -19.84,
+     null
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "ruido_buena_aac_192k.m4a",
+    "astats": [
+     -17.972494,
+     -26.483702
+    ],
+    "pcm": [
+     -17.97,
+     -26.48
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "ruido_mala_aac_192k.m4a",
+    "astats": [
+     -17.870096,
+     null
+    ],
+    "pcm": [
+     -17.87,
+     null
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "ruido_buena_flac.flac",
+    "astats": [
+     -16.814924,
+     -26.291921
+    ],
+    "pcm": [
+     -16.82,
+     -26.29
+    ],
+    "dif_dB": [
+     -0.0003,
+     -0.0003
+    ]
+   },
+   {
+    "fichero": "ruido_mala_flac.flac",
+    "astats": [
+     -16.814924,
+     null
+    ],
+    "pcm": [
+     -16.82,
+     null
+    ],
+    "dif_dB": [
+     -0.0003,
+     0.0
+    ]
+   },
+   {
+    "fichero": "ruido_buena_wav.wav",
+    "astats": [
+     -16.814924,
+     -26.291921
+    ],
+    "pcm": [
+     -16.82,
+     -26.29
+    ],
+    "dif_dB": [
+     -0.0003,
+     -0.0003
+    ]
+   },
+   {
+    "fichero": "ruido_mala_wav.wav",
+    "astats": [
+     -16.814924,
+     null
+    ],
+    "pcm": [
+     -16.82,
+     null
+    ],
+    "dif_dB": [
+     -0.0003,
+     0.0
+    ]
+   },
+   {
+    "fichero": "ruido_buena_brutal_brutal_lowpass500.mp3",
+    "astats": [
+     -33.62341,
+     -29.085403
+    ],
+    "pcm": [
+     -33.62,
+     -29.09
+    ],
+    "dif_dB": [
+     0.0001,
+     0.0002
+    ]
+   },
+   {
+    "fichero": "ruido_buena_brutal_brutal_highpass3k.mp3",
+    "astats": [
+     -24.436722,
+     -36.046025
+    ],
+    "pcm": [
+     -24.44,
+     -36.05
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "ruido_buena_brutal_brutal_8khz.opus",
+    "astats": [
+     -32.189101,
+     -32.189101
+    ],
+    "pcm": [
+     -32.19,
+     -32.19
+    ],
+    "dif_dB": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "ruido_buena_brutal_brutal_aformat_u8.wav",
+    "astats": [
+     -16.81195,
+     -26.284018
+    ],
+    "pcm": [
+     -16.81,
+     -26.28
+    ],
+    "dif_dB": [
+     -0.0003,
+     -0.0003
+    ]
+   },
+   {
+    "fichero": "ruido_buena_brutal_brutal_opus6k_mono_a_estereo.opus",
+    "astats": [
+     -29.793378,
+     -29.793378
+    ],
+    "pcm": [
+     -29.79,
+     -29.79
+    ],
+    "dif_dB": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "fase_inv_buena_opus_6k.opus",
+    "astats": [
+     -98.488692,
+     -98.488692
+    ],
+    "pcm": [
+     -98.49,
+     -98.49
+    ],
+    "dif_dB": [
+     -0.0005,
+     -0.0005
+    ]
+   },
+   {
+    "fichero": "fase_inv_mala_opus_6k.opus",
+    "astats": [
+     -23.070916,
+     -23.070916
+    ],
+    "pcm": [
+     -23.07,
+     -23.07
+    ],
+    "dif_dB": [
+     0.0001,
+     0.0001
+    ]
+   },
+   {
+    "fichero": "fase_inv_buena_opus_8k.opus",
+    "astats": [
+     -99.85316,
+     -99.85316
+    ],
+    "pcm": [
+     -99.85,
+     -99.85
+    ],
+    "dif_dB": [
+     -0.0005,
+     -0.0005
+    ]
+   },
+   {
+    "fichero": "fase_inv_mala_opus_8k.opus",
+    "astats": [
+     -23.017992,
+     -23.017992
+    ],
+    "pcm": [
+     -23.02,
+     -23.02
+    ],
+    "dif_dB": [
+     0.0001,
+     0.0001
+    ]
+   },
+   {
+    "fichero": "fase_inv_buena_opus_16k.opus",
+    "astats": [
+     -99.83722,
+     -99.83722
+    ],
+    "pcm": [
+     -99.84,
+     -99.84
+    ],
+    "dif_dB": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "fase_inv_mala_opus_16k.opus",
+    "astats": [
+     -22.487016,
+     -22.487016
+    ],
+    "pcm": [
+     -22.49,
+     -22.49
+    ],
+    "dif_dB": [
+     -0.0,
+     -0.0
+    ]
+   },
+   {
+    "fichero": "fase_inv_buena_opus_32k.opus",
+    "astats": [
+     -16.322565,
+     -16.322576
+    ],
+    "pcm": [
+     -16.32,
+     -16.32
+    ],
+    "dif_dB": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "fase_inv_mala_opus_32k.opus",
+    "astats": [
+     -16.425768,
+     -77.746362
+    ],
+    "pcm": [
+     -16.43,
+     -77.75
+    ],
+    "dif_dB": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "fase_inv_buena_opus_96k.opus",
+    "astats": [
+     -16.361774,
+     -16.361774
+    ],
+    "pcm": [
+     -16.36,
+     -16.36
+    ],
+    "dif_dB": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "fase_inv_mala_opus_96k.opus",
+    "astats": [
+     -16.385567,
+     -300.465055
+    ],
+    "pcm": [
+     -16.39,
+     -300.47
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "fase_inv_buena_mp3_32k.mp3",
+    "astats": [
+     -16.79434,
+     -16.79434
+    ],
+    "pcm": [
+     -16.79,
+     -16.79
+    ],
+    "dif_dB": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "fase_inv_mala_mp3_32k.mp3",
+    "astats": [
+     -16.820384,
+     null
+    ],
+    "pcm": [
+     -16.82,
+     null
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "fase_inv_buena_mp3_64k.mp3",
+    "astats": [
+     -16.821879,
+     -16.821879
+    ],
+    "pcm": [
+     -16.82,
+     -16.82
+    ],
+    "dif_dB": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "fase_inv_mala_mp3_64k.mp3",
+    "astats": [
+     -16.822115,
+     null
+    ],
+    "pcm": [
+     -16.82,
+     null
+    ],
+    "dif_dB": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "fase_inv_buena_mp3_192k.mp3",
+    "astats": [
+     -16.640008,
+     -16.640008
+    ],
+    "pcm": [
+     -16.64,
+     -16.64
+    ],
+    "dif_dB": [
+     -0.0,
+     -0.0
+    ]
+   },
+   {
+    "fichero": "fase_inv_mala_mp3_192k.mp3",
+    "astats": [
+     -16.639905,
+     null
+    ],
+    "pcm": [
+     -16.64,
+     null
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "fase_inv_buena_mp3_q9.mp3",
+    "astats": [
+     -16.360016,
+     -16.360016
+    ],
+    "pcm": [
+     -16.36,
+     -16.36
+    ],
+    "dif_dB": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "fase_inv_mala_mp3_q9.mp3",
+    "astats": [
+     -16.370082,
+     null
+    ],
+    "pcm": [
+     -16.37,
+     null
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "fase_inv_buena_aac_32k.m4a",
+    "astats": [
+     -16.426186,
+     -16.426186
+    ],
+    "pcm": [
+     -16.43,
+     -16.43
+    ],
+    "dif_dB": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "fase_inv_mala_aac_32k.m4a",
+    "astats": [
+     -16.432774,
+     null
+    ],
+    "pcm": [
+     -16.43,
+     null
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "fase_inv_buena_aac_64k.m4a",
+    "astats": [
+     -16.403074,
+     -16.403075
+    ],
+    "pcm": [
+     -16.4,
+     -16.4
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "fase_inv_mala_aac_64k.m4a",
+    "astats": [
+     -16.426875,
+     null
+    ],
+    "pcm": [
+     -16.43,
+     null
+    ],
+    "dif_dB": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "fase_inv_buena_aac_192k.m4a",
+    "astats": [
+     -16.378423,
+     -16.378423
+    ],
+    "pcm": [
+     -16.38,
+     -16.38
+    ],
+    "dif_dB": [
+     -0.0,
+     -0.0
+    ]
+   },
+   {
+    "fichero": "fase_inv_mala_aac_192k.m4a",
+    "astats": [
+     -16.378415,
+     null
+    ],
+    "pcm": [
+     -16.38,
+     null
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "fase_inv_buena_flac.flac",
+    "astats": [
+     -16.374987,
+     -16.374987
+    ],
+    "pcm": [
+     -16.38,
+     -16.38
+    ],
+    "dif_dB": [
+     -0.0003,
+     -0.0003
+    ]
+   },
+   {
+    "fichero": "fase_inv_mala_flac.flac",
+    "astats": [
+     -16.374987,
+     null
+    ],
+    "pcm": [
+     -16.38,
+     null
+    ],
+    "dif_dB": [
+     -0.0003,
+     0.0
+    ]
+   },
+   {
+    "fichero": "fase_inv_buena_wav.wav",
+    "astats": [
+     -16.374987,
+     -16.374987
+    ],
+    "pcm": [
+     -16.38,
+     -16.38
+    ],
+    "dif_dB": [
+     -0.0003,
+     -0.0003
+    ]
+   },
+   {
+    "fichero": "fase_inv_mala_wav.wav",
+    "astats": [
+     -16.374987,
+     null
+    ],
+    "pcm": [
+     -16.38,
+     null
+    ],
+    "dif_dB": [
+     -0.0003,
+     0.0
+    ]
+   },
+   {
+    "fichero": "fase_inv_buena_brutal_brutal_lowpass500.mp3",
+    "astats": [
+     -23.057181,
+     -23.057181
+    ],
+    "pcm": [
+     -23.06,
+     -23.06
+    ],
+    "dif_dB": [
+     0.0002,
+     0.0002
+    ]
+   },
+   {
+    "fichero": "fase_inv_buena_brutal_brutal_highpass3k.mp3",
+    "astats": [
+     -32.37328,
+     -32.37328
+    ],
+    "pcm": [
+     -32.37,
+     -32.37
+    ],
+    "dif_dB": [
+     0.0002,
+     0.0002
+    ]
+   },
+   {
+    "fichero": "fase_inv_buena_brutal_brutal_8khz.opus",
+    "astats": [
+     -99.85316,
+     -99.85316
+    ],
+    "pcm": [
+     -99.85,
+     -99.85
+    ],
+    "dif_dB": [
+     -0.0005,
+     -0.0005
+    ]
+   },
+   {
+    "fichero": "fase_inv_buena_brutal_brutal_aformat_u8.wav",
+    "astats": [
+     -16.370797,
+     -16.370781
+    ],
+    "pcm": [
+     -16.37,
+     -16.37
+    ],
+    "dif_dB": [
+     -0.0003,
+     -0.0003
+    ]
+   },
+   {
+    "fichero": "fase_inv_buena_brutal_brutal_opus6k_mono_a_estereo.opus",
+    "astats": [
+     -98.488692,
+     -98.488692
+    ],
+    "pcm": [
+     -98.49,
+     -98.49
+    ],
+    "dif_dB": [
+     -0.0005,
+     -0.0005
+    ]
+   },
+   {
+    "fichero": "flojo_buena_opus_6k.opus",
+    "astats": [
+     -22.811961,
+     -22.811961
+    ],
+    "pcm": [
+     -22.81,
+     -22.81
+    ],
+    "dif_dB": [
+     0.0001,
+     0.0001
+    ]
+   },
+   {
+    "fichero": "flojo_mala_opus_6k.opus",
+    "astats": [
+     -23.070916,
+     -23.070916
+    ],
+    "pcm": [
+     -23.07,
+     -23.07
+    ],
+    "dif_dB": [
+     0.0001,
+     0.0001
+    ]
+   },
+   {
+    "fichero": "flojo_buena_opus_8k.opus",
+    "astats": [
+     -23.000742,
+     -23.000742
+    ],
+    "pcm": [
+     -23.0,
+     -23.0
+    ],
+    "dif_dB": [
+     0.0001,
+     0.0001
+    ]
+   },
+   {
+    "fichero": "flojo_mala_opus_8k.opus",
+    "astats": [
+     -23.017992,
+     -23.017992
+    ],
+    "pcm": [
+     -23.02,
+     -23.02
+    ],
+    "dif_dB": [
+     0.0001,
+     0.0001
+    ]
+   },
+   {
+    "fichero": "flojo_buena_opus_16k.opus",
+    "astats": [
+     -22.543647,
+     -22.543647
+    ],
+    "pcm": [
+     -22.54,
+     -22.54
+    ],
+    "dif_dB": [
+     -0.0,
+     -0.0
+    ]
+   },
+   {
+    "fichero": "flojo_mala_opus_16k.opus",
+    "astats": [
+     -22.487016,
+     -22.487016
+    ],
+    "pcm": [
+     -22.49,
+     -22.49
+    ],
+    "dif_dB": [
+     -0.0,
+     -0.0
+    ]
+   },
+   {
+    "fichero": "flojo_buena_opus_32k.opus",
+    "astats": [
+     -16.407898,
+     -62.755286
+    ],
+    "pcm": [
+     -16.41,
+     -62.76
+    ],
+    "dif_dB": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "flojo_mala_opus_32k.opus",
+    "astats": [
+     -16.425768,
+     -77.746362
+    ],
+    "pcm": [
+     -16.43,
+     -77.75
+    ],
+    "dif_dB": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "flojo_buena_opus_96k.opus",
+    "astats": [
+     -16.396542,
+     -56.392291
+    ],
+    "pcm": [
+     -16.4,
+     -56.39
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "flojo_mala_opus_96k.opus",
+    "astats": [
+     -16.385567,
+     -300.465055
+    ],
+    "pcm": [
+     -16.39,
+     -300.47
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "flojo_buena_mp3_32k.mp3",
+    "astats": [
+     -16.830051,
+     -56.832695
+    ],
+    "pcm": [
+     -16.83,
+     -56.83
+    ],
+    "dif_dB": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "flojo_mala_mp3_32k.mp3",
+    "astats": [
+     -16.820384,
+     null
+    ],
+    "pcm": [
+     -16.82,
+     null
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "flojo_buena_mp3_64k.mp3",
+    "astats": [
+     -16.814459,
+     -56.840136
+    ],
+    "pcm": [
+     -16.81,
+     -56.84
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "flojo_mala_mp3_64k.mp3",
+    "astats": [
+     -16.822115,
+     null
+    ],
+    "pcm": [
+     -16.82,
+     null
+    ],
+    "dif_dB": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "flojo_buena_mp3_192k.mp3",
+    "astats": [
+     -16.639683,
+     -56.680999
+    ],
+    "pcm": [
+     -16.64,
+     -56.68
+    ],
+    "dif_dB": [
+     0.0,
+     -0.0
+    ]
+   },
+   {
+    "fichero": "flojo_mala_mp3_192k.mp3",
+    "astats": [
+     -16.639905,
+     null
+    ],
+    "pcm": [
+     -16.64,
+     null
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "flojo_buena_mp3_q9.mp3",
+    "astats": [
+     -16.370082,
+     -56.448278
+    ],
+    "pcm": [
+     -16.37,
+     -56.45
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "flojo_mala_mp3_q9.mp3",
+    "astats": [
+     -16.370082,
+     null
+    ],
+    "pcm": [
+     -16.37,
+     null
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "flojo_buena_aac_32k.m4a",
+    "astats": [
+     -15.411078,
+     -55.560296
+    ],
+    "pcm": [
+     -15.41,
+     -55.56
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "flojo_mala_aac_32k.m4a",
+    "astats": [
+     -16.432774,
+     null
+    ],
+    "pcm": [
+     -16.43,
+     null
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "flojo_buena_aac_64k.m4a",
+    "astats": [
+     -16.514037,
+     -56.514951
+    ],
+    "pcm": [
+     -16.51,
+     -56.51
+    ],
+    "dif_dB": [
+     0.0,
+     -0.0
+    ]
+   },
+   {
+    "fichero": "flojo_mala_aac_64k.m4a",
+    "astats": [
+     -16.426875,
+     null
+    ],
+    "pcm": [
+     -16.43,
+     null
+    ],
+    "dif_dB": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "flojo_buena_aac_192k.m4a",
+    "astats": [
+     -16.384171,
+     -56.436835
+    ],
+    "pcm": [
+     -16.38,
+     -56.44
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "flojo_mala_aac_192k.m4a",
+    "astats": [
+     -16.378415,
+     null
+    ],
+    "pcm": [
+     -16.38,
+     null
+    ],
+    "dif_dB": [
+     -0.0,
+     0.0
+    ]
+   },
+   {
+    "fichero": "flojo_buena_flac.flac",
+    "astats": [
+     -16.374987,
+     -56.416481
+    ],
+    "pcm": [
+     -16.38,
+     -56.42
+    ],
+    "dif_dB": [
+     -0.0003,
+     -0.0003
+    ]
+   },
+   {
+    "fichero": "flojo_mala_flac.flac",
+    "astats": [
+     -16.374987,
+     null
+    ],
+    "pcm": [
+     -16.38,
+     null
+    ],
+    "dif_dB": [
+     -0.0003,
+     0.0
+    ]
+   },
+   {
+    "fichero": "flojo_buena_wav.wav",
+    "astats": [
+     -16.374987,
+     -56.416481
+    ],
+    "pcm": [
+     -16.38,
+     -56.42
+    ],
+    "dif_dB": [
+     -0.0003,
+     -0.0003
+    ]
+   },
+   {
+    "fichero": "flojo_mala_wav.wav",
+    "astats": [
+     -16.374987,
+     null
+    ],
+    "pcm": [
+     -16.38,
+     null
+    ],
+    "dif_dB": [
+     -0.0003,
+     0.0
+    ]
+   },
+   {
+    "fichero": "flojo_buena_brutal_brutal_lowpass500.mp3",
+    "astats": [
+     -23.057573,
+     -62.566955
+    ],
+    "pcm": [
+     -23.06,
+     -62.57
+    ],
+    "dif_dB": [
+     0.0002,
+     0.0002
+    ]
+   },
+   {
+    "fichero": "flojo_buena_brutal_brutal_highpass3k.mp3",
+    "astats": [
+     -32.365735,
+     -74.137533
+    ],
+    "pcm": [
+     -32.37,
+     -74.14
+    ],
+    "dif_dB": [
+     0.0002,
+     0.0002
+    ]
+   },
+   {
+    "fichero": "flojo_buena_brutal_brutal_8khz.opus",
+    "astats": [
+     -22.809323,
+     -22.809323
+    ],
+    "pcm": [
+     -22.81,
+     -22.81
+    ],
+    "dif_dB": [
+     0.0001,
+     0.0001
+    ]
+   },
+   {
+    "fichero": "flojo_buena_brutal_brutal_aformat_u8.wav",
+    "astats": [
+     -16.370797,
+     -45.382311
+    ],
+    "pcm": [
+     -16.37,
+     -45.38
+    ],
+    "dif_dB": [
+     -0.0003,
+     -0.0003
+    ]
+   },
+   {
+    "fichero": "flojo_buena_brutal_brutal_opus6k_mono_a_estereo.opus",
+    "astats": [
+     -22.941193,
+     -22.941193
+    ],
+    "pcm": [
+     -22.94,
+     -22.94
+    ],
+    "dif_dB": [
+     0.0001,
+     0.0001
+    ]
+   }
+  ]
+ },
+ "filas": [
+  {
+   "fuente": "distintos",
+   "clase": "buena",
+   "destino": "opus_6k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.0051,
+   "desfase": 6,
+   "rms_ent": [
+    -16.38,
+    -31.53
+   ],
+   "rms_sal": [
+    -22.43,
+    -22.43
+   ],
+   "corr_c0": 0.8445,
+   "corr_c1": 0.1341,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.1341
+  },
+  {
+   "fuente": "distintos",
+   "clase": "mala",
+   "destino": "opus_6k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.0051,
+   "desfase": 6,
+   "rms_ent": [
+    -16.38,
+    -31.53
+   ],
+   "rms_sal": [
+    -23.07,
+    -23.07
+   ],
+   "corr_c0": 0.8588,
+   "corr_c1": 0.0029,
+   "A7_hoy": false,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0029
+  },
+  {
+   "fuente": "distintos",
+   "clase": "buena",
+   "destino": "opus_8k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.0051,
+   "desfase": 6,
+   "rms_ent": [
+    -16.38,
+    -31.53
+   ],
+   "rms_sal": [
+    -22.72,
+    -22.72
+   ],
+   "corr_c0": 0.9177,
+   "corr_c1": 0.1552,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.1552
+  },
+  {
+   "fuente": "distintos",
+   "clase": "mala",
+   "destino": "opus_8k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.0051,
+   "desfase": 6,
+   "rms_ent": [
+    -16.38,
+    -31.53
+   ],
+   "rms_sal": [
+    -23.02,
+    -23.02
+   ],
+   "corr_c0": 0.9339,
+   "corr_c1": 0.0059,
+   "A7_hoy": false,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0059
+  },
+  {
+   "fuente": "distintos",
+   "clase": "buena",
+   "destino": "opus_16k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.0051,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -31.53
+   ],
+   "rms_sal": [
+    -22.35,
+    -22.35
+   ],
+   "corr_c0": 0.9676,
+   "corr_c1": 0.1706,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.1706
+  },
+  {
+   "fuente": "distintos",
+   "clase": "mala",
+   "destino": "opus_16k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.0051,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -31.53
+   ],
+   "rms_sal": [
+    -22.49,
+    -22.49
+   ],
+   "corr_c0": 0.9837,
+   "corr_c1": 0.0048,
+   "A7_hoy": false,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0048
+  },
+  {
+   "fuente": "distintos",
+   "clase": "buena",
+   "destino": "opus_32k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.0051,
+   "desfase": -1,
+   "rms_ent": [
+    -16.38,
+    -31.53
+   ],
+   "rms_sal": [
+    -16.43,
+    -31.59
+   ],
+   "corr_c0": 0.9611,
+   "corr_c1": 0.9922,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.9611
+  },
+  {
+   "fuente": "distintos",
+   "clase": "mala",
+   "destino": "opus_32k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.0051,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -31.53
+   ],
+   "rms_sal": [
+    -16.43,
+    -77.75
+   ],
+   "corr_c0": 0.9745,
+   "corr_c1": -0.0034,
+   "A7_hoy": false,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": -0.0034
+  },
+  {
+   "fuente": "distintos",
+   "clase": "buena",
+   "destino": "opus_96k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.0051,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -31.53
+   ],
+   "rms_sal": [
+    -16.39,
+    -31.53
+   ],
+   "corr_c0": 0.9976,
+   "corr_c1": 0.9998,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.9976
+  },
+  {
+   "fuente": "distintos",
+   "clase": "mala",
+   "destino": "opus_96k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.0051,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -31.53
+   ],
+   "rms_sal": [
+    -16.39,
+    -300.47
+   ],
+   "corr_c0": 0.9975,
+   "corr_c1": 0.0041,
+   "A7_hoy": true,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0041
+  },
+  {
+   "fuente": "distintos",
+   "clase": "buena",
+   "destino": "mp3_32k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.0051,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -31.53
+   ],
+   "rms_sal": [
+    -16.83,
+    -31.96
+   ],
+   "corr_c0": 0.9856,
+   "corr_c1": 0.9998,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.9856
+  },
+  {
+   "fuente": "distintos",
+   "clase": "mala",
+   "destino": "mp3_32k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.0051,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -31.53
+   ],
+   "rms_sal": [
+    -16.82,
+    null
+   ],
+   "corr_c0": 0.9917,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "distintos",
+   "clase": "buena",
+   "destino": "mp3_64k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.0051,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -31.53
+   ],
+   "rms_sal": [
+    -16.81,
+    -31.98
+   ],
+   "corr_c0": 0.9965,
+   "corr_c1": 1.0,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.9965
+  },
+  {
+   "fuente": "distintos",
+   "clase": "mala",
+   "destino": "mp3_64k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.0051,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -31.53
+   ],
+   "rms_sal": [
+    -16.82,
+    null
+   ],
+   "corr_c0": 0.9993,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "distintos",
+   "clase": "buena",
+   "destino": "mp3_192k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.0051,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -31.53
+   ],
+   "rms_sal": [
+    -16.64,
+    -31.8
+   ],
+   "corr_c0": 1.0,
+   "corr_c1": 1.0,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 1.0
+  },
+  {
+   "fuente": "distintos",
+   "clase": "mala",
+   "destino": "mp3_192k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.0051,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -31.53
+   ],
+   "rms_sal": [
+    -16.64,
+    null
+   ],
+   "corr_c0": 1.0,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "distintos",
+   "clase": "buena",
+   "destino": "mp3_q9",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.0051,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -31.53
+   ],
+   "rms_sal": [
+    -16.37,
+    -31.89
+   ],
+   "corr_c0": 0.9984,
+   "corr_c1": 0.9885,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.9885
+  },
+  {
+   "fuente": "distintos",
+   "clase": "mala",
+   "destino": "mp3_q9",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.0051,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -31.53
+   ],
+   "rms_sal": [
+    -16.37,
+    null
+   ],
+   "corr_c0": 0.9984,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "distintos",
+   "clase": "buena",
+   "destino": "aac_32k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.0051,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -31.53
+   ],
+   "rms_sal": [
+    -15.39,
+    -31.02
+   ],
+   "corr_c0": 0.9379,
+   "corr_c1": 0.9373,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.9373
+  },
+  {
+   "fuente": "distintos",
+   "clase": "mala",
+   "destino": "aac_32k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.0051,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -31.53
+   ],
+   "rms_sal": [
+    -16.43,
+    null
+   ],
+   "corr_c0": 0.9974,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "distintos",
+   "clase": "buena",
+   "destino": "aac_64k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.0051,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -31.53
+   ],
+   "rms_sal": [
+    -16.48,
+    -31.56
+   ],
+   "corr_c0": 0.964,
+   "corr_c1": 0.9972,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.964
+  },
+  {
+   "fuente": "distintos",
+   "clase": "mala",
+   "destino": "aac_64k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.0051,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -31.53
+   ],
+   "rms_sal": [
+    -16.43,
+    null
+   ],
+   "corr_c0": 0.999,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "distintos",
+   "clase": "buena",
+   "destino": "aac_192k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.0051,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -31.53
+   ],
+   "rms_sal": [
+    -16.39,
+    -31.54
+   ],
+   "corr_c0": 0.9994,
+   "corr_c1": 0.9999,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.9994
+  },
+  {
+   "fuente": "distintos",
+   "clase": "mala",
+   "destino": "aac_192k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.0051,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -31.53
+   ],
+   "rms_sal": [
+    -16.38,
+    null
+   ],
+   "corr_c0": 1.0,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "distintos",
+   "clase": "buena",
+   "destino": "flac",
+   "con_perdida": false,
+   "rc": 0,
+   "corr_LR_entrada": 0.0051,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -31.53
+   ],
+   "rms_sal": [
+    -16.38,
+    -31.53
+   ],
+   "corr_c0": 1.0,
+   "corr_c1": 1.0,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 1.0
+  },
+  {
+   "fuente": "distintos",
+   "clase": "mala",
+   "destino": "flac",
+   "con_perdida": false,
+   "rc": 0,
+   "corr_LR_entrada": 0.0051,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -31.53
+   ],
+   "rms_sal": [
+    -16.38,
+    null
+   ],
+   "corr_c0": 1.0,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "distintos",
+   "clase": "buena",
+   "destino": "wav",
+   "con_perdida": false,
+   "rc": 0,
+   "corr_LR_entrada": 0.0051,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -31.53
+   ],
+   "rms_sal": [
+    -16.38,
+    -31.53
+   ],
+   "corr_c0": 1.0,
+   "corr_c1": 1.0,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 1.0
+  },
+  {
+   "fuente": "distintos",
+   "clase": "mala",
+   "destino": "wav",
+   "con_perdida": false,
+   "rc": 0,
+   "corr_LR_entrada": 0.0051,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -31.53
+   ],
+   "rms_sal": [
+    -16.38,
+    null
+   ],
+   "corr_c0": 1.0,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "distintos",
+   "clase": "buena_brutal",
+   "destino": "brutal_lowpass500",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.0051,
+   "desfase": 21,
+   "rms_ent": [
+    -16.38,
+    -31.53
+   ],
+   "rms_sal": [
+    -23.06,
+    -34.02
+   ],
+   "corr_c0": 0.8183,
+   "corr_c1": 0.9835,
+   "A7_hoy": false,
+   "clase_real": "buena_brutal",
+   "corr_min_audible": 0.8183
+  },
+  {
+   "fuente": "distintos",
+   "clase": "buena_brutal",
+   "destino": "brutal_highpass3k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.0051,
+   "desfase": 18,
+   "rms_ent": [
+    -16.38,
+    -31.53
+   ],
+   "rms_sal": [
+    -32.34,
+    -65.76
+   ],
+   "corr_c0": 0.2443,
+   "corr_c1": -0.6724,
+   "A7_hoy": false,
+   "clase_real": "buena_brutal",
+   "corr_min_audible": -0.6724
+  },
+  {
+   "fuente": "distintos",
+   "clase": "buena_brutal",
+   "destino": "brutal_8khz",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.0051,
+   "desfase": 6,
+   "rms_ent": [
+    -16.38,
+    -31.53
+   ],
+   "rms_sal": [
+    -22.65,
+    -22.65
+   ],
+   "corr_c0": 0.9629,
+   "corr_c1": 0.1724,
+   "A7_hoy": false,
+   "clase_real": "buena_brutal",
+   "corr_min_audible": 0.1724
+  },
+  {
+   "fuente": "distintos",
+   "clase": "buena_brutal",
+   "destino": "brutal_aformat_u8",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.0051,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -31.53
+   ],
+   "rms_sal": [
+    -16.37,
+    -31.53
+   ],
+   "corr_c0": 0.9999,
+   "corr_c1": 0.9968,
+   "A7_hoy": false,
+   "clase_real": "buena_brutal",
+   "corr_min_audible": 0.9968
+  },
+  {
+   "fuente": "distintos",
+   "clase": "buena_brutal",
+   "destino": "brutal_opus6k_mono_a_estereo",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.0051,
+   "desfase": 6,
+   "rms_ent": [
+    -16.38,
+    -31.53
+   ],
+   "rms_sal": [
+    -22.39,
+    -22.39
+   ],
+   "corr_c0": 0.8373,
+   "corr_c1": 0.1347,
+   "A7_hoy": false,
+   "clase_real": "buena_brutal",
+   "corr_min_audible": 0.1347
+  },
+  {
+   "fuente": "reales",
+   "clase": "buena",
+   "destino": "opus_6k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.9997,
+   "desfase": 6,
+   "rms_ent": [
+    -16.38,
+    -16.36
+   ],
+   "rms_sal": [
+    -17.3,
+    -17.3
+   ],
+   "corr_c0": 0.8501,
+   "corr_c1": 0.8506,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.8501
+  },
+  {
+   "fuente": "reales",
+   "clase": "mala",
+   "destino": "opus_6k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.9997,
+   "desfase": 6,
+   "rms_ent": [
+    -16.38,
+    -16.36
+   ],
+   "rms_sal": [
+    -23.07,
+    -23.07
+   ],
+   "corr_c0": 0.8588,
+   "corr_c1": 0.8587,
+   "A7_hoy": false,
+   "clase_real": "mala_sin_perdida",
+   "corr_min_audible": 0.8587
+  },
+  {
+   "fuente": "reales",
+   "clase": "buena",
+   "destino": "opus_8k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.9997,
+   "desfase": 6,
+   "rms_ent": [
+    -16.38,
+    -16.36
+   ],
+   "rms_sal": [
+    -17.35,
+    -17.35
+   ],
+   "corr_c0": 0.9313,
+   "corr_c1": 0.9315,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.9313
+  },
+  {
+   "fuente": "reales",
+   "clase": "mala",
+   "destino": "opus_8k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.9997,
+   "desfase": 6,
+   "rms_ent": [
+    -16.38,
+    -16.36
+   ],
+   "rms_sal": [
+    -23.02,
+    -23.02
+   ],
+   "corr_c0": 0.9339,
+   "corr_c1": 0.934,
+   "A7_hoy": false,
+   "clase_real": "mala_sin_perdida",
+   "corr_min_audible": 0.9339
+  },
+  {
+   "fuente": "reales",
+   "clase": "buena",
+   "destino": "opus_16k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.9997,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.36
+   ],
+   "rms_sal": [
+    -16.91,
+    -16.91
+   ],
+   "corr_c0": 0.9779,
+   "corr_c1": 0.9779,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.9779
+  },
+  {
+   "fuente": "reales",
+   "clase": "mala",
+   "destino": "opus_16k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.9997,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.36
+   ],
+   "rms_sal": [
+    -22.49,
+    -22.49
+   ],
+   "corr_c0": 0.9837,
+   "corr_c1": 0.9835,
+   "A7_hoy": false,
+   "clase_real": "mala_sin_perdida",
+   "corr_min_audible": 0.9835
+  },
+  {
+   "fuente": "reales",
+   "clase": "buena",
+   "destino": "opus_32k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.9997,
+   "desfase": -2,
+   "rms_ent": [
+    -16.38,
+    -16.36
+   ],
+   "rms_sal": [
+    -16.39,
+    -16.4
+   ],
+   "corr_c0": 0.9716,
+   "corr_c1": 0.9718,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.9716
+  },
+  {
+   "fuente": "reales",
+   "clase": "mala",
+   "destino": "opus_32k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.9997,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.36
+   ],
+   "rms_sal": [
+    -16.43,
+    -77.75
+   ],
+   "corr_c0": 0.9745,
+   "corr_c1": 0.0036,
+   "A7_hoy": false,
+   "clase_real": "mala_sin_perdida",
+   "corr_min_audible": 0.0036
+  },
+  {
+   "fuente": "reales",
+   "clase": "buena",
+   "destino": "opus_96k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.9997,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.36
+   ],
+   "rms_sal": [
+    -16.35,
+    -16.33
+   ],
+   "corr_c0": 0.999,
+   "corr_c1": 0.999,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.999
+  },
+  {
+   "fuente": "reales",
+   "clase": "mala",
+   "destino": "opus_96k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.9997,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.36
+   ],
+   "rms_sal": [
+    -16.39,
+    -300.47
+   ],
+   "corr_c0": 0.9975,
+   "corr_c1": 0.0067,
+   "A7_hoy": true,
+   "clase_real": "mala_sin_perdida",
+   "corr_min_audible": 0.0067
+  },
+  {
+   "fuente": "reales",
+   "clase": "buena",
+   "destino": "mp3_32k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.9997,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.36
+   ],
+   "rms_sal": [
+    -16.82,
+    -16.81
+   ],
+   "corr_c0": 0.9881,
+   "corr_c1": 0.9882,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.9881
+  },
+  {
+   "fuente": "reales",
+   "clase": "mala",
+   "destino": "mp3_32k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.9997,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.36
+   ],
+   "rms_sal": [
+    -16.82,
+    null
+   ],
+   "corr_c0": 0.9917,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_sin_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "reales",
+   "clase": "buena",
+   "destino": "mp3_64k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.9997,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.36
+   ],
+   "rms_sal": [
+    -16.82,
+    -16.81
+   ],
+   "corr_c0": 0.9986,
+   "corr_c1": 0.9986,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.9986
+  },
+  {
+   "fuente": "reales",
+   "clase": "mala",
+   "destino": "mp3_64k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.9997,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.36
+   ],
+   "rms_sal": [
+    -16.82,
+    null
+   ],
+   "corr_c0": 0.9993,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_sin_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "reales",
+   "clase": "buena",
+   "destino": "mp3_192k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.9997,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.36
+   ],
+   "rms_sal": [
+    -16.64,
+    -16.63
+   ],
+   "corr_c0": 1.0,
+   "corr_c1": 1.0,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 1.0
+  },
+  {
+   "fuente": "reales",
+   "clase": "mala",
+   "destino": "mp3_192k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.9997,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.36
+   ],
+   "rms_sal": [
+    -16.64,
+    null
+   ],
+   "corr_c0": 1.0,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_sin_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "reales",
+   "clase": "buena",
+   "destino": "mp3_q9",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.9997,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.36
+   ],
+   "rms_sal": [
+    -16.36,
+    -16.34
+   ],
+   "corr_c0": 0.9987,
+   "corr_c1": 0.9987,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.9987
+  },
+  {
+   "fuente": "reales",
+   "clase": "mala",
+   "destino": "mp3_q9",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.9997,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.36
+   ],
+   "rms_sal": [
+    -16.37,
+    null
+   ],
+   "corr_c0": 0.9984,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_sin_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "reales",
+   "clase": "buena",
+   "destino": "aac_32k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.9997,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.36
+   ],
+   "rms_sal": [
+    -16.38,
+    -16.37
+   ],
+   "corr_c0": 0.9931,
+   "corr_c1": 0.9931,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.9931
+  },
+  {
+   "fuente": "reales",
+   "clase": "mala",
+   "destino": "aac_32k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.9997,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.36
+   ],
+   "rms_sal": [
+    -16.43,
+    null
+   ],
+   "corr_c0": 0.9974,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_sin_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "reales",
+   "clase": "buena",
+   "destino": "aac_64k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.9997,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.36
+   ],
+   "rms_sal": [
+    -16.4,
+    -16.39
+   ],
+   "corr_c0": 0.9972,
+   "corr_c1": 0.9972,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.9972
+  },
+  {
+   "fuente": "reales",
+   "clase": "mala",
+   "destino": "aac_64k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.9997,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.36
+   ],
+   "rms_sal": [
+    -16.43,
+    null
+   ],
+   "corr_c0": 0.999,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_sin_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "reales",
+   "clase": "buena",
+   "destino": "aac_192k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.9997,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.36
+   ],
+   "rms_sal": [
+    -16.38,
+    -16.36
+   ],
+   "corr_c0": 1.0,
+   "corr_c1": 1.0,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 1.0
+  },
+  {
+   "fuente": "reales",
+   "clase": "mala",
+   "destino": "aac_192k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.9997,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.36
+   ],
+   "rms_sal": [
+    -16.38,
+    null
+   ],
+   "corr_c0": 1.0,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_sin_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "reales",
+   "clase": "buena",
+   "destino": "flac",
+   "con_perdida": false,
+   "rc": 0,
+   "corr_LR_entrada": 0.9997,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.36
+   ],
+   "rms_sal": [
+    -16.38,
+    -16.36
+   ],
+   "corr_c0": 1.0,
+   "corr_c1": 1.0,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 1.0
+  },
+  {
+   "fuente": "reales",
+   "clase": "mala",
+   "destino": "flac",
+   "con_perdida": false,
+   "rc": 0,
+   "corr_LR_entrada": 0.9997,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.36
+   ],
+   "rms_sal": [
+    -16.38,
+    null
+   ],
+   "corr_c0": 1.0,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_sin_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "reales",
+   "clase": "buena",
+   "destino": "wav",
+   "con_perdida": false,
+   "rc": 0,
+   "corr_LR_entrada": 0.9997,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.36
+   ],
+   "rms_sal": [
+    -16.38,
+    -16.36
+   ],
+   "corr_c0": 1.0,
+   "corr_c1": 1.0,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 1.0
+  },
+  {
+   "fuente": "reales",
+   "clase": "mala",
+   "destino": "wav",
+   "con_perdida": false,
+   "rc": 0,
+   "corr_LR_entrada": 0.9997,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.36
+   ],
+   "rms_sal": [
+    -16.38,
+    null
+   ],
+   "corr_c0": 1.0,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_sin_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "reales",
+   "clase": "buena_brutal",
+   "destino": "brutal_lowpass500",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.9997,
+   "desfase": 21,
+   "rms_ent": [
+    -16.38,
+    -16.36
+   ],
+   "rms_sal": [
+    -23.06,
+    -23.03
+   ],
+   "corr_c0": 0.8189,
+   "corr_c1": 0.8195,
+   "A7_hoy": false,
+   "clase_real": "buena_brutal",
+   "corr_min_audible": 0.8189
+  },
+  {
+   "fuente": "reales",
+   "clase": "buena_brutal",
+   "destino": "brutal_highpass3k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.9997,
+   "desfase": 18,
+   "rms_ent": [
+    -16.38,
+    -16.36
+   ],
+   "rms_sal": [
+    -32.33,
+    -32.33
+   ],
+   "corr_c0": 0.245,
+   "corr_c1": 0.2442,
+   "A7_hoy": false,
+   "clase_real": "buena_brutal",
+   "corr_min_audible": 0.2442
+  },
+  {
+   "fuente": "reales",
+   "clase": "buena_brutal",
+   "destino": "brutal_8khz",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.9997,
+   "desfase": 6,
+   "rms_ent": [
+    -16.38,
+    -16.36
+   ],
+   "rms_sal": [
+    -17.12,
+    -17.12
+   ],
+   "corr_c0": 0.9757,
+   "corr_c1": 0.9757,
+   "A7_hoy": false,
+   "clase_real": "buena_brutal",
+   "corr_min_audible": 0.9757
+  },
+  {
+   "fuente": "reales",
+   "clase": "buena_brutal",
+   "destino": "brutal_aformat_u8",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.9997,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.36
+   ],
+   "rms_sal": [
+    -16.37,
+    -16.36
+   ],
+   "corr_c0": 0.9999,
+   "corr_c1": 0.9999,
+   "A7_hoy": false,
+   "clase_real": "buena_brutal",
+   "corr_min_audible": 0.9999
+  },
+  {
+   "fuente": "reales",
+   "clase": "buena_brutal",
+   "destino": "brutal_opus6k_mono_a_estereo",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.9997,
+   "desfase": 6,
+   "rms_ent": [
+    -16.38,
+    -16.36
+   ],
+   "rms_sal": [
+    -17.42,
+    -17.42
+   ],
+   "corr_c0": 0.8407,
+   "corr_c1": 0.8412,
+   "A7_hoy": false,
+   "clase_real": "buena_brutal",
+   "corr_min_audible": 0.8407
+  },
+  {
+   "fuente": "identicos",
+   "clase": "buena",
+   "destino": "opus_6k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 1.0,
+   "desfase": 6,
+   "rms_ent": [
+    -21.07,
+    -21.07
+   ],
+   "rms_sal": [
+    -21.42,
+    -21.42
+   ],
+   "corr_c0": 0.9945,
+   "corr_c1": 0.9945,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.9945
+  },
+  {
+   "fuente": "identicos",
+   "clase": "mala",
+   "destino": "opus_6k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 1.0,
+   "desfase": 6,
+   "rms_ent": [
+    -21.07,
+    -21.07
+   ],
+   "rms_sal": [
+    -27.43,
+    -27.43
+   ],
+   "corr_c0": 0.9946,
+   "corr_c1": 0.9946,
+   "A7_hoy": false,
+   "clase_real": "mala_sin_perdida",
+   "corr_min_audible": 0.9946
+  },
+  {
+   "fuente": "identicos",
+   "clase": "buena",
+   "destino": "opus_8k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 1.0,
+   "desfase": 6,
+   "rms_ent": [
+    -21.07,
+    -21.07
+   ],
+   "rms_sal": [
+    -21.42,
+    -21.42
+   ],
+   "corr_c0": 0.9966,
+   "corr_c1": 0.9966,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.9966
+  },
+  {
+   "fuente": "identicos",
+   "clase": "mala",
+   "destino": "opus_8k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 1.0,
+   "desfase": 6,
+   "rms_ent": [
+    -21.07,
+    -21.07
+   ],
+   "rms_sal": [
+    -27.47,
+    -27.47
+   ],
+   "corr_c0": 0.997,
+   "corr_c1": 0.997,
+   "A7_hoy": false,
+   "clase_real": "mala_sin_perdida",
+   "corr_min_audible": 0.997
+  },
+  {
+   "fuente": "identicos",
+   "clase": "buena",
+   "destino": "opus_16k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 1.0,
+   "desfase": 0,
+   "rms_ent": [
+    -21.07,
+    -21.07
+   ],
+   "rms_sal": [
+    -21.23,
+    -21.23
+   ],
+   "corr_c0": 0.9978,
+   "corr_c1": 0.9978,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.9978
+  },
+  {
+   "fuente": "identicos",
+   "clase": "mala",
+   "destino": "opus_16k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 1.0,
+   "desfase": 0,
+   "rms_ent": [
+    -21.07,
+    -21.07
+   ],
+   "rms_sal": [
+    -27.18,
+    -27.18
+   ],
+   "corr_c0": 0.998,
+   "corr_c1": 0.998,
+   "A7_hoy": false,
+   "clase_real": "mala_sin_perdida",
+   "corr_min_audible": 0.998
+  },
+  {
+   "fuente": "identicos",
+   "clase": "buena",
+   "destino": "opus_32k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 1.0,
+   "desfase": 0,
+   "rms_ent": [
+    -21.07,
+    -21.07
+   ],
+   "rms_sal": [
+    -21.0,
+    -21.0
+   ],
+   "corr_c0": 0.999,
+   "corr_c1": 0.999,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.999
+  },
+  {
+   "fuente": "identicos",
+   "clase": "mala",
+   "destino": "opus_32k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 1.0,
+   "desfase": 0,
+   "rms_ent": [
+    -21.07,
+    -21.07
+   ],
+   "rms_sal": [
+    -21.07,
+    -78.97
+   ],
+   "corr_c0": 0.999,
+   "corr_c1": 0.0137,
+   "A7_hoy": false,
+   "clase_real": "mala_sin_perdida",
+   "corr_min_audible": 0.0137
+  },
+  {
+   "fuente": "identicos",
+   "clase": "buena",
+   "destino": "opus_96k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 1.0,
+   "desfase": 0,
+   "rms_ent": [
+    -21.07,
+    -21.07
+   ],
+   "rms_sal": [
+    -21.09,
+    -21.09
+   ],
+   "corr_c0": 1.0,
+   "corr_c1": 1.0,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 1.0
+  },
+  {
+   "fuente": "identicos",
+   "clase": "mala",
+   "destino": "opus_96k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 1.0,
+   "desfase": 0,
+   "rms_ent": [
+    -21.07,
+    -21.07
+   ],
+   "rms_sal": [
+    -21.07,
+    -168.44
+   ],
+   "corr_c0": 1.0,
+   "corr_c1": 0.008,
+   "A7_hoy": true,
+   "clase_real": "mala_sin_perdida",
+   "corr_min_audible": 0.008
+  },
+  {
+   "fuente": "identicos",
+   "clase": "buena",
+   "destino": "mp3_32k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 1.0,
+   "desfase": 0,
+   "rms_ent": [
+    -21.07,
+    -21.07
+   ],
+   "rms_sal": [
+    -21.52,
+    -21.52
+   ],
+   "corr_c0": 1.0,
+   "corr_c1": 1.0,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 1.0
+  },
+  {
+   "fuente": "identicos",
+   "clase": "mala",
+   "destino": "mp3_32k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 1.0,
+   "desfase": 0,
+   "rms_ent": [
+    -21.07,
+    -21.07
+   ],
+   "rms_sal": [
+    -21.52,
+    null
+   ],
+   "corr_c0": 1.0,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_sin_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "identicos",
+   "clase": "buena",
+   "destino": "mp3_64k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 1.0,
+   "desfase": 0,
+   "rms_ent": [
+    -21.07,
+    -21.07
+   ],
+   "rms_sal": [
+    -21.52,
+    -21.52
+   ],
+   "corr_c0": 1.0,
+   "corr_c1": 1.0,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 1.0
+  },
+  {
+   "fuente": "identicos",
+   "clase": "mala",
+   "destino": "mp3_64k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 1.0,
+   "desfase": 0,
+   "rms_ent": [
+    -21.07,
+    -21.07
+   ],
+   "rms_sal": [
+    -21.52,
+    null
+   ],
+   "corr_c0": 1.0,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_sin_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "identicos",
+   "clase": "buena",
+   "destino": "mp3_192k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 1.0,
+   "desfase": 0,
+   "rms_ent": [
+    -21.07,
+    -21.07
+   ],
+   "rms_sal": [
+    -21.34,
+    -21.34
+   ],
+   "corr_c0": 1.0,
+   "corr_c1": 1.0,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 1.0
+  },
+  {
+   "fuente": "identicos",
+   "clase": "mala",
+   "destino": "mp3_192k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 1.0,
+   "desfase": 0,
+   "rms_ent": [
+    -21.07,
+    -21.07
+   ],
+   "rms_sal": [
+    -21.34,
+    null
+   ],
+   "corr_c0": 1.0,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_sin_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "identicos",
+   "clase": "buena",
+   "destino": "mp3_q9",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 1.0,
+   "desfase": 0,
+   "rms_ent": [
+    -21.07,
+    -21.07
+   ],
+   "rms_sal": [
+    -21.07,
+    -21.07
+   ],
+   "corr_c0": 0.9947,
+   "corr_c1": 0.9947,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.9947
+  },
+  {
+   "fuente": "identicos",
+   "clase": "mala",
+   "destino": "mp3_q9",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 1.0,
+   "desfase": 0,
+   "rms_ent": [
+    -21.07,
+    -21.07
+   ],
+   "rms_sal": [
+    -20.92,
+    null
+   ],
+   "corr_c0": 0.993,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_sin_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "identicos",
+   "clase": "buena",
+   "destino": "aac_32k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 1.0,
+   "desfase": 0,
+   "rms_ent": [
+    -21.07,
+    -21.07
+   ],
+   "rms_sal": [
+    -21.12,
+    -21.12
+   ],
+   "corr_c0": 0.9973,
+   "corr_c1": 0.9973,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.9973
+  },
+  {
+   "fuente": "identicos",
+   "clase": "mala",
+   "destino": "aac_32k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 1.0,
+   "desfase": 0,
+   "rms_ent": [
+    -21.07,
+    -21.07
+   ],
+   "rms_sal": [
+    -21.08,
+    null
+   ],
+   "corr_c0": 0.9998,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_sin_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "identicos",
+   "clase": "buena",
+   "destino": "aac_64k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 1.0,
+   "desfase": 0,
+   "rms_ent": [
+    -21.07,
+    -21.07
+   ],
+   "rms_sal": [
+    -21.1,
+    -21.1
+   ],
+   "corr_c0": 0.9997,
+   "corr_c1": 0.9997,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.9997
+  },
+  {
+   "fuente": "identicos",
+   "clase": "mala",
+   "destino": "aac_64k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 1.0,
+   "desfase": 0,
+   "rms_ent": [
+    -21.07,
+    -21.07
+   ],
+   "rms_sal": [
+    -21.08,
+    null
+   ],
+   "corr_c0": 0.9999,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_sin_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "identicos",
+   "clase": "buena",
+   "destino": "aac_192k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 1.0,
+   "desfase": 0,
+   "rms_ent": [
+    -21.07,
+    -21.07
+   ],
+   "rms_sal": [
+    -21.08,
+    -21.08
+   ],
+   "corr_c0": 0.9999,
+   "corr_c1": 0.9999,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.9999
+  },
+  {
+   "fuente": "identicos",
+   "clase": "mala",
+   "destino": "aac_192k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 1.0,
+   "desfase": 0,
+   "rms_ent": [
+    -21.07,
+    -21.07
+   ],
+   "rms_sal": [
+    -21.08,
+    null
+   ],
+   "corr_c0": 0.9999,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_sin_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "identicos",
+   "clase": "buena",
+   "destino": "flac",
+   "con_perdida": false,
+   "rc": 0,
+   "corr_LR_entrada": 1.0,
+   "desfase": 0,
+   "rms_ent": [
+    -21.07,
+    -21.07
+   ],
+   "rms_sal": [
+    -21.07,
+    -21.07
+   ],
+   "corr_c0": 1.0,
+   "corr_c1": 1.0,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 1.0
+  },
+  {
+   "fuente": "identicos",
+   "clase": "mala",
+   "destino": "flac",
+   "con_perdida": false,
+   "rc": 0,
+   "corr_LR_entrada": 1.0,
+   "desfase": 0,
+   "rms_ent": [
+    -21.07,
+    -21.07
+   ],
+   "rms_sal": [
+    -21.07,
+    null
+   ],
+   "corr_c0": 1.0,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_sin_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "identicos",
+   "clase": "buena",
+   "destino": "wav",
+   "con_perdida": false,
+   "rc": 0,
+   "corr_LR_entrada": 1.0,
+   "desfase": 0,
+   "rms_ent": [
+    -21.07,
+    -21.07
+   ],
+   "rms_sal": [
+    -21.07,
+    -21.07
+   ],
+   "corr_c0": 1.0,
+   "corr_c1": 1.0,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 1.0
+  },
+  {
+   "fuente": "identicos",
+   "clase": "mala",
+   "destino": "wav",
+   "con_perdida": false,
+   "rc": 0,
+   "corr_LR_entrada": 1.0,
+   "desfase": 0,
+   "rms_ent": [
+    -21.07,
+    -21.07
+   ],
+   "rms_sal": [
+    -21.07,
+    null
+   ],
+   "corr_c0": 1.0,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_sin_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "identicos",
+   "clase": "buena_brutal",
+   "destino": "brutal_lowpass500",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 1.0,
+   "desfase": 24,
+   "rms_ent": [
+    -21.07,
+    -21.07
+   ],
+   "rms_sal": [
+    -23.56,
+    -23.56
+   ],
+   "corr_c0": 1.0,
+   "corr_c1": 1.0,
+   "A7_hoy": false,
+   "clase_real": "buena_brutal",
+   "corr_min_audible": 1.0
+  },
+  {
+   "fuente": "identicos",
+   "clase": "buena_brutal",
+   "destino": "brutal_highpass3k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 1.0,
+   "desfase": -51,
+   "rms_ent": [
+    -21.07,
+    -21.07
+   ],
+   "rms_sal": [
+    -55.15,
+    -55.15
+   ],
+   "corr_c0": 0.9999,
+   "corr_c1": 0.9999,
+   "A7_hoy": false,
+   "clase_real": "buena_brutal",
+   "corr_min_audible": 0.9999
+  },
+  {
+   "fuente": "identicos",
+   "clase": "buena_brutal",
+   "destino": "brutal_8khz",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 1.0,
+   "desfase": 6,
+   "rms_ent": [
+    -21.07,
+    -21.07
+   ],
+   "rms_sal": [
+    -21.19,
+    -21.19
+   ],
+   "corr_c0": 0.9985,
+   "corr_c1": 0.9985,
+   "A7_hoy": false,
+   "clase_real": "buena_brutal",
+   "corr_min_audible": 0.9985
+  },
+  {
+   "fuente": "identicos",
+   "clase": "buena_brutal",
+   "destino": "brutal_aformat_u8",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 1.0,
+   "desfase": 0,
+   "rms_ent": [
+    -21.07,
+    -21.07
+   ],
+   "rms_sal": [
+    -21.11,
+    -21.11
+   ],
+   "corr_c0": 0.9997,
+   "corr_c1": 0.9997,
+   "A7_hoy": false,
+   "clase_real": "buena_brutal",
+   "corr_min_audible": 0.9997
+  },
+  {
+   "fuente": "identicos",
+   "clase": "buena_brutal",
+   "destino": "brutal_opus6k_mono_a_estereo",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 1.0,
+   "desfase": 6,
+   "rms_ent": [
+    -21.07,
+    -21.07
+   ],
+   "rms_sal": [
+    -21.42,
+    -21.42
+   ],
+   "corr_c0": 0.9945,
+   "corr_c1": 0.9945,
+   "A7_hoy": false,
+   "clase_real": "buena_brutal",
+   "corr_min_audible": 0.9945
+  },
+  {
+   "fuente": "desfasados",
+   "clase": "buena",
+   "destino": "opus_6k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0066,
+   "desfase": 5,
+   "rms_ent": [
+    -16.38,
+    -16.5
+   ],
+   "rms_sal": [
+    -20.21,
+    -20.21
+   ],
+   "corr_c0": 0.5887,
+   "corr_c1": 0.5665,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.5665
+  },
+  {
+   "fuente": "desfasados",
+   "clase": "mala",
+   "destino": "opus_6k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0066,
+   "desfase": 6,
+   "rms_ent": [
+    -16.38,
+    -16.5
+   ],
+   "rms_sal": [
+    -23.07,
+    -23.07
+   ],
+   "corr_c0": 0.8588,
+   "corr_c1": -0.0211,
+   "A7_hoy": false,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": -0.0211
+  },
+  {
+   "fuente": "desfasados",
+   "clase": "buena",
+   "destino": "opus_8k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0066,
+   "desfase": 6,
+   "rms_ent": [
+    -16.38,
+    -16.5
+   ],
+   "rms_sal": [
+    -20.15,
+    -20.15
+   ],
+   "corr_c0": 0.6574,
+   "corr_c1": 0.6433,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.6433
+  },
+  {
+   "fuente": "desfasados",
+   "clase": "mala",
+   "destino": "opus_8k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0066,
+   "desfase": 6,
+   "rms_ent": [
+    -16.38,
+    -16.5
+   ],
+   "rms_sal": [
+    -23.02,
+    -23.02
+   ],
+   "corr_c0": 0.9339,
+   "corr_c1": -0.0148,
+   "A7_hoy": false,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": -0.0148
+  },
+  {
+   "fuente": "desfasados",
+   "clase": "buena",
+   "destino": "opus_16k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0066,
+   "desfase": -1,
+   "rms_ent": [
+    -16.38,
+    -16.5
+   ],
+   "rms_sal": [
+    -19.69,
+    -19.69
+   ],
+   "corr_c0": 0.6984,
+   "corr_c1": 0.6792,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.6792
+  },
+  {
+   "fuente": "desfasados",
+   "clase": "mala",
+   "destino": "opus_16k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0066,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.5
+   ],
+   "rms_sal": [
+    -22.49,
+    -22.49
+   ],
+   "corr_c0": 0.9837,
+   "corr_c1": -0.0051,
+   "A7_hoy": false,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": -0.0051
+  },
+  {
+   "fuente": "desfasados",
+   "clase": "buena",
+   "destino": "opus_32k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0066,
+   "desfase": -3,
+   "rms_ent": [
+    -16.38,
+    -16.5
+   ],
+   "rms_sal": [
+    -16.77,
+    -16.73
+   ],
+   "corr_c0": 0.9651,
+   "corr_c1": 0.9661,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.9651
+  },
+  {
+   "fuente": "desfasados",
+   "clase": "mala",
+   "destino": "opus_32k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0066,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.5
+   ],
+   "rms_sal": [
+    -16.43,
+    -77.75
+   ],
+   "corr_c0": 0.9745,
+   "corr_c1": 0.0004,
+   "A7_hoy": false,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0004
+  },
+  {
+   "fuente": "desfasados",
+   "clase": "buena",
+   "destino": "opus_96k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0066,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.5
+   ],
+   "rms_sal": [
+    -16.39,
+    -16.51
+   ],
+   "corr_c0": 0.9983,
+   "corr_c1": 0.9985,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.9983
+  },
+  {
+   "fuente": "desfasados",
+   "clase": "mala",
+   "destino": "opus_96k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0066,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.5
+   ],
+   "rms_sal": [
+    -16.39,
+    -300.47
+   ],
+   "corr_c0": 0.9975,
+   "corr_c1": -0.0075,
+   "A7_hoy": true,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": -0.0075
+  },
+  {
+   "fuente": "desfasados",
+   "clase": "buena",
+   "destino": "mp3_32k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0066,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.5
+   ],
+   "rms_sal": [
+    -16.84,
+    -16.91
+   ],
+   "corr_c0": 0.9851,
+   "corr_c1": 0.9876,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.9851
+  },
+  {
+   "fuente": "desfasados",
+   "clase": "mala",
+   "destino": "mp3_32k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0066,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.5
+   ],
+   "rms_sal": [
+    -16.82,
+    null
+   ],
+   "corr_c0": 0.9917,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "desfasados",
+   "clase": "buena",
+   "destino": "mp3_64k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0066,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.5
+   ],
+   "rms_sal": [
+    -16.8,
+    -16.96
+   ],
+   "corr_c0": 0.9958,
+   "corr_c1": 0.9965,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.9958
+  },
+  {
+   "fuente": "desfasados",
+   "clase": "mala",
+   "destino": "mp3_64k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0066,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.5
+   ],
+   "rms_sal": [
+    -16.82,
+    null
+   ],
+   "corr_c0": 0.9993,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "desfasados",
+   "clase": "buena",
+   "destino": "mp3_192k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0066,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.5
+   ],
+   "rms_sal": [
+    -16.64,
+    -16.76
+   ],
+   "corr_c0": 1.0,
+   "corr_c1": 1.0,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 1.0
+  },
+  {
+   "fuente": "desfasados",
+   "clase": "mala",
+   "destino": "mp3_192k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0066,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.5
+   ],
+   "rms_sal": [
+    -16.64,
+    null
+   ],
+   "corr_c0": 1.0,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "desfasados",
+   "clase": "buena",
+   "destino": "mp3_q9",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0066,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.5
+   ],
+   "rms_sal": [
+    -16.37,
+    -16.49
+   ],
+   "corr_c0": 0.9984,
+   "corr_c1": 0.9988,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.9984
+  },
+  {
+   "fuente": "desfasados",
+   "clase": "mala",
+   "destino": "mp3_q9",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0066,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.5
+   ],
+   "rms_sal": [
+    -16.37,
+    null
+   ],
+   "corr_c0": 0.9984,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "desfasados",
+   "clase": "buena",
+   "destino": "aac_32k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0066,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.5
+   ],
+   "rms_sal": [
+    -15.97,
+    -16.05
+   ],
+   "corr_c0": 0.9198,
+   "corr_c1": 0.9189,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.9189
+  },
+  {
+   "fuente": "desfasados",
+   "clase": "mala",
+   "destino": "aac_32k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0066,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.5
+   ],
+   "rms_sal": [
+    -16.43,
+    null
+   ],
+   "corr_c0": 0.9974,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "desfasados",
+   "clase": "buena",
+   "destino": "aac_64k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0066,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.5
+   ],
+   "rms_sal": [
+    -16.45,
+    -16.59
+   ],
+   "corr_c0": 0.9842,
+   "corr_c1": 0.9854,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.9842
+  },
+  {
+   "fuente": "desfasados",
+   "clase": "mala",
+   "destino": "aac_64k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0066,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.5
+   ],
+   "rms_sal": [
+    -16.43,
+    null
+   ],
+   "corr_c0": 0.999,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "desfasados",
+   "clase": "buena",
+   "destino": "aac_192k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0066,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.5
+   ],
+   "rms_sal": [
+    -16.39,
+    -16.51
+   ],
+   "corr_c0": 0.9998,
+   "corr_c1": 0.9999,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.9998
+  },
+  {
+   "fuente": "desfasados",
+   "clase": "mala",
+   "destino": "aac_192k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0066,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.5
+   ],
+   "rms_sal": [
+    -16.38,
+    null
+   ],
+   "corr_c0": 1.0,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "desfasados",
+   "clase": "buena",
+   "destino": "flac",
+   "con_perdida": false,
+   "rc": 0,
+   "corr_LR_entrada": -0.0066,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.5
+   ],
+   "rms_sal": [
+    -16.38,
+    -16.5
+   ],
+   "corr_c0": 1.0,
+   "corr_c1": 1.0,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 1.0
+  },
+  {
+   "fuente": "desfasados",
+   "clase": "mala",
+   "destino": "flac",
+   "con_perdida": false,
+   "rc": 0,
+   "corr_LR_entrada": -0.0066,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.5
+   ],
+   "rms_sal": [
+    -16.38,
+    null
+   ],
+   "corr_c0": 1.0,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "desfasados",
+   "clase": "buena",
+   "destino": "wav",
+   "con_perdida": false,
+   "rc": 0,
+   "corr_LR_entrada": -0.0066,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.5
+   ],
+   "rms_sal": [
+    -16.38,
+    -16.5
+   ],
+   "corr_c0": 1.0,
+   "corr_c1": 1.0,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 1.0
+  },
+  {
+   "fuente": "desfasados",
+   "clase": "mala",
+   "destino": "wav",
+   "con_perdida": false,
+   "rc": 0,
+   "corr_LR_entrada": -0.0066,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.5
+   ],
+   "rms_sal": [
+    -16.38,
+    null
+   ],
+   "corr_c0": 1.0,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "desfasados",
+   "clase": "buena_brutal",
+   "destino": "brutal_lowpass500",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0066,
+   "desfase": 21,
+   "rms_ent": [
+    -16.38,
+    -16.5
+   ],
+   "rms_sal": [
+    -23.06,
+    -23.06
+   ],
+   "corr_c0": 0.8184,
+   "corr_c1": 0.8302,
+   "A7_hoy": false,
+   "clase_real": "buena_brutal",
+   "corr_min_audible": 0.8184
+  },
+  {
+   "fuente": "desfasados",
+   "clase": "buena_brutal",
+   "destino": "brutal_highpass3k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0066,
+   "desfase": 18,
+   "rms_ent": [
+    -16.38,
+    -16.5
+   ],
+   "rms_sal": [
+    -32.34,
+    -33.28
+   ],
+   "corr_c0": 0.2447,
+   "corr_c1": 0.2583,
+   "A7_hoy": false,
+   "clase_real": "buena_brutal",
+   "corr_min_audible": 0.2447
+  },
+  {
+   "fuente": "desfasados",
+   "clase": "buena_brutal",
+   "destino": "brutal_8khz",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0066,
+   "desfase": 6,
+   "rms_ent": [
+    -16.38,
+    -16.5
+   ],
+   "rms_sal": [
+    -19.97,
+    -19.97
+   ],
+   "corr_c0": 0.6898,
+   "corr_c1": 0.6814,
+   "A7_hoy": false,
+   "clase_real": "buena_brutal",
+   "corr_min_audible": 0.6814
+  },
+  {
+   "fuente": "desfasados",
+   "clase": "buena_brutal",
+   "destino": "brutal_aformat_u8",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0066,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.5
+   ],
+   "rms_sal": [
+    -16.37,
+    -16.49
+   ],
+   "corr_c0": 0.9999,
+   "corr_c1": 0.9999,
+   "A7_hoy": false,
+   "clase_real": "buena_brutal",
+   "corr_min_audible": 0.9999
+  },
+  {
+   "fuente": "desfasados",
+   "clase": "buena_brutal",
+   "destino": "brutal_opus6k_mono_a_estereo",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0066,
+   "desfase": 5,
+   "rms_ent": [
+    -16.38,
+    -16.5
+   ],
+   "rms_sal": [
+    -20.24,
+    -20.24
+   ],
+   "corr_c0": 0.5985,
+   "corr_c1": 0.561,
+   "A7_hoy": false,
+   "clase_real": "buena_brutal",
+   "corr_min_audible": 0.561
+  },
+  {
+   "fuente": "dos_voces",
+   "clase": "buena",
+   "destino": "opus_6k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 6,
+   "rms_ent": [
+    -16.38,
+    -16.42
+   ],
+   "rms_sal": [
+    -20.31,
+    -20.31
+   ],
+   "corr_c0": 0.5666,
+   "corr_c1": 0.5306,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.5306
+  },
+  {
+   "fuente": "dos_voces",
+   "clase": "mala",
+   "destino": "opus_6k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 6,
+   "rms_ent": [
+    -16.38,
+    -16.42
+   ],
+   "rms_sal": [
+    -23.07,
+    -23.07
+   ],
+   "corr_c0": 0.8588,
+   "corr_c1": -0.0443,
+   "A7_hoy": false,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": -0.0443
+  },
+  {
+   "fuente": "dos_voces",
+   "clase": "buena",
+   "destino": "opus_8k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 6,
+   "rms_ent": [
+    -16.38,
+    -16.42
+   ],
+   "rms_sal": [
+    -20.55,
+    -20.55
+   ],
+   "corr_c0": 0.6193,
+   "corr_c1": 0.624,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.6193
+  },
+  {
+   "fuente": "dos_voces",
+   "clase": "mala",
+   "destino": "opus_8k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 6,
+   "rms_ent": [
+    -16.38,
+    -16.42
+   ],
+   "rms_sal": [
+    -23.02,
+    -23.02
+   ],
+   "corr_c0": 0.9339,
+   "corr_c1": -0.0447,
+   "A7_hoy": false,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": -0.0447
+  },
+  {
+   "fuente": "dos_voces",
+   "clase": "buena",
+   "destino": "opus_16k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.42
+   ],
+   "rms_sal": [
+    -19.7,
+    -19.7
+   ],
+   "corr_c0": 0.6759,
+   "corr_c1": 0.6735,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.6735
+  },
+  {
+   "fuente": "dos_voces",
+   "clase": "mala",
+   "destino": "opus_16k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.42
+   ],
+   "rms_sal": [
+    -22.49,
+    -22.49
+   ],
+   "corr_c0": 0.9837,
+   "corr_c1": -0.0429,
+   "A7_hoy": false,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": -0.0429
+  },
+  {
+   "fuente": "dos_voces",
+   "clase": "buena",
+   "destino": "opus_32k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": -1,
+   "rms_ent": [
+    -16.38,
+    -16.42
+   ],
+   "rms_sal": [
+    -16.46,
+    -16.43
+   ],
+   "corr_c0": 0.9644,
+   "corr_c1": 0.9749,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.9644
+  },
+  {
+   "fuente": "dos_voces",
+   "clase": "mala",
+   "destino": "opus_32k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.42
+   ],
+   "rms_sal": [
+    -16.43,
+    -77.75
+   ],
+   "corr_c0": 0.9745,
+   "corr_c1": 0.0009,
+   "A7_hoy": false,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0009
+  },
+  {
+   "fuente": "dos_voces",
+   "clase": "buena",
+   "destino": "opus_96k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.42
+   ],
+   "rms_sal": [
+    -16.37,
+    -16.42
+   ],
+   "corr_c0": 0.9974,
+   "corr_c1": 0.9976,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.9974
+  },
+  {
+   "fuente": "dos_voces",
+   "clase": "mala",
+   "destino": "opus_96k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.42
+   ],
+   "rms_sal": [
+    -16.39,
+    -300.47
+   ],
+   "corr_c0": 0.9975,
+   "corr_c1": 0.0044,
+   "A7_hoy": true,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0044
+  },
+  {
+   "fuente": "dos_voces",
+   "clase": "buena",
+   "destino": "mp3_32k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.42
+   ],
+   "rms_sal": [
+    -16.86,
+    -16.9
+   ],
+   "corr_c0": 0.9841,
+   "corr_c1": 0.9866,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.9841
+  },
+  {
+   "fuente": "dos_voces",
+   "clase": "mala",
+   "destino": "mp3_32k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.42
+   ],
+   "rms_sal": [
+    -16.82,
+    null
+   ],
+   "corr_c0": 0.9917,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "dos_voces",
+   "clase": "buena",
+   "destino": "mp3_64k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.42
+   ],
+   "rms_sal": [
+    -16.81,
+    -16.86
+   ],
+   "corr_c0": 0.9956,
+   "corr_c1": 0.997,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.9956
+  },
+  {
+   "fuente": "dos_voces",
+   "clase": "mala",
+   "destino": "mp3_64k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.42
+   ],
+   "rms_sal": [
+    -16.82,
+    null
+   ],
+   "corr_c0": 0.9993,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "dos_voces",
+   "clase": "buena",
+   "destino": "mp3_192k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.42
+   ],
+   "rms_sal": [
+    -16.64,
+    -16.68
+   ],
+   "corr_c0": 1.0,
+   "corr_c1": 1.0,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 1.0
+  },
+  {
+   "fuente": "dos_voces",
+   "clase": "mala",
+   "destino": "mp3_192k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.42
+   ],
+   "rms_sal": [
+    -16.64,
+    null
+   ],
+   "corr_c0": 1.0,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "dos_voces",
+   "clase": "buena",
+   "destino": "mp3_q9",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.42
+   ],
+   "rms_sal": [
+    -16.37,
+    -16.42
+   ],
+   "corr_c0": 0.9984,
+   "corr_c1": 0.9984,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.9984
+  },
+  {
+   "fuente": "dos_voces",
+   "clase": "mala",
+   "destino": "mp3_q9",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.42
+   ],
+   "rms_sal": [
+    -16.37,
+    null
+   ],
+   "corr_c0": 0.9984,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "dos_voces",
+   "clase": "buena",
+   "destino": "aac_32k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.42
+   ],
+   "rms_sal": [
+    -15.52,
+    -15.51
+   ],
+   "corr_c0": 0.9364,
+   "corr_c1": 0.9365,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.9364
+  },
+  {
+   "fuente": "dos_voces",
+   "clase": "mala",
+   "destino": "aac_32k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.42
+   ],
+   "rms_sal": [
+    -16.43,
+    null
+   ],
+   "corr_c0": 0.9974,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "dos_voces",
+   "clase": "buena",
+   "destino": "aac_64k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.42
+   ],
+   "rms_sal": [
+    -16.3,
+    -16.52
+   ],
+   "corr_c0": 0.9556,
+   "corr_c1": 0.9602,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.9556
+  },
+  {
+   "fuente": "dos_voces",
+   "clase": "mala",
+   "destino": "aac_64k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.42
+   ],
+   "rms_sal": [
+    -16.43,
+    null
+   ],
+   "corr_c0": 0.999,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "dos_voces",
+   "clase": "buena",
+   "destino": "aac_192k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.42
+   ],
+   "rms_sal": [
+    -16.39,
+    -16.44
+   ],
+   "corr_c0": 0.9995,
+   "corr_c1": 0.9999,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.9995
+  },
+  {
+   "fuente": "dos_voces",
+   "clase": "mala",
+   "destino": "aac_192k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.42
+   ],
+   "rms_sal": [
+    -16.38,
+    null
+   ],
+   "corr_c0": 1.0,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "dos_voces",
+   "clase": "buena",
+   "destino": "flac",
+   "con_perdida": false,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.42
+   ],
+   "rms_sal": [
+    -16.38,
+    -16.42
+   ],
+   "corr_c0": 1.0,
+   "corr_c1": 1.0,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 1.0
+  },
+  {
+   "fuente": "dos_voces",
+   "clase": "mala",
+   "destino": "flac",
+   "con_perdida": false,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.42
+   ],
+   "rms_sal": [
+    -16.38,
+    null
+   ],
+   "corr_c0": 1.0,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "dos_voces",
+   "clase": "buena",
+   "destino": "wav",
+   "con_perdida": false,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.42
+   ],
+   "rms_sal": [
+    -16.38,
+    -16.42
+   ],
+   "corr_c0": 1.0,
+   "corr_c1": 1.0,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 1.0
+  },
+  {
+   "fuente": "dos_voces",
+   "clase": "mala",
+   "destino": "wav",
+   "con_perdida": false,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.42
+   ],
+   "rms_sal": [
+    -16.38,
+    null
+   ],
+   "corr_c0": 1.0,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "dos_voces",
+   "clase": "buena_brutal",
+   "destino": "brutal_lowpass500",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 21,
+   "rms_ent": [
+    -16.38,
+    -16.42
+   ],
+   "rms_sal": [
+    -23.06,
+    -22.46
+   ],
+   "corr_c0": 0.8181,
+   "corr_c1": 0.8615,
+   "A7_hoy": false,
+   "clase_real": "buena_brutal",
+   "corr_min_audible": 0.8181
+  },
+  {
+   "fuente": "dos_voces",
+   "clase": "buena_brutal",
+   "destino": "brutal_highpass3k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 18,
+   "rms_ent": [
+    -16.38,
+    -16.42
+   ],
+   "rms_sal": [
+    -32.36,
+    -33.77
+   ],
+   "corr_c0": 0.2435,
+   "corr_c1": 0.1693,
+   "A7_hoy": false,
+   "clase_real": "buena_brutal",
+   "corr_min_audible": 0.1693
+  },
+  {
+   "fuente": "dos_voces",
+   "clase": "buena_brutal",
+   "destino": "brutal_8khz",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 6,
+   "rms_ent": [
+    -16.38,
+    -16.42
+   ],
+   "rms_sal": [
+    -20.26,
+    -20.26
+   ],
+   "corr_c0": 0.6676,
+   "corr_c1": 0.6715,
+   "A7_hoy": false,
+   "clase_real": "buena_brutal",
+   "corr_min_audible": 0.6676
+  },
+  {
+   "fuente": "dos_voces",
+   "clase": "buena_brutal",
+   "destino": "brutal_aformat_u8",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.42
+   ],
+   "rms_sal": [
+    -16.37,
+    -16.41
+   ],
+   "corr_c0": 0.9999,
+   "corr_c1": 0.9999,
+   "A7_hoy": false,
+   "clase_real": "buena_brutal",
+   "corr_min_audible": 0.9999
+  },
+  {
+   "fuente": "dos_voces",
+   "clase": "buena_brutal",
+   "destino": "brutal_opus6k_mono_a_estereo",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 6,
+   "rms_ent": [
+    -16.38,
+    -16.42
+   ],
+   "rms_sal": [
+    -20.41,
+    -20.41
+   ],
+   "corr_c0": 0.5587,
+   "corr_c1": 0.5335,
+   "A7_hoy": false,
+   "clase_real": "buena_brutal",
+   "corr_min_audible": 0.5335
+  },
+  {
+   "fuente": "ruido",
+   "clase": "buena",
+   "destino": "opus_6k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.0002,
+   "desfase": 6,
+   "rms_ent": [
+    -16.82,
+    -26.29
+   ],
+   "rms_sal": [
+    -29.8,
+    -29.8
+   ],
+   "corr_c0": 0.101,
+   "corr_c1": 0.267,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.101
+  },
+  {
+   "fuente": "ruido",
+   "clase": "mala",
+   "destino": "opus_6k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.0002,
+   "desfase": 6,
+   "rms_ent": [
+    -16.82,
+    -26.29
+   ],
+   "rms_sal": [
+    -31.31,
+    -31.31
+   ],
+   "corr_c0": 0.1193,
+   "corr_c1": -0.003,
+   "A7_hoy": false,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": -0.003
+  },
+  {
+   "fuente": "ruido",
+   "clase": "buena",
+   "destino": "opus_8k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.0002,
+   "desfase": 6,
+   "rms_ent": [
+    -16.82,
+    -26.29
+   ],
+   "rms_sal": [
+    -31.72,
+    -31.72
+   ],
+   "corr_c0": 0.1606,
+   "corr_c1": 0.3981,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.1606
+  },
+  {
+   "fuente": "ruido",
+   "clase": "mala",
+   "destino": "opus_8k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.0002,
+   "desfase": 7,
+   "rms_ent": [
+    -16.82,
+    -26.29
+   ],
+   "rms_sal": [
+    -33.65,
+    -33.65
+   ],
+   "corr_c0": 0.2034,
+   "corr_c1": -0.0016,
+   "A7_hoy": false,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": -0.0016
+  },
+  {
+   "fuente": "ruido",
+   "clase": "buena",
+   "destino": "opus_16k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.0002,
+   "desfase": 0,
+   "rms_ent": [
+    -16.82,
+    -26.29
+   ],
+   "rms_sal": [
+    -24.97,
+    -24.97
+   ],
+   "corr_c0": 0.2122,
+   "corr_c1": 0.2423,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.2122
+  },
+  {
+   "fuente": "ruido",
+   "clase": "mala",
+   "destino": "opus_16k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.0002,
+   "desfase": 0,
+   "rms_ent": [
+    -16.82,
+    -26.29
+   ],
+   "rms_sal": [
+    -25.57,
+    -25.57
+   ],
+   "corr_c0": 0.2322,
+   "corr_c1": -0.0005,
+   "A7_hoy": false,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": -0.0005
+  },
+  {
+   "fuente": "ruido",
+   "clase": "buena",
+   "destino": "opus_32k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.0002,
+   "desfase": -4,
+   "rms_ent": [
+    -16.82,
+    -26.29
+   ],
+   "rms_sal": [
+    -18.39,
+    -27.41
+   ],
+   "corr_c0": 0.1894,
+   "corr_c1": 0.6653,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.1894
+  },
+  {
+   "fuente": "ruido",
+   "clase": "mala",
+   "destino": "opus_32k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.0002,
+   "desfase": -4,
+   "rms_ent": [
+    -16.82,
+    -26.29
+   ],
+   "rms_sal": [
+    -18.65,
+    -80.38
+   ],
+   "corr_c0": 0.2375,
+   "corr_c1": 0.0056,
+   "A7_hoy": true,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0056
+  },
+  {
+   "fuente": "ruido",
+   "clase": "buena",
+   "destino": "opus_96k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.0002,
+   "desfase": 0,
+   "rms_ent": [
+    -16.82,
+    -26.29
+   ],
+   "rms_sal": [
+    -17.52,
+    -26.7
+   ],
+   "corr_c0": 0.6001,
+   "corr_c1": 0.869,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.6001
+  },
+  {
+   "fuente": "ruido",
+   "clase": "mala",
+   "destino": "opus_96k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.0002,
+   "desfase": 0,
+   "rms_ent": [
+    -16.82,
+    -26.29
+   ],
+   "rms_sal": [
+    -17.7,
+    -168.18
+   ],
+   "corr_c0": 0.6137,
+   "corr_c1": -0.003,
+   "A7_hoy": true,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": -0.003
+  },
+  {
+   "fuente": "ruido",
+   "clase": "buena",
+   "destino": "mp3_32k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.0002,
+   "desfase": 0,
+   "rms_ent": [
+    -16.82,
+    -26.29
+   ],
+   "rms_sal": [
+    -26.15,
+    -27.46
+   ],
+   "corr_c0": 0.2768,
+   "corr_c1": 0.8339,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.2768
+  },
+  {
+   "fuente": "ruido",
+   "clase": "mala",
+   "destino": "mp3_32k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.0002,
+   "desfase": 0,
+   "rms_ent": [
+    -16.82,
+    -26.29
+   ],
+   "rms_sal": [
+    -23.18,
+    null
+   ],
+   "corr_c0": 0.3882,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "ruido",
+   "clase": "buena",
+   "destino": "mp3_64k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.0002,
+   "desfase": 0,
+   "rms_ent": [
+    -16.82,
+    -26.29
+   ],
+   "rms_sal": [
+    -22.1,
+    -27.15
+   ],
+   "corr_c0": 0.4336,
+   "corr_c1": 0.8924,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.4336
+  },
+  {
+   "fuente": "ruido",
+   "clase": "mala",
+   "destino": "mp3_64k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.0002,
+   "desfase": 0,
+   "rms_ent": [
+    -16.82,
+    -26.29
+   ],
+   "rms_sal": [
+    -20.18,
+    null
+   ],
+   "corr_c0": 0.6268,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "ruido",
+   "clase": "buena",
+   "destino": "mp3_192k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.0002,
+   "desfase": 0,
+   "rms_ent": [
+    -16.82,
+    -26.29
+   ],
+   "rms_sal": [
+    -17.86,
+    -26.61
+   ],
+   "corr_c0": 0.8284,
+   "corr_c1": 0.9739,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.8284
+  },
+  {
+   "fuente": "ruido",
+   "clase": "mala",
+   "destino": "mp3_192k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.0002,
+   "desfase": 0,
+   "rms_ent": [
+    -16.82,
+    -26.29
+   ],
+   "rms_sal": [
+    -18.15,
+    null
+   ],
+   "corr_c0": 0.8808,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "ruido",
+   "clase": "buena",
+   "destino": "mp3_q9",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.0002,
+   "desfase": 0,
+   "rms_ent": [
+    -16.82,
+    -26.29
+   ],
+   "rms_sal": [
+    -21.28,
+    -26.79
+   ],
+   "corr_c0": 0.5044,
+   "corr_c1": 0.9127,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.5044
+  },
+  {
+   "fuente": "ruido",
+   "clase": "mala",
+   "destino": "mp3_q9",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.0002,
+   "desfase": 0,
+   "rms_ent": [
+    -16.82,
+    -26.29
+   ],
+   "rms_sal": [
+    -21.28,
+    null
+   ],
+   "corr_c0": 0.5044,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "ruido",
+   "clase": "buena",
+   "destino": "aac_32k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.0002,
+   "desfase": 0,
+   "rms_ent": [
+    -16.82,
+    -26.29
+   ],
+   "rms_sal": [
+    -23.55,
+    -26.32
+   ],
+   "corr_c0": 0.3397,
+   "corr_c1": 0.7804,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.3397
+  },
+  {
+   "fuente": "ruido",
+   "clase": "mala",
+   "destino": "aac_32k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.0002,
+   "desfase": 0,
+   "rms_ent": [
+    -16.82,
+    -26.29
+   ],
+   "rms_sal": [
+    -24.76,
+    null
+   ],
+   "corr_c0": 0.3877,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "ruido",
+   "clase": "buena",
+   "destino": "aac_64k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.0002,
+   "desfase": 0,
+   "rms_ent": [
+    -16.82,
+    -26.29
+   ],
+   "rms_sal": [
+    -19.15,
+    -26.25
+   ],
+   "corr_c0": 0.4782,
+   "corr_c1": 0.8428,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.4782
+  },
+  {
+   "fuente": "ruido",
+   "clase": "mala",
+   "destino": "aac_64k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.0002,
+   "desfase": 0,
+   "rms_ent": [
+    -16.82,
+    -26.29
+   ],
+   "rms_sal": [
+    -19.84,
+    null
+   ],
+   "corr_c0": 0.6441,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "ruido",
+   "clase": "buena",
+   "destino": "aac_192k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.0002,
+   "desfase": 0,
+   "rms_ent": [
+    -16.82,
+    -26.29
+   ],
+   "rms_sal": [
+    -17.97,
+    -26.48
+   ],
+   "corr_c0": 0.7014,
+   "corr_c1": 0.9442,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.7014
+  },
+  {
+   "fuente": "ruido",
+   "clase": "mala",
+   "destino": "aac_192k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.0002,
+   "desfase": 0,
+   "rms_ent": [
+    -16.82,
+    -26.29
+   ],
+   "rms_sal": [
+    -17.87,
+    null
+   ],
+   "corr_c0": 0.8985,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "ruido",
+   "clase": "buena",
+   "destino": "flac",
+   "con_perdida": false,
+   "rc": 0,
+   "corr_LR_entrada": 0.0002,
+   "desfase": 0,
+   "rms_ent": [
+    -16.82,
+    -26.29
+   ],
+   "rms_sal": [
+    -16.82,
+    -26.29
+   ],
+   "corr_c0": 1.0,
+   "corr_c1": 1.0,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 1.0
+  },
+  {
+   "fuente": "ruido",
+   "clase": "mala",
+   "destino": "flac",
+   "con_perdida": false,
+   "rc": 0,
+   "corr_LR_entrada": 0.0002,
+   "desfase": 0,
+   "rms_ent": [
+    -16.82,
+    -26.29
+   ],
+   "rms_sal": [
+    -16.82,
+    null
+   ],
+   "corr_c0": 1.0,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "ruido",
+   "clase": "buena",
+   "destino": "wav",
+   "con_perdida": false,
+   "rc": 0,
+   "corr_LR_entrada": 0.0002,
+   "desfase": 0,
+   "rms_ent": [
+    -16.82,
+    -26.29
+   ],
+   "rms_sal": [
+    -16.82,
+    -26.29
+   ],
+   "corr_c0": 1.0,
+   "corr_c1": 1.0,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 1.0
+  },
+  {
+   "fuente": "ruido",
+   "clase": "mala",
+   "destino": "wav",
+   "con_perdida": false,
+   "rc": 0,
+   "corr_LR_entrada": 0.0002,
+   "desfase": 0,
+   "rms_ent": [
+    -16.82,
+    -26.29
+   ],
+   "rms_sal": [
+    -16.82,
+    null
+   ],
+   "corr_c0": 1.0,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "ruido",
+   "clase": "buena_brutal",
+   "destino": "brutal_lowpass500",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.0002,
+   "desfase": 17,
+   "rms_ent": [
+    -16.82,
+    -26.29
+   ],
+   "rms_sal": [
+    -33.62,
+    -29.09
+   ],
+   "corr_c0": 0.1966,
+   "corr_c1": 0.7937,
+   "A7_hoy": false,
+   "clase_real": "buena_brutal",
+   "corr_min_audible": 0.1966
+  },
+  {
+   "fuente": "ruido",
+   "clase": "buena_brutal",
+   "destino": "brutal_highpass3k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.0002,
+   "desfase": -1,
+   "rms_ent": [
+    -16.82,
+    -26.29
+   ],
+   "rms_sal": [
+    -24.44,
+    -36.05
+   ],
+   "corr_c0": 0.234,
+   "corr_c1": 0.1361,
+   "A7_hoy": false,
+   "clase_real": "buena_brutal",
+   "corr_min_audible": 0.1361
+  },
+  {
+   "fuente": "ruido",
+   "clase": "buena_brutal",
+   "destino": "brutal_8khz",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.0002,
+   "desfase": 6,
+   "rms_ent": [
+    -16.82,
+    -26.29
+   ],
+   "rms_sal": [
+    -32.19,
+    -32.19
+   ],
+   "corr_c0": 0.2339,
+   "corr_c1": 0.5047,
+   "A7_hoy": false,
+   "clase_real": "buena_brutal",
+   "corr_min_audible": 0.2339
+  },
+  {
+   "fuente": "ruido",
+   "clase": "buena_brutal",
+   "destino": "brutal_aformat_u8",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.0002,
+   "desfase": 0,
+   "rms_ent": [
+    -16.82,
+    -26.29
+   ],
+   "rms_sal": [
+    -16.81,
+    -26.28
+   ],
+   "corr_c0": 0.9999,
+   "corr_c1": 0.9989,
+   "A7_hoy": false,
+   "clase_real": "buena_brutal",
+   "corr_min_audible": 0.9989
+  },
+  {
+   "fuente": "ruido",
+   "clase": "buena_brutal",
+   "destino": "brutal_opus6k_mono_a_estereo",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": 0.0002,
+   "desfase": 6,
+   "rms_ent": [
+    -16.82,
+    -26.29
+   ],
+   "rms_sal": [
+    -29.79,
+    -29.79
+   ],
+   "corr_c0": 0.1018,
+   "corr_c1": 0.2661,
+   "A7_hoy": false,
+   "clase_real": "buena_brutal",
+   "corr_min_audible": 0.1018
+  },
+  {
+   "fuente": "fase_inv",
+   "clase": "buena",
+   "destino": "opus_6k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -1.0,
+   "desfase": -181,
+   "rms_ent": [
+    -16.37,
+    -16.37
+   ],
+   "rms_sal": [
+    -98.49,
+    -98.49
+   ],
+   "corr_c0": 0.0111,
+   "corr_c1": -0.0111,
+   "A7_hoy": true,
+   "clase_real": "buena",
+   "corr_min_audible": -0.0111
+  },
+  {
+   "fuente": "fase_inv",
+   "clase": "mala",
+   "destino": "opus_6k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -1.0,
+   "desfase": 6,
+   "rms_ent": [
+    -16.38,
+    -16.38
+   ],
+   "rms_sal": [
+    -23.07,
+    -23.07
+   ],
+   "corr_c0": 0.8588,
+   "corr_c1": -0.8588,
+   "A7_hoy": false,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": -0.8588
+  },
+  {
+   "fuente": "fase_inv",
+   "clase": "buena",
+   "destino": "opus_8k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -1.0,
+   "desfase": -181,
+   "rms_ent": [
+    -16.37,
+    -16.37
+   ],
+   "rms_sal": [
+    -99.85,
+    -99.85
+   ],
+   "corr_c0": 0.0111,
+   "corr_c1": -0.0111,
+   "A7_hoy": true,
+   "clase_real": "buena",
+   "corr_min_audible": -0.0111
+  },
+  {
+   "fuente": "fase_inv",
+   "clase": "mala",
+   "destino": "opus_8k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -1.0,
+   "desfase": 6,
+   "rms_ent": [
+    -16.38,
+    -16.38
+   ],
+   "rms_sal": [
+    -23.02,
+    -23.02
+   ],
+   "corr_c0": 0.9339,
+   "corr_c1": -0.9339,
+   "A7_hoy": false,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": -0.9339
+  },
+  {
+   "fuente": "fase_inv",
+   "clase": "buena",
+   "destino": "opus_16k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -1.0,
+   "desfase": -20,
+   "rms_ent": [
+    -16.38,
+    -16.38
+   ],
+   "rms_sal": [
+    -99.84,
+    -99.84
+   ],
+   "corr_c0": 0.0069,
+   "corr_c1": -0.0069,
+   "A7_hoy": true,
+   "clase_real": "buena",
+   "corr_min_audible": -0.0069
+  },
+  {
+   "fuente": "fase_inv",
+   "clase": "mala",
+   "destino": "opus_16k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -1.0,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.38
+   ],
+   "rms_sal": [
+    -22.49,
+    -22.49
+   ],
+   "corr_c0": 0.9837,
+   "corr_c1": -0.9837,
+   "A7_hoy": false,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": -0.9837
+  },
+  {
+   "fuente": "fase_inv",
+   "clase": "buena",
+   "destino": "opus_32k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -1.0,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.38
+   ],
+   "rms_sal": [
+    -16.32,
+    -16.32
+   ],
+   "corr_c0": 0.9934,
+   "corr_c1": 0.9934,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.9934
+  },
+  {
+   "fuente": "fase_inv",
+   "clase": "mala",
+   "destino": "opus_32k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -1.0,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.38
+   ],
+   "rms_sal": [
+    -16.43,
+    -77.75
+   ],
+   "corr_c0": 0.9745,
+   "corr_c1": -0.0036,
+   "A7_hoy": false,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": -0.0036
+  },
+  {
+   "fuente": "fase_inv",
+   "clase": "buena",
+   "destino": "opus_96k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -1.0,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.38
+   ],
+   "rms_sal": [
+    -16.36,
+    -16.36
+   ],
+   "corr_c0": 0.9988,
+   "corr_c1": 0.9988,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.9988
+  },
+  {
+   "fuente": "fase_inv",
+   "clase": "mala",
+   "destino": "opus_96k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -1.0,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.38
+   ],
+   "rms_sal": [
+    -16.39,
+    -300.47
+   ],
+   "corr_c0": 0.9975,
+   "corr_c1": -0.0066,
+   "A7_hoy": true,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": -0.0066
+  },
+  {
+   "fuente": "fase_inv",
+   "clase": "buena",
+   "destino": "mp3_32k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -1.0,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.38
+   ],
+   "rms_sal": [
+    -16.79,
+    -16.79
+   ],
+   "corr_c0": 0.9914,
+   "corr_c1": 0.9914,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.9914
+  },
+  {
+   "fuente": "fase_inv",
+   "clase": "mala",
+   "destino": "mp3_32k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -1.0,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.38
+   ],
+   "rms_sal": [
+    -16.82,
+    null
+   ],
+   "corr_c0": 0.9917,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "fase_inv",
+   "clase": "buena",
+   "destino": "mp3_64k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -1.0,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.38
+   ],
+   "rms_sal": [
+    -16.82,
+    -16.82
+   ],
+   "corr_c0": 0.9993,
+   "corr_c1": 0.9993,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.9993
+  },
+  {
+   "fuente": "fase_inv",
+   "clase": "mala",
+   "destino": "mp3_64k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -1.0,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.38
+   ],
+   "rms_sal": [
+    -16.82,
+    null
+   ],
+   "corr_c0": 0.9993,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "fase_inv",
+   "clase": "buena",
+   "destino": "mp3_192k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -1.0,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.38
+   ],
+   "rms_sal": [
+    -16.64,
+    -16.64
+   ],
+   "corr_c0": 1.0,
+   "corr_c1": 1.0,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 1.0
+  },
+  {
+   "fuente": "fase_inv",
+   "clase": "mala",
+   "destino": "mp3_192k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -1.0,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.38
+   ],
+   "rms_sal": [
+    -16.64,
+    null
+   ],
+   "corr_c0": 1.0,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "fase_inv",
+   "clase": "buena",
+   "destino": "mp3_q9",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -1.0,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.38
+   ],
+   "rms_sal": [
+    -16.36,
+    -16.36
+   ],
+   "corr_c0": 0.9987,
+   "corr_c1": 0.9987,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.9987
+  },
+  {
+   "fuente": "fase_inv",
+   "clase": "mala",
+   "destino": "mp3_q9",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -1.0,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.38
+   ],
+   "rms_sal": [
+    -16.37,
+    null
+   ],
+   "corr_c0": 0.9984,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "fase_inv",
+   "clase": "buena",
+   "destino": "aac_32k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -1.0,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.38
+   ],
+   "rms_sal": [
+    -16.43,
+    -16.43
+   ],
+   "corr_c0": 0.9926,
+   "corr_c1": 0.9926,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.9926
+  },
+  {
+   "fuente": "fase_inv",
+   "clase": "mala",
+   "destino": "aac_32k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -1.0,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.38
+   ],
+   "rms_sal": [
+    -16.43,
+    null
+   ],
+   "corr_c0": 0.9974,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "fase_inv",
+   "clase": "buena",
+   "destino": "aac_64k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -1.0,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.38
+   ],
+   "rms_sal": [
+    -16.4,
+    -16.4
+   ],
+   "corr_c0": 0.9971,
+   "corr_c1": 0.9971,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.9971
+  },
+  {
+   "fuente": "fase_inv",
+   "clase": "mala",
+   "destino": "aac_64k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -1.0,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.38
+   ],
+   "rms_sal": [
+    -16.43,
+    null
+   ],
+   "corr_c0": 0.999,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "fase_inv",
+   "clase": "buena",
+   "destino": "aac_192k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -1.0,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.38
+   ],
+   "rms_sal": [
+    -16.38,
+    -16.38
+   ],
+   "corr_c0": 1.0,
+   "corr_c1": 1.0,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 1.0
+  },
+  {
+   "fuente": "fase_inv",
+   "clase": "mala",
+   "destino": "aac_192k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -1.0,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.38
+   ],
+   "rms_sal": [
+    -16.38,
+    null
+   ],
+   "corr_c0": 1.0,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "fase_inv",
+   "clase": "buena",
+   "destino": "flac",
+   "con_perdida": false,
+   "rc": 0,
+   "corr_LR_entrada": -1.0,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.38
+   ],
+   "rms_sal": [
+    -16.38,
+    -16.38
+   ],
+   "corr_c0": 1.0,
+   "corr_c1": 1.0,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 1.0
+  },
+  {
+   "fuente": "fase_inv",
+   "clase": "mala",
+   "destino": "flac",
+   "con_perdida": false,
+   "rc": 0,
+   "corr_LR_entrada": -1.0,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.38
+   ],
+   "rms_sal": [
+    -16.38,
+    null
+   ],
+   "corr_c0": 1.0,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "fase_inv",
+   "clase": "buena",
+   "destino": "wav",
+   "con_perdida": false,
+   "rc": 0,
+   "corr_LR_entrada": -1.0,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.38
+   ],
+   "rms_sal": [
+    -16.38,
+    -16.38
+   ],
+   "corr_c0": 1.0,
+   "corr_c1": 1.0,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 1.0
+  },
+  {
+   "fuente": "fase_inv",
+   "clase": "mala",
+   "destino": "wav",
+   "con_perdida": false,
+   "rc": 0,
+   "corr_LR_entrada": -1.0,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.38
+   ],
+   "rms_sal": [
+    -16.38,
+    null
+   ],
+   "corr_c0": 1.0,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "fase_inv",
+   "clase": "buena_brutal",
+   "destino": "brutal_lowpass500",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -1.0,
+   "desfase": 21,
+   "rms_ent": [
+    -16.38,
+    -16.38
+   ],
+   "rms_sal": [
+    -23.06,
+    -23.06
+   ],
+   "corr_c0": 0.8188,
+   "corr_c1": 0.8188,
+   "A7_hoy": false,
+   "clase_real": "buena_brutal",
+   "corr_min_audible": 0.8188
+  },
+  {
+   "fuente": "fase_inv",
+   "clase": "buena_brutal",
+   "destino": "brutal_highpass3k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -1.0,
+   "desfase": 18,
+   "rms_ent": [
+    -16.38,
+    -16.38
+   ],
+   "rms_sal": [
+    -32.37,
+    -32.37
+   ],
+   "corr_c0": 0.2456,
+   "corr_c1": 0.2456,
+   "A7_hoy": false,
+   "clase_real": "buena_brutal",
+   "corr_min_audible": 0.2456
+  },
+  {
+   "fuente": "fase_inv",
+   "clase": "buena_brutal",
+   "destino": "brutal_8khz",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -1.0,
+   "desfase": -181,
+   "rms_ent": [
+    -16.37,
+    -16.37
+   ],
+   "rms_sal": [
+    -99.85,
+    -99.85
+   ],
+   "corr_c0": 0.0111,
+   "corr_c1": -0.0111,
+   "A7_hoy": true,
+   "clase_real": "buena_brutal",
+   "corr_min_audible": -0.0111
+  },
+  {
+   "fuente": "fase_inv",
+   "clase": "buena_brutal",
+   "destino": "brutal_aformat_u8",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -1.0,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -16.38
+   ],
+   "rms_sal": [
+    -16.37,
+    -16.37
+   ],
+   "corr_c0": 0.9999,
+   "corr_c1": 0.9999,
+   "A7_hoy": false,
+   "clase_real": "buena_brutal",
+   "corr_min_audible": 0.9999
+  },
+  {
+   "fuente": "fase_inv",
+   "clase": "buena_brutal",
+   "destino": "brutal_opus6k_mono_a_estereo",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -1.0,
+   "desfase": -181,
+   "rms_ent": [
+    -16.37,
+    -16.37
+   ],
+   "rms_sal": [
+    -98.49,
+    -98.49
+   ],
+   "corr_c0": 0.0111,
+   "corr_c1": -0.0111,
+   "A7_hoy": true,
+   "clase_real": "buena_brutal",
+   "corr_min_audible": -0.0111
+  },
+  {
+   "fuente": "flojo",
+   "clase": "buena",
+   "destino": "opus_6k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 6,
+   "rms_ent": [
+    -16.38,
+    -56.42
+   ],
+   "rms_sal": [
+    -22.81,
+    -22.81
+   ],
+   "corr_c0": 0.867,
+   "corr_c1": -0.0386,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": -0.0386
+  },
+  {
+   "fuente": "flojo",
+   "clase": "mala",
+   "destino": "opus_6k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 6,
+   "rms_ent": [
+    -16.38,
+    -56.42
+   ],
+   "rms_sal": [
+    -23.07,
+    -23.07
+   ],
+   "corr_c0": 0.8588,
+   "corr_c1": -0.0443,
+   "A7_hoy": false,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": -0.0443
+  },
+  {
+   "fuente": "flojo",
+   "clase": "buena",
+   "destino": "opus_8k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 6,
+   "rms_ent": [
+    -16.38,
+    -56.42
+   ],
+   "rms_sal": [
+    -23.0,
+    -23.0
+   ],
+   "corr_c0": 0.9334,
+   "corr_c1": -0.0356,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": -0.0356
+  },
+  {
+   "fuente": "flojo",
+   "clase": "mala",
+   "destino": "opus_8k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 6,
+   "rms_ent": [
+    -16.38,
+    -56.42
+   ],
+   "rms_sal": [
+    -23.02,
+    -23.02
+   ],
+   "corr_c0": 0.9339,
+   "corr_c1": -0.0447,
+   "A7_hoy": false,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": -0.0447
+  },
+  {
+   "fuente": "flojo",
+   "clase": "buena",
+   "destino": "opus_16k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -56.42
+   ],
+   "rms_sal": [
+    -22.54,
+    -22.54
+   ],
+   "corr_c0": 0.9839,
+   "corr_c1": -0.035,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": -0.035
+  },
+  {
+   "fuente": "flojo",
+   "clase": "mala",
+   "destino": "opus_16k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -56.42
+   ],
+   "rms_sal": [
+    -22.49,
+    -22.49
+   ],
+   "corr_c0": 0.9837,
+   "corr_c1": -0.0429,
+   "A7_hoy": false,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": -0.0429
+  },
+  {
+   "fuente": "flojo",
+   "clase": "buena",
+   "destino": "opus_32k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": -2,
+   "rms_ent": [
+    -16.38,
+    -56.42
+   ],
+   "rms_sal": [
+    -16.41,
+    -62.76
+   ],
+   "corr_c0": 0.9668,
+   "corr_c1": 0.451,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.451
+  },
+  {
+   "fuente": "flojo",
+   "clase": "mala",
+   "destino": "opus_32k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -56.42
+   ],
+   "rms_sal": [
+    -16.43,
+    -77.75
+   ],
+   "corr_c0": 0.9745,
+   "corr_c1": 0.0009,
+   "A7_hoy": false,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0009
+  },
+  {
+   "fuente": "flojo",
+   "clase": "buena",
+   "destino": "opus_96k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -56.42
+   ],
+   "rms_sal": [
+    -16.4,
+    -56.39
+   ],
+   "corr_c0": 0.9979,
+   "corr_c1": 0.9964,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.9964
+  },
+  {
+   "fuente": "flojo",
+   "clase": "mala",
+   "destino": "opus_96k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -56.42
+   ],
+   "rms_sal": [
+    -16.39,
+    -300.47
+   ],
+   "corr_c0": 0.9975,
+   "corr_c1": 0.0044,
+   "A7_hoy": true,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0044
+  },
+  {
+   "fuente": "flojo",
+   "clase": "buena",
+   "destino": "mp3_32k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -56.42
+   ],
+   "rms_sal": [
+    -16.83,
+    -56.83
+   ],
+   "corr_c0": 0.9854,
+   "corr_c1": 0.9892,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.9854
+  },
+  {
+   "fuente": "flojo",
+   "clase": "mala",
+   "destino": "mp3_32k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -56.42
+   ],
+   "rms_sal": [
+    -16.82,
+    null
+   ],
+   "corr_c0": 0.9917,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "flojo",
+   "clase": "buena",
+   "destino": "mp3_64k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -56.42
+   ],
+   "rms_sal": [
+    -16.81,
+    -56.84
+   ],
+   "corr_c0": 0.9963,
+   "corr_c1": 0.9974,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.9963
+  },
+  {
+   "fuente": "flojo",
+   "clase": "mala",
+   "destino": "mp3_64k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -56.42
+   ],
+   "rms_sal": [
+    -16.82,
+    null
+   ],
+   "corr_c0": 0.9993,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "flojo",
+   "clase": "buena",
+   "destino": "mp3_192k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -56.42
+   ],
+   "rms_sal": [
+    -16.64,
+    -56.68
+   ],
+   "corr_c0": 1.0,
+   "corr_c1": 1.0,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 1.0
+  },
+  {
+   "fuente": "flojo",
+   "clase": "mala",
+   "destino": "mp3_192k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -56.42
+   ],
+   "rms_sal": [
+    -16.64,
+    null
+   ],
+   "corr_c0": 1.0,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "flojo",
+   "clase": "buena",
+   "destino": "mp3_q9",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -56.42
+   ],
+   "rms_sal": [
+    -16.37,
+    -56.45
+   ],
+   "corr_c0": 0.9984,
+   "corr_c1": 0.9898,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.9898
+  },
+  {
+   "fuente": "flojo",
+   "clase": "mala",
+   "destino": "mp3_q9",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -56.42
+   ],
+   "rms_sal": [
+    -16.37,
+    null
+   ],
+   "corr_c0": 0.9984,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "flojo",
+   "clase": "buena",
+   "destino": "aac_32k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -56.42
+   ],
+   "rms_sal": [
+    -15.41,
+    -55.56
+   ],
+   "corr_c0": 0.9385,
+   "corr_c1": 0.9385,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.9385
+  },
+  {
+   "fuente": "flojo",
+   "clase": "mala",
+   "destino": "aac_32k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -56.42
+   ],
+   "rms_sal": [
+    -16.43,
+    null
+   ],
+   "corr_c0": 0.9974,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "flojo",
+   "clase": "buena",
+   "destino": "aac_64k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -56.42
+   ],
+   "rms_sal": [
+    -16.51,
+    -56.51
+   ],
+   "corr_c0": 0.9691,
+   "corr_c1": 0.9887,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.9691
+  },
+  {
+   "fuente": "flojo",
+   "clase": "mala",
+   "destino": "aac_64k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -56.42
+   ],
+   "rms_sal": [
+    -16.43,
+    null
+   ],
+   "corr_c0": 0.999,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "flojo",
+   "clase": "buena",
+   "destino": "aac_192k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -56.42
+   ],
+   "rms_sal": [
+    -16.38,
+    -56.44
+   ],
+   "corr_c0": 0.9995,
+   "corr_c1": 0.9997,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 0.9995
+  },
+  {
+   "fuente": "flojo",
+   "clase": "mala",
+   "destino": "aac_192k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -56.42
+   ],
+   "rms_sal": [
+    -16.38,
+    null
+   ],
+   "corr_c0": 1.0,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "flojo",
+   "clase": "buena",
+   "destino": "flac",
+   "con_perdida": false,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -56.42
+   ],
+   "rms_sal": [
+    -16.38,
+    -56.42
+   ],
+   "corr_c0": 1.0,
+   "corr_c1": 1.0,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 1.0
+  },
+  {
+   "fuente": "flojo",
+   "clase": "mala",
+   "destino": "flac",
+   "con_perdida": false,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -56.42
+   ],
+   "rms_sal": [
+    -16.38,
+    null
+   ],
+   "corr_c0": 1.0,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "flojo",
+   "clase": "buena",
+   "destino": "wav",
+   "con_perdida": false,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -56.42
+   ],
+   "rms_sal": [
+    -16.38,
+    -56.42
+   ],
+   "corr_c0": 1.0,
+   "corr_c1": 1.0,
+   "A7_hoy": false,
+   "clase_real": "buena",
+   "corr_min_audible": 1.0
+  },
+  {
+   "fuente": "flojo",
+   "clase": "mala",
+   "destino": "wav",
+   "con_perdida": false,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -56.42
+   ],
+   "rms_sal": [
+    -16.38,
+    null
+   ],
+   "corr_c0": 1.0,
+   "corr_c1": 0.0,
+   "A7_hoy": true,
+   "clase_real": "mala_con_perdida",
+   "corr_min_audible": 0.0
+  },
+  {
+   "fuente": "flojo",
+   "clase": "buena_brutal",
+   "destino": "brutal_lowpass500",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 21,
+   "rms_ent": [
+    -16.38,
+    -56.42
+   ],
+   "rms_sal": [
+    -23.06,
+    -62.57
+   ],
+   "corr_c0": 0.8186,
+   "corr_c1": 0.862,
+   "A7_hoy": false,
+   "clase_real": "buena_brutal",
+   "corr_min_audible": 0.8186
+  },
+  {
+   "fuente": "flojo",
+   "clase": "buena_brutal",
+   "destino": "brutal_highpass3k",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 18,
+   "rms_ent": [
+    -16.38,
+    -56.42
+   ],
+   "rms_sal": [
+    -32.37,
+    -74.14
+   ],
+   "corr_c0": 0.2436,
+   "corr_c1": 0.1748,
+   "A7_hoy": false,
+   "clase_real": "buena_brutal",
+   "corr_min_audible": 0.1748
+  },
+  {
+   "fuente": "flojo",
+   "clase": "buena_brutal",
+   "destino": "brutal_8khz",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 6,
+   "rms_ent": [
+    -16.38,
+    -56.42
+   ],
+   "rms_sal": [
+    -22.81,
+    -22.81
+   ],
+   "corr_c0": 0.9789,
+   "corr_c1": -0.0371,
+   "A7_hoy": false,
+   "clase_real": "buena_brutal",
+   "corr_min_audible": -0.0371
+  },
+  {
+   "fuente": "flojo",
+   "clase": "buena_brutal",
+   "destino": "brutal_aformat_u8",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 0,
+   "rms_ent": [
+    -16.38,
+    -56.42
+   ],
+   "rms_sal": [
+    -16.37,
+    -45.38
+   ],
+   "corr_c0": 0.9999,
+   "corr_c1": 0.5827,
+   "A7_hoy": false,
+   "clase_real": "buena_brutal",
+   "corr_min_audible": 0.5827
+  },
+  {
+   "fuente": "flojo",
+   "clase": "buena_brutal",
+   "destino": "brutal_opus6k_mono_a_estereo",
+   "con_perdida": true,
+   "rc": 0,
+   "corr_LR_entrada": -0.0437,
+   "desfase": 6,
+   "rms_ent": [
+    -16.38,
+    -56.42
+   ],
+   "rms_sal": [
+    -22.94,
+    -22.94
+   ],
+   "corr_c0": 0.8528,
+   "corr_c1": -0.0365,
+   "A7_hoy": false,
+   "clase_real": "buena_brutal",
+   "corr_min_audible": -0.0365
+  }
+ ]
+}

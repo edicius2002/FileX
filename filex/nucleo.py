@@ -349,6 +349,8 @@ def destino_ocupado_por_un_tercero(ruta: str) -> bool:
 #   * **Si el destino es un DIRECTORIO existente**, `shutil.move` metía la
 #     salida dentro y `os.replace` se niega. Es un cambio de comportamiento, y
 #     negarse es lo correcto: nadie pidió esa ruta.
+#     **N20: negarse era correcto y el MOTIVO era falso — MEDIDO**
+#     (`bench/fidelidad-y-nucleo.md` §3). Ver `DestinoNoEsFichero`.
 
 
 class DestinoOcupado(OSError):
@@ -357,6 +359,37 @@ class DestinoOcupado(OSError):
     Es una excepción y no un booleano a propósito: el que la lanza es el
     `os.replace` que **ya ha decidido**, no una consulta previa que alguien
     pueda ignorar.
+    """
+
+
+class DestinoNoEsFichero(OSError):
+    """El destino final existe y es un DIRECTORIO.
+
+    **Por qué hace falta una excepción aparte, y por qué el `errno` no sirve
+    para distinguirla — MEDIDO** (`bench/salidas-fidelidad-n/sonda_destino_dir.json`):
+    en esta máquina `os.replace(fichero, DIRECTORIO)` y
+    `os.replace(fichero, fichero_abierto_por_un_tercero)` dan **el mismo
+    `PermissionError`, el mismo `errno=13` y el mismo `WinError 5`**. Los dos
+    caían por tanto en `DestinoOcupado` y el cliente leía *«otro proceso tiene
+    abierta esa ruta de salida»*, que **es falso** en el primero: no hay ningún
+    otro proceso. Es la trampa 44 —un mensaje que promete algo que no ha
+    ocurrido— sobre el camino que N12 acababa de arreglar.
+
+    **La distinción se hace con `os.path.isdir` DESPUÉS del fallo, y eso no es
+    un «comprobar y luego actuar» de los que prohíbe la trampa 63.** La acción
+    ya está decidida y es la misma en los dos casos: negarse. Lo único que
+    depende del `isdir` es **qué frase se escribe**, así que la peor
+    consecuencia de una carrera aquí es un mensaje equivocado, nunca un
+    atropello. Por eso se mira después y no antes.
+
+    **Y no abre un canal de información que R1/R4 cierren.** La opacidad de
+    R1/R4 protege rutas que el cliente **no** tiene permitidas: distingue
+    «prohibido» de «no existe» para no ser un oráculo del sistema de ficheros.
+    Aquí la ruta ya pasó el confinamiento —está dentro de una raíz de la lista
+    blanca— y **la pidió el propio cliente**, que es el mismo argumento que ya
+    justifica nombrar la ruta en «otra conversión está escribiendo ya esa ruta
+    de salida». Lo que se revela es que **la ruta que él eligió** es un
+    directorio, y eso ya lo sabía o lo puede saber sin FileX.
     """
 
 
@@ -370,13 +403,34 @@ def _move_seguro() -> bool:
     return (os.environ.get("FILEX_MOVE_SEGURO") or "1").strip() != "0"
 
 
+#: Los dos motivos, en un solo sitio: los leen `mover_a_destino`, `_un_salto` y
+#: la comprobación temprana de `convertir`, y una prueba se pone roja si se
+#: separan. La trampa 44 es exactamente esto: el texto es parte del contrato.
+MOTIVO_OCUPADO = "otro proceso tiene abierta esa ruta de salida"
+MOTIVO_NO_ES_FICHERO = "la ruta de salida es un directorio que ya existe"
+
+
+def _negativa(e: OSError, destino: str) -> OSError:
+    """Traduce la negativa de `os.replace` al motivo VERDADERO.
+
+    El `errno` no distingue los dos casos en esta máquina (los dos son
+    `EACCES`/`WinError 5`, MEDIDO), así que la pregunta se le hace al sistema
+    de ficheros. Se hace **después** del fallo y solo para elegir la frase: la
+    decisión de negarse ya está tomada. Ver `DestinoNoEsFichero`.
+    """
+    if os.path.isdir(destino):
+        return DestinoNoEsFichero(e.errno, str(e), destino)
+    return DestinoOcupado(e.errno, str(e), destino)
+
+
 def mover_a_destino(origen: str, destino: str) -> str:
     """Saca la salida del desechable al destino **sin ventana**.
 
     Devuelve la ruta final. Lanza `DestinoOcupado` si un tercero lo tiene
-    abierto, y deja pasar `FileNotFoundError` tal cual: *«no está»* y *«no se
-    puede»* son dos cosas distintas (trampa 43), y aquí «no está» es un fallo
-    de programación nuestro, no un ocupante.
+    abierto, `DestinoNoEsFichero` si el destino es un directorio (N20), y deja
+    pasar `FileNotFoundError` tal cual: *«no está»* y *«no se puede»* son dos
+    cosas distintas (trampa 43), y aquí «no está» es un fallo de programación
+    nuestro, no un ocupante.
     """
     dir_destino = os.path.dirname(os.path.abspath(destino)) or "."
     os.makedirs(dir_destino, exist_ok=True)
@@ -390,7 +444,7 @@ def mover_a_destino(origen: str, destino: str) -> str:
         raise
     except OSError as e:
         if e.errno != errno.EXDEV:
-            raise DestinoOcupado(e.errno, str(e), destino) from e
+            raise _negativa(e, destino) from e
 
     # Volúmenes distintos: hay copia, pero el paso que DECIDE sigue siendo un
     # `os.replace`. El temporal va en el directorio de destino —no en el
@@ -406,7 +460,7 @@ def mover_a_destino(origen: str, destino: str) -> str:
             pass
         if isinstance(e, FileNotFoundError):
             raise
-        raise DestinoOcupado(e.errno, str(e), destino) from e
+        raise _negativa(e, destino) from e
     try:
         os.remove(origen)
     except OSError:
@@ -578,7 +632,18 @@ class FileX:
         # en convertir para acabar negándose igual.
         if destino_ocupado_por_un_tercero(sal_abs):
             _soltar_destino(sal_abs)
-            conv.motivo = "otro proceso tiene abierta esa ruta de salida"
+            conv.motivo = MOTIVO_OCUPADO
+            return conv
+
+        # N20 — y por el mismo motivo que la línea de arriba: si el destino ya
+        # es un DIRECTORIO, la conversión va a acabar negándose igual, así que
+        # más vale no gastar los ~250 ms del motor. **La detección de arriba no
+        # lo ve**: `os.replace(DIR, DIR)` funciona y devuelve `False` (MEDIDO,
+        # caso A2 de `sonda_destino_dir.json`), que es correcto —nadie tiene ese
+        # directorio abierto— y por eso hace falta esta línea aparte.
+        if os.path.isdir(sal_abs):
+            _soltar_destino(sal_abs)
+            conv.motivo = MOTIVO_NO_ES_FICHERO
             return conv
 
         actual = ent_abs
@@ -693,7 +758,7 @@ class FileX:
             # colaron 12 de 12 terceros—.
             if destino_ocupado_por_un_tercero(destino_final):
                 s.veredicto = "fallo"
-                s.motivo = "otro proceso tiene abierta esa ruta de salida"
+                s.motivo = MOTIVO_OCUPADO
                 s.ruta = dentro
                 return s
             try:
@@ -701,9 +766,17 @@ class FileX:
                 # `shutil.move` y **pisa en silencio**. La detección y la acción
                 # son ahora la misma llamada del sistema.
                 mover_a_destino(t.destino(nombre), destino_final)
+            except DestinoNoEsFichero:
+                # N20: el mismo `errno` que el de abajo y **otro** motivo. La
+                # comprobación temprana de `convertir` cubre el caso normal;
+                # esta cubre el directorio que aparece MIENTRAS se convierte.
+                s.veredicto = "fallo"
+                s.motivo = MOTIVO_NO_ES_FICHERO
+                s.ruta = dentro
+                return s
             except DestinoOcupado:
                 s.veredicto = "fallo"
-                s.motivo = "otro proceso tiene abierta esa ruta de salida"
+                s.motivo = MOTIVO_OCUPADO
                 s.ruta = dentro
                 return s
             s.ruta = destino_final

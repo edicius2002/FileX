@@ -1,0 +1,314 @@
+
+=== distintos: corr(L,R)=+0.0051  rms -16.38 / -31.53 dBFS
+  distintos  buena        opus_6k                    corr c0=+0.8445 c1=+0.1341  A7hoy=False
+  distintos  mala         opus_6k                    corr c0=+0.8588 c1=+0.0029  A7hoy=False
+  distintos  buena        opus_8k                    corr c0=+0.9177 c1=+0.1552  A7hoy=False
+  distintos  mala         opus_8k                    corr c0=+0.9339 c1=+0.0059  A7hoy=False
+  distintos  buena        opus_16k                   corr c0=+0.9676 c1=+0.1706  A7hoy=False
+  distintos  mala         opus_16k                   corr c0=+0.9837 c1=+0.0048  A7hoy=False
+  distintos  buena        opus_32k                   corr c0=+0.9611 c1=+0.9922  A7hoy=False
+  distintos  mala         opus_32k                   corr c0=+0.9745 c1=-0.0034  A7hoy=False
+  distintos  buena        opus_96k                   corr c0=+0.9976 c1=+0.9998  A7hoy=False
+  distintos  mala         opus_96k                   corr c0=+0.9975 c1=+0.0041  A7hoy=True 
+  distintos  buena        mp3_32k                    corr c0=+0.9856 c1=+0.9998  A7hoy=False
+  distintos  mala         mp3_32k                    corr c0=+0.9917 c1=+0.0000  A7hoy=True 
+  distintos  buena        mp3_64k                    corr c0=+0.9965 c1=+1.0000  A7hoy=False
+  distintos  mala         mp3_64k                    corr c0=+0.9993 c1=+0.0000  A7hoy=True 
+  distintos  buena        mp3_192k                   corr c0=+1.0000 c1=+1.0000  A7hoy=False
+  distintos  mala         mp3_192k                   corr c0=+1.0000 c1=+0.0000  A7hoy=True 
+  distintos  buena        mp3_q9                     corr c0=+0.9984 c1=+0.9885  A7hoy=False
+  distintos  mala         mp3_q9                     corr c0=+0.9984 c1=+0.0000  A7hoy=True 
+  distintos  buena        aac_32k                    corr c0=+0.9379 c1=+0.9373  A7hoy=False
+  distintos  mala         aac_32k                    corr c0=+0.9974 c1=+0.0000  A7hoy=True 
+  distintos  buena        aac_64k                    corr c0=+0.9640 c1=+0.9972  A7hoy=False
+  distintos  mala         aac_64k                    corr c0=+0.9990 c1=+0.0000  A7hoy=True 
+  distintos  buena        aac_192k                   corr c0=+0.9994 c1=+0.9999  A7hoy=False
+  distintos  mala         aac_192k                   corr c0=+1.0000 c1=+0.0000  A7hoy=True 
+  distintos  buena        flac                       corr c0=+1.0000 c1=+1.0000  A7hoy=False
+  distintos  mala         flac                       corr c0=+1.0000 c1=+0.0000  A7hoy=True 
+  distintos  buena        wav                        corr c0=+1.0000 c1=+1.0000  A7hoy=False
+  distintos  mala         wav                        corr c0=+1.0000 c1=+0.0000  A7hoy=True 
+  distintos  buena_brutal brutal_lowpass500          corr c0=+0.8183 c1=+0.9835  A7hoy=False
+  distintos  buena_brutal brutal_highpass3k          corr c0=+0.2443 c1=-0.6724  A7hoy=False
+  distintos  buena_brutal brutal_8khz                corr c0=+0.9629 c1=+0.1724  A7hoy=False
+  distintos  buena_brutal brutal_aformat_u8          corr c0=+0.9999 c1=+0.9968  A7hoy=False
+  distintos  buena_brutal brutal_opus6k_mono_a_estereo corr c0=+0.8373 c1=+0.1347  A7hoy=False
+
+=== reales: corr(L,R)=+0.9997  rms -16.38 / -16.36 dBFS
+  reales     buena        opus_6k                    corr c0=+0.8501 c1=+0.8506  A7hoy=False
+  reales     mala         opus_6k                    corr c0=+0.8588 c1=+0.8587  A7hoy=False
+  reales     buena        opus_8k                    corr c0=+0.9313 c1=+0.9315  A7hoy=False
+  reales     mala         opus_8k                    corr c0=+0.9339 c1=+0.9340  A7hoy=False
+  reales     buena        opus_16k                   corr c0=+0.9779 c1=+0.9779  A7hoy=False
+  reales     mala         opus_16k                   corr c0=+0.9837 c1=+0.9835  A7hoy=False
+  reales     buena        opus_32k                   corr c0=+0.9716 c1=+0.9718  A7hoy=False
+  reales     mala         opus_32k                   corr c0=+0.9745 c1=+0.0036  A7hoy=False
+  reales     buena        opus_96k                   corr c0=+0.9990 c1=+0.9990  A7hoy=False
+  reales     mala         opus_96k                   corr c0=+0.9975 c1=+0.0067  A7hoy=True 
+  reales     buena        mp3_32k                    corr c0=+0.9881 c1=+0.9882  A7hoy=False
+  reales     mala         mp3_32k                    corr c0=+0.9917 c1=+0.0000  A7hoy=True 
+  reales     buena        mp3_64k                    corr c0=+0.9986 c1=+0.9986  A7hoy=False
+  reales     mala         mp3_64k                    corr c0=+0.9993 c1=+0.0000  A7hoy=True 
+  reales     buena        mp3_192k                   corr c0=+1.0000 c1=+1.0000  A7hoy=False
+  reales     mala         mp3_192k                   corr c0=+1.0000 c1=+0.0000  A7hoy=True 
+  reales     buena        mp3_q9                     corr c0=+0.9987 c1=+0.9987  A7hoy=False
+  reales     mala         mp3_q9                     corr c0=+0.9984 c1=+0.0000  A7hoy=True 
+  reales     buena        aac_32k                    corr c0=+0.9931 c1=+0.9931  A7hoy=False
+  reales     mala         aac_32k                    corr c0=+0.9974 c1=+0.0000  A7hoy=True 
+  reales     buena        aac_64k                    corr c0=+0.9972 c1=+0.9972  A7hoy=False
+  reales     mala         aac_64k                    corr c0=+0.9990 c1=+0.0000  A7hoy=True 
+  reales     buena        aac_192k                   corr c0=+1.0000 c1=+1.0000  A7hoy=False
+  reales     mala         aac_192k                   corr c0=+1.0000 c1=+0.0000  A7hoy=True 
+  reales     buena        flac                       corr c0=+1.0000 c1=+1.0000  A7hoy=False
+  reales     mala         flac                       corr c0=+1.0000 c1=+0.0000  A7hoy=True 
+  reales     buena        wav                        corr c0=+1.0000 c1=+1.0000  A7hoy=False
+  reales     mala         wav                        corr c0=+1.0000 c1=+0.0000  A7hoy=True 
+  reales     buena_brutal brutal_lowpass500          corr c0=+0.8189 c1=+0.8195  A7hoy=False
+  reales     buena_brutal brutal_highpass3k          corr c0=+0.2450 c1=+0.2442  A7hoy=False
+  reales     buena_brutal brutal_8khz                corr c0=+0.9757 c1=+0.9757  A7hoy=False
+  reales     buena_brutal brutal_aformat_u8          corr c0=+0.9999 c1=+0.9999  A7hoy=False
+  reales     buena_brutal brutal_opus6k_mono_a_estereo corr c0=+0.8407 c1=+0.8412  A7hoy=False
+
+=== identicos: corr(L,R)=+1.0000  rms -21.07 / -21.07 dBFS
+  identicos  buena        opus_6k                    corr c0=+0.9945 c1=+0.9945  A7hoy=False
+  identicos  mala         opus_6k                    corr c0=+0.9946 c1=+0.9946  A7hoy=False
+  identicos  buena        opus_8k                    corr c0=+0.9966 c1=+0.9966  A7hoy=False
+  identicos  mala         opus_8k                    corr c0=+0.9970 c1=+0.9970  A7hoy=False
+  identicos  buena        opus_16k                   corr c0=+0.9978 c1=+0.9978  A7hoy=False
+  identicos  mala         opus_16k                   corr c0=+0.9980 c1=+0.9980  A7hoy=False
+  identicos  buena        opus_32k                   corr c0=+0.9990 c1=+0.9990  A7hoy=False
+  identicos  mala         opus_32k                   corr c0=+0.9990 c1=+0.0137  A7hoy=False
+  identicos  buena        opus_96k                   corr c0=+1.0000 c1=+1.0000  A7hoy=False
+  identicos  mala         opus_96k                   corr c0=+1.0000 c1=+0.0080  A7hoy=True 
+  identicos  buena        mp3_32k                    corr c0=+1.0000 c1=+1.0000  A7hoy=False
+  identicos  mala         mp3_32k                    corr c0=+1.0000 c1=+0.0000  A7hoy=True 
+  identicos  buena        mp3_64k                    corr c0=+1.0000 c1=+1.0000  A7hoy=False
+  identicos  mala         mp3_64k                    corr c0=+1.0000 c1=+0.0000  A7hoy=True 
+  identicos  buena        mp3_192k                   corr c0=+1.0000 c1=+1.0000  A7hoy=False
+  identicos  mala         mp3_192k                   corr c0=+1.0000 c1=+0.0000  A7hoy=True 
+  identicos  buena        mp3_q9                     corr c0=+0.9947 c1=+0.9947  A7hoy=False
+  identicos  mala         mp3_q9                     corr c0=+0.9930 c1=+0.0000  A7hoy=True 
+  identicos  buena        aac_32k                    corr c0=+0.9973 c1=+0.9973  A7hoy=False
+  identicos  mala         aac_32k                    corr c0=+0.9998 c1=+0.0000  A7hoy=True 
+  identicos  buena        aac_64k                    corr c0=+0.9997 c1=+0.9997  A7hoy=False
+  identicos  mala         aac_64k                    corr c0=+0.9999 c1=+0.0000  A7hoy=True 
+  identicos  buena        aac_192k                   corr c0=+0.9999 c1=+0.9999  A7hoy=False
+  identicos  mala         aac_192k                   corr c0=+0.9999 c1=+0.0000  A7hoy=True 
+  identicos  buena        flac                       corr c0=+1.0000 c1=+1.0000  A7hoy=False
+  identicos  mala         flac                       corr c0=+1.0000 c1=+0.0000  A7hoy=True 
+  identicos  buena        wav                        corr c0=+1.0000 c1=+1.0000  A7hoy=False
+  identicos  mala         wav                        corr c0=+1.0000 c1=+0.0000  A7hoy=True 
+  identicos  buena_brutal brutal_lowpass500          corr c0=+1.0000 c1=+1.0000  A7hoy=False
+  identicos  buena_brutal brutal_highpass3k          corr c0=+0.9999 c1=+0.9999  A7hoy=False
+  identicos  buena_brutal brutal_8khz                corr c0=+0.9985 c1=+0.9985  A7hoy=False
+  identicos  buena_brutal brutal_aformat_u8          corr c0=+0.9997 c1=+0.9997  A7hoy=False
+  identicos  buena_brutal brutal_opus6k_mono_a_estereo corr c0=+0.9945 c1=+0.9945  A7hoy=False
+
+=== desfasados: corr(L,R)=-0.0066  rms -16.38 / -16.50 dBFS
+  desfasados buena        opus_6k                    corr c0=+0.5887 c1=+0.5665  A7hoy=False
+  desfasados mala         opus_6k                    corr c0=+0.8588 c1=-0.0211  A7hoy=False
+  desfasados buena        opus_8k                    corr c0=+0.6574 c1=+0.6433  A7hoy=False
+  desfasados mala         opus_8k                    corr c0=+0.9339 c1=-0.0148  A7hoy=False
+  desfasados buena        opus_16k                   corr c0=+0.6984 c1=+0.6792  A7hoy=False
+  desfasados mala         opus_16k                   corr c0=+0.9837 c1=-0.0051  A7hoy=False
+  desfasados buena        opus_32k                   corr c0=+0.9651 c1=+0.9661  A7hoy=False
+  desfasados mala         opus_32k                   corr c0=+0.9745 c1=+0.0004  A7hoy=False
+  desfasados buena        opus_96k                   corr c0=+0.9983 c1=+0.9985  A7hoy=False
+  desfasados mala         opus_96k                   corr c0=+0.9975 c1=-0.0075  A7hoy=True 
+  desfasados buena        mp3_32k                    corr c0=+0.9851 c1=+0.9876  A7hoy=False
+  desfasados mala         mp3_32k                    corr c0=+0.9917 c1=+0.0000  A7hoy=True 
+  desfasados buena        mp3_64k                    corr c0=+0.9958 c1=+0.9965  A7hoy=False
+  desfasados mala         mp3_64k                    corr c0=+0.9993 c1=+0.0000  A7hoy=True 
+  desfasados buena        mp3_192k                   corr c0=+1.0000 c1=+1.0000  A7hoy=False
+  desfasados mala         mp3_192k                   corr c0=+1.0000 c1=+0.0000  A7hoy=True 
+  desfasados buena        mp3_q9                     corr c0=+0.9984 c1=+0.9988  A7hoy=False
+  desfasados mala         mp3_q9                     corr c0=+0.9984 c1=+0.0000  A7hoy=True 
+  desfasados buena        aac_32k                    corr c0=+0.9198 c1=+0.9189  A7hoy=False
+  desfasados mala         aac_32k                    corr c0=+0.9974 c1=+0.0000  A7hoy=True 
+  desfasados buena        aac_64k                    corr c0=+0.9842 c1=+0.9854  A7hoy=False
+  desfasados mala         aac_64k                    corr c0=+0.9990 c1=+0.0000  A7hoy=True 
+  desfasados buena        aac_192k                   corr c0=+0.9998 c1=+0.9999  A7hoy=False
+  desfasados mala         aac_192k                   corr c0=+1.0000 c1=+0.0000  A7hoy=True 
+  desfasados buena        flac                       corr c0=+1.0000 c1=+1.0000  A7hoy=False
+  desfasados mala         flac                       corr c0=+1.0000 c1=+0.0000  A7hoy=True 
+  desfasados buena        wav                        corr c0=+1.0000 c1=+1.0000  A7hoy=False
+  desfasados mala         wav                        corr c0=+1.0000 c1=+0.0000  A7hoy=True 
+  desfasados buena_brutal brutal_lowpass500          corr c0=+0.8184 c1=+0.8302  A7hoy=False
+  desfasados buena_brutal brutal_highpass3k          corr c0=+0.2447 c1=+0.2583  A7hoy=False
+  desfasados buena_brutal brutal_8khz                corr c0=+0.6898 c1=+0.6814  A7hoy=False
+  desfasados buena_brutal brutal_aformat_u8          corr c0=+0.9999 c1=+0.9999  A7hoy=False
+  desfasados buena_brutal brutal_opus6k_mono_a_estereo corr c0=+0.5985 c1=+0.5610  A7hoy=False
+
+=== dos_voces: corr(L,R)=-0.0437  rms -16.38 / -16.42 dBFS
+  dos_voces  buena        opus_6k                    corr c0=+0.5666 c1=+0.5306  A7hoy=False
+  dos_voces  mala         opus_6k                    corr c0=+0.8588 c1=-0.0443  A7hoy=False
+  dos_voces  buena        opus_8k                    corr c0=+0.6193 c1=+0.6240  A7hoy=False
+  dos_voces  mala         opus_8k                    corr c0=+0.9339 c1=-0.0447  A7hoy=False
+  dos_voces  buena        opus_16k                   corr c0=+0.6759 c1=+0.6735  A7hoy=False
+  dos_voces  mala         opus_16k                   corr c0=+0.9837 c1=-0.0429  A7hoy=False
+  dos_voces  buena        opus_32k                   corr c0=+0.9644 c1=+0.9749  A7hoy=False
+  dos_voces  mala         opus_32k                   corr c0=+0.9745 c1=+0.0009  A7hoy=False
+  dos_voces  buena        opus_96k                   corr c0=+0.9974 c1=+0.9976  A7hoy=False
+  dos_voces  mala         opus_96k                   corr c0=+0.9975 c1=+0.0044  A7hoy=True 
+  dos_voces  buena        mp3_32k                    corr c0=+0.9841 c1=+0.9866  A7hoy=False
+  dos_voces  mala         mp3_32k                    corr c0=+0.9917 c1=+0.0000  A7hoy=True 
+  dos_voces  buena        mp3_64k                    corr c0=+0.9956 c1=+0.9970  A7hoy=False
+  dos_voces  mala         mp3_64k                    corr c0=+0.9993 c1=+0.0000  A7hoy=True 
+  dos_voces  buena        mp3_192k                   corr c0=+1.0000 c1=+1.0000  A7hoy=False
+  dos_voces  mala         mp3_192k                   corr c0=+1.0000 c1=+0.0000  A7hoy=True 
+  dos_voces  buena        mp3_q9                     corr c0=+0.9984 c1=+0.9984  A7hoy=False
+  dos_voces  mala         mp3_q9                     corr c0=+0.9984 c1=+0.0000  A7hoy=True 
+  dos_voces  buena        aac_32k                    corr c0=+0.9364 c1=+0.9365  A7hoy=False
+  dos_voces  mala         aac_32k                    corr c0=+0.9974 c1=+0.0000  A7hoy=True 
+  dos_voces  buena        aac_64k                    corr c0=+0.9556 c1=+0.9602  A7hoy=False
+  dos_voces  mala         aac_64k                    corr c0=+0.9990 c1=+0.0000  A7hoy=True 
+  dos_voces  buena        aac_192k                   corr c0=+0.9995 c1=+0.9999  A7hoy=False
+  dos_voces  mala         aac_192k                   corr c0=+1.0000 c1=+0.0000  A7hoy=True 
+  dos_voces  buena        flac                       corr c0=+1.0000 c1=+1.0000  A7hoy=False
+  dos_voces  mala         flac                       corr c0=+1.0000 c1=+0.0000  A7hoy=True 
+  dos_voces  buena        wav                        corr c0=+1.0000 c1=+1.0000  A7hoy=False
+  dos_voces  mala         wav                        corr c0=+1.0000 c1=+0.0000  A7hoy=True 
+  dos_voces  buena_brutal brutal_lowpass500          corr c0=+0.8181 c1=+0.8615  A7hoy=False
+  dos_voces  buena_brutal brutal_highpass3k          corr c0=+0.2435 c1=+0.1693  A7hoy=False
+  dos_voces  buena_brutal brutal_8khz                corr c0=+0.6676 c1=+0.6715  A7hoy=False
+  dos_voces  buena_brutal brutal_aformat_u8          corr c0=+0.9999 c1=+0.9999  A7hoy=False
+  dos_voces  buena_brutal brutal_opus6k_mono_a_estereo corr c0=+0.5587 c1=+0.5335  A7hoy=False
+
+=== ruido: corr(L,R)=+0.0002  rms -16.82 / -26.29 dBFS
+  ruido      buena        opus_6k                    corr c0=+0.1010 c1=+0.2670  A7hoy=False
+  ruido      mala         opus_6k                    corr c0=+0.1193 c1=-0.0030  A7hoy=False
+  ruido      buena        opus_8k                    corr c0=+0.1606 c1=+0.3981  A7hoy=False
+  ruido      mala         opus_8k                    corr c0=+0.2034 c1=-0.0016  A7hoy=False
+  ruido      buena        opus_16k                   corr c0=+0.2122 c1=+0.2423  A7hoy=False
+  ruido      mala         opus_16k                   corr c0=+0.2322 c1=-0.0005  A7hoy=False
+  ruido      buena        opus_32k                   corr c0=+0.1894 c1=+0.6653  A7hoy=False
+  ruido      mala         opus_32k                   corr c0=+0.2375 c1=+0.0056  A7hoy=True 
+  ruido      buena        opus_96k                   corr c0=+0.6001 c1=+0.8690  A7hoy=False
+  ruido      mala         opus_96k                   corr c0=+0.6137 c1=-0.0030  A7hoy=True 
+  ruido      buena        mp3_32k                    corr c0=+0.2768 c1=+0.8339  A7hoy=False
+  ruido      mala         mp3_32k                    corr c0=+0.3882 c1=+0.0000  A7hoy=True 
+  ruido      buena        mp3_64k                    corr c0=+0.4336 c1=+0.8924  A7hoy=False
+  ruido      mala         mp3_64k                    corr c0=+0.6268 c1=+0.0000  A7hoy=True 
+  ruido      buena        mp3_192k                   corr c0=+0.8284 c1=+0.9739  A7hoy=False
+  ruido      mala         mp3_192k                   corr c0=+0.8808 c1=+0.0000  A7hoy=True 
+  ruido      buena        mp3_q9                     corr c0=+0.5044 c1=+0.9127  A7hoy=False
+  ruido      mala         mp3_q9                     corr c0=+0.5044 c1=+0.0000  A7hoy=True 
+  ruido      buena        aac_32k                    corr c0=+0.3397 c1=+0.7804  A7hoy=False
+  ruido      mala         aac_32k                    corr c0=+0.3877 c1=+0.0000  A7hoy=True 
+  ruido      buena        aac_64k                    corr c0=+0.4782 c1=+0.8428  A7hoy=False
+  ruido      mala         aac_64k                    corr c0=+0.6441 c1=+0.0000  A7hoy=True 
+  ruido      buena        aac_192k                   corr c0=+0.7014 c1=+0.9442  A7hoy=False
+  ruido      mala         aac_192k                   corr c0=+0.8985 c1=+0.0000  A7hoy=True 
+  ruido      buena        flac                       corr c0=+1.0000 c1=+1.0000  A7hoy=False
+  ruido      mala         flac                       corr c0=+1.0000 c1=+0.0000  A7hoy=True 
+  ruido      buena        wav                        corr c0=+1.0000 c1=+1.0000  A7hoy=False
+  ruido      mala         wav                        corr c0=+1.0000 c1=+0.0000  A7hoy=True 
+  ruido      buena_brutal brutal_lowpass500          corr c0=+0.1966 c1=+0.7937  A7hoy=False
+  ruido      buena_brutal brutal_highpass3k          corr c0=+0.2340 c1=+0.1361  A7hoy=False
+  ruido      buena_brutal brutal_8khz                corr c0=+0.2339 c1=+0.5047  A7hoy=False
+  ruido      buena_brutal brutal_aformat_u8          corr c0=+0.9999 c1=+0.9989  A7hoy=False
+  ruido      buena_brutal brutal_opus6k_mono_a_estereo corr c0=+0.1018 c1=+0.2661  A7hoy=False
+
+=== fase_inv: corr(L,R)=-1.0000  rms -16.38 / -16.38 dBFS
+  fase_inv   buena        opus_6k                    corr c0=+0.0111 c1=-0.0111  A7hoy=True 
+  fase_inv   mala         opus_6k                    corr c0=+0.8588 c1=-0.8588  A7hoy=False
+  fase_inv   buena        opus_8k                    corr c0=+0.0111 c1=-0.0111  A7hoy=True 
+  fase_inv   mala         opus_8k                    corr c0=+0.9339 c1=-0.9339  A7hoy=False
+  fase_inv   buena        opus_16k                   corr c0=+0.0069 c1=-0.0069  A7hoy=True 
+  fase_inv   mala         opus_16k                   corr c0=+0.9837 c1=-0.9837  A7hoy=False
+  fase_inv   buena        opus_32k                   corr c0=+0.9934 c1=+0.9934  A7hoy=False
+  fase_inv   mala         opus_32k                   corr c0=+0.9745 c1=-0.0036  A7hoy=False
+  fase_inv   buena        opus_96k                   corr c0=+0.9988 c1=+0.9988  A7hoy=False
+  fase_inv   mala         opus_96k                   corr c0=+0.9975 c1=-0.0066  A7hoy=True 
+  fase_inv   buena        mp3_32k                    corr c0=+0.9914 c1=+0.9914  A7hoy=False
+  fase_inv   mala         mp3_32k                    corr c0=+0.9917 c1=+0.0000  A7hoy=True 
+  fase_inv   buena        mp3_64k                    corr c0=+0.9993 c1=+0.9993  A7hoy=False
+  fase_inv   mala         mp3_64k                    corr c0=+0.9993 c1=+0.0000  A7hoy=True 
+  fase_inv   buena        mp3_192k                   corr c0=+1.0000 c1=+1.0000  A7hoy=False
+  fase_inv   mala         mp3_192k                   corr c0=+1.0000 c1=+0.0000  A7hoy=True 
+  fase_inv   buena        mp3_q9                     corr c0=+0.9987 c1=+0.9987  A7hoy=False
+  fase_inv   mala         mp3_q9                     corr c0=+0.9984 c1=+0.0000  A7hoy=True 
+  fase_inv   buena        aac_32k                    corr c0=+0.9926 c1=+0.9926  A7hoy=False
+  fase_inv   mala         aac_32k                    corr c0=+0.9974 c1=+0.0000  A7hoy=True 
+  fase_inv   buena        aac_64k                    corr c0=+0.9971 c1=+0.9971  A7hoy=False
+  fase_inv   mala         aac_64k                    corr c0=+0.9990 c1=+0.0000  A7hoy=True 
+  fase_inv   buena        aac_192k                   corr c0=+1.0000 c1=+1.0000  A7hoy=False
+  fase_inv   mala         aac_192k                   corr c0=+1.0000 c1=+0.0000  A7hoy=True 
+  fase_inv   buena        flac                       corr c0=+1.0000 c1=+1.0000  A7hoy=False
+  fase_inv   mala         flac                       corr c0=+1.0000 c1=+0.0000  A7hoy=True 
+  fase_inv   buena        wav                        corr c0=+1.0000 c1=+1.0000  A7hoy=False
+  fase_inv   mala         wav                        corr c0=+1.0000 c1=+0.0000  A7hoy=True 
+  fase_inv   buena_brutal brutal_lowpass500          corr c0=+0.8188 c1=+0.8188  A7hoy=False
+  fase_inv   buena_brutal brutal_highpass3k          corr c0=+0.2456 c1=+0.2456  A7hoy=False
+  fase_inv   buena_brutal brutal_8khz                corr c0=+0.0111 c1=-0.0111  A7hoy=True 
+  fase_inv   buena_brutal brutal_aformat_u8          corr c0=+0.9999 c1=+0.9999  A7hoy=False
+  fase_inv   buena_brutal brutal_opus6k_mono_a_estereo corr c0=+0.0111 c1=-0.0111  A7hoy=True 
+
+=== flojo: corr(L,R)=-0.0437  rms -16.38 / -56.42 dBFS
+  flojo      buena        opus_6k                    corr c0=+0.8670 c1=-0.0386  A7hoy=False
+  flojo      mala         opus_6k                    corr c0=+0.8588 c1=-0.0443  A7hoy=False
+  flojo      buena        opus_8k                    corr c0=+0.9334 c1=-0.0356  A7hoy=False
+  flojo      mala         opus_8k                    corr c0=+0.9339 c1=-0.0447  A7hoy=False
+  flojo      buena        opus_16k                   corr c0=+0.9839 c1=-0.0350  A7hoy=False
+  flojo      mala         opus_16k                   corr c0=+0.9837 c1=-0.0429  A7hoy=False
+  flojo      buena        opus_32k                   corr c0=+0.9668 c1=+0.4510  A7hoy=False
+  flojo      mala         opus_32k                   corr c0=+0.9745 c1=+0.0009  A7hoy=False
+  flojo      buena        opus_96k                   corr c0=+0.9979 c1=+0.9964  A7hoy=False
+  flojo      mala         opus_96k                   corr c0=+0.9975 c1=+0.0044  A7hoy=True 
+  flojo      buena        mp3_32k                    corr c0=+0.9854 c1=+0.9892  A7hoy=False
+  flojo      mala         mp3_32k                    corr c0=+0.9917 c1=+0.0000  A7hoy=True 
+  flojo      buena        mp3_64k                    corr c0=+0.9963 c1=+0.9974  A7hoy=False
+  flojo      mala         mp3_64k                    corr c0=+0.9993 c1=+0.0000  A7hoy=True 
+  flojo      buena        mp3_192k                   corr c0=+1.0000 c1=+1.0000  A7hoy=False
+  flojo      mala         mp3_192k                   corr c0=+1.0000 c1=+0.0000  A7hoy=True 
+  flojo      buena        mp3_q9                     corr c0=+0.9984 c1=+0.9898  A7hoy=False
+  flojo      mala         mp3_q9                     corr c0=+0.9984 c1=+0.0000  A7hoy=True 
+  flojo      buena        aac_32k                    corr c0=+0.9385 c1=+0.9385  A7hoy=False
+  flojo      mala         aac_32k                    corr c0=+0.9974 c1=+0.0000  A7hoy=True 
+  flojo      buena        aac_64k                    corr c0=+0.9691 c1=+0.9887  A7hoy=False
+  flojo      mala         aac_64k                    corr c0=+0.9990 c1=+0.0000  A7hoy=True 
+  flojo      buena        aac_192k                   corr c0=+0.9995 c1=+0.9997  A7hoy=False
+  flojo      mala         aac_192k                   corr c0=+1.0000 c1=+0.0000  A7hoy=True 
+  flojo      buena        flac                       corr c0=+1.0000 c1=+1.0000  A7hoy=False
+  flojo      mala         flac                       corr c0=+1.0000 c1=+0.0000  A7hoy=True 
+  flojo      buena        wav                        corr c0=+1.0000 c1=+1.0000  A7hoy=False
+  flojo      mala         wav                        corr c0=+1.0000 c1=+0.0000  A7hoy=True 
+  flojo      buena_brutal brutal_lowpass500          corr c0=+0.8186 c1=+0.8620  A7hoy=False
+  flojo      buena_brutal brutal_highpass3k          corr c0=+0.2436 c1=+0.1748  A7hoy=False
+  flojo      buena_brutal brutal_8khz                corr c0=+0.9789 c1=-0.0371  A7hoy=False
+  flojo      buena_brutal brutal_aformat_u8          corr c0=+0.9999 c1=+0.5827  A7hoy=False
+  flojo      buena_brutal brutal_opus6k_mono_a_estereo corr c0=+0.8528 c1=-0.0365  A7hoy=False
+
+=== corr minima de canal audible — que atrapa y que rompe ===
+  < 0.002  atrapa 77/84  FP buenas  6/112  FP brutales  5/40  toca 18 malas-sin-perdida
+  < 0.005  atrapa 82/84  FP buenas  6/112  FP brutales  5/40  toca 19 malas-sin-perdida
+  < 0.008  atrapa 84/84  FP buenas  6/112  FP brutales  5/40  toca 20 malas-sin-perdida
+  < 0.010  atrapa 84/84  FP buenas  6/112  FP brutales  5/40  toca 21 malas-sin-perdida
+  < 0.020  atrapa 84/84  FP buenas  6/112  FP brutales  5/40  toca 22 malas-sin-perdida
+  < 0.050  atrapa 84/84  FP buenas  6/112  FP brutales  5/40  toca 22 malas-sin-perdida
+  < 0.080  atrapa 84/84  FP buenas  6/112  FP brutales  5/40  toca 22 malas-sin-perdida
+  < 0.100  atrapa 84/84  FP buenas  6/112  FP brutales  5/40  toca 22 malas-sin-perdida
+  < 0.130  atrapa 84/84  FP buenas  7/112  FP brutales  6/40  toca 22 malas-sin-perdida
+  < 0.150  atrapa 84/84  FP buenas  8/112  FP brutales  8/40  toca 22 malas-sin-perdida
+  < 0.200  atrapa 84/84  FP buenas 12/112  FP brutales 12/40  toca 22 malas-sin-perdida
+  < 0.300  atrapa 84/84  FP buenas 14/112  FP brutales 16/40  toca 22 malas-sin-perdida
+  < 0.500  atrapa 84/84  FP buenas 18/112  FP brutales 16/40  toca 22 malas-sin-perdida
+
+=== por DESTINO (trampa 53) ===
+  opus_6k                    con perdida peor mala +0.0029  mejor buena -0.0386  hueco -0.0415  A7 hoy 0/6
+  opus_8k                    con perdida peor mala +0.0059  mejor buena -0.0356  hueco -0.0415  A7 hoy 0/6
+  opus_16k                   con perdida peor mala +0.0048  mejor buena -0.0350  hueco -0.0398  A7 hoy 0/6
+  opus_32k                   con perdida peor mala +0.0056  mejor buena +0.1894  hueco +0.1838  A7 hoy 1/6
+  opus_96k                   con perdida peor mala +0.0044  mejor buena +0.6001  hueco +0.5957  A7 hoy 6/6
+  mp3_32k                    con perdida peor mala +0.0000  mejor buena +0.2768  hueco +0.2768  A7 hoy 6/6
+  mp3_64k                    con perdida peor mala +0.0000  mejor buena +0.4336  hueco +0.4336  A7 hoy 6/6
+  mp3_192k                   con perdida peor mala +0.0000  mejor buena +0.8284  hueco +0.8284  A7 hoy 6/6
+  mp3_q9                     con perdida peor mala +0.0000  mejor buena +0.5044  hueco +0.5044  A7 hoy 6/6
+  aac_32k                    con perdida peor mala +0.0000  mejor buena +0.3397  hueco +0.3397  A7 hoy 6/6
+  aac_64k                    con perdida peor mala +0.0000  mejor buena +0.4782  hueco +0.4782  A7 hoy 6/6
+  aac_192k                   con perdida peor mala +0.0000  mejor buena +0.7014  hueco +0.7014  A7 hoy 6/6
+  flac                       SIN perdida peor mala +0.0000  mejor buena +1.0000  hueco +1.0000  A7 hoy 6/6
+  wav                        SIN perdida peor mala +0.0000  mejor buena +1.0000  hueco +1.0000  A7 hoy 6/6
+
+=== acuerdo RMS  PCM  vs  astats ===
+  528 canales comparados, |dif| max 0.0011 dB, mediana 0.0 dB, 0 discordes: []
