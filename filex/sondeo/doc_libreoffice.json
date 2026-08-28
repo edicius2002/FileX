@@ -4,6 +4,12 @@
  "fecha": "2026-08-22",
  "informe": "bench/sondeo-documental.md",
  "nota": "n=1 por arista, tanda SUCIA (sesión remota activa) y con dos agentes más trabajando: los ms desempatan dentro de este informe, NO se comparan con los de otro. El `build` lleva el ID de la imagen: en otra máquina esto no se aplica.",
+ "huella": {
+  "motor": "28a9e681835e7b0a",
+  "invocacion": "de4a69976377acb8",
+  "contrato": "6af6b556299be217"
+ },
+ "nota_huella": "Sellado el 2026-08-23 por D1 con la huella del codigo vigente, NO resondeado. Estas medidas se tomaron con este mismo codigo: `motores.py`/`motor_contenedor.py` e `invocacion.py` no han cambiado desde que se midieron, y el unico cambio posterior del contrato (9f99cae, sobre `_datos` y `_pdf`) es MONOTONAMENTE MAS PERMISIVO -solo convierte `fallo` en `aviso`/`ok`-, asi que ningun `real` de aqui puede ser falso por su causa. Razonamiento y controles en `bench/deuda-sondeo.md` 3.3.",
  "aristas": {
   "csv>pdf": {
    "estado": "real",
