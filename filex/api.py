@@ -73,7 +73,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import parse_qs, urlparse
 
 from . import __version__
-from .mcp import Servicio, Trabajos
+from .servicio import Servicio, Trabajos
 from .nucleo import FileX
 
 # **`subprocess` no se importa aquí.** Igual que en `filex/mcp.py` y en

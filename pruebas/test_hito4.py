@@ -32,6 +32,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from filex import confinamiento as _conf  # noqa: E402
 from filex import mcp as M  # noqa: E402
+from filex import servicio as S  # noqa: E402
 from filex.nucleo import FileX  # noqa: E402
 
 _RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -63,14 +64,14 @@ def ntok(s: str) -> int:
 
 def _servicio(raices=None):
     fx = FileX(raices_lectura=raices) if raices else FileX()
-    return M.Servicio(fx, M.Trabajos(tempfile.mkdtemp(prefix="h4-trab-")))
+    return S.Servicio(fx, S.Trabajos(tempfile.mkdtemp(prefix="h4-trab-")))
 
 
 def _esperar(sv, jid, tope=180.0):
     t0 = time.time()
     while time.time() - t0 < tope:
         r = sv.despachar("job", {"job_id": jid, "accion": "resultado"})
-        if r.get("estado") != M.TRABAJANDO:
+        if r.get("estado") != S.TRABAJANDO:
             return r
         time.sleep(0.15)
     return {"estado": "timeout_de_la_prueba"}
@@ -293,7 +294,7 @@ class Confinar(unittest.TestCase):
                                           "salida": os.path.join(d, "x.webp")})
         self.assertIn("job_id", r, "el camino png->webp sí existe")
         fin = _esperar(self.sv, r["job_id"])
-        self.assertEqual(fin["estado"], M.FALLIDO)
+        self.assertEqual(fin["estado"], S.FALLIDO)
         self.assertEqual(fin.get("motivo"), _conf.MENSAJE_OPACO)
 
     def test_interseccion_de_roots_no_sustitucion(self):
@@ -472,7 +473,7 @@ class NoBloquear(unittest.TestCase):
         r = self.sv.despachar("convert", {"entrada": png,
                                           "salida": os.path.join(self.salidas, "a.avif")})
         ms = (time.perf_counter() - t0) * 1000
-        self.assertEqual(r["estado"], M.TRABAJANDO)
+        self.assertEqual(r["estado"], S.TRABAJANDO)
         self.assertIn("job_id", r)
         self.assertLess(ms, 200, "convert está bloqueando")
         _esperar(self.sv, r["job_id"])
@@ -488,7 +489,7 @@ class NoBloquear(unittest.TestCase):
         r = self.sv.despachar("convert", {"entrada": png, "salida": destino})
         fin = _esperar(self.sv, r["job_id"], tope=60)
         self.assertNotEqual(fin["estado"], "timeout_de_la_prueba")
-        self.assertEqual(fin["estado"], M.COMPLETADO)
+        self.assertEqual(fin["estado"], S.COMPLETADO)
         # Y la aserción de `sharp.test.ts:369`: se abre lo que se escribió.
         self.assertTrue(os.path.getsize(destino) > 0)
 
@@ -507,10 +508,10 @@ class NoBloquear(unittest.TestCase):
                                           "salida": os.path.join(self.salidas, "p.webp")})
         _esperar(self.sv, r["job_id"])
         # Otro registro, mismo directorio: es lo que verá la CLI o el watcher.
-        otro = M.Trabajos(self.sv.trabajos.dir)
+        otro = S.Trabajos(self.sv.trabajos.dir)
         t = otro.get(r["job_id"])
         self.assertIsNotNone(t)
-        self.assertEqual(t.estado, M.COMPLETADO)
+        self.assertEqual(t.estado, S.COMPLETADO)
 
 
 class Despacho(unittest.TestCase):
@@ -549,7 +550,7 @@ class ServidorReal(unittest.TestCase):
     def test_se_construye_sin_arrancar(self):
         srv, sv, raices = M.construir(FileX(), [_RAIZ])
         self.assertIsNotNone(srv)
-        self.assertIsInstance(sv, M.Servicio)
+        self.assertIsInstance(sv, S.Servicio)
         self.assertIsInstance(raices, M.Raices)
 
 
