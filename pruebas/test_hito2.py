@@ -243,6 +243,14 @@ class DegradacionSinIntervencion(unittest.TestCase):
         self.assertIn("bitrate_video_bps", dec)
         self.assertNotIn("bitrate_bps", dec)
 
+    def test_el_bitrate_de_audio_se_publica_en_decidido(self):
+        """N28: V10 necesita restar el audio que este mismo argv codifica."""
+        gpu._CACHE["hevc_nvenc"] = (True, 0, "")
+        _argv, dec = self.m.orden("e.mp4", "s.mkv",
+                                  {"codec_video": "hevc", "bitrate_video": "2000k",
+                                   "bitrate_audio": "96k"})
+        self.assertEqual(dec.get("bitrate_audio_bps"), 96_000)
+
     def test_codec_desconocido_no_pasa_en_silencio(self):
         with self.assertRaises(ValueError):
             self.m.elegir_codec("no_existe_este_codec")

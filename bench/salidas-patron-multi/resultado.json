@@ -1,0 +1,358 @@
+{
+  "tmp": "/tmp/filex_n28_c22_e1j8szai",
+  "tope_s": 180,
+  "n28": [
+    {
+      "caso": "tipico_crf10_supra",
+      "orden": [
+        "ffmpeg",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-loglevel",
+        "error",
+        "-threads",
+        "4",
+        "-i",
+        "/mnt/d/work/research/filex/.ccb/workspaces/worker2/corpus/video/tipico.mp4",
+        "-map",
+        "0",
+        "-c:v",
+        "libx264",
+        "-crf",
+        "10",
+        "-c:a",
+        "aac",
+        "-b:a",
+        "128k",
+        "/tmp/filex_n28_c22_e1j8szai/n28_tipico_crf10_supra.mkv"
+      ],
+      "rc": 0,
+      "ms": 21363.6,
+      "stderr": "",
+      "bytes": 35530165,
+      "n_audio": 1,
+      "bitrate_contenedor_bps": 14185114,
+      "bitrate_video_estimado_bps": 14057114,
+      "desvio_estimado": 45.85704666666667,
+      "v10_actual": [
+        {
+          "punto": 4,
+          "regla": "V10",
+          "severidad": "informativo",
+          "mensaje": "bitrate por encima del pedido (+4628.4 % del contenedor) NO evaluable: 1 pista(s) de audio inflan el contenedor y la sonda no publica su bitrate",
+          "esperado": 300000,
+          "obtenido": 14185114
+        }
+      ],
+      "v10_con_dato": [
+        {
+          "punto": 4,
+          "regla": "V10",
+          "severidad": "fallo",
+          "mensaje": "el bitrate de video se pasa muy por encima del pedido (+4585.7 % tras restar 1 pista(s) de audio declaradas)",
+          "esperado": 300000,
+          "obtenido": 14057114
+        }
+      ]
+    },
+    {
+      "caso": "tipico_diez_veces_mas",
+      "orden": [
+        "ffmpeg",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-loglevel",
+        "error",
+        "-threads",
+        "4",
+        "-i",
+        "/mnt/d/work/research/filex/.ccb/workspaces/worker2/corpus/video/tipico.mp4",
+        "-map",
+        "0",
+        "-c:v",
+        "libx264",
+        "-b:v",
+        "20000000",
+        "-c:a",
+        "aac",
+        "-b:a",
+        "128k",
+        "/tmp/filex_n28_c22_e1j8szai/n28_tipico_diez_veces_mas.mkv"
+      ],
+      "rc": 0,
+      "ms": 21672.8,
+      "stderr": "",
+      "bytes": 49114103,
+      "n_audio": 1,
+      "bitrate_contenedor_bps": 19608385,
+      "bitrate_video_estimado_bps": 19480385,
+      "desvio_estimado": 8.7401925,
+      "v10_actual": [
+        {
+          "punto": 4,
+          "regla": "V10",
+          "severidad": "informativo",
+          "mensaje": "bitrate por encima del pedido (+880.4 % del contenedor) NO evaluable: 1 pista(s) de audio inflan el contenedor y la sonda no publica su bitrate",
+          "esperado": 2000000,
+          "obtenido": 19608385
+        }
+      ],
+      "v10_con_dato": [
+        {
+          "punto": 4,
+          "regla": "V10",
+          "severidad": "fallo",
+          "mensaje": "el bitrate de video se pasa muy por encima del pedido (+874.0 % tras restar 1 pista(s) de audio declaradas)",
+          "esperado": 2000000,
+          "obtenido": 19480385
+        }
+      ]
+    },
+    {
+      "caso": "dos_pistas_crf10_supra",
+      "orden": [
+        "ffmpeg",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-loglevel",
+        "error",
+        "-threads",
+        "4",
+        "-i",
+        "/mnt/d/work/research/filex/.ccb/workspaces/worker2/corpus/video/patologico_2pistas.mkv",
+        "-map",
+        "0",
+        "-c:v",
+        "libx264",
+        "-crf",
+        "10",
+        "-c:a",
+        "aac",
+        "-b:a",
+        "128k",
+        "/tmp/filex_n28_c22_e1j8szai/n28_dos_pistas_crf10_supra.mkv"
+      ],
+      "rc": 0,
+      "ms": 5625.7,
+      "stderr": "",
+      "bytes": 8757839,
+      "n_audio": 2,
+      "bitrate_contenedor_bps": 6968640,
+      "bitrate_video_estimado_bps": 6712640,
+      "desvio_estimado": 21.375466666666668,
+      "v10_actual": [
+        {
+          "punto": 4,
+          "regla": "V10",
+          "severidad": "informativo",
+          "mensaje": "bitrate por encima del pedido (+2222.9 % del contenedor) NO evaluable: 2 pista(s) de audio inflan el contenedor y la sonda no publica su bitrate",
+          "esperado": 300000,
+          "obtenido": 6968640
+        }
+      ],
+      "v10_con_dato": [
+        {
+          "punto": 4,
+          "regla": "V10",
+          "severidad": "fallo",
+          "mensaje": "el bitrate de video se pasa muy por encima del pedido (+2137.5 % tras restar 2 pista(s) de audio declaradas)",
+          "esperado": 300000,
+          "obtenido": 6712640
+        }
+      ]
+    },
+    {
+      "caso": "dos_pistas_diez_veces_mas",
+      "orden": [
+        "ffmpeg",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-loglevel",
+        "error",
+        "-threads",
+        "4",
+        "-i",
+        "/mnt/d/work/research/filex/.ccb/workspaces/worker2/corpus/video/patologico_2pistas.mkv",
+        "-map",
+        "0",
+        "-c:v",
+        "libx264",
+        "-b:v",
+        "20000000",
+        "-c:a",
+        "aac",
+        "-b:a",
+        "128k",
+        "/tmp/filex_n28_c22_e1j8szai/n28_dos_pistas_diez_veces_mas.mkv"
+      ],
+      "rc": 0,
+      "ms": 7811.8,
+      "stderr": "",
+      "bytes": 18920066,
+      "n_audio": 2,
+      "bitrate_contenedor_bps": 15054757,
+      "bitrate_video_estimado_bps": 14798757,
+      "desvio_estimado": 6.3993785,
+      "v10_actual": [
+        {
+          "punto": 4,
+          "regla": "V10",
+          "severidad": "informativo",
+          "mensaje": "bitrate por encima del pedido (+652.7 % del contenedor) NO evaluable: 2 pista(s) de audio inflan el contenedor y la sonda no publica su bitrate",
+          "esperado": 2000000,
+          "obtenido": 15054757
+        }
+      ],
+      "v10_con_dato": [
+        {
+          "punto": 4,
+          "regla": "V10",
+          "severidad": "fallo",
+          "mensaje": "el bitrate de video se pasa muy por encima del pedido (+639.9 % tras restar 2 pista(s) de audio declaradas)",
+          "esperado": 2000000,
+          "obtenido": 14798757
+        }
+      ]
+    }
+  ],
+  "c22": [
+    {
+      "caso": "hls",
+      "orden": [
+        "ffmpeg",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-loglevel",
+        "error",
+        "-threads",
+        "4",
+        "-i",
+        "/mnt/d/work/research/filex/.ccb/workspaces/worker2/corpus/video/trivial.mp4",
+        "-c:v",
+        "libx264",
+        "-crf",
+        "30",
+        "-hls_time",
+        "1",
+        "-hls_segment_filename",
+        "/tmp/filex_n28_c22_e1j8szai/destino/h%03d.ts",
+        "/tmp/filex_n28_c22_e1j8szai/destino/h.m3u8"
+      ],
+      "rc": 0,
+      "ms": 691.0,
+      "stderr": "",
+      "antes_trabajo": {
+        "destino": -1,
+        "n28_dos_pistas_diez_veces_mas.mkv": 18920066,
+        "n28_dos_pistas_crf10_supra.mkv": 8757839,
+        "n28_tipico_diez_veces_mas.mkv": 49114103,
+        "n28_tipico_crf10_supra.mkv": 35530165
+      },
+      "despues_trabajo": {
+        "destino": -1,
+        "n28_dos_pistas_diez_veces_mas.mkv": 18920066,
+        "n28_dos_pistas_crf10_supra.mkv": 8757839,
+        "n28_tipico_diez_veces_mas.mkv": 49114103,
+        "n28_tipico_crf10_supra.mkv": 35530165
+      },
+      "antes_destino": {},
+      "despues_destino": {
+        "h.m3u8": 114,
+        "h000.ts": 244400
+      },
+      "hallazgos": [
+        {
+          "punto": 5,
+          "regla": "N7",
+          "severidad": "informativo",
+          "mensaje": "salida multifichero declarada (m3u8): 1 fichero(s) acompañan al declarado",
+          "esperado": "lista HLS: los segmentos son ficheros aparte",
+          "obtenido": [
+            "h000.ts"
+          ]
+        },
+        {
+          "punto": 5,
+          "regla": "N9",
+          "severidad": "informativo",
+          "mensaje": "el fichero declarado lleva el 0.0 % de los bytes escritos (114 de 244514 B)",
+          "esperado": "100 %",
+          "obtenido": 0.0
+        }
+      ]
+    },
+    {
+      "caso": "secuencia",
+      "orden": [
+        "ffmpeg",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-loglevel",
+        "error",
+        "-threads",
+        "4",
+        "-i",
+        "/mnt/d/work/research/filex/.ccb/workspaces/worker2/corpus/video/trivial.mp4",
+        "-vf",
+        "fps=4",
+        "/tmp/filex_n28_c22_e1j8szai/destino/f%03d.png"
+      ],
+      "rc": 0,
+      "ms": 301.2,
+      "stderr": "",
+      "antes_trabajo": {
+        "destino": -1,
+        "n28_dos_pistas_diez_veces_mas.mkv": 18920066,
+        "n28_dos_pistas_crf10_supra.mkv": 8757839,
+        "n28_tipico_diez_veces_mas.mkv": 49114103,
+        "n28_tipico_crf10_supra.mkv": 35530165
+      },
+      "despues_trabajo": {
+        "destino": -1,
+        "n28_dos_pistas_diez_veces_mas.mkv": 18920066,
+        "n28_dos_pistas_crf10_supra.mkv": 8757839,
+        "n28_tipico_diez_veces_mas.mkv": 49114103,
+        "n28_tipico_crf10_supra.mkv": 35530165
+      },
+      "antes_destino": {},
+      "despues_destino": {
+        "f020.png": 59965,
+        "f019.png": 60655,
+        "f018.png": 64769,
+        "f017.png": 64876,
+        "f016.png": 65081,
+        "f015.png": 66220,
+        "f014.png": 65527,
+        "f013.png": 64567,
+        "f012.png": 64663,
+        "f011.png": 64852,
+        "f010.png": 63713,
+        "f009.png": 64521,
+        "f008.png": 61277,
+        "f007.png": 62309,
+        "f006.png": 64243,
+        "f005.png": 63743,
+        "f004.png": 61054,
+        "f003.png": 59115,
+        "f002.png": 59061,
+        "f001.png": 58889
+      },
+      "hallazgos": [
+        {
+          "punto": 5,
+          "regla": "N9",
+          "severidad": "informativo",
+          "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (1259100 de 1259100 B)",
+          "esperado": "100 %",
+          "obtenido": 100.0
+        }
+      ]
+    }
+  ]
+}

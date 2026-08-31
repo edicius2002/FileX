@@ -101,6 +101,20 @@ class ElBitrateDeVideoTieneRegla(unittest.TestCase):
         hs = _v10(_sonda_video(390_800, n_audio=2), 200_000, n_audio=2)
         self.assertEqual([x["severidad"] for x in hs], ["informativo"])
 
+    def test_por_arriba_CON_audio_declarado_resta_cada_pista_y_es_fallo(self):
+        """N28: ``-b:a`` decidido hace evaluable el lado alto de V10.
+
+        1 Mbps del contenedor incluye 2 x 128 kb/s de audio; descontarlos
+        deja 744 kb/s de vídeo frente a 200 kb/s pedidos, todavía +272 %.
+        Sin el dato, esta misma celda se debe quedar en informativo.
+        """
+        s = _sonda_video(1_000_000, n_audio=2)
+        p = {"destino": "mkv", "params": {"bitrate_video_bps": 200_000,
+                                            "bitrate_audio_bps": 128_000}}
+        hs = [x for x in verificador.punto4_pedido(s, _sonda_video(5_000_000, 2), p)
+              if x.get("regla") == "V10"]
+        self.assertEqual([x["severidad"] for x in hs], ["fallo"])
+
     def test_el_desvio_normal_de_NVENC_no_es_un_fallo(self):
         """Las cuatro celdas de `hevc_nvenc` de `hito2-nvenc.md` §4.3, con sus
         cifras exactas. Ninguna puede salir `fallo`: +24,59 % es lo que NVENC

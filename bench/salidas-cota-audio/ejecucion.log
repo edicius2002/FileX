@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "D:\work\research\filex\.ccb\workspaces\worker2\bench\salidas-cota-audio\medir.py", line 88, in <module>
+    if __name__=="__main__":main()
+                            ^^^^^^
+  File "D:\work\research\filex\.ccb\workspaces\worker2\bench\salidas-cota-audio\medir.py", line 85, in main
+    t=tabla(m); p=patologicas(tmp,t); despues=sorted(os.listdir(tmp))
+      ^^^^^^^^
+  File "D:\work\research\filex\.ccb\workspaces\worker2\bench\salidas-cota-audio\medir.py", line 54, in tabla
+    out[codec]={"n":len(rs),"max_factor":max(rs),"min_factor":min(rs),"candidatos":[{"factor":q,"cubre":sum(x<=q for x in rs),"total":len(rs)} for q in candidatos]}
+                                         ^^^^^^^
+ValueError: max() arg is an empty sequence
