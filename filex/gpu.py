@@ -311,11 +311,28 @@ class Lock:
             return True
         limite = time.monotonic() + max(0.0, espera)
         while True:
-            if self._candado.tomar(espera=0):
-                self.aviso = self._candado.aviso
-                self.mio = True
-                _PROFUNDIDAD = 1
-                return True
+            # Compatibilidad deliberada: mientras haya arneses Python o shell
+            # que sólo toman O_EXCL, el fichero SIGUE SIENDO exclusión, no
+            # metadato. Tomar sólo el mutex crearía dos poblaciones que no se
+            # ven: precisamente la media exclusión de C38/C39.
+            if self._intentar():
+                if self._candado.tomar(espera=0):
+                    self.aviso = self._candado.aviso
+                    _PROFUNDIDAD = 1
+                    return True
+                # El mutex está ocupado por alguien ya migrado: deshace sólo
+                # nuestro O_EXCL antes de esperar, sin tocar el suyo.
+                self.mio = False
+                c = _campos(self.ruta)
+                if c and c[1] == str(os.getpid()):
+                    try:
+                        os.unlink(self.ruta)
+                    except OSError:
+                        pass
+            # Reintento inmediato tras recoger huérfano: con espera=0 la
+            # recuperación no puede dejar el lock libre y devolver False.
+            elif self._recoger_huerfano():
+                continue
             if time.monotonic() >= limite:
                 return False
             time.sleep(intervalo)
@@ -331,6 +348,12 @@ class Lock:
         if self.reentrada or _PROFUNDIDAD > 0:
             return
         self._candado.soltar()
+        c = _campos(self.ruta)
+        if c and c[1] == str(os.getpid()):
+            try:
+                os.unlink(self.ruta)
+            except OSError:
+                pass
 
     def __enter__(self) -> "Lock":
         if not self.tomar(espera=float(os.environ.get("FILEX_GPU_ESPERA", "900"))):

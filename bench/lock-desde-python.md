@@ -32,6 +32,13 @@ liberación tras `taskkill /F` y contexto: `2/2 OK` con Python Windows 3.11.
 El censo actual da **25** `.py` con `nvidia-smi` y **1** con `gpu_acquire`.
 Esto refuta que el lock de shell baste para los consumidores Python.
 
+**Compatibilidad durante la migración (MEDIDO por las regresiones de H2):** el
+fichero heredado no es sólo metadato mientras queden arneses sin migrar. Un
+`filex.gpu.Lock` toma primero el fichero `O_CREAT|O_EXCL` y después el mutex;
+por ello un arnés viejo bloquea a uno migrado, y el migrado bloquea tanto a
+viejos como a migrados. El dueño vivo no se roba y un huérfano se recupera aun
+con `espera=0`. Sin esta doble toma habría «media exclusión».
+
 ## C39 — cruce de intérpretes
 
 **MEDIDO.** Dueño vivo antes y después (`kill -0` rc=0); el evaluador recibió
