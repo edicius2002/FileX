@@ -76,6 +76,13 @@ import os
 import subprocess
 import tempfile
 import time
+import json
+import signal
+import sys
+
+if __package__ in (None, ""):
+    sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from filex.cerrojo import Candado
 
 #: Lienzo de la sonda. **No lo bajes.** Con 128×128 `hevc_nvenc` dice que no
 #: funciona y con 144×144 lo dice `h264_nvenc`: mínimos 129×33 y 145×49, MEDIDOS
@@ -235,7 +242,7 @@ def poseido() -> bool:
 
 
 class Lock:
-    """Exclusión de máquina para la tarjeta, **interoperable con el arnés**.
+    """Exclusión de máquina para la tarjeta mediante ``Global\\filex-gpu``.
 
     Uso::
 
@@ -252,6 +259,7 @@ class Lock:
         self.mio = False
         self.reentrada = False
         self.aviso = ""
+        self._candado = Candado("gpu", metadatos=etiqueta)
 
     def _linea(self) -> str:
         pid = os.getpid()
@@ -303,16 +311,9 @@ class Lock:
             return True
         limite = time.monotonic() + max(0.0, espera)
         while True:
-            if self._intentar():
-                _PROFUNDIDAD = 1
-                return True
-            # **El reintento inmediato no es un detalle.** Sin él, recoger un
-            # huérfano y salir por el tope en la misma vuelta devuelve `False`
-            # habiendo dejado el lock libre: con `espera=0` —el caso de quien no
-            # quiere bloquearse— la recogida de huérfanos no serviría NUNCA, y
-            # se leería como «el mecanismo no funciona» (MEDIDO: así salió la
-            # primera tanda de N7).
-            if self._recoger_huerfano() and self._intentar():
+            if self._candado.tomar(espera=0):
+                self.aviso = self._candado.aviso
+                self.mio = True
                 _PROFUNDIDAD = 1
                 return True
             if time.monotonic() >= limite:
@@ -329,13 +330,7 @@ class Lock:
         _PROFUNDIDAD = max(0, _PROFUNDIDAD - 1)
         if self.reentrada or _PROFUNDIDAD > 0:
             return
-        c = _campos(self.ruta)
-        if c and c[1] and c[1] != str(os.getpid()):
-            return
-        try:
-            os.unlink(self.ruta)
-        except OSError:
-            pass
+        self._candado.soltar()
 
     def __enter__(self) -> "Lock":
         if not self.tomar(espera=float(os.environ.get("FILEX_GPU_ESPERA", "900"))):
@@ -353,12 +348,47 @@ class Lock:
 
 def dueno() -> str | None:
     """La etiqueta del dueño del lock, o `None` si está libre."""
-    c = _campos(fichero_lock())
-    return c[0] if c else None
+    from filex.cerrojo import dueno as _dueno
+    d = _dueno("gpu")
+    return d.split("\t", 2)[2] if d and "\t" in d else d
 
 
 def esta_libre() -> bool:
-    return not os.path.exists(fichero_lock())
+    from filex.cerrojo import esta_libre as _libre
+    return _libre("gpu")
+
+
+def _hold(etiqueta: str, espera: float) -> int:
+    """CLI para shell: conserva el mutex hasta SIGTERM/taskkill.
+
+    El JSON se escribe sólo tras tomar el candado; el shell usa ``pid`` para
+    verificar y terminar el dueño Windows, no el PID de un lanzador MSYS.
+    """
+    lock = Lock(etiqueta)
+    if not lock.tomar(espera=espera):
+        print(json.dumps({"ok": False, "pid": os.getpid()}), flush=True)
+        return 2
+    print(json.dumps({"ok": True, "pid": os.getpid(), "aviso": lock.aviso}), flush=True)
+    vivo = True
+    def parar(_s, _f):
+        nonlocal vivo
+        vivo = False
+    signal.signal(signal.SIGTERM, parar)
+    signal.signal(signal.SIGINT, parar)
+    while vivo:
+        time.sleep(0.1)
+    lock.soltar()
+    return 0
+
+
+if __name__ == "__main__":
+    import argparse
+    _p = argparse.ArgumentParser()
+    _p.add_argument("modo", choices=("hold",))
+    _p.add_argument("etiqueta")
+    _p.add_argument("--espera", type=float, default=900.0)
+    _a = _p.parse_args()
+    raise SystemExit(_hold(_a.etiqueta, _a.espera))
 
 
 # --------------------------------------------------------------------------
