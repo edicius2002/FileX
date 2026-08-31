@@ -513,9 +513,6 @@ class FFmpeg(Motor):
             # ---- hito 2: NVENC con sondeo y degradación ---------------------
             argv += self._video_codec(pedido, decidido)
             audio = pedido.get("bitrate_audio", "96k" if d == "webm" else "128k")
-            # ``-b:a`` vale por PISTA. Publicarlo evita que V10 confunda la
-            # suma de esas pistas con bitrate de vídeo (N28).
-            decidido["bitrate_audio_bps"] = _a_bps(audio)
             argv += ["-c:a", "libopus" if d == "webm" else "aac",
                      "-b:a", str(audio)]
             # El desvío de bitrate se registra en los METADATOS DE SALIDA. Lo

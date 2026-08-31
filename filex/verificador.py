@@ -3836,24 +3836,10 @@ def punto4_pedido(sonda: dict, sonda_ent: dict | None, pedido: dict) -> list:
                                "pedido (%+.1f %% sobre el contenedor, que es cota "
                                "SUPERIOR del video)" % (desv * 100), pb, obt))
         elif desv > BITRATE_VIDEO_TOL:
-            ba = p.get("bitrate_audio_bps")
             if n_aud == 0:
                 h.append(_hallazgo(4, "V10", "fallo",
                                    "el bitrate de video se pasa muy por encima "
                                    "del pedido (%+.1f %%)" % (desv * 100), pb, obt))
-            elif ba:
-                # ``-b:a`` es una tasa POR PISTA: si el motor la declaró,
-                # restar n_aud veces esa cota separa el vídeo del contenedor.
-                # Solo habilita el lado alto; el inferior ya era concluyente
-                # con la cota superior del contenedor.
-                video = max(0, obt - n_aud * ba)
-                desv_video = (video - pb) / pb
-                if desv_video > BITRATE_VIDEO_TOL:
-                    h.append(_hallazgo(4, "V10", "fallo",
-                                       "el bitrate de video se pasa muy por encima "
-                                       "del pedido (%+.1f %% tras restar %d pista(s) "
-                                       "de audio declaradas)" % (desv_video * 100, n_aud),
-                                       pb, video))
             else:
                 h.append(_hallazgo(4, "V10", "informativo",
                                    "bitrate por encima del pedido (%+.1f %% del "
