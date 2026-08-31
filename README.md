@@ -6,7 +6,7 @@ Cubre 12 categorías: ofimática↔PDF, markup, operaciones PDF, ebooks, imágen
 
 > **Estado: los siete hitos, hechos.** Este repositorio contiene la auditoría de 22 repositorios del ecosistema —leídos a nivel de código y ejecutados en la máquina real—, el plan de construcción que sale de ella, y **el producto**: registro, grafo con coste por arista, confinamiento, invocación disciplinada, y **cuatro superficies** —CLI, MCP, watcher de carpetas y API HTTP local—, con la verificación DENTRO de la conversión.
 >
-> **22 módulos, biblioteca estándar, cero dependencias. 16 ficheros de pruebas.** Suite verificada el 31/08/2026 con `.venv-mcp-filex/Scripts/python.exe` (win32, 3.11.9) y Docker levantado: **420 passed · 2 skipped · 0 failed · 116 subtests** en 165,27 s. Los dos saltados van declarados: uno pide un ráster que hay que generar y el otro la tarjeta (`FILEX_PRUEBAS_SIDECAR=1`). **Un recuento de suite declara su intérprete, su entorno y qué quedó fuera, o no dice qué se ejecutó.**
+> **22 módulos, biblioteca estándar, cero dependencias. 16 ficheros de pruebas.** Suite verificada el 31/08/2026 con `.venv-mcp-filex/Scripts/python.exe` (win32, 3.11.9) y Docker levantado: **424 passed · 2 skipped · 0 failed · 116 subtests** en 156,51 s. Los dos saltados van declarados: uno pide un ráster que hay que generar y el otro la tarjeta (`FILEX_PRUEBAS_SIDECAR=1`). **Un recuento de suite declara su intérprete, su entorno y qué quedó fuera, o no dice qué se ejecutó.**
 
 ```
 $ filex convertir corpus/video/patologico_2pistas.mkv salida.mp4
@@ -35,12 +35,12 @@ Siete fallos independientes, en seis proyectos distintos, todos del mismo tipo: 
 |---|---|
 | **Usarlo** | `python -m filex motores` para ver qué hay, `python -m filex plan a.png b.pdf` para ver qué haría, `python -m filex convertir a.png b.pdf` para hacerlo |
 | **Leer el código** | [`filex/`](filex/) — 22 módulos, biblioteca estándar, cero dependencias. Empieza por `invocacion.py`, que es el único sitio que puede lanzar un proceso, y sigue por `verificador.py`, que es el contrato |
-| **Seguir construyendo** | [`ESTADO-Y-REPARTO.md`](ESTADO-Y-REPARTO.md) §3 — el inventario vivo: **107 filas, 69 cerradas, 29 abiertas**, agrupadas por el recurso que las limita. Los siete hitos de [`PLAN-ORQUESTADOR.md`](PLAN-ORQUESTADOR.md) están hechos |
+| **Seguir construyendo** | [`ESTADO-Y-REPARTO.md`](ESTADO-Y-REPARTO.md) §3 — el inventario vivo: **107 filas, 72 cerradas, 25 abiertas**, agrupadas por el recurso que las limita. Los siete hitos de [`PLAN-ORQUESTADOR.md`](PLAN-ORQUESTADOR.md) están hechos |
 | Entender **por qué** FileX y no otra cosa | [`HUECOS.md`](HUECOS.md) — los cinco diferenciadores, reevaluados tras ejecutar |
 | El análisis completo del ecosistema | [`ANALISIS-COMPLETO.md`](ANALISIS-COMPLETO.md) — 22 repos, 21 tablas comparativas |
 | Diseñar la capa MCP | [`RESULTADOS-MCP.md`](RESULTADOS-MCP.md) — incluye las 15 reglas de confinamiento |
 | Los motores de IA que faltan por probar | [`AGENTES-PRUEBAS-PENDIENTES.md`](AGENTES-PRUEBAS-PENDIENTES.md) |
-| Las reglas y **las 94 trampas ya pagadas** | [`CLAUDE.md`](CLAUDE.md) — cada una con la medida que la respalda. Es el documento más útil del repositorio si vas a tocar algo |
+| Las reglas y **las 98 trampas ya pagadas** | [`CLAUDE.md`](CLAUDE.md) — cada una con la medida que la respalda. Es el documento más útil del repositorio si vas a tocar algo |
 
 ## Estructura
 
