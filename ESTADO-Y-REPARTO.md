@@ -435,6 +435,44 @@ Agrupado por **el recurso que lo limita**, que es lo que decide el reparto. Cada
 | **L1** | **C26** + el barrido de veracidad de este documento | `bench/lock-de-maquina.md`, `bench/lib/harness.sh`, este fichero | ✅ **CERRADO** |
 | **D1 (el segundo)** | **N3** + **N2**, las dos deudas de `filex/sondeo.py` | `bench/deuda-sondeo.md`, `filex/huella.py`, `pruebas/test_sondeo.py` | ✅ **CERRADO.** La arista tiene **seis** dimensiones; y N2 **resultó no existir** |
 
+### Ronda 1 — **31/08, EN CURSO** · *registrada al DESPACHARLA, no al cerrarla*
+
+> **El reparto cambia de forma: se acabaron los turnos, ahora hay CARRILES.** De los 29
+> abiertos, **12 necesitan la GPU** (los 10 de B más N26 y N27) y el lock es de uno a la
+> vez. Si los dos workers se turnan la tarjeta hay que coordinar el lock en cada ronda — y
+> **C39 acaba de demostrar que el lock no falla callándose: borra el del otro**. Con
+> **worker1 siempre en GPU y worker2 siempre en CPU/Docker**, la contención no se gestiona:
+> **no existe**. Es exclusión estructural en vez de cooperativa, que es la lección de las
+> trampas 33 y 90. Y arrastra la mitad de la trampa 84 gratis: **cada carril POSEE unos
+> módulos** —worker1 `filex/gpu.py`, `filex/sidecar.py`, `bench/lib/harness.sh`; worker2
+> `filex/verificador.py`, `filex/motores.py`, `filex/api.py`, `filex/nucleo.py`— y nadie más
+> los toca.
+
+| Agente | Trabajo | Informe | Estado |
+|---|---|---|---|
+| **Ronda 0** (master) | Arrancar Docker y relanzar la suite | — | ✅ **CERRADA.** **420 passed · 2 skipped · 0 failed**, frente a 408/14/0 sin demonio y 414/8/0 con Python de WSL. **Las 12 que faltaban PASAN**, y es la primera vez que se ejecutan sobre Windows con demonio: no estaban rotas, **no se habían ejecutado nunca**. Corrige la trampa 94, que se quedaba corta — un recuento necesita **tres** declaraciones: intérprete, entorno y qué quedó fuera |
+| **worker1** | **C38 + C39** | `bench/lock-desde-python.md`, `filex/gpu.py`, `bench/lib/harness.sh` | 🟡 **EN CURSO.** No elige el primitivo: **mide las dos salidas** con las mismas celdas —fichero de rango de bytes frente al mutex `Global\`— incluidas las cuatro de cruce Git Bash×WSL, **y el coste de tomarlo desde shell, que es lo que C39 no midió** |
+| **worker2** | **N28** | `bench/bitrate-por-pista.md`, `filex/verificador.py`, `filex/motores.py` | ✅ **CERRADO.** La resta se **retira**: `-b:a` no es cota superior por pista. Saldo dicho con número: **8 de 12 atrapadas por el lado bajo, 4 declaradas**. Y trae lo que faltaba —¿existe la magnitud?—: `stream=bit_rate` da `None` en MKV y WEBM, `-count_packets` sólo cuenta, y **sólo `-show_packets` + suma de `pkt_size` por `stream_index` es uniforme, y es cara**. La regla que queda escrita: ***pedido no equivale a obtenido*** |
+| **worker2** (2ª pasada) | **C25**, residuo | ídem | 🟡 **EN CURSO.** `amv` cerrado como fallo documentado (`rc=-22`, dos intentos gastados). **Su «bloqueo» de las 15 reejecuciones está REFUTADO** — ver abajo |
+
+> #### El espejo de la trampa 89, y es más caro que el original
+>
+> worker2 declaró *«BLOQUEO MEDIDO: sus semillas P2 fueron podadas… sin entradas no se puede
+> cumplir la reejecución honesta»*. **Lo refuta el propio repositorio:**
+> `bench/salidas-invocacion/pool_indice.json` está **versionado**, 20 187 B, con las **112
+> entradas** del pool —`aptx`, `msbc`, `tta` y `mjpeg` incluidas—; `_p2_semillas.py` está
+> versionado; y el `MANIFIESTO.md` lo dice **en dos sitios**:
+> `| pool/ | 112 | 225 069 057 | python _p2_semillas.py |`.
+>
+> Las semillas **no se perdieron: se podaron a propósito**, que es literalmente la regla §6
+> —*borra los bytes, deja la orden que los reproduce*—. Miró el disco y no el manifiesto.
+>
+> **La trampa 89 decía: antes de creerte un rojo, mira si el activo que juzgas está
+> versionado. Falta la otra mitad, y es peor: antes de creerte un BLOQUEO, mira si el activo
+> que falta está PODADO CON SU ORDEN.** Un rojo se investiga; un bloqueo se acepta. Esa
+> asimetría es lo que lo hace más caro, porque la disciplina de §6 —que es buena— fabrica
+> exactamente este falso muro cada vez que alguien mira el disco antes que el manifiesto.
+
 ### Contención, en una frase
 
 > **Nunca dos agentes de GPU a la vez.** Desde el 23/08 el lock **es de máquina** (`/tmp/filex-gpu.lock` = `%TEMP%`), se recupera solo si su dueño muere, y **`gpu_acquire` se niega a medir con la tarjeta ocupada por un tercero**. Pero **no obliga a cooperar a quien no lo toma**: por eso hay detección además de exclusión. **Nadie escribe en los maestros salvo el agente de consolidación.** **Un fichero de informe por agente**, sin excepciones.
