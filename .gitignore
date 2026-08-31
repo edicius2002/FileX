@@ -102,3 +102,7 @@ bench/.gpu.lock
 
 # Worktrees de agentes: son copias de trabajo, no contenido del repositorio.
 .claude/worktrees/
+
+# Rasteres de la tanda DESCARTADA de B21/B22 (trampa 92). Regenerables con
+# bench/salidas-suelo-ppp/b21b22.py; cubiertos por su MANIFIESTO.md.
+bench/salidas-suelo-ppp/img/

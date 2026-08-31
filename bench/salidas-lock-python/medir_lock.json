@@ -1,0 +1,44 @@
+{
+  "testigo_mono_ini_us": 29158.7,
+  "testigo_proc_ini_us": 30534.1,
+  "archivo_rango": {
+    "n": 99,
+    "mediana_us": 490.3,
+    "min_us": 385.1,
+    "max_us": 2990.6
+  },
+  "mutex_global": {
+    "n": 99,
+    "mediana_us": 11.3,
+    "min_us": 10.9,
+    "max_us": 6669.9
+  },
+  "muerto_archivo": {
+    "ok": true,
+    "us": 8793.9
+  },
+  "muerto_compuesto": {
+    "ok": true,
+    "us": 11037.1
+  },
+  "arranque_python_pass": {
+    "n": 9,
+    "mediana_us": 41332.6,
+    "min_us": 38955.0,
+    "max_us": 44809.8
+  },
+  "arranque_mas_mutex": {
+    "n": 9,
+    "mediana_us": 82022.1,
+    "min_us": 77395.3,
+    "max_us": 90689.4
+  },
+  "arranque_mas_guardia": {
+    "n": 9,
+    "mediana_us": 128128.1,
+    "min_us": 122048.2,
+    "max_us": 141361.1
+  },
+  "testigo_mono_fin_us": 27370.8,
+  "testigo_proc_fin_us": 29461.2
+}

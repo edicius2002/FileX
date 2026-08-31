@@ -38,6 +38,16 @@
 # puede tomar desde shell sin añadir una dependencia.
 GPU_LOCK_DIR="${GPU_LOCK_DIR:-/tmp}"
 GPU_LOCK="${GPU_LOCK:-$GPU_LOCK_DIR/filex-gpu.lock}"
+# C38/C39: el fichero conserva el primitivo histórico para comparación; el
+# defecto es el mutex de máquina tomado por el retenedor Python.
+GPU_LOCK_PRIMITIVO="${GPU_LOCK_PRIMITIVO:-mutex}"
+_GPU_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+_GPU_LOCK_PY_LOCAL="$_GPU_ROOT/.venv-mcp-filex/Scripts/python.exe"
+_GPU_LOCK_PY_SHARED="$(cd "$_GPU_ROOT/../../.." 2>/dev/null && pwd)/.venv-mcp-filex/Scripts/python.exe"
+if [ -x "$_GPU_LOCK_PY_LOCAL" ]; then _GPU_LOCK_PY_DEFAULT="$_GPU_LOCK_PY_LOCAL"; else _GPU_LOCK_PY_DEFAULT="$_GPU_LOCK_PY_SHARED"; fi
+GPU_LOCK_PY="${GPU_LOCK_PY:-$_GPU_LOCK_PY_DEFAULT}"
+GPU_LOCK_READY="${GPU_LOCK_READY:-/tmp/filex-gpu-mutex.$$.json}"
+GPU_LOCK_WINPID=""
 
 # Lock de LEGADO: el sitio donde vivía hasta el 23/08. Mientras haya tandas
 # arrancadas con el harness viejo todavía vivas, siguen tomando ESE fichero y no
@@ -146,7 +156,7 @@ _gpu_dueno_vivo(){
   return 0
 }
 
-gpu_acquire(){
+gpu_acquire_archivo(){
   local who="${1:-anon}" waited=0 winpid imagen linea esperado_gpu=0
   winpid="$(cat /proc/$$/winpid 2>/dev/null)"; : "${winpid:=$$}"
   imagen="$(basename "${BASH:-bash}")"
@@ -225,9 +235,65 @@ gpu_acquire(){
 
 # Solo borra el lock si es NUESTRO: si otro nos lo robó por huérfano, no se lo
 # quitamos de debajo.
-gpu_release(){
+gpu_release_archivo(){
   local mio; mio="$(_gpu_lock_campo 2)"
   if [ -z "$mio" ] || [ "$mio" = "$$" ]; then rm -f "$GPU_LOCK" 2>/dev/null; fi
+}
+
+# Mutex Global\\filex-gpu: el hijo Python LO RETIENE. Una llamada Python que
+# tomase y saliese mediría un mutex libre; por eso espera una señal JSON de
+# disponibilidad y el shell conserva el PID Windows publicado por el hijo.
+gpu_acquire_mutex(){
+  local who="${1:-anon}" waited=0 linea ok pid py_script
+  [ -x "$GPU_LOCK_PY" ] || { echo "[lock] falta Python mutex: $GPU_LOCK_PY" >&2; return 1; }
+  rm -f "$GPU_LOCK_READY" 2>/dev/null
+  py_script="$_GPU_ROOT/filex/gpu.py"
+  # Windows Python recibe rutas POSIX de Git Bash, pero no las de WSL.
+  if [ ! -e "/proc/$$/winpid" ] && command -v wslpath >/dev/null 2>&1; then
+    py_script="$(wslpath -w "$py_script")"
+  fi
+  "$GPU_LOCK_PY" "$py_script" hold "$who" --espera 900 >"$GPU_LOCK_READY" 2>/dev/null &
+  local launcher=$!
+  while [ $waited -lt 200 ]; do
+    if [ -s "$GPU_LOCK_READY" ]; then break; fi
+    sleep 0.1; waited=$((waited+1))
+  done
+  [ -s "$GPU_LOCK_READY" ] || { kill "$launcher" 2>/dev/null; echo "[lock] retenedor mutex no publicó listo (20 s)" >&2; return 1; }
+  linea="$(head -1 "$GPU_LOCK_READY")"
+  ok="$(printf '%s' "$linea" | sed -n 's/.*"ok": *\(true\|false\).*/\1/p')"
+  pid="$(printf '%s' "$linea" | sed -n 's/.*"pid": *\([0-9][0-9]*\).*/\1/p')"
+  if [ "$ok" != true ] || [ -z "$pid" ]; then
+    echo "[lock] mutex ocupado o retenedor falló: $linea" >&2; return 1
+  fi
+  GPU_LOCK_WINPID="$pid"
+  trap 'gpu_release' EXIT INT TERM
+  echo "[lock] mutex adquirido por $who (pid Windows $GPU_LOCK_WINPID)"
+}
+
+gpu_release_mutex(){
+  [ -n "$GPU_LOCK_WINPID" ] || return 0
+  if [ -e "/proc/$$/winpid" ]; then
+    taskkill.exe //PID "$GPU_LOCK_WINPID" //T //F >/dev/null 2>&1
+  else
+    taskkill.exe /PID "$GPU_LOCK_WINPID" /T /F >/dev/null 2>&1
+  fi
+  GPU_LOCK_WINPID=""
+  rm -f "$GPU_LOCK_READY" 2>/dev/null
+}
+
+gpu_acquire(){
+  case "$GPU_LOCK_PRIMITIVO" in
+    mutex) gpu_acquire_mutex "$@" ;;
+    archivo) gpu_acquire_archivo "$@" ;;
+    *) echo "[lock] GPU_LOCK_PRIMITIVO inválido: $GPU_LOCK_PRIMITIVO" >&2; return 1 ;;
+  esac
+}
+
+gpu_release(){
+  case "$GPU_LOCK_PRIMITIVO" in
+    mutex) gpu_release_mutex ;;
+    archivo) gpu_release_archivo ;;
+  esac
 }
 
 # --- ¿está la GPU lo bastante tranquila para medir? ---
