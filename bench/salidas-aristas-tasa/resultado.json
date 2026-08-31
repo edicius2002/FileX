@@ -1,0 +1,2103 @@
+{
+  "entorno": {
+    "ffmpeg": "ffmpeg version N-121159-g0bd5a7d371-20250921 Copyright (c) 2000-2025 the FFmpeg developers",
+    "ruta_resuelta": "D:\\utils\\ffmpeg\\bin\\ffmpeg.EXE",
+    "tope_s": 20
+  },
+  "antes": [],
+  "despues": [
+    "a_flac_aac_128000.m4a",
+    "a_flac_aac_192000.m4a",
+    "a_flac_aac_32000.m4a",
+    "a_flac_aac_8000.m4a",
+    "a_flac_aac_96000.m4a",
+    "a_flac_libmp3lame_128000.mp3",
+    "a_flac_libmp3lame_192000.mp3",
+    "a_flac_libmp3lame_32000.mp3",
+    "a_flac_libmp3lame_8000.mp3",
+    "a_flac_libmp3lame_96000.mp3",
+    "a_flac_libopus_128000.opus",
+    "a_flac_libopus_192000.opus",
+    "a_flac_libopus_32000.opus",
+    "a_flac_libopus_8000.opus",
+    "a_flac_libopus_96000.opus",
+    "a_mkv_dos_pistas_aac_128000.m4a",
+    "a_mkv_dos_pistas_aac_192000.m4a",
+    "a_mkv_dos_pistas_aac_32000.m4a",
+    "a_mkv_dos_pistas_aac_8000.m4a",
+    "a_mkv_dos_pistas_aac_96000.m4a",
+    "a_mkv_dos_pistas_libmp3lame_128000.mp3",
+    "a_mkv_dos_pistas_libmp3lame_192000.mp3",
+    "a_mkv_dos_pistas_libmp3lame_32000.mp3",
+    "a_mkv_dos_pistas_libmp3lame_8000.mp3",
+    "a_mkv_dos_pistas_libmp3lame_96000.mp3",
+    "a_mkv_dos_pistas_libopus_128000.opus",
+    "a_mkv_dos_pistas_libopus_192000.opus",
+    "a_mkv_dos_pistas_libopus_32000.opus",
+    "a_mkv_dos_pistas_libopus_8000.opus",
+    "a_mkv_dos_pistas_libopus_96000.opus",
+    "a_wav_mono_aac_128000.m4a",
+    "a_wav_mono_aac_192000.m4a",
+    "a_wav_mono_aac_32000.m4a",
+    "a_wav_mono_aac_8000.m4a",
+    "a_wav_mono_aac_96000.m4a",
+    "a_wav_mono_libmp3lame_128000.mp3",
+    "a_wav_mono_libmp3lame_192000.mp3",
+    "a_wav_mono_libmp3lame_32000.mp3",
+    "a_wav_mono_libmp3lame_8000.mp3",
+    "a_wav_mono_libmp3lame_96000.mp3",
+    "a_wav_mono_libopus_128000.opus",
+    "a_wav_mono_libopus_192000.opus",
+    "a_wav_mono_libopus_32000.opus",
+    "a_wav_mono_libopus_8000.opus",
+    "a_wav_mono_libopus_96000.opus",
+    "base.png",
+    "bayer.png",
+    "bayer.raw",
+    "bayera.png",
+    "bayera.raw",
+    "c25_amv.amv",
+    "c25_amv_perfil.amv",
+    "c25_gxf.gxf",
+    "c25_mlp.mlp",
+    "c25_mlp_strict.mlp",
+    "c25_thd.thd",
+    "c25_thd_strict.thd",
+    "rgb_leido_8.png",
+    "tercero.rgb"
+  ],
+  "audio": [
+    {
+      "fuente": "wav_mono",
+      "codec": "aac",
+      "pedido_bps": 8000,
+      "orden": [
+        "D:\\utils\\ffmpeg\\bin\\ffmpeg.EXE",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-loglevel",
+        "error",
+        "-i",
+        "D:\\work\\research\\filex\\.ccb\\workspaces\\worker2\\corpus/audio/trivial.wav",
+        "-map",
+        "0:a?",
+        "-t",
+        "8",
+        "-c:a",
+        "aac",
+        "-b:a",
+        "8000",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex_tanda_b_qdj9egmo\\a_wav_mono_aac_8000.m4a"
+      ],
+      "rc": 0,
+      "ms": 972.8,
+      "err": "",
+      "bytes": 17058,
+      "obtenido_bps_por_pista": [
+        14868
+      ],
+      "desvio_por_pista": [
+        0.8585
+      ]
+    },
+    {
+      "fuente": "wav_mono",
+      "codec": "aac",
+      "pedido_bps": 32000,
+      "orden": [
+        "D:\\utils\\ffmpeg\\bin\\ffmpeg.EXE",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-loglevel",
+        "error",
+        "-i",
+        "D:\\work\\research\\filex\\.ccb\\workspaces\\worker2\\corpus/audio/trivial.wav",
+        "-map",
+        "0:a?",
+        "-t",
+        "8",
+        "-c:a",
+        "aac",
+        "-b:a",
+        "32000",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex_tanda_b_qdj9egmo\\a_wav_mono_aac_32000.m4a"
+      ],
+      "rc": 0,
+      "ms": 238.8,
+      "err": "",
+      "bytes": 34812,
+      "obtenido_bps_por_pista": [
+        32622
+      ],
+      "desvio_por_pista": [
+        0.0194375
+      ]
+    },
+    {
+      "fuente": "wav_mono",
+      "codec": "aac",
+      "pedido_bps": 96000,
+      "orden": [
+        "D:\\utils\\ffmpeg\\bin\\ffmpeg.EXE",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-loglevel",
+        "error",
+        "-i",
+        "D:\\work\\research\\filex\\.ccb\\workspaces\\worker2\\corpus/audio/trivial.wav",
+        "-map",
+        "0:a?",
+        "-t",
+        "8",
+        "-c:a",
+        "aac",
+        "-b:a",
+        "96000",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex_tanda_b_qdj9egmo\\a_wav_mono_aac_96000.m4a"
+      ],
+      "rc": 0,
+      "ms": 279.3,
+      "err": "",
+      "bytes": 98815,
+      "obtenido_bps_por_pista": [
+        96625
+      ],
+      "desvio_por_pista": [
+        0.006510416666666667
+      ]
+    },
+    {
+      "fuente": "wav_mono",
+      "codec": "aac",
+      "pedido_bps": 128000,
+      "orden": [
+        "D:\\utils\\ffmpeg\\bin\\ffmpeg.EXE",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-loglevel",
+        "error",
+        "-i",
+        "D:\\work\\research\\filex\\.ccb\\workspaces\\worker2\\corpus/audio/trivial.wav",
+        "-map",
+        "0:a?",
+        "-t",
+        "8",
+        "-c:a",
+        "aac",
+        "-b:a",
+        "128000",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex_tanda_b_qdj9egmo\\a_wav_mono_aac_128000.m4a"
+      ],
+      "rc": 0,
+      "ms": 211.0,
+      "err": "",
+      "bytes": 129008,
+      "obtenido_bps_por_pista": [
+        126818
+      ],
+      "desvio_por_pista": [
+        -0.009234375
+      ]
+    },
+    {
+      "fuente": "wav_mono",
+      "codec": "aac",
+      "pedido_bps": 192000,
+      "orden": [
+        "D:\\utils\\ffmpeg\\bin\\ffmpeg.EXE",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-loglevel",
+        "error",
+        "-i",
+        "D:\\work\\research\\filex\\.ccb\\workspaces\\worker2\\corpus/audio/trivial.wav",
+        "-map",
+        "0:a?",
+        "-t",
+        "8",
+        "-c:a",
+        "aac",
+        "-b:a",
+        "192000",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex_tanda_b_qdj9egmo\\a_wav_mono_aac_192000.m4a"
+      ],
+      "rc": 0,
+      "ms": 787.1,
+      "err": "",
+      "bytes": 131397,
+      "obtenido_bps_por_pista": [
+        129207
+      ],
+      "desvio_por_pista": [
+        -0.327046875
+      ]
+    },
+    {
+      "fuente": "wav_mono",
+      "codec": "libopus",
+      "pedido_bps": 8000,
+      "orden": [
+        "D:\\utils\\ffmpeg\\bin\\ffmpeg.EXE",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-loglevel",
+        "error",
+        "-i",
+        "D:\\work\\research\\filex\\.ccb\\workspaces\\worker2\\corpus/audio/trivial.wav",
+        "-map",
+        "0:a?",
+        "-t",
+        "8",
+        "-c:a",
+        "libopus",
+        "-b:a",
+        "8000",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex_tanda_b_qdj9egmo\\a_wav_mono_libopus_8000.opus"
+      ],
+      "rc": 0,
+      "ms": 138.3,
+      "err": "",
+      "bytes": 7080,
+      "obtenido_bps_por_pista": [
+        6295
+      ],
+      "desvio_por_pista": [
+        -0.213125
+      ]
+    },
+    {
+      "fuente": "wav_mono",
+      "codec": "libopus",
+      "pedido_bps": 32000,
+      "orden": [
+        "D:\\utils\\ffmpeg\\bin\\ffmpeg.EXE",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-loglevel",
+        "error",
+        "-i",
+        "D:\\work\\research\\filex\\.ccb\\workspaces\\worker2\\corpus/audio/trivial.wav",
+        "-map",
+        "0:a?",
+        "-t",
+        "8",
+        "-c:a",
+        "libopus",
+        "-b:a",
+        "32000",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex_tanda_b_qdj9egmo\\a_wav_mono_libopus_32000.opus"
+      ],
+      "rc": 0,
+      "ms": 128.5,
+      "err": "",
+      "bytes": 44658,
+      "obtenido_bps_por_pista": [
+        43842
+      ],
+      "desvio_por_pista": [
+        0.3700625
+      ]
+    },
+    {
+      "fuente": "wav_mono",
+      "codec": "libopus",
+      "pedido_bps": 96000,
+      "orden": [
+        "D:\\utils\\ffmpeg\\bin\\ffmpeg.EXE",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-loglevel",
+        "error",
+        "-i",
+        "D:\\work\\research\\filex\\.ccb\\workspaces\\worker2\\corpus/audio/trivial.wav",
+        "-map",
+        "0:a?",
+        "-t",
+        "8",
+        "-c:a",
+        "libopus",
+        "-b:a",
+        "96000",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex_tanda_b_qdj9egmo\\a_wav_mono_libopus_96000.opus"
+      ],
+      "rc": 0,
+      "ms": 125.6,
+      "err": "",
+      "bytes": 116918,
+      "obtenido_bps_por_pista": [
+        115643
+      ],
+      "desvio_por_pista": [
+        0.20461458333333332
+      ]
+    },
+    {
+      "fuente": "wav_mono",
+      "codec": "libopus",
+      "pedido_bps": 128000,
+      "orden": [
+        "D:\\utils\\ffmpeg\\bin\\ffmpeg.EXE",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-loglevel",
+        "error",
+        "-i",
+        "D:\\work\\research\\filex\\.ccb\\workspaces\\worker2\\corpus/audio/trivial.wav",
+        "-map",
+        "0:a?",
+        "-t",
+        "8",
+        "-c:a",
+        "libopus",
+        "-b:a",
+        "128000",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex_tanda_b_qdj9egmo\\a_wav_mono_libopus_128000.opus"
+      ],
+      "rc": 0,
+      "ms": 136.8,
+      "err": "",
+      "bytes": 147800,
+      "obtenido_bps_por_pista": [
+        146498
+      ],
+      "desvio_por_pista": [
+        0.144515625
+      ]
+    },
+    {
+      "fuente": "wav_mono",
+      "codec": "libopus",
+      "pedido_bps": 192000,
+      "orden": [
+        "D:\\utils\\ffmpeg\\bin\\ffmpeg.EXE",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-loglevel",
+        "error",
+        "-i",
+        "D:\\work\\research\\filex\\.ccb\\workspaces\\worker2\\corpus/audio/trivial.wav",
+        "-map",
+        "0:a?",
+        "-t",
+        "8",
+        "-c:a",
+        "libopus",
+        "-b:a",
+        "192000",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex_tanda_b_qdj9egmo\\a_wav_mono_libopus_192000.opus"
+      ],
+      "rc": 0,
+      "ms": 124.6,
+      "err": "",
+      "bytes": 209834,
+      "obtenido_bps_por_pista": [
+        208082
+      ],
+      "desvio_por_pista": [
+        0.08376041666666667
+      ]
+    },
+    {
+      "fuente": "wav_mono",
+      "codec": "libmp3lame",
+      "pedido_bps": 8000,
+      "orden": [
+        "D:\\utils\\ffmpeg\\bin\\ffmpeg.EXE",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-loglevel",
+        "error",
+        "-i",
+        "D:\\work\\research\\filex\\.ccb\\workspaces\\worker2\\corpus/audio/trivial.wav",
+        "-map",
+        "0:a?",
+        "-t",
+        "8",
+        "-c:a",
+        "libmp3lame",
+        "-b:a",
+        "8000",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex_tanda_b_qdj9egmo\\a_wav_mono_libmp3lame_8000.mp3"
+      ],
+      "rc": 0,
+      "ms": 96.5,
+      "err": "",
+      "bytes": 32409,
+      "obtenido_bps_por_pista": [
+        32183
+      ],
+      "desvio_por_pista": [
+        3.022875
+      ]
+    },
+    {
+      "fuente": "wav_mono",
+      "codec": "libmp3lame",
+      "pedido_bps": 32000,
+      "orden": [
+        "D:\\utils\\ffmpeg\\bin\\ffmpeg.EXE",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-loglevel",
+        "error",
+        "-i",
+        "D:\\work\\research\\filex\\.ccb\\workspaces\\worker2\\corpus/audio/trivial.wav",
+        "-map",
+        "0:a?",
+        "-t",
+        "8",
+        "-c:a",
+        "libmp3lame",
+        "-b:a",
+        "32000",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex_tanda_b_qdj9egmo\\a_wav_mono_libmp3lame_32000.mp3"
+      ],
+      "rc": 0,
+      "ms": 106.5,
+      "err": "",
+      "bytes": 32409,
+      "obtenido_bps_por_pista": [
+        32183
+      ],
+      "desvio_por_pista": [
+        0.00571875
+      ]
+    },
+    {
+      "fuente": "wav_mono",
+      "codec": "libmp3lame",
+      "pedido_bps": 96000,
+      "orden": [
+        "D:\\utils\\ffmpeg\\bin\\ffmpeg.EXE",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-loglevel",
+        "error",
+        "-i",
+        "D:\\work\\research\\filex\\.ccb\\workspaces\\worker2\\corpus/audio/trivial.wav",
+        "-map",
+        "0:a?",
+        "-t",
+        "8",
+        "-c:a",
+        "libmp3lame",
+        "-b:a",
+        "96000",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex_tanda_b_qdj9egmo\\a_wav_mono_libmp3lame_96000.mp3"
+      ],
+      "rc": 0,
+      "ms": 163.1,
+      "err": "",
+      "bytes": 96906,
+      "obtenido_bps_por_pista": [
+        96549
+      ],
+      "desvio_por_pista": [
+        0.00571875
+      ]
+    },
+    {
+      "fuente": "wav_mono",
+      "codec": "libmp3lame",
+      "pedido_bps": 128000,
+      "orden": [
+        "D:\\utils\\ffmpeg\\bin\\ffmpeg.EXE",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-loglevel",
+        "error",
+        "-i",
+        "D:\\work\\research\\filex\\.ccb\\workspaces\\worker2\\corpus/audio/trivial.wav",
+        "-map",
+        "0:a?",
+        "-t",
+        "8",
+        "-c:a",
+        "libmp3lame",
+        "-b:a",
+        "128000",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex_tanda_b_qdj9egmo\\a_wav_mono_libmp3lame_128000.mp3"
+      ],
+      "rc": 0,
+      "ms": 126.4,
+      "err": "",
+      "bytes": 129192,
+      "obtenido_bps_por_pista": [
+        128731
+      ],
+      "desvio_por_pista": [
+        0.0057109375
+      ]
+    },
+    {
+      "fuente": "wav_mono",
+      "codec": "libmp3lame",
+      "pedido_bps": 192000,
+      "orden": [
+        "D:\\utils\\ffmpeg\\bin\\ffmpeg.EXE",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-loglevel",
+        "error",
+        "-i",
+        "D:\\work\\research\\filex\\.ccb\\workspaces\\worker2\\corpus/audio/trivial.wav",
+        "-map",
+        "0:a?",
+        "-t",
+        "8",
+        "-c:a",
+        "libmp3lame",
+        "-b:a",
+        "192000",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex_tanda_b_qdj9egmo\\a_wav_mono_libmp3lame_192000.mp3"
+      ],
+      "rc": 0,
+      "ms": 119.1,
+      "err": "",
+      "bytes": 193767,
+      "obtenido_bps_por_pista": [
+        193097
+      ],
+      "desvio_por_pista": [
+        0.005713541666666666
+      ]
+    },
+    {
+      "fuente": "flac",
+      "codec": "aac",
+      "pedido_bps": 8000,
+      "orden": [
+        "D:\\utils\\ffmpeg\\bin\\ffmpeg.EXE",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-loglevel",
+        "error",
+        "-i",
+        "D:\\work\\research\\filex\\.ccb\\workspaces\\worker2\\corpus/audio/tipico.flac",
+        "-map",
+        "0:a?",
+        "-t",
+        "8",
+        "-c:a",
+        "aac",
+        "-b:a",
+        "8000",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex_tanda_b_qdj9egmo\\a_flac_aac_8000.m4a"
+      ],
+      "rc": 0,
+      "ms": 670.4,
+      "err": "",
+      "bytes": 17058,
+      "obtenido_bps_por_pista": [
+        14868
+      ],
+      "desvio_por_pista": [
+        0.8585
+      ]
+    },
+    {
+      "fuente": "flac",
+      "codec": "aac",
+      "pedido_bps": 32000,
+      "orden": [
+        "D:\\utils\\ffmpeg\\bin\\ffmpeg.EXE",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-loglevel",
+        "error",
+        "-i",
+        "D:\\work\\research\\filex\\.ccb\\workspaces\\worker2\\corpus/audio/tipico.flac",
+        "-map",
+        "0:a?",
+        "-t",
+        "8",
+        "-c:a",
+        "aac",
+        "-b:a",
+        "32000",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex_tanda_b_qdj9egmo\\a_flac_aac_32000.m4a"
+      ],
+      "rc": 0,
+      "ms": 218.5,
+      "err": "",
+      "bytes": 34812,
+      "obtenido_bps_por_pista": [
+        32622
+      ],
+      "desvio_por_pista": [
+        0.0194375
+      ]
+    },
+    {
+      "fuente": "flac",
+      "codec": "aac",
+      "pedido_bps": 96000,
+      "orden": [
+        "D:\\utils\\ffmpeg\\bin\\ffmpeg.EXE",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-loglevel",
+        "error",
+        "-i",
+        "D:\\work\\research\\filex\\.ccb\\workspaces\\worker2\\corpus/audio/tipico.flac",
+        "-map",
+        "0:a?",
+        "-t",
+        "8",
+        "-c:a",
+        "aac",
+        "-b:a",
+        "96000",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex_tanda_b_qdj9egmo\\a_flac_aac_96000.m4a"
+      ],
+      "rc": 0,
+      "ms": 299.3,
+      "err": "",
+      "bytes": 98815,
+      "obtenido_bps_por_pista": [
+        96625
+      ],
+      "desvio_por_pista": [
+        0.006510416666666667
+      ]
+    },
+    {
+      "fuente": "flac",
+      "codec": "aac",
+      "pedido_bps": 128000,
+      "orden": [
+        "D:\\utils\\ffmpeg\\bin\\ffmpeg.EXE",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-loglevel",
+        "error",
+        "-i",
+        "D:\\work\\research\\filex\\.ccb\\workspaces\\worker2\\corpus/audio/tipico.flac",
+        "-map",
+        "0:a?",
+        "-t",
+        "8",
+        "-c:a",
+        "aac",
+        "-b:a",
+        "128000",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex_tanda_b_qdj9egmo\\a_flac_aac_128000.m4a"
+      ],
+      "rc": 0,
+      "ms": 211.5,
+      "err": "",
+      "bytes": 129008,
+      "obtenido_bps_por_pista": [
+        126818
+      ],
+      "desvio_por_pista": [
+        -0.009234375
+      ]
+    },
+    {
+      "fuente": "flac",
+      "codec": "aac",
+      "pedido_bps": 192000,
+      "orden": [
+        "D:\\utils\\ffmpeg\\bin\\ffmpeg.EXE",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-loglevel",
+        "error",
+        "-i",
+        "D:\\work\\research\\filex\\.ccb\\workspaces\\worker2\\corpus/audio/tipico.flac",
+        "-map",
+        "0:a?",
+        "-t",
+        "8",
+        "-c:a",
+        "aac",
+        "-b:a",
+        "192000",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex_tanda_b_qdj9egmo\\a_flac_aac_192000.m4a"
+      ],
+      "rc": 0,
+      "ms": 854.5,
+      "err": "",
+      "bytes": 131397,
+      "obtenido_bps_por_pista": [
+        129207
+      ],
+      "desvio_por_pista": [
+        -0.327046875
+      ]
+    },
+    {
+      "fuente": "flac",
+      "codec": "libopus",
+      "pedido_bps": 8000,
+      "orden": [
+        "D:\\utils\\ffmpeg\\bin\\ffmpeg.EXE",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-loglevel",
+        "error",
+        "-i",
+        "D:\\work\\research\\filex\\.ccb\\workspaces\\worker2\\corpus/audio/tipico.flac",
+        "-map",
+        "0:a?",
+        "-t",
+        "8",
+        "-c:a",
+        "libopus",
+        "-b:a",
+        "8000",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex_tanda_b_qdj9egmo\\a_flac_libopus_8000.opus"
+      ],
+      "rc": 0,
+      "ms": 129.3,
+      "err": "",
+      "bytes": 7080,
+      "obtenido_bps_por_pista": [
+        6295
+      ],
+      "desvio_por_pista": [
+        -0.213125
+      ]
+    },
+    {
+      "fuente": "flac",
+      "codec": "libopus",
+      "pedido_bps": 32000,
+      "orden": [
+        "D:\\utils\\ffmpeg\\bin\\ffmpeg.EXE",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-loglevel",
+        "error",
+        "-i",
+        "D:\\work\\research\\filex\\.ccb\\workspaces\\worker2\\corpus/audio/tipico.flac",
+        "-map",
+        "0:a?",
+        "-t",
+        "8",
+        "-c:a",
+        "libopus",
+        "-b:a",
+        "32000",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex_tanda_b_qdj9egmo\\a_flac_libopus_32000.opus"
+      ],
+      "rc": 0,
+      "ms": 107.9,
+      "err": "",
+      "bytes": 44658,
+      "obtenido_bps_por_pista": [
+        43842
+      ],
+      "desvio_por_pista": [
+        0.3700625
+      ]
+    },
+    {
+      "fuente": "flac",
+      "codec": "libopus",
+      "pedido_bps": 96000,
+      "orden": [
+        "D:\\utils\\ffmpeg\\bin\\ffmpeg.EXE",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-loglevel",
+        "error",
+        "-i",
+        "D:\\work\\research\\filex\\.ccb\\workspaces\\worker2\\corpus/audio/tipico.flac",
+        "-map",
+        "0:a?",
+        "-t",
+        "8",
+        "-c:a",
+        "libopus",
+        "-b:a",
+        "96000",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex_tanda_b_qdj9egmo\\a_flac_libopus_96000.opus"
+      ],
+      "rc": 0,
+      "ms": 126.7,
+      "err": "",
+      "bytes": 116918,
+      "obtenido_bps_por_pista": [
+        115643
+      ],
+      "desvio_por_pista": [
+        0.20461458333333332
+      ]
+    },
+    {
+      "fuente": "flac",
+      "codec": "libopus",
+      "pedido_bps": 128000,
+      "orden": [
+        "D:\\utils\\ffmpeg\\bin\\ffmpeg.EXE",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-loglevel",
+        "error",
+        "-i",
+        "D:\\work\\research\\filex\\.ccb\\workspaces\\worker2\\corpus/audio/tipico.flac",
+        "-map",
+        "0:a?",
+        "-t",
+        "8",
+        "-c:a",
+        "libopus",
+        "-b:a",
+        "128000",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex_tanda_b_qdj9egmo\\a_flac_libopus_128000.opus"
+      ],
+      "rc": 0,
+      "ms": 113.0,
+      "err": "",
+      "bytes": 147800,
+      "obtenido_bps_por_pista": [
+        146498
+      ],
+      "desvio_por_pista": [
+        0.144515625
+      ]
+    },
+    {
+      "fuente": "flac",
+      "codec": "libopus",
+      "pedido_bps": 192000,
+      "orden": [
+        "D:\\utils\\ffmpeg\\bin\\ffmpeg.EXE",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-loglevel",
+        "error",
+        "-i",
+        "D:\\work\\research\\filex\\.ccb\\workspaces\\worker2\\corpus/audio/tipico.flac",
+        "-map",
+        "0:a?",
+        "-t",
+        "8",
+        "-c:a",
+        "libopus",
+        "-b:a",
+        "192000",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex_tanda_b_qdj9egmo\\a_flac_libopus_192000.opus"
+      ],
+      "rc": 0,
+      "ms": 128.2,
+      "err": "",
+      "bytes": 209834,
+      "obtenido_bps_por_pista": [
+        208082
+      ],
+      "desvio_por_pista": [
+        0.08376041666666667
+      ]
+    },
+    {
+      "fuente": "flac",
+      "codec": "libmp3lame",
+      "pedido_bps": 8000,
+      "orden": [
+        "D:\\utils\\ffmpeg\\bin\\ffmpeg.EXE",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-loglevel",
+        "error",
+        "-i",
+        "D:\\work\\research\\filex\\.ccb\\workspaces\\worker2\\corpus/audio/tipico.flac",
+        "-map",
+        "0:a?",
+        "-t",
+        "8",
+        "-c:a",
+        "libmp3lame",
+        "-b:a",
+        "8000",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex_tanda_b_qdj9egmo\\a_flac_libmp3lame_8000.mp3"
+      ],
+      "rc": 0,
+      "ms": 83.6,
+      "err": "",
+      "bytes": 32409,
+      "obtenido_bps_por_pista": [
+        32183
+      ],
+      "desvio_por_pista": [
+        3.022875
+      ]
+    },
+    {
+      "fuente": "flac",
+      "codec": "libmp3lame",
+      "pedido_bps": 32000,
+      "orden": [
+        "D:\\utils\\ffmpeg\\bin\\ffmpeg.EXE",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-loglevel",
+        "error",
+        "-i",
+        "D:\\work\\research\\filex\\.ccb\\workspaces\\worker2\\corpus/audio/tipico.flac",
+        "-map",
+        "0:a?",
+        "-t",
+        "8",
+        "-c:a",
+        "libmp3lame",
+        "-b:a",
+        "32000",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex_tanda_b_qdj9egmo\\a_flac_libmp3lame_32000.mp3"
+      ],
+      "rc": 0,
+      "ms": 117.7,
+      "err": "",
+      "bytes": 32409,
+      "obtenido_bps_por_pista": [
+        32183
+      ],
+      "desvio_por_pista": [
+        0.00571875
+      ]
+    },
+    {
+      "fuente": "flac",
+      "codec": "libmp3lame",
+      "pedido_bps": 96000,
+      "orden": [
+        "D:\\utils\\ffmpeg\\bin\\ffmpeg.EXE",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-loglevel",
+        "error",
+        "-i",
+        "D:\\work\\research\\filex\\.ccb\\workspaces\\worker2\\corpus/audio/tipico.flac",
+        "-map",
+        "0:a?",
+        "-t",
+        "8",
+        "-c:a",
+        "libmp3lame",
+        "-b:a",
+        "96000",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex_tanda_b_qdj9egmo\\a_flac_libmp3lame_96000.mp3"
+      ],
+      "rc": 0,
+      "ms": 141.6,
+      "err": "",
+      "bytes": 96906,
+      "obtenido_bps_por_pista": [
+        96549
+      ],
+      "desvio_por_pista": [
+        0.00571875
+      ]
+    },
+    {
+      "fuente": "flac",
+      "codec": "libmp3lame",
+      "pedido_bps": 128000,
+      "orden": [
+        "D:\\utils\\ffmpeg\\bin\\ffmpeg.EXE",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-loglevel",
+        "error",
+        "-i",
+        "D:\\work\\research\\filex\\.ccb\\workspaces\\worker2\\corpus/audio/tipico.flac",
+        "-map",
+        "0:a?",
+        "-t",
+        "8",
+        "-c:a",
+        "libmp3lame",
+        "-b:a",
+        "128000",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex_tanda_b_qdj9egmo\\a_flac_libmp3lame_128000.mp3"
+      ],
+      "rc": 0,
+      "ms": 117.9,
+      "err": "",
+      "bytes": 129192,
+      "obtenido_bps_por_pista": [
+        128731
+      ],
+      "desvio_por_pista": [
+        0.0057109375
+      ]
+    },
+    {
+      "fuente": "flac",
+      "codec": "libmp3lame",
+      "pedido_bps": 192000,
+      "orden": [
+        "D:\\utils\\ffmpeg\\bin\\ffmpeg.EXE",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-loglevel",
+        "error",
+        "-i",
+        "D:\\work\\research\\filex\\.ccb\\workspaces\\worker2\\corpus/audio/tipico.flac",
+        "-map",
+        "0:a?",
+        "-t",
+        "8",
+        "-c:a",
+        "libmp3lame",
+        "-b:a",
+        "192000",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex_tanda_b_qdj9egmo\\a_flac_libmp3lame_192000.mp3"
+      ],
+      "rc": 0,
+      "ms": 126.2,
+      "err": "",
+      "bytes": 193767,
+      "obtenido_bps_por_pista": [
+        193097
+      ],
+      "desvio_por_pista": [
+        0.005713541666666666
+      ]
+    },
+    {
+      "fuente": "mkv_dos_pistas",
+      "codec": "aac",
+      "pedido_bps": 8000,
+      "orden": [
+        "D:\\utils\\ffmpeg\\bin\\ffmpeg.EXE",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-loglevel",
+        "error",
+        "-i",
+        "D:\\work\\research\\filex\\.ccb\\workspaces\\worker2\\corpus/video/patologico_2pistas.mkv",
+        "-map",
+        "0:a?",
+        "-t",
+        "8",
+        "-c:a",
+        "aac",
+        "-b:a",
+        "8000",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex_tanda_b_qdj9egmo\\a_mkv_dos_pistas_aac_8000.m4a"
+      ],
+      "rc": 0,
+      "ms": 806.6,
+      "err": "",
+      "bytes": 39519,
+      "obtenido_bps_por_pista": [
+        15562,
+        17010
+      ],
+      "desvio_por_pista": [
+        0.94525,
+        1.12625
+      ]
+    },
+    {
+      "fuente": "mkv_dos_pistas",
+      "codec": "aac",
+      "pedido_bps": 32000,
+      "orden": [
+        "D:\\utils\\ffmpeg\\bin\\ffmpeg.EXE",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-loglevel",
+        "error",
+        "-i",
+        "D:\\work\\research\\filex\\.ccb\\workspaces\\worker2\\corpus/video/patologico_2pistas.mkv",
+        "-map",
+        "0:a?",
+        "-t",
+        "8",
+        "-c:a",
+        "aac",
+        "-b:a",
+        "32000",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex_tanda_b_qdj9egmo\\a_mkv_dos_pistas_aac_32000.m4a"
+      ],
+      "rc": 0,
+      "ms": 286.1,
+      "err": "",
+      "bytes": 72826,
+      "obtenido_bps_por_pista": [
+        32865,
+        33014
+      ],
+      "desvio_por_pista": [
+        0.02703125,
+        0.0316875
+      ]
+    },
+    {
+      "fuente": "mkv_dos_pistas",
+      "codec": "aac",
+      "pedido_bps": 96000,
+      "orden": [
+        "D:\\utils\\ffmpeg\\bin\\ffmpeg.EXE",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-loglevel",
+        "error",
+        "-i",
+        "D:\\work\\research\\filex\\.ccb\\workspaces\\worker2\\corpus/video/patologico_2pistas.mkv",
+        "-map",
+        "0:a?",
+        "-t",
+        "8",
+        "-c:a",
+        "aac",
+        "-b:a",
+        "96000",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex_tanda_b_qdj9egmo\\a_mkv_dos_pistas_aac_96000.m4a"
+      ],
+      "rc": 0,
+      "ms": 405.4,
+      "err": "",
+      "bytes": 182892,
+      "obtenido_bps_por_pista": [
+        91711,
+        84234
+      ],
+      "desvio_por_pista": [
+        -0.04467708333333333,
+        -0.1225625
+      ]
+    },
+    {
+      "fuente": "mkv_dos_pistas",
+      "codec": "aac",
+      "pedido_bps": 128000,
+      "orden": [
+        "D:\\utils\\ffmpeg\\bin\\ffmpeg.EXE",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-loglevel",
+        "error",
+        "-i",
+        "D:\\work\\research\\filex\\.ccb\\workspaces\\worker2\\corpus/video/patologico_2pistas.mkv",
+        "-map",
+        "0:a?",
+        "-t",
+        "8",
+        "-c:a",
+        "aac",
+        "-b:a",
+        "128000",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex_tanda_b_qdj9egmo\\a_mkv_dos_pistas_aac_128000.m4a"
+      ],
+      "rc": 0,
+      "ms": 609.2,
+      "err": "",
+      "bytes": 191794,
+      "obtenido_bps_por_pista": [
+        98732,
+        86115
+      ],
+      "desvio_por_pista": [
+        -0.22865625,
+        -0.3272265625
+      ]
+    },
+    {
+      "fuente": "mkv_dos_pistas",
+      "codec": "aac",
+      "pedido_bps": 192000,
+      "orden": [
+        "D:\\utils\\ffmpeg\\bin\\ffmpeg.EXE",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-loglevel",
+        "error",
+        "-i",
+        "D:\\work\\research\\filex\\.ccb\\workspaces\\worker2\\corpus/video/patologico_2pistas.mkv",
+        "-map",
+        "0:a?",
+        "-t",
+        "8",
+        "-c:a",
+        "aac",
+        "-b:a",
+        "192000",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex_tanda_b_qdj9egmo\\a_mkv_dos_pistas_aac_192000.m4a"
+      ],
+      "rc": 0,
+      "ms": 683.8,
+      "err": "",
+      "bytes": 193402,
+      "obtenido_bps_por_pista": [
+        99651,
+        86804
+      ],
+      "desvio_por_pista": [
+        -0.480984375,
+        -0.5478958333333334
+      ]
+    },
+    {
+      "fuente": "mkv_dos_pistas",
+      "codec": "libopus",
+      "pedido_bps": 8000,
+      "orden": [
+        "D:\\utils\\ffmpeg\\bin\\ffmpeg.EXE",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-loglevel",
+        "error",
+        "-i",
+        "D:\\work\\research\\filex\\.ccb\\workspaces\\worker2\\corpus/video/patologico_2pistas.mkv",
+        "-map",
+        "0:a?",
+        "-t",
+        "8",
+        "-c:a",
+        "libopus",
+        "-b:a",
+        "8000",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex_tanda_b_qdj9egmo\\a_mkv_dos_pistas_libopus_8000.opus"
+      ],
+      "rc": 0,
+      "ms": 150.4,
+      "err": "",
+      "bytes": 15928,
+      "obtenido_bps_por_pista": [
+        6375,
+        7947
+      ],
+      "desvio_por_pista": [
+        -0.203125,
+        -0.006625
+      ]
+    },
+    {
+      "fuente": "mkv_dos_pistas",
+      "codec": "libopus",
+      "pedido_bps": 32000,
+      "orden": [
+        "D:\\utils\\ffmpeg\\bin\\ffmpeg.EXE",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-loglevel",
+        "error",
+        "-i",
+        "D:\\work\\research\\filex\\.ccb\\workspaces\\worker2\\corpus/video/patologico_2pistas.mkv",
+        "-map",
+        "0:a?",
+        "-t",
+        "8",
+        "-c:a",
+        "libopus",
+        "-b:a",
+        "32000",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex_tanda_b_qdj9egmo\\a_mkv_dos_pistas_libopus_32000.opus"
+      ],
+      "rc": 0,
+      "ms": 130.6,
+      "err": "",
+      "bytes": 94387,
+      "obtenido_bps_por_pista": [
+        44565,
+        48152
+      ],
+      "desvio_por_pista": [
+        0.39265625,
+        0.50475
+      ]
+    },
+    {
+      "fuente": "mkv_dos_pistas",
+      "codec": "libopus",
+      "pedido_bps": 96000,
+      "orden": [
+        "D:\\utils\\ffmpeg\\bin\\ffmpeg.EXE",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-loglevel",
+        "error",
+        "-i",
+        "D:\\work\\research\\filex\\.ccb\\workspaces\\worker2\\corpus/video/patologico_2pistas.mkv",
+        "-map",
+        "0:a?",
+        "-t",
+        "8",
+        "-c:a",
+        "libopus",
+        "-b:a",
+        "96000",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex_tanda_b_qdj9egmo\\a_mkv_dos_pistas_libopus_96000.opus"
+      ],
+      "rc": 0,
+      "ms": 125.9,
+      "err": "",
+      "bytes": 239702,
+      "obtenido_bps_por_pista": [
+        116406,
+        120710
+      ],
+      "desvio_por_pista": [
+        0.2125625,
+        0.2573958333333333
+      ]
+    },
+    {
+      "fuente": "mkv_dos_pistas",
+      "codec": "libopus",
+      "pedido_bps": 128000,
+      "orden": [
+        "D:\\utils\\ffmpeg\\bin\\ffmpeg.EXE",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-loglevel",
+        "error",
+        "-i",
+        "D:\\work\\research\\filex\\.ccb\\workspaces\\worker2\\corpus/video/patologico_2pistas.mkv",
+        "-map",
+        "0:a?",
+        "-t",
+        "8",
+        "-c:a",
+        "libopus",
+        "-b:a",
+        "128000",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex_tanda_b_qdj9egmo\\a_mkv_dos_pistas_libopus_128000.opus"
+      ],
+      "rc": 0,
+      "ms": 130.7,
+      "err": "",
+      "bytes": 301480,
+      "obtenido_bps_por_pista": [
+        147273,
+        151562
+      ],
+      "desvio_por_pista": [
+        0.1505703125,
+        0.184078125
+      ]
+    },
+    {
+      "fuente": "mkv_dos_pistas",
+      "codec": "libopus",
+      "pedido_bps": 192000,
+      "orden": [
+        "D:\\utils\\ffmpeg\\bin\\ffmpeg.EXE",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-loglevel",
+        "error",
+        "-i",
+        "D:\\work\\research\\filex\\.ccb\\workspaces\\worker2\\corpus/video/patologico_2pistas.mkv",
+        "-map",
+        "0:a?",
+        "-t",
+        "8",
+        "-c:a",
+        "libopus",
+        "-b:a",
+        "192000",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex_tanda_b_qdj9egmo\\a_mkv_dos_pistas_libopus_192000.opus"
+      ],
+      "rc": 0,
+      "ms": 128.7,
+      "err": "",
+      "bytes": 425749,
+      "obtenido_bps_por_pista": [
+        208980,
+        213228
+      ],
+      "desvio_por_pista": [
+        0.0884375,
+        0.1105625
+      ]
+    },
+    {
+      "fuente": "mkv_dos_pistas",
+      "codec": "libmp3lame",
+      "pedido_bps": 8000,
+      "orden": [
+        "D:\\utils\\ffmpeg\\bin\\ffmpeg.EXE",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-loglevel",
+        "error",
+        "-i",
+        "D:\\work\\research\\filex\\.ccb\\workspaces\\worker2\\corpus/video/patologico_2pistas.mkv",
+        "-map",
+        "0:a?",
+        "-t",
+        "8",
+        "-c:a",
+        "libmp3lame",
+        "-b:a",
+        "8000",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex_tanda_b_qdj9egmo\\a_mkv_dos_pistas_libmp3lame_8000.mp3"
+      ],
+      "rc": 4294967274,
+      "ms": 68.7,
+      "err": "[mp3 @ 000001e10cf1ec80] Invalid audio stream. Exactly one MP3 audio stream is required.\r\n[out#0/mp3 @ 000001e10ccedc40] Could not write header (incorrect codec parameters ?): Invalid argument\r\n[af#0:1 @ 000001e10ce59d40] Error sending frames to consumers: Invalid argument\r\n[af#0:1 @ 000001e10ce59d40] Task finished with error code: -22 (Invalid argument)\r\n[af#0:1 @ 000001e10ce59d40] Terminating thread with return code -22 (Invalid argument)\r\n[out#0/mp3 @ 000001e10ccedc40] Nothing was written into output file, because at least one of its streams received no packets.\r\n",
+      "bytes": 0,
+      "intento2": {
+        "rc": 4294967274,
+        "ms": 101.3,
+        "err": "[mp3 @ 000001f63efa2180] Invalid audio stream. Exactly one MP3 audio stream is required.\r\n[out#0/mp3 @ 000001f63f000d00] Could not write header (incorrect codec parameters ?): Invalid argument\r\n[af#0:1 @ 000001f6410e5b80] Error sending frames to consumers: Invalid argument\r\n[af#0:1 @ 000001f6410e5b80] Task finished with error code: -22 (Invalid argument)\r\n[af#0:1 @ 000001f6410e5b80] Terminating thread with return code -22 (Invalid argument)\r\n[out#0/mp3 @ 000001f63f000d00] Nothing was written into output file, because at least one of its streams received no packets.\r\n",
+        "bytes": 0
+      }
+    },
+    {
+      "fuente": "mkv_dos_pistas",
+      "codec": "libmp3lame",
+      "pedido_bps": 32000,
+      "orden": [
+        "D:\\utils\\ffmpeg\\bin\\ffmpeg.EXE",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-loglevel",
+        "error",
+        "-i",
+        "D:\\work\\research\\filex\\.ccb\\workspaces\\worker2\\corpus/video/patologico_2pistas.mkv",
+        "-map",
+        "0:a?",
+        "-t",
+        "8",
+        "-c:a",
+        "libmp3lame",
+        "-b:a",
+        "32000",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex_tanda_b_qdj9egmo\\a_mkv_dos_pistas_libmp3lame_32000.mp3"
+      ],
+      "rc": 4294967274,
+      "ms": 71.4,
+      "err": "[mp3 @ 0000018967a84340] Invalid audio stream. Exactly one MP3 audio stream is required.\r\n[out#0/mp3 @ 0000018967af4940] Could not write header (incorrect codec parameters ?): Invalid argument\r\n[af#0:1 @ 0000018969a79780] Error sending frames to consumers: Invalid argument\r\n[af#0:1 @ 0000018969a79780] Task finished with error code: -22 (Invalid argument)\r\n[af#0:1 @ 0000018969a79780] Terminating thread with return code -22 (Invalid argument)\r\n[out#0/mp3 @ 0000018967af4940] Nothing was written into output file, because at least one of its streams received no packets.\r\n",
+      "bytes": 0,
+      "intento2": {
+        "rc": 4294967274,
+        "ms": 61.5,
+        "err": "[mp3 @ 0000027c9fc0eb80] Invalid audio stream. Exactly one MP3 audio stream is required.\r\n[out#0/mp3 @ 0000027c9fb91b80] Could not write header (incorrect codec parameters ?): Invalid argument\r\n[af#0:1 @ 0000027ca1b91400] Error sending frames to consumers: Invalid argument\r\n[af#0:1 @ 0000027ca1b91400] Task finished with error code: -22 (Invalid argument)\r\n[af#0:1 @ 0000027ca1b91400] Terminating thread with return code -22 (Invalid argument)\r\n[out#0/mp3 @ 0000027c9fb91b80] Nothing was written into output file, because at least one of its streams received no packets.\r\n",
+        "bytes": 0
+      }
+    },
+    {
+      "fuente": "mkv_dos_pistas",
+      "codec": "libmp3lame",
+      "pedido_bps": 96000,
+      "orden": [
+        "D:\\utils\\ffmpeg\\bin\\ffmpeg.EXE",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-loglevel",
+        "error",
+        "-i",
+        "D:\\work\\research\\filex\\.ccb\\workspaces\\worker2\\corpus/video/patologico_2pistas.mkv",
+        "-map",
+        "0:a?",
+        "-t",
+        "8",
+        "-c:a",
+        "libmp3lame",
+        "-b:a",
+        "96000",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex_tanda_b_qdj9egmo\\a_mkv_dos_pistas_libmp3lame_96000.mp3"
+      ],
+      "rc": 4294967274,
+      "ms": 66.7,
+      "err": "[mp3 @ 00000201bbc7ecc0] Invalid audio stream. Exactly one MP3 audio stream is required.\r\n[out#0/mp3 @ 00000201bbbf1980] Could not write header (incorrect codec parameters ?): Invalid argument\r\n[af#0:0 @ 00000201bbb85fc0] Error sending frames to consumers: Invalid argument\r\n[af#0:0 @ 00000201bbb85fc0] Task finished with error code: -22 (Invalid argument)\r\n[af#0:0 @ 00000201bbb85fc0] Terminating thread with return code -22 (Invalid argument)\r\n[out#0/mp3 @ 00000201bbbf1980] Nothing was written into output file, because at least one of its streams received no packets.\r\n",
+      "bytes": 0,
+      "intento2": {
+        "rc": 4294967274,
+        "ms": 61.1,
+        "err": "[mp3 @ 00000196d25d8c40] Invalid audio stream. Exactly one MP3 audio stream is required.\r\n[out#0/mp3 @ 00000196d0801080] Could not write header (incorrect codec parameters ?): Invalid argument\r\n[af#0:0 @ 00000196d251d140] Error sending frames to consumers: Invalid argument\r\n[af#0:0 @ 00000196d251d140] Task finished with error code: -22 (Invalid argument)\r\n[af#0:0 @ 00000196d251d140] Terminating thread with return code -22 (Invalid argument)\r\n[out#0/mp3 @ 00000196d0801080] Nothing was written into output file, because at least one of its streams received no packets.\r\n",
+        "bytes": 0
+      }
+    },
+    {
+      "fuente": "mkv_dos_pistas",
+      "codec": "libmp3lame",
+      "pedido_bps": 128000,
+      "orden": [
+        "D:\\utils\\ffmpeg\\bin\\ffmpeg.EXE",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-loglevel",
+        "error",
+        "-i",
+        "D:\\work\\research\\filex\\.ccb\\workspaces\\worker2\\corpus/video/patologico_2pistas.mkv",
+        "-map",
+        "0:a?",
+        "-t",
+        "8",
+        "-c:a",
+        "libmp3lame",
+        "-b:a",
+        "128000",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex_tanda_b_qdj9egmo\\a_mkv_dos_pistas_libmp3lame_128000.mp3"
+      ],
+      "rc": 4294967274,
+      "ms": 63.2,
+      "err": "[mp3 @ 0000015a4a4d3bc0] Invalid audio stream. Exactly one MP3 audio stream is required.\r\n[out#0/mp3 @ 0000015a4a44fcc0] Could not write header (incorrect codec parameters ?): Invalid argument\r\n[af#0:1 @ 0000015a4c29fd80] Error sending frames to consumers: Invalid argument\r\n[af#0:1 @ 0000015a4c29fd80] Task finished with error code: -22 (Invalid argument)\r\n[af#0:1 @ 0000015a4c29fd80] Terminating thread with return code -22 (Invalid argument)\r\n[out#0/mp3 @ 0000015a4a44fcc0] Nothing was written into output file, because at least one of its streams received no packets.\r\n",
+      "bytes": 0,
+      "intento2": {
+        "rc": 4294967274,
+        "ms": 80.2,
+        "err": "[mp3 @ 00000174365f9c80] Invalid audio stream. Exactly one MP3 audio stream is required.\r\n[out#0/mp3 @ 0000017434392280] Could not write header (incorrect codec parameters ?): Invalid argument\r\n[af#0:1 @ 0000017436436740] Error sending frames to consumers: Invalid argument\r\n[af#0:1 @ 0000017436436740] Task finished with error code: -22 (Invalid argument)\r\n[af#0:1 @ 0000017436436740] Terminating thread with return code -22 (Invalid argument)\r\n[out#0/mp3 @ 0000017434392280] Nothing was written into output file, because at least one of its streams received no packets.\r\n",
+        "bytes": 0
+      }
+    },
+    {
+      "fuente": "mkv_dos_pistas",
+      "codec": "libmp3lame",
+      "pedido_bps": 192000,
+      "orden": [
+        "D:\\utils\\ffmpeg\\bin\\ffmpeg.EXE",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-loglevel",
+        "error",
+        "-i",
+        "D:\\work\\research\\filex\\.ccb\\workspaces\\worker2\\corpus/video/patologico_2pistas.mkv",
+        "-map",
+        "0:a?",
+        "-t",
+        "8",
+        "-c:a",
+        "libmp3lame",
+        "-b:a",
+        "192000",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex_tanda_b_qdj9egmo\\a_mkv_dos_pistas_libmp3lame_192000.mp3"
+      ],
+      "rc": 4294967274,
+      "ms": 69.7,
+      "err": "[mp3 @ 000001995aba5040] Invalid audio stream. Exactly one MP3 audio stream is required.\r\n[out#0/mp3 @ 0000019958a40880] Could not write header (incorrect codec parameters ?): Invalid argument\r\n[af#0:0 @ 000001995acc9040] Error sending frames to consumers: Invalid argument\r\n[af#0:0 @ 000001995acc9040] Task finished with error code: -22 (Invalid argument)\r\n[af#0:0 @ 000001995acc9040] Terminating thread with return code -22 (Invalid argument)\r\n[out#0/mp3 @ 0000019958a40880] Nothing was written into output file, because at least one of its streams received no packets.\r\n",
+      "bytes": 0,
+      "intento2": {
+        "rc": 4294967274,
+        "ms": 62.9,
+        "err": "[mp3 @ 0000022f444bb240] Invalid audio stream. Exactly one MP3 audio stream is required.\r\n[out#0/mp3 @ 0000022f44513200] Could not write header (incorrect codec parameters ?): Invalid argument\r\n[af#0:1 @ 0000022f462200c0] Error sending frames to consumers: Invalid argument\r\n[af#0:1 @ 0000022f462200c0] Task finished with error code: -22 (Invalid argument)\r\n[af#0:1 @ 0000022f462200c0] Terminating thread with return code -22 (Invalid argument)\r\n[out#0/mp3 @ 0000022f44513200] Nothing was written into output file, because at least one of its streams received no packets.\r\n",
+        "bytes": 0
+      }
+    }
+  ],
+  "c25_salida": [
+    {
+      "formato": "amv",
+      "orden": [
+        "D:\\utils\\ffmpeg\\bin\\ffmpeg.EXE",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-loglevel",
+        "error",
+        "-i",
+        "D:\\work\\research\\filex\\.ccb\\workspaces\\worker2\\corpus/video/trivial.mp4",
+        "-map",
+        "0:v:0",
+        "-map",
+        "0:a?",
+        "-t",
+        "2",
+        "-f",
+        "amv",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex_tanda_b_qdj9egmo\\c25_amv.amv"
+      ],
+      "rc": 4294967274,
+      "ms": 92.6,
+      "err": "[amv @ 000001a541e99d80] AMV files only support 2 streams\r\n[out#0/amv @ 000001a541ef3000] Could not write header (incorrect codec parameters ?): Invalid argument\r\n[vf#0:0 @ 000001a543b2fc40] Error sending frames to consumers: Invalid argument\r\n[vf#0:0 @ 000001a543b2fc40] Task finished with error code: -22 (Invalid argument)\r\n[vf#0:0 @ 000001a543b2fc40] Terminating thread with return code -22 (Invalid argument)\r\n[out#0/amv @ 000001a541ef3000] Nothing was written into output file, because at least one of its streams received no packets.\r\n",
+      "bytes": 0,
+      "intento2": {
+        "rc": 4294967274,
+        "ms": 80.0,
+        "err": "[amv @ 0000021d43596380] AMV files only support 2 streams\r\n[out#0/amv @ 0000021d43612880] Could not write header (incorrect codec parameters ?): Invalid argument\r\n[vf#0:0 @ 0000021d4368e5c0] Error sending frames to consumers: Invalid argument\r\n[vf#0:0 @ 0000021d4368e5c0] Task finished with error code: -22 (Invalid argument)\r\n[vf#0:0 @ 0000021d4368e5c0] Terminating thread with return code -22 (Invalid argument)\r\n[out#0/amv @ 0000021d43612880] Nothing was written into output file, because at least one of its streams received no packets.\r\n",
+        "bytes": 0
+      }
+    },
+    {
+      "formato": "amv_perfil",
+      "orden": [
+        "D:\\utils\\ffmpeg\\bin\\ffmpeg.EXE",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-loglevel",
+        "error",
+        "-i",
+        "D:\\work\\research\\filex\\.ccb\\workspaces\\worker2\\corpus/video/tipico.mp4",
+        "-map",
+        "0:v:0",
+        "-map",
+        "0:a:0",
+        "-t",
+        "2",
+        "-vf",
+        "scale=160:120",
+        "-r",
+        "15",
+        "-ac",
+        "1",
+        "-ar",
+        "22050",
+        "-c:v",
+        "amv",
+        "-c:a",
+        "adpcm_ima_amv",
+        "-f",
+        "amv",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex_tanda_b_qdj9egmo\\c25_amv_perfil.amv"
+      ],
+      "rc": 4294967274,
+      "ms": 161.6,
+      "err": "[amv @ 0000022af3d98d00] Invalid audio frame size. Got 1024, wanted 1470\r\n[amv @ 0000022af3d98d00] Invalid audio block align. Got 520, wanted 743\r\n[amv @ 0000022af3d98d00] Try -block_size 1470\r\n[out#0/amv @ 0000022af1c54b80] Could not write header (incorrect codec parameters ?): Invalid argument\r\n[vf#0:0 @ 0000022af3ab6280] Error sending frames to consumers: Invalid argument\r\n[vf#0:0 @ 0000022af3ab6280] Task finished with error code: -22 (Invalid argument)\r\n[vf#0:0 @ 0000022af3ab6280] Terminating thread with return code -22 (Invalid argument)\r\n[out#0/amv @ 0000022af1c54b80] Nothing was written into output file, because at least one of its streams received no packets.\r\n",
+      "bytes": 0,
+      "intento2": {
+        "rc": 4294967274,
+        "ms": 164.8,
+        "err": "[amv @ 0000017d7206ed40] Invalid audio frame size. Got 1024, wanted 1470\r\n[amv @ 0000017d7206ed40] Invalid audio block align. Got 520, wanted 743\r\n[amv @ 0000017d7206ed40] Try -block_size 1470\r\n[out#0/amv @ 0000017d702c1300] Could not write header (incorrect codec parameters ?): Invalid argument\r\n[vf#0:0 @ 0000017d7033f280] Error sending frames to consumers: Invalid argument\r\n[vf#0:0 @ 0000017d7033f280] Task finished with error code: -22 (Invalid argument)\r\n[vf#0:0 @ 0000017d7033f280] Terminating thread with return code -22 (Invalid argument)\r\n[out#0/amv @ 0000017d702c1300] Nothing was written into output file, because at least one of its streams received no packets.\r\n",
+        "bytes": 0
+      }
+    },
+    {
+      "formato": "gxf",
+      "orden": [
+        "D:\\utils\\ffmpeg\\bin\\ffmpeg.EXE",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-loglevel",
+        "error",
+        "-i",
+        "D:\\work\\research\\filex\\.ccb\\workspaces\\worker2\\corpus/video/trivial.mp4",
+        "-map",
+        "0:v:0",
+        "-map",
+        "0:a?",
+        "-t",
+        "2",
+        "-c:v",
+        "mpeg2video",
+        "-c:a",
+        "pcm_s16le",
+        "-f",
+        "gxf",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex_tanda_b_qdj9egmo\\c25_gxf.gxf"
+      ],
+      "rc": 0,
+      "ms": 127.8,
+      "err": "",
+      "bytes": 206416
+    },
+    {
+      "formato": "mlp",
+      "orden": [
+        "D:\\utils\\ffmpeg\\bin\\ffmpeg.EXE",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-loglevel",
+        "error",
+        "-i",
+        "D:\\work\\research\\filex\\.ccb\\workspaces\\worker2\\corpus/audio/trivial.wav",
+        "-map",
+        "0:a:0",
+        "-t",
+        "2",
+        "-c:a",
+        "mlp",
+        "-f",
+        "mlp",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex_tanda_b_qdj9egmo\\c25_mlp.mlp"
+      ],
+      "rc": 3561836632,
+      "ms": 68.5,
+      "err": "t to use it.\r\n[af#0:0 @ 0000015626f6cd80] Error sending frames to consumers: Experimental feature\r\n[af#0:0 @ 0000015626f6cd80] Task finished with error code: -733130664 (Experimental feature)\r\n[af#0:0 @ 0000015626f6cd80] Terminating thread with return code -733130664 (Experimental feature)\r\n[aost#0:0/mlp @ 0000015626e91840] [enc:mlp @ 0000015628c7eb00] Could not open encoder before EOF\r\n[aost#0:0/mlp @ 0000015626e91840] Task finished with error code: -22 (Invalid argument)\r\n[aost#0:0/mlp @ 0000015626e91840] Terminating thread with return code -22 (Invalid argument)\r\n[out#0/mlp @ 0000015626efc2c0] Nothing was written into output file, because at least one of its streams received no packets.\r\n",
+      "bytes": 0,
+      "intento2": {
+        "rc": 3561836632,
+        "ms": 66.6,
+        "err": "t to use it.\r\n[af#0:0 @ 00000268ad4b9900] Error sending frames to consumers: Experimental feature\r\n[af#0:0 @ 00000268ad4b9900] Task finished with error code: -733130664 (Experimental feature)\r\n[af#0:0 @ 00000268ad4b9900] Terminating thread with return code -733130664 (Experimental feature)\r\n[aost#0:0/mlp @ 00000268ab651680] [enc:mlp @ 00000268ad4b6f40] Could not open encoder before EOF\r\n[aost#0:0/mlp @ 00000268ab651680] Task finished with error code: -22 (Invalid argument)\r\n[aost#0:0/mlp @ 00000268ab651680] Terminating thread with return code -22 (Invalid argument)\r\n[out#0/mlp @ 00000268ab6afec0] Nothing was written into output file, because at least one of its streams received no packets.\r\n",
+        "bytes": 0
+      }
+    },
+    {
+      "formato": "thd",
+      "orden": [
+        "D:\\utils\\ffmpeg\\bin\\ffmpeg.EXE",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-loglevel",
+        "error",
+        "-i",
+        "D:\\work\\research\\filex\\.ccb\\workspaces\\worker2\\corpus/audio/trivial.wav",
+        "-map",
+        "0:a:0",
+        "-t",
+        "2",
+        "-c:a",
+        "truehd",
+        "-f",
+        "truehd",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex_tanda_b_qdj9egmo\\c25_thd.thd"
+      ],
+      "rc": 3561836632,
+      "ms": 68.1,
+      "err": "af#0:0 @ 000001fa5fbffbc0] Error sending frames to consumers: Experimental feature\r\n[af#0:0 @ 000001fa5fbffbc0] Task finished with error code: -733130664 (Experimental feature)\r\n[af#0:0 @ 000001fa5fbffbc0] Terminating thread with return code -733130664 (Experimental feature)\r\n[aost#0:0/truehd @ 000001fa5fb30080] [enc:truehd @ 000001fa5fbff740] Could not open encoder before EOF\r\n[aost#0:0/truehd @ 000001fa5fb30080] Task finished with error code: -22 (Invalid argument)\r\n[aost#0:0/truehd @ 000001fa5fb30080] Terminating thread with return code -22 (Invalid argument)\r\n[out#0/truehd @ 000001fa5fb81840] Nothing was written into output file, because at least one of its streams received no packets.\r\n",
+      "bytes": 0,
+      "intento2": {
+        "rc": 3561836632,
+        "ms": 62.9,
+        "err": "af#0:0 @ 00000216640f0680] Error sending frames to consumers: Experimental feature\r\n[af#0:0 @ 00000216640f0680] Task finished with error code: -733130664 (Experimental feature)\r\n[af#0:0 @ 00000216640f0680] Terminating thread with return code -733130664 (Experimental feature)\r\n[aost#0:0/truehd @ 00000216622624c0] [enc:truehd @ 0000021662260880] Could not open encoder before EOF\r\n[aost#0:0/truehd @ 00000216622624c0] Task finished with error code: -22 (Invalid argument)\r\n[aost#0:0/truehd @ 00000216622624c0] Terminating thread with return code -22 (Invalid argument)\r\n[out#0/truehd @ 00000216622d5e00] Nothing was written into output file, because at least one of its streams received no packets.\r\n",
+        "bytes": 0
+      }
+    },
+    {
+      "formato": "mlp_strict",
+      "orden": [
+        "D:\\utils\\ffmpeg\\bin\\ffmpeg.EXE",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-loglevel",
+        "error",
+        "-i",
+        "D:\\work\\research\\filex\\.ccb\\workspaces\\worker2\\corpus/audio/trivial.wav",
+        "-strict",
+        "-2",
+        "-map",
+        "0:a:0",
+        "-t",
+        "2",
+        "-c:a",
+        "mlp",
+        "-f",
+        "mlp",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex_tanda_b_qdj9egmo\\c25_mlp_strict.mlp"
+      ],
+      "rc": 0,
+      "ms": 97.9,
+      "err": "",
+      "bytes": 62410
+    },
+    {
+      "formato": "thd_strict",
+      "orden": [
+        "D:\\utils\\ffmpeg\\bin\\ffmpeg.EXE",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-loglevel",
+        "error",
+        "-i",
+        "D:\\work\\research\\filex\\.ccb\\workspaces\\worker2\\corpus/audio/trivial.wav",
+        "-strict",
+        "-2",
+        "-map",
+        "0:a:0",
+        "-t",
+        "2",
+        "-c:a",
+        "truehd",
+        "-f",
+        "truehd",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex_tanda_b_qdj9egmo\\c25_thd_strict.thd"
+      ],
+      "rc": 0,
+      "ms": 95.6,
+      "err": "",
+      "bytes": 62410
+    }
+  ],
+  "crudos": [
+    {
+      "caso": "generar_rgb_8bit",
+      "rc": 0,
+      "ms": 32.1,
+      "err": "",
+      "bytes": 9216
+    },
+    {
+      "caso": "rgb_tercero",
+      "depth": 8,
+      "rc": 0,
+      "ms": 34.4,
+      "err": "",
+      "bytes": 778,
+      "rmse_stderr": "72.1239 (0.00110054)"
+    },
+    {
+      "caso": "rgb_tercero",
+      "depth": 16,
+      "rc": 1,
+      "ms": 45.1,
+      "err": "magick.EXE: unexpected end-of-file 'C:\\Users\\krato\\AppData\\Local\\Temp\\filex_tanda_b_qdj9egmo\\tercero.rgb': No such file or directory @ error/rgb.c/ReadRGBImage/251.\r\n",
+      "bytes": 0
+    },
+    {
+      "caso": "bayer",
+      "escritura": {
+        "rc": 0,
+        "ms": 56.1,
+        "err": ""
+      },
+      "lectura": {
+        "rc": 0,
+        "ms": 45.8,
+        "err": ""
+      },
+      "bytes_raw": 3072,
+      "bytes_png": 1049,
+      "referencia": "PENDIENTE: un mosaico CFA no tiene RMSE directo contra RGB"
+    },
+    {
+      "caso": "bayera",
+      "escritura": {
+        "rc": 0,
+        "ms": 53.2,
+        "err": ""
+      },
+      "lectura": {
+        "rc": 0,
+        "ms": 43.2,
+        "err": ""
+      },
+      "bytes_raw": 3072,
+      "bytes_png": 1049,
+      "referencia": "PENDIENTE: un mosaico CFA no tiene RMSE directo contra RGB"
+    }
+  ],
+  "received_no_packets_p2": [
+    {
+      "a": "aptx",
+      "b": "isma",
+      "rc": 4294967274,
+      "bytes": 0,
+      "p2_causa": "t) [out#0/ismv @ 000001784825bcc0] Nothing was written into output file, because at least one of its streams received no",
+      "p2_reglas": [
+        "M",
+        "R",
+        "C",
+        "F-out"
+      ]
+    },
+    {
+      "a": "msbc",
+      "b": "ismv",
+      "rc": 4294967274,
+      "bytes": 0,
+      "p2_causa": "t) [out#0/ismv @ 00000261a643f740] Nothing was written into output file, because at least one of its streams received no",
+      "p2_reglas": [
+        "M",
+        "R",
+        "C",
+        "F-out"
+      ]
+    },
+    {
+      "a": "webp",
+      "b": "rm",
+      "rc": 4294967274,
+      "bytes": 0,
+      "p2_causa": "83c300] Nothing was written into output file, because at least one of its streams received no packets. frame=    0 fps=0",
+      "p2_reglas": [
+        "M",
+        "R",
+        "C",
+        "F-out"
+      ]
+    },
+    {
+      "a": "tta",
+      "b": "h265.mp4",
+      "rc": 4294967274,
+      "bytes": 0,
+      "p2_causa": "nt) [out#0/mp4 @ 000001da80a2dcc0] Nothing was written into output file, because at least one of its streams received no",
+      "p2_reglas": [
+        "M",
+        "R",
+        "C",
+        "F-out"
+      ]
+    },
+    {
+      "a": "fits",
+      "b": "flac",
+      "rc": 4294967274,
+      "bytes": 0,
+      "p2_causa": "56ae80] Nothing was written into output file, because at least one of its streams received no packets. frame=    0 fps=0",
+      "p2_reglas": [
+        "M",
+        "R",
+        "C",
+        "F-out"
+      ]
+    },
+    {
+      "a": "w64",
+      "b": "amr",
+      "rc": 4294967256,
+      "bytes": 0,
+      "p2_causa": "codificador ausente del build: amr_nb",
+      "p2_reglas": [
+        "M",
+        "R",
+        "C",
+        "F-out"
+      ]
+    },
+    {
+      "a": "loas",
+      "b": "roq",
+      "rc": 4294967274,
+      "bytes": 0,
+      "p2_causa": "nt) [out#0/roq @ 0000017ae732c6c0] Nothing was written into output file, because at least one of its streams received no",
+      "p2_reglas": [
+        "M",
+        "R",
+        "C",
+        "F-out"
+      ]
+    },
+    {
+      "a": "bmp",
+      "b": "3gp",
+      "rc": 4294967274,
+      "bytes": 0,
+      "p2_causa": "fbdfc0] Nothing was written into output file, because at least one of its streams received no packets. frame=    0 fps=0",
+      "p2_reglas": [
+        "M",
+        "R",
+        "C",
+        "F-out"
+      ]
+    },
+    {
+      "a": "png",
+      "b": "aifc",
+      "rc": 4294967274,
+      "bytes": 0,
+      "p2_causa": "d7a300] Nothing was written into output file, because at least one of its streams received no packets. frame=    0 fps=0",
+      "p2_reglas": [
+        "M",
+        "R",
+        "C",
+        "F-out"
+      ]
+    },
+    {
+      "a": "avi",
+      "b": "rco",
+      "rc": 4294967274,
+      "bytes": 0,
+      "p2_causa": " [out#0/g723_1 @ 000001c7e9a3d480] Nothing was written into output file, because at least one of its streams received no",
+      "p2_reglas": [
+        "M",
+        "R",
+        "C",
+        "F-out"
+      ]
+    },
+    {
+      "a": "bmp",
+      "b": "afc",
+      "rc": 4294967274,
+      "bytes": 0,
+      "p2_causa": "f2cac0] Nothing was written into output file, because at least one of its streams received no packets. frame=    0 fps=0",
+      "p2_reglas": [
+        "M",
+        "R",
+        "C",
+        "F-out"
+      ]
+    },
+    {
+      "a": "uw",
+      "b": "roq",
+      "rc": 4294967274,
+      "bytes": 0,
+      "p2_causa": "nt) [out#0/roq @ 000001ba0547c8c0] Nothing was written into output file, because at least one of its streams received no",
+      "p2_reglas": [
+        "M",
+        "R",
+        "C",
+        "F-out"
+      ]
+    },
+    {
+      "a": "pgm",
+      "b": "aif",
+      "rc": 4294967274,
+      "bytes": 0,
+      "p2_causa": "83bd00] Nothing was written into output file, because at least one of its streams received no packets. frame=    0 fps=0",
+      "p2_reglas": [
+        "M",
+        "R",
+        "C",
+        "F-out"
+      ]
+    },
+    {
+      "a": "mov",
+      "b": "tco",
+      "rc": 4294967274,
+      "bytes": 0,
+      "p2_causa": " [out#0/g723_1 @ 000001ed5b98af80] Nothing was written into output file, because at least one of its streams received no",
+      "p2_reglas": [
+        "M",
+        "R",
+        "C",
+        "F-out"
+      ]
+    },
+    {
+      "a": "ass",
+      "b": "m3u8",
+      "rc": 4294967274,
+      "bytes": -1,
+      "p2_causa": "nt) [out#0/hls @ 000001f28836b6c0] Nothing was written into output file, because at least one of its streams received no",
+      "p2_reglas": [
+        "M",
+        "C",
+        "F-out"
+      ]
+    }
+  ]
+}
