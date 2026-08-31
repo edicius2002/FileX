@@ -1,3 +1,22 @@
+# Fin de linea: LF en el repositorio Y en el arbol de trabajo, para TODOS.
+#
+# Sin esta regla el mismo arbol se lee distinto segun quien lo mire. Con
+# core.autocrlf=true (el Git de Windows, que hizo los 22 commits) el disco queda en
+# CRLF; visto desde WSL, donde no hay filtro, esos ficheros salen "modificados" sin
+# que nadie los haya tocado. MEDIDO el 31/08/2026 sobre el mismo commit: 3.006
+# entradas de `git status` desde WSL frente a 6 desde Windows, y las 3.002 de
+# diferencia eran puro CR. Un `git status` que da 3.006 rojos no oculta cuatro
+# cambios reales: los entierra.
+#
+# eol=lf y no solo text=auto, porque este repositorio se trabaja desde los DOS lados
+# -Git Bash es el entorno de medicion, WSL es donde corren los agentes- y text=auto
+# a secas devuelve CRLF al disco de Windows, que es justo el desacuerdo que esto
+# viene a cerrar.
+* text=auto eol=lf
+
+# PowerShell de Windows sigue prefiriendo CRLF. Son cuatro ficheros.
+*.ps1 text eol=crlf
+
 # Benchmark fixtures and conversion outputs are binary artifacts, not text diffs.
 *.pdf binary
 *.png binary
