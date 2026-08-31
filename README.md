@@ -6,7 +6,7 @@ Cubre 12 categorías: ofimática↔PDF, markup, operaciones PDF, ebooks, imágen
 
 > **Estado: los siete hitos, hechos.** Este repositorio contiene la auditoría de 22 repositorios del ecosistema —leídos a nivel de código y ejecutados en la máquina real—, el plan de construcción que sale de ella, y **el producto**: registro, grafo con coste por arista, confinamiento, invocación disciplinada, y **cuatro superficies** —CLI, MCP, watcher de carpetas y API HTTP local—, con la verificación DENTRO de la conversión.
 >
-> **22 módulos, biblioteca estándar, cero dependencias. 16 ficheros de pruebas.** Suite verificada el 31/08/2026 con `.venv-mcp-filex/Scripts/python.exe` (win32, 3.11.9): **408 passed · 14 skipped · 0 failed · 116 subtests**. Doce de los catorce saltados piden un demonio de Docker que no estaba levantado, así que el hito 5 y la cancelación real de contenedor **no** entran en ese verde — **un recuento de suite declara su intérprete y qué saltó, o no dice qué se ejecutó.**
+> **22 módulos, biblioteca estándar, cero dependencias. 16 ficheros de pruebas.** Suite verificada el 31/08/2026 con `.venv-mcp-filex/Scripts/python.exe` (win32, 3.11.9) y Docker levantado: **420 passed · 2 skipped · 0 failed · 116 subtests** en 165,27 s. Los dos saltados van declarados: uno pide un ráster que hay que generar y el otro la tarjeta (`FILEX_PRUEBAS_SIDECAR=1`). **Un recuento de suite declara su intérprete, su entorno y qué quedó fuera, o no dice qué se ejecutó.**
 
 ```
 $ filex convertir corpus/video/patologico_2pistas.mkv salida.mp4
