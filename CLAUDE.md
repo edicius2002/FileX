@@ -38,6 +38,20 @@ RTX 3060 12 288 MiB (compute 8.6, driver 572.61) · 12 núcleos · Windows 10 ·
 
 **Contenedores:** SnapOtter `:1349` (`admin` / `<CONTRASENA-REDACTADA>`), ConvertX `:3100`, Gotenberg `:3200`.
 
+> **La contraseña de SnapOtter se borró del repositorio y de su historia el 31/08/2026** (`git filter-repo --replace-text`, 48 ocurrencias → 0, verificado sobre las 65 revisiones con control positivo), porque el repositorio pasa a ser **público**. Era la de un contenedor **local** de investigación, no un secreto real — pero borrarla del repositorio **no la cambia en el contenedor**: eso hay que hacerlo aparte.
+
+**Entornos virtuales que quedan, tras la limpieza del 31/08/2026:**
+
+| Venv | Para qué | Estado |
+|---|---|---|
+| `.venv-ai` | docling, faster-whisper, torch CUDA | **frágil, no instalar** |
+| `.venv-paddle` | PaddleOCR | **frágil, no instalar** |
+| `.venv-mcp-md` | markitdown (`.mcp.json`) | **frágil, no instalar** |
+| `.venv-marker` | marker — build **CPU**, sin una sola medida (B3) | protegido por §1 |
+| `.venv-mcp-filex` | el MCP de FileX y **la suite de pruebas** | activo |
+
+**Borrados: `.venv-mcp-sdk-18`, `.venv-mcp-sdk-1x`, `.venv-mcp-sdk-2x`, `.venv-mcp-lite`, `.venv-mcp-vam`, `.venv-mm-ffmpeg`, `.venv-mm-vamcp`** (598 MB). Eran los arneses de informes MCP ya cerrados y se rehacen con un `pip install`. **Lo que cuesta, y hay que decirlo:** la trampa 93 mide *«6 de 6 venvs»* y **tres de los seis ya no existen** (`.venv-mcp-lite`, `.venv-mm-ffmpeg`, `.venv-mcp-sdk-2x`). El hallazgo no cambia —los otros tres siguen aquí y lo reproducen— pero **su n baja de 6 a 3 hasta que se rehagan**.
+
 **Lo que NO hay en Windows sí está en `filex-convertx`** — que **NO es una imagen, es un CONTENEDOR** (`docker image inspect filex-convertx` → *No such image*). La imagen es **`ghcr.io/c4illin/convertx:latest`**, y `filex-c13` es esa misma con `qpdf` y `tesseract` añadidos. Corregido el 22/08 por `bench/hito5-documental.md`; Debian forky/sid — comprobado con `command -v`: `soffice`, `libreoffice`, `pandoc`, `ebook-convert` (Calibre), `vips`, `inkscape`, `resvg`, `magick`, `ffmpeg`, `gs`, `assimp`, `dasel`, `potrace`, `vtracer`, `dvisvgm`, `xelatex`, `msgconvert`, `cjxl`, `djxl`, `heif-enc`, `python3`. **Ausentes: `qpdf` y `tesseract`** — son los dos únicos motores que habría que añadir a una imagen, **y ya está medido lo que cuesta: 8 líneas, 28,1 s, +50 MB** (imagen `filex-c13`, `bench/salidas-invocacion/Dockerfile.c13`).
 
 ## 3. Cómo se mide aquí
