@@ -82,6 +82,7 @@
 
 | Fecha | Informe | Qué cierra |
 |---|---|---|
+| 29/08 | **`bench/lock-entre-interpretes.md`** (master) | **`C39`.** El lock de GPU **no cruza entre interpretes, y no falla callandose: BORRA el del otro**. Una sola celda verde de cuatro, y **WSL no se excluye ni consigo mismo**. El arnes mato a su propio sujeto **dos veces** y lo destapo el control positivo |
 | 28/08 | **`bench/metrica-ocr.md`** (W) | **A7.** La métrica de OCR canónica pasa a ser la **acentuada**. Cuesta **4 celdas de 628, 0 inversiones**. Y *«el evaluador acentuado»* eran **DOS métricas**: la otra habría cambiado el ganador en **21 familias** |
 | 28/08 | **`bench/contrato-familia-resvg.md`** (V) | **C19, C21, C29** y la respuesta medida a **C27**. La regla **A7** de fidelidad, el suelo de V8 —**refutado y puesto igualmente**— y el defecto que nadie había visto: **`EXT_FAMILIA` era código muerto** |
 | 28/08 | **`bench/watcher-y-desechables.md`** (U) | **N4, N5, N14.** *«En POSIX no hay equivalente»* era una deducción **y era falsa**; el residuo de N5 hubo que **fabricarlo**; y **978 desechables huérfanos en cinco horas** |
@@ -210,13 +211,13 @@ Agrupado por **el recurso que lo limita**, que es lo que decide el reparto. Cada
 
 > ### Cómo se cuenta esto (23/08, L1)
 >
-> **Una fila = un identificador = exactamente un emoji de estado, y va en la última columna.** Verificado a máquina: **106 filas, 106 emojis.**
+> **Una fila = un identificador = exactamente un emoji de estado, y va en la última columna.** Verificado a máquina: **107 filas, 107 emojis** *(29/08: 106 → 107 con `C39`)*.
 >
 > | Emoji | Significa | Cuántos hoy |
 > |---|---|---|
 > | 🟢 | **CERRADO** con informe que lo prueba | **69** |
 > | 🟡 | **EN CURSO o PARCIAL** (una mitad cerrada, o hay un agente dentro) | **3** |
-> | 🔴 | **ABIERTO** | **28** |
+> | 🔴 | **ABIERTO** | **29** |
 > | ⚫ | **histórico**: la fila se conserva porque documenta una refutación, pero **no cuenta** | **6** |
 >
 > La orden que lo comprueba. Hay que acotar **dos** veces: a la §3, porque la §4 usa ✅ para el estado de los *agentes*; y **a las filas cuya primera celda es un identificador**, porque si no la propia leyenda se cuenta a sí misma (comprobado: sin el segundo filtro salen 47/8/35/7 en vez de 44/6/32/5):
@@ -227,7 +228,7 @@ Agrupado por **el recurso que lo limita**, que es lo que decide el reparto. Cada
 >   | grep -o '🔴\|🟡\|🟢\|⚫' | sort | uniq -c
 > ```
 >
-> Salida esperada hoy: `6 ⚫ · 42 🔴 · 5 🟡 · 39 🟢` sobre **95** filas. *(23/08: `5 ⚫ · 44 🔴 · 6 🟡 · 32 🟢` sobre 87; 27/08: `6 · 40 · 5 · 36`; 28/08 tras la ronda 1: `6 · 42 · 5 · 39`.)* **La ronda 1 cerró tres y abrió cinco; las rondas 2 y 3 cerraron DIEZ y abrieron tres. Cerrar bien un pendiente casi siempre destapa los que tapaba — pero la proporción mejora cuando el encargo trae el mecanismo hecho: N10 se cerró rápido porque N1 ya había construido `filex/cerrojo.py`.**
+> Salida esperada hoy: `6 ⚫ · 29 🔴 · 3 🟡 · 69 🟢` sobre **107** filas *(verificado a máquina el 31/08)*. *(23/08: `5 ⚫ · 44 🔴 · 6 🟡 · 32 🟢` sobre 87; 27/08: `6 · 40 · 5 · 36`; 28/08 tras la ronda 1: `6 · 42 · 5 · 39`; 29/08 con C39: `6 · 29 · 3 · 69` sobre 107.)* **Esta línea estuvo TRES DÍAS diciendo 95 filas mientras la leyenda de arriba decía 107: es la trampa 44 dentro del documento que gobierna el reparto — un recuento honesto con una nota falsa al lado.)* **La ronda 1 cerró tres y abrió cinco; las rondas 2 y 3 cerraron DIEZ y abrieron tres. Cerrar bien un pendiente casi siempre destapa los que tapaba — pero la proporción mejora cuando el encargo trae el mecanismo hecho: N10 se cerró rápido porque N1 ya había construido `filex/cerrojo.py`.**
 >
 > **Y el segundo barrido encontró algo que el primero no buscaba: cuatro de las cinco filas movidas ya estaban cerradas ANTES de este repaso, y una —C33— llevaba cuatro días marcada como *«lo más urgente de esta sección»* sobre un fallo de seguridad **cerrado en el commit `3707751`**.** El barrido del 23/08 comprobó que **cada fila tuviera un emoji**; no comprobó que **el emoji fuera verdad**. Son dos revisiones distintas y hacen falta las dos: la primera se hace con `grep`, la segunda **solo contra el código y el `git log`**.
 >
@@ -325,6 +326,7 @@ Agrupado por **el recurso que lo limita**, que es lo que decide el reparto. Cada
 | **C24** | **MITAD CERRADA el 22/08, y el enunciado cambia.** La mitad EXTERNA está explicada y **no era el envoltorio: era el `--psm`.** Sobre el mismo `d3`, `psm 3/4` devuelven **0 bytes** y `psm 6/11` devuelven **113,92 %** y **188,61 %** — *silencio y alucinación son el mismo motor con distinto modo de segmentación*, y **los tres devuelven `rc=0`**. Añadido: **0 bytes puede además ser un proceso que NO ARRANCÓ** (`rc=0xC0000142`), indistinguible del silencio legítimo si no se registra el `rc` (trampa 25). **Sigue abierta la mitad de Ghostscript: qué `--psm` usa su Tesseract embebido no se ha sondeado** | 🟡 **REDEFINIDO** · `psm-y-rasterizador.md` §2.2 §9, `k-por-motor.md` §6.1 |
 | **C25** | **Lo que dejó abierto P2:** las 4 semiaristas de salida que resistieron el barrido (`amv`, `gxf`, `mlp`, `thd`) y las 11 aristas con `received no packets` *(dos intentos gastados en cada una)*; **la profundidad de los crudos de TERCEROS** —todo lo medido son ficheros que escribió el propio ImageMagick a 16 bits, y uno de 8 bits daría basura con la misma bandera—; `bayer`/`bayera` **sin referencia ideal** (≈366 aristas supuestas); y **el coste en tiempo de la invocación cuidada frente a la de ConvertX**, que añade dos lanzamientos de proceso por arista y **no está cuantificado** | 🔴 **NUEVO** · ídem §11 |
 | **C26** | ✅ **CERRADO el 23/08 por L1** (`bench/lock-de-maquina.md`). El lock pasa a **`/tmp/filex-gpu.lock` = `%TEMP%`** (MEDIDO: `cd /tmp && pwd -W` → `C:/Users/krato/AppData/Local/Temp`), deja de quedarse **huérfano** —lleva dentro el **winpid** y el nombre de imagen del dueño, y la recuperación baja de **900 s a 1 s**— y se le añade **la mitad que el enunciado no pedía y que es la que cierra el caso real: DETECCIÓN.** **Un lock no obliga a cooperar a quien no lo toma**: la sesión de ASR nunca iba a tomar este fichero, esté donde esté. Así que `gpu_acquire` mira ahora la **VRAM libre** y **se niega a medir** por debajo de **6 000 MiB**. Línea base medida de esta máquina: **3 292 / 3 356 / 3 448 MiB ocupados** (mín/mediana/máx, n=90 a 1 s). **Y un límite medido que hay que saber: en WDDM la VRAM POR PID no es observable** (`--query-compute-apps` devuelve `[N/A]` en los 30 procesos y `pmon` responde *«not supported in this configuration»*), así que *«mira los PID»* solo puede dar **una lista de sospechosos**, nunca al culpable | 🟢 **CERRADO** |
+| **C39** | **El lock de GPU no cruza entre INTERPRETES, y no falla callandose: BORRA el del otro.** Su recuperacion de huerfanos —necesaria, porque un `taskkill /F` no ejecuta el `trap`— se convierte en el arma cuando `_gpu_dueno_vivo` no reconoce al dueño. En WSL2 fallan las dos piezas que la alimentan: `/proc/$$/winpid` **no existe** (el campo guarda el PID de *Linux*) y `tasklist` sin `.exe` **no se ejecuta**. Cuatro celdas con el dueño **vivo antes y despues**, una sola verde: Git Bash->Git Bash `DUENO_VIVO` (control positivo); Git Bash->WSL, WSL->Git Bash y **WSL->WSL**, las tres `HUERFANO`. **WSL no se excluye NI CONSIGO MISMO**, asi que descarta el reparto mixto Y los dos workers en WSL. No es un parche de rutas: **un proceso de WSL no tiene PID de Windows en absoluto**. Decidir el sustituto del criterio de vida del dueño — el candidato es el mutex `Global\` de `filex/cerrojo.py` (18,1 us, no depende del PID), pero **tomarlo desde shell añade una dependencia que el harness no tiene**, y eso NO esta medido. Hermana de **C38** y de **N7** | 🔴 **NUEVO** · `lock-entre-interpretes.md` §7, §9 |
 
 ### N · Deuda del paquete `filex/` — **nace el 23/08 y no tenía sección**
 

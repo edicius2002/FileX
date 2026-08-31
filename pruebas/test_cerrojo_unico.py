@@ -79,6 +79,26 @@ def _matar(p) -> None:
         pass
 
 
+def _espera_a_que_muera(pid: int, tope: float = 30.0) -> bool:
+    """¿Ha muerto ya el proceso `pid`? Espera hasta `tope` segundos.
+
+    `Popen.wait()` no sirve para esto cuando `sys.executable` es el `python.exe`
+    de un venv de Windows: espera al LANZADOR, que muere antes que el proceso
+    Python real y antes de que se suelte el handle del fichero (trampa 93).
+    Aquí se pregunta por el PID de verdad, que el hijo publica él mismo.
+    """
+    import time
+    t0 = time.monotonic()
+    while time.monotonic() - t0 < tope:
+        r = subprocess.run(["tasklist", "/FI", f"PID eq {pid}", "/NH", "/FO", "CSV"],
+                           stdin=subprocess.DEVNULL, capture_output=True,
+                           text=True, errors="replace", timeout=20, check=False)
+        if str(pid) not in r.stdout:
+            return True
+        time.sleep(0.01)
+    return False
+
+
 class CerrojoDeMaquina(unittest.TestCase):
     """b1: que «de máquina» deje de ser un título prestado."""
 
@@ -333,19 +353,28 @@ class DeteccionYAfinidad(unittest.TestCase):
     def test_en_windows_un_LECTOR_ajeno_ya_cuenta_como_ocupado(self):
         """Trampa 33: `os.replace(p,p)` no dice «lo están escribiendo», dice
         «lo tienen ABIERTO». Un hijo que solo lee dispara el mismo WinError 32."""
-        guion = ("import sys,time\n"
+        # El guion publica su PID REAL. Hace falta porque el `python.exe` de un
+        # venv de Windows es un LANZADOR: `p.pid` es el del shim, y `p.wait()`
+        # espera a ÉSE y no a quien tiene el fichero abierto (trampa 93). Sin
+        # esperar al de verdad, el `assertFalse` de abajo falla 8 de 9 veces
+        # por una ventana de 0,7 ms de mediana — MEDIDO.
+        guion = ("import sys,os,time\n"
                  "f=open(sys.argv[1],'rb')\n"
-                 "sys.stdout.write('listo\\n'); sys.stdout.flush()\n"
+                 "sys.stdout.write(str(os.getpid())+'\\n'); sys.stdout.flush()\n"
                  "time.sleep(20)\n")
         p = subprocess.Popen([sys.executable, "-c", guion, self.ruta],
                              stdin=subprocess.DEVNULL, stdout=subprocess.PIPE,
                              text=True)
+        pid_real = None
         try:
-            p.stdout.readline()
+            pid_real = int(p.stdout.readline().strip())
             self.assertTrue(cerrojo.abierto_por_un_tercero(self.ruta))
         finally:
             p.kill()
             p.wait(timeout=30)
+            if pid_real is not None:
+                self.assertTrue(_espera_a_que_muera(pid_real, tope=30),
+                                "el proceso que abrió el fichero sigue vivo")
         self.assertFalse(cerrojo.abierto_por_un_tercero(self.ruta))
 
     def test_el_candado_se_suelta_bien_desde_OTRO_hilo(self):

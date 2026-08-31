@@ -86,7 +86,12 @@ class _ConHijo(unittest.TestCase):
             argv, stdin=subprocess.DEVNULL, stdout=subprocess.PIPE,
             stderr=subprocess.DEVNULL, text=True, encoding="utf-8",
             errors="replace", cwd=RAIZ)
-        self.jid = _lee_evento(self.proc, "arrancado")["job_id"]
+        # El hijo publica su PID REAL, y hace falta: en Windows el
+        # `python.exe` de un venv es un LANZADOR, así que `self.proc.pid` es el
+        # del shim y NO el del proceso que toma el candado (trampa 93).
+        _arrancado = _lee_evento(self.proc, "arrancado")
+        self.jid = _arrancado["job_id"]
+        self.pid_hijo = _arrancado["pid"]
         self.assertTrue(_lee_evento(self.proc, "en_vuelo")["hay"],
                         "el motor del hijo no llegó a arrancar")
         # El servicio de ESTE proceso, que solo conoce al trabajo por el disco.
@@ -176,7 +181,9 @@ class CancelarEntreProcesos(_ConHijo):
         d = cerrojo.dueno(S.clave_de(self.jid))
         self.assertIsNotNone(d)
         self.assertIn(self.jid, d)
-        self.assertEqual(int(d.split("\t")[0]), self.proc.pid)
+        # Contra el PID que el hijo DICE ser, no contra `self.proc.pid`: ese es
+        # el del lanzador y difiere siempre en Windows (trampa 93).
+        self.assertEqual(int(d.split("\t")[0]), self.pid_hijo)
 
 
 class SinCanalNoSeAlcanza(_ConHijo):

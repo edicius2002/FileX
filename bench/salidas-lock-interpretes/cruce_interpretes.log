@@ -1,0 +1,37 @@
+lock (WSL)      : /mnt/c/Users/krato/AppData/Local/Temp/sonda-lock-interpretes.lock
+lock (Git Bash) : /c/Users/krato/AppData/Local/Temp/sonda-lock-interpretes.lock
+retención       : 25s
+
+########## CELDA A · retiene Git Bash -> evalúa Git Bash  (CONTROL POSITIVO) ##########
+  escrito_por=MINGW64_NT-10.0-19045 pid_shell=1421 winpid=36448 imagen=bash
+  lock_aparecio_en=300ms  dueño_vivo_ANTES=SI
+  evaluado_por=MINGW64_NT-10.0-19045
+    campo3_winpid=36448  campo4_imagen=bash
+    VEREDICTO=DUENO_VIVO (rc=0) -> respeta el lock
+  dueño_vivo_DESPUES=SI
+
+########## CELDA B · retiene Git Bash -> evalúa WSL2 ##########
+  escrito_por=MINGW64_NT-10.0-19045 pid_shell=1444 winpid=7048 imagen=bash
+  lock_aparecio_en=300ms  dueño_vivo_ANTES=SI
+  evaluado_por=Linux
+    campo3_winpid=7048  campo4_imagen=bash
+    VEREDICTO=HUERFANO  (rc=1) -> BORRA el lock y entra
+  dueño_vivo_DESPUES=SI
+
+########## CELDA C · retiene WSL2     -> evalúa Git Bash ##########
+  escrito_por=Linux pid_shell=394117 winpid=394117 imagen=bash
+  lock_aparecio_en=100ms  dueño_vivo_ANTES=SI
+  evaluado_por=MINGW64_NT-10.0-19045
+    campo3_winpid=394117  campo4_imagen=bash
+    VEREDICTO=HUERFANO  (rc=1) -> BORRA el lock y entra
+  dueño_vivo_DESPUES=SI
+
+########## CELDA D · retiene WSL2     -> evalúa WSL2   (¿se excluye consigo mismo?) ##########
+  escrito_por=Linux pid_shell=394135 winpid=394135 imagen=bash
+  lock_aparecio_en=100ms  dueño_vivo_ANTES=SI
+  evaluado_por=Linux
+    campo3_winpid=394135  campo4_imagen=bash
+    VEREDICTO=HUERFANO  (rc=1) -> BORRA el lock y entra
+  dueño_vivo_DESPUES=SI
+
+lock de sonda borrado.
