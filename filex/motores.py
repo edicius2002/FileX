@@ -512,9 +512,9 @@ class FFmpeg(Motor):
         elif pedido.get("codec_video"):
             # ---- hito 2: NVENC con sondeo y degradación ---------------------
             argv += self._video_codec(pedido, decidido)
-            audio = pedido.get("bitrate_audio", "96k" if d == "webm" else "128k")
             argv += ["-c:a", "libopus" if d == "webm" else "aac",
-                     "-b:a", str(audio)]
+                     "-b:a", str(pedido.get("bitrate_audio",
+                                            "96k" if d == "webm" else "128k"))]
             # El desvío de bitrate se registra en los METADATOS DE SALIDA. Lo
             # que se puede escribir en UNA pasada es lo pedido y con qué se
             # codificó; el bitrate obtenido no existe todavía cuando se
