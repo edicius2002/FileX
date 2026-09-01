@@ -35,12 +35,12 @@ Siete fallos independientes, en seis proyectos distintos, todos del mismo tipo: 
 |---|---|
 | **Usarlo** | `python -m filex motores` para ver qué hay, `python -m filex plan a.png b.pdf` para ver qué haría, `python -m filex convertir a.png b.pdf` para hacerlo |
 | **Leer el código** | [`filex/`](filex/) — 22 módulos, biblioteca estándar, cero dependencias. Empieza por `invocacion.py`, que es el único sitio que puede lanzar un proceso, y sigue por `verificador.py`, que es el contrato |
-| **Seguir construyendo** | [`ESTADO-Y-REPARTO.md`](ESTADO-Y-REPARTO.md) §3 — el inventario vivo: **107 filas, 72 cerradas, 25 abiertas**, agrupadas por el recurso que las limita. Los siete hitos de [`PLAN-ORQUESTADOR.md`](PLAN-ORQUESTADOR.md) están hechos |
+| **Seguir construyendo** | [`ESTADO-Y-REPARTO.md`](ESTADO-Y-REPARTO.md) §3 — el inventario vivo: **107 filas, 72 cerradas, 23 abiertas**, agrupadas por el recurso que las limita. Los siete hitos de [`PLAN-ORQUESTADOR.md`](PLAN-ORQUESTADOR.md) están hechos |
 | Entender **por qué** FileX y no otra cosa | [`HUECOS.md`](HUECOS.md) — los cinco diferenciadores, reevaluados tras ejecutar |
 | El análisis completo del ecosistema | [`ANALISIS-COMPLETO.md`](ANALISIS-COMPLETO.md) — 22 repos, 21 tablas comparativas |
 | Diseñar la capa MCP | [`RESULTADOS-MCP.md`](RESULTADOS-MCP.md) — incluye las 15 reglas de confinamiento |
 | Los motores de IA que faltan por probar | [`AGENTES-PRUEBAS-PENDIENTES.md`](AGENTES-PRUEBAS-PENDIENTES.md) |
-| Las reglas y **las 98 trampas ya pagadas** | [`CLAUDE.md`](CLAUDE.md) — cada una con la medida que la respalda. Es el documento más útil del repositorio si vas a tocar algo |
+| Las reglas y **las 101 trampas ya pagadas** | [`CLAUDE.md`](CLAUDE.md) — cada una con la medida que la respalda. Es el documento más útil del repositorio si vas a tocar algo |
 
 ## Estructura
 
