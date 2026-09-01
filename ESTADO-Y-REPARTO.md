@@ -224,7 +224,7 @@ Agrupado por **el recurso que lo limita**, que es lo que decide el reparto. Cada
 > |---|---|---|
 > | 🟢 | **CERRADO** con informe que lo prueba | **72** |
 > | 🟡 | **EN CURSO o PARCIAL** (una mitad cerrada, o hay un agente dentro) | **6** |
-> | 🔴 | **ABIERTO** | **26** |
+> | 🔴 | **ABIERTO** | **27** |
 > | ⚫ | **histórico**: la fila se conserva porque documenta una refutación, pero **no cuenta** | **6** |
 >
 > La orden que lo comprueba. Hay que acotar **dos** veces: a la §3, porque la §4 usa ✅ para el estado de los *agentes*; y **a las filas cuya primera celda es un identificador**, porque si no la propia leyenda se cuenta a sí misma (comprobado: sin el segundo filtro salen 47/8/35/7 en vez de 44/6/32/5):
@@ -235,7 +235,7 @@ Agrupado por **el recurso que lo limita**, que es lo que decide el reparto. Cada
 >   | grep -o '🔴\|🟡\|🟢\|⚫' | sort | uniq -c
 > ```
 >
-> Salida esperada hoy: `6 ⚫ · 26 🔴 · 6 🟡 · 72 🟢` sobre **110** filas *(verificado a máquina el 01/09; y desde hoy lo verifica también `ci/integridad.py` en cada PR, que es lo que impide que esta línea vuelva a quedarse tres días diciendo otra cosa)*. *(23/08: `5 ⚫ · 44 🔴 · 6 🟡 · 32 🟢` sobre 87; 27/08: `6 · 40 · 5 · 36`; 28/08 tras la ronda 1: `6 · 42 · 5 · 39`; 29/08 con C39: `6 · 29 · 3 · 69` sobre 107.)* **Esta línea estuvo TRES DÍAS diciendo 95 filas mientras la leyenda de arriba decía 107: es la trampa 44 dentro del documento que gobierna el reparto — un recuento honesto con una nota falsa al lado.)* **La ronda 1 cerró tres y abrió cinco; la ronda 2 cerró dos y medio cerró dos. Cerrar bien un pendiente casi siempre destapa los que tapaba — pero la proporción mejora cuando el encargo trae el mecanismo hecho: N10 se cerró rápido porque N1 ya había construido `filex/cerrojo.py`.**
+> Salida esperada hoy: `6 ⚫ · 27 🔴 · 6 🟡 · 72 🟢` sobre **111** filas *(verificado a máquina el 01/09; y desde hoy lo verifica también `ci/integridad.py` en cada PR, que es lo que impide que esta línea vuelva a quedarse tres días diciendo otra cosa)*. *(23/08: `5 ⚫ · 44 🔴 · 6 🟡 · 32 🟢` sobre 87; 27/08: `6 · 40 · 5 · 36`; 28/08 tras la ronda 1: `6 · 42 · 5 · 39`; 29/08 con C39: `6 · 29 · 3 · 69` sobre 107.)* **Esta línea estuvo TRES DÍAS diciendo 95 filas mientras la leyenda de arriba decía 107: es la trampa 44 dentro del documento que gobierna el reparto — un recuento honesto con una nota falsa al lado.)* **La ronda 1 cerró tres y abrió cinco; la ronda 2 cerró dos y medio cerró dos. Cerrar bien un pendiente casi siempre destapa los que tapaba — pero la proporción mejora cuando el encargo trae el mecanismo hecho: N10 se cerró rápido porque N1 ya había construido `filex/cerrojo.py`.**
 >
 > **Y el segundo barrido encontró algo que el primero no buscaba: cuatro de las cinco filas movidas ya estaban cerradas ANTES de este repaso, y una —C33— llevaba cuatro días marcada como *«lo más urgente de esta sección»* sobre un fallo de seguridad **cerrado en el commit `c2f6a59`**.** El barrido del 23/08 comprobó que **cada fila tuviera un emoji**; no comprobó que **el emoji fuera verdad**. Son dos revisiones distintas y hacen falta las dos: la primera se hace con `grep`, la segunda **solo contra el código y el `git log`**.
 >
@@ -339,6 +339,8 @@ Agrupado por **el recurso que lo limita**, que es lo que decide el reparto. Cada
 | **C41** | **Veinte de sesenta directorios `bench/salidas-*` sin `MANIFIESTO.md`.** La regla §6 los exige, y no es burocracia: sin manifiesto, un activo podado parece un **bloqueo**, que es la trampa 95 — y un bloqueo se acepta donde un rojo se investiga. Mismo trinquete: los veinte están congelados, el veintiuno rompe | 🔴 **NUEVO** · ídem |
 
 | **C42** | **La lista de módulos aptos para la CI está medida en la plataforma equivocada.** `ci/linux-apto.json` salió de WSL2 sobre DrvFs con Python 3.14 y da **11 aptos, 262 pruebas, 0 fallos**; los **mismos once** en `ubuntu-latest` con 3.11 dan **23 fallos, 7 errores y 30 saltadas sobre 256 pruebas**. El trabajo `deriva` de `.github/workflows/suite.yml` la vuelve a medir en el runner de verdad; hasta que la lista se rehaga, el trabajo `linux` lleva `continue-on-error: true` e **informa sin bloquear**. **Cerrar esto es quitar ese `continue-on-error`** | 🔴 **NUEVO** · trampa 104 |
+
+| **C43** | **La huella del código es función del INTÉRPRETE, así que las 215 aristas selladas sólo valen bajo el Python que las selló — MEDIDO con control positivo.** Mismo runner y mismos bytes: con 3.11 `test_sondeo` pasa y con **3.13 caducan los siete motores a la vez**; y `filex/verificador.py` da `eec752a87e8927cf` bajo 3.11.9 y `16ddd8d13d61c4f1` bajo 3.14.4. **Hay que decidir entre dos cosas, y ninguna es gratis**: meter la versión del intérprete en la huella —que caduca todo hoy, una vez, a cambio de que el aviso sea verdadero— o **declarar el intérprete de sellado** y negarse a comparar huellas de intérpretes distintos. Hoy no hace ninguna de las dos y **el modo de fallo es el peor: dice «caducado» donde debería decir «no comparable»** | 🔴 **NUEVO** · trampa 105 |
 
 ### N · Deuda del paquete `filex/` — **nace el 23/08 y no tenía sección**
 
@@ -1254,7 +1256,7 @@ Los huecos **2, 3 y 4 están cerrados o refutados**, y el **2 lo está ahora con
 
 | Ruta | Para qué |
 |---|---|
-| `CLAUDE.md` | Las reglas de trabajo, las **104** trampas ya pagadas y las reglas de diseño no negociables. ~~24~~ — **la cifra llevaba setenta y ocho trampas desfasada**, que es el mismo defecto que esta sección viene a arreglar |
+| `CLAUDE.md` | Las reglas de trabajo, las **105** trampas ya pagadas y las reglas de diseño no negociables. ~~24~~ — **la cifra llevaba setenta y ocho trampas desfasada**, que es el mismo defecto que esta sección viene a arreglar |
 | **`bench/salidas-publicacion/MANIFIESTO.md`** | **El mapa `viejo → nuevo` de los 64 commits que reescribió el `filter-repo` del 31/08**, y el residuo que dejó la herramienta: 48 ocurrencias de la credencial en un `fast-export.original` de 57 MB **dentro de `.git`** |
 | `HUECOS.md` | Los cinco diferenciadores, con su veredicto y su evidencia |
 | `PLAN-ORQUESTADOR.md` | El plan de construcción: 7 hitos con criterio de aceptación |

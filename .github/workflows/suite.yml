@@ -54,10 +54,13 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        # 3.11 es el mínimo que declara `pyproject.toml` y el que se mide en la
-        # máquina (3.11.9). 3.13 va delante para que una ruptura futura salga
-        # aquí y no en producción -- `audioop`, por ejemplo, desapareció en 3.13.
-        python: ['3.11', '3.13']
+        # SÓLO 3.11, y no por comodidad. Con 3.13 en la matriz, `test_sondeo`
+        # falla -- y tiene razón: la huella del código es función del INTÉRPRETE,
+        # no sólo del código, porque `ast.dump` cambia entre versiones. Mismo
+        # runner, mismos bytes, 3.11 verde y 3.13 con las aristas de los siete
+        # motores caducadas. Meter 3.13 aquí no probaría compatibilidad: sólo
+        # dejaría la CI roja por un sellado que es correcto. Trampa 105, C43.
+        python: ['3.11']
     steps:
       - uses: actions/checkout@v4
         with:
