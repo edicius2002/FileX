@@ -113,3 +113,7 @@ bench/salidas-suelo-ppp/img/
 # asi que git los ve una SEGUNDA vez como no seguidos. Mismo inodo, mismo
 # contenido: verificado. Borrarlos destruiria contenido versionado.
 bench/salidas-mcp-refs/confinamiento/sandbox/**/*:oculto
+
+# Fichero de trabajo que CCB deja en cada worktree de agente. No es contenido
+# del repositorio, y aparecia como no seguido en los DOS workers.
+.ccb-workspace.json

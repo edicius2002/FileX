@@ -35,6 +35,7 @@ Siete fallos independientes, en seis proyectos distintos, todos del mismo tipo: 
 |---|---|
 | **Usarlo** | `python -m filex motores` para ver qué hay, `python -m filex plan a.png b.pdf` para ver qué haría, `python -m filex convertir a.png b.pdf` para hacerlo |
 | **Leer el código** | [`filex/`](filex/) — 22 módulos, biblioteca estándar, cero dependencias. Empieza por `invocacion.py`, que es el único sitio que puede lanzar un proceso, y sigue por `verificador.py`, que es el contrato |
+| **Saber qué falta** | [`PENDIENTE.md`](PENDIENTE.md) — la lista corta y accionable: las cuatro decisiones que no son trabajo, la ronda lista para despachar, y lo que está bloqueado con su motivo |
 | **Seguir construyendo** | [`ESTADO-Y-REPARTO.md`](ESTADO-Y-REPARTO.md) §3 — el inventario vivo: **107 filas, 72 cerradas, 23 abiertas**, agrupadas por el recurso que las limita. Los siete hitos de [`PLAN-ORQUESTADOR.md`](PLAN-ORQUESTADOR.md) están hechos |
 | Entender **por qué** FileX y no otra cosa | [`HUECOS.md`](HUECOS.md) — los cinco diferenciadores, reevaluados tras ejecutar |
 | El análisis completo del ecosistema | [`ANALISIS-COMPLETO.md`](ANALISIS-COMPLETO.md) — 22 repos, 21 tablas comparativas |
