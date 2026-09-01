@@ -1,13 +1,6 @@
 {
-  "_": "Deuda CONGELADA el 01/09/2026, medida y no escrita a mano. Lo que esta aqui no rompe la CI; lo NUEVO si, y lo ARREGLADO tambien -- para obligar a encoger la lista. El trinquete solo aprieta. REMEDIDO el 01/09 tras el primer rojo de la CI: la primera version salio de glob() sobre el arbol de trabajo y contaba bench/salidas-marker, que en mi disco es un logs/ vacio y en un clon no existe. Ahora sale de git ls-files: se comprueba lo que se publica.",
+  "_": "Deuda CONGELADA y REMEDIDA el 01/09/2026. Encogio dos veces en el mismo dia, y las dos por defectos de la SONDA, no por trabajo: (1) glob() sobre el arbol contaba un directorio que en un clon no existe; (2) exigir el nombre exacto MANIFIESTO.md ocultaba dos manifiestos escritos a proposito, y la regla de peso no distinguia salida regenerable de evidencia irreproducible. Lo que esta aqui no rompe la CI; lo NUEVO si, y lo ARREGLADO tambien.",
   "binarios": [
-    "bench/salidas-competidores/convertx/vid-2pistas__convertx.mp4",
-    "bench/salidas-competidores/convertx/vid-mp42webm__convertx.webm",
-    "bench/salidas-competidores/convertx/vid2gif__convertx.gif",
-    "bench/salidas-competidores/snapotter/pdfesc2png__snapotter.zip",
-    "bench/salidas-competidores/snapotter/pdfesc2png__snapotter_paginas/page-1.png",
-    "bench/salidas-competidores/snapotter/vid-2pistas__snapotter.mp4",
-    "bench/salidas-competidores/snapotter/vid2gif__snapotter.gif",
     "bench/salidas-mcp-refs/multimedia/salidas/vam_trivial.mkv",
     "bench/salidas-mcp-refs/multimedia/salidas_lite/trivial_converted.gif",
     "bench/salidas-mcp-refs/multimedia/salidas_lite/trivial_converted.webm"
@@ -15,7 +8,6 @@
   "manifiestos": [
     "bench/salidas-aristas-tasa",
     "bench/salidas-bitrate-pista",
-    "bench/salidas-competidores",
     "bench/salidas-confinamiento-mm",
     "bench/salidas-cota-audio",
     "bench/salidas-fidelidad",
@@ -26,7 +18,6 @@
     "bench/salidas-mcp",
     "bench/salidas-mcp-cabos",
     "bench/salidas-mcp-refs",
-    "bench/salidas-ocrmypdf",
     "bench/salidas-patron-multi",
     "bench/salidas-saturacion",
     "bench/salidas-sdk-mcp",

@@ -1,0 +1,12 @@
+# Rutas cuyo contenido binario es EVIDENCIA FORENSE IRREPRODUCIBLE, y a las que
+# por tanto NO les aplica la regla §6 -- que dice «no versiones salidas binarias
+# REGENERABLES», con la palabra regenerables dentro.
+#
+# Esto NO es una lista de perdon. Cada linea exige un motivo y el documento que
+# lo sostiene; una linea sin motivo no cuenta. Ampliar esta lista es una
+# afirmacion sobre el mundo -- «esto no se puede volver a generar» -- y se
+# defiende con una cita, no con una preferencia.
+#
+# Formato: <prefijo de ruta>  <motivo, con el documento que lo respalda>
+
+bench/salidas-competidores/  Los contenedores de ConvertX y SnapOtter cambian de version, asi que sus fallos NO se regeneran: MANIFIESTO-retirado.md (2026-08-20) lo declara y por eso su poda fue conservadora, "no se ha retirado ninguna prueba". Son la evidencia de la tesis central del proyecto: siete fallos independientes en seis proyectos.

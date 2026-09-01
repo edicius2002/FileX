@@ -3,7 +3,7 @@
 Proyecto de investigación **en español**. Informes, comentarios y mensajes de commit,
 en español.
 
-Este fichero es la versión corta y operativa. Las reglas completas —y las **105 trampas ya
+Este fichero es la versión corta y operativa. Las reglas completas —y las **106 trampas ya
 pagadas**— están en [`CLAUDE.md`](CLAUDE.md), que es el documento más útil del repositorio
 si vas a tocar algo. El reparto del trabajo vive en
 [`ESTADO-Y-REPARTO.md`](ESTADO-Y-REPARTO.md).
@@ -118,10 +118,19 @@ sale vacío, «lo rompió el merge» es imposible.
 Si generas salidas, **borra las grandes al terminar** y deja un `MANIFIESTO.md` con nombre,
 `sha256`, tamaño y **la orden exacta que las reproduce**.
 
-`ci/integridad.py` lo comprueba con un **trinquete**: la deuda de hoy —10 binarios sueltos
-y 20 directorios sin manifiesto— está congelada en `ci/heredado.json` y no rompe nada, pero
+**Pero la palabra que manda es «regenerables».** `bench/salidas-competidores/` es
+**evidencia forense irreproducible** —esos contenedores cambian de versión y sus fallos no
+se vuelven a producir—, y borrarla destruiría la prueba de la tesis del proyecto. Si tu
+salida es de esa clase, decláralo en `ci/evidencia-irreproducible.txt` **con su motivo y el
+documento que lo sostiene**: la lista no perdona, exige una razón escrita (trampa 106).
+
+`ci/integridad.py` lo comprueba con un **trinquete**: la deuda de hoy —3 binarios sueltos y
+17 directorios sin manifiesto— está congelada en `ci/heredado.json` y no rompe nada, pero
 **lo nuevo rompe**. Y lo **arreglado** también, para obligar a encoger la lista: sin esa
 tercera mitad el trinquete se afloja solo.
+
+El manifiesto puede llamarse `MANIFIESTO-loquesea.md`: la comprobación acepta el prefijo,
+no el nombre exacto.
 
 El `corpus/` está en Git LFS. Tras clonar: `git lfs pull`.
 
