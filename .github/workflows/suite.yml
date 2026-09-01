@@ -1,0 +1,117 @@
+name: suite
+
+# Los módulos de prueba que un runner de Linux PUEDE ejecutar, medidos uno a uno
+# con `ci/sonda_linux.py` y congelados en `ci/linux-apto.json`.
+#
+# 11 de 17 módulos · 262 pruebas · 64,4 s. Los seis que faltan NO se ejecutan y
+# hay que decir por qué, o el verde miente:
+#
+#   CUELGAN  test_cancelacion, test_gpu_lock, test_hito2  -- se duermen y agotan
+#            el tope. Lanzar la suite entera con `python3` de Linux se queda
+#            dormida sin decir en qué módulo: quemaría el runner y devolvería un
+#            rojo que no nombra nada.
+#   FALLAN   test_hito5 (2), test_hito7 (7), test_sondeo (1) -- necesitan Docker
+#            con las imágenes locales, o motores que un runner no trae.
+#
+# **Y ninguno de los once lee `corpus/`** -- comprobado, no supuesto. Por eso
+# `lfs: false` es seguro por construcción y no por suerte: la cuota gratuita de
+# LFS es de 1 GB de ancho de banda AL MES y el corpus pesa 254 MB.
+#
+# Esto NO sustituye a la suite del proyecto: las pruebas `win32`, la GPU y los
+# contenedores locales sólo corren en la máquina. Ver CONTRIBUTING.md §1.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    # Lunes a las 04:00 UTC: el trabajo de deriva, que vuelve a medir la lista.
+    - cron: '0 4 * * 1'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: suite-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  linux:
+    if: github.event_name != 'schedule'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        # 3.11 es el mínimo que declara `pyproject.toml` y el que se mide en la
+        # máquina (3.11.9). 3.13 va delante para que una ruptura futura salga
+        # aquí y no en producción -- `audioop`, por ejemplo, desapareció en 3.13.
+        python: ['3.11', '3.13']
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: false
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+
+      - name: Declarar el intérprete y el entorno
+        run: |
+          python3 -VV
+          echo "plataforma: $(python3 -c 'import sys; print(sys.platform)')"
+          echo "docker:     $(command -v docker || echo AUSENTE)"
+          echo "ffmpeg:     $(command -v ffmpeg || echo AUSENTE)"
+
+      - name: El paquete importa y la CLI arranca
+        run: |
+          python3 -c "import filex; print('filex', filex.__file__)"
+          python3 -m filex motores
+
+      - name: Los módulos declarados APTOS
+        run: |
+          MODULOS=$(python3 -c "import json; print(' '.join('pruebas.'+m for m in json.load(open('ci/linux-apto.json'))['aptos']))")
+          echo "ejecutando: $MODULOS"
+          python3 -m unittest $MODULOS
+
+  deriva:
+    # Vuelve a MEDIR qué es apto, en el runner de verdad. `ci/linux-apto.json`
+    # se midió en WSL2 sobre DrvFs con Python 3.14, y la trampa 41 es explícita:
+    # un resultado de una familia de sistemas de ficheros no se extrapola a otra,
+    # ni con el signo. Este trabajo no rompe nada -- informa de que la lista
+    # congelada se ha quedado vieja.
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: false
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Medir módulo a módulo, con tope
+        run: python3 ci/sonda_linux.py --tope 90 --json /tmp/linux-apto-runner.json
+
+      - name: ¿Se ha movido la lista?
+        run: |
+          python3 - <<'EOF'
+          import json
+          congelada = set(json.load(open("ci/linux-apto.json"))["aptos"])
+          medida = set(json.load(open("/tmp/linux-apto-runner.json"))["aptos"])
+          if congelada == medida:
+              print("sin deriva: %d módulos" % len(medida))
+          else:
+              print("DERIVA -- actualiza ci/linux-apto.json con `python3 ci/sonda_linux.py`")
+              print("  ya no son aptos: %s" % sorted(congelada - medida))
+              print("  aptos nuevos:    %s" % sorted(medida - congelada))
+          EOF
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: linux-apto-runner
+          path: /tmp/linux-apto-runner.json

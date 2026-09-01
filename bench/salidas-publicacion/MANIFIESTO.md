@@ -34,9 +34,17 @@ operación, y se copia aquí para que sobreviva al clon.
 Reproduce el control:
 
 ```sh
-grep -c 'FileXBench2026aZ' .git/filter-repo/fast-export.original   # 48
-grep -c 'FileXBench2026aZ' .git/filter-repo/commit-map             # 0
+SECRETO=<la contrasena de SnapOtter, que NO se escribe aqui>
+grep -c "$SECRETO" .git/filter-repo/fast-export.original   # 48
+grep -c "$SECRETO" .git/filter-repo/commit-map             # 0
 ```
+
+> **Y este fichero estuvo a punto de deshacer lo que documenta.** La primera version
+> escribia la credencial literal en las dos ordenes de arriba — es decir, la devolvia al
+> repositorio dentro del informe que celebraba haberla quitado. **Lo caso `ci/integridad.py`
+> en su PRIMERA pasada**, con dos hallazgos en las lineas 37 y 38 de este mismo fichero.
+> Un control que se escribe con el secreto dentro no es un control: es una fuga con forma
+> de prueba.
 
 > **La credencial sigue viva en el contenedor.** Borrarla del repositorio no la cambia en
 > SnapOtter: eso es una acción aparte y **sigue PENDIENTE**.

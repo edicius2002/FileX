@@ -40,7 +40,41 @@ Siete fallos independientes, en seis proyectos distintos, todos del mismo tipo: 
 | El análisis completo del ecosistema | [`ANALISIS-COMPLETO.md`](ANALISIS-COMPLETO.md) — 22 repos, 21 tablas comparativas |
 | Diseñar la capa MCP | [`RESULTADOS-MCP.md`](RESULTADOS-MCP.md) — incluye las 15 reglas de confinamiento |
 | Los motores de IA que faltan por probar | [`AGENTES-PRUEBAS-PENDIENTES.md`](AGENTES-PRUEBAS-PENDIENTES.md) |
-| Las reglas y **las 102 trampas ya pagadas** | [`CLAUDE.md`](CLAUDE.md) — cada una con la medida que la respalda. Es el documento más útil del repositorio si vas a tocar algo |
+| Las reglas y **las 103 trampas ya pagadas** | [`CLAUDE.md`](CLAUDE.md) — cada una con la medida que la respalda. Es el documento más útil del repositorio si vas a tocar algo |
+| **Contribuir** | [`CONTRIBUTING.md`](CONTRIBUTING.md) — los carriles, las cuatro declaraciones que necesita un recuento de suite, y **qué NO puede comprobar la CI**, que es lo primero que hay que saber |
+
+## Integración continua, y lo que NO cubre
+
+Esto va primero, porque **una CI verde que no cubre lo que importa es peor que no tener
+CI**: es un falso verde, y este repositorio tiene medido lo que cuesta uno (trampas 94
+y 101).
+
+| | |
+|---|---|
+| **`integridad`** | Las nueve comprobaciones de [`ci/integridad.py`](ci/integridad.py). Cada una sale de un defecto **real** encontrado a mano el 01/09; ninguna está inventada «por si acaso» |
+| **`suite-linux`** | Los módulos de prueba que un runner de Linux puede ejecutar, **medidos uno a uno con tope** por [`ci/sonda_linux.py`](ci/sonda_linux.py) — no deducidos |
+
+Lo que **sólo** corre en la máquina del proyecto, y es casi todo el valor:
+
+- **Las pruebas `win32`** — `os.replace` como cerrojo, el mutex `Global\`, la DACL, los
+  nombres 8.3. Un runner alojado de GitHub no tiene NTFS.
+- **La GPU** — el lock, los seis motores de OCR, el sidecar. No hay RTX 3060 en la nube de
+  Actions.
+- **Los contenedores locales** — `filex-c13`, SnapOtter, ConvertX, Gotenberg.
+- **El corpus** — 254 MB en Git LFS, y la cuota gratuita es de 1 GB de ancho de banda **al
+  mes**: cuatro ejecuciones con `lfs: true` la agotan. Los flujos bajan el repositorio
+  **sin** LFS, a propósito.
+
+**Un `✅` de GitHub dice que la documentación es coherente y que el código sigue importando
+en Linux. No dice que la medición esté bien.** Eso lo declara quien abre el PR, con las
+cuatro declaraciones que pide la plantilla.
+
+Se ejecutan igual en local, y tardan segundos:
+
+```sh
+python3 ci/integridad.py           # las nueve comprobaciones
+python3 ci/integridad.py --lista   # qué comprueba cada una y por qué
+```
 
 ## Estructura
 

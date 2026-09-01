@@ -1,0 +1,49 @@
+name: integridad
+
+# Las nueve comprobaciones documentales de `ci/integridad.py`. Cada una sale de
+# un defecto REAL encontrado a mano el 01/09; ninguna está inventada «por si
+# acaso». Tardan segundos y no tocan la GPU, ni Docker, ni el corpus.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: integridad-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  integridad:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # `fetch-depth: 0` NO es opcional: la comprobación `citas` resuelve
+          # hashes con `git cat-file`, y con el clon superficial que trae el
+          # `checkout` por defecto **todos los hashes históricos darían muertos**.
+          # Sería un falso rojo de la misma familia que la trampa 89.
+          fetch-depth: 0
+          # El corpus son 254 MB en Git LFS y la cuota gratuita es de 1 GB de
+          # ancho de banda AL MES: cuatro ejecuciones con `lfs: true` la agotan
+          # y dejan el repositorio sin poder descargar sus propios ficheros.
+          # Estas comprobaciones no leen el corpus, así que no se baja.
+          lfs: false
+
+      - uses: actions/setup-python@v5
+        with:
+          # El proyecto declara `requires-python = ">=3.11"` y se mide en
+          # 3.11.9. La trampa 94 es explícita: un recuento que no declara su
+          # intérprete no dice qué se ejecutó.
+          python-version: '3.11'
+
+      - name: Comprobaciones de integridad
+        run: python3 ci/integridad.py
+
+      - name: Qué comprueba y por qué
+        if: always()
+        run: python3 ci/integridad.py --lista
