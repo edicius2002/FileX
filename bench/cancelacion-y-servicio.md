@@ -25,7 +25,7 @@ Pruebas: `pruebas/test_cancelacion.py` (13, todas fallan sin el arreglo).
 
 Y el precio, que se paga entero y no se disimula: **tocar `filex/invocacion.py`
 caduca el sondeo de los cinco motores y el grafo cae de 210 aristas `real` a
-57** (§4). Es el mecanismo del commit `69f08df` funcionando exactamente como se
+57** (§4). Es el mecanismo del commit `13181f6` funcionando exactamente como se
 diseñó.
 
 ---

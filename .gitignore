@@ -106,3 +106,10 @@ bench/.gpu.lock
 # Rasteres de la tanda DESCARTADA de B21/B22 (trampa 92). Regenerables con
 # bench/salidas-suelo-ppp/b21b22.py; cubiertos por su MANIFIESTO.md.
 bench/salidas-suelo-ppp/img/
+
+# Los flujos alternativos NTFS (ADS) del arnes de confinamiento ya estan
+# VERSIONADOS bajo su nombre con U+F03A, que es como DrvFs escribe los dos
+# puntos. Pero `readdir` desde WSL devuelve ademas el nombre con `:` literal,
+# asi que git los ve una SEGUNDA vez como no seguidos. Mismo inodo, mismo
+# contenido: verificado. Borrarlos destruiria contenido versionado.
+bench/salidas-mcp-refs/confinamiento/sandbox/**/*:oculto

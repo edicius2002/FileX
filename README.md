@@ -40,7 +40,7 @@ Siete fallos independientes, en seis proyectos distintos, todos del mismo tipo: 
 | El análisis completo del ecosistema | [`ANALISIS-COMPLETO.md`](ANALISIS-COMPLETO.md) — 22 repos, 21 tablas comparativas |
 | Diseñar la capa MCP | [`RESULTADOS-MCP.md`](RESULTADOS-MCP.md) — incluye las 15 reglas de confinamiento |
 | Los motores de IA que faltan por probar | [`AGENTES-PRUEBAS-PENDIENTES.md`](AGENTES-PRUEBAS-PENDIENTES.md) |
-| Las reglas y **las 101 trampas ya pagadas** | [`CLAUDE.md`](CLAUDE.md) — cada una con la medida que la respalda. Es el documento más útil del repositorio si vas a tocar algo |
+| Las reglas y **las 102 trampas ya pagadas** | [`CLAUDE.md`](CLAUDE.md) — cada una con la medida que la respalda. Es el documento más útil del repositorio si vas a tocar algo |
 
 ## Estructura
 

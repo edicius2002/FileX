@@ -140,7 +140,7 @@ Inclúyelas en todos los prompts.
 | **Entregable** | `bench/marker.md` + salidas en `bench/salidas-marker/` |
 | **Coste de disco** | ~4 GB (torch 2.7 + modelos) |
 
-**Contexto que el agente debe recibir.** Un análisis previo concluyó que marker estaba bloqueado por surya. **Es falso.** Leyendo el clon (commit `e1a6226`, 2026-08-07):
+**Contexto que el agente debe recibir.** Un análisis previo concluyó que marker estaba bloqueado por surya. **Es falso.** Leyendo el clon (commit `e1a6226` **del repositorio de marker, no de FileX** — por eso no resuelve aquí y no hay que repararlo, 2026-08-07):
 
 - `marker/models.py:13,43` — el backend es un **parámetro público**: `create_model_dict(..., inference_backend: str | None = None)` → `SuryaInferenceManager(method=inference_backend)`. El contenedor vLLM es el valor por defecto, no el único camino.
 - `marker/models.py:27,31` — el servidor es **perezoso**: *"only spawns a server when OCR is actually [needed]"*, *"Holds no model; spawns/attaches the server on first call, not here."*

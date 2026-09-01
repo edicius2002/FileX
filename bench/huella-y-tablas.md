@@ -221,7 +221,7 @@ de cada versión con **los dos algoritmos** (`bench/salidas-huella/historia.py`)
 
 | commit | `sha256` crudo | huella **vieja** | huella **NUEVA** | asunto |
 |---|---|---|---|---|
-| `3707751` | `97323bd07ec9` | `7e3e6c6fe4140d26` | `43dede629fe3d884` | Hitos 3 y 4 |
+| `c2f6a59` | `97323bd07ec9` | `7e3e6c6fe4140d26` | `43dede629fe3d884` | Hitos 3 y 4 |
 | `67320b6` | cambia | `c18aef206f16668d` ← cambia | `f91f6866fa876905` ← cambia | Sondeo completo |
 | `9f99cae` | cambia | `6af6b556299be217` ← cambia | `2e704b65856e9147` ← cambia | Arregla la sonda, mueve 8 aristas |
 | **`2f2fba0`** | cambia | **`6af6b556299be217` = NO SE MUEVE** | **`5761de1dcf0ab811` ← CAMBIA** | **El commit de V que arregló `EXT_FAMILIA`** |

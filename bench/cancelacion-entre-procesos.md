@@ -335,7 +335,7 @@ huella es **el AST del fichero entero**. MEDIDO, antes y después
 | Aristas | `real` **210**, `nominal` 5 | `real` **57**, `nominal` 3, `sin_sondear` **155** |
 | Motores caducados | ninguno | **los cinco**, todos por `invocacion` |
 
-Es el mecanismo del commit `69f08df` funcionando como se diseñó: el fichero que
+Es el mecanismo del commit `13181f6` funcionando como se diseñó: el fichero que
 decide el `rc` de toda arista cambió, y las medidas que dependían de él dicen que
 ya no valen en vez de aparentar que sí. **No se ha resondeado y no se ha tocado
 `filex/huella.py` ni el campo `huella` de ningún `filex/sondeo/*.json`**, según
