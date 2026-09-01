@@ -280,9 +280,23 @@ def informes_registrados():
     "bloqueo — la trampa 95, que es más cara que un falso rojo.",
 )
 def manifiestos():
-    sin = [str(d.relative_to(RAIZ)).replace("\\", "/")
-           for d in sorted((RAIZ / "bench").glob("salidas-*"))
-           if d.is_dir() and not (d / "MANIFIESTO.md").exists()]
+    # Sale de `git ls-files`, no de `glob`: un directorio que sólo contiene
+    # otro vacío EXISTE en mi disco y NO existe en un clon, porque git no
+    # versiona directorios vacíos. Midiendo el árbol de trabajo, el trinquete
+    # daba `bench/salidas-marker` por arreglado en el runner y rompía la CI.
+    # Lo que se comprueba es lo que se publica -- la misma corrección que `_md()`.
+    versionados, con_manifiesto = set(), set()
+    for rel in _git("ls-files", "-z", "bench/salidas-*").stdout.split("\x00"):
+        if not rel:
+            continue
+        partes = rel.split("/")
+        if len(partes) < 2:
+            continue
+        d = "%s/%s" % (partes[0], partes[1])
+        versionados.add(d)
+        if rel == "%s/MANIFIESTO.md" % d:
+            con_manifiesto.add(d)
+    sin = sorted(versionados - con_manifiesto)
     return _trinquete("manifiestos", sin, "sin MANIFIESTO")
 
 

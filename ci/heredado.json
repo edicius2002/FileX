@@ -1,5 +1,5 @@
 {
-  "_": "Deuda CONGELADA el 01/09/2026, medida y no escrita a mano. Lo que esta aqui no rompe la CI; lo NUEVO si, y lo ARREGLADO tambien -- para obligar a encoger la lista. El trinquete solo aprieta.",
+  "_": "Deuda CONGELADA el 01/09/2026, medida y no escrita a mano. Lo que esta aqui no rompe la CI; lo NUEVO si, y lo ARREGLADO tambien -- para obligar a encoger la lista. El trinquete solo aprieta. REMEDIDO el 01/09 tras el primer rojo de la CI: la primera version salio de glob() sobre el arbol de trabajo y contaba bench/salidas-marker, que en mi disco es un logs/ vacio y en un clon no existe. Ahora sale de git ls-files: se comprueba lo que se publica.",
   "binarios": [
     "bench/salidas-competidores/convertx/vid-2pistas__convertx.mp4",
     "bench/salidas-competidores/convertx/vid-mp42webm__convertx.webm",
@@ -23,7 +23,6 @@
     "bench/salidas-huella",
     "bench/salidas-lock",
     "bench/salidas-lock-interpretes",
-    "bench/salidas-marker",
     "bench/salidas-mcp",
     "bench/salidas-mcp-cabos",
     "bench/salidas-mcp-refs",

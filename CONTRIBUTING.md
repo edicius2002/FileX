@@ -3,7 +3,7 @@
 Proyecto de investigación **en español**. Informes, comentarios y mensajes de commit,
 en español.
 
-Este fichero es la versión corta y operativa. Las reglas completas —y las **103 trampas ya
+Este fichero es la versión corta y operativa. Las reglas completas —y las **104 trampas ya
 pagadas**— están en [`CLAUDE.md`](CLAUDE.md), que es el documento más útil del repositorio
 si vas a tocar algo. El reparto del trabajo vive en
 [`ESTADO-Y-REPARTO.md`](ESTADO-Y-REPARTO.md).
@@ -19,7 +19,7 @@ que no tener CI: es un **falso verde**, y el repositorio ya tiene medido lo que 
 | Lo que se ejecuta en GitHub | Lo que **sólo** se ejecuta en la máquina del proyecto |
 |---|---|
 | Las nueve comprobaciones de `ci/integridad.py` | **Las pruebas `win32`**: `os.replace` como cerrojo, el mutex `Global\`, la DACL, los nombres 8.3 — es decir, **casi todo el valor del proyecto** |
-| La parte de la suite que corre en Linux sin corpus | Todo lo que toca la **GPU**: el lock, los seis motores de OCR, el sidecar |
+| La parte de la suite que corre en Linux sin corpus — **hoy informa, no bloquea**: la lista de aptos está medida en WSL2 y en el runner no se sostiene (C42, trampa 104) | Todo lo que toca la **GPU**: el lock, los seis motores de OCR, el sidecar |
 | Que el paquete importa y la CLI arranca | Los **contenedores locales**: `filex-c13`, SnapOtter, ConvertX, Gotenberg |
 | | Todo lo que lee el **corpus**, que son 254 MB en Git LFS |
 
