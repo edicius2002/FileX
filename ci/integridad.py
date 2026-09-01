@@ -82,6 +82,25 @@ def _git(*args):
 HEREDADO = RAIZ / "ci" / "heredado.json"
 
 
+def _evidencia():
+    """Rutas cuyo contenido binario es evidencia forense IRREPRODUCIBLE.
+
+    No es una lista de perdon: cada linea exige un motivo y el documento que lo
+    sostiene, y sin motivo la linea no cuenta. La regla §6 —«no versiones
+    salidas binarias regenerables»— tiene la palabra *regenerables* dentro, y
+    `bench/salidas-competidores/MANIFIESTO-retirado.md` dice literalmente que
+    esos contenedores «cambian de version, asi que sus fallos no se regeneran».
+    Borrarlos destruiria la evidencia de la tesis central del proyecto."""
+    f = RAIZ / "ci" / "evidencia-irreproducible.txt"
+    fuera = []
+    if f.exists():
+        for linea in f.read_text(encoding="utf-8").splitlines():
+            linea = linea.split("#")[0].strip()
+            if linea and len(linea.split(None, 1)) == 2:
+                fuera.append(linea.split(None, 1)[0])
+    return fuera
+
+
 def _heredado():
     import json
     if not HEREDADO.exists():
@@ -294,7 +313,13 @@ def manifiestos():
             continue
         d = "%s/%s" % (partes[0], partes[1])
         versionados.add(d)
-        if rel == "%s/MANIFIESTO.md" % d:
+        # `MANIFIESTO*.md`, no el nombre exacto: `salidas-competidores` tiene un
+        # `MANIFIESTO-retirado.md` y `salidas-ocrmypdf` un `MANIFIESTO-img.md`,
+        # los dos escritos a proposito y los dos invisibles para una comparacion
+        # de igualdad. La comprobacion daba DOS falsos positivos por exigir un
+        # nombre en vez de una funcion.
+        hoja = rel[len(d) + 1:]
+        if "/" not in hoja and hoja.startswith("MANIFIESTO") and hoja.endswith(".md"):
             con_manifiesto.add(d)
     sin = sorted(versionados - con_manifiesto)
     return _trinquete("manifiestos", sin, "sin MANIFIESTO")
@@ -346,9 +371,17 @@ def binarios():
     r = _git("lfs", "ls-files", "-n")
     if r.returncode == 0:
         lfs = {l.strip() for l in r.stdout.splitlines() if l.strip()}
+    # Hay binarios que NO son «salidas regenerables» y por tanto la regla §6 no
+    # les aplica: son evidencia forense de software de terceros que cambia de
+    # versión. Se declaran uno a uno en `ci/evidencia-irreproducible.txt`, con su
+    # motivo y el documento que lo sostiene. Es lo contrario de ampliar el
+    # umbral: la lista no perdona, EXIGE una razón escrita.
+    evidencia = _evidencia()
     gordos = []
     for rel in _git("ls-files", "-z").stdout.split("\0"):
         if not rel or rel in lfs:
+            continue
+        if any(rel.startswith(x) for x in evidencia):
             continue
         p = RAIZ / rel
         try:
@@ -356,7 +389,8 @@ def binarios():
                 gordos.append(rel)
         except OSError:
             continue
-    return _trinquete("binarios", gordos, "binarios sueltos")
+    ok, detalle, problemas = _trinquete("binarios", gordos, "binarios sueltos")
+    return ok, "%s · %d rutas declaradas evidencia" % (detalle, len(evidencia)), problemas
 
 
 # ---------------------------------------------------------------- 6. curso --
