@@ -109,7 +109,11 @@ RapidOCR sobre `d5c` solo, por sí solo, es **más de cuatro veces mayor**. Ejem
 no monotonía en Tesseract, para que quede la forma exacta del pico y no sólo el
 rango: `escaneado_d5` con `psm 3` da 1,7 % a 130 ppp, **3,4 % a 135** y 2,0 % a 140 —
 un pico de un solo paso (5 ppp) que **no aparece en el mismo documento con `psm 11`**
-(1,8 / 1,8 / 2,0 en el mismo tramo). El pico es del triple (documento, ppp, `--psm`),
+(2,3 / 1,8 / 2,0 en el mismo tramo — **corregido el 01/09 tras reverificar contra el
+JSON**: la primera versión de este informe decía 1,8 / 1,8 / 2,0, un error de
+transcripción; ninguno de los dos tríos muestra el pico de 3,4 que sí tiene `psm 3`,
+así que la conclusión no cambia, pero el número estaba mal). El pico es del triple
+(documento, ppp, `--psm`),
 no sólo del par (documento, ppp) que ya proponía `suelo-ppp.md`.
 
 **Y, a diferencia de las siete configuraciones de `suelo-ppp.md`, en Tesseract el
