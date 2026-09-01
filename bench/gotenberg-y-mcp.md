@@ -24,7 +24,7 @@ La salud de Gotenberg fue HTTP 200, con Chromium y LibreOffice `up`. Se ejecutar
 
 ### El recuento correcto
 
-**MEDIDO:** §13 de `hito4-mcp.md` enumera **nueve**, no ocho. Dos ya se cerraron por otra vía: W9 (commit `3707751`, reproducido ahora: 2/2 pruebas ADS pasan) y `job cancelar` (C34/N10, `bench/cancelacion-y-servicio.md`). Quedan siete pendientes reales; la fila C36 que dice «ocho» está desactualizada.
+**MEDIDO:** §13 de `hito4-mcp.md` enumera **nueve**, no ocho. Dos ya se cerraron por otra vía: W9 (commit `c2f6a59`, reproducido ahora: 2/2 pruebas ADS pasan) y `job cancelar` (C34/N10, `bench/cancelacion-y-servicio.md`). Quedan siete pendientes reales; la fila C36 que dice «ocho» está desactualizada.
 
 | Pendiente de §13 | Estado actual |
 |---|---|

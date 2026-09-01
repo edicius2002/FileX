@@ -120,7 +120,7 @@ recorriendo los commits reales con `git show`:
 
 | commit | huella de alcance | |
 |---|---|---|
-| `3707751` | `7e3e6c6fe4140d26` | |
+| `c2f6a59` | `7e3e6c6fe4140d26` | |
 | `67320b6` | `c18aef206f16668d` | ← cambia |
 | `9f99cae` | `6af6b556299be217` | ← **cambia: es el commit que arregló la sonda y movió 8 aristas** |
 | `HEAD` | `6af6b556299be217` | (igual) |

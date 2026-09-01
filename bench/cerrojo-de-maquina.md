@@ -232,7 +232,7 @@ Un cerrojo que arregla el 1 % rompiendo el 99 % no es un arreglo.
 | El destino **recién escrito por FileX** no se detecta como ocupado | `False` — el falso positivo que lo habría roto todo |
 | El destino que **no existe** no se detecta como ocupado | `False` |
 | El modo **por defecto** es el seguro | `maquina`, comprobado en un intérprete limpio sin la variable |
-| **La huella del sondeo** (`filex/huella.py`, commit `69f08df`) | **`caducados: {}` · `{'real': 210, 'nominal': 5}` — idéntico antes y después.** `nucleo.py` no está en ninguno de los tres componentes, como declaraba su autor |
+| **La huella del sondeo** (`filex/huella.py`, commit `13181f6`) | **`caducados: {}` · `{'real': 210, 'nominal': 5}` — idéntico antes y después.** `nucleo.py` no está en ninguno de los tres componentes, como declaraba su autor |
 
 ---
 

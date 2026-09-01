@@ -1,0 +1,55 @@
+{
+  "_": "MEDIDO EN EL RUNNER (ubuntu-latest, Python 3.11.16), no en la maquina del proyecto. La primera version de este fichero salio de WSL2 sobre DrvFs con Python 3.14 y daba 11 aptos y 262 pruebas; los MISMOS once, aqui, dan 23 fallos y 7 errores. Una lista de aptitud de un entorno se mide EN ese entorno -- trampa 104. Se regenera con el trabajo `deriva` de .github/workflows/suite.yml, que la mide donde toca.",
+  "interprete": "3.11.16",
+  "plataforma": "linux (ubuntu-latest)",
+  "medido_en": "runner de GitHub Actions, ejecucion 33538561732",
+  "tope_por_modulo_s": 90,
+  "aptos": [
+    "test_bitrate_y_lock",
+    "test_cerrojo_unico",
+    "test_contrato_v",
+    "test_firmas_cierre",
+    "test_hito5",
+    "test_hito6",
+    "test_sondeo"
+  ],
+  "no_aptos": {
+    "cuelga": {
+      "test_cancelacion": "test_cancelar_una_conversion_NO_toca_el_contenedor_de_la_de_al_lado"
+    },
+    "falla": {
+      "test_a7_ciego": "0 pruebas corridas, 1 error de carga",
+      "test_cancelacion_procesos": "8 fallos",
+      "test_cerrojo": "5 fallos",
+      "test_gpu_lock": "1 fallo, no hay tarjeta",
+      "test_hito1": "2 fallos",
+      "test_hito2": "1 fallo, no hay ffmpeg con NVENC",
+      "test_hito4": "10 fallos",
+      "test_hito7": "31 fallos, watcher y API",
+      "test_watcher_n": "4 fallos, la estabilidad se comporta distinto en ext4"
+    }
+  },
+  "contraste_wsl2_drvfs_py314": {
+    "_": "Lo que daba el MISMO barrido en la maquina del proyecto. Se conserva porque la diferencia es el hallazgo, no un residuo.",
+    "aptos": [
+      "test_a7_ciego",
+      "test_bitrate_y_lock",
+      "test_cancelacion_procesos",
+      "test_cerrojo",
+      "test_cerrojo_unico",
+      "test_contrato_v",
+      "test_firmas_cierre",
+      "test_hito1",
+      "test_hito4",
+      "test_hito6",
+      "test_watcher_n"
+    ],
+    "coinciden": [
+      "test_bitrate_y_lock",
+      "test_cerrojo_unico",
+      "test_contrato_v",
+      "test_firmas_cierre",
+      "test_hito6"
+    ]
+  }
+}

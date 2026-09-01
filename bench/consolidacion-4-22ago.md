@@ -10,7 +10,7 @@
 
 D3 consolidó **diez** informes del 21 de agosto. Mientras lo hacía, **M1 y F1 seguían midiendo** —lo
 detectó en el árbol y los excluyó de su commit, correctamente: no tenían informe que los explicara—.
-Cerraron después. **Sus dos informes entraron en el commit `1fb5024` con su evidencia, pero sin
+Cerraron después. **Sus dos informes entraron en el commit `dcd4057` con su evidencia, pero sin
 consolidar.** Esto lo cierra.
 
 **Y hay una razón para no dejarlo pendiente: uno de los dos rompe la premisa de coste del hito 4.**

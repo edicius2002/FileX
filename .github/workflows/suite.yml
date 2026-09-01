@@ -1,0 +1,130 @@
+name: suite
+
+# Los módulos de prueba que un runner de Linux PUEDE ejecutar, medidos uno a uno
+# con `ci/sonda_linux.py` y congelados en `ci/linux-apto.json`.
+#
+# **7 de 17 módulos · 198 pruebas · 3,4 s**, MEDIDO EN EL RUNNER. Los diez que
+# faltan NO se ejecutan y hay que decir por qué, o el verde miente:
+#
+#   CUELGA   test_cancelacion -- se duerme y agota el tope. Lanzar la suite
+#            entera se queda dormida sin decir en qué módulo: quemaría el runner
+#            y devolvería un rojo que no nombra nada.
+#   FALLAN   test_a7_ciego, test_cancelacion_procesos, test_cerrojo,
+#            test_gpu_lock, test_hito1, test_hito2, test_hito4, test_hito7,
+#            test_watcher_n -- piden tarjeta, motores, contenedores, o NTFS.
+#
+# Y la lista **no se puede medir en la máquina del proyecto**: allí, en WSL2
+# sobre DrvFs con Python 3.14, salen 11 aptos y 262 pruebas, y los mismos once
+# aquí dan 23 fallos y 7 errores. De las dos listas -- 11 y 7 -- sólo
+# coinciden CINCO módulos. Trampa 104.
+#
+# **Y ninguno de los once lee `corpus/`** -- comprobado, no supuesto. Por eso
+# `lfs: false` es seguro por construcción y no por suerte: la cuota gratuita de
+# LFS es de 1 GB de ancho de banda AL MES y el corpus pesa 254 MB.
+#
+# Esto NO sustituye a la suite del proyecto: las pruebas `win32`, la GPU y los
+# contenedores locales sólo corren en la máquina. Ver CONTRIBUTING.md §1.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    # Lunes a las 04:00 UTC: el trabajo de deriva, que vuelve a medir la lista.
+    - cron: '0 4 * * 1'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: suite-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  linux:
+    # BLOQUEA. Y hubo que ganárselo: durante dos ejecuciones llevó
+    # `continue-on-error: true`, que a nivel de TRABAJO hace que el run entero
+    # salga en VERDE con los dos trabajos en rojo. Es el falso verde contra el
+    # que avisa CONTRIBUTING.md §1, construido dentro del flujo que lo avisaba.
+    # Con la lista medida donde toca, ya no hace falta esconder nada.
+    if: github.event_name != 'schedule'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        # SÓLO 3.11, y no por comodidad. Con 3.13 en la matriz, `test_sondeo`
+        # falla -- y tiene razón: la huella del código es función del INTÉRPRETE,
+        # no sólo del código, porque `ast.dump` cambia entre versiones. Mismo
+        # runner, mismos bytes, 3.11 verde y 3.13 con las aristas de los siete
+        # motores caducadas. Meter 3.13 aquí no probaría compatibilidad: sólo
+        # dejaría la CI roja por un sellado que es correcto. Trampa 105, C43.
+        python: ['3.11']
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: false
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+
+      - name: Declarar el intérprete y el entorno
+        run: |
+          python3 -VV
+          echo "plataforma: $(python3 -c 'import sys; print(sys.platform)')"
+          echo "docker:     $(command -v docker || echo AUSENTE)"
+          echo "ffmpeg:     $(command -v ffmpeg || echo AUSENTE)"
+
+      - name: El paquete importa y la CLI arranca
+        run: |
+          python3 -c "import filex; print('filex', filex.__file__)"
+          python3 -m filex motores
+
+      - name: Los módulos declarados APTOS
+        run: |
+          MODULOS=$(python3 -c "import json; print(' '.join('pruebas.'+m for m in json.load(open('ci/linux-apto.json'))['aptos']))")
+          echo "ejecutando: $MODULOS"
+          python3 -m unittest $MODULOS
+
+  deriva:
+    # Vuelve a MEDIR qué es apto, en el runner de verdad. `ci/linux-apto.json`
+    # se midió en WSL2 sobre DrvFs con Python 3.14, y la trampa 41 es explícita:
+    # un resultado de una familia de sistemas de ficheros no se extrapola a otra,
+    # ni con el signo. Este trabajo no rompe nada -- informa de que la lista
+    # congelada se ha quedado vieja.
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: false
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Medir módulo a módulo, con tope
+        run: python3 ci/sonda_linux.py --tope 90 --json /tmp/linux-apto-runner.json
+
+      - name: ¿Se ha movido la lista?
+        run: |
+          python3 - <<'EOF'
+          import json
+          congelada = set(json.load(open("ci/linux-apto.json"))["aptos"])
+          medida = set(json.load(open("/tmp/linux-apto-runner.json"))["aptos"])
+          if congelada == medida:
+              print("sin deriva: %d módulos" % len(medida))
+          else:
+              print("DERIVA -- actualiza ci/linux-apto.json con `python3 ci/sonda_linux.py`")
+              print("  ya no son aptos: %s" % sorted(congelada - medida))
+              print("  aptos nuevos:    %s" % sorted(medida - congelada))
+          EOF
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: linux-apto-runner
+          path: /tmp/linux-apto-runner.json

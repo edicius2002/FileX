@@ -1,0 +1,8 @@
+# Hashes citados en los informes que NO son de este repositorio, y por eso no
+# tienen que resolver contra `git cat-file`. Formato: <hash> <de donde sale>.
+#
+# Sin esta lista la comprobación `citas` da un falso rojo, que es justo lo que
+# no puede hacer: un rojo se investiga, y el que investiga el primero se
+# acostumbra a que la CI mienta. Cada línea es una afirmación verificable.
+
+e1a6226  clon de marker en repos/, leido el 2026-08-07 (AGENTES-PRUEBAS-PENDIENTES.md §143)
