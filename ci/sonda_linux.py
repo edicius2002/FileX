@@ -114,7 +114,15 @@ def main() -> int:
          "tope_por_modulo_s": args.tope,
          "aptos": aptos,
          "detalle": filas}, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    print("\nescrito %s" % args.json.relative_to(RAIZ))
+    try:
+        donde = args.json.relative_to(RAIZ)
+    except ValueError:
+        # `--json /tmp/...` es legítimo: el trabajo de deriva escribe fuera del
+        # árbol para no ensuciarlo. `relative_to` lanza, y la sonda moría DESPUÉS
+        # de haber medido bien las 17 celdas -- tirando la medición entera por
+        # una línea de traza.
+        donde = args.json
+    print("\nescrito %s" % donde)
     return 0
 
 

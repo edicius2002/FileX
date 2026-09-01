@@ -1,191 +1,55 @@
 {
-  "_": "Medido con 3.14.4 el 2026-09-01. Se regenera con `python3 ci/sonda_linux.py`. APTO = rc 0 dentro del tope; no significa que la prueba MIDA algo en Linux, sólo que no rompe ni cuelga.",
-  "interprete": "3.14.4",
-  "plataforma": "linux",
-  "tope_por_modulo_s": 100,
+  "_": "MEDIDO EN EL RUNNER (ubuntu-latest, Python 3.11.16), no en la maquina del proyecto. La primera version de este fichero salio de WSL2 sobre DrvFs con Python 3.14 y daba 11 aptos y 262 pruebas; los MISMOS once, aqui, dan 23 fallos y 7 errores. Una lista de aptitud de un entorno se mide EN ese entorno -- trampa 104. Se regenera con el trabajo `deriva` de .github/workflows/suite.yml, que la mide donde toca.",
+  "interprete": "3.11.16",
+  "plataforma": "linux (ubuntu-latest)",
+  "medido_en": "runner de GitHub Actions, ejecucion 33538561732",
+  "tope_por_modulo_s": 90,
   "aptos": [
-    "test_a7_ciego",
     "test_bitrate_y_lock",
-    "test_cancelacion_procesos",
-    "test_cerrojo",
     "test_cerrojo_unico",
     "test_contrato_v",
     "test_firmas_cierre",
-    "test_hito1",
-    "test_hito4",
+    "test_hito5",
     "test_hito6",
-    "test_watcher_n"
+    "test_sondeo"
   ],
-  "detalle": [
-    {
-      "modulo": "test_a7_ciego",
-      "veredicto": "APTO",
-      "rc": 0,
-      "corridas": 6,
-      "saltos": 0,
-      "fallos": 0,
-      "segundos": 4.1,
-      "cuelga_en": ""
+  "no_aptos": {
+    "cuelga": {
+      "test_cancelacion": "test_cancelar_una_conversion_NO_toca_el_contenedor_de_la_de_al_lado"
     },
-    {
-      "modulo": "test_bitrate_y_lock",
-      "veredicto": "APTO",
-      "rc": 0,
-      "corridas": 17,
-      "saltos": 0,
-      "fallos": 0,
-      "segundos": 0.8,
-      "cuelga_en": ""
-    },
-    {
-      "modulo": "test_cancelacion",
-      "veredicto": "CUELGA",
-      "rc": null,
-      "corridas": 0,
-      "saltos": 0,
-      "fallos": 0,
-      "segundos": 100.0,
-      "cuelga_en": "test_cancelar_un_hilo_no_toca_al_de_al_lado"
-    },
-    {
-      "modulo": "test_cancelacion_procesos",
-      "veredicto": "APTO",
-      "rc": 0,
-      "corridas": 15,
-      "saltos": 0,
-      "fallos": 0,
-      "segundos": 17.6,
-      "cuelga_en": ""
-    },
-    {
-      "modulo": "test_cerrojo",
-      "veredicto": "APTO",
-      "rc": 0,
-      "corridas": 24,
-      "saltos": 9,
-      "fallos": 0,
-      "segundos": 20.6,
-      "cuelga_en": ""
-    },
-    {
-      "modulo": "test_cerrojo_unico",
-      "veredicto": "APTO",
-      "rc": 0,
-      "corridas": 15,
-      "saltos": 2,
-      "fallos": 0,
-      "segundos": 3.5,
-      "cuelga_en": ""
-    },
-    {
-      "modulo": "test_contrato_v",
-      "veredicto": "APTO",
-      "rc": 0,
-      "corridas": 19,
-      "saltos": 0,
-      "fallos": 0,
-      "segundos": 4.0,
-      "cuelga_en": ""
-    },
-    {
-      "modulo": "test_firmas_cierre",
-      "veredicto": "APTO",
-      "rc": 0,
-      "corridas": 32,
-      "saltos": 0,
-      "fallos": 0,
-      "segundos": 1.4,
-      "cuelga_en": ""
-    },
-    {
-      "modulo": "test_gpu_lock",
-      "veredicto": "CUELGA",
-      "rc": null,
-      "corridas": 0,
-      "saltos": 0,
-      "fallos": 0,
-      "segundos": 100.1,
-      "cuelga_en": "test_api_contexto"
-    },
-    {
-      "modulo": "test_hito1",
-      "veredicto": "APTO",
-      "rc": 0,
-      "corridas": 32,
-      "saltos": 0,
-      "fallos": 0,
-      "segundos": 4.0,
-      "cuelga_en": ""
-    },
-    {
-      "modulo": "test_hito2",
-      "veredicto": "CUELGA",
-      "rc": null,
-      "corridas": 0,
-      "saltos": 0,
-      "fallos": 0,
-      "segundos": 100.1,
-      "cuelga_en": "test_av1_produce_un_fichero_con_bytes"
-    },
-    {
-      "modulo": "test_hito4",
-      "veredicto": "APTO",
-      "rc": 0,
-      "corridas": 31,
-      "saltos": 8,
-      "fallos": 0,
-      "segundos": 7.3,
-      "cuelga_en": ""
-    },
-    {
-      "modulo": "test_hito5",
-      "veredicto": "FALLA",
-      "rc": 1,
-      "corridas": 25,
-      "saltos": 0,
-      "fallos": 2,
-      "segundos": 35.1,
-      "cuelga_en": ""
-    },
-    {
-      "modulo": "test_hito6",
-      "veredicto": "APTO",
-      "rc": 0,
-      "corridas": 52,
-      "saltos": 2,
-      "fallos": 0,
-      "segundos": 0.5,
-      "cuelga_en": ""
-    },
-    {
-      "modulo": "test_hito7",
-      "veredicto": "FALLA",
-      "rc": 1,
-      "corridas": 42,
-      "saltos": 1,
-      "fallos": 7,
-      "segundos": 16.6,
-      "cuelga_en": ""
-    },
-    {
-      "modulo": "test_sondeo",
-      "veredicto": "FALLA",
-      "rc": 1,
-      "corridas": 38,
-      "saltos": 0,
-      "fallos": 1,
-      "segundos": 2.0,
-      "cuelga_en": ""
-    },
-    {
-      "modulo": "test_watcher_n",
-      "veredicto": "APTO",
-      "rc": 0,
-      "corridas": 19,
-      "saltos": 2,
-      "fallos": 0,
-      "segundos": 0.6,
-      "cuelga_en": ""
+    "falla": {
+      "test_a7_ciego": "0 pruebas corridas, 1 error de carga",
+      "test_cancelacion_procesos": "8 fallos",
+      "test_cerrojo": "5 fallos",
+      "test_gpu_lock": "1 fallo, no hay tarjeta",
+      "test_hito1": "2 fallos",
+      "test_hito2": "1 fallo, no hay ffmpeg con NVENC",
+      "test_hito4": "10 fallos",
+      "test_hito7": "31 fallos, watcher y API",
+      "test_watcher_n": "4 fallos, la estabilidad se comporta distinto en ext4"
     }
-  ]
+  },
+  "contraste_wsl2_drvfs_py314": {
+    "_": "Lo que daba el MISMO barrido en la maquina del proyecto. Se conserva porque la diferencia es el hallazgo, no un residuo.",
+    "aptos": [
+      "test_a7_ciego",
+      "test_bitrate_y_lock",
+      "test_cancelacion_procesos",
+      "test_cerrojo",
+      "test_cerrojo_unico",
+      "test_contrato_v",
+      "test_firmas_cierre",
+      "test_hito1",
+      "test_hito4",
+      "test_hito6",
+      "test_watcher_n"
+    ],
+    "coinciden": [
+      "test_bitrate_y_lock",
+      "test_cerrojo_unico",
+      "test_contrato_v",
+      "test_firmas_cierre",
+      "test_hito6"
+    ]
+  }
 }

@@ -3,15 +3,20 @@ name: suite
 # Los módulos de prueba que un runner de Linux PUEDE ejecutar, medidos uno a uno
 # con `ci/sonda_linux.py` y congelados en `ci/linux-apto.json`.
 #
-# 11 de 17 módulos · 262 pruebas · 64,4 s. Los seis que faltan NO se ejecutan y
-# hay que decir por qué, o el verde miente:
+# **7 de 17 módulos · 198 pruebas · 3,4 s**, MEDIDO EN EL RUNNER. Los diez que
+# faltan NO se ejecutan y hay que decir por qué, o el verde miente:
 #
-#   CUELGAN  test_cancelacion, test_gpu_lock, test_hito2  -- se duermen y agotan
-#            el tope. Lanzar la suite entera con `python3` de Linux se queda
-#            dormida sin decir en qué módulo: quemaría el runner y devolvería un
-#            rojo que no nombra nada.
-#   FALLAN   test_hito5 (2), test_hito7 (7), test_sondeo (1) -- necesitan Docker
-#            con las imágenes locales, o motores que un runner no trae.
+#   CUELGA   test_cancelacion -- se duerme y agota el tope. Lanzar la suite
+#            entera se queda dormida sin decir en qué módulo: quemaría el runner
+#            y devolvería un rojo que no nombra nada.
+#   FALLAN   test_a7_ciego, test_cancelacion_procesos, test_cerrojo,
+#            test_gpu_lock, test_hito1, test_hito2, test_hito4, test_hito7,
+#            test_watcher_n -- piden tarjeta, motores, contenedores, o NTFS.
+#
+# Y la lista **no se puede medir en la máquina del proyecto**: allí, en WSL2
+# sobre DrvFs con Python 3.14, salen 11 aptos y 262 pruebas, y los mismos once
+# aquí dan 23 fallos y 7 errores. De las dos listas -- 11 y 7 -- sólo
+# coinciden CINCO módulos. Trampa 104.
 #
 # **Y ninguno de los once lee `corpus/`** -- comprobado, no supuesto. Por eso
 # `lfs: false` es seguro por construcción y no por suerte: la cuota gratuita de
@@ -38,11 +43,11 @@ concurrency:
 
 jobs:
   linux:
-    # Mientras `ci/linux-apto.json` esté medido en la plataforma equivocada,
-    # este trabajo NO bloquea: informa. La lista se rehace con la medición del
-    # trabajo `deriva`, que corre en el runner de verdad. Quitar este
-    # `continue-on-error` es lo que cierra C42.
-    continue-on-error: true
+    # BLOQUEA. Y hubo que ganárselo: durante dos ejecuciones llevó
+    # `continue-on-error: true`, que a nivel de TRABAJO hace que el run entero
+    # salga en VERDE con los dos trabajos en rojo. Es el falso verde contra el
+    # que avisa CONTRIBUTING.md §1, construido dentro del flujo que lo avisaba.
+    # Con la lista medida donde toca, ya no hace falta esconder nada.
     if: github.event_name != 'schedule'
     runs-on: ubuntu-latest
     timeout-minutes: 10
@@ -86,7 +91,7 @@ jobs:
     # un resultado de una familia de sistemas de ficheros no se extrapola a otra,
     # ni con el signo. Este trabajo no rompe nada -- informa de que la lista
     # congelada se ha quedado vieja.
-    if: github.event_name != 'push'
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     timeout-minutes: 45
     continue-on-error: true
