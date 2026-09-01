@@ -1,0 +1,21 @@
+................F
+================================== FAILURES ===================================
+____ ElLockRodeaAlCodificado.test_la_guardia_no_se_repite_en_la_reentrada _____
+
+self = <test_bitrate_y_lock.ElLockRodeaAlCodificado testMethod=test_la_guardia_no_se_repite_en_la_reentrada>
+
+    def test_la_guardia_no_se_repite_en_la_reentrada(self):
+        """*«Preguntar por la VRAM en cada conversión sería caro»* — §6.3 de H2.
+    
+        Su propio parche lo hacía: `with gpu.Lock(...)` llama a `guardia()`
+        SIEMPRE, también cuando el lote ya tiene el lock. Aquí no.
+        """
+        fuera = gpu.Lock("lote")
+>       self.assertTrue(fuera.tomar(espera=5))
+E       AssertionError: False is not true
+
+pruebas\test_bitrate_y_lock.py:184: AssertionError
+=========================== short test summary info ===========================
+FAILED pruebas/test_bitrate_y_lock.py::ElLockRodeaAlCodificado::test_la_guardia_no_se_repite_en_la_reentrada
+!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!
+1 failed, 16 passed, 9 subtests passed in 11.54s
