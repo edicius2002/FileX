@@ -1,0 +1,1520 @@
+{
+  "meta": {
+    "motor": "RapidOCR ONNX rapid-v6-r6",
+    "entrada": "ndarray BGR, 3 canales desde PNG sRGB",
+    "dispositivo": "GPU cuda:0",
+    "R6": true,
+    "det_limit_side_len": 736,
+    "det_limit_type": "min",
+    "lock_aviso": ""
+  },
+  "doc": "escaneado_d5a",
+  "reps": 3,
+  "ruido": {
+    "testigo_monohilo_ini_ms": 30.86,
+    "testigo_monohilo_fin_ms": 23.6,
+    "deriva": 0.76,
+    "testigo_proceso_ini_ms": 33.14,
+    "testigo_proceso_fin_ms": 28.92,
+    "nivel_vs_reposo": 1.24
+  },
+  "etiqueta_ruido": "limpia",
+  "rows": [
+    {
+      "doc": "escaneado_d5a",
+      "ppp": 80,
+      "ppp_nativo": 90,
+      "raster_wh": [
+        517,
+        712
+      ],
+      "resized_det_input": [
+        1,
+        3,
+        1024,
+        736
+      ],
+      "png_identify": "517x712 31.489999999999998437,31.489999999999998437 PixelsPerCentimeter",
+      "n_boxes": [
+        11,
+        11,
+        11
+      ],
+      "area_total_px2": [
+        82000.5,
+        82000.5,
+        82000.5
+      ],
+      "area_frac_pagina": 0.22276,
+      "n": 3,
+      "determinista_boxes": true,
+      "determinista_texto": true,
+      "cer_pct": 10.7,
+      "cer_pct_reps": [
+        10.7,
+        10.7,
+        10.7
+      ],
+      "lineas": [
+        {
+          "bloque": "titulo",
+          "linea": "INFORME DE DIGITALIZACIÓN",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "subtitulo",
+          "linea": "Expediente núm. 4.827/2026 - Archivo Histórico",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "El día 14 de marzo se recibió la solicitud de análisis",
+          "exacto": false,
+          "sim_pct": 98.1
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "técnico sobre veintiún volúmenes encuadernados en piel.",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "La comisión determinó que la reproducción fotográfica",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "debía realizarse con iluminación difusa y sin contacto,",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "según la norma UNE 15-402, para evitar daños añadidos",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "en los pliegos más frágiles del año 1893.",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "pequeña",
+          "linea": "¿Quién autorizó la excepción? El párrafo tercero señala",
+          "exacto": false,
+          "sim_pct": 96.2
+        },
+        {
+          "bloque": "pequeña",
+          "linea": "que la revisión ortográfica y lingüística del legajo",
+          "exacto": false,
+          "sim_pct": 86.5
+        },
+        {
+          "bloque": "pequeña",
+          "linea": "es responsabilidad del área de conservación preventiva.",
+          "exacto": false,
+          "sim_pct": 27.8
+        },
+        {
+          "bloque": "pequeña",
+          "linea": "¡Atención! Los códigos 7-B, 9-Ñ y 12-K quedan anulados.",
+          "exacto": false,
+          "sim_pct": 98.0
+        }
+      ],
+      "chars_salida": 553,
+      "bytes_utf8_salida": 581,
+      "bytes_utf8_ref": 647,
+      "texto_crudo": "INFORME DE DIGITALIZACIÓN Expediente núm. 4.827/2026 - Archivo Histórico El dia 14 de marzo se recibió la solicitud de análisis técnico sobre veintiún volúmenes encuadernados en piel. La comisión determinó que la reproducción fotográfica debía realizarse con iluminación difusa y sin contacto, según la norma UNE 15-402, para evitar daños añadidos en los pliegos más frágiles del año 1893. ¿Quién autorizó la excepción? El parrafo tercero senala que la revisión crtografica y Ingûistica cel legajo iAtención! Los códigos 7-B. 9-N y 12-K quedan anulados.",
+      "texto": "escaneado_d5a__ppp080.txt"
+    },
+    {
+      "doc": "escaneado_d5a",
+      "ppp": 90,
+      "ppp_nativo": 90,
+      "raster_wh": [
+        582,
+        801
+      ],
+      "resized_det_input": [
+        1,
+        3,
+        1024,
+        736
+      ],
+      "png_identify": "582x801 35.429999999999999716,35.429999999999999716 PixelsPerCentimeter",
+      "n_boxes": [
+        12,
+        12,
+        12
+      ],
+      "area_total_px2": [
+        105302.0,
+        105302.0,
+        105302.0
+      ],
+      "area_frac_pagina": 0.22588,
+      "n": 3,
+      "determinista_boxes": true,
+      "determinista_texto": true,
+      "cer_pct": 0.3,
+      "cer_pct_reps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "lineas": [
+        {
+          "bloque": "titulo",
+          "linea": "INFORME DE DIGITALIZACIÓN",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "subtitulo",
+          "linea": "Expediente núm. 4.827/2026 - Archivo Histórico",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "El día 14 de marzo se recibió la solicitud de análisis",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "técnico sobre veintiún volúmenes encuadernados en piel.",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "La comisión determinó que la reproducción fotográfica",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "debía realizarse con iluminación difusa y sin contacto,",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "según la norma UNE 15-402, para evitar daños añadidos",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "en los pliegos más frágiles del año 1893.",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "pequeña",
+          "linea": "¿Quién autorizó la excepción? El párrafo tercero señala",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "pequeña",
+          "linea": "que la revisión ortográfica y lingüística del legajo",
+          "exacto": false,
+          "sim_pct": 98.1
+        },
+        {
+          "bloque": "pequeña",
+          "linea": "es responsabilidad del área de conservación preventiva.",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "pequeña",
+          "linea": "¡Atención! Los códigos 7-B, 9-Ñ y 12-K quedan anulados.",
+          "exacto": false,
+          "sim_pct": 98.0
+        }
+      ],
+      "chars_salida": 609,
+      "bytes_utf8_salida": 643,
+      "bytes_utf8_ref": 647,
+      "texto_crudo": "INFORME DE DIGITALIZACIÓN Expediente núm. 4.827/2026 - Archivo Histórico El día 14 de marzo se recibió la solicitud de análisis técnico sobre veintiún volúmenes encuadernados en piel. La comisión determinó que la reproducción fotográfica debía realizarse con iluminación difusa y sin contacto, según la norma UNE 15-402, para evitar daños añadidos en los pliegos más frágiles del año 1893. ¿Quién autorizó la excepción? El párrafo tercero señala que la revisión ortográfica y lingüistica del legajo es responsabilidad del área de conservación preventiva. Atención! Los códigos 7-B, 9-N y 12-K quedan anulados.",
+      "texto": "escaneado_d5a__ppp090.txt"
+    },
+    {
+      "doc": "escaneado_d5a",
+      "ppp": 100,
+      "ppp_nativo": 90,
+      "raster_wh": [
+        647,
+        890
+      ],
+      "resized_det_input": [
+        1,
+        3,
+        1024,
+        736
+      ],
+      "png_identify": "647x890 39.369999999999997442,39.369999999999997442 PixelsPerCentimeter",
+      "n_boxes": [
+        12,
+        12,
+        12
+      ],
+      "area_total_px2": [
+        125764.0,
+        125764.0,
+        125764.0
+      ],
+      "area_frac_pagina": 0.2184,
+      "n": 3,
+      "determinista_boxes": true,
+      "determinista_texto": true,
+      "cer_pct": 1.0,
+      "cer_pct_reps": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "lineas": [
+        {
+          "bloque": "titulo",
+          "linea": "INFORME DE DIGITALIZACIÓN",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "subtitulo",
+          "linea": "Expediente núm. 4.827/2026 - Archivo Histórico",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "El día 14 de marzo se recibió la solicitud de análisis",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "técnico sobre veintiún volúmenes encuadernados en piel.",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "La comisión determinó que la reproducción fotográfica",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "debía realizarse con iluminación difusa y sin contacto,",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "según la norma UNE 15-402, para evitar daños añadidos",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "en los pliegos más frágiles del año 1893.",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "pequeña",
+          "linea": "¿Quién autorizó la excepción? El párrafo tercero señala",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "pequeña",
+          "linea": "que la revisión ortográfica y lingüística del legajo",
+          "exacto": false,
+          "sim_pct": 96.2
+        },
+        {
+          "bloque": "pequeña",
+          "linea": "es responsabilidad del área de conservación preventiva.",
+          "exacto": false,
+          "sim_pct": 96.3
+        },
+        {
+          "bloque": "pequeña",
+          "linea": "¡Atención! Los códigos 7-B, 9-Ñ y 12-K quedan anulados.",
+          "exacto": false,
+          "sim_pct": 92.2
+        }
+      ],
+      "chars_salida": 608,
+      "bytes_utf8_salida": 644,
+      "bytes_utf8_ref": 647,
+      "texto_crudo": "INFORME DE DIGITALIZACIÓN Expediente núm. 4.827/2026 - Archivo Histórico El día 14 de marzo se recibió la solicitud de análisis técnico sobre veintiún volúmenes encuadernados en piel. La comisión determinó que la reproducción fotográfica debía realizarse con iluminación difusa y sin contacto, según la norma UNE 15-402, para evitar daños añadidos en los pliegos más frágiles del año 1893. ¿Quién autorizó la excepción? El párrafo tercero señala que la revisión ortogråfica y lingüistica del legajo ès résponsabilidad del área de conservación preventiva. Atención! Los códigos 7-B, 9- y 12-K quedan anulados.",
+      "texto": "escaneado_d5a__ppp100.txt"
+    },
+    {
+      "doc": "escaneado_d5a",
+      "ppp": 105,
+      "ppp_nativo": 90,
+      "raster_wh": [
+        679,
+        934
+      ],
+      "resized_det_input": [
+        1,
+        3,
+        1024,
+        736
+      ],
+      "png_identify": "679x934 41.329999999999998295,41.340000000000003411 PixelsPerCentimeter",
+      "n_boxes": [
+        12,
+        12,
+        12
+      ],
+      "area_total_px2": [
+        148018.5,
+        148018.5,
+        148018.5
+      ],
+      "area_frac_pagina": 0.2334,
+      "n": 3,
+      "determinista_boxes": true,
+      "determinista_texto": true,
+      "cer_pct": 0.3,
+      "cer_pct_reps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "lineas": [
+        {
+          "bloque": "titulo",
+          "linea": "INFORME DE DIGITALIZACIÓN",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "subtitulo",
+          "linea": "Expediente núm. 4.827/2026 - Archivo Histórico",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "El día 14 de marzo se recibió la solicitud de análisis",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "técnico sobre veintiún volúmenes encuadernados en piel.",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "La comisión determinó que la reproducción fotográfica",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "debía realizarse con iluminación difusa y sin contacto,",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "según la norma UNE 15-402, para evitar daños añadidos",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "en los pliegos más frágiles del año 1893.",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "pequeña",
+          "linea": "¿Quién autorizó la excepción? El párrafo tercero señala",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "pequeña",
+          "linea": "que la revisión ortográfica y lingüística del legajo",
+          "exacto": false,
+          "sim_pct": 98.1
+        },
+        {
+          "bloque": "pequeña",
+          "linea": "es responsabilidad del área de conservación preventiva.",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "pequeña",
+          "linea": "¡Atención! Los códigos 7-B, 9-Ñ y 12-K quedan anulados.",
+          "exacto": false,
+          "sim_pct": 98.0
+        }
+      ],
+      "chars_salida": 609,
+      "bytes_utf8_salida": 643,
+      "bytes_utf8_ref": 647,
+      "texto_crudo": "INFORME DE DIGITALIZACIÓN Expediente núm. 4.827/2026 - Archivo Histórico El día 14 de marzo se recibió la solicitud de análisis técnico sobre veintiún volúmenes encuadernados en piel. La comisión determinó que la reproducción fotográfica debía realizarse con iluminación difusa y sin contacto, según la norma UNE 15-402, para evitar daños añadidos en los pliegos más frágiles del año 1893. ¿Quién autorizó la excepción? El párrafo tercero señala que la revisión ortográfica y lingüistica del legajo es responsabilidad del área de conservación preventiva. Atención! Los códigos 7-B, 9-N y 12-K quedan anulados.",
+      "texto": "escaneado_d5a__ppp105.txt"
+    },
+    {
+      "doc": "escaneado_d5a",
+      "ppp": 110,
+      "ppp_nativo": 90,
+      "raster_wh": [
+        711,
+        979
+      ],
+      "resized_det_input": [
+        1,
+        3,
+        1024,
+        736
+      ],
+      "png_identify": "711x979 43.299999999999997158,43.299999999999997158 PixelsPerCentimeter",
+      "n_boxes": [
+        12,
+        12,
+        12
+      ],
+      "area_total_px2": [
+        157945.5,
+        157945.5,
+        157945.5
+      ],
+      "area_frac_pagina": 0.22691,
+      "n": 3,
+      "determinista_boxes": true,
+      "determinista_texto": true,
+      "cer_pct": 0.5,
+      "cer_pct_reps": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "lineas": [
+        {
+          "bloque": "titulo",
+          "linea": "INFORME DE DIGITALIZACIÓN",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "subtitulo",
+          "linea": "Expediente núm. 4.827/2026 - Archivo Histórico",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "El día 14 de marzo se recibió la solicitud de análisis",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "técnico sobre veintiún volúmenes encuadernados en piel.",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "La comisión determinó que la reproducción fotográfica",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "debía realizarse con iluminación difusa y sin contacto,",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "según la norma UNE 15-402, para evitar daños añadidos",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "en los pliegos más frágiles del año 1893.",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "pequeña",
+          "linea": "¿Quién autorizó la excepción? El párrafo tercero señala",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "pequeña",
+          "linea": "que la revisión ortográfica y lingüística del legajo",
+          "exacto": false,
+          "sim_pct": 98.1
+        },
+        {
+          "bloque": "pequeña",
+          "linea": "es responsabilidad del área de conservación preventiva.",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "pequeña",
+          "linea": "¡Atención! Los códigos 7-B, 9-Ñ y 12-K quedan anulados.",
+          "exacto": false,
+          "sim_pct": 96.1
+        }
+      ],
+      "chars_salida": 609,
+      "bytes_utf8_salida": 643,
+      "bytes_utf8_ref": 647,
+      "texto_crudo": "INFORME DE DIGITALIZACIÓN Expediente núm. 4.827/2026 - Archivo Histórico El día 14 de marzo se recibió la solicitud de análisis técnico sobre veintiún volúmenes encuadernados en piel. La comisión determinó que la reproducción fotográfica debía realizarse con iluminación difusa y sin contacto, según la norma UNE 15-402, para evitar daños añadidos en los pliegos más frágiles del año 1893. ¿Quién autorizó la excepción? El párrafo tercero señala que la revisión ortográfica y lingüistica del legajo es responsabilidad del área de conservación preventiva. Atención! Las códigos 7-B, 9-N y 12-K quedan anulados.",
+      "texto": "escaneado_d5a__ppp110.txt"
+    },
+    {
+      "doc": "escaneado_d5a",
+      "ppp": 115,
+      "ppp_nativo": 90,
+      "raster_wh": [
+        744,
+        1023
+      ],
+      "resized_det_input": [
+        1,
+        3,
+        1024,
+        736
+      ],
+      "png_identify": "744x1023 45.270000000000003126,45.270000000000003126 PixelsPerCentimeter",
+      "n_boxes": [
+        12,
+        12,
+        12
+      ],
+      "area_total_px2": [
+        170448.0,
+        170448.0,
+        170448.0
+      ],
+      "area_frac_pagina": 0.22395,
+      "n": 3,
+      "determinista_boxes": true,
+      "determinista_texto": true,
+      "cer_pct": 0.3,
+      "cer_pct_reps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "lineas": [
+        {
+          "bloque": "titulo",
+          "linea": "INFORME DE DIGITALIZACIÓN",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "subtitulo",
+          "linea": "Expediente núm. 4.827/2026 - Archivo Histórico",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "El día 14 de marzo se recibió la solicitud de análisis",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "técnico sobre veintiún volúmenes encuadernados en piel.",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "La comisión determinó que la reproducción fotográfica",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "debía realizarse con iluminación difusa y sin contacto,",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "según la norma UNE 15-402, para evitar daños añadidos",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "en los pliegos más frágiles del año 1893.",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "pequeña",
+          "linea": "¿Quién autorizó la excepción? El párrafo tercero señala",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "pequeña",
+          "linea": "que la revisión ortográfica y lingüística del legajo",
+          "exacto": false,
+          "sim_pct": 98.1
+        },
+        {
+          "bloque": "pequeña",
+          "linea": "es responsabilidad del área de conservación preventiva.",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "pequeña",
+          "linea": "¡Atención! Los códigos 7-B, 9-Ñ y 12-K quedan anulados.",
+          "exacto": false,
+          "sim_pct": 98.0
+        }
+      ],
+      "chars_salida": 609,
+      "bytes_utf8_salida": 643,
+      "bytes_utf8_ref": 647,
+      "texto_crudo": "INFORME DE DIGITALIZACIÓN Expediente núm. 4.827/2026 - Archivo Histórico El día 14 de marzo se recibió la solicitud de análisis técnico sobre veintiún volúmenes encuadernados en piel. La comisión determinó que la reproducción fotográfica debía realizarse con iluminación difusa y sin contacto, según la norma UNE 15-402, para evitar daños añadidos en los pliegos más frágiles del año 1893. ¿Quién autorizó la excepción? El párrafo tercero señala que la revisión ortográfica y lingüistica del legajo es responsabilidad del área de conservación preventiva. Atención! Los códigos 7-B, 9-N y 12-K quedan anulados.",
+      "texto": "escaneado_d5a__ppp115.txt"
+    },
+    {
+      "doc": "escaneado_d5a",
+      "ppp": 120,
+      "ppp_nativo": 90,
+      "raster_wh": [
+        776,
+        1068
+      ],
+      "resized_det_input": [
+        1,
+        3,
+        1056,
+        768
+      ],
+      "png_identify": "776x1068 47.24000000000000199,47.24000000000000199 PixelsPerCentimeter",
+      "n_boxes": [
+        12,
+        12,
+        12
+      ],
+      "area_total_px2": [
+        180750.0,
+        180750.0,
+        180750.0
+      ],
+      "area_frac_pagina": 0.21809,
+      "n": 3,
+      "determinista_boxes": true,
+      "determinista_texto": true,
+      "cer_pct": 0.3,
+      "cer_pct_reps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "lineas": [
+        {
+          "bloque": "titulo",
+          "linea": "INFORME DE DIGITALIZACIÓN",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "subtitulo",
+          "linea": "Expediente núm. 4.827/2026 - Archivo Histórico",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "El día 14 de marzo se recibió la solicitud de análisis",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "técnico sobre veintiún volúmenes encuadernados en piel.",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "La comisión determinó que la reproducción fotográfica",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "debía realizarse con iluminación difusa y sin contacto,",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "según la norma UNE 15-402, para evitar daños añadidos",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "en los pliegos más frágiles del año 1893.",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "pequeña",
+          "linea": "¿Quién autorizó la excepción? El párrafo tercero señala",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "pequeña",
+          "linea": "que la revisión ortográfica y lingüística del legajo",
+          "exacto": false,
+          "sim_pct": 98.1
+        },
+        {
+          "bloque": "pequeña",
+          "linea": "es responsabilidad del área de conservación preventiva.",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "pequeña",
+          "linea": "¡Atención! Los códigos 7-B, 9-Ñ y 12-K quedan anulados.",
+          "exacto": false,
+          "sim_pct": 98.0
+        }
+      ],
+      "chars_salida": 609,
+      "bytes_utf8_salida": 643,
+      "bytes_utf8_ref": 647,
+      "texto_crudo": "INFORME DE DIGITALIZACIÓN Expediente núm. 4.827/2026 - Archivo Histórico El día 14 de marzo se recibió la solicitud de análisis técnico sobre veintiún volúmenes encuadernados en piel. La comisión determinó que la reproducción fotográfica debía realizarse con iluminación difusa y sin contacto, según la norma UNE 15-402, para evitar daños añadidos en los pliegos más frágiles del año 1893. ¿Quién autorizó la excepción? El párrafo tercero señala que la revisión ortográfica y lingüistica del legajo es responsabilidad del área de conservación preventiva. Atención! Los códigos 7-B, 9-N y 12-K quedan anulados.",
+      "texto": "escaneado_d5a__ppp120.txt"
+    },
+    {
+      "doc": "escaneado_d5a",
+      "ppp": 125,
+      "ppp_nativo": 90,
+      "raster_wh": [
+        808,
+        1112
+      ],
+      "resized_det_input": [
+        1,
+        3,
+        1120,
+        800
+      ],
+      "png_identify": "808x1112 49.210000000000000853,49.210000000000000853 PixelsPerCentimeter",
+      "n_boxes": [
+        12,
+        12,
+        12
+      ],
+      "area_total_px2": [
+        194574.5,
+        194574.5,
+        194574.5
+      ],
+      "area_frac_pagina": 0.21656,
+      "n": 3,
+      "determinista_boxes": true,
+      "determinista_texto": true,
+      "cer_pct": 0.3,
+      "cer_pct_reps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "lineas": [
+        {
+          "bloque": "titulo",
+          "linea": "INFORME DE DIGITALIZACIÓN",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "subtitulo",
+          "linea": "Expediente núm. 4.827/2026 - Archivo Histórico",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "El día 14 de marzo se recibió la solicitud de análisis",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "técnico sobre veintiún volúmenes encuadernados en piel.",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "La comisión determinó que la reproducción fotográfica",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "debía realizarse con iluminación difusa y sin contacto,",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "según la norma UNE 15-402, para evitar daños añadidos",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "en los pliegos más frágiles del año 1893.",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "pequeña",
+          "linea": "¿Quién autorizó la excepción? El párrafo tercero señala",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "pequeña",
+          "linea": "que la revisión ortográfica y lingüística del legajo",
+          "exacto": false,
+          "sim_pct": 98.1
+        },
+        {
+          "bloque": "pequeña",
+          "linea": "es responsabilidad del área de conservación preventiva.",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "pequeña",
+          "linea": "¡Atención! Los códigos 7-B, 9-Ñ y 12-K quedan anulados.",
+          "exacto": false,
+          "sim_pct": 98.0
+        }
+      ],
+      "chars_salida": 609,
+      "bytes_utf8_salida": 643,
+      "bytes_utf8_ref": 647,
+      "texto_crudo": "INFORME DE DIGITALIZACIÓN Expediente núm. 4.827/2026 - Archivo Histórico El día 14 de marzo se recibió la solicitud de análisis técnico sobre veintiún volúmenes encuadernados en piel. La comisión determinó que la reproducción fotográfica debía realizarse con iluminación difusa y sin contacto, según la norma UNE 15-402, para evitar daños añadidos en los pliegos más frágiles del año 1893. ¿Quién autorizó la excepción? El párrafo tercero señala que la revisión ortográfica y lingüistica del legajo es responsabilidad del área de conservación preventiva. Atención! Los códigos 7-B, 9-N y 12-K quedan anulados.",
+      "texto": "escaneado_d5a__ppp125.txt"
+    },
+    {
+      "doc": "escaneado_d5a",
+      "ppp": 130,
+      "ppp_nativo": 90,
+      "raster_wh": [
+        841,
+        1157
+      ],
+      "resized_det_input": [
+        1,
+        3,
+        1152,
+        832
+      ],
+      "png_identify": "841x1157 51.179999999999999716,51.179999999999999716 PixelsPerCentimeter",
+      "n_boxes": [
+        12,
+        12,
+        12
+      ],
+      "area_total_px2": [
+        207641.0,
+        207641.0,
+        207641.0
+      ],
+      "area_frac_pagina": 0.21339,
+      "n": 3,
+      "determinista_boxes": true,
+      "determinista_texto": true,
+      "cer_pct": 0.3,
+      "cer_pct_reps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "lineas": [
+        {
+          "bloque": "titulo",
+          "linea": "INFORME DE DIGITALIZACIÓN",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "subtitulo",
+          "linea": "Expediente núm. 4.827/2026 - Archivo Histórico",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "El día 14 de marzo se recibió la solicitud de análisis",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "técnico sobre veintiún volúmenes encuadernados en piel.",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "La comisión determinó que la reproducción fotográfica",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "debía realizarse con iluminación difusa y sin contacto,",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "según la norma UNE 15-402, para evitar daños añadidos",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "en los pliegos más frágiles del año 1893.",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "pequeña",
+          "linea": "¿Quién autorizó la excepción? El párrafo tercero señala",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "pequeña",
+          "linea": "que la revisión ortográfica y lingüística del legajo",
+          "exacto": false,
+          "sim_pct": 98.1
+        },
+        {
+          "bloque": "pequeña",
+          "linea": "es responsabilidad del área de conservación preventiva.",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "pequeña",
+          "linea": "¡Atención! Los códigos 7-B, 9-Ñ y 12-K quedan anulados.",
+          "exacto": false,
+          "sim_pct": 98.0
+        }
+      ],
+      "chars_salida": 609,
+      "bytes_utf8_salida": 643,
+      "bytes_utf8_ref": 647,
+      "texto_crudo": "INFORME DE DIGITALIZACIÓN Expediente núm. 4.827/2026 - Archivo Histórico El día 14 de marzo se recibió la solicitud de análisis técnico sobre veintiún volúmenes encuadernados en piel. La comisión determinó que la reproducción fotográfica debía realizarse con iluminación difusa y sin contacto, según la norma UNE 15-402, para evitar daños añadidos en los pliegos más frágiles del año 1893. ¿Quién autorizó la excepción? El párrafo tercero señala que la revisión ortográfica y lingüistica del legajo es responsabilidad del área de conservación preventiva. Atención! Los códigos 7-B, 9-N y 12-K quedan anulados.",
+      "texto": "escaneado_d5a__ppp130.txt"
+    },
+    {
+      "doc": "escaneado_d5a",
+      "ppp": 135,
+      "ppp_nativo": 90,
+      "raster_wh": [
+        873,
+        1201
+      ],
+      "resized_det_input": [
+        1,
+        3,
+        1216,
+        864
+      ],
+      "png_identify": "873x1201 53.140000000000000568,53.149999999999998579 PixelsPerCentimeter",
+      "n_boxes": [
+        12,
+        12,
+        12
+      ],
+      "area_total_px2": [
+        227443.5,
+        227443.5,
+        227443.5
+      ],
+      "area_frac_pagina": 0.21693,
+      "n": 3,
+      "determinista_boxes": true,
+      "determinista_texto": true,
+      "cer_pct": 0.3,
+      "cer_pct_reps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "lineas": [
+        {
+          "bloque": "titulo",
+          "linea": "INFORME DE DIGITALIZACIÓN",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "subtitulo",
+          "linea": "Expediente núm. 4.827/2026 - Archivo Histórico",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "El día 14 de marzo se recibió la solicitud de análisis",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "técnico sobre veintiún volúmenes encuadernados en piel.",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "La comisión determinó que la reproducción fotográfica",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "debía realizarse con iluminación difusa y sin contacto,",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "según la norma UNE 15-402, para evitar daños añadidos",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "en los pliegos más frágiles del año 1893.",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "pequeña",
+          "linea": "¿Quién autorizó la excepción? El párrafo tercero señala",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "pequeña",
+          "linea": "que la revisión ortográfica y lingüística del legajo",
+          "exacto": false,
+          "sim_pct": 98.1
+        },
+        {
+          "bloque": "pequeña",
+          "linea": "es responsabilidad del área de conservación preventiva.",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "pequeña",
+          "linea": "¡Atención! Los códigos 7-B, 9-Ñ y 12-K quedan anulados.",
+          "exacto": false,
+          "sim_pct": 98.0
+        }
+      ],
+      "chars_salida": 609,
+      "bytes_utf8_salida": 643,
+      "bytes_utf8_ref": 647,
+      "texto_crudo": "INFORME DE DIGITALIZACIÓN Expediente núm. 4.827/2026 - Archivo Histórico El día 14 de marzo se recibió la solicitud de análisis técnico sobre veintiún volúmenes encuadernados en piel. La comisión determinó que la reproducción fotográfica debía realizarse con iluminación difusa y sin contacto, según la norma UNE 15-402, para evitar daños añadidos en los pliegos más frágiles del año 1893. ¿Quién autorizó la excepción? El párrafo tercero señala que la revisión ortográfica y lingüistica del legajo es responsabilidad del área de conservación preventiva. Atención! Los códigos 7-B. 9-N y 12-K quedan anulados.",
+      "texto": "escaneado_d5a__ppp135.txt"
+    },
+    {
+      "doc": "escaneado_d5a",
+      "ppp": 140,
+      "ppp_nativo": 90,
+      "raster_wh": [
+        905,
+        1246
+      ],
+      "resized_det_input": [
+        1,
+        3,
+        1248,
+        896
+      ],
+      "png_identify": "905x1246 55.109999999999999432,55.119999999999997442 PixelsPerCentimeter",
+      "n_boxes": [
+        12,
+        12,
+        12
+      ],
+      "area_total_px2": [
+        244392.5,
+        244392.5,
+        244392.5
+      ],
+      "area_frac_pagina": 0.21673,
+      "n": 3,
+      "determinista_boxes": true,
+      "determinista_texto": true,
+      "cer_pct": 0.3,
+      "cer_pct_reps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "lineas": [
+        {
+          "bloque": "titulo",
+          "linea": "INFORME DE DIGITALIZACIÓN",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "subtitulo",
+          "linea": "Expediente núm. 4.827/2026 - Archivo Histórico",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "El día 14 de marzo se recibió la solicitud de análisis",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "técnico sobre veintiún volúmenes encuadernados en piel.",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "La comisión determinó que la reproducción fotográfica",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "debía realizarse con iluminación difusa y sin contacto,",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "según la norma UNE 15-402, para evitar daños añadidos",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "en los pliegos más frágiles del año 1893.",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "pequeña",
+          "linea": "¿Quién autorizó la excepción? El párrafo tercero señala",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "pequeña",
+          "linea": "que la revisión ortográfica y lingüística del legajo",
+          "exacto": false,
+          "sim_pct": 98.1
+        },
+        {
+          "bloque": "pequeña",
+          "linea": "es responsabilidad del área de conservación preventiva.",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "pequeña",
+          "linea": "¡Atención! Los códigos 7-B, 9-Ñ y 12-K quedan anulados.",
+          "exacto": false,
+          "sim_pct": 98.0
+        }
+      ],
+      "chars_salida": 609,
+      "bytes_utf8_salida": 643,
+      "bytes_utf8_ref": 647,
+      "texto_crudo": "INFORME DE DIGITALIZACIÓN Expediente núm. 4.827/2026 - Archivo Histórico El día 14 de marzo se recibió la solicitud de análisis técnico sobre veintiún volúmenes encuadernados en piel. La comisión determinó que la reproducción fotográfica debía realizarse con iluminación difusa y sin contacto, según la norma UNE 15-402, para evitar daños añadidos en los pliegos más frágiles del año 1893. ¿Quién autorizó la excepción? El párrafo tercero señala que la revisión ortográfica y lingüistica del legajo es responsabilidad del área de conservación preventiva. Atención! Los códigos 7-B, 9-N y 12-K quedan anulados.",
+      "texto": "escaneado_d5a__ppp140.txt"
+    },
+    {
+      "doc": "escaneado_d5a",
+      "ppp": 145,
+      "ppp_nativo": 90,
+      "raster_wh": [
+        938,
+        1290
+      ],
+      "resized_det_input": [
+        1,
+        3,
+        1280,
+        928
+      ],
+      "png_identify": "938x1290 57.079999999999998295,57.079999999999998295 PixelsPerCentimeter",
+      "n_boxes": [
+        12,
+        12,
+        12
+      ],
+      "area_total_px2": [
+        258032.5,
+        258032.5,
+        258032.5
+      ],
+      "area_frac_pagina": 0.21325,
+      "n": 3,
+      "determinista_boxes": true,
+      "determinista_texto": true,
+      "cer_pct": 0.3,
+      "cer_pct_reps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "lineas": [
+        {
+          "bloque": "titulo",
+          "linea": "INFORME DE DIGITALIZACIÓN",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "subtitulo",
+          "linea": "Expediente núm. 4.827/2026 - Archivo Histórico",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "El día 14 de marzo se recibió la solicitud de análisis",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "técnico sobre veintiún volúmenes encuadernados en piel.",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "La comisión determinó que la reproducción fotográfica",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "debía realizarse con iluminación difusa y sin contacto,",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "según la norma UNE 15-402, para evitar daños añadidos",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "en los pliegos más frágiles del año 1893.",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "pequeña",
+          "linea": "¿Quién autorizó la excepción? El párrafo tercero señala",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "pequeña",
+          "linea": "que la revisión ortográfica y lingüística del legajo",
+          "exacto": false,
+          "sim_pct": 98.1
+        },
+        {
+          "bloque": "pequeña",
+          "linea": "es responsabilidad del área de conservación preventiva.",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "pequeña",
+          "linea": "¡Atención! Los códigos 7-B, 9-Ñ y 12-K quedan anulados.",
+          "exacto": false,
+          "sim_pct": 98.0
+        }
+      ],
+      "chars_salida": 609,
+      "bytes_utf8_salida": 643,
+      "bytes_utf8_ref": 647,
+      "texto_crudo": "INFORME DE DIGITALIZACIÓN Expediente núm. 4.827/2026 - Archivo Histórico El día 14 de marzo se recibió la solicitud de análisis técnico sobre veintiún volúmenes encuadernados en piel. La comisión determinó que la reproducción fotográfica debía realizarse con iluminación difusa y sin contacto, según la norma UNE 15-402, para evitar daños añadidos en los pliegos más frágiles del año 1893. ¿Quién autorizó la excepción? El párrafo tercero señala que la revisión ortográfica y lingüistica del legajo es responsabilidad del área de conservación preventiva. Atención! Los códigos 7-B, 9-N y 12-K quedan anulados.",
+      "texto": "escaneado_d5a__ppp145.txt"
+    },
+    {
+      "doc": "escaneado_d5a",
+      "ppp": 150,
+      "ppp_nativo": 90,
+      "raster_wh": [
+        970,
+        1335
+      ],
+      "resized_det_input": [
+        1,
+        3,
+        1344,
+        960
+      ],
+      "png_identify": "970x1335 59.049999999999997158,59.049999999999997158 PixelsPerCentimeter",
+      "n_boxes": [
+        12,
+        12,
+        12
+      ],
+      "area_total_px2": [
+        272295.0,
+        272295.0,
+        272295.0
+      ],
+      "area_frac_pagina": 0.21027,
+      "n": 3,
+      "determinista_boxes": true,
+      "determinista_texto": true,
+      "cer_pct": 0.3,
+      "cer_pct_reps": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "lineas": [
+        {
+          "bloque": "titulo",
+          "linea": "INFORME DE DIGITALIZACIÓN",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "subtitulo",
+          "linea": "Expediente núm. 4.827/2026 - Archivo Histórico",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "El día 14 de marzo se recibió la solicitud de análisis",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "técnico sobre veintiún volúmenes encuadernados en piel.",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "La comisión determinó que la reproducción fotográfica",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "debía realizarse con iluminación difusa y sin contacto,",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "según la norma UNE 15-402, para evitar daños añadidos",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "cuerpo",
+          "linea": "en los pliegos más frágiles del año 1893.",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "pequeña",
+          "linea": "¿Quién autorizó la excepción? El párrafo tercero señala",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "pequeña",
+          "linea": "que la revisión ortográfica y lingüística del legajo",
+          "exacto": false,
+          "sim_pct": 98.1
+        },
+        {
+          "bloque": "pequeña",
+          "linea": "es responsabilidad del área de conservación preventiva.",
+          "exacto": true,
+          "sim_pct": 100.0
+        },
+        {
+          "bloque": "pequeña",
+          "linea": "¡Atención! Los códigos 7-B, 9-Ñ y 12-K quedan anulados.",
+          "exacto": false,
+          "sim_pct": 98.0
+        }
+      ],
+      "chars_salida": 609,
+      "bytes_utf8_salida": 643,
+      "bytes_utf8_ref": 647,
+      "texto_crudo": "INFORME DE DIGITALIZACIÓN Expediente núm. 4.827/2026 - Archivo Histórico El día 14 de marzo se recibió la solicitud de análisis técnico sobre veintiún volúmenes encuadernados en piel. La comisión determinó que la reproducción fotográfica debía realizarse con iluminación difusa y sin contacto, según la norma UNE 15-402, para evitar daños añadidos en los pliegos más frágiles del año 1893. ¿Quién autorizó la excepción? El párrafo tercero señala que la revisión ortográfica y lingüistica del legajo es responsabilidad del área de conservación preventiva. Atención! Los códigos 7-B, 9-N y 12-K quedan anulados.",
+      "texto": "escaneado_d5a__ppp150.txt"
+    }
+  ],
+  "segundos": 75.5
+}
