@@ -1,27 +1,9 @@
 {
-  "_": "Deuda CONGELADA y REMEDIDA el 01/09/2026. Encogio dos veces en el mismo dia, y las dos por defectos de la SONDA, no por trabajo: (1) glob() sobre el arbol contaba un directorio que en un clon no existe; (2) exigir el nombre exacto MANIFIESTO.md ocultaba dos manifiestos escritos a proposito, y la regla de peso no distinguia salida regenerable de evidencia irreproducible. Lo que esta aqui no rompe la CI; lo NUEVO si, y lo ARREGLADO tambien.",
+  "_": "Deuda CONGELADA y REMEDIDA el 01/09/2026. Encogio dos veces en el mismo dia, y las dos por defectos de la SONDA, no por trabajo: (1) glob() sobre el arbol contaba un directorio que en un clon no existe; (2) exigir el nombre exacto MANIFIESTO.md ocultaba dos manifiestos escritos a proposito, y la regla de peso no distinguia salida regenerable de evidencia irreproducible. Lo que esta aqui no rompe la CI; lo NUEVO si, y lo ARREGLADO tambien. C41 (ronda 3, worker2) escribio los 17 manifiestos que faltaban -- bench/saneo-inventario.md tiene el detalle por directorio -- y la clave 'manifiestos' queda vacia.",
   "binarios": [
     "bench/salidas-mcp-refs/multimedia/salidas/vam_trivial.mkv",
     "bench/salidas-mcp-refs/multimedia/salidas_lite/trivial_converted.gif",
     "bench/salidas-mcp-refs/multimedia/salidas_lite/trivial_converted.webm"
   ],
-  "manifiestos": [
-    "bench/salidas-aristas-tasa",
-    "bench/salidas-bitrate-pista",
-    "bench/salidas-confinamiento-mm",
-    "bench/salidas-cota-audio",
-    "bench/salidas-fidelidad",
-    "bench/salidas-hito3",
-    "bench/salidas-huella",
-    "bench/salidas-lock",
-    "bench/salidas-lock-interpretes",
-    "bench/salidas-mcp",
-    "bench/salidas-mcp-cabos",
-    "bench/salidas-mcp-refs",
-    "bench/salidas-patron-multi",
-    "bench/salidas-saturacion",
-    "bench/salidas-sdk-mcp",
-    "bench/salidas-verificacion",
-    "bench/salidas-verificacion-fidelidad"
-  ]
+  "manifiestos": []
 }
