@@ -527,6 +527,36 @@ Agrupado por **el recurso que lo limita**, que es lo que decide el reparto. Cada
 
 ---
 
+### Ronda 3 — **01/09, DESPACHADA** · *registrada AL DESPACHARLA, que es la regla que la ronda 2 incumplió*
+
+> **Dos encargos, no cuatro.** La ronda 2 perdió **40 minutos medidos** en un solo relevo
+> (trampa 100) y esta ronda estrena dos variables nuevas: el **flujo de PR con CI**, y unos
+> workers que **acaban de nacer como `claude` con el contexto vacío** —los de `codex`
+> conocían el proyecto; éstos no—, así que el encargo tiene que traer el contexto dentro.
+> Con dos veo si el flujo funciona antes de multiplicarlo.
+>
+> Y una condición previa que no había en rondas anteriores: **los *worktrees* iban 12 y 15
+> commits por detrás de `main`**, que es donde vive la CI que va a juzgar sus PRs.
+
+| Agente | Trabajo | Informe | Estado |
+|---|---|---|---|
+| **worker1** (carril GPU) | **B21 + B22** — Tesseract `psm 3` y `psm 11`, el pendiente que él mismo declaró al cerrar la ronda 2: no entran en las 336 celdas | `bench/psm-suelo-ppp.md` | 🟡 **DESPACHADA** |
+| **worker2** (carril CPU/Docker) | **Saneo de veracidad del inventario** + **C41** | `bench/saneo-inventario.md` | 🟡 **DESPACHADA** |
+
+> #### Por qué el saneo va primero, y por qué no lo hace la CI
+>
+> `ci/integridad.py` comprueba que **cada fila tenga un emoji**; no comprueba que **el emoji
+> sea verdad**. Es el mismo límite que el barrido del 23/08 dejó escrito, y es por diseño:
+> la segunda revisión sólo se hace **contra el código, el informe y el `git log`**.
+>
+> Y hacía falta: preparando este reparto encontré **tres filas obsoletas en una tarde** —
+> `C22` tiene informe desde el 30/08 y seguía 🔴; `C35` y `C36` las movió la ronda 2 y
+> seguían 🔴 un día después, **y mi propio registro decía «🟢 CERRADO» cuando el informe
+> declara pendientes en las dos**. Un inventario cuyo color no se puede creer no sirve para
+> planificar, que es su única función.
+
+---
+
 ### Contención, en una frase
 
 > **Nunca dos agentes de GPU a la vez.** Desde el 23/08 el lock **es de máquina** (`/tmp/filex-gpu.lock` = `%TEMP%`), se recupera solo si su dueño muere, y **`gpu_acquire` se niega a medir con la tarjeta ocupada por un tercero**. Pero **no obliga a cooperar a quien no lo toma**: por eso hay detección además de exclusión. **Nadie escribe en los maestros salvo el agente de consolidación.** **Un fichero de informe por agente**, sin excepciones.
