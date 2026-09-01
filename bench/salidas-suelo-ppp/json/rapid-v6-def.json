@@ -1,24 +1,26 @@
 {
   "meta": {
     "motor": "RapidOCR ONNX rapid-v6-def",
-    "entrada": "ruta PNG RGB",
+    "entrada": "ndarray BGR, 3 canales desde PNG sRGB",
     "dispositivo": "GPU cuda:0",
     "R6": false,
-    "torch_cuda": true
+    "torch_cuda": true,
+    "lock_archivo_y_mutex": true,
+    "lock_aviso": ""
   },
   "config": "rapid-v6-def",
   "reps": 9,
   "orden_docs": "d5a,d5c,d5,d5b (mayor a menor)",
   "rasterizador": "ImageMagick -units PixelsPerInch -density N; pHYs=N",
   "ruido": {
-    "testigo_monohilo_ini_ms": 36.91,
-    "testigo_monohilo_fin_ms": 42.95,
-    "deriva": 1.16,
-    "testigo_proceso_ini_ms": 38.61,
-    "testigo_proceso_fin_ms": 51.13,
-    "nivel_vs_reposo": 1.92
+    "testigo_monohilo_ini_ms": 85.68,
+    "testigo_monohilo_fin_ms": 21.77,
+    "deriva": 0.25,
+    "testigo_proceso_ini_ms": 83.03,
+    "testigo_proceso_fin_ms": 30.73,
+    "nivel_vs_reposo": 3.12
   },
-  "etiqueta_ruido": "limpia",
+  "etiqueta_ruido": "SUCIA",
   "rows": [
     {
       "config": "rapid-v6-def",
@@ -28,6 +30,13 @@
       "factor": 1.0,
       "png": "ppp090__escaneado_d5a.png",
       "png_identify": "582x801 35.429999999999999716,35.429999999999999716 PixelsPerCentimeter",
+      "preflight": {
+        "vram_libre_mib": 8994,
+        "mpx_actual": 0.466,
+        "mpx_pendiente_ordenada": 0
+      },
+      "entrada": "ndarray BGR, 3 canales desde PNG sRGB",
+      "dispositivo": "GPU cuda:0",
       "rc": [
         0,
         0,
@@ -51,7 +60,7 @@
         ""
       ],
       "n": 9,
-      "ms_mediana": 401.3,
+      "ms_mediana": 1139.8,
       "determinista": true,
       "metrica": "acentos",
       "cer_pct": 0.3,
@@ -68,6 +77,13 @@
       "factor": 1.111,
       "png": "ppp100__escaneado_d5a.png",
       "png_identify": "647x890 39.369999999999997442,39.369999999999997442 PixelsPerCentimeter",
+      "preflight": {
+        "vram_libre_mib": 8439,
+        "mpx_actual": 0.576,
+        "mpx_pendiente_ordenada": 0
+      },
+      "entrada": "ndarray BGR, 3 canales desde PNG sRGB",
+      "dispositivo": "GPU cuda:0",
       "rc": [
         0,
         0,
@@ -91,7 +107,7 @@
         ""
       ],
       "n": 9,
-      "ms_mediana": 435.9,
+      "ms_mediana": 1072.1,
       "determinista": true,
       "metrica": "acentos",
       "cer_pct": 1.0,
@@ -108,6 +124,13 @@
       "factor": 1.167,
       "png": "ppp105__escaneado_d5a.png",
       "png_identify": "679x934 41.329999999999998295,41.340000000000003411 PixelsPerCentimeter",
+      "preflight": {
+        "vram_libre_mib": 8449,
+        "mpx_actual": 0.634,
+        "mpx_pendiente_ordenada": 0
+      },
+      "entrada": "ndarray BGR, 3 canales desde PNG sRGB",
+      "dispositivo": "GPU cuda:0",
       "rc": [
         0,
         0,
@@ -131,7 +154,7 @@
         ""
       ],
       "n": 9,
-      "ms_mediana": 399.2,
+      "ms_mediana": 671.0,
       "determinista": true,
       "metrica": "acentos",
       "cer_pct": 0.3,
@@ -148,6 +171,13 @@
       "factor": 1.222,
       "png": "ppp110__escaneado_d5a.png",
       "png_identify": "711x979 43.299999999999997158,43.299999999999997158 PixelsPerCentimeter",
+      "preflight": {
+        "vram_libre_mib": 8447,
+        "mpx_actual": 0.696,
+        "mpx_pendiente_ordenada": 0
+      },
+      "entrada": "ndarray BGR, 3 canales desde PNG sRGB",
+      "dispositivo": "GPU cuda:0",
       "rc": [
         0,
         0,
@@ -171,7 +201,7 @@
         ""
       ],
       "n": 9,
-      "ms_mediana": 430.5,
+      "ms_mediana": 437.5,
       "determinista": true,
       "metrica": "acentos",
       "cer_pct": 0.5,
@@ -188,6 +218,13 @@
       "factor": 1.278,
       "png": "ppp115__escaneado_d5a.png",
       "png_identify": "744x1023 45.270000000000003126,45.270000000000003126 PixelsPerCentimeter",
+      "preflight": {
+        "vram_libre_mib": 8440,
+        "mpx_actual": 0.761,
+        "mpx_pendiente_ordenada": 0
+      },
+      "entrada": "ndarray BGR, 3 canales desde PNG sRGB",
+      "dispositivo": "GPU cuda:0",
       "rc": [
         0,
         0,
@@ -211,7 +248,7 @@
         ""
       ],
       "n": 9,
-      "ms_mediana": 411.3,
+      "ms_mediana": 297.3,
       "determinista": true,
       "metrica": "acentos",
       "cer_pct": 0.3,
@@ -228,6 +265,13 @@
       "factor": 1.333,
       "png": "ppp120__escaneado_d5a.png",
       "png_identify": "776x1068 47.24000000000000199,47.24000000000000199 PixelsPerCentimeter",
+      "preflight": {
+        "vram_libre_mib": 8422,
+        "mpx_actual": 0.829,
+        "mpx_pendiente_ordenada": 0
+      },
+      "entrada": "ndarray BGR, 3 canales desde PNG sRGB",
+      "dispositivo": "GPU cuda:0",
       "rc": [
         0,
         0,
@@ -251,7 +295,7 @@
         ""
       ],
       "n": 9,
-      "ms_mediana": 415.0,
+      "ms_mediana": 287.0,
       "determinista": true,
       "metrica": "acentos",
       "cer_pct": 0.2,
@@ -268,6 +312,13 @@
       "factor": 1.389,
       "png": "ppp125__escaneado_d5a.png",
       "png_identify": "808x1112 49.210000000000000853,49.210000000000000853 PixelsPerCentimeter",
+      "preflight": {
+        "vram_libre_mib": 8427,
+        "mpx_actual": 0.898,
+        "mpx_pendiente_ordenada": 0
+      },
+      "entrada": "ndarray BGR, 3 canales desde PNG sRGB",
+      "dispositivo": "GPU cuda:0",
       "rc": [
         0,
         0,
@@ -291,7 +342,7 @@
         ""
       ],
       "n": 9,
-      "ms_mediana": 445.6,
+      "ms_mediana": 292.8,
       "determinista": true,
       "metrica": "acentos",
       "cer_pct": 0.5,
@@ -308,6 +359,13 @@
       "factor": 1.444,
       "png": "ppp130__escaneado_d5a.png",
       "png_identify": "841x1157 51.179999999999999716,51.179999999999999716 PixelsPerCentimeter",
+      "preflight": {
+        "vram_libre_mib": 8431,
+        "mpx_actual": 0.973,
+        "mpx_pendiente_ordenada": 0
+      },
+      "entrada": "ndarray BGR, 3 canales desde PNG sRGB",
+      "dispositivo": "GPU cuda:0",
       "rc": [
         0,
         0,
@@ -331,7 +389,7 @@
         ""
       ],
       "n": 9,
-      "ms_mediana": 461.8,
+      "ms_mediana": 335.8,
       "determinista": true,
       "metrica": "acentos",
       "cer_pct": 0.3,
@@ -348,6 +406,13 @@
       "factor": 1.5,
       "png": "ppp135__escaneado_d5a.png",
       "png_identify": "873x1201 53.140000000000000568,53.149999999999998579 PixelsPerCentimeter",
+      "preflight": {
+        "vram_libre_mib": 8459,
+        "mpx_actual": 1.048,
+        "mpx_pendiente_ordenada": 0
+      },
+      "entrada": "ndarray BGR, 3 canales desde PNG sRGB",
+      "dispositivo": "GPU cuda:0",
       "rc": [
         0,
         0,
@@ -371,7 +436,7 @@
         ""
       ],
       "n": 9,
-      "ms_mediana": 470.5,
+      "ms_mediana": 318.5,
       "determinista": true,
       "metrica": "acentos",
       "cer_pct": 0.3,
@@ -388,6 +453,13 @@
       "factor": 1.556,
       "png": "ppp140__escaneado_d5a.png",
       "png_identify": "905x1246 55.109999999999999432,55.119999999999997442 PixelsPerCentimeter",
+      "preflight": {
+        "vram_libre_mib": 8107,
+        "mpx_actual": 1.128,
+        "mpx_pendiente_ordenada": 0
+      },
+      "entrada": "ndarray BGR, 3 canales desde PNG sRGB",
+      "dispositivo": "GPU cuda:0",
       "rc": [
         0,
         0,
@@ -411,7 +483,7 @@
         ""
       ],
       "n": 9,
-      "ms_mediana": 498.8,
+      "ms_mediana": 341.7,
       "determinista": true,
       "metrica": "acentos",
       "cer_pct": 0.3,
@@ -428,6 +500,13 @@
       "factor": 1.611,
       "png": "ppp145__escaneado_d5a.png",
       "png_identify": "938x1290 57.079999999999998295,57.079999999999998295 PixelsPerCentimeter",
+      "preflight": {
+        "vram_libre_mib": 8108,
+        "mpx_actual": 1.21,
+        "mpx_pendiente_ordenada": 0
+      },
+      "entrada": "ndarray BGR, 3 canales desde PNG sRGB",
+      "dispositivo": "GPU cuda:0",
       "rc": [
         0,
         0,
@@ -451,7 +530,7 @@
         ""
       ],
       "n": 9,
-      "ms_mediana": 500.8,
+      "ms_mediana": 288.6,
       "determinista": true,
       "metrica": "acentos",
       "cer_pct": 0.3,
@@ -468,6 +547,13 @@
       "factor": 1.667,
       "png": "ppp150__escaneado_d5a.png",
       "png_identify": "970x1335 59.049999999999997158,59.049999999999997158 PixelsPerCentimeter",
+      "preflight": {
+        "vram_libre_mib": 8120,
+        "mpx_actual": 1.295,
+        "mpx_pendiente_ordenada": 0
+      },
+      "entrada": "ndarray BGR, 3 canales desde PNG sRGB",
+      "dispositivo": "GPU cuda:0",
       "rc": [
         0,
         0,
@@ -491,7 +577,7 @@
         ""
       ],
       "n": 9,
-      "ms_mediana": 512.9,
+      "ms_mediana": 319.7,
       "determinista": true,
       "metrica": "acentos",
       "cer_pct": 0.3,
@@ -508,6 +594,13 @@
       "factor": 1.0,
       "png": "ppp080__escaneado_d5c.png",
       "png_identify": "517x708 31.489999999999998437,31.489999999999998437 PixelsPerCentimeter",
+      "preflight": {
+        "vram_libre_mib": 8162,
+        "mpx_actual": 0.366,
+        "mpx_pendiente_ordenada": 0
+      },
+      "entrada": "ndarray BGR, 3 canales desde PNG sRGB",
+      "dispositivo": "GPU cuda:0",
       "rc": [
         0,
         0,
@@ -531,7 +624,7 @@
         ""
       ],
       "n": 9,
-      "ms_mediana": 432.6,
+      "ms_mediana": 264.6,
       "determinista": true,
       "metrica": "acentos",
       "cer_pct": 0.5,
@@ -548,6 +641,13 @@
       "factor": 1.25,
       "png": "ppp100__escaneado_d5c.png",
       "png_identify": "646x885 39.369999999999997442,39.369999999999997442 PixelsPerCentimeter",
+      "preflight": {
+        "vram_libre_mib": 8125,
+        "mpx_actual": 0.572,
+        "mpx_pendiente_ordenada": 0
+      },
+      "entrada": "ndarray BGR, 3 canales desde PNG sRGB",
+      "dispositivo": "GPU cuda:0",
       "rc": [
         0,
         0,
@@ -571,7 +671,7 @@
         ""
       ],
       "n": 9,
-      "ms_mediana": 418.2,
+      "ms_mediana": 240.1,
       "determinista": true,
       "metrica": "acentos",
       "cer_pct": 0.7,
@@ -588,6 +688,13 @@
       "factor": 1.312,
       "png": "ppp105__escaneado_d5c.png",
       "png_identify": "679x929 41.329999999999998295,41.340000000000003411 PixelsPerCentimeter",
+      "preflight": {
+        "vram_libre_mib": 8139,
+        "mpx_actual": 0.631,
+        "mpx_pendiente_ordenada": 0
+      },
+      "entrada": "ndarray BGR, 3 canales desde PNG sRGB",
+      "dispositivo": "GPU cuda:0",
       "rc": [
         0,
         0,
@@ -611,7 +718,7 @@
         ""
       ],
       "n": 9,
-      "ms_mediana": 435.4,
+      "ms_mediana": 266.3,
       "determinista": true,
       "metrica": "acentos",
       "cer_pct": 0.5,
@@ -628,6 +735,13 @@
       "factor": 1.375,
       "png": "ppp110__escaneado_d5c.png",
       "png_identify": "711x974 43.299999999999997158,43.299999999999997158 PixelsPerCentimeter",
+      "preflight": {
+        "vram_libre_mib": 8141,
+        "mpx_actual": 0.693,
+        "mpx_pendiente_ordenada": 0
+      },
+      "entrada": "ndarray BGR, 3 canales desde PNG sRGB",
+      "dispositivo": "GPU cuda:0",
       "rc": [
         0,
         0,
@@ -651,7 +765,7 @@
         ""
       ],
       "n": 9,
-      "ms_mediana": 793.5,
+      "ms_mediana": 283.4,
       "determinista": true,
       "metrica": "acentos",
       "cer_pct": 0.3,
@@ -668,6 +782,13 @@
       "factor": 1.438,
       "png": "ppp115__escaneado_d5c.png",
       "png_identify": "743x1018 45.270000000000003126,45.270000000000003126 PixelsPerCentimeter",
+      "preflight": {
+        "vram_libre_mib": 8154,
+        "mpx_actual": 0.756,
+        "mpx_pendiente_ordenada": 0
+      },
+      "entrada": "ndarray BGR, 3 canales desde PNG sRGB",
+      "dispositivo": "GPU cuda:0",
       "rc": [
         0,
         0,
@@ -691,7 +812,7 @@
         ""
       ],
       "n": 9,
-      "ms_mediana": 1329.1,
+      "ms_mediana": 285.3,
       "determinista": true,
       "metrica": "acentos",
       "cer_pct": 9.1,
@@ -708,6 +829,13 @@
       "factor": 1.5,
       "png": "ppp120__escaneado_d5c.png",
       "png_identify": "775x1062 47.24000000000000199,47.24000000000000199 PixelsPerCentimeter",
+      "preflight": {
+        "vram_libre_mib": 8116,
+        "mpx_actual": 0.823,
+        "mpx_pendiente_ordenada": 0
+      },
+      "entrada": "ndarray BGR, 3 canales desde PNG sRGB",
+      "dispositivo": "GPU cuda:0",
       "rc": [
         0,
         0,
@@ -731,7 +859,7 @@
         ""
       ],
       "n": 9,
-      "ms_mediana": 1897.5,
+      "ms_mediana": 309.6,
       "determinista": true,
       "metrica": "acentos",
       "cer_pct": 0.7,
@@ -748,6 +876,13 @@
       "factor": 1.562,
       "png": "ppp125__escaneado_d5c.png",
       "png_identify": "808x1106 49.210000000000000853,49.210000000000000853 PixelsPerCentimeter",
+      "preflight": {
+        "vram_libre_mib": 8076,
+        "mpx_actual": 0.894,
+        "mpx_pendiente_ordenada": 0
+      },
+      "entrada": "ndarray BGR, 3 canales desde PNG sRGB",
+      "dispositivo": "GPU cuda:0",
       "rc": [
         0,
         0,
@@ -771,7 +906,7 @@
         ""
       ],
       "n": 9,
-      "ms_mediana": 1146.6,
+      "ms_mediana": 270.6,
       "determinista": true,
       "metrica": "acentos",
       "cer_pct": 0.7,
@@ -788,6 +923,13 @@
       "factor": 1.625,
       "png": "ppp130__escaneado_d5c.png",
       "png_identify": "840x1151 51.179999999999999716,51.179999999999999716 PixelsPerCentimeter",
+      "preflight": {
+        "vram_libre_mib": 8070,
+        "mpx_actual": 0.967,
+        "mpx_pendiente_ordenada": 0
+      },
+      "entrada": "ndarray BGR, 3 canales desde PNG sRGB",
+      "dispositivo": "GPU cuda:0",
       "rc": [
         0,
         0,
@@ -811,7 +953,7 @@
         ""
       ],
       "n": 9,
-      "ms_mediana": 1186.3,
+      "ms_mediana": 338.5,
       "determinista": true,
       "metrica": "acentos",
       "cer_pct": 0.7,
@@ -828,6 +970,13 @@
       "factor": 1.688,
       "png": "ppp135__escaneado_d5c.png",
       "png_identify": "872x1195 53.140000000000000568,53.149999999999998579 PixelsPerCentimeter",
+      "preflight": {
+        "vram_libre_mib": 8069,
+        "mpx_actual": 1.042,
+        "mpx_pendiente_ordenada": 0
+      },
+      "entrada": "ndarray BGR, 3 canales desde PNG sRGB",
+      "dispositivo": "GPU cuda:0",
       "rc": [
         0,
         0,
@@ -851,7 +1000,7 @@
         ""
       ],
       "n": 9,
-      "ms_mediana": 1066.4,
+      "ms_mediana": 313.8,
       "determinista": true,
       "metrica": "acentos",
       "cer_pct": 0.5,
@@ -868,6 +1017,13 @@
       "factor": 1.75,
       "png": "ppp140__escaneado_d5c.png",
       "png_identify": "905x1239 55.109999999999999432,55.119999999999997442 PixelsPerCentimeter",
+      "preflight": {
+        "vram_libre_mib": 8038,
+        "mpx_actual": 1.121,
+        "mpx_pendiente_ordenada": 0
+      },
+      "entrada": "ndarray BGR, 3 canales desde PNG sRGB",
+      "dispositivo": "GPU cuda:0",
       "rc": [
         0,
         0,
@@ -891,7 +1047,7 @@
         ""
       ],
       "n": 9,
-      "ms_mediana": 839.4,
+      "ms_mediana": 374.5,
       "determinista": true,
       "metrica": "acentos",
       "cer_pct": 0.7,
@@ -908,6 +1064,13 @@
       "factor": 1.812,
       "png": "ppp145__escaneado_d5c.png",
       "png_identify": "937x1283 57.079999999999998295,57.079999999999998295 PixelsPerCentimeter",
+      "preflight": {
+        "vram_libre_mib": 8103,
+        "mpx_actual": 1.202,
+        "mpx_pendiente_ordenada": 0
+      },
+      "entrada": "ndarray BGR, 3 canales desde PNG sRGB",
+      "dispositivo": "GPU cuda:0",
       "rc": [
         0,
         0,
@@ -931,7 +1094,7 @@
         ""
       ],
       "n": 9,
-      "ms_mediana": 687.7,
+      "ms_mediana": 310.7,
       "determinista": true,
       "metrica": "acentos",
       "cer_pct": 0.5,
@@ -948,6 +1111,13 @@
       "factor": 1.875,
       "png": "ppp150__escaneado_d5c.png",
       "png_identify": "969x1328 59.049999999999997158,59.049999999999997158 PixelsPerCentimeter",
+      "preflight": {
+        "vram_libre_mib": 8091,
+        "mpx_actual": 1.287,
+        "mpx_pendiente_ordenada": 0
+      },
+      "entrada": "ndarray BGR, 3 canales desde PNG sRGB",
+      "dispositivo": "GPU cuda:0",
       "rc": [
         0,
         0,
@@ -971,7 +1141,7 @@
         ""
       ],
       "n": 9,
-      "ms_mediana": 1124.2,
+      "ms_mediana": 330.7,
       "determinista": true,
       "metrica": "acentos",
       "cer_pct": 0.5,
@@ -988,6 +1158,13 @@
       "factor": 1.0,
       "png": "ppp072__escaneado_d5.png",
       "png_identify": "465x636 28.339999999999999858,28.339999999999999858 PixelsPerCentimeter",
+      "preflight": {
+        "vram_libre_mib": 8112,
+        "mpx_actual": 0.296,
+        "mpx_pendiente_ordenada": 0
+      },
+      "entrada": "ndarray BGR, 3 canales desde PNG sRGB",
+      "dispositivo": "GPU cuda:0",
       "rc": [
         0,
         0,
@@ -1011,7 +1188,7 @@
         ""
       ],
       "n": 9,
-      "ms_mediana": 1102.6,
+      "ms_mediana": 316.4,
       "determinista": true,
       "metrica": "acentos",
       "cer_pct": 0.5,
@@ -1028,6 +1205,13 @@
       "factor": 1.389,
       "png": "ppp100__escaneado_d5.png",
       "png_identify": "646x883 39.369999999999997442,39.369999999999997442 PixelsPerCentimeter",
+      "preflight": {
+        "vram_libre_mib": 7987,
+        "mpx_actual": 0.57,
+        "mpx_pendiente_ordenada": 0
+      },
+      "entrada": "ndarray BGR, 3 canales desde PNG sRGB",
+      "dispositivo": "GPU cuda:0",
       "rc": [
         0,
         0,
@@ -1051,7 +1235,7 @@
         ""
       ],
       "n": 9,
-      "ms_mediana": 1360.7,
+      "ms_mediana": 280.7,
       "determinista": true,
       "metrica": "acentos",
       "cer_pct": 0.7,
@@ -1068,6 +1252,13 @@
       "factor": 1.458,
       "png": "ppp105__escaneado_d5.png",
       "png_identify": "678x928 41.329999999999998295,41.340000000000003411 PixelsPerCentimeter",
+      "preflight": {
+        "vram_libre_mib": 7988,
+        "mpx_actual": 0.629,
+        "mpx_pendiente_ordenada": 0
+      },
+      "entrada": "ndarray BGR, 3 canales desde PNG sRGB",
+      "dispositivo": "GPU cuda:0",
       "rc": [
         0,
         0,
@@ -1091,7 +1282,7 @@
         ""
       ],
       "n": 9,
-      "ms_mediana": 1207.8,
+      "ms_mediana": 276.2,
       "determinista": true,
       "metrica": "acentos",
       "cer_pct": 9.7,
@@ -1108,6 +1299,13 @@
       "factor": 1.528,
       "png": "ppp110__escaneado_d5.png",
       "png_identify": "710x972 43.299999999999997158,43.299999999999997158 PixelsPerCentimeter",
+      "preflight": {
+        "vram_libre_mib": 8005,
+        "mpx_actual": 0.69,
+        "mpx_pendiente_ordenada": 0
+      },
+      "entrada": "ndarray BGR, 3 canales desde PNG sRGB",
+      "dispositivo": "GPU cuda:0",
       "rc": [
         0,
         0,
@@ -1131,7 +1329,7 @@
         ""
       ],
       "n": 9,
-      "ms_mediana": 1177.1,
+      "ms_mediana": 277.7,
       "determinista": true,
       "metrica": "acentos",
       "cer_pct": 1.8,
@@ -1148,6 +1346,13 @@
       "factor": 1.597,
       "png": "ppp115__escaneado_d5.png",
       "png_identify": "743x1016 45.270000000000003126,45.270000000000003126 PixelsPerCentimeter",
+      "preflight": {
+        "vram_libre_mib": 8003,
+        "mpx_actual": 0.755,
+        "mpx_pendiente_ordenada": 0
+      },
+      "entrada": "ndarray BGR, 3 canales desde PNG sRGB",
+      "dispositivo": "GPU cuda:0",
       "rc": [
         0,
         0,
@@ -1171,7 +1376,7 @@
         ""
       ],
       "n": 9,
-      "ms_mediana": 915.6,
+      "ms_mediana": 252.0,
       "determinista": true,
       "metrica": "acentos",
       "cer_pct": 1.3,
@@ -1188,6 +1393,13 @@
       "factor": 1.667,
       "png": "ppp120__escaneado_d5.png",
       "png_identify": "775x1060 47.24000000000000199,47.24000000000000199 PixelsPerCentimeter",
+      "preflight": {
+        "vram_libre_mib": 7983,
+        "mpx_actual": 0.822,
+        "mpx_pendiente_ordenada": 0
+      },
+      "entrada": "ndarray BGR, 3 canales desde PNG sRGB",
+      "dispositivo": "GPU cuda:0",
       "rc": [
         0,
         0,
@@ -1211,7 +1423,7 @@
         ""
       ],
       "n": 9,
-      "ms_mediana": 913.2,
+      "ms_mediana": 324.7,
       "determinista": true,
       "metrica": "acentos",
       "cer_pct": 1.7,
@@ -1228,6 +1440,13 @@
       "factor": 1.736,
       "png": "ppp125__escaneado_d5.png",
       "png_identify": "807x1104 49.210000000000000853,49.210000000000000853 PixelsPerCentimeter",
+      "preflight": {
+        "vram_libre_mib": 7962,
+        "mpx_actual": 0.891,
+        "mpx_pendiente_ordenada": 0
+      },
+      "entrada": "ndarray BGR, 3 canales desde PNG sRGB",
+      "dispositivo": "GPU cuda:0",
       "rc": [
         0,
         0,
@@ -1251,7 +1470,7 @@
         ""
       ],
       "n": 9,
-      "ms_mediana": 1085.9,
+      "ms_mediana": 265.5,
       "determinista": true,
       "metrica": "acentos",
       "cer_pct": 0.8,
@@ -1268,6 +1487,13 @@
       "factor": 1.806,
       "png": "ppp130__escaneado_d5.png",
       "png_identify": "840x1148 51.179999999999999716,51.179999999999999716 PixelsPerCentimeter",
+      "preflight": {
+        "vram_libre_mib": 7934,
+        "mpx_actual": 0.964,
+        "mpx_pendiente_ordenada": 0
+      },
+      "entrada": "ndarray BGR, 3 canales desde PNG sRGB",
+      "dispositivo": "GPU cuda:0",
       "rc": [
         0,
         0,
@@ -1291,7 +1517,7 @@
         ""
       ],
       "n": 9,
-      "ms_mediana": 862.2,
+      "ms_mediana": 289.1,
       "determinista": true,
       "metrica": "acentos",
       "cer_pct": 7.4,
@@ -1308,6 +1534,13 @@
       "factor": 1.875,
       "png": "ppp135__escaneado_d5.png",
       "png_identify": "872x1193 53.140000000000000568,53.149999999999998579 PixelsPerCentimeter",
+      "preflight": {
+        "vram_libre_mib": 7977,
+        "mpx_actual": 1.04,
+        "mpx_pendiente_ordenada": 0
+      },
+      "entrada": "ndarray BGR, 3 canales desde PNG sRGB",
+      "dispositivo": "GPU cuda:0",
       "rc": [
         0,
         0,
@@ -1331,7 +1564,7 @@
         ""
       ],
       "n": 9,
-      "ms_mediana": 1079.0,
+      "ms_mediana": 306.8,
       "determinista": true,
       "metrica": "acentos",
       "cer_pct": 0.5,
@@ -1348,6 +1581,13 @@
       "factor": 1.944,
       "png": "ppp140__escaneado_d5.png",
       "png_identify": "904x1237 55.109999999999999432,55.119999999999997442 PixelsPerCentimeter",
+      "preflight": {
+        "vram_libre_mib": 8053,
+        "mpx_actual": 1.118,
+        "mpx_pendiente_ordenada": 0
+      },
+      "entrada": "ndarray BGR, 3 canales desde PNG sRGB",
+      "dispositivo": "GPU cuda:0",
       "rc": [
         0,
         0,
@@ -1371,7 +1611,7 @@
         ""
       ],
       "n": 9,
-      "ms_mediana": 1578.8,
+      "ms_mediana": 303.6,
       "determinista": true,
       "metrica": "acentos",
       "cer_pct": 0.7,
@@ -1388,6 +1628,13 @@
       "factor": 2.014,
       "png": "ppp145__escaneado_d5.png",
       "png_identify": "936x1281 57.079999999999998295,57.079999999999998295 PixelsPerCentimeter",
+      "preflight": {
+        "vram_libre_mib": 8053,
+        "mpx_actual": 1.199,
+        "mpx_pendiente_ordenada": 0
+      },
+      "entrada": "ndarray BGR, 3 canales desde PNG sRGB",
+      "dispositivo": "GPU cuda:0",
       "rc": [
         0,
         0,
@@ -1411,7 +1658,7 @@
         ""
       ],
       "n": 9,
-      "ms_mediana": 2501.3,
+      "ms_mediana": 343.0,
       "determinista": true,
       "metrica": "acentos",
       "cer_pct": 0.3,
@@ -1428,6 +1675,13 @@
       "factor": 2.083,
       "png": "ppp150__escaneado_d5.png",
       "png_identify": "969x1325 59.049999999999997158,59.049999999999997158 PixelsPerCentimeter",
+      "preflight": {
+        "vram_libre_mib": 8061,
+        "mpx_actual": 1.284,
+        "mpx_pendiente_ordenada": 0
+      },
+      "entrada": "ndarray BGR, 3 canales desde PNG sRGB",
+      "dispositivo": "GPU cuda:0",
       "rc": [
         0,
         0,
@@ -1451,7 +1705,7 @@
         ""
       ],
       "n": 9,
-      "ms_mediana": 1684.2,
+      "ms_mediana": 312.1,
       "determinista": true,
       "metrica": "acentos",
       "cer_pct": 0.8,
@@ -1468,6 +1722,13 @@
       "factor": 1.0,
       "png": "ppp060__escaneado_d5b.png",
       "png_identify": "388x531 23.620000000000000995,23.620000000000000995 PixelsPerCentimeter",
+      "preflight": {
+        "vram_libre_mib": 8075,
+        "mpx_actual": 0.206,
+        "mpx_pendiente_ordenada": 0
+      },
+      "entrada": "ndarray BGR, 3 canales desde PNG sRGB",
+      "dispositivo": "GPU cuda:0",
       "rc": [
         0,
         0,
@@ -1491,7 +1752,7 @@
         ""
       ],
       "n": 9,
-      "ms_mediana": 1246.0,
+      "ms_mediana": 270.6,
       "determinista": true,
       "metrica": "acentos",
       "cer_pct": 10.4,
@@ -1508,6 +1769,13 @@
       "factor": 1.667,
       "png": "ppp100__escaneado_d5b.png",
       "png_identify": "647x885 39.369999999999997442,39.369999999999997442 PixelsPerCentimeter",
+      "preflight": {
+        "vram_libre_mib": 8082,
+        "mpx_actual": 0.573,
+        "mpx_pendiente_ordenada": 0
+      },
+      "entrada": "ndarray BGR, 3 canales desde PNG sRGB",
+      "dispositivo": "GPU cuda:0",
       "rc": [
         0,
         0,
@@ -1531,7 +1799,7 @@
         ""
       ],
       "n": 9,
-      "ms_mediana": 759.3,
+      "ms_mediana": 234.5,
       "determinista": true,
       "metrica": "acentos",
       "cer_pct": 19.5,
@@ -1548,6 +1816,13 @@
       "factor": 1.75,
       "png": "ppp105__escaneado_d5b.png",
       "png_identify": "679x929 41.329999999999998295,41.340000000000003411 PixelsPerCentimeter",
+      "preflight": {
+        "vram_libre_mib": 8087,
+        "mpx_actual": 0.631,
+        "mpx_pendiente_ordenada": 0
+      },
+      "entrada": "ndarray BGR, 3 canales desde PNG sRGB",
+      "dispositivo": "GPU cuda:0",
       "rc": [
         0,
         0,
@@ -1571,7 +1846,7 @@
         ""
       ],
       "n": 9,
-      "ms_mediana": 473.9,
+      "ms_mediana": 287.6,
       "determinista": true,
       "metrica": "acentos",
       "cer_pct": 11.7,
@@ -1588,6 +1863,13 @@
       "factor": 1.833,
       "png": "ppp110__escaneado_d5b.png",
       "png_identify": "711x974 43.299999999999997158,43.299999999999997158 PixelsPerCentimeter",
+      "preflight": {
+        "vram_libre_mib": 7991,
+        "mpx_actual": 0.693,
+        "mpx_pendiente_ordenada": 0
+      },
+      "entrada": "ndarray BGR, 3 canales desde PNG sRGB",
+      "dispositivo": "GPU cuda:0",
       "rc": [
         0,
         0,
@@ -1611,7 +1893,7 @@
         ""
       ],
       "n": 9,
-      "ms_mediana": 420.7,
+      "ms_mediana": 269.0,
       "determinista": true,
       "metrica": "acentos",
       "cer_pct": 11.1,
@@ -1628,6 +1910,13 @@
       "factor": 1.917,
       "png": "ppp115__escaneado_d5b.png",
       "png_identify": "744x1018 45.270000000000003126,45.270000000000003126 PixelsPerCentimeter",
+      "preflight": {
+        "vram_libre_mib": 7972,
+        "mpx_actual": 0.757,
+        "mpx_pendiente_ordenada": 0
+      },
+      "entrada": "ndarray BGR, 3 canales desde PNG sRGB",
+      "dispositivo": "GPU cuda:0",
       "rc": [
         0,
         0,
@@ -1651,7 +1940,7 @@
         ""
       ],
       "n": 9,
-      "ms_mediana": 391.4,
+      "ms_mediana": 344.4,
       "determinista": true,
       "metrica": "acentos",
       "cer_pct": 10.2,
@@ -1668,6 +1957,13 @@
       "factor": 2.0,
       "png": "ppp120__escaneado_d5b.png",
       "png_identify": "776x1062 47.24000000000000199,47.24000000000000199 PixelsPerCentimeter",
+      "preflight": {
+        "vram_libre_mib": 7804,
+        "mpx_actual": 0.824,
+        "mpx_pendiente_ordenada": 0
+      },
+      "entrada": "ndarray BGR, 3 canales desde PNG sRGB",
+      "dispositivo": "GPU cuda:0",
       "rc": [
         0,
         0,
@@ -1691,7 +1987,7 @@
         ""
       ],
       "n": 9,
-      "ms_mediana": 399.9,
+      "ms_mediana": 267.9,
       "determinista": true,
       "metrica": "acentos",
       "cer_pct": 9.4,
@@ -1708,6 +2004,13 @@
       "factor": 2.083,
       "png": "ppp125__escaneado_d5b.png",
       "png_identify": "808x1106 49.210000000000000853,49.210000000000000853 PixelsPerCentimeter",
+      "preflight": {
+        "vram_libre_mib": 7854,
+        "mpx_actual": 0.894,
+        "mpx_pendiente_ordenada": 0
+      },
+      "entrada": "ndarray BGR, 3 canales desde PNG sRGB",
+      "dispositivo": "GPU cuda:0",
       "rc": [
         0,
         0,
@@ -1731,7 +2034,7 @@
         ""
       ],
       "n": 9,
-      "ms_mediana": 415.5,
+      "ms_mediana": 283.6,
       "determinista": true,
       "metrica": "acentos",
       "cer_pct": 3.4,
@@ -1748,6 +2051,13 @@
       "factor": 2.167,
       "png": "ppp130__escaneado_d5b.png",
       "png_identify": "841x1151 51.179999999999999716,51.179999999999999716 PixelsPerCentimeter",
+      "preflight": {
+        "vram_libre_mib": 7852,
+        "mpx_actual": 0.968,
+        "mpx_pendiente_ordenada": 0
+      },
+      "entrada": "ndarray BGR, 3 canales desde PNG sRGB",
+      "dispositivo": "GPU cuda:0",
       "rc": [
         0,
         0,
@@ -1771,7 +2081,7 @@
         ""
       ],
       "n": 9,
-      "ms_mediana": 420.1,
+      "ms_mediana": 298.7,
       "determinista": true,
       "metrica": "acentos",
       "cer_pct": 10.6,
@@ -1788,6 +2098,13 @@
       "factor": 2.25,
       "png": "ppp135__escaneado_d5b.png",
       "png_identify": "873x1195 53.140000000000000568,53.149999999999998579 PixelsPerCentimeter",
+      "preflight": {
+        "vram_libre_mib": 7861,
+        "mpx_actual": 1.043,
+        "mpx_pendiente_ordenada": 0
+      },
+      "entrada": "ndarray BGR, 3 canales desde PNG sRGB",
+      "dispositivo": "GPU cuda:0",
       "rc": [
         0,
         0,
@@ -1811,7 +2128,7 @@
         ""
       ],
       "n": 9,
-      "ms_mediana": 422.1,
+      "ms_mediana": 302.7,
       "determinista": true,
       "metrica": "acentos",
       "cer_pct": 4.2,
@@ -1828,6 +2145,13 @@
       "factor": 2.333,
       "png": "ppp140__escaneado_d5b.png",
       "png_identify": "905x1239 55.109999999999999432,55.119999999999997442 PixelsPerCentimeter",
+      "preflight": {
+        "vram_libre_mib": 7870,
+        "mpx_actual": 1.121,
+        "mpx_pendiente_ordenada": 0
+      },
+      "entrada": "ndarray BGR, 3 canales desde PNG sRGB",
+      "dispositivo": "GPU cuda:0",
       "rc": [
         0,
         0,
@@ -1851,7 +2175,7 @@
         ""
       ],
       "n": 9,
-      "ms_mediana": 439.2,
+      "ms_mediana": 308.5,
       "determinista": true,
       "metrica": "acentos",
       "cer_pct": 3.2,
@@ -1868,6 +2192,13 @@
       "factor": 2.417,
       "png": "ppp145__escaneado_d5b.png",
       "png_identify": "938x1283 57.079999999999998295,57.079999999999998295 PixelsPerCentimeter",
+      "preflight": {
+        "vram_libre_mib": 7808,
+        "mpx_actual": 1.203,
+        "mpx_pendiente_ordenada": 0
+      },
+      "entrada": "ndarray BGR, 3 canales desde PNG sRGB",
+      "dispositivo": "GPU cuda:0",
       "rc": [
         0,
         0,
@@ -1891,7 +2222,7 @@
         ""
       ],
       "n": 9,
-      "ms_mediana": 426.9,
+      "ms_mediana": 310.1,
       "determinista": true,
       "metrica": "acentos",
       "cer_pct": 3.9,
@@ -1908,6 +2239,13 @@
       "factor": 2.5,
       "png": "ppp150__escaneado_d5b.png",
       "png_identify": "970x1328 59.049999999999997158,59.049999999999997158 PixelsPerCentimeter",
+      "preflight": {
+        "vram_libre_mib": 7829,
+        "mpx_actual": 1.288,
+        "mpx_pendiente_ordenada": 0
+      },
+      "entrada": "ndarray BGR, 3 canales desde PNG sRGB",
+      "dispositivo": "GPU cuda:0",
       "rc": [
         0,
         0,
@@ -1931,7 +2269,7 @@
         ""
       ],
       "n": 9,
-      "ms_mediana": 513.0,
+      "ms_mediana": 334.4,
       "determinista": true,
       "metrica": "acentos",
       "cer_pct": 3.2,
@@ -1941,5 +2279,5 @@
       "texto": "rapid-v6-def__ppp150__escaneado_d5b.txt"
     }
   ],
-  "segundos": 628.1
+  "segundos": 283.0
 }

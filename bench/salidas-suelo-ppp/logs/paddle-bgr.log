@@ -1,0 +1,65 @@
+[32mCreating model: ('PP-LCNet_x1_0_textline_ori', None, None)[0m
+Traceback (most recent call last):
+  File "D:\Work\research\FileX\.ccb\workspaces\worker1\bench\salidas-suelo-ppp\b21b22.py", line 170, in <module>
+    if __name__=="__main__": main()
+                             ^^^^^^
+  File "D:\Work\research\FileX\.ccb\workspaces\worker1\bench\salidas-suelo-ppp\b21b22.py", line 148, in main
+    ocr,meta=engine(args.config); rows=[]; t0=time.time()
+             ^^^^^^^^^^^^^^^^^^^
+  File "D:\Work\research\FileX\.ccb\workspaces\worker1\bench\salidas-suelo-ppp\b21b22.py", line 106, in engine
+    x=PaddleOCR(device="gpu:0",lang="en",use_doc_orientation_classify=False,use_doc_unwarping=False,use_textline_orientation=True)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Work\research\FileX\.venv-paddle\Lib\site-packages\paddleocr\_pipelines\ocr.py", line 173, in __init__
+    super().__init__(**base_params)
+  File "D:\Work\research\FileX\.venv-paddle\Lib\site-packages\paddleocr\_pipelines\base.py", line 67, in __init__
+    self.paddlex_pipeline = self._create_paddlex_pipeline()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Work\research\FileX\.venv-paddle\Lib\site-packages\paddleocr\_pipelines\base.py", line 105, in _create_paddlex_pipeline
+    return create_pipeline(config=self._merged_paddlex_config, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Work\research\FileX\.venv-paddle\Lib\site-packages\paddlex\inference\pipelines\__init__.py", line 169, in create_pipeline
+    pipeline = BasePipeline.get(pipeline_name)(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Work\research\FileX\.venv-paddle\Lib\site-packages\paddlex\utils\deps.py", line 208, in _wrapper
+    return old_init_func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Work\research\FileX\.venv-paddle\Lib\site-packages\paddlex\inference\pipelines\_parallel.py", line 135, in __init__
+    self._pipeline = self._create_internal_pipeline(config, self.device)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Work\research\FileX\.venv-paddle\Lib\site-packages\paddlex\inference\pipelines\_parallel.py", line 190, in _create_internal_pipeline
+    pipeline = self._pipeline_cls(
+               ^^^^^^^^^^^^^^^^^^^
+  File "D:\Work\research\FileX\.venv-paddle\Lib\site-packages\paddlex\inference\pipelines\ocr\pipeline.py", line 95, in __init__
+    self.textline_orientation_model = self.create_model(
+                                      ^^^^^^^^^^^^^^^^^^
+  File "D:\Work\research\FileX\.venv-paddle\Lib\site-packages\paddlex\inference\pipelines\base.py", line 143, in create_model
+    return create_predictor(
+           ^^^^^^^^^^^^^^^^^
+  File "D:\Work\research\FileX\.venv-paddle\Lib\site-packages\paddlex\inference\models\__init__.py", line 432, in create_predictor
+    model_dir_resolved = _resolve_local_model_dir(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Work\research\FileX\.venv-paddle\Lib\site-packages\paddlex\inference\models\__init__.py", line 273, in _resolve_local_model_dir
+    return _resolve_model_dir(
+           ^^^^^^^^^^^^^^^^^^^
+  File "D:\Work\research\FileX\.venv-paddle\Lib\site-packages\paddlex\inference\models\__init__.py", line 100, in _resolve_model_dir
+    official_models.get_model_path(
+  File "D:\Work\research\FileX\.venv-paddle\Lib\site-packages\paddlex\inference\utils\official_models.py", line 985, in get_model_path
+    return self._get_model_local_path(download_model_names)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Work\research\FileX\.venv-paddle\Lib\site-packages\paddlex\inference\utils\official_models.py", line 952, in _get_model_local_path
+    with filelock.FileLock(lock_path):
+  File "D:\Work\research\FileX\.venv-paddle\Lib\site-packages\filelock\_api.py", line 951, in __enter__
+    self.acquire()
+  File "D:\Work\research\FileX\.venv-paddle\Lib\site-packages\filelock\_api.py", line 1059, in acquire
+    self._poll_until_acquired(
+  File "D:\Work\research\FileX\.venv-paddle\Lib\site-packages\filelock\_api.py", line 1220, in _poll_until_acquired
+    self._acquire_with_fork_tracking()
+  File "D:\Work\research\FileX\.venv-paddle\Lib\site-packages\filelock\_api.py", line 1278, in _acquire_with_fork_tracking
+    self._acquire()
+  File "D:\Work\research\FileX\.venv-paddle\Lib\site-packages\filelock\_windows.py", line 189, in _acquire
+    locked = _lock_fd_nonblocking(fd)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Work\research\FileX\.venv-paddle\Lib\site-packages\filelock\_windows.py", line 162, in _lock_fd_nonblocking
+    raise ctypes.WinError(err)  # pragma: no cover
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [WinError 1] Función incorrecta.
