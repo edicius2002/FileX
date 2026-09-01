@@ -1,10 +1,11 @@
 # MANIFIESTO — bench/salidas-suelo-ppp/img/
 
-Los **60 rásteres PNG** de este directorio (7,0 MB) **no se versionan**: son regenerables y,
-además, pertenecen a la **tanda descartada** por la trampa 92 (referencia duplicada ×2,002).
-No respaldan ninguna cifra publicada — `suelo-ppp.md` declara B21 y B22 **PENDIENTES**.
+Los **60 rásteres PNG** de este directorio (7,0 MB) **no se versionan**: son regenerables.
+La tanda vigente B21/B22 los reproduce desde `d4_texto.BLOQUES` (610 caracteres de origen,
+596 tras normalización acentuada); no parsea `REFERENCIA-d5.txt`.
 
-**Orden que los reproduce:** `python bench/salidas-suelo-ppp/b21b22.py` desde Git Bash.
+**Orden que los reproduce:** desde Git Bash de Windows,
+`/d/Work/research/FileX/.venv-ai/Scripts/python.exe bench/salidas-suelo-ppp/b21b22.py rapid-v6-r6 --ppp 100,105,110,115,120,125,130,135,140,145,150 --reps 9`.
 
 | Fichero | Bytes | SHA-256 |
 |---|---:|---|
