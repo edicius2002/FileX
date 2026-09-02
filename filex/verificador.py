@@ -133,9 +133,23 @@ FIRMAS = [
     # valido no puede llevar 0 imagenes, asi que `00 00 01 00 00 00` nunca es un ICO.
     (0, b"\x00\x00\x01\x00\x00\x00", "jbig"),
     (0, b"\x00\x00\x01\x00", "ico"),
+    # C31(c): la MISMA forma que JBIG/ICO arriba, del lado que faltaba. Un CUR
+    # valido NO PUEDE llevar 0 imagenes (los bytes 4-5 son la cuenta), y
+    # `00 00 02 00 00 00` es justo lo que escribe `magick` para un TGA sin ID
+    # ni mapa de color (tipo=2, longitud de mapa=0) -- MEDIDO en ejecucion,
+    # `bench/hito3-mudanza.md` sec.6.3: un TGA real entregado con extension
+    # `.cur` pasaba `evaluado` con CERO hallazgos, indistinguible de un cursor
+    # autentico. Se comprueba ANTES que la firma corta de 4 bytes y se deja
+    # SIN CLASIFICAR -- no se inventa un "tga" que este proyecto no puede
+    # validar en general (no tiene marcador universal: sigue en EXT_SIN_FIRMA).
+    # `desconocido` hace que el punto 1 compare contra {"cur","ico"} y falle
+    # con G3 en vez de aprobar en silencio.
+    (0, b"\x00\x00\x02\x00\x00\x00", "desconocido"),
     # OJO, colision declarada: un TGA sin comprimir empieza tambien por
     # `00 00 02 00 ...`. No produce falso positivo porque `.tga` esta en
-    # EXT_SIN_FIRMA (no tiene marcador), pero un TGA con extension .cur pasaria.
+    # EXT_SIN_FIRMA (no tiene marcador), pero un TGA con extension .cur pasaria
+    # -- salvo en el caso de arriba (cuenta de imagenes = 0), que es el unico
+    # que un `.cur` real jamas produce.
     (0, b"\x00\x00\x02\x00", "cur"),
     (0, b"qoif", "qoi"),
     (0, b"farbfeld", "farbfeld"),
@@ -1566,22 +1580,38 @@ def _datos(ruta: str) -> dict:
         # subclase de ValueError, asi que se escapaba del `except` de
         # sondear_en_proceso y TUMBABA EL PROCESO. Lo dispara una salida real: el
         # "TXT" de ImageMagick, que es la enumeracion de los pixeles.
+        #
+        # C31(a): NO se materializa `list(csv.reader(...))`. Esa lista de listas
+        # de `str` -uno por CAMPO, no por fila- es el coste medido en x21,3 sobre
+        # el fichero (x7,0 en la rama degradada de abajo) -- MEDIDO,
+        # `bench/hito3-mudanza.md` sec.6.1, corrige `firmas-contrato.md` sec.10.
+        # Ningun punto del contrato lee las filas en si, solo estos CUATRO
+        # agregados (D1/D2 en `punto3_propiedades`/`punto4_pedido`), asi que se
+        # calculan en UN SOLO RECORRIDO sin retener mas que el que va, la
+        # cabecera y una lista de enteros (longitud por fila, no el contenido).
+        cabecera = None
+        n_filas = 0
+        campos_por_fila = []
         try:
-            filas = list(csv.reader(io.StringIO(texto, newline="")))
+            for fila in csv.reader(io.StringIO(texto, newline="")):
+                if not fila:
+                    continue
+                if cabecera is None:
+                    cabecera = fila
+                campos_por_fila.append(len(fila))
+                n_filas += 1
         except csv.Error as e:
             d["error"] = "csv ilegible: %s" % e
             d["csv_n_filas"] = 0
             d["csv_cabecera"] = []
             d["filas_datos"] = 0
             return d
-        filas = [f for f in filas if f]
-        d["csv_filas"] = filas
-        d["csv_n_filas"] = len(filas)
-        d["csv_n_campos_por_fila"] = [len(f) for f in filas]
-        d["csv_cabecera"] = filas[0] if filas else []
+        d["csv_n_filas"] = n_filas
+        d["csv_n_campos_por_fila"] = campos_por_fila
+        d["csv_cabecera"] = cabecera or []
         # Un CSV cuenta su cabecera como fila y un JSON de objetos no. Comparar
         # 'n_filas' entre ambos da un desfase de 1 que parece perdida de datos.
-        d["filas_datos"] = max(0, len(filas) - 1)
+        d["filas_datos"] = max(0, n_filas - 1)
     return d
 
 

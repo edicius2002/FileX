@@ -193,6 +193,60 @@ class LosOtrosDosQueElDatoDejaAccionables(_ConFicheros):
         self.assertEqual(V.punto1_estado(p), "evaluado")
 
 
+class TGAEntregadoComoCUR(_ConFicheros):
+    """C31(c) — `bench/hito3-mudanza.md` §6.3: un TGA sin comprimir escrito por
+    `magick` (ID=0, sin mapa de color, tipo=2) empieza por los mismos 4 bytes
+    que un CUR (`00 00 02 00`) y, entregado con extensión `.cur`, pasaba
+    `evaluado` con CERO hallazgos — indistinguible de un cursor auténtico.
+
+    El discriminante es la MISMA forma que ya separaba JBIG de ICO: un CUR
+    válido no puede declarar 0 imágenes (bytes 4-5), y `00 00 02 00 00 00`
+    —lo que escribe `magick`— es justo ese caso imposible.
+    """
+
+    #: Cabecera real de `magick tipico.png real.tga` — MEDIDO,
+    #: `bench/hito3-mudanza.md` §6.3 y reproducido de nuevo en la ronda 6.
+    TGA_SIN_COLORMAP = b"\x00\x00\x02\x00\x00\x00" + b"\x00" * 200
+
+    def test_un_TGA_entregado_como_cur_ya_NO_se_clasifica_cur(self):
+        p = self.escribe("m.cur", self.TGA_SIN_COLORMAP)
+        self.assertNotEqual(V.firma_real(p), "cur")
+
+    def test_el_contrato_sobre_ese_fichero_SI_dispara_fallo(self):
+        """El ANTES de esta prueba era `ok_parcial` con 0 hallazgos — el falso
+        negativo confirmado en ejecución. Ahora tiene que fallar por firma."""
+        p = self.escribe("m.cur", self.TGA_SIN_COLORMAP)
+        r = V.verificar(p, {"destino": "cur", "params": {}})
+        self.assertEqual(r["veredicto"], "fallo")
+        g3 = [h for h in r["hallazgos"]
+              if h["regla"] == "G3" and h["severidad"] == "fallo"]
+        self.assertEqual(len(g3), 1, r["hallazgos"])
+
+    def test_un_CUR_de_verdad_con_imagenes_SIGUE_pasando(self):
+        # Control negativo: el discriminante no puede volverse un veto general
+        # sobre `.cur`. Cuenta = 1 (bytes 4-5), como cualquier cursor real.
+        p = self.escribe("m.cur", b"\x00\x00\x02\x00\x01\x00\x10\x10"
+                                  + b"\x00" * 64)
+        self.assertEqual(V.firma_real(p), "cur")
+        r = V.verificar(p, {"destino": "cur", "params": {}})
+        self.assertNotEqual(r["veredicto"], "fallo")
+
+    def test_el_mismo_fichero_con_extension_tga_no_cambia(self):
+        # `.tga` no tiene marcador (EXT_SIN_FIRMA): el veredicto no depende de
+        # que `firma_real` diga "cur" o "desconocido", así que esto no regresa.
+        p = self.escribe("m.tga", self.TGA_SIN_COLORMAP)
+        self.assertEqual(V.punto1_estado(p), "no_aplica")
+        r = V.verificar(p, {"destino": "tga", "params": {}})
+        self.assertNotEqual(r["veredicto"], "fallo")
+
+    def test_un_ICO_de_verdad_no_se_ve_afectado(self):
+        # El discriminante nuevo es de "cur"; "ico" usa un patron de 4 bytes
+        # distinto (`00 00 01 00`) y no lo toca esta entrada.
+        p = self.escribe("m.ico", b"\x00\x00\x01\x00\x01\x00\x10\x10"
+                                  + b"\x00" * 64)
+        self.assertEqual(V.firma_real(p), "ico")
+
+
 class LosDiecisieteDelBannerDelEscritor(_ConFicheros):
     """C28. `firmas-contrato.md` §10.1 propone atacarlos con **un segundo
     escritor por formato**, y no hay: **0 de 17** tienen un segundo escritor

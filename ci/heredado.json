@@ -1,9 +1,5 @@
 {
-  "_": "Deuda CONGELADA y REMEDIDA el 01/09/2026. Encogio dos veces en el mismo dia, y las dos por defectos de la SONDA, no por trabajo: (1) glob() sobre el arbol contaba un directorio que en un clon no existe; (2) exigir el nombre exacto MANIFIESTO.md ocultaba dos manifiestos escritos a proposito, y la regla de peso no distinguia salida regenerable de evidencia irreproducible. Lo que esta aqui no rompe la CI; lo NUEVO si, y lo ARREGLADO tambien. C41 (ronda 3, worker2) escribio los 17 manifiestos que faltaban -- bench/saneo-inventario.md tiene el detalle por directorio -- y la clave 'manifiestos' queda vacia.",
-  "binarios": [
-    "bench/salidas-mcp-refs/multimedia/salidas/vam_trivial.mkv",
-    "bench/salidas-mcp-refs/multimedia/salidas_lite/trivial_converted.gif",
-    "bench/salidas-mcp-refs/multimedia/salidas_lite/trivial_converted.webm"
-  ],
+  "_": "Deuda CONGELADA y REMEDIDA el 01/09/2026. Encogio dos veces en el mismo dia, y las dos por defectos de la SONDA, no por trabajo: (1) glob() sobre el arbol contaba un directorio que en un clon no existe; (2) exigir el nombre exacto MANIFIESTO.md ocultaba dos manifiestos escritos a proposito, y la regla de peso no distinguia salida regenerable de evidencia irreproducible. Lo que esta aqui no rompe la CI; lo NUEVO si, y lo ARREGLADO tambien. C41 (ronda 3, worker2) escribio los 17 manifiestos que faltaban -- bench/saneo-inventario.md tiene el detalle por directorio -- y la clave 'manifiestos' queda vacia. C40 (ronda 6, 03/09/2026, worker2) cerro los 3 binarios que quedaban: `trivial_converted.gif` se BORRO -- reproducido byte a byte (mismo sha256) con `ffmpeg -i corpus/video/trivial.mp4 -y <salida>.gif`, sin necesitar el venv borrado de ffmpeg-mcp-lite, MEDIDO leyendo su fuente en `repos/mcp-refs/` -- y `vam_trivial.mkv`/`trivial_converted.webm` pasan a `ci/evidencia-irreproducible.txt`: el muxer Matroska/WebM de libavformat genera un UID EBML aleatorio en cada mux, MEDIDO con dos conversiones nativas identicas que difieren de sha256. La clave 'binarios' queda vacia.",
+  "binarios": [],
   "manifiestos": []
 }
