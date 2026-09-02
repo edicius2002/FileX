@@ -604,9 +604,17 @@ Agrupado por **el recurso que lo limita**, que es lo que decide el reparto. Cada
 
 | Agente | Trabajo | Informe | Estado |
 |---|---|---|---|
-| **worker1** (carril GPU) · `edicius2002/filex-gpu` | **N29 + B23 (resto)** — el `_vivo()` que sólo sabe preguntar con `tasklist`, y las 4 configuraciones que la rejilla reducida no cubrió | `bench/vivo-y-residuos.md` | 🟡 **DESPACHADA** |
-| **worker2** (carril CPU/Docker) · `edicius2002/filex-cpu` | **C43 + C42 (resto)** — sellar el intérprete y negarse a comparar; la causa sin reproducir y la promoción en el runner real | `bench/huella-y-runner.md` | 🟡 **DESPACHADA** |
+| **worker1** (carril GPU) · `edicius2002/filex-gpu` | **N29 + B23 (resto)** — el `_vivo()` que sólo sabe preguntar con `tasklist`, y las 4 configuraciones que la rejilla reducida no cubrió | `bench/vivo-y-residuos.md` | 🟡 **ENTREGADA (`58eeca4`), pendiente de verificación del maestro.** DECLARA: huérfano recuperado en **<5 ms** con el arreglo y **nunca** con la versión vieja reimplantada; **112 celdas** en las 4 configuraciones que faltaban del racimo de 9, **0 fallos, 0 no deterministas, 0 celdas a CER 100 %**; y un hallazgo que no se esperaba — **los dos Docling tienen el arrepentimiento MÁXIMO del racimo entero (8,4-8,8 pt)**, y no por el «peine» ya conocido de RapidOCR sino por degradar sistemáticamente en el documento más pequeño. Suite: **434 passed · 0 failed · 3 skipped** |
+| **worker2** (carril CPU/Docker) · `edicius2002/filex-cpu` | **C43 + C42 (resto)** — sellar el intérprete y negarse a comparar; la causa sin reproducir y la promoción en el runner real | `bench/huella-y-runner.md` | 🟡 **ENTREGADA (`42f090d`), pendiente de verificación del maestro.** DECLARA: `C43` cerrada —ningún motor caducado ni no comparable— con línea base **medida antes de tocar nada** (422 passed · 3 skipped · 1 failed que **pasa aislado**, atribuido a contención y declarado *no es mío ni de esta ronda*). `C42` **avanzada y no cerrable**: cuarto intento de reproducir `test_watcher_n`, ahora sobre **ext4 genuino de WSL2** —que ninguno de los tres previos había probado—, sigue sin reproducirse, **lo documenta y para**. **Y trae el dato que el proyecto no tenía: esta sesión SÍ tiene credenciales de `gh`**, y lo declaró en el informe **en vez de usarlas** |
 
+> **`C44` se adelanta a la ronda 6.** Su requisito previo era `N29`, que la ronda 5 acaba de cerrar,
+> y su riesgo entero —el runner como **tercer actor sobre el lock de la tarjeta**— vive en el módulo
+> que worker1 tiene recién reescrito. Además **no toca la GPU**, así que deja la máquina libre para
+> verificar la ronda 5 sin contención (trampa 101). **Alcance acotado al despacharlo:** el diseño de
+> seguridad, los *workflows*, los cambios en `ci/` y la medición son del agente; **registrar el runner
+> e instalar el servicio, y cambiar los ajustes del repositorio en GitHub, NO** — y eso importa más
+> ahora que se sabe que **sí hay credenciales de `gh`** en las sesiones de los workers.
+>
 > **Por qué estas cuatro y no otras: son el instrumento que juzga a las demás.** Hasta que `N29`
 > cierre, un lock huérfano no se recupera fuera de Windows —y los dos *worktrees* nuevos son justo
 > otro sitio desde donde tomarlo—; hasta que `C43` cierre, la huella dice «caducado» donde debería
@@ -623,11 +631,11 @@ Agrupado por **el recurso que lo limita**, que es lo que decide el reparto. Cada
 
 | Ronda | worker1 · GPU | worker2 · CPU/Docker | Qué la une |
 |---|---|---|---|
-| **6** | **B20** + **B7** | **C31** + **C32** + **C40** | Filas cuyo color no se puede creer todavía |
+| **6** | **C44** (runner con aprobación manual) · 🟡 **DESPACHADA el 02/09** | **C31** + **C32** + **C40** | El carril GPU **adelanta `C44`**: su requisito era `N29`, ya cerrado, y no toca la tarjeta |
 | **7** | **B8** + **C18** | **C20** + **C23** | Cuatro umbrales que no se cierran sin variar la entrada |
 | **8** | **N26** + **N27** | **C24** + **C25** | Los dos modelos que hoy se sostienen sobre un margen |
 | **9** | **B3** (marker, build CPU) + cerrar **B4**/**B5** | **N9** + **C5** | Aquí sale `.venv-marker` de la lista protegida |
-| **10** | **C44** (runner con aprobación manual) | **C35** + **C36** | Las dos mayores del inventario, una por carril |
+| **10** | **B20** + **B7** | **C35** + **C36** | Las dos mayores del carril CPU, y el residuo de B12 con la heurística ya calibrable contra `d4` |
 | **11** | — | **C16** + **C28** (corpus FATE, ya en disco) | Convierte el 48,6 % estimado en número medido |
 
 ---
