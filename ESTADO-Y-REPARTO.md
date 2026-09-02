@@ -557,7 +557,7 @@ Agrupado por **el recurso que lo limita**, que es lo que decide el reparto. Cada
 
 ---
 
-### Ronda 4 — **01/09, DESPACHADA** · *registrada al despacharla*
+### Ronda 4 — **EJECUTADA Y CERRADA (01–02/09)** · *registrada al despacharla*
 
 > **Los encargos de GPU van en RACIMO porque interactúan.** `B23`, `B24` y `B16` no son tres
 > tareas que quepan en un agente: son **una sola rejilla**. El `k` está ajustado sobre tres
@@ -572,8 +572,23 @@ Agrupado por **el recurso que lo limita**, que es lo que decide el reparto. Cada
 
 | Agente | Trabajo | Informe | Estado |
 |---|---|---|---|
-| **worker1** (carril GPU) | **B23 + B24 + B16** — el `k` sobre documentos que no discriminan, el `--oem` sin tocar, y los dos acantilados sin puntos intermedios | `bench/k-oem-acantilados.md` | 🟡 **DESPACHADA** |
-| **worker2** (carril CPU/Docker) | **C42 + C27 + C20** — los 10 módulos que no corren en el runner, G6 de `aviso` a `fallo`, y el sustituto de P9 a escala | `bench/ci-y-contrato.md` | 🟡 **DESPACHADA** |
+| **worker1** (carril GPU) | **B23 + B24 + B16** | `bench/k-oem-acantilados.md` | 🟢 **B16 y B24 CERRADAS, B23 a medias.** 234 celdas. **B16 refuta su propio enunciado**: no hay acantilado, hay un **peine** —2,53 / 73,42 / 25,32 / 6,33 / **0,00** / 75,95 en `k` consecutivos, 13 de 13 deterministas—, y el 75,95 % que se repite exacto es **colapso de modo verificado LEYENDO EL TEXTO**: las celdas devuelven sólo la primera línea, 60 caracteres de 79 = 75,95 % exacto. **B24 cierra sin trabajo pendiente**: `oem 0` y `oem 2` fallan 16 de 16 porque el `spa.traineddata` de PDFgear es LSTM-only, `oem 1` y `oem 3` dan CER idéntico letra por letra, los once `--psm` se reducen a **tres comportamientos**, y **Ghostscript ≡ ImageMagick en 10 de 10** con el pHYs declarado — la tabla de `k` **no** hay que rehacerla |
+| **worker2** (carril CPU/Docker) | **C42 + C27 + C20** | `bench/ci-y-contrato.md` | 🟢 **C27 cerrada, C42 avanzada, C20 declarada intacta.** **7/17 → 14/17** módulos limpios. Los diez rotos eran **dos mecanismos, no diez causas** —sin motores externos, y el corpus como punteros de LFS— más dos no previstos: **`_vivo()` pregunta con `tasklist`** (→ `N29`, fallo de PRODUCTO que **no tocó porque es del otro carril**) y un `docker run` bajando **5,7 GB** en cada ejecución. Y el hallazgo que da la **trampa 107**: un `skipUnless` que nombra su causa y **no protege nada**, porque `os.path.exists()` es `True` para un puntero de LFS. **No sobrescribió `ci/linux-apto.json`** —su contenedor no es el runner— y dejó `test_watcher_n` **sin resolver en vez de forzarlo** |
+
+---
+
+### Ronda 5 — **02/09, DESPACHADA** · *registrada al despacharla*
+
+> **Cada carril recoge lo que la ronda anterior le dejó, y en el caso de worker1 eso incluye
+> un fallo que descubrió el OTRO carril.** `N29` es de `filex/gpu.py`: worker2 lo diagnosticó
+> al clasificar C42 y no lo tocó porque no es suyo. Que la propiedad de módulos aguante bajo
+> tentación —tenía el diagnóstico hecho y el arreglo a la vista— es la primera prueba real de
+> que el reparto por carriles funciona, y no sólo de que está escrito.
+
+| Agente | Trabajo | Informe | Estado |
+|---|---|---|---|
+| **worker1** (carril GPU) | **N29 + B23 (resto) + B20** — el `_vivo()` que sólo sabe preguntar en Windows, las 4 configuraciones que B23 no cubrió, y el residuo de B12 | `bench/vivo-y-residuos.md` | 🟡 **DESPACHADA** |
+| **worker2** (carril CPU/Docker) | **C20 + C31 + C32** — el sustituto de P9 fuera de Ghostscript, el falso positivo VIVO de `.pcd`, y el texto de §10 que nadie ha corregido | `bench/pcd-y-acuerdo.md` | 🟡 **DESPACHADA** |
 
 ---
 
