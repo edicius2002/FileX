@@ -1,0 +1,65 @@
+{
+  "coste_tomar_soltar": {
+    "n": 9,
+    "tomar_us_mediana": 618.5,
+    "soltar_us_mediana": 1144.8,
+    "detalle": [
+      {
+        "tomar_us": 9424.3,
+        "soltar_us": 9633.7
+      },
+      {
+        "tomar_us": 780.9,
+        "soltar_us": 1254.7
+      },
+      {
+        "tomar_us": 653.4,
+        "soltar_us": 1120.4
+      },
+      {
+        "tomar_us": 550.2,
+        "soltar_us": 1258.0
+      },
+      {
+        "tomar_us": 676.4,
+        "soltar_us": 1093.0
+      },
+      {
+        "tomar_us": 576.0,
+        "soltar_us": 1192.4
+      },
+      {
+        "tomar_us": 557.5,
+        "soltar_us": 1051.6
+      },
+      {
+        "tomar_us": 618.5,
+        "soltar_us": 981.7
+      },
+      {
+        "tomar_us": 540.2,
+        "soltar_us": 1144.8
+      }
+    ]
+  },
+  "control_negativo": {
+    "robo_indebido": false,
+    "dt_s": 1.014,
+    "pid_dueno_vivo": 33592
+  },
+  "control_positivo": {
+    "recupero": true,
+    "dt_s": 0.171,
+    "pid_muerto": 33248,
+    "campos_lock_antes": [
+      "hijo-ci",
+      "33248",
+      "33248",
+      "python.exe",
+      "1788359946",
+      "C:\\Users\\krato\\orca\\workspaces\\FileX\\filex-gpu"
+    ]
+  },
+  "plataforma": "win32",
+  "python": "3.11.9"
+}

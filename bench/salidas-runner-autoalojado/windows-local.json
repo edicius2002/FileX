@@ -1,0 +1,180 @@
+{
+  "_": "Medido con 3.11.9 el 2026-09-02. Se regenera con `python ci/sonda_windows.py`. APTO = rc 0 dentro del tope; no significa que la prueba MIDA algo en Windows, sólo que no rompe ni cuelga.",
+  "interprete": "3.11.9",
+  "ejecutable": "D:\\Work\\research\\FileX\\.venv-mcp-filex\\Scripts\\python.exe",
+  "plataforma": "win32",
+  "tope_por_modulo_s": 90,
+  "excluidos": [
+    "test_gpu_lock",
+    "test_hito2"
+  ],
+  "aptos": [
+    "test_a7_ciego",
+    "test_bitrate_y_lock",
+    "test_cancelacion",
+    "test_cancelacion_procesos",
+    "test_cerrojo",
+    "test_cerrojo_unico",
+    "test_contrato_v",
+    "test_firmas_cierre",
+    "test_hito1",
+    "test_hito4",
+    "test_hito5",
+    "test_hito6",
+    "test_hito7",
+    "test_sondeo",
+    "test_watcher_n"
+  ],
+  "detalle": [
+    {
+      "modulo": "test_a7_ciego",
+      "veredicto": "APTO",
+      "rc": 0,
+      "corridas": 6,
+      "saltos": 0,
+      "fallos": 0,
+      "segundos": 2.8,
+      "cuelga_en": ""
+    },
+    {
+      "modulo": "test_bitrate_y_lock",
+      "veredicto": "APTO",
+      "rc": 0,
+      "corridas": 17,
+      "saltos": 0,
+      "fallos": 0,
+      "segundos": 0.4,
+      "cuelga_en": ""
+    },
+    {
+      "modulo": "test_cancelacion",
+      "veredicto": "APTO",
+      "rc": 0,
+      "corridas": 20,
+      "saltos": 0,
+      "fallos": 0,
+      "segundos": 19.4,
+      "cuelga_en": ""
+    },
+    {
+      "modulo": "test_cancelacion_procesos",
+      "veredicto": "APTO",
+      "rc": 0,
+      "corridas": 15,
+      "saltos": 0,
+      "fallos": 0,
+      "segundos": 20.3,
+      "cuelga_en": ""
+    },
+    {
+      "modulo": "test_cerrojo",
+      "veredicto": "APTO",
+      "rc": 0,
+      "corridas": 24,
+      "saltos": 1,
+      "fallos": 0,
+      "segundos": 40.2,
+      "cuelga_en": ""
+    },
+    {
+      "modulo": "test_cerrojo_unico",
+      "veredicto": "APTO",
+      "rc": 0,
+      "corridas": 15,
+      "saltos": 0,
+      "fallos": 0,
+      "segundos": 2.3,
+      "cuelga_en": ""
+    },
+    {
+      "modulo": "test_contrato_v",
+      "veredicto": "APTO",
+      "rc": 0,
+      "corridas": 19,
+      "saltos": 0,
+      "fallos": 0,
+      "segundos": 0.8,
+      "cuelga_en": ""
+    },
+    {
+      "modulo": "test_firmas_cierre",
+      "veredicto": "APTO",
+      "rc": 0,
+      "corridas": 32,
+      "saltos": 0,
+      "fallos": 0,
+      "segundos": 0.5,
+      "cuelga_en": ""
+    },
+    {
+      "modulo": "test_hito1",
+      "veredicto": "APTO",
+      "rc": 0,
+      "corridas": 32,
+      "saltos": 0,
+      "fallos": 0,
+      "segundos": 3.8,
+      "cuelga_en": ""
+    },
+    {
+      "modulo": "test_hito4",
+      "veredicto": "APTO",
+      "rc": 0,
+      "corridas": 31,
+      "saltos": 0,
+      "fallos": 0,
+      "segundos": 15.7,
+      "cuelga_en": ""
+    },
+    {
+      "modulo": "test_hito5",
+      "veredicto": "APTO",
+      "rc": 0,
+      "corridas": 25,
+      "saltos": 0,
+      "fallos": 0,
+      "segundos": 29.5,
+      "cuelga_en": ""
+    },
+    {
+      "modulo": "test_hito6",
+      "veredicto": "APTO",
+      "rc": 0,
+      "corridas": 52,
+      "saltos": 2,
+      "fallos": 0,
+      "segundos": 0.6,
+      "cuelga_en": ""
+    },
+    {
+      "modulo": "test_hito7",
+      "veredicto": "APTO",
+      "rc": 0,
+      "corridas": 42,
+      "saltos": 0,
+      "fallos": 0,
+      "segundos": 16.7,
+      "cuelga_en": ""
+    },
+    {
+      "modulo": "test_sondeo",
+      "veredicto": "APTO",
+      "rc": 0,
+      "corridas": 38,
+      "saltos": 0,
+      "fallos": 0,
+      "segundos": 1.8,
+      "cuelga_en": ""
+    },
+    {
+      "modulo": "test_watcher_n",
+      "veredicto": "APTO",
+      "rc": 0,
+      "corridas": 19,
+      "saltos": 0,
+      "fallos": 0,
+      "segundos": 2.1,
+      "cuelga_en": ""
+    }
+  ]
+}
