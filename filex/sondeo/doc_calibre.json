@@ -1,63 +1,62 @@
 {
   "motor": "doc_calibre",
   "build": "doc_calibre 29.4.3 · filex-c13@6d359bad483e",
-  "fecha": "2026-08-28",
-  "informe": "bench/sondeo-documental.md",
-  "nota": "n=1 por arista, tanda SUCIA (sesión remota activa) y con dos agentes más trabajando: los ms desempatan dentro de este informe, NO se comparan con los de otro. El `build` lleva el ID de la imagen: en otra máquina esto no se aplica.",
+  "fecha": "2026-09-02",
+  "informe": "bench/acuerdo-y-cruce.md",
   "huella": {
     "motor": "5ccb326907e06e1e",
     "invocacion": "3a2c16603bb46673",
-    "contrato": "9beb191c5479d72e"
+    "contrato": "fe41b4d52413299c"
   },
-  "interprete": "3.11.9",
-  "nota_huella": "Resondeado y sellado el 2026-08-28: estas medidas se tomaron con el codigo cuya huella esta arriba, no con uno anterior. Cierra el pendiente que dejo `bench/deuda-sondeo.md` 3.3, donde el sellado era ARGUMENTADO y no MEDIDO porque `verificador.py` habia cambiado despues de escribirse los ficheros.",
+  "interprete": "3.11",
+  "nota_huella": "RESONDEADO (no resellado por algoritmo) el 2026-09-02 por worker2, ronda 7: `C31` (ronda 6) cambio el componente `contrato` -- FIRMAS (TGA/CUR) y `_datos` (RAM) -- y `bench/salidas-huella/resellar.py --comprobar` confirmo que la huella guardada NO coincidia con el algoritmo anterior sobre el arbol de ahora: no era un cambio de algoritmo, hacia falta resondear. Las 62/70/8/16/16 aristas se remidieron de verdad (FileX.convertir() real, contrato de cinco puntos incluido), no se copio el JSON viejo con un campo cambiado.",
   "aristas": {
     "azw3>epub": {
       "estado": "real",
-      "ms": 3317.9,
-      "motivo": "18604 B, 564 caracteres, contrato ok_parcial",
+      "ms": 7363.5,
+      "motivo": "17764 B, 564 caracteres, contrato ok_parcial",
       "caso": "S17"
     },
     "azw3>pdf": {
       "estado": "real",
-      "ms": 4031.2,
+      "ms": 6557.4,
       "motivo": "27387 B, 456 caracteres, contrato ok",
       "caso": "S19"
     },
     "epub>epub": {
       "estado": "real",
-      "ms": 2660.2,
-      "motivo": "19985 B, 564 caracteres, contrato ok_parcial",
+      "ms": 5020.6,
+      "motivo": "33749 B, 564 caracteres, contrato ok_parcial",
       "caso": "S22"
     },
     "md>epub": {
       "estado": "real",
-      "ms": 2680.7,
-      "motivo": "12369 B, 558 caracteres, contrato ok_parcial",
+      "ms": 5818.4,
+      "motivo": "10781 B, 558 caracteres, contrato ok_parcial",
       "caso": "S21"
     },
     "mobi>azw3": {
       "estado": "real",
-      "ms": 3165.9,
+      "ms": 3976.2,
       "motivo": "12614 B, 12603 caracteres, contrato ok_parcial; sonda de texto CIEGA (comprime el texto), verificado por ida y vuelta a epub en d2.json §C",
       "caso": "S23"
     },
     "mobi>epub": {
       "estado": "real",
-      "ms": 3196.8,
-      "motivo": "24269 B, 610 caracteres, contrato ok_parcial",
+      "ms": 11140.2,
+      "motivo": "20195 B, 610 caracteres, contrato ok_parcial",
       "caso": "S16"
     },
     "mobi>pdf": {
       "estado": "real",
-      "ms": 4141.0,
+      "ms": 12525.1,
       "motivo": "31178 B, 488 caracteres, contrato ok",
       "caso": "S18"
     },
     "txt>epub": {
       "estado": "real",
-      "ms": 2939.0,
-      "motivo": "12863 B, 484 caracteres, contrato ok_parcial",
+      "ms": 5374.3,
+      "motivo": "10019 B, 484 caracteres, contrato ok_parcial",
       "caso": "S20"
     }
   }

@@ -671,12 +671,35 @@ veces** que hacen que cada línea de la tabla tenga una medida detrás.
 1. **Los 86 destinos indeterminados**: 79 que ningún motor de esta máquina escribe y 7 más donde la
    muestra describe al escritor y no al formato. Cerrarlos exige o el corpus FATE de ffmpeg (el mismo
    PENDIENTE nº 1 de `aristas-nominales.md` §11) o un segundo escritor por formato.
-2. **Los 12 de la deuda restante** (§3.2), cada uno con su motivo. Los dos accionables son `pict` y
-   `pcd`: bastaría leer más allá del byte 512 **solo cuando la extensión lo pide**.
-3. **`.pcd` se clasifica hoy como `mpegaudio`** porque sus 2 KB de relleno `0xFF` casan con el
-   sincronismo de trama. No produce falso positivo —`.pcd` no está en la tabla— pero está declarado.
+2. ~~**Los 12 de la deuda restante** (§3.2), cada uno con su motivo. Los dos accionables son `pict` y
+   `pcd`: bastaría leer más allá del byte 512 **solo cuando la extensión lo pide**.~~ **CORREGIDO el
+   03/09/2026 por worker2 (ronda 6), sobre lo que ya midió F2 el 28/08:** la puerta *«solo cuando la
+   extensión lo pide»* está refutada con número — `bench/firmas-cierre.md` §2.3 mide que
+   `open+read(2056)` frente a `open+read(512)` sobre los mismos 78 ficheros da **64,75 y 77,9 µs por
+   fichero**, la diferencia sale **negativa** (por debajo del suelo de la tanda), y en cambio la puerta
+   le costaría a `firma_real` su invariante de que la extensión NO decide la respuesta. **Se lee
+   siempre** (`filex/verificador.py`, `_NCAB_LARGO = 2056`, comentario junto a la constante). Los dos
+   accionables (`pict`, `pcd`) están **CERRADOS** desde el 28/08 (`pruebas/test_firmas_cierre.py::MarcadoresMasAllaDel512`).
+3. ~~**`.pcd` se clasifica hoy como `mpegaudio`** porque sus 2 KB de relleno `0xFF` casan con el
+   sincronismo de trama. No produce falso positivo —`.pcd` no está en la tabla— pero está declarado.~~
+   **REFUTADO el 22/08 por `bench/hito3-mudanza.md` §6.2, y CERRADO el 28/08 por F2** — la cifra vieja
+   se deja tachada, no se borra (trampa 44: un campo honesto al lado de una nota falsa se lee como una
+   respuesta honesta). *«No produce falso positivo»* era **falso**: un `png→pcd` legítimo de este
+   ImageMagick (`rc=0`, 788 480 B) daba `veredicto: FALLO`, porque la firma `mpegaudio` no se queda en
+   el punto 1 — **contamina la CATEGORÍA**, y la categoría manda el fichero a la sonda de audio, que
+   encuentra `duración = None` y dispara `G4` con severidad `fallo`. `.pcd` ya no está fuera de la
+   tabla: tiene marcador propio en `FIRMAS_LARGAS` (byte 0x800, `PCD_IPI`) desde el 28/08, y
+   `filex/verificador.py` lo verifica de nuevo el 03/09/2026 sobre un fichero real
+   (`bench/pcd-y-memoria.md` §1): `veredicto: ok_parcial`, sin un solo `fallo`.
 4. **La colisión TGA/CUR**: los dos empiezan por `00 00 02 00`. No hay falso positivo porque `.tga` no
-   tiene marcador, pero un TGA con extensión `.cur` pasaría.
+   tiene marcador, pero un TGA con extensión `.cur` pasaría. **CONFIRMADO EN EJECUCIÓN el 22/08**
+   (`bench/hito3-mudanza.md` §6.3: un TGA real de `magick`, entregado con extensión `.cur`, pasaba
+   `evaluado` con **cero hallazgos** — indistinguible de un cursor auténtico) **y CERRADO el
+   03/09/2026 por worker2 (ronda 6):** un CUR válido no puede declarar 0 imágenes (bytes 4-5), y
+   `00 00 02 00 00 00` —justo lo que escribe `magick` para un TGA sin ID ni mapa de color— es ese caso
+   imposible. Misma forma que el par JBIG/ICO que ya existía dos líneas más arriba en `FIRMAS`. Ahora
+   `firma_real` devuelve `desconocido` para ese patrón y el punto 1 dispara `G3 fallo`
+   (`bench/pcd-y-memoria.md` §2, `pruebas/test_firmas_cierre.py::TGAEntregadoComoCUR`).
 5. **G6 está calibrada sobre 22 casos de un solo motor.** Es `aviso` a propósito. Subirla a `fallo`
    exige medirla sobre más motores y comprobar que no marca conversiones legítimas de formato a formato
    equivalente (`png` → `apng`, `mkv` → `mka`).
@@ -686,8 +709,19 @@ veces** que hacen que cada línea de la tabla tenga una medida detrás.
 7. **La verificación del censo dentro del contenedor** solo guardó 64 bytes de cabecera por muestra, así
    que la prueba ancha de falsos positivos (§6.2) cubre **los 385 destinos locales**, no los 162 del
    contenedor. Repetirla dentro exigiría llevar el verificador allí.
-8. **`_datos` lee el fichero entero en memoria.** Con el TXT de 156 MB de ImageMagick eso son 156 MB de
-   RAM para contar comas. Está fuera del encargo y queda apuntado.
+8. ~~**`_datos` lee el fichero entero en memoria.** Con el TXT de 156 MB de ImageMagick eso son 156 MB
+   de RAM para contar comas. Está fuera del encargo y queda apuntado.~~ **LA CIFRA ERA FALSA — MEDIDO
+   el 22/08 por `bench/hito3-mudanza.md` §6.1, y CERRADO el 03/09/2026 por worker2 (ronda 6).** No es
+   ×1: era **×21,3** en la rama normal (×7,0 en la degradada), y el culpable no era el `fh.read()`
+   sino `d["csv_filas"] = filas` — la lista de listas de `str`, una por CAMPO, que se quedaba dentro de
+   la sonda. Sobre el TXT de 156 520 548 B de ImageMagick eran **≈1,1 GB de pico**, no 156 MB.
+   **Arreglado:** ninguna regla del contrato lee las filas en sí —solo los cuatro agregados que ya
+   publicaba `_datos` (`csv_n_filas`, `csv_n_campos_por_fila` para D2, `csv_cabecera`, `filas_datos`
+   para D1)—, así que ahora se calculan en un solo recorrido de `csv.reader` sin materializar la lista
+   completa. **MEDIDO de nuevo tras el arreglo** (`bench/pcd-y-memoria.md` §3,
+   `bench/salidas-pcd-y-memoria/datos_ram.json`): el pico baja de **×21,3 a ×6,2** sobre un CSV de 32 MB
+   (207 280 691 B de pico), reproducible al MiB entre corridas. La rama degradada (`csv.Error`, la del
+   TXT de ImageMagick) no cambia —nunca llegó a materializar `filas`— y se queda en ×7,0-7,5.
 
 ---
 

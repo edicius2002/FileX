@@ -1,110 +1,109 @@
 {
   "motor": "doc_libreoffice",
   "build": "doc_libreoffice 29.4.3 · filex-c13@6d359bad483e",
-  "fecha": "2026-08-28",
-  "informe": "bench/sondeo-documental.md",
-  "nota": "n=1 por arista, tanda SUCIA (sesión remota activa) y con dos agentes más trabajando: los ms desempatan dentro de este informe, NO se comparan con los de otro. El `build` lleva el ID de la imagen: en otra máquina esto no se aplica.",
+  "fecha": "2026-09-02",
+  "informe": "bench/acuerdo-y-cruce.md",
   "huella": {
     "motor": "ffe3c41451f77538",
     "invocacion": "3a2c16603bb46673",
-    "contrato": "9beb191c5479d72e"
+    "contrato": "fe41b4d52413299c"
   },
-  "interprete": "3.11.9",
-  "nota_huella": "Resondeado y sellado el 2026-08-28: estas medidas se tomaron con el codigo cuya huella esta arriba, no con uno anterior. Cierra el pendiente que dejo `bench/deuda-sondeo.md` 3.3, donde el sellado era ARGUMENTADO y no MEDIDO porque `verificador.py` habia cambiado despues de escribirse los ficheros.",
+  "interprete": "3.11",
+  "nota_huella": "RESONDEADO (no resellado por algoritmo) el 2026-09-02 por worker2, ronda 7: `C31` (ronda 6) cambio el componente `contrato` -- FIRMAS (TGA/CUR) y `_datos` (RAM) -- y `bench/salidas-huella/resellar.py --comprobar` confirmo que la huella guardada NO coincidia con el algoritmo anterior sobre el arbol de ahora: no era un cambio de algoritmo, hacia falta resondear. Las 62/70/8/16/16 aristas se remidieron de verdad (FileX.convertir() real, contrato de cinco puntos incluido), no se copio el JSON viejo con un campo cambiado.",
   "aristas": {
     "csv>pdf": {
       "estado": "real",
-      "ms": 1591.0,
+      "ms": 3726.1,
       "motivo": "20944 B, 119 caracteres, contrato ok",
       "caso": "Q06"
     },
     "csv>xlsx": {
       "estado": "real",
-      "ms": 3030.3,
+      "ms": 4951.6,
       "motivo": "5790 B, 338 caracteres, contrato ok_parcial",
       "caso": "Q01"
     },
     "docx>rtf": {
       "estado": "real",
-      "ms": 1759.4,
+      "ms": 3914.5,
       "motivo": "8213 B, 8213 caracteres, contrato ok",
       "caso": "S06"
     },
     "html>odt": {
       "estado": "real",
-      "ms": 2378.7,
-      "motivo": "8125 B, 1194 caracteres, contrato ok_parcial",
+      "ms": 7547.9,
+      "motivo": "8122 B, 1192 caracteres, contrato ok_parcial",
       "caso": "S03"
     },
     "odt>html": {
       "estado": "real",
-      "ms": 1734.6,
+      "ms": 3250.9,
       "motivo": "2476 B, 895 caracteres, contrato ok",
       "caso": "S05"
     },
     "pptx>odp": {
       "estado": "real",
-      "ms": 2382.2,
+      "ms": 4130.5,
       "motivo": "32669 B, 2825 caracteres, contrato ok_parcial",
       "caso": "Q08"
     },
     "pptx>pdf": {
       "estado": "real",
-      "ms": 2408.3,
+      "ms": 6476.5,
       "motivo": "24534 B, 456 caracteres, contrato ok",
       "caso": "Q07"
     },
     "pptx>png": {
       "estado": "real",
-      "ms": 2077.7,
+      "ms": 3381.4,
       "motivo": "50462 B, 0 caracteres, contrato ok; RASTERIZA: 0 caracteres, es el precio del destino, no un fallo",
       "caso": "Q09"
     },
     "rtf>docx": {
       "estado": "real",
-      "ms": 1982.7,
+      "ms": 4787.5,
       "motivo": "5293 B, 542 caracteres, contrato ok_parcial",
       "caso": "S02"
     },
     "rtf>odt": {
       "estado": "real",
-      "ms": 1950.4,
-      "motivo": "14174 B, 1769 caracteres, contrato ok_parcial",
+      "ms": 19753.6,
+      "motivo": "14172 B, 1767 caracteres, contrato ok_parcial",
       "caso": "S01"
     },
     "svg>pdf": {
       "estado": "real",
-      "ms": 1644.4,
+      "ms": 5547.6,
       "motivo": "12500 B, 44 caracteres, contrato ok",
       "caso": "Q10"
     },
     "svg>png": {
       "estado": "real",
-      "ms": 1674.1,
+      "ms": 3648.7,
       "motivo": "9081 B, 0 caracteres, contrato ok; RASTERIZA: 0 caracteres, es el precio del destino, no un fallo",
       "caso": "Q11"
     },
     "txt>odt": {
       "estado": "real",
-      "ms": 1861.9,
-      "motivo": "12121 B, 1106 caracteres, contrato ok_parcial",
+      "ms": 4251.5,
+      "motivo": "12118 B, 1106 caracteres, contrato ok_parcial",
       "caso": "S04"
     },
     "xlsx>csv": {
       "estado": "real",
-      "ms": 1718.8,
+      "ms": 3562.9,
       "motivo": "109 B, 108 caracteres, contrato ok",
       "caso": "Q04"
     },
     "xlsx>html": {
       "estado": "real",
-      "ms": 1694.4,
+      "ms": 4869.5,
       "motivo": "2902 B, 464 caracteres, contrato ok",
       "caso": "Q05"
     },
     "xlsx>pdf": {
       "estado": "real",
-      "ms": 2692.9,
+      "ms": 2932.6,
       "motivo": "27403 B, 119 caracteres, contrato ok",
       "caso": "Q03"
     }

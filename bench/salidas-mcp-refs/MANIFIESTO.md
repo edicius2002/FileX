@@ -253,7 +253,7 @@ Los pares `_c` con el mismo `sha256` que su original (`img_tipico.png`≡`img_ti
 misma conversión pedida de dos formas distintas produce bytes idénticos, que es justo lo que
 esa sección mide.
 
-**Deuda YA congelada, no de este manifiesto:** `multimedia/salidas/vam_trivial.mkv` (552079 B),
+~~**Deuda YA congelada, no de este manifiesto:** `multimedia/salidas/vam_trivial.mkv` (552079 B),
 `multimedia/salidas_lite/trivial_converted.gif` (2290244 B) y
 `multimedia/salidas_lite/trivial_converted.webm` (559046 B) son los **3 binarios sueltos**
 que `ESTADO-Y-REPARTO.md` fila **C40** deja abiertos a propósito: *"salidas de terceros con
@@ -263,16 +263,39 @@ ellos — `video-audio-mcp`/`ffmpeg-mcp-lite` invocan códecs con metadatos de t
 garantizan reproducibilidad byte a byte, y C40 ya lo declaró así. Se listan aquí por
 completitud del directorio, con sha256/tamaño (**MEDIDO**) y la orden *en principio* que las
 produjo (`python multimedia/gen_specs.py conversion` → specs `conv_vam`/`cat_vam`/`err_lite`
-→ `mcp_probe_bin.py`), marcada explícitamente **sin garantía de bit-exactitud**.
+→ `mcp_probe_bin.py`), marcada explícitamente **sin garantía de bit-exactitud**.~~
 
-| Fichero | Bytes | SHA-256 |
-|---|---:|---|
-| `multimedia/salidas/vam_tipico.mp3` | 160825 | `b4001e575dc11358d49020c9a1f9bf912a4f8713b18a8cd45962a0b1919b24bf` |
-| `multimedia/salidas/vam_trivial.flac` | 104318 | `b4950a7155d749deb68c894e96143194e1b6767895549ad33a9c3ec05717e684` |
-| `multimedia/salidas/vam_trivial.mkv` | 552079 | `46eaa170a8ba11c560913430004e7da4723ec8c135919ec5574bc9a95df4bc82` |
-| `multimedia/salidas/vam_wav.mp3` | 64591 | `04b12a569ebe74fbda11b5e8b72e8e848fd6ae0eaec8ad4633d0bb902d087549` |
-| `multimedia/salidas_lite/trivial_converted.gif` | 2290244 | `03f07fa28389cb574bb995ba91a3747409888dca9378da4eff07de2cb99927e7` |
-| `multimedia/salidas_lite/trivial_converted.webm` | 559046 | `430f474f66582865d3820dcf63a60dd857ad6f96deac13042e7a7a1cea0c8436` |
+**C40 CERRADO el 03/09/2026 por worker2 (ronda 6), y por las DOS vías, no por una — trampa 106
+obliga a decidir cada uno, no a perdonarlos en bloque:**
+
+- **`trivial_converted.gif` estaba mal clasificado y se BORRÓ.** `ffmpeg-mcp-lite` no invoca
+  códecs con parámetros propios para GIF: su fuente (`repos/mcp-refs/ffmpeg-mcp-lite/src/ffmpeg_mcp_lite/tools/convert.py`)
+  arma el comando `[ffmpeg, -i, <entrada>, -y, <salida>]` **sin un solo flag de códec o filtro**
+  cuando no se piden — MEDIDO leyendo la fuente, no adivinando. Con el `ffmpeg` nativo de este
+  proyecto (N-121159) y `corpus/video/trivial.mp4`, `ffmpeg -i corpus/video/trivial.mp4 -y
+  <salida>.gif` reproduce el fichero **byte a byte**: mismo tamaño (2 290 244 B) y **mismo
+  `sha256`** (`03f07fa2…`) que el que estaba versionado, sin necesitar el venv `.venv-mcp-lite`
+  que `CLAUDE.md` §2 ya lista como borrado. El fichero se quitó de `git` (regla §6: es
+  regenerable) y la orden de arriba es la que lo reproduce.
+- **`vam_trivial.mkv` y `trivial_converted.webm` SÍ son irreproducibles, y ahora con mecanismo
+  medido, no supuesto.** El muxer Matroska (WebM es su mismo perfil) de `libavformat` escribe un
+  **UID EBML aleatorio** en cada mux — MEDIDO el 03/09/2026: dos conversiones `mp4→mkv` **con
+  `-c copy`** (sin reencodificar, con el `ffmpeg` nativo de este proyecto, mismo comando, mismo
+  fichero de entrada) dan el **mismo tamaño exacto** (552 079 B, igual que `vam_trivial.mkv`) y
+  **`sha256` distinto**, con el primer byte que difiere siempre en el mismo desplazamiento
+  relativo (el campo `SegmentUID`/`TrackUID`, offset ~0xDA). No es un problema de venv ni de
+  versión de `ffmpeg`: **el formato en sí no garantiza reproducibilidad byte a byte**, ni con
+  `-c copy`. Pasan a `ci/evidencia-irreproducible.txt`, con la medida citada
+  (`bench/pcd-y-memoria.md` §4). `ci/heredado.json["binarios"]` queda **vacío**.
+
+| Fichero | Bytes | SHA-256 | Estado |
+|---|---:|---|---|
+| `multimedia/salidas/vam_tipico.mp3` | 160825 | `b4001e575dc11358d49020c9a1f9bf912a4f8713b18a8cd45962a0b1919b24bf` | versionado |
+| `multimedia/salidas/vam_trivial.flac` | 104318 | `b4950a7155d749deb68c894e96143194e1b6767895549ad33a9c3ec05717e684` | versionado |
+| `multimedia/salidas/vam_trivial.mkv` | 552079 | `46eaa170a8ba11c560913430004e7da4723ec8c135919ec5574bc9a95df4bc82` | versionado — declarado en `ci/evidencia-irreproducible.txt` |
+| `multimedia/salidas/vam_wav.mp3` | 64591 | `04b12a569ebe74fbda11b5e8b72e8e848fd6ae0eaec8ad4633d0bb902d087549` | versionado |
+| ~~`multimedia/salidas_lite/trivial_converted.gif`~~ | ~~2290244~~ | ~~`03f07fa28389cb574bb995ba91a3747409888dca9378da4eff07de2cb99927e7`~~ | **BORRADO 03/09/2026 — reproducible, ver arriba** |
+| `multimedia/salidas_lite/trivial_converted.webm` | 559046 | `430f474f66582865d3820dcf63a60dd857ad6f96deac13042e7a7a1cea0c8436` | versionado — declarado en `ci/evidencia-irreproducible.txt` |
 
 **PENDIENTE (declarado, todo §6-9):** no reejecutado en esta ronda. `multimedia/gen_specs.py`
 graba `RAIZ = "D:/Work/research/FileX"` y lanza `.venv-mcp-vam/Scripts/python.exe` y
