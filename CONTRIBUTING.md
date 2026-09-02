@@ -142,9 +142,20 @@ El `corpus/` está en Git LFS. Tras clonar: `git lfs pull`.
 git switch -c gpu/lo-que-sea        # el prefijo es el carril
 python3 ci/integridad.py            # segundos, y evita el 80 % de los rechazos
 # … el trabajo, y su informe en bench/ …
-git push -u origin gpu/lo-que-sea
-gh pr create                        # la plantilla pide las cuatro declaraciones
+git commit                          # PRONTO y a menudo: ver abajo
 ```
+
+**Quien empuja y abre el PR es el maestro, no tú.** No es una jerarquía: es que
+`gh auth` vive en el `home` de cada agente y **los workers no tienen credenciales de
+GitHub** — `git push` responde *«could not read Username»* y `gh auth status` dice *«not
+logged into any host»*. Se midió el 01/09, cuando worker2 terminó su encargo entero y no
+pudo entregarlo. Así que tu entrega es **la rama commiteada**, y el maestro la empuja, abre
+el PR con la plantilla y la fusiona cuando la CI pasa.
+
+> **Commitea pronto y a menudo.** Ese mismo día caducaron las dos sesiones de worker con
+> trabajo en el disco: el de worker1 estaba entero y se recogió sin perder nada, y el de
+> worker2 eran 18 ficheros sin commitear que hubo que rescatar con `git stash -u`. **Lo que
+> se pierde cuando cae una sesión no es el trabajo: es el trabajo sin commitear.**
 
 En el PR:
 
