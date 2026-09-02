@@ -23,6 +23,7 @@ from __future__ import annotations
 
 import json
 import os
+import shutil
 import sys
 import tempfile
 import time
@@ -37,6 +38,19 @@ from filex.nucleo import FileX  # noqa: E402
 
 _RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 _CORPUS = os.path.join(_RAIZ, "corpus")
+
+#: Solo ImageMagick lee PNG en `filex.motores.MOTORES`. `.github/workflows/
+#: suite.yml` no instala ningún motor externo, así que en el runner de Linux
+#: `shutil.which("magick")` es `None` -- C42, `bench/ci-y-contrato.md` §1,
+#: MEDIDO dentro de un contenedor limpio. **Sigue habiendo un segundo
+#: pendiente detrás de éste** (no arreglado aquí, fuera del alcance de C42):
+#: incluso CON ImageMagick, `corpus/imagen/{tipico,trivial}.png` están en Git
+#: LFS y con `lfs: false` llegan como punteros de texto de ~130 B, no como
+#: PNG real -- la misma trampa 34 que ya se cerró en `test_a7_ciego` y
+#: `test_cancelacion_procesos` para audio/vídeo, todavía abierta para imagen.
+_MOTIVO_SIN_IMAGEMAGICK = ("no hay ImageMagick (`magick`): ningún motor lee "
+                          "png (C42, bench/ci-y-contrato.md §1)")
+HAY_IMAGEMAGICK = shutil.which("magick") is not None
 
 try:
     import mcp.types as _t  # noqa: F401
@@ -191,6 +205,7 @@ class Cobertura(unittest.TestCase):
     def setUp(self):
         self.sv = _servicio([_RAIZ])
 
+    @unittest.skipUnless(HAY_IMAGEMAGICK, _MOTIVO_SIN_IMAGEMAGICK)
     def test_responde_lo_que_existe_de_verdad(self):
         r = self.sv.despachar("list_targets", {"formato_origen": "png"})
         self.assertIn("webp", r["destinos"])
@@ -224,6 +239,7 @@ class Cobertura(unittest.TestCase):
         self.assertNotIn("job_id", r)
         self.assertIn("list_targets", r.get("sugerencia", ""))
 
+    @unittest.skipUnless(HAY_IMAGEMAGICK, _MOTIVO_SIN_IMAGEMAGICK)
     def test_evidencia_por_arista(self):
         """**El 41,0 % de las aristas que los catálogos del sector declaran no
         existen.** Decir `sin_sondear` cuando no se ha medido es la diferencia."""
@@ -278,6 +294,7 @@ class Confinar(unittest.TestCase):
         self.assertNotIn(self.raiz, s)
         self.assertNotIn("Windows", s)
 
+    @unittest.skipUnless(HAY_IMAGEMAGICK, _MOTIVO_SIN_IMAGEMAGICK)
     def test_convert_fuera_de_la_raiz_no_convierte(self):
         """El camino existe (png→webp) y aun así no se convierte, porque el
         destino cae fuera. **El orden importa y es deliberado:** primero se
@@ -387,6 +404,7 @@ class Respuestas(unittest.TestCase):
         # el destino tiene que estar dentro de la raíz para poder escribir
         self.sv = _servicio([_RAIZ, self.salidas])
 
+    @unittest.skipUnless(HAY_IMAGEMAGICK, _MOTIVO_SIN_IMAGEMAGICK)
     def test_ninguna_respuesta_lleva_base64(self):
         import re
 
@@ -421,6 +439,7 @@ class Respuestas(unittest.TestCase):
         self.assertLessEqual(ntok(json.dumps(lt, ensure_ascii=False)),
                              M.PRESUPUESTO_RESPUESTA)
 
+    @unittest.skipUnless(HAY_IMAGEMAGICK, _MOTIVO_SIN_IMAGEMAGICK)
     def test_nunca_stderr_crudo(self):
         """MEDIDO: los tres servidores de referencia reenvían el `stderr` de
         ffmpeg — **884-1.228 tokens, casi todo banner de compilación**. Y el
@@ -437,6 +456,7 @@ class Respuestas(unittest.TestCase):
                            "pip install", "npm install", "traceback"):
             self.assertNotIn(filtracion, s)
 
+    @unittest.skipUnless(HAY_IMAGEMAGICK, _MOTIVO_SIN_IMAGEMAGICK)
     def test_inspect_esta_exento_del_presupuesto_pero_no_del_confinamiento(self):
         """`inspect` es la excepción a R8 y a R18 —lectura de cabeceras en
         proceso, sin staging y sin censo— **pero no a la lista blanca**. Lo que
@@ -462,6 +482,7 @@ class NoBloquear(unittest.TestCase):
         self.salidas = tempfile.mkdtemp(prefix="h4-nb-")
         self.sv = _servicio([_CORPUS, self.salidas])
 
+    @unittest.skipUnless(HAY_IMAGEMAGICK, _MOTIVO_SIN_IMAGEMAGICK)
     def test_convert_devuelve_el_asa_al_empezar(self):
         """§5.2: **una firma, un comportamiento.** Nada de bifurcar entre
         «rápida bloquea» y «lenta devuelve asa»: un clip de 5 s superó los 900 s
@@ -478,6 +499,7 @@ class NoBloquear(unittest.TestCase):
         self.assertLess(ms, 200, "convert está bloqueando")
         _esperar(self.sv, r["job_id"])
 
+    @unittest.skipUnless(HAY_IMAGEMAGICK, _MOTIVO_SIN_IMAGEMAGICK)
     def test_la_salida_preexistente_no_cuelga(self):
         """El disparador exacto de las 26: la ruta de salida **ya existe**."""
         png = os.path.join(_CORPUS, "imagen", "trivial.png")
@@ -497,6 +519,7 @@ class NoBloquear(unittest.TestCase):
         r = self.sv.despachar("job", {"job_id": "no-existe"})
         self.assertIn("error", r)
 
+    @unittest.skipUnless(HAY_IMAGEMAGICK, _MOTIVO_SIN_IMAGEMAGICK)
     def test_el_trabajo_se_persiste_en_disco(self):
         """§5.3: *el fallo de origen es que el trabajo sobrevivió a quien lo
         esperaba*. Si el `job_id` solo vive en el proceso, una reconexión

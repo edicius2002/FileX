@@ -34,6 +34,17 @@ def cerrar(p):
 
 
 class GpuMutex(unittest.TestCase):
+    @unittest.skipUnless(
+        sys.platform == "win32",
+        "la recuperación de huérfanos de filex.gpu.Lock depende de "
+        "_vivo(), que llama a `tasklist` (Windows) para saber si el dueño "
+        "sigue vivo; fuera de Windows esa llamada falla con FileNotFoundError "
+        "y _vivo() responde 'vivo' por el lado seguro del error (no robar), "
+        "así que un huérfano NUNCA se recupera aquí -- MEDIDO, determinista, "
+        "aislado con GPU_LOCK=/tmp/x (C42, bench/ci-y-contrato.md §1: no era "
+        "\"no hay tarjeta\", esta prueba no toca la GPU en absoluto). Es la "
+        "trampa 90/93 de CLAUDE.md aplicada a filex/gpu.py; el arreglo es de "
+        "worker1 (carril GPU), no de esta prueba.")
     def test_python_excluye_y_muerto_se_libera(self):
         a, ra = lanzar("1", "30")
         self.assertTrue(ra["ok"])

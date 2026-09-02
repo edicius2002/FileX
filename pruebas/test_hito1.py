@@ -10,6 +10,7 @@ que saber cuál es cuál.
 from __future__ import annotations
 
 import os
+import shutil
 import sys
 import tempfile
 import unittest
@@ -21,6 +22,14 @@ from filex.confinamiento import Confinamiento, Denegado, nombre_seguro  # noqa: 
 from filex.grafo import REAL, SIN_SONDEAR, Arista, Grafo  # noqa: E402
 from filex.nucleo import FileX  # noqa: E402
 from filex.trabajo import DirectorioDeTrabajo  # noqa: E402
+
+#: `.github/workflows/suite.yml` no instala ningún motor externo -- el
+#: runner de Linux puede llegar aquí sin `ffmpeg` (C42, `bench/ci-y-contrato.md`
+#: §1: MEDIDO dentro de un contenedor `python:3.12-slim-bookworm` limpio, sin
+#: red, `shutil.which("ffmpeg")` es `None`). `HAY_ALGUN_MOTOR` no es una
+#: suposición: pregunta a `FileX()` lo mismo que la prueba de abajo.
+HAY_ALGUN_MOTOR = len(FileX().disponibles) > 0
+HAY_IMAGEMAGICK = shutil.which("magick") is not None
 
 
 class ElegirBien(unittest.TestCase):
@@ -295,10 +304,17 @@ class Integracion(unittest.TestCase):
         for m in self.fx.disponibles:
             self.assertTrue(m.version, f"{m.nombre} sin versión sondeada")
 
+    @unittest.skipUnless(HAY_ALGUN_MOTOR,
+                         "ningún motor disponible (ni ffmpeg): "
+                         "`.github/workflows/suite.yml` no instala ninguno, "
+                         "C42 bench/ci-y-contrato.md §1")
     def test_un_motor_ausente_no_tumba_nada(self):
         self.assertIsInstance(self.fx.ausentes, list)
         self.assertGreater(len(self.fx.disponibles), 0)
 
+    @unittest.skipUnless(HAY_IMAGEMAGICK,
+                         "no hay ImageMagick (`magick`): ningún motor lee "
+                         "png (C42, bench/ci-y-contrato.md §1)")
     def test_conversion_real_con_contrato(self):
         ent = os.path.join(self.raiz, "corpus", "imagen", "tipico.png")
         if not os.path.isfile(ent):

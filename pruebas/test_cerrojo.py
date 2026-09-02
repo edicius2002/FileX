@@ -42,6 +42,15 @@ PNG = os.path.join(CORPUS, "tipico.png")
 JPG = os.path.join(CORPUS, "tipico.jpg")
 ES_WINDOWS = sys.platform == "win32"
 
+#: `filex.motores.MOTORES = (ImageMagick, Ghostscript, FFmpeg)` -- solo el
+#: primero lee PNG/JPG. Un runner sin el binario `magick` (C42,
+#: bench/ci-y-contrato.md §1: MEDIDO dentro de `python:3.12-slim-bookworm`,
+#: reproduce "ningún motor disponible lee 'png'" en las 5 celdas exactas que
+#: `ci/linux-apto.json` reportaba) no puede convertir NADA en este fichero:
+#: no era una carrera rota ni un cerrojo roto, era que no había con qué leer
+#: la entrada.
+HAY_IMAGEMAGICK = shutil.which("magick") is not None
+
 #: Tope de TODO lo que se lanza aquí. `CLAUDE.md` §3: timeouts explícitos en
 #: todo, que estos procesos dejan huérfanos vivos 13 minutos.
 TOPE = 300
@@ -244,6 +253,8 @@ class CarreraEntreProcesos(_Base):
             filas.append(fila)
         return filas, len(os.listdir(self.dsal))
 
+    @unittest.skipUnless(HAY_IMAGEMAGICK,
+                        "no hay ImageMagick (`magick`): ningún motor lee png/jpg")
     def test_sin_el_cerrojo_de_maquina_los_dos_procesos_devuelven_ok(self):
         """**La prueba que falla sin el arreglo.** Es el estado del hito 7:
         `FILEX_CERROJO_DESTINO=proceso` es exactamente el `set` en memoria.
@@ -266,6 +277,8 @@ class CarreraEntreProcesos(_Base):
                         "el fallo del hito 7 es que una respuesta describe un "
                         "fichero que ya no existe")
 
+    @unittest.skipUnless(HAY_IMAGEMAGICK,
+                        "no hay ImageMagick (`magick`): ningún motor lee png/jpg")
     def test_con_el_cerrojo_de_maquina_solo_uno_gana(self):
         """El mismo caso, con el defecto. **El ganador no es determinista; el
         invariante sí** — tres pasadas en §2 del informe, con dos ganadores
@@ -502,12 +515,16 @@ class UnSoloProceso(_Base):
         super().setUp()
         self.fx = FileX(raices_lectura=[self.dir])
 
+    @unittest.skipUnless(HAY_IMAGEMAGICK,
+                        "no hay ImageMagick (`magick`): ningún motor lee png/jpg")
     def test_tres_conversiones_seguidas_al_mismo_destino(self):
         for i in range(3):
             conv = self.fx.convertir(self.png, self.salida, {})
             self.assertTrue(conv.ok, f"pasada {i}: {conv.motivo}")
         self.assertEqual(len(os.listdir(self.dsal)), 1)
 
+    @unittest.skipUnless(HAY_IMAGEMAGICK,
+                        "no hay ImageMagick (`magick`): ningún motor lee png/jpg")
     def test_el_destino_recien_escrito_no_se_detecta_como_ocupado(self):
         """El falso positivo que habría roto todo: FileX acaba de cerrar ese
         fichero. Si `os.replace(p,p)` viera su propio rastro, la segunda
@@ -594,6 +611,8 @@ class DestinoQueEsDirectorio(_Base):
         # El destino existe y es un DIRECTORIO. Nadie lo tiene abierto.
         os.makedirs(self.salida)
 
+    @unittest.skipUnless(HAY_IMAGEMAGICK,
+                        "no hay ImageMagick (`magick`): ningún motor lee png/jpg")
     def test_el_motivo_no_habla_de_otro_proceso(self):
         """**La prueba que se pone roja sin el arreglo**: antes decía
         literalmente «otro proceso tiene abierta esa ruta de salida», y no
