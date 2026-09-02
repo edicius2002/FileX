@@ -654,8 +654,8 @@ Agrupado por **el recurso que lo limita**, que es lo que decide el reparto. Cada
 | **6** | **C44** · 🟢 **ENTREGADA Y VERIFICADA (`b582ceb`)** — diseño cerrado; registrar el runner es del usuario | **C31** + **C32** + **C40** · 🟡 **DESPACHADA el 02/09** — `bench/pcd-y-memoria.md` | El carril GPU **adelantó `C44`** (su requisito era `N29`) y el CPU recoge las tres filas de veracidad: un falso positivo VIVO, un falso negativo, una contradicción sin cerrar y 3 binarios |
 | **7** | **N27** · 🟢 **ENTREGADA Y VERIFICADA (`456b1ea`)** | **C20** + **C23** + **el resondeo** · 🟢 **ENTREGADA Y VERIFICADA (`6e98c44`)** — 172 aristas resondeadas, **0 diferencias de veredicto** | El carril GPU **adelanta `N27`** porque es re-análisis de puntos ya medidos y **no toca la tarjeta**: worker2 va a correr la suite varias veces en la ronda 6 y medir encima es la trampa 101 |
 | **8** | **B8** + **C18** · 🟡 **DESPACHADA el 02/09** — `bench/deskew-y-fidelidad.md` | **C24** + **C25** | Cuatro umbrales que no se cierran sin variar la entrada |
-| **9** | **N26** + **B3** (marker, build CPU) + cerrar **B4**/**B5** | **N9** + **C5** | El otro margen que sostiene un presupuesto, y aquí sale `.venv-marker` de la lista protegida |
-| **10** | **B20** + **B7** | **C35** + **C36** | Las dos mayores del carril CPU, y el residuo de B12 con la heurística ya calibrable contra `d4` |
+| **9** | **N26** + **B3** (marker, build CPU) + cerrar **B4**/**B5** | **C24** + **C25** · 🟡 **DESPACHADA el 02/09** — `bench/psm-gs-y-crudos.md` | El otro margen que sostiene un presupuesto, y aquí sale `.venv-marker` de la lista protegida |
+| **10** | **B20** + **B7** | **N9** + **C5** + **C35** + **C36** | Las dos mayores del carril CPU, y el residuo de B12 con la heurística ya calibrable contra `d4` |
 | **11** | — | **C16** + **C28** (corpus FATE, ya en disco) | Convierte el 48,6 % estimado en número medido |
 
 ---
