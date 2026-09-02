@@ -1,0 +1,444 @@
+{
+  "meta": {
+    "motor": "Docling+RapidOCR torch (defecto)",
+    "dispositivo": "GPU cuda",
+    "gpu": true,
+    "lock_aviso": "",
+    "backend": "torch",
+    "lang": "english",
+    "R6": false
+  },
+  "config": "docling-def",
+  "ruido": {
+    "mono_ini": 50.73,
+    "mono_fin": 24.97,
+    "deriva": 0.49,
+    "proc_ini": 57.99,
+    "proc_fin": 40.13,
+    "nivel": 2.18
+  },
+  "etiqueta_ruido": "SUCIA",
+  "rows": [
+    {
+      "config": "docling-def",
+      "doc": "escaneado_d5a",
+      "ppp_nativo": 90,
+      "factor": 0.75,
+      "ppp": 67.5,
+      "n": 3,
+      "determinista": true,
+      "cer_pct": 0.5,
+      "rc_reps": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "config": "docling-def",
+      "doc": "escaneado_d5a",
+      "ppp_nativo": 90,
+      "factor": 0.875,
+      "ppp": 78.8,
+      "n": 3,
+      "determinista": true,
+      "cer_pct": 0.3,
+      "rc_reps": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "config": "docling-def",
+      "doc": "escaneado_d5a",
+      "ppp_nativo": 90,
+      "factor": 1.0,
+      "ppp": 90.0,
+      "n": 3,
+      "determinista": true,
+      "cer_pct": 0.3,
+      "rc_reps": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "config": "docling-def",
+      "doc": "escaneado_d5a",
+      "ppp_nativo": 90,
+      "factor": 1.125,
+      "ppp": 101.2,
+      "n": 3,
+      "determinista": true,
+      "cer_pct": 0.3,
+      "rc_reps": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "config": "docling-def",
+      "doc": "escaneado_d5a",
+      "ppp_nativo": 90,
+      "factor": 1.25,
+      "ppp": 112.5,
+      "n": 3,
+      "determinista": true,
+      "cer_pct": 0.3,
+      "rc_reps": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "config": "docling-def",
+      "doc": "escaneado_d5a",
+      "ppp_nativo": 90,
+      "factor": 1.4,
+      "ppp": 126.0,
+      "n": 3,
+      "determinista": true,
+      "cer_pct": 0.3,
+      "rc_reps": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "config": "docling-def",
+      "doc": "escaneado_d5a",
+      "ppp_nativo": 90,
+      "factor": 1.6,
+      "ppp": 144.0,
+      "n": 3,
+      "determinista": true,
+      "cer_pct": 0.3,
+      "rc_reps": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "config": "docling-def",
+      "doc": "escaneado_d5c",
+      "ppp_nativo": 80,
+      "factor": 0.75,
+      "ppp": 60.0,
+      "n": 3,
+      "determinista": true,
+      "cer_pct": 0.5,
+      "rc_reps": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "config": "docling-def",
+      "doc": "escaneado_d5c",
+      "ppp_nativo": 80,
+      "factor": 0.875,
+      "ppp": 70.0,
+      "n": 3,
+      "determinista": true,
+      "cer_pct": 9.4,
+      "rc_reps": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "config": "docling-def",
+      "doc": "escaneado_d5c",
+      "ppp_nativo": 80,
+      "factor": 1.0,
+      "ppp": 80.0,
+      "n": 3,
+      "determinista": true,
+      "cer_pct": 0.3,
+      "rc_reps": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "config": "docling-def",
+      "doc": "escaneado_d5c",
+      "ppp_nativo": 80,
+      "factor": 1.125,
+      "ppp": 90.0,
+      "n": 3,
+      "determinista": true,
+      "cer_pct": 0.5,
+      "rc_reps": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "config": "docling-def",
+      "doc": "escaneado_d5c",
+      "ppp_nativo": 80,
+      "factor": 1.25,
+      "ppp": 100.0,
+      "n": 3,
+      "determinista": true,
+      "cer_pct": 0.7,
+      "rc_reps": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "config": "docling-def",
+      "doc": "escaneado_d5c",
+      "ppp_nativo": 80,
+      "factor": 1.4,
+      "ppp": 112.0,
+      "n": 3,
+      "determinista": true,
+      "cer_pct": 0.7,
+      "rc_reps": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "config": "docling-def",
+      "doc": "escaneado_d5c",
+      "ppp_nativo": 80,
+      "factor": 1.6,
+      "ppp": 128.0,
+      "n": 3,
+      "determinista": true,
+      "cer_pct": 0.5,
+      "rc_reps": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "config": "docling-def",
+      "doc": "escaneado_d5",
+      "ppp_nativo": 72,
+      "factor": 0.75,
+      "ppp": 54.0,
+      "n": 3,
+      "determinista": true,
+      "cer_pct": 1.7,
+      "rc_reps": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "config": "docling-def",
+      "doc": "escaneado_d5",
+      "ppp_nativo": 72,
+      "factor": 0.875,
+      "ppp": 63.0,
+      "n": 3,
+      "determinista": true,
+      "cer_pct": 0.8,
+      "rc_reps": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "config": "docling-def",
+      "doc": "escaneado_d5",
+      "ppp_nativo": 72,
+      "factor": 1.0,
+      "ppp": 72.0,
+      "n": 3,
+      "determinista": true,
+      "cer_pct": 9.4,
+      "rc_reps": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "config": "docling-def",
+      "doc": "escaneado_d5",
+      "ppp_nativo": 72,
+      "factor": 1.125,
+      "ppp": 81.0,
+      "n": 3,
+      "determinista": true,
+      "cer_pct": 9.2,
+      "rc_reps": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "config": "docling-def",
+      "doc": "escaneado_d5",
+      "ppp_nativo": 72,
+      "factor": 1.25,
+      "ppp": 90.0,
+      "n": 3,
+      "determinista": true,
+      "cer_pct": 9.1,
+      "rc_reps": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "config": "docling-def",
+      "doc": "escaneado_d5",
+      "ppp_nativo": 72,
+      "factor": 1.4,
+      "ppp": 100.8,
+      "n": 3,
+      "determinista": true,
+      "cer_pct": 9.1,
+      "rc_reps": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "config": "docling-def",
+      "doc": "escaneado_d5",
+      "ppp_nativo": 72,
+      "factor": 1.6,
+      "ppp": 115.2,
+      "n": 3,
+      "determinista": true,
+      "cer_pct": 9.2,
+      "rc_reps": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "config": "docling-def",
+      "doc": "escaneado_d5b",
+      "ppp_nativo": 60,
+      "factor": 0.75,
+      "ppp": 45.0,
+      "n": 3,
+      "determinista": true,
+      "cer_pct": 33.1,
+      "rc_reps": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "config": "docling-def",
+      "doc": "escaneado_d5b",
+      "ppp_nativo": 60,
+      "factor": 0.875,
+      "ppp": 52.5,
+      "n": 3,
+      "determinista": true,
+      "cer_pct": 16.1,
+      "rc_reps": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "config": "docling-def",
+      "doc": "escaneado_d5b",
+      "ppp_nativo": 60,
+      "factor": 1.0,
+      "ppp": 60.0,
+      "n": 3,
+      "determinista": true,
+      "cer_pct": 3.0,
+      "rc_reps": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "config": "docling-def",
+      "doc": "escaneado_d5b",
+      "ppp_nativo": 60,
+      "factor": 1.125,
+      "ppp": 67.5,
+      "n": 3,
+      "determinista": true,
+      "cer_pct": 2.2,
+      "rc_reps": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "config": "docling-def",
+      "doc": "escaneado_d5b",
+      "ppp_nativo": 60,
+      "factor": 1.25,
+      "ppp": 75.0,
+      "n": 3,
+      "determinista": true,
+      "cer_pct": 10.6,
+      "rc_reps": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "config": "docling-def",
+      "doc": "escaneado_d5b",
+      "ppp_nativo": 60,
+      "factor": 1.4,
+      "ppp": 84.0,
+      "n": 3,
+      "determinista": true,
+      "cer_pct": 10.6,
+      "rc_reps": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "config": "docling-def",
+      "doc": "escaneado_d5b",
+      "ppp_nativo": 60,
+      "factor": 1.6,
+      "ppp": 96.0,
+      "n": 3,
+      "determinista": true,
+      "cer_pct": 8.9,
+      "rc_reps": [
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "segundos": 178.8
+}

@@ -387,16 +387,12 @@ class LockDeGpu(unittest.TestCase):
         l = gpu.Lock("yo", ruta=self.ruta)
         self.assertFalse(l.tomar(espera=0.0))
 
-    @unittest.skipUnless(
-        sys.platform == "win32",
-        "la recuperación de huérfanos de filex.gpu.Lock depende de _vivo(), "
-        "que llama a `tasklist` (Windows); fuera de Windows falla con "
-        "FileNotFoundError y _vivo() responde 'vivo' por el lado seguro del "
-        "error, así que un huérfano NUNCA se recupera aquí -- MEDIDO, misma "
-        "causa que pruebas.test_gpu_lock (C42, bench/ci-y-contrato.md §1; "
-        "trampa 90/93 de CLAUDE.md). NO es 'no hay ffmpeg con NVENC' como "
-        "decía `ci/linux-apto.json`: esta prueba no toca ffmpeg. El arreglo "
-        "es de worker1 (carril GPU), no de esta prueba.")
+    # N29 (ronda 5, `bench/vivo-y-residuos.md`): igual que en
+    # `pruebas.test_gpu_lock.GpuMutex`, este método estaba `skipUnless(win32)`
+    # por el mismo mecanismo -- `_vivo()` sin rama POSIX -- y NO por "no hay
+    # ffmpeg con NVENC" como decía `ci/linux-apto.json` (esta prueba no toca
+    # ffmpeg). Arreglado en `filex.gpu._vivo_posix`; control positivo y
+    # negativo en Linux real, `bench/vivo-y-residuos.md` §1. Se retira el skip.
     def test_recoge_un_huerfano_con_espera_cero(self):
         """**El reintento inmediato.** Sin él, recoger el huérfano y salir por
         el tope en la misma vuelta devolvía `False` habiendo dejado el lock
