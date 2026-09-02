@@ -108,3 +108,72 @@ regenerables.
 | `raster_im__escaneado_d5a.png` | 124796 | `a53d8c13ee260910851438c1c01e77843421c3cee091e9fb5486becde10a4eef` |
 | `raster_im__escaneado_d5b.png` | 71068 | `b0ed2b8c52f33b70fdcef572859c3938f757339795d4130482f2cf5e3e44a25a` |
 | `raster_im__escaneado_d5c.png` | 116022 | `774c446e8815e63a4841ae4efc7a07ace23ca18fdf41163771cd62be532369e9` |
+
+---
+
+## Ronda 5 — B23 (resto): 4 configuraciones más, 28 rásteres reutilizados
+
+`bench/vivo-y-residuos.md` completa las 4 configuraciones que faltaban del
+racimo de 9 (Docling defecto, Docling+R6, RapidOCR v6 small defecto, RapidOCR
+v5 mobile defecto). Las dos de Docling **no generan PNG**: rasterizan el PDF
+ellas mismas vía `RapidOcrOptions.scale` (igual que
+`bench/salidas-k-motor/docling_lote_km.py`). Las dos de RapidOCR standalone
+**reutilizan los mismos 28 `kf####__escaneado_d5*.png`** que ya usaba
+`rapidocr-r6` en `b23_k_d5.py` — misma receta (gris, sin declarar pHYs),
+mismo nombre de fichero.
+
+**Hallazgo, no anotado antes: el `sha256` de estos 28 ficheros NO coincide
+con el de la tabla de arriba, aunque el TAMAÑO en bytes sí (los 28, exacto) y
+`magick compare -metric RMSE` da 0 en los pares comprobados (trampa 5: no se
+usa SSIM).** Es la trampa 22 («`SOURCE_DATE_EPOCH` no hace reproducible un
+PDF de ImageMagick: estampa `/CreationDate` igual») extendida al PNG: los
+metadatos de fecha del fichero (no el contenido de píxeles) mueven el
+`sha256` entre dos ejecuciones en días distintos. **La "orden exacta que los
+reproduce" reproduce los PÍXELES, no el byte — que es lo único que le
+importa a un motor de OCR.** Se deja registrado el `sha256` NUEVO de esta
+sesión; quien lo recalcule un día distinto obtendrá un tercer valor y unos
+píxeles idénticos.
+
+Reutilizado sin cambios (mismo comando, misma orden que arriba):
+
+```
+"D:/Work/research/FileX/.venv-ai/Scripts/python.exe" bench/salidas-k-oem-acantilados/b23_resto_rapidocr.py <rapidocr-v6-def|rapidocr-v5-def> --reps 3
+"D:/Work/research/FileX/.venv-ai/Scripts/python.exe" bench/salidas-k-oem-acantilados/b23_resto_docling.py <docling-def|docling-r6> --reps 3
+```
+
+(Los tres scripts nuevos calculan `ROOT` desde su propia ubicación —
+`os.path.dirname` repetido tres veces— en vez de hardcodearlo: el `ROOT`
+fijo de `b23_k_d5.py` apuntaba a `D:\...\.ccb\workspaces\worker1`, que ya no
+existe tras desmontar CCB en esta misma ronda — ver `ESTADO-Y-REPARTO.md`
+§Ronda 5.)
+
+| Fichero | Bytes | SHA-256 (esta sesión, 02/09/2026) |
+|---|---:|---|
+| `kf0750__escaneado_d5.png` | 62609 | `c4f9974ae4da50b2670674140bd737f599c54d9787d318b1ac9e71c1dc4c13d0` |
+| `kf0750__escaneado_d5a.png` | 81476 | `24f4a1e24f9ab730ba14c45c93ef38c50248252d9b3a9e8a19c47d1663b47c2d` |
+| `kf0750__escaneado_d5b.png` | 43933 | `f0c53c5641de57b310a9e0db1d4bbddcb02cb2bf4a669718ac9108851c9d05ad` |
+| `kf0750__escaneado_d5c.png` | 74394 | `44b55677dde69d97a50d7a33f7018af285a2df406c69950d81b6beec24a9d5e3` |
+| `kf0875__escaneado_d5.png` | 78417 | `09d4fb4c0bfab30660f1d0014c5fdd7a73783f8ae0f7deb74dd363b6b1c6b507` |
+| `kf0875__escaneado_d5a.png` | 103400 | `60994a71fd4ce6e13c8c0e217007d958829b679f74b0bc4d9ee219a9fcf72a31` |
+| `kf0875__escaneado_d5b.png` | 56800 | `61dd4a1e8f8bfa001ead83af7473cfd01925c145fcd45c6ac4f6408a9406f4ce` |
+| `kf0875__escaneado_d5c.png` | 91779 | `f8651fc6b23a57638a161e003df2c490f84dc037f45a033817e08d7ac93fe79c` |
+| `kf1000__escaneado_d5.png` | 97674 | `080f810f0101affc4f6a67930b9b042c937b65c73278fa8f0ff94c6b965edbd2` |
+| `kf1000__escaneado_d5a.png` | 124752 | `a31becacfdb040a219f06977346efc4234aef8840604a552d9a7bcd118310ee5` |
+| `kf1000__escaneado_d5b.png` | 71024 | `5d250fd1aa8c89f50797d621ab48116d499d6d5f8799bd905909933f01a35897` |
+| `kf1000__escaneado_d5c.png` | 115978 | `4f9d3e2b10395a07ecbdf13e1c09fc4d567ad47bb46222600b720c93353298d4` |
+| `kf1125__escaneado_d5.png` | 104352 | `224d79e888ae2be1d5bfd805c509aa281f29a5ae6cde84fff18b4a64c2d37c74` |
+| `kf1125__escaneado_d5a.png` | 135654 | `5ea89ab5e5d93aa199a020c026b42b6969c626a69e3e59b300fc60603e8676de` |
+| `kf1125__escaneado_d5b.png` | 76698 | `15826040248450d3271bbc850c76aba481a9ac601f9d3a9331068969e7322891` |
+| `kf1125__escaneado_d5c.png` | 122456 | `44e28b6f02a48891412a94b69f09f152657c44642210a5cb7a1913aa710cfa62` |
+| `kf1250__escaneado_d5.png` | 108858 | `ccf5e5d42b1bbf8334dfaeaa2ec2976660ab0f78f680d342c4f61cf4181032aa` |
+| `kf1250__escaneado_d5a.png` | 142988 | `70182b5bdd510674f3a19f784828f610d61a212ae2bc672c3f2a5e252c6fa2e6` |
+| `kf1250__escaneado_d5b.png` | 77786 | `35b97cdd2ffbfc7c570953fb0cabc20f1734e3c73db036c5cd8a3b844970fb63` |
+| `kf1250__escaneado_d5c.png` | 128195 | `39365ba23bd57b7250a6d12cabe5cc52d8bb19f0a467bc4b413b98acee7e9f15` |
+| `kf1400__escaneado_d5.png` | 115539 | `eb14e17b4f4c2c3532eb25248ceef881da1ded1762284135b9156e1a0c670ac8` |
+| `kf1400__escaneado_d5a.png` | 148958 | `7bb60b91269fd88b95a2f3b181c506c1d67932ba4347fcb5c2ed829c9bc0b1fb` |
+| `kf1400__escaneado_d5b.png` | 84394 | `44cada182168e8e4036d98774640829c7bd5685543eda6e06839864d212d6a91` |
+| `kf1400__escaneado_d5c.png` | 138925 | `92fec5f20b996f480f3cfca8628121e6dac9f50f7a5452fc1ed0c3487934ac32` |
+| `kf1600__escaneado_d5.png` | 123491 | `6c7ae447bfeeecaae7d63d9645e6ec053fcb7be62e6a24aca5dee430c2c1406a` |
+| `kf1600__escaneado_d5a.png` | 158024 | `d94263ff537569d4b9f413f821ea27deb19a8a46e2299eea02c74a7285bf849d` |
+| `kf1600__escaneado_d5b.png` | 89608 | `e39ed37495aee9c404ffa200a825717c610d4131350f7c27ff0951ac66e686fd` |
+| `kf1600__escaneado_d5c.png` | 146580 | `9ca730866fe59c89e14ad9893b558d5292399cef52e964492d36464c80b8b28f` |

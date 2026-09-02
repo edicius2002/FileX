@@ -208,13 +208,28 @@ def _campos(ruta: str) -> list[str]:
 def _vivo(winpid: str, imagen: str) -> bool:
     """¿Vive el dueño del lock? PID **y nombre de imagen**, como el arnés.
 
+    N29 (`bench/ci-y-contrato.md` §1, trampa 90/93): la comprobación **es de
+    plataforma**, y antes de este arreglo solo existía la mitad de Windows —
+    fuera de Windows, `tasklist` no existe, `subprocess.run` lanzaba
+    `FileNotFoundError`, y el `except` de aquí devolvía «vivo» por el lado
+    seguro del error. Consecuencia MEDIDA (`GPU_LOCK=/tmp/aislado.lock`, sin
+    contención de máquina): un huérfano **nunca** se recupera fuera de
+    Windows, determinista. El fallo no era "no hay tarjeta" ni "no hay
+    ffmpeg": es que `_vivo()` respondía siempre `True`.
+
     En Windows los PID se reutilizan: comprobar solo el número deja que un
     proceso cualquiera se haga pasar por el dueño y el lock no se recupere
     jamás. Si no se puede preguntar, se responde «vivo»: **no robar** es el
-    lado seguro del error.
+    lado seguro del error. Eso vale en las dos ramas.
     """
     if not winpid:
         return True                      # formato viejo, sin PID: no lo robo
+    if sys.platform == "win32":
+        return _vivo_win32(winpid, imagen)
+    return _vivo_posix(winpid, imagen)
+
+
+def _vivo_win32(winpid: str, imagen: str) -> bool:
     try:
         r = subprocess.run(["tasklist", "/FI", f"PID eq {winpid}", "/NH", "/FO", "CSV"],
                            stdin=subprocess.DEVNULL, stdout=subprocess.PIPE,
@@ -226,6 +241,47 @@ def _vivo(winpid: str, imagen: str) -> bool:
     if winpid not in linea:
         return False
     return (not imagen) or (imagen in linea)
+
+
+def _vivo_posix(winpid: str, imagen: str) -> bool:
+    """La mitad que faltaba. NO es la del arnés de shell (`_gpu_dueno_vivo`
+    en `bench/lib/harness.sh`, que sigue con `/proc/$$/winpid` + `tasklist`
+    y su propio problema conocido, trampa 90) — es Python puro sobre
+    `os.kill`, que en POSIX SÍ tiene semántica estándar: `ProcessLookupError`
+    (ESRCH) es "no existe", `PermissionError` (EPERM) es "existe pero no es
+    mío". MEDIDO en Linux real (WSL2 Ubuntu, Python 3.14.4, no deducido de la
+    documentación — trampa 45): `os.kill(pid_vivo, 0)` no lanza,
+    `os.kill(pid_inexistente, 0)` lanza `ProcessLookupError`. En Windows
+    `os.kill(pid, 0)` con un PID inexistente lanza `OSError` genérico
+    (`WinError 87`), no `ProcessLookupError` — por eso esta función solo se
+    invoca fuera de `win32`, nunca como sustituto de `_vivo_win32`.
+    """
+    try:
+        pid = int(winpid)
+    except ValueError:
+        return True                      # campo ilegible: no robar
+    try:
+        os.kill(pid, 0)
+    except ProcessLookupError:
+        return False                     # el PID no existe: muerto de verdad
+    except PermissionError:
+        return True                      # vive, y no es nuestro
+    except OSError:
+        return True                      # no se pudo preguntar: no robar
+    if not imagen:
+        return True
+    # El PID existe, pero POSIX también reutiliza PID: comprobar la imagen,
+    # igual que `_vivo_win32` con la columna de `tasklist`. `/proc` es
+    # Linux (no lo hay en macOS/BSD); sin él no se puede verificar la
+    # identidad y se responde por el lado seguro.
+    try:
+        with open(f"/proc/{pid}/comm", "r", encoding="utf-8", errors="replace") as f:
+            comm = f.read().strip()
+    except OSError:
+        return True
+    if comm and not (comm in imagen or imagen.startswith(comm)):
+        return False
+    return True
 
 
 #: Cuántas veces lo tiene ESTE proceso. No es un lujo: sin esto, un lote que
