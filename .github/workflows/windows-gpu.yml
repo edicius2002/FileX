@@ -1,0 +1,205 @@
+name: windows-gpu
+
+# C44 (bench/runner-autoalojado.md) -- lo que ubuntu-latest NO puede probar:
+# Windows real (os.replace, el mutex Global\, las DACL, los nombres 8.3), la
+# GPU real, y los contenedores locales (CONTRIBUTING.md §1). Necesita un
+# runner AUTOALOJADO, que hoy NO EXISTE -- este fichero es el diseño, no la
+# ejecución: nada de esto ha corrido de verdad hasta que alguien registre un
+# runner con las etiquetas de `runs-on:` de abajo. Eso, y cualquier cambio de
+# ajustes del repositorio, es EXPRESAMENTE trabajo de otra persona (ver
+# bench/runner-autoalojado.md §0).
+#
+# ─────────────────────────────────────────────────────────────────────────
+# POR QUÉ DOS JOBS, Y NO UNO CON UN `if:`
+# ─────────────────────────────────────────────────────────────────────────
+# Un runner autoalojado en un repositorio PÚBLICO expone el escritorio del
+# usuario al PR de cualquier desconocido -- MEDIDO que el repositorio hoy NO
+# exige aprobación para colaboradores externos ya aprobados una vez
+# (`fork-pr-contributor-approval` = `first_time_contributors`, sondeado con
+# `gh api`, ver el informe §1: un PR "de propina" inofensivo aprobado una vez
+# deja pasar SIN aprobación cualquier PR posterior del mismo autor).
+#
+# La separación en dos jobs se apoya en dos cosas distintas a propósito, para
+# que un solo fallo de diseño no las tire a las dos:
+#
+#   - `push`/`workflow_dispatch` YA exigen permiso de escritura en el
+#     repositorio -- lo impone la PLATAFORMA, un fork no puede disparar
+#     ninguno de los dos pase lo que pase en este YAML.
+#   - Un `pull_request` SÍ puede dispararlo cualquiera con un fork, así que
+#     `pr-con-aprobacion` se activa siempre que el evento sea `pull_request`
+#     Y ADEMÁS filtra por `head.repo.full_name` para no pedirle aprobación a
+#     un PR del propio repositorio (mismo autor de confianza, mismo control
+#     de acceso que ya protege `push`) -- la aprobación es "para PRs de
+#     terceros" (ENCARGO-C44.md), no para todos.
+#
+#     Lleva `environment: aprobacion-manual-gpu`: un job con `environment` a
+#     un entorno con revisores obligatorios se PAUSA hasta que alguien de la
+#     lista aprueba en la UI de Actions. **Ese entorno no lo crea este
+#     fichero**: GitHub lo crea vacío (sin revisores, es decir SIN
+#     aprobación real) la primera vez que se referencia, y hace falta
+#     Settings > Environments > `aprobacion-manual-gpu` > Required reviewers
+#     para que proteja algo. Repetido en `bench/runner-autoalojado.md` para
+#     que no se pierda en un comentario de YAML. Y por eso el filtro de
+#     `head.repo.full_name` de arriba es una comodidad, NO la defensa: si
+#     alguien lo borra por error, el entorno sigue pausando todo PR ajeno.
+#
+# Y una tercera capa, más estrecha que la aprobación: `pr-con-aprobacion`
+# NUNCA activa `correr_gpu` (ver más abajo) por defecto, así que un PR
+# aprobado por error sigue sin poder tocar el lock de la tarjeta -- sólo
+# alguien con `workflow_dispatch` (ya de por sí restringido a colaboradores)
+# puede pedir esa parte explícitamente. Es la trampa 33 con dos mitades:
+# exclusión (el `environment`) y un límite del daño si la exclusión falla.
+#
+# ─────────────────────────────────────────────────────────────────────────
+# LA PREGUNTA DEL LOCK
+# ─────────────────────────────────────────────────────────────────────────
+# `ci/lock_preflight.py` decide: el job NO espera indefinidamente por el
+# lock de GPU (el `FILEX_GPU_ESPERA=900` de producto es para un lote humano,
+# no para un runner de CI). Con `--espera 30` se niega y omite los módulos de
+# GPU si la tarjeta está ocupada, en vez de camparse encima de un lote real
+# que puede durar hasta 40 minutos entre configuraciones (trampa 100).
+# Números y controles (positivo Y negativo) en el informe §2.
+
+on:
+  workflow_dispatch:
+    inputs:
+      correr_gpu:
+        description: >-
+          Ejecutar TAMBIÉN los módulos que tocan la tarjeta y el lock real
+          (test_gpu_lock, test_hito2). Por defecto NO.
+        type: boolean
+        default: false
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  # Un solo job de Windows en marcha a la vez: sólo hay un runner físico, y
+  # dos jobs a la vez sólo se estorbarían entre sí (y con los workers
+  # humanos, que ya tienen su propia exclusión de GPU).
+  group: windows-gpu
+  cancel-in-progress: false
+
+jobs:
+  # ------------------------------------------------------------------------
+  # Disparado por quien ya tiene permiso de escritura (push a main,
+  # workflow_dispatch) -- restricción de la PLATAFORMA, no de este fichero.
+  # ------------------------------------------------------------------------
+  medir-interno:
+    if: >-
+      github.event_name != 'pull_request' ||
+      github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: [self-hosted, Windows, gpu, filex]
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: false
+
+      - name: Declarar el intérprete y el entorno
+        shell: pwsh
+        run: |
+          & "$env:FILEX_PY" -VV
+          Write-Host "docker:      $(if (Get-Command docker -ErrorAction SilentlyContinue) {'presente'} else {'AUSENTE'})"
+          Write-Host "nvidia-smi:  $(if (Get-Command nvidia-smi -ErrorAction SilentlyContinue) {'presente'} else {'AUSENTE'})"
+        env:
+          # Ruta ABSOLUTA al `python.exe` del venv de pruebas. NO se instala
+          # nada aquí (CLAUDE.md §1: usar los venvs para ejecutar sí,
+          # instalar en ellos jamás) -- variable de repositorio
+          # (`vars.FILEX_PY`), sin valor por defecto a propósito: que falte
+          # es más seguro que adivinar mal una ruta de otra máquina.
+          FILEX_PY: ${{ vars.FILEX_PY }}
+
+      - name: El paquete importa y la CLI arranca
+        shell: pwsh
+        run: |
+          & "$env:FILEX_PY" -c "import filex; print('filex', filex.__file__)"
+          & "$env:FILEX_PY" -m filex motores
+        env:
+          FILEX_PY: ${{ vars.FILEX_PY }}
+
+      - name: Preflight del lock -- ¿hay hueco para los módulos de GPU?
+        id: lock
+        if: inputs.correr_gpu
+        shell: pwsh
+        continue-on-error: true
+        run: |
+          & "$env:FILEX_PY" ci/lock_preflight.py --etiqueta ci-windows --espera 30
+        env:
+          FILEX_PY: ${{ vars.FILEX_PY }}
+
+      - name: Medir qué módulos son aptos en ESTE Windows (sonda, no deduce)
+        shell: pwsh
+        run: |
+          $excluir = @("--excluir", "test_gpu_lock", "--excluir", "test_hito2")
+          if ($env:CORRER_GPU -eq "true" -and "${{ steps.lock.outcome }}" -eq "success") {
+            $excluir = @()
+          }
+          & "$env:FILEX_PY" ci/sonda_windows.py --tope 90 @excluir --json ci-windows-medido.json
+        env:
+          FILEX_PY: ${{ vars.FILEX_PY }}
+          CORRER_GPU: ${{ inputs.correr_gpu }}
+          # `FILEX_GPU_ESPERA` corto para TODO el paso, no sólo el preflight:
+          # si algún módulo individual necesita el lock, que se rinda rápido
+          # también, en vez de heredar los 900 s de producto.
+          FILEX_GPU_ESPERA: "30"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: windows-medido
+          path: ci-windows-medido.json
+
+      - name: >-
+          Correr la lista YA CONGELADA (ci/windows-apto.json), si existe --
+          NO se escribe desde aquí (ver bench/runner-autoalojado.md §3)
+        if: hashFiles('ci/windows-apto.json') != ''
+        shell: pwsh
+        run: |
+          $modulos = (& "$env:FILEX_PY" -c "import json; print(' '.join('pruebas.'+m for m in json.load(open('ci/windows-apto.json'))['aptos']))")
+          Write-Host "ejecutando: $modulos"
+          & "$env:FILEX_PY" -m unittest $modulos.Split(' ')
+        env:
+          FILEX_PY: ${{ vars.FILEX_PY }}
+          FILEX_GPU_ESPERA: "30"
+
+  # ------------------------------------------------------------------------
+  # Disparado por CUALQUIERA (incluido un fork): la aprobación manual vive
+  # en el `environment`, no en una condición de este fichero.
+  # ------------------------------------------------------------------------
+  pr-con-aprobacion:
+    if: >-
+      github.event_name == 'pull_request' &&
+      github.event.pull_request.head.repo.full_name != github.repository
+    environment: aprobacion-manual-gpu
+    runs-on: [self-hosted, Windows, gpu, filex]
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: false
+
+      - name: El paquete importa y la CLI arranca
+        shell: pwsh
+        run: |
+          & "$env:FILEX_PY" -c "import filex; print('filex', filex.__file__)"
+          & "$env:FILEX_PY" -m filex motores
+        env:
+          FILEX_PY: ${{ vars.FILEX_PY }}
+
+      - name: >-
+          Medir módulos APTOS -- SIEMPRE sin GPU en PR de fuera, sea cual sea
+          la aprobación (tercera capa, ver cabecera de este fichero)
+        shell: pwsh
+        run: |
+          & "$env:FILEX_PY" ci/sonda_windows.py --tope 90 --excluir test_gpu_lock --excluir test_hito2 --json ci-windows-pr-medido.json
+        env:
+          FILEX_PY: ${{ vars.FILEX_PY }}
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: windows-pr-medido
+          path: ci-windows-pr-medido.json
