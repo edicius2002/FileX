@@ -1,99 +1,99 @@
 {
   "motor": "ffmpeg",
   "build": "ffmpeg N-121159-g0bd5a7d371-20250921",
-  "fecha": "2026-08-22",
-  "informe": "bench/sondeo-ffmpeg.md",
+  "fecha": "2026-09-02",
+  "informe": "bench/acuerdo-y-cruce.md",
   "huella": {
     "motor": "52bd204369ca3053",
     "invocacion": "3a2c16603bb46673",
-    "contrato": "9beb191c5479d72e"
+    "contrato": "fe41b4d52413299c"
   },
-  "interprete": "3.11.9",
-  "nota_huella": "Resondeado y sellado el 2026-08-28: estas medidas se tomaron con el codigo cuya huella esta arriba, no con uno anterior. Cierra el pendiente que dejo `bench/deuda-sondeo.md` 3.3, donde el sellado era ARGUMENTADO y no MEDIDO porque `verificador.py` habia cambiado despues de escribirse los ficheros.",
+  "interprete": "3.11",
+  "nota_huella": "RESONDEADO (no resellado por algoritmo) el 2026-09-02 por worker2, ronda 7: `C31` (ronda 6) cambio el componente `contrato` -- FIRMAS (TGA/CUR) y `_datos` (RAM) -- y `bench/salidas-huella/resellar.py --comprobar` confirmo que la huella guardada NO coincidia con el algoritmo anterior sobre el arbol de ahora: no era un cambio de algoritmo, hacia falta resondear. Las 62/70/8/16/16 aristas se remidieron de verdad (FileX.convertir() real, contrato de cinco puntos incluido), no se copio el JSON viejo con un campo cambiado.",
   "aristas": {
     "avi>flac": {
       "estado": "real",
-      "ms": 45.8
+      "ms": 81.4
     },
     "avi>gif": {
       "estado": "real",
-      "ms": 644.1
+      "ms": 1424.7
     },
     "avi>m4a": {
       "estado": "real",
-      "ms": 543.3
+      "ms": 809.8
     },
     "avi>mkv": {
       "estado": "real",
-      "ms": 1285.7
+      "ms": 1997.5
     },
     "avi>mov": {
       "estado": "real",
-      "ms": 1316.2
+      "ms": 2611.3
     },
     "avi>mp3": {
       "estado": "real",
-      "ms": 80.4
+      "ms": 125.1
     },
     "avi>mp4": {
       "estado": "real",
-      "ms": 1300.3
+      "ms": 2524.2
     },
     "avi>ogg": {
       "estado": "real",
-      "ms": 103.8
+      "ms": 143.8
     },
     "avi>opus": {
       "estado": "real",
-      "ms": 94.3
+      "ms": 131.3
     },
     "avi>wav": {
       "estado": "real",
-      "ms": 43.2
+      "ms": 119.2
     },
     "avi>webm": {
       "estado": "real",
-      "ms": 6223.0
+      "ms": 9884.5
     },
     "flac>m4a": {
       "estado": "real",
-      "ms": 439.5
+      "ms": 796.1
     },
     "flac>ogg": {
       "estado": "real",
-      "ms": 93.9
+      "ms": 123.1
     },
     "m4a>flac": {
       "estado": "real",
-      "ms": 43.3
+      "ms": 88.8
     },
     "m4a>mp3": {
       "estado": "real",
-      "ms": 77.3
+      "ms": 152.6
     },
     "m4a>ogg": {
       "estado": "real",
-      "ms": 92.5
+      "ms": 121.9
     },
     "m4a>opus": {
       "estado": "real",
-      "ms": 78.7
+      "ms": 115.9
     },
     "m4a>wav": {
       "estado": "real",
-      "ms": 39.8
+      "ms": 67.4
     },
     "mkv>avi": {
       "estado": "real",
-      "ms": 1408.3
+      "ms": 2725.8
     },
     "mkv>flac": {
       "estado": "real",
-      "ms": 51.5
+      "ms": 86.9
     },
     "mkv>gif": {
       "estado": "real",
-      "ms": 692.4
+      "ms": 1230.8
     },
     "mkv>m4a": {
       "estado": "nominal",
@@ -102,39 +102,39 @@
     },
     "mkv>mov": {
       "estado": "real",
-      "ms": 1434.5
+      "ms": 2305.0
     },
     "mkv>mp3": {
       "estado": "real",
-      "ms": 87.8
+      "ms": 127.5
     },
     "mkv>ogg": {
       "estado": "real",
-      "ms": 110.0
+      "ms": 148.2
     },
     "mkv>opus": {
       "estado": "real",
-      "ms": 94.5
+      "ms": 144.4
     },
     "mkv>wav": {
       "estado": "real",
-      "ms": 47.8
+      "ms": 76.7
     },
     "mkv>webm": {
       "estado": "real",
-      "ms": 6151.0
+      "ms": 8695.4
     },
     "mov>avi": {
       "estado": "real",
-      "ms": 1376.1
+      "ms": 2606.3
     },
     "mov>flac": {
       "estado": "real",
-      "ms": 60.3
+      "ms": 64.9
     },
     "mov>gif": {
       "estado": "real",
-      "ms": 676.1
+      "ms": 1479.8
     },
     "mov>m4a": {
       "estado": "nominal",
@@ -143,155 +143,155 @@
     },
     "mov>mkv": {
       "estado": "real",
-      "ms": 1345.5
+      "ms": 2627.3
     },
     "mov>mp3": {
       "estado": "real",
-      "ms": 92.5
+      "ms": 137.7
     },
     "mov>mp4": {
       "estado": "real",
-      "ms": 1368.1
+      "ms": 2130.8
     },
     "mov>ogg": {
       "estado": "real",
-      "ms": 115.1
+      "ms": 155.7
     },
     "mov>opus": {
       "estado": "real",
-      "ms": 109.4
+      "ms": 145.2
     },
     "mov>wav": {
       "estado": "real",
-      "ms": 47.3
+      "ms": 95.2
     },
     "mov>webm": {
       "estado": "real",
-      "ms": 5980.5
+      "ms": 9249.5
     },
     "mp3>m4a": {
       "estado": "real",
-      "ms": 434.7
+      "ms": 571.5
     },
     "mp3>ogg": {
       "estado": "real",
-      "ms": 88.3
+      "ms": 137.0
     },
     "mp3>opus": {
       "estado": "real",
-      "ms": 79.6
+      "ms": 109.2
     },
     "mp4>avi": {
       "estado": "real",
-      "ms": 1524.8
+      "ms": 2521.8
     },
     "mp4>flac": {
       "estado": "real",
-      "ms": 53.7
+      "ms": 74.5
     },
     "mp4>mov": {
       "estado": "real",
-      "ms": 1500.2
+      "ms": 2519.3
     },
     "mp4>ogg": {
       "estado": "real",
-      "ms": 112.2
+      "ms": 195.5
     },
     "mp4>opus": {
       "estado": "real",
-      "ms": 99.1
+      "ms": 191.9
     },
     "mp4>wav": {
       "estado": "real",
-      "ms": 45.3
+      "ms": 100.5
     },
     "ogg>flac": {
       "estado": "real",
-      "ms": 43.2
+      "ms": 61.0
     },
     "ogg>m4a": {
       "estado": "real",
-      "ms": 397.8
+      "ms": 524.1
     },
     "ogg>mp3": {
       "estado": "real",
-      "ms": 72.6
+      "ms": 111.3
     },
     "ogg>opus": {
       "estado": "real",
-      "ms": 76.3
+      "ms": 139.4
     },
     "ogg>wav": {
       "estado": "real",
-      "ms": 41.3
+      "ms": 63.4
     },
     "opus>flac": {
       "estado": "real",
-      "ms": 51.5
+      "ms": 78.4
     },
     "opus>m4a": {
       "estado": "real",
-      "ms": 480.3
+      "ms": 781.1
     },
     "opus>mp3": {
       "estado": "real",
-      "ms": 75.6
+      "ms": 126.1
     },
     "opus>ogg": {
       "estado": "real",
-      "ms": 95.7
+      "ms": 252.7
     },
     "opus>wav": {
       "estado": "real",
-      "ms": 50.6
+      "ms": 78.7
     },
     "wav>ogg": {
       "estado": "real",
-      "ms": 105.2
+      "ms": 144.5
     },
     "webm>avi": {
       "estado": "real",
-      "ms": 1451.8
+      "ms": 2330.6
     },
     "webm>flac": {
       "estado": "real",
-      "ms": 57.4
+      "ms": 92.5
     },
     "webm>gif": {
       "estado": "real",
-      "ms": 814.5
+      "ms": 1392.6
     },
     "webm>m4a": {
       "estado": "real",
-      "ms": 524.8
+      "ms": 790.1
     },
     "webm>mkv": {
       "estado": "real",
-      "ms": 1410.3
+      "ms": 2454.0
     },
     "webm>mov": {
       "estado": "real",
-      "ms": 1404.7
+      "ms": 2170.3
     },
     "webm>mp3": {
       "estado": "real",
-      "ms": 88.4
+      "ms": 119.1
     },
     "webm>mp4": {
       "estado": "real",
-      "ms": 1397.8
+      "ms": 2477.9
     },
     "webm>ogg": {
       "estado": "real",
-      "ms": 117.4
+      "ms": 241.8
     },
     "webm>opus": {
       "estado": "real",
-      "ms": 91.8
+      "ms": 125.2
     },
     "webm>wav": {
       "estado": "real",
-      "ms": 55.3
+      "ms": 90.1
     }
   }
 }

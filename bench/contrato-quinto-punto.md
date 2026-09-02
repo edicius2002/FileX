@@ -329,6 +329,43 @@ mismos ocho (§7).
    entregada usa el camino en proceso **porque no añade dependencias**, y esa elección tiene un
    precio medido.
 
+**AMPLIADO el 03/09/2026 por worker2 (`C23`, ronda 7) — `bench/acuerdo-y-cruce.md` §2, ONCE
+puntos en vez de tres.** Con tres puntos no había curva, solo la sospecha de una: los ratios
+del propio informe (×2,29 a 0,08 Mpx antes del cruce, ×6,8 a 0,32, ×20,5 a 1,84) no forman una
+progresión reconocible con tan pocos datos. El barrido nuevo —PNG sintéticos deterministas
+(`plasma:fractal` + ruido, `-seed` fijo), caja PROPORCIONAL a la imagen (misma semántica que
+rasterizar el mismo documento a más resolución), mediana de n=9 con calentamiento— confirma la
+posición del cruce y aclara la forma:
+
+| Mpx | en proceso (ms) | `magick` (ms) | gana |
+|---:|---:|---:|---|
+| 0,0098 | 4,5 | 53,4 | proceso ×11,9 |
+| 0,0200 | 8,1 | 47,6 | proceso ×5,9 |
+| 0,0399 | 36,5 | 106,2 | proceso ×2,9 |
+| 0,0800 | 59,0 | 134,9 | proceso ×2,3 |
+| **0,1602** | **128,2** | **55,4** | **magick ×2,3** |
+| 0,3200 | 135,0 | 63,0 | magick ×2,1 |
+| 0,6401 | 303,2 | 102,1 | magick ×3,0 |
+| 1,2800 | 483,5 | 98,7 | magick ×4,9 |
+| 1,8432 | 950,2 | 117,2 | magick ×8,1 |
+| 2,5595 | 1235,2 | 291,6 | magick ×4,2 |
+| 5,1200 | 2265,3 | 217,7 | magick ×10,4 |
+
+**El cruce cae entre 0,08 y 0,16 Mpx** — confirma el «~0,1 Mpx» del §4.3 original con un punto a
+cada lado, en vez de extrapolarlo desde 0,08 y 0,32. **La forma, con once puntos, es más cercana
+a LINEAL en Mpx de lo que sugerían los tres originales**: el coste en proceso por Mpx se
+mantiene en 377–516 ms/Mpx desde 1,28 hasta 5,12 Mpx (sin la subida abrupta que los tres puntos
+antiguos insinuaban entre 0,32 y 1,84). `magick`, en cambio, se queda dominado por un coste
+**casi fijo** (47–292 ms) en todo el rango: no es que crezca despacio, es que decodificar y
+recortar cuesta lo mismo que arrancar el proceso hasta bien pasados los 5 Mpx de esta prueba.
+
+**Aviso de comparabilidad, con número:** las cifras absolutas NO son las del §4.3 original —
+contenido sintético frente a rasters de SVG reales, `standard_deviation` frente al umbral de
+tinta del propio I9, máquina `C:` bajo carga (63–96 % de CPU, declarado en el encargo) frente a
+la tanda `D:` original—. Lo que se sostiene es la DIRECCIÓN (proceso gana abajo, `magick` gana
+arriba, con margen creciente) y el ORDEN DE MAGNITUD del cruce (~0,1 Mpx en las dos tandas), no
+los ratios exactos punto a punto.
+
 ### 4.4 ¿Dónde vive I9? Y la pregunta de arquitectura de D2
 
 D2 acotó así el hallazgo de E1: *«el contrato juzga la declaración; el contenido que desaparece
@@ -497,9 +534,47 @@ Si el motor **reconoce**, dos pasadas con reconocedores distintos entregan casi 
 
 **Su precio, dicho con todas las letras: cuesta una segunda pasada de OCR.** Sobre estos
 documentos son 240–1 100 ms más (`verificador-ghostscript.md` §5.4). Eso lo pone claramente en
-el grupo C, y solo para la arista de reparación. **PENDIENTE:** validarlo fuera de Ghostscript
+el grupo C, y solo para la arista de reparación. ~~**PENDIENTE:** validarlo fuera de Ghostscript
 (dos idiomas del mismo motor podrían acordar en su propio error) y sobre documentos con
-vocabulario que `eng` no comparta.
+vocabulario que `eng` no comparta.~~
+
+**VALIDADO y REFUTADO el 03/09/2026 por worker2 (`C20`, ronda 7) —
+`bench/acuerdo-y-cruce.md` §1.** Se probó exactamente lo pendiente: Tesseract 5.5.0
+**ESTANDALONE** dentro del contenedor `filex-c13` (no el Tesseract compilado dentro de
+`gswin64c.exe`), sobre los cuatro documentos legado más la familia `escaneado_d4` (castellano
+CON tildes, vocabulario que `eng` no comparte). **La separación de 16/16 NO se reproduce.** Dos
+mecanismos de fallo, los dos medidos y diagnosticados:
+
+1. **Trampa de silencio.** `escaneado_d3` y `escaneado_d4e` dan **0 caracteres en las DOS
+   pasadas** (`--psm 3`). Dos cadenas vacías son idénticas para `difflib`
+   (`SequenceMatcher.ratio() == 1.000`), así que el acuerdo dice «perfecto» sobre un CER real
+   del **100 %**. Confirmado que el motivo es `--psm`, no el documento: con `--psm 6` u `11` el
+   mismo `d3` deja de estar en silencio y pasa a alucinar en su lugar (misma forma que
+   `CLAUDE.md` ya documenta: *«silencio y alucinación son el mismo motor con distinto modo de
+   segmentación»*) — pero no se barrió el `--psm` a fondo (eso sería la trampa 78 aplicada al
+   propio arnés: variar dos preguntas a la vez).
+2. **Trampa del idioma en vocabulario acentuado.** `escaneado_d4a` reconoce casi perfectamente
+   (CER `spa` = **0,17 %**) y aun así el acuerdo `spa`/`eng` da **0,735** —por debajo del
+   umbral 0,80—, porque el modelo `eng` no falla por ausencia de tildes: **sustituye letras
+   incorrectas** para los glifos acentuados (`ó`→`é`, `ñ`→`N`/`fh`…), no solo las omite.
+   Probado que no es un problema de normalización: ni conservar los diacríticos (NFC) ni
+   descartarlos (NFKD ciega) suben el acuerdo por encima de 0,73.
+
+**Con solo `escaneado_d4` (dificultad intermedia) y los cuatro legado el patrón se sostiene**
+(acuerdo bajo con CER alto, acuerdo 1,000 con CER 0,0 %); con la familia `d4a`/`d4c`/`d3`/`d4e`
+completa, dos de cada ocho documentos dan una lectura FALSA (una `bueno` marcada `ruido`, dos
+`ruido` marcadas `bueno`). Es la trampa 78 confirmando su propia advertencia: *un umbral
+calibrado con un solo motor describe a ese motor* — y aquí, con un solo `--psm` y sin guardar
+de longitud mínima.
+
+**Decisión: el acuerdo NO entra como regla, ni siquiera informativa.** Al menos no en esta
+forma (`difflib` sobre texto crudo, sin guarda de longitud). Media regla demostrable vale más
+que una regla entera calibrada a ojo (trampa 87): la mitad que SÍ se sostiene —documento de
+dificultad intermedia, sin acentos extremos, con longitud mínima garantizada— no está separada
+del resto de un modo que un umbral único pueda capturar sin las dos guardas que faltan (mínimo
+de caracteres no vacíos; comparación que no penalice la sustitución de un solo carácter
+acentuado). Implementarlas y remedir queda **PENDIENTE**, y es un encargo nuevo, no una
+continuación de este.
 
 ### 6.4 `ocr: true` en el pedido — el cambio de firma
 

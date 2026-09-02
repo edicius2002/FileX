@@ -1,0 +1,105 @@
+{
+ "motor": "doc_pandoc",
+ "build": "doc_pandoc 29.4.3 · filex-c13@6d359bad483e",
+ "fecha": "2026-09-02",
+ "informe": "bench/sondeo-documental.md",
+ "nota": "n=1 por arista, tanda SUCIA (sesión remota activa) y con dos agentes más trabajando: los ms desempatan dentro de este informe, NO se comparan con los de otro. El `build` lleva el ID de la imagen: en otra máquina esto no se aplica.",
+ "aristas": {
+  "docx>odt": {
+   "estado": "real",
+   "ms": 3451.5,
+   "motivo": "7202 B, 515 caracteres, contrato ok_parcial",
+   "caso": "S10"
+  },
+  "docx>tex": {
+   "estado": "real",
+   "ms": 1615.8,
+   "motivo": "2698 B, 2649 caracteres, contrato ok",
+   "caso": "Q13"
+  },
+  "epub>docx": {
+   "estado": "real",
+   "ms": 21742.3,
+   "motivo": "10992 B, 635 caracteres, contrato ok_parcial",
+   "caso": "S11"
+  },
+  "epub>txt": {
+   "estado": "real",
+   "ms": 3110.5,
+   "motivo": "566 B, 514 caracteres, contrato ok",
+   "caso": "S12"
+  },
+  "html>epub": {
+   "estado": "real",
+   "ms": 5604.8,
+   "motivo": "5279 B, 554 caracteres, contrato ok_parcial",
+   "caso": "S07"
+  },
+  "html>odt": {
+   "estado": "real",
+   "ms": 6208.9,
+   "motivo": "7286 B, 543 caracteres, contrato ok_parcial",
+   "caso": "S08"
+  },
+  "html>rtf": {
+   "estado": "real",
+   "ms": 3416.3,
+   "motivo": "1756 B, 1754 caracteres, contrato ok",
+   "caso": "S09"
+  },
+  "md>pptx": {
+   "estado": "real",
+   "ms": 1564.1,
+   "motivo": "28170 B, 2218 caracteres, contrato ok_parcial",
+   "caso": "Q02"
+  },
+  "md>rtf": {
+   "estado": "real",
+   "ms": 7618.7,
+   "motivo": "1700 B, 1698 caracteres, contrato ok",
+   "caso": "S15"
+  },
+  "md>tex": {
+   "estado": "real",
+   "ms": 1958.9,
+   "motivo": "2748 B, 2699 caracteres, contrato ok",
+   "caso": "Q12"
+  },
+  "pptx>md": {
+   "estado": "real",
+   "ms": 1235.9,
+   "motivo": "549 B, 499 caracteres, contrato ok",
+   "caso": "Q17"
+  },
+  "rtf>html": {
+   "estado": "real",
+   "ms": 22552.2,
+   "motivo": "4324 B, 3133 caracteres, contrato ok",
+   "caso": "S14"
+  },
+  "rtf>md": {
+   "estado": "real",
+   "ms": 1703.5,
+   "motivo": "471 B, 466 caracteres, contrato ok",
+   "caso": "S13"
+  },
+  "tex>docx": {
+   "estado": "real",
+   "ms": 1310.5,
+   "motivo": "10772 B, 394 caracteres, contrato ok_parcial",
+   "caso": "Q14"
+  },
+  "tex>html": {
+   "estado": "real",
+   "ms": 864.9,
+   "motivo": "4651 B, 2939 caracteres, contrato ok",
+   "caso": "Q15"
+  },
+  "tex>pdf": {
+   "estado": "real",
+   "ms": 10527.7,
+   "motivo": "9755 B, 268 caracteres, contrato aviso",
+   "caso": "Q16"
+  }
+ }
+}

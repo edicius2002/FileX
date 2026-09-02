@@ -539,9 +539,23 @@ class AplicarConInterprete(unittest.TestCase):
 
 
 class InterpreteActual(unittest.TestCase):
-    def test_devuelve_la_version_de_python_en_curso(self):
-        import platform
-        self.assertEqual(huella.interprete_actual(), platform.python_version())
+    """Ronda 7: la granularidad bajó de mayor.menor.parche a mayor.menor,
+    porque `.venv-mcp-filex` sella con 3.11.9 y el runner real resuelve a
+    3.11.16 — el triple completo habría declarado el sellado "no comparable"
+    en CADA ejecución de la CI. Sigue protegiendo la trampa 105 real (3.11
+    frente a 3.14)."""
+
+    def test_devuelve_mayor_punto_menor(self):
+        import sys
+        self.assertEqual(huella.interprete_actual(),
+                         "%d.%d" % sys.version_info[:2])
+
+    def test_NO_incluye_el_parche(self):
+        # La afirmación central de esta ronda: dos parches de la misma menor
+        # tienen que declararse iguales. No se puede fabricar un segundo
+        # intérprete 3.11.x en esta máquina (§1 del informe), así que se
+        # comprueba la FORMA de la cadena en vez del valor con dos binarios.
+        self.assertEqual(huella.interprete_actual().count("."), 1)
 
     def test_es_una_cadena_no_vacia(self):
         self.assertTrue(huella.interprete_actual())
@@ -605,8 +619,21 @@ class SelladoDelDisco(unittest.TestCase):
         """El criterio de aceptación duro de `C43`: **no puede caducar ni una
         de las aristas selladas**, ni tampoco declararse `interprete_distinto`
         —que sería el mismo daño con otro nombre—, corriendo la suite con el
-        intérprete que las selló. Se llama a `sondeo.aplicar()` sin inyectar
-        nada: es exactamente la ruta que usan `motores.py` y
+        intérprete que las selló.
+
+        **Se llama a `m.sondear()`, no a `sondeo.aplicar()` a mano** —
+        corregido en la ronda 7—. La versión de la ronda 5 llamaba a
+        `sondeo.aplicar(m.nombre, m.build, ...)` sobre un `cls()` recién
+        creado, y `Motor.build` es una `@property` que depende de `ruta`/
+        `version`, que solo rellena `sondear()`. Sin sondear, `m.build` vale
+        el nombre pelado (`"imagemagick"`), nunca coincide con el `build`
+        guardado (`"imagemagick 7.1.2-21"`), y `sondeo.aplicar()` **se para
+        en la guarda del `build` antes de llegar siquiera al intérprete** —
+        la prueba pasaba SIEMPRE, sin ejercer nunca la ruta que dice
+        proteger. MEDIDO al arreglarlo (`bench/acuerdo-y-cruce.md` §1): con
+        `sondear()` real, los CINCO motores caían en `interprete_distinto`
+        antes del resondeo de esta ronda — la prueba vieja nunca lo habría
+        visto. `sondear()` es exactamente la ruta que usan `motores.py` y
         `motor_contenedor.py` en producción."""
         from filex import motores
         sondeo.descongelar()
@@ -616,9 +643,11 @@ class SelladoDelDisco(unittest.TestCase):
             d = sondeo.cargar(m.nombre)
             if not d or not d.get("huella"):
                 continue
+            m.sondear()
+            if not m.disponible:
+                continue
             vistos += 1
             with self.subTest(motor=m.nombre):
-                sondeo.aplicar(m.nombre, m.build, m._aristas())
                 diag = sondeo.diagnostico()
                 self.assertNotIn(m.nombre, diag["interprete_distinto"],
                                  "se declaró no comparable con SU PROPIO sello")

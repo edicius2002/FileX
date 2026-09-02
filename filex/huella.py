@@ -128,7 +128,7 @@ import ast
 import hashlib
 import inspect
 import os
-import platform
+import sys
 import textwrap
 
 #: Desde dónde se calcula el cierre de llamadas del contrato. `verificar()` es
@@ -165,15 +165,42 @@ def interprete_actual() -> str:
     hacerla y llamar al resultado «caducado» (decisión del 02/09, no
     reabrir).
 
-    Se usa `platform.python_version()` —el triple completo, no solo
-    mayor.menor— porque es exactamente lo que la medida de control positivo
-    declaró (3.11.9 frente a 3.14.4) y una granularidad más gruesa sería una
-    hipótesis sin medir: **PENDIENTE** si un cambio de versión de
-    mantenimiento (p. ej. 3.11.9 → 3.11.10) mueve `ast.dump`; CPython no
-    suele tocar el analizador en esas versiones, pero aquí no se ha medido, y
-    la regla del proyecto es no comparar sin medir primero.
+    GRANULARIDAD — corregida en la ronda 7, y es la interacción con la propia
+    CI del proyecto (`.github/workflows/suite.yml` fija `python: ['3.11']`,
+    no un parche exacto). La versión original de C43 usaba
+    `platform.python_version()` completo (el triple: mayor.menor.parche)
+    porque era exactamente lo que medía la trampa 105 (3.11.9 frente a
+    3.14.4, dos MENORES distintas). Eso funcionaba en la máquina del
+    proyecto y habría fallado en el runner real: `.venv-mcp-filex` sella con
+    **3.11.9** y el runner (`ubuntu-latest`, `actions/setup-python@v5` con
+    `python-version: '3.11'`) resuelve a **3.11.16** — MEDIDO, `gh run view`
+    sobre la ejecución más reciente de `suite.yml`. Sellar con el triple
+    completo habría declarado esos cinco ficheros «no comparables» en CADA
+    ejecución del runner, para siempre, aunque el código midiera lo mismo:
+    el propio arreglo de `C43` habría bloqueado la fusión que vino a
+    proteger.
+
+    Se usa **`mayor.menor`** (`"3.11"`, no `"3.11.9"`) porque es la
+    granularidad que la CI del proyecto YA se compromete a mantener estable
+    en su matriz, y porque es la ÚNICA granularidad que no exige adivinar
+    qué parche exacto tendrá el runner en la próxima ejecución —eso cambia
+    solo con la caché de `actions/setup-python`, fuera del control de este
+    repositorio—. Sigue protegiendo contra la trampa 105 real (3.11 frente a
+    3.14 se siguen declarando distintos). **PENDIENTE, sin medir en esta
+    máquina**: si `ast.dump` puede diferir entre dos versiones de
+    MANTENIMIENTO de la misma menor (p. ej. 3.11.9 frente a 3.11.16) — se
+    intentó comprobar con un segundo intérprete 3.11.x en esta máquina y no
+    fue posible (§1 de `bench/acuerdo-y-cruce.md`: CPython 3.11 ya no
+    publica binarios de Windows, solo fuente, y compilarlo estaba fuera de
+    alcance de esta ronda). Sí se comprobó, leyendo el `ast.py` que trae esta
+    instalación, que `dump()`/`parse()` no tienen ni una rama condicionada a
+    `sys.platform` u `os.name`: la plataforma (Windows/Linux) no debería
+    entrar en el resultado para el mismo intérprete, solo el parche podría —
+    y CPython no suele tocar la gramática ni el volcado del AST en versiones
+    de mantenimiento, por política, aunque eso no se ha medido aquí con dos
+    intérpretes reales lado a lado.
     """
-    return platform.python_version()
+    return "%d.%d" % sys.version_info[:2]
 
 
 # ---------------------------------------------------------------- normalizar
