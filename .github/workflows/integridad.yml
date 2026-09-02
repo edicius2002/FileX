@@ -21,7 +21,7 @@ jobs:
   integridad:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           # `fetch-depth: 0` NO es opcional: la comprobación `citas` resuelve
           # hashes con `git cat-file`, y con el clon superficial que trae el
@@ -34,7 +34,7 @@ jobs:
           # Estas comprobaciones no leen el corpus, así que no se baja.
           lfs: false
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           # El proyecto declara `requires-python = ">=3.11"` y se mide en
           # 3.11.9. La trampa 94 es explícita: un recuento que no declara su
