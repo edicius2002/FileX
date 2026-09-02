@@ -232,7 +232,7 @@ Agrupado por **el recurso que lo limita**, que es lo que decide el reparto. Cada
 > | 🔴 | **ABIERTO** | **17** |
 > | ⚫ | **histórico**: la fila se conserva porque documenta una refutación, pero **no cuenta** | **6** |
 >
-> *(112 filas desde el 02/09: `N29` — el hallazgo de `filex.gpu.Lock._vivo()` al clasificar C42 — se añadió como pendiente nuevo del carril GPU.)*
+> *(113 filas desde el 02/09: `N29` —el hallazgo de `filex.gpu.Lock._vivo()` al clasificar C42— y `C44` —el runner autoalojado con aprobación manual, decidido el 02/09— se añadieron como pendientes nuevos del carril GPU.)*
 >
 > La orden que lo comprueba. Hay que acotar **dos** veces: a la §3, porque la §4 usa ✅ para el estado de los *agentes*; y **a las filas cuya primera celda es un identificador**, porque si no la propia leyenda se cuenta a sí misma (comprobado: sin el segundo filtro salen 47/8/35/7 en vez de 44/6/32/5):
 >
@@ -242,7 +242,7 @@ Agrupado por **el recurso que lo limita**, que es lo que decide el reparto. Cada
 >   | grep -o '🔴\|🟡\|🟢\|⚫' | sort | uniq -c
 > ```
 >
-> Salida esperada hoy: `6 ⚫ · 17 🔴 · 11 🟡 · 78 🟢` sobre **112** filas *(verificado a máquina el 02/09, tras la ronda 4 del carril CPU/Docker — ver `bench/ci-y-contrato.md` — y desde hoy lo verifica también `ci/integridad.py` en cada PR, que es lo que impide que esta línea vuelva a quedarse tres días diciendo otra cosa)*. La ronda 4 cerró **C27** (🔴→🟢, decisión: G6 se queda en `aviso`) y avanzó **C42** sin cerrarla del todo (🔴→🟡: 9 de 10 módulos de la CI clasificados y arreglados con código, 1 sin reproducir, la promoción final de `ci/linux-apto.json` pendiente de correr en el runner real). El resto del movimiento desde la ronda 3 (`6 · 19 · 10 · 76` → `6 · 16 · 11 · 78`) es del carril GPU en paralelo (`gpu/k-oem-acantilados`). *(23/08: `5 ⚫ · 44 🔴 · 6 🟡 · 32 🟢` sobre 87; 27/08: `6 · 40 · 5 · 36`; 28/08 tras la ronda 1: `6 · 42 · 5 · 39`; 29/08 con C39: `6 · 29 · 3 · 69` sobre 107; 01/09 antes del saneo: `6 · 24 · 8 · 73` sobre 111; 01/09 tras el saneo de la ronda 3: `6 · 19 · 10 · 76`.)* **El saneo de la ronda 3 no movió filas por trabajo nuevo: movió DOS filas porque su propio color contradecía su propia evidencia** — `C28` estaba 🟢 y su informe fuente (`firmas-cierre.md` §8) declara sin resolver justo lo que la fila daba por cerrado; `C32` pedía arbitrar una contradicción que `C31`/`C37` ya habían arbitrado sin que nadie cerrara esta fila. **Esta línea estuvo TRES DÍAS diciendo 95 filas mientras la leyenda de arriba decía 107: es la trampa 44 dentro del documento que gobierna el reparto — un recuento honesto con una nota falsa al lado.** **La ronda 1 cerró tres y abrió cinco; la ronda 2 cerró dos y medio cerró dos. Cerrar bien un pendiente casi siempre destapa los que tapaba — pero la proporción mejora cuando el encargo trae el mecanismo hecho: N10 se cerró rápido porque N1 ya había construido `filex/cerrojo.py`.**
+> Salida esperada hoy: `6 ⚫ · 14 🔴 · 13 🟡 · 80 🟢` sobre **113** filas *(verificado a máquina el 02/09, tras la ronda 4 del carril CPU/Docker — ver `bench/ci-y-contrato.md` — y desde hoy lo verifica también `ci/integridad.py` en cada PR, que es lo que impide que esta línea vuelva a quedarse tres días diciendo otra cosa)*. La ronda 4 cerró **C27** (🔴→🟢, decisión: G6 se queda en `aviso`) y avanzó **C42** sin cerrarla del todo (🔴→🟡: 9 de 10 módulos de la CI clasificados y arreglados con código, 1 sin reproducir, la promoción final de `ci/linux-apto.json` pendiente de correr en el runner real). El resto del movimiento desde la ronda 3 (`6 · 19 · 10 · 76` → `6 · 16 · 11 · 78`) es del carril GPU en paralelo (`gpu/k-oem-acantilados`). *(23/08: `5 ⚫ · 44 🔴 · 6 🟡 · 32 🟢` sobre 87; 27/08: `6 · 40 · 5 · 36`; 28/08 tras la ronda 1: `6 · 42 · 5 · 39`; 29/08 con C39: `6 · 29 · 3 · 69` sobre 107; 01/09 antes del saneo: `6 · 24 · 8 · 73` sobre 111; 01/09 tras el saneo de la ronda 3: `6 · 19 · 10 · 76`.)* **El saneo de la ronda 3 no movió filas por trabajo nuevo: movió DOS filas porque su propio color contradecía su propia evidencia** — `C28` estaba 🟢 y su informe fuente (`firmas-cierre.md` §8) declara sin resolver justo lo que la fila daba por cerrado; `C32` pedía arbitrar una contradicción que `C31`/`C37` ya habían arbitrado sin que nadie cerrara esta fila. **Esta línea estuvo TRES DÍAS diciendo 95 filas mientras la leyenda de arriba decía 107: es la trampa 44 dentro del documento que gobierna el reparto — un recuento honesto con una nota falsa al lado.** **La ronda 1 cerró tres y abrió cinco; la ronda 2 cerró dos y medio cerró dos. Cerrar bien un pendiente casi siempre destapa los que tapaba — pero la proporción mejora cuando el encargo trae el mecanismo hecho: N10 se cerró rápido porque N1 ya había construido `filex/cerrojo.py`.**
 >
 > **Y el segundo barrido encontró algo que el primero no buscaba: cuatro de las cinco filas movidas ya estaban cerradas ANTES de este repaso, y una —C33— llevaba cuatro días marcada como *«lo más urgente de esta sección»* sobre un fallo de seguridad **cerrado en el commit `c2f6a59`**.** El barrido del 23/08 comprobó que **cada fila tuviera un emoji**; no comprobó que **el emoji fuera verdad**. Son dos revisiones distintas y hacen falta las dos: la primera se hace con `grep`, la segunda **solo contra el código y el `git log`**.
 >
@@ -268,9 +268,9 @@ Agrupado por **el recurso que lo limita**, que es lo que decide el reparto. Cada
 |---|---|---|
 | ~~**B1**~~ | Construir `escaneado_d4` | 🟢 **CERRADO** por G1. **Cumple los cuatro criterios y el de éxito.** `corpus/pdf/escaneado_d4{,a,b,c,e,f}.pdf` + `MANIFIESTO-d4.md` |
 | ~~**B2**~~ | Aislar la asimetría de PaddleOCR | 🟢 **CERRADO** por G1, y **no era ninguna de las tres candidatas**: era la normalización del detector de RapidOCR. **72,2 puntos por seis números** |
-| **B3** | **marker** — instalado y sin medir. `torch 2.13.0` **sin paquetes `nvidia-*`**: es build **CPU**. **Confirmado el 23/08: sigue sin una sola medida.** `bench/salidas-marker/` solo contiene un `logs/` vacío y hereda el bloqueo de surya (`surya-ocr>=0.22.1,<0.23.0`) | 🔴 **ABIERTO** |
-| **B4** | **surya** por `SURYA_INFERENCE_BACKEND=llamacpp` o `VLLM_GPU_MEMORY_UTILIZATION=0.5`. **Único material: `bench/gpu-fase1.md` §B.3 — «NO FUNCIONA en GPU en esta máquina».** VRAM: sin dato | 🔴 **ABIERTO** |
-| **B5** | **MinerU `[vlm]`** (no `[vllm]`). **Cero menciones en todo `bench/`** | 🔴 **ABIERTO** |
+| **B3** | **marker** — instalado y sin medir. `torch 2.13.0` **sin paquetes `nvidia-*`**: es build **CPU**. **Confirmado el 23/08: sigue sin una sola medida.** `bench/salidas-marker/` solo contiene un `logs/` vacío y hereda el bloqueo de surya (`surya-ocr>=0.22.1,<0.23.0`). **DECIDIDO el 02/09: SE MIDE** (ronda 9) — y con una consecuencia que nadie había escrito: **al ser build CPU, B3 NO necesita el lock de la tarjeta**, así que el carril GPU se vacía en la ronda 8 y worker1 lo toma sólo porque ya no tiene GPU que hacer. Al cerrarlo, `.venv-marker` (1 205 MB) sale de la lista protegida de `CLAUDE.md` §1 | 🟡 **DECIDIDO, ronda 9** |
+| **B4** | **surya** por `SURYA_INFERENCE_BACKEND=llamacpp` o `VLLM_GPU_MEMORY_UTILIZATION=0.5`. **Único material: `bench/gpu-fase1.md` §B.3 — «NO FUNCIONA en GPU en esta máquina».** VRAM: sin dato. **CERRADO POR DECISIÓN el 02/09: se descarta.** El motivo está medido y es el propio bloqueo —Surya 0.22.1 lanza un contenedor vLLM que reserva el 85 % de la VRAM y **se cuelga sin excepción** (trampa 15)—, y un «no se pudo medir» documentado **es** un resultado en este proyecto | 🟢 **CERRADO, descartado** |
+| **B5** | **MinerU `[vlm]`** (no `[vllm]`). **Cero menciones en todo `bench/`**. **CERRADO POR DECISIÓN el 02/09: se descarta.** Diez días abierto sin una sola cifra y sin material de partida, frente a ocho filas del carril GPU que sí traen hallazgo dentro | 🟢 **CERRADO, descartado** |
 | **B6** | **NVENC en lote sobre carpeta real** — el único pendiente del hueco 4, y el único caso donde decide algo. **Y ahora tiene un segundo motivo:** `bench/hito7-superficies.md` §5.4 mide que en `filex/` **no hay uso de GPU ni lock de GPU** —las apariciones de `nvenc`/`cuda` en el paquete son **tres comentarios**—, así que el hito 2 seguía sin empezar. **CERRADO el 28/08 por H2 — y la premisa de esta fila queda REFUTADA: el lote DILUYE.** ×4,10 sobre 8 clips frente a **×7,68 sobre una conversión larga suelta**; la ganancia crece con la **duración**, no con el número de ficheros, y FileX añade solo **27,2 ms (+3,6 %)** sobre el `ffmpeg` crudo. **El escenario donde la GPU decide es el fichero LARGO.** Es la trampa 76 | 🟢 **CERRADO** · `hito2-nvenc.md` |
 | **B7** | Heurística de «degradación severa». **Ahora hay contra qué calibrarla (`d4`) y dos señales candidatas medidas**: cajas detectadas frente a área de texto, y el tiempo (d3 cuesta ×4,5 lo que d2 en Ghostscript) | 🟡 `corpus-d4.md` §11, `verificador-ghostscript.md` §5.4 |
 | **B8** | R1 sobre PDF que **no** son «una imagen a página completa»; e interacción de **`magick -deskew 40%`** con el techo, ahora sobre la familia d4 (rotada de −4° a +4°). **Comprobado el 23/08: ningún informe posterior menciona `deskew`** | 🔴 ídem · **ABIERTO** |
@@ -347,7 +347,8 @@ Agrupado por **el recurso que lo limita**, que es lo que decide el reparto. Cada
 
 | **C42** | **La lista de módulos aptos para la CI estaba medida en la plataforma equivocada — CERRADO EN PARTE el 01/09 por el master (commit `0999538`).** `ci/linux-apto.json` ya mide **en el runner de verdad** (`ubuntu-latest`, Python 3.11.16): **7 aptos, 198 pruebas**, y el `continue-on-error` a nivel de trabajo ya se quitó. **RONDA 4 — worker2: los 10 no aptos, clasificados uno a uno contra su traza real, no contra su nombre.** Los diez eran **UN SOLO mecanismo repetido, no diez causas**: (a) `.github/workflows/suite.yml` no instala ningún motor externo, así que sin ImageMagick "ningún motor disponible lee 'png'" hace caer en cascada `test_cerrojo` (5), `test_hito1` (2), `test_hito4` (9) y **las 31 de `test_hito7`** — incluidas comprobaciones de confinamiento que en teoría no deberían tocar un motor, porque MCP/API resuelven el formato antes de validar la ruta; (b) `corpus/video/tipico.mp4` y `corpus/audio/*.flac` son punteros de Git LFS con `lfs: false` (trampa 34, sin proteger en estos dos ficheros): `test_a7_ciego` entraba en `setUpClass` con un puntero y reventaba con «0 pruebas corridas, 1 error de carga» —MEDIDO, reproducido exacto dentro de un contenedor limpio—, y las 8 de `test_cancelacion_procesos` fallaban igual con "ningún motor disponible lee 'mp4'" **incluso con ffmpeg instalado**: no era ffmpeg, era el puntero; (c) `filex.gpu.Lock._vivo()` llama a `tasklist` (Windows) para saber si el dueño de un lock huérfano sigue vivo — fuera de Windows falla con `FileNotFoundError` y responde "vivo" por el lado seguro del error, así que un huérfano **nunca** se recupera en Linux: esto, y NO "no hay tarjeta"/"no hay ffmpeg con NVENC` como decían las descripciones viejas, es lo que rompía `test_gpu_lock` y una celda de `test_hito2` (trampa 90/93 de CLAUDE.md, aplicada a un código que nadie había mirado desde ese ángulo; el arreglo de fondo es de `filex/gpu.py`, carril GPU — aquí solo se documenta con un `skipUnless` honesto); (d) el `CUELGA` de `test_cancelacion` era `docker run` intentando descargar `ghcr.io/c4illin/convertx:latest` (5,7 GB) en cada ejecución porque `_hay_docker()` solo comprobaba que el DEMONIO estuviera vivo, no que la IMAGEN estuviera cacheada. **Las cuatro causas se arreglaron con `skipUnless` honestos** (no se tocó `filex/verificador.py`, `filex/motores.py`, `filex/api.py` ni `filex/nucleo.py` de este carril, y NO se tocó `filex/gpu.py`, que es de worker1) y se verificaron en dos entornos: la máquina real (con ImageMagick y ffmpeg, 0 fallos) y un contenedor `python:3.12-slim-bookworm` limpio que aproxima `ubuntu-latest` (LFS con punteros reales, sin motores) — de 7/17 a **16/17 módulos sin fallos ni cuelgues** en esa aproximación. **PENDIENTE, declarado y no forzado:** (1) `test_watcher_n` (4 fallos, "la estabilidad se comporta distinto en ext4") no se pudo reproducir en tres entornos POSIX distintos (DrvFs, tmpfs de WSL2, overlay2 de un contenedor) — sigue en `no_aptos` sin arreglo, tal como pide el proyecto en vez de forzar un skip sin evidencia; (2) dentro del contenedor de aproximación aparecieron DOS fallos nuevos en `test_hito2` con el ffmpeg de Debian bookworm (canales de audio alterados en un `.mkv` de dos pistas, y `av1_nvenc` listado de otra forma) que dependen del BUILD exacto de ffmpeg, no del mecanismo ya arreglado — **no se tocan hoy**, y `ci/linux-apto.json` **no se sobrescribe desde aquí**: la aproximación de contenedor no es el runner real (la propia regla del proyecto, trampa 104), así que la promoción final de módulos a `aptos` la decide `python3 ci/sonda_linux.py` ejecutado en `ubuntu-latest` de verdad, no una simulación | 🟡 **9 de 10 causas clasificadas y arregladas con código, 1 sin reproducir, promoción pendiente de correr en el runner real** · `bench/ci-y-contrato.md` §1 |
 
-| **C43** | **La huella del código es función del INTÉRPRETE, así que las 215 aristas selladas sólo valen bajo el Python que las selló — MEDIDO con control positivo.** Mismo runner y mismos bytes: con 3.11 `test_sondeo` pasa y con **3.13 caducan los siete motores a la vez**; y `filex/verificador.py` da `eec752a87e8927cf` bajo 3.11.9 y `16ddd8d13d61c4f1` bajo 3.14.4. **Hay que decidir entre dos cosas, y ninguna es gratis**: meter la versión del intérprete en la huella —que caduca todo hoy, una vez, a cambio de que el aviso sea verdadero— o **declarar el intérprete de sellado** y negarse a comparar huellas de intérpretes distintos. Hoy no hace ninguna de las dos y **el modo de fallo es el peor: dice «caducado» donde debería decir «no comparable»** | 🔴 **NUEVO** · trampa 105 |
+| **C43** | **La huella del código es función del INTÉRPRETE, así que las 215 aristas selladas sólo valen bajo el Python que las selló — MEDIDO con control positivo.** Mismo runner y mismos bytes: con 3.11 `test_sondeo` pasa y con **3.13 caducan los siete motores a la vez**; y `filex/verificador.py` da `eec752a87e8927cf` bajo 3.11.9 y `16ddd8d13d61c4f1` bajo 3.14.4. **Hay que decidir entre dos cosas, y ninguna es gratis**: meter la versión del intérprete en la huella —que caduca todo hoy, una vez, a cambio de que el aviso sea verdadero— o **declarar el intérprete de sellado** y negarse a comparar huellas de intérpretes distintos. Hoy no hace ninguna de las dos y **el modo de fallo es el peor: dice «caducado» donde debería decir «no comparable»**. **DECIDIDO el 02/09: se declara el intérprete de sellado y se niega la comparación entre versiones distintas** — no caduca ni una arista y convierte un falso positivo en un error honesto | 🟡 **DECIDIDO, despachado en la ronda 5** · trampa 105 |
+| **C44** | **Runner autoalojado con aprobación manual para PRs de terceros — DECIDIDO el 02/09.** Es lo único que cubriría GPU, NTFS y contenedores locales, que es casi todo el valor del proyecto: hoy la CI de GitHub no toca **nada** de eso. Dos cosas que van dentro del alcance y no fuera: **(a)** el runner es un **TERCER ACTOR sobre el lock de la tarjeta**, y el lock no excluye a quien no lo toma —**24 de 25 arneses `.py` siguen tomando el fichero y no el mutex** (trampa 96), así que va **después de `N29`**; **(b)** sobre un runner de **Windows**, `ci/linux-apto.json` deja de tener sentido —podrían correr los **17** módulos, no 7—, y ese es el premio real | 🔴 **NUEVO** · decisión del 02/09 |
 
 ### N · Deuda del paquete `filex/` — **nace el 23/08 y no tenía sección**
 
@@ -577,18 +578,57 @@ Agrupado por **el recurso que lo limita**, que es lo que decide el reparto. Cada
 
 ---
 
-### Ronda 5 — **02/09, DESPACHADA** · *registrada al despacharla*
+### Ronda 5 — **02/09, REDESPACHADA sobre *worktrees* de Orca** · *registrada al despacharla*
 
-> **Cada carril recoge lo que la ronda anterior le dejó, y en el caso de worker1 eso incluye
-> un fallo que descubrió el OTRO carril.** `N29` es de `filex/gpu.py`: worker2 lo diagnosticó
-> al clasificar C42 y no lo tocó porque no es suyo. Que la propiedad de módulos aguante bajo
-> tentación —tenía el diagnóstico hecho y el arreglo a la vista— es la primera prueba real de
-> que el reparto por carriles funciona, y no sólo de que está escrito.
+> **Cambia la infraestructura, no la forma.** CCB queda desmontado —directorio `.ccb/` (651 MB),
+> los dos *workspaces*, once ramas locales, dos remotas y su subárbol de estado en WSL (266 MB)— y
+> los dos carriles pasan a *worktrees* de Orca con **Claude Sonnet 5**. Lo que NO cambia: worker1
+> siempre GPU, worker2 siempre CPU/Docker, y **cada carril posee sus módulos**.
+>
+> **Y hay un coste nuevo que el encargo tiene que llevar dentro.** Los *worktrees* de Orca viven en
+> `C:\Users\krato\orca\workspaces\FileX\`, mientras los venvs —`.venv-ai`, `.venv-paddle`,
+> `.venv-marker`, `.venv-mcp-md`, `.venv-mcp-filex`— siguen en `D:\Work\research\FileX\` y **no
+> viajan: en el *worktree* hay CERO**. Un conductor que apunte a `$ROOT/.venv-*` da `rc=127` en las
+> cuatro configuraciones a la vez, que es exactamente la tanda que costó la **trampa 100**. **Ruta
+> absoluta en el encargo, o no hay encargo.** Y por lo mismo, una cifra absoluta medida desde `C:`
+> **no es comparable** con las históricas: ahora cambia el volumen, no sólo la tanda.
+
+**Cuatro decisiones tomadas el 02/09 — es lo que redefine esta ronda y las cinco siguientes:**
+
+| | Decisión | Consecuencia |
+|---|---|---|
+| **`C43`** | **Declarar el intérprete de sellado y negarse a comparar** entre versiones distintas | No caduca ninguna de las 215 aristas. Es el encargo de worker2 en esta ronda |
+| **`B3`/`B4`/`B5`** | **Sólo marker se mide**; surya y MinerU se **cierran** con su motivo escrito | El carril GPU se acaba en la ronda 9. `.venv-marker` (1 205 MB) sale de la lista protegida al cerrar B3 |
+| **`C16`/`C28`** | **Corpus FATE bajado**: 2 529 ficheros, 1 345 840 190 B, en `D:\Work\research\fate-suite\` (fuera del repositorio, por §6) | Deja de ser bloqueo. **Pero compra menos de lo que parecía**: `firmas-cierre.md` §4.4 ya midió que cierra **15 de 56** en C28, *«y ni siquiera bien»* —FATE es corpus para DECODIFICAR y el censo necesita una muestra ESCRITA—. Para `C16` sí es la vía |
+| **Runner** | **Autoalojado, con aprobación manual** para PRs de terceros | Fila nueva **`C44`**, carril GPU, y **después de `N29`**: el runner es un **tercer actor sobre el lock de la tarjeta**, y hoy el lock no excluye a todo el mundo (24 de 25 arneses toman el fichero, no el mutex) |
 
 | Agente | Trabajo | Informe | Estado |
 |---|---|---|---|
-| **worker1** (carril GPU) | **N29 + B23 (resto) + B20** — el `_vivo()` que sólo sabe preguntar en Windows, las 4 configuraciones que B23 no cubrió, y el residuo de B12 | `bench/vivo-y-residuos.md` | 🟡 **DESPACHADA** |
-| **worker2** (carril CPU/Docker) | **C20 + C31 + C32** — el sustituto de P9 fuera de Ghostscript, el falso positivo VIVO de `.pcd`, y el texto de §10 que nadie ha corregido | `bench/pcd-y-acuerdo.md` | 🟡 **DESPACHADA** |
+| **worker1** (carril GPU) · `edicius2002/filex-gpu` | **N29 + B23 (resto)** — el `_vivo()` que sólo sabe preguntar con `tasklist`, y las 4 configuraciones que la rejilla reducida no cubrió | `bench/vivo-y-residuos.md` | 🟡 **DESPACHADA** |
+| **worker2** (carril CPU/Docker) · `edicius2002/filex-cpu` | **C43 + C42 (resto)** — sellar el intérprete y negarse a comparar; la causa sin reproducir y la promoción en el runner real | `bench/huella-y-runner.md` | 🟡 **DESPACHADA** |
+
+> **Por qué estas cuatro y no otras: son el instrumento que juzga a las demás.** Hasta que `N29`
+> cierre, un lock huérfano no se recupera fuera de Windows —y los dos *worktrees* nuevos son justo
+> otro sitio desde donde tomarlo—; hasta que `C43` cierre, la huella dice «caducado» donde debería
+> decir «no comparable». Medir cualquier otra cosa antes es medir con el instrumento roto.
+
+---
+
+### Rondas 6 a 11 — **PLANIFICADAS, no despachadas**
+
+> **24 filas encargadas · 2 cerradas por decisión (`B4`, `B5`) · 2 que siguen bloqueadas
+> (`C6` clave de API, `C7` datos de demanda) · 1 nueva (`C44`).** El plan está limitado por el
+> **carril CPU, no por la GPU**: 14 encargos contra 10. Por eso la ronda 11 va con un solo worker,
+> y se dice en vez de disimularlo.
+
+| Ronda | worker1 · GPU | worker2 · CPU/Docker | Qué la une |
+|---|---|---|---|
+| **6** | **B20** + **B7** | **C31** + **C32** + **C40** | Filas cuyo color no se puede creer todavía |
+| **7** | **B8** + **C18** | **C20** + **C23** | Cuatro umbrales que no se cierran sin variar la entrada |
+| **8** | **N26** + **N27** | **C24** + **C25** | Los dos modelos que hoy se sostienen sobre un margen |
+| **9** | **B3** (marker, build CPU) + cerrar **B4**/**B5** | **N9** + **C5** | Aquí sale `.venv-marker` de la lista protegida |
+| **10** | **C44** (runner con aprobación manual) | **C35** + **C36** | Las dos mayores del inventario, una por carril |
+| **11** | — | **C16** + **C28** (corpus FATE, ya en disco) | Convierte el 48,6 % estimado en número medido |
 
 ---
 
