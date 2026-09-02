@@ -69,10 +69,35 @@ on:
           (test_gpu_lock, test_hito2). Por defecto NO.
         type: boolean
         default: false
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+  # ─────────────────────────────────────────────────────────────────────────
+  # `push` y `pull_request` están DESACTIVADOS a propósito, y el orden importa
+  # ─────────────────────────────────────────────────────────────────────────
+  # MEDIDO el 02/09: con estos dos disparadores activos y CERO runners
+  # registrados (`gh api .../actions/runners` → `total_count: 0`), cada push a
+  # `main` dejaba una ejecución colgada — dos llegaron a 47 y 55 minutos antes
+  # de cancelarlas a mano, y GitHub las mantiene en cola 24 h. Hoy sólo es
+  # ruido; el día que este check entre en la lista de requeridos, bloquea
+  # TODOS los PRs para siempre, porque nunca ha pasado y no puede pasar.
+  #
+  # Para reactivarlos hacen falta DOS cosas, EN ESTE ORDEN:
+  #
+  #   1. Crear el entorno `aprobacion-manual-gpu` CON revisores obligatorios
+  #      (Settings > Environments). MEDIDO: hoy el repositorio tiene 0
+  #      entornos, y GitHub crea uno VACÍO —sin revisores, es decir SIN
+  #      aprobación— la primera vez que se referencia. Un entorno sin
+  #      revisores no es una puerta.
+  #   2. DESPUÉS, registrar el runner con las etiquetas de `runs-on:`.
+  #
+  # Al revés hay una ventana en la que el runner existe, este fichero está en
+  # `main`, y la única defensa viva es el filtro de `head.repo.full_name` que
+  # el propio diseño declara «una comodidad, NO la defensa». Y el repositorio
+  # YA es público, con `approval_policy: first_time_contributors` — un externo
+  # aprobado una vez pasa sin aprobación para siempre.
+  #
+  # push:
+  #   branches: [main]
+  # pull_request:
+  #   branches: [main]
 
 permissions:
   contents: read

@@ -1,0 +1,31 @@
+version: 2
+
+# Un solo ecosistema, y es a propósito.
+#
+# `pyproject.toml` declara `dependencies = []`: FileX **no tiene dependencias de
+# Python por decisión de arquitectura** (ver la trampa 80 de CLAUDE.md, donde una
+# propuesta ya medida se descartó justamente por eso). Un bloque `pip` aquí no
+# encontraría nada y daría la falsa impresión de que hay algo vigilado.
+#
+# Lo que sí hay son tres acciones de terceros —`actions/checkout`,
+# `actions/setup-python`, `actions/upload-artifact`—, y esas sí se mueven. Importa
+# más de lo normal en este repositorio: es PÚBLICO y el diseño de `C44` contempla
+# un runner AUTOALOJADO, así que una acción comprometida no ejecuta código en una
+# máquina de GitHub, lo ejecuta en el escritorio del usuario.
+#
+# Van AGRUPADAS en un solo PR: con tres acciones y un ecosistema el aluvión de la
+# primera pasada es pequeño, pero un PR por acción es ruido sin información.
+
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 3
+    groups:
+      acciones:
+        patterns:
+          - "*"
+    commit-message:
+      prefix: "ci"

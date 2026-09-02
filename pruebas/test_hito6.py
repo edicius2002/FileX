@@ -42,24 +42,37 @@ class RectasDeVram(unittest.TestCase):
 
     def test_rapidocr_satura_en_su_tope(self):
         """RapidOCR recorta a 2 000 px (`Global.max_side_len`), así que por
-        encima del recorte el coste no se mueve, por grande que sea la página."""
-        m = sidecar.MOTORES["rapidocr"]
-        self.assertEqual(m.coste_previsto(8.882), 1526)
-        self.assertEqual(m.coste_previsto(20.0), m.coste_previsto(8.882))
-        self.assertEqual(m.tope_mib, 1526)
+        encima del recorte el coste no se mueve, por grande que sea la página.
 
-    def test_la_recta_de_rapidocr_subestima_en_el_tramo_de_en_medio(self):
-        """**La recta de RapidOCR no es un modelo: es una cota superior floja**,
-        y su propio informe lo dice (r²=0,7581, cuatro puntos lineales y el
-        quinto plano). En el tramo de en medio **subestima**, que es el lado malo
-        para un presupuesto: a 4,352 Mpx el modelo pide 1 117 MiB y la medida de
-        §3.3 fue **1 456**. Esto no es un fallo del código; es el residuo del
-        modelo publicado, y va escrito para que nadie lo descubra en producción.
+        El tope es **1 533**, no 1 526: N27 (`bench/vram-rapidocr.md`) mide el
+        mismo `sha256` de píxeles en tres tandas independientes —1 456 / 1 526 /
+        1 533— y una cota superior tiene que cubrir la MAYOR de las tres, no la
+        primera publicada.
         """
         m = sidecar.MOTORES["rapidocr"]
-        self.assertLess(m.coste_previsto(4.352), 1456)
-        # El margen de 500 MiB lo cubre: 1 117 + 500 > 1 456.
-        self.assertGreater(m.coste_previsto(4.352) + sidecar.MARGEN_MIB, 1456)
+        self.assertEqual(m.coste_previsto(8.882), 1533)
+        self.assertEqual(m.coste_previsto(20.0), m.coste_previsto(8.882))
+        self.assertEqual(m.tope_mib, 1533)
+
+    def test_la_recta_de_rapidocr_ya_no_subestima_mas_alla_del_ruido(self):
+        """**N27** (`bench/vram-rapidocr.md`): la recta vieja (ordenada 643,
+        109 MiB/Mpx) se ajustaba sobre los 5 puntos —incluidos los dos que ya
+        están en la meseta del recorte a 2 000 px— y eso la sesgaba hacia abajo
+        justo en el tramo de en medio: pedía 1 117 MiB a 4,352 Mpx donde la
+        medida fue 1 456 (**−339**, muy por encima del ruido del instrumento,
+        ±43 MiB). La recta nueva sale SÓLO de los tres puntos sin recortar
+        (0,55/1,25/2,22 Mpx, r²=0,985) más un redondeo al alza mínimo. El residuo
+        que queda en el punto de transición (4,352 Mpx, ya en el borde del
+        recorte) es de **5 MiB — dentro del ruido, no una subestimación real**
+        (trampa 36: por debajo del suelo del instrumento, una diferencia no es
+        una medida).
+        """
+        m = sidecar.MOTORES["rapidocr"]
+        RUIDO_MIB = 43
+        self.assertLessEqual(1456 - m.coste_previsto(4.352), RUIDO_MIB)
+        # Y la vieja subestimación de 339 MiB queda muy atrás: no es que se
+        # haya movido el ruido, es que el sesgo sistemático se fue.
+        self.assertLess(1456 - m.coste_previsto(4.352), 339)
 
     def test_los_dos_sin_tope_crecen_con_los_mpx(self):
         e, p = sidecar.MOTORES["easyocr"], sidecar.MOTORES["paddleocr"]
@@ -117,7 +130,7 @@ class LaDecision(unittest.TestCase):
         d = sidecar.decidir(sidecar.MOTORES["rapidocr"], 8.882, libre_mib=6000)
         self.assertEqual(d.veredicto, "admitir")
         self.assertTrue(d.ok)
-        self.assertEqual(d.coste_previsto_mib, 1526)
+        self.assertEqual(d.coste_previsto_mib, 1533)
 
     def test_recicla_cuando_cabe_solo_recuperando_lo_retenido(self):
         """La diferencia entre `reciclar` y `rechazar` es exactamente lo que el
@@ -142,8 +155,8 @@ class LaDecision(unittest.TestCase):
 
     def test_el_margen_de_500_decide_el_borde(self):
         m = sidecar.MOTORES["rapidocr"]
-        self.assertEqual(sidecar.decidir(m, 8.882, 2026).veredicto, "admitir")
-        self.assertNotEqual(sidecar.decidir(m, 8.882, 2025).veredicto, "admitir")
+        self.assertEqual(sidecar.decidir(m, 8.882, 2033).veredicto, "admitir")
+        self.assertNotEqual(sidecar.decidir(m, 8.882, 2032).veredicto, "admitir")
 
     def test_la_decision_lleva_los_numeros_dentro(self):
         """Un veredicto sin sus cifras no es auditable."""
@@ -220,12 +233,16 @@ class LaGeometria(unittest.TestCase):
 class ElPresupuesto(unittest.TestCase):
     """El `Perfil` obliga a nombrar el tamaño máximo de entrada (trampa 68)."""
 
-    def test_el_perfil_que_cumple_reproduce_los_7564(self):
+    def test_el_perfil_que_cumple_reproduce_los_7571(self):
+        """N27: el OCR del perfil sube de 1 526 a 1 533 (el tope corregido), así
+        que el total sube de los 7 564 publicados a **7 571** — 7 MiB, la misma
+        diferencia que ya medía `hito6-sidecar.md` §3.3 entre su réplica y la
+        cifra original. Sigue cumpliendo el techo de 8 909 MiB con holgura."""
         p = sidecar.Perfil("distil+rapidocr+nvenc", escritorio_mib=3448,
                            audio_mib=1847, motor=sidecar.MOTORES["rapidocr"],
                            mpx_max=8.882, nvenc_mib=743)
         v = p.evaluar()
-        self.assertEqual(v["total_MiB"], 7564)
+        self.assertEqual(v["total_MiB"], 7571)
         self.assertTrue(v["cumple_techo"])
 
     def test_el_perfil_de_large_v3_no_cumple(self):
@@ -233,7 +250,7 @@ class ElPresupuesto(unittest.TestCase):
                            audio_mib=4525, motor=sidecar.MOTORES["rapidocr"],
                            mpx_max=8.882, nvenc_mib=743)
         v = p.evaluar()
-        self.assertEqual(v["total_MiB"], 10242)
+        self.assertEqual(v["total_MiB"], 10249)
         self.assertFalse(v["cumple_techo"])
         self.assertTrue(v["cabe_en_tarjeta"])       # no cumple, pero cabe
 
