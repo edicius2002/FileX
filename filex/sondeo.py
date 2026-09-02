@@ -25,6 +25,7 @@ Formato::
       "fecha":  "2026-08-22",
       "informe": "bench/sondeo-aristas.md",
       "huella": {"motor": "…", "invocacion": "…", "contrato": "…"},
+      "interprete": "3.11.9",
       "aristas": {
         "png>webp": {"estado": "real",    "ms": 265.0},
         "gif>ico":  {"estado": "nominal", "motivo": "rc=1: no such image format"}
@@ -34,8 +35,8 @@ Formato::
 `estado` es `real` o `nominal`, y **nada más**: `sin_sondear` es la ausencia de
 entrada, no un valor que se escriba.
 
-**Dos consecuencias de que el sondeo sea DATO. Las dos están SALDADAS, y una de
-las dos resultó no existir** (`bench/deuda-sondeo.md`):
+**Tres consecuencias de que el sondeo sea DATO. Las tres están SALDADAS, y una
+de ellas resultó no existir** (`bench/deuda-sondeo.md`):
 
 1. ~~**La suite de pruebas lee estado del disco, así que no es reproducible
    mientras se sondea.**~~ **REFUTADA EN MAGNITUD — MEDIDO, cuatro pasadas de
@@ -69,6 +70,20 @@ las dos resultó no existir** (`bench/deuda-sondeo.md`):
    costaba **153 aristas medidas con este mismo código**, y perder trabajo bueno
    por no saber leerlo no es prudencia. La regla de legado es transitoria — los
    cinco están sellados.
+
+3. **La huella es función del INTÉRPRETE, no solo del código — MEDIDO el
+   02/09 (trampa 105).** `ast.dump` no da la misma cadena entre versiones de
+   Python: el mismo commit, sobre los mismos bytes, sella huellas distintas
+   bajo 3.11.9 y bajo 3.14.4, y bajo 3.13 **caducan los siete motores a la
+   vez** sin que el código haya cambiado. Es la firma de un fallo global, no
+   de un cambio real, y el sistema decía «caducado» donde debía decir «no
+   comparable». **CERRADO (`C43`):** el fichero lleva ahora un campo
+   `interprete` con el de `platform.python_version()` en el momento del
+   sellado, y se compara **antes** que la `huella`: si no coincide, la
+   comparación de huella no se hace — se declara `interprete_distinto`, una
+   categoría propia, y no se confunde con `caducados`. **Un fichero SIN
+   `interprete` se aplica igual**, por la misma regla de legado que `huella`,
+   y se declara en `diagnostico()` como `sin_interprete`.
 """
 
 from __future__ import annotations
@@ -88,7 +103,8 @@ _CONGELADO: dict | None = None
 #: Lo que la última pasada de `aplicar()` tuvo que decidir sin protección o
 #: contra la protección. Se LEE, no se escribe: es el canal por el que se entera
 #: un humano —y `pruebas/test_sondeo.py`— de que hay sondeo que ya no vale.
-_DIAG: dict = {"sin_huella": [], "caducados": {}, "build_distinto": []}
+_DIAG: dict = {"sin_huella": [], "caducados": {}, "build_distinto": [],
+               "sin_interprete": [], "interprete_distinto": []}
 
 #: El coste base cuando el sondeo trae un tiempo. El tiempo DESEMPATA, no
 #: decide: K1 midió que con el coste puesto al tiempo el grafo resuelve
@@ -149,33 +165,53 @@ def descongelar() -> None:
 def diagnostico() -> dict:
     """Qué se aplicó sin protección, y qué se degradó por caducidad.
 
-    ``sin_huella``      motores cuyo fichero es anterior a la huella: se aplican
-                        por la regla de legado, **sin protección de código**.
-    ``caducados``       `{motor: [componentes]}` que NO se aplicaron.
-    ``build_distinto``  los que ya se degradaban antes, por la quinta dimensión.
+    ``sin_huella``          motores cuyo fichero es anterior a la huella: se
+                            aplican por la regla de legado, **sin protección
+                            de código**.
+    ``caducados``           `{motor: [componentes]}` que NO se aplicaron
+                            porque el CÓDIGO cambió, con el mismo intérprete.
+    ``build_distinto``      los que ya se degradaban antes, por la quinta
+                            dimensión (la máquina).
+    ``sin_interprete``      motores cuyo fichero es anterior al campo
+                            `interprete`: se aplican por la regla de legado.
+    ``interprete_distinto`` los que NO se aplicaron porque el intérprete que
+                            selló no es el de ahora — **no comparable**, no
+                            «caducado»: la huella no se llegó ni a comparar.
     """
     return copy.deepcopy(_DIAG)
 
 
 def aplicar(motor: str, build: str, aristas: list[Arista],
-            huella_actual: dict | None = None) -> list[Arista]:
+            huella_actual: dict | None = None,
+            interprete_actual: str | None = None) -> list[Arista]:
     """Superpone el sondeo sobre las aristas que declara el motor.
 
-    Dos guardas, y las dos degradan a `sin_sondear` en vez de a `nominal`: una
-    medida que ya no vale **no es prueba de que la arista esté muerta**.
+    Tres guardas, y las tres degradan a `sin_sondear` en vez de a `nominal`:
+    una medida que ya no vale **no es prueba de que la arista esté muerta**.
 
     1. **Si el `build` del fichero no es el de ahora, no se aplica nada.** Es la
        quinta dimensión de la arista, y sin ella una tabla heredada de otra
        máquina afirma capacidades que aquí no existen.
-    2. **Si la `huella` del código que decide la arista no es la de ahora,
-       tampoco.** Es la sexta, y su ausencia costó 20 medidas falsas de 21.
+    2. **Si el `interprete` que selló no es el de ahora, tampoco — y no se
+       llega ni a mirar la `huella`.** `ast.dump` no da la misma cadena entre
+       versiones de Python (trampa 105): comparar huellas calculadas con
+       intérpretes distintos no dice «el código cambió», dice «esto no se
+       puede comparar», y confundir las dos cosas es exactamente el fallo que
+       `C43` cierra.
+    3. **Si la `huella` del código que decide la arista no es la de ahora,
+       tampoco.** Es la sexta dimensión, y su ausencia costó 20 medidas falsas
+       de 21. Solo se llega aquí con el mismo intérprete que selló.
 
-    `huella_actual` se inyecta para poder PROBARLO sin editar `motores.py` a
-    mitad de una prueba. En producción lo calcula el propio motor.
+    `huella_actual` e `interprete_actual` se inyectan para poder PROBARLO sin
+    editar `motores.py` ni cambiar de intérprete a mitad de una prueba. En
+    producción los calcula el propio motor y `filex.huella.interprete_actual()`.
     """
     _DIAG["sin_huella"] = [m for m in _DIAG["sin_huella"] if m != motor]
     _DIAG["caducados"].pop(motor, None)
     _DIAG["build_distinto"] = [m for m in _DIAG["build_distinto"] if m != motor]
+    _DIAG["sin_interprete"] = [m for m in _DIAG["sin_interprete"] if m != motor]
+    _DIAG["interprete_distinto"] = [m for m in _DIAG["interprete_distinto"]
+                                    if m != motor]
 
     d = cargar(motor)
     if not d:
@@ -183,6 +219,19 @@ def aplicar(motor: str, build: str, aristas: list[Arista],
     if d.get("build") and d["build"] != build:
         _DIAG["build_distinto"].append(motor)
         return aristas
+
+    declarado = d.get("interprete")
+    if declarado:
+        if interprete_actual is None:
+            interprete_actual = _huella.interprete_actual()
+        if declarado != interprete_actual:
+            _DIAG["interprete_distinto"].append(motor)
+            return aristas
+    else:
+        # REGLA DE LEGADO, igual que la de `huella`: un fichero sellado antes
+        # de que existiera este campo no se tira por uno que su autor no pudo
+        # escribir. Se aplica, y se declara — callarlo sería el agujero.
+        _DIAG["sin_interprete"].append(motor)
 
     guardada = d.get("huella")
     if not isinstance(guardada, dict) or not guardada:
