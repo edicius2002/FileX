@@ -527,7 +527,7 @@ Agrupado por **el recurso que lo limita**, que es lo que decide el reparto. Cada
 
 ---
 
-### Ronda 3 — **01/09, DESPACHADA** · *registrada AL DESPACHARLA, que es la regla que la ronda 2 incumplió*
+### Ronda 3 — **EJECUTADA Y CERRADA (01/09)** · *registrada AL DESPACHARLA, que es la regla que la ronda 2 incumplió*
 
 > **Dos encargos, no cuatro.** La ronda 2 perdió **40 minutos medidos** en un solo relevo
 > (trampa 100) y esta ronda estrena dos variables nuevas: el **flujo de PR con CI**, y unos
@@ -540,8 +540,8 @@ Agrupado por **el recurso que lo limita**, que es lo que decide el reparto. Cada
 
 | Agente | Trabajo | Informe | Estado |
 |---|---|---|---|
-| **worker1** (carril GPU) | **B21 + B22** — Tesseract `psm 3` y `psm 11`, el pendiente que él mismo declaró al cerrar la ronda 2: no entran en las 336 celdas | `bench/psm-suelo-ppp.md` | 🟡 **DESPACHADA** |
-| **worker2** (carril CPU/Docker) | **Saneo de veracidad del inventario** + **C41** | `bench/saneo-inventario.md` | 🟡 **DESPACHADA** |
+| **worker1** (carril GPU) | **B21 + B22** — Tesseract `psm 3` y `psm 11`, y luego el residuo de B22: el mecanismo de los picos | `bench/psm-suelo-ppp.md`, `bench/cajas-rapidocr.md` | 🟢 **LAS DOS CERRADAS.** El suelo de 100 ppp **le invierte el signo a Tesseract** —hasta 20 puntos de ganancia en el documento de 60 ppp nativos—, y con las nueve configuraciones el saldo es **16/15/5**, un empate que sigue siendo engañoso. Y los picos de RapidOCR **son del RECONOCEDOR, no del detector**: las 12 cajas están en las 12 celdas con área estable, y lo que se hunde es **una línea de 7 pt**, de ~96 % a 27–46 % de similitud. **Refuta la hipótesis con la que el master abrió el encargo** |
+| **worker2** (carril CPU/Docker) | **Saneo de veracidad del inventario** + **C41** | `bench/saneo-inventario.md` | 🟢 **CERRADO.** Las 111 filas contra su cita. **C28 era el peor tipo de fila: VERDE y contradicha por su propia evidencia** —daba por cerrado «FATE cierra 15» y el informe dice literalmente *«no lo he descargado»*—; **C32** pedía una arbitración que ya existía en C31/C37; **C22** llevaba dos días con informe y en rojo. Los 17 manifiestos escritos y la **deuda a 0**. *(Y el saneo cometió el defecto que buscaba: hizo C41 entera y dejó su propia fila abierta.)* |
 
 > #### Por qué el saneo va primero, y por qué no lo hace la CI
 >
@@ -554,6 +554,26 @@ Agrupado por **el recurso que lo limita**, que es lo que decide el reparto. Cada
 > seguían 🔴 un día después, **y mi propio registro decía «🟢 CERRADO» cuando el informe
 > declara pendientes en las dos**. Un inventario cuyo color no se puede creer no sirve para
 > planificar, que es su única función.
+
+---
+
+### Ronda 4 — **01/09, DESPACHADA** · *registrada al despacharla*
+
+> **Los encargos de GPU van en RACIMO porque interactúan.** `B23`, `B24` y `B16` no son tres
+> tareas que quepan en un agente: son **una sola rejilla**. El `k` está ajustado sobre tres
+> documentos que comparten generador y geometría (B23), el `--oem` no se ha tocado nunca y la
+> tabla de Tesseract habría que rehacerla con Ghostscript (B24), y B16 son los dos acantilados
+> sin puntos intermedios. Separarlos obliga a repetir el barrido entero.
+>
+> Y esta ronda estrena el flujo decidido en el PR #8: **el worker entrega la rama commiteada y
+> el maestro empuja y abre el PR**, porque `gh auth` vive en el `home` de cada agente y los
+> workers no tienen credenciales — medido cuando worker2 terminó su encargo y no pudo
+> entregarlo.
+
+| Agente | Trabajo | Informe | Estado |
+|---|---|---|---|
+| **worker1** (carril GPU) | **B23 + B24 + B16** — el `k` sobre documentos que no discriminan, el `--oem` sin tocar, y los dos acantilados sin puntos intermedios | `bench/k-oem-acantilados.md` | 🟡 **DESPACHADA** |
+| **worker2** (carril CPU/Docker) | **C42 + C27 + C20** — los 10 módulos que no corren en el runner, G6 de `aviso` a `fallo`, y el sustituto de P9 a escala | `bench/ci-y-contrato.md` | 🟡 **DESPACHADA** |
 
 ---
 
