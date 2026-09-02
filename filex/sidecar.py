@@ -83,11 +83,20 @@ class Motor:
     `coste_previsto(mpx) = min(ordenada + pendiente × mpx, tope)`
 
     Los valores salen de `bench/ocr-produccion-sidecar.md` §5.1 (cinco puntos por
-    motor, 0,55 a 8,88 Mpx, un solo documento base reescalado). **La recta de
-    RapidOCR es explicitamente una cota superior floja**: sus cuatro primeros
-    puntos son lineales y el quinto no se mueve, porque el motor recorta a
-    2 000 px (`Global.max_side_len`) y por encima de eso recibe el array
-    identico. Para el, lo que decide es el `tope`, no la pendiente.
+    motor, 0,55 a 8,88 Mpx, un solo documento base reescalado).
+
+    **La recta de RapidOCR NO se ajusta sobre los cinco puntos** (N27,
+    `bench/vram-rapidocr.md`): el motor recorta a 2 000 px (`Global.max_side_len`)
+    y a partir de ahi el quinto punto y una parte del cuarto ya estan en la
+    meseta, no en el tramo lineal — meterlos en el mismo ajuste que los tres
+    puntos sin recortar sesga la recta hacia abajo justo en el tramo de en medio
+    (subestimaba 339 MiB a 4,352 Mpx con el ajuste viejo de 5 puntos). La recta
+    de aqui sale de los **tres** puntos confirmados sin recorte (0,55/1,25/2,22
+    Mpx, r²=0,992) mas un redondeo al alza minimo para que ninguno de los tres
+    quede por debajo — no para que cuadre un cuarto o quinto punto, que seria la
+    misma trampa con otro nombre. El `tope` es el maximo de tres medidas
+    independientes del mismo `sha256` de pixeles (1 456 / 1 526 / 1 533 MiB):
+    usar la mas baja de las tres NO seria una cota superior.
     """
 
     __slots__ = ("nombre", "ordenada_mib", "pendiente_mib_mpx", "tope_mib",
@@ -135,13 +144,20 @@ class Motor:
 
 
 _F = "bench/ocr-produccion-sidecar.md §5.1 (MEDIDO, 5 puntos, escaneado_d4 reescalado)"
+#: N27: la recta de RapidOCR ya NO sale de los 5 puntos de `_F` (ver el
+#: docstring de `Motor`) — sale de los 3 sin recortar de ese mismo informe, más
+#: el tope corregido de `bench/vram-rapidocr.md`. Se mantiene la subcadena
+#: "ocr-produccion-sidecar" porque los TRES puntos siguen siendo de ahí.
+_F_RAPIDOCR = ("bench/ocr-produccion-sidecar.md §3.3 (3 puntos sin recortar, "
+              "0,55-2,22 Mpx) + bench/vram-rapidocr.md (N27: la recta corregida "
+              "y el tope, MEDIDO)")
 
 #: Las tres rectas medidas. **Un motor nuevo no hereda ninguna**: entra con la
 #: suya medida o no entra — es la misma regla que la del `k` por motor, *«una
 #: constante global hace que cada motor nuevo herede en silencio los ppp que le
 #: convenian a otro»*.
 MOTORES: dict[str, Motor] = {
-    "rapidocr": Motor("rapidocr", 643, 109, 1526, _F, r2=0.7581),
+    "rapidocr": Motor("rapidocr", 428, 235, 1533, _F_RAPIDOCR, r2=0.9853),
     "paddleocr": Motor("paddleocr", 202, 719, None, _F, r2=0.9995),
     "easyocr": Motor("easyocr", 641, 1080, None, _F, r2=0.9571),
 }
