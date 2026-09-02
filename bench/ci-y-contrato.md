@@ -18,6 +18,45 @@ hacer (varía la entrada antes de creerte el hueco).
 
 ---
 
+## 0. EL HALLAZGO QUE HAY QUE DESTACAR: un `skipUnless` que parecía honesto y no lo era
+
+`pruebas/test_a7_ciego.py` ya tenía, ANTES de esta ronda, un guarda que se lee
+como un modelo de buena práctica — nombra la causa exacta, incluso da la
+orden que la arregla:
+
+```python
+@unittest.skipUnless(os.path.exists(JFK) and os.path.exists(LARGO),
+                     "hace falta el corpus de audio (git lfs checkout)")
+class PuntoCiegoDeA7(unittest.TestCase):
+```
+
+**Y no protege nada.** `os.path.exists()` es `True` para un puntero de Git
+LFS sin descargar (~130 B de texto: `version https://git-lfs.github.com/...`).
+Con `actions/checkout@v4: lfs: false` —que es como corre el `job: linux`—, el
+puntero SÍ existe, la condición se cumple, la clase entra, `setUpClass` le
+pasa el puntero a `ffmpeg`, y el proceso revienta con una excepción sin
+capturar. El resultado en `ci/linux-apto.json` era *"0 pruebas corridas, 1
+error de carga"* — que es indistinguible, mirado desde fuera, de un entorno
+roto. **El guarda no evitó el fallo: lo disfrazó de otra cosa.**
+
+Es peor que no tener guarda ninguno, por lo que dice la propia trampa 44 del
+proyecto: un campo que parece correcto al lado de un problema real es lo que
+hace que nadie mire dos veces. Un módulo sin `skipUnless` que revienta grita
+"aquí falta algo"; un módulo con un `skipUnless` que nombra la causa y aun
+así revienta invita a pensar que la causa ya está cubierta, y esconde que NO
+lo está detrás de una línea que parece la solución.
+
+**El arreglo (§1.2) no fue añadir el guarda: fue corregir lo que el guarda
+comprobaba** — de `os.path.exists()` a `_es_audio_real()` (tamaño > 100 KB,
+que es lo que separa un FLAC real de un puntero). El mismo patrón, con el
+mismo riesgo si alguien lo copia sin pensar, existía sin protección en
+`corpus/video/tipico.mp4` para `test_cancelacion_procesos` (§1.2): ahí no
+había ni guarda, así que el fallo se veía como tal — el caso de
+`test_a7_ciego` es el único de los diez donde el guarda EXISTENTE fue lo que
+ocultó el problema.
+
+---
+
 ## 1. C42 — declarados no es lo mismo que entendidos
 
 ### 1.0 Metodología, y su límite
