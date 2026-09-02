@@ -1,0 +1,10 @@
+#!/bin/sh
+# Hook versionado que SOLO delega en Git LFS. Ver .githooks/LEEME.md.
+# Al fijar `core.hooksPath`, git deja de leer `.git/hooks/`, donde `git lfs
+# install` puso los suyos. Sin este fichero, `corpus/` se queda en punteros
+# de 130 B tras un checkout -- la trampa 34.
+command -v git-lfs >/dev/null 2>&1 || {
+	printf >&2 '\n%s\n\n' "Este repositorio usa Git LFS y no encuentro 'git-lfs' en el PATH.";
+	exit 2;
+}
+git lfs post-merge "$@"

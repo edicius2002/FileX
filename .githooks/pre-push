@@ -1,0 +1,45 @@
+#!/bin/sh
+# Hook versionado. Ver .githooks/LEEME.md.
+#
+# DOS trabajos, en este orden:
+#   1. Git LFS. Es OBLIGATORIO encadenarlo: al fijar `core.hooksPath`, git deja
+#      de leer `.git/hooks/`, donde `git lfs install` puso los suyos. Sin esta
+#      llamada los binarios de `corpus/` no se suben y el siguiente clon los ve
+#      como punteros de 130 B -- que es la trampa 34, y cuesta 15 rojos que no
+#      son de quien los ve.
+#   2. La puerta barata: `ci/integridad.py`, ~15 s, antes de que el push llegue
+#      a un runner.
+
+# --- 1. Git LFS ---------------------------------------------------------
+if command -v git-lfs >/dev/null 2>&1; then
+	git lfs pre-push "$@" || exit $?
+else
+	printf >&2 '\n%s\n\n' "Este repositorio usa Git LFS y no encuentro 'git-lfs' en el PATH. Instálalo, o borra .githooks/pre-push si de verdad no lo quieres."
+	exit 2
+fi
+
+# --- 2. Integridad ------------------------------------------------------
+# Un hook NUNCA debe bloquear un clon recién hecho (sin intérprete, sin nada):
+# si no hay python, se dice y se sale con 0. La CI lo comprueba igualmente.
+PY=""
+for candidato in python3 python; do
+	if command -v "$candidato" >/dev/null 2>&1; then PY="$candidato"; break; fi
+done
+
+if [ -z "$PY" ]; then
+	printf >&2 '%s\n' "pre-push: sin intérprete de Python, me salto ci/integridad.py (la CI sí lo comprueba)."
+	exit 0
+fi
+
+if [ ! -f ci/integridad.py ]; then
+	exit 0
+fi
+
+printf '%s\n' "pre-push: ci/integridad.py..."
+if PYTHONIOENCODING=utf-8 "$PY" ci/integridad.py; then
+	exit 0
+fi
+
+printf >&2 '\n%s\n' "pre-push: ci/integridad.py FALLA. El push se detiene aquí en vez de gastar un runner."
+printf >&2 '%s\n\n' "Si de verdad quieres empujar así: git push --no-verify"
+exit 1
