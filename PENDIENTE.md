@@ -53,11 +53,17 @@ repositorio público no debería hacer sin pensarlo.
 `bench/salidas-marker/` sólo contiene un `logs/` vacío. Si se cierran, `.venv-marker`
 (**1 205 MB**) sale de la lista protegida de `CLAUDE.md` §1.
 
-### 1.4 · ¿El veredicto de un PR es la CI o soy yo?
+### 1.4 · ¿El veredicto de un PR es la CI o soy yo? · **RESUELTO el 01/09**
 
 Sin runner local, un `✅` de GitHub **no dice que la medición esté bien**: dice que la
-documentación es coherente y que el código importa en Linux. Hoy ejecuto yo la suite en
-Windows con Docker antes de fusionar. Si eso cambia, hay que decirlo en `CONTRIBUTING.md`.
+documentación es coherente y que el código importa en Linux.
+
+**Decidido: el maestro empuja, abre el PR y fusiona.** Los workers entregan la rama
+commiteada y nada más — no por jerarquía, sino porque `gh auth` vive en el `home` de cada
+agente y **no tienen credenciales**: se midió cuando worker2 terminó su encargo entero y no
+pudo entregarlo (`git push` → *«could not read Username»*). La alternativa —autenticar `gh`
+en cada worker— reparte credenciales entre cuatro sesiones para ahorrar una orden, y no
+compensa. Escrito en `CONTRIBUTING.md` §7.
 
 ---
 
