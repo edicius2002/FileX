@@ -62,11 +62,11 @@ jobs:
         # dejaría la CI roja por un sellado que es correcto. Trampa 105, C43.
         python: ['3.11']
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           lfs: false
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: ${{ matrix.python }}
 
@@ -99,11 +99,11 @@ jobs:
     timeout-minutes: 45
     continue-on-error: true
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           lfs: false
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: '3.11'
 
@@ -124,7 +124,7 @@ jobs:
               print("  aptos nuevos:    %s" % sorted(medida - congelada))
           EOF
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: linux-apto-runner
           path: /tmp/linux-apto-runner.json
