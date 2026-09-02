@@ -139,6 +139,19 @@ nativos, cuatro geometrías de página distintas, generador compartido con
 `d4` para el TEXTO pero no la degradación) × 7 factores (0,75 / 0,875 / 1,00 /
 1,125 / 1,25 / 1,40 / 1,60).**
 
+**Verificado antes de escribir, no después (trampa 99):** las 140 celdas
+dieron `determinista=true` (3/3 repeticiones idénticas), `err.log` vacío en
+las tres tandas GPU, y **ningún fichero de texto por debajo de 3 bytes** en
+las 140 — ninguna configuración se acerca a «100 % de sus celdas a CER 100 %».
+El *script* de este pendiente no registra un `rc` explícito para los tres
+motores GPU (son llamadas en proceso, no subprocesos; una excepción habría
+tirado el script entero y se habría visto en el `err.log`) ni para Tesseract
+dentro de `b23_k_d5.py` (a diferencia de `b16_acantilados.py` y `b24_tess.py`,
+que sí lo hacen) — es una brecha de la disciplina de la trampa 99 en este
+fichero concreto, cerrada aquí por inspección directa del tamaño de cada
+salida en vez de por un campo `rc`, y queda anotada para quien reutilice este
+script.
+
 **Esto NO es el racimo completo que pedía el encargo — se declara así, no se
 disimula.** El original (`k-por-motor.md`) midió **9 configuraciones × 4
 documentos × 11 factores = 396 celdas**; aquí van **5 configuraciones** (se
@@ -185,6 +198,15 @@ familia `d5`.** `escaneado_d5a` y `escaneado_d5c` dan **9,1 %** y **18,5 %** a
 0,7-9,4 %)— exactamente la forma de pico que `cajas-rapidocr.md` ya
 caracterizó como colapso del reconocedor, no del detector, sobre estos mismos
 documentos.
+
+**Esto le añade algo a `k-por-motor.md` que su propia rejilla de 11 factores
+no podía ver: el terreno donde se busca el argmin no es liso.** Con puntos
+espaciados ×0,125–×0,20 (la rejilla original) un pico aislado de 2-3 puntos de
+factor de ancho se puede caer entero entre dos medidas y el argmin publicado
+parecer estable cuando en realidad está pegado al borde de un pico — como le
+pasa aquí a `escaneado_d5a` en RapidOCR+R6: su óptimo de ×1,00 tiene un pico de
+casi 9 puntos justo al lado, a sólo ×0,25 de distancia. Un argmin hallado en
+rejilla gruesa no viene con la garantía de que su vecindad sea plana.
 
 **PENDIENTE, declarado y no cubierto aquí:** las 4 configuraciones que
 faltan del racimo de 9 (Docling defecto, Docling+R6, RapidOCR v6 defecto,
