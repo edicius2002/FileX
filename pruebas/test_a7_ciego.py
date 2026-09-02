@@ -44,8 +44,28 @@ def _ff(argv):
                           stdin=subprocess.DEVNULL)
 
 
-@unittest.skipUnless(os.path.exists(JFK) and os.path.exists(LARGO),
-                     "hace falta el corpus de audio (git lfs checkout)")
+def _es_audio_real(ruta: str) -> bool:
+    """`os.path.exists` es TRUE también para un puntero de Git LFS sin
+    descargar (~130 B de texto) -- trampa 34, aquí sin proteger. Con
+    `actions/checkout: lfs: false` el runner de Linux tiene el puntero, no el
+    audio, y `setUpClass` revienta con un `ffmpeg` que no encuentra un flujo
+    que decodificar: eso es el "0 pruebas corridas, 1 error de carga" de
+    `ci/linux-apto.json` (C42, bench/ci-y-contrato.md §1), no un fallo del
+    corpus en sí. Un FLAC real de este proyecto pesa >1 MB; el umbral de
+    100 KB deja margen de sobra sin acercarse al tamaño de un puntero."""
+    try:
+        return os.path.getsize(ruta) > 100_000
+    except OSError:
+        return False
+
+
+HAY_FFMPEG = shutil.which("ffmpeg") is not None
+
+
+@unittest.skipUnless(
+    HAY_FFMPEG and _es_audio_real(JFK) and _es_audio_real(LARGO),
+    "hace falta ffmpeg y el corpus de audio REAL (no un puntero de Git LFS "
+    "sin `git lfs checkout` -- trampa 34)")
 class PuntoCiegoDeA7(unittest.TestCase):
 
     @classmethod

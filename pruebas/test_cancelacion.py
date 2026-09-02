@@ -258,6 +258,25 @@ def _hay_docker() -> bool:
 IMAGEN = "ghcr.io/c4illin/convertx:latest"
 
 
+def _hay_imagen_local(imagen: str) -> bool:
+    """`docker image inspect` no descarga nada; `docker run` sobre una imagen
+    ausente SÍ intenta descargarla, y eso es justo lo que hace que
+    `ContenedorReal` CUELGUE en el runner de Linux (C42, `bench/ci-y-contrato.md`
+    §1): el demonio SÍ está vivo ahí, pero la imagen pesa 5,7 GB y nunca está
+    cacheada. `_hay_docker()` respondía la pregunta equivocada — «¿hay
+    demonio?» en vez de «¿hay lo que esta clase necesita?» —, así que el
+    `skipUnless` parecía honesto y no lo era."""
+    if not _hay_docker():
+        return False
+    try:
+        p = subprocess.run(["docker", "image", "inspect", imagen],
+                           stdin=subprocess.DEVNULL, capture_output=True,
+                           timeout=20, check=False)
+        return p.returncode == 0
+    except Exception:
+        return False
+
+
 class ContenedorPuro(unittest.TestCase):
     """Lo que se puede comprobar sin levantar un demonio.
 
@@ -344,7 +363,10 @@ class ContenedorPuro(unittest.TestCase):
         self.assertEqual(tocados, [])
 
 
-@unittest.skipUnless(_hay_docker(), "no hay demonio de docker")
+@unittest.skipUnless(_hay_imagen_local(IMAGEN),
+                     "no hay demonio de docker, o la imagen %s no está cacheada "
+                     "localmente (evita el cuelgue de C42: `docker run` sobre "
+                     "una imagen ausente la descarga, 5,7 GB)" % IMAGEN)
 class ContenedorReal(unittest.TestCase):
 
     @staticmethod

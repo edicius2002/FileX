@@ -58,6 +58,28 @@ CORPUS = os.path.join(RAIZ, "corpus", "imagen")
 PNG = os.path.join(CORPUS, "tipico.png")
 JPG = os.path.join(CORPUS, "tipico.jpg")
 
+#: Solo ImageMagick lee PNG en `filex.motores.MOTORES`, y `.github/workflows/
+#: suite.yml` no instala ningún motor externo (C42, `bench/ci-y-contrato.md`
+#: §1, MEDIDO dentro de un contenedor limpio: **31 fallos/errores de este
+#: módulo, TODOS con el mismo "ningún motor disponible lee 'png'"** en la
+#: traza, incluidas comprobaciones de confinamiento que en principio no
+#: deberían tocar un motor -- las superficies MCP y API resuelven el formato
+#: ANTES de validar la ruta, así que sin PNG legible ni siquiera esas
+#: comprobaciones llegan a ejecutarse). No es 31 causas: es una.
+HAY_IMAGEMAGICK = shutil.which("magick") is not None
+_MOTIVO_SIN_IMAGEMAGICK = ("no hay ImageMagick (`magick`): ningún motor lee "
+                          "png (C42, bench/ci-y-contrato.md §1)")
+
+#: `CON` (R12, v3) y `:` como separador de flujo alternativo (W9/ADS, v4) son
+#: reservas de NOMBRE de NTFS/Windows; en un fichero de Linux "CON.png" y
+#: "v4:oculto.webp" son nombres corrientes sin ningún significado especial,
+#: así que ambos vectores fallan con ImageMagick INSTALADO -- MEDIDO en este
+#: mismo runner (C42, bench/ci-y-contrato.md §1): 7 fallos que sobrevivían al
+#: arreglo de ImageMagick porque su causa es otra por completo.
+ES_WINDOWS = sys.platform == "win32"
+_MOTIVO_SOLO_WINDOWS = ("los nombres reservados y los flujos alternativos "
+                        "son de NTFS/Windows (R12, W9)")
+
 #: Los cuatro ficheros de superficie. Ninguno puede llevar validación propia.
 SUPERFICIES = {
     "cla": os.path.join(RAIZ, "filex", "cli.py"),
@@ -361,6 +383,7 @@ class _Adaptadores:
                 "watcher": self.watcher, "api": self.api}
 
 
+@unittest.skipUnless(HAY_IMAGEMAGICK, _MOTIVO_SIN_IMAGEMAGICK)
 class CuatroSuperficies(unittest.TestCase):
     """Los mismos vectores por las cuatro. **Esto es la prueba de R10.**"""
 
@@ -419,6 +442,7 @@ class CuatroSuperficies(unittest.TestCase):
         # copia del predicado, aquí es donde se vería la divergencia.
         self.assertEqual(len(set(motivos.values())), 1, motivos)
 
+    @unittest.skipUnless(ES_WINDOWS, _MOTIVO_SOLO_WINDOWS)
     def test_v3_nombre_de_salida_reservado(self):
         """R12: `CON.webp` sigue siendo `CON`. Denegado en las cuatro.
 
@@ -437,6 +461,7 @@ class CuatroSuperficies(unittest.TestCase):
                 texto = f(entrada, salida)
                 self.assertIn(_conf.MENSAJE_OPACO, texto)
 
+    @unittest.skipUnless(ES_WINDOWS, _MOTIVO_SOLO_WINDOWS)
     def test_v4_nombre_de_salida_con_flujo_alternativo(self):
         """R12/W9: `v4:oculto.webp` escribe en el flujo `oculto.webp` del
         fichero `v4`. **Es el único de los 29 vectores que la referencia
@@ -570,6 +595,7 @@ class WatcherCompletitud(unittest.TestCase):
             fh.close()
         self.assertTrue(_watch._estable_en_disco(p))
 
+    @unittest.skipUnless(HAY_IMAGEMAGICK, _MOTIVO_SIN_IMAGEMAGICK)
     def test_un_solo_sondeo_convierte_ficheros_a_medias(self):
         """El watcher ingenuo. MEDIDO: con `estables=1` y sin cerrojo convierte
         **5 veces** el mismo fichero, **4 de ellas incompletas** (6 426 / 14 994
@@ -592,6 +618,7 @@ class WatcherCompletitud(unittest.TestCase):
         self.assertTrue(any(t < real for t in tamanos),
                         f"se esperaba ver el fichero a medias: {tamanos} de {real}")
 
+    @unittest.skipUnless(HAY_IMAGEMAGICK, _MOTIVO_SIN_IMAGEMAGICK)
     def test_estabilidad_mas_cerrojo_solo_ve_el_fichero_completo(self):
         """La configuración por defecto. MEDIDO: **1 sola conversión** y sobre
         los 42 855 B completos, incluso con el escritor haciendo una pausa más
@@ -620,6 +647,7 @@ class WatcherCompletitud(unittest.TestCase):
         self.assertEqual([r.estado for r in hechos], ["convertido"])
 
 
+@unittest.skipUnless(HAY_IMAGEMAGICK, _MOTIVO_SIN_IMAGEMAGICK)
 class WatcherDuplicados(unittest.TestCase):
     """«Un fichero que aparece dos veces». MEDIDO en §4."""
 
@@ -754,6 +782,7 @@ class WatcherNucleo(unittest.TestCase):
             v.comprobar_raices()
         self.assertEqual(str(ctx.exception), _conf.MENSAJE_OPACO)
 
+    @unittest.skipUnless(HAY_IMAGEMAGICK, _MOTIVO_SIN_IMAGEMAGICK)
     def test_el_punto_5_llega_cubierto_y_no_lo_verifica_el_watcher(self):
         """El watcher no llama al contrato. No puede: el punto 5 se toma dentro
         del `with` del desechable, y **sin censo 49 de 53 salidas del patrón oro
@@ -768,6 +797,7 @@ class WatcherNucleo(unittest.TestCase):
         self.assertEqual(r.estado, "convertido")
         self.assertTrue(r.cobertura.get("5_escritura"))
 
+    @unittest.skipUnless(HAY_IMAGEMAGICK, _MOTIVO_SIN_IMAGEMAGICK)
     def test_el_trabajo_del_watcher_lo_ve_la_capa_mcp(self):
         """*«Un JSON por trabajo sirve además a la CLI, al watcher y a la API:
         los cuatro frentes ven el mismo trabajo»* (`PLAN-ORQUESTADOR.md` §5.3).
@@ -788,6 +818,7 @@ class WatcherNucleo(unittest.TestCase):
         self.assertEqual(d.get("estado"), "completed")
         self.assertEqual(d.get("ruta_salida"), r.salida)
 
+    @unittest.skipUnless(HAY_IMAGEMAGICK, _MOTIVO_SIN_IMAGEMAGICK)
     def test_el_filtro_de_extension_pregunta_al_grafo(self):
         """No hay lista de extensiones escrita a mano: se pregunta si hay
         camino, que es la misma respuesta que da `list_targets` — *«lo que no
@@ -914,6 +945,7 @@ class ApiDefensas(unittest.TestCase):
         self.assertEqual(rc, 2)
         self.assertIn("permitir-red", err.getvalue())
 
+    @unittest.skipUnless(HAY_IMAGEMAGICK, _MOTIVO_SIN_IMAGEMAGICK)
     def test_la_respuesta_no_lleva_contenido(self):
         """*Ruta y metadatos, nunca contenido* — y «contenido» incluye base64.
         MEDIDO: el asa cuesta **121 B** y el resultado **278 B** para un fichero
@@ -936,6 +968,7 @@ class ApiDefensas(unittest.TestCase):
         self.assertEqual(res["bytes"], bytes_reales)
         self.assertLess(n2, bytes_reales)          # la respuesta pesa menos que el fichero
 
+    @unittest.skipUnless(HAY_IMAGEMAGICK, _MOTIVO_SIN_IMAGEMAGICK)
     def test_el_asa_llega_al_empezar(self):
         """§5.2: *toda operación larga devuelve un `job_id` al empezar. No
         bloquea, nunca condicionado a un booleano*. Un `ffmpeg_convert` de un
@@ -967,6 +1000,7 @@ class ApiDefensas(unittest.TestCase):
         self.assertIn("sugerencia", d)
 
 
+@unittest.skipUnless(HAY_IMAGEMAGICK, _MOTIVO_SIN_IMAGEMAGICK)
 class ApiConcurrencia(unittest.TestCase):
     """La primera superficie con concurrencia real. §5 del informe."""
 
@@ -1105,6 +1139,7 @@ class NucleoDestinoEnCurso(unittest.TestCase):
         self.assertTrue(_nucleo._reservar_destino(p))
         _nucleo._soltar_destino(p)
 
+    @unittest.skipUnless(HAY_IMAGEMAGICK, _MOTIVO_SIN_IMAGEMAGICK)
     def test_convertir_rechaza_un_destino_reservado(self):
         fx = fx_de([self.dir])
         sal = os.path.join(self.dir, "x.webp")

@@ -42,6 +42,25 @@ from filex import servicio as S                                 # noqa: E402
 VIDEO = os.path.join(RAIZ, "corpus", "video", "tipico.mp4")
 HIJO = os.path.join(RAIZ, "pruebas", "hijo_de_trabajo.py")
 
+
+def _es_video_real(ruta: str) -> bool:
+    """`os.path.exists` es TRUE también para un puntero de Git LFS sin
+    descargar (~130 B de texto) -- trampa 34, aquí sin proteger. Con
+    `actions/checkout: lfs: false` el runner de Linux tiene el puntero, no el
+    vídeo, y ningún motor reconoce su firma: **"ningún motor disponible lee
+    'mp4'" no es que falte ffmpeg** (MEDIDO: el mismo error aparece con
+    ffmpeg instalado) -- es que la entrada no es un MP4. C42,
+    `bench/ci-y-contrato.md` §1. Un MP4 real de este proyecto pesa >1 MB."""
+    try:
+        return os.path.getsize(ruta) > 100_000
+    except OSError:
+        return False
+
+
+HAY_VIDEO_REAL = _es_video_real(VIDEO)
+_MOTIVO_SIN_VIDEO = ("hace falta el corpus de vídeo REAL (no un puntero de "
+                    "Git LFS sin `git lfs checkout` -- trampa 34)")
+
 #: Cuánto se le da a un hijo para arrancar y poner un motor en vuelo.
 TOPE_ARRANQUE = 90.0
 
@@ -129,6 +148,7 @@ class _FxFalso:
 # ==========================================================================
 
 
+@unittest.skipUnless(HAY_VIDEO_REAL, _MOTIVO_SIN_VIDEO)
 class CancelarEntreProcesos(_ConHijo):
 
     def test_cancelar_alcanza_al_motor_de_otro_proceso(self):
@@ -186,6 +206,7 @@ class CancelarEntreProcesos(_ConHijo):
         self.assertEqual(int(d.split("\t")[0]), self.pid_hijo)
 
 
+@unittest.skipUnless(HAY_VIDEO_REAL, _MOTIVO_SIN_VIDEO)
 class SinCanalNoSeAlcanza(_ConHijo):
     """El ANTES, en la misma tanda. `FILEX_MANDO=0` en los DOS procesos."""
 
@@ -219,6 +240,7 @@ class SinCanalNoSeAlcanza(_ConHijo):
 # ==========================================================================
 
 
+@unittest.skipUnless(HAY_VIDEO_REAL, _MOTIVO_SIN_VIDEO)
 class DuenoMuerto(_ConHijo):
 
     def _matar_al_hijo(self) -> None:
