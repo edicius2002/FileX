@@ -128,6 +128,7 @@ import ast
 import hashlib
 import inspect
 import os
+import platform
 import textwrap
 
 #: Desde dónde se calcula el cierre de llamadas del contrato. `verificar()` es
@@ -140,6 +141,39 @@ ENTRADAS_CONTRATO = ("verificar",)
 LARGO = 16
 
 _PAQUETE = os.path.dirname(os.path.abspath(__file__))
+
+
+# -------------------------------------------------------------- intérprete
+
+
+def interprete_actual() -> str:
+    """El intérprete que está calculando la huella AHORA mismo.
+
+    `ast.dump` **no da la misma cadena entre versiones de Python** — MEDIDO
+    con control positivo (trampa 105 de `CLAUDE.md`): el mismo commit, sobre
+    los mismos bytes, sella `eec752a87e8927cf`/`c918f1be90ef0652` bajo 3.11.9
+    y `16ddd8d13d61c4f1`/`605a04d57983eaa5` bajo 3.14.4 para
+    `verificador.py`/`motores.py`, y los **siete motores caducan a la vez**
+    bajo 3.13 — la firma de un fallo global, no de un cambio real.
+
+    Esto no es una propiedad del CÓDIGO que se hashea: es una propiedad del
+    PROCESO que hashea. No entra en `de_alcance()` ni en `de_clase()` —eso
+    mezclaría dos cosas distintas dentro de un mismo número—, entra como
+    campo declarado al lado de `huella`, igual que `build` ya declara la
+    máquina. `sondeo.aplicar()` lo compara ANTES de comparar la huella: si no
+    coincide, la comparación no dice nada y hay que negarse a hacerla, no
+    hacerla y llamar al resultado «caducado» (decisión del 02/09, no
+    reabrir).
+
+    Se usa `platform.python_version()` —el triple completo, no solo
+    mayor.menor— porque es exactamente lo que la medida de control positivo
+    declaró (3.11.9 frente a 3.14.4) y una granularidad más gruesa sería una
+    hipótesis sin medir: **PENDIENTE** si un cambio de versión de
+    mantenimiento (p. ej. 3.11.9 → 3.11.10) mueve `ast.dump`; CPython no
+    suele tocar el analizador en esas versiones, pero aquí no se ha medido, y
+    la regla del proyecto es no comparar sin medir primero.
+    """
+    return platform.python_version()
 
 
 # ---------------------------------------------------------------- normalizar
@@ -491,5 +525,5 @@ def diferencias(guardada: dict | None, actual: dict) -> list:
 
 __all__ = ["ENTRADAS_CONTRATO", "cadena_de_clase", "de_alcance", "de_clase",
            "de_clase_en_fuente", "de_contrato", "de_fichero", "de_fuente",
-           "de_modulo", "de_motor", "diferencias", "nombres_alcanzados",
-           "normalizar", "olvidar"]
+           "de_modulo", "de_motor", "diferencias", "interprete_actual",
+           "nombres_alcanzados", "normalizar", "olvidar"]

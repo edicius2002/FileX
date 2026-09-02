@@ -457,6 +457,97 @@ class AplicarConHuella(unittest.TestCase):
 
 
 # --------------------------------------------------------------------------
+# 4 bis. `C43`: la huella es función del intérprete — «no comparable», no
+#         «caducado»
+# --------------------------------------------------------------------------
+
+
+class AplicarConInterprete(unittest.TestCase):
+    """Trampa 105: `ast.dump` no da la misma cadena entre versiones de
+    Python, y bajo un intérprete distinto el sistema decía «caducado» donde
+    debía decir «no comparable» — invitando a resellar a ciegas (trampa 61)
+    o a resondear 215 aristas por un cambio que no ocurrió. La decisión del
+    02/09: declarar el intérprete de sellado y negarse a comparar. Aquí se
+    prueba la lógica de la guarda, inyectando valores — no hace falta
+    cambiar de intérprete a mitad de una prueba para probar el ORDEN de las
+    guardas."""
+
+    def setUp(self):
+        self.d = tempfile.mkdtemp(prefix="filex-interprete-")
+        self._viejo = sondeo._DIR
+        sondeo._DIR = self.d
+        sondeo.descongelar()
+        self.h = {"motor": "aaaa", "invocacion": "bbbb", "contrato": "cccc"}
+        self.base = {
+            "motor": "m", "build": "b", "huella": self.h,
+            "interprete": "3.11.9",
+            "aristas": {"png>webp": {"estado": REAL, "ms": 100.0},
+                        "png>ico": {"estado": NOMINAL, "motivo": "rc=1"}},
+        }
+
+    def tearDown(self):
+        sondeo._DIR = self._viejo
+        sondeo.descongelar()
+
+    def test_con_el_interprete_igual_y_la_huella_igual_SI_se_aplica(self):
+        _fichero(self.d, "m", self.base)
+        out = sondeo.aplicar("m", "b", _aristas(), huella_actual=self.h,
+                             interprete_actual="3.11.9")
+        self.assertEqual([a.estado for a in out], [REAL, NOMINAL])
+
+    def test_con_el_interprete_DISTINTO_no_se_aplica_AUNQUE_LA_HUELLA_COINCIDA(self):
+        # El caso que reproduce la trampa 105: mismo código (huella idéntica),
+        # otro intérprete. No es una arista que cambió: es una que no se
+        # puede comparar.
+        _fichero(self.d, "m", self.base)
+        out = sondeo.aplicar("m", "b", _aristas(), huella_actual=self.h,
+                             interprete_actual="3.14.4")
+        self.assertEqual([a.estado for a in out], [SIN_SONDEAR, SIN_SONDEAR])
+
+    def test_el_interprete_distinto_se_declara_APARTE_de_caducados(self):
+        # La afirmación central de C43: NO es «caducado». Nunca se llega a
+        # comparar la huella, así que `caducados` se queda vacío para este
+        # motor aunque la huella inyectada también difiera.
+        _fichero(self.d, "m", self.base)
+        sondeo.aplicar("m", "b", _aristas(), huella_actual=dict(self.h, motor="zzzz"),
+                       interprete_actual="3.14.4")
+        diag = sondeo.diagnostico()
+        self.assertIn("m", diag["interprete_distinto"])
+        self.assertNotIn("m", diag["caducados"])
+
+    def test_un_fichero_SIN_interprete_se_aplica_pero_se_DECLARA_legado(self):
+        # Misma regla de legado que `huella`: un sondeo sellado antes de que
+        # existiera este campo no se tira por uno que su autor no pudo
+        # escribir.
+        cuerpo = copy.deepcopy(self.base)
+        del cuerpo["interprete"]
+        _fichero(self.d, "m", cuerpo)
+        out = sondeo.aplicar("m", "b", _aristas(), huella_actual=self.h,
+                             interprete_actual="3.14.4")
+        self.assertEqual([a.estado for a in out], [REAL, NOMINAL])
+        self.assertIn("m", sondeo.diagnostico()["sin_interprete"])
+
+    def test_el_diagnostico_se_limpia_entre_pasadas(self):
+        # Igual que `caducados`/`build_distinto`: no se acumula para siempre.
+        _fichero(self.d, "m", self.base)
+        sondeo.aplicar("m", "b", _aristas(), huella_actual=self.h,
+                       interprete_actual="3.14.4")
+        self.assertIn("m", sondeo.diagnostico()["interprete_distinto"])
+        sondeo.aplicar("m", "b", _aristas(), huella_actual=self.h,
+                       interprete_actual="3.11.9")
+        self.assertNotIn("m", sondeo.diagnostico()["interprete_distinto"])
+
+
+class InterpreteActual(unittest.TestCase):
+    def test_devuelve_la_version_de_python_en_curso(self):
+        import platform
+        self.assertEqual(huella.interprete_actual(), platform.python_version())
+
+    def test_es_una_cadena_no_vacia(self):
+        self.assertTrue(huella.interprete_actual())
+
+
+# --------------------------------------------------------------------------
 # 5. El sellado: que el disco lleve la huella del código de AHORA
 # --------------------------------------------------------------------------
 
@@ -496,6 +587,43 @@ class SelladoDelDisco(unittest.TestCase):
         self.assertEqual(malos, {}, (
             "el código que decide estas aristas cambió después de sondearlas: "
             "hay que RESONDEAR y volver a sellar, no editar la huella a mano"))
+
+    def test_los_ficheros_del_disco_declaran_su_interprete_de_sellado(self):
+        """`C43`: el sello lleva ahora un cuarto dato — con qué intérprete se
+        calculó la huella de arriba —, o la comparación no significa nada."""
+        sin = []
+        for n in sorted(os.listdir(sondeo._DIR)):
+            if not n.endswith(".json"):
+                continue
+            if not sondeo.cargar(n[:-5]).get("interprete"):
+                sin.append(n)
+        self.assertEqual(sin, [],
+                         "hay sondeo sellado sin declarar su intérprete: "
+                         "C43 no está cerrado sobre este fichero")
+
+    def test_ningun_motor_disponible_es_no_comparable_bajo_este_interprete(self):
+        """El criterio de aceptación duro de `C43`: **no puede caducar ni una
+        de las aristas selladas**, ni tampoco declararse `interprete_distinto`
+        —que sería el mismo daño con otro nombre—, corriendo la suite con el
+        intérprete que las selló. Se llama a `sondeo.aplicar()` sin inyectar
+        nada: es exactamente la ruta que usan `motores.py` y
+        `motor_contenedor.py` en producción."""
+        from filex import motores
+        sondeo.descongelar()
+        vistos = 0
+        for cls in list(motores.MOTORES) + motores._descubrir():
+            m = cls()
+            d = sondeo.cargar(m.nombre)
+            if not d or not d.get("huella"):
+                continue
+            vistos += 1
+            with self.subTest(motor=m.nombre):
+                sondeo.aplicar(m.nombre, m.build, m._aristas())
+                diag = sondeo.diagnostico()
+                self.assertNotIn(m.nombre, diag["interprete_distinto"],
+                                 "se declaró no comparable con SU PROPIO sello")
+                self.assertNotIn(m.nombre, diag["caducados"])
+        self.assertGreater(vistos, 0, "no se comprobó ningún motor sellado")
 
 
 # --------------------------------------------------------------------------
