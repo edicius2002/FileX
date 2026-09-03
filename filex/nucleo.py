@@ -568,7 +568,8 @@ class FileX:
     estaba en la capa MCP. Aquí no puede pasar: no hay otro camino.
     """
 
-    def __init__(self, raices_lectura=None, raices_escritura=None) -> None:
+    def __init__(self, raices_lectura=None, raices_escritura=None, *,
+                 ecualizar_temporal: bool = False) -> None:
         # N14 — el barrido de desechables huérfanos, UNA vez por proceso y en el
         # arranque. Va aquí y no en cada superficie por lo mismo que el cerrojo
         # de destino: las cuatro tienen el agujero y se cierra en el sitio en el
@@ -584,7 +585,12 @@ class FileX:
                     self.grafo.añadir(a)
         self.confinamiento = None
         if raices_lectura:
-            self.confinamiento = Confinamiento(raices_lectura, raices_escritura)
+            # N9: el suelo temporal es DECISIÓN DE SUPERFICIE, no del núcleo
+            # (`bench/oraculo-y-gotenberg.md` §1). El parámetro solo lo pone a
+            # `True` quien construye el `FileX` de la API HTTP.
+            self.confinamiento = Confinamiento(
+                raices_lectura, raices_escritura,
+                ecualizar_temporal=ecualizar_temporal)
 
     # ------------------------------------------------------------ inventario
 

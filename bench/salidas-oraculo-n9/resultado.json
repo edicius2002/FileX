@@ -1,0 +1,57 @@
+{
+ "testigo_proceso_antes": {
+  "ms": 54.09,
+  "sucia": true,
+  "tope_alcanzado": false
+ },
+ "sin_ecualizar": {
+  "prohibido": {
+   "mediana_us": 13.4,
+   "p90_us": 16.7,
+   "n": 2000,
+   "deriva_primera_vs_segunda_mitad": 0.97
+  },
+  "no_existe": {
+   "mediana_us": 234.95,
+   "p90_us": 364.65,
+   "n": 2000,
+   "deriva_primera_vs_segunda_mitad": 0.972
+  },
+  "existe": {
+   "mediana_us": 170.7,
+   "p90_us": 252.55,
+   "n": 2000,
+   "deriva_primera_vs_segunda_mitad": 0.869
+  }
+ },
+ "ecualizado": {
+  "prohibido": {
+   "mediana_us": 302.7,
+   "p90_us": 308.6,
+   "n": 2000,
+   "deriva_primera_vs_segunda_mitad": 1.0
+  },
+  "no_existe": {
+   "mediana_us": 301.2,
+   "p90_us": 582.19,
+   "n": 2000,
+   "deriva_primera_vs_segunda_mitad": 1.001
+  },
+  "existe": {
+   "mediana_us": 301.3,
+   "p90_us": 413.79,
+   "n": 2000,
+   "deriva_primera_vs_segunda_mitad": 1.0
+  }
+ },
+ "testigo_proceso_despues": {
+  "ms": 51.55,
+  "sucia": true,
+  "tope_alcanzado": false
+ },
+ "sucia": true,
+ "ratio_no_existe_sobre_prohibido": {
+  "sin_ecualizar": 17.53,
+  "ecualizado": 1.0
+ }
+}
