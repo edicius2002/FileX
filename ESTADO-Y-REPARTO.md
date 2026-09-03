@@ -659,7 +659,7 @@ Agrupado por **el recurso que lo limita**, que es lo que decide el reparto. Cada
 | **8** | **B8** + **C18** · 🟢 **ENTREGADA Y VERIFICADA (`8ec82ed`)** — `C18` cerrado **refutando** el «NO REPRODUCIDO» de `verificador-ghostscript.md` §5.7; `B8` a medias porque el segundo motor le dio la vuelta al hallazgo | **C24** + **C25** | Cuatro umbrales que no se cierran sin variar la entrada |
 | **9** | **N26** + **B3** (marker, build CPU) + cerrar **B4**/**B5** | **C24** + **C25** · 🟢 **ENTREGADA Y VERIFICADA (`8ec82ed`)** — los dos cerrados: el Tesseract de Ghostscript se comporta como `--psm 6` (**INFERIDO**), y las 9 aristas de «grafo de filtros» se arreglan con un solo `-af`/`-vf` | El otro margen que sostiene un presupuesto, y aquí sale `.venv-marker` de la lista protegida |
 | **10** | **B7** + **B20** · 🟡 **DESPACHADA el 03/09** — `bench/severidad-y-curvatura.md` | **N9** + **C35** + **C5** + **C36** · 🟡 **DESPACHADA el 03/09** — `bench/oraculo-y-gotenberg.md`, por orden de prioridad | Las dos mayores del carril CPU, y el residuo de B12 con la heurística ya calibrable contra `d4` |
-| **11** | — | **C16** + **C28** (corpus FATE, ya en disco) | Convierte el 48,6 % estimado en número medido |
+| **11** | **N31** + **N26** · 🟡 **DESPACHADA el 03/09** — `bench/presupuesto-vram.md`, un solo tema: el presupuesto de VRAM | **C28** (lo barato: los 8 `sin_clasificar` y los 17 sin probar) + **C16** con FATE · 🟡 **DESPACHADA el 03/09** — `bench/fate-y-aristas.md` | Convierte el 48,6 % estimado en número medido |
 
 ---
 
