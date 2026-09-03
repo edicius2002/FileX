@@ -120,6 +120,10 @@ bench/salidas-severidad-y-curvatura/tmp/
 # (orden exacta en el MANIFIESTO.md); mismo sha256 que los de N27.
 bench/salidas-presupuesto-vram/img/
 
+# Rasteres de la rejilla 2x2 pHYs/corpus (worker8, B23 cierre). Regenerables
+# con b25_phys_corpus.py; cubiertos por su MANIFIESTO.md.
+bench/salidas-k-tesseract-configs/img/
+
 # Los flujos alternativos NTFS (ADS) del arnes de confinamiento ya estan
 # VERSIONADOS bajo su nombre con U+F03A, que es como DrvFs escribe los dos
 # puntos. Pero `readdir` desde WSL devuelve ademas el nombre con `:` literal,
