@@ -1,0 +1,121 @@
+{
+ "entrada": "a1.png (64x48, +noise Random, -seed 11, misma receta que _censo_firmas.py::semillas)",
+ "control_jp2": {
+  "rc": 0,
+  "bytes": 20351
+ },
+ "desechable_antes": [],
+ "desechable_despues": [
+  "a1.png",
+  "control.jp2",
+  "out.jpt"
+ ],
+ "filas": [
+  {
+   "formato": "8bimwtext",
+   "argv": [
+    "C:\\Program Files\\ImageMagick-7.1.2-Q16-HDRI\\magick.exe",
+    "C:\\Users\\krato\\orca\\workspaces\\FileX\\filex-cpu\\bench\\salidas-fate-y-aristas\\tmp8\\a1.png",
+    "-auto-orient",
+    "C:\\Users\\krato\\orca\\workspaces\\FileX\\filex-cpu\\bench\\salidas-fate-y-aristas\\tmp8\\out.8bimwtext"
+   ],
+   "rc": 0,
+   "bytes": 0,
+   "ficheros_candidatos": [],
+   "stderr_completo": ""
+  },
+  {
+   "formato": "app1jpeg",
+   "argv": [
+    "C:\\Program Files\\ImageMagick-7.1.2-Q16-HDRI\\magick.exe",
+    "C:\\Users\\krato\\orca\\workspaces\\FileX\\filex-cpu\\bench\\salidas-fate-y-aristas\\tmp8\\a1.png",
+    "-auto-orient",
+    "C:\\Users\\krato\\orca\\workspaces\\FileX\\filex-cpu\\bench\\salidas-fate-y-aristas\\tmp8\\out.app1jpeg"
+   ],
+   "rc": 0,
+   "bytes": 0,
+   "ficheros_candidatos": [],
+   "stderr_completo": ""
+  },
+  {
+   "formato": "clip",
+   "argv": [
+    "C:\\Program Files\\ImageMagick-7.1.2-Q16-HDRI\\magick.exe",
+    "C:\\Users\\krato\\orca\\workspaces\\FileX\\filex-cpu\\bench\\salidas-fate-y-aristas\\tmp8\\a1.png",
+    "-auto-orient",
+    "C:\\Users\\krato\\orca\\workspaces\\FileX\\filex-cpu\\bench\\salidas-fate-y-aristas\\tmp8\\out.clip"
+   ],
+   "rc": 1,
+   "bytes": 0,
+   "ficheros_candidatos": [],
+   "stderr_completo": "magick.exe: no clip path defined 'C:\\Users\\krato\\orca\\workspaces\\FileX\\filex-cpu\\bench\\salidas-fate-y-aristas\\tmp8\\out.clip': No such file or directory @ error/image.c/ClipImagePath/730.\r\nmagick.exe: image does not have a clip mask `C:\\Users\\krato\\orca\\workspaces\\FileX\\filex-cpu\\bench\\salidas-fate-y-aristas\\tmp8\\out.clip' @ error/clip.c/WriteCLIPImage/234."
+  },
+  {
+   "formato": "iptcwtext",
+   "argv": [
+    "C:\\Program Files\\ImageMagick-7.1.2-Q16-HDRI\\magick.exe",
+    "C:\\Users\\krato\\orca\\workspaces\\FileX\\filex-cpu\\bench\\salidas-fate-y-aristas\\tmp8\\a1.png",
+    "-auto-orient",
+    "C:\\Users\\krato\\orca\\workspaces\\FileX\\filex-cpu\\bench\\salidas-fate-y-aristas\\tmp8\\out.iptcwtext"
+   ],
+   "rc": 0,
+   "bytes": 0,
+   "ficheros_candidatos": [],
+   "stderr_completo": ""
+  },
+  {
+   "formato": "jpt",
+   "argv": [
+    "C:\\Program Files\\ImageMagick-7.1.2-Q16-HDRI\\magick.exe",
+    "C:\\Users\\krato\\orca\\workspaces\\FileX\\filex-cpu\\bench\\salidas-fate-y-aristas\\tmp8\\a1.png",
+    "-auto-orient",
+    "C:\\Users\\krato\\orca\\workspaces\\FileX\\filex-cpu\\bench\\salidas-fate-y-aristas\\tmp8\\out.jpt"
+   ],
+   "rc": 1,
+   "bytes": 0,
+   "ficheros_candidatos": [
+    "out.jpt"
+   ],
+   "stderr_completo": "magick.exe: unable to encode image file `C:\\Users\\krato\\orca\\workspaces\\FileX\\filex-cpu\\bench\\salidas-fate-y-aristas\\tmp8\\out.jpt' @ error/jp2.c/WriteJP2Image/1271."
+  },
+  {
+   "formato": "mask",
+   "argv": [
+    "C:\\Program Files\\ImageMagick-7.1.2-Q16-HDRI\\magick.exe",
+    "C:\\Users\\krato\\orca\\workspaces\\FileX\\filex-cpu\\bench\\salidas-fate-y-aristas\\tmp8\\a1.png",
+    "-auto-orient",
+    "C:\\Users\\krato\\orca\\workspaces\\FileX\\filex-cpu\\bench\\salidas-fate-y-aristas\\tmp8\\out.mask"
+   ],
+   "rc": 1,
+   "bytes": 0,
+   "ficheros_candidatos": [],
+   "stderr_completo": "magick.exe: image does not have an mask channel `C:\\Users\\krato\\orca\\workspaces\\FileX\\filex-cpu\\bench\\salidas-fate-y-aristas\\tmp8\\out.mask' @ error/mask.c/WriteMASKImage/353."
+  },
+  {
+   "formato": "matte",
+   "argv": [
+    "C:\\Program Files\\ImageMagick-7.1.2-Q16-HDRI\\magick.exe",
+    "C:\\Users\\krato\\orca\\workspaces\\FileX\\filex-cpu\\bench\\salidas-fate-y-aristas\\tmp8\\a1.png",
+    "-auto-orient",
+    "C:\\Users\\krato\\orca\\workspaces\\FileX\\filex-cpu\\bench\\salidas-fate-y-aristas\\tmp8\\out.matte"
+   ],
+   "rc": 1,
+   "bytes": 0,
+   "ficheros_candidatos": [],
+   "stderr_completo": "magick.exe: image does not have an alpha channel `C:\\Users\\krato\\orca\\workspaces\\FileX\\filex-cpu\\bench\\salidas-fate-y-aristas\\tmp8\\out.matte' @ error/matte.c/WriteMATTEImage/180."
+  },
+  {
+   "formato": "thumbnail",
+   "argv": [
+    "C:\\Program Files\\ImageMagick-7.1.2-Q16-HDRI\\magick.exe",
+    "C:\\Users\\krato\\orca\\workspaces\\FileX\\filex-cpu\\bench\\salidas-fate-y-aristas\\tmp8\\a1.png",
+    "-auto-orient",
+    "C:\\Users\\krato\\orca\\workspaces\\FileX\\filex-cpu\\bench\\salidas-fate-y-aristas\\tmp8\\out.thumbnail"
+   ],
+   "rc": 1,
+   "bytes": 0,
+   "ficheros_candidatos": [],
+   "stderr_completo": "magick.exe: image does not have a EXIF thumbnail `C:\\Users\\krato\\orca\\workspaces\\FileX\\filex-cpu\\bench\\salidas-fate-y-aristas\\tmp8\\out.thumbnail' @ error/thumbnail.c/WriteTHUMBNAILImage/187."
+  }
+ ]
+}

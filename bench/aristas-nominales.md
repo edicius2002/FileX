@@ -396,7 +396,16 @@ Warning (in usvg::text:129): No match for 'serif' font-family.
 
 ## 11. Lo que este informe NO ha medido — **[PENDIENTE]**
 
-1. **El 54,78 % indeterminado.** Exige un corpus de los 445 formatos que ningún motor local escribe. Es la única vía para pasar del escenario B a un número medido (§7).
+1. ~~**El 54,78 % indeterminado.** Exige un corpus de los 445 formatos que ningún
+   motor local escribe. Es la única vía para pasar del escenario B a un número
+   medido (§7).~~ **AVANZADO el 03/09/2026 por worker2** (`bench/fate-y-aristas.md`
+   §2, ronda 11, corpus FATE ya en disco): con ficheros reales sobre **69 de los
+   445** formatos (sesgo de cobertura declarado, no muestra aleatoria de los 445),
+   la semiarista de entrada sale VIVA en el **97,1 %** y una muestra de aristas da
+   **66,9 %** (criterio más barato que el contrato de 5 puntos) — las dos MUY por
+   encima del 48,6 % de Escenario B, cerca del 77,5 % de Escenario C. **No cierra
+   el 54,78 % entero**: sigue PENDIENTE para los 376 formatos que FATE no nombra
+   igual.
 2. **La otra mitad del sesgo de materialización.** Todas las semiaristas de entrada se probaron con ficheros escritos por el propio motor. Con ficheros de terceros la tasa **subiría**, y no se sabe cuánto. El caso `txt` (§2, sesgo 2) muestra que la diferencia puede ser total.
 3. **El 88 % de destinos donde N2 no es evaluable.** Son **436 de las 498** aristas de la muestra: en ellas, una salida con la firma equivocada pasa como buena. Ampliar el vocabulario de firmas del verificador (hoy 24 nombres) es trabajo de V1, y **solo puede subir el 50,5 %, nunca bajarlo**.
 4. **Los 140 aristas de Ghostscript y Gotenberg** no se han muestreado: son el 0,10 % de la población, pero son **toda** la superficie documental del grafo. `fidelidad-caminos.md` ya ejecutó 69 caminos sobre ellas; falta el censo.

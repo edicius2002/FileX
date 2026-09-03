@@ -1,0 +1,457 @@
+{
+ "desechable_antes": [],
+ "desechable_despues": [
+  "302_a1.302",
+  "302_a2.302",
+  "amv_v1.amv",
+  "amv_v2.amv",
+  "avs2_v1.avs2",
+  "avs2_v2.avs2",
+  "dnxhr_v1.dnxhr",
+  "dnxhr_v2.dnxhr",
+  "dv_v1.dv",
+  "dv_v2.dv",
+  "flm_i1.flm",
+  "flm_i2.flm",
+  "gxf_v1.gxf",
+  "gxf_v2.gxf",
+  "mmf_a1.mmf",
+  "mmf_a2.mmf",
+  "rco_a1.rco",
+  "rco_a2.rco",
+  "roq_v1.roq",
+  "roq_v2.roq",
+  "tco_a1.tco",
+  "tco_a2.tco",
+  "tun_a1.tun",
+  "tun_a2.tun",
+  "vbn_i1.vbn",
+  "vbn_i2.vbn",
+  "xface_i1.xface",
+  "xface_i2.xface"
+ ],
+ "n_total": 17,
+ "n_buenas": 14,
+ "resultados": [
+  {
+   "formato": "302",
+   "nota": "daud: EXACTAMENTE 6 canales a 96000 Hz (dos restricciones encadenadas)",
+   "argv_cod": [
+    "-c:a",
+    "pcm_s24daud",
+    "-ar",
+    "96000",
+    "-ac",
+    "6"
+   ],
+   "celdas": [
+    {
+     "semilla": "a1",
+     "rc": 0,
+     "bytes": 1036916
+    },
+    {
+     "semilla": "a2",
+     "rc": 0,
+     "bytes": 1036916
+    }
+   ],
+   "escrito": 2,
+   "buena": true,
+   "prefijo_comun_n": 10,
+   "prefijo_comun_hex": "8ca08010000000000000"
+  },
+  {
+   "formato": "amv",
+   "nota": "amv: audio a 22050 Hz (en la fuente) + -strict -2 + -block_size 882 (el propio ffmpeg lo sugiere: 'Try -block_size 882')",
+   "argv_cod": [
+    "-s",
+    "160x120",
+    "-r",
+    "25",
+    "-strict",
+    "-2",
+    "-block_size",
+    "882",
+    "-ar",
+    "22050"
+   ],
+   "celdas": [
+    {
+     "semilla": "v1",
+     "rc": 0,
+     "bytes": 52114
+    },
+    {
+     "semilla": "v2",
+     "rc": 0,
+     "bytes": 33730
+    }
+   ],
+   "escrito": 2,
+   "buena": true,
+   "prefijo_comun_n": 64,
+   "prefijo_comun_hex": "5249464600000000414d56204c495354000000006864726c616d766838000000409c000000000000000000000000000000000000000000000000000000000000"
+  },
+  {
+   "formato": "avs2",
+   "nota": "avs2: video puro, sin pista de audio (el muxer no admite audio)",
+   "argv_cod": [
+    "-s",
+    "320x240",
+    "-r",
+    "25",
+    "-an"
+   ],
+   "celdas": [
+    {
+     "semilla": "v1",
+     "rc": 0,
+     "bytes": 4243
+    },
+    {
+     "semilla": "v2",
+     "rc": 0,
+     "bytes": 925
+    }
+   ],
+   "escrito": 2,
+   "buena": true,
+   "prefijo_comun_n": 64,
+   "prefijo_comun_hex": "000001b02014814003c122604e2400100001582645101a411d0249134094499025890610d0a20902291243842308000001b2786176733220656e636f64657200"
+  },
+  {
+   "formato": "dnxhr",
+   "nota": "dnxhr: perfil DNxHR explicito + yuv422p",
+   "argv_cod": [
+    "-c:v",
+    "dnxhd",
+    "-profile:v",
+    "dnxhr_hq",
+    "-s",
+    "1920x1080",
+    "-pix_fmt",
+    "yuv422p",
+    "-r",
+    "25"
+   ],
+   "celdas": [
+    {
+     "semilla": "v1",
+     "rc": 0,
+     "bytes": 13762560
+    },
+    {
+     "semilla": "v2",
+     "rc": 0,
+     "bytes": 13762560
+    }
+   ],
+   "escrito": 2,
+   "buena": true,
+   "prefijo_comun_n": 64,
+   "prefijo_comun_hex": "00000280030180a00000000000000000000000000000000004380780000438000038880000000000000004f88000000000000000000000000000000000000000"
+  },
+  {
+   "formato": "gxf",
+   "nota": "gxf: geometria PAL + mpeg2video/pcm_s16le explicitos",
+   "argv_cod": [
+    "-s",
+    "720x576",
+    "-r",
+    "25",
+    "-pix_fmt",
+    "yuv420p",
+    "-c:v",
+    "mpeg2video",
+    "-ar",
+    "48000",
+    "-c:a",
+    "pcm_s16le"
+   ],
+   "celdas": [
+    {
+     "semilla": "v1",
+     "rc": 0,
+     "bytes": 164260
+    },
+    {
+     "semilla": "v2",
+     "rc": 0,
+     "bytes": 119044
+    }
+   ],
+   "escrito": 2,
+   "buena": true,
+   "prefijo_comun_n": 64,
+   "prefijo_comun_hex": "0000000001bc000001b000000000e1e2e0ff008e406e4558543a2f5044522f64656661756c742f433a5c55736572735c6b7261746f5c6f7263615c776f726b73"
+  },
+  {
+   "formato": "mmf",
+   "nota": "mmf: 44100 Hz explicito (el ruido de la segunda semilla nace a 48000, que mmf rechaza; la sonda de 440 Hz ya nacia a 44100 y coincidia por suerte)",
+   "argv_cod": [
+    "-ar",
+    "44100"
+   ],
+   "celdas": [
+    {
+     "semilla": "a1",
+     "rc": 0,
+     "bytes": 13403
+    },
+    {
+     "semilla": "a2",
+     "rc": 0,
+     "bytes": 13403
+    }
+   ],
+   "escrito": 2,
+   "buena": true,
+   "prefijo_comun_n": 64,
+   "prefijo_comun_hex": "4d4d4d4400003453434e54490000000500010100004f50444100000010564e3a4c61766636322e362e3130302c41545200000034260000140002024174737100"
+  },
+  {
+   "formato": "rco",
+   "nota": "g723_1: 8000 Hz (mismo fix de C25, ronda 9)",
+   "argv_cod": [
+    "-c:a",
+    "g723_1",
+    "-ar",
+    "8000",
+    "-ac",
+    "1"
+   ],
+   "celdas": [
+    {
+     "semilla": "a1",
+     "rc": 0,
+     "bytes": 480
+    },
+    {
+     "semilla": "a2",
+     "rc": 0,
+     "bytes": 480
+    }
+   ],
+   "escrito": 2,
+   "buena": true,
+   "prefijo_comun_n": 0,
+   "prefijo_comun_hex": ""
+  },
+  {
+   "formato": "roq",
+   "nota": "roq VIDEO: yuvj444p explicito (el audio roq_dpcm@22050 ya se fijo en C25)",
+   "argv_cod": [
+    "-c:v",
+    "roqvideo",
+    "-pix_fmt",
+    "yuvj444p",
+    "-s",
+    "320x240",
+    "-r",
+    "25"
+   ],
+   "celdas": [
+    {
+     "semilla": "v1",
+     "rc": 0,
+     "bytes": 31048
+    },
+    {
+     "semilla": "v2",
+     "rc": 0,
+     "bytes": 15269
+    }
+   ],
+   "escrito": 2,
+   "buena": true,
+   "prefijo_comun_n": 26,
+   "prefijo_comun_hex": "8410ffffffff190001100800000000004001f000080004000210"
+  },
+  {
+   "formato": "tco",
+   "nota": "g723_1: 8000 Hz (mismo fix de C25, ronda 9)",
+   "argv_cod": [
+    "-c:a",
+    "g723_1",
+    "-ar",
+    "8000",
+    "-ac",
+    "1"
+   ],
+   "celdas": [
+    {
+     "semilla": "a1",
+     "rc": 0,
+     "bytes": 480
+    },
+    {
+     "semilla": "a2",
+     "rc": 0,
+     "bytes": 480
+    }
+   ],
+   "escrito": 2,
+   "buena": true,
+   "prefijo_comun_n": 0,
+   "prefijo_comun_hex": ""
+  },
+  {
+   "formato": "tun",
+   "nota": "alp/tun: 22050 Hz exacto (\"Sample rate must be 22050 for TUN files\")",
+   "argv_cod": [
+    "-ar",
+    "22050"
+   ],
+   "celdas": [
+    {
+     "semilla": "a1",
+     "rc": 0,
+     "bytes": 6631
+    },
+    {
+     "semilla": "a2",
+     "rc": 0,
+     "bytes": 6631
+    }
+   ],
+   "escrito": 2,
+   "buena": true,
+   "prefijo_comun_n": 16,
+   "prefijo_comun_hex": "414c502008000000414450434d000001"
+  },
+  {
+   "formato": "vbn",
+   "nota": "vbn: codec y pix_fmt explicitos (image2 adivinaba mal)",
+   "argv_cod": [
+    "-c:v",
+    "vbn",
+    "-pix_fmt",
+    "rgba"
+   ],
+   "celdas": [
+    {
+     "semilla": "i1",
+     "rc": 0,
+     "bytes": 76992
+    },
+    {
+     "semilla": "i2",
+     "rc": 0,
+     "bytes": 76992
+    }
+   ],
+   "escrito": 2,
+   "buena": true,
+   "prefijo_comun_n": 64,
+   "prefijo_comun_hex": "1ef10d90030000000400000040010000f000000004000000030000000500000000000000002c0100000000000000000000000000000000000000000000000000"
+  },
+  {
+   "formato": "xface",
+   "nota": "xface: 48x48 fijo + monow (el encoder solo admite ese pix_fmt)",
+   "argv_cod": [
+    "-c:v",
+    "xface",
+    "-s",
+    "48x48",
+    "-pix_fmt",
+    "monow"
+   ],
+   "celdas": [
+    {
+     "semilla": "i1",
+     "rc": 0,
+     "bytes": 309
+    },
+    {
+     "semilla": "i2",
+     "rc": 0,
+     "bytes": 234
+    }
+   ],
+   "escrito": 2,
+   "buena": true,
+   "prefijo_comun_n": 0,
+   "prefijo_comun_hex": ""
+  },
+  {
+   "formato": "dv",
+   "nota": "dv: NTSC 720x480@29.97 yuv411p",
+   "argv_cod": [
+    "-s",
+    "720x480",
+    "-r",
+    "30000/1001",
+    "-pix_fmt",
+    "yuv411p",
+    "-c:v",
+    "dvvideo",
+    "-ar",
+    "48000",
+    "-ac",
+    "2"
+   ],
+   "celdas": [
+    {
+     "semilla": "v1",
+     "rc": 0,
+     "bytes": 2040000
+    },
+    {
+     "semilla": "v2",
+     "rc": 0,
+     "bytes": 2040000
+    }
+   ],
+   "escrito": 2,
+   "buena": true,
+   "prefijo_comun_n": 64,
+   "prefijo_comun_hex": "1f07003ff9797979ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+  },
+  {
+   "formato": "flm",
+   "nota": "filmstrip: rgba explicito (rawvideo por defecto, sin restriccion de tamano)",
+   "argv_cod": [
+    "-pix_fmt",
+    "rgba"
+   ],
+   "celdas": [
+    {
+     "semilla": "i1",
+     "rc": 0,
+     "bytes": 307236
+    },
+    {
+     "semilla": "i2",
+     "rc": 0,
+     "bytes": 307236
+    }
+   ],
+   "escrito": 2,
+   "buena": true,
+   "prefijo_comun_n": 0,
+   "prefijo_comun_hex": ""
+  },
+  {
+   "formato": "js",
+   "nota": "jacosub: `-h encoder=jacosub` -> \"no encoders for it are available\"",
+   "escrito": 0,
+   "buena": false,
+   "clase_real": "AVERROR_ENCODER_NOT_FOUND (mal clasificado como EINVAL)"
+  },
+  {
+   "formato": "sup",
+   "nota": "hdmv_pgs_subtitle: `-h encoder=hdmv_pgs_subtitle` -> \"no encoders for it are available\"",
+   "escrito": 0,
+   "buena": false,
+   "clase_real": "AVERROR_ENCODER_NOT_FOUND (mal clasificado como EINVAL)"
+  },
+  {
+   "formato": "chk",
+   "nota": "webm_chunk: exige fragmentar en varios ficheros con chunk_start_index/header -- no es 'una bandera', es otro modo de escritura",
+   "escrito": 0,
+   "buena": false,
+   "clase_real": "otro paradigma de invocacion, no una bandera"
+  }
+ ]
+}
