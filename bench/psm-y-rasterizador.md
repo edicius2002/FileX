@@ -833,8 +833,20 @@ bien puesta: sin él, esa tanda habría gastado hasta 300 s midiendo el ruido.
 
 ### 6.5 Lo que no se midió
 
-- **No se sondeó qué `--psm` usa el Tesseract embebido en Ghostscript.** Es lo único
-  que cerraría del todo el pendiente 7 de `invocacion-aristas.md`, y sigue **PENDIENTE**.
+- ~~**No se sondeó qué `--psm` usa el Tesseract embebido en Ghostscript.** Es lo único
+  que cerraría del todo el pendiente 7 de `invocacion-aristas.md`, y sigue **PENDIENTE**.~~
+  **CERRADO el 03/09/2026 por worker2 (`C24`, ronda 9) — `bench/psm-gs-y-crudos.md` §1.**
+  No hay switch: `-h` no lista ningún `psm`/`ocr`/`segmentation`, y un `-dOCRPageSegMode=N`
+  inventado no produce error ni efecto — Ghostscript no tiene ese parámetro expuesto.
+  **INFERIDO por huella de comportamiento, no sondeado directamente** (se declara así, no
+  como medida directa): en 10 celdas (`d2`/`d3` × 5 resoluciones, `-r` real, mismo
+  mecanismo que ya usa este informe), la salida de `gswin64c -sDEVICE=ocr` es **BYTE A
+  BYTE IDÉNTICA** a Tesseract 5.5.0 standalone con `--psm 6` en 2 de 10 celdas y su CER
+  coincide exacto o casi exacto en 8 de 10 — frente a `--psm 3` (plano en `d3`, 100,00 %
+  en las 5 resoluciones, mientras `gs` varía de 105 a 834 %) y `--psm 11` (diverge mucho
+  más: hasta 1 760 % donde `gs` da 715 %). **La huella distinguible de la sec.4.4 de este
+  mismo informe —invariante a la resolución— también se reproduce**: la curva de `gs`
+  sobre `d2` es literalmente plana (3,80/0,00/0,00/0,00/0,00), igual que la de `psm 6`.
 - **No se midió el Tesseract del contenedor** (`filex-c13`, Debian, `tesseract-ocr-spa`).
   Todo esto es el nativo de Windows con el `tessdata` de PDFgear.
 - **No se barrió el `--oem`** (motor LSTM / legacy / combinado), que es el otro
@@ -946,7 +958,9 @@ arrepentimiento**, como estableció M1.
 - **El efecto del `pHYs` sólo está medido con Tesseract.** Todo el corpus del proyecto
   está rasterizado sin declarar resolución: si PaddleOCR, RapidOCR o EasyOCR miran el
   metadato, **hay tablas que rehacer**. Es barato de comprobar y no está hecho.
-- **Qué `--psm` usa el Tesseract embebido en Ghostscript** sigue sin sondear.
+- ~~**Qué `--psm` usa el Tesseract embebido en Ghostscript** sigue sin sondear.~~ **CERRADO
+  el 03/09/2026 por worker2 — inferido como `psm 6` por huella de comportamiento (ver
+  sec.6.5).**
 - **La estrategia de dos intentos con `--psm` disjuntos (§7, punto 4) está propuesta y
   no medida.** Falta el criterio de selección entre las dos salidas, que no puede ser
   `rc` ni longitud a secas: `psm 5` sobre `d4e` devuelve 2 377 bytes de basura.

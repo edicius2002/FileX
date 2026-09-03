@@ -408,7 +408,16 @@ RUN apt-get update \
 
 **Tres cosas que sacar de esa tabla:**
 
-1. **Tesseract 5.5.0 externo falla en `d3` devolviendo un fichero de 0 bytes.** El Tesseract **embebido en Ghostscript** falla en el mismo documento **alucinando** (165,8 % de CER, `verificador-ghostscript.md`). **Mismo motor nominal, dos modos de fallo opuestos** — la diferencia tiene que estar en el preprocesado que aplica cada envoltorio. Es material para la heurística de degradación severa (B7): **un motor que devuelve 0 bytes y otro que devuelve más texto que la referencia son la misma señal de fallo vista desde dos lados.** **[PENDIENTE]** de aislar la causa.
+1. ~~**Tesseract 5.5.0 externo falla en `d3` devolviendo un fichero de 0 bytes.** El Tesseract **embebido en Ghostscript** falla en el mismo documento **alucinando** (165,8 % de CER, `verificador-ghostscript.md`). **Mismo motor nominal, dos modos de fallo opuestos** — la diferencia tiene que estar en el preprocesado que aplica cada envoltorio. Es material para la heurística de degradación severa (B7): **un motor que devuelve 0 bytes y otro que devuelve más texto que la referencia son la misma señal de fallo vista desde dos lados.** **[PENDIENTE]** de aislar la causa.~~ **CERRADO
+   el 03/09/2026 por worker2 (`C24`, ronda 9) — `bench/psm-gs-y-crudos.md` §1, y la causa NO
+   era el preprocesado.** Era el `--psm` por defecto, sin más: el Tesseract externo de esta
+   tabla no declara `--psm` (queda en el 3 de fábrica, que sobre `d3` da silencio —
+   `CLAUDE.md` trampa 8, «psm 3/4 devuelven 0 bytes»), y el embebido en Ghostscript se
+   comporta como `--psm 6` —**INFERIDO por huella de comportamiento, no sondeado
+   directamente: no hay switch que exponga el parámetro**—, que sobre el mismo documento
+   aluciona (misma trampa 8, «psm 6/11 devuelven 113,92 % y 188,61 %»). **Mismo motor,
+   mismo documento, `--psm` distinto por defecto: silencio y alucinación son ese único
+   parámetro, no dos preprocesados distintos.**
 2. **`escaneado_d2` es un contraejemplo a la regla R1, con n=1.** A 150 ppp da **0,00 %** y a sus 100 ppp nativos da **32,10 %**. `clamp(nativos, 100, 200)` le asigna 100 y **empeora**. La regla se midió sobre motores neuronales; **Tesseract no es uno de ellos** y su detector de líneas parece necesitar más píxeles. **[PENDIENTE]**: barrer la curva para Tesseract antes de aplicarle R1.
 3. **En `d4`, en cambio, R1 acierta de largo**: 82,89 % a 150 ppp frente a **51,15 %** a 200. Y **51,15 % deja a Tesseract el peor de los cinco motores** del corpus d4 (PaddleOCR 19,30 · RapidOCR+normalización 18,62 · Docling+RapidOCR 36,91 · RapidOCR ONNX 41,78 · EasyOCR 61,41). **Sigue teniendo una ventaja decisiva: VRAM 0 y va en el mismo contenedor que el resto.**
 
@@ -434,12 +443,23 @@ RUN apt-get update \
 ## 11. Lo que este informe NO ha medido — **[PENDIENTE]**
 
 1. **El 54,78 % indeterminado sigue indeterminado.** Peor: al revivir semiaristas de entrada, **2 868 aristas pasan de «muerta» a «sin veredicto»** (su otra mitad nunca se pudo materializar). Están contadas como nominales en la cifra conservadora, y **podrían ser recuperaciones adicionales**. Cerrarlo sigue exigiendo el corpus de C16.
-2. **La profundidad de los crudos de terceros.** Todo lo medido son ficheros que escribió el propio ImageMagick a 16 bits. Un `.rgb` de 8 bits de otra procedencia **daría basura con la misma bandera**, y no se sabe cuánta gente lo tiene a 8 bits.
+2. ~~**La profundidad de los crudos de terceros.** Todo lo medido son ficheros que escribió el propio ImageMagick a 16 bits. Un `.rgb` de 8 bits de otra procedencia **daría basura con la misma bandera**, y no se sabe cuánta gente lo tiene a 8 bits.~~ **CERRADO
+   parcialmente el 03/09/2026 por worker2 (`C25`, ronda 9) — `bench/psm-gs-y-crudos.md` §3.**
+   Un crudo `.rgb` de 8 bits/canal genuino, escrito por **ffmpeg** (no ImageMagick — otra
+   procedencia real), **no da basura** con la regla que §4.1 ya prescribía (derivar la
+   profundidad de bytes ÷ píxeles, no asumirla): la regla predice 8 bits y el RMSE contra la
+   referencia es **0, exacto**. Y el temor del pendiente resultó asimétrico: sub-asumir
+   profundidad (leer un crudo de 16 bits con `-depth 8`, ya medido en §4.1) es el fallo
+   PELIGROSO porque es silencioso; sobre-asumirla (leer un crudo de 8 bits con `-depth 16`,
+   medido ahora) es AUTOPROTECTOR — ImageMagick pide el doble de bytes de los que hay y
+   rehúsa escribir nada (`rc≠0`). Sigue **PENDIENTE**, y en sentido estricto: solo un formato
+   (`rgb` plano), una geometría y un productor externo — no cuánta gente en el mundo real
+   tiene sus crudos a 8 bits, que no es medible desde este repositorio.
 3. **`bayer` y `bayera`** no tienen referencia ideal: su recuperación está **supuesta**, no demostrada (≈366 aristas, 0,2 puntos).
 4. **Las 4 semiaristas de salida que resistieron el barrido** (`amv`, `gxf`, `mlp`, `thd`) y las 11 aristas del residuo con `received no packets`. Dos intentos gastados en cada una.
 5. **72 de las 102 extensiones de Gotenberg/LibreOffice** siguen sin semilla. El 3,1 % de C17 es cota inferior.
 6. **La curva de ppp de Tesseract.** `escaneado_d2` refuta R1 para este motor con n=1. No se ha barrido.
-7. **La causa de la asimetría entre el Tesseract externo (silencio) y el embebido en Ghostscript (alucinación)** sobre `escaneado_d3`.
+7. ~~**La causa de la asimetría entre el Tesseract externo (silencio) y el embebido en Ghostscript (alucinación)** sobre `escaneado_d3`.~~ **CERRADO el 03/09/2026 por worker2 — ver la corrección del punto 1 de §10: es el `--psm` por defecto (3 frente al 6 inferido de Ghostscript), no el preprocesado.**
 8. **Si estas aristas se piden.** Sigue abierto lo de siempre: recuperar `mxf → sgi` no vale lo mismo que recuperar `png → ico`. De las 27 aristas del residuo recuperadas, **las de la familia `ico` son las únicas que un producto real sirve todos los días**.
 9. **El coste en tiempo de P2-INV frente a la invocación de ConvertX.** No se ha medido: sondear el muxer y el codificador añade dos lanzamientos de proceso por arista, cacheables, pero no cuantificados aquí.
 
