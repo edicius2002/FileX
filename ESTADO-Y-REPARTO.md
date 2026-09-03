@@ -1399,7 +1399,7 @@ Los huecos **2, 3 y 4 están cerrados o refutados**, y el **2 lo está ahora con
 
 | Ruta | Para qué |
 |---|---|
-| `CLAUDE.md` | Las reglas de trabajo, las **109** trampas ya pagadas y las reglas de diseño no negociables. ~~24~~ — **la cifra llevaba setenta y ocho trampas desfasada**, que es el mismo defecto que esta sección viene a arreglar |
+| `CLAUDE.md` | Las reglas de trabajo, las **110** trampas ya pagadas y las reglas de diseño no negociables. ~~24~~ — **la cifra llevaba setenta y ocho trampas desfasada**, que es el mismo defecto que esta sección viene a arreglar |
 | **`bench/salidas-publicacion/MANIFIESTO.md`** | **El mapa `viejo → nuevo` de los 64 commits que reescribió el `filter-repo` del 31/08**, y el residuo que dejó la herramienta: 48 ocurrencias de la credencial en un `fast-export.original` de 57 MB **dentro de `.git`** |
 | `HUECOS.md` | Los cinco diferenciadores, con su veredicto y su evidencia |
 | `PLAN-ORQUESTADOR.md` | El plan de construcción: 7 hitos con criterio de aceptación |

@@ -637,12 +637,14 @@ class SelladoDelDisco(unittest.TestCase):
         `motor_contenedor.py` en producción."""
         from filex import motores
         sondeo.descongelar()
+        sellados = 0
         vistos = 0
         for cls in list(motores.MOTORES) + motores._descubrir():
             m = cls()
             d = sondeo.cargar(m.nombre)
             if not d or not d.get("huella"):
                 continue
+            sellados += 1
             m.sondear()
             if not m.disponible:
                 continue
@@ -652,7 +654,23 @@ class SelladoDelDisco(unittest.TestCase):
                 self.assertNotIn(m.nombre, diag["interprete_distinto"],
                                  "se declaró no comparable con SU PROPIO sello")
                 self.assertNotIn(m.nombre, diag["caducados"])
-        self.assertGreater(vistos, 0, "no se comprobó ningún motor sellado")
+        # Dos ausencias distintas, y confundirlas es la trampa 43: «no se
+        # puede» no es «no está».
+        #   - Sin un solo sello que comprobar, algo se ha roto de verdad.
+        #   - Con sellos pero sin NINGÚN ejecutable, esta prueba no puede
+        #     ejercer nada, y decirlo es un salto declarado, no un verde.
+        # El segundo caso es el runner de Linux, MEDIDO: `python -m filex
+        # motores` imprime ✗ en los siete (falta `magick`, `gs`, `ffmpeg`, y
+        # no está ninguna imagen de contenedor). Antes de la ronda 7 esto no
+        # se notaba porque la prueba se paraba en la guarda del `build` y
+        # pasaba en vacío en todas partes -- trampa 109.
+        self.assertGreater(sellados, 0,
+                           "no hay ni un sondeo sellado que comprobar")
+        if not vistos:
+            self.skipTest(
+                "%d motores sellados y NINGUNO disponible en esta máquina: "
+                "sin ejecutable no hay `build` que comparar, así que esta "
+                "prueba no puede ejercer la ruta que protege." % sellados)
 
 
 # --------------------------------------------------------------------------
