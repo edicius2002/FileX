@@ -1,0 +1,187 @@
+{
+ "entrada": "entrada.txt (bench/salidas-hito5/entradas/), via LibreOffice en las dos vías",
+ "n": 11,
+ "testigo_proceso_antes": {
+  "ms": 89.56,
+  "sucia": true
+ },
+ "testigo_proceso_despues": {
+  "ms": 32.15,
+  "sucia": true
+ },
+ "sucia": true,
+ "celdas": [
+  {
+   "i": 0,
+   "gotenberg": {
+    "ms": 4220.601900000474,
+    "http": 200,
+    "bytes": 16317
+   },
+   "c13": {
+    "ms": 6294.406399998479,
+    "motivo": "",
+    "ok": true,
+    "bytes": 16940
+   }
+  },
+  {
+   "i": 1,
+   "gotenberg": {
+    "ms": 438.310100000308,
+    "http": 200,
+    "bytes": 16317
+   },
+   "c13": {
+    "ms": 2628.8863999998284,
+    "motivo": "",
+    "ok": true,
+    "bytes": 16940
+   }
+  },
+  {
+   "i": 2,
+   "gotenberg": {
+    "ms": 438.2912999990367,
+    "http": 200,
+    "bytes": 16317
+   },
+   "c13": {
+    "ms": 3241.034500000751,
+    "motivo": "",
+    "ok": true,
+    "bytes": 16940
+   }
+  },
+  {
+   "i": 3,
+   "gotenberg": {
+    "ms": 375.1436999991711,
+    "http": 200,
+    "bytes": 16317
+   },
+   "c13": {
+    "ms": 2554.003700000976,
+    "motivo": "",
+    "ok": true,
+    "bytes": 16940
+   }
+  },
+  {
+   "i": 4,
+   "gotenberg": {
+    "ms": 381.20060000073863,
+    "http": 200,
+    "bytes": 16317
+   },
+   "c13": {
+    "ms": 3918.703800000003,
+    "motivo": "",
+    "ok": true,
+    "bytes": 16940
+   }
+  },
+  {
+   "i": 5,
+   "gotenberg": {
+    "ms": 633.6074999999255,
+    "http": 200,
+    "bytes": 16317
+   },
+   "c13": {
+    "ms": 3209.011899998586,
+    "motivo": "",
+    "ok": true,
+    "bytes": 16940
+   }
+  },
+  {
+   "i": 6,
+   "gotenberg": {
+    "ms": 710.9335999994073,
+    "http": 200,
+    "bytes": 16317
+   },
+   "c13": {
+    "ms": 4134.394099999554,
+    "motivo": "",
+    "ok": true,
+    "bytes": 16940
+   }
+  },
+  {
+   "i": 7,
+   "gotenberg": {
+    "ms": 483.195999999225,
+    "http": 200,
+    "bytes": 16317
+   },
+   "c13": {
+    "ms": 3481.5287999990687,
+    "motivo": "",
+    "ok": true,
+    "bytes": 16940
+   }
+  },
+  {
+   "i": 8,
+   "gotenberg": {
+    "ms": 530.3171999985352,
+    "http": 200,
+    "bytes": 16317
+   },
+   "c13": {
+    "ms": 3546.787699999186,
+    "motivo": "",
+    "ok": true,
+    "bytes": 16940
+   }
+  },
+  {
+   "i": 9,
+   "gotenberg": {
+    "ms": 411.5407999997842,
+    "http": 200,
+    "bytes": 16317
+   },
+   "c13": {
+    "ms": 3858.527899999899,
+    "motivo": "",
+    "ok": true,
+    "bytes": 16940
+   }
+  },
+  {
+   "i": 10,
+   "gotenberg": {
+    "ms": 1106.8293000007543,
+    "http": 200,
+    "bytes": 16317
+   },
+   "c13": {
+    "ms": 2740.2396999987104,
+    "motivo": "",
+    "ok": true,
+    "bytes": 16940
+   }
+  }
+ ],
+ "gotenberg": {
+  "n": 11,
+  "mediana_ms": 483.2,
+  "p90_ms": 3597.8,
+  "min_ms": 375.1,
+  "max_ms": 4220.6,
+  "deriva_primera_vs_segunda_mitad": 1.328
+ },
+ "c13": {
+  "n": 11,
+  "mediana_ms": 3481.5,
+  "p90_ms": 5862.4,
+  "min_ms": 2554.0,
+  "max_ms": 6294.4,
+  "deriva_primera_vs_segunda_mitad": 1.084
+ },
+ "huerfanos_docker_ps_a": [],
+ "ratio_c13_sobre_gotenberg_mediana": 7.21
+}
