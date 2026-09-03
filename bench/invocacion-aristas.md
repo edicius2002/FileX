@@ -408,7 +408,16 @@ RUN apt-get update \
 
 **Tres cosas que sacar de esa tabla:**
 
-1. **Tesseract 5.5.0 externo falla en `d3` devolviendo un fichero de 0 bytes.** El Tesseract **embebido en Ghostscript** falla en el mismo documento **alucinando** (165,8 % de CER, `verificador-ghostscript.md`). **Mismo motor nominal, dos modos de fallo opuestos** — la diferencia tiene que estar en el preprocesado que aplica cada envoltorio. Es material para la heurística de degradación severa (B7): **un motor que devuelve 0 bytes y otro que devuelve más texto que la referencia son la misma señal de fallo vista desde dos lados.** **[PENDIENTE]** de aislar la causa.
+1. ~~**Tesseract 5.5.0 externo falla en `d3` devolviendo un fichero de 0 bytes.** El Tesseract **embebido en Ghostscript** falla en el mismo documento **alucinando** (165,8 % de CER, `verificador-ghostscript.md`). **Mismo motor nominal, dos modos de fallo opuestos** — la diferencia tiene que estar en el preprocesado que aplica cada envoltorio. Es material para la heurística de degradación severa (B7): **un motor que devuelve 0 bytes y otro que devuelve más texto que la referencia son la misma señal de fallo vista desde dos lados.** **[PENDIENTE]** de aislar la causa.~~ **CERRADO
+   el 03/09/2026 por worker2 (`C24`, ronda 9) — `bench/psm-gs-y-crudos.md` §1, y la causa NO
+   era el preprocesado.** Era el `--psm` por defecto, sin más: el Tesseract externo de esta
+   tabla no declara `--psm` (queda en el 3 de fábrica, que sobre `d3` da silencio —
+   `CLAUDE.md` trampa 8, «psm 3/4 devuelven 0 bytes»), y el embebido en Ghostscript se
+   comporta como `--psm 6` —**INFERIDO por huella de comportamiento, no sondeado
+   directamente: no hay switch que exponga el parámetro**—, que sobre el mismo documento
+   aluciona (misma trampa 8, «psm 6/11 devuelven 113,92 % y 188,61 %»). **Mismo motor,
+   mismo documento, `--psm` distinto por defecto: silencio y alucinación son ese único
+   parámetro, no dos preprocesados distintos.**
 2. **`escaneado_d2` es un contraejemplo a la regla R1, con n=1.** A 150 ppp da **0,00 %** y a sus 100 ppp nativos da **32,10 %**. `clamp(nativos, 100, 200)` le asigna 100 y **empeora**. La regla se midió sobre motores neuronales; **Tesseract no es uno de ellos** y su detector de líneas parece necesitar más píxeles. **[PENDIENTE]**: barrer la curva para Tesseract antes de aplicarle R1.
 3. **En `d4`, en cambio, R1 acierta de largo**: 82,89 % a 150 ppp frente a **51,15 %** a 200. Y **51,15 % deja a Tesseract el peor de los cinco motores** del corpus d4 (PaddleOCR 19,30 · RapidOCR+normalización 18,62 · Docling+RapidOCR 36,91 · RapidOCR ONNX 41,78 · EasyOCR 61,41). **Sigue teniendo una ventaja decisiva: VRAM 0 y va en el mismo contenedor que el resto.**
 
@@ -439,7 +448,7 @@ RUN apt-get update \
 4. **Las 4 semiaristas de salida que resistieron el barrido** (`amv`, `gxf`, `mlp`, `thd`) y las 11 aristas del residuo con `received no packets`. Dos intentos gastados en cada una.
 5. **72 de las 102 extensiones de Gotenberg/LibreOffice** siguen sin semilla. El 3,1 % de C17 es cota inferior.
 6. **La curva de ppp de Tesseract.** `escaneado_d2` refuta R1 para este motor con n=1. No se ha barrido.
-7. **La causa de la asimetría entre el Tesseract externo (silencio) y el embebido en Ghostscript (alucinación)** sobre `escaneado_d3`.
+7. ~~**La causa de la asimetría entre el Tesseract externo (silencio) y el embebido en Ghostscript (alucinación)** sobre `escaneado_d3`.~~ **CERRADO el 03/09/2026 por worker2 — ver la corrección del punto 1 de §10: es el `--psm` por defecto (3 frente al 6 inferido de Ghostscript), no el preprocesado.**
 8. **Si estas aristas se piden.** Sigue abierto lo de siempre: recuperar `mxf → sgi` no vale lo mismo que recuperar `png → ico`. De las 27 aristas del residuo recuperadas, **las de la familia `ico` son las únicas que un producto real sirve todos los días**.
 9. **El coste en tiempo de P2-INV frente a la invocación de ConvertX.** No se ha medido: sondear el muxer y el codificador añade dos lanzamientos de proceso por arista, cacheables, pero no cuantificados aquí.
 
