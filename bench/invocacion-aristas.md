@@ -443,7 +443,18 @@ RUN apt-get update \
 ## 11. Lo que este informe NO ha medido — **[PENDIENTE]**
 
 1. **El 54,78 % indeterminado sigue indeterminado.** Peor: al revivir semiaristas de entrada, **2 868 aristas pasan de «muerta» a «sin veredicto»** (su otra mitad nunca se pudo materializar). Están contadas como nominales en la cifra conservadora, y **podrían ser recuperaciones adicionales**. Cerrarlo sigue exigiendo el corpus de C16.
-2. **La profundidad de los crudos de terceros.** Todo lo medido son ficheros que escribió el propio ImageMagick a 16 bits. Un `.rgb` de 8 bits de otra procedencia **daría basura con la misma bandera**, y no se sabe cuánta gente lo tiene a 8 bits.
+2. ~~**La profundidad de los crudos de terceros.** Todo lo medido son ficheros que escribió el propio ImageMagick a 16 bits. Un `.rgb` de 8 bits de otra procedencia **daría basura con la misma bandera**, y no se sabe cuánta gente lo tiene a 8 bits.~~ **CERRADO
+   parcialmente el 03/09/2026 por worker2 (`C25`, ronda 9) — `bench/psm-gs-y-crudos.md` §3.**
+   Un crudo `.rgb` de 8 bits/canal genuino, escrito por **ffmpeg** (no ImageMagick — otra
+   procedencia real), **no da basura** con la regla que §4.1 ya prescribía (derivar la
+   profundidad de bytes ÷ píxeles, no asumirla): la regla predice 8 bits y el RMSE contra la
+   referencia es **0, exacto**. Y el temor del pendiente resultó asimétrico: sub-asumir
+   profundidad (leer un crudo de 16 bits con `-depth 8`, ya medido en §4.1) es el fallo
+   PELIGROSO porque es silencioso; sobre-asumirla (leer un crudo de 8 bits con `-depth 16`,
+   medido ahora) es AUTOPROTECTOR — ImageMagick pide el doble de bytes de los que hay y
+   rehúsa escribir nada (`rc≠0`). Sigue **PENDIENTE**, y en sentido estricto: solo un formato
+   (`rgb` plano), una geometría y un productor externo — no cuánta gente en el mundo real
+   tiene sus crudos a 8 bits, que no es medible desde este repositorio.
 3. **`bayer` y `bayera`** no tienen referencia ideal: su recuperación está **supuesta**, no demostrada (≈366 aristas, 0,2 puntos).
 4. **Las 4 semiaristas de salida que resistieron el barrido** (`amv`, `gxf`, `mlp`, `thd`) y las 11 aristas del residuo con `received no packets`. Dos intentos gastados en cada una.
 5. **72 de las 102 extensiones de Gotenberg/LibreOffice** siguen sin semilla. El 3,1 % de C17 es cota inferior.
