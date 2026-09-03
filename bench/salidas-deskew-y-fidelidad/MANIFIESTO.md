@@ -43,8 +43,14 @@ python bench/salidas-deskew-y-fidelidad/raster_b8.py
 - `raster_b8.py` — genera `img/` y `rasteres.json`.
 - `b8_tesseract.py` → `python bench/salidas-deskew-y-fidelidad/b8_tesseract.py --reps 3`
   — produce `json/b8_tesseract.json` y `texto/tesseract__*.txt` (20 celdas, n=3, 97,7 s).
-- `b8_rapidocr.py` → `python bench/salidas-deskew-y-fidelidad/b8_rapidocr.py --reps 3`
-  — produce `json/b8_rapidocr.json` y `texto/rapidocr__*.txt`. Toma el lock de GPU
-  (`gpu.Lock("B8-rapidocr")`) para toda la tanda.
+- `b8_rapidocr.py` → `.venv-ai/Scripts/python.exe bench/salidas-deskew-y-fidelidad/b8_rapidocr.py --reps 3`
+  (necesita `rapidocr`+`torch` CUDA, no están en `.venv-mcp-filex`) — produce
+  `json/b8_rapidocr.json` y `texto/rapidocr__*.txt` (20 celdas, n=3, 165,7 s, etiqueta de
+  ruido `limpia`). Toma el lock de GPU (`gpu.Lock("B8-rapidocr")`) para toda la tanda.
+- `c18_repro_i1.py` → `python bench/salidas-deskew-y-fidelidad/c18_repro_i1.py --reps 3`
+  — reproduce el camino I1 de `bench/fidelidad-caminos.md` con sus parámetros literales
+  (ppp=150 solo en el primer paso, idioma `eng`, fórmula de similitud exacta). Produce
+  `json/c18_repro_i1.json`. No toca la GPU. Usa un directorio de trabajo desechable
+  (`_tmp_c18/`, borrado tras cada ejecución) para los tres pasos intermedios.
 
 Informe: `bench/deskew-y-fidelidad.md`.
