@@ -202,6 +202,63 @@ class Confinar(unittest.TestCase):
             self.assertFalse(nombre_seguro("x.png."))
 
 
+class OraculoTemporalN9(unittest.TestCase):
+    """N9 (`bench/oraculo-y-gotenberg.md` §1): trampa 28 dice que «prohibido»
+    corta en R1 sin tocar disco y es ×12-20 más rápido que «no existe»/«existe»,
+    que sí pagan `realpath`. Es un PARÁMETRO de `Confinamiento`, no el
+    comportamiento por defecto: sólo la API HTTP lo activa.
+    """
+
+    def setUp(self):
+        self.base = tempfile.mkdtemp(prefix="filex-test-n9-")
+        self.permitido = os.path.join(self.base, "permitido")
+        os.makedirs(self.permitido, exist_ok=True)
+        self.existe = os.path.join(self.permitido, "x.txt")
+        open(self.existe, "w").close()
+        self.no_existe = os.path.join(self.permitido, "no_existe.txt")
+        self.prohibido = os.path.join(self.base, "fuera", "x.txt")
+        self.addCleanup(shutil.rmtree, self.base, ignore_errors=True)
+
+    def test_por_defecto_NO_ecualiza(self):
+        # Regresión: si esto se activara solo, CLI/watcher/MCP pagarían un
+        # suelo que no les hace falta sin que nadie lo haya decidido.
+        c = Confinamiento([self.permitido])
+        self.assertFalse(c.ecualizar_temporal)
+
+    def test_ecualizado_el_prohibido_deja_de_ser_instantaneo(self):
+        import time
+        from filex.confinamiento import PISO_TEMPORAL_S
+        c = Confinamiento([self.permitido], ecualizar_temporal=True)
+        ini = time.perf_counter()
+        with self.assertRaises(Denegado):
+            c.resolver(self.prohibido)
+        transcurrido = time.perf_counter() - ini
+        self.assertGreaterEqual(transcurrido, PISO_TEMPORAL_S)
+
+    def test_ecualizado_las_tres_vias_convergen_al_mismo_suelo(self):
+        # `resolver()` NO comprueba existencia — sólo que la ruta resuelva
+        # dentro de la raíz (`realpath` no exige que el fichero exista) —, así
+        # que `no_existe` no lanza `Denegado` aquí: quien distingue «no
+        # existe» es `FileX.convertir()`, un paso más arriba, con su propio
+        # `os.path.isfile()`. Esta prueba no exige que las tres tarden IGUAL
+        # (una vía lenta por carga real puede superar el suelo, y eso es
+        # correcto: el suelo es un MÍNIMO, no un tope). Exige que NINGUNA
+        # quede por debajo.
+        import time
+        from filex.confinamiento import PISO_TEMPORAL_S
+        c = Confinamiento([self.permitido], ecualizar_temporal=True)
+        for ruta, se_deniega in ((self.prohibido, True), (self.no_existe, False),
+                                 (self.existe, False)):
+            with self.subTest(ruta=os.path.basename(ruta)):
+                ini = time.perf_counter()
+                if se_deniega:
+                    with self.assertRaises(Denegado):
+                        c.resolver(ruta)
+                else:
+                    c.resolver(ruta)
+                self.assertGreaterEqual(time.perf_counter() - ini, PISO_TEMPORAL_S)
+
+
 class Invocar(unittest.TestCase):
     def test_una_cadena_no_es_argv(self):
         # Aceptarla implicaría shell. morphos usa `bash -c` y tiene RCE.

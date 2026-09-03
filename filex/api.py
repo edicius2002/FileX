@@ -403,7 +403,10 @@ def main(argv=None) -> int:
         return 2
 
     try:
-        fx = FileX(raices_lectura=args.raiz)
+        # N9: solo esta superficie tiene un adversario capaz de cronometrar
+        # (un navegador vía DNS-rebinding); ver `bench/oraculo-y-gotenberg.md`
+        # §1. CLI, watcher y MCP construyen su `FileX` sin este parámetro.
+        fx = FileX(raices_lectura=args.raiz, ecualizar_temporal=True)
     except ValueError as e:
         print(f"no se puede arrancar: {e}", file=sys.stderr)
         return 2
