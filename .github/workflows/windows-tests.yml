@@ -1,0 +1,112 @@
+name: windows-tests
+
+# Los módulos de prueba que un runner Windows HOSPEDADO por GitHub
+# (`windows-latest`) puede ejecutar, medidos uno a uno con
+# `ci/sonda_windows_hosted.py` y congelados en `ci/windows-hosted-apto.json`.
+#
+# ─────────────────────────────────────────────────────────────────────────
+# QUÉ CUBRE ESTE JOB Y QUÉ NO -- para que nadie lo confunda con cobertura
+# completa de Windows:
+# ─────────────────────────────────────────────────────────────────────────
+# `windows-latest` es una VM DESECHABLE que GitHub hospeda y destruye después
+# de cada ejecución -- sin GPU, sin Docker con contenedores reales y sin la
+# tarjeta física del proyecto. Lo que SÍ tiene es NTFS de verdad, y con eso
+# basta para las pruebas `win32` que no piden tarjeta ni contenedor: `os.replace`
+# como cerrojo real, el mutex con nombre `Global\`, las DACL, los nombres
+# cortos 8.3. Es justo la mitad que `ubuntu-latest` (`suite.yml`) no puede
+# probar y que hasta ahora sólo se había visto en la máquina de escritorio del
+# proyecto o deducido a mano.
+#
+# La GPU, Docker con contenedores reales y la tarjeta física siguen siendo
+# terreno EXCLUSIVO de `windows-gpu.yml` (runner autoalojado -- C44,
+# `bench/runner-autoalojado.md` -- que hoy no tiene ningún runner registrado:
+# ese fichero es diseño, no ejecución todavía). Este job no comparte ese
+# problema de seguridad: no hay ningún recurso físico que proteger, así que no
+# necesita `environment` ni aprobación manual -- la propia decisión de C44 de
+# NO montar un runner autoalojado en el escritorio del usuario no cambia aquí.
+#
+# La lista de aptos/no aptos se MIDE en el propio `windows-latest`, no se
+# deduce de la de Linux (`ci/linux-apto.json`) ni de la máquina de escritorio
+# del proyecto (WSL2 sobre DrvFs): trampa 104, ver `ci/sonda_windows_hosted.py`
+# y `bench/ci-windows-hosted.md` para el detalle y el motivo de cada módulo.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      medir:
+        description: >-
+          Volver a MEDIR qué módulos son aptos en windows-latest, en vez de
+          correr la lista ya congelada. Escribe un JSON de resultado y lo sube
+          como artefacto -- NO sobreescribe ci/windows-hosted-apto.json (eso
+          se congela a mano, tras revisar la medida real). Por defecto NO.
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: windows-tests-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          # El corpus son 254 MB en Git LFS y la cuota gratuita es de 1 GB de
+          # ancho de banda AL MES (misma regla que suite.yml/integridad.yml).
+          # Ninguno de los módulos que este job ejecuta lee `corpus/`.
+          lfs: false
+
+      - uses: actions/setup-python@v7
+        with:
+          # El proyecto declara `requires-python = ">=3.11"` y se mide en
+          # 3.11.x -- misma versión que suite.yml e integridad.yml, y por el
+          # mismo motivo (trampa 105): la huella del código depende del
+          # intérprete, no sólo del código.
+          python-version: '3.11'
+
+      - name: Declarar el intérprete y el entorno
+        shell: pwsh
+        run: |
+          python -VV
+          Write-Host "plataforma: $(python -c 'import sys; print(sys.platform)')"
+          Write-Host "docker:     $(if (Get-Command docker -ErrorAction SilentlyContinue) {'presente'} else {'AUSENTE'})"
+          Write-Host "nvidia-smi: $(if (Get-Command nvidia-smi -ErrorAction SilentlyContinue) {'presente'} else {'AUSENTE'})"
+
+      - name: El paquete importa y la CLI arranca
+        shell: pwsh
+        run: |
+          python -c "import filex; print('filex', filex.__file__)"
+          python -m filex motores
+
+      - name: >-
+          Medir módulo a módulo en ESTE windows-latest (sólo si se pide
+          explícitamente con workflow_dispatch, medir=true)
+        if: github.event_name == 'workflow_dispatch' && inputs.medir
+        shell: pwsh
+        run: python ci/sonda_windows_hosted.py --tope 90 --json ci-windows-hosted-medido.json
+
+      - uses: actions/upload-artifact@v7
+        if: github.event_name == 'workflow_dispatch' && inputs.medir
+        with:
+          name: windows-hosted-medido
+          path: ci-windows-hosted-medido.json
+
+      - name: >-
+          Correr la lista YA CONGELADA (ci/windows-hosted-apto.json), si
+          existe y no se pidió remedir
+        if: >-
+          !(github.event_name == 'workflow_dispatch' && inputs.medir) &&
+          hashFiles('ci/windows-hosted-apto.json') != ''
+        shell: pwsh
+        run: |
+          $modulos = (python -c "import json; print(' '.join('pruebas.'+m for m in json.load(open('ci/windows-hosted-apto.json'))['aptos']))")
+          Write-Host "ejecutando: $modulos"
+          python -m unittest $modulos.Split(' ')
