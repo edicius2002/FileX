@@ -69,6 +69,15 @@ El segundo nivel de la clasificación separa cinco aristas que no tienen flujo s
 
 **Cifra útil:** 5/15 son irreparables por construcción (`no_aplica`); 9/15 siguen candidatas a una invocación distinta; 1/15 requiere soporte de codificador. No se reintentó ninguna: los intentos de esta deuda ya están gastados.
 
+**CERRADO el 03/09/2026 por worker2 (`C25`, ronda 9) — `bench/psm-gs-y-crudos.md` §2: las
+9 «grafo de filtros» arreglan las 9/9 con UN solo filtro (`-af`/`-vf`), no un grafo.** Bajando
+del nombre genérico del nodo (`af#0:0`/`vf#0:0`) al mensaje del encoder salen tres causas
+distintas — channel layout ambiguo (`aptx`, `msbc`, `tta`), frecuencia fija del codificador
+(`loas`/`uw` a 22 050 Hz, `avi`/`mov` a 8 000 Hz) y geometría inválida (`webp`/`bmp`, con un
+techo de macrobloques en `rv10` que ni siquiera el múltiplo de 16 evita) — y ninguna necesitaba
+`filter_complex`. La etiqueta de esta tabla acertó el SITIO del arreglo, no la naturaleza de
+la causa.
+
 ## Verificación
 
 - Prueba roja y verde: V10 con audio y `bitrate_audio_bps` vuelve a `informativo`; el motor no publica la tasa pedida como obtenida.

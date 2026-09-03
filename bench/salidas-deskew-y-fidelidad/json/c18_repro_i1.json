@@ -1,0 +1,45 @@
+{
+  "camino": "I1 (pdf con texto -> png 150ppp -> pdf sin flags -> txt OCR eng)",
+  "entrada": "tipico_texto.pdf",
+  "parametros_literales": {
+    "ppp_rasterizado_paso1": 150,
+    "ppp_paso_ocr_final": "sin -r explicito (por defecto del dispositivo ocr)",
+    "idioma_ocr": "eng (TESSDATA_PREFIX solo trae eng+osd, sin -sOCRLanguage=)",
+    "formula_similitud": "sum(matching_blocks)/len(_norm(original)); _norm quita todo salvo [0-9a-zA-Z] y pasa a minusculas"
+  },
+  "reps": 3,
+  "determinista": true,
+  "texto_original": "     FileX - documento de prueba con texto seleccionable\n     Segunda linea: acentos aeiou n ˆ y simbolos % & @\n     Tabla:  Col A    Col B    Col C\n             1        2        3\n",
+  "texto_ocr": "FileX - documento de prueba con texto seleccionable\nSegunda linea: acentos aeiou n” y simbolos % & @\nTabla: ColA ColB ColG\n\n1 2 3\n",
+  "similitud": 0.9896907216494846,
+  "similitud_fmt_1dp": "99.0%",
+  "afirmacion_original": "99,0% (bench/fidelidad-caminos.md linea 196)",
+  "afirmacion_verificador_ghostscript": "94,7-97,1% NO REPRODUCIDO (bench/verificador-ghostscript.md §5.7)",
+  "veredicto": "REPRODUCIDO",
+  "filas_crudas": [
+    {
+      "rc_paso1": 0,
+      "rc_paso2": 0,
+      "rc_paso3": 0,
+      "texto": "FileX - documento de prueba con texto seleccionable\nSegunda linea: acentos aeiou n” y simbolos % & @\nTabla: ColA ColB ColG\n\n1 2 3\n",
+      "sha256_paso3": "8566eafdb8d7648766036c494cd374b7b3e0d1da939911adbd5b69a80d6abb84",
+      "bytes_paso3": 132
+    },
+    {
+      "rc_paso1": 0,
+      "rc_paso2": 0,
+      "rc_paso3": 0,
+      "texto": "FileX - documento de prueba con texto seleccionable\nSegunda linea: acentos aeiou n” y simbolos % & @\nTabla: ColA ColB ColG\n\n1 2 3\n",
+      "sha256_paso3": "8566eafdb8d7648766036c494cd374b7b3e0d1da939911adbd5b69a80d6abb84",
+      "bytes_paso3": 132
+    },
+    {
+      "rc_paso1": 0,
+      "rc_paso2": 0,
+      "rc_paso3": 0,
+      "texto": "FileX - documento de prueba con texto seleccionable\nSegunda linea: acentos aeiou n” y simbolos % & @\nTabla: ColA ColB ColG\n\n1 2 3\n",
+      "sha256_paso3": "8566eafdb8d7648766036c494cd374b7b3e0d1da939911adbd5b69a80d6abb84",
+      "bytes_paso3": 132
+    }
+  ]
+}
