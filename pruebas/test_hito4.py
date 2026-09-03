@@ -221,11 +221,35 @@ class Cobertura(unittest.TestCase):
     def test_el_aviso_de_rasterizacion_viaja_al_modelo(self):
         """El fallo de `resvg`: `rc=0`, PNG válido, geometría exacta y **ni una
         letra** (`bench/aristas-nominales.md` §8.2). El contrato no lo atrapa,
-        así que el modelo tiene que enterarse **antes**, no después."""
+        así que el modelo tiene que enterarse **antes**, no después.
+
+        No fija el par: busca CUALQUIER arista real que rasterice hacia un
+        destino que admite texto. Un par fijo (`svg→pdf`) dejó de servir el
+        03/09 cuando `worker7` añadió `("svg", "pdf")` sin rasterizar a
+        `LibreOfficeEnContenedor._DECLARADAS` (`bench/aristas-documentales-
+        cierre.md` §9): el planificador, correctamente, empezó a preferirlo
+        sobre la vía de ImageMagick que rasterizaba — el criterio amarillo
+        del hito 1 funcionando como se diseñó, no una regresión. Buscar en
+        vivo hace que la prueba siga siendo un tripwire real en vez de
+        depender de qué arista sea hoy la peor disponible."""
+        from filex import formatos as F
+
+        def _rasteriza_hacia_texto(a):
+            if not a.rasteriza:
+                return False
+            d = F.formato(a.destino)
+            return d is not None and d.texto
+
+        candidato = next(
+            (a for a in self.sv.fx.grafo.aristas if _rasteriza_hacia_texto(a)), None)
+        if candidato is None:
+            self.skipTest("ningún par real rasteriza hacia un destino con texto "
+                          "en esta máquina — ver bench/aristas-documentales-cierre.md §9")
         r = self.sv.despachar("list_targets",
-                              {"formato_origen": "svg", "formato_destino": "pdf"})
+                              {"formato_origen": candidato.origen,
+                               "formato_destino": candidato.destino})
         if not r.get("posible"):
-            self.skipTest("sin motor svg→pdf en esta máquina")
+            self.skipTest("la arista candidata dejó de ser alcanzable")
         self.assertIn("aviso", r)
         self.assertIn("texto", r["aviso"])
 
