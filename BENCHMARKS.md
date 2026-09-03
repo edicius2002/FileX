@@ -22,7 +22,7 @@ va al lado, nunca en una nota aparte que nadie lee.
 | 2 | **Leer cabeceras en proceso es 145× más barato que lanzar un subproceso** (0,372 ms frente a 54,06 ms por fichero, mediana de 53 salidas × 15 repeticiones) | El coste no está en leer los bytes: está en crear el proceso | `bench/coste-verificacion.md` §0 y §4 |
 | 3 | **GPU en un vídeo largo suelto: ×7,68. En un lote de 8 clips cortos: ×4,10** — el lote **diluye** la ventaja de la GPU, no la anula | Un «×N» sin la duración de la entrada no es un número | `bench/hito2-nvenc.md` §5 |
 | 4 | **FileX añade +3,6 % (27,2 ms) sobre un `ffmpeg` NVENC crudo** de 753,5 ms (n=9, clip de 5 s) | El orquestador no se come la ventaja de la GPU | `bench/hito2-nvenc.md` §5 |
-| 5 | **La exclusión de máquina (mutex + candado de fichero + identidad NTFS) cuesta el 0,319 % de una conversión** (1.169,7 µs sobre 367,0 ms, n=20.000 por celda) | Cerrar la carrera entre dos procesos `filex` no cuesta rendimiento medible | `bench/cerrojo-unico.md` §5 |
+| 5 | **La exclusión de máquina (mutex + candado de fichero + identidad NTFS) cuesta el 0,319 % de una conversión** (1.169,7 µs de cerrojo, n=20.000 por celda, sobre una conversión `png→webp` de 367,0 ms, n=11) | Cerrar la carrera entre dos procesos `filex` no cuesta rendimiento medible | `bench/cerrojo-unico.md` §5 |
 | 6 | **Frente a Gotenberg, mismo día y misma máquina: FileX-en-contenedor cubre 7/7 conversiones (Gotenberg 6/7, falla `epub→pdf`), pero es ×7,21 más lento por mediana** (n=11 por vía) | Cobertura completa tiene un precio de latencia, medido y no escondido | `bench/gotenberg-y-mcp.md` (C35) + `bench/oraculo-y-gotenberg.md` §2.2 |
 
 ---
@@ -31,7 +31,7 @@ va al lado, nunca en una nota aparte que nadie lee.
 
 **La cifra central: 0,032 %.** Las 39 órdenes del patrón oro convierten en 74.865 ms;
 verificarlas las 39 con el motor en proceso cuesta 24,2 ms. Por categoría, la ratio va del
-0,14 % (vídeo) al 0,36 % (datos), y **la peor ratio individual de las 39 es el 3,14 %** — no
+0,14 % (pdf) al 0,36 % (datos), y **la peor ratio individual de las 39 es el 3,14 %** — no
 hay ni un caso en que verificar se acerque a costar lo que convertir. *(`bench/coste-verificacion.md`
 §2 y §3.)*
 
@@ -42,7 +42,7 @@ la ratio verificar/convertir sube al **9,6 %** sobre las 39 órdenes; en **15 de
 (38 %)**, verificar con subprocesos cuesta **más** que convertir, hasta **397 %** en
 `flac → wav`. El paralelismo no lo salva: el escalado se estanca en ×1,79 con 24 hilos sobre
 12 núcleos, porque el cuello es la creación de proceso, no la CPU ni el disco.
-*(`bench/coste-verificacion.md` §3 y §4.)*
+*(`bench/coste-verificacion.md` §3 y §5; el 145× también en §0 y §4.)*
 
 **Lo que la verificación atrapa, y a qué coste.** Reproducidos con los dos motores (en
 proceso y por subproceso), el verificador atrapa los cinco fallos reales documentados en el
@@ -57,8 +57,8 @@ proyecto, con **0 falsos positivos sobre las 53 salidas del patrón oro**:
 | Fichero de 0 bytes declarado como éxito | `video-audio-mcp` | 0,25 ms |
 
 *(`bench/coste-verificacion.md` §6.)* Los tres primeros son exactamente los fallos que
-`bench/competidores.md` §5 y §6 documentó al hacer convertir el corpus real a SnapOtter y
-ConvertX (ver §4 más abajo).
+`bench/competidores.md` §5.1, §5.2 y §5.5 documentó al hacer convertir el corpus real a
+SnapOtter y ConvertX (ver §4 más abajo).
 
 **Un fallo que ni el vocabulario de firmas atrapa, y que sí atrapa una regla de 0 coste.**
 `magick x.png y.group4` (y otros 21 pseudoformatos de ImageMagick) devuelve `rc=0` y entrega
@@ -133,8 +133,8 @@ vídeo — queda declarado como hueco abierto, no oculto. *(`bench/hito2-nvenc.m
 ## 3. Exclusión de máquina — la seguridad no cuesta rendimiento medible
 
 **0,319 % de una conversión.** El primitivo vigente (mutex `Global\` con DACL explícita +
-candado de rango de bytes + identidad NTFS del destino) cuesta 1.169,7 µs sobre una conversión
-`png→webp` de 367,0 ms medida en la misma tanda (n=20.000 por celda). El mutex en sí cuesta
+candado de rango de bytes + identidad NTFS del destino) cuesta 1.169,7 µs (n=20.000 por
+celda) sobre una conversión `png→webp` de 367,0 ms medida en la misma tanda (n=11). El mutex en sí cuesta
 **18,1 µs**: por ese precio se toman los dos primitivos, porque ninguno cubre lo que cubre el
 otro (el mutex cruza entre usuarios de Windows; el candado de fichero funciona en POSIX y dice
 quién lo tiene). *(`bench/cerrojo-unico.md` §1.2 y §5.)*
@@ -230,8 +230,8 @@ línea de comandos.
 `batch`, `job`), 215 aristas de conversión, 6 motores— cuesta 1.605 tokens.** Añadir tres
 motores nuevos al registro sólo sube el catálogo +102 tokens (+6,8 %), sin herramientas
 nuevas: el coste crece con las aristas, no con la superficie de la API. **MEDIDO** dos veces
-por vías independientes con el mismo resultado. *(`bench/hito4-mcp.md` resumen ejecutivo #4 y
-§4.1; `bench/gotenberg-y-mcp.md`, sección C36.)*
+por vías independientes con el mismo resultado. *(`bench/hito4-mcp.md` resumen ejecutivo #1,
+§2 y §3; `bench/gotenberg-y-mcp.md`, sección C36.)*
 
 **En un banco de 15 peticiones a un agente real (Claude Haiku) usando las herramientas MCP de
 FileX: 0 % de fallos silenciosos, frente al 15–17 % que da un catálogo de referencia peor
@@ -243,8 +243,9 @@ relacionada indica que Sonnet falla **más** (17 %) con el catálogo escueto, y 
 banco con Sonnet queda `PENDIENTE`. *(`bench/hito4-mcp.md` §4.1 y §4.4.)*
 
 **Leer la cabecera de un fichero en proceso (`inspect`) para no copiarlo antes de pasarlo a un
-sondeo externo cuesta de 2,0× a 284× menos que copiar + `ffprobe`**, según el tamaño: de 2,6×
-en un PNG vacío a 284× en un TIFF de 68,7 MB; el propio `inspect` cuesta 0,21–0,59 ms.
+sondeo externo cuesta de 2,0× a 284× menos que copiar + `ffprobe`**, según el tamaño: de 2,0×
+en un PNG de 0,04 MB a 284,4× en un TIFF de 68,7 MB (con un PNG casi vacío en 2,6× y un MP4 de
+15,5 MB en 27,6×, en el mismo barrido de cinco ficheros); el propio `inspect` cuesta 0,21–0,59 ms.
 **MEDIDO**, con una corrección explícita del proyecto sobre sí mismo: una medición anterior
 había estimado el margen «de 30× a más de 3.000×» midiendo por error sólo «abrir y leer 64
 KiB», no un `inspect` completo — el número de aquí es el corregido.
@@ -253,8 +254,9 @@ KiB», no un `inspect` completo — el número de aquí es el corregido.
 **Un tercer punto de exclusión, de proceso y no de máquina, con el mismo patrón de coste
 irrisorio:** el conjunto de destinos en curso que evita que dos conversiones simultáneas
 dentro del mismo proceso pisen el mismo fichero de salida (el fallo real que lo motivó: tres
-peticiones concurrentes a la misma ruta devolvían las tres `ok`, con un solo fichero real en
-disco) cuesta **3,2 µs — el 0,0013 % de una conversión de ~250 ms**. **MEDIDO**, n=20.000.
+peticiones concurrentes con tres entradas distintas a la misma ruta de salida terminaban las
+tres en `completed` con veredicto aprobado —dos `ok`, una `ok_parcial`— y sólo un fichero real
+en disco) cuesta **3,2 µs — el 0,0013 % de una conversión de ~250 ms**. **MEDIDO**, n=20.000.
 *(`bench/hito7-superficies.md`, citado también en `CLAUDE.md` trampa 26.)*
 
 ---
