@@ -9,7 +9,6 @@ from __future__ import annotations
 
 import argparse
 import json
-import os
 import sys
 
 from . import __version__, formatos
@@ -87,6 +86,15 @@ def _convertir(fx: FileX, args) -> int:
         except json.JSONDecodeError as e:
             print(f"--params no es JSON válido: {e}", file=sys.stderr)
             return 2
+        # `json.loads` acepta cualquier valor JSON, no solo objetos: sin este
+        # chequeo, `--params 42` o `--params '[1,2]'` llegaban como un `int` o
+        # una `list` hasta `dict(pedido or {})` en el núcleo y reventaban con
+        # un traceback de Python (MEDIDO). `--params null` es la excepción que
+        # confirma la regla: se queda fuera porque `None` cae en `pedido or {}`.
+        if pedido is not None and not isinstance(pedido, dict):
+            print(f"--params debe ser un objeto JSON ({{...}}), no "
+                  f"{type(pedido).__name__}", file=sys.stderr)
+            return 2
 
     conv = fx.convertir(args.entrada, args.salida, pedido, timeout=args.timeout)
 
@@ -108,7 +116,10 @@ def _convertir(fx: FileX, args) -> int:
 
     if not conv.ok:
         print(f"NO CONVERTIDO — {conv.motivo}")
-        if conv.camino:
+        # `conv.camino` puede existir con `formatos == []` (p. ej. origen y
+        # destino en el mismo formato, saltos=0): sin este segundo chequeo
+        # imprimía "camino intentado: " con nada detrás (MEDIDO).
+        if conv.camino and conv.camino.formatos:
             print(f"  camino intentado: {' → '.join(conv.camino.formatos)}")
         for s in conv.saltos:
             if s.err and args.verboso:
@@ -186,20 +197,55 @@ def _consola_utf8() -> None:
             pass
 
 
+_ORDENES = {"convertir", "motores", "destinos", "plan"}
+
+
 def main(argv=None) -> int:
+    """Punto de entrada del CLI. Códigos de salida — interfaz para terceros:
+
+    - **0**: éxito. Incluye mostrar la ayuda (sin subcomando y sin 2 argumentos
+      posicionales), `--version`/`-h`, y `convertir` cuando `ok` es verdadero
+      —lo que abarca los veredictos `ok`, `ok_parcial` y `aviso` por igual:
+      un `rc==0` NO garantiza una conversión perfecta, solo que se completó;
+      el matiz vive en `veredicto` (texto) o en la clave `"veredicto"` (JSON).
+    - **1**: fallo de NEGOCIO — la operación se entendió pero no se pudo
+      completar: conversión rechazada (`convertir`), sin camino (`plan`), o
+      un formato conocido sin destinos alcanzables con los motores presentes
+      (`destinos`).
+    - **2**: error de USO/ENTRADA — lo que argparse ya genera por su cuenta
+      (`-h`/`--version` son excepción con 0), más `--params` no siendo JSON
+      válido *o* siendo JSON válido pero no un objeto (ambos, MEDIDO, antes
+      de esta ronda el segundo caso no se validaba y reventaba con un
+      traceback), un formato desconocido en `destinos`, y no poder arrancar
+      `FileX` (p. ej. `--raiz` inválido).
+
+    **Hallazgo sin corregir** (`bench/pulido-cli.md` §1): un formato de
+    destino que NINGÚN motor conoce da `2` en `destinos` (falla la validación
+    léxica contra el vocabulario) pero `1` en `convertir`/`plan` (nunca
+    consultan ese vocabulario: piden un camino al grafo y lo tratan como
+    cualquier destino inalcanzable). Es la MISMA equivocación del usuario con
+    dos códigos distintos — no se cambia aquí porque un script que ya
+    dependa de uno de los dos se rompería sin aviso.
+    """
     _consola_utf8()
     p = construir_parser()
-    args = p.parse_args(argv)
+    argv = list(argv if argv is not None else sys.argv[1:])
 
     # `filex a.png b.webp` sin subcomando: la forma corta del hito 1.
+    # TIENE que detectarse ANTES de `parse_args`: los subparsers de argparse
+    # validan el primer positional contra {convertir,motores,destinos,plan}
+    # en cuanto lo ven, así que con un nombre de fichero ahí `parse_args`
+    # aborta con `SystemExit(2)` ("invalid choice") antes de que el código
+    # de más abajo pudiera mirar `args.orden is None` — la forma corta
+    # estaba MUERTA desde el commit del hito 1 (MEDIDO: nunca se ejecutó).
+    resto = [a for a in argv if not a.startswith("-")]
+    if resto and resto[0] not in _ORDENES and len(resto) == 2:
+        argv = ["convertir", *argv]
+
+    args = p.parse_args(argv)
     if args.orden is None:
-        resto = (argv if argv is not None else sys.argv[1:])
-        resto = [a for a in resto if not a.startswith("-")]
-        if len(resto) == 2:
-            args = p.parse_args(["convertir"] + (argv if argv is not None else sys.argv[1:]))
-        else:
-            p.print_help()
-            return 0
+        p.print_help()
+        return 0
 
     try:
         fx = FileX(raices_lectura=args.raiz)
