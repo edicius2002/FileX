@@ -196,11 +196,11 @@ class Perfil:
     """
 
     __slots__ = ("nombre", "escritorio_mib", "audio_mib", "motor", "mpx_max",
-                 "nvenc_mib", "techo_mib")
+                 "nvenc_mib", "techo_mib", "medido_mib")
 
     def __init__(self, nombre: str, escritorio_mib: int, audio_mib: int,
                  motor: Motor, mpx_max: float, nvenc_mib: int = 0,
-                 techo_mib: int = 8909):
+                 techo_mib: int = 8909, medido_mib: int | None = None):
         self.nombre = nombre
         self.escritorio_mib = escritorio_mib
         self.audio_mib = audio_mib
@@ -209,15 +209,37 @@ class Perfil:
         self.nvenc_mib = nvenc_mib
         #: 8 909 MiB = los «~8,7 GB» del criterio original en MiB (8,7 × 1024).
         self.techo_mib = techo_mib
+        #: N26 (bench/presupuesto-vram.md): la suma SIEMPRE sobreestima (medido
+        #: en los 3 perfiles de la Clausula C), pero por cuanto es DEL PERFIL,
+        #: no del sistema -- 1,2 % con `distil`, 7,2 % con `large-v3`. Cuando un
+        #: perfil YA tiene una medida conjunta (los tres componentes vivos a la
+        #: vez), esa medida es mas ajustada que la suma y no introduce riesgo:
+        #: la suma nunca ha infravalorado en ningun perfil medido. `medido_mib`
+        #: es el "coste propio medido" de SV7 -- audio+ocr+nvenc vivos a la vez,
+        #: SIN el escritorio, la misma convencion que ya usa `suma_mib` (el
+        #: escritorio se suma una vez, en `total_mib`, con los dos caminos). Si
+        #: no se da, `total_mib` sigue sumando componente a componente
+        #: (comportamiento igual al de antes de esta ronda).
+        self.medido_mib = medido_mib
 
     @property
     def ocr_mib(self) -> int:
         return self.motor.coste_previsto(self.mpx_max)
 
     @property
-    def total_mib(self) -> int:
+    def suma_mib(self) -> int:
+        """La suma de los componentes medidos por separado. Cota superior
+        conservadora SIEMPRE (sesgo del signo verificado en 3 perfiles), pero
+        de magnitud propia del perfil, no del sistema -- no se usa para
+        derivar un margen unico."""
         return (self.escritorio_mib + self.audio_mib + self.ocr_mib
                 + self.nvenc_mib)
+
+    @property
+    def total_mib(self) -> int:
+        if self.medido_mib is not None:
+            return self.escritorio_mib + self.medido_mib
+        return self.suma_mib
 
     def evaluar(self, tarjeta_mib: int = 12288) -> dict:
         """El veredicto, con los sumandos a la vista y **sin ocultar la suma**.
@@ -225,16 +247,19 @@ class Perfil:
         `aditividad_supuesta` no es decoracion: mientras el total sea una suma de
         medidas tomadas por separado, es una **hipotesis**, y quien lea el
         veredicto tiene que verlo. `bench/hito6-sidecar.md` §3 la mide.
+        Con `medido_mib` puesto, el total es una MEDIDA (Clausula C, los
+        componentes vivos a la vez), no una suma, y el campo lo declara.
         """
         t = self.total_mib
         return {"perfil": self.nombre, "escritorio_MiB": self.escritorio_mib,
                 "audio_MiB": self.audio_mib, "ocr_MiB": self.ocr_mib,
                 "nvenc_MiB": self.nvenc_mib, "mpx_max": self.mpx_max,
                 "motor": self.motor.nombre, "total_MiB": t,
+                "suma_MiB": self.suma_mib,
                 "techo_MiB": self.techo_mib, "tarjeta_MiB": tarjeta_mib,
                 "cumple_techo": t <= self.techo_mib,
                 "cabe_en_tarjeta": t <= tarjeta_mib,
-                "aditividad_supuesta": True}
+                "aditividad_supuesta": self.medido_mib is None}
 
 
 # ==========================================================================

@@ -277,6 +277,56 @@ class ElPresupuesto(unittest.TestCase):
         self.assertFalse(perfil(8.882).evaluar()["cumple_techo"])
         self.assertTrue(perfil(2.221).evaluar()["cumple_techo"])
 
+    # -- N26 (bench/presupuesto-vram.md): `medido_mib` sustituye la suma por la
+    # medida conjunta de la Clausula C cuando existe, sin tocar el comportamiento
+    # por defecto (la suma sigue siendo la cota superior de un perfil sin medir).
+    def test_medido_mib_ausente_se_comporta_igual_que_antes(self):
+        """Sin `medido_mib`, `total_mib` es la suma -- el default no cambia."""
+        p = sidecar.Perfil("x", 3448, 1847, sidecar.MOTORES["rapidocr"], 8.882)
+        v = p.evaluar()
+        self.assertEqual(v["total_MiB"], v["suma_MiB"])
+        self.assertTrue(v["aditividad_supuesta"])
+
+    def test_los_tres_perfiles_medidos_de_hito6_sidecar_V7(self):
+        """`bench/hito6-sidecar.md` SV7 midio los tres perfiles con los
+        componentes vivos a la vez (Clausula C). Con `medido_mib`, `Perfil`
+        reproduce esos tres veredictos exactos en vez de la suma, que para
+        estos mismos perfiles sobreestima entre 1,2 % (A) y 7,2 % (C)."""
+        A = sidecar.Perfil("A distil-large-v3 11s", 3448, 0,
+                           sidecar.MOTORES["rapidocr"], 8.882, medido_mib=3739)
+        B = sidecar.Perfil("B large-v3 11s", 3448, 0,
+                           sidecar.MOTORES["rapidocr"], 8.882, medido_mib=5469)
+        C = sidecar.Perfil("C large-v3 308s", 3448, 0,
+                           sidecar.MOTORES["rapidocr"], 8.882, medido_mib=6083)
+        va, vb, vc = A.evaluar(), B.evaluar(), C.evaluar()
+        self.assertEqual(va["total_MiB"], 7187)
+        self.assertTrue(va["cumple_techo"])
+        self.assertEqual(vb["total_MiB"], 8917)
+        self.assertFalse(vb["cumple_techo"])       # no cumple, por 8 MiB
+        self.assertEqual(vc["total_MiB"], 9531)
+        self.assertFalse(vc["cumple_techo"])
+        for v in (va, vb, vc):
+            self.assertFalse(v["aditividad_supuesta"])   # es medida, no suma
+
+    def test_la_suma_sobreestima_mas_para_large_v3_que_para_distil(self):
+        """El numero que justifica la fila N26: el sesgo de la suma es DEL
+        PERFIL, no una constante del sistema -- componentes de
+        `hito6-sidecar.md` SS3.1 (tanda F, distil) y SV7 (tanda H, large-v3
+        308s), ambas con los tres componentes vivos a la vez (Clausula C)."""
+        A = sidecar.Perfil("A distil 11s", 3448, audio_mib=1751,
+                           motor=sidecar.MOTORES["rapidocr"], mpx_max=8.882,
+                           nvenc_mib=500, medido_mib=3739)
+        C = sidecar.Perfil("C large-v3 308s", 3448, audio_mib=4575,
+                           motor=sidecar.MOTORES["rapidocr"], mpx_max=8.882,
+                           nvenc_mib=459, medido_mib=6083)
+        sobreestima_a = (A.suma_mib - A.total_mib) / A.suma_mib
+        sobreestima_c = (C.suma_mib - C.total_mib) / C.suma_mib
+        self.assertGreater(sobreestima_c, sobreestima_a)
+        # las dos son POSITIVAS: la suma nunca ha infravalorado en ningun
+        # perfil medido -- por eso sigue valiendo como cota superior.
+        self.assertGreater(sobreestima_a, 0)
+        self.assertGreater(sobreestima_c, 0)
+
 
 # ==========================================================================
 class TrabajadorFalso:

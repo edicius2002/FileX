@@ -116,6 +116,10 @@ bench/salidas-deskew-y-fidelidad/img/
 bench/salidas-severidad-y-curvatura/img/
 bench/salidas-severidad-y-curvatura/tmp/
 
+# Rasteres de N31 (ronda 11, presupuesto de VRAM). Regenerables con Ghostscript
+# (orden exacta en el MANIFIESTO.md); mismo sha256 que los de N27.
+bench/salidas-presupuesto-vram/img/
+
 # Los flujos alternativos NTFS (ADS) del arnes de confinamiento ya estan
 # VERSIONADOS bajo su nombre con U+F03A, que es como DrvFs escribe los dos
 # puntos. Pero `readdir` desde WSL devuelve ademas el nombre con `:` literal,
