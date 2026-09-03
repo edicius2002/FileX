@@ -1,0 +1,43 @@
+{
+ "n_medidos": 2,
+ "n_vivas": 1,
+ "n_muertas": 1,
+ "filas": [
+  {
+   "formato": "heic",
+   "fate_ruta": "D:\\Work\\research\\fate-suite\\heif-conformance\\C002.heic",
+   "fate_bytes": 111897,
+   "identify_rc": 0,
+   "identify_reconoce": true,
+   "convert_rc": 0,
+   "convert_bytes": 1072298,
+   "convert_ms": 512.7,
+   "convert_err": "",
+   "estado": "viva",
+   "resultado": "medido"
+  },
+  {
+   "formato": "3gp",
+   "fate_ruta": "D:\\Work\\research\\fate-suite\\aac\\CT_DecoderCheck\\File6.3gp",
+   "fate_bytes": 32901,
+   "identify_rc": 1,
+   "identify_reconoce": false,
+   "convert_rc": 1,
+   "convert_bytes": -1,
+   "convert_ms": 75.9,
+   "convert_err": "15. magick.exe: VideoDelegateFailed `[out#0/rawvideo @ 000001cf8e23b200] Output file does not contain any stream  Error opening output file C:/Users/krato/AppData/Local/Temp/magick-pkkjhwke04mfJn_EPW8yL1BLrIfkPWKv.  Error opening output files: Invalid argument  ' @ error/video.c/ReadVIDEOImage/273. ",
+   "estado": "muerta",
+   "resultado": "medido"
+  },
+  {
+   "formato": "raw",
+   "resultado": "colision_de_extension",
+   "candidatos": [
+    "filter-reference\\owdenoise-scenwin.raw",
+    "filter-reference\\owdenoise-scenwin-jpeg.raw",
+    "lossless-audio\\truehd_5.1.raw"
+   ],
+   "motivo": "colision de extension: identify los intenta leer como DNG (error/dng.c/ReadDNGImage) y falla con 'Unsupported file format or not RAW file' -- son un dump de audio TrueHD y dos rasters de filtro, no una imagen RAW de camara"
+  }
+ ]
+}

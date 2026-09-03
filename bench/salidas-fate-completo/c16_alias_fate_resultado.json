@@ -1,0 +1,503 @@
+{
+ "n_alias_candidatos": 24,
+ "n_medidos": 24,
+ "n_vivas": 23,
+ "n_muertas": 1,
+ "tasa_viva": 0.9583,
+ "filas": [
+  {
+   "formato": "cavsvideo",
+   "fate_dir": "cavs",
+   "fate_ruta": "D:\\Work\\research\\fate-suite\\cavs\\bunny.mp4",
+   "fate_bytes": 177752,
+   "demuxer_esperado": "cavsvideo",
+   "forzado_con_-f": null,
+   "sonda_ffprobe_natural": "Input #0, cavsvideo, from 'D:\\Work\\research\\fate-suite\\cavs\\bunny.mp4':",
+   "estado": "viva",
+   "intentos": [
+    {
+     "destino": "mkv",
+     "rc": 0,
+     "bytes": 465243,
+     "ms": 1058.0,
+     "err": ""
+    }
+   ],
+   "resultado": "medido"
+  },
+  {
+   "formato": "vc1test",
+   "fate_dir": "vc1",
+   "fate_ruta": "D:\\Work\\research\\fate-suite\\vc1\\SMM0015.rcv",
+   "fate_bytes": 437157,
+   "demuxer_esperado": "vc1test",
+   "forzado_con_-f": null,
+   "sonda_ffprobe_natural": "Input #0, vc1test, from 'D:\\Work\\research\\fate-suite\\vc1\\SMM0015.rcv':",
+   "estado": "viva",
+   "intentos": [
+    {
+     "destino": "mkv",
+     "rc": 0,
+     "bytes": 410350,
+     "ms": 358.3,
+     "err": ""
+    }
+   ],
+   "resultado": "medido"
+  },
+  {
+   "formato": "roq",
+   "fate_dir": "idroq",
+   "fate_ruta": "D:\\Work\\research\\fate-suite\\idroq\\idlogo.roq",
+   "fate_bytes": 2895296,
+   "demuxer_esperado": "roq",
+   "forzado_con_-f": null,
+   "sonda_ffprobe_natural": "Input #0, roq, from 'D:\\Work\\research\\fate-suite\\idroq\\idlogo.roq':",
+   "estado": "viva",
+   "intentos": [
+    {
+     "destino": "mkv",
+     "rc": 0,
+     "bytes": 1142502,
+     "ms": 749.4,
+     "err": ""
+    }
+   ],
+   "resultado": "medido"
+  },
+  {
+   "formato": "anm",
+   "fate_dir": "deluxepaint-anm",
+   "fate_ruta": "D:\\Work\\research\\fate-suite\\deluxepaint-anm\\INTRO1.ANM",
+   "fate_bytes": 452911,
+   "demuxer_esperado": "anm",
+   "forzado_con_-f": null,
+   "sonda_ffprobe_natural": "Input #0, anm, from 'D:\\Work\\research\\fate-suite\\deluxepaint-anm\\INTRO1.ANM':",
+   "estado": "viva",
+   "intentos": [
+    {
+     "destino": "mkv",
+     "rc": 0,
+     "bytes": 30399,
+     "ms": 140.4,
+     "err": ""
+    }
+   ],
+   "resultado": "medido"
+  },
+  {
+   "formato": "c93",
+   "fate_dir": "cyberia-c93",
+   "fate_ruta": "D:\\Work\\research\\fate-suite\\cyberia-c93\\intro1.c93",
+   "fate_bytes": 1933312,
+   "demuxer_esperado": "c93",
+   "forzado_con_-f": null,
+   "sonda_ffprobe_natural": "Input #0, c93, from 'D:\\Work\\research\\fate-suite\\cyberia-c93\\intro1.c93':",
+   "estado": "viva",
+   "intentos": [
+    {
+     "destino": "mkv",
+     "rc": 0,
+     "bytes": 588897,
+     "ms": 563.4,
+     "err": ""
+    }
+   ],
+   "resultado": "medido"
+  },
+  {
+   "formato": "dfa",
+   "fate_dir": "chronomaster-dfa",
+   "fate_ruta": "D:\\Work\\research\\fate-suite\\chronomaster-dfa\\0006.dfa",
+   "fate_bytes": 14944,
+   "demuxer_esperado": "dfa",
+   "forzado_con_-f": null,
+   "sonda_ffprobe_natural": "Input #0, dfa, from 'D:\\Work\\research\\fate-suite\\chronomaster-dfa\\0006.dfa':",
+   "estado": "viva",
+   "intentos": [
+    {
+     "destino": "mkv",
+     "rc": 0,
+     "bytes": 4586,
+     "ms": 60.8,
+     "err": ""
+    }
+   ],
+   "resultado": "medido"
+  },
+  {
+   "formato": "iss",
+   "fate_dir": "funcom-iss",
+   "fate_ruta": "D:\\Work\\research\\fate-suite\\funcom-iss\\0004010100.iss",
+   "fate_bytes": 60987,
+   "demuxer_esperado": "iss",
+   "forzado_con_-f": null,
+   "sonda_ffprobe_natural": "Input #0, iss, from 'D:\\Work\\research\\fate-suite\\funcom-iss\\0004010100.iss':",
+   "estado": "viva",
+   "intentos": [
+    {
+     "destino": "mkv",
+     "rc": 0,
+     "bytes": 36210,
+     "ms": 85.2,
+     "err": ""
+    }
+   ],
+   "resultado": "medido"
+  },
+  {
+   "formato": "wsvqa",
+   "fate_dir": "vqa",
+   "fate_ruta": "D:\\Work\\research\\fate-suite\\vqa\\small-cut-v3.vqa",
+   "fate_bytes": 92160,
+   "demuxer_esperado": "wsvqa",
+   "forzado_con_-f": null,
+   "sonda_ffprobe_natural": "Input #0, wsvqa, from 'D:\\Work\\research\\fate-suite\\vqa\\small-cut-v3.vqa':",
+   "estado": "viva",
+   "intentos": [
+    {
+     "destino": "mkv",
+     "rc": 0,
+     "bytes": 13759,
+     "ms": 61.8,
+     "err": ""
+    }
+   ],
+   "resultado": "medido"
+  },
+  {
+   "formato": "wsaud",
+   "fate_dir": "westwood-aud",
+   "fate_ruta": "D:\\Work\\research\\fate-suite\\westwood-aud\\excellent.aud",
+   "fate_bytes": 5316,
+   "demuxer_esperado": "wsaud",
+   "forzado_con_-f": null,
+   "sonda_ffprobe_natural": "Input #0, wsaud, from 'D:\\Work\\research\\fate-suite\\westwood-aud\\excellent.aud':",
+   "estado": "viva",
+   "intentos": [
+    {
+     "destino": "mkv",
+     "rc": 0,
+     "bytes": 7373,
+     "ms": 49.6,
+     "err": ""
+    }
+   ],
+   "resultado": "medido"
+  },
+  {
+   "formato": "daud",
+   "fate_dir": "d-cinema",
+   "fate_ruta": "D:\\Work\\research\\fate-suite\\d-cinema\\THX_Science_FLT_1920-partial.302",
+   "fate_bytes": 131072,
+   "demuxer_esperado": "daud",
+   "forzado_con_-f": null,
+   "sonda_ffprobe_natural": "Input #0, daud, from 'D:\\Work\\research\\fate-suite\\d-cinema\\THX_Science_FLT_1920-partial.302':",
+   "estado": "viva",
+   "intentos": [
+    {
+     "destino": "mkv",
+     "rc": 0,
+     "bytes": 3945,
+     "ms": 61.4,
+     "err": ""
+    }
+   ],
+   "resultado": "medido"
+  },
+  {
+   "formato": "argo_asf",
+   "fate_dir": "argo-asf",
+   "fate_ruta": "D:\\Work\\research\\fate-suite\\argo-asf\\PWIN22M.ASF",
+   "fate_bytes": 234389,
+   "demuxer_esperado": "argo_asf",
+   "forzado_con_-f": null,
+   "sonda_ffprobe_natural": "Input #0, argo_asf, from 'D:\\Work\\research\\fate-suite\\argo-asf\\PWIN22M.ASF':",
+   "estado": "viva",
+   "intentos": [
+    {
+     "destino": "mkv",
+     "rc": 0,
+     "bytes": 103960,
+     "ms": 215.0,
+     "err": ""
+    }
+   ],
+   "resultado": "medido"
+  },
+  {
+   "formato": "asf_o",
+   "fate_dir": "asf",
+   "fate_ruta": "D:\\Work\\research\\fate-suite\\asf\\bug821-2.asf",
+   "fate_bytes": 115867,
+   "demuxer_esperado": "asf_o",
+   "forzado_con_-f": "asf_o",
+   "sonda_ffprobe_natural": "(no aplica: forzado)",
+   "estado": "muerta",
+   "intentos": [
+    {
+     "destino": "mkv",
+     "rc": 3199971767,
+     "bytes": -1,
+     "ms": 34.8,
+     "err": "rror opening input: Invalid data found when processing input Error opening input file D:\\Work\\research\\fate-suite\\asf\\bug821-2.asf. Error opening input files: Invalid data found when processing input "
+    },
+    {
+     "destino": "wav",
+     "rc": 3199971767,
+     "bytes": -1,
+     "ms": 35.5,
+     "err": "rror opening input: Invalid data found when processing input Error opening input file D:\\Work\\research\\fate-suite\\asf\\bug821-2.asf. Error opening input files: Invalid data found when processing input "
+    },
+    {
+     "destino": "png",
+     "rc": 3199971767,
+     "bytes": -1,
+     "ms": 40.5,
+     "err": "rror opening input: Invalid data found when processing input Error opening input file D:\\Work\\research\\fate-suite\\asf\\bug821-2.asf. Error opening input files: Invalid data found when processing input "
+    }
+   ],
+   "resultado": "medido"
+  },
+  {
+   "formato": "amr",
+   "fate_dir": "amrnb",
+   "fate_ruta": "D:\\Work\\research\\fate-suite\\amrnb\\4.75k.amr",
+   "fate_bytes": 3698,
+   "demuxer_esperado": "amr",
+   "forzado_con_-f": null,
+   "sonda_ffprobe_natural": "Input #0, amr, from 'D:\\Work\\research\\fate-suite\\amrnb\\4.75k.amr':",
+   "estado": "viva",
+   "intentos": [
+    {
+     "destino": "mkv",
+     "rc": 0,
+     "bytes": 20489,
+     "ms": 73.8,
+     "err": ""
+    }
+   ],
+   "resultado": "medido"
+  },
+  {
+   "formato": "ipmovie",
+   "fate_dir": "interplay-mve",
+   "fate_ruta": "D:\\Work\\research\\fate-suite\\interplay-mve\\descent3-level5-16bit-partial.mve",
+   "fate_bytes": 1048576,
+   "demuxer_esperado": "ipmovie",
+   "forzado_con_-f": null,
+   "sonda_ffprobe_natural": "Input #0, ipmovie, from 'D:\\Work\\research\\fate-suite\\interplay-mve\\descent3-level5-16bit-partial.mve':",
+   "estado": "viva",
+   "intentos": [
+    {
+     "destino": "mkv",
+     "rc": 0,
+     "bytes": 136271,
+     "ms": 350.1,
+     "err": ""
+    }
+   ],
+   "resultado": "medido"
+  },
+  {
+   "formato": "dsicin",
+   "fate_dir": "delphine-cin",
+   "fate_ruta": "D:\\Work\\research\\fate-suite\\delphine-cin\\LOGO-partial.CIN",
+   "fate_bytes": 1048576,
+   "demuxer_esperado": "dsicin",
+   "forzado_con_-f": null,
+   "sonda_ffprobe_natural": "Input #0, dsicin, from 'D:\\Work\\research\\fate-suite\\delphine-cin\\LOGO-partial.CIN':",
+   "estado": "viva",
+   "intentos": [
+    {
+     "destino": "mkv",
+     "rc": 0,
+     "bytes": 103011,
+     "ms": 204.0,
+     "err": ""
+    }
+   ],
+   "resultado": "medido"
+  },
+  {
+   "formato": "ans",
+   "fate_dir": "ansi",
+   "fate_ruta": "D:\\Work\\research\\fate-suite\\ansi\\ansi256.ans",
+   "fate_bytes": 12885,
+   "demuxer_esperado": "ans",
+   "forzado_con_-f": null,
+   "sonda_ffprobe_natural": "Input #0, tty, from 'D:\\Work\\research\\fate-suite\\ansi\\ansi256.ans':",
+   "estado": "viva",
+   "intentos": [
+    {
+     "destino": "mkv",
+     "rc": 0,
+     "bytes": 436329,
+     "ms": 307.3,
+     "err": ""
+    }
+   ],
+   "resultado": "medido"
+  },
+  {
+   "formato": "psxstr",
+   "fate_dir": "psx-str",
+   "fate_ruta": "D:\\Work\\research\\fate-suite\\psx-str\\abc000_cut.str",
+   "fate_bytes": 700000,
+   "demuxer_esperado": "psxstr",
+   "forzado_con_-f": null,
+   "sonda_ffprobe_natural": "Input #0, psxstr, from 'D:\\Work\\research\\fate-suite\\psx-str\\abc000_cut.str':",
+   "estado": "viva",
+   "intentos": [
+    {
+     "destino": "mkv",
+     "rc": 0,
+     "bytes": 43634,
+     "ms": 105.5,
+     "err": ""
+    }
+   ],
+   "resultado": "medido"
+  },
+  {
+   "formato": "film_cpk",
+   "fate_dir": "film",
+   "fate_ruta": "D:\\Work\\research\\fate-suite\\film\\op-partial.cak",
+   "fate_bytes": 131072,
+   "demuxer_esperado": "film_cpk",
+   "forzado_con_-f": null,
+   "sonda_ffprobe_natural": "Input #0, film_cpk, from 'D:\\Work\\research\\fate-suite\\film\\op-partial.cak':",
+   "estado": "viva",
+   "intentos": [
+    {
+     "destino": "mkv",
+     "rc": 0,
+     "bytes": 27813,
+     "ms": 149.8,
+     "err": ""
+    }
+   ],
+   "resultado": "medido"
+  },
+  {
+   "formato": "bethsoftvid",
+   "fate_dir": "bethsoft-vid",
+   "fate_ruta": "D:\\Work\\research\\fate-suite\\bethsoft-vid\\ANIM0001.VID",
+   "fate_bytes": 1430898,
+   "demuxer_esperado": "bethsoftvid",
+   "forzado_con_-f": null,
+   "sonda_ffprobe_natural": "Input #0, bethsoftvid, from 'D:\\Work\\research\\fate-suite\\bethsoft-vid\\ANIM0001.VID':",
+   "estado": "viva",
+   "intentos": [
+    {
+     "destino": "mkv",
+     "rc": 0,
+     "bytes": 251505,
+     "ms": 372.7,
+     "err": ""
+    }
+   ],
+   "resultado": "medido"
+  },
+  {
+   "formato": "brender_pix",
+   "fate_dir": "brenderpix",
+   "fate_ruta": "D:\\Work\\research\\fate-suite\\brenderpix\\gears.pix",
+   "fate_bytes": 3134,
+   "demuxer_esperado": "brender_pix",
+   "forzado_con_-f": null,
+   "sonda_ffprobe_natural": "Input #0, brender_pix, from 'D:\\Work\\research\\fate-suite\\brenderpix\\gears.pix':",
+   "estado": "viva",
+   "intentos": [
+    {
+     "destino": "mkv",
+     "rc": 0,
+     "bytes": 1730,
+     "ms": 118.0,
+     "err": ""
+    }
+   ],
+   "resultado": "medido"
+  },
+  {
+   "formato": "alias_pix",
+   "fate_dir": "aliaspix",
+   "fate_ruta": "D:\\Work\\research\\fate-suite\\aliaspix\\firstgray.pix",
+   "fate_bytes": 28868,
+   "demuxer_esperado": "alias_pix",
+   "forzado_con_-f": null,
+   "sonda_ffprobe_natural": "Input #0, alias_pix, from 'D:\\Work\\research\\fate-suite\\aliaspix\\firstgray.pix':",
+   "estado": "viva",
+   "intentos": [
+    {
+     "destino": "mkv",
+     "rc": 0,
+     "bytes": 2962,
+     "ms": 50.1,
+     "err": ""
+    }
+   ],
+   "resultado": "medido"
+  },
+  {
+   "formato": "ea_cdata",
+   "fate_dir": "ea-cdata",
+   "fate_ruta": "D:\\Work\\research\\fate-suite\\ea-cdata\\166b084d.46410f77.0009b440.24be960c.cdata",
+   "fate_bytes": 45616,
+   "demuxer_esperado": "ea_cdata",
+   "forzado_con_-f": null,
+   "sonda_ffprobe_natural": "Input #0, ea_cdata, from 'D:\\Work\\research\\fate-suite\\ea-cdata\\166b084d.46410f77.0009b440.24be960c.cdata':",
+   "estado": "viva",
+   "intentos": [
+    {
+     "destino": "mkv",
+     "rc": 0,
+     "bytes": 18136,
+     "ms": 89.4,
+     "err": ""
+    }
+   ],
+   "resultado": "medido"
+  },
+  {
+   "formato": "tiertexseq",
+   "fate_dir": "tiertex-seq",
+   "fate_ruta": "D:\\Work\\research\\fate-suite\\tiertex-seq\\Gameover.seq",
+   "fate_bytes": 1093632,
+   "demuxer_esperado": "tiertexseq",
+   "forzado_con_-f": null,
+   "sonda_ffprobe_natural": "Input #0, tiertexseq, from 'D:\\Work\\research\\fate-suite\\tiertex-seq\\Gameover.seq':",
+   "estado": "viva",
+   "intentos": [
+    {
+     "destino": "mkv",
+     "rc": 0,
+     "bytes": 40110,
+     "ms": 192.8,
+     "err": ""
+    }
+   ],
+   "resultado": "medido"
+  },
+  {
+   "formato": "mvi",
+   "fate_dir": "motion-pixels",
+   "fate_ruta": "D:\\Work\\research\\fate-suite\\motion-pixels\\INTRO-partial.MVI",
+   "fate_bytes": 2097152,
+   "demuxer_esperado": "mvi",
+   "forzado_con_-f": null,
+   "sonda_ffprobe_natural": "Input #0, mvi, from 'D:\\Work\\research\\fate-suite\\motion-pixels\\INTRO-partial.MVI':",
+   "estado": "viva",
+   "intentos": [
+    {
+     "destino": "mkv",
+     "rc": 0,
+     "bytes": 636737,
+     "ms": 599.7,
+     "err": ""
+    }
+   ],
+   "resultado": "medido"
+  }
+ ]
+}
