@@ -1,0 +1,40 @@
+{
+  "_": "MEDIDO EN EL RUNNER (windows-latest, Python 3.11.9), no en la maquina del proyecto ni deducido de la lista de Linux -- trampa 104. Congelado a mano por el maestro tras revisar la ejecucion real (ver `medido_en`); `ci/sonda_windows_hosted.py` solo captura el RECUENTO de fallos por modulo, no la traza -- los cinco `no_aptos.falla` con motivo 'PENDIENTE' no tienen causa verificada todavia, y se declaran asi en vez de inventarla. `test_hito7` es la excepcion: su motivo SI esta confirmado, leyendo el paso 'El paquete importa y la CLI arranca' del mismo run (docker responde, ninguna imagen del proyecto presente) -- mismo mecanismo que C42 en Linux.",
+  "interprete": "3.11.9",
+  "plataforma": "windows (windows-latest)",
+  "medido_en": "runner de GitHub Actions, ejecucion 33788937291",
+  "tope_por_modulo_s": 90,
+  "aptos": [
+    "test_a7_ciego",
+    "test_bitrate_y_lock",
+    "test_cancelacion",
+    "test_cancelacion_procesos",
+    "test_cerrojo_unico",
+    "test_contrato_v",
+    "test_datos_csv",
+    "test_firmas_cierre",
+    "test_gpu_lock",
+    "test_hito2",
+    "test_hito5",
+    "test_hito6",
+    "test_sondeo"
+  ],
+  "no_aptos": {
+    "cuelga": {},
+    "falla": {
+      "test_cerrojo": "9 de 24 fallos -- PENDIENTE de traza, motivo no verificado",
+      "test_hito1": "4 de 35 fallos -- PENDIENTE de traza, motivo no verificado",
+      "test_hito4": "3 de 31 fallos -- PENDIENTE de traza, motivo no verificado",
+      "test_hito7": "16 de 42 fallos -- CONFIRMADO: el demonio Docker responde ('docker: presente') pero no esta ninguna imagen del proyecto (filex-c13, ghcr.io/c4illin/convertx:latest); mismo mecanismo que C42 en ubuntu-latest",
+      "test_watcher_n": "4 de 19 fallos -- PENDIENTE de traza; sorprendente porque windows-latest SI tiene NTFS real, que era la ventaja esperada de este runner sobre Linux"
+    }
+  },
+  "detalle_del_run": {
+    "imagemagick": "presente, 7.1.2-25 (preinstalado en la imagen de windows-latest)",
+    "ghostscript": "AUSENTE -- falta gswin64c",
+    "ffmpeg": "AUSENTE",
+    "docker": "comando presente, demonio responde, 0 imagenes del proyecto",
+    "nvidia-smi": "AUSENTE",
+    "nota": "test_gpu_lock y test_hito2 dan APTO sin tarjeta real: prueban el mecanismo de exclusion (mutex Global\\), no el uso de la GPU en si -- las partes que si necesitan hardware se saltan via skipUnless (19 saltos en test_hito2)"
+  }
+}
