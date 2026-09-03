@@ -210,9 +210,56 @@ la imagen de ConvertX: **ocho líneas de Dockerfile, 28,1 s de construcción (17
 de paso resuelve la distribución de `tessdata` en español sin copiar ficheros a mano.
 *(`bench/invocacion-aristas.md` §9.)*
 
+**La frontera del contenedor efímero (un `docker run` por conversión) cuesta 864 ms por
+conversión** (mediana n=9) — el 13,2 % de un `docx→pdf` (6.523 ms) y el 4,2 % de un
+`epub→pdf` (20.615 ms) con Calibre. El resto es el motor, no el arranque del contenedor: *«no
+hay que optimizar el `docker run`, hay que optimizar Calibre, o no llamarlo»*. Aparte, y sin
+confundirlo con el coste anterior: el arranque en frío de **Docker** tras reiniciar el propio
+demonio es un suceso de una sola vez, no un coste por conversión — **34.672 ms** la primera
+vez frente a una mediana normal de 6.523 ms. *(`bench/hito5-documental.md` §3.2 y §8, filas 6
+y 7.)*
+
 ---
 
-## 6. Qué NO está aquí, y por qué
+## 6. Coste de exponer FileX a un agente de IA (MCP)
+
+Relevante para quien piensa usar FileX **desde un agente** (Claude u otro), no sólo desde la
+línea de comandos.
+
+**El catálogo MCP completo de FileX —5 herramientas (`convert`, `inspect`, `list_targets`,
+`batch`, `job`), 215 aristas de conversión, 6 motores— cuesta 1.605 tokens.** Añadir tres
+motores nuevos al registro sólo sube el catálogo +102 tokens (+6,8 %), sin herramientas
+nuevas: el coste crece con las aristas, no con la superficie de la API. **MEDIDO** dos veces
+por vías independientes con el mismo resultado. *(`bench/hito4-mcp.md` resumen ejecutivo #4 y
+§4.1; `bench/gotenberg-y-mcp.md`, sección C36.)*
+
+**En un banco de 15 peticiones a un agente real (Claude Haiku) usando las herramientas MCP de
+FileX: 0 % de fallos silenciosos, frente al 15–17 % que da un catálogo de referencia peor
+diseñado** (sin `enum` de formatos válidos en el esquema de cada herramienta). **Salvedad de
+potencia que el propio informe declara**: con n=15 (n=3 por caso), «0 % de fallo silencioso»
+no se distingue de un 5 % real — sólo descarta con seguridad un fallo del orden del 15–17 %,
+que es justo lo que había que descartar. Medido con un solo modelo (Haiku); una medición
+relacionada indica que Sonnet falla **más** (17 %) con el catálogo escueto, y repetir este
+banco con Sonnet queda `PENDIENTE`. *(`bench/hito4-mcp.md` §4.1 y §4.4.)*
+
+**Leer la cabecera de un fichero en proceso (`inspect`) para no copiarlo antes de pasarlo a un
+sondeo externo cuesta de 2,0× a 284× menos que copiar + `ffprobe`**, según el tamaño: de 2,6×
+en un PNG vacío a 284× en un TIFF de 68,7 MB; el propio `inspect` cuesta 0,21–0,59 ms.
+**MEDIDO**, con una corrección explícita del proyecto sobre sí mismo: una medición anterior
+había estimado el margen «de 30× a más de 3.000×» midiendo por error sólo «abrir y leer 64
+KiB», no un `inspect` completo — el número de aquí es el corregido.
+*(`bench/hito4-mcp.md` §6.4 y resumen ejecutivo #6.)*
+
+**Un tercer punto de exclusión, de proceso y no de máquina, con el mismo patrón de coste
+irrisorio:** el conjunto de destinos en curso que evita que dos conversiones simultáneas
+dentro del mismo proceso pisen el mismo fichero de salida (el fallo real que lo motivó: tres
+peticiones concurrentes a la misma ruta devolvían las tres `ok`, con un solo fichero real en
+disco) cuesta **3,2 µs — el 0,0013 % de una conversión de ~250 ms**. **MEDIDO**, n=20.000.
+*(`bench/hito7-superficies.md`, citado también en `CLAUDE.md` trampa 26.)*
+
+---
+
+## 7. Qué NO está aquí, y por qué
 
 Esta curación fue selectiva, no exhaustiva por pereza. Fuera quedó, con su motivo:
 
