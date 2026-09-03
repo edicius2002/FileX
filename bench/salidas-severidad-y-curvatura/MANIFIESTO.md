@@ -1,7 +1,8 @@
 # MANIFIESTO — bench/salidas-severidad-y-curvatura/
 
 Ronda 10, carril GPU: `B7` (heurística de degradación severa) y `B20` (residuo de
-`B12`, saturación de la sonda de curvatura).
+`B12`, saturación de la sonda de curvatura). Ronda 12: proxy de cajas para
+RapidOCR (`b7_cajas_rapidocr.py`), el resto de B7.
 
 ## img/ y tmp/ — NO se versionan (7,6 MB, regenerables)
 
@@ -42,5 +43,12 @@ el JPEG, que es el que de verdad se rasteriza para OCR.
   catastróficas de la ronda 8 (`escaneado_d4`/`d4c` × 200/280 ppp × deskew).
   Reproducible con el script equivalente descrito en `bench/severidad-y-curvatura.md`
   §3 (usa los mismos rásteres de `bench/salidas-deskew-y-fidelidad/img/`).
+- `b7_cajas_rapidocr.py` (ronda 12) →
+  `D:\Work\research\FileX\.venv-ai\Scripts\python.exe bench/salidas-severidad-y-curvatura/b7_cajas_rapidocr.py`
+  — engancha `TextDetector.__call__` de RapidOCR (misma técnica que
+  `bench/salidas-presupuesto-vram/n31_fases_child.py`) sobre los 20 rásteres de
+  la ronda 8. Produce `json/b7_cajas_rapidocr.json` (20 celdas: cajas, área,
+  bytes, CER). Toma el lock de GPU para toda la tanda, un solo proceso (no mide
+  VRAM, así que no hace falta reiniciar entre imágenes).
 
-Informe: `bench/severidad-y-curvatura.md`.
+Informes: `bench/severidad-y-curvatura.md` (ronda 10), `bench/senal-severidad-y-psm.md` (ronda 12).
