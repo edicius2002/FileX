@@ -69,10 +69,20 @@ def _papel_convertidor(arg: dict) -> int:
         if time.perf_counter() - t0 > TOPE:
             return 2
         time.sleep(0.001)
+    # N30: `ini`/`fin` delimitan la sección que compite (la llamada a
+    # `convertir()` entera, que es donde vive la escritura al destino
+    # compartido). `time.perf_counter()` es comparable ENTRE procesos en esta
+    # máquina -- en Windows envuelve `QueryPerformanceCounter`, sin origen por
+    # proceso (`bench/oraculo-y-gotenberg.md` §1.3 lo sondeó para el mismo
+    # propósito) --, así que el padre puede decidir si las dos ventanas se
+    # solaparon de verdad sin necesitar un reloj compartido aparte.
+    ini = time.perf_counter()
     conv = fx.convertir(arg["--entrada"], arg["--salida"], {}, timeout=TOPE)
+    fin = time.perf_counter()
     print(json.dumps({"ok": conv.ok, "motivo": conv.motivo,
                       "bytes": (os.path.getsize(arg["--salida"])
-                                if os.path.exists(arg["--salida"]) else None)},
+                                if os.path.exists(arg["--salida"]) else None),
+                      "ini": ini, "fin": fin},
                      ensure_ascii=False), flush=True)
     return 0
 
@@ -264,8 +274,28 @@ class CarreraEntreProcesos(_Base):
         éxitos son deterministas. MEDIDO con tres procesos y las tres entradas
         del hito 7 en `bench/cerrojo-de-maquina.md` §2: tres `ok`, tres tamaños
         declarados distintos y **un fichero en el disco**.
+
+        N30: bajo carga, la sincronización por `GO` garantiza que los dos
+        procesos SALEN a la vez, pero no que sus `convertir()` lleguen a
+        SOLAPARSE dentro de la sección que compite — uno puede terminar
+        entero antes de que al otro le toque CPU. Eso no es "el fallo no se
+        dio": es "no se puede afirmar que se dio", y una prueba que falla en
+        ese caso está midiendo el planificador, no el cerrojo (trampa 38:
+        *registra si la condición que dices reproducir se dio*). Se comprueba
+        con los `ini`/`fin` que cada proceso publica, y si no hubo solape se
+        salta — no se relaja el `assertTrue` de más abajo, que sigue
+        pudiendo fallar cuando SÍ hay solape.
         """
         filas, ficheros = self._carrera("proceso")
+        if len(filas) == 2 and not (filas[0]["ini"] < filas[1]["fin"] and
+                                    filas[1]["ini"] < filas[0]["fin"]):
+            self.skipTest(
+                "la ventana de carrera no se abrió bajo esta carga: los dos "
+                "convertir() no se solaparon (proc0 %.1f-%.1f ms, proc1 "
+                "%.1f-%.1f ms desde el GO) — no hay nada que esta prueba "
+                "pueda afirmar sobre el fallo del hito 7 en esta pasada"
+                % (filas[0]["ini"] * 1000, filas[0]["fin"] * 1000,
+                   filas[1]["ini"] * 1000, filas[1]["fin"] * 1000))
         self.assertEqual(sum(1 for f in filas if f["ok"]), 2,
                          "sin cerrojo de máquina los dos tienen que colar")
         self.assertEqual(ficheros, 1)
@@ -275,7 +305,8 @@ class CarreraEntreProcesos(_Base):
         # Y aquí está el daño: alguno declara un tamaño que no es el del disco.
         self.assertTrue(any(f["bytes"] != reales for f in filas),
                         "el fallo del hito 7 es que una respuesta describe un "
-                        "fichero que ya no existe")
+                        "fichero que ya no existe -- reales=%s filas=%s"
+                        % (reales, filas))
 
     @unittest.skipUnless(HAY_IMAGEMAGICK,
                         "no hay ImageMagick (`magick`): ningún motor lee png/jpg")
@@ -308,6 +339,17 @@ class DuenoMuerto(_Base):
     """
 
     def test_el_candado_se_recupera_solo_al_morir_su_dueno(self):
+        """N30: `_matar` (`taskkill /F`) devuelve el control en cuanto Windows
+        acepta la orden, no en cuanto el candado de rango de bytes queda
+        efectivamente liberado — bajo carga esas dos cosas se separan. La
+        prueba original comprobaba una sola vez justo después de matar, así
+        que medía el planificador, no la recuperación. Aquí se reintenta con
+        tope (trampa 65: el arreglo no es relajar el `assertTrue`, sigue
+        exigiendo que se recupere). Lo que SÍ sigue siendo "inmediato" —y se
+        sigue comprobando— es cada intento individual: `_reservar_destino`
+        no lleva ninguna espera propia, es el sistema operativo el que tarda
+        en soltar, no la función.
+        """
         p = _lanzar("reservador", "maquina", salida=self.salida)
         self.vivos.append(p)
         self.assertEqual(_ultima_linea_json(p.stdout.readline()),
@@ -315,11 +357,22 @@ class DuenoMuerto(_Base):
         self.assertFalse(nucleo._reservar_destino(self.salida),
                          "con el dueño VIVO no se puede entrar")
         _matar(p)
+        tope, paso = 2.0, 0.03
         t0 = time.perf_counter()
-        self.assertTrue(nucleo._reservar_destino(self.salida),
-                        "el candado de un dueño muerto tiene que ser recuperable")
-        self.assertLess((time.perf_counter() - t0) * 1000, 100,
-                        "la recuperación es inmediata, no una espera")
+        recuperado = False
+        while time.perf_counter() - t0 < tope:
+            ini = time.perf_counter()
+            recuperado = nucleo._reservar_destino(self.salida)
+            ms_intento = (time.perf_counter() - ini) * 1000
+            self.assertLess(ms_intento, 100,
+                            "cada intento tiene que ser inmediato: "
+                            "_reservar_destino no lleva lógica de espera propia")
+            if recuperado:
+                break
+            time.sleep(paso)
+        self.assertTrue(recuperado,
+                        "el candado de un dueño muerto tiene que ser recuperable "
+                        "(tope de %.1f s agotado)" % tope)
         nucleo._soltar_destino(self.salida)
 
     def test_el_fichero_de_candado_no_se_queda_de_basura(self):

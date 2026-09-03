@@ -258,9 +258,23 @@ class DuenoMuerto(_ConHijo):
 
         Sin detección, el trabajo se queda `working` en el disco para siempre:
         las cuatro superficies y el modelo esperan a algo que ya no existe.
+
+        N30: `_es_huerfano` decide preguntando a `cerrojo.esta_libre`, que
+        toma y suelta el candado de rango de bytes del proceso muerto — y ese
+        candado lo suelta el SISTEMA OPERATIVO al morir el proceso, no algo
+        instantáneo garantizado. `_matar_al_hijo` espera a que `taskkill`
+        termine (`self.proc.wait`), pero eso no es lo mismo que "el SO ya
+        liberó el candado" bajo carga. Una sola comprobación medía el
+        planificador; aquí se reintenta con tope declarado (sigue fallando
+        de verdad si el tope se agota, trampa 65).
         """
         self._matar_al_hijo()
+        tope, paso = 2.0, 0.05
+        t0 = time.perf_counter()
         r = self.sv.job(self.jid)
+        while r["estado"] != S.FALLIDO and time.perf_counter() - t0 < tope:
+            time.sleep(paso)
+            r = self.sv.job(self.jid)
         self.assertEqual(r["estado"], S.FALLIDO, r)
         self.assertTrue(r.get("huerfano"))
         self.assertIn("no vive", r["nota"])
