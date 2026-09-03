@@ -529,8 +529,25 @@ class LibreOfficeEnContenedor(_EnContenedor, Motor):
     }
     #: No medidas. Se declaran porque son el mismo filtro de importación que una
     #: medida, con otro filtro de exportación — no porque el catálogo las liste.
+    #:
+    #: Pendiente 5 de `hito5-documental.md`, MEDIDAS por S3 en
+    #: `bench/sondeo-documental.md` §3 y RESONDEADAS de verdad por worker7 en
+    #: `bench/aristas-documentales-cierre.md`. **NO** entran `("pptx", "png")`
+    #: ni `("svg", "png")`, aunque las dos están medidas `real`: `_aristas()`
+    #: construye las `Arista` de `_DECLARADAS` sin pasar `rasteriza=`, así que
+    #: quedarían con `rasteriza=False` a pesar de rasterizar de verdad, y
+    #: `sondeo.aplicar()` toma `rasteriza=a.rasteriza` de la arista QUE YA
+    #: EXISTÍA antes de superponer — nunca del sondeo. El planificador podría
+    #: entonces elegir un camino que rasteriza sin pagar la penalización de
+    #: +1000, entregando una salida sin una letra y sin avisar: la misma
+    #: familia de `resvg`. Arreglarlo de verdad exige un tercer campo en la
+    #: tupla (o una tupla aparte) que toque `_aristas()` y `sondeo.aplicar()`,
+    #: y se queda fuera de esta ronda a propósito.
     _DECLARADAS = (("rtf", "odt"), ("rtf", "docx"), ("html", "odt"),
-                   ("txt", "odt"), ("odt", "html"), ("docx", "rtf"))
+                   ("txt", "odt"), ("odt", "html"), ("docx", "rtf"),
+                   ("csv", "xlsx"), ("xlsx", "pdf"), ("xlsx", "csv"),
+                   ("xlsx", "html"), ("csv", "pdf"), ("pptx", "pdf"),
+                   ("pptx", "odp"), ("svg", "pdf"))
     COSTE_SIN_SONDEAR = 1.21
 
     def __init__(self) -> None:
@@ -570,9 +587,15 @@ class PandocEnContenedor(_EnContenedor, Motor):
         ("md", "txt"): ('P15', 1.01, False),
     }
     _MUERTAS = {}
+    #: Ídem `LibreOfficeEnContenedor._DECLARADAS`: pendiente 5, MEDIDAS por S3
+    #: y RESONDEADAS por worker7. Las 7 completas, sin exclusión — ninguna
+    #: rasteriza (`pandoc` no produce imágenes desde estos pares).
     _DECLARADAS = (("html", "epub"), ("html", "odt"), ("html", "rtf"),
                    ("docx", "odt"), ("epub", "docx"), ("epub", "txt"),
-                   ("rtf", "md"), ("rtf", "html"), ("md", "rtf"))
+                   ("rtf", "md"), ("rtf", "html"), ("md", "rtf"),
+                   ("md", "pptx"), ("md", "tex"), ("docx", "tex"),
+                   ("tex", "docx"), ("tex", "html"), ("tex", "pdf"),
+                   ("pptx", "md"))
     COSTE_SIN_SONDEAR = 1.21
 
     def __init__(self) -> None:

@@ -65,6 +65,11 @@ _F = [
     Formato("pdf", "documento", texto=True, alfa=True, prof_max=16),
     Formato("docx", "documento", texto=True),
     Formato("odt", "documento", texto=True),
+    Formato("xlsx", "hoja", texto=True),
+    Formato("ods", "hoja", texto=True),
+    Formato("pptx", "presentacion", texto=True),
+    Formato("odp", "presentacion", texto=True),
+    Formato("tex", "documento", texto=True),
     Formato("epub", "documento", texto=True),
     Formato("mobi", "documento", texto=True,
             nota="MOBI comprime el texto (PalmDoc/LZ77): un centinela NO aparece "
