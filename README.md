@@ -1,12 +1,17 @@
 # FileX
 
+[![integridad](https://github.com/edicius2002/FileX/actions/workflows/integridad.yml/badge.svg?branch=main)](https://github.com/edicius2002/FileX/actions/workflows/integridad.yml)
+[![suite](https://github.com/edicius2002/FileX/actions/workflows/suite.yml/badge.svg?branch=main)](https://github.com/edicius2002/FileX/actions/workflows/suite.yml)
+[![Licencia: MIT](https://img.shields.io/badge/licencia-MIT-blue.svg)](LICENSE)
+[![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-blue.svg)](pyproject.toml)
+
 Conversor universal de archivos, **local-first**, que se entrega como **servidor MCP + CLI + watcher de carpetas + API HTTP local**. Sobre Windows con Docker/WSL2, aprovechando una RTX 3060 de 12 GB.
 
 Cubre 12 categorías: ofimática↔PDF, markup, operaciones PDF, ebooks, imágenes normales y especiales, vídeo, audio, documento→texto para LLM, OCR, datos tabulares y audio/vídeo→texto.
 
 > **Estado: los siete hitos, hechos.** Este repositorio contiene la auditoría de 22 repositorios del ecosistema —leídos a nivel de código y ejecutados en la máquina real—, el plan de construcción que sale de ella, y **el producto**: registro, grafo con coste por arista, confinamiento, invocación disciplinada, y **cuatro superficies** —CLI, MCP, watcher de carpetas y API HTTP local—, con la verificación DENTRO de la conversión.
 >
-> **22 módulos, biblioteca estándar, cero dependencias. 16 ficheros de pruebas.** Suite verificada el 31/08/2026 con `.venv-mcp-filex/Scripts/python.exe` (win32, 3.11.9) y Docker levantado: **424 passed · 2 skipped · 0 failed · 116 subtests** en 156,51 s. Los dos saltados van declarados: uno pide un ráster que hay que generar y el otro la tarjeta (`FILEX_PRUEBAS_SIDECAR=1`). **Un recuento de suite declara su intérprete, su entorno y qué quedó fuera, o no dice qué se ejecutó.**
+> **22 módulos, biblioteca estándar, cero dependencias. 18 ficheros de pruebas.** Suite verificada el 03/09/2026 con `.venv-mcp-filex/Scripts/python.exe` (win32, 3.11.9) y Docker levantado: **460 passed · 3 skipped · 0 failed · 130 subtests** en 243,58 s, con la máquina despejada. Los tres saltados van declarados: uno pide un ráster que hay que generar, otro la tarjeta (`FILEX_PRUEBAS_SIDECAR=1`) y el tercero dos volúmenes de disco distintos que esta máquina no tiene. *(Bajo carga de dos carriles trabajando en paralelo, una pasada previa dio 4 fallos intermitentes — carreras ya documentadas como `N30`, trampa 101 de `CLAUDE.md`: no son una regresión, son el mismo hallazgo reproduciéndose.)* **Un recuento de suite declara su intérprete, su entorno, el estado de la máquina y qué quedó fuera, o no dice qué se ejecutó.**
 
 ```
 $ filex convertir corpus/video/patologico_2pistas.mkv salida.mp4
@@ -31,18 +36,28 @@ Siete fallos independientes, en seis proyectos distintos, todos del mismo tipo: 
 
 ## Por dónde empezar
 
+Dos públicos distintos, dos puertas de entrada. La tabla los separa; no mezcles el orden.
+
+**Si sólo quieres usar FileX** (convertir ficheros, nada de tocar código):
+
 | Si quieres… | Lee |
 |---|---|
-| **Usarlo** | `python -m filex motores` para ver qué hay, `python -m filex plan a.png b.pdf` para ver qué haría, `python -m filex convertir a.png b.pdf` para hacerlo |
+| **Instalarlo y convertir tu primer fichero** | [`GUIA-DE-USO.md`](GUIA-DE-USO.md) — requisitos reales, los tres comandos básicos y ejemplos ejecutados de verdad en esta máquina, con su salida tal cual |
+
+**Si vas a tocar código, medir algo o entender la investigación:**
+
+| Si quieres… | Lee |
+|---|---|
 | **Leer el código** | [`filex/`](filex/) — 22 módulos, biblioteca estándar, cero dependencias. Empieza por `invocacion.py`, que es el único sitio que puede lanzar un proceso, y sigue por `verificador.py`, que es el contrato |
-| **Saber qué falta** | [`PENDIENTE.md`](PENDIENTE.md) — la lista corta y accionable: las cuatro decisiones que no son trabajo, la ronda lista para despachar, y lo que está bloqueado con su motivo |
-| **Seguir construyendo** | [`ESTADO-Y-REPARTO.md`](ESTADO-Y-REPARTO.md) §3 — el inventario vivo: **107 filas, 72 cerradas, 23 abiertas**, agrupadas por el recurso que las limita. Los siete hitos de [`PLAN-ORQUESTADOR.md`](PLAN-ORQUESTADOR.md) están hechos |
+| **Las reglas y las 110 trampas ya pagadas** | [`CLAUDE.md`](CLAUDE.md) — cada una con la medida que la respalda. Léelo ANTES de tocar nada: es el documento más útil del repositorio si vas a modificar código |
+| **Contribuir** (carriles, PRs, CI) | [`CONTRIBUTING.md`](CONTRIBUTING.md) — los carriles, las cuatro declaraciones que necesita un recuento de suite, y **qué NO puede comprobar la CI**, que es lo primero que hay que saber |
+| **Saber qué falta** | [`PENDIENTE.md`](PENDIENTE.md) — la lista corta y accionable: lo bloqueado con su motivo, la deuda que la CI cuenta y lo listo para despachar |
+| **Seguir el inventario vivo** | [`ESTADO-Y-REPARTO.md`](ESTADO-Y-REPARTO.md) §3 — **118 filas: 97 cerradas, 9 en curso, 6 abiertas** (más 6 históricas que no cuentan), agrupadas por el recurso que las limita. Los siete hitos de [`PLAN-ORQUESTADOR.md`](PLAN-ORQUESTADOR.md) están hechos |
 | Entender **por qué** FileX y no otra cosa | [`HUECOS.md`](HUECOS.md) — los cinco diferenciadores, reevaluados tras ejecutar |
 | El análisis completo del ecosistema | [`ANALISIS-COMPLETO.md`](ANALISIS-COMPLETO.md) — 22 repos, 21 tablas comparativas |
 | Diseñar la capa MCP | [`RESULTADOS-MCP.md`](RESULTADOS-MCP.md) — incluye las 15 reglas de confinamiento |
 | Los motores de IA que faltan por probar | [`AGENTES-PRUEBAS-PENDIENTES.md`](AGENTES-PRUEBAS-PENDIENTES.md) |
-| Las reglas y **las 110 trampas ya pagadas** | [`CLAUDE.md`](CLAUDE.md) — cada una con la medida que la respalda. Es el documento más útil del repositorio si vas a tocar algo |
-| **Contribuir** | [`CONTRIBUTING.md`](CONTRIBUTING.md) — los carriles, las cuatro declaraciones que necesita un recuento de suite, y **qué NO puede comprobar la CI**, que es lo primero que hay que saber |
+| Qué cambió en cada versión | [`CHANGELOG.md`](CHANGELOG.md) |
 
 ## Integración continua, y lo que NO cubre
 
