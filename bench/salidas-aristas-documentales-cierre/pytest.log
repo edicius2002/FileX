@@ -1,0 +1,34 @@
+........................................................... [ 12%]
+........s......................................................................................................... [ 37%]
+.......................................................... [ 49%]
+...................F................................................. [ 64%]
+.................s...................................s.................................. [ 83%]
+.......................................................... [ 96%]
+.................                                                        [100%]
+================================== FAILURES ===================================
+__________ Cobertura.test_el_aviso_de_rasterizacion_viaja_al_modelo ___________
+
+self = <test_hito4.Cobertura testMethod=test_el_aviso_de_rasterizacion_viaja_al_modelo>
+
+    def test_el_aviso_de_rasterizacion_viaja_al_modelo(self):
+        """El fallo de `resvg`: `rc=0`, PNG válido, geometría exacta y **ni una
+        letra** (`bench/aristas-nominales.md` §8.2). El contrato no lo atrapa,
+        así que el modelo tiene que enterarse **antes**, no después."""
+        r = self.sv.despachar("list_targets",
+                              {"formato_origen": "svg", "formato_destino": "pdf"})
+        if not r.get("posible"):
+            self.skipTest("sin motor svg→pdf en esta máquina")
+>       self.assertIn("aviso", r)
+E       AssertionError: 'aviso' not found in {'origen': 'svg', 'destino': 'pdf', 'posible': True, 'camino': ['svg', 'pdf'], 'motores': ['doc_libreoffice'], 'saltos': 1, 'evidencia': ['real'], 'descartado': "rasteriza en 'svg→webp [imagemagick]' y 'pdf' admite texto: el resultado tendría la geometría correcta y ni una letra seleccionable"}
+
+pruebas\test_hito4.py:229: AssertionError
+============================== warnings summary ===============================
+pruebas/test_hito4.py::Catalogo::test_ni_resources_ni_prompts
+pruebas/test_hito4.py::ServidorReal::test_se_construye_sin_arrancar
+  C:\Users\krato\orca\workspaces\FileX\filex-aristas-doc\filex\mcp.py:528: MCPDeprecationWarning: The roots capability is deprecated as of 2026-07-28 (SEP-2577).
+    srv = Server(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED pruebas/test_hito4.py::Cobertura::test_el_aviso_de_rasterizacion_viaja_al_modelo
+1 failed, 459 passed, 3 skipped, 2 warnings, 130 subtests passed in 217.28s (0:03:37)

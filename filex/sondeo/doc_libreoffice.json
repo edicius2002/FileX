@@ -1,57 +1,57 @@
 {
   "motor": "doc_libreoffice",
   "build": "doc_libreoffice 29.4.3 · filex-c13@6d359bad483e",
-  "fecha": "2026-09-02",
-  "informe": "bench/acuerdo-y-cruce.md",
+  "fecha": "2026-09-03",
+  "informe": "bench/aristas-documentales-cierre.md",
   "huella": {
-    "motor": "ffe3c41451f77538",
+    "motor": "48e14e7a35210f60",
     "invocacion": "3a2c16603bb46673",
     "contrato": "fe41b4d52413299c"
   },
   "interprete": "3.11",
-  "nota_huella": "RESONDEADO (no resellado por algoritmo) el 2026-09-02 por worker2, ronda 7: `C31` (ronda 6) cambio el componente `contrato` -- FIRMAS (TGA/CUR) y `_datos` (RAM) -- y `bench/salidas-huella/resellar.py --comprobar` confirmo que la huella guardada NO coincidia con el algoritmo anterior sobre el arbol de ahora: no era un cambio de algoritmo, hacia falta resondear. Las 62/70/8/16/16 aristas se remidieron de verdad (FileX.convertir() real, contrato de cinco puntos incluido), no se copio el JSON viejo con un campo cambiado.",
+  "nota_huella": "RESONDEADO (no resellado por algoritmo) el 2026-09-03 por worker7, carril aristas-documentales-doc: `bench/aristas-documentales-cierre.md` anadio 8 tuplas a `_DECLARADAS` (csv>xlsx, xlsx>pdf, xlsx>csv, xlsx>html, csv>pdf, pptx>pdf, pptx>odp, svg>pdf) para cerrar el hueco de `fx.destinos('csv') -> []`. Eso cambio el AST de la clase y CADUCO la huella `motor` (de ffe3c41451f77538 a 48e14e7a35210f60); `invocacion` y `contrato` no se tocaron y no cambiaron. Las 24 aristas REAL de este motor (10 `_MEDIDAS` + 14 `_DECLARADAS`) se REMIDIERON de verdad con `FileX.convertir()` real (contrato de cinco puntos, censo del punto 5 incluido) via `bench/salidas-aristas-documentales-cierre/_resondeo55.py`, no se copio el JSON viejo con la huella cambiada. `pptx>png` y `svg>png` siguen SIN tupla en `_DECLARADAS` a proposito (rasterizan y `_aristas()` no puede marcarlas `rasteriza=True` sin un tercer campo en la tupla - ver el comentario en motor_contenedor.py): sus dos entradas se conservan del sellado de worker2 (ronda 7, 2026-09-02) sin re-medir, porque siguen siendo evidencia real aunque el codigo de hoy no las use.",
   "aristas": {
     "csv>pdf": {
       "estado": "real",
-      "ms": 3726.1,
+      "ms": 2169.5,
       "motivo": "20944 B, 119 caracteres, contrato ok",
-      "caso": "Q06"
+      "caso": "R22"
     },
     "csv>xlsx": {
       "estado": "real",
-      "ms": 4951.6,
+      "ms": 2797.1,
       "motivo": "5790 B, 338 caracteres, contrato ok_parcial",
-      "caso": "Q01"
+      "caso": "R01"
     },
     "docx>rtf": {
       "estado": "real",
-      "ms": 3914.5,
+      "ms": 2038.8,
       "motivo": "8213 B, 8213 caracteres, contrato ok",
-      "caso": "S06"
+      "caso": "R18"
     },
     "html>odt": {
       "estado": "real",
-      "ms": 7547.9,
-      "motivo": "8122 B, 1192 caracteres, contrato ok_parcial",
-      "caso": "S03"
+      "ms": 2177.8,
+      "motivo": "8124 B, 1192 caracteres, contrato ok_parcial",
+      "caso": "R15"
     },
     "odt>html": {
       "estado": "real",
-      "ms": 3250.9,
+      "ms": 2394.0,
       "motivo": "2476 B, 895 caracteres, contrato ok",
-      "caso": "S05"
+      "caso": "R17"
     },
     "pptx>odp": {
       "estado": "real",
-      "ms": 4130.5,
-      "motivo": "32669 B, 2825 caracteres, contrato ok_parcial",
-      "caso": "Q08"
+      "ms": 2686.5,
+      "motivo": "32668 B, 2825 caracteres, contrato ok_parcial",
+      "caso": "R24"
     },
     "pptx>pdf": {
       "estado": "real",
-      "ms": 6476.5,
+      "ms": 2643.3,
       "motivo": "24534 B, 456 caracteres, contrato ok",
-      "caso": "Q07"
+      "caso": "R23"
     },
     "pptx>png": {
       "estado": "real",
@@ -61,21 +61,21 @@
     },
     "rtf>docx": {
       "estado": "real",
-      "ms": 4787.5,
+      "ms": 1950.9,
       "motivo": "5293 B, 542 caracteres, contrato ok_parcial",
-      "caso": "S02"
+      "caso": "R14"
     },
     "rtf>odt": {
       "estado": "real",
-      "ms": 19753.6,
-      "motivo": "14172 B, 1767 caracteres, contrato ok_parcial",
-      "caso": "S01"
+      "ms": 2112.0,
+      "motivo": "14173 B, 1767 caracteres, contrato ok_parcial",
+      "caso": "R13"
     },
     "svg>pdf": {
       "estado": "real",
-      "ms": 5547.6,
+      "ms": 1779.1,
       "motivo": "12500 B, 44 caracteres, contrato ok",
-      "caso": "Q10"
+      "caso": "R33"
     },
     "svg>png": {
       "estado": "real",
@@ -85,27 +85,27 @@
     },
     "txt>odt": {
       "estado": "real",
-      "ms": 4251.5,
-      "motivo": "12118 B, 1106 caracteres, contrato ok_parcial",
-      "caso": "S04"
+      "ms": 2671.1,
+      "motivo": "12117 B, 1104 caracteres, contrato ok_parcial",
+      "caso": "R16"
     },
     "xlsx>csv": {
       "estado": "real",
-      "ms": 3562.9,
+      "ms": 2883.2,
       "motivo": "109 B, 108 caracteres, contrato ok",
-      "caso": "Q04"
+      "caso": "R20"
     },
     "xlsx>html": {
       "estado": "real",
-      "ms": 4869.5,
+      "ms": 2095.4,
       "motivo": "2902 B, 464 caracteres, contrato ok",
-      "caso": "Q05"
+      "caso": "R21"
     },
     "xlsx>pdf": {
       "estado": "real",
-      "ms": 2932.6,
+      "ms": 2201.0,
       "motivo": "27403 B, 119 caracteres, contrato ok",
-      "caso": "Q03"
+      "caso": "R19"
     }
   }
 }

@@ -1,111 +1,111 @@
 {
   "motor": "doc_pandoc",
   "build": "doc_pandoc 29.4.3 · filex-c13@6d359bad483e",
-  "fecha": "2026-09-02",
-  "informe": "bench/acuerdo-y-cruce.md",
+  "fecha": "2026-09-03",
+  "informe": "bench/aristas-documentales-cierre.md",
   "huella": {
-    "motor": "f750a96c5bcb196a",
+    "motor": "08817e0e76ef187f",
     "invocacion": "3a2c16603bb46673",
     "contrato": "fe41b4d52413299c"
   },
   "interprete": "3.11",
-  "nota_huella": "RESONDEADO (no resellado por algoritmo) el 2026-09-02 por worker2, ronda 7: `C31` (ronda 6) cambio el componente `contrato` -- FIRMAS (TGA/CUR) y `_datos` (RAM) -- y `bench/salidas-huella/resellar.py --comprobar` confirmo que la huella guardada NO coincidia con el algoritmo anterior sobre el arbol de ahora: no era un cambio de algoritmo, hacia falta resondear. Las 62/70/8/16/16 aristas se remidieron de verdad (FileX.convertir() real, contrato de cinco puntos incluido), no se copio el JSON viejo con un campo cambiado.",
+  "nota_huella": "RESONDEADO (no resellado por algoritmo) el 2026-09-03 por worker7, carril aristas-documentales-doc: `bench/aristas-documentales-cierre.md` anadio 7 tuplas a `_DECLARADAS` (md>pptx, md>tex, docx>tex, tex>docx, tex>html, tex>pdf, pptx>md), ninguna rasteriza. Eso cambio el AST de la clase y CADUCO la huella `motor` (de f750a96c5bcb196a a 08817e0e76ef187f); `invocacion` y `contrato` no se tocaron y no cambiaron. Las 31 aristas REAL de este motor (15 `_MEDIDAS` + 16 `_DECLARADAS`) se REMIDIERON de verdad con `FileX.convertir()` real (contrato de cinco puntos, censo del punto 5 incluido) via `bench/salidas-aristas-documentales-cierre/_resondeo55.py`, no se copio el JSON viejo con la huella cambiada.",
   "aristas": {
     "docx>odt": {
       "estado": "real",
-      "ms": 3451.5,
+      "ms": 966.6,
       "motivo": "7202 B, 515 caracteres, contrato ok_parcial",
-      "caso": "S10"
+      "caso": "R45"
     },
     "docx>tex": {
       "estado": "real",
-      "ms": 1615.8,
+      "ms": 1103.5,
       "motivo": "2698 B, 2649 caracteres, contrato ok",
-      "caso": "Q13"
+      "caso": "R52"
     },
     "epub>docx": {
       "estado": "real",
-      "ms": 21742.3,
+      "ms": 762.6,
       "motivo": "10992 B, 635 caracteres, contrato ok_parcial",
-      "caso": "S11"
+      "caso": "R46"
     },
     "epub>txt": {
       "estado": "real",
-      "ms": 3110.5,
+      "ms": 691.0,
       "motivo": "566 B, 514 caracteres, contrato ok",
-      "caso": "S12"
+      "caso": "R47"
     },
     "html>epub": {
       "estado": "real",
-      "ms": 5604.8,
-      "motivo": "5279 B, 554 caracteres, contrato ok_parcial",
-      "caso": "S07"
+      "ms": 721.8,
+      "motivo": "5284 B, 554 caracteres, contrato ok_parcial",
+      "caso": "R42"
     },
     "html>odt": {
       "estado": "real",
-      "ms": 6208.9,
-      "motivo": "7286 B, 543 caracteres, contrato ok_parcial",
-      "caso": "S08"
+      "ms": 754.5,
+      "motivo": "7285 B, 543 caracteres, contrato ok_parcial",
+      "caso": "R43"
     },
     "html>rtf": {
       "estado": "real",
-      "ms": 3416.3,
+      "ms": 869.3,
       "motivo": "1756 B, 1754 caracteres, contrato ok",
-      "caso": "S09"
+      "caso": "R44"
     },
     "md>pptx": {
       "estado": "real",
-      "ms": 1564.1,
-      "motivo": "28170 B, 2218 caracteres, contrato ok_parcial",
-      "caso": "Q02"
+      "ms": 731.5,
+      "motivo": "28169 B, 2218 caracteres, contrato ok_parcial",
+      "caso": "R02"
     },
     "md>rtf": {
       "estado": "real",
-      "ms": 7618.7,
+      "ms": 955.2,
       "motivo": "1700 B, 1698 caracteres, contrato ok",
-      "caso": "S15"
+      "caso": "R50"
     },
     "md>tex": {
       "estado": "real",
-      "ms": 1958.9,
+      "ms": 1447.9,
       "motivo": "2748 B, 2699 caracteres, contrato ok",
-      "caso": "Q12"
+      "caso": "R51"
     },
     "pptx>md": {
       "estado": "real",
-      "ms": 1235.9,
+      "ms": 2830.1,
       "motivo": "549 B, 499 caracteres, contrato ok",
-      "caso": "Q17"
+      "caso": "R56"
     },
     "rtf>html": {
       "estado": "real",
-      "ms": 22552.2,
+      "ms": 830.7,
       "motivo": "4324 B, 3133 caracteres, contrato ok",
-      "caso": "S14"
+      "caso": "R49"
     },
     "rtf>md": {
       "estado": "real",
-      "ms": 1703.5,
+      "ms": 1143.6,
       "motivo": "471 B, 466 caracteres, contrato ok",
-      "caso": "S13"
+      "caso": "R48"
     },
     "tex>docx": {
       "estado": "real",
-      "ms": 1310.5,
-      "motivo": "10772 B, 394 caracteres, contrato ok_parcial",
-      "caso": "Q14"
+      "ms": 1282.6,
+      "motivo": "10771 B, 394 caracteres, contrato ok_parcial",
+      "caso": "R53"
     },
     "tex>html": {
       "estado": "real",
-      "ms": 864.9,
+      "ms": 929.4,
       "motivo": "4651 B, 2939 caracteres, contrato ok",
-      "caso": "Q15"
+      "caso": "R54"
     },
     "tex>pdf": {
       "estado": "real",
-      "ms": 10527.7,
-      "motivo": "9755 B, 268 caracteres, contrato aviso",
-      "caso": "Q16"
+      "ms": 6570.4,
+      "motivo": "9754 B, 268 caracteres, contrato aviso",
+      "caso": "R55"
     }
   }
 }

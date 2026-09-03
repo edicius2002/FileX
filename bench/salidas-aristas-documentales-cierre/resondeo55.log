@@ -1,0 +1,73 @@
+contenedores vivos ANTES: 5
+    19a7a940a15d|filex-convertx|ghcr.io/c4illin/convertx:latest|Up 2 hours
+    e446d1d7ad78|filex-snapotter|snapotter/snapotter:latest|Up 2 hours (healthy)
+    851f149b14b4|filex-snapotter-pg|postgres:17-alpine|Up 2 hours (healthy)
+    c0a97b977b80|filex-snapotter-redis|redis:8-alpine|Up 2 hours (healthy)
+    6efb0c4e8fac|filex-gotenberg8|gotenberg/gotenberg:8|Up 2 hours (healthy)
+builds: {'doc_libreoffice': 'doc_libreoffice 29.4.3 · filex-c13@6d359bad483e', 'doc_pandoc': 'doc_pandoc 29.4.3 · filex-c13@6d359bad483e', 'doc_calibre': 'doc_calibre 29.4.3 · filex-c13@6d359bad483e'}
+R01  doc_libreoffice    csv->xlsx  rc=0     2797 ms      5790 B  car=   338 cent=S contrato=ok_parcial sobra=0
+     semilla guardada: C:\Users\krato\orca\workspaces\FileX\filex-aristas-doc\bench\salidas-aristas-documentales-cierre\entradas\entrada.xlsx (5790 B)
+R02  doc_pandoc          md->pptx  rc=0      732 ms     28169 B  car=  2218 cent=S contrato=ok_parcial sobra=0
+     semilla guardada: C:\Users\krato\orca\workspaces\FileX\filex-aristas-doc\bench\salidas-aristas-documentales-cierre\entradas\entrada.pptx (28169 B)
+R03  doc_libreoffice   docx->html  rc=0     2400 ms      2399 B  car=   571 cent=S contrato=ok         sobra=0
+R04  doc_libreoffice   docx->odt   rc=0     2553 ms     13561 B  car=  1757 cent=S contrato=ok_parcial sobra=0
+R05  doc_libreoffice   docx->pdf   rc=0     2746 ms     22820 B  car=   456 cent=S contrato=ok         sobra=0
+R06  doc_libreoffice   docx->png   rc=0     4408 ms     38798 B  car=     0 cent=n contrato=ok         sobra=0
+R07  doc_libreoffice   html->pdf   rc=0     3211 ms     32807 B  car=   456 cent=S contrato=ok         sobra=0
+R08  doc_libreoffice    odt->docx  rc=0     2186 ms      6063 B  car=   540 cent=S contrato=ok_parcial sobra=0
+R09  doc_libreoffice    odt->pdf   rc=0     2163 ms     31976 B  car=   456 cent=S contrato=ok         sobra=0
+R10  doc_libreoffice    odt->txt   rc=0     5733 ms       458 B  car=   456 cent=S contrato=ok         sobra=0
+R11  doc_libreoffice    rtf->pdf   rc=0     1886 ms     21412 B  car=   458 cent=S contrato=ok         sobra=0
+R12  doc_libreoffice    txt->pdf   rc=0     1814 ms     16940 B  car=   383 cent=S contrato=ok         sobra=0
+R13  doc_libreoffice    rtf->odt   rc=0     2112 ms     14173 B  car=  1767 cent=S contrato=ok_parcial sobra=0
+R14  doc_libreoffice    rtf->docx  rc=0     1951 ms      5293 B  car=   542 cent=S contrato=ok_parcial sobra=0
+R15  doc_libreoffice   html->odt   rc=0     2178 ms      8124 B  car=  1192 cent=S contrato=ok_parcial sobra=0
+R16  doc_libreoffice    txt->odt   rc=0     2671 ms     12117 B  car=  1104 cent=S contrato=ok_parcial sobra=0
+R17  doc_libreoffice    odt->html  rc=0     2394 ms      2476 B  car=   895 cent=S contrato=ok         sobra=0
+R18  doc_libreoffice   docx->rtf   rc=0     2039 ms      8213 B  car=  8213 cent=S contrato=ok         sobra=0
+R19  doc_libreoffice   xlsx->pdf   rc=0     2201 ms     27403 B  car=   119 cent=S contrato=ok         sobra=0
+R20  doc_libreoffice   xlsx->csv   rc=0     2883 ms       109 B  car=   108 cent=S contrato=ok         sobra=0
+R21  doc_libreoffice   xlsx->html  rc=0     2095 ms      2902 B  car=   464 cent=S contrato=ok         sobra=0
+R22  doc_libreoffice    csv->pdf   rc=0     2170 ms     20944 B  car=   119 cent=S contrato=ok         sobra=0
+R23  doc_libreoffice   pptx->pdf   rc=0     2643 ms     24534 B  car=   456 cent=S contrato=ok         sobra=0
+R24  doc_libreoffice   pptx->odp   rc=0     2686 ms     32668 B  car=  2825 cent=S contrato=ok_parcial sobra=0
+R33  doc_libreoffice    svg->pdf   rc=0     1779 ms     12500 B  car=    44 cent=S contrato=ok         sobra=0
+R26  doc_pandoc        docx->epub  rc=0     1023 ms      5242 B  car=   509 cent=S contrato=ok_parcial sobra=0
+R27  doc_pandoc        docx->html  rc=0      926 ms      4487 B  car=  3131 cent=S contrato=ok         sobra=0
+R28  doc_pandoc        docx->md    rc=0      578 ms       566 B  car=   514 cent=S contrato=ok         sobra=0
+R29  doc_pandoc        docx->pdf   rc=0     5367 ms      8159 B  car=   456 cent=S contrato=aviso      sobra=0
+R30  doc_pandoc        docx->rtf   rc=0     2017 ms      1634 B  car=  1632 cent=S contrato=ok         sobra=0
+R31  doc_pandoc        epub->html  rc=0      810 ms      4629 B  car=  3152 cent=S contrato=ok         sobra=0
+R32  doc_pandoc        epub->md    rc=0     1124 ms       585 B  car=   532 cent=S contrato=ok         sobra=0
+R34  doc_pandoc        html->docx  rc=0      846 ms     10881 B  car=   614 cent=S contrato=ok_parcial sobra=0
+R35  doc_pandoc        html->md    rc=0      696 ms       568 B  car=   516 cent=S contrato=ok         sobra=0
+R36  doc_pandoc          md->docx  rc=0      846 ms     10862 B  car=   586 cent=S contrato=ok_parcial sobra=0
+R37  doc_pandoc          md->epub  rc=0     1578 ms      5275 B  car=   523 cent=S contrato=ok_parcial sobra=0
+R38  doc_pandoc          md->html  rc=0     1520 ms      4525 B  car=  3131 cent=S contrato=ok         sobra=0
+R39  doc_pandoc          md->odt   rc=0     3954 ms      7303 B  car=   515 cent=S contrato=ok_parcial sobra=0
+R40  doc_pandoc          md->pdf   rc=0    10073 ms     10366 B  car=   456 cent=S contrato=aviso      sobra=0
+R41  doc_pandoc          md->txt   rc=0     1225 ms       535 B  car=   485 cent=S contrato=ok         sobra=0
+R42  doc_pandoc        html->epub  rc=0      722 ms      5284 B  car=   554 cent=S contrato=ok_parcial sobra=0
+R43  doc_pandoc        html->odt   rc=0      754 ms      7285 B  car=   543 cent=S contrato=ok_parcial sobra=0
+R44  doc_pandoc        html->rtf   rc=0      869 ms      1756 B  car=  1754 cent=S contrato=ok         sobra=0
+R45  doc_pandoc        docx->odt   rc=0      967 ms      7202 B  car=   515 cent=S contrato=ok_parcial sobra=0
+R46  doc_pandoc        epub->docx  rc=0      763 ms     10992 B  car=   635 cent=S contrato=ok_parcial sobra=0
+R47  doc_pandoc        epub->txt   rc=0      691 ms       566 B  car=   514 cent=S contrato=ok         sobra=0
+R48  doc_pandoc         rtf->md    rc=0     1144 ms       471 B  car=   466 cent=S contrato=ok         sobra=0
+R49  doc_pandoc         rtf->html  rc=0      831 ms      4324 B  car=  3133 cent=S contrato=ok         sobra=0
+R50  doc_pandoc          md->rtf   rc=0      955 ms      1700 B  car=  1698 cent=S contrato=ok         sobra=0
+R51  doc_pandoc          md->tex   rc=0     1448 ms      2748 B  car=  2699 cent=S contrato=ok         sobra=0
+R52  doc_pandoc        docx->tex   rc=0     1104 ms      2698 B  car=  2649 cent=S contrato=ok         sobra=0
+R53  doc_pandoc         tex->docx  rc=0     1283 ms     10771 B  car=   394 cent=S contrato=ok_parcial sobra=0
+R54  doc_pandoc         tex->html  rc=0      929 ms      4651 B  car=  2939 cent=S contrato=ok         sobra=0
+R55  doc_pandoc         tex->pdf   rc=0     6570 ms      9754 B  car=   268 cent=S contrato=aviso      sobra=0
+R56  doc_pandoc        pptx->md    rc=0     2830 ms       549 B  car=   499 cent=S contrato=ok         sobra=0
+
+total 121.6 s
+contenedores vivos DESPUES: 5
+    19a7a940a15d|filex-convertx|ghcr.io/c4illin/convertx:latest|Up 3 hours
+    e446d1d7ad78|filex-snapotter|snapotter/snapotter:latest|Up 2 hours (healthy)
+    851f149b14b4|filex-snapotter-pg|postgres:17-alpine|Up 2 hours (healthy)
+    c0a97b977b80|filex-snapotter-redis|redis:8-alpine|Up 2 hours (healthy)
+    6efb0c4e8fac|filex-gotenberg8|gotenberg/gotenberg:8|Up 2 hours (healthy)
+contenedores NUEVOS vivos: 0
