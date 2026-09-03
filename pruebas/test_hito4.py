@@ -321,22 +321,29 @@ class Confinar(unittest.TestCase):
     @unittest.skipUnless(HAY_IMAGEMAGICK, _MOTIVO_SIN_IMAGEMAGICK)
     def test_convert_fuera_de_la_raiz_no_convierte(self):
         """El camino existe (png→webp) y aun así no se convierte, porque el
-        destino cae fuera. **El orden importa y es deliberado:** primero se
-        comprueba que la conversión EXISTE —una consulta al grafo, sin tocar el
-        disco y sin decir nada que el `enum` del catálogo no diga ya— y solo
-        después se toca el sistema de ficheros. Ese orden no filtra: el que sí
-        filtraría es el de `kordoc`, que hace `realpathSync` antes de
-        `assertWithinRoot` y por eso enumera el disco entero."""
+        destino cae fuera. **El orden importa y sigue siendo deliberado:**
+        primero se comprueba que la conversión EXISTE —una consulta al grafo,
+        sin tocar el disco y sin decir nada que el `enum` del catálogo no diga
+        ya— y solo después se toca el sistema de ficheros. Ese orden no
+        filtra: el que sí filtraría es el de `kordoc`, que hace `realpathSync`
+        antes de `assertWithinRoot` y por eso enumera el disco entero.
+
+        C36-7 (`hito4-mcp.md` §8.6): lo que SÍ cambia es que la comprobación
+        de confinamiento —que antes solo ocurría DENTRO del hilo del
+        trabajo, gastando un `job_id` por nada (2 601,65 µs de mediana,
+        200/200 `job_id`, `bench/salidas-suelo-n32/resultado_job_denegado.json`)—
+        ahora ocurre en el acto, DESPUÉS de confirmar que el camino existe y
+        ANTES de crear el trabajo: mismo orden, un paso menos de indirección.
+        El mensaje sigue siendo el mismo opaco (R4); solo deja de haber un
+        `job_id` que consultar."""
         png = os.path.join(self.raiz, "e.png")
         with open(png, "wb") as fh:
             fh.write(b"\x89PNG\r\n\x1a\n")
         d = tempfile.mkdtemp(prefix="h4-fuera-")
         r = self.sv.despachar("convert", {"entrada": png,
                                           "salida": os.path.join(d, "x.webp")})
-        self.assertIn("job_id", r, "el camino png->webp sí existe")
-        fin = _esperar(self.sv, r["job_id"])
-        self.assertEqual(fin["estado"], S.FALLIDO)
-        self.assertEqual(fin.get("motivo"), _conf.MENSAJE_OPACO)
+        self.assertNotIn("job_id", r, "C36-7: se deniega ANTES del job_id")
+        self.assertEqual(r, {"error": _conf.MENSAJE_OPACO})
 
     def test_interseccion_de_roots_no_sustitucion(self):
         """R13. `servers/filesystem` (`index.ts:181`) **sustituye** la lista, que

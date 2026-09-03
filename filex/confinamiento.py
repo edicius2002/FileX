@@ -11,8 +11,10 @@ superficies —CLA, MCP, watcher y API HTTP— y ninguna puede llevar su propia 
 
 from __future__ import annotations
 
+import contextlib
 import os
 import sys
+import threading
 import time
 
 #: R4: el MISMO mensaje para «prohibido» y para «no existe». Sin ruta, sin ruta
@@ -56,6 +58,37 @@ MAX_LONGITUD = 4096
 #: **Subir el suelo por encima del p90 es una DECISIÓN que exige volver a
 #: medir, y no se toma aquí** (`N32`): sube el coste del rechazo, que es justo
 #: el amplificador de DoS que la trampa 28 nombra.
+#:
+#: **`N32`, decidido — MEDIDO el 03/09/2026 en esta máquina, 5 tandas
+#: independientes** (`bench/salidas-suelo-n32/`): el p90 de `no_existe` sin
+#: ecualizar del que partía la cola de 1,88× (582,19 µs) era de una tanda
+#: `SUCIA` (CPU compartida con otro carril). Sobre **5 tandas frescas**, el
+#: mismo p90 da **181,77 / 325,89 / 247,70 / 335,09 / 242,69 µs** — todas por
+#: debajo del suelo actual salvo una casi empatada — y el ratio p90
+#: `no_existe/prohibido` YA ECUALIZADO con el suelo de HOY (300 µs) da **0,94
+#: / 1,26 / 1,32 / 1,01 / 0,99**: mediana de las 5 tandas ≈ 1,01. **La cola de
+#: 1,88× no reproduce hoy: era de la tanda, no del suelo.** Subir el suelo a
+#: 500 µs (margen sobre el peor p90 fresco, 335,09) no mejora esa ratio
+#: (0,995 frente a 1,003 con 300 µs — dentro del ruido) y **cuesta ×1,666 en
+#: CADA rechazo real** (301,30 → 502,00 µs de mediana,
+#: `resultado_suelo_alto.json`): el amplificador de DoS de la trampa 28, sin
+#: beneficio medible. **No se sube.** Lo que SÍ se cierra es el residuo
+#: estructural (no depende del ruido: es aritmético) que
+#: `bench/oraculo-y-gotenberg.md` §1.5 dejó `PENDIENTE` — `existe/prohibido =
+#: 2,11× (mediana) / 2,15× (p90)` porque `FileX._resolver()` paga el suelo dos
+#: veces (entrada + directorio de salida) en la vía válida y una sola en la
+#: denegada en la entrada. Se implementa un suelo POR OPERACIÓN
+#: (`Confinamiento.operacion()`, usado por `FileX._resolver()`): la vía válida
+#: paga UN suelo, no dos. **Verificado sobre 4 tandas** a nivel de
+#: `FileX.convertir()` (`bench/salidas-suelo-n32/resultado_operacion.json`,
+#: la última): el ratio `existe/prohibido` baja a **1,09–1,25× de mediana y
+#: 1,11–1,77× de p90** (las cuatro tandas, frente a 2,11×/2,15× de antes), y
+#: el coste mediano de la vía válida BAJA de 659,55 a **348–386 µs** —
+#: aproximadamente la mitad, porque ahora paga un piso en vez de dos— sin que
+#: el coste de la vía denegada se mueva (312,50 → 307–324 µs, dentro del
+#: ruido). **No cierra del todo a p90 en las cuatro tandas** (mejor caso
+#: 1,11×, peor 1,77×) pero sí de forma consistente y grande frente al 2,15×
+#: de origen, y sin el coste de subir el suelo global.
 PISO_TEMPORAL_S = 0.0003
 
 #: MEDIDO en esta máquina (control de 6 objetivos, 200 repeticiones cada uno,
@@ -144,6 +177,10 @@ class Confinamiento:
         # N9: ver PISO_TEMPORAL_S. Por defecto False: CLI/watcher/MCP no pagan
         # nada por un adversario que no tienen.
         self.ecualizar_temporal = ecualizar_temporal
+        # N32: marca si el hilo actual está DENTRO de un `with operacion():`.
+        # `threading.local` porque el mismo `Confinamiento` es compartido por
+        # `FileX`, y dos hilos resolviendo a la vez no pueden pisarse la marca.
+        self._local = threading.local()
 
     @staticmethod
     def _preparar(raices) -> list[str]:
@@ -198,6 +235,46 @@ class Confinamiento:
 
     # --------------------------------------------------------------- público
 
+    @contextlib.contextmanager
+    def operacion(self):
+        """N32: agrupa varias llamadas a `resolver()` bajo UN solo suelo.
+
+        `FileX._resolver()` llama a `resolver()` dos veces para una conversión
+        válida (entrada + directorio de salida) y una sola si se deniega en la
+        entrada. Con el suelo por LLAMADA (el único que había hasta N32), la
+        vía válida paga el doble — el residuo de `existe/prohibido = 2,11×`
+        que `bench/oraculo-y-gotenberg.md` §1.5 dejó `PENDIENTE`. Envolviendo
+        la secuencia entera en `with confinamiento.operacion():`, las llamadas
+        de dentro NO esperan cada una por su cuenta (ven la marca de hilo y se
+        saltan su propio `_esperar_piso`); el suelo se paga UNA vez, al salir
+        del `with` — con `try/finally`, así que una `Denegado` a mitad de la
+        secuencia también lo paga, igual que antes.
+
+        Sin `ecualizar_temporal`, no hace nada (mismo criterio que `resolver`):
+        CLI/watcher/MCP no pagan un suelo que no necesitan.
+
+        Reentrante: si ya hay una `operacion()` en curso en este hilo (o se
+        llama a `resolver()` suelto, fuera de un `with`), cada uno sigue
+        pagando su propio suelo — esto solo evita el DOBLE PAGO cuando el
+        propio código agrupa las llamadas a propósito.
+        """
+        if not self.ecualizar_temporal:
+            yield
+            return
+        ya_en_operacion = getattr(self._local, "en_operacion", False)
+        if ya_en_operacion:
+            # Anidado: la operación exterior ya va a pagar el suelo. No abrir
+            # un segundo cronómetro ni tocar la marca de hilo.
+            yield
+            return
+        inicio = time.perf_counter()
+        self._local.en_operacion = True
+        try:
+            yield
+        finally:
+            self._local.en_operacion = False
+            _esperar_piso(inicio)
+
     def resolver(self, ruta: str, *, escritura: bool = False) -> str:
         """Devuelve la ruta absoluta y resuelta, o lanza `Denegado`.
 
@@ -211,8 +288,15 @@ class Confinamiento:
         espera hasta `PISO_TEMPORAL_S` desde la entrada. Es un `try/finally`
         alrededor del método entero, no de cada `raise`, para que ningún
         camino nuevo que se añada aquí en el futuro se cuele sin pagarlo.
+
+        N32: si esta llamada ocurre dentro de un `with self.operacion():` de
+        este mismo hilo, el suelo NO se paga aquí — lo paga `operacion()` una
+        sola vez al salir del `with`. Fuera de una `operacion()`, el
+        comportamiento es el de siempre: un suelo por llamada.
         """
         if not self.ecualizar_temporal:
+            return self._resolver_sin_ecualizar(ruta, escritura=escritura)
+        if getattr(self._local, "en_operacion", False):
             return self._resolver_sin_ecualizar(ruta, escritura=escritura)
         inicio = time.perf_counter()
         try:

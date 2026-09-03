@@ -639,11 +639,36 @@ class FileX:
             raise Denegado()
         if self.confinamiento is None:
             return os.path.abspath(entrada), os.path.abspath(salida)
-        ent = self.confinamiento.resolver(entrada)
-        # La salida aún no existe: se valida su DIRECTORIO, que sí.
-        dsal = os.path.dirname(os.path.abspath(salida)) or "."
-        self.confinamiento.resolver(dsal, escritura=True)
+        # N32: las DOS llamadas a `resolver()` de aquí abajo (entrada +
+        # directorio de salida) son UNA operación, no dos, a efectos del
+        # suelo temporal — `with confinamiento.operacion():` hace que se
+        # pague un solo suelo para la secuencia entera. Antes de esto, la vía
+        # válida pagaba el doble que la denegada en la entrada (residuo
+        # `existe/prohibido = 2,11×`, `bench/oraculo-y-gotenberg.md` §1.5).
+        with self.confinamiento.operacion():
+            ent = self.confinamiento.resolver(entrada)
+            # La salida aún no existe: se valida su DIRECTORIO, que sí.
+            dsal = os.path.dirname(os.path.abspath(salida)) or "."
+            self.confinamiento.resolver(dsal, escritura=True)
         return ent, os.path.abspath(salida)
+
+    def validar(self, entrada: str, salida: str) -> bool:
+        """C36-7 (`hito4-mcp.md` §8.6): ¿pasaría `_resolver()` sin `Denegado`?
+
+        Pensado para una superficie que hace trabajo caro DESPUÉS de saber que
+        hay camino —`Servicio.convert()`: `job_id`, un JSON en disco, un hilo—
+        y quiere rechazar una ruta denegada ANTES de pagarlo, con el mismo
+        mensaje opaco que ya usa `_resolver`. Repite el resolve que
+        `convertir()` hará de todos modos si la ruta es válida: el coste es
+        un `_resolver()` extra en la vía válida (barato: sin ecualizar en las
+        superficies que no activan N9, que es el caso de MCP) a cambio de que
+        una ruta denegada no llegue a gastar el `job_id`.
+        """
+        try:
+            self._resolver(entrada, salida)
+            return True
+        except Denegado:
+            return False
 
     def convertir(self, entrada: str, salida: str, pedido: dict | None = None,
                   *, timeout: float = invocacion.TIMEOUT_POR_DEFECTO) -> Conversion:

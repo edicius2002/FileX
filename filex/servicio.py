@@ -657,6 +657,17 @@ class Servicio:
             return {"error": dec.motivo or "origen y destino son el mismo formato",
                     "sugerencia": "list_targets con formato_origen dice a qué "
                                   "formatos se llega de verdad desde ahí"}
+        # C36-7 (`hito4-mcp.md` §8.6): una ruta denegada se descubría solo
+        # DENTRO del hilo (`fx.convertir()`), así que gastaba un `job_id`, un
+        # JSON en disco y un arranque de hilo con espera de candado por nada.
+        # MEDIDO (`bench/salidas-suelo-n32/resultado_job_denegado.json`,
+        # n=200): sin este gate, un `convert` denegado costaba 2 601,65 µs de
+        # mediana —el mismo orden que uno válido (2 799,40 µs)— y gastaba
+        # 200/200 `job_id`. Con el gate, el denegado cae a 19,40 µs y 0/200
+        # `job_id`, a cambio de un `validar()` extra en la vía válida (barato:
+        # sin ecualizar para MCP, N9 §1.1): +448,75 µs de mediana (+16 %).
+        if not self.fx.validar(entrada, salida):
+            return self._denegado()
         t = self.trabajos.nuevo("convert")
         r = {"job_id": t.id, "estado": TRABAJANDO, "sondeo_ms": SONDEO_MS,
              "camino": dec.camino.formatos,
