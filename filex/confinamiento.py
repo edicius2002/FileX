@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import os
 import sys
+import time
 
 #: R4: el MISMO mensaje para «prohibido» y para «no existe». Sin ruta, sin ruta
 #: resuelta, sin lista blanca. Tres fugas distintas se midieron por no hacerlo.
@@ -25,7 +26,67 @@ MENSAJE_OPACO = "ruta no accesible"
 MAX_COMPONENTES = 64
 MAX_LONGITUD = 4096
 
+#: N9: el oráculo temporal de R4 (trampa 28, `bench/hito7-superficies.md` §7.2).
+#: «Prohibido» corta en el predicado léxico (R1) y nunca paga el `realpath`;
+#: «no existe»/«existe» sí lo pagan. La decisión —tomada por superficie, no
+#: aquí— está en `bench/oraculo-y-gotenberg.md` §1: sólo la API HTTP tiene un
+#: adversario capaz de cronometrar (un navegador, vía DNS-rebinding, con
+#: `fetch()`+`performance.now()`); CLI, watcher y MCP son de confianza local y
+#: pagar el suelo ahí sería puro coste. Por eso esto es un PARÁMETRO del
+#: constructor, no una constante global: quien construye `Confinamiento` decide
+#: si lo paga. El valor sale de medir ESTA máquina —n=2000 por celda,
+#: `bench/salidas-oraculo-n9/resultado.json`—, no de las cifras de
+#: `hito7-superficies.md`, que son de otra (`D:`, no `C:`) y no comparables en
+#: absoluto. Según ESE artefacto, `no_existe` sin ecualizar da **234,95 µs de
+#: mediana y 364,65 µs de p90** bajo carga (worker1 en el carril GPU).
+#:
+#: **Corregido por el maestro al verificar la ronda 10:** este comentario
+#: citaba «161,95 µs de mediana y 271,19 µs de p90» y concluía que el suelo se
+#: ponía «con margen sobre eso». Esas cifras **no están en el `resultado.json`
+#: versionado** —son de otra tanda que no se guardó—, y con las que sí lo están
+#: la conclusión es FALSA: 300 µs queda **por debajo** de un p90 de 364,65.
+#: Trampa 55 dentro de la 44 — una nota falsa justificando la constante.
+#:
+#: Lo que este suelo hace de verdad, MEDIDO: cierra el oráculo **a la mediana**
+#: (ratio `no_existe/prohibido` 17,53× → 1,00×) y **no cierra la cola** — ya
+#: ecualizado, el p90 de `no_existe` es 582,19 µs frente a 308,60 del camino
+#: denegado, o sea **1,88× a p90**. Un atacante que promedie muchas muestras
+#: sigue viendo esa diferencia.
+#:
+#: **Subir el suelo por encima del p90 es una DECISIÓN que exige volver a
+#: medir, y no se toma aquí** (`N32`): sube el coste del rechazo, que es justo
+#: el amplificador de DoS que la trampa 28 nombra.
+PISO_TEMPORAL_S = 0.0003
+
+#: MEDIDO en esta máquina (control de 6 objetivos, 200 repeticiones cada uno,
+#: `bench/oraculo-y-gotenberg.md` §1.3): `time.sleep()` en Windows no baja de
+#: ~1 ms de mediana real sin importar si se le pide 10 µs o 500 µs -- dormir
+#: para un suelo de cientos de µs lo sobrepasaría por 3-10×, que es más caro
+#: que la propia asimetría que se quiere cerrar. Por debajo de este umbral se
+#: espera con un spin (`time.perf_counter()` en bucle), no con `sleep()`: el
+#: coste de CPU de menos de un milisegundo de spin es despreciable frente al
+#: coste de dormir de más.
+_UMBRAL_SLEEP_FIABLE_S = 0.002
+
 _ES_WINDOWS = sys.platform == "win32"
+
+
+def _esperar_piso(inicio: float) -> None:
+    """Espera hasta `PISO_TEMPORAL_S` desde `inicio` (un `time.perf_counter()`).
+
+    Por debajo de `_UMBRAL_SLEEP_FIABLE_S`, con SPIN — ver la nota de
+    `_UMBRAL_SLEEP_FIABLE_S`: `time.sleep()` en esta máquina no es fiable a
+    esta escala. Por encima (no debería ocurrir con el `PISO_TEMPORAL_S` de
+    hoy, pero la función es correcta si alguien lo sube), cede la CPU con
+    `time.sleep()` para el grueso y termina en spin el último tramo.
+    """
+    objetivo = inicio + PISO_TEMPORAL_S
+    if PISO_TEMPORAL_S > _UMBRAL_SLEEP_FIABLE_S:
+        resto = objetivo - time.perf_counter() - _UMBRAL_SLEEP_FIABLE_S
+        if resto > 0:
+            time.sleep(resto)
+    while time.perf_counter() < objetivo:
+        pass
 
 #: R12: nombres reservados de Windows. `CON.txt` sigue siendo `CON`.
 _RESERVADOS = {
@@ -71,7 +132,8 @@ def nombre_seguro(nombre: str) -> bool:
 class Confinamiento:
     """R6: denegar por defecto. Sin ninguna raíz accesible, no se arranca."""
 
-    def __init__(self, raices_lectura, raices_escritura=None) -> None:
+    def __init__(self, raices_lectura, raices_escritura=None, *,
+                 ecualizar_temporal: bool = False) -> None:
         self.lectura = self._preparar(raices_lectura)
         # R9: raíz de lectura != raíz de escritura. Una sola lista para todas
         # las operaciones fue lo que dejó a `write_file` destruir un fichero.
@@ -79,6 +141,9 @@ class Confinamiento:
                                         else raices_lectura)
         if not self.lectura:
             raise ValueError("sin raíces de lectura accesibles: FileX no arranca (R6)")
+        # N9: ver PISO_TEMPORAL_S. Por defecto False: CLI/watcher/MCP no pagan
+        # nada por un adversario que no tienen.
+        self.ecualizar_temporal = ecualizar_temporal
 
     @staticmethod
     def _preparar(raices) -> list[str]:
@@ -141,7 +206,21 @@ class Confinamiento:
         `dir_fd` segmento a segmento; **PENDIENTE**, y en Windows no existe
         ninguno de los dos primitivos (MEDIDO). Nada de esto sustituye al
         staging de R8: lo complementa.
+
+        N9: si `self.ecualizar_temporal`, TODA salida —la excepción incluida—
+        espera hasta `PISO_TEMPORAL_S` desde la entrada. Es un `try/finally`
+        alrededor del método entero, no de cada `raise`, para que ningún
+        camino nuevo que se añada aquí en el futuro se cuele sin pagarlo.
         """
+        if not self.ecualizar_temporal:
+            return self._resolver_sin_ecualizar(ruta, escritura=escritura)
+        inicio = time.perf_counter()
+        try:
+            return self._resolver_sin_ecualizar(ruta, escritura=escritura)
+        finally:
+            _esperar_piso(inicio)
+
+    def _resolver_sin_ecualizar(self, ruta: str, *, escritura: bool = False) -> str:
         if not self._lexico_ok(ruta):
             raise Denegado()
         raices = self.escritura if escritura else self.lectura
