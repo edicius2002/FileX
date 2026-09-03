@@ -646,11 +646,26 @@ degradación de un módulo bien escrito es también un camino de falso verde).
    escribir en `filex/sondeo/*.json` y en tres informes que no son míos.
 2. **Los 15 de los 56 que sí necesitan otro motor** (`ac4 avs3 bit c2 cavs cvg dzi
    evc lbc nia nii oma pml rcv vc1`). Aquí sí hace falta FATE o una build de ffmpeg
-   con más codificadores. **No lo he descargado**, como pedía el encargo.
-3. **Los 23 que se cierran con la invocación**, de los que **6 ya están probados**.
-   Faltan 17, y `h261`/`h263` tienen su prefijo publicado en §4.4 listo para añadir.
-4. **Los 8 `sin clasificar` de los 56**: el censo truncó el `stderr` a 400
-   caracteres y no se puede decidir. Volver a correr esas 8 celdas.
+   con más codificadores. ~~**No lo he descargado**, como pedía el encargo.~~
+   **PARCIAL el 03/09/2026 por worker2** (`bench/fate-y-aristas.md`, ronda 11): el
+   corpus FATE ya está en disco (`D:\Work\research\fate-suite`) y una muestra
+   estratificada por nombre de directorio dio de rebote 3 de estos 15 —
+   `oma`/`vc1` VIVOS, `evc` MUERTO—, sin ir a buscar los 12 restantes.
+3. ~~**Los 23 que se cierran con la invocación**, de los que **6 ya están probados**.
+   Faltan 17, y `h261`/`h263` tienen su prefijo publicado en §4.4 listo para
+   añadir.~~ **CERRADO el 03/09/2026 por worker2** (`bench/fate-y-aristas.md` §1.2):
+   de los 17 que faltaban, **14/17 escritos de verdad** con 2 semillas y prefijo
+   estable, **2/17** (`js`, `sup`) reclasificados a "sin encoder en esta build" (mal
+   etiquetados como EINVAL) y **1/17** (`chk`) exige otro paradigma de invocación
+   (fragmentar la salida), no una bandera.
+4. ~~**Los 8 `sin clasificar` de los 56**: el censo truncó el `stderr` a 400
+   caracteres y no se puede decidir. Volver a correr esas 8 celdas.~~ **CERRADO el
+   03/09/2026 por worker2** (`bench/fate-y-aristas.md` §1.1): reproducidas con
+   `stderr` completo. 4 son la misma clase que "metadato, no formato" (el regex
+   original no las alcanzaba, no la causa), 1 (`jpt`) es un delegado que no admite
+   esa variante concreta, y 3 (`8bimwtext`, `app1jpeg`, `iptcwtext`) revelan un
+   hallazgo nuevo: GraphicsMagick falla en silencio total (`rc=1`, cero mensaje) e
+   ImageMagick local "tiene éxito" (`rc=0`) sin escribir ni un byte.
 5. **`fbxa` tiene n=1 disfrazado de n=2**: las dos muestras del censo pesan 9 157 B
    las dos. Hay que rehacerlas con entradas distintas antes de creerse su prefijo.
 6. **Las 3 firmas huérfanas que quedan** (`alp`, `iff`, `rar`): ningún adaptador las
