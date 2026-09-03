@@ -82,9 +82,28 @@ debajo de 2 ms. El coste de CPU de un *spin* de menos de un milisegundo es despr
 **Ratio no_existe/prohibido: 17,53× sin ecualizar → 1,00× ecualizado.** Reproduce la
 asimetría de trampa 28 en esta máquina (orden de magnitud comparable al ×20,6 histórico de
 `D:`, cifra absoluta no comparable) y la cierra a la mediana. El suelo, `PISO_TEMPORAL_S =
-0,0003` (300 µs), se fijó con margen sobre el p90 de `no_existe` sin ecualizar (364,65 µs
-bajo esta misma carga) — **antes de calibrar, se comprobó que la magnitud existe donde se
-cree** (trampa 86): medida en la máquina real, no supuesta de un informe de otra.
+0,0003` (300 µs), se fijó midiendo esta máquina — **antes de calibrar, se comprobó que la
+magnitud existe donde se cree** (trampa 86): medida en la máquina real, no supuesta de un
+informe de otra.
+
+> **⚠ CORREGIDO por el maestro al verificar la ronda 10, y la corrección importa porque el
+> número justifica una constante de seguridad.** Esta frase decía que el suelo *«se fijó con
+> margen sobre el p90 de `no_existe` sin ecualizar (364,65 µs)»*, y **300 µs no está por
+> encima de 364,65: está por debajo**. La tabla de arriba desmentía a la frase de al lado.
+> Y el comentario de `filex/confinamiento.py` justificaba la constante con otras cifras
+> —«161,95 µs de mediana, 271,19 de p90»— que **no aparecen en el `resultado.json`
+> versionado**: con ésas la afirmación sería cierta, con las guardadas es falsa. Son **dos
+> tandas**, y la que sostenía la conclusión no se guardó. Es la **trampa 55** (*una cifra
+> citada puede venir de otra medida y el texto no lo dice*) dentro de la **44** (*un campo
+> honesto al lado de una nota falsa se lee como una respuesta honesta*).
+>
+> **Lo que NO cambia:** el ratio a la mediana, que es el resultado, y §1.5, que ya declaraba
+> honestamente la fuga residual. **Lo que sí:** el suelo cierra el oráculo **a la mediana y
+> no en la cola** — ya ecualizado, el p90 de `no_existe` es **582,19 µs** frente a **308,60**
+> del camino denegado, es decir **1,88× a p90**, y un atacante que promedie muchas muestras
+> lo ve. **Subir el suelo por encima del p90 exige volver a medir y sube el coste del
+> rechazo** —el amplificador de DoS de la trampa 28—, así que es una decisión, no un ajuste:
+> queda abierta como **`N32`**.
 
 ### 1.5 Lo que el suelo NO cierra — declarado, no escondido
 

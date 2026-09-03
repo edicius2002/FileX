@@ -37,8 +37,25 @@ MAX_LONGITUD = 4096
 #: si lo paga. El valor sale de medir ESTA máquina —n=2000 por celda,
 #: `bench/salidas-oraculo-n9/resultado.json`—, no de las cifras de
 #: `hito7-superficies.md`, que son de otra (`D:`, no `C:`) y no comparables en
-#: absoluto. `no_existe` da 161,95 µs de mediana y 271,19 µs de p90 bajo carga
-#: (worker1 en el carril GPU); el suelo se pone con margen sobre eso.
+#: absoluto. Según ESE artefacto, `no_existe` sin ecualizar da **234,95 µs de
+#: mediana y 364,65 µs de p90** bajo carga (worker1 en el carril GPU).
+#:
+#: **Corregido por el maestro al verificar la ronda 10:** este comentario
+#: citaba «161,95 µs de mediana y 271,19 µs de p90» y concluía que el suelo se
+#: ponía «con margen sobre eso». Esas cifras **no están en el `resultado.json`
+#: versionado** —son de otra tanda que no se guardó—, y con las que sí lo están
+#: la conclusión es FALSA: 300 µs queda **por debajo** de un p90 de 364,65.
+#: Trampa 55 dentro de la 44 — una nota falsa justificando la constante.
+#:
+#: Lo que este suelo hace de verdad, MEDIDO: cierra el oráculo **a la mediana**
+#: (ratio `no_existe/prohibido` 17,53× → 1,00×) y **no cierra la cola** — ya
+#: ecualizado, el p90 de `no_existe` es 582,19 µs frente a 308,60 del camino
+#: denegado, o sea **1,88× a p90**. Un atacante que promedie muchas muestras
+#: sigue viendo esa diferencia.
+#:
+#: **Subir el suelo por encima del p90 es una DECISIÓN que exige volver a
+#: medir, y no se toma aquí** (`N32`): sube el coste del rechazo, que es justo
+#: el amplificador de DoS que la trampa 28 nombra.
 PISO_TEMPORAL_S = 0.0003
 
 #: MEDIDO en esta máquina (control de 6 objetivos, 200 repeticiones cada uno,
