@@ -7,7 +7,7 @@
 >
 > Cada afirmación va marcada **MEDIDO** (hay dato en `bench/salidas-mcp-refs/`) o **PENDIENTE** (no se ha comprobado). Donde el resultado contradice a un documento del proyecto, se dice y se señala el documento.
 >
-> **Nota de trazabilidad.** Los tres informes citan `PRUEBAS-MCP-REFS.md §X` allí donde corrigen una afirmación suya. Esas citas son históricas y su referente está en el commit inicial: `git show 23b8d3c:PRUEBAS-MCP-REFS.md`. Las correcciones a ese documento están recogidas en §12.7 y en `analysis/00-mcp-componentes.md` §3.6.
+> **Nota de trazabilidad.** Los tres informes citan `PRUEBAS-MCP-REFS.md §X` allí donde corrigen una afirmación suya. Esas citas son históricas. **El hash que este documento daba para recuperarlas —`23b8d3c`— ya no resuelve**, y se comprobó con `git cat-file -e`: era un commit de las ramas `ccb/w1..w3`, y al borrarlas dejó de ser alcanzable. Es la trampa 115 de `CLAUDE.md` (*un `--squash` mata los hashes que un informe cita de su propia rama*), **no** la reescritura de historia del 31/08 — no aparece en `bench/salidas-publicacion/commit-map-20260831.txt`. La versión más antigua que **sí** se puede recuperar es la del commit que introdujo el fichero en el repositorio: `git show dcd4057:PRUEBAS-MCP-REFS.md`. Las correcciones a ese documento están recogidas en §12.7 y en `analysis/00-mcp-componentes.md` §3.6.
 
 ---
 
@@ -193,6 +193,8 @@ La causa es la **superficie de parámetros**, no el número de herramientas: `re
 | Haiku | B (8) | 2.306 | **8.264** | 2,17 |
 
 > **La regla de ≤1.200 tokens se confirma y se le añade la cifra que le faltaba: un catálogo de 1.200 tokens costará ≈2.400–3.100 tokens de entrada por petición sencilla.** Ese, y no 1.200, es el número que hay que comparar con el resto del presupuesto de contexto.
+>
+> **⚠ Actualización del 04/09/2026: el catálogo real ya se pasa del límite, y el límite sobrevive como higiene, no como presupuesto.** El catálogo de FileX va por **1 650 tokens** y **crece con el registro** —≈2,6 tokens por arista: pasar de 215 a 232 aristas lo movió de 1 605 a 1 650—, así que un techo fijo de 1.200 no es una restricción que el proyecto pueda cumplir mientras siga añadiendo conversiones. **Lo que se conserva de la regla es la disciplina de nombres y descripciones cortas; lo que se retira es tratarla como un presupuesto.** Ver `CLAUDE.md` §5.
 >
 > *(Las cifras de Haiku para B están afectadas por un reparto desigual de aciertos de caché entre ejecuciones concurrentes; las de Sonnet son limpias. El recuento propio del informe da 7.886 y 2.306 frente a los 7.964 y 2.322 publicados aquí: **1 % por debajo**, por un detalle de serialización, y **la proporción entre catálogos es la misma**.)*
 

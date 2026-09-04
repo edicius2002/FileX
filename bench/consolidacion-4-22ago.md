@@ -176,8 +176,8 @@ Y de M1, una sola: **observar una emisión real de `list_changed`**, que en head
 ## 6. Cómo verificar este documento
 
 ```bash
-git show 1fb5024 --stat | tail -3          # el commit que trajo los dos informes
-git diff 1fb5024 -- CLAUDE.md HUECOS.md PLAN-ORQUESTADOR.md RESULTADOS-MCP.md
+git show dcd4057 --stat | tail -3          # el commit que trajo los dos informes
+git diff dcd4057 -- CLAUDE.md HUECOS.md PLAN-ORQUESTADOR.md RESULTADOS-MCP.md
 grep -n "RE-ACOTADO" RESULTADOS-MCP.md bench/saturacion-herramientas.md
 grep -n "G6" PLAN-ORQUESTADOR.md CLAUDE.md HUECOS.md
 ```

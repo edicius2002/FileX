@@ -12,7 +12,11 @@
 > documenta **qué se preguntó antes de medir**, que es lo que permite ver cuánto de
 > lo que parecía trabajo resultó estar ya contestado.
 >
-> **Léelo como historia, no como lista de tareas.**
+> **Léelo como historia, no como lista de tareas.** Y en concreto: **§4 a §7 están escritas
+> en imperativo y en futuro** —«queda solo la fase 2», «si solo se hace una cosa…», «reglas
+> para el agente que lo ejecute»— porque eran un plan. **Ese plan se ejecutó y sus
+> resultados están en `RESULTADOS-MCP.md`**; ninguna de esas instrucciones es trabajo
+> vigente, ni describe cómo se contribuye hoy (para eso está `CONTRIBUTING.md`).
 
 **Documento de traspaso.** Fecha: 19 de agosto de 2026.
 
@@ -188,7 +192,7 @@ Solo de los que la fase 1 marque como prometedores. Todos son Python o Node, lig
 
 ## 6. Orden y contención
 
-**Ninguno de los seis necesita GPU.** No compiten con los agentes de motores de IA descritos en `AGENTES-PRUEBAS-PENDIENTES.md`, así que **pueden correr en paralelo con ellos**.
+**Ninguno de los seis necesita GPU.** No compiten con los agentes de motores de IA que describía `AGENTES-PRUEBAS-PENDIENTES.md` (documento a su vez superado, ver su cabecera), así que **podían correr en paralelo con ellos**.
 
 | Prioridad | Qué | Por qué |
 |---|---|---|
@@ -220,5 +224,5 @@ Solo de los que la fase 1 marque como prometedores. Todos son Python o Node, lig
 | `analysis/00-mcp-patrones.md` | Reglas MCP actuales, derivadas del caso texto |
 | `analysis/kordoc-y-mcps-menores.md` | Lo poco que se sabe hoy de esta categoría |
 | `bench/mcp-ergonomia.md` | Las medidas sobre markitdown-mcp y docling-mcp (16 reglas) |
-| `AGENTES-PRUEBAS-PENDIENTES.md` | Los cuatro agentes de motores de IA; **compatible en paralelo con este trabajo** |
+| `AGENTES-PRUEBAS-PENDIENTES.md` | Los cuatro agentes de motores de IA. **También superado**: su justificación se refutó y sus marcas están invalidadas (lo dice su propia cabecera) |
 | `PLAN-ORQUESTADOR.md` §4.4 y §4.6 | Dónde encajan estos hallazgos en la construcción |

@@ -1,5 +1,29 @@
 # FileX — Análisis completo del ecosistema de conversión de archivos
 
+> ### Qué es este documento, si llegas de fuera
+>
+> **El estudio de campo del que salió FileX.** 22 proyectos de conversión de ficheros
+> clonados, **leídos a nivel de código y ejecutados** contra un corpus de casos patológicos,
+> con el veredicto por repositorio: licencia, arquitectura, seguridad, qué se le puede
+> copiar y qué no. La conclusión —dónde está el hueco y si merece la pena construir— vive en
+> [`HUECOS.md`](HUECOS.md); qué es FileX, en [`README.md`](README.md).
+>
+> Sirve a quien quiera **decidir si construir, adoptar o descartar** en este espacio, y a
+> quien quiera evaluar esos 22 proyectos sin repetir el trabajo.
+>
+> **Convención:** el repositorio marca cada afirmación **MEDIDO** o **PENDIENTE**. **Este
+> documento es anterior a que esa disciplina se aplicara de forma sistemática**, así que
+> muchas de sus cifras van sin marca; lo que las respalda es la regla de la nota de abajo
+> —nada sale de un README ni de metadatos de GitHub—. **Para las cifras vigentes y marcadas,
+> con su `n` y su informe de origen, ve a [`BENCHMARKS.md`](BENCHMARKS.md).**
+>
+> **Dos cosas que este documento nombra y que NO están en el repositorio publicado:**
+> `repos/` (los 22 clones de terceros, en `.gitignore`: conservan sus propias licencias y no
+> se redistribuyen) y los entornos virtuales `.venv-*` de la máquina de referencia.
+>
+> **No se ha actualizado con las mediciones posteriores al 21/08/2026.** Donde una cifra de
+> aquí y una de `bench/` no coincidan, **manda la de `bench/`**.
+
 **Fecha:** 19 de agosto de 2026
 **Alcance:** 22 repositorios clonados y auditados a nivel de código, ejecutados en la máquina real
 **Hardware:** RTX 3060 12 GB (compute capability 8.6, driver 572.61) · Windows 10 · 12 núcleos · Docker 29.4.3 + WSL2 · Python 3.11.9

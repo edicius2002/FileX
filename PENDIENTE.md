@@ -1,18 +1,32 @@
 # Lo que queda por hacer
 
-**Al 04/09/2026**, tras fusionar la ronda 13 (cinco carriles) y los arreglos de maestro de
-`orden/arreglos-04sep`. Este fichero es la lista corta y accionable; el inventario completo
-—**121 filas**— vive en [`ESTADO-Y-REPARTO.md`](ESTADO-Y-REPARTO.md) §3 y lo cuenta a
-máquina `ci/integridad.py`.
+**Al 04/09/2026**, tras fusionar la ronda 16. Este fichero es la lista corta y accionable;
+el inventario completo —**126 filas**— vive en
+[`ESTADO-Y-REPARTO.md`](ESTADO-Y-REPARTO.md) §3 y lo cuenta a máquina `ci/integridad.py`.
 
 ```
-inventario   6 ⚫ · 3 🔴 · 4 🟡 · 108 🟢   sobre 121 filas
-suite        478 passed · 3 skipped · 175 subtests · 209,38 s
-             (03/09, win32 3.11.9, Docker levantado, sobre el árbol unido de la
-              ronda 13 — DECLARADO en `360de34`, no reverificado el 04/09)
-CI           integridad ✓ · suite-linux ✓ — 18 de 19 módulos · 450 pruebas ·
-             110 saltadas · 10,776 s (ejecución 33834111090)
+inventario   6 ⚫ · 3 🔴 · 3 🟡 · 114 🟢   sobre 126 filas
+             (contado a máquina el 04/09 por `ci/integridad.py`)
+suite        501 passed · 3 skipped · 0 failed · 179 subtests · 265,49 s
+             (04/09, win32 3.11.9, Docker 29.4.3 levantado, corpus de LFS
+              materializado, máquina NO despejada — las cuatro declaraciones,
+              enteras, en `README.md`)
 ```
+
+> **La sección §1 y las tablas de §2 y §3 de este fichero describen el reparto tal como
+> estaba tras la ronda 13**, que es cuando se escribieron. El recuento de arriba sí está
+> reverificado hoy; el detalle fila a fila **no**, y la fuente vigente es
+> `ESTADO-Y-REPARTO.md` §3. Se deja dicho en vez de reescribirlo de memoria: una lista de
+> filas rehecha sin volver a mirar el inventario sería exactamente la cifra caducada que
+> este documento existe para evitar.
+
+> **Vocabulario, para quien llegue de fuera.** Este proyecto se desarrolla en **rondas** de
+> trabajo paralelo, y cada carril de una ronda lo lleva una sesión con un identificador
+> (`worker1`, `worker2`…); **«el maestro»** es quien integra y verifica lo que entrega cada
+> carril. Esos nombres aparecen aquí como **atribución de quién midió cada cosa**, que es la
+> trazabilidad que el repositorio exige a cualquier cifra — no como reparto de trabajo
+> vigente ni como algo que un lector tenga que seguir. Las filas (`B3`, `C28`…) son
+> identificadores del inventario de [`ESTADO-Y-REPARTO.md`](ESTADO-Y-REPARTO.md) §3.
 
 Este documento **no** toca `ESTADO-Y-REPARTO.md` ni `CLAUDE.md` ni ningún módulo de
 `filex/` — sólo los lee.
@@ -94,8 +108,11 @@ Ninguna se cierra midiendo más de lo mismo: se cierran **escribiendo el techo**
 1. **La contraseña de SnapOtter sigue viva en el contenedor.** Se borró de las 65 revisiones el
    31/08 y del residuo de `.git` el 01/09 (trampa 102), pero **eso no la cambia en el
    contenedor**.
-2. **`fabian.espinoza@ucsp.edu.pe` es público** en los commits. Cambiarlo pide otra reescritura
-   de historia, que volvería a matar todas las citas de hash (lo que costó reparar el 01/09).
+2. **La dirección de correo del autor es pública** en los metadatos de los commits. Cambiarla
+   pide otra reescritura de historia, que volvería a matar todas las citas de hash (lo que
+   costó reparar el 01/09). *(Aquí no se repite la dirección literal: está en
+   `git log`, que es donde el interesado puede verla, y escribirla otra vez en un fichero
+   del árbol sólo añade una copia más que indexar.)*
 3. **Los respaldos pre-limpieza** (`FileX-git-backup-20260831.tar.gz` y compañía, con el
    historial sin limpiar dentro) **no se localizaron** al verificarlo el 03/09. No se afirma
    aquí ni que existan ni que no existan. Si siguen en algún sitio, siguen siendo el mismo
@@ -103,11 +120,18 @@ Ninguna se cierra midiendo más de lo mismo: se cierran **escribiendo el techo**
 
 ---
 
-## 6. Un desfase que este fichero no arregla
+## 6. Un desfase que este fichero ya no arregla porque está arreglado
 
-`README.md` declara la suite en **460 passed · 3 skipped · 130 subtests · 243,58 s**, que es
-una medida **anterior** a fusionar la ronda 13; el árbol unido declara **478 · 3 · 175** en
-`360de34`. Las dos son honestas y miden árboles distintos. **No se toca aquí porque
-reverificarla exige correr la suite**, y un recuento de suite necesita sus cuatro
-declaraciones —intérprete, entorno, qué quedó fuera y estado de la máquina— o no dice qué se
-ejecutó (trampas 94 y 101).
+**CERRADO el 04/09/2026.** Este apartado decía que `README.md` declaraba la suite en
+**460 passed · 3 skipped · 130 subtests · 243,58 s** —medida **anterior** a la ronda 13,
+frente a los **478 · 3 · 175** del árbol unido— y que no se tocaba porque reverificarla
+exigía correr la suite.
+
+Se corrió: **501 passed · 3 skipped · 0 failed · 179 subtests · 265,49 s**, con las cuatro
+declaraciones —intérprete, entorno, qué quedó fuera y estado de la máquina— escritas en
+`README.md`. El recuento **reproduce exactamente** el de `bench/raices-mixtas.md` §8; el
+tiempo no, y no tiene por qué: las cifras absolutas de tandas distintas no son comparables y
+las relativas dentro de una tanda sí (`CLAUDE.md` §3).
+
+**Ninguna de las dos cifras anteriores era falsa: medían árboles distintos.** Lo que era un
+defecto es que el `README` no dijera cuál.
