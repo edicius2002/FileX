@@ -310,11 +310,21 @@ def trampas():
     "proyecto se planifique como si no existiera.",
 )
 def informes_registrados():
+    # DOS defectos que encontró worker11 el 04/09 y verificó el maestro, y los dos
+    # son de esta comprobación, no de su objeto:
+    #
+    # (a) Salía de `glob`, no de `git ls-files`. Es la trampa 104 sin corregir
+    #     justo aquí, mientras sus dos vecinas -`_md()` y `manifiestos`- ya la
+    #     habían pagado: contaba informes sin commitear y se perdía los
+    #     versionados que no estuvieran en el disco de quien la corre.
+    # (b) El detalle decía SIEMPRE «todos citados», incluso con `fuera` lleno.
+    #     Un recuento honesto con una nota falsa al lado -la trampa 44- dentro
+    #     del fichero que existe para comprobar esas cosas.
     texto = ESTADO.read_text(encoding="utf-8")
-    fuera = [p.name for p in sorted((RAIZ / "bench").glob("*.md"))
-             if p.name not in texto]
-    return not fuera, "%d informes, todos citados" % len(
-        list((RAIZ / "bench").glob("*.md"))), fuera
+    informes = sorted(p for p in _md() if p.parent == RAIZ / "bench")
+    fuera = [p.name for p in informes if p.name not in texto]
+    estado = "todos citados" if not fuera else "%d SIN citar" % len(fuera)
+    return not fuera, "%d informes, %s" % (len(informes), estado), fuera
 
 
 @comprobacion(
