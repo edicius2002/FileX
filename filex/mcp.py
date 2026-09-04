@@ -443,7 +443,7 @@ class Raices:
             # Un registrador que tumba el servidor no es un registrador.
             pass
 
-    def _anota_descartes(self, uris: list[str], podadas: list[str]) -> None:
+    def _anota_descartes(self, uris: list[str], efectivas: list[str]) -> None:
         """N37: deja rastro de las raíces que se cayeron, y de por cuál motivo.
 
         Son dos causas distintas y se registran por separado a propósito
@@ -460,10 +460,14 @@ class Raices:
         un registrador**. No entra en `stderr` ni en la respuesta: R4 manda un
         mensaje opaco al cliente, y esto es para el operador de la máquina.
         """
-        if not uris and not podadas:
-            return
         destino = os.environ.get(self.VAR_REGISTRO)
         if not destino:
+            # Antes de calcular nada: `_podadas` recorre las raíces otra vez
+            # (10,2 µs medidos) y no hay a quién contárselo. Sin registro
+            # declarado, esto no cuesta más que una lectura de entorno.
+            return
+        podadas = _conf.Confinamiento._podadas(efectivas)
+        if not uris and not podadas:
             return
         try:
             import time
@@ -615,8 +619,7 @@ class Raices:
                 cliente = []
                 fallo = True
             efectivas = self._interseca(self.servidor, cliente)
-            self._anota_descartes(descartados,
-                                  _conf.Confinamiento._podadas(efectivas))
+            self._anota_descartes(descartados, efectivas)
             sin_confinar = False
             try:
                 self.fx.confinamiento = (_conf.Confinamiento(efectivas)
