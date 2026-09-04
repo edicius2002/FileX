@@ -49,7 +49,7 @@ Dos públicos distintos, dos puertas de entrada. La tabla los separa; no mezcles
 | Si quieres… | Lee |
 |---|---|
 | **Leer el código** | [`filex/`](filex/) — 22 módulos, biblioteca estándar, cero dependencias. Empieza por `invocacion.py`, que es el único sitio que puede lanzar un proceso, y sigue por `verificador.py`, que es el contrato |
-| **Las reglas y las 110 trampas ya pagadas** | [`CLAUDE.md`](CLAUDE.md) — cada una con la medida que la respalda. Léelo ANTES de tocar nada: es el documento más útil del repositorio si vas a modificar código |
+| **Las reglas y las 111 trampas ya pagadas** | [`CLAUDE.md`](CLAUDE.md) — cada una con la medida que la respalda. Léelo ANTES de tocar nada: es el documento más útil del repositorio si vas a modificar código |
 | **Contribuir** (carriles, PRs, CI) | [`CONTRIBUTING.md`](CONTRIBUTING.md) — los carriles, las cuatro declaraciones que necesita un recuento de suite, y **qué NO puede comprobar la CI**, que es lo primero que hay que saber |
 | **Saber qué falta** | [`PENDIENTE.md`](PENDIENTE.md) — la lista corta y accionable: lo bloqueado con su motivo, la deuda que la CI cuenta y lo listo para despachar |
 | **Seguir el inventario vivo** | [`ESTADO-Y-REPARTO.md`](ESTADO-Y-REPARTO.md) §3 — **118 filas: 97 cerradas, 9 en curso, 6 abiertas** (más 6 históricas que no cuentan), agrupadas por el recurso que las limita. Los siete hitos de [`PLAN-ORQUESTADOR.md`](PLAN-ORQUESTADOR.md) están hechos |

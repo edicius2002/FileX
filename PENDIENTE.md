@@ -1,111 +1,113 @@
 # Lo que queda por hacer
 
-**Al 03/09/2026**, con `main` en `873942c`, la CI en pie y las rondas 12 de los carriles
-`filex-gpu` y `filex-cpu` despachadas y en curso. Este fichero es la lista corta y
-accionable; el inventario completo —**118 filas**— vive en
-[`ESTADO-Y-REPARTO.md`](ESTADO-Y-REPARTO.md) §3, y se cuenta con la orden que hay ahí (la
-misma que ejecuta `ci/integridad.py`).
+**Al 04/09/2026**, tras fusionar la ronda 13 (cinco carriles) y los arreglos de maestro de
+`orden/arreglos-04sep`. Este fichero es la lista corta y accionable; el inventario completo
+—**121 filas**— vive en [`ESTADO-Y-REPARTO.md`](ESTADO-Y-REPARTO.md) §3 y lo cuenta a
+máquina `ci/integridad.py`.
 
 ```
-inventario   6 ⚫ · 6 🔴 · 9 🟡 · 97 🟢   sobre 118 filas
-suite        460 passed · 3 skipped · 0 failed · 130 subtests · 243,58 s
-             (03/09, win32 3.11.9, Docker levantado, máquina despejada)
-CI           integridad ✓ · suite-linux ✓
+inventario   6 ⚫ · 3 🔴 · 4 🟡 · 108 🟢   sobre 121 filas
+suite        478 passed · 3 skipped · 175 subtests · 209,38 s
+             (03/09, win32 3.11.9, Docker levantado, sobre el árbol unido de la
+              ronda 13 — DECLARADO en `360de34`, no reverificado el 04/09)
+CI           integridad ✓ · suite-linux ✓ — 18 de 19 módulos · 450 pruebas ·
+             110 saltadas · 10,776 s (ejecución 33834111090)
 ```
 
-Este documento **no** toca `ESTADO-Y-REPARTO.md`, `CLAUDE.md` ni ningún módulo de
-`filex/` — sólo los lee. Y no reparte trabajo nuevo entre `filex-gpu`/`filex-cpu`: eso lo
-decide quien lleva esos carriles, no este documento.
+Este documento **no** toca `ESTADO-Y-REPARTO.md` ni `CLAUDE.md` ni ningún módulo de
+`filex/` — sólo los lee.
 
 ---
 
-## 1. Las cuatro decisiones de la ronda anterior — **LAS CUATRO YA ESTÁN RESUELTAS**
+## 1. La observación que gobierna todo lo demás
 
-La versión de este fichero del 01/09 las listaba como abiertas. Comprobado hoy contra
-`ESTADO-Y-REPARTO.md`: las cuatro se decidieron y tres de las cuatro ya están además
-**implementadas y verificadas**. Se dejan aquí, tachadas, para que quien busque el
-razonamiento no tenga que ir a buscarlo a otro documento — no para reabrirlas.
+**El inventario está agotado de trabajo barato y medible.** De las 7 filas vivas, **una** es
+una medida que un worker puede cerrar (`B3`), **tres** son residuos que ya tienen su techo
+medido por dos rutas independientes (`C28`, `C16`, `C36`) y **tres están bloqueadas por algo
+que no está en esta máquina** (`C6` clave de API, `C7` datos de demanda, `C5` la VM de WSL2).
 
-- ~~**`C43` — la huella y el intérprete**~~ **CERRADO el 02/09** (`bench/huella-y-runner.md`,
-  verificado por el maestro). Se declara el intérprete de sellado (granularidad
-  `mayor.menor`) y se niega la comparación entre intérpretes distintos: ya no caduca
-  ninguna de las 215 aristas selladas. Detalle en la trampa 105 de `CLAUDE.md`.
-- ~~**¿Runner autoalojado?**~~ **DECIDIDO el 02/09: autoalojado, con aprobación manual**
-  para PRs de terceros. `C44` — **entregada y verificada** (commit `b582ceb`): el diseño
-  está cerrado. Lo único que queda, y no es trabajo de este repositorio: **registrar el
-  runner es del usuario**.
-- ~~**marker / surya / MinerU**~~ **DECIDIDO el 02/09.** `B5` (MinerU) y la mitad de `B4`
-  (surya) se cierran **descartados** por decisión — diez días abiertos sin una sola cifra.
-  `B3` (marker) se decidió **medir**: sigue 🟡 *(`DECIDIDO, ronda 9`)*, es trabajo del
-  carril GPU, no una decisión pendiente.
-- ~~**¿El veredicto de un PR es la CI o soy yo?**~~ Seguía **RESUELTO** desde el 01/09: el
-  maestro empuja, abre el PR y fusiona — los workers no tienen credenciales de `gh`
-  (`CONTRIBUTING.md` §7).
+**Consecuencia para el reparto: la ronda 14 es la última que se puede despachar así.** Lo que
+venga después no lo desbloquea otro worker — lo desbloquea el mundo exterior o una decisión.
+Seguir despachando rondas simétricas sería fabricar trabajo, que es el defecto contra el que
+se cerraron `B4` y `B5`.
 
 ---
 
-## 2. Lo que los otros carriles están corriendo ahora — ronda 12, despachada el 03/09
+## 2. Cerrado desde la versión anterior de este fichero (03/09)
 
-No hace falta repetirlo aquí con detalle: `ESTADO-Y-REPARTO.md` §4 lo lleva ronda a ronda.
-Resumen de a qué apunta cada carril, para no tener que ir a buscarlo:
+Seis filas, y una de ellas refutando su propia hipótesis de partida:
 
-| Carril | Filas | Informe (en curso) |
+| | Qué era | Cómo cerró |
 |---|---|---|
-| `filex-gpu` (worker1) | `B7` + `B8` | `bench/senal-severidad-y-psm.md` — cierra la otra mitad de sus propios hallazgos de la ronda 10 |
-| `filex-cpu` (worker2) | `N30` (arreglar, no sólo documentar) + `C45` (anclar acciones de CI por `sha`) | `bench/pruebas-de-carrera-y-acciones.md` |
+| **`C42`** | 10 de 17 módulos no corrían en el runner | La hipótesis del sistema de ficheros era **falsa** — eran punteros de Git LFS, y por eso cinco intentos no la reprodujeron: **cada intento corría con el corpus real, y el fallo sólo existe donde el corpus no está** |
+| **`N32`** | El suelo temporal de `N9` en la cola (p90 a 1,88×) | Suelo por operación, y la cola **no reproduce**: era contención de CPU, no una propiedad del suelo |
+| **`C46`** | Las dos guardas del acuerdo `spa`/`eng` | Separan **8 de 8** documentos |
+| **`C47`** | `ci/linux-apto.json` declaraba 7 módulos mientras el runner medía 16 | Fichero congelado contra el runner ya fusionado (`18f4602`) y `deriva` en verde sobre ese sha |
+| **`B27`**, **`N33`** | Nuevas | Nacen cerradas |
+
+Y **`B3` retrocedió de 🟡 a 🔴**, que es honesto: no se pudo medir `marker` porque lanza un
+contenedor vLLM con `--gpus device=0` **sin tomar el lock de GPU**.
 
 ---
 
-## 3. Deuda que la CI cuenta — `ci/heredado.json`
+## 3. Lo que sigue abierto
 
-De las cuatro filas que motivaron el trinquete el 01/09, **tres ya están cerradas**:
-
-| | Qué era | Estado hoy |
-|---|---|---|
-| ~~`C40`~~ | 3 binarios sueltos fuera de LFS | 🟢 **CERRADO** — `ci/integridad.py` da `0 sueltos · 3 rutas declaradas evidencia` (trampa 106) |
-| ~~`C41`~~ | 17 directorios `bench/salidas-*` sin manifiesto | 🟢 **CERRADO** — `0 sin MANIFIESTO heredados` |
-| ~~`C43`~~ | La huella y el intérprete | 🟢 **CERRADO** — ver §1 |
-| **`C42`** | 10 de 17 módulos no corrían en el runner | 🟡 **9 de 10 causas clasificadas y arregladas con código; 1 sin reproducir** (`test_watcher_n`, inestable entre tres sistemas de ficheros POSIX distintos). La promoción final de módulos a `aptos` sigue pendiente de una corrida en `ubuntu-latest` real, no en la aproximación de contenedor |
-
----
-
-## 4. Abierto sin ronda asignada todavía
-
-Dos filas nuevas de esta semana que ningún carril tiene tomadas en la ronda 12:
-
-| | Qué es |
-|---|---|
-| **`C46`** | El residuo de `C20`: al acuerdo `spa`/`eng` (el sustituto de `P9`) le faltan dos guardas — una longitud mínima no vacía y una comparación que no penalice sustituciones de un solo carácter acentuado. Sin ellas, 2 de 8 documentos leen al revés. **No es una continuación de `C20`: esa fila se cerró refutando su propio enunciado**, así que esto es una hipótesis nueva (`bench/acuerdo-y-cruce.md` §2.3) |
-| **`N32`** | El suelo temporal de `N9` (`PISO_TEMPORAL_S`) cierra el oráculo a la MEDIANA pero no en la cola: a p90 sigue en 1,88× sobre el denegado. Subir el suelo cierra la cola y sube el coste del rechazo — el mismo conflicto de `N9` un nivel más abajo (trampa 28). Hay una salida sin medir: un suelo por OPERACIÓN en vez de por llamada (`bench/oraculo-y-gotenberg.md` §1.4-1.5) |
-
----
-
-## 5. Bloqueado, y por qué
+### Medible por un worker — **una fila**
 
 | | Qué falta |
 |---|---|
-| **`C6`** | Una clave de API que no existe en esta máquina — replicar la saturación en dominio documental con `temperature` fija |
-| **`C7`** | Datos de demanda real de conversiones, no una medición de máquina |
+| **`B3`** 🔴 | **marker, con el lock tomado.** Los dos intentos de worker10 se gastaron en *evitar* la GPU (`--mode fast`, `TORCH_DEVICE=cpu`) y el `docker run --gpus device=0` reapareció las dos veces. **El camino (a) del propio informe nunca se intentó**: tomar el lock y dejar que la use, aunque el venv sea CPU. El arnés y la verdad conocida ya están escritos (`bench/salidas-suelo-n32/medir_marker.py`, `corpus/pdf/tipico_texto.pdf`) |
 
-`C16`/`C28` **ya no están bloqueadas**: el corpus FATE (2 529 ficheros, 1 345 840 190 B) se
-bajó fuera del repositorio el 02/09 y ambas avanzaron con él en la ronda 11
-(`bench/fate-y-aristas.md`). `C28` sigue 🟡 con 56 aristas completas por resolver, pero eso
-ya es trabajo, no bloqueo.
+### Residuos con su techo ya medido — **tres filas**
+
+Ninguna se cierra midiendo más de lo mismo: se cierran **escribiendo el techo** con su coste.
+
+| | Dónde está el techo |
+|---|---|
+| **`C28`** 🟡 | **15/56 con FATE**, medido por worker2 (ronda 11) y worker11 (ronda 13). Quedan **41 aristas que FATE no puede cerrar** — el propio techo lo declara |
+| **`C16`** 🟡 | **95 de 445 formatos**, semiarista **91/95 viva (95,8 %)**. Quedan **350 sin fichero real conocido**. Es una **cota inferior**, no un 54,78 % pendiente |
+| **`C36`** 🟡 | **2 de 7 cerrados.** De los cinco vivos, **tres son viables** (subsunción automática, idempotencia ante `Resolve(ListRoots)` doble, qué sustituye a `roots` en el protocolo 2026-07-28); el ítem 1 pide otro modelo con n≥10 y el 3 pide **una emisión real** de `notifications/roots/list_changed`, que lleva sin observarse desde el hito 4 y **no se puede forzar** |
+
+### Bloqueado fuera de esta máquina — **tres filas**
+
+| | Qué falta |
+|---|---|
+| **`C5`** 🟡 | Mitad cerrada. La carrera de symlinks en Linux: el arnés está listo y **la VM de WSL2 cae con `0x8007274c`** bajo contención. *«No es un resultado negativo: es una medición no hecha»* |
+| **`C6`** 🔴 | Una clave de API que no existe en esta máquina |
+| **`C7`** 🔴 | Datos de demanda real de conversiones, no una medición de máquina |
 
 ---
 
-## 6. Fuera del repositorio — sólo el usuario puede
+## 4. Decisiones abiertas, y son del usuario
 
-1. **La contraseña de SnapOtter sigue viva en el contenedor.** Se borró de las 65
-   revisiones el 31/08 y del residuo de `.git` el 01/09 (trampa 102), pero **eso no la
-   cambia en el contenedor** — sigue siendo la misma credencial dentro de él.
-2. **`fabian.espinoza@ucsp.edu.pe` es público** en los commits. Cambiarlo pide otra
-   reescritura de historia, que volvería a matar todas las citas de hash (lo que costó
-   reparar el 01/09) — decisión del usuario, no automática.
-3. **Los respaldos pre-limpieza citados en la versión anterior de este fichero**
-   (`FileX-git-backup-20260831.tar.gz` y compañía, con el historial sin limpiar dentro) —
-   **no se localizaron hoy** en `D:\Work\research\` al verificar este punto. Puede que se
-   hayan movido, renombrado o ya se hayan limpiado; **no se afirma aquí ni que existan ni
-   que no existan**, porque no se pudo comprobar desde este *worktree*. Si siguen en algún
-   sitio con la credencial dentro, siguen siendo el mismo riesgo que describía la versión
-   anterior de este documento.
+1. **`.venv-marker` son 1,3 GB** y está en la lista protegida de `CLAUDE.md` §1. Si `B3` acaba
+   descartada como `B4` y `B5`, no queda motivo para conservarlo. worker10 reservó esta
+   pregunta explícitamente para el maestro y sigue sin respuesta.
+2. **`C47`, la mitad que no es medida:** la lista se regenera **a mano**, que es el statu quo —
+   el job `deriva` falla y nombra el remedio, no se autoparchea—. Convertirlo en un trabajo que
+   abra el PR sería diseño nuevo; **no se ha pedido y no se ha hecho**.
+
+---
+
+## 5. Fuera del repositorio — sólo el usuario puede
+
+1. **La contraseña de SnapOtter sigue viva en el contenedor.** Se borró de las 65 revisiones el
+   31/08 y del residuo de `.git` el 01/09 (trampa 102), pero **eso no la cambia en el
+   contenedor**.
+2. **`fabian.espinoza@ucsp.edu.pe` es público** en los commits. Cambiarlo pide otra reescritura
+   de historia, que volvería a matar todas las citas de hash (lo que costó reparar el 01/09).
+3. **Los respaldos pre-limpieza** (`FileX-git-backup-20260831.tar.gz` y compañía, con el
+   historial sin limpiar dentro) **no se localizaron** al verificarlo el 03/09. No se afirma
+   aquí ni que existan ni que no existan. Si siguen en algún sitio, siguen siendo el mismo
+   riesgo.
+
+---
+
+## 6. Un desfase que este fichero no arregla
+
+`README.md` declara la suite en **460 passed · 3 skipped · 130 subtests · 243,58 s**, que es
+una medida **anterior** a fusionar la ronda 13; el árbol unido declara **478 · 3 · 175** en
+`360de34`. Las dos son honestas y miden árboles distintos. **No se toca aquí porque
+reverificarla exige correr la suite**, y un recuento de suite necesita sus cuatro
+declaraciones —intérprete, entorno, qué quedó fuera y estado de la máquina— o no dice qué se
+ejecutó (trampas 94 y 101).

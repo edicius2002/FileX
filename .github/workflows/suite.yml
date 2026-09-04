@@ -3,24 +3,37 @@ name: suite
 # Los módulos de prueba que un runner de Linux PUEDE ejecutar, medidos uno a uno
 # con `ci/sonda_linux.py` y congelados en `ci/linux-apto.json`.
 #
-# **7 de 17 módulos · 198 pruebas · 3,4 s**, MEDIDO EN EL RUNNER. Los diez que
-# faltan NO se ejecutan y hay que decir por qué, o el verde miente:
+# **18 de 19 módulos · 450 pruebas · 110 saltadas · 10,776 s**, MEDIDO EN EL
+# RUNNER (ejecución 33834111090, sobre 18f4602). El que falta NO se ejecuta y
+# hay que decir por qué, o el verde miente:
 #
-#   CUELGA   test_cancelacion -- se duerme y agota el tope. Lanzar la suite
-#            entera se queda dormida sin decir en qué módulo: quemaría el runner
-#            y devolvería un rojo que no nombra nada.
-#   FALLAN   test_a7_ciego, test_cancelacion_procesos, test_cerrojo,
-#            test_gpu_lock, test_hito1, test_hito2, test_hito4, test_hito7,
-#            test_watcher_n -- piden tarjeta, motores, contenedores, o NTFS.
+#   FALLA    test_hito4 -- 1 fallo de 31 corridas, 18 saltadas. PENDIENTE de
+#            traza: el motivo NO está verificado y no se inventa, que un
+#            recuento no es una causa (trampas 25 y 111).
+#   CUELGA   ninguno. test_cancelacion colgaba en la medida del 01/09 y hoy
+#            pasa; por qué dejó de colgar tampoco está verificado.
+#
+# Este fichero estuvo congelado en SIETE módulos del 01/09 al 03/09 mientras el
+# runner medía dieciséis, así que el trabajo `linux` ejecutaba 7 de 18 y nadie
+# lo sabía. Los nueve que faltaban NO se arreglaron: ya pasaban, y lo roto era
+# el fichero. Trampa 110, fila C47.
 #
 # Y la lista **no se puede medir en la máquina del proyecto**: allí, en WSL2
-# sobre DrvFs con Python 3.14, salen 11 aptos y 262 pruebas, y los mismos once
-# aquí dan 23 fallos y 7 errores. De las dos listas -- 11 y 7 -- sólo
-# coinciden CINCO módulos. Trampa 104.
+# sobre DrvFs con Python 3.14, salían 11 aptos y 262 pruebas, y los mismos once
+# aquí daban 23 fallos y 7 errores. De aquellas dos listas -- 11 y 7 -- sólo
+# coincidían CINCO módulos. Trampa 104.
 #
-# **Y ninguno de los once lee `corpus/`** -- comprobado, no supuesto. Por eso
-# `lfs: false` es seguro por construcción y no por suerte: la cuota gratuita de
-# LFS es de 1 GB de ancho de banda AL MES y el corpus pesa 254 MB.
+# **`lfs: false` sigue siendo seguro, pero YA NO porque nadie lea `corpus/`.**
+# Con siete módulos era cierto; con dieciocho es falso: DOCE de los dieciocho
+# lo nombran (contado sobre `ci/linux-apto.json`, no supuesto). Lo que lo
+# sostiene ahora son sus guardas, que miran el TAMAÑO y no la existencia: un
+# puntero de LFS de 130 B *existe*, así que `os.path.exists` decía que sí y el
+# módulo reventaba (trampa 107). La cuota gratuita de LFS es de 1 GB de ancho
+# de banda AL MES y el corpus pesa 254 MB: cuatro ejecuciones la agotan.
+#
+# De las 450 pruebas, **110 se saltan aquí**. Cuánto de esas 110 es el corpus y
+# cuánto son la tarjeta, Docker o win32 NO está medido, y no se reparte a ojo:
+# un motivo se escribe con la traza delante o se deja en PENDIENTE (trampa 111).
 #
 # Esto NO sustituye a la suite del proyecto: las pruebas `win32`, la GPU y los
 # contenedores locales sólo corren en la máquina. Ver CONTRIBUTING.md §1.
