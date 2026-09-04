@@ -116,6 +116,24 @@ class _ConHijo(unittest.TestCase):
         # El servicio de ESTE proceso, que solo conoce al trabajo por el disco.
         self.sv = S.Servicio(_FxFalso(), S.Trabajos(self.trabajos))
 
+    def _en_disco(self) -> dict:
+        """Lo que el trabajo dice en el DISCO, sin pasar por `Servicio`.
+
+        Un `estado` no dice **quién lo escribió**, y aquí esa es toda la
+        diferencia: `resultado["motivo"] == "proceso_dueno_muerto"` lo escribió
+        la DETECCIÓN, y cualquier otro resumen lo escribió **el propio dueño**
+        —es decir, el dueño siguió vivo lo bastante como para cerrar su trabajo
+        y la condición que la prueba dice reproducir NO se dio (trampa 38)—.
+        Va en el mensaje de las aserciones para que un rojo nombre su causa en
+        vez de obligar a reproducirlo: N36 costó una tanda entera por eso.
+        """
+        try:
+            with open(os.path.join(self.trabajos, self.jid + ".json"),
+                      encoding="utf-8") as fh:
+                return json.load(fh)
+        except OSError:
+            return {}
+
     def tearDown(self):
         try:
             self.proc.kill()
@@ -275,8 +293,8 @@ class DuenoMuerto(_ConHijo):
         while r["estado"] != S.FALLIDO and time.perf_counter() - t0 < tope:
             time.sleep(paso)
             r = self.sv.job(self.jid)
-        self.assertEqual(r["estado"], S.FALLIDO, r)
-        self.assertTrue(r.get("huerfano"))
+        self.assertEqual(r["estado"], S.FALLIDO, (r, self._en_disco()))
+        self.assertTrue(r.get("huerfano"), (r, self._en_disco()))
         self.assertIn("no vive", r["nota"])
         # Y queda escrito: quien pregunte después ve el mismo veredicto.
         otra = S.Servicio(_FxFalso(), S.Trabajos(self.trabajos))
@@ -290,7 +308,8 @@ class DuenoMuerto(_ConHijo):
         try:
             r = self.sv.job(self.jid)
             self.assertEqual(r["estado"], S.TRABAJANDO,
-                             "sin detección un huérfano parece vivo")
+                             "sin detección un huérfano parece vivo; "
+                             f"en disco: {self._en_disco()}")
         finally:
             os.environ.pop("FILEX_MANDO", None)
 

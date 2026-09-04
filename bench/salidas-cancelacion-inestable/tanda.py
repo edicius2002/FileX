@@ -35,6 +35,9 @@ LOGS = os.path.join(AQUI, "logs")
 #: testigo (§3 de `CLAUDE.md`).
 TOPE_TESTIGO = 20.0
 
+#: Bucle de CPU para `--carga`. Sin fin: se mata al cerrar la pasada.
+_CARGA = "x=0\nwhile True:\n    x=(x*x+1)%1000003\n"
+
 
 def nivel_ms() -> float:
     """Lo que cuesta lanzar un proceso. Mediana de 3, con tope."""
@@ -105,6 +108,11 @@ def main() -> int:
                     help="lo que se le pasa a pytest como selección")
     ap.add_argument("--env", action="append", default=[],
                     help="VAR=VALOR extra para el proceso de pytest")
+    ap.add_argument("--carga", type=int, default=0,
+                    help="procesos de CPU levantados DURANTE cada pasada. Es "
+                         "una variable independiente declarada, no ruido "
+                         "heredado: los fallos del módulo se dan en las "
+                         "pasadas lentas y esto pregunta si la lentitud basta")
     args = ap.parse_args()
 
     os.makedirs(LOGS, exist_ok=True)
@@ -116,6 +124,10 @@ def main() -> int:
 
     filas = []
     for i in range(1, args.n + 1):
+        cargas = [subprocess.Popen(
+            [sys.executable, "-c", _CARGA], stdin=subprocess.DEVNULL,
+            stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            for _ in range(args.carga)]
         antes_ff = ffmpeg_vivos()
         niv0, der0 = nivel_ms(), deriva_ms()
         t0 = time.perf_counter()
@@ -125,6 +137,12 @@ def main() -> int:
             stdin=subprocess.DEVNULL, capture_output=True, text=True,
             encoding="utf-8", errors="replace", cwd=RAIZ, env=entorno)
         seg = round(time.perf_counter() - t0, 2)
+        for c in cargas:
+            try:
+                c.kill()
+                c.wait(timeout=20)
+            except Exception:
+                pass
         niv1, der1 = nivel_ms(), deriva_ms()
         despues_ff = ffmpeg_vivos()
 
@@ -141,6 +159,7 @@ def main() -> int:
             "nivel_ms_antes": niv0, "nivel_ms_despues": niv1,
             "deriva_ms_antes": der0, "deriva_ms_despues": der1,
             "ffmpeg_antes": antes_ff, "ffmpeg_despues": despues_ff,
+            "carga": args.carga,
         }
         filas.append(fila)
         print(json.dumps(fila, ensure_ascii=False), flush=True)
