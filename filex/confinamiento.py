@@ -195,6 +195,33 @@ class Confinamiento:
         self._local = threading.local()
 
     @staticmethod
+    def _podadas(raices) -> list[str]:
+        """QUÉ se descartó al preparar. N37: la poda de N35 era MUDA.
+
+        N35 acertó al podar en vez de invalidar el conjunto —un cliente que
+        declara `["C:\\", <un directorio legítimo>]` conserva el legítimo—,
+        pero lo hace **en silencio**: nadie se entera de qué raíces se cayeron
+        ni por qué, y una lista blanca más estrecha de lo que el operador cree
+        se manifiesta después como un `ruta no accesible` que R4 obliga a dejar
+        opaco. Es la trampa 44 por omisión: el comportamiento es correcto y no
+        hay dónde verlo.
+
+        No cambia ninguna decisión —se calcula sobre lo mismo que `_preparar`
+        descarta— y sólo existe para que la superficie pueda registrarlo. Se
+        devuelven las raíces TAL COMO LAS DECLARÓ quien las pasó, no
+        normalizadas: lo que el operador necesita reconocer es lo que escribió.
+        """
+        quedan = set(Confinamiento._preparar(raices))
+        fuera = []
+        for r in raices or []:
+            if not r or not str(r).strip():
+                fuera.append(str(r))
+                continue
+            if _norm(os.path.abspath(r)) not in quedan:
+                fuera.append(str(r))
+        return fuera
+
+    @staticmethod
     def _preparar(raices) -> list[str]:
         """R3 + N35: las raíces que no confinan se PODAN, no invalidan el conjunto.
 
@@ -236,6 +263,20 @@ class Confinamiento:
         """
         out = []
         for r in raices or []:
+            # N37: una raíz VACÍA no nombra ningún directorio, y `abspath("")`
+            # la convierte en el `cwd` del proceso — una lista blanca que nadie
+            # declaró, por el mismo mecanismo que la fila N37 cerró en los URI:
+            # lo declarado y lo efectivo dejan de coincidir, y no porque se
+            # pierda la raíz sino porque se SUSTITUYE por otra. MEDIDO
+            # (`bench/uri-authority.md`): `Confinamiento([""])` concedía el
+            # `cwd` entero, y la CLI pasa `--raiz` tal cual, así que una
+            # variable de entorno vacía en un script bastaba. Se poda igual que
+            # las de abajo, y el resultado es el que R6 ya prescribe: si no
+            # queda ninguna, no se arranca. Separar «no declaré» (lista vacía)
+            # de «declaré algo que no confina» es la trampa 43, y aquí las dos
+            # acaban en el mismo sitio a propósito: sin acceso.
+            if not r or not str(r).strip():
+                continue
             a = _norm(os.path.abspath(r))
             # R3: una raíz que normaliza a la raíz de una unidad —o a la de un
             # recurso UNC `\\servidor\recurso`, que da lo mismo aquí— no

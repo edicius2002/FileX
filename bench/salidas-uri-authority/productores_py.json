@@ -1,0 +1,82 @@
+{
+  "runtime": "python 3.11.9",
+  "plataforma": "win32",
+  "produccion": [
+    {
+      "caso": "local",
+      "ruta_de_entrada": "D:\\Work\\research\\FileX",
+      "as_uri": "file:///D:/Work/research/FileX",
+      "authority_emitida": "",
+      "pathname2url": "///D:/Work/research/FileX"
+    },
+    {
+      "caso": "unc",
+      "ruta_de_entrada": "\\\\servidor\\recurso",
+      "as_uri": "file://servidor/recurso/",
+      "authority_emitida": "servidor",
+      "pathname2url": "////servidor/recurso"
+    },
+    {
+      "caso": "unc_sub",
+      "ruta_de_entrada": "\\\\servidor\\recurso\\sub",
+      "as_uri": "file://servidor/recurso/sub",
+      "authority_emitida": "servidor",
+      "pathname2url": "////servidor/recurso/sub"
+    },
+    {
+      "caso": "raiz_unidad",
+      "ruta_de_entrada": "D:\\",
+      "as_uri": "file:///D:/",
+      "authority_emitida": "",
+      "pathname2url": "///D:"
+    }
+  ],
+  "consumo": [
+    {
+      "uri": "file://servidor/recurso",
+      "netloc_de_urlparse": "servidor",
+      "path_de_urlparse": "/recurso",
+      "url2pathname": "\\recurso",
+      "unc_reconstruida": "\\\\servidor\\recurso"
+    },
+    {
+      "uri": "file:///recurso",
+      "netloc_de_urlparse": "",
+      "path_de_urlparse": "/recurso",
+      "url2pathname": "\\recurso",
+      "unc_reconstruida": null
+    },
+    {
+      "uri": "file://localhost/D:/Work",
+      "netloc_de_urlparse": "localhost",
+      "path_de_urlparse": "/D:/Work",
+      "url2pathname": "D:\\Work",
+      "unc_reconstruida": "\\\\localhost\\D:\\Work"
+    },
+    {
+      "uri": "file:///D:/Work",
+      "netloc_de_urlparse": "",
+      "path_de_urlparse": "/D:/Work",
+      "url2pathname": "D:\\Work",
+      "unc_reconstruida": null
+    },
+    {
+      "uri": "file://",
+      "netloc_de_urlparse": "",
+      "path_de_urlparse": "",
+      "url2pathname": "",
+      "unc_reconstruida": null
+    },
+    {
+      "uri": "file:///",
+      "netloc_de_urlparse": "",
+      "path_de_urlparse": "/",
+      "url2pathname": "\\",
+      "unc_reconstruida": null
+    }
+  ],
+  "control_unc": {
+    "drive_de_\\\\servidor\\recurso": "\\\\servidor\\recurso",
+    "es_absoluta": true
+  }
+}

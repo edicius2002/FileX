@@ -1,0 +1,36 @@
+{
+  "pregunta": "¿hay un recurso UNC accesible sobre el que medir C4?",
+  "python": "3.11.9",
+  "hay_unc_accesible": true,
+  "filas": [
+    {
+      "ruta": "\\\\localhost\\D$",
+      "exists": true,
+      "n_entradas": 48,
+      "realpath": "\\\\localhost\\D$",
+      "dirname_igual": true
+    },
+    {
+      "ruta": "\\\\localhost\\C$",
+      "exists": true,
+      "n_entradas": 35,
+      "realpath": "\\\\localhost\\C$",
+      "dirname_igual": true
+    },
+    {
+      "ruta": "\\\\127.0.0.1\\D$",
+      "exists": true,
+      "n_entradas": 48,
+      "realpath": "\\\\127.0.0.1\\D$",
+      "dirname_igual": true
+    },
+    {
+      "ruta": "\\\\localhost\\D$\\Work",
+      "exists": true,
+      "n_entradas": 10,
+      "realpath": "\\\\localhost\\D$\\Work",
+      "dirname_igual": false
+    }
+  ],
+  "net_share": "\nNombre       Recurso                         Descripci¢n\n\n-------------------------------------------------------------------------------\nC$           C:\\                             Recurso predeterminado            \nD$           D:\\                             Recurso predeterminado            \nIPC$                                         IPC remota                        \nADMIN$       C:\\Windows                      Admin remota                      \nnest-hub     D:\\Work\\shared                  \nSe ha completado el comando correctamente.\n\n"
+}

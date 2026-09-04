@@ -1,0 +1,292 @@
+{
+  "control_de_identidad": {
+    "sha256_de_uri_a_ruta": "0849916d662ae173",
+    "lineas": 11,
+    "cwd": "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-a146f8a533c52cb89",
+    "python": "3.11.9",
+    "os_name": "nt"
+  },
+  "ramas_cubiertas": [
+    "R1 no-file",
+    "R2 letra-unidad",
+    "R3 sin-letra"
+  ],
+  "ramas_esperadas": [
+    "R1 no-file",
+    "R2 letra-unidad",
+    "R3 sin-letra"
+  ],
+  "todas_las_ramas_cubiertas": true,
+  "filas": [
+    {
+      "uri": "",
+      "rama": "R1 no-file",
+      "rama_declarada_coincide": true,
+      "porque": "cadena vacía: ni siquiera es un URI",
+      "authority_netloc": "",
+      "devuelve": "",
+      "authority_perdida": false,
+      "destino": {
+        "lo_toma_asegurar": false
+      }
+    },
+    {
+      "uri": "http://servidor/recurso",
+      "rama": "R1 no-file",
+      "rama_declarada_coincide": true,
+      "porque": "esquema ajeno",
+      "authority_netloc": "servidor",
+      "devuelve": "",
+      "authority_perdida": true,
+      "destino": {
+        "lo_toma_asegurar": false
+      }
+    },
+    {
+      "uri": "D:/Work",
+      "rama": "R1 no-file",
+      "rama_declarada_coincide": true,
+      "porque": "ruta pelada, sin esquema",
+      "authority_netloc": "",
+      "devuelve": "",
+      "authority_perdida": false,
+      "destino": {
+        "lo_toma_asegurar": false
+      }
+    },
+    {
+      "uri": "file:///D:/Work/research/FileX",
+      "rama": "R2 letra-unidad",
+      "rama_declarada_coincide": true,
+      "porque": "el caso canónico local",
+      "authority_netloc": "",
+      "devuelve": "D:\\Work\\research\\FileX",
+      "authority_perdida": false,
+      "destino": {
+        "lo_toma_asegurar": true,
+        "abspath": "D:\\Work\\research\\FileX",
+        "norm": "d:\\work\\research\\filex",
+        "sobrevive_a_la_poda_de_N35": true,
+        "tras_preparar": [
+          "d:\\work\\research\\filex"
+        ],
+        "confinamiento_construye": true,
+        "dentro_de_la_propia_raiz": true,
+        "dentro_de_un_hijo": true,
+        "dentro_de_un_extraño": false
+      }
+    },
+    {
+      "uri": "file:///C:/Users/krato/Escritorio%20de%20prueba",
+      "rama": "R2 letra-unidad",
+      "rama_declarada_coincide": true,
+      "porque": "con %20: el unquote va antes del recorte",
+      "authority_netloc": "",
+      "devuelve": "C:\\Users\\krato\\Escritorio de prueba",
+      "authority_perdida": false,
+      "destino": {
+        "lo_toma_asegurar": true,
+        "abspath": "C:\\Users\\krato\\Escritorio de prueba",
+        "norm": "c:\\users\\krato\\escritorio de prueba",
+        "sobrevive_a_la_poda_de_N35": true,
+        "tras_preparar": [
+          "c:\\users\\krato\\escritorio de prueba"
+        ],
+        "confinamiento_construye": true,
+        "dentro_de_la_propia_raiz": true,
+        "dentro_de_un_hijo": true,
+        "dentro_de_un_extraño": false
+      }
+    },
+    {
+      "uri": "file:///D:/",
+      "rama": "R2 letra-unidad",
+      "rama_declarada_coincide": true,
+      "porque": "raíz de unidad: la poda de N35 la espera",
+      "authority_netloc": "",
+      "devuelve": "D:\\",
+      "authority_perdida": false,
+      "destino": {
+        "lo_toma_asegurar": true,
+        "abspath": "D:\\",
+        "norm": "d:\\",
+        "sobrevive_a_la_poda_de_N35": false,
+        "tras_preparar": [],
+        "confinamiento_construye": false,
+        "error": "podado por N35: no queda ninguna raíz (R6)"
+      }
+    },
+    {
+      "uri": "file://servidor/recurso",
+      "rama": "R3 sin-letra",
+      "rama_declarada_coincide": true,
+      "porque": "UNC canónico de RFC 8089: la fila N37",
+      "authority_netloc": "servidor",
+      "devuelve": "\\recurso",
+      "authority_perdida": true,
+      "destino": {
+        "lo_toma_asegurar": true,
+        "abspath": "D:\\recurso",
+        "norm": "d:\\recurso",
+        "sobrevive_a_la_poda_de_N35": true,
+        "tras_preparar": [
+          "d:\\recurso"
+        ],
+        "confinamiento_construye": true,
+        "dentro_de_la_propia_raiz": true,
+        "dentro_de_un_hijo": true,
+        "dentro_de_un_extraño": false
+      }
+    },
+    {
+      "uri": "file://servidor/recurso/sub",
+      "rama": "R3 sin-letra",
+      "rama_declarada_coincide": true,
+      "porque": "UNC con subdirectorio",
+      "authority_netloc": "servidor",
+      "devuelve": "\\recurso\\sub",
+      "authority_perdida": true,
+      "destino": {
+        "lo_toma_asegurar": true,
+        "abspath": "D:\\recurso\\sub",
+        "norm": "d:\\recurso\\sub",
+        "sobrevive_a_la_poda_de_N35": true,
+        "tras_preparar": [
+          "d:\\recurso\\sub"
+        ],
+        "confinamiento_construye": true,
+        "dentro_de_la_propia_raiz": true,
+        "dentro_de_un_hijo": true,
+        "dentro_de_un_extraño": false
+      }
+    },
+    {
+      "uri": "file://localhost/D:/Work",
+      "rama": "R2 letra-unidad",
+      "rama_declarada_coincide": false,
+      "porque": "RFC 8089 §2: `localhost` es EQUIVALENTE a authority vacía",
+      "authority_netloc": "localhost",
+      "devuelve": "D:\\Work",
+      "authority_perdida": true,
+      "destino": {
+        "lo_toma_asegurar": true,
+        "abspath": "D:\\Work",
+        "norm": "d:\\work",
+        "sobrevive_a_la_poda_de_N35": true,
+        "tras_preparar": [
+          "d:\\work"
+        ],
+        "confinamiento_construye": true,
+        "dentro_de_la_propia_raiz": true,
+        "dentro_de_un_hijo": true,
+        "dentro_de_un_extraño": false
+      }
+    },
+    {
+      "uri": "file://LOCALHOST/D:/Work",
+      "rama": "R2 letra-unidad",
+      "rama_declarada_coincide": false,
+      "porque": "y su authority no distingue mayúsculas",
+      "authority_netloc": "LOCALHOST",
+      "devuelve": "D:\\Work",
+      "authority_perdida": true,
+      "destino": {
+        "lo_toma_asegurar": true,
+        "abspath": "D:\\Work",
+        "norm": "d:\\work",
+        "sobrevive_a_la_poda_de_N35": true,
+        "tras_preparar": [
+          "d:\\work"
+        ],
+        "confinamiento_construye": true,
+        "dentro_de_la_propia_raiz": true,
+        "dentro_de_un_hijo": true,
+        "dentro_de_un_extraño": false
+      }
+    },
+    {
+      "uri": "file://///servidor/recurso",
+      "rama": "R3 sin-letra",
+      "rama_declarada_coincide": true,
+      "porque": "barras de más",
+      "authority_netloc": "",
+      "devuelve": "\\\\\\servidor\\recurso",
+      "authority_perdida": false,
+      "destino": {
+        "lo_toma_asegurar": true,
+        "abspath": "\\\\\\servidor\\recurso",
+        "norm": "\\\\\\servidor\\recurso",
+        "sobrevive_a_la_poda_de_N35": true,
+        "tras_preparar": [
+          "\\\\\\servidor\\recurso"
+        ],
+        "confinamiento_construye": true,
+        "dentro_de_la_propia_raiz": true,
+        "dentro_de_un_hijo": true,
+        "dentro_de_un_extraño": false
+      }
+    },
+    {
+      "uri": "file:///",
+      "rama": "R3 sin-letra",
+      "rama_declarada_coincide": true,
+      "porque": "sólo la barra",
+      "authority_netloc": "",
+      "devuelve": "\\",
+      "authority_perdida": false,
+      "destino": {
+        "lo_toma_asegurar": true,
+        "abspath": "D:\\",
+        "norm": "d:\\",
+        "sobrevive_a_la_poda_de_N35": false,
+        "tras_preparar": [],
+        "confinamiento_construye": false,
+        "error": "podado por N35: no queda ninguna raíz (R6)"
+      }
+    },
+    {
+      "uri": "file://",
+      "rama": "R3 sin-letra",
+      "rama_declarada_coincide": true,
+      "porque": "authority vacía y sin path: ¿qué da normpath('')?",
+      "authority_netloc": "",
+      "devuelve": ".",
+      "authority_perdida": false,
+      "destino": {
+        "lo_toma_asegurar": true,
+        "abspath": "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-a146f8a533c52cb89",
+        "norm": "d:\\work\\research\\filex\\.claude\\worktrees\\agent-a146f8a533c52cb89",
+        "sobrevive_a_la_poda_de_N35": true,
+        "tras_preparar": [
+          "d:\\work\\research\\filex\\.claude\\worktrees\\agent-a146f8a533c52cb89"
+        ],
+        "confinamiento_construye": true,
+        "dentro_de_la_propia_raiz": true,
+        "dentro_de_un_hijo": true,
+        "dentro_de_un_extraño": false
+      }
+    },
+    {
+      "uri": "file:///recurso",
+      "rama": "R3 sin-letra",
+      "rama_declarada_coincide": true,
+      "porque": "path absoluto POSIX sin unidad",
+      "authority_netloc": "",
+      "devuelve": "\\recurso",
+      "authority_perdida": false,
+      "destino": {
+        "lo_toma_asegurar": true,
+        "abspath": "D:\\recurso",
+        "norm": "d:\\recurso",
+        "sobrevive_a_la_poda_de_N35": true,
+        "tras_preparar": [
+          "d:\\recurso"
+        ],
+        "confinamiento_construye": true,
+        "dentro_de_la_propia_raiz": true,
+        "dentro_de_un_hijo": true,
+        "dentro_de_un_extraño": false
+      }
+    }
+  ]
+}
