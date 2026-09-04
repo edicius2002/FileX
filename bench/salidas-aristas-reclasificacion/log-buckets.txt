@@ -1,0 +1,25 @@
+censo.json ffmpeg.muertos_in: 17
+
+(demux=True mux=True proto=True dev=False)  n=2
+    hls, rtp
+
+(demux=True mux=True proto=False dev=False)  n=71
+    3g2, 3gp, ac4, aea, alaw, alp, amr, argo_asf, avs3, bit, cavsvideo, codec2, codec2raw, dash, daud, dirac, dnxhd, dts, dv, evc, f32be, f32le, f64be, f64le, ffmetadata ...
+
+(demux=True mux=False proto=True dev=False)  n=1
+    concat
+
+(demux=True mux=False proto=False dev=False)  n=173
+    3dostr, 4xm, aa, aax, ace, acm, act, adf, adp, ads, aix, alias_pix, amrnb, amrwb, anm, apc, ape, aqtitle, argo_brp, asf_o, av1, avr, bethsoftvid, bfi, bfstm ...
+
+(demux=False mux=False proto=False dev=True)  n=2
+    lavfi, openal
+
+(demux=False mux=False proto=False dev=False)  n=110
+    302, 669, 722, aa3, alsa, amf, ams, ans, apl, aqt, asc, avc, awb, bcstm, c2, cdata, cgi, cif, dat, dav, dbm, dif, digi, diz, dmf ...
+
+--- CONTROL CRUZADO con censo.json ---
+desconocidos por mi cruce : 110
+en censo.muertos_in       : 12
+NO en censo.muertos_in    : 98  ['302', '669', '722', 'aa3', 'amf', 'ams', 'ans', 'apl', 'aqt', 'asc', 'avc', 'bcstm', 'c2', 'cdata', 'cgi', 'cif', 'dat', 'dav', 'dbm', 'dif']
+en censo pero materializ. : 5

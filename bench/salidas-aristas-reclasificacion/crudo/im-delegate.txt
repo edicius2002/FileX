@@ -1,0 +1,30 @@
+
+Path: C:\Program Files\ImageMagick-7.1.2-Q16-HDRI\delegates.xml
+
+Delegate                Command
+-------------------------------------------------------------------------------
+        bpg =>          ""bpgdec" -b 16 -o "%o" "%i""
+        dot =>          ""dot" -Tsvg "%i" -o "%o""
+        dvi =>          ""dvips" -q -o "%o" "%i""
+        eps<=>pdf        ""C:/Program Files/gs/gs10.07.0/bin/gswin64c.exe" -q -dQUIET -dSAFER -dBATCH -dNOPAUSE -dNOPROMPT -dMaxBitmap=500000000 "-sDEVICE=pdfwrite" "-sOutputFile=%o" "-f%i""
+        eps<=>ps         ""C:/Program Files/gs/gs10.07.0/bin/gswin64c.exe" -q -dQUIET -dSAFER -dBATCH -dNOPAUSE -dNOPROMPT -dMaxBitmap=500000000 -dAlignToPixels=0 -dGridFitTT=2 "-sDEVICE=ps2write" "-sOutputFile=%o" "-f%i""
+        hpg =>          ""hp2xx" -q -m eps -f "%o" "%i""
+       hpgl =>          ""hp2xx" -q -m eps -f "%o" "%i""
+        htm =>          ""html2ps" -U -o "%o" "%i""
+       html =>          ""html2ps" -U -o "%o" "%i""
+       ilbm =>          ""ilbmtoppm" "%i" > "%o""
+        jpg<= lep        ""lepton" "%i" "%o""
+        jxr =>          "cmd.exe /c (move "%i" "%i.jxr" >nul) & ("JXRDecApp.exe" -i "%i.jxr" -o "%o.tiff") & (move "%i.jxr" "%i" >nul) & (move "%o.tiff" "%o" >nul)"
+        lep =>          ""lepton" "%i" "%o""
+        pdf<=>eps        ""C:/Program Files/gs/gs10.07.0/bin/gswin64c.exe" -q -dQUIET -dSAFER -dBATCH -dNOPAUSE -dNOPROMPT -dMaxBitmap=500000000 -dAlignToPixels=0 -dGridFitTT=2 "-sDEVICE=eps2write" "-sPDFPassword=%a" "-sOutputFile=%o" "-f%i""
+        pdf<=>ps         ""C:/Program Files/gs/gs10.07.0/bin/gswin64c.exe" -q -dQUIET -dSAFER -dBATCH -dNOPAUSE -dNOPROMPT -dMaxBitmap=500000000 -dAlignToPixels=0 -dGridFitTT=2 "-sDEVICE=ps2write" "-sPDFPassword=%a" "-sOutputFile=%o" "-f%i""
+        png<= bpg        ""bpgenc" -b 12 -q "%~" -o "%o" "%i""
+        pnm<= ilbm       ""ppmtoilbm" -24if "%i" > "%o""
+         ps<=>eps        ""C:/Program Files/gs/gs10.07.0/bin/gswin64c.exe" -q -dQUIET -dSAFER -dBATCH -dNOPAUSE -dNOPROMPT -dMaxBitmap=500000000 -dAlignToPixels=0 -dGridFitTT=2 "-sDEVICE=eps2write" "-sOutputFile=%o" "-f%i""
+         ps<=>pdf        ""C:/Program Files/gs/gs10.07.0/bin/gswin64c.exe" -q -dQUIET -dSAFER -dBATCH -dNOPAUSE -dNOPROMPT -dMaxBitmap=500000000 -dAlignToPixels=0 -dGridFitTT=2 "-sDEVICE=pdfwrite" "-sOutputFile=%o" "-f%i""
+      shtml =>          ""html2ps" -U -o "%o" "%i""
+        svg =>          ""rsvg-convert" --dpi-x %x --dpi-y %y -o "%o" "%i""
+       tiff<= jxr        "cmd.exe /c (move "%i" "%i.tiff" >nul) & ("JXREncApp.exe" -i "%i.tiff" -o "%o.jxr" -q %Q) & (move "%i.tiff" "%i" >nul) & (move "%o.jxr" "%o" >nul)"
+       tiff<= wdp        "cmd.exe /c (move "%i" "%i.tiff" >nul) & ("JXREncApp.exe" -i "%i.tiff" -o "%o.jxr" -q %Q) & (move "%i.tiff" "%i" >nul) & (move "%o.jxr" "%o" >nul)"
+video:decode =>          ""ffmpeg" -nostdin -loglevel error -i "%s" -an -f rawvideo -y %s "%s""
+        wdp =>          "cmd.exe /c (move "%i" "%i.jxr" >nul) & ("JXRDecApp.exe" -i "%i.jxr" -o "%o.pnm") & (move "%i.jxr" "%i" >nul) & (move "%o.pnm" "%o" >nul)"
