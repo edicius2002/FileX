@@ -3,9 +3,9 @@
 Proyecto de investigación **en español**. Informes, comentarios y mensajes de commit,
 en español.
 
-Este fichero es la versión corta y operativa. Las reglas completas —y las **107 trampas ya
+Este fichero es la versión corta y operativa. Las reglas completas —y las **119 trampas ya
 pagadas**— están en [`CLAUDE.md`](CLAUDE.md), que es el documento más útil del repositorio
-si vas a tocar algo. El reparto del trabajo vive en
+si vas a tocar algo. El inventario de trabajo, con su estado fila a fila, vive en
 [`ESTADO-Y-REPARTO.md`](ESTADO-Y-REPARTO.md).
 
 ---
@@ -80,7 +80,10 @@ medido (trampas 94 y 101):
    `python.exe` de Windows **miden cosas distintas**: las seis pruebas `win32` sólo corren
    con el segundo.
 2. **El entorno.** Sin demonio de Docker, 12 pruebas **se saltan**: el hito 5 entero y la
-   cancelación real de contenedor. Con Docker: `420 passed · 2 skipped · 0 failed`.
+   cancelación real de contenedor. Con Docker, aquel mismo día (31/08/2026):
+   `420 passed · 2 skipped · 0 failed`. *(Las tres cifras de este punto y del anterior son
+   del 31/08/2026 y están aquí como ejemplo del efecto, no como el recuento vigente: el de
+   hoy está en el `README.md`.)*
 3. **Qué quedó fuera, y por qué.** Un salto honesto se declara; uno silencioso es un
    agujero.
 4. **El estado de la máquina.** `test_cancelacion_procesos` dio **2 failed** en una tanda de
@@ -124,10 +127,14 @@ se vuelven a producir—, y borrarla destruiría la prueba de la tesis del proye
 salida es de esa clase, decláralo en `ci/evidencia-irreproducible.txt` **con su motivo y el
 documento que lo sostiene**: la lista no perdona, exige una razón escrita (trampa 106).
 
-`ci/integridad.py` lo comprueba con un **trinquete**: la deuda de hoy —3 binarios sueltos y
-17 directorios sin manifiesto— está congelada en `ci/heredado.json` y no rompe nada, pero
-**lo nuevo rompe**. Y lo **arreglado** también, para obligar a encoger la lista: sin esa
-tercera mitad el trinquete se afloja solo.
+`ci/integridad.py` lo comprueba con un **trinquete**: la deuda heredada se congela en
+`ci/heredado.json` y no rompe nada, pero **lo nuevo rompe**. Y lo **arreglado** también,
+para obligar a encoger la lista: sin esa tercera mitad el trinquete se afloja solo.
+
+**Hoy las dos listas de `ci/heredado.json` están vacías** —la deuda de 3 binarios sueltos y
+17 directorios sin manifiesto que se congeló el 01/09/2026 quedó cerrada—, así que cualquier
+binario suelto o directorio de salidas sin manifiesto que aparezca a partir de ahora **rompe
+la CI**, que es lo que se pretendía.
 
 El manifiesto puede llamarse `MANIFIESTO-loquesea.md`: la comprobación acepta el prefijo,
 no el nombre exacto.
@@ -145,17 +152,20 @@ python3 ci/integridad.py            # segundos, y evita el 80 % de los rechazos
 git commit                          # PRONTO y a menudo: ver abajo
 ```
 
-**Quien empuja y abre el PR es el maestro, no tú.** No es una jerarquía: es que
-`gh auth` vive en el `home` de cada agente y **los workers no tienen credenciales de
-GitHub** — `git push` responde *«could not read Username»* y `gh auth status` dice *«not
-logged into any host»*. Se midió el 01/09, cuando worker2 terminó su encargo entero y no
-pudo entregarlo. Así que tu entrega es **la rama commiteada**, y el maestro la empuja, abre
-el PR con la plantilla y la fusiona cuando la CI pasa.
+**Si vienes de fuera**, el camino es el corriente en GitHub: haz un *fork*, trabaja en una
+rama con el prefijo de su carril, y abre el PR contra `main` rellenando la plantilla.
 
-> **Commitea pronto y a menudo.** Ese mismo día caducaron las dos sesiones de worker con
-> trabajo en el disco: el de worker1 estaba entero y se recogió sin perder nada, y el de
-> worker2 eran 18 ficheros sin commitear que hubo que rescatar con `git stash -u`. **Lo que
-> se pierde cuando cae una sesión no es el trabajo: es el trabajo sin commitear.**
+**Si tu sesión es la de un agente automatizado**, tu entrega es **la rama commiteada** y no
+el PR: `gh auth` vive en el `home` de cada sesión, así que una sesión de agente **no tiene
+credenciales de GitHub** — `git push` responde *«could not read Username»* y `gh auth
+status` dice *«not logged into any host»*. Se midió el 01/09/2026, cuando una sesión terminó
+su encargo entero y no pudo entregarlo. Quien tenga las credenciales empuja la rama, abre el
+PR y lo fusiona cuando la CI pasa.
+
+> **Commitea pronto y a menudo.** Ese mismo día caducaron dos sesiones con trabajo en el
+> disco: una lo tenía todo commiteado y se recogió sin perder nada; la otra eran 18 ficheros
+> sin commitear que hubo que rescatar con `git stash -u`. **Lo que se pierde cuando cae una
+> sesión no es el trabajo: es el trabajo sin commitear.**
 
 En el PR:
 

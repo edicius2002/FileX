@@ -278,11 +278,24 @@ footer b{color:var(--ink-2);font-weight:500}
   <p class="standfirst">Los conversores universales con tracción <strong>ignoran por completo la GPU y el protocolo MCP</strong>. Los motores que sí usan GPU no convierten nada fuera de documentos. Nadie ha unido las dos mitades, y nadie encadena conversiones. Ahí está FileX.</p>
 </header>
 
+<div style="max-width:52rem;margin:2rem auto;padding:1.25rem 1.5rem;border:2px solid #c0392b;border-radius:8px;background:rgba(192,57,43,.06)">
+  <p style="margin:0 0 .6rem;font-weight:700;font-size:1.05rem">⛔ Instantánea del 19 de agosto de 2026 — conservada como historia, no como estado actual</p>
+  <p style="margin:0 0 .6rem">Este informe es la <b>síntesis ejecutiva de la investigación previa</b>, anterior a construir FileX. Se conserva sin reescribir porque documenta <b>qué se creía antes de medir</b>. El repositorio siguió midiendo después, y <b>cuatro de sus afirmaciones centrales quedaron corregidas por el propio proyecto</b>:</p>
+  <ul style="margin:0 0 .6rem;padding-left:1.2rem">
+    <li><b>«8,4× en HEVC por NVENC»</b> — cierto para <i>un fichero largo suelto</i> (×7,68 remedido), pero <b>en un lote de clips cortos la ventaja se diluye a ×4,10</b>. Un «×N» sin la duración de la entrada no es un número. <i>(<code>bench/hito2-nvenc.md</code> §5; trampa 76.)</i></li>
+    <li><b>«salida idéntica carácter a carácter» entre CPU y GPU</b> — <b>REFUTADO</b>: 5 de 21 celdas difieren, y la CPU es mejor en dos y peor en tres. <i>(Trampa 11.)</i></li>
+    <li><b>«en la dificultad 3 fallan los tres motores de OCR»</b> — <b>REFUTADO</b>: era un ×2 de interpolación del arnés. A ppp nativos, PaddleOCR resuelve ese documento con <b>2,5 % de CER</b>. <i>(Trampa 6.)</i></li>
+    <li><b>«marker hereda el bloqueo de Surya»</b> — la premisa análoga se refutó el 03/09/2026: el entorno es de CPU y <code>marker_single</code> lanza igual un contenedor con <code>--gpus device=0</code>. <i>(<code>CLAUDE.md</code> §2.)</i></li>
+  </ul>
+  <p style="margin:0">Las cifras de este informe <b>casi no llevan marca MEDIDO/PENDIENTE</b>, al contrario que el resto del repositorio. Para las cifras vigentes, con su <code>n</code> y el informe del que salen, ve a <b><code>BENCHMARKS.md</code></b>; para el estado de la tesis, a <b><code>HUECOS.md</code></b>. El pie remite a <code>repos/</code>, que <b>no se publica</b> (son clones de terceros, y está en <code>.gitignore</code>).</p>
+</div>
+
+
 <div class="stats">
   <div class="stat"><span class="n"><em>0</em>/7</span><span class="l">orquestadores con búsqueda de camino</span></div>
   <div class="stat"><span class="n"><em>86</em></span><span class="l">estrellas del MCP de conversión más popular</span></div>
   <div class="stat"><span class="n"><em>2,93</em>×</span><span class="l">más cobertura con los mismos motores</span></div>
-  <div class="stat"><span class="n"><em>8,4</em>×</span><span class="l">HEVC por NVENC en tu RTX 3060</span></div>
+  <div class="stat"><span class="n"><em>8,4</em>×</span><span class="l">HEVC por NVENC (clip largo suelto)</span></div>
 </div>
 
 <!-- ================= 01 ================= -->
@@ -441,7 +454,7 @@ footer b{color:var(--ink-2);font-weight:500}
 <!-- ================= 04 ================= -->
 <section>
   <div class="sec-head"><span class="sec-num">04</span><div>
-    <h2>Medido en tu máquina</h2>
+    <h2>Medido en la máquina de referencia</h2>
     <p class="lede col">RTX 3060 12 GB, compute capability 8.6, driver 572.61 · Windows 10 · Docker 29.4.3 · Python 3.11.9 · Node 22 · Go 1.22.5</p>
   </div></div>
 
@@ -621,7 +634,7 @@ footer b{color:var(--ink-2);font-weight:500}
       <span class="rank">2</span>
       <div>
         <h3>NVENC en conversión de vídeo</h3>
-        <p>Ningún orquestador lo usa, ni siquiera los que ya integran FFmpeg. 3,3× medido en tu tarjeta.</p>
+        <p>Ningún orquestador lo usa, ni siquiera los que ya integran FFmpeg. 3,3× medido en la RTX 3060 del banco de pruebas.</p>
       </div>
       <div class="cost"><b>Coste: muy bajo</b>Parámetros de invocación más sondeo de capacidades y degradación a CPU.</div>
     </div>
@@ -669,7 +682,7 @@ footer b{color:var(--ink-2);font-weight:500}
     </table>
   </div>
 
-  <p class="prov"><b>Nota verificada:</b> tu FFmpeg está compilado con <code>--enable-gpl --enable-libx264 --enable-libx265</code>: es un binario GPL. Basta con no empotrarlo ni redistribuirlo como parte de FileX. <b>Ghostscript</b> (AGPL) es el motor más agresivo del conjunto: seguro como proceso, pero conviene no redistribuirlo.</p>
+  <p class="prov"><b>Nota verificada:</b> el FFmpeg del banco de pruebas está compilado con <code>--enable-gpl --enable-libx264 --enable-libx265</code>: es un binario GPL. Basta con no empotrarlo ni redistribuirlo como parte de FileX. <b>Ghostscript</b> (AGPL) es el motor más agresivo del conjunto: seguro como proceso, pero conviene no redistribuirlo.</p>
 </section>
 
 <!-- ================= cara a cara ================= -->
@@ -737,7 +750,7 @@ footer b{color:var(--ink-2);font-weight:500}
     </div>
     <div class="layer indent">
       <div class="t">registro + grafo de conversión</div>
-      <div class="d">Nodos = formatos · aristas = (motor, coste) · Dijkstra elige el camino. Auto-descubrimiento con can_register(): en tu máquina hay 4 de los ~12 motores, así que arrancar con capacidades reducidas es requisito, no detalle.</div>
+      <div class="d">Nodos = formatos · aristas = (motor, coste) · Dijkstra elige el camino. Auto-descubrimiento con can_register(): en la máquina de referencia hay 4 de los ~12 motores, así que arrancar con capacidades reducidas es requisito, no detalle.</div>
     </div>
     <div class="layer indent">
       <div class="t">motores externos — execFile, sin shell</div>
