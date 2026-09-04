@@ -33,6 +33,7 @@ DESC = {
     "sonda_coste.py": "arnés de coste: las dos versiones intercaladas",
     "coste_tanda1.json": "tanda 1, n=9 × 2000",
     "coste_tanda2.json": "tanda 2, n=9 × 2000",
+    "coste_tanda3.json": "tanda 3, n=9 × 2000",
     "pruebas_ANTES.txt": "las 11 pruebas contra el código de antes",
     "suite.txt": "la suite completa",
     "hacer_inventario.py": "este generador (se incluye para no mentir por omisión)",

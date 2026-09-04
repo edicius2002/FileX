@@ -42,7 +42,7 @@ cd bench/salidas-raices-mixtas
 BASE="C:/Users/<usuario>/AppData/Local/Temp/filex-n35-fijo"
 
 PYTHONIOENCODING=utf-8 $PY sonda_regresion.py --salida regresion_despues.json --base "$BASE"
-cd ../.. && git checkout aab61bb -- filex/confinamiento.py    # el commit ANTERIOR al arreglo
+cd ../.. && git checkout a4dc3f3 -- filex/confinamiento.py    # el commit ANTERIOR al arreglo
 cd bench/salidas-raices-mixtas
 PYTHONIOENCODING=utf-8 $PY sonda_regresion.py --salida regresion_antes.json  --base "$BASE"
 cd ../.. && git checkout HEAD -- filex/confinamiento.py       # restaurar
@@ -64,7 +64,7 @@ PYTHONIOENCODING=utf-8 $PY -m unittest pruebas.test_hito1.RaicesMixtasN35 \
                                        pruebas.test_hito4.RaicesMixtasPorMCP
 
 # contra el codigo de antes: 3 failures + 7 errors -> pruebas_ANTES.txt
-git checkout aab61bb -- filex/confinamiento.py
+git checkout a4dc3f3 -- filex/confinamiento.py
 PYTHONIOENCODING=utf-8 $PY -m unittest pruebas.test_hito1.RaicesMixtasN35 \
     pruebas.test_hito4.RaicesMixtasPorMCP -v 2>&1 \
   | grep -E "\.\.\. (ok|ERROR|FAIL)" | sed 's/ (pruebas.*//' > bench/salidas-raices-mixtas/pruebas_ANTES.txt
@@ -113,12 +113,13 @@ regresión.
 | `regresion_despues.json` | 7 517 | `43f39fe474bd12ced5381e70945758aab3230d0a823d1e4ca3a40b7262c3c5d8` | 11 filas sobre el código de después |
 | `comparar.py` | 3 772 | `384028dd7e57f569be092fa32164db51d41bf22afd9742c6c9d537f60914417a` | el diff celda a celda; `rc=0` si no hay fuga |
 | `comparacion.json` | 3 661 | `21a3e906f4f8147c003b315bc9bfecebc538108dfec449da2faf9f5da2f24d2a` | **7 SIN_CAMBIO · 4 RECUPERA · 0 fugas** |
-| `sonda_coste.py` | 8 469 | `2f4394a1f0bd777a9ec83ff84e33343a556420eb0518fe60d2a0382af24bf658` | arnés de coste: las dos versiones intercaladas |
+| `sonda_coste.py` | 8 990 | `cbcea6a4168eb9c48b590472223f0f574e3084cdc591d954c6dad3beea2a9c84` | arnés de coste: las dos versiones intercaladas |
 | `coste_tanda1.json` | 3 362 | `2a30bd6d3143d16f406e2aefb70a27650f3fdb6d14f18366e33bcdccd66c111a` | tanda 1, n=9 × 2000 |
 | `coste_tanda2.json` | 3 362 | `83a08614a93b35a1d80adc44c2ad89b0d01d8b7cb3effe2f464411ec47da9366` | tanda 2, n=9 × 2000 |
+| `coste_tanda3.json` | 3 361 | `c5fe557b1009a8f51b5393103c0278a7fe401d370de6cae15bc3194d8d1d891d` | tanda 3, n=9 × 2000 |
 | `pruebas_ANTES.txt` | 966 | `4a617a5c051c60dc337f4ab3779340b497a770acae6b559725c7d9e69fe4869c` | las 11 pruebas contra el código de antes |
 | `suite.txt` | 1 179 | `df5af5a01f241207cb397d4be731428516862df6dabfd0d874816582e813995e` | la suite completa |
-| `hacer_inventario.py` | 3 014 | `653f4f481cdfe80512f29761e8d7c98d0d6c0c43c881f5b45a37f3f20baec786` | este generador (se incluye para no mentir por omisión) |
+| `hacer_inventario.py` | 3 136 | `101e0c61570bf29e67ac6a55d7ecf298403ecf64f84bee510c5993c8ae4698fb` | este generador (se incluye para no mentir por omisión) |
 
 <!-- INVENTARIO:FIN -->
 

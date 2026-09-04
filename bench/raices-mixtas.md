@@ -20,8 +20,8 @@ superficies, no con una intuición.
 | La tabla de **lectura no decide**: B, C y E aciertan las 8 filas los tres | **MEDIDO** |
 | Lo que decide es el par `(sin_acceso, confinamiento)` que llega al consumidor | **MEDIDO**, 32 celdas en 2 superficies |
 | **Podar** acierta las 32; **rechazar** (hoy) deniega de más en 4; **podar sin guarda** y **aceptar** mienten en 2 | **MEDIDO** |
-| El camino de **denegación no se mueve** (trampa 28) | **MEDIDO**, 2 tandas, el signo se invierte entre ellas |
-| Construir con raíces mixtas cuesta **×5,3–5,9** (+14,9 / +15,9 µs), una vez | **MEDIDO**, 2 tandas |
+| El camino de **denegación no se mueve** (trampa 28) | **MEDIDO**, 3 tandas, el signo se invierte entre ellas |
+| Construir con raíces mixtas cuesta **×4,9–5,9** (+13,1 a +15,9 µs), una vez | **MEDIDO**, 3 tandas |
 | `_uri_a_ruta` rompe los roots UNC en forma canónica RFC 8089 | **MEDIDO** — hallazgo colateral, **PENDIENTE** |
 
 ---
@@ -265,25 +265,27 @@ al construir, y no toca `resolver()` ni una línea.
 Las **dos versiones se cargan en el mismo proceso y se miden intercaladas** —la
 vieja extraída del blob de git del commit anterior, no reimplementada—, porque
 comparar dos corridas sería comparar dos tandas (§3 y trampa 59).
-Dos tandas, n=9 × 2000 repeticiones
+Tres tandas, n=9 x 2000 repeticiones
 ([`coste_tanda1.json`](salidas-raices-mixtas/coste_tanda1.json),
-[`coste_tanda2.json`](salidas-raices-mixtas/coste_tanda2.json)):
+[`coste_tanda2.json`](salidas-raices-mixtas/coste_tanda2.json),
+[`coste_tanda3.json`](salidas-raices-mixtas/coste_tanda3.json)):
 
-| caso | tanda 1 Δ | tanda 2 Δ | ¿supera el ruido? | veredicto |
-|---|---|---|---|---|
-| denegar, corta en R1 | +0,113 µs | **−0,149 µs** | no, en ninguna | **no se mueve** |
-| denegar, «existe pero no» | +0,149 µs | +0,047 µs | no, en ninguna | **no se mueve** |
-| permitir ruta válida | +18,96 µs | +5,23 µs | no *(ruido 225 y 97 µs)* | **no es una medida** |
-| construir raíz simple | +0,118 µs | **−0,268 µs** | no, en ninguna | **no se mueve** |
-| **construir MIXTA** | **+14,90 µs (×5,94)** | **+15,91 µs (×5,30)** | sí | **es el coste real** |
+| caso | tanda 1 Δ | tanda 2 Δ | tanda 3 Δ | ¿supera el ruido? | veredicto |
+|---|---|---|---|---|---|
+| denegar, corta en R1 | +0,113 µs | **−0,149 µs** | +0,247 µs | no, en ninguna | **no se mueve** |
+| denegar, «existe pero no» | +0,149 µs | +0,047 µs | **−1,031 µs** | no, en ninguna | **no se mueve** |
+| permitir ruta válida | +18,96 µs | +5,23 µs | +11,55 µs | no *(ruido 225 / 97 / 75 µs)* | **no es una medida** |
+| construir raíz simple | +0,118 µs | **−0,268 µs** | +0,465 µs | no, en ninguna | **no se mueve** |
+| **construir MIXTA** | **+14,90 (×5,94)** | **+15,91 (×5,30)** | **+13,15 (×4,90)** | sí | **es el coste real** |
 
-**En los cuatro primeros el signo se invierte entre tandas**, que es la firma
-del ruido puro y no de un efecto (trampa 36). **En el quinto el signo y la
-magnitud se conservan**, así que ése sí es el coste.
+**En los cuatro primeros el signo se invierte entre tandas** —los dos caminos de
+denegación cambian de signo, cada uno en una tanda distinta—, que es la firma
+del ruido puro y no de un efecto (trampa 36). **En el quinto el signo se
+conserva en las tres y la magnitud se mueve poco**, así que ése sí es el coste.
 
 **Cómo hay que leer ese ×5,9, porque citado a secas engaña** (trampa 88): no es
 una regresión, es que **la versión vieja abortaba en la primera raíz sin
-terminar su trabajo**. El ratio compara «hacer» contra «rendirse». Son **+15 µs
+terminar su trabajo**. El ratio compara «hacer» contra «rendirse». Son **+13 a +16 µs
 una vez por construcción**, frente a los 1 169,7 µs del cerrojo de destino y
 los ~484 µs del lock que el propio proyecto ya paga por conversión.
 
@@ -415,9 +417,46 @@ selladas.
 
 **No he tocado `ESTADO-Y-REPARTO.md`, `CLAUDE.md` ni `PLAN-ORQUESTADOR.md`.**
 
-### Fila del inventario
+### ⚠ `ci/integridad.py` queda en 8 de 9, y el noveno es esa prohibición
 
-> | `N35` | 🟢 | Las raíces mixtas denegaban de más: una raíz que no confina se **poda**, no invalida el conjunto. Decidido con 4 candidatos × 2 superficies; **0 accesos indebidos ganados** sobre 11 filas y la celda de N7 **sin cambio**. El camino de denegación no paga nada (trampa 28); construir con raíces mixtas cuesta ×5,3–5,9 una vez. | `bench/raices-mixtas.md` |
+```
+MAL  informes-registrados   100 informes, todos citados
+        raices-mixtas.md
+```
+
+`informes_registrados()` exige que **todo `bench/*.md` esté citado en
+`ESTADO-Y-REPARTO.md`**, así que el informe nuevo no puede pasar la
+comprobación sin editar el fichero que el encargo me prohíbe tocar. **Las otras
+ocho pasan**, incluida `manifiestos` —que sólo se puso verde al commitear,
+porque sale de `git ls-files` y no de `glob`: la trampa 104 funcionando—.
+
+Con cualquiera de los tres textos de abajo pegado, queda en 9 de 9.
+
+### Sobre la trampa 115: **no hace falta archivar esta rama**
+
+Este informe y su `MANIFIESTO.md` citan **dos** commits, y los dos sobreviven
+al `--squash`:
+
+- **`a4dc3f3`** — la punta de `main` antes de esta rama, usada como «el código
+  de antes» en la sonda de coste y en las órdenes de reproducción.
+- **`82cf1f3`** — el commit de antes de ayer, para comprobar que las pruebas de
+  N34 siguen siendo discriminantes.
+
+**La primera versión citaba `aab61bb`, que está sólo en mi rama y habría muerto
+en la fusión.** Se sustituyó tras comprobar que el blob de
+`filex/confinamiento.py` es **el mismo** en los dos
+(`db24918f8353aba6ec796973d838d19dfc470d1c`), así que la cita nueva señala
+exactamente el mismo código. Es la salida que la trampa 115 recomienda —*citar
+algo que sobreviva*— y aquí se podía sin perder nada, porque lo que la cita
+prueba es **qué código se midió**, no un orden temporal.
+
+### (a) Fila de la tabla de §1 — la que arregla la CI
+
+> | 04/09 | **`bench/raices-mixtas.md`** (worker5, `nucleo/raices-mixtas`) | **`N35` cerrada PODANDO, y el reverso de la fuga de ayer queda cerrado sin reabrirla.** Una raíz que no confina se descarta ella, no invalida el conjunto: un cliente que declare `["C:\", <legítimo>]` conserva el legítimo. Elegido con **4 candidatos × 8 filas × 2 superficies** (núcleo y MCP), no con una intuición. **La demostración de que no se reabre N7 es la misma sonda sobre el código de antes y el de después, con la misma base de rutas: 11 filas, 7 SIN_CAMBIO y 4 RECUPERA_ACCESO, con CERO accesos indebidos ganados y la celda de N7 idéntica.** El camino de denegación **no paga nada** (trampa 28: el delta queda bajo el ruido y **el signo se invierte entre las dos tandas**); lo único que se mueve es construir con raíces mixtas, ×4,9–5,9 **una vez** —y ese ratio compara «hacer el trabajo» contra «abortar en el primer elemento», no una regresión—. 11 pruebas nuevas en dos superficies, **10 de las 11 rojas contra el código anterior** y las 3 que pasan en ambos son justo las de no-regresión. **Se refuta a sí mismo tres veces**, una de ellas sobre el propio sujeto: la raíz de unidad **no es ancha, es INERTE**. Trampas **118** y **119** |
+
+### (b) La fila `N35` del inventario, que hoy está 🔴 ABIERTO
+
+> | **N35** | *(texto actual)* … **CERRADA el 04/09/2026 por worker5** (`bench/raices-mixtas.md`): se **poda** —las raíces que no confinan se descartan una a una y el `ValueError` queda para lo que R6 siempre quiso decir, *no queda ninguna*—, elegido con 4 candidatos sobre 2 superficies. **No reabre N7: 0 accesos indebidos ganados sobre 11 filas y la celda de N7 SIN_CAMBIO.** Coste: el camino de denegación no se mueve; construir con raíces mixtas, ×4,9–5,9 una vez. Y **refuta la lectura que todos hacíamos de R3**: una raíz de unidad no confina demasiado, **no confina NADA** —`_dentro` genera una barra doble y deniega hasta lo que está literalmente debajo—, que es lo que convierte «podar» de apuesta en teorema. PENDIENTE declarado: `_uri_a_ruta` rompe los roots UNC canónicos, la raíz `""` confina en el `cwd`, y la poda es silenciosa | 🟢 **CERRADO** · `bench/raices-mixtas.md` |
 
 ### Trampa propuesta — la 118
 

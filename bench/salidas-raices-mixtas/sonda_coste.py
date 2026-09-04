@@ -45,7 +45,12 @@ AQUI = os.path.dirname(os.path.abspath(__file__))
 RAIZ = os.path.abspath(os.path.join(AQUI, "..", ".."))
 sys.path.insert(0, RAIZ)
 
-COMMIT_VIEJO = "aab61bb"          # el commit anterior al arreglo de N35
+#: `a4dc3f3` es la punta de `main` ANTES de esta rama, y su blob de
+#: `filex/confinamiento.py` es el mismo que el del commit anterior al
+#: arreglo (`db24918f8353aba6ec796973d838d19dfc470d1c`, comprobado). Se cita
+#: ESE y no uno de mi propia rama porque el `--squash` con el que se fusiona
+#: mata los commits de la rama y la cita moriria con ellos (trampa 115).
+COMMIT_VIEJO = "a4dc3f3"
 N_TANDAS = 9
 N_REPS = 2000
 
