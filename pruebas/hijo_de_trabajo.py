@@ -32,6 +32,25 @@ RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, RAIZ)
 
 
+def _pids_motores() -> list[int]:
+    """Los PID de los motores que este proceso tiene en vuelo.
+
+    Hace falta para poder matar al DUEÑO sin dejar el motor huérfano: si se
+    mata primero al dueño, el motor pierde a su padre y `taskkill /T` sobre el
+    abuelo ya no lo alcanza. Se barre **por identidad, no por nombre** —trampa
+    47—, y por eso el identificador tiene que salir de aquí.
+
+    Lee el registro privado de `invocacion` a propósito: es un arnés, y añadir
+    un accesor público a `filex/` por comodidad de una prueba movería el AST de
+    un módulo sellado (trampas 32 y 97). El `pid` de un motor **sí** es el de
+    verdad: la trampa 93 es del `python.exe` de un venv, que es un lanzador;
+    `ffmpeg.exe` no lo es.
+    """
+    from filex import invocacion as _inv
+    with _inv._CERROJO_VUELO:                            # noqa: SLF001
+        return [proc.pid for proc, _ in _inv._EN_VUELO.values()]
+
+
 def di(**kw) -> None:
     sys.stdout.write(json.dumps(kw, ensure_ascii=False) + "\n")
     sys.stdout.flush()
@@ -67,7 +86,8 @@ def main() -> int:
     limite = time.perf_counter() + a.tope
     while invocacion.en_vuelo() == 0 and time.perf_counter() < limite:
         time.sleep(0.01)
-    di(evento="en_vuelo", hay=invocacion.en_vuelo() > 0)
+    di(evento="en_vuelo", hay=invocacion.en_vuelo() > 0,
+       motores=_pids_motores())
 
     if t is not None and t.hilo is not None:
         t.hilo.join(timeout=a.tope)

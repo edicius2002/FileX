@@ -1,0 +1,64 @@
+============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-9.1.1, pluggy-1.6.0 -- D:\Work\research\FileX\.venv-mcp-filex\Scripts\python.exe
+rootdir: D:\Work\research\FileX\.claude\worktrees\agent-acd1bf1db76068e4c
+configfile: pyproject.toml
+plugins: anyio-4.14.2
+collecting ... collected 15 items
+
+pruebas/test_cancelacion_procesos.py::CancelarEntreProcesos::test_cancelar_alcanza_al_motor_de_otro_proceso PASSED [  6%]
+pruebas/test_cancelacion_procesos.py::CancelarEntreProcesos::test_el_candado_del_trabajo_se_suelta_al_terminar PASSED [ 13%]
+pruebas/test_cancelacion_procesos.py::CancelarEntreProcesos::test_el_dueno_se_puede_saber_sin_preguntar_por_ningun_PID PASSED [ 20%]
+pruebas/test_cancelacion_procesos.py::CancelarEntreProcesos::test_el_mando_se_borra_al_terminar_el_trabajo PASSED [ 26%]
+pruebas/test_cancelacion_procesos.py::SinCanalNoSeAlcanza::test_sin_canal_la_cancelacion_no_llega_y_se_dice PASSED [ 33%]
+pruebas/test_cancelacion_procesos.py::DuenoMuerto::test_sin_deteccion_el_trabajo_se_queda_working_para_siempre FAILED [ 40%]
+pruebas/test_cancelacion_procesos.py::DuenoMuerto::test_un_trabajo_vivo_NO_se_declara_huerfano PASSED [ 46%]
+pruebas/test_cancelacion_procesos.py::DuenoMuerto::test_un_working_sin_dueno_vivo_se_detecta_y_se_cierra PASSED [ 53%]
+pruebas/test_cancelacion_procesos.py::UnJobIdEsUnaEntrada::test_un_job_id_bueno_si_compone PASSED [ 60%]
+pruebas/test_cancelacion_procesos.py::UnJobIdEsUnaEntrada::test_un_job_id_con_travesia_no_compone_ninguna_ruta PASSED [ 66%]
+pruebas/test_cancelacion_procesos.py::ElAndamiajeEsUnMecanismo::test_hilo_de_NO_limpia_al_entrar PASSED [ 73%]
+pruebas/test_cancelacion_procesos.py::ElAndamiajeEsUnMecanismo::test_hilo_de_borra_el_rastro_aunque_el_cuerpo_reviente PASSED [ 80%]
+pruebas/test_cancelacion_procesos.py::ElAndamiajeEsUnMecanismo::test_los_hilos_de_trabajo_solo_se_construyen_en_una_puerta PASSED [ 86%]
+pruebas/test_cancelacion_procesos.py::ElAndamiajeEsUnMecanismo::test_una_clase_de_trabajo_nueva_no_puede_saltarse_arrancar PASSED [ 93%]
+pruebas/test_cancelacion_procesos.py::ElAndamiajeEsUnMecanismo::test_ya_no_queda_la_disciplina_suelta PASSED [100%]
+
+================================== FAILURES ===================================
+___ DuenoMuerto.test_sin_deteccion_el_trabajo_se_queda_working_para_siempre ___
+
+self = <test_cancelacion_procesos.DuenoMuerto testMethod=test_sin_deteccion_el_trabajo_se_queda_working_para_siempre>
+
+    def test_sin_deteccion_el_trabajo_se_queda_working_para_siempre(self):
+        """El mismo caso con `FILEX_MANDO=0`: es lo que había."""
+        self._matar_al_hijo()
+        os.environ["FILEX_MANDO"] = "0"
+        try:
+            r = self.sv.job(self.jid)
+>           self.assertEqual(r["estado"], S.TRABAJANDO,
+                             "sin detección un huérfano parece vivo; "
+                             f"en disco: {self._en_disco()}")
+E                            AssertionError: 'failed' != 'working'
+E                            - failed
+E                            + working
+E                             : sin detección un huérfano parece vivo; en disco: {'job_id': '9cff4041128d', 'tipo': 'convert', 'estado': 'failed', 'creado': 1788546602.237266, 'fin': 1788546603.5109305, 'resultado': {'ok': False, 'veredicto': 'fallo', 'camino': ['mp4', 'webm'], 'motores': ['ffmpeg'], 'ms_motor': 1068.8, 'motivo': 'el_motor_rechazo_la_conversion'}}
+
+pruebas\test_cancelacion_procesos.py:310: AssertionError
+============================== slowest durations ==============================
+20.32s call     pruebas/test_cancelacion_procesos.py::DuenoMuerto::test_un_working_sin_dueno_vivo_se_detecta_y_se_cierra
+13.43s call     pruebas/test_cancelacion_procesos.py::DuenoMuerto::test_sin_deteccion_el_trabajo_se_queda_working_para_siempre
+10.91s call     pruebas/test_cancelacion_procesos.py::DuenoMuerto::test_un_trabajo_vivo_NO_se_declara_huerfano
+6.69s call     pruebas/test_cancelacion_procesos.py::SinCanalNoSeAlcanza::test_sin_canal_la_cancelacion_no_llega_y_se_dice
+5.95s call     pruebas/test_cancelacion_procesos.py::CancelarEntreProcesos::test_el_mando_se_borra_al_terminar_el_trabajo
+4.03s call     pruebas/test_cancelacion_procesos.py::CancelarEntreProcesos::test_cancelar_alcanza_al_motor_de_otro_proceso
+3.95s call     pruebas/test_cancelacion_procesos.py::CancelarEntreProcesos::test_el_candado_del_trabajo_se_suelta_al_terminar
+3.31s call     pruebas/test_cancelacion_procesos.py::CancelarEntreProcesos::test_el_dueno_se_puede_saber_sin_preguntar_por_ningun_PID
+0.27s call     pruebas/test_cancelacion_procesos.py::ElAndamiajeEsUnMecanismo::test_hilo_de_borra_el_rastro_aunque_el_cuerpo_reviente
+0.18s call     pruebas/test_cancelacion_procesos.py::ElAndamiajeEsUnMecanismo::test_hilo_de_NO_limpia_al_entrar
+0.15s call     pruebas/test_cancelacion_procesos.py::ElAndamiajeEsUnMecanismo::test_una_clase_de_trabajo_nueva_no_puede_saltarse_arrancar
+0.08s call     pruebas/test_cancelacion_procesos.py::ElAndamiajeEsUnMecanismo::test_ya_no_queda_la_disciplina_suelta
+0.02s call     pruebas/test_cancelacion_procesos.py::ElAndamiajeEsUnMecanismo::test_los_hilos_de_trabajo_solo_se_construyen_en_una_puerta
+0.01s teardown pruebas/test_cancelacion_procesos.py::CancelarEntreProcesos::test_el_mando_se_borra_al_terminar_el_trabajo
+
+(31 durations < 0.005s hidden.  Use -vv to show these durations.)
+=========================== short test summary info ===========================
+FAILED pruebas/test_cancelacion_procesos.py::DuenoMuerto::test_sin_deteccion_el_trabajo_se_queda_working_para_siempre
+=================== 1 failed, 14 passed in 69.67s (0:01:09) ===================
+

@@ -1,0 +1,19 @@
+============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-9.1.1, pluggy-1.6.0 -- D:\Work\research\FileX\.venv-mcp-filex\Scripts\python.exe
+rootdir: D:\Work\research\FileX\.claude\worktrees\agent-acd1bf1db76068e4c
+configfile: pyproject.toml
+plugins: anyio-4.14.2
+collecting ... collected 3 items
+
+pruebas/test_cancelacion_procesos.py::DuenoMuerto::test_sin_deteccion_el_trabajo_se_queda_working_para_siempre PASSED [ 33%]
+pruebas/test_cancelacion_procesos.py::DuenoMuerto::test_un_trabajo_vivo_NO_se_declara_huerfano PASSED [ 66%]
+pruebas/test_cancelacion_procesos.py::DuenoMuerto::test_un_working_sin_dueno_vivo_se_detecta_y_se_cierra PASSED [100%]
+
+============================== slowest durations ==============================
+4.15s call     pruebas/test_cancelacion_procesos.py::DuenoMuerto::test_un_working_sin_dueno_vivo_se_detecta_y_se_cierra
+4.11s call     pruebas/test_cancelacion_procesos.py::DuenoMuerto::test_un_trabajo_vivo_NO_se_declara_huerfano
+4.10s call     pruebas/test_cancelacion_procesos.py::DuenoMuerto::test_sin_deteccion_el_trabajo_se_queda_working_para_siempre
+
+(6 durations < 0.005s hidden.  Use -vv to show these durations.)
+============================= 3 passed in 12.43s ==============================
+
