@@ -467,14 +467,28 @@ estado de la máquina. El control de que no es mío está en §8.3.
 con `.venv-mcp-filex\Scripts\python.exe -m pytest pruebas -q`, **Python 3.11.9
 win32**, **Docker 29.4.3 levantado**, y la máquina **no despejada**.
 
-**Qué quedó fuera, y por qué** — los 3 saltos son los honestos que la trampa 94
-dejó declarados, ninguno nuevo y ninguno mío:
+**Qué quedó fuera, y por qué.** Con la traza de `pytest -rs` delante, que es lo
+único que vale (trampa 111: *un motivo se escribe con la traza del sujeto
+delante, o se deja en `PENDIENTE`*):
 
-| Salto | Motivo declarado |
+| Salto | Motivo, literal de la traza |
 |---|---|
-| `test_hito6` — ráster | `falta el ráster (bench/salidas-hito6/preparar_h6.py)` |
-| `test_hito6` — sidecar | `necesita la tarjeta: FILEX_PRUEBAS_SIDECAR=1` |
-| `test_hito6` — intérprete OCR | `falta FILEX_PY_OCR con el intérprete del venv de OCR` |
+| `test_hito4.py:221` | `ningún par real rasteriza hacia un destino con texto en esta máquina — ver bench/aristas-documentales-cierre.md §9` |
+| `test_hito6.py:186` | `falta el ráster (bench/salidas-hito6/preparar_h6.py)` |
+| `test_hito6.py:697` | `necesita la tarjeta: FILEX_PRUEBAS_SIDECAR=1` |
+
+> **Corrección de este mismo informe, y es la trampa 111 en mi propio texto.**
+> La primera versión de esta tabla daba como tercer salto *«falta `FILEX_PY_OCR`
+> con el intérprete del venv de OCR»*, y es **FALSO**: lo saqué de un `grep` de
+> `skipTest` sobre el código fuente —el sitio de al lado— en vez de la salida de
+> `pytest -rs`. El salto real es de `test_hito4.py:221`, un módulo distinto del
+> que nombré. Los dos que sí acerté los cité además con la línea equivocada (189
+> y 693 en vez de 186 y 697), que es la señal de que no estaba leyendo la traza.
+> Ninguno de los tres es nuevo ni mío, así que el recuento no se mueve — pero el
+> motivo escrito sí, y era el tipo de dato que nadie vuelve a comprobar.
+
+*(Esta segunda tanda limpia, la del `-rs`, da **514 passed · 3 skipped · 0
+failed · 198 subtests · 193,08 s**: reproduce la de §8.2 en todo salvo 1,3 s.)*
 
 Con Docker arriba, las 12 que se saltan sin demonio —el hito 5 entero y la
 cancelación real de contenedor— **sí se ejecutaron**.
