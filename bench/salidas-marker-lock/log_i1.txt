@@ -1,0 +1,6 @@
+2026-09-04 08:15:34  INICIO fase 0 (preflight)
+2026-09-04 08:15:34  FIN fase 0  vram_base=1999 MiB  libre=10117 MiB  contenedores=7
+2026-09-04 08:15:34  INICIO fase 1 (lock)
+2026-09-04 08:15:34  FIN fase 1 rc=0  lock tomado en 7.41 ms
+2026-09-04 08:15:34  INICIO fase 2 (marker)  orden: D:\Work\research\FileX\.venv-marker\Scripts\marker_single.exe D:\Work\research\FileX\.claude\worktrees\agent-aba8566b66697c12b\corpus\pdf\tipico_texto.pdf --output_dir C:\Users\krato\AppData\Local\Temp\filex-b3-i1-uuw_ncz5\out --output_format markdown
+2026-09-04 08:16:10  DOCKER visto: C:\Program Files\Docker\Docker\resources\bin\docker.EXE run --rm -d --name surya-vllm-59179 --runtime nvidia --gpus device=0 -v C:\Users\krato/.cache/huggingface:/root/.cache/huggingface -p 59179:8000 --ipc=host vllm/vllm-openai:v0.20.1 --model datalab-to/surya-ocr-2 --no-enforce-eager --max-num-seqs 32 --dtype bfloat16 --max-model-len 18000 --max-num-batched-tokens 8192 --gpu-memory-utilization 0
