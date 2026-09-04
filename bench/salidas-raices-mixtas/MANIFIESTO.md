@@ -110,6 +110,8 @@ regresión.
 | `cli.json` | 3 083 | `cdbe8fd7db56c43aefcb17e28807da6a1138753927c2625adaedd0b07455a916` | 3 rc distintos: convierte / deniega / no arranca |
 | `sonda_escritura.py` | 5 894 | `d00fccbf148be5c31a29c09c189d1eecd3a0f065481934d20c5d0e041d897ec8` | arnés: B1 contra B2, con el control de hoy |
 | `escritura.json` | 6 451 | `a97562bc18b47c209d05f4076a8e8da855447f1963ac01045f4650d0050228b0` | 6 filas × 3 candidatos + control |
+| `sonda_bordes.py` | 3 569 | `555948beca06ef13b3755ebb0741e6cc9f61bb96526a1444428a6782e6c9a267` | arnés: 9 formas raras de raíz; rc=1 si alguna concede |
+| `bordes.json` | 3 624 | `174e410c7a4ac681930225c63729c3b41618be0051b9b72d3b8859ba3524fa62` | 0 accesos indebidos sobre 9 formas |
 | `sonda_regresion.py` | 5 158 | `32d4f451e96a87c437f9ecc1d6af3c6b0e2807e1a620ceef8a070a3ecf1b721f` | arnés del par antes/después, clase REAL |
 | `regresion_antes.json` | 6 917 | `f5b07b46252aae0da0648aaca817de4d95dc5c134b164a07d758173a0397a176` | 11 filas sobre el código de antes |
 | `regresion_despues.json` | 7 517 | `43f39fe474bd12ced5381e70945758aab3230d0a823d1e4ca3a40b7262c3c5d8` | 11 filas sobre el código de después |
@@ -121,7 +123,7 @@ regresión.
 | `coste_tanda3.json` | 3 361 | `c5fe557b1009a8f51b5393103c0278a7fe401d370de6cae15bc3194d8d1d891d` | tanda 3, n=9 × 2000 |
 | `pruebas_ANTES.txt` | 966 | `4a617a5c051c60dc337f4ab3779340b497a770acae6b559725c7d9e69fe4869c` | las 11 pruebas contra el código de antes |
 | `suite.txt` | 1 179 | `df5af5a01f241207cb397d4be731428516862df6dabfd0d874816582e813995e` | la suite completa |
-| `hacer_inventario.py` | 3 285 | `2aa52dfd18228703f731addbe11315db79bff18c1a92bfd90317267532b97057` | este generador (se incluye para no mentir por omisión) |
+| `hacer_inventario.py` | 3 426 | `aede9fb6f5e7c145d14d38eb7a4ee7f29b4e12119561c8a21cc8b64dd0839380` | este generador (se incluye para no mentir por omisión) |
 
 <!-- INVENTARIO:FIN -->
 

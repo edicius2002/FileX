@@ -20,6 +20,7 @@ superficies, no con una intuición.
 | La tabla de **lectura no decide**: B, C y E aciertan las 8 filas los tres | **MEDIDO** |
 | Lo que decide es el par `(sin_acceso, confinamiento)` que llega al consumidor | **MEDIDO**, 32 celdas en 2 superficies, mas la CLI de extremo a extremo |
 | **Podar** acierta las 32; **rechazar** (hoy) deniega de más en 4; **podar sin guarda** y **aceptar** mienten en 2 | **MEDIDO** |
+| Ninguna de **9 formas raras de raíz** concede acceso indebido | **MEDIDO** |
 | El camino de **denegación no se mueve** (trampa 28) | **MEDIDO**, 3 tandas, el signo se invierte entre ellas |
 | Construir con raíces mixtas cuesta **×4,9–5,9** (+13,1 a +15,9 µs), una vez | **MEDIDO**, 3 tandas |
 | `_uri_a_ruta` rompe los roots UNC en forma canónica RFC 8089 | **MEDIDO** — hallazgo colateral, **PENDIENTE** |
@@ -271,6 +272,38 @@ Las tres cosas que había que demostrar, y dónde están:
 Y la propiedad estructural que lo respalda, no sólo las celdas: **podar sólo
 QUITA**. El conjunto efectivo es un subconjunto de lo declarado; no hay forma
 de que la poda añada una raíz. Hay una prueba que lo afirma.
+
+---
+
+## 5bis. Los bordes: las formas raras de raiz — MEDIDO
+
+Las dos propiedades que sostienen la decision —la raiz inerte no concede nada,
+y podar solo quita— estan medidas sobre las formas **normales** de raiz. Pero
+una lista blanca la escribe un humano o un cliente MCP, y las formas raras son
+justo donde vive el fallo. `sonda_bordes.py` barre nueve, **con la misma
+victima siempre y fuera de toda raiz legitima**
+([`bordes.json`](salidas-raices-mixtas/bordes.json)):
+
+| forma declarada | lectura efectiva | ¿lee `C:\Windows\win.ini`? |
+|---|---|---|
+| `<base>\..\..\..\…` (sube hasta la unidad) | `ValueError`: no arranca | no |
+| `<legit>\..\..` + `<legit>` | el temporal padre + `legit` | no |
+| `c:\` (minúscula) + `<legit>` | `legit` | no |
+| `C:/` (barra unix) + `<legit>` | `legit` | no |
+| `C:` (sin barra) + `<legit>` | `legit` | no |
+| `\\?\C:\` (prefijo extendido) + `<legit>` | `legit` | no |
+| `""` (cadena vacía) + `<legit>` | el `cwd` + `legit` | no |
+| `C:\` repetida + `<legit>` | `legit` | no |
+| `C:\` + `c:/` + `C:` (tres formas, ninguna útil) | `ValueError`: no arranca | no |
+
+**0 casos con acceso indebido sobre 9**, y el arnés devuelve `rc=1` si alguno lo
+tuviera. Dos filas merecen comentario:
+
+- **`<legit>\..\..` conserva el temporal padre**, y es correcto: el usuario
+  declaró esa raíz, aunque sea más ancha de lo que parece al leerla. La poda no
+  interviene, porque ese directorio **sí** confina.
+- **La cadena vacía conserva el `cwd`** — el hallazgo de §2, que **no es de este
+  cambio** (ya pasaba antes) y queda `PENDIENTE`.
 
 ---
 

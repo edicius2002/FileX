@@ -27,6 +27,8 @@ DESC = {
     "cli.json": "3 rc distintos: convierte / deniega / no arranca",
     "sonda_escritura.py": "arnés: B1 contra B2, con el control de hoy",
     "escritura.json": "6 filas × 3 candidatos + control",
+    "sonda_bordes.py": "arnés: 9 formas raras de raíz; rc=1 si alguna concede",
+    "bordes.json": "0 accesos indebidos sobre 9 formas",
     "sonda_regresion.py": "arnés del par antes/después, clase REAL",
     "regresion_antes.json": "11 filas sobre el código de antes",
     "regresion_despues.json": "11 filas sobre el código de después",
