@@ -86,13 +86,21 @@ def c1_nombre_corto() -> dict:
             "raiz_resuelta": os.path.realpath(base),
             "difieren": _norm(os.path.abspath(base)) != _norm(os.path.realpath(base)),
             "puede_leer_con_raiz_TAL_CUAL": corta.puede_leer(dentro),
-            "puede_leer_con_raiz_RESUELTA": larga.puede_leer(dentro),
+            # La raíz resuelta con la ruta SIN resolver: no basta, porque el
+            # predicado léxico de R1 corre ANTES del `realpath` y compara la
+            # ruta tal cual.
+            "puede_leer_raiz_RESUELTA_ruta_SIN_resolver": larga.puede_leer(dentro),
+            # Las dos resueltas: la tercera celda, que es la que dice si el
+            # confinamiento funciona cuando todo llega ya canónico.
+            "puede_leer_TODO_RESUELTO": larga.puede_leer(
+                os.path.join(os.path.realpath(base), "x.txt")),
             "control_positivo_raiz_larga_del_repo": control.puede_leer(str(prop_f)),
             "veredicto": (
                 "el nombre corto 8.3 de la raíz cierra la lista blanca"
                 if (_norm(os.path.abspath(base)) != _norm(os.path.realpath(base))
                     and not corta.puede_leer(dentro)
-                    and larga.puede_leer(dentro))
+                    and larga.puede_leer(os.path.join(os.path.realpath(base),
+                                                      "x.txt")))
                 else "el 8.3 NO explica el fallo: mirar otra cosa"),
         }
     finally:

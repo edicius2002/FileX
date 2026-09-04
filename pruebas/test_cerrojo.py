@@ -447,6 +447,8 @@ class TerceroQueNoCoopera(_Base):
         self.assertTrue(fila, f"{out!r} {err[-300:]!r}")
         return fila, antes
 
+    @unittest.skipUnless(HAY_IMAGEMAGICK and CORPUS_REAL,
+                         _MOTIVO_CORPUS)
     def test_sin_deteccion_filex_pisa_el_fichero_de_un_tercero(self):
         """El estado del hito 7, y **es el caso peor**: `shutil.move` sobre un
         destino que existe cae a `copy2`, que sobrescribe **en silencio**, y
