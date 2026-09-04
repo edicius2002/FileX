@@ -1,0 +1,70 @@
+{
+  "plataforma": "wsl2",
+  "kernel": "6.18.33.2-microsoft-standard-WSL2",
+  "fs_tmp": "tmpfs",
+  "duracion_por_fase_s": 12.0,
+  "allowed_root": "/tmp/c5_toctou/allowed",
+  "estatico": {
+    "B_read_directo": "SECRETO-DE-FUERA-ENVENENADO",
+    "B_servidor": "denegado",
+    "A_servidor": "dentro"
+  },
+  "control_positivo_vulnerable_natural": {
+    "sujeto": "puro-python vulnerable (sin ventana forzada)",
+    "ventana_forzada_s": 0.0,
+    "intentos": 87873,
+    "toggles_atacante": 94948,
+    "conteo": {
+      "denegado": 9303,
+      "enoent": 40070,
+      "WIN_FUERA": 20717,
+      "dentro": 17783
+    },
+    "wins_fuera": 20717,
+    "tasa_win_%": 23.576
+  },
+  "control_positivo_vulnerable_ventana": {
+    "sujeto": "puro-python vulnerable (ventana forzada 2ms)",
+    "ventana_forzada_s": 0.002,
+    "intentos": 2705,
+    "toggles_atacante": 141851,
+    "conteo": {
+      "WIN_FUERA": 382,
+      "enoent": 788,
+      "dentro": 488,
+      "denegado": 1047
+    },
+    "wins_fuera": 382,
+    "tasa_win_%": 14.122
+  },
+  "control_negativo_seguro": {
+    "sujeto": "puro-python seguro por fd (ventana forzada 2ms)",
+    "ventana_forzada_s": 0.002,
+    "intentos": 18129,
+    "toggles_atacante": 147777,
+    "conteo": {
+      "denegado": 1446,
+      "dentro": 227,
+      "enoent": 16456
+    },
+    "wins_fuera": 0,
+    "tasa_win_%": 0.0
+  },
+  "servidor_referencia": {
+    "sujeto": "servers/filesystem dist/index.js (node)",
+    "vivo_antes": true,
+    "vivo_despues": true,
+    "intentos": 13169,
+    "toggles_atacante": 395931,
+    "conteo": {
+      "denegado": 9991,
+      "dentro": 1998,
+      "WIN_FUERA": 1180
+    },
+    "wins_fuera": 1180,
+    "tasa_win_%": 8.96,
+    "ejemplo_win": "{\"result\": {\"content\": [{\"type\": \"text\", \"text\": \"SECRETO-DE-FUERA-ENVENENADO\\n\"}], \"structuredContent\": {\"content\": \"SECRETO-DE-FUERA-ENVENENADO\\n\"}}, \"jsonrpc\": \"2.0\", \"id\": 10}",
+    "ejemplo_denegado": "{\"result\": {\"content\": [{\"type\": \"text\", \"text\": \"Parent directory does not exist: /tmp/c5_toctou/allowed/target\"}], \"isError\": true}, \"jsonrpc\": \"2.0\", \"id\": 2}",
+    "ejemplo_dentro": "{\"result\": {\"content\": [{\"type\": \"text\", \"text\": \"CONTENIDO-DENTRO-LEGITIMO\\n\"}], \"structuredContent\": {\"content\": \"CONTENIDO-DENTRO-LEGITIMO\\n\"}}, \"jsonrpc\": \"2.0\", \"id\": 4}"
+  }
+}
