@@ -1,0 +1,50 @@
+no_materializable en semi_entrada.json: 445
+control sonda IM: reproducidas 246, censo 246, difieren NINGUNA
+control sonda ffmpeg: demuxers 405, muxers 184, protocolos in 41, dispositivos D 5
+control positivo: png={'modulo': 'PNG', 'modo': 'rw-', 'blob': True, 'desc': 'Portable Network Graphics (libpng 1.6.58)'}  xc={'modulo': 'XC', 'modo': 'r--', 'blob': True, 'desc': 'Constant image uniform color'}
+
+ffmpeg (359):
+  (demux, mux, proto_in, dev_in) -> {(False, False, False, False): 110, (True, False, False, False): 173, (True, True, False, False): 71, (True, False, True, False): 1, (True, True, True, False): 2, (False, False, False, True): 2}
+
+imagemagick (86) por modulo:
+   DNG           31   3fr, arw, cr2, cr3, crw, dcr
+   TTF            6   dfont, otf, pfa, pfb, ttc, ttf
+   URL            4   file, ftp, http, https
+   HEIC           3   avci, heic, heif
+   VIDEO          2   3g2, 3gp
+   XC             2   canvas, xc
+   EMF            2   emf, wmf
+   PLASMA         2   fractal, plasma
+   GRADIENT       2   gradient, radial-gradient
+   CAPTION        1   caption
+   CLIP           1   clip
+   CUBE           1   cube
+   CUT            1   cut
+   DCM            1   dcm
+   HALD           1   hald
+   JNX            1   jnx
+   JP2            1   jpt
+   LABEL          1   label
+   MAC            1   mac
+   MASK           1   mask
+   JPEG           1   mpo
+   MSL            1   msl
+   ORA            1   ora
+   PANGO          1   pango
+   PATTERN        1   pattern
+   PES            1   pes
+   PWP            1   pwp
+   RGB            1   rgb565
+   RLA            1   rla
+   RLE            1   rle
+   SCR            1   scr
+   SCREENSHO      1   screenshot
+   SCT            1   sct
+   SFW            1   sfw
+   STEGANO        1   stegano
+   TXT            1   text
+   TILE           1   tile
+   TIM            1   tim
+   TIM2           1   tm2
+   XCF            1   xcf
+   XPS            1   xps

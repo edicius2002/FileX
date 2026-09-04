@@ -1,0 +1,26 @@
+clasificados: 445
+
+  ff_solo_demuxer                  174   ejemplos: 3dostr, 4xm, aa, aax
+  ff_extension_de_demuxer           98   ejemplos: 302, 669, 722, aa3
+  ff_declarado_muxer                73   ejemplos: 3g2, 3gp, ac4, aea
+  im_formato_real_solo_lectura      65   ejemplos: 3fr, 3g2, 3gp, arw
+  ff_desconocido_por_el_binario     12   ejemplos: alsa, awb, fbdev, iec61883
+  no_aplica_generador               10   ejemplos: canvas, caption, fractal, gradient
+  im_pseudo_operador                 7   ejemplos: clip, mask, msl, pango
+  no_aplica_protocolo                4   ejemplos: file, ftp, http, https
+  no_aplica_dispositivo              2   ejemplos: lavfi, openal
+
+  MUEVEN a no_aplica: 16
+
+--- CONTROL: reproduccion de _agrega.py ---
+  total 138501  viva 40252  muerta 22235  indet 75874  otro 140
+  esperado por aristas-nominales.md: (138501, 40252, 22235, 75874, 140)
+  COINCIDE
+
+--- RECUENTO con los origenes que no son ficheros retirados ---
+  aristas retiradas de la poblacion: 2966
+  poblacion nueva: 135535  (antes 138501)
+   viva               40252 ->   40252   29.06 % -> 29.70 %
+   muerta             22235 ->   22113   16.05 % -> 16.32 %
+   indeterminada      75874 ->   73030   54.78 % -> 53.88 %
+   otro_motor           140 ->     140    0.10 % ->  0.10 %
