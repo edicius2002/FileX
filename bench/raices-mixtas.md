@@ -18,7 +18,7 @@ superficies, no con una intuición.
 |---|---|
 | Una raíz de unidad **no es ancha: es INERTE** — deniega los 4 objetivos, incluido uno literalmente debajo de ella | **MEDIDO** — refuta mi hipótesis de partida |
 | La tabla de **lectura no decide**: B, C y E aciertan las 8 filas los tres | **MEDIDO** |
-| Lo que decide es el par `(sin_acceso, confinamiento)` que llega al consumidor | **MEDIDO**, 32 celdas en 2 superficies |
+| Lo que decide es el par `(sin_acceso, confinamiento)` que llega al consumidor | **MEDIDO**, 32 celdas en 2 superficies, mas la CLI de extremo a extremo |
 | **Podar** acierta las 32; **rechazar** (hoy) deniega de más en 4; **podar sin guarda** y **aceptar** mienten en 2 | **MEDIDO** |
 | El camino de **denegación no se mueve** (trampa 28) | **MEDIDO**, 3 tandas, el signo se invierte entre ellas |
 | Construir con raíces mixtas cuesta **×4,9–5,9** (+13,1 a +15,9 µs), una vez | **MEDIDO**, 3 tandas |
@@ -185,6 +185,26 @@ acceso»). No es fuga, pero es un consumidor al que se le miente.
 > confina— ([`unc.json`](salidas-raices-mixtas/unc.json)). Es la trampa 38/91:
 > el arnés mataba a su sujeto y el resultado parecía el bueno. Corregido, A da
 > `DENIEGA_DE_MÁS` en las dos superficies, que es lo coherente.
+
+### 4.2bis La TERCERA superficie, de extremo a extremo: la CLI real — MEDIDO
+
+Que el nucleo cubra a la CLI, el watcher y la API es cierto y es una
+**deduccion**, asi que se sondea: `sonda_cli.py` lanza `python -m filex` **como
+proceso**, con `--raiz` repetida, y lee el veredicto **del disco**, no del
+mensaje ([`cli.json`](salidas-raices-mixtas/cli.json)):
+
+| caso | `rc` | ¿salida? | bytes | qué dice |
+|---|---|---|---|---|
+| **`--raiz C:\ --raiz <legítima>`, entrada dentro** | **0** | **sí** | **13 516** | convierte |
+| `--raiz C:\ --raiz <legítima>`, entrada **fuera** | 1 | no | 0 | `NO CONVERTIDO — ruta no accesible` |
+| **`--raiz C:\` sola** *(N7)* | **2** | **no** | 0 | `sin raíces de lectura accesibles: FileX no arranca (R6)` |
+| control: `--raiz <legítima>` sola | 0 | sí | **13 516** | convierte |
+
+**El caso mixto produce exactamente los mismos 13 516 bytes que el control**, y
+los tres desenlaces tienen **tres códigos de salida distintos** —0, 1 y 2—, así
+que un guion puede separarlos sin leer el mensaje. Es lo contrario de la
+trampa 25: aquí el `rc` **sí** distingue «convertí», «te lo deniego» y «no
+arranco».
 
 ### 4.3 El eje ESCRITURA, y la forma exacta del arreglo — MEDIDO
 

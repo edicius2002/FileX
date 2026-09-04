@@ -106,6 +106,8 @@ regresión.
 | `superficies.json` | 19 108 | `f09b724d30dbcbaa26058d3ecbf1264c7b6700c51c8e0af3b76510fa1d61d7cc` | 32 celdas: el eje que decide |
 | `sonda_unc.py` | 2 919 | `da8a1e7fd03ce14fca8ca79ae6f4d2d23f7f899c513e443d844bc69761e9e0b9` | arnés: el viaje de una ruta por el cable MCP |
 | `unc.json` | 2 371 | `72363cf6b1209f1bd5718ec82342022b33a900e7645f43d38aed7a9332f3c145` | el defecto de mi doble + el de `_uri_a_ruta` |
+| `sonda_cli.py` | 4 189 | `698558a71ed1850d46897f313e6fe03768f46ed4e529d08fb645ce3164ff5212` | arnés: la CLI real, de extremo a extremo, como proceso |
+| `cli.json` | 3 083 | `cdbe8fd7db56c43aefcb17e28807da6a1138753927c2625adaedd0b07455a916` | 3 rc distintos: convierte / deniega / no arranca |
 | `sonda_escritura.py` | 5 894 | `d00fccbf148be5c31a29c09c189d1eecd3a0f065481934d20c5d0e041d897ec8` | arnés: B1 contra B2, con el control de hoy |
 | `escritura.json` | 6 451 | `a97562bc18b47c209d05f4076a8e8da855447f1963ac01045f4650d0050228b0` | 6 filas × 3 candidatos + control |
 | `sonda_regresion.py` | 5 158 | `32d4f451e96a87c437f9ecc1d6af3c6b0e2807e1a620ceef8a070a3ecf1b721f` | arnés del par antes/después, clase REAL |
@@ -119,7 +121,7 @@ regresión.
 | `coste_tanda3.json` | 3 361 | `c5fe557b1009a8f51b5393103c0278a7fe401d370de6cae15bc3194d8d1d891d` | tanda 3, n=9 × 2000 |
 | `pruebas_ANTES.txt` | 966 | `4a617a5c051c60dc337f4ab3779340b497a770acae6b559725c7d9e69fe4869c` | las 11 pruebas contra el código de antes |
 | `suite.txt` | 1 179 | `df5af5a01f241207cb397d4be731428516862df6dabfd0d874816582e813995e` | la suite completa |
-| `hacer_inventario.py` | 3 136 | `101e0c61570bf29e67ac6a55d7ecf298403ecf64f84bee510c5993c8ae4698fb` | este generador (se incluye para no mentir por omisión) |
+| `hacer_inventario.py` | 3 285 | `2aa52dfd18228703f731addbe11315db79bff18c1a92bfd90317267532b97057` | este generador (se incluye para no mentir por omisión) |
 
 <!-- INVENTARIO:FIN -->
 

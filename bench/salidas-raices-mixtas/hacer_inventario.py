@@ -23,6 +23,8 @@ DESC = {
     "superficies.json": "32 celdas: el eje que decide",
     "sonda_unc.py": "arnés: el viaje de una ruta por el cable MCP",
     "unc.json": "el defecto de mi doble + el de `_uri_a_ruta`",
+    "sonda_cli.py": "arnés: la CLI real, de extremo a extremo, como proceso",
+    "cli.json": "3 rc distintos: convierte / deniega / no arranca",
     "sonda_escritura.py": "arnés: B1 contra B2, con el control de hoy",
     "escritura.json": "6 filas × 3 candidatos + control",
     "sonda_regresion.py": "arnés del par antes/después, clase REAL",
