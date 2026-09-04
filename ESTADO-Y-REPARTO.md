@@ -661,7 +661,7 @@ Agrupado por **el recurso que lo limita**, que es lo que decide el reparto. Cada
 
 ---
 
-### Rondas 6 a 11 — **PLANIFICADAS, no despachadas**
+### Rondas 6 a 14 — **el reparto ronda a ronda**
 
 > **24 filas encargadas · 2 cerradas por decisión (`B4`, `B5`) · 2 que siguen bloqueadas
 > (`C6` clave de API, `C7` datos de demanda) · 1 nueva (`C44`).** El plan está limitado por el
@@ -677,6 +677,8 @@ Agrupado por **el recurso que lo limita**, que es lo que decide el reparto. Cada
 | **10** | **B7** + **B20** · 🟡 **DESPACHADA el 03/09** — `bench/severidad-y-curvatura.md` | **N9** + **C35** + **C5** + **C36** · 🟡 **DESPACHADA el 03/09** — `bench/oraculo-y-gotenberg.md`, por orden de prioridad | Las dos mayores del carril CPU, y el residuo de B12 con la heurística ya calibrable contra `d4` |
 | **11** | **N31** + **N26** · 🟢 **ENTREGADA Y VERIFICADA (`7c848c0`)** — refuta su propia explicación candidata: el sobrecoste vive en la DETECCIÓN | **C28** (lo barato: los 8 `sin_clasificar` y los 17 sin probar) + **C16** con FATE · 🟢 **ENTREGADA Y VERIFICADA (`6974480`)** — 97,1 % de semiaristas vivas, muy por encima del 48,6 % estimado |
 | **12** | **B7** + **B8** · 🟡 **DESPACHADA el 03/09** — `bench/senal-severidad-y-psm.md`, cierra la otra mitad de sus propios hallazgos | **N30** (arreglar, no solo documentar) + **C45** (anclar por `sha`) · 🟡 **DESPACHADA el 03/09** — `bench/pruebas-de-carrera-y-acciones.md` | Convierte el 48,6 % estimado en número medido |
+| **13** | **cinco carriles a la vez**, no dos · 🟢 **EJECUTADA Y CERRADA (03/09)** — fusionados en `49e1e45`, `0d48da3`, `05c5b6f`, `edc472e` y `c7d4188` | *(ídem: los cinco carriles van juntos, no repartidos por recurso)* | **Registrada aquí el 04/09, tarde.** El detalle de qué cerró cada carril vive en §3 y **no se reconstruye en esta tabla**: cierra `C42`, `N32` y `C46`, abre `C47`, añade `B27` y `N33` ya cerradas, y devuelve `B3` de 🟡 a 🔴 |
+| **14** | **B3** — `marker` **con el lock tomado** · 🟡 **DESPACHADA el 04/09** — `bench/marker-con-lock.md` | **C36** (los tres viables) + los **techos de C28 y C16** · 🟡 **DESPACHADA el 04/09** — `bench/mcp-cabos-y-techos.md`, por orden de prioridad | **La última que se puede despachar así, y se dice.** El inventario está agotado de trabajo barato y medible: de las 7 filas vivas, **una** es una medida que un worker puede cerrar, **tres** son residuos con su techo ya medido y **tres están bloqueadas fuera de esta máquina**. El carril CPU va sin tarjeta y sin medir tiempos en Docker **a propósito**, para que las cifras de VRAM y tiempo del carril GPU no midan contención (trampa 101) |
 
 ---
 
