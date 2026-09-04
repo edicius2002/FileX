@@ -1,0 +1,19 @@
+........................................................... [ 11%]
+.................................................................................................................. [ 33%]
+........................... [ 38%]
+........................................................ [ 49%]
+.....................s.............................................................................................s.... [ 72%]
+...............................s........................................................ [ 89%]
+.....................................................      [100%]
+============================== warnings summary ===============================
+pruebas/test_hito4.py::Catalogo::test_ni_resources_ni_prompts
+pruebas/test_hito4.py::ServidorReal::test_se_construye_sin_arrancar
+  D:\Work\research\FileX\.claude\worktrees\agent-acd1bf1db76068e4c\filex\mcp.py:789: MCPDeprecationWarning: The roots capability is deprecated as of 2026-07-28 (SEP-2577).
+    srv = Server(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+SKIPPED [1] pruebas\test_hito4.py:221: ningún par real rasteriza hacia un destino con texto en esta máquina — ver bench/aristas-documentales-cierre.md §9
+SKIPPED [1] pruebas\test_hito6.py:186: falta el ráster (`bench/salidas-hito6/preparar_h6.py`)
+SKIPPED [1] pruebas\test_hito6.py:697: necesita la tarjeta: FILEX_PRUEBAS_SIDECAR=1
+514 passed, 3 skipped, 2 warnings, 198 subtests passed in 193.36s (0:03:13)
