@@ -1,37 +1,48 @@
 {
-  "_": "MEDIDO EN EL RUNNER (ubuntu-latest, Python 3.11.16), no en la maquina del proyecto. La primera version de este fichero salio de WSL2 sobre DrvFs con Python 3.14 y daba 11 aptos y 262 pruebas; los MISMOS once, aqui, dan 23 fallos y 7 errores. Una lista de aptitud de un entorno se mide EN ese entorno -- trampa 104. Se regenera con el trabajo `deriva` de .github/workflows/suite.yml, que la mide donde toca.",
+  "_": "MEDIDO EN EL RUNNER (ubuntu-latest, Python 3.11.16), no en la maquina del proyecto. La primera version de este fichero salio de WSL2 sobre DrvFs con Python 3.14 y daba 11 aptos y 262 pruebas; los MISMOS once, alli, dan 23 fallos y 7 errores. Una lista de aptitud de un entorno se mide EN ese entorno -- trampa 104. Se regenera con el trabajo `deriva` de .github/workflows/suite.yml, que la mide donde toca, y desde el 03/09 ese trabajo FALLA cuando la lista se mueve en cualquiera de las dos direcciones.",
+  "por_que_18_y_no_7": "Este fichero estuvo congelado en 7 modulos del 01/09 al 03/09 mientras el runner medía 16, asi que el trabajo `linux` ejecutaba 7 de 18 y la deriva era invisible: el paso que la detectaba la imprimia y el trabajo llevaba `continue-on-error: true`, de modo que terminaba en `success`. Los nueve modulos que faltaban NO se arreglaron: ya pasaban, y lo que fallaba era el fichero. El unico arreglo real de codigo en esta tanda es la guarda de punteros de Git LFS de `test_watcher_n` (trampas 34 y 107), que cierra C42. Trampa 110: un check solo protege si alguien lo mira.",
   "interprete": "3.11.16",
   "plataforma": "linux (ubuntu-latest)",
-  "medido_en": "runner de GitHub Actions, ejecucion 33538561732",
+  "medido_en": "runner de GitHub Actions, ejecucion 33833864771, sobre main con los cinco carriles de la ronda 13 ya fusionados",
   "tope_por_modulo_s": 90,
   "aptos": [
+    "test_a7_ciego",
     "test_bitrate_y_lock",
+    "test_cancelacion",
+    "test_cancelacion_procesos",
+    "test_cerrojo",
     "test_cerrojo_unico",
     "test_contrato_v",
+    "test_datos_csv",
     "test_firmas_cierre",
+    "test_grafo_rasteriza",
+    "test_gpu_lock",
+    "test_hito1",
+    "test_hito2",
     "test_hito5",
     "test_hito6",
-    "test_sondeo"
+    "test_hito7",
+    "test_sondeo",
+    "test_watcher_n"
   ],
   "no_aptos": {
-    "cuelga": {
-      "test_cancelacion": "test_cancelar_una_conversion_NO_toca_el_contenedor_de_la_de_al_lado"
-    },
+    "cuelga": {},
     "falla": {
-      "test_a7_ciego": "0 pruebas corridas, 1 error de carga",
-      "test_cancelacion_procesos": "8 fallos",
-      "test_cerrojo": "5 fallos",
-      "test_gpu_lock": "1 fallo, no hay tarjeta",
-      "test_hito1": "2 fallos",
-      "test_hito2": "1 fallo, no hay ffmpeg con NVENC",
-      "test_hito4": "10 fallos",
-      "test_hito7": "31 fallos, watcher y API",
-      "test_watcher_n": "4 fallos, la estabilidad se comporta distinto en ext4"
+      "test_hito4": "1 fallo de 31 corridas (18 saltadas) -- PENDIENTE de traza, motivo no verificado. Se declara asi en vez de inventarlo: un recuento no es una causa (trampa 25). El modulo cambio en esta misma ronda al fusionar `filex-suelo-y-mcp`, asi que la traza hay que sacarla de una ejecucion posterior a esa fusion, no de una anterior."
     }
   },
-  "contraste_wsl2_drvfs_py314": {
-    "_": "Lo que daba el MISMO barrido en la maquina del proyecto. Se conserva porque la diferencia es el hallazgo, no un residuo.",
-    "aptos": [
+  "historico": {
+    "_": "Lo que declaraba este fichero antes del 03/09, y lo que daba el MISMO barrido en la maquina del proyecto. Se conserva porque la diferencia es el hallazgo, no un residuo.",
+    "congelado_01_09": [
+      "test_bitrate_y_lock",
+      "test_cerrojo_unico",
+      "test_contrato_v",
+      "test_firmas_cierre",
+      "test_hito5",
+      "test_hito6",
+      "test_sondeo"
+    ],
+    "wsl2_drvfs_py314": [
       "test_a7_ciego",
       "test_bitrate_y_lock",
       "test_cancelacion_procesos",
@@ -44,7 +55,7 @@
       "test_hito6",
       "test_watcher_n"
     ],
-    "coinciden": [
+    "coinciden_wsl2_y_runner": [
       "test_bitrate_y_lock",
       "test_cerrojo_unico",
       "test_contrato_v",
