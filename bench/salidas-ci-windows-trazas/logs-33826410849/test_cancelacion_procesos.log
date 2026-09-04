@@ -1,0 +1,31 @@
+test_cancelar_alcanza_al_motor_de_otro_proceso (pruebas.test_cancelacion_procesos.CancelarEntreProcesos.test_cancelar_alcanza_al_motor_de_otro_proceso)
+Lo que C34 declaró imposible: `motor_detenido` desde fuera. ... skipped 'hace falta el corpus de vídeo REAL (no un puntero de Git LFS sin `git lfs checkout` -- trampa 34)'
+test_el_candado_del_trabajo_se_suelta_al_terminar (pruebas.test_cancelacion_procesos.CancelarEntreProcesos.test_el_candado_del_trabajo_se_suelta_al_terminar)
+Mientras el trabajo vive su candado está tomado; al morir, libre. ... skipped 'hace falta el corpus de vídeo REAL (no un puntero de Git LFS sin `git lfs checkout` -- trampa 34)'
+test_el_dueno_se_puede_saber_sin_preguntar_por_ningun_PID (pruebas.test_cancelacion_procesos.CancelarEntreProcesos.test_el_dueno_se_puede_saber_sin_preguntar_por_ningun_PID)
+Trampa 31: la VRAM por PID no es observable, así que la respuesta a ... skipped 'hace falta el corpus de vídeo REAL (no un puntero de Git LFS sin `git lfs checkout` -- trampa 34)'
+test_el_mando_se_borra_al_terminar_el_trabajo (pruebas.test_cancelacion_procesos.CancelarEntreProcesos.test_el_mando_se_borra_al_terminar_el_trabajo)
+Un fichero de mando que sobrevive a su trabajo es basura con ... skipped 'hace falta el corpus de vídeo REAL (no un puntero de Git LFS sin `git lfs checkout` -- trampa 34)'
+test_sin_deteccion_el_trabajo_se_queda_working_para_siempre (pruebas.test_cancelacion_procesos.DuenoMuerto.test_sin_deteccion_el_trabajo_se_queda_working_para_siempre)
+El mismo caso con `FILEX_MANDO=0`: es lo que había. ... skipped 'hace falta el corpus de vídeo REAL (no un puntero de Git LFS sin `git lfs checkout` -- trampa 34)'
+test_un_trabajo_vivo_NO_se_declara_huerfano (pruebas.test_cancelacion_procesos.DuenoMuerto.test_un_trabajo_vivo_NO_se_declara_huerfano)
+El falso positivo que la espera del candado existe para evitar. ... skipped 'hace falta el corpus de vídeo REAL (no un puntero de Git LFS sin `git lfs checkout` -- trampa 34)'
+test_un_working_sin_dueno_vivo_se_detecta_y_se_cierra (pruebas.test_cancelacion_procesos.DuenoMuerto.test_un_working_sin_dueno_vivo_se_detecta_y_se_cierra)
+**La otra mitad.** Un mecanismo que solo alcanza a quien coopera ... skipped 'hace falta el corpus de vídeo REAL (no un puntero de Git LFS sin `git lfs checkout` -- trampa 34)'
+test_hilo_de_NO_limpia_al_entrar (pruebas.test_cancelacion_procesos.ElAndamiajeEsUnMecanismo.test_hilo_de_NO_limpia_al_entrar)
+Sería la simetría bonita y se tragaría una cancelación real. ... ok
+test_hilo_de_borra_el_rastro_aunque_el_cuerpo_reviente (pruebas.test_cancelacion_procesos.ElAndamiajeEsUnMecanismo.test_hilo_de_borra_el_rastro_aunque_el_cuerpo_reviente) ... ok
+test_los_hilos_de_trabajo_solo_se_construyen_en_una_puerta (pruebas.test_cancelacion_procesos.ElAndamiajeEsUnMecanismo.test_los_hilos_de_trabajo_solo_se_construyen_en_una_puerta)
+`threading.Thread(` en `servicio.py`, y dónde puede estar. ... ok
+test_una_clase_de_trabajo_nueva_no_puede_saltarse_arrancar (pruebas.test_cancelacion_procesos.ElAndamiajeEsUnMecanismo.test_una_clase_de_trabajo_nueva_no_puede_saltarse_arrancar)
+Quien cree un trabajo tiene que lanzarlo por `_arrancar`. ... ok
+test_ya_no_queda_la_disciplina_suelta (pruebas.test_cancelacion_procesos.ElAndamiajeEsUnMecanismo.test_ya_no_queda_la_disciplina_suelta)
+`olvidar_hilo` no se LLAMA a mano en `servicio.py`. ... ok
+test_sin_canal_la_cancelacion_no_llega_y_se_dice (pruebas.test_cancelacion_procesos.SinCanalNoSeAlcanza.test_sin_canal_la_cancelacion_no_llega_y_se_dice) ... skipped 'hace falta el corpus de vídeo REAL (no un puntero de Git LFS sin `git lfs checkout` -- trampa 34)'
+test_un_job_id_bueno_si_compone (pruebas.test_cancelacion_procesos.UnJobIdEsUnaEntrada.test_un_job_id_bueno_si_compone) ... ok
+test_un_job_id_con_travesia_no_compone_ninguna_ruta (pruebas.test_cancelacion_procesos.UnJobIdEsUnaEntrada.test_un_job_id_con_travesia_no_compone_ninguna_ruta) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.034s
+
+OK (skipped=8)

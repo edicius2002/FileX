@@ -1,0 +1,44 @@
+test_el_modulo_no_depende_de_nada_de_filex (pruebas.test_cerrojo_unico.ApiDelModulo.test_el_modulo_no_depende_de_nada_de_filex)
+El tercer consumidor son los arneses `.py` de `bench/`, que no son ... ok
+test_esta_libre_y_el_gestor_de_contexto (pruebas.test_cerrojo_unico.ApiDelModulo.test_esta_libre_y_el_gestor_de_contexto) ... ok
+test_tomarlo_dos_veces_desde_el_mismo_candado_no_se_bloquea (pruebas.test_cerrojo_unico.ApiDelModulo.test_tomarlo_dos_veces_desde_el_mismo_candado_no_se_bloquea)
+Reentrada del propio objeto: `tomar()` sobre algo ya tomado no puede ... ok
+test_dos_directorios_de_candados_distintos_siguen_excluyendose (pruebas.test_cerrojo_unico.CerrojoDeMaquina.test_dos_directorios_de_candados_distintos_siguen_excluyendose)
+**LA prueba de b1.** Dos `FILEX_CERROJO_DIR` distintos es lo que ... C:\hostedtoolcache\windows\Python\3.11.9\x64\Lib\unittest\case.py:579: ResourceWarning: unclosed file <_io.TextIOWrapper name=4 encoding='cp1252'>
+  if method() is not None:
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\hostedtoolcache\windows\Python\3.11.9\x64\Lib\unittest\case.py:579: ResourceWarning: unclosed file <_io.TextIOWrapper name=5 encoding='cp1252'>
+  if method() is not None:
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\hostedtoolcache\windows\Python\3.11.9\x64\Lib\unittest\case.py:579: ResourceWarning: unclosed file <_io.TextIOWrapper name=6 encoding='cp1252'>
+  if method() is not None:
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\hostedtoolcache\windows\Python\3.11.9\x64\Lib\unittest\case.py:579: ResourceWarning: unclosed file <_io.TextIOWrapper name=7 encoding='cp1252'>
+  if method() is not None:
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_el_dueno_muerto_no_deja_huerfano (pruebas.test_cerrojo_unico.CerrojoDeMaquina.test_el_dueno_muerto_no_deja_huerfano)
+`taskkill /F` no ejecuta ningún `finally`: lo tiene que soltar el ... ok
+test_el_mismo_directorio_tambien_excluye (pruebas.test_cerrojo_unico.CerrojoDeMaquina.test_el_mismo_directorio_tambien_excluye)
+El caso que ya cerraba N-b, para que la mudanza no lo pierda. ... ok
+test_la_espera_tiene_tope_y_lo_respeta (pruebas.test_cerrojo_unico.CerrojoDeMaquina.test_la_espera_tiene_tope_y_lo_respeta)
+Lo que pide el tercer consumidor (el lock de GPU) y no piden los ... ok
+test_los_metadatos_dicen_quien_lo_tiene_y_None_si_esta_libre (pruebas.test_cerrojo_unico.CerrojoDeMaquina.test_los_metadatos_dicen_quien_lo_tiene_y_None_si_esta_libre)
+Media trampa 31: por PID no se puede preguntar, así que el dueño ... ok
+test_el_candado_se_suelta_bien_desde_OTRO_hilo (pruebas.test_cerrojo_unico.DeteccionYAfinidad.test_el_candado_se_suelta_bien_desde_OTRO_hilo)
+MEDIDO que funciona, y MEDIDO que funciona por accidente. ... ok
+test_en_windows_un_LECTOR_ajeno_ya_cuenta_como_ocupado (pruebas.test_cerrojo_unico.DeteccionYAfinidad.test_en_windows_un_LECTOR_ajeno_ya_cuenta_como_ocupado)
+Trampa 33: `os.replace(p,p)` no dice «lo están escribiendo», dice ... ok
+test_un_fichero_que_nadie_tiene_abierto_no_esta_ocupado (pruebas.test_cerrojo_unico.DeteccionYAfinidad.test_un_fichero_que_nadie_tiene_abierto_no_esta_ocupado) ... ok
+test_un_fichero_que_no_existe_no_revienta (pruebas.test_cerrojo_unico.DeteccionYAfinidad.test_un_fichero_que_no_existe_no_revienta)
+Se pregunta por destinos que todavía no existen: es el caso normal. ... ok
+test_un_destino_que_nace_entre_reservar_y_soltar_se_suelta_igual (pruebas.test_cerrojo_unico.EnlaceComoDestino.test_un_destino_que_nace_entre_reservar_y_soltar_se_suelta_igual)
+La regresión que la clave de identidad podía introducir, y el motivo ... ok
+test_un_enlace_duro_no_da_dos_duenos (pruebas.test_cerrojo_unico.EnlaceComoDestino.test_un_enlace_duro_no_da_dos_duenos)
+El caso de b4, en el mismo proceso. Antes: `True` y `True`. ... ok
+test_un_enlace_duro_no_da_dos_duenos_entre_procesos (pruebas.test_cerrojo_unico.EnlaceComoDestino.test_un_enlace_duro_no_da_dos_duenos_entre_procesos) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 1.348s
+
+OK

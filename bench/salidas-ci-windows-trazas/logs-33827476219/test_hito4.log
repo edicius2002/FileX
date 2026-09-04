@@ -1,0 +1,93 @@
+test_cada_parametro_lleva_description (pruebas.test_hito4.Catalogo.test_cada_parametro_lleva_description)
+MEDIDO: **0 de 193** parámetros de los tres catálogos de referencia ... ok
+test_los_enum_salen_del_registro (pruebas.test_hito4.Catalogo.test_los_enum_salen_del_registro)
+«Añadir un motor no toca la capa MCP» — criterio del hito 4. ... ok
+test_los_nombres_son_el_presupuesto_que_si_se_paga (pruebas.test_hito4.Catalogo.test_los_nombres_son_el_presupuesto_que_si_se_paga)
+RE-ACOTADO (`bench/mcp-cabos-2.md` §4): en sesión real el **cuerpo** ... skipped 'necesita tiktoken'
+test_ni_resources_ni_prompts (pruebas.test_hito4.Catalogo.test_ni_resources_ni_prompts)
+MEDIDO (`bench/mcp-cabos-2.md` §3): el cliente los enumera y el ... skipped 'necesita mcp>=2.0.0'
+test_presupuesto_de_catalogo (pruebas.test_hito4.Catalogo.test_presupuesto_de_catalogo)
+El presupuesto de \u22641.200 tokens **NO se cumple, y está medido por qué**. ... skipped 'necesita tiktoken'
+test_un_motor_nuevo_no_toca_este_fichero (pruebas.test_hito4.Catalogo.test_un_motor_nuevo_no_toca_este_fichero)
+La prueba dura del criterio: se inyecta una arista con un motor que ... ok
+test_convert_imposible_falla_en_el_acto_y_no_gasta_un_job (pruebas.test_hito4.Cobertura.test_convert_imposible_falla_en_el_acto_y_no_gasta_un_job)
+La primera versión de este servidor devolvía un `job_id` también ... ok
+test_el_aviso_de_rasterizacion_viaja_al_modelo (pruebas.test_hito4.Cobertura.test_el_aviso_de_rasterizacion_viaja_al_modelo)
+El fallo de `resvg`: `rc=0`, PNG válido, geometría exacta y **ni una ... skipped 'ningún par real rasteriza hacia un destino con texto en esta máquina — ver bench/aristas-documentales-cierre.md §9'
+test_evidencia_por_arista (pruebas.test_hito4.Cobertura.test_evidencia_por_arista)
+**El 41,0 % de las aristas que los catálogos del sector declaran no ... ok
+test_lo_imposible_dice_por_que_y_no_ofrece_un_parecido (pruebas.test_hito4.Cobertura.test_lo_imposible_dice_por_que_y_no_ofrece_un_parecido) ... ok
+test_responde_lo_que_existe_de_verdad (pruebas.test_hito4.Cobertura.test_responde_lo_que_existe_de_verdad) ... ok
+test_convert_fuera_de_la_raiz_no_convierte (pruebas.test_hito4.Confinar.test_convert_fuera_de_la_raiz_no_convierte)
+El camino existe (png\u2192webp) y aun así no se convierte, porque el ... ok
+test_el_mensaje_no_filtra_la_lista_blanca (pruebas.test_hito4.Confinar.test_el_mensaje_no_filtra_la_lista_blanca)
+Lo que `servers/filesystem` sí filtra en sus tres mensajes de ... ok
+test_interseccion_de_roots_no_sustitucion (pruebas.test_hito4.Confinar.test_interseccion_de_roots_no_sustitucion)
+R13. `servers/filesystem` (`index.ts:181`) **sustituye** la lista, que ... ok
+test_mismo_mensaje_para_prohibido_y_para_no_existe (pruebas.test_hito4.Confinar.test_mismo_mensaje_para_prohibido_y_para_no_existe)
+R4. Tres fugas distintas se midieron por no hacerlo, y `kordoc` es ... ok
+test_no_hay_predicado_de_rutas_en_la_superficie (pruebas.test_hito4.Confinar.test_no_hay_predicado_de_rutas_en_la_superficie)
+Prueba **estructural**, no de comportamiento: si alguien vuelve a ... ok
+test_faltan_obligatorios (pruebas.test_hito4.Despacho.test_faltan_obligatorios) ... ok
+test_herramienta_desconocida (pruebas.test_hito4.Despacho.test_herramienta_desconocida) ... ok
+test_los_parametros_de_mas_se_ignoran (pruebas.test_hito4.Despacho.test_los_parametros_de_mas_se_ignoran)
+`additionalProperties: false` lo declara; el despachador lo aplica. ... ok
+test_convert_devuelve_el_asa_al_empezar (pruebas.test_hito4.NoBloquear.test_convert_devuelve_el_asa_al_empezar)
+§5.2: **una firma, un comportamiento.** Nada de bifurcar entre ... ok
+test_el_trabajo_se_persiste_en_disco (pruebas.test_hito4.NoBloquear.test_el_trabajo_se_persiste_en_disco)
+§5.3: *el fallo de origen es que el trabajo sobrevivió a quien lo ... FAIL
+test_job_desconocido_no_revienta (pruebas.test_hito4.NoBloquear.test_job_desconocido_no_revienta) ... ok
+test_la_salida_preexistente_no_cuelga (pruebas.test_hito4.NoBloquear.test_la_salida_preexistente_no_cuelga)
+El disparador exacto de las 26: la ruta de salida **ya existe**. ... FAIL
+test_inspect_esta_exento_del_presupuesto_pero_no_del_confinamiento (pruebas.test_hito4.Respuestas.test_inspect_esta_exento_del_presupuesto_pero_no_del_confinamiento)
+`inspect` es la excepción a R8 y a R18 —lectura de cabeceras en ... FAIL
+test_ninguna_respuesta_lleva_base64 (pruebas.test_hito4.Respuestas.test_ninguna_respuesta_lleva_base64) ... ok
+test_nunca_stderr_crudo (pruebas.test_hito4.Respuestas.test_nunca_stderr_crudo)
+MEDIDO: los tres servidores de referencia reenvían el `stderr` de ... ok
+test_presupuesto_de_respuesta (pruebas.test_hito4.Respuestas.test_presupuesto_de_respuesta)
+\u2264200 tokens **salvo `inspect`** (`RESULTADOS-MCP.md` §9.3, regla 1). ... skipped 'necesita tiktoken'
+test_el_catalogo_es_Tool_valido (pruebas.test_hito4.ServidorReal.test_el_catalogo_es_Tool_valido) ... skipped 'necesita mcp>=2.0.0 (.venv-mcp-filex)'
+test_se_construye_sin_arrancar (pruebas.test_hito4.ServidorReal.test_se_construye_sin_arrancar) ... skipped 'necesita mcp>=2.0.0 (.venv-mcp-filex)'
+test_escribir_en_un_ADS_deberia_denegarse (pruebas.test_hito4.W9_FlujosAlternativos.test_escribir_en_un_ADS_deberia_denegarse) ... ok
+test_leer_un_ADS_deberia_denegarse (pruebas.test_hito4.W9_FlujosAlternativos.test_leer_un_ADS_deberia_denegarse) ... ok
+
+======================================================================
+FAIL: test_el_trabajo_se_persiste_en_disco (pruebas.test_hito4.NoBloquear.test_el_trabajo_se_persiste_en_disco)
+§5.3: *el fallo de origen es que el trabajo sobrevivió a quien lo
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\a\FileX\FileX\pruebas\test_hito4.py", line 561, in test_el_trabajo_se_persiste_en_disco
+    self.assertEqual(t.estado, S.COMPLETADO)
+AssertionError: 'failed' != 'completed'
+- failed
++ completed
+
+
+======================================================================
+FAIL: test_la_salida_preexistente_no_cuelga (pruebas.test_hito4.NoBloquear.test_la_salida_preexistente_no_cuelga)
+El disparador exacto de las 26: la ruta de salida **ya existe**.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\a\FileX\FileX\pruebas\test_hito4.py", line 538, in test_la_salida_preexistente_no_cuelga
+    self.assertEqual(fin["estado"], S.COMPLETADO)
+AssertionError: 'failed' != 'completed'
+- failed
++ completed
+
+
+======================================================================
+FAIL: test_inspect_esta_exento_del_presupuesto_pero_no_del_confinamiento (pruebas.test_hito4.Respuestas.test_inspect_esta_exento_del_presupuesto_pero_no_del_confinamiento)
+`inspect` es la excepción a R8 y a R18 —lectura de cabeceras en
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\a\FileX\FileX\pruebas\test_hito4.py", line 492, in test_inspect_esta_exento_del_presupuesto_pero_no_del_confinamiento
+    self.assertEqual(r["firma"], "png")
+AssertionError: 'texto' != 'png'
+- texto
++ png
+
+
+----------------------------------------------------------------------
+Ran 31 tests in 3.363s
+
+FAILED (failures=3, skipped=7)

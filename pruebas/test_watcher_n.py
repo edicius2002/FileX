@@ -51,6 +51,41 @@ ES_WINDOWS = sys.platform == "win32"
 TOPE = 120
 
 
+def _es_real(ruta: str) -> bool:
+    """¿El fichero del corpus es el fichero, o el puntero de Git LFS?
+
+    `os.path.exists()` devuelve `True` también para un puntero sin descargar
+    —~130 B de texto que empiezan por `version https://git-lfs...`—, así que un
+    guarda que comprueba EXISTENCIA no protege de nada (trampa 107; el daño,
+    trampa 34). Se mira la CABECERA, que es exacta y no necesita umbral.
+    """
+    try:
+        with open(ruta, "rb") as fh:
+            return not fh.read(40).startswith(b"version https://git-lfs")
+    except OSError:
+        return False
+
+
+#: MEDIDO en la ejecución 33826410849 de `windows-tests` sobre `windows-latest`:
+#: los **4 fallos** de este módulo son este mecanismo y sólo éste. El job hace
+#: `actions/checkout` con `lfs: false` —254 MB de corpus contra 1 GB de cuota
+#: mensual—, así que `trivial.wav` llega como puntero de 130 B: cortarlo por la
+#: mitad da los 65 B que aparecían en la traza, `_coherencia_declarada` responde
+#: `sin_declaracion` en vez de `completo` y el `Vigilante` madura un fichero a
+#: medias. **Dos pruebas más pasaban en VERDE por el mismo motivo**
+#: (`test_riff_de_relleno_no_es_un_incompleto` y `test_un_wav_entero_no_se_aplaza`:
+#: un puntero es `sin_declaracion` mires lo que mires), y un verde por el motivo
+#: equivocado es peor que un rojo -- también van con guarda.
+#:
+#: `corpus/datos/patologico_bom.csv` **no** está en LFS (`git lfs ls-files`), así
+#: que las pruebas que sólo usan el CSV no llevan guarda: el guarda se pone por
+#: ACTIVO, no por clase.
+PNG_REAL = _es_real(PNG)
+WAV_REAL = _es_real(WAV)
+_MOTIVO_LFS = ("hace falta el corpus REAL, no el puntero de Git LFS "
+               "(`git lfs checkout`) -- trampas 34 y 107")
+
+
 def _a_wsl(ruta: str) -> str:
     a = os.path.abspath(ruta)
     return "/mnt/" + a[0].lower() + a[2:].replace("\\", "/")
@@ -175,6 +210,7 @@ class CoherenciaDeclarada(unittest.TestCase):
         self.assertEqual(os.path.getsize(destino), n)   # la condición, medida
         return destino
 
+    @unittest.skipUnless(WAV_REAL, _MOTIVO_LFS)
     def test_wav_truncado_se_ve(self):
         total = os.path.getsize(WAV)
         self.assertEqual(w._coherencia_declarada(WAV), "completo")
@@ -187,6 +223,7 @@ class CoherenciaDeclarada(unittest.TestCase):
             w._coherencia_declarada(self._cortar(WAV, total - 1, "casi.wav")),
             "incompleto")
 
+    @unittest.skipUnless(PNG_REAL, _MOTIVO_LFS)
     def test_png_truncado_se_ve(self):
         total = os.path.getsize(PNG)
         self.assertEqual(w._coherencia_declarada(PNG), "completo")
@@ -194,6 +231,7 @@ class CoherenciaDeclarada(unittest.TestCase):
             w._coherencia_declarada(self._cortar(PNG, total // 2, "m.png")),
             "incompleto")
 
+    @unittest.skipUnless(WAV_REAL, _MOTIVO_LFS)
     def test_riff_de_relleno_no_es_un_incompleto(self):
         """El falso positivo MEDIDO: `ffmpeg` escribiendo a una tubería no puede
         volver atrás y estampa `0xFFFFFFFF`. Un WAV **entero** con esa cabecera
@@ -216,6 +254,7 @@ class CoherenciaDeclarada(unittest.TestCase):
 
 
 # --------------------------------------------------------------------------
+@unittest.skipUnless(WAV_REAL, _MOTIVO_LFS)
 class PacienciaDelWatcher(unittest.TestCase):
     """N5 — la tercera defensa dentro del `Vigilante`, sin convertir nada."""
 

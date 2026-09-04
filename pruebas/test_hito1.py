@@ -32,6 +32,18 @@ HAY_ALGUN_MOTOR = len(FileX().disponibles) > 0
 HAY_IMAGEMAGICK = shutil.which("magick") is not None
 
 
+def _es_real(ruta: str) -> bool:
+    """`os.path.exists()`/`isfile()` son `True` tambien para un puntero de Git
+    LFS sin descargar --~130 B de texto que empiezan por
+    `version https://git-lfs...`--: un guarda que comprueba EXISTENCIA no
+    protege de nada (trampa 107). Se mira la CABECERA."""
+    try:
+        with open(ruta, "rb") as fh:
+            return not fh.read(40).startswith(b"version https://git-lfs")
+    except OSError:
+        return False
+
+
 class ElegirBien(unittest.TestCase):
     """El criterio de aceptación que de verdad demuestra la tesis del hito 1.
 
@@ -374,8 +386,14 @@ class Integracion(unittest.TestCase):
                          "png (C42, bench/ci-y-contrato.md §1)")
     def test_conversion_real_con_contrato(self):
         ent = os.path.join(self.raiz, "corpus", "imagen", "tipico.png")
-        if not os.path.isfile(ent):
-            self.skipTest("falta el corpus")
+        if not _es_real(ent):
+            # MEDIDO en la ejecucion 33826410849 (`windows-latest`): con
+            # `lfs: false` este `isfile()` decia `True` sobre un puntero de
+            # 130 B, la prueba NO se saltaba y ImageMagick devolvia
+            # `el_motor_rechazo_la_conversion`. El guarda nombraba su causa y
+            # no protegia de ella: trampa 107.
+            self.skipTest("falta el corpus REAL (¿punteros de Git LFS? "
+                          "`git lfs checkout`)")
         d = tempfile.mkdtemp(prefix="filex-test-")
         sal = os.path.join(d, "salida.webp")
         c = self.fx.convertir(ent, sal)

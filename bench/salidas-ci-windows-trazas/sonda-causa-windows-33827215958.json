@@ -1,0 +1,90 @@
+{
+  "_": "MEDIDO dentro del runner donde corre. C1 lleva control negativo (la misma raíz resuelta) y control positivo (una raíz larga del repositorio): sin ellos, «no entra» no distingue el nombre corto de un Confinamiento roto.",
+  "c0_entorno": {
+    "interprete": "3.11.9",
+    "plataforma": "win32",
+    "cwd": "D:\\a\\FileX\\FileX",
+    "raiz_del_repo": "D:\\a\\FileX\\FileX",
+    "tempdir": "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp",
+    "tempdir_realpath": "C:\\Users\\runneradmin\\AppData\\Local\\Temp",
+    "tempdir_es_nombre_corto": true,
+    "TEMP": "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp",
+    "TMP": "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp",
+    "USERNAME": "runneradmin",
+    "USERPROFILE": "C:\\Users\\runneradmin"
+  },
+  "c1_nombre_corto": {
+    "raiz_tal_cual": "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\sonda-c1-fh32c0ix",
+    "raiz_resuelta": "C:\\Users\\runneradmin\\AppData\\Local\\Temp\\sonda-c1-fh32c0ix",
+    "difieren": true,
+    "puede_leer_con_raiz_TAL_CUAL": false,
+    "puede_leer_con_raiz_RESUELTA": false,
+    "control_positivo_raiz_larga_del_repo": true,
+    "veredicto": "el 8.3 NO explica el fallo: mirar otra cosa"
+  },
+  "c2_lfs": {
+    "corpus/imagen/tipico.png": {
+      "existe": true,
+      "bytes": 130,
+      "cabecera": "version https://git-lfs.github.com/spec/",
+      "es_puntero_lfs": true
+    },
+    "corpus/imagen/tipico.jpg": {
+      "existe": true,
+      "bytes": 130,
+      "cabecera": "version https://git-lfs.github.com/spec/",
+      "es_puntero_lfs": true
+    },
+    "corpus/audio/trivial.wav": {
+      "existe": true,
+      "bytes": 131,
+      "cabecera": "version https://git-lfs.github.com/spec/",
+      "es_puntero_lfs": true
+    },
+    "corpus/audio/habla_jfk.flac": {
+      "existe": true,
+      "bytes": 132,
+      "cabecera": "version https://git-lfs.github.com/spec/",
+      "es_puntero_lfs": true
+    },
+    "corpus/datos/patologico_bom.csv": {
+      "existe": true,
+      "bytes": 88,
+      "cabecera": "ï»¿id,nombre,notas\n1,\"PÃ©rez, Juan\",\"dij",
+      "es_puntero_lfs": false
+    }
+  },
+  "c3_docker": {
+    "docker_en_PATH": "C:\\Windows\\system32\\docker.EXE",
+    "rc": 0,
+    "imagenes": [],
+    "stderr": ""
+  },
+  "c4_motores": {
+    "which": {
+      "magick": "C:\\Program Files\\ImageMagick-7.1.2-Q16-HDRI\\magick.EXE",
+      "gswin64c": "AUSENTE",
+      "ffmpeg": "AUSENTE",
+      "ffprobe": "AUSENTE",
+      "tesseract": "AUSENTE"
+    },
+    "disponibles": [
+      "imagemagick"
+    ],
+    "ausentes": [
+      "Ghostscript(nombre='ghostscript', binario='gswin64c', version='', ruta=None, aristas=[], motivo_ausencia='')",
+      "FFmpeg(nombre='ffmpeg', binario='ffmpeg', version='', ruta=None, aristas=[], motivo_ausencia='')",
+      "LibreOfficeEnContenedor(nombre='doc_libreoffice', binario='docker', version='', ruta=None, aristas=[], motivo_ausencia='el demonio responde pero no está ninguna de las imágenes: filex-c13, ghcr.io/c4illin/convertx:latest')",
+      "PandocEnContenedor(nombre='doc_pandoc', binario='docker', version='', ruta=None, aristas=[], motivo_ausencia='el demonio responde pero no está ninguna de las imágenes: filex-c13, ghcr.io/c4illin/convertx:latest')",
+      "CalibreEnContenedor(nombre='doc_calibre', binario='docker', version='', ruta=None, aristas=[], motivo_ausencia='el demonio responde pero no está ninguna de las imágenes: filex-c13, ghcr.io/c4illin/convertx:latest')"
+    ]
+  },
+  "c5_segunda_capa": {
+    "raiz_resuelta": "C:\\Users\\runneradmin\\AppData\\Local\\Temp\\sonda-c5-d2ksgjcr",
+    "bytes_de_la_entrada": 130,
+    "ok": false,
+    "motivo": "el_motor_rechazo_la_conversion",
+    "veredicto": "fallo",
+    "salida_existe": false
+  }
+}

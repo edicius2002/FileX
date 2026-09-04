@@ -1,0 +1,282 @@
+test_dos_peticiones_al_mismo_destino_no_devuelven_dos_ok (pruebas.test_hito7.ApiConcurrencia.test_dos_peticiones_al_mismo_destino_no_devuelven_dos_ok)
+**La regresión del hallazgo del hito** (`bench/hito7-superficies.md` ... FAIL
+test_ocho_conversiones_simultaneas_no_se_pisan (pruebas.test_hito7.ApiConcurrencia.test_ocho_conversiones_simultaneas_no_se_pisan)
+MEDIDO: 8 asas en **69,6 ms**, las 8 `completed`, 8 ficheros en el ... FAIL
+test_cuerpo_demasiado_grande (pruebas.test_hito7.ApiDefensas.test_cuerpo_demasiado_grande)
+Sin tope, `rfile.read(Content-Length)` es una reserva de memoria ... ok
+test_el_asa_llega_al_empezar (pruebas.test_hito7.ApiDefensas.test_el_asa_llega_al_empezar)
+§5.2: *toda operación larga devuelve un `job_id` al empezar. No ... ok
+test_es_loopback (pruebas.test_hito7.ApiDefensas.test_es_loopback) ... ok
+test_host_ajeno_rechazado (pruebas.test_hito7.ApiDefensas.test_host_ajeno_rechazado)
+DNS rebinding: el navegador resuelve `malo.example` a 127.0.0.1 y ... ok
+test_la_respuesta_no_lleva_contenido (pruebas.test_hito7.ApiDefensas.test_la_respuesta_no_lleva_contenido)
+*Ruta y metadatos, nunca contenido* — y «contenido» incluye base64. ... FAIL
+test_metodos_y_rutas_desconocidos (pruebas.test_hito7.ApiDefensas.test_metodos_y_rutas_desconocidos) ... ok
+test_options_no_abre_cors (pruebas.test_hito7.ApiDefensas.test_options_no_abre_cors) ... ok
+test_peticion_con_origin_rechazada (pruebas.test_hito7.ApiDefensas.test_peticion_con_origin_rechazada)
+Ninguna petición legítima a esta API viene de una página web. ... ok
+test_post_de_formulario_rechazado (pruebas.test_hito7.ApiDefensas.test_post_de_formulario_rechazado)
+`application/x-www-form-urlencoded` es lo ÚNICO que un `<form>` ... ok
+test_salud_responde (pruebas.test_hito7.ApiDefensas.test_salud_responde) ... ok
+test_se_niega_a_escuchar_fuera_de_loopback_sin_bandera (pruebas.test_hito7.ApiDefensas.test_se_niega_a_escuchar_fuera_de_loopback_sin_bandera)
+MEDIDO: `rc=2` y un mensaje que dice el motivo — esta API **no ... ok
+test_sin_cabeceras_cors (pruebas.test_hito7.ApiDefensas.test_sin_cabeceras_cors) ... ok
+test_sin_camino_falla_al_instante_y_sin_asa (pruebas.test_hito7.ApiDefensas.test_sin_camino_falla_al_instante_y_sin_asa)
+*El silencio es el modo de fallo peligroso, no el error.* Que no ... ok
+test_v1_ruta_fuera_de_la_lista_blanca (pruebas.test_hito7.CuatroSuperficies.test_v1_ruta_fuera_de_la_lista_blanca)
+Fuera de la raíz permitida: `ruta no accesible`, en las cuatro. ... ok
+test_v2_ruta_dentro_pero_inexistente_dice_lo_mismo (pruebas.test_hito7.CuatroSuperficies.test_v2_ruta_dentro_pero_inexistente_dice_lo_mismo)
+R4: el MISMO mensaje para «prohibido» y para «no existe». ... ok
+test_v3_nombre_de_salida_reservado (pruebas.test_hito7.CuatroSuperficies.test_v3_nombre_de_salida_reservado)
+R12: `CON.webp` sigue siendo `CON`. Denegado en las cuatro. ... ok
+test_v4_nombre_de_salida_con_flujo_alternativo (pruebas.test_hito7.CuatroSuperficies.test_v4_nombre_de_salida_con_flujo_alternativo)
+R12/W9: `v4:oculto.webp` escribe en el flujo `oculto.webp` del ... ok
+test_v5_conversion_legitima_y_el_punto_5_cubierto (pruebas.test_hito7.CuatroSuperficies.test_v5_conversion_legitima_y_el_punto_5_cubierto)
+Las cuatro convierten, y las cuatro traen el punto 5 CUBIERTO. ... 
+  test_v5_conversion_legitima_y_el_punto_5_cubierto (pruebas.test_hito7.CuatroSuperficies.test_v5_conversion_legitima_y_el_punto_5_cubierto) (superficie='cla')
+Las cuatro convierten, y las cuatro traen el punto 5 CUBIERTO. ... FAIL
+  test_v5_conversion_legitima_y_el_punto_5_cubierto (pruebas.test_hito7.CuatroSuperficies.test_v5_conversion_legitima_y_el_punto_5_cubierto) (superficie='mcp')
+Las cuatro convierten, y las cuatro traen el punto 5 CUBIERTO. ... FAIL
+  test_v5_conversion_legitima_y_el_punto_5_cubierto (pruebas.test_hito7.CuatroSuperficies.test_v5_conversion_legitima_y_el_punto_5_cubierto) (superficie='watcher')
+Las cuatro convierten, y las cuatro traen el punto 5 CUBIERTO. ... FAIL
+  test_v5_conversion_legitima_y_el_punto_5_cubierto (pruebas.test_hito7.CuatroSuperficies.test_v5_conversion_legitima_y_el_punto_5_cubierto) (superficie='api')
+Las cuatro convierten, y las cuatro traen el punto 5 CUBIERTO. ... FAIL
+test_v5_conversion_legitima_y_el_punto_5_cubierto (pruebas.test_hito7.CuatroSuperficies.test_v5_conversion_legitima_y_el_punto_5_cubierto)
+Las cuatro convierten, y las cuatro traen el punto 5 CUBIERTO. ... FAIL
+test_v6_el_stderr_del_motor_no_cruza_a_ninguna_superficie (pruebas.test_hito7.CuatroSuperficies.test_v6_el_stderr_del_motor_no_cruza_a_ninguna_superficie)
+*Nunca devolver `stderr` crudo*: el error de un motor puede dirigir ... skipped 'el motor no produjo stderr con esta entrada'
+test_convertir_rechaza_un_destino_reservado (pruebas.test_hito7.NucleoDestinoEnCurso.test_convertir_rechaza_un_destino_reservado) ... FAIL
+test_el_cerrojo_se_suelta_aunque_la_conversion_falle (pruebas.test_hito7.NucleoDestinoEnCurso.test_el_cerrojo_se_suelta_aunque_la_conversion_falle)
+Si no se soltara en el `finally`, un fallo dejaría el destino ... ok
+test_la_reserva_toma_ademas_un_candado_de_fichero (pruebas.test_hito7.NucleoDestinoEnCurso.test_la_reserva_toma_ademas_un_candado_de_fichero)
+N1: la reserva dejó de ser solo un `set` en memoria. ... ok
+test_reservar_y_soltar (pruebas.test_hito7.NucleoDestinoEnCurso.test_reservar_y_soltar) ... ok
+test_la_api_no_reimplementa_el_servicio (pruebas.test_hito7.R10Estructural.test_la_api_no_reimplementa_el_servicio)
+La API es transporte: usa el mismo `Servicio` que la capa MCP. ... ok
+test_ninguna_superficie_evalua_una_ruta (pruebas.test_hito7.R10Estructural.test_ninguna_superficie_evalua_una_ruta)
+Las piezas del predicado viven en `confinamiento.py`. Solo ahí. ... ok
+test_ninguna_superficie_importa_subprocess (pruebas.test_hito7.R10Estructural.test_ninguna_superficie_importa_subprocess)
+*No hay puntos de invocación: hay uno* (`filex/invocacion.py`). ... ok
+test_solo_el_nucleo_llama_a_nombre_seguro (pruebas.test_hito7.R10Estructural.test_solo_el_nucleo_llama_a_nombre_seguro)
+La regresión del fallo que ya se pagó. ... ok
+test_el_cerrojo_ve_al_escritor_y_open_rb_no (pruebas.test_hito7.WatcherCompletitud.test_el_cerrojo_ve_al_escritor_y_open_rb_no)
+MEDIDO (`bench/hito7-superficies.md` §3.2), y es el resultado que ... ok
+test_estabilidad_mas_cerrojo_solo_ve_el_fichero_completo (pruebas.test_hito7.WatcherCompletitud.test_estabilidad_mas_cerrojo_solo_ve_el_fichero_completo)
+La configuración por defecto. MEDIDO: **1 sola conversión** y sobre ... FAIL
+test_un_solo_sondeo_convierte_ficheros_a_medias (pruebas.test_hito7.WatcherCompletitud.test_un_solo_sondeo_convierte_ficheros_a_medias)
+El watcher ingenuo. MEDIDO: con `estables=1` y sin cerrojo convierte ... ok
+test_dos_entradas_con_el_mismo_tallo_colisionan_y_R9_lo_atrapa (pruebas.test_hito7.WatcherDuplicados.test_dos_entradas_con_el_mismo_tallo_colisionan_y_R9_lo_atrapa)
+MEDIDO en la primera prueba de humo del watcher por línea de órdenes: ... FAIL
+test_el_mismo_fichero_quieto_se_convierte_una_sola_vez (pruebas.test_hito7.WatcherDuplicados.test_el_mismo_fichero_quieto_se_convierte_una_sola_vez)
+MEDIDO: 8 sondeos \u2192 1 conversión; otros 8 \u2192 0. ... ok
+test_la_memoria_sobrevive_a_un_reinicio (pruebas.test_hito7.WatcherDuplicados.test_la_memoria_sobrevive_a_un_reinicio)
+Sin persistencia, reiniciar el watcher reconvierte la carpeta entera. ... ok
+test_reescribir_en_sitio_no_sobrescribe_en_silencio (pruebas.test_hito7.WatcherDuplicados.test_reescribir_en_sitio_no_sobrescribe_en_silencio)
+R9. MEDIDO: la reescritura produce una huella nueva —y debe—, pero ... FAIL
+test_renombrar_produce_una_salida_nueva (pruebas.test_hito7.WatcherDuplicados.test_renombrar_produce_una_salida_nueva)
+MEDIDO, y es una DECISIÓN, no un descuido: la identidad lleva la ... FAIL
+test_un_touch_sin_cambio_de_bytes_cuenta_como_fichero_nuevo (pruebas.test_hito7.WatcherDuplicados.test_un_touch_sin_cambio_de_bytes_cuenta_como_fichero_nuevo)
+El PRECIO declarado de no hacer hash del contenido. ... FAIL
+test_el_filtro_de_extension_pregunta_al_grafo (pruebas.test_hito7.WatcherNucleo.test_el_filtro_de_extension_pregunta_al_grafo)
+No hay lista de extensiones escrita a mano: se pregunta si hay ... ok
+test_el_punto_5_llega_cubierto_y_no_lo_verifica_el_watcher (pruebas.test_hito7.WatcherNucleo.test_el_punto_5_llega_cubierto_y_no_lo_verifica_el_watcher)
+El watcher no llama al contrato. No puede: el punto 5 se toma dentro ... FAIL
+test_el_trabajo_del_watcher_lo_ve_la_capa_mcp (pruebas.test_hito7.WatcherNucleo.test_el_trabajo_del_watcher_lo_ve_la_capa_mcp)
+*«Un JSON por trabajo sirve además a la CLI, al watcher y a la API: ... FAIL
+test_se_niega_a_arrancar_fuera_de_la_lista_blanca (pruebas.test_hito7.WatcherNucleo.test_se_niega_a_arrancar_fuera_de_la_lista_blanca)
+Y con el mensaje opaco: un watcher que dijera «esa carpeta no ... ok
+
+======================================================================
+FAIL: test_dos_peticiones_al_mismo_destino_no_devuelven_dos_ok (pruebas.test_hito7.ApiConcurrencia.test_dos_peticiones_al_mismo_destino_no_devuelven_dos_ok)
+**La regresión del hallazgo del hito** (`bench/hito7-superficies.md`
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\a\FileX\FileX\pruebas\test_hito7.py", line 1101, in test_dos_peticiones_al_mismo_destino_no_devuelven_dos_ok
+    self.assertEqual(len(exitos), 1,
+AssertionError: 0 != 1 : dos conversiones simultáneas al mismo destino no pueden devolver dos éxitos
+
+======================================================================
+FAIL: test_ocho_conversiones_simultaneas_no_se_pisan (pruebas.test_hito7.ApiConcurrencia.test_ocho_conversiones_simultaneas_no_se_pisan)
+MEDIDO: 8 asas en **69,6 ms**, las 8 `completed`, 8 ficheros en el
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\a\FileX\FileX\pruebas\test_hito7.py", line 1067, in test_ocho_conversiones_simultaneas_no_se_pisan
+    self.assertEqual([r["estado"] for r in resultados], ["completed"] * 8)
+AssertionError: Lists differ: ['failed', 'failed', 'failed', 'failed', 'f[32 chars]led'] != ['completed', 'completed', 'completed', 'co[56 chars]ted']
+
+First differing element 0:
+'failed'
+'completed'
+
+- ['failed', 'failed', 'failed', 'failed', 'failed', 'failed', 'failed', 'failed']
++ ['completed',
++  'completed',
++  'completed',
++  'completed',
++  'completed',
++  'completed',
++  'completed',
++  'completed']
+
+======================================================================
+FAIL: test_la_respuesta_no_lleva_contenido (pruebas.test_hito7.ApiDefensas.test_la_respuesta_no_lleva_contenido)
+*Ruta y metadatos, nunca contenido* — y «contenido» incluye base64.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\a\FileX\FileX\pruebas\test_hito7.py", line 965, in test_la_respuesta_no_lleva_contenido
+    self.assertEqual(res.get("estado"), "completed")
+AssertionError: 'failed' != 'completed'
+- failed
++ completed
+
+
+======================================================================
+FAIL: test_v5_conversion_legitima_y_el_punto_5_cubierto (pruebas.test_hito7.CuatroSuperficies.test_v5_conversion_legitima_y_el_punto_5_cubierto) (superficie='cla')
+Las cuatro convierten, y las cuatro traen el punto 5 CUBIERTO.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\a\FileX\FileX\pruebas\test_hito7.py", line 504, in test_v5_conversion_legitima_y_el_punto_5_cubierto
+    self.assertNotIn(_conf.MENSAJE_OPACO, texto)
+AssertionError: 'ruta no accesible' unexpectedly found in '{\n "entrada": "C:\\\\Users\\\\RUNNER~1\\\\AppData\\\\Local\\\\Temp\\\\filex-h7-_689a_81\\\\dentro\\\\bueno.png",\n "salida": "C:\\\\Users\\\\RUNNER~1\\\\AppData\\\\Local\\\\Temp\\\\filex-h7-_689a_81\\\\salida\\\\v5_cla\\\\bueno.webp",\n "ok": false,\n "veredicto": "fallo",\n "motivo": "ruta no accesible",\n "aviso": "",\n "camino": [],\n "saltos": [],\n "descartados": []\n}\n'
+
+======================================================================
+FAIL: test_v5_conversion_legitima_y_el_punto_5_cubierto (pruebas.test_hito7.CuatroSuperficies.test_v5_conversion_legitima_y_el_punto_5_cubierto) (superficie='mcp')
+Las cuatro convierten, y las cuatro traen el punto 5 CUBIERTO.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\a\FileX\FileX\pruebas\test_hito7.py", line 504, in test_v5_conversion_legitima_y_el_punto_5_cubierto
+    self.assertNotIn(_conf.MENSAJE_OPACO, texto)
+AssertionError: 'ruta no accesible' unexpectedly found in '{"job_id": "41a2fbfcca25", "estado": "failed", "ms": 2.0, "ok": false, "veredicto": "fallo", "camino": [], "motores": [], "ms_motor": 0, "motivo": "ruta no accesible"}'
+
+======================================================================
+FAIL: test_v5_conversion_legitima_y_el_punto_5_cubierto (pruebas.test_hito7.CuatroSuperficies.test_v5_conversion_legitima_y_el_punto_5_cubierto) (superficie='watcher')
+Las cuatro convierten, y las cuatro traen el punto 5 CUBIERTO.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\a\FileX\FileX\pruebas\test_hito7.py", line 504, in test_v5_conversion_legitima_y_el_punto_5_cubierto
+    self.assertNotIn(_conf.MENSAJE_OPACO, texto)
+AssertionError: 'ruta no accesible' unexpectedly found in '{"estado": "fallido", "motivo": "ruta no accesible", "veredicto": "fallo", "salida": "C:\\\\Users\\\\RUNNER~1\\\\AppData\\\\Local\\\\Temp\\\\filex-h7-_689a_81\\\\salida\\\\v5_watcher\\\\bueno.webp", "cobertura": {}}'
+
+======================================================================
+FAIL: test_v5_conversion_legitima_y_el_punto_5_cubierto (pruebas.test_hito7.CuatroSuperficies.test_v5_conversion_legitima_y_el_punto_5_cubierto) (superficie='api')
+Las cuatro convierten, y las cuatro traen el punto 5 CUBIERTO.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\a\FileX\FileX\pruebas\test_hito7.py", line 504, in test_v5_conversion_legitima_y_el_punto_5_cubierto
+    self.assertNotIn(_conf.MENSAJE_OPACO, texto)
+AssertionError: 'ruta no accesible' unexpectedly found in '{"job_id": "201b37060ff4", "estado": "failed", "ms": 1.8, "ok": false, "veredicto": "fallo", "camino": [], "motores": [], "ms_motor": 0, "motivo": "ruta no accesible"}'
+
+======================================================================
+FAIL: test_v5_conversion_legitima_y_el_punto_5_cubierto (pruebas.test_hito7.CuatroSuperficies.test_v5_conversion_legitima_y_el_punto_5_cubierto)
+Las cuatro convierten, y las cuatro traen el punto 5 CUBIERTO.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\a\FileX\FileX\pruebas\test_hito7.py", line 519, in test_v5_conversion_legitima_y_el_punto_5_cubierto
+    self.assertEqual(len(set(veredictos.values())), 1, veredictos)
+AssertionError: 0 != 1 : {}
+
+======================================================================
+FAIL: test_convertir_rechaza_un_destino_reservado (pruebas.test_hito7.NucleoDestinoEnCurso.test_convertir_rechaza_un_destino_reservado)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\a\FileX\FileX\pruebas\test_hito7.py", line 1152, in test_convertir_rechaza_un_destino_reservado
+    self.assertIn("escribiendo ya esa ruta", conv.motivo)
+AssertionError: 'escribiendo ya esa ruta' not found in 'ruta no accesible'
+
+======================================================================
+FAIL: test_estabilidad_mas_cerrojo_solo_ve_el_fichero_completo (pruebas.test_hito7.WatcherCompletitud.test_estabilidad_mas_cerrojo_solo_ve_el_fichero_completo)
+La configuración por defecto. MEDIDO: **1 sola conversión** y sobre
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\a\FileX\FileX\pruebas\test_hito7.py", line 647, in test_estabilidad_mas_cerrojo_solo_ve_el_fichero_completo
+    self.assertEqual([r.estado for r in hechos], ["convertido"])
+AssertionError: Lists differ: ['fallido'] != ['convertido']
+
+First differing element 0:
+'fallido'
+'convertido'
+
+- ['fallido']
++ ['convertido']
+
+======================================================================
+FAIL: test_dos_entradas_con_el_mismo_tallo_colisionan_y_R9_lo_atrapa (pruebas.test_hito7.WatcherDuplicados.test_dos_entradas_con_el_mismo_tallo_colisionan_y_R9_lo_atrapa)
+MEDIDO en la primera prueba de humo del watcher por línea de órdenes:
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\a\FileX\FileX\pruebas\test_hito7.py", line 737, in test_dos_entradas_con_el_mismo_tallo_colisionan_y_R9_lo_atrapa
+    self.assertEqual(sorted(r.estado for r in hechos),
+AssertionError: Lists differ: ['fallido', 'fallido'] != ['convertido', 'saltado']
+
+First differing element 0:
+'fallido'
+'convertido'
+
+- ['fallido', 'fallido']
++ ['convertido', 'saltado']
+
+======================================================================
+FAIL: test_reescribir_en_sitio_no_sobrescribe_en_silencio (pruebas.test_hito7.WatcherDuplicados.test_reescribir_en_sitio_no_sobrescribe_en_silencio)
+R9. MEDIDO: la reescritura produce una huella nueva —y debe—, pero
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\a\FileX\FileX\pruebas\test_hito7.py", line 707, in test_reescribir_en_sitio_no_sobrescribe_en_silencio
+    self.assertEqual(hechos[0].estado, "saltado")
+AssertionError: 'fallido' != 'saltado'
+- fallido
++ saltado
+
+
+======================================================================
+FAIL: test_renombrar_produce_una_salida_nueva (pruebas.test_hito7.WatcherDuplicados.test_renombrar_produce_una_salida_nueva)
+MEDIDO, y es una DECISIÓN, no un descuido: la identidad lleva la
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\a\FileX\FileX\pruebas\test_hito7.py", line 691, in test_renombrar_produce_una_salida_nueva
+    self.assertEqual(hechos[0].estado, "convertido")
+AssertionError: 'fallido' != 'convertido'
+- fallido
++ convertido
+
+
+======================================================================
+FAIL: test_un_touch_sin_cambio_de_bytes_cuenta_como_fichero_nuevo (pruebas.test_hito7.WatcherDuplicados.test_un_touch_sin_cambio_de_bytes_cuenta_como_fichero_nuevo)
+El PRECIO declarado de no hacer hash del contenido.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\a\FileX\FileX\pruebas\test_hito7.py", line 724, in test_un_touch_sin_cambio_de_bytes_cuenta_como_fichero_nuevo
+    self.assertEqual(hechos[0].estado, "saltado")   # R9 lo detiene igual
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'fallido' != 'saltado'
+- fallido
++ saltado
+
+
+======================================================================
+FAIL: test_el_punto_5_llega_cubierto_y_no_lo_verifica_el_watcher (pruebas.test_hito7.WatcherNucleo.test_el_punto_5_llega_cubierto_y_no_lo_verifica_el_watcher)
+El watcher no llama al contrato. No puede: el punto 5 se toma dentro
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\a\FileX\FileX\pruebas\test_hito7.py", line 797, in test_el_punto_5_llega_cubierto_y_no_lo_verifica_el_watcher
+    self.assertEqual(r.estado, "convertido")
+AssertionError: 'fallido' != 'convertido'
+- fallido
++ convertido
+
+
+======================================================================
+FAIL: test_el_trabajo_del_watcher_lo_ve_la_capa_mcp (pruebas.test_hito7.WatcherNucleo.test_el_trabajo_del_watcher_lo_ve_la_capa_mcp)
+*«Un JSON por trabajo sirve además a la CLI, al watcher y a la API:
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\a\FileX\FileX\pruebas\test_hito7.py", line 818, in test_el_trabajo_del_watcher_lo_ve_la_capa_mcp
+    self.assertEqual(d.get("estado"), "completed")
+AssertionError: 'failed' != 'completed'
+- failed
++ completed
+
+
+----------------------------------------------------------------------
+Ran 42 tests in 6.557s
+
+FAILED (failures=16, skipped=1)

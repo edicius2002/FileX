@@ -1,0 +1,77 @@
+test_el_nombre_corto_8_3_no_da_un_segundo_dueno (pruebas.test_cerrojo.AliasDeRuta.test_el_nombre_corto_8_3_no_da_un_segundo_dueno) ... ok
+test_con_el_cerrojo_de_maquina_solo_uno_gana (pruebas.test_cerrojo.CarreraEntreProcesos.test_con_el_cerrojo_de_maquina_solo_uno_gana)
+El mismo caso, con el defecto. **El ganador no es determinista; el ... skipped 'no hay ImageMagick (`magick`) o el corpus son punteros de Git LFS (`git lfs checkout`) -- ningun motor lee png/jpg'
+test_sin_el_cerrojo_de_maquina_los_dos_procesos_devuelven_ok (pruebas.test_cerrojo.CarreraEntreProcesos.test_sin_el_cerrojo_de_maquina_los_dos_procesos_devuelven_ok)
+**La prueba que falla sin el arreglo.** Es el estado del hito 7: ... skipped 'no hay ImageMagick (`magick`) o el corpus son punteros de Git LFS (`git lfs checkout`) -- ningun motor lee png/jpg'
+test_el_motivo_no_habla_de_otro_proceso (pruebas.test_cerrojo.DestinoQueEsDirectorio.test_el_motivo_no_habla_de_otro_proceso)
+**La prueba que se pone roja sin el arreglo**: antes decía ... skipped 'no hay ImageMagick (`magick`) o el corpus son punteros de Git LFS (`git lfs checkout`) -- ningun motor lee png/jpg'
+test_la_deteccion_de_ocupante_no_ve_el_directorio (pruebas.test_cerrojo.DestinoQueEsDirectorio.test_la_deteccion_de_ocupante_no_ve_el_directorio)
+Por qué hace falta una comprobación aparte y no vale la de N12: ... ok
+test_mover_a_destino_distingue_las_dos_negativas (pruebas.test_cerrojo.DestinoQueEsDirectorio.test_mover_a_destino_distingue_las_dos_negativas)
+Las dos excepciones son distintas **y las dos siguen siendo ... ok
+test_no_mete_la_salida_dentro_del_directorio (pruebas.test_cerrojo.DestinoQueEsDirectorio.test_no_mete_la_salida_dentro_del_directorio)
+`shutil.move` metía el fichero DENTRO. Nadie pidió esa ruta. ... ok
+test_se_rechaza_antes_de_convertir (pruebas.test_cerrojo.DestinoQueEsDirectorio.test_se_rechaza_antes_de_convertir)
+Y por el mismo motivo que la detección temprana del ocupante: si va ... ok
+test_el_candado_se_recupera_solo_al_morir_su_dueno (pruebas.test_cerrojo.DuenoMuerto.test_el_candado_se_recupera_solo_al_morir_su_dueno)
+N30: `_matar` (`taskkill /F`) devuelve el control en cuanto Windows ... ok
+C:\hostedtoolcache\windows\Python\3.11.9\x64\Lib\unittest\suite.py:107: ResourceWarning: unclosed file <_io.TextIOWrapper name=4 encoding='utf-8'>
+  for index, test in enumerate(self):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\hostedtoolcache\windows\Python\3.11.9\x64\Lib\unittest\suite.py:107: ResourceWarning: unclosed file <_io.TextIOWrapper name=5 encoding='utf-8'>
+  for index, test in enumerate(self):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+test_el_fichero_de_candado_no_se_queda_de_basura (pruebas.test_cerrojo.DuenoMuerto.test_el_fichero_de_candado_no_se_queda_de_basura) ... ok
+test_a_un_directorio_no_mete_dentro (pruebas.test_cerrojo.RecogerNoPisa.test_a_un_directorio_no_mete_dentro)
+La otra mitad de N20, a este nivel: `shutil.move` metía la salida ... ok
+test_el_caso_normal_sigue_funcionando (pruebas.test_cerrojo.RecogerNoPisa.test_el_caso_normal_sigue_funcionando)
+Un arreglo que rompe el 99 % para cubrir el 1 % no es un arreglo: ... ok
+test_no_pisa_el_fichero_de_un_tercero (pruebas.test_cerrojo.RecogerNoPisa.test_no_pisa_el_fichero_de_un_tercero)
+**La prueba que se pone roja sin el arreglo.** Con `shutil.move` la ... ok
+C:\hostedtoolcache\windows\Python\3.11.9\x64\Lib\unittest\suite.py:84: ResourceWarning: unclosed file <_io.TextIOWrapper name=4 encoding='utf-8'>
+  return self.run(*args, **kwds)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\hostedtoolcache\windows\Python\3.11.9\x64\Lib\unittest\suite.py:84: ResourceWarning: unclosed file <_io.TextIOWrapper name=5 encoding='utf-8'>
+  return self.run(*args, **kwds)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+test_aun_sin_deteccion_el_move_seguro_protege_al_tercero (pruebas.test_cerrojo.TerceroQueNoCoopera.test_aun_sin_deteccion_el_move_seguro_protege_al_tercero)
+N12: las dos mitades ya no son independientes, y esto lo mide. ... D:\a\FileX\FileX\pruebas\test_cerrojo.py:438: ResourceWarning: unclosed file <_io.BufferedReader name='C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\filex-n1-t1u_95zb\\sal\\s.webp'>
+  open(self.salida, "rb").read(14))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+D:\a\FileX\FileX\pruebas\test_cerrojo.py:488: ResourceWarning: unclosed file <_io.BufferedReader name='C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\filex-n1-t1u_95zb\\sal\\s.webp'>
+  open(self.salida, "rb").read(14)), antes)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_con_deteccion_filex_se_niega_y_no_lo_toca (pruebas.test_cerrojo.TerceroQueNoCoopera.test_con_deteccion_filex_se_niega_y_no_lo_toca) ... D:\a\FileX\FileX\pruebas\test_cerrojo.py:438: ResourceWarning: unclosed file <_io.BufferedReader name='C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\filex-n1-s8urinya\\sal\\s.webp'>
+  open(self.salida, "rb").read(14))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+FAIL
+test_sin_deteccion_filex_pisa_el_fichero_de_un_tercero (pruebas.test_cerrojo.TerceroQueNoCoopera.test_sin_deteccion_filex_pisa_el_fichero_de_un_tercero)
+El estado del hito 7, y **es el caso peor**: `shutil.move` sobre un ... skipped 'no hay ImageMagick (`magick`) o el corpus son punteros de Git LFS (`git lfs checkout`) -- ningun motor lee png/jpg'
+test_el_destino_recien_escrito_no_se_detecta_como_ocupado (pruebas.test_cerrojo.UnSoloProceso.test_el_destino_recien_escrito_no_se_detecta_como_ocupado)
+El falso positivo que habría roto todo: FileX acaba de cerrar ese ... skipped 'no hay ImageMagick (`magick`) o el corpus son punteros de Git LFS (`git lfs checkout`) -- ningun motor lee png/jpg'
+test_el_modo_por_defecto_es_el_seguro (pruebas.test_cerrojo.UnSoloProceso.test_el_modo_por_defecto_es_el_seguro)
+Una defensa que hay que encender no es una defensa. ... ok
+test_la_detección_no_dispara_con_un_destino_que_no_existe (pruebas.test_cerrojo.UnSoloProceso.test_la_detección_no_dispara_con_un_destino_que_no_existe) ... ok
+test_tres_conversiones_seguidas_al_mismo_destino (pruebas.test_cerrojo.UnSoloProceso.test_tres_conversiones_seguidas_al_mismo_destino) ... skipped 'no hay ImageMagick (`magick`) o el corpus son punteros de Git LFS (`git lfs checkout`) -- ningun motor lee png/jpg'
+test_con_os_replace_filex_se_niega_y_no_lo_toca (pruebas.test_cerrojo.VentanaAntesDelMove.test_con_os_replace_filex_se_niega_y_no_lo_toca)
+`os.replace` funde la detección y la acción en una sola llamada del ... skipped 'no hay ImageMagick (`magick`) o el corpus son punteros de Git LFS (`git lfs checkout`) -- ningun motor lee png/jpg'
+test_con_shutil_move_el_tercero_de_la_ventana_es_atropellado (pruebas.test_cerrojo.VentanaAntesDelMove.test_con_shutil_move_el_tercero_de_la_ventana_es_atropellado)
+El estado anterior a N12. **12 de 12 celdas** del arnés acabaron ... skipped 'no hay ImageMagick (`magick`) o el corpus son punteros de Git LFS (`git lfs checkout`) -- ningun motor lee png/jpg'
+test_cruzar_volumen_no_se_confunde_con_ocupado (pruebas.test_cerrojo.VentanaAntesDelMove.test_cruzar_volumen_no_se_confunde_con_ocupado)
+Trampa 43 en su versión de N12: «no se puede» y «está en otro disco» ... ok
+test_el_move_seguro_es_el_defecto (pruebas.test_cerrojo.VentanaAntesDelMove.test_el_move_seguro_es_el_defecto)
+Una defensa que hay que encender no es una defensa. ... ok
+
+======================================================================
+FAIL: test_con_deteccion_filex_se_niega_y_no_lo_toca (pruebas.test_cerrojo.TerceroQueNoCoopera.test_con_deteccion_filex_se_niega_y_no_lo_toca)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\a\FileX\FileX\pruebas\test_cerrojo.py", line 472, in test_con_deteccion_filex_se_niega_y_no_lo_toca
+    self.assertIn("otro proceso tiene abierta", fila["motivo"])
+AssertionError: 'otro proceso tiene abierta' not found in 'ruta no accesible'
+
+----------------------------------------------------------------------
+Ran 24 tests in 2.517s
+
+FAILED (failures=1, skipped=8)

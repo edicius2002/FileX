@@ -1,0 +1,17 @@
+test_el_fallo_de_verdad_sigue_saliendo_fallo (pruebas.test_a7_ciego.PuntoCiegoDeA7.test_el_fallo_de_verdad_sigue_saliendo_fallo)
+Declarar un punto ciego no puede apagar la regla: a 96 kb/s el canal ... skipped 'hace falta ffmpeg y el corpus de audio REAL (no un puntero de Git LFS sin `git lfs checkout` -- trampa 34)'
+test_la_tasa_se_deduce_cuando_la_sonda_no_la_da (pruebas.test_a7_ciego.PuntoCiegoDeA7.test_la_tasa_se_deduce_cuando_la_sonda_no_la_da)
+En un `.opus` la sonda devuelve `bitrate_bps = None` en la pista — ... skipped 'hace falta ffmpeg y el corpus de audio REAL (no un puntero de Git LFS sin `git lfs checkout` -- trampa 34)'
+test_mp3_y_aac_a_la_misma_tasa_baja_NO_son_ciegos (pruebas.test_a7_ciego.PuntoCiegoDeA7.test_mp3_y_aac_a_la_misma_tasa_baja_NO_son_ciegos)
+Lo que refuta el nombre viejo: a 32 kb/s los otros dos atrapan ... skipped 'hace falta ffmpeg y el corpus de audio REAL (no un puntero de Git LFS sin `git lfs checkout` -- trampa 34)'
+test_opus_estereo_a_96k_si_se_declara_aprobada (pruebas.test_a7_ciego.PuntoCiegoDeA7.test_opus_estereo_a_96k_si_se_declara_aprobada)
+Y el otro lado: a 96 kb/s Opus **sí** deja el canal mudo, A7 lo ve ... skipped 'hace falta ffmpeg y el corpus de audio REAL (no un puntero de Git LFS sin `git lfs checkout` -- trampa 34)'
+test_opus_estereo_a_tasa_baja_no_se_declara_aprobada (pruebas.test_a7_ciego.PuntoCiegoDeA7.test_opus_estereo_a_tasa_baja_no_se_declara_aprobada)
+**La prueba que se pone roja sin el arreglo**: antes decía ... skipped 'hace falta ffmpeg y el corpus de audio REAL (no un puntero de Git LFS sin `git lfs checkout` -- trampa 34)'
+test_un_opus_MONO_no_es_punto_ciego (pruebas.test_a7_ciego.PuntoCiegoDeA7.test_un_opus_MONO_no_es_punto_ciego)
+Con un solo canal no hay de dónde copiar: el colapso a mono no ... skipped 'hace falta ffmpeg y el corpus de audio REAL (no un puntero de Git LFS sin `git lfs checkout` -- trampa 34)'
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.008s
+
+OK (skipped=6)

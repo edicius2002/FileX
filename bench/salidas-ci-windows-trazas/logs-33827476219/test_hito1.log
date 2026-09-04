@@ -1,0 +1,89 @@
+test_R12_nombres_de_salida (pruebas.test_hito1.Confinar.test_R12_nombres_de_salida) ... ok
+test_R17_una_ruta_absurdamente_larga_se_rechaza_SIN_tocar_el_disco (pruebas.test_hito1.Confinar.test_R17_una_ruta_absurdamente_larga_se_rechaza_SIN_tocar_el_disco) ... ok
+test_R2_el_vecino_con_el_mismo_prefijo_NO_entra (pruebas.test_hito1.Confinar.test_R2_el_vecino_con_el_mismo_prefijo_NO_entra) ... ok
+test_R4_prohibido_y_no_existe_dan_EL_MISMO_mensaje (pruebas.test_hito1.Confinar.test_R4_prohibido_y_no_existe_dan_EL_MISMO_mensaje) ... ok
+test_R6_sin_raices_no_se_arranca (pruebas.test_hito1.Confinar.test_R6_sin_raices_no_se_arranca) ... ok
+test_lo_que_esta_dentro_si_entra (pruebas.test_hito1.Confinar.test_lo_que_esta_dentro_si_entra) ... FAIL
+test_nadie_escribe_el_destino (pruebas.test_hito1.CuandoNoHayCamino.test_nadie_escribe_el_destino) ... ok
+test_nadie_lee_el_origen (pruebas.test_hito1.CuandoNoHayCamino.test_nadie_lee_el_origen) ... ok
+test_se_escribe_pero_desde_un_formato_inalcanzable (pruebas.test_hito1.CuandoNoHayCamino.test_se_escribe_pero_desde_un_formato_inalcanzable) ... ok
+test_pero_dos_codificaciones_con_perdida_SI_se_penalizan (pruebas.test_hito1.ElegirBien.test_pero_dos_codificaciones_con_perdida_SI_se_penalizan) ... ok
+test_prefiere_el_camino_que_conserva_el_texto_aunque_sea_mas_caro (pruebas.test_hito1.ElegirBien.test_prefiere_el_camino_que_conserva_el_texto_aunque_sea_mas_caro) ... ok
+test_si_el_destino_NO_admite_texto_rasterizar_deja_de_ser_caro (pruebas.test_hito1.ElegirBien.test_si_el_destino_NO_admite_texto_rasterizar_deja_de_ser_caro) ... ok
+test_si_el_unico_camino_rasteriza_no_se_calla (pruebas.test_hito1.ElegirBien.test_si_el_unico_camino_rasteriza_no_se_calla) ... ok
+test_una_arista_sondeada_y_muerta_no_se_usa (pruebas.test_hito1.ElegirBien.test_una_arista_sondeada_y_muerta_no_se_usa) ... ok
+test_una_transcodificacion_NO_es_una_recodificacion (pruebas.test_hito1.ElegirBien.test_una_transcodificacion_NO_es_una_recodificacion)
+Regresión: la penalización por pérdida iba en la arista y estaba mal. ... ok
+test_y_dice_por_que_descarto_el_otro (pruebas.test_hito1.ElegirBien.test_y_dice_por_que_descarto_el_otro) ... ok
+test_alias (pruebas.test_hito1.Formatos.test_alias) ... ok
+test_jpeg_no_tiene_alfa_ni_mas_de_8_bits (pruebas.test_hito1.Formatos.test_jpeg_no_tiene_alfa_ni_mas_de_8_bits) ... ok
+test_los_que_admiten_texto_estan_marcados (pruebas.test_hito1.Formatos.test_los_que_admiten_texto_estan_marcados) ... ok
+test_png_conserva_16_bits (pruebas.test_hito1.Formatos.test_png_conserva_16_bits) ... ok
+test_conversion_real_con_contrato (pruebas.test_hito1.Integracion.test_conversion_real_con_contrato) ... skipped 'falta el corpus REAL (¿punteros de Git LFS? `git lfs checkout`)'
+test_ruta_inexistente_da_el_mensaje_opaco (pruebas.test_hito1.Integracion.test_ruta_inexistente_da_el_mensaje_opaco) ... ok
+test_se_sondean_los_motores_en_ejecucion (pruebas.test_hito1.Integracion.test_se_sondean_los_motores_en_ejecucion) ... ok
+test_un_motor_ausente_no_tumba_nada (pruebas.test_hito1.Integracion.test_un_motor_ausente_no_tumba_nada) ... ok
+test_el_motivo_no_lleva_stderr (pruebas.test_hito1.Invocar.test_el_motivo_no_lleva_stderr) ... ok
+test_hay_timeout_y_mata (pruebas.test_hito1.Invocar.test_hay_timeout_y_mata) ... ok
+test_stdin_esta_cerrado (pruebas.test_hito1.Invocar.test_stdin_esta_cerrado) ... ok
+test_un_binario_que_no_existe_no_revienta_se_informa (pruebas.test_hito1.Invocar.test_un_binario_que_no_existe_no_revienta_se_informa) ... ok
+test_una_cadena_no_es_argv (pruebas.test_hito1.Invocar.test_una_cadena_no_es_argv) ... ok
+test_ecualizado_el_prohibido_deja_de_ser_instantaneo (pruebas.test_hito1.OraculoTemporalN9.test_ecualizado_el_prohibido_deja_de_ser_instantaneo) ... ok
+test_ecualizado_las_tres_vias_convergen_al_mismo_suelo (pruebas.test_hito1.OraculoTemporalN9.test_ecualizado_las_tres_vias_convergen_al_mismo_suelo) ... 
+  test_ecualizado_las_tres_vias_convergen_al_mismo_suelo (pruebas.test_hito1.OraculoTemporalN9.test_ecualizado_las_tres_vias_convergen_al_mismo_suelo) (ruta='no_existe.txt') ... ERROR
+  test_ecualizado_las_tres_vias_convergen_al_mismo_suelo (pruebas.test_hito1.OraculoTemporalN9.test_ecualizado_las_tres_vias_convergen_al_mismo_suelo) (ruta='x.txt') ... ERROR
+test_por_defecto_NO_ecualiza (pruebas.test_hito1.OraculoTemporalN9.test_por_defecto_NO_ecualiza) ... ok
+test_el_censo_sobrevive_al_borrado (pruebas.test_hito1.PuntoCinco.test_el_censo_sobrevive_al_borrado) ... D:\a\FileX\FileX\pruebas\test_hito1.py:334: ResourceWarning: unclosed file <_io.BufferedWriter name='C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\filex-6vu7gw10\\a.png'>
+  open(t.destino("a.png"), "wb").write(b"x")
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_el_censo_ve_lo_que_nadie_pidio (pruebas.test_hito1.PuntoCinco.test_el_censo_ve_lo_que_nadie_pidio) ... D:\a\FileX\FileX\pruebas\test_hito1.py:317: ResourceWarning: unclosed file <_io.BufferedWriter name='C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\filex-yrofrw6l\\salida.webp'>
+  open(t.destino("salida.webp"), "wb").write(b"x")
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+D:\a\FileX\FileX\pruebas\test_hito1.py:318: ResourceWarning: unclosed file <_io.BufferedWriter name='C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\filex-yrofrw6l\\chunk-stream0-00001.m4s'>
+  open(t.destino("chunk-stream0-00001.m4s"), "wb").write(b"y" * 100)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_el_desechable_se_borra_entero (pruebas.test_hito1.PuntoCinco.test_el_desechable_se_borra_entero) ... D:\a\FileX\FileX\pruebas\test_hito1.py:326: ResourceWarning: unclosed file <_io.BufferedWriter name='C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\filex-seodskqo\\basura.bin'>
+  open(t.destino("basura.bin"), "wb").write(b"x")
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+
+======================================================================
+ERROR: test_ecualizado_las_tres_vias_convergen_al_mismo_suelo (pruebas.test_hito1.OraculoTemporalN9.test_ecualizado_las_tres_vias_convergen_al_mismo_suelo) (ruta='no_existe.txt')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\a\FileX\FileX\pruebas\test_hito1.py", line 270, in test_ecualizado_las_tres_vias_convergen_al_mismo_suelo
+    c.resolver(ruta)
+  File "D:\a\FileX\FileX\filex\confinamiento.py", line 219, in resolver
+    return self._resolver_sin_ecualizar(ruta, escritura=escritura)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\a\FileX\FileX\filex\confinamiento.py", line 242, in _resolver_sin_ecualizar
+    raise Denegado()
+filex.confinamiento.Denegado: ruta no accesible
+
+======================================================================
+ERROR: test_ecualizado_las_tres_vias_convergen_al_mismo_suelo (pruebas.test_hito1.OraculoTemporalN9.test_ecualizado_las_tres_vias_convergen_al_mismo_suelo) (ruta='x.txt')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\a\FileX\FileX\pruebas\test_hito1.py", line 270, in test_ecualizado_las_tres_vias_convergen_al_mismo_suelo
+    c.resolver(ruta)
+  File "D:\a\FileX\FileX\filex\confinamiento.py", line 219, in resolver
+    return self._resolver_sin_ecualizar(ruta, escritura=escritura)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\a\FileX\FileX\filex\confinamiento.py", line 242, in _resolver_sin_ecualizar
+    raise Denegado()
+filex.confinamiento.Denegado: ruta no accesible
+
+======================================================================
+FAIL: test_lo_que_esta_dentro_si_entra (pruebas.test_hito1.Confinar.test_lo_que_esta_dentro_si_entra)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\a\FileX\FileX\pruebas\test_hito1.py", line 181, in test_lo_que_esta_dentro_si_entra
+    self.assertTrue(self.c.puede_leer(f))
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 35 tests in 1.707s
+
+FAILED (failures=1, errors=2, skipped=1)

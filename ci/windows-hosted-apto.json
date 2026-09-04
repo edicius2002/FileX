@@ -1,8 +1,8 @@
 {
-  "_": "MEDIDO EN EL RUNNER (windows-latest, Python 3.11.9), no en la maquina del proyecto ni deducido de la lista de Linux -- trampa 104. Congelado a mano por el maestro tras revisar la ejecucion real (ver `medido_en`); `ci/sonda_windows_hosted.py` solo captura el RECUENTO de fallos por modulo, no la traza -- los cinco `no_aptos.falla` con motivo 'PENDIENTE' no tienen causa verificada todavia, y se declaran asi en vez de inventarla. `test_hito7` es la excepcion: su motivo SI esta confirmado, leyendo el paso 'El paquete importa y la CLI arranca' del mismo run (docker responde, ninguna imagen del proyecto presente) -- mismo mecanismo que C42 en Linux.",
+  "_": "MEDIDO EN EL RUNNER (windows-latest, Python 3.11.9), no en la maquina del proyecto ni deducido de la lista de Linux -- trampa 104. Congelado a mano tras revisar la ejecucion real. `ci/sonda_windows_hosted.py` captura ya la TRAZA de cada fallo (nombre del test y traceback) y vuelca la salida integra de cada modulo, asi que las causas de abajo estan VERIFICADAS contra su traceback, no supuestas del nombre del modulo: un recuento no separa causas (trampa 25 en el nivel del arnes). Cada fila declara en que ejecucion se midio. Detalle y controles en `bench/ci-windows-trazas.md`.",
   "interprete": "3.11.9",
   "plataforma": "windows (windows-latest)",
-  "medido_en": "runner de GitHub Actions, ejecucion 33788937291",
+  "medido_en": "runner de GitHub Actions, ejecucion 33827476219 (03/09/2026). Lista anterior: 33788937291, que daba los mismos recuentos sin causa; las trazas que los clasifican salen de 33826410849, y la sonda de causa con sus controles, de 33826410849 + 33827476219",
   "tope_por_modulo_s": 90,
   "aptos": [
     "test_a7_ciego",
@@ -17,24 +17,43 @@
     "test_hito2",
     "test_hito5",
     "test_hito6",
-    "test_sondeo"
+    "test_sondeo",
+    "test_watcher_n"
   ],
   "no_aptos": {
     "cuelga": {},
     "falla": {
-      "test_cerrojo": "9 de 24 fallos -- PENDIENTE de traza, motivo no verificado",
-      "test_hito1": "4 de 35 fallos -- PENDIENTE de traza, motivo no verificado",
-      "test_hito4": "3 de 31 fallos -- PENDIENTE de traza, motivo no verificado",
-      "test_hito7": "16 de 42 fallos -- CONFIRMADO: el demonio Docker responde ('docker: presente') pero no esta ninguna imagen del proyecto (filex-c13, ghcr.io/c4illin/convertx:latest); mismo mecanismo que C42 en ubuntu-latest",
-      "test_watcher_n": "4 de 19 fallos -- PENDIENTE de traza; sorprendente porque windows-latest SI tiene NTFS real, que era la ventaja esperada de este runner sobre Linux"
+      "test_cerrojo": "1 de 24 fallos (eran 9) -- VERIFICADO en 33827476219: `TerceroQueNoCoopera.test_con_deteccion_filex_se_niega_y_no_lo_toca` recibe 'ruta no accesible' donde espera 'otro proceso tiene abierta'. Es el FALLO DE PRODUCTO F1 (ver `fallos_de_producto`), no se salta. Los otros 8 eran punteros de Git LFS y ya llevan guarda honesta por cabecera",
+      "test_hito1": "3 de 35 fallos (eran 4) -- VERIFICADO en 33827476219: los tres mueren en `filex/confinamiento.py:242`, el segundo `_dentro(resuelta, raices)`. Es el FALLO DE PRODUCTO F1, no se salta. El cuarto (`Integracion.test_conversion_real_con_contrato`) era un puntero de LFS que pasaba un guarda de `os.path.isfile` (trampa 107) y ya se salta por cabecera",
+      "test_hito4": "3 de 31 fallos -- PENDIENTE de clasificar A PROPOSITO: la rama sin fusionar `edicius2002/filex-suelo-y-mcp` modifica `pruebas/test_hito4.py`, y clasificar ahora seria medir un fichero que esta a punto de cambiar. Su traza esta guardada en `bench/salidas-ci-windows-trazas/logs-33827476219/test_hito4.log` para quien lo retome",
+      "test_hito7": "16 de 42 fallos -- VERIFICADO en 33826410849 y 33827476219, y REFUTA el motivo anterior: NO es Docker. Las 42 pruebas de este modulo no mencionan a docker ni una vez en su salida integra (`grep -i docker`, 0 lineas), y las 16 que fallan estan en clases que construyen su FileX con `fx_de([mkdtemp()])`: es el FALLO DE PRODUCTO F1. El motivo viejo ('el demonio responde pero no esta ninguna imagen') describe bien el ENTORNO --confirmado: `docker images` devuelve 0 imagenes-- y lo atribuia al modulo equivocado"
+    }
+  },
+  "fallos_de_producto": {
+    "F1": {
+      "que": "`Confinamiento` no resuelve sus RAICES, asi que una raiz cuya forma absoluta difiere de su forma resuelta --el nombre corto 8.3, aqui-- deniega todo lo que hay dentro, se pase la ruta como se pase.",
+      "medido_en": "33827476219, `c1_nombre_corto` de `bench/salidas-ci-windows-trazas/sonda-causa-windows-33827476219.json`",
+      "celdas": {
+        "raiz 8.3 + ruta 8.3": "DENEGADO -- pasa el predicado lexico y cae en el `_dentro` de la ruta RESUELTA (confinamiento.py:242)",
+        "raiz resuelta + ruta 8.3": "DENEGADO -- cae antes, en el predicado lexico de R1, que compara la ruta TAL CUAL",
+        "raiz resuelta + ruta resuelta": "PERMITIDO -- el control que fija el mecanismo",
+        "control positivo, raiz larga del repo": "PERMITIDO"
+      },
+      "donde": "filex/confinamiento.py, `Confinamiento._preparar` (normcase+normpath+abspath, sin realpath) frente a `_resolver_sin_ecualizar` (valida la RESUELTA, R7)",
+      "de_quien": "`filex/confinamiento.py` lo tienen dos ramas sin fusionar; worker13 NO lo toca. El arreglo no es de una linea: resolver las raices a secas rompe el predicado lexico de R1, que corre ANTES del realpath -- hay que guardar las DOS formas. PENDIENTE de medir",
+      "seguridad": "falla CERRANDO: deniega de mas, nunca de menos. No es un agujero; es un 'no' donde tocaba un 'si'",
+      "por_que_no_se_ve_en_la_maquina_del_proyecto": "alli `%TEMP%` es `C:\\Users\\krato\\AppData\\Local\\Temp`, largo; en `windows-latest` es `C:\\Users\\RUNNER~1\\AppData\\Local\\Temp`, con `USERNAME=runneradmin`"
     }
   },
   "detalle_del_run": {
-    "imagemagick": "presente, 7.1.2-25 (preinstalado en la imagen de windows-latest)",
+    "imagemagick": "presente, C:\\Program Files\\ImageMagick-7.1.2-Q16-HDRI\\magick.EXE",
     "ghostscript": "AUSENTE -- falta gswin64c",
-    "ffmpeg": "AUSENTE",
-    "docker": "comando presente, demonio responde, 0 imagenes del proyecto",
+    "ffmpeg": "AUSENTE (tambien ffprobe)",
+    "tesseract": "AUSENTE",
+    "docker": "comando presente, demonio responde, `docker images` devuelve 0 imagenes -- los tres motores en contenedor salen ausentes con el motivo correcto",
     "nvidia-smi": "AUSENTE",
+    "corpus": "PUNTEROS de Git LFS: tipico.png 130 B, tipico.jpg 130 B, trivial.wav 131 B, habla_jfk.flac 132 B, todos con cabecera `version https://git-lfs.github.com/spec/`. `corpus/datos/patologico_bom.csv` (88 B) NO esta en LFS y es real",
+    "tempdir": "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp -- NOMBRE CORTO 8.3; resuelve a C:\\Users\\runneradmin\\...",
     "nota": "test_gpu_lock y test_hito2 dan APTO sin tarjeta real: prueban el mecanismo de exclusion (mutex Global\\), no el uso de la GPU en si -- las partes que si necesitan hardware se saltan via skipUnless (19 saltos en test_hito2)"
   }
 }

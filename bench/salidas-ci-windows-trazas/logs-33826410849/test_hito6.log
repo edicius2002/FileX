@@ -1,0 +1,98 @@
+test_un_trabajador_de_verdad_lee_el_folio (pruebas.test_hito6.ConLaTarjeta.test_un_trabajador_de_verdad_lee_el_folio) ... skipped 'necesita la tarjeta: FILEX_PRUEBAS_SIDECAR=1'
+test_el_mayor_va_primero (pruebas.test_hito6.ElOrdenDelLote.test_el_mayor_va_primero)
+**Refutación medida**, no preferencia: el ascendente que proponía ... ok
+test_no_pierde_ni_duplica_paginas (pruebas.test_hito6.ElOrdenDelLote.test_no_pierde_ni_duplica_paginas) ... ok
+test_bajar_el_tamano_maximo_puede_cambiar_el_veredicto (pruebas.test_hito6.ElPresupuesto.test_bajar_el_tamano_maximo_puede_cambiar_el_veredicto)
+La demostración de por qué el criterio necesita el tamaño dentro: la ... ok
+test_easyocr_a_888_mpx_no_cabe_en_la_tarjeta (pruebas.test_hito6.ElPresupuesto.test_easyocr_a_888_mpx_no_cabe_en_la_tarjeta)
+La fila que cierra la pregunta: **un** modelo, sin NVENC, sin segundo ... ok
+test_el_perfil_de_large_v3_no_cumple (pruebas.test_hito6.ElPresupuesto.test_el_perfil_de_large_v3_no_cumple) ... ok
+test_el_perfil_declara_que_la_suma_es_una_hipotesis (pruebas.test_hito6.ElPresupuesto.test_el_perfil_declara_que_la_suma_es_una_hipotesis)
+Mientras el total sea una suma de medidas tomadas por separado, quien ... ok
+test_el_perfil_que_cumple_reproduce_los_7571 (pruebas.test_hito6.ElPresupuesto.test_el_perfil_que_cumple_reproduce_los_7571)
+N27: el OCR del perfil sube de 1 526 a 1 533 (el tope corregido), así ... ok
+test_la_suma_sobreestima_mas_para_large_v3_que_para_distil (pruebas.test_hito6.ElPresupuesto.test_la_suma_sobreestima_mas_para_large_v3_que_para_distil)
+El numero que justifica la fila N26: el sesgo de la suma es DEL ... ok
+test_los_tres_perfiles_medidos_de_hito6_sidecar_V7 (pruebas.test_hito6.ElPresupuesto.test_los_tres_perfiles_medidos_de_hito6_sidecar_V7)
+`bench/hito6-sidecar.md` SV7 midio los tres perfiles con los ... ok
+test_medido_mib_ausente_se_comporta_igual_que_antes (pruebas.test_hito6.ElPresupuesto.test_medido_mib_ausente_se_comporta_igual_que_antes)
+Sin `medido_mib`, `total_mib` es la suma -- el default no cambia. ... ok
+test_arranca_pese_a_4000_lineas_de_stderr (pruebas.test_hito6.ElProtocoloDelTrabajador.test_arranca_pese_a_4000_lineas_de_stderr)
+Sin el hilo que drena el `stderr`, esto se queda colgado hasta el ... ok
+test_el_desechable_se_crea_y_se_borra (pruebas.test_hito6.ElProtocoloDelTrabajador.test_el_desechable_se_crea_y_se_borra)
+R18/R21: directorio de trabajo desechable por trabajador, censado y ... ok
+test_el_stderr_queda_para_diagnostico_pero_no_en_el_resultado (pruebas.test_hito6.ElProtocoloDelTrabajador.test_el_stderr_queda_para_diagnostico_pero_no_en_el_resultado) ... ok
+test_reciclar_cambia_de_proceso (pruebas.test_hito6.ElProtocoloDelTrabajador.test_reciclar_cambia_de_proceso) ... ok
+test_una_linea_ajena_al_protocolo_no_mata_al_trabajador (pruebas.test_hito6.ElProtocoloDelTrabajador.test_una_linea_ajena_al_protocolo_no_mata_al_trabajador)
+El `[INFO]` que el motor imprime en `stdout` se salta, y **se ... ok
+test_cada_resultado_declara_dispositivo_y_via_de_entrada (pruebas.test_hito6.ElRegistro.test_cada_resultado_declara_dispositivo_y_via_de_entrada)
+Trampas 11 y 30: las dos variables que cambian la salida y que el ... ok
+test_cerrar_se_lleva_a_todos (pruebas.test_hito6.ElRegistro.test_cerrar_se_lleva_a_todos) ... ok
+test_el_dispositivo_va_en_la_clave_del_registro (pruebas.test_hito6.ElRegistro.test_el_dispositivo_va_en_la_clave_del_registro)
+CPU y GPU no dan la misma salida (5 de 21 celdas): son dos ... ok
+test_el_lote_procesa_en_orden_descendente (pruebas.test_hito6.ElRegistro.test_el_lote_procesa_en_orden_descendente) ... ok
+test_el_reciclado_queda_anotado (pruebas.test_hito6.ElRegistro.test_el_reciclado_queda_anotado)
+Un campo honesto al lado de una nota falsa se lee como una respuesta ... ok
+test_en_cpu_no_se_presupuesta_vram (pruebas.test_hito6.ElRegistro.test_en_cpu_no_se_presupuesta_vram) ... ok
+test_lru_desaloja_al_menos_reciente (pruebas.test_hito6.ElRegistro.test_lru_desaloja_al_menos_reciente)
+Se desaloja al que lleva más tiempo sin usarse, **no al que más ... ok
+test_lru_devuelve_none_cuando_no_queda_a_quien_desalojar (pruebas.test_hito6.ElRegistro.test_lru_devuelve_none_cuando_no_queda_a_quien_desalojar) ... ok
+test_lru_no_desaloja_al_que_se_esta_salvando (pruebas.test_hito6.ElRegistro.test_lru_no_desaloja_al_que_se_esta_salvando) ... ok
+test_rechaza_la_pagina_que_no_cabe_y_no_arranca_nada (pruebas.test_hito6.ElRegistro.test_rechaza_la_pagina_que_no_cabe_y_no_arranca_nada)
+La admisión se evalúa **antes**: una página que no cabe no debe ... ok
+test_recicla_cuando_lo_retenido_basta (pruebas.test_hito6.ElRegistro.test_recicla_cuando_lo_retenido_basta)
+El escenario del atasco, reproducido: una página grande deja el ... ok
+test_ttl_descarga_por_inactividad (pruebas.test_hito6.ElRegistro.test_ttl_descarga_por_inactividad)
+«Los modelos se descargan por inactividad» es la mitad del criterio ... ok
+test_un_motor_sin_recta_medida_no_entra (pruebas.test_hito6.ElRegistro.test_un_motor_sin_recta_medida_no_entra)
+*«Una constante global hace que cada motor nuevo herede en silencio ... ok
+test_un_proceso_sin_historia_no_tiene_nada_que_reciclar (pruebas.test_hito6.ElRegistro.test_un_proceso_sin_historia_no_tiene_nada_que_reciclar)
+`reciclar` solo es distinto de `rechazar` porque hay algo retenido: ... ok
+test_usarlo_reinicia_el_ttl (pruebas.test_hito6.ElRegistro.test_usarlo_reinicia_el_ttl) ... ok
+D:\a\FileX\FileX\pruebas\test_hito6.py:629: ResourceWarning: unclosed file <_io.TextIOWrapper name='D:\\a\\FileX\\FileX\\filex\\sidecar.py' mode='r' encoding='utf-8'>
+  cls.fuente = open(sidecar.__file__, encoding="utf-8").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+test_el_paquete_no_gana_dependencias (pruebas.test_hito6.Forma.test_el_paquete_no_gana_dependencias)
+`filex` no tiene dependencias, y es una decisión escrita en ... ok
+test_el_stderr_del_motor_no_vuelve_crudo (pruebas.test_hito6.Forma.test_el_stderr_del_motor_no_vuelve_crudo)
+*«Nunca devolver `stderr` crudo al modelo.»* El trabajador devuelve el ... ok
+test_la_fuente_compila (pruebas.test_hito6.Forma.test_la_fuente_compila)
+Una prueba de AST puede pasar porque la fuente NO compila (trampa 60): ... ok
+test_no_se_invoca_nada_con_shell (pruebas.test_hito6.Forma.test_no_se_invoca_nada_con_shell) ... ok
+test_toda_espera_de_subproceso_lleva_tope (pruebas.test_hito6.Forma.test_toda_espera_de_subproceso_lleva_tope)
+Timeouts explícitos en todo: estos motores dejan huérfanos vivos 13 ... ok
+test_admite_cuando_cabe_con_margen (pruebas.test_hito6.LaDecision.test_admite_cuando_cabe_con_margen) ... ok
+test_el_margen_de_500_decide_el_borde (pruebas.test_hito6.LaDecision.test_el_margen_de_500_decide_el_borde) ... ok
+test_la_decision_lleva_los_numeros_dentro (pruebas.test_hito6.LaDecision.test_la_decision_lleva_los_numeros_dentro)
+Un veredicto sin sus cifras no es auditable. ... ok
+test_rechaza_cuando_no_cabe_ni_reciclando (pruebas.test_hito6.LaDecision.test_rechaza_cuando_no_cabe_ni_reciclando)
+*«Reciclar dos veces seguidas no ayuda»*: si ni con todo lo retenido ... ok
+test_recicla_cuando_cabe_solo_recuperando_lo_retenido (pruebas.test_hito6.LaDecision.test_recicla_cuando_cabe_solo_recuperando_lo_retenido)
+La diferencia entre `reciclar` y `rechazar` es exactamente lo que el ... ok
+test_sin_lectura_de_vram_se_admite (pruebas.test_hito6.LaDecision.test_sin_lectura_de_vram_se_admite)
+`None` no es cero. Confundir «no hay tarjeta» con «la tarjeta está ... ok
+test_jpeg_sintetico (pruebas.test_hito6.LaGeometria.test_jpeg_sintetico)
+El otro formato que produce el rasterizado de este proyecto. El alto ... ok
+test_png_del_corpus (pruebas.test_hito6.LaGeometria.test_png_del_corpus) ... skipped 'corpus en punteros de LFS: `git lfs checkout`'
+test_png_del_rasterizado (pruebas.test_hito6.LaGeometria.test_png_del_rasterizado) ... skipped 'falta el ráster (`bench/salidas-hito6/preparar_h6.py`)'
+test_png_sintetico (pruebas.test_hito6.LaGeometria.test_png_sintetico)
+Sin depender de ningún binario: los rásteres del informe se borran al ... ok
+test_un_fichero_que_no_es_imagen_no_devuelve_un_numero_cualquiera (pruebas.test_hito6.LaGeometria.test_un_fichero_que_no_es_imagen_no_devuelve_un_numero_cualquiera) ... ok
+test_cada_recta_declara_su_fuente (pruebas.test_hito6.RectasDeVram.test_cada_recta_declara_su_fuente) ... ok
+test_la_recta_de_rapidocr_ya_no_subestima_mas_alla_del_ruido (pruebas.test_hito6.RectasDeVram.test_la_recta_de_rapidocr_ya_no_subestima_mas_alla_del_ruido)
+**N27** (`bench/vram-rapidocr.md`): la recta vieja (ordenada 643, ... ok
+test_los_dos_sin_tope_crecen_con_los_mpx (pruebas.test_hito6.RectasDeVram.test_los_dos_sin_tope_crecen_con_los_mpx) ... ok
+test_los_mpx_admisibles_reproducen_la_tabla (pruebas.test_hito6.RectasDeVram.test_los_mpx_admisibles_reproducen_la_tabla)
+4,50 y 7,37 Mpx con los 6 000 MiB del `GPU_GUARD` y 500 de margen. ... ok
+test_mpx_negativos_no_se_admiten_en_silencio (pruebas.test_hito6.RectasDeVram.test_mpx_negativos_no_se_admiten_en_silencio) ... ok
+test_rapidocr_satura_en_su_tope (pruebas.test_hito6.RectasDeVram.test_rapidocr_satura_en_su_tope)
+RapidOCR recorta a 2 000 px (`Global.max_side_len`), así que por ... ok
+test_solo_recicla_quien_no_tiene_tope (pruebas.test_hito6.RectasDeVram.test_solo_recicla_quien_no_tiene_tope)
+*«Un motor sin tope propio entra en el sidecar CON su política de ... ok
+test_un_a4_a_300ppp_no_entra_en_dos_de_los_tres_motores (pruebas.test_hito6.RectasDeVram.test_un_a4_a_300ppp_no_entra_en_dos_de_los_tres_motores)
+Un A4 a 300 ppp son **8,70 Mpx**, y con los 6 000 MiB del `GPU_GUARD` ... ok
+
+----------------------------------------------------------------------
+Ran 55 tests in 0.374s
+
+OK (skipped=3)
