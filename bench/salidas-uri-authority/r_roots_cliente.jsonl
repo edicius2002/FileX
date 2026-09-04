@@ -1,0 +1,10 @@
+{"t_ms": 0.998, "clase": "arranque", "dato": {"argv": ["D:/Work/research/FileX/.claude/worktrees/agent-a146f8a533c52cb89/bench/salidas-uri-authority/srv_sonda_roots.py"], "cwd_del_servidor": "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-a146f8a533c52cb89\\bench\\salidas-uri-authority", "proto_ofrecido": "(eco del cliente)"}}
+{"t_ms": 282.701, "clase": "recibido", "dato": {"method": "initialize", "params": {"protocolVersion": "2025-11-25", "capabilities": {"roots": {"listChanged": true}, "elicitation": {}}, "clientInfo": {"name": "claude-code", "title": "Claude Code", "version": "2.1.260", "description": "Anthropic's agentic coding tool", "websiteUrl": "https://claude.com/claude-code"}}, "jsonrpc": "2.0", "id": 0}}
+{"t_ms": 283.226, "clase": "capacidades_del_cliente", "dato": {"roots": {"listChanged": true}, "elicitation": {}}}
+{"t_ms": 283.226, "clase": "respondemos_initialize", "dato": {"protocolVersion": "2025-11-25", "serverInfo": {"name": "filex-sonda-roots", "version": "0.0.1"}, "capabilities": {"tools": {}}}}
+{"t_ms": 707.96, "clase": "recibido", "dato": {"jsonrpc": "2.0", "method": "notifications/initialized"}}
+{"t_ms": 707.96, "clase": "pedimos_roots", "dato": {"jsonrpc": "2.0", "id": 9001, "method": "roots/list"}}
+{"t_ms": 811.846, "clase": "recibido", "dato": {"method": "tools/list", "jsonrpc": "2.0", "id": 1}}
+{"t_ms": 1111.58, "clase": "recibido", "dato": {"result": {"roots": [{"uri": "file:///D:/Work/research/FileX/.claude/worktrees/agent-a146f8a533c52cb89/bench/salidas-uri-authority"}]}, "jsonrpc": "2.0", "id": 9001}}
+{"t_ms": 1112.579, "clase": "RESPUESTA_ROOTS", "dato": {"result": {"roots": [{"uri": "file:///D:/Work/research/FileX/.claude/worktrees/agent-a146f8a533c52cb89/bench/salidas-uri-authority"}]}, "jsonrpc": "2.0", "id": 9001}}
+{"t_ms": 8246.75, "clase": "fin_stdin", "dato": {}}

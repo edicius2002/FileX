@@ -1,0 +1,51 @@
+{
+  "python": "3.11.9",
+  "P1_funciona": {
+    "raiz": "\\\\localhost\\D$\\Work\\research\\FileX",
+    "existe": true,
+    "tras_preparar": [
+      "\\\\localhost\\d$\\work\\research\\filex"
+    ],
+    "construye": true,
+    "lectura": [
+      "\\\\localhost\\d$\\work\\research\\filex"
+    ],
+    "resolver_dentro": {
+      "ok": true,
+      "valor": "\\\\localhost\\D$\\Work\\research\\FileX\\CLAUDE.md"
+    },
+    "resolver_fuera": {
+      "ok": false,
+      "error": "Denegado: ruta no accesible"
+    },
+    "puede_leer_la_forma_LOCAL_del_mismo_fichero": false
+  },
+  "P2_alias": {
+    "realpath_de_la_UNC": {
+      "ok": true,
+      "valor": "\\\\localhost\\D$\\Work\\research\\FileX"
+    },
+    "realpath_de_la_LOCAL": {
+      "ok": true,
+      "valor": "D:\\Work\\research\\FileX"
+    },
+    "realpath_las_iguala": false,
+    "mismo_objeto_ntfs": true,
+    "st_dev_ino_unc": [
+      553714096,
+      10414574138295902
+    ],
+    "st_dev_ino_local": [
+      553714096,
+      10414574138295902
+    ]
+  },
+  "P3_cuela": {
+    "raiz_LOCAL_concede_forma_local": true,
+    "raiz_LOCAL_concede_forma_UNC": false,
+    "raiz_UNC_concede_forma_unc": true,
+    "raiz_UNC_concede_forma_local": false,
+    "interseca_local_con_unc": [],
+    "interseca_unc_con_local": []
+  }
+}

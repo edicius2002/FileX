@@ -1,0 +1,93 @@
+{
+  "runtime": "node v22.23.2",
+  "produccion": [
+    {
+      "caso": "local",
+      "ruta_de_entrada": "D:\\Work\\research\\FileX",
+      "uri_emitido": "file:///D:/Work/research/FileX",
+      "error": null,
+      "authority_emitida": "",
+      "ida_y_vuelta": "D:\\Work\\research\\FileX",
+      "ida_y_vuelta_error": null,
+      "ida_y_vuelta_fiel": true
+    },
+    {
+      "caso": "unc",
+      "ruta_de_entrada": "\\\\servidor\\recurso",
+      "uri_emitido": "file://servidor/recurso",
+      "error": null,
+      "authority_emitida": "servidor",
+      "ida_y_vuelta": "\\\\servidor\\recurso",
+      "ida_y_vuelta_error": null,
+      "ida_y_vuelta_fiel": true
+    },
+    {
+      "caso": "unc_sub",
+      "ruta_de_entrada": "\\\\servidor\\recurso\\sub",
+      "uri_emitido": "file://servidor/recurso/sub",
+      "error": null,
+      "authority_emitida": "servidor",
+      "ida_y_vuelta": "\\\\servidor\\recurso\\sub",
+      "ida_y_vuelta_error": null,
+      "ida_y_vuelta_fiel": true
+    },
+    {
+      "caso": "unc_admin",
+      "ruta_de_entrada": "\\\\localhost\\D$\\Work",
+      "uri_emitido": "file:///D$/Work",
+      "error": null,
+      "authority_emitida": "",
+      "ida_y_vuelta": null,
+      "ida_y_vuelta_error": "File URL path must be absolute",
+      "ida_y_vuelta_fiel": false
+    },
+    {
+      "caso": "raiz_unidad",
+      "ruta_de_entrada": "D:\\",
+      "uri_emitido": "file:///D:/",
+      "error": null,
+      "authority_emitida": "",
+      "ida_y_vuelta": "D:\\",
+      "ida_y_vuelta_error": null,
+      "ida_y_vuelta_fiel": true
+    }
+  ],
+  "consumo": [
+    {
+      "uri": "file://servidor/recurso",
+      "authority": "servidor",
+      "fileURLToPath": "\\\\servidor\\recurso",
+      "error": null
+    },
+    {
+      "uri": "file:///recurso",
+      "authority": "",
+      "fileURLToPath": null,
+      "error": "File URL path must be absolute"
+    },
+    {
+      "uri": "file://localhost/D:/Work",
+      "authority": "",
+      "fileURLToPath": "D:\\Work",
+      "error": null
+    },
+    {
+      "uri": "file:///D:/Work",
+      "authority": "",
+      "fileURLToPath": "D:\\Work",
+      "error": null
+    },
+    {
+      "uri": "file://",
+      "authority": "",
+      "fileURLToPath": null,
+      "error": "File URL path must be absolute"
+    },
+    {
+      "uri": "file:///",
+      "authority": "",
+      "fileURLToPath": null,
+      "error": "File URL path must be absolute"
+    }
+  ]
+}

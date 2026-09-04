@@ -1,0 +1,511 @@
+{
+  "nota": "trampa 51: la tabla de qué atrapa y qué rompe cada candidato",
+  "python": "3.11.9",
+  "cwd": "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-a146f8a533c52cb89",
+  "control_unc": {
+    "raiz_del_recurso": "\\\\servidor\\recurso",
+    "norm": "\\\\servidor\\recurso",
+    "dirname_igual_a_si_misma": true,
+    "la_poda_de_N35_se_la_lleva": true,
+    "un_subdirectorio_si_confina": true
+  },
+  "resumen": {
+    "C1 ignorar (HOY)": {
+      "fugas_atrapadas_de_3": 1,
+      "legitimas_intactas_de_4": 4,
+      "legitimas_rotas": 0,
+      "detalle": [
+        "file://servidor/recurso sigue concediendo ['D:\\\\recurso\\\\secreto.txt']",
+        "file://nas-de-la-empresa/Work sigue concediendo ['D:\\\\Work\\\\research\\\\FileX\\\\CLAUDE.md', 'D:\\\\Work\\\\research\\\\ASR', 'D:\\\\Work']",
+        "file:///recurso sigue confinando en d:\\recurso",
+        "file:// sigue confinando en d:\\work\\research\\filex\\.claude\\worktrees\\agent-a146f8a533c52cb89"
+      ]
+    },
+    "C2 rechazar toda authority": {
+      "fugas_atrapadas_de_3": 3,
+      "legitimas_intactas_de_4": 2,
+      "legitimas_rotas": 2,
+      "detalle": [
+        "file://localhost/D:/Work (legitimo_rfc8089) deja de conceder",
+        "file://LOCALHOST/D:/Work (legitimo_rfc8089) deja de conceder",
+        "file:///recurso sigue confinando en d:\\recurso",
+        "file:// sigue confinando en d:\\work\\research\\filex\\.claude\\worktrees\\agent-a146f8a533c52cb89"
+      ]
+    },
+    "C3 rechazar salvo localhost": {
+      "fugas_atrapadas_de_3": 4,
+      "legitimas_intactas_de_4": 4,
+      "legitimas_rotas": 0,
+      "detalle": [
+        "file:///recurso sigue confinando en d:\\recurso"
+      ]
+    },
+    "C4 traducir a UNC": {
+      "fugas_atrapadas_de_3": 4,
+      "legitimas_intactas_de_4": 4,
+      "legitimas_rotas": 0,
+      "detalle": [
+        "file:///recurso sigue confinando en d:\\recurso"
+      ]
+    }
+  },
+  "filas": [
+    {
+      "uri": "file:///D:/Work/research/FileX",
+      "clase": "legitimo_local",
+      "se_espera": "tiene que seguir concediendo D:\\Work\\research\\FileX",
+      "por_candidato": {
+        "C1 ignorar (HOY)": {
+          "devuelve": "D:\\Work\\research\\FileX",
+          "raiz": "d:\\work\\research\\filex",
+          "estado": "confina",
+          "concede": [
+            "D:\\Work\\research\\FileX\\CLAUDE.md"
+          ]
+        },
+        "C2 rechazar toda authority": {
+          "devuelve": "D:\\Work\\research\\FileX",
+          "raiz": "d:\\work\\research\\filex",
+          "estado": "confina",
+          "concede": [
+            "D:\\Work\\research\\FileX\\CLAUDE.md"
+          ]
+        },
+        "C3 rechazar salvo localhost": {
+          "devuelve": "D:\\Work\\research\\FileX",
+          "raiz": "d:\\work\\research\\filex",
+          "estado": "confina",
+          "concede": [
+            "D:\\Work\\research\\FileX\\CLAUDE.md"
+          ]
+        },
+        "C4 traducir a UNC": {
+          "devuelve": "D:\\Work\\research\\FileX",
+          "raiz": "d:\\work\\research\\filex",
+          "estado": "confina",
+          "concede": [
+            "D:\\Work\\research\\FileX\\CLAUDE.md"
+          ]
+        }
+      }
+    },
+    {
+      "uri": "file:///C:/Users/krato",
+      "clase": "legitimo_local",
+      "se_espera": "ídem en otra unidad",
+      "por_candidato": {
+        "C1 ignorar (HOY)": {
+          "devuelve": "C:\\Users\\krato",
+          "raiz": "c:\\users\\krato",
+          "estado": "confina",
+          "concede": [
+            "C:\\Users\\krato"
+          ]
+        },
+        "C2 rechazar toda authority": {
+          "devuelve": "C:\\Users\\krato",
+          "raiz": "c:\\users\\krato",
+          "estado": "confina",
+          "concede": [
+            "C:\\Users\\krato"
+          ]
+        },
+        "C3 rechazar salvo localhost": {
+          "devuelve": "C:\\Users\\krato",
+          "raiz": "c:\\users\\krato",
+          "estado": "confina",
+          "concede": [
+            "C:\\Users\\krato"
+          ]
+        },
+        "C4 traducir a UNC": {
+          "devuelve": "C:\\Users\\krato",
+          "raiz": "c:\\users\\krato",
+          "estado": "confina",
+          "concede": [
+            "C:\\Users\\krato"
+          ]
+        }
+      }
+    },
+    {
+      "uri": "file://localhost/D:/Work",
+      "clase": "legitimo_rfc8089",
+      "se_espera": "RFC 8089 §2: idéntico a file:///D:/Work",
+      "por_candidato": {
+        "C1 ignorar (HOY)": {
+          "devuelve": "D:\\Work",
+          "raiz": "d:\\work",
+          "estado": "confina",
+          "concede": [
+            "D:\\Work\\research\\FileX\\CLAUDE.md",
+            "D:\\Work\\research\\ASR",
+            "D:\\Work"
+          ]
+        },
+        "C2 rechazar toda authority": {
+          "devuelve": "",
+          "raiz": null,
+          "estado": "ignorada",
+          "concede": []
+        },
+        "C3 rechazar salvo localhost": {
+          "devuelve": "D:\\Work",
+          "raiz": "d:\\work",
+          "estado": "confina",
+          "concede": [
+            "D:\\Work\\research\\FileX\\CLAUDE.md",
+            "D:\\Work\\research\\ASR",
+            "D:\\Work"
+          ]
+        },
+        "C4 traducir a UNC": {
+          "devuelve": "D:\\Work",
+          "raiz": "d:\\work",
+          "estado": "confina",
+          "concede": [
+            "D:\\Work\\research\\FileX\\CLAUDE.md",
+            "D:\\Work\\research\\ASR",
+            "D:\\Work"
+          ]
+        }
+      }
+    },
+    {
+      "uri": "file://LOCALHOST/D:/Work",
+      "clase": "legitimo_rfc8089",
+      "se_espera": "y sin distinguir mayúsculas",
+      "por_candidato": {
+        "C1 ignorar (HOY)": {
+          "devuelve": "D:\\Work",
+          "raiz": "d:\\work",
+          "estado": "confina",
+          "concede": [
+            "D:\\Work\\research\\FileX\\CLAUDE.md",
+            "D:\\Work\\research\\ASR",
+            "D:\\Work"
+          ]
+        },
+        "C2 rechazar toda authority": {
+          "devuelve": "",
+          "raiz": null,
+          "estado": "ignorada",
+          "concede": []
+        },
+        "C3 rechazar salvo localhost": {
+          "devuelve": "D:\\Work",
+          "raiz": "d:\\work",
+          "estado": "confina",
+          "concede": [
+            "D:\\Work\\research\\FileX\\CLAUDE.md",
+            "D:\\Work\\research\\ASR",
+            "D:\\Work"
+          ]
+        },
+        "C4 traducir a UNC": {
+          "devuelve": "D:\\Work",
+          "raiz": "d:\\work",
+          "estado": "confina",
+          "concede": [
+            "D:\\Work\\research\\FileX\\CLAUDE.md",
+            "D:\\Work\\research\\ASR",
+            "D:\\Work"
+          ]
+        }
+      }
+    },
+    {
+      "uri": "file://servidor/recurso",
+      "clase": "fuga_n37",
+      "se_espera": "NO puede confinar en una ruta local",
+      "por_candidato": {
+        "C1 ignorar (HOY)": {
+          "devuelve": "\\recurso",
+          "raiz": "d:\\recurso",
+          "estado": "confina",
+          "concede": [
+            "D:\\recurso\\secreto.txt"
+          ]
+        },
+        "C2 rechazar toda authority": {
+          "devuelve": "",
+          "raiz": null,
+          "estado": "ignorada",
+          "concede": []
+        },
+        "C3 rechazar salvo localhost": {
+          "devuelve": "",
+          "raiz": null,
+          "estado": "ignorada",
+          "concede": []
+        },
+        "C4 traducir a UNC": {
+          "devuelve": "\\\\servidor\\recurso",
+          "raiz": "\\\\servidor\\recurso",
+          "estado": "podada_por_N35_sin_acceso",
+          "concede": []
+        }
+      }
+    },
+    {
+      "uri": "file://servidor/recurso/sub",
+      "clase": "fuga_n37",
+      "se_espera": "ídem",
+      "por_candidato": {
+        "C1 ignorar (HOY)": {
+          "devuelve": "\\recurso\\sub",
+          "raiz": "d:\\recurso\\sub",
+          "estado": "confina",
+          "concede": []
+        },
+        "C2 rechazar toda authority": {
+          "devuelve": "",
+          "raiz": null,
+          "estado": "ignorada",
+          "concede": []
+        },
+        "C3 rechazar salvo localhost": {
+          "devuelve": "",
+          "raiz": null,
+          "estado": "ignorada",
+          "concede": []
+        },
+        "C4 traducir a UNC": {
+          "devuelve": "\\\\servidor\\recurso\\sub",
+          "raiz": "\\\\servidor\\recurso\\sub",
+          "estado": "confina",
+          "concede": []
+        }
+      }
+    },
+    {
+      "uri": "file://nas-de-la-empresa/Work",
+      "clase": "fuga_n37",
+      "se_espera": "el caso caro: hoy concede D:\\Work entero",
+      "por_candidato": {
+        "C1 ignorar (HOY)": {
+          "devuelve": "\\Work",
+          "raiz": "d:\\work",
+          "estado": "confina",
+          "concede": [
+            "D:\\Work\\research\\FileX\\CLAUDE.md",
+            "D:\\Work\\research\\ASR",
+            "D:\\Work"
+          ]
+        },
+        "C2 rechazar toda authority": {
+          "devuelve": "",
+          "raiz": null,
+          "estado": "ignorada",
+          "concede": []
+        },
+        "C3 rechazar salvo localhost": {
+          "devuelve": "",
+          "raiz": null,
+          "estado": "ignorada",
+          "concede": []
+        },
+        "C4 traducir a UNC": {
+          "devuelve": "\\\\nas-de-la-empresa\\Work",
+          "raiz": "\\\\nas-de-la-empresa\\work",
+          "estado": "podada_por_N35_sin_acceso",
+          "concede": []
+        }
+      }
+    },
+    {
+      "uri": "file:///recurso",
+      "clase": "sin_unidad",
+      "se_espera": "path absoluto sin unidad: hoy cae en D:\\recurso",
+      "por_candidato": {
+        "C1 ignorar (HOY)": {
+          "devuelve": "\\recurso",
+          "raiz": "d:\\recurso",
+          "estado": "confina",
+          "concede": [
+            "D:\\recurso\\secreto.txt"
+          ]
+        },
+        "C2 rechazar toda authority": {
+          "devuelve": "\\recurso",
+          "raiz": "d:\\recurso",
+          "estado": "confina",
+          "concede": [
+            "D:\\recurso\\secreto.txt"
+          ]
+        },
+        "C3 rechazar salvo localhost": {
+          "devuelve": "\\recurso",
+          "raiz": "d:\\recurso",
+          "estado": "confina",
+          "concede": [
+            "D:\\recurso\\secreto.txt"
+          ]
+        },
+        "C4 traducir a UNC": {
+          "devuelve": "\\recurso",
+          "raiz": "d:\\recurso",
+          "estado": "confina",
+          "concede": [
+            "D:\\recurso\\secreto.txt"
+          ]
+        }
+      }
+    },
+    {
+      "uri": "file://",
+      "clase": "cwd",
+      "se_espera": "hoy normpath('') da '.' y confina en el cwd del servidor",
+      "por_candidato": {
+        "C1 ignorar (HOY)": {
+          "devuelve": ".",
+          "raiz": "d:\\work\\research\\filex\\.claude\\worktrees\\agent-a146f8a533c52cb89",
+          "estado": "confina",
+          "concede": []
+        },
+        "C2 rechazar toda authority": {
+          "devuelve": ".",
+          "raiz": "d:\\work\\research\\filex\\.claude\\worktrees\\agent-a146f8a533c52cb89",
+          "estado": "confina",
+          "concede": []
+        },
+        "C3 rechazar salvo localhost": {
+          "devuelve": "",
+          "raiz": null,
+          "estado": "ignorada",
+          "concede": []
+        },
+        "C4 traducir a UNC": {
+          "devuelve": "",
+          "raiz": null,
+          "estado": "ignorada",
+          "concede": []
+        }
+      }
+    },
+    {
+      "uri": "file:///",
+      "clase": "raiz_unidad",
+      "se_espera": "N35 ya lo poda",
+      "por_candidato": {
+        "C1 ignorar (HOY)": {
+          "devuelve": "\\",
+          "raiz": "d:\\",
+          "estado": "podada_por_N35_sin_acceso",
+          "concede": []
+        },
+        "C2 rechazar toda authority": {
+          "devuelve": "\\",
+          "raiz": "d:\\",
+          "estado": "podada_por_N35_sin_acceso",
+          "concede": []
+        },
+        "C3 rechazar salvo localhost": {
+          "devuelve": "\\",
+          "raiz": "d:\\",
+          "estado": "podada_por_N35_sin_acceso",
+          "concede": []
+        },
+        "C4 traducir a UNC": {
+          "devuelve": "\\",
+          "raiz": "d:\\",
+          "estado": "podada_por_N35_sin_acceso",
+          "concede": []
+        }
+      }
+    },
+    {
+      "uri": "file:///D:/",
+      "clase": "raiz_unidad",
+      "se_espera": "N35 ya lo poda",
+      "por_candidato": {
+        "C1 ignorar (HOY)": {
+          "devuelve": "D:\\",
+          "raiz": "d:\\",
+          "estado": "podada_por_N35_sin_acceso",
+          "concede": []
+        },
+        "C2 rechazar toda authority": {
+          "devuelve": "D:\\",
+          "raiz": "d:\\",
+          "estado": "podada_por_N35_sin_acceso",
+          "concede": []
+        },
+        "C3 rechazar salvo localhost": {
+          "devuelve": "D:\\",
+          "raiz": "d:\\",
+          "estado": "podada_por_N35_sin_acceso",
+          "concede": []
+        },
+        "C4 traducir a UNC": {
+          "devuelve": "D:\\",
+          "raiz": "d:\\",
+          "estado": "podada_por_N35_sin_acceso",
+          "concede": []
+        }
+      }
+    },
+    {
+      "uri": "http://servidor/x",
+      "clase": "no_file",
+      "se_espera": "se ignora, y debe seguir ignorándose",
+      "por_candidato": {
+        "C1 ignorar (HOY)": {
+          "devuelve": "",
+          "raiz": null,
+          "estado": "ignorada",
+          "concede": []
+        },
+        "C2 rechazar toda authority": {
+          "devuelve": "",
+          "raiz": null,
+          "estado": "ignorada",
+          "concede": []
+        },
+        "C3 rechazar salvo localhost": {
+          "devuelve": "",
+          "raiz": null,
+          "estado": "ignorada",
+          "concede": []
+        },
+        "C4 traducir a UNC": {
+          "devuelve": "",
+          "raiz": null,
+          "estado": "ignorada",
+          "concede": []
+        }
+      }
+    },
+    {
+      "uri": "",
+      "clase": "no_file",
+      "se_espera": "ídem",
+      "por_candidato": {
+        "C1 ignorar (HOY)": {
+          "devuelve": "",
+          "raiz": null,
+          "estado": "ignorada",
+          "concede": []
+        },
+        "C2 rechazar toda authority": {
+          "devuelve": "",
+          "raiz": null,
+          "estado": "ignorada",
+          "concede": []
+        },
+        "C3 rechazar salvo localhost": {
+          "devuelve": "",
+          "raiz": null,
+          "estado": "ignorada",
+          "concede": []
+        },
+        "C4 traducir a UNC": {
+          "devuelve": "",
+          "raiz": null,
+          "estado": "ignorada",
+          "concede": []
+        }
+      }
+    }
+  ]
+}
