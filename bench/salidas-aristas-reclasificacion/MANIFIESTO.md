@@ -1,4 +1,4 @@
-# `bench/salidas-aristas-reclasificacion/` — C43, worker9, ronda 19
+# `bench/salidas-aristas-reclasificacion/` — C49, worker9, ronda 19
 
 Salidas de `bench/aristas-reclasificacion.md`: reclasificación de los **445**
 `no_materializable` de `bench/salidas-aristas/semi_entrada.json`.

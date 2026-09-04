@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""C43 / worker9 - RECLASIFICACION DE LOS 445 `no_materializable` DE semi_entrada.json.
+"""C49 / worker9 - RECLASIFICACION DE LOS 445 `no_materializable` DE semi_entrada.json.
 
 NO ejecuta ningun motor de conversion. Solo LEE listados de metadatos ya volcados
 en crudo/ (magick -list format, -list delegate; ffmpeg -protocols -devices

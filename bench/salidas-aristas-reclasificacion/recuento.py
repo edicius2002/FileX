@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""C43 / worker9 - Clasificacion de los 445 y recuento del 54,78 %.
+"""C49 / worker9 - Clasificacion de los 445 y recuento del 54,78 %.
 
 Dos mitades:
   (1) CONTROL: reproduce EXACTAMENTE la agregacion de _agrega.py sobre aristas.json.
