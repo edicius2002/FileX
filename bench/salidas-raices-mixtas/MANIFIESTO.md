@@ -59,16 +59,17 @@ PYTHONIOENCODING=utf-8 $PY comparar.py                        # -> comparacion.j
 ### Las pruebas y su discriminación (§7 del informe)
 
 ```sh
-# con el arreglo: 11 passed
+# con el arreglo: 12 passed
 PYTHONIOENCODING=utf-8 $PY -m unittest pruebas.test_hito1.RaicesMixtasN35 \
                                        pruebas.test_hito4.RaicesMixtasPorMCP
 
-# contra el codigo de antes: 3 failures + 7 errors -> pruebas_ANTES.txt
-git checkout a4dc3f3 -- filex/confinamiento.py
-PYTHONIOENCODING=utf-8 $PY -m unittest pruebas.test_hito1.RaicesMixtasN35 \
-    pruebas.test_hito4.RaicesMixtasPorMCP -v 2>&1 \
-  | grep -E "\.\.\. (ok|ERROR|FAIL)" | sed 's/ (pruebas.*//' > bench/salidas-raices-mixtas/pruebas_ANTES.txt
-git checkout HEAD -- filex/confinamiento.py
+# ¿discriminan? -> discriminacion_{antes,despues}.json
+PYTHONIOENCODING=utf-8 $PY sonda_discriminacion.py --salida discriminacion_despues.json
+# ... revertir filex/confinamiento.py al commit a4dc3f3 y volver a lanzarla:
+PYTHONIOENCODING=utf-8 $PY sonda_discriminacion.py --salida discriminacion_antes.json
+# ... y restaurarlo. Cada JSON registra QUE codigo midio (`codigo_medido`),
+# asi que las dos corridas no se pueden confundir aunque se olvide revertir.
+#   despues: 12 verdes    antes: 8 rojas / 4 verdes
 
 # y que las 8 de N34 siguen siendo discriminantes: 4 de 8 caen
 git checkout 82cf1f3 -- filex/mcp.py
@@ -98,8 +99,8 @@ regresión.
 |---|---|---|---|
 | `sonda_vocabulario.py` | 3 508 | `cb2412ccb592925c3d2293af24bac3eee5437f4c8d27a8ada5107dc0aa271f67` | arnés: qué cuenta como raíz que no confina |
 | `vocabulario.json` | 4 811 | `6aa59c5954629cf6f09ccebad55b6a5467067f5e37f41a8b870ca263c234754c` | 17 candidatas; raíz de unidad **y** de recurso UNC |
-| `sonda_mecanismo.py` | 2 812 | `d06a344182848932ebc73925734235367eb634dee907b1cae33ccfe4a438bc67` | arnés: por qué `C:\` no abre nada |
-| `mecanismo.json` | 807 | `fcc85d7576189c27657e04a70ab79f763158f99c07881acad72612b17399b322` | la barra doble, con control positivo y negativo |
+| `sonda_mecanismo.py` | 4 438 | `27bc76f766217d73b8a5bed6b9fa886ba3fe712b51654e1946b0d7c212d30023` | arnés: por qué `C:\` no abre nada |
+| `mecanismo.json` | 1 526 | `cd58382eb21feb97bc2e94be24260867ca31eb5fabc4ab918bef332d0190ee62` | la barra doble, con control positivo y negativo |
 | `sonda_candidatos.py` | 10 330 | `63f62c10611abc8f4367c287d30460a74ee8000da164ebbae6cd614931612aa0` | arnés: 8 filas × 4 candidatos (lectura) |
 | `candidatos.json` | 27 565 | `3b1154c2df67f2c84d7bde303ad653879d66cd1c8ba2a1c50a016b8e5653017c` | la tabla de lectura: la meseta |
 | `sonda_superficies.py` | 10 381 | `e5176935f1b4186a0a150930bba674e21b8b4c1c90d9bad4feeda992db9da2d9` | arnés: núcleo y MCP |
@@ -121,9 +122,11 @@ regresión.
 | `coste_tanda1.json` | 3 362 | `2a30bd6d3143d16f406e2aefb70a27650f3fdb6d14f18366e33bcdccd66c111a` | tanda 1, n=9 × 2000 |
 | `coste_tanda2.json` | 3 362 | `83a08614a93b35a1d80adc44c2ad89b0d01d8b7cb3effe2f464411ec47da9366` | tanda 2, n=9 × 2000 |
 | `coste_tanda3.json` | 3 361 | `c5fe557b1009a8f51b5393103c0278a7fe401d370de6cae15bc3194d8d1d891d` | tanda 3, n=9 × 2000 |
-| `pruebas_ANTES.txt` | 966 | `4a617a5c051c60dc337f4ab3779340b497a770acae6b559725c7d9e69fe4869c` | las 11 pruebas contra el código de antes |
-| `suite.txt` | 1 179 | `df5af5a01f241207cb397d4be731428516862df6dabfd0d874816582e813995e` | la suite completa |
-| `hacer_inventario.py` | 3 426 | `aede9fb6f5e7c145d14d38eb7a4ee7f29b4e12119561c8a21cc8b64dd0839380` | este generador (se incluye para no mentir por omisión) |
+| `sonda_discriminacion.py` | 4 160 | `02849ce0a787bec7d8106acf8cfa485b849bfe05b7843ad0bbb672ff96537072` | arnés: ¿discriminan las pruebas? por NOMBRE de test |
+| `discriminacion_antes.json` | 2 346 | `f5145917bafb3d904d3de8e6e0150311ea3c2fe16e41eb7759080c7b8e2b006a` | 8 rojas / 4 verdes contra el código de antes |
+| `discriminacion_despues.json` | 2 311 | `3ea1db5696cdc272f314c0aff7d874a6ac6f5d84f44e4a9ea1ec8ef079f6524c` | 12 verdes con el arreglo |
+| `suite.txt` | 1 601 | `511df4c1fb12dbe02ef4ff4c2e6a84668eaba308ae0dff68354aca529e23db57` | la suite completa |
+| `hacer_inventario.py` | 3 591 | `831aab412fd629d923e05573625d82910a210e1068c488cc0f0b71062663995a` | este generador (se incluye para no mentir por omisión) |
 
 <!-- INVENTARIO:FIN -->
 

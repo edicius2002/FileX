@@ -38,7 +38,9 @@ DESC = {
     "coste_tanda1.json": "tanda 1, n=9 × 2000",
     "coste_tanda2.json": "tanda 2, n=9 × 2000",
     "coste_tanda3.json": "tanda 3, n=9 × 2000",
-    "pruebas_ANTES.txt": "las 11 pruebas contra el código de antes",
+    "sonda_discriminacion.py": "arnés: ¿discriminan las pruebas? por NOMBRE de test",
+    "discriminacion_antes.json": "8 rojas / 4 verdes contra el código de antes",
+    "discriminacion_despues.json": "12 verdes con el arreglo",
     "suite.txt": "la suite completa",
     "hacer_inventario.py": "este generador (se incluye para no mentir por omisión)",
 }

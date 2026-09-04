@@ -16,7 +16,8 @@ superficies, no con una intuición.
 
 | | MEDIDO / PENDIENTE |
 |---|---|
-| Una raíz de unidad **no es ancha: es INERTE** — deniega los 4 objetivos, incluido uno literalmente debajo de ella | **MEDIDO** — refuta mi hipótesis de partida |
+| Una raíz de unidad **no es ancha**: concede **1 candidato de 5** (ella misma) y ningún descendiente | **MEDIDO** — refuta mi hipótesis de partida, **y luego mi propia corrección** |
+| Podar es seguro **por MONOTONÍA**, no por inercia: quitar un término de un OR sólo reduce | **MEDIDO** + estructural |
 | La tabla de **lectura no decide**: B, C y E aciertan las 8 filas los tres | **MEDIDO** |
 | Lo que decide es el par `(sin_acceso, confinamiento)` que llega al consumidor | **MEDIDO**, 32 celdas en 2 superficies, mas la CLI de extremo a extremo |
 | **Podar** acierta las 32; **rechazar** (hoy) deniega de más en 4; **podar sin guarda** y **aceptar** mienten en 2 | **MEDIDO** |
@@ -87,14 +88,50 @@ _dentro(C:\Users\publico.txt, [C:\Users])     True        <- control positivo
 ```
 
 `_dentro` compara con `r + os.sep`, y la raíz de una unidad **ya termina en el
-separador**, así que la concatenación da `c:\\` y no la casa ningún candidato
-normalizado. Con `C:\` de única raíz se deniegan **los cuatro objetivos**,
+separador**, así que la concatenación da `c:\\` y no la casa ningún
+**descendiente**. Con `C:\` de única raíz se deniegan los cuatro objetivos,
 incluido `C:\Windows\win.ini`, que está literalmente debajo.
 
 **R3 dice exactamente lo que pasa —*«no confina nada»*— y yo lo estaba leyendo
-como «confina demasiado».** La consecuencia es la que sostiene toda la
-decisión: **quitar una raíz inerte no puede quitar ningún acceso, porque no
-concedía ninguno.**
+como «confina demasiado».**
+
+> ### ⚠ Y aquí me equivoqué por segunda vez, en el arreglo del primer error
+>
+> Publiqué que la raíz de unidad es **INERTE** y que *«`_dentro` devuelve
+> `False` para todo»*. **Es falso, y lo encontró una revisión independiente.**
+> `_dentro` tiene **dos** ramas:
+>
+> ```python
+> if c == r or c.startswith(r + os.sep):
+> ```
+>
+> La barra doble sólo mata la **segunda**. La primera, `c == r`, **acepta un
+> candidato: la propia raíz.** MEDIDO
+> ([`mecanismo.json`](salidas-raices-mixtas/mecanismo.json), rehecho):
+> `_dentro("C:\", ["c:\"])` es **`True`**, y de una muestra de cinco concede
+> **1** —`C:\` sí; `C:\Windows`, `C:\Windows\win.ini`, `C:\Users` y
+> `C:\noexiste`, no—. Mi sonda original desmontó una rama del `or` y publicó la
+> conclusión como si hubiera desmontado las dos.
+>
+> **El veredicto no cambia, pero el argumento que lo sostenía sí, y era el que
+> más peso llevaba.** Los motivos buenos son estructurales y no dependen de qué
+> conceda la raíz podada:
+>
+> 1. **MONOTONÍA.** `_dentro` es un OR sobre las raíces, y `_preparar` no
+>    reescribe las que sobreviven —salen con la misma `_norm(abspath(...))` de
+>    siempre—. **Quitar un término de un OR sólo puede reducir el conjunto
+>    aceptado**, así que podar no puede conceder nada nuevo. Esto es un
+>    teorema, no una medición.
+> 2. **Y más fuerte: ese acceso nunca existió.** Con el código anterior, un
+>    `Confinamiento` **construido** no pudo contener jamás una raíz de unidad,
+>    porque `_preparar` lanzaba antes de devolverla. **La poda no quita un
+>    acceso que nunca llegó a existir**, y eso cierra la pregunta sin depender
+>    de la inercia.
+>
+> Es la trampa 58 sobre mi propio trabajo —el hecho («podar es seguro») era
+> cierto y la causa que le puse era falsa— y la 44 sobre la frase con más peso
+> del informe. Impacto práctico: **cero**, porque `_preparar` poda siempre y
+> `puede_leer("C:\")` es inalcanzable desde cualquier superficie.
 
 Y reencuadra la fuga de ayer: **N7 no la causaba la anchura de `C:\`**, la
 causaba el `confinamiento = None`. El riesgo a evitar no es «dejar entrar una
@@ -349,23 +386,40 @@ paga nada, así que el rechazo no se convierte en amplificador de DoS.**
 
 ## 7. Las pruebas, y la comprobación de que no son vacuas — MEDIDO
 
-**11 pruebas en dos superficies**: 8 en `pruebas/test_hito1.py::RaicesMixtasN35`
+**12 pruebas en dos superficies**: 9 en `pruebas/test_hito1.py::RaicesMixtasN35`
 (sobre `Confinamiento` y `FileX._resolver`) y 3 en
 `pruebas/test_hito4.py::RaicesMixtasPorMCP` (sobre `Raices.asegurar`).
 
 Un `assert` que nunca discrimina es indistinguible de uno que se cumple
 (trampa 109), así que se midieron **contra el código de antes de N35**
-([`pruebas_ANTES.txt`](salidas-raices-mixtas/pruebas_ANTES.txt)):
+([`discriminacion_antes.json`](salidas-raices-mixtas/discriminacion_antes.json),
+[`discriminacion_despues.json`](salidas-raices-mixtas/discriminacion_despues.json)):
 
-**10 de las 11 fallan** (3 failures, 7 errors). **Y las 3 que pasan en las dos
-versiones son exactamente las que afirman que la fuga no se reabre:**
+**8 de las 12 fallan.** Y **las 4 que pasan en las dos versiones son
+exactamente las que afirman lo que NO debe cambiar**, que es lo que se les
+pide:
 
 - `test_podar_NO_reabre_N7_sin_ninguna_raiz_util_sigue_sin_arrancar`
 - `test_si_NINGUN_root_confina_se_sigue_diciendo_SIN_ACCESO`
 - `test_no_declarar_escritura_sigue_siendo_legitimo`
+- `test_que_concede_de_verdad_una_raiz_de_unidad_SIN_podarla` — afirma el
+  mecanismo de `_dentro`, que este cambio no toca
 
-Que una prueba de no-regresión pase antes y después **es lo que se le pide**:
-afirma lo que no debe cambiar.
+> **El recuento que publiqué primero —«10 de 11»— era FALSO, y lo era por el
+> arnés.** `pruebas_ANTES.txt` se generaba con un `grep` sobre `unittest -v`, y
+> ese formato tiene dos trampas: **imprime la primera línea del DOCSTRING** en
+> vez del nombre cuando el test tiene uno —así que la única prueba sin
+> docstring salió en el fichero **sin veredicto**, y 1 de los 11 no estaba en
+> la evidencia versionada—, y **los `subTest` imprimen una línea por subcaso**,
+> de modo que había **13 líneas para 11 pruebas**. De ahí que «10 fallan» y «3
+> pasan» sumaran 13. Es la trampa 48 —publicar un tamaño que no cuadra con sus
+> elementos— y la 103 —un arnés que descarta parte de su salida ha medido y no
+> ha aprendido—.
+>
+> Sustituido por `sonda_discriminacion.py`, que agrupa por **método de test**
+> con un `TestResult` y **registra en el JSON qué código midió**
+> (`codigo_medido: "poda"` / `"rechaza"`), que es el control de identidad que
+> la trampa 119 exige.
 
 Además, **las 8 pruebas de N34 siguen siendo discriminantes con mi cambio
 puesto**: revertido `filex/mcp.py` a `82cf1f3` (antes de ayer), **4 de 8 caen**,
@@ -392,7 +446,7 @@ trampa 65 manda comprobar.
 ## 8. La suite, con sus cuatro declaraciones (trampas 94 y 101)
 
 ```
-500 passed · 3 skipped · 0 failed · 179 subtests · 252,62 s
+501 passed · 3 skipped · 0 failed · 179 subtests · 208,05 s
 ```
 
 1. **Intérprete** — `.venv-mcp-filex\Scripts\python.exe`, **win32, 3.11.9**.
@@ -411,12 +465,19 @@ trampa 65 manda comprobar.
    suponerlo**: CPU al **44–47 %** con **9 procesos `python`** durante toda la
    sesión, y el testigo de nivel de la sonda de coste dio **45–48 ms** de
    mediana para lanzar un proceso. El lock de GPU estaba **libre** y no se usó
-   la tarjeta. La suite tardó **252,62 s** frente a los **221,52 s** de la
-   referencia (**+14 %**), consistente con esa carga.
+   la tarjeta. La suite tardó **208,05 s** frente a los **221,52 s** de la
+   referencia; la primera pasada, con la máquina más cargada, tardó
+   **252,62 s** sobre el mismo código menos una prueba. **El tiempo no es
+   comparable entre tandas** (§3); el recuento sí.
 
-**Contra la referencia de 489 passed · 3 skipped · 175 subtests: +11 pruebas y
-+4 subtests, que son exactamente las mías** (11 tests, de los cuales 2 llevan 2
+**Contra la referencia de 489 passed · 3 skipped · 175 subtests: +12 pruebas y
++4 subtests, que son exactamente las mías** (12 tests, de los cuales 2 llevan 2
 subtests cada uno). Cuadra sin residuo.
+
+*(La primera pasada dio **500 passed en 252,62 s**; las 12 son 11 más la que
+salió de partir en dos la prueba vacua que encontró la revisión —§7—, y los
+44 s de menos son la máquina, que se fue despejando: el número de pruebas es
+comparable entre tandas y el tiempo no, §3.)*
 
 Y la huella no se movió: `test_sondeo` da **48/48**, así que ni el cambio de
 `confinamiento.py` ni el docstring de `mcp.py` caducan ninguna de las aristas
@@ -438,6 +499,21 @@ selladas.
 3. **Mi propia comprobación de discriminación** (§7): el `git stash` que no
    stasheaba, y una prueba que pasaba en las dos versiones por mecanismos
    distintos.
+4. **Mi propia refutación del punto 1** (§3), que encontró una revisión
+   independiente y no yo. Al corregir *«`C:\` abre la unidad entera»* escribí
+   *«no concede nada»*, y **también era falso**: concede exactamente un
+   candidato, ella misma. Desmonté una rama de un `or` de dos y publiqué la
+   conclusión como si las hubiera desmontado las dos. **El veredicto aguanta
+   porque los motivos buenos eran otros** —monotonía, y que ese acceso nunca
+   existió—, pero la frase que más peso llevaba estaba mal.
+5. **La prueba que blindaba justamente ese punto era VACUA** (trampa 109, sobre
+   mi propio trabajo). `test_una_raiz_inerte_no_concedia_NADA...` construía
+   `Confinamiento([legit, inerte])` y afirmaba que nada bajo la raíz de unidad
+   se leía — cierto, **pero porque `_preparar` ya la había podado**, no porque
+   fuera inerte. El `assert` no podía distinguir las dos cosas. Reescrita para
+   ejercitar `_dentro` con la raíz **presente**, y entonces mide el hecho real.
+6. **El recuento de la discriminación** (§7): «10 de 11» eran 13 líneas para 11
+   pruebas.
 
 ---
 

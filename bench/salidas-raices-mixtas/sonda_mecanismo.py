@@ -50,12 +50,37 @@ def main() -> int:
     bajo_users = _norm(os.path.abspath(r"C:\Users\publico.txt"))
     obs["_dentro(C:\\Users\\publico.txt, [C:\\Users])"] = c._dentro(bajo_users, [raiz_normal])
 
+    # ---------------------------------------------------------------------
+    # CORREGIDO tras la revision: `_dentro` tiene DOS ramas y la primera
+    # version de esta sonda solo desmonto una. El `or` de
+    # `c == r or c.startswith(r + os.sep)` hace que la raiz de unidad SI
+    # conceda un candidato: ELLA MISMA. Publicar «deniega para todo» era
+    # falso, y era justo la frase que sostenia la decision.
+    obs["_dentro(C:\\, [C:\\])  <- la rama `c == r`"] = c._dentro("C:\\", [raiz_unidad])
+    # Cuantos candidatos concede, exactamente: se prueba una muestra.
+    muestra = ["C:\\", r"C:\Windows", r"C:\Windows\win.ini", r"C:\Users",
+               r"C:\noexiste"]
+    concedidos = [m for m in muestra if c._dentro(_norm(os.path.abspath(m)),
+                                                  [raiz_unidad])]
+    obs["candidatos_concedidos_por_la_raiz_de_unidad"] = concedidos
+    obs["n_concedidos_de_la_muestra"] = "%d de %d" % (len(concedidos), len(muestra))
+
     obs["conclusion"] = (
-        "la raiz de unidad ya termina en el separador, asi que `r + os.sep` "
-        "produce una barra DOBLE que ningun candidato normalizado casa: "
-        "`_dentro` devuelve False para todo. R3 dice literalmente lo que pasa "
-        "-«no confina nada»- y no confina nada en el sentido de que DENIEGA "
-        "todo, no en el de que lo permita todo."
+        "La raiz de unidad ya termina en el separador, asi que `r + os.sep` "
+        "produce una barra DOBLE que ningun descendiente casa. Pero `_dentro` "
+        "es un OR de dos ramas y la primera, `c == r`, SI acepta un candidato: "
+        "LA PROPIA RAIZ. Asi que `C:\\` no concede «nada» -eso era falso y se "
+        "publico- sino EXACTAMENTE UN camino, el directorio raiz; ningun "
+        "descendiente, ni siquiera C:\\Windows."
+    )
+    obs["por_que_podar_sigue_siendo_seguro"] = (
+        "No depende de la inercia, que era el argumento malo. (1) MONOTONIA: "
+        "`_dentro` es un OR sobre las raices y `_preparar` no reescribe las que "
+        "sobreviven, asi que quitar un termino de un OR solo puede REDUCIR el "
+        "conjunto aceptado. (2) Y mas fuerte todavia: con el codigo de antes un "
+        "`Confinamiento` construido NUNCA pudo contener una raiz de unidad "
+        "-`_preparar` lanzaba-, luego la poda no puede quitar un acceso que "
+        "jamas llego a existir."
     )
 
     destino = os.path.join(AQUI, "mecanismo.json")

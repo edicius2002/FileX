@@ -208,19 +208,31 @@ class Confinamiento:
 
         Podar es seguro, y no de palabra (`bench/raices-mixtas.md`):
 
-        1. **Una raíz de unidad es INERTE, no ancha.** `_dentro` compara con
-           `r + os.sep`, y sobre `c:\\` eso da la barra DOBLE `c:\\\\`, que
-           ningún candidato normalizado casa. MEDIDO: con `C:\\` como única
-           raíz se deniegan los 4 objetivos, incluido `C:\\Windows\\win.ini`,
-           que está literalmente debajo. Quitarla no quita ningún acceso
-           porque no concedía ninguno.
-        2. **Podar sólo QUITA.** El conjunto efectivo es un subconjunto de lo
-           declarado: no hay forma de que la poda añada una raíz.
+        1. **Podar sólo QUITA — y esto es lo que sostiene la decisión.**
+           `_dentro` es un OR sobre las raíces, y aquí las que sobreviven no se
+           reescriben: salen con la misma `_norm(abspath(...))` que aplicaba el
+           código de antes. Quitar un término de un OR sólo puede **reducir** el
+           conjunto aceptado, así que la poda no puede conceder nada nuevo.
+        2. **Y más fuerte todavía: ese acceso nunca existió.** Con el código
+           anterior, un `Confinamiento` **construido** no podía contener jamás
+           una raíz de unidad, porque esta misma función lanzaba antes de
+           devolverla. La poda no quita un acceso que nunca llegó a existir.
         3. **La guarda R6 sigue en pie.** Si tras podar no queda ninguna raíz
            de lectura, el `__init__` lanza igual que antes, así que el caso de
            N7 —`["C:\\"]` sola— sale idéntico al de ayer: `sin_acceso = True`,
            `confinamiento = None`. MEDIDO celda a celda: A y B coinciden en
            esa fila en las dos superficies.
+
+        > **Lo que este docstring afirmaba y era FALSO, conservado porque el
+        > error es instructivo.** Decía *«una raíz de unidad es INERTE: no
+        > concede nada, `_dentro` deniega para todo»*. `_dentro` es
+        > `c == r or c.startswith(r + os.sep)`, y sólo la **segunda** rama
+        > muere con la barra doble: la primera acepta un candidato, **la propia
+        > raíz**. MEDIDO: `_dentro("C:\\\\", ["c:\\\\"])` es `True`, y de una
+        > muestra de cinco concede **1** —`C:\\` sí, `C:\\Windows` no—. No
+        > cambia el veredicto, pero la frase que sostenía la decisión estaba
+        > mal: los motivos buenos son el 1 y el 2, que son estructurales y no
+        > dependen de qué conceda la raíz podada.
         """
         out = []
         for r in raices or []:

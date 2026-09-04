@@ -2,11 +2,11 @@
 .................................................................................................................. [ 34%]
 ........................... [ 39%]
 ........................................................ [ 50%]
-....................s................................................. [ 64%]
-...............................s...................................s. [ 78%]
+.....................s................................................ [ 64%]
+................................s...................................s [ 78%]
 ................ [ 81%]
 ............................................................... [ 94%]
-.............................                                       [100%]
+..............................                                      [100%]
 ============================== warnings summary ===============================
 pruebas/test_hito4.py::Catalogo::test_ni_resources_ni_prompts
 pruebas/test_hito4.py::ServidorReal::test_se_construye_sin_arrancar
@@ -14,4 +14,8 @@ pruebas/test_hito4.py::ServidorReal::test_se_construye_sin_arrancar
     srv = Server(
 
 -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
-500 passed, 3 skipped, 2 warnings, 179 subtests passed in 252.62s (0:04:12)
+=========================== short test summary info ===========================
+SKIPPED [1] pruebas\test_hito4.py:221: ningún par real rasteriza hacia un destino con texto en esta máquina — ver bench/aristas-documentales-cierre.md §9
+SKIPPED [1] pruebas\test_hito6.py:186: falta el ráster (`bench/salidas-hito6/preparar_h6.py`)
+SKIPPED [1] pruebas\test_hito6.py:697: necesita la tarjeta: FILEX_PRUEBAS_SIDECAR=1
+501 passed, 3 skipped, 2 warnings, 179 subtests passed in 208.05s (0:03:28)

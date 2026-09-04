@@ -269,22 +269,50 @@ class RaicesMixtasN35(unittest.TestCase):
         with self.assertRaises(ValueError):
             Confinamiento([self.inerte, self.inerte])
 
-    def test_una_raiz_inerte_no_concedia_NADA_asi_que_podarla_no_quita_nada(self):
-        """El motivo por el que podar es seguro, medido y no argumentado.
+    def test_que_concede_de_verdad_una_raiz_de_unidad_SIN_podarla(self):
+        """Qué concede la raíz podada, ejercitando `_dentro` con ella PRESENTE.
 
-        `_dentro` compara con `r + os.sep`, y sobre `c:\\` eso da la barra
-        DOBLE `c:\\\\`, que ningún candidato normalizado casa. Así que la raíz
-        de una unidad **no es una raíz ancha: es inerte**, y quitarla no puede
-        quitar ningún acceso porque no concedía ninguno.
+        **Esta prueba nació vacua y se reescribió** (trampa 109). La primera
+        versión construía `Confinamiento([legit, inerte])` y afirmaba que nada
+        bajo la raíz de unidad se leía — cierto, **pero porque `_preparar` ya
+        la había podado**, no porque fuera inerte. El `assert` no podía
+        distinguir las dos cosas, así que no probaba la afirmación de la que
+        colgaba su nombre. La única forma de ejercitarla es **saltarse
+        `_preparar`** y poner la raíz en `lectura` a mano.
+
+        Y hecho así, la afirmación de la que colgaba resulta FALSA: `_dentro`
+        es `c == r or c.startswith(r + os.sep)`, y aunque la barra doble mata
+        la segunda rama, **la primera acepta la propia raíz**.
+        """
+        c = Confinamiento([self.legit])
+        raiz = _norm(os.path.abspath(self.inerte))
+        c.lectura = [raiz]                       # como si NO se hubiera podado
+
+        # Lo que sí concede: exactamente un camino, ella misma.
+        self.assertTrue(c._dentro(raiz, [raiz]),
+                        "la rama `c == r` de `_dentro` acepta la propia raíz")
+        # Y ningún descendiente, que es la mitad que la barra doble sí mata.
+        for hijo in (os.path.join(self.inerte, "Windows"),
+                     os.path.join(self.inerte, "Windows", "win.ini"),
+                     self.legit):
+            self.assertFalse(c._dentro(_norm(os.path.abspath(hijo)), [raiz]),
+                             "%s no debería casar con la raíz de unidad" % hijo)
+
+    def test_podar_no_puede_conceder_porque_ese_acceso_NUNCA_existio(self):
+        """El motivo bueno, y no depende de qué conceda la raíz podada.
+
+        Con el código anterior, `_preparar` lanzaba **antes de devolver**, así
+        que un `Confinamiento` construido no pudo contener jamás una raíz de
+        unidad. La poda no quita un acceso que nunca llegó a existir. Lo que
+        se afirma aquí es esa imposibilidad, sobre el objeto ya construido.
         """
         c = Confinamiento([self.legit, self.inerte])
-        # Nada de lo que caería bajo la raíz inerte —y no bajo la legítima—
-        # se lee, ni antes ni después de podarla.
-        bajo_la_inerte = os.path.abspath(
-            r"C:\Windows\win.ini" if sys.platform == "win32" else "/etc/hostname")
-        if os.path.exists(bajo_la_inerte):
-            self.assertFalse(c.puede_leer(bajo_la_inerte))
-        self.assertFalse(c.puede_leer(self.fuera))
+        raiz = _norm(os.path.abspath(self.inerte))
+        self.assertNotIn(raiz, c.lectura)
+        self.assertNotIn(raiz, c.escritura)
+        # Y por tanto tampoco se puede alcanzar el único camino que concedía.
+        with self.assertRaises(Denegado):
+            c.resolver(self.inerte)
 
     def test_podar_solo_QUITA_el_resultado_es_subconjunto_de_lo_declarado(self):
         """No hay forma de que la poda AÑADA una raíz: la propiedad, afirmada."""
