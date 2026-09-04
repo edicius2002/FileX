@@ -1,0 +1,37 @@
+{
+  "codigo_medido": "rechaza",
+  "control_de_identidad": "`raise ValueError` en _preparar",
+  "n_pruebas": 12,
+  "n_rojas": 8,
+  "n_verdes": 4,
+  "rojas": [
+    "RaicesMixtasN35.test_declarar_escritura_y_que_ninguna_confine_es_un_ERROR_no_un_silencio",
+    "RaicesMixtasN35.test_la_escritura_MIXTA_conserva_la_raiz_util",
+    "RaicesMixtasN35.test_podar_no_puede_conceder_porque_ese_acceso_NUNCA_existio",
+    "RaicesMixtasN35.test_podar_solo_QUITA_el_resultado_es_subconjunto_de_lo_declarado",
+    "RaicesMixtasN35.test_por_el_NUCLEO_una_raiz_mixta_resuelve_su_propia_raiz",
+    "RaicesMixtasN35.test_una_raiz_que_no_confina_NO_se_lleva_por_delante_a_las_demas",
+    "RaicesMixtasPorMCP.test_un_root_que_no_confina_NO_le_quita_al_cliente_los_que_si",
+    "RaicesMixtasPorMCP.test_y_el_confinamiento_que_queda_sigue_DENEGANDO_lo_de_fuera"
+  ],
+  "verdes": [
+    "RaicesMixtasN35.test_no_declarar_escritura_sigue_siendo_legitimo",
+    "RaicesMixtasN35.test_podar_NO_reabre_N7_sin_ninguna_raiz_util_sigue_sin_arrancar",
+    "RaicesMixtasN35.test_que_concede_de_verdad_una_raiz_de_unidad_SIN_podarla",
+    "RaicesMixtasPorMCP.test_si_NINGUN_root_confina_se_sigue_diciendo_SIN_ACCESO"
+  ],
+  "veredictos": {
+    "RaicesMixtasN35.test_declarar_escritura_y_que_ninguna_confine_es_un_ERROR_no_un_silencio": "FAIL",
+    "RaicesMixtasN35.test_la_escritura_MIXTA_conserva_la_raiz_util": "ERROR",
+    "RaicesMixtasN35.test_no_declarar_escritura_sigue_siendo_legitimo": "ok",
+    "RaicesMixtasN35.test_podar_NO_reabre_N7_sin_ninguna_raiz_util_sigue_sin_arrancar": "ok",
+    "RaicesMixtasN35.test_podar_no_puede_conceder_porque_ese_acceso_NUNCA_existio": "ERROR",
+    "RaicesMixtasN35.test_podar_solo_QUITA_el_resultado_es_subconjunto_de_lo_declarado": "ERROR",
+    "RaicesMixtasN35.test_por_el_NUCLEO_una_raiz_mixta_resuelve_su_propia_raiz": "ERROR",
+    "RaicesMixtasN35.test_que_concede_de_verdad_una_raiz_de_unidad_SIN_podarla": "ok",
+    "RaicesMixtasN35.test_una_raiz_que_no_confina_NO_se_lleva_por_delante_a_las_demas": "ERROR",
+    "RaicesMixtasPorMCP.test_si_NINGUN_root_confina_se_sigue_diciendo_SIN_ACCESO": "ok",
+    "RaicesMixtasPorMCP.test_un_root_que_no_confina_NO_le_quita_al_cliente_los_que_si": "FAIL",
+    "RaicesMixtasPorMCP.test_y_el_confinamiento_que_queda_sigue_DENEGANDO_lo_de_fuera": "ERROR"
+  }
+}

@@ -981,5 +981,79 @@ class RaicesEnConcurrencia(unittest.TestCase):
         self.assertFalse(g2.sin_acceso)
         self.assertIsNotNone(fx2.confinamiento)
 
+
+@unittest.skipUnless(HAY_ANYIO, "hace falta anyio (viene con el SDK de MCP)")
+class RaicesMixtasPorMCP(unittest.TestCase):
+    """N35 (`bench/raices-mixtas.md`) visto desde la superficie que lo sufre.
+
+    La política vive en `filex/confinamiento.py` y se prueba ahí
+    (`test_hito1.RaicesMixtasN35`), pero el consumidor que la traduce a
+    «tengo acceso o no» es `Raices.asegurar`, y **el mismo `except ValueError`
+    tapaba las dos mitades**: la fuga de N7 —abría de más— y N35 —cerraba de
+    más—. Por eso las dos se comprueban aquí, juntas: un arreglo que recupere
+    el acceso legítimo y de paso relaje el confinamiento no sería un arreglo.
+    """
+
+    def setUp(self):
+        self.d = tempfile.mkdtemp(prefix="n35-t-")
+        self.sub = os.path.join(self.d, "sub")
+        os.makedirs(self.sub, exist_ok=True)
+        self.addCleanup(shutil.rmtree, self.d, ignore_errors=True)
+        self.unidad = os.path.splitdrive(os.path.abspath(self.sub))[0] + os.sep
+
+    def _asegurar(self, raices):
+        import anyio
+
+        fx = FileX()
+        g = M.Raices(fx, None)
+        g.sin_acceso = False
+        anyio.run(g.asegurar, _SesionDeRoots(raices, retardo=0.0))
+        return fx, g
+
+    def test_un_root_que_no_confina_NO_le_quita_al_cliente_los_que_si(self):
+        """MEDIDO: antes, `sin_acceso = True` sobre una lista blanca utilizable."""
+        for orden in ([self.unidad, self.sub], [self.sub, self.unidad]):
+            with self.subTest(primero=os.path.basename(orden[0]) or orden[0]):
+                fx, g = self._asegurar(orden)
+                self.assertFalse(g.sin_acceso,
+                                 "el root legítimo sobrevive a la poda del otro")
+                self.assertIsNotNone(fx.confinamiento)
+                self.assertEqual(fx.confinamiento.lectura,
+                                 [_conf._norm(os.path.abspath(self.sub))])
+
+    def test_y_el_confinamiento_que_queda_sigue_DENEGANDO_lo_de_fuera(self):
+        """La mitad que impide que «recuperar acceso» se convierta en la fuga.
+
+        Recuperar el root legítimo no puede traer consigo nada más: ni el
+        directorio hermano, ni —lo que la raíz de unidad haría pensar— el resto
+        de la unidad.
+        """
+        fx, g = self._asegurar([self.unidad, self.sub])
+        hermano = os.path.join(self.d, "hermano")
+        os.makedirs(hermano, exist_ok=True)
+        fuera = os.path.join(hermano, "x.txt")
+        open(fuera, "w").close()
+        with self.assertRaises(_conf.Denegado):
+            fx.confinamiento.resolver(fuera)
+        # Y nada del resto de la unidad, que es lo que el root podado nombraba.
+        raiz_unidad = os.path.join(self.unidad, "Windows", "win.ini")
+        if os.path.exists(raiz_unidad):
+            with self.assertRaises(_conf.Denegado):
+                fx.confinamiento.resolver(raiz_unidad)
+
+    def test_si_NINGUN_root_confina_se_sigue_diciendo_SIN_ACCESO(self):
+        """N7 no se reabre: es la celda que separa este arreglo de la fuga.
+
+        Cuando la poda se lleva TODOS los roots, `Confinamiento` lanza igual
+        que antes de N35 y esta superficie tiene que traducirlo a
+        `sin_acceso = True` con `confinamiento is None` — nunca a
+        `confinamiento is None` con `sin_acceso = False`, que es exactamente
+        el par que producía la fuga.
+        """
+        fx, g = self._asegurar([self.unidad])
+        self.assertIsNone(fx.confinamiento)
+        self.assertTrue(g.sin_acceso)
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

@@ -1,0 +1,67 @@
+{
+  "plataforma": "win32",
+  "base": "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n35-cli-ee16b_o4",
+  "unidad": "C:\\",
+  "celdas": {
+    "MIXTA_convierte_dentro_de_su_raiz": {
+      "argv": [
+        "--raiz",
+        "C:\\",
+        "--raiz",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n35-cli-ee16b_o4\\legit",
+        "convertir",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n35-cli-ee16b_o4\\legit\\entrada.png",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n35-cli-ee16b_o4\\legit\\salida.webp"
+      ],
+      "rc": 0,
+      "stdout": "alida.webp   [ok_parcial]\n  png→webp [imagemagick]  rc=0  609 ms  contrato 5/6 → ok_parcial\n      [informativo] I5: reduccion de profundidad inevitable en webp (techo 8 bits)\n      [informativo] I2: se descarta el canal alfa y min(alfa) de la entrada no esta calculado: la regla I2 no es evaluable\n      [informativo] N9: el fichero declarado lleva el 100.0 % de los bytes escritos (13516 de 13516 B)",
+      "stderr": "",
+      "salida_existe": true,
+      "salida_bytes": 13516
+    },
+    "MIXTA_deniega_lo_de_fuera": {
+      "argv": [
+        "--raiz",
+        "C:\\",
+        "--raiz",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n35-cli-ee16b_o4\\legit",
+        "convertir",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n35-cli-ee16b_o4\\hermano\\entrada.png",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n35-cli-ee16b_o4\\legit\\salida2.webp"
+      ],
+      "rc": 1,
+      "stdout": "NO CONVERTIDO — ruta no accesible",
+      "stderr": "",
+      "salida_existe": false,
+      "salida_bytes": 0
+    },
+    "SOLO_UNIDAD_no_arranca": {
+      "argv": [
+        "--raiz",
+        "C:\\",
+        "convertir",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n35-cli-ee16b_o4\\legit\\entrada.png",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n35-cli-ee16b_o4\\legit\\salida3.webp"
+      ],
+      "rc": 2,
+      "stdout": "",
+      "stderr": "no se puede arrancar: sin raíces de lectura accesibles: FileX no arranca (R6)",
+      "salida_existe": false,
+      "salida_bytes": 0
+    },
+    "CONTROL_solo_legitima": {
+      "argv": [
+        "--raiz",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n35-cli-ee16b_o4\\legit",
+        "convertir",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n35-cli-ee16b_o4\\legit\\entrada.png",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n35-cli-ee16b_o4\\legit\\salida4.webp"
+      ],
+      "rc": 0,
+      "stdout": "lida4.webp   [ok_parcial]\n  png→webp [imagemagick]  rc=0  510 ms  contrato 5/6 → ok_parcial\n      [informativo] I5: reduccion de profundidad inevitable en webp (techo 8 bits)\n      [informativo] I2: se descarta el canal alfa y min(alfa) de la entrada no esta calculado: la regla I2 no es evaluable\n      [informativo] N9: el fichero declarado lleva el 100.0 % de los bytes escritos (13516 de 13516 B)",
+      "stderr": "",
+      "salida_existe": true,
+      "salida_bytes": 13516
+    }
+  }
+}

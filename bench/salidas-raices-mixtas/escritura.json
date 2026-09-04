@@ -1,0 +1,195 @@
+{
+  "plataforma": "win32",
+  "base_desechable": "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n35-esc-owj67350",
+  "destino_bueno": "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n35-esc-owj67350\\escr",
+  "destino_malo": "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n35-esc-owj67350\\fuera",
+  "celdas": {
+    "1_CONTROL_ambas_buenas": {
+      "A_rechazar": {
+        "constructor": "ok",
+        "lectura": [
+          "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-esc-owj67350\\legit"
+        ],
+        "escritura": [
+          "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-esc-owj67350\\escr"
+        ],
+        "escribe_en_su_raiz": true,
+        "escribe_fuera": false
+      },
+      "B1_podar_y_callar": {
+        "constructor": "ok",
+        "lectura": [
+          "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-esc-owj67350\\legit"
+        ],
+        "escritura": [
+          "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-esc-owj67350\\escr"
+        ],
+        "escribe_en_su_raiz": true,
+        "escribe_fuera": false
+      },
+      "B2_podar_y_avisar": {
+        "constructor": "ok",
+        "lectura": [
+          "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-esc-owj67350\\legit"
+        ],
+        "escritura": [
+          "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-esc-owj67350\\escr"
+        ],
+        "escribe_en_su_raiz": true,
+        "escribe_fuera": false
+      }
+    },
+    "2_escritura_None_hereda_lectura": {
+      "A_rechazar": {
+        "constructor": "ok",
+        "lectura": [
+          "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-esc-owj67350\\legit"
+        ],
+        "escritura": [
+          "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-esc-owj67350\\legit"
+        ],
+        "escribe_en_su_raiz": false,
+        "escribe_fuera": false
+      },
+      "B1_podar_y_callar": {
+        "constructor": "ok",
+        "lectura": [
+          "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-esc-owj67350\\legit"
+        ],
+        "escritura": [
+          "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-esc-owj67350\\legit"
+        ],
+        "escribe_en_su_raiz": false,
+        "escribe_fuera": false
+      },
+      "B2_podar_y_avisar": {
+        "constructor": "ok",
+        "lectura": [
+          "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-esc-owj67350\\legit"
+        ],
+        "escritura": [
+          "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-esc-owj67350\\legit"
+        ],
+        "escribe_en_su_raiz": false,
+        "escribe_fuera": false
+      }
+    },
+    "3_escritura_declarada_VACIA": {
+      "A_rechazar": {
+        "constructor": "ok",
+        "lectura": [
+          "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-esc-owj67350\\legit"
+        ],
+        "escritura": [],
+        "escribe_en_su_raiz": false,
+        "escribe_fuera": false
+      },
+      "B1_podar_y_callar": {
+        "constructor": "ok",
+        "lectura": [
+          "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-esc-owj67350\\legit"
+        ],
+        "escritura": [],
+        "escribe_en_su_raiz": false,
+        "escribe_fuera": false
+      },
+      "B2_podar_y_avisar": {
+        "constructor": "ok",
+        "lectura": [
+          "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-esc-owj67350\\legit"
+        ],
+        "escritura": [],
+        "escribe_en_su_raiz": false,
+        "escribe_fuera": false
+      }
+    },
+    "4_escritura_SOLO_raiz_de_unidad": {
+      "A_rechazar": {
+        "constructor": "ValueError",
+        "mensaje": "una raíz no puede ser la raíz de una unidad (R3)",
+        "escribe_en_su_raiz": false,
+        "escribe_fuera": false
+      },
+      "B1_podar_y_callar": {
+        "constructor": "ok",
+        "lectura": [
+          "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-esc-owj67350\\legit"
+        ],
+        "escritura": [],
+        "escribe_en_su_raiz": false,
+        "escribe_fuera": false
+      },
+      "B2_podar_y_avisar": {
+        "constructor": "ValueError",
+        "mensaje": "se declararon raíces de escritura y ninguna confina (R6+R9)",
+        "escribe_en_su_raiz": false,
+        "escribe_fuera": false
+      }
+    },
+    "5_escritura_MIXTA": {
+      "A_rechazar": {
+        "constructor": "ValueError",
+        "mensaje": "una raíz no puede ser la raíz de una unidad (R3)",
+        "escribe_en_su_raiz": false,
+        "escribe_fuera": false
+      },
+      "B1_podar_y_callar": {
+        "constructor": "ok",
+        "lectura": [
+          "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-esc-owj67350\\legit"
+        ],
+        "escritura": [
+          "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-esc-owj67350\\escr"
+        ],
+        "escribe_en_su_raiz": true,
+        "escribe_fuera": false
+      },
+      "B2_podar_y_avisar": {
+        "constructor": "ok",
+        "lectura": [
+          "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-esc-owj67350\\legit"
+        ],
+        "escritura": [
+          "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-esc-owj67350\\escr"
+        ],
+        "escribe_en_su_raiz": true,
+        "escribe_fuera": false
+      }
+    },
+    "6_lectura_MIXTA_escritura_buena": {
+      "A_rechazar": {
+        "constructor": "ValueError",
+        "mensaje": "una raíz no puede ser la raíz de una unidad (R3)",
+        "escribe_en_su_raiz": false,
+        "escribe_fuera": false
+      },
+      "B1_podar_y_callar": {
+        "constructor": "ok",
+        "lectura": [
+          "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-esc-owj67350\\legit"
+        ],
+        "escritura": [
+          "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-esc-owj67350\\escr"
+        ],
+        "escribe_en_su_raiz": true,
+        "escribe_fuera": false
+      },
+      "B2_podar_y_avisar": {
+        "constructor": "ok",
+        "lectura": [
+          "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-esc-owj67350\\legit"
+        ],
+        "escritura": [
+          "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-esc-owj67350\\escr"
+        ],
+        "escribe_en_su_raiz": true,
+        "escribe_fuera": false
+      }
+    }
+  },
+  "control_hoy_permite_escritura_vacia": {
+    "construye": true,
+    "escritura": [],
+    "escribe_en_su_raiz": false
+  }
+}

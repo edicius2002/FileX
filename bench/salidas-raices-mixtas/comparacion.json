@@ -1,0 +1,129 @@
+{
+  "base": "C:/Users/krato/AppData/Local/Temp/filex-n35-fijo",
+  "filas": {
+    "1_solo_legitima_CONTROL": {
+      "clase": "SIN_CAMBIO",
+      "gana": [],
+      "pierde": [],
+      "gana_escritura": false,
+      "pierde_escritura": false,
+      "constructor_antes": "ok",
+      "constructor_despues": "ok",
+      "objetivos_ganados_indebidos": []
+    },
+    "2_solo_raiz_de_unidad_N7": {
+      "clase": "SIN_CAMBIO",
+      "gana": [],
+      "pierde": [],
+      "gana_escritura": false,
+      "pierde_escritura": false,
+      "constructor_antes": "ValueError",
+      "constructor_despues": "ValueError",
+      "objetivos_ganados_indebidos": []
+    },
+    "3_MIXTA_mala_primero_N35": {
+      "clase": "RECUPERA_ACCESO",
+      "gana": [
+        "O1_dentro_de_la_raiz_legitima"
+      ],
+      "pierde": [],
+      "gana_escritura": false,
+      "pierde_escritura": false,
+      "constructor_antes": "ValueError",
+      "constructor_despues": "ok",
+      "objetivos_ganados_indebidos": []
+    },
+    "4_MIXTA_buena_primero_N35": {
+      "clase": "RECUPERA_ACCESO",
+      "gana": [
+        "O1_dentro_de_la_raiz_legitima"
+      ],
+      "pierde": [],
+      "gana_escritura": false,
+      "pierde_escritura": false,
+      "constructor_antes": "ValueError",
+      "constructor_despues": "ok",
+      "objetivos_ganados_indebidos": []
+    },
+    "5_dos_malas": {
+      "clase": "SIN_CAMBIO",
+      "gana": [],
+      "pierde": [],
+      "gana_escritura": false,
+      "pierde_escritura": false,
+      "constructor_antes": "ValueError",
+      "constructor_despues": "ValueError",
+      "objetivos_ganados_indebidos": []
+    },
+    "6_dos_buenas": {
+      "clase": "SIN_CAMBIO",
+      "gana": [],
+      "pierde": [],
+      "gana_escritura": false,
+      "pierde_escritura": false,
+      "constructor_antes": "ok",
+      "constructor_despues": "ok",
+      "objetivos_ganados_indebidos": []
+    },
+    "7_MIXTA_con_UNC": {
+      "clase": "RECUPERA_ACCESO",
+      "gana": [
+        "O1_dentro_de_la_raiz_legitima"
+      ],
+      "pierde": [],
+      "gana_escritura": false,
+      "pierde_escritura": false,
+      "constructor_antes": "ValueError",
+      "constructor_despues": "ok",
+      "objetivos_ganados_indebidos": []
+    },
+    "8_vacia": {
+      "clase": "SIN_CAMBIO",
+      "gana": [],
+      "pierde": [],
+      "gana_escritura": false,
+      "pierde_escritura": false,
+      "constructor_antes": "ValueError",
+      "constructor_despues": "ValueError",
+      "objetivos_ganados_indebidos": []
+    },
+    "9_escritura_SOLO_raiz_de_unidad": {
+      "clase": "SIN_CAMBIO",
+      "gana": [],
+      "pierde": [],
+      "gana_escritura": false,
+      "pierde_escritura": false,
+      "constructor_antes": "ValueError",
+      "constructor_despues": "ValueError",
+      "objetivos_ganados_indebidos": []
+    },
+    "10_escritura_MIXTA": {
+      "clase": "RECUPERA_ACCESO",
+      "gana": [
+        "O1_dentro_de_la_raiz_legitima"
+      ],
+      "pierde": [],
+      "gana_escritura": true,
+      "pierde_escritura": false,
+      "constructor_antes": "ValueError",
+      "constructor_despues": "ok",
+      "objetivos_ganados_indebidos": []
+    },
+    "11_escritura_declarada_VACIA": {
+      "clase": "SIN_CAMBIO",
+      "gana": [],
+      "pierde": [],
+      "gana_escritura": false,
+      "pierde_escritura": false,
+      "constructor_antes": "ok",
+      "constructor_despues": "ok",
+      "objetivos_ganados_indebidos": []
+    }
+  },
+  "resumen": {
+    "SIN_CAMBIO": 7,
+    "RECUPERA_ACCESO": 4
+  },
+  "N7_no_reabierta": true,
+  "cero_fugas": true
+}

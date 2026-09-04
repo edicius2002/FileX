@@ -1,0 +1,128 @@
+{
+  "plataforma": "win32",
+  "python": "3.11.9",
+  "predicado": "os.path.dirname(_norm(abspath(r))) == _norm(abspath(r))",
+  "filas": [
+    {
+      "declarada": "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-af0fa20bb8ba9d275\\bench\\salidas-raices-mixtas",
+      "normalizada": "d:\\work\\research\\filex\\.claude\\worktrees\\agent-af0fa20bb8ba9d275\\bench\\salidas-raices-mixtas",
+      "dirname": "d:\\work\\research\\filex\\.claude\\worktrees\\agent-af0fa20bb8ba9d275\\bench",
+      "no_confina": false,
+      "constructor": "ok"
+    },
+    {
+      "declarada": "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-af0fa20bb8ba9d275",
+      "normalizada": "d:\\work\\research\\filex\\.claude\\worktrees\\agent-af0fa20bb8ba9d275",
+      "dirname": "d:\\work\\research\\filex\\.claude\\worktrees",
+      "no_confina": false,
+      "constructor": "ok"
+    },
+    {
+      "declarada": "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-af0fa20bb8ba9d275\\corpus",
+      "normalizada": "d:\\work\\research\\filex\\.claude\\worktrees\\agent-af0fa20bb8ba9d275\\corpus",
+      "dirname": "d:\\work\\research\\filex\\.claude\\worktrees\\agent-af0fa20bb8ba9d275",
+      "no_confina": false,
+      "constructor": "ok"
+    },
+    {
+      "declarada": "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-af0fa20bb8ba9d275\\corpus\\",
+      "normalizada": "d:\\work\\research\\filex\\.claude\\worktrees\\agent-af0fa20bb8ba9d275\\corpus",
+      "dirname": "d:\\work\\research\\filex\\.claude\\worktrees\\agent-af0fa20bb8ba9d275",
+      "no_confina": false,
+      "constructor": "ok"
+    },
+    {
+      "declarada": "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-af0fa20bb8ba9d275\\corpus\\..",
+      "normalizada": "d:\\work\\research\\filex\\.claude\\worktrees\\agent-af0fa20bb8ba9d275",
+      "dirname": "d:\\work\\research\\filex\\.claude\\worktrees",
+      "no_confina": false,
+      "constructor": "ok"
+    },
+    {
+      "declarada": "corpus",
+      "normalizada": "d:\\work\\research\\filex\\.claude\\worktrees\\agent-af0fa20bb8ba9d275\\corpus",
+      "dirname": "d:\\work\\research\\filex\\.claude\\worktrees\\agent-af0fa20bb8ba9d275",
+      "no_confina": false,
+      "constructor": "ok"
+    },
+    {
+      "declarada": "C:\\",
+      "normalizada": "c:\\",
+      "dirname": "c:\\",
+      "no_confina": true,
+      "constructor": "ValueError: una raíz no puede ser la raíz de una unidad (R3)"
+    },
+    {
+      "declarada": "C:/",
+      "normalizada": "c:\\",
+      "dirname": "c:\\",
+      "no_confina": true,
+      "constructor": "ValueError: una raíz no puede ser la raíz de una unidad (R3)"
+    },
+    {
+      "declarada": "c:\\",
+      "normalizada": "c:\\",
+      "dirname": "c:\\",
+      "no_confina": true,
+      "constructor": "ValueError: una raíz no puede ser la raíz de una unidad (R3)"
+    },
+    {
+      "declarada": "D:\\",
+      "normalizada": "d:\\",
+      "dirname": "d:\\",
+      "no_confina": true,
+      "constructor": "ValueError: una raíz no puede ser la raíz de una unidad (R3)"
+    },
+    {
+      "declarada": "D:\\",
+      "normalizada": "d:\\",
+      "dirname": "d:\\",
+      "no_confina": true,
+      "constructor": "ValueError: una raíz no puede ser la raíz de una unidad (R3)"
+    },
+    {
+      "declarada": "C:",
+      "normalizada": "c:\\",
+      "dirname": "c:\\",
+      "no_confina": true,
+      "constructor": "ValueError: una raíz no puede ser la raíz de una unidad (R3)"
+    },
+    {
+      "declarada": "\\\\servidor\\recurso",
+      "normalizada": "\\\\servidor\\recurso",
+      "dirname": "\\\\servidor\\recurso",
+      "no_confina": true,
+      "constructor": "ValueError: una raíz no puede ser la raíz de una unidad (R3)"
+    },
+    {
+      "declarada": "\\\\servidor\\recurso\\sub",
+      "normalizada": "\\\\servidor\\recurso\\sub",
+      "dirname": "\\\\servidor\\recurso\\",
+      "no_confina": false,
+      "constructor": "ok"
+    },
+    {
+      "declarada": "\\\\?\\C:\\",
+      "normalizada": "\\\\?\\c:\\",
+      "dirname": "\\\\?\\c:\\",
+      "no_confina": true,
+      "constructor": "ValueError: una raíz no puede ser la raíz de una unidad (R3)"
+    },
+    {
+      "declarada": "",
+      "normalizada": "d:\\work\\research\\filex\\.claude\\worktrees\\agent-af0fa20bb8ba9d275",
+      "dirname": "d:\\work\\research\\filex\\.claude\\worktrees",
+      "no_confina": false,
+      "constructor": "ok"
+    },
+    {
+      "declarada": ".",
+      "normalizada": "d:\\work\\research\\filex\\.claude\\worktrees\\agent-af0fa20bb8ba9d275",
+      "dirname": "d:\\work\\research\\filex\\.claude\\worktrees",
+      "no_confina": false,
+      "constructor": "ok"
+    }
+  ],
+  "n_no_confina": 8,
+  "n_confina": 9
+}

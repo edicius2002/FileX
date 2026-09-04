@@ -527,6 +527,21 @@ class Raices:
         `Confinamiento.__init__` ya lo dice —*«R6: denegar por defecto. Sin
         ninguna raíz accesible, no se arranca»*—: el núcleo deja subir el
         `ValueError` y era esta superficie la que se lo tragaba.
+
+        **Y este mismo `except` tapaba TAMBIÉN el reverso — cerrado en N35**
+        (`bench/raices-mixtas.md`). Hasta N35, `Confinamiento._preparar`
+        lanzaba en cuanto **una** raíz no confinaba, así que un cliente que
+        declarase `["C:\\", <un directorio legítimo>]` perdía también el
+        legítimo: `sin_acceso = True` sobre una lista blanca utilizable. Las
+        dos mitades salían por aquí con la misma excepción y el mismo `except`,
+        y por eso la de arriba —que abría de más— tapó a ésta —que cerraba de
+        más— durante toda una ronda. Ahora las raíces que no confinan **se
+        podan** y el `ValueError` queda para lo que R6 siempre quiso decir:
+        *no queda ninguna raíz*. Este `except` no cambia y **no debe cambiar**:
+        sigue siendo el que traduce «no hay lista blanca» a `sin_acceso`.
+        MEDIDO, misma sonda sobre el código de antes y el de después: 11 filas,
+        7 sin cambio y 4 que recuperan acceso, con **cero** accesos indebidos
+        ganados; la fila de N7 sale idéntica.
         """
         with self._lock:
             if self._resuelto:

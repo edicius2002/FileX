@@ -1,0 +1,222 @@
+{
+  "plataforma": "win32",
+  "python": "3.11.9",
+  "base": "C:/Users/krato/AppData/Local/Temp/filex-n35-fijo",
+  "objetivos": {
+    "O1_dentro_de_la_raiz_legitima": "C:/Users/krato/AppData/Local/Temp/filex-n35-fijo\\legit\\dentro.txt",
+    "O2_hermano_no_declarado": "C:/Users/krato/AppData/Local/Temp/filex-n35-fijo\\hermano\\fuera.txt",
+    "O3_otra_unidad": "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-af0fa20bb8ba9d275\\corpus\\imagen\\tipico.png",
+    "O4_bajo_la_unidad_fuera_de_legit": "C:\\Windows\\win.ini"
+  },
+  "destino_escritura": "C:/Users/krato/AppData/Local/Temp/filex-n35-fijo\\escr",
+  "celdas": {
+    "1_solo_legitima_CONTROL": {
+      "lectura_declarada": [
+        "C:/Users/krato/AppData/Local/Temp/filex-n35-fijo\\legit"
+      ],
+      "escritura_declarada": null,
+      "constructor": "ok",
+      "lectura_efectiva": [
+        "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-fijo\\legit"
+      ],
+      "escritura_efectiva": [
+        "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-fijo\\legit"
+      ],
+      "lee": {
+        "O1_dentro_de_la_raiz_legitima": true,
+        "O2_hermano_no_declarado": false,
+        "O3_otra_unidad": false,
+        "O4_bajo_la_unidad_fuera_de_legit": false
+      },
+      "escribe": false
+    },
+    "2_solo_raiz_de_unidad_N7": {
+      "lectura_declarada": [
+        "C:\\"
+      ],
+      "escritura_declarada": null,
+      "constructor": "ValueError",
+      "mensaje": "sin raíces de lectura accesibles: FileX no arranca (R6)",
+      "lee": {
+        "O1_dentro_de_la_raiz_legitima": false,
+        "O2_hermano_no_declarado": false,
+        "O3_otra_unidad": false,
+        "O4_bajo_la_unidad_fuera_de_legit": false
+      },
+      "escribe": false
+    },
+    "3_MIXTA_mala_primero_N35": {
+      "lectura_declarada": [
+        "C:\\",
+        "C:/Users/krato/AppData/Local/Temp/filex-n35-fijo\\legit"
+      ],
+      "escritura_declarada": null,
+      "constructor": "ok",
+      "lectura_efectiva": [
+        "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-fijo\\legit"
+      ],
+      "escritura_efectiva": [
+        "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-fijo\\legit"
+      ],
+      "lee": {
+        "O1_dentro_de_la_raiz_legitima": true,
+        "O2_hermano_no_declarado": false,
+        "O3_otra_unidad": false,
+        "O4_bajo_la_unidad_fuera_de_legit": false
+      },
+      "escribe": false
+    },
+    "4_MIXTA_buena_primero_N35": {
+      "lectura_declarada": [
+        "C:/Users/krato/AppData/Local/Temp/filex-n35-fijo\\legit",
+        "C:\\"
+      ],
+      "escritura_declarada": null,
+      "constructor": "ok",
+      "lectura_efectiva": [
+        "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-fijo\\legit"
+      ],
+      "escritura_efectiva": [
+        "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-fijo\\legit"
+      ],
+      "lee": {
+        "O1_dentro_de_la_raiz_legitima": true,
+        "O2_hermano_no_declarado": false,
+        "O3_otra_unidad": false,
+        "O4_bajo_la_unidad_fuera_de_legit": false
+      },
+      "escribe": false
+    },
+    "5_dos_malas": {
+      "lectura_declarada": [
+        "C:\\",
+        "D:\\"
+      ],
+      "escritura_declarada": null,
+      "constructor": "ValueError",
+      "mensaje": "sin raíces de lectura accesibles: FileX no arranca (R6)",
+      "lee": {
+        "O1_dentro_de_la_raiz_legitima": false,
+        "O2_hermano_no_declarado": false,
+        "O3_otra_unidad": false,
+        "O4_bajo_la_unidad_fuera_de_legit": false
+      },
+      "escribe": false
+    },
+    "6_dos_buenas": {
+      "lectura_declarada": [
+        "C:/Users/krato/AppData/Local/Temp/filex-n35-fijo\\legit",
+        "C:/Users/krato/AppData/Local/Temp/filex-n35-fijo\\escr"
+      ],
+      "escritura_declarada": null,
+      "constructor": "ok",
+      "lectura_efectiva": [
+        "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-fijo\\legit",
+        "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-fijo\\escr"
+      ],
+      "escritura_efectiva": [
+        "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-fijo\\legit",
+        "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-fijo\\escr"
+      ],
+      "lee": {
+        "O1_dentro_de_la_raiz_legitima": true,
+        "O2_hermano_no_declarado": false,
+        "O3_otra_unidad": false,
+        "O4_bajo_la_unidad_fuera_de_legit": false
+      },
+      "escribe": true
+    },
+    "7_MIXTA_con_UNC": {
+      "lectura_declarada": [
+        "\\\\servidor\\recurso",
+        "C:/Users/krato/AppData/Local/Temp/filex-n35-fijo\\legit"
+      ],
+      "escritura_declarada": null,
+      "constructor": "ok",
+      "lectura_efectiva": [
+        "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-fijo\\legit"
+      ],
+      "escritura_efectiva": [
+        "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-fijo\\legit"
+      ],
+      "lee": {
+        "O1_dentro_de_la_raiz_legitima": true,
+        "O2_hermano_no_declarado": false,
+        "O3_otra_unidad": false,
+        "O4_bajo_la_unidad_fuera_de_legit": false
+      },
+      "escribe": false
+    },
+    "8_vacia": {
+      "lectura_declarada": [],
+      "escritura_declarada": null,
+      "constructor": "ValueError",
+      "mensaje": "sin raíces de lectura accesibles: FileX no arranca (R6)",
+      "lee": {
+        "O1_dentro_de_la_raiz_legitima": false,
+        "O2_hermano_no_declarado": false,
+        "O3_otra_unidad": false,
+        "O4_bajo_la_unidad_fuera_de_legit": false
+      },
+      "escribe": false
+    },
+    "9_escritura_SOLO_raiz_de_unidad": {
+      "lectura_declarada": [
+        "C:/Users/krato/AppData/Local/Temp/filex-n35-fijo\\legit"
+      ],
+      "escritura_declarada": [
+        "C:\\"
+      ],
+      "constructor": "ValueError",
+      "mensaje": "se declararon raíces de escritura y ninguna confina (R6+R9)",
+      "lee": {
+        "O1_dentro_de_la_raiz_legitima": false,
+        "O2_hermano_no_declarado": false,
+        "O3_otra_unidad": false,
+        "O4_bajo_la_unidad_fuera_de_legit": false
+      },
+      "escribe": false
+    },
+    "10_escritura_MIXTA": {
+      "lectura_declarada": [
+        "C:/Users/krato/AppData/Local/Temp/filex-n35-fijo\\legit"
+      ],
+      "escritura_declarada": [
+        "C:\\",
+        "C:/Users/krato/AppData/Local/Temp/filex-n35-fijo\\escr"
+      ],
+      "constructor": "ok",
+      "lectura_efectiva": [
+        "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-fijo\\legit"
+      ],
+      "escritura_efectiva": [
+        "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-fijo\\escr"
+      ],
+      "lee": {
+        "O1_dentro_de_la_raiz_legitima": true,
+        "O2_hermano_no_declarado": false,
+        "O3_otra_unidad": false,
+        "O4_bajo_la_unidad_fuera_de_legit": false
+      },
+      "escribe": true
+    },
+    "11_escritura_declarada_VACIA": {
+      "lectura_declarada": [
+        "C:/Users/krato/AppData/Local/Temp/filex-n35-fijo\\legit"
+      ],
+      "escritura_declarada": [],
+      "constructor": "ok",
+      "lectura_efectiva": [
+        "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-fijo\\legit"
+      ],
+      "escritura_efectiva": [],
+      "lee": {
+        "O1_dentro_de_la_raiz_legitima": true,
+        "O2_hermano_no_declarado": false,
+        "O3_otra_unidad": false,
+        "O4_bajo_la_unidad_fuera_de_legit": false
+      },
+      "escribe": false
+    }
+  }
+}

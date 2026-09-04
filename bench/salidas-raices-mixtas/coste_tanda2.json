@@ -1,0 +1,172 @@
+{
+  "plataforma": "win32",
+  "python": "3.11.9",
+  "n_tandas": 9,
+  "n_reps": 2000,
+  "control": {
+    "vieja_rechaza": true,
+    "nueva_poda": true,
+    "commit_viejo": "aab61bb"
+  },
+  "testigo_nivel_ms": {
+    "mediana": 45.34700000658631,
+    "max": 62.36779999744613
+  },
+  "testigo_deriva_ms": {
+    "primera": 784.798699998646,
+    "ultima": 571.3991000084206,
+    "ratio": 0.7280836474492204
+  },
+  "casos": {
+    "denegar_prohibido_R1": {
+      "nueva_us": 1.572,
+      "vieja_us": 1.721,
+      "delta_us": -0.149,
+      "ratio": 0.9134,
+      "nueva_todas": [
+        1.449,
+        1.572,
+        1.837,
+        1.84,
+        1.9,
+        1.911,
+        1.548,
+        1.56,
+        1.358
+      ],
+      "vieja_todas": [
+        1.504,
+        1.968,
+        1.365,
+        1.422,
+        1.778,
+        2.171,
+        1.913,
+        1.317,
+        1.721
+      ],
+      "dispersion_intra_us": 0.854,
+      "delta_supera_el_ruido": false
+    },
+    "denegar_existe_pero_no": {
+      "nueva_us": 11.94,
+      "vieja_us": 11.892,
+      "delta_us": 0.047,
+      "ratio": 1.004,
+      "nueva_todas": [
+        10.682,
+        12.13,
+        10.588,
+        10.208,
+        12.4,
+        19.194,
+        12.237,
+        11.94,
+        10.264
+      ],
+      "vieja_todas": [
+        11.83,
+        11.666,
+        10.41,
+        9.605,
+        12.445,
+        19.734,
+        13.554,
+        11.892,
+        13.443
+      ],
+      "dispersion_intra_us": 10.129,
+      "delta_supera_el_ruido": false
+    },
+    "permitir_ruta_valida": {
+      "nueva_us": 147.637,
+      "vieja_us": 142.413,
+      "delta_us": 5.225,
+      "ratio": 1.0367,
+      "nueva_todas": [
+        136.465,
+        162.794,
+        146.169,
+        147.637,
+        137.328,
+        164.66,
+        193.291,
+        166.603,
+        117.867
+      ],
+      "vieja_todas": [
+        226.773,
+        142.413,
+        129.419,
+        141.33,
+        146.13,
+        179.413,
+        134.291,
+        145.953,
+        134.655
+      ],
+      "dispersion_intra_us": 97.354,
+      "delta_supera_el_ruido": false
+    },
+    "construir_raiz_simple": {
+      "nueva_us": 10.494,
+      "vieja_us": 10.762,
+      "delta_us": -0.268,
+      "ratio": 0.9751,
+      "nueva_todas": [
+        10.494,
+        9.98,
+        10.004,
+        13.365,
+        14.083,
+        12.817,
+        9.744,
+        9.322,
+        15.763
+      ],
+      "vieja_todas": [
+        8.833,
+        11.729,
+        9.49,
+        12.796,
+        11.262,
+        10.762,
+        8.214,
+        8.596,
+        12.115
+      ],
+      "dispersion_intra_us": 6.441,
+      "delta_supera_el_ruido": false
+    },
+    "construir_MIXTA": {
+      "nueva_us": 19.607,
+      "vieja_us": 3.702,
+      "delta_us": 15.905,
+      "ratio": 5.2965,
+      "nueva_todas": [
+        14.208,
+        22.619,
+        15.224,
+        19.607,
+        30.734,
+        21.217,
+        12.979,
+        12.713,
+        31.297
+      ],
+      "vieja_todas": [
+        3.142,
+        4.104,
+        3.447,
+        3.702,
+        5.197,
+        4.682,
+        3.599,
+        2.878,
+        4.457
+      ],
+      "dispersion_intra_us": 18.584,
+      "delta_supera_el_ruido": false
+    }
+  }
+}
