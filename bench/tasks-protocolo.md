@@ -480,12 +480,21 @@ las mediciones, que es lo que hace falta para repetirlas.)*
 | **Qué quedó fuera** | La suite completa (no toqué código de producto) y lo listado en §7 |
 | **Estado de la máquina** | No despejada: otros workers en la ronda 15. **Ninguna medida de aquí es de tiempo** — son deterministas (conteo de tokens, presencia de símbolos, contenido de un `initialize`), así que el ruido no las mueve. Los únicos milisegundos publicados son de traza, no de comparación |
 
-**`ci/integridad.py` sobre esta rama: 8 de 9 en verde.** La que falla es
-`informes-registrados`, y **falla a propósito**: exige que este informe esté citado en la
-tabla de §1 de `ESTADO-Y-REPARTO.md`, y el encargo prohíbe expresamente tocar ese fichero.
-**Se cierra sola en cuanto el maestro pegue la fila de §8.2.** Las otras ocho —citas (50
-vivas, 1 ajena declarada, 0 muertas), inventario, un-emoji-por-fila, trampas (115, sin
-huecos), manifiestos (**0 nuevos sin manifiesto**), secretos, binarios, en-curso— pasan.
+**`ci/integridad.py` sobre esta rama: 9 de 9 en verde** — citas (50 vivas, 1 ajena
+declarada, 0 muertas), inventario, un-emoji-por-fila, trampas (115, sin huecos),
+informes-registrados, manifiestos (**0 nuevos sin manifiesto**), secretos, binarios,
+en-curso.
+
+*(Y el camino hasta ese verde merece una línea, porque casi lo cuento mal.* **Estuvo en 8
+de 9 casi todo el rato**, fallando `informes-registrados`, que exige este informe citado en
+`ESTADO-Y-REPARTO.md` — un fichero que el encargo prohíbe tocar. Iba a entregarlo así,
+declarado. Al comprobar el alcance del diff apareció **un borrado de una línea en
+`ESTADO-Y-REPARTO.md` que yo no había hecho**, y el control de la trampa 101 lo resolvió en
+una orden: `git log main..HEAD -- ESTADO-Y-REPARTO.md` sale **vacío**, así que no era mío
+— **`main` había avanzado** mientras yo medía, y el maestro ya había registrado el informe
+al despachar la ronda. Trayendo `main` a la rama, la novena se pone verde sola. **El
+"borrado" era mi rama estando vieja, no un cambio; y el rojo que iba a declarar como
+inevitable llevaba media hora arreglado en otra rama.**)*
 
 *(Detalle de máquina, por si le pasa a otro: `ci/integridad.py` **revienta** en esta consola
 sin `PYTHONIOENCODING=utf-8`, con `UnicodeEncodeError: 'charmap' codec can't encode
