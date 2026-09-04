@@ -1,0 +1,62 @@
+{
+  "plataforma": "wsl2",
+  "kernel": "6.18.33.2-microsoft-standard-WSL2",
+  "sujeto": "filex.confinamiento.Confinamiento.resolver (primitivo real de FileX)",
+  "nota": "cota INFERIOR: la ventana de una conversion real es mas ancha (resolver -> ... -> subprocess -> open del motor)",
+  "duracion_por_fase_s": 12.0,
+  "estatico": {
+    "B_resolver": "denegado",
+    "A_resolver": "CONTENIDO-DENTRO-LEGITIMO"
+  },
+  "filex_patron_natural": {
+    "sujeto": "FileX resolver()+open (patron de nucleo, sin ventana forzada)",
+    "ventana_forzada_s": 0.0,
+    "confinamiento_ecualizar_temporal": false,
+    "vivo_antes": true,
+    "atacante_detenido": true,
+    "intentos": 86621,
+    "toggles_atacante": 68789,
+    "conteo": {
+      "denegado_filex": 12383,
+      "enoent": 41568,
+      "dentro": 17500,
+      "WIN_FUERA": 15170
+    },
+    "wins_fuera": 15170,
+    "tasa_win_%": 17.513
+  },
+  "filex_patron_ventana": {
+    "sujeto": "FileX resolver()+open (ventana forzada 2ms, ~= la conversion real)",
+    "ventana_forzada_s": 0.002,
+    "confinamiento_ecualizar_temporal": false,
+    "vivo_antes": true,
+    "atacante_detenido": true,
+    "intentos": 2711,
+    "toggles_atacante": 129774,
+    "conteo": {
+      "WIN_FUERA": 383,
+      "dentro": 449,
+      "enoent": 784,
+      "denegado_filex": 1095
+    },
+    "wins_fuera": 383,
+    "tasa_win_%": 14.128
+  },
+  "control_negativo_seguro": {
+    "sujeto": "arreglo propuesto: resolver()+fd validado (ventana forzada 2ms)",
+    "ventana_forzada_s": 0.002,
+    "confinamiento_ecualizar_temporal": false,
+    "vivo_antes": true,
+    "atacante_detenido": true,
+    "intentos": 6625,
+    "toggles_atacante": 128769,
+    "conteo": {
+      "denegado_fd": 1222,
+      "enoent": 3478,
+      "denegado_filex": 1660,
+      "dentro": 265
+    },
+    "wins_fuera": 0,
+    "tasa_win_%": 0.0
+  }
+}
