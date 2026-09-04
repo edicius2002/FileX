@@ -1,0 +1,142 @@
+{
+ "chk": {
+  "solo_audio": {
+   "argv": [
+    "ffmpeg",
+    "-nostdin",
+    "-y",
+    "-i",
+    "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\semillas\\s_cif.mp4",
+    "-map",
+    "0:a:0",
+    "-vn",
+    "-c:a",
+    "libvorbis",
+    "-f",
+    "webm_chunk",
+    "-audio_chunk_duration",
+    "1000",
+    "-header",
+    "ha.chk",
+    "-chunk_start_index",
+    "1",
+    "a_%d.chk"
+   ],
+   "bytes_totales": 6383,
+   "clase_rc": "rc0",
+   "ficheros_nuevos": {
+    "a_1.chk": 2492,
+    "ha.chk": 3891
+   },
+   "ms": 70.1,
+   "ok": true,
+   "porque": "idem, la variante de audio",
+   "rc": 0,
+   "stderr": ":1 -> #0:0 (pcm_s16le (native) -> vorbis (libvorbis)) | [webm_chunk @ 00000202f2a89700] Opening 'ha.chk' for writing | Output #0, webm_chunk, to 'a_%d.chk': |   Metadata: |     major_brand     : isom |     minor_version   : 512 |     compatible_brands: isomiso2avc1mp41 |     encoder         : Lavf62.6.100 |   Stream #0:0(und): Audio: vorbis, 48000 Hz, mono, fltp (default) |     Metadata: |       encoder         : Lavc62.15.100 libvorbis |       handler_name    : SoundHandler |       vendor_id       : [0][0][0][0] | [webm_chunk @ 00000202f2a89700] Opening 'a_1.chk' for writing | [out#0/webm_chunk @ 00000202f2ae7240] video:0KiB audio:2KiB subtitle:0KiB other streams:0KiB global headers:3KiB muxing overhead: unknown | size=N/A time=00:00:01.00 bitrate=N/A speed=34.8x elapsed=0:00:00.02     | "
+  },
+  "solo_video": {
+   "argv": [
+    "ffmpeg",
+    "-nostdin",
+    "-y",
+    "-i",
+    "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\semillas\\s_cif.mp4",
+    "-map",
+    "0:v:0",
+    "-an",
+    "-c:v",
+    "libvpx",
+    "-f",
+    "webm_chunk",
+    "-header",
+    "h.chk",
+    "-chunk_start_index",
+    "1",
+    "m_%d.chk"
+   ],
+   "bytes_totales": 22777,
+   "clase_rc": "rc0",
+   "ficheros_nuevos": {
+    "h.chk": 582,
+    "m_1.chk": 22195
+   },
+   "ms": 159.0,
+   "ok": true,
+   "porque": "'does not contain any stream': webm_chunk no admite las dos pistas",
+   "rc": 0,
+   "stderr": "d     : isom |     minor_version   : 512 |     compatible_brands: isomiso2avc1mp41 |     encoder         : Lavf62.6.100 |   Stream #0:0(und): Video: vp8, yuv420p(tv, progressive), 352x288 [SAR 1:1 DAR 11:9], q=2-31, 256 kb/s, 25 fps, 1k tbn (default) |     Metadata: |       encoder         : Lavc62.15.100 libvpx |       handler_name    : VideoHandler |       vendor_id       : [0][0][0][0] |     Side data: |       CPB properties: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A | [webm_chunk @ 0000022c17008dc0] Opening 'm_1.chk' for writing | [out#0/webm_chunk @ 0000022c15226f40] video:21KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown | frame=   25 fps=0.0 q=32.0 Lsize=N/A time=00:00:01.00 bitrate=N/A speed=9.39x elapsed=0:00:00.10     | "
+  }
+ },
+ "clip_mask": {
+  "clip_con_path": {
+   "argv": [
+    "magick",
+    "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\corpus\\imagen\\tipico.png",
+    "-alpha",
+    "set",
+    "-clip",
+    "m.clip"
+   ],
+   "bytes_totales": 0,
+   "clase_rc": "otro_rc_1",
+   "ficheros_nuevos": {},
+   "ms": 127.2,
+   "ok": false,
+   "porque": "pidiendo el recorte por trayectoria",
+   "rc": 1,
+   "stderr": "magick: no clip path defined 'D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\corpus\\imagen\\tipico.png': No error @ error/image.c/ClipImagePath/730. | "
+  },
+  "clip_desde_alpha": {
+   "argv": [
+    "magick",
+    "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\corpus\\imagen\\alpha.png",
+    "-clip",
+    "m.clip"
+   ],
+   "bytes_totales": 0,
+   "clase_rc": "otro_rc_1",
+   "ficheros_nuevos": {},
+   "ms": 34.8,
+   "ok": false,
+   "porque": "idem desde la imagen con alfa real",
+   "rc": 1,
+   "stderr": "magick: no clip path defined 'D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\corpus\\imagen\\alpha.png': No error @ error/image.c/ClipImagePath/730. | "
+  },
+  "mask_desde_alpha": {
+   "argv": [
+    "magick",
+    "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\corpus\\imagen\\alpha.png",
+    "-alpha",
+    "extract",
+    "m.mask"
+   ],
+   "bytes_totales": 0,
+   "clase_rc": "otro_rc_1",
+   "ficheros_nuevos": {},
+   "ms": 43.1,
+   "ok": false,
+   "porque": "el canal de mascara extraido de alpha.png (alfa NO trivial, t.1)",
+   "rc": 1,
+   "stderr": "magick: image does not have an mask channel `m.mask' @ error/mask.c/WriteMASKImage/353. | "
+  },
+  "mask_write_mask": {
+   "argv": [
+    "magick",
+    "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\corpus\\imagen\\alpha.png",
+    "-write-mask",
+    "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\corpus\\imagen\\alpha.png",
+    "m.mask"
+   ],
+   "bytes_totales": 40786,
+   "clase_rc": "rc0",
+   "ficheros_nuevos": {
+    "m.mask": 40786
+   },
+   "ms": 84.8,
+   "ok": true,
+   "porque": "activando la mascara de escritura de IM7",
+   "rc": 0,
+   "stderr": ""
+  }
+ }
+}

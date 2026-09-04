@@ -1,0 +1,59 @@
+muestras a leer: 53
+  3g2          nominal=True   forzado=True   -> viva
+  3gp          nominal=True   forzado=True   -> viva
+  alaw         nominal=False  forzado=True   -> muerta
+  alp          nominal=True   forzado=True   -> viva
+  amr          nominal=True   forzado=True   -> viva
+  argo_asf     nominal=True   forzado=True   -> viva
+  dash         nominal=False  forzado=False  -> muerta
+  daud         nominal=True   forzado=True   -> viva
+  dirac        nominal=True   forzado=True   -> viva
+  dnxhd        nominal=True   forzado=True   -> viva
+  dts          nominal=True   forzado=True   -> viva
+  dv           nominal=True   forzado=True   -> viva
+  f32be        nominal=False  forzado=True   -> muerta
+  f32le        nominal=False  forzado=True   -> muerta
+  f64be        nominal=True   forzado=True   -> viva
+  f64le        nominal=True   forzado=True   -> viva
+  ffmetadata   nominal=False  forzado=False  -> muerta
+  film_cpk     nominal=True   forzado=True   -> viva
+  filmstrip    nominal=False  forzado=True   -> muerta
+  g723_1       nominal=True   forzado=True   -> viva
+  g726         nominal=False  forzado=True   -> muerta
+  g726le       nominal=False  forzado=True   -> muerta
+  gxf          nominal=True   forzado=True   -> viva
+  h264         nominal=True   forzado=True   -> viva
+  hls          nominal=False  forzado=False  -> muerta
+  image2       nominal=True   forzado=True   -> viva
+  kvag         nominal=True   forzado=True   -> viva
+  mlp          nominal=True   forzado=True   -> viva
+  mmf          nominal=True   forzado=True   -> viva
+  mpjpeg       nominal=True   forzado=True   -> viva
+  mulaw        nominal=False  forzado=True   -> muerta
+  rawvideo     nominal=False  forzado=False  -> muerta
+  roq          nominal=True   forzado=True   -> viva
+  rtp          nominal=False  forzado=False  -> muerta
+  s16be        nominal=False  forzado=True   -> muerta
+  s16le        nominal=False  forzado=True   -> muerta
+  s24be        nominal=False  forzado=True   -> muerta
+  s24le        nominal=False  forzado=True   -> muerta
+  s32be        nominal=False  forzado=True   -> muerta
+  s32le        nominal=False  forzado=True   -> muerta
+  s8           nominal=False  forzado=True   -> muerta
+  smjpeg       nominal=True   forzado=True   -> viva
+  truehd       nominal=True   forzado=True   -> viva
+  u16be        nominal=False  forzado=True   -> muerta
+  u16le        nominal=False  forzado=True   -> muerta
+  u24be        nominal=False  forzado=True   -> muerta
+  u24le        nominal=False  forzado=True   -> muerta
+  u32be        nominal=False  forzado=True   -> muerta
+  u32le        nominal=False  forzado=True   -> muerta
+  u8           nominal=False  forzado=True   -> muerta
+  vidc         nominal=False  forzado=True   -> muerta
+  webvtt       nominal=True   forzado=True   -> viva
+  wsaud        nominal=True   forzado=True   -> viva
+
+VIVAS con la invocacion del censo (grafo A): 26 de 53
+VIVAS con el demuxer forzado:                48 de 53
+solo legibles forzando el demuxer (22): ['alaw', 'f32be', 'f32le', 'filmstrip', 'g726', 'g726le', 'mulaw', 's16be', 's16le', 's24be', 's24le', 's32be', 's32le', 's8', 'u16be', 'u16le', 'u24be', 'u24le', 'u32be', 'u32le', 'u8', 'vidc']
+(25s, 318 celdas de lectura)

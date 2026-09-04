@@ -1,0 +1,2132 @@
+{
+ "res": {
+  "3g2": {
+   "bytes_muestra": 18698,
+   "demuxer_forzado": {
+    "intentos": [
+     {
+      "bytes": 14687,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 91.6,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   },
+   "estado_grafoA": "viva",
+   "nominal": {
+    "intentos": [
+     {
+      "bytes": 14687,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 179.8,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   }
+  },
+  "3gp": {
+   "bytes_muestra": 18698,
+   "demuxer_forzado": {
+    "intentos": [
+     {
+      "bytes": 14684,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 91.6,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   },
+   "estado_grafoA": "viva",
+   "nominal": {
+    "intentos": [
+     {
+      "bytes": 14684,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 99.2,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   }
+  },
+  "alaw": {
+   "bytes_muestra": 48000,
+   "demuxer_forzado": {
+    "intentos": [
+     {
+      "bytes": 12983,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 51.6,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   },
+   "estado_grafoA": "muerta",
+   "nominal": {
+    "intentos": [
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "mkv",
+      "err": "0 /  6.  2.100 | [in#0 @ 00000287ae348900] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.alaw. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 38.7,
+      "rc": -1094995529
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "wav",
+      "err": "0 /  6.  2.100 | [in#0 @ 000001ebe30e9080] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.alaw. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 38.1,
+      "rc": -1094995529
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "png",
+      "err": "0 /  6.  2.100 | [in#0 @ 0000023438d19c00] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.alaw. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 36.5,
+      "rc": -1094995529
+     }
+    ],
+    "vivo": false
+   }
+  },
+  "alp": {
+   "bytes_muestra": 11041,
+   "demuxer_forzado": {
+    "intentos": [
+     {
+      "bytes": 8458,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 45.4,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   },
+   "estado_grafoA": "viva",
+   "nominal": {
+    "intentos": [
+     {
+      "bytes": 8458,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 464.6,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   }
+  },
+  "amr": {
+   "bytes_muestra": 1638,
+   "demuxer_forzado": {
+    "intentos": [
+     {
+      "bytes": 5137,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 43.3,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   },
+   "estado_grafoA": "viva",
+   "nominal": {
+    "intentos": [
+     {
+      "bytes": 5137,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 51.4,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   }
+  },
+  "argo_asf": {
+   "bytes_muestra": 25544,
+   "demuxer_forzado": {
+    "intentos": [
+     {
+      "bytes": 6925,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 56.4,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   },
+   "estado_grafoA": "viva",
+   "nominal": {
+    "intentos": [
+     {
+      "bytes": 6925,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 59.2,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   }
+  },
+  "dash": {
+   "bytes_muestra": 1881,
+   "demuxer_forzado": {
+    "intentos": [
+     {
+      "bytes": -1,
+      "clase_rc": "otro_rc_-2",
+      "destino": "mkv",
+      "err": "rror when loading first fragment of playlist | [in#0 @ 0000023407f7a240] Error opening input: No such file or directory | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.dash. | Error opening input files: No such file or directory | ",
+      "ms": 40.8,
+      "rc": -2
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "otro_rc_-2",
+      "destino": "wav",
+      "err": "rror when loading first fragment of playlist | [in#0 @ 0000015cefb885c0] Error opening input: No such file or directory | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.dash. | Error opening input files: No such file or directory | ",
+      "ms": 36.8,
+      "rc": -2
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "otro_rc_-2",
+      "destino": "png",
+      "err": "rror when loading first fragment of playlist | [in#0 @ 0000020d72ac86c0] Error opening input: No such file or directory | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.dash. | Error opening input files: No such file or directory | ",
+      "ms": 37.8,
+      "rc": -2
+     }
+    ],
+    "vivo": false
+   },
+   "estado_grafoA": "muerta",
+   "nominal": {
+    "intentos": [
+     {
+      "bytes": -1,
+      "clase_rc": "otro_rc_-2",
+      "destino": "mkv",
+      "err": "rror when loading first fragment of playlist | [in#0 @ 000001d614af7e00] Error opening input: No such file or directory | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.dash. | Error opening input files: No such file or directory | ",
+      "ms": 66.5,
+      "rc": -2
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "otro_rc_-2",
+      "destino": "wav",
+      "err": "rror when loading first fragment of playlist | [in#0 @ 00000274d33c8900] Error opening input: No such file or directory | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.dash. | Error opening input files: No such file or directory | ",
+      "ms": 37.5,
+      "rc": -2
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "otro_rc_-2",
+      "destino": "png",
+      "err": "rror when loading first fragment of playlist | [in#0 @ 00000180abb1a0c0] Error opening input: No such file or directory | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.dash. | Error opening input files: No such file or directory | ",
+      "ms": 38.1,
+      "rc": -2
+     }
+    ],
+    "vivo": false
+   }
+  },
+  "daud": {
+   "bytes_muestra": 1728192,
+   "demuxer_forzado": {
+    "intentos": [
+     {
+      "bytes": 11287,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 100.2,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   },
+   "estado_grafoA": "viva",
+   "nominal": {
+    "intentos": [
+     {
+      "bytes": 11287,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 125.9,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   }
+  },
+  "dirac": {
+   "bytes_muestra": 3131607,
+   "demuxer_forzado": {
+    "intentos": [
+     {
+      "bytes": 8440,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 77.8,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   },
+   "estado_grafoA": "viva",
+   "nominal": {
+    "intentos": [
+     {
+      "bytes": 8440,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 80.1,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   }
+  },
+  "dnxhd": {
+   "bytes_muestra": 4710400,
+   "demuxer_forzado": {
+    "intentos": [
+     {
+      "bytes": 61310,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 511.1,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   },
+   "estado_grafoA": "viva",
+   "nominal": {
+    "intentos": [
+     {
+      "bytes": 61310,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 397.9,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   }
+  },
+  "dts": {
+   "bytes_muestra": 177096,
+   "demuxer_forzado": {
+    "intentos": [
+     {
+      "bytes": 8119,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 73.5,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   },
+   "estado_grafoA": "viva",
+   "nominal": {
+    "intentos": [
+     {
+      "bytes": 8119,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 85.8,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   }
+  },
+  "dv": {
+   "bytes_muestra": 3480000,
+   "demuxer_forzado": {
+    "intentos": [
+     {
+      "bytes": 30651,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 156.0,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   },
+   "estado_grafoA": "viva",
+   "nominal": {
+    "intentos": [
+     {
+      "bytes": 30651,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 184.0,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   }
+  },
+  "f32be": {
+   "bytes_muestra": 192000,
+   "demuxer_forzado": {
+    "intentos": [
+     {
+      "bytes": 6288,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 50.5,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   },
+   "estado_grafoA": "muerta",
+   "nominal": {
+    "intentos": [
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "mkv",
+      "err": " /  6.  2.100 | [in#0 @ 000002a1e16793c0] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.f32be. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 48.9,
+      "rc": -1094995529
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "wav",
+      "err": " /  6.  2.100 | [in#0 @ 000002499c478a00] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.f32be. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 49.2,
+      "rc": -1094995529
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "png",
+      "err": " /  6.  2.100 | [in#0 @ 0000021609da8e80] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.f32be. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 49.2,
+      "rc": -1094995529
+     }
+    ],
+    "vivo": false
+   }
+  },
+  "f32le": {
+   "bytes_muestra": 192000,
+   "demuxer_forzado": {
+    "intentos": [
+     {
+      "bytes": 6288,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 53.5,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   },
+   "estado_grafoA": "muerta",
+   "nominal": {
+    "intentos": [
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "mkv",
+      "err": " /  6.  2.100 | [in#0 @ 0000022f8ab293c0] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.f32le. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 50.4,
+      "rc": -1094995529
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "wav",
+      "err": " /  6.  2.100 | [in#0 @ 0000022ef0ce93c0] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.f32le. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 59.8,
+      "rc": -1094995529
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "png",
+      "err": " /  6.  2.100 | [in#0 @ 000001def60b9c00] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.f32le. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 54.1,
+      "rc": -1094995529
+     }
+    ],
+    "vivo": false
+   }
+  },
+  "f64be": {
+   "bytes_muestra": 384000,
+   "demuxer_forzado": {
+    "intentos": [
+     {
+      "bytes": 6288,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 48.6,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   },
+   "estado_grafoA": "viva",
+   "nominal": {
+    "intentos": [
+     {
+      "bytes": 722901,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 477.5,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   }
+  },
+  "f64le": {
+   "bytes_muestra": 384000,
+   "demuxer_forzado": {
+    "intentos": [
+     {
+      "bytes": 6288,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 48.6,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   },
+   "estado_grafoA": "viva",
+   "nominal": {
+    "intentos": [
+     {
+      "bytes": 737896,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 457.3,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   }
+  },
+  "ffmetadata": {
+   "bytes_muestra": 104,
+   "demuxer_forzado": {
+    "intentos": [
+     {
+      "bytes": -1,
+      "clase_rc": "EINVAL",
+      "destino": "mkv",
+      "err": "as-aristas-escribibles\\trabajo\\L0034\\x.mkv': | [out#0/matroska @ 0000020e484d8340] Output file does not contain any stream | Error opening output file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\trabajo\\L0034\\x.mkv. | Error opening output files: Invalid argument | ",
+      "ms": 36.2,
+      "rc": -22
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "EINVAL",
+      "destino": "wav",
+      "err": "salidas-aristas-escribibles\\trabajo\\L0034\\x.wav': | [out#0/wav @ 0000024a3d4662c0] Output file does not contain any stream | Error opening output file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\trabajo\\L0034\\x.wav. | Error opening output files: Invalid argument | ",
+      "ms": 40.0,
+      "rc": -22
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "EINVAL",
+      "destino": "png",
+      "err": "idas-aristas-escribibles\\trabajo\\L0034\\x.png': | [out#0/image2 @ 000002148d09bb00] Output file does not contain any stream | Error opening output file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\trabajo\\L0034\\x.png. | Error opening output files: Invalid argument | ",
+      "ms": 34.7,
+      "rc": -22
+     }
+    ],
+    "vivo": false
+   },
+   "estado_grafoA": "muerta",
+   "nominal": {
+    "intentos": [
+     {
+      "bytes": -1,
+      "clase_rc": "EINVAL",
+      "destino": "mkv",
+      "err": "as-aristas-escribibles\\trabajo\\L0033\\x.mkv': | [out#0/matroska @ 00000191e7696100] Output file does not contain any stream | Error opening output file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\trabajo\\L0033\\x.mkv. | Error opening output files: Invalid argument | ",
+      "ms": 34.5,
+      "rc": -22
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "EINVAL",
+      "destino": "wav",
+      "err": "salidas-aristas-escribibles\\trabajo\\L0033\\x.wav': | [out#0/wav @ 0000021ad3c88d80] Output file does not contain any stream | Error opening output file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\trabajo\\L0033\\x.wav. | Error opening output files: Invalid argument | ",
+      "ms": 38.7,
+      "rc": -22
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "EINVAL",
+      "destino": "png",
+      "err": "idas-aristas-escribibles\\trabajo\\L0033\\x.png': | [out#0/image2 @ 000001b922de91c0] Output file does not contain any stream | Error opening output file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\trabajo\\L0033\\x.png. | Error opening output files: Invalid argument | ",
+      "ms": 38.6,
+      "rc": -22
+     }
+    ],
+    "vivo": false
+   }
+  },
+  "film_cpk": {
+   "bytes_muestra": 219873,
+   "demuxer_forzado": {
+    "intentos": [
+     {
+      "bytes": 13760,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 89.7,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   },
+   "estado_grafoA": "viva",
+   "nominal": {
+    "intentos": [
+     {
+      "bytes": 13760,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 917.9,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   }
+  },
+  "filmstrip": {
+   "bytes_muestra": 10137636,
+   "demuxer_forzado": {
+    "intentos": [
+     {
+      "bytes": 7662,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 1554.2,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   },
+   "estado_grafoA": "muerta",
+   "nominal": {
+    "intentos": [
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "mkv",
+      "err": "6.  2.100 | [in#0 @ 0000013b6e1b9c40] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.filmstrip. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 90.4,
+      "rc": -1094995529
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "wav",
+      "err": "6.  2.100 | [in#0 @ 000002b1108893c0] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.filmstrip. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 88.6,
+      "rc": -1094995529
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "png",
+      "err": "6.  2.100 | [in#0 @ 00000205850b8fc0] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.filmstrip. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 608.1,
+      "rc": -1094995529
+     }
+    ],
+    "vivo": false
+   }
+  },
+  "g723_1": {
+   "bytes_muestra": 816,
+   "demuxer_forzado": {
+    "intentos": [
+     {
+      "bytes": 4337,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 1262.0,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   },
+   "estado_grafoA": "viva",
+   "nominal": {
+    "intentos": [
+     {
+      "bytes": 4337,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 2181.4,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   }
+  },
+  "g726": {
+   "bytes_muestra": 2000,
+   "demuxer_forzado": {
+    "intentos": [
+     {
+      "bytes": 4842,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 42.9,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   },
+   "estado_grafoA": "muerta",
+   "nominal": {
+    "intentos": [
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "mkv",
+      "err": " audio frames. | [in#0 @ 000002d82b0c8900] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.g726. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 185.5,
+      "rc": -1094995529
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "wav",
+      "err": " audio frames. | [in#0 @ 0000027b7e5193c0] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.g726. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 42.3,
+      "rc": -1094995529
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "png",
+      "err": " audio frames. | [in#0 @ 0000019cd5bba040] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.g726. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 120.0,
+      "rc": -1094995529
+     }
+    ],
+    "vivo": false
+   }
+  },
+  "g726le": {
+   "bytes_muestra": 2000,
+   "demuxer_forzado": {
+    "intentos": [
+     {
+      "bytes": 4843,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 42.0,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   },
+   "estado_grafoA": "muerta",
+   "nominal": {
+    "intentos": [
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "mkv",
+      "err": "udio frames. | [in#0 @ 000001afca3993c0] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.g726le. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 45.1,
+      "rc": -1094995529
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "wav",
+      "err": "udio frames. | [in#0 @ 00000205365a8940] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.g726le. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 44.2,
+      "rc": -1094995529
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "png",
+      "err": "udio frames. | [in#0 @ 0000026dd93f8700] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.g726le. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 40.3,
+      "rc": -1094995529
+     }
+    ],
+    "vivo": false
+   }
+  },
+  "gxf": {
+   "bytes_muestra": 262052,
+   "demuxer_forzado": {
+    "intentos": [
+     {
+      "bytes": 31760,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 149.4,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   },
+   "estado_grafoA": "viva",
+   "nominal": {
+    "intentos": [
+     {
+      "bytes": 31760,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 223.7,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   }
+  },
+  "h264": {
+   "bytes_muestra": 7674,
+   "demuxer_forzado": {
+    "intentos": [
+     {
+      "bytes": 8399,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 79.2,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   },
+   "estado_grafoA": "viva",
+   "nominal": {
+    "intentos": [
+     {
+      "bytes": 8399,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 184.3,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   }
+  },
+  "hls": {
+   "bytes_muestra": 112,
+   "demuxer_forzado": {
+    "intentos": [
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "mkv",
+      "err": "muestras\\m0.ts' | [in#0 @ 0000022200a08940] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.hls. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 188.0,
+      "rc": -1094995529
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "wav",
+      "err": "muestras\\m0.ts' | [in#0 @ 0000022deaab8940] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.hls. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 40.4,
+      "rc": -1094995529
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "png",
+      "err": "muestras\\m0.ts' | [in#0 @ 000002a57eb6a040] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.hls. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 38.1,
+      "rc": -1094995529
+     }
+    ],
+    "vivo": false
+   },
+   "estado_grafoA": "muerta",
+   "nominal": {
+    "intentos": [
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "mkv",
+      "err": "epeated 1 times | [in#0 @ 0000026b35eea040] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.hls. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 35.7,
+      "rc": -1094995529
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "wav",
+      "err": "epeated 1 times | [in#0 @ 000001ad95eb9c00] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.hls. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 32.4,
+      "rc": -1094995529
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "png",
+      "err": "epeated 1 times | [in#0 @ 000001d713378900] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.hls. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 34.8,
+      "rc": -1094995529
+     }
+    ],
+    "vivo": false
+   }
+  },
+  "image2": {
+   "bytes_muestra": 60382,
+   "demuxer_forzado": {
+    "intentos": [
+     {
+      "bytes": 4581,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 111.0,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   },
+   "estado_grafoA": "viva",
+   "nominal": {
+    "intentos": [
+     {
+      "bytes": 4581,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 179.7,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   }
+  },
+  "kvag": {
+   "bytes_muestra": 24014,
+   "demuxer_forzado": {
+    "intentos": [
+     {
+      "bytes": 10985,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 55.2,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   },
+   "estado_grafoA": "viva",
+   "nominal": {
+    "intentos": [
+     {
+      "bytes": 10985,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 53.8,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   }
+  },
+  "mlp": {
+   "bytes_muestra": 35060,
+   "demuxer_forzado": {
+    "intentos": [
+     {
+      "bytes": 8153,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 56.9,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   },
+   "estado_grafoA": "viva",
+   "nominal": {
+    "intentos": [
+     {
+      "bytes": 8153,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 1461.7,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   }
+  },
+  "mmf": {
+   "bytes_muestra": 22619,
+   "demuxer_forzado": {
+    "intentos": [
+     {
+      "bytes": 11985,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 48.6,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   },
+   "estado_grafoA": "viva",
+   "nominal": {
+    "intentos": [
+     {
+      "bytes": 11985,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 50.0,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   }
+  },
+  "mpjpeg": {
+   "bytes_muestra": 163537,
+   "demuxer_forzado": {
+    "intentos": [
+     {
+      "bytes": 19211,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 71.9,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   },
+   "estado_grafoA": "viva",
+   "nominal": {
+    "intentos": [
+     {
+      "bytes": 19211,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 72.2,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   }
+  },
+  "mulaw": {
+   "bytes_muestra": 48000,
+   "demuxer_forzado": {
+    "intentos": [
+     {
+      "bytes": 13035,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 53.2,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   },
+   "estado_grafoA": "muerta",
+   "nominal": {
+    "intentos": [
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "mkv",
+      "err": " /  6.  2.100 | [in#0 @ 0000028d12dc8900] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.mulaw. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 46.1,
+      "rc": -1094995529
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "wav",
+      "err": " /  6.  2.100 | [in#0 @ 00000256fed09c00] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.mulaw. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 39.1,
+      "rc": -1094995529
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "png",
+      "err": " /  6.  2.100 | [in#0 @ 0000023079737e00] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.mulaw. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 39.8,
+      "rc": -1094995529
+     }
+    ],
+    "vivo": false
+   }
+  },
+  "rawvideo": {
+   "bytes_muestra": 3801600,
+   "demuxer_forzado": {
+    "intentos": [
+     {
+      "bytes": -1,
+      "clase_rc": "EINVAL",
+      "destino": "mkv",
+      "err": " [IMGUTILS @ 000000b7e3ffeb80] Picture size 0x0 is invalid | [in#0 @ 000002a3129d7900] Error opening input: Invalid argument | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.rawvideo. | Error opening input files: Invalid argument | ",
+      "ms": 157.9,
+      "rc": -22
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "EINVAL",
+      "destino": "wav",
+      "err": " [IMGUTILS @ 000000dbe27fe600] Picture size 0x0 is invalid | [in#0 @ 000002c1af2a7e40] Error opening input: Invalid argument | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.rawvideo. | Error opening input files: Invalid argument | ",
+      "ms": 33.3,
+      "rc": -22
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "EINVAL",
+      "destino": "png",
+      "err": " [IMGUTILS @ 000000b8847fe480] Picture size 0x0 is invalid | [in#0 @ 0000021a60f58880] Error opening input: Invalid argument | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.rawvideo. | Error opening input files: Invalid argument | ",
+      "ms": 34.5,
+      "rc": -22
+     }
+    ],
+    "vivo": false
+   },
+   "estado_grafoA": "muerta",
+   "nominal": {
+    "intentos": [
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "mkv",
+      "err": " 6.  2.100 | [in#0 @ 0000022c4af7a040] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.rawvideo. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 618.7,
+      "rc": -1094995529
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "wav",
+      "err": " 6.  2.100 | [in#0 @ 00000213d8e18940] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.rawvideo. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 81.7,
+      "rc": -1094995529
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "png",
+      "err": " 6.  2.100 | [in#0 @ 0000027a8df09c40] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.rawvideo. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 80.6,
+      "rc": -1094995529
+     }
+    ],
+    "vivo": false
+   }
+  },
+  "roq": {
+   "bytes_muestra": 100517,
+   "demuxer_forzado": {
+    "intentos": [
+     {
+      "bytes": 18850,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 73.7,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   },
+   "estado_grafoA": "viva",
+   "nominal": {
+    "intentos": [
+     {
+      "bytes": 18850,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 1215.4,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   }
+  },
+  "rtp": {
+   "bytes_muestra": 96172,
+   "demuxer_forzado": {
+    "intentos": [
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "mkv",
+      "err": "e describing it | [in#0 @ 0000023762548c80] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.rtp. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 698.5,
+      "rc": -1094995529
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "wav",
+      "err": "e describing it | [in#0 @ 0000027d39558c80] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.rtp. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 33.4,
+      "rc": -1094995529
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "png",
+      "err": "e describing it | [in#0 @ 000001908211a040] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.rtp. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 33.4,
+      "rc": -1094995529
+     }
+    ],
+    "vivo": false
+   },
+   "estado_grafoA": "muerta",
+   "nominal": {
+    "intentos": [
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "mkv",
+      "err": "00 /  6.  2.100 | [in#0 @ 000002020d5d9c00] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.rtp. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 40.7,
+      "rc": -1094995529
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "wav",
+      "err": "00 /  6.  2.100 | [in#0 @ 00000148f4af93c0] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.rtp. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 41.0,
+      "rc": -1094995529
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "png",
+      "err": "00 /  6.  2.100 | [in#0 @ 000001fe377393c0] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.rtp. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 40.2,
+      "rc": -1094995529
+     }
+    ],
+    "vivo": false
+   }
+  },
+  "s16be": {
+   "bytes_muestra": 96000,
+   "demuxer_forzado": {
+    "intentos": [
+     {
+      "bytes": 6288,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 47.0,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   },
+   "estado_grafoA": "muerta",
+   "nominal": {
+    "intentos": [
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "mkv",
+      "err": " /  6.  2.100 | [in#0 @ 0000021ed49ba040] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.s16be. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 39.5,
+      "rc": -1094995529
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "wav",
+      "err": " /  6.  2.100 | [in#0 @ 0000020fc3667f80] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.s16be. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 39.6,
+      "rc": -1094995529
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "png",
+      "err": " /  6.  2.100 | [in#0 @ 0000011d8f227e80] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.s16be. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 40.1,
+      "rc": -1094995529
+     }
+    ],
+    "vivo": false
+   }
+  },
+  "s16le": {
+   "bytes_muestra": 96000,
+   "demuxer_forzado": {
+    "intentos": [
+     {
+      "bytes": 6288,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 50.8,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   },
+   "estado_grafoA": "muerta",
+   "nominal": {
+    "intentos": [
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "mkv",
+      "err": " /  6.  2.100 | [in#0 @ 000001ca6ee87e00] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.s16le. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 40.3,
+      "rc": -1094995529
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "wav",
+      "err": " /  6.  2.100 | [in#0 @ 000001adc87c93c0] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.s16le. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 38.2,
+      "rc": -1094995529
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "png",
+      "err": " /  6.  2.100 | [in#0 @ 0000029a98908900] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.s16le. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 40.2,
+      "rc": -1094995529
+     }
+    ],
+    "vivo": false
+   }
+  },
+  "s24be": {
+   "bytes_muestra": 144000,
+   "demuxer_forzado": {
+    "intentos": [
+     {
+      "bytes": 6288,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 52.8,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   },
+   "estado_grafoA": "muerta",
+   "nominal": {
+    "intentos": [
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "mkv",
+      "err": " /  6.  2.100 | [in#0 @ 000002c0d54b9c00] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.s24be. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 44.4,
+      "rc": -1094995529
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "wav",
+      "err": " /  6.  2.100 | [in#0 @ 0000026d0b35a040] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.s24be. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 45.0,
+      "rc": -1094995529
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "png",
+      "err": " /  6.  2.100 | [in#0 @ 000001f0da28a040] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.s24be. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 45.6,
+      "rc": -1094995529
+     }
+    ],
+    "vivo": false
+   }
+  },
+  "s24le": {
+   "bytes_muestra": 144000,
+   "demuxer_forzado": {
+    "intentos": [
+     {
+      "bytes": 6288,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 57.7,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   },
+   "estado_grafoA": "muerta",
+   "nominal": {
+    "intentos": [
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "mkv",
+      "err": " /  6.  2.100 | [in#0 @ 00000217c7e9b100] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.s24le. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 47.7,
+      "rc": -1094995529
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "wav",
+      "err": " /  6.  2.100 | [in#0 @ 0000019484d7a040] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.s24le. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 48.7,
+      "rc": -1094995529
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "png",
+      "err": " /  6.  2.100 | [in#0 @ 000001a5f8c68900] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.s24le. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 56.7,
+      "rc": -1094995529
+     }
+    ],
+    "vivo": false
+   }
+  },
+  "s32be": {
+   "bytes_muestra": 192000,
+   "demuxer_forzado": {
+    "intentos": [
+     {
+      "bytes": 6288,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 64.4,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   },
+   "estado_grafoA": "muerta",
+   "nominal": {
+    "intentos": [
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "mkv",
+      "err": " /  6.  2.100 | [in#0 @ 0000012f5aa88900] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.s32be. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 617.8,
+      "rc": -1094995529
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "wav",
+      "err": " /  6.  2.100 | [in#0 @ 000001e133e89c00] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.s32be. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 51.8,
+      "rc": -1094995529
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "png",
+      "err": " /  6.  2.100 | [in#0 @ 0000021cb2799200] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.s32be. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 55.0,
+      "rc": -1094995529
+     }
+    ],
+    "vivo": false
+   }
+  },
+  "s32le": {
+   "bytes_muestra": 192000,
+   "demuxer_forzado": {
+    "intentos": [
+     {
+      "bytes": 6288,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 63.8,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   },
+   "estado_grafoA": "muerta",
+   "nominal": {
+    "intentos": [
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "mkv",
+      "err": " /  6.  2.100 | [in#0 @ 00000218d7dcd8c0] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.s32le. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 69.2,
+      "rc": -1094995529
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "wav",
+      "err": " /  6.  2.100 | [in#0 @ 000002acef6e9e40] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.s32le. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 71.0,
+      "rc": -1094995529
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "png",
+      "err": " /  6.  2.100 | [in#0 @ 000001dff3f38b40] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.s32le. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 1371.7,
+      "rc": -1094995529
+     }
+    ],
+    "vivo": false
+   }
+  },
+  "s8": {
+   "bytes_muestra": 48000,
+   "demuxer_forzado": {
+    "intentos": [
+     {
+      "bytes": 14300,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 52.9,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   },
+   "estado_grafoA": "muerta",
+   "nominal": {
+    "intentos": [
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "mkv",
+      "err": "100 /  6.  2.100 | [in#0 @ 000001686f4b8900] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.s8. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 43.6,
+      "rc": -1094995529
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "wav",
+      "err": "100 /  6.  2.100 | [in#0 @ 0000024b3b2d7e00] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.s8. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 46.6,
+      "rc": -1094995529
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "png",
+      "err": "100 /  6.  2.100 | [in#0 @ 00000237aabb9c00] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.s8. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 47.2,
+      "rc": -1094995529
+     }
+    ],
+    "vivo": false
+   }
+  },
+  "smjpeg": {
+   "bytes_muestra": 259025,
+   "demuxer_forzado": {
+    "intentos": [
+     {
+      "bytes": 25215,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 90.2,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   },
+   "estado_grafoA": "viva",
+   "nominal": {
+    "intentos": [
+     {
+      "bytes": 25215,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 152.5,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   }
+  },
+  "truehd": {
+   "bytes_muestra": 35060,
+   "demuxer_forzado": {
+    "intentos": [
+     {
+      "bytes": 8153,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 63.3,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   },
+   "estado_grafoA": "viva",
+   "nominal": {
+    "intentos": [
+     {
+      "bytes": 8153,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 61.5,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   }
+  },
+  "u16be": {
+   "bytes_muestra": 96000,
+   "demuxer_forzado": {
+    "intentos": [
+     {
+      "bytes": 6288,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 49.0,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   },
+   "estado_grafoA": "muerta",
+   "nominal": {
+    "intentos": [
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "mkv",
+      "err": " /  6.  2.100 | [in#0 @ 0000022f3ec9a040] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.u16be. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 43.6,
+      "rc": -1094995529
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "wav",
+      "err": " /  6.  2.100 | [in#0 @ 000002ac0a577e00] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.u16be. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 47.9,
+      "rc": -1094995529
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "png",
+      "err": " /  6.  2.100 | [in#0 @ 000001d0c1fba040] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.u16be. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 43.9,
+      "rc": -1094995529
+     }
+    ],
+    "vivo": false
+   }
+  },
+  "u16le": {
+   "bytes_muestra": 96000,
+   "demuxer_forzado": {
+    "intentos": [
+     {
+      "bytes": 6288,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 51.7,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   },
+   "estado_grafoA": "muerta",
+   "nominal": {
+    "intentos": [
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "mkv",
+      "err": " /  6.  2.100 | [in#0 @ 00000162790c93c0] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.u16le. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 40.1,
+      "rc": -1094995529
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "wav",
+      "err": " /  6.  2.100 | [in#0 @ 00000259a4bb8900] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.u16le. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 39.6,
+      "rc": -1094995529
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "png",
+      "err": " /  6.  2.100 | [in#0 @ 0000020722d27e00] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.u16le. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 40.2,
+      "rc": -1094995529
+     }
+    ],
+    "vivo": false
+   }
+  },
+  "u24be": {
+   "bytes_muestra": 144000,
+   "demuxer_forzado": {
+    "intentos": [
+     {
+      "bytes": 6288,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 53.3,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   },
+   "estado_grafoA": "muerta",
+   "nominal": {
+    "intentos": [
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "mkv",
+      "err": " /  6.  2.100 | [in#0 @ 000002009e3b7e00] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.u24be. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 45.9,
+      "rc": -1094995529
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "wav",
+      "err": " /  6.  2.100 | [in#0 @ 000001e232fc7980] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.u24be. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 46.2,
+      "rc": -1094995529
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "png",
+      "err": " /  6.  2.100 | [in#0 @ 00000213ce876ec0] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.u24be. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 46.3,
+      "rc": -1094995529
+     }
+    ],
+    "vivo": false
+   }
+  },
+  "u24le": {
+   "bytes_muestra": 144000,
+   "demuxer_forzado": {
+    "intentos": [
+     {
+      "bytes": 6288,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 48.5,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   },
+   "estado_grafoA": "muerta",
+   "nominal": {
+    "intentos": [
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "mkv",
+      "err": " /  6.  2.100 | [in#0 @ 0000019bed968900] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.u24le. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 47.0,
+      "rc": -1094995529
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "wav",
+      "err": " /  6.  2.100 | [in#0 @ 000002870cf58900] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.u24le. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 46.4,
+      "rc": -1094995529
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "png",
+      "err": " /  6.  2.100 | [in#0 @ 000002b377d17e00] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.u24le. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 45.7,
+      "rc": -1094995529
+     }
+    ],
+    "vivo": false
+   }
+  },
+  "u32be": {
+   "bytes_muestra": 192000,
+   "demuxer_forzado": {
+    "intentos": [
+     {
+      "bytes": 6288,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 112.5,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   },
+   "estado_grafoA": "muerta",
+   "nominal": {
+    "intentos": [
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "mkv",
+      "err": " /  6.  2.100 | [in#0 @ 0000026008375b40] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.u32be. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 48.6,
+      "rc": -1094995529
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "wav",
+      "err": " /  6.  2.100 | [in#0 @ 0000028e377c9c00] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.u32be. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 53.4,
+      "rc": -1094995529
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "png",
+      "err": " /  6.  2.100 | [in#0 @ 00000231506eacc0] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.u32be. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 79.4,
+      "rc": -1094995529
+     }
+    ],
+    "vivo": false
+   }
+  },
+  "u32le": {
+   "bytes_muestra": 192000,
+   "demuxer_forzado": {
+    "intentos": [
+     {
+      "bytes": 6288,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 55.7,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   },
+   "estado_grafoA": "muerta",
+   "nominal": {
+    "intentos": [
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "mkv",
+      "err": " /  6.  2.100 | [in#0 @ 0000017fdcf48b40] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.u32le. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 95.7,
+      "rc": -1094995529
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "wav",
+      "err": " /  6.  2.100 | [in#0 @ 000001b95ebb0640] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.u32le. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 75.3,
+      "rc": -1094995529
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "png",
+      "err": " /  6.  2.100 | [in#0 @ 000001b2f48a17c0] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.u32le. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 67.5,
+      "rc": -1094995529
+     }
+    ],
+    "vivo": false
+   }
+  },
+  "u8": {
+   "bytes_muestra": 48000,
+   "demuxer_forzado": {
+    "intentos": [
+     {
+      "bytes": 14300,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 53.8,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   },
+   "estado_grafoA": "muerta",
+   "nominal": {
+    "intentos": [
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "mkv",
+      "err": "100 /  6.  2.100 | [in#0 @ 000001d06aa48900] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.u8. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 42.1,
+      "rc": -1094995529
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "wav",
+      "err": "100 /  6.  2.100 | [in#0 @ 00000232d4048580] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.u8. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 42.8,
+      "rc": -1094995529
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "png",
+      "err": "100 /  6.  2.100 | [in#0 @ 0000023a2f8793c0] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.u8. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 45.4,
+      "rc": -1094995529
+     }
+    ],
+    "vivo": false
+   }
+  },
+  "vidc": {
+   "bytes_muestra": 48000,
+   "demuxer_forzado": {
+    "intentos": [
+     {
+      "bytes": 15877,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 50.3,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   },
+   "estado_grafoA": "muerta",
+   "nominal": {
+    "intentos": [
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "mkv",
+      "err": "0 /  6.  2.100 | [in#0 @ 000001ab91909800] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.vidc. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 41.6,
+      "rc": -1094995529
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "wav",
+      "err": "0 /  6.  2.100 | [in#0 @ 0000014d9b355b40] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.vidc. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 39.3,
+      "rc": -1094995529
+     },
+     {
+      "bytes": -1,
+      "clase_rc": "INVALIDDATA",
+      "destino": "png",
+      "err": "0 /  6.  2.100 | [in#0 @ 000002b550517e00] Error opening input: Invalid data found when processing input | Error opening input file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\muestras\\m.vidc. | Error opening input files: Invalid data found when processing input | ",
+      "ms": 38.5,
+      "rc": -1094995529
+     }
+    ],
+    "vivo": false
+   }
+  },
+  "webvtt": {
+   "bytes_muestra": 103,
+   "demuxer_forzado": {
+    "intentos": [
+     {
+      "bytes": 1250,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 34.7,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   },
+   "estado_grafoA": "viva",
+   "nominal": {
+    "intentos": [
+     {
+      "bytes": 1250,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 54.5,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   }
+  },
+  "wsaud": {
+   "bytes_muestra": 24204,
+   "demuxer_forzado": {
+    "intentos": [
+     {
+      "bytes": 11075,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 58.0,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   },
+   "estado_grafoA": "viva",
+   "nominal": {
+    "intentos": [
+     {
+      "bytes": 11075,
+      "clase_rc": "rc0",
+      "destino": "mkv",
+      "err": "",
+      "ms": 49.5,
+      "rc": 0
+     }
+    ],
+    "vivo": true
+   }
+  }
+ },
+ "solo_forzado": [
+  "alaw",
+  "f32be",
+  "f32le",
+  "filmstrip",
+  "g726",
+  "g726le",
+  "mulaw",
+  "s16be",
+  "s16le",
+  "s24be",
+  "s24le",
+  "s32be",
+  "s32le",
+  "s8",
+  "u16be",
+  "u16le",
+  "u24be",
+  "u24le",
+  "u32be",
+  "u32le",
+  "u8",
+  "vidc"
+ ],
+ "vivas_forzado": 48,
+ "vivas_nominal": 26
+}
