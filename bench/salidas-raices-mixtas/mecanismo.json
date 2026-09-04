@@ -1,0 +1,20 @@
+{
+  "_norm('C:\\\\')": "c:\\",
+  "_norm('C:\\\\Users')": "c:\\users",
+  "candidato": "c:\\windows\\win.ini",
+  "raiz_unidad + os.sep": "c:\\\\",
+  "raiz_normal + os.sep": "c:\\users\\",
+  "candidato == raiz_unidad": false,
+  "candidato.startswith(raiz_unidad + os.sep)": false,
+  "candidato.startswith(raiz_normal + os.sep)": false,
+  "_dentro(win.ini, [C:\\Users])": false,
+  "_dentro(win.ini, [C:\\])": false,
+  "_dentro(C:\\Users\\publico.txt, [C:\\Users])": true,
+  "_dentro(C:\\, [C:\\])  <- la rama `c == r`": true,
+  "candidatos_concedidos_por_la_raiz_de_unidad": [
+    "C:\\"
+  ],
+  "n_concedidos_de_la_muestra": "1 de 5",
+  "conclusion": "La raiz de unidad ya termina en el separador, asi que `r + os.sep` produce una barra DOBLE que ningun descendiente casa. Pero `_dentro` es un OR de dos ramas y la primera, `c == r`, SI acepta un candidato: LA PROPIA RAIZ. Asi que `C:\\` no concede «nada» -eso era falso y se publico- sino EXACTAMENTE UN camino, el directorio raiz; ningun descendiente, ni siquiera C:\\Windows.",
+  "por_que_podar_sigue_siendo_seguro": "No depende de la inercia, que era el argumento malo. (1) MONOTONIA: `_dentro` es un OR sobre las raices y `_preparar` no reescribe las que sobreviven, asi que quitar un termino de un OR solo puede REDUCIR el conjunto aceptado. (2) Y mas fuerte todavia: con el codigo de antes un `Confinamiento` construido NUNCA pudo contener una raiz de unidad -`_preparar` lanzaba-, luego la poda no puede quitar un acceso que jamas llego a existir."
+}

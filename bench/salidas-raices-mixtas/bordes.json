@@ -1,0 +1,107 @@
+{
+  "plataforma": "win32",
+  "base": "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n35-bordes-24ye66qc",
+  "victima": "C:\\Windows\\win.ini",
+  "celdas": {
+    "raiz_con_..._que_sube_a_la_unidad": {
+      "raices_declaradas": [
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n35-bordes-24ye66qc\\..\\..\\..\\..\\..\\..\\..\\.."
+      ],
+      "constructor": "ValueError",
+      "mensaje": "sin raíces de lectura accesibles: FileX no arranca (R6)",
+      "lee_la_victima": false
+    },
+    "raiz_con_..._mas_una_legitima": {
+      "raices_declaradas": [
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n35-bordes-24ye66qc\\legit\\..\\..",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n35-bordes-24ye66qc\\legit"
+      ],
+      "constructor": "ok",
+      "lectura_efectiva": [
+        "c:\\users\\krato\\appdata\\local\\temp",
+        "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-bordes-24ye66qc\\legit"
+      ],
+      "lee_la_victima": false
+    },
+    "unidad_en_minuscula": {
+      "raices_declaradas": [
+        "c:\\",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n35-bordes-24ye66qc\\legit"
+      ],
+      "constructor": "ok",
+      "lectura_efectiva": [
+        "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-bordes-24ye66qc\\legit"
+      ],
+      "lee_la_victima": false
+    },
+    "unidad_con_barra_unix": {
+      "raices_declaradas": [
+        "C:/",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n35-bordes-24ye66qc\\legit"
+      ],
+      "constructor": "ok",
+      "lectura_efectiva": [
+        "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-bordes-24ye66qc\\legit"
+      ],
+      "lee_la_victima": false
+    },
+    "unidad_sin_barra": {
+      "raices_declaradas": [
+        "C:",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n35-bordes-24ye66qc\\legit"
+      ],
+      "constructor": "ok",
+      "lectura_efectiva": [
+        "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-bordes-24ye66qc\\legit"
+      ],
+      "lee_la_victima": false
+    },
+    "prefijo_extendido": {
+      "raices_declaradas": [
+        "\\\\?\\C:\\",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n35-bordes-24ye66qc\\legit"
+      ],
+      "constructor": "ok",
+      "lectura_efectiva": [
+        "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-bordes-24ye66qc\\legit"
+      ],
+      "lee_la_victima": false
+    },
+    "cadena_vacia_mas_legitima": {
+      "raices_declaradas": [
+        "",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n35-bordes-24ye66qc\\legit"
+      ],
+      "constructor": "ok",
+      "lectura_efectiva": [
+        "d:\\work\\research\\filex\\.claude\\worktrees\\agent-af0fa20bb8ba9d275\\bench\\salidas-raices-mixtas",
+        "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-bordes-24ye66qc\\legit"
+      ],
+      "lee_la_victima": false
+    },
+    "raiz_repetida": {
+      "raices_declaradas": [
+        "C:\\",
+        "C:\\",
+        "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n35-bordes-24ye66qc\\legit"
+      ],
+      "constructor": "ok",
+      "lectura_efectiva": [
+        "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-bordes-24ye66qc\\legit"
+      ],
+      "lee_la_victima": false
+    },
+    "solo_unidades_de_varias_formas": {
+      "raices_declaradas": [
+        "C:\\",
+        "c:/",
+        "C:"
+      ],
+      "constructor": "ValueError",
+      "mensaje": "sin raíces de lectura accesibles: FileX no arranca (R6)",
+      "lee_la_victima": false
+    }
+  },
+  "fugas": [],
+  "cero_fugas": true
+}
