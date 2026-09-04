@@ -1,0 +1,100 @@
+{
+  "fecha": "2026-09-04",
+  "agente": "worker11",
+  "informe": "bench/contenedor-publicable.md",
+  "maquina": {
+    "docker_servidor": "29.4.3",
+    "orden_version": "docker version --format '{{.Server.Version}}'"
+  },
+
+  "base_upstream": {
+    "referencia": "ghcr.io/c4illin/convertx:latest",
+    "tipo": "application/vnd.oci.image.index.v1+json",
+    "orden": "docker buildx imagetools inspect ghcr.io/c4illin/convertx:latest",
+    "digest_indice": "sha256:b515b04bfd25298a5cdc775b2fcd48b9399bab658ce13e2598b65df1b16098c8",
+    "digest_manifiesto_amd64": "sha256:081d1638e8c6dfb6b5e69f47ff90e6f6037cdee29a2f25ddd44ddc6d2e52451d",
+    "digest_manifiesto_arm64": "sha256:c65ab84cab4c3e3ede28853f9dfcbaf5ddf1e52fd27e2c9ee5d02c77218eed60",
+    "digest_config_amd64": "sha256:a5b16e0b7d225f154757672dee1ccde32a0772f666115492e8ff1df2d54efe38",
+    "capas_amd64": 11,
+    "creada": "2026-06-21T20:32:00.311399794Z",
+    "coincide_con_registro_historico": {
+      "documento": "bench/docker.md linea 49",
+      "valor_registrado_22_08_2026": "b515b04bfd25",
+      "veredicto": "COINCIDE: el :latest de hoy es el mismo indice que el proyecto midio"
+    }
+  },
+
+  "autocorreccion": {
+    "afirmacion_inicial": "el :latest se ha movido: config del registro a5b16e0b != local b515b04",
+    "veredicto": "FALSA",
+    "causa": "se comparo el digest del CONFIG del manifiesto amd64 contra el digest del INDICE. Son magnitudes de niveles distintos. b515b04 es el indice, no un config.",
+    "lo_que_lo_destapo": "docker buildx imagetools inspect, que imprime el digest del indice en su cabecera",
+    "trampas": ["36 (una explicacion plausible no es un mecanismo)", "58 (el hecho no implica la causa)"]
+  },
+
+  "sondas_y_controles": {
+    "control_negativo_digest_inventado": {
+      "orden": "docker manifest inspect ghcr.io/c4illin/convertx@sha256:deadbeef...",
+      "rc": 1,
+      "stderr": "manifest unknown",
+      "veredicto": "la sonda DISCRIMINA"
+    },
+    "sonda_rota_detectada": {
+      "orden": "docker images --digests",
+      "sintoma": "la columna Digest coincide con .ID en las dos imagenes",
+      "veredicto": "en Docker 29 con almacen containerd esa columna no sirve para un FROM; hay que usar RepoDigests o buildx imagetools",
+      "trampa": "66 (misma respuesta para cosas que se saben distintas)"
+    }
+  },
+
+  "verificacion_construyendo": {
+    "declarado": "CONSTRUIDO, no solo consultado",
+    "orden": "docker build --platform linux/amd64 -f docker/Dockerfile.c13 -t filex-c13-w11 docker/",
+    "rc": 0,
+    "segundos": 29,
+    "referencia_historica_segundos": 28.1,
+    "log": "build-filex-c13-w11.log",
+    "veces_construida": 1,
+    "motores_dentro": {
+      "soffice": "/usr/bin/soffice",
+      "libreoffice": "/usr/bin/libreoffice",
+      "pandoc": "/usr/bin/pandoc",
+      "ebook-convert": "/usr/bin/ebook-convert",
+      "qpdf": "12.4.1",
+      "tesseract": "5.5.0",
+      "tesseract_langs": ["eng", "osd", "spa"]
+    },
+    "tamano": "5.78GB",
+    "tamano_base": "5.73GB"
+  },
+
+  "el_digest_no_basta": {
+    "afirmacion": "fijar la base es NECESARIO y NO SUFICIENTE",
+    "id_imagen_sellada": "sha256:6d359bad483eb307c1473dcffef234050ace45254ea53cc023dc5ad90cbaca97",
+    "id_imagen_reconstruida": "sha256:0210178ee7b33fe6e477edaabd8e6ca9633f6d880ab6dc8efb90a8b7dac98349",
+    "causa": "la capa apt-get no esta fijada; Debian forky/sid movio qpdf de 12.4.0 a 12.4.1",
+    "por_que_no_se_fijan_las_versiones_apt": "Debian sid RETIRA las versiones viejas de sus indices: un qpdf=12.4.0-1 haria que la receta dejara de construir en semanas",
+    "efecto_medido": {
+      "orden": "python -m filex motores  /  FILEX_IMAGEN_DOC=filex-c13-w11 python -m filex motores",
+      "salida": "aristas_por_imagen.txt",
+      "tandas": 2,
+      "determinista": true,
+      "con_sellada":      {"doc_libreoffice": 26, "doc_pandoc": 31, "doc_calibre": 16, "total_medidas": 73},
+      "con_reconstruida": {"doc_libreoffice": 10, "doc_pandoc": 15, "doc_calibre": 8,  "total_medidas": 33},
+      "diferencia": 40,
+      "interpretacion": "la diferencia es EXACTAMENTE el numero de aristas selladas de contenedor: reconstruir la imagen las hace caducar"
+    }
+  },
+
+  "degradacion_sin_docker": {
+    "fuente": "filex/sondeo/*.json contados uno a uno, no estimados",
+    "aristas_selladas_totales": 172,
+    "aristas_selladas_contenedor": 40,
+    "porcentaje": 23.26,
+    "desglose_sellado": {"doc_libreoffice": 16, "doc_pandoc": 16, "doc_calibre": 8},
+    "aristas_grafo_contenedor": 76,
+    "desglose_grafo": {"doc_libreoffice": 28, "doc_pandoc": 31, "doc_calibre": 17},
+    "aristas_nativas_no_afectadas": {"ffmpeg": 70, "imagemagick": 62, "total": 132},
+    "pruebas_saltadas": {"test_hito5.py::Integracion": 8, "test_cancelacion.py::ContenedorReal": 4, "total": 12}
+  }
+}

@@ -1,0 +1,108 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile.c13
+#1 transferring dockerfile:
+#1 transferring dockerfile: 2.26kB 0.0s done
+#1 DONE 0.3s
+
+#2 [internal] load metadata for ghcr.io/c4illin/convertx@sha256:b515b04bfd25298a5cdc775b2fcd48b9399bab658ce13e2598b65df1b16098c8
+#2 DONE 0.4s
+
+#3 [internal] load .dockerignore
+#3 transferring context:
+#3 transferring context: 2B done
+#3 DONE 1.2s
+
+#4 [1/2] FROM ghcr.io/c4illin/convertx@sha256:b515b04bfd25298a5cdc775b2fcd48b9399bab658ce13e2598b65df1b16098c8
+#4 resolve ghcr.io/c4illin/convertx@sha256:b515b04bfd25298a5cdc775b2fcd48b9399bab658ce13e2598b65df1b16098c8 0.1s done
+#4 DONE 1.7s
+
+#5 [2/2] RUN apt-get update  && apt-get install -y --no-install-recommends       qpdf tesseract-ocr tesseract-ocr-spa tesseract-ocr-eng  && rm -rf /var/lib/apt/lists/*
+#5 1.652 Get:1 http://deb.debian.org/debian testing InRelease [151 kB]
+#5 1.861 Get:2 http://deb.debian.org/debian testing-updates InRelease [45.1 kB]
+#5 2.056 Get:3 http://deb.debian.org/debian-security testing-security InRelease [48.0 kB]
+#5 2.075 Get:4 http://deb.debian.org/debian testing/main amd64 Packages [9920 kB]
+#5 5.243 Fetched 10.2 MB in 4s (2580 kB/s)
+#5 5.243 Reading package lists...
+#5 6.349 Reading package lists...
+#5 7.467 Building dependency tree...
+#5 7.714 Reading state information...
+#5 7.830 Solving dependencies...
+#5 8.195 The following additional packages will be installed:
+#5 8.197   libleptonica6 libqpdf30 libtesseract5 tesseract-ocr-osd
+#5 8.200 Suggested packages:
+#5 8.200   qpdf-doc
+#5 8.283 The following NEW packages will be installed:
+#5 8.284   libleptonica6 libqpdf30 libtesseract5 qpdf tesseract-ocr tesseract-ocr-eng
+#5 8.286   tesseract-ocr-osd tesseract-ocr-spa
+#5 8.451 0 upgraded, 8 newly installed, 0 to remove and 402 not upgraded.
+#5 8.451 Need to get 9696 kB of archives.
+#5 8.451 After this operation, 30.3 MB of additional disk space will be used.
+#5 8.451 Get:1 http://deb.debian.org/debian testing/main amd64 libleptonica6 amd64 1.86.0-1+b1 [1086 kB]
+#5 8.606 Get:2 http://deb.debian.org/debian testing/main amd64 libqpdf30 amd64 12.4.1-1 [1100 kB]
+#5 8.762 Get:3 http://deb.debian.org/debian testing/main amd64 libtesseract5 amd64 5.5.0-1.1 [1392 kB]
+#5 8.978 Get:4 http://deb.debian.org/debian testing/main amd64 qpdf amd64 12.4.1-1 [163 kB]
+#5 9.002 Get:5 http://deb.debian.org/debian testing/main amd64 tesseract-ocr-eng all 1:4.1.0-2 [1594 kB]
+#5 9.210 Get:6 http://deb.debian.org/debian testing/main amd64 tesseract-ocr-osd all 1:4.1.0-2 [2992 kB]
+#5 9.738 Get:7 http://deb.debian.org/debian testing/main amd64 tesseract-ocr amd64 5.5.0-1.1 [416 kB]
+#5 9.771 Get:8 http://deb.debian.org/debian testing/main amd64 tesseract-ocr-spa all 1:4.1.0-2 [954 kB]
+#5 10.89 debconf: unable to initialize frontend: Dialog
+#5 10.89 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#5 10.89 debconf: falling back to frontend: Readline
+#5 10.90 debconf: unable to initialize frontend: Readline
+#5 10.90 debconf: (This frontend requires a controlling tty.)
+#5 10.90 debconf: falling back to frontend: Teletype
+#5 10.91 debconf: unable to initialize frontend: Teletype
+#5 10.91 debconf: (This frontend requires a controlling tty.)
+#5 10.91 debconf: falling back to frontend: Noninteractive
+#5 12.10 Fetched 9696 kB in 1s (6719 kB/s)
+#5 12.23 Selecting previously unselected package libleptonica6:amd64.
+#5 12.23 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 70638 files and directories currently installed.)
+#5 13.98 Preparing to unpack .../0-libleptonica6_1.86.0-1+b1_amd64.deb ...
+#5 14.00 Unpacking libleptonica6:amd64 (1.86.0-1+b1) ...
+#5 14.19 Selecting previously unselected package libqpdf30:amd64.
+#5 14.19 Preparing to unpack .../1-libqpdf30_12.4.1-1_amd64.deb ...
+#5 14.21 Unpacking libqpdf30:amd64 (12.4.1-1) ...
+#5 14.34 Selecting previously unselected package libtesseract5:amd64.
+#5 14.34 Preparing to unpack .../2-libtesseract5_5.5.0-1.1_amd64.deb ...
+#5 14.36 Unpacking libtesseract5:amd64 (5.5.0-1.1) ...
+#5 14.50 Selecting previously unselected package qpdf.
+#5 14.50 Preparing to unpack .../3-qpdf_12.4.1-1_amd64.deb ...
+#5 14.52 Unpacking qpdf (12.4.1-1) ...
+#5 14.61 Selecting previously unselected package tesseract-ocr-eng.
+#5 14.62 Preparing to unpack .../4-tesseract-ocr-eng_1%3a4.1.0-2_all.deb ...
+#5 14.64 Unpacking tesseract-ocr-eng (1:4.1.0-2) ...
+#5 14.90 Selecting previously unselected package tesseract-ocr-osd.
+#5 14.91 Preparing to unpack .../5-tesseract-ocr-osd_1%3a4.1.0-2_all.deb ...
+#5 14.91 Unpacking tesseract-ocr-osd (1:4.1.0-2) ...
+#5 15.15 Selecting previously unselected package tesseract-ocr.
+#5 15.16 Preparing to unpack .../6-tesseract-ocr_5.5.0-1.1_amd64.deb ...
+#5 15.17 Unpacking tesseract-ocr (5.5.0-1.1) ...
+#5 15.26 Selecting previously unselected package tesseract-ocr-spa.
+#5 15.27 Preparing to unpack .../7-tesseract-ocr-spa_1%3a4.1.0-2_all.deb ...
+#5 15.29 Unpacking tesseract-ocr-spa (1:4.1.0-2) ...
+#5 15.44 Setting up libleptonica6:amd64 (1.86.0-1+b1) ...
+#5 15.47 Setting up tesseract-ocr-eng (1:4.1.0-2) ...
+#5 15.50 Setting up tesseract-ocr-spa (1:4.1.0-2) ...
+#5 15.53 Setting up libtesseract5:amd64 (5.5.0-1.1) ...
+#5 15.56 Setting up tesseract-ocr-osd (1:4.1.0-2) ...
+#5 15.59 Setting up libqpdf30:amd64 (12.4.1-1) ...
+#5 15.62 Setting up tesseract-ocr (5.5.0-1.1) ...
+#5 15.64 Setting up qpdf (12.4.1-1) ...
+#5 16.80 Processing triggers for libc-bin (2.42-16) ...
+#5 DONE 20.1s
+
+#6 exporting to image
+#6 exporting layers
+#6 exporting layers 2.5s done
+#6 exporting manifest sha256:394c437d799b0e93faff70a5c268c82ba0293958b3039581c35f8c52de727c4a 0.0s done
+#6 exporting config sha256:e2c312e790c2d25233f89af1735087425d23faf95897e97d8dbc9f2efae4403d 0.0s done
+#6 exporting attestation manifest sha256:401d844556d2e3ba4f9af21e5f85bedfa82243447c7fe6817ae698e67216bfa7
+#6 exporting attestation manifest sha256:401d844556d2e3ba4f9af21e5f85bedfa82243447c7fe6817ae698e67216bfa7 0.1s done
+#6 exporting manifest list sha256:0210178ee7b33fe6e477edaabd8e6ca9633f6d880ab6dc8efb90a8b7dac98349 0.0s done
+#6 naming to docker.io/library/filex-c13-w11:latest done
+#6 unpacking to docker.io/library/filex-c13-w11:latest
+#6 unpacking to docker.io/library/filex-c13-w11:latest 0.4s done
+#6 DONE 3.3s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/po2gp19ab880kc91c4jm9nlvn

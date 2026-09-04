@@ -32,10 +32,44 @@ máquina de referencia:
 
 Sin ninguno de los tres nativos instalados, `filex motores` declara el grafo entero **sin
 sondear** y cualquier conversión falla con `ningún motor disponible lee '<formato>'` — es un
-fallo honesto, no un cuelgue, pero es un fallo. Sin Docker, pierdes el tercio ofimático del
-catálogo; el resto (imagen, vídeo, audio, PDF) sigue funcionando igual. No hay gestor de
-paquetes que resuelva esto por ti: lo que falte se instala a mano o se levanta en contenedor
-(`docker/`).
+fallo honesto, no un cuelgue, pero es un fallo. No hay gestor de paquetes que resuelva esto
+por ti: lo que falte se instala a mano o se levanta en contenedor (`docker/`).
+
+### Qué pierdes exactamente sin Docker
+
+No es una estimación: sale de contar `filex/sondeo/*.json`, que es donde viven las aristas
+selladas (MEDIDO el 04/09/2026).
+
+| | Con Docker | Sin Docker |
+|---|---:|---:|
+| Aristas **selladas** de LibreOffice | 16 | 0 |
+| Aristas **selladas** de Pandoc | 16 | 0 |
+| Aristas **selladas** de Calibre | 8 | 0 |
+| **Total sellado** | **172** | **132** (−40, el **23,3 %**) |
+| Aristas del **grafo** ofimático (declaradas + medidas + muertas) | 76 | 0 |
+| Pruebas de la suite | todas | **12 saltadas** (8 de `test_hito5.py`, 4 de `test_cancelacion.py`) |
+
+Lo que **no** se toca: las **132** aristas nativas (ffmpeg 70, ImageMagick 62). Imagen,
+vídeo, audio y PDF siguen funcionando igual.
+
+Lo que **sí** desaparece es el estrato documental entero — nada de `docx→*`, `epub→*`,
+`xlsx→*`, `tex→*`, `md→pptx`, `mobi/azw3→*`. Los tres motores se auto-excluyen **informando
+del motivo** (`el demonio responde pero no está ninguna de las imágenes: …`), que es un
+fallo honesto y no un silencio.
+
+Para recuperarlo, una sola orden — la imagen pesa **5,78 GB** y tarda ~30 s sobre la base ya
+descargada:
+
+```
+docker build --platform linux/amd64 -f docker/Dockerfile.c13 -t filex-c13 docker/
+```
+
+`FILEX_IMAGEN_DOC` sobreescribe qué imagen se usa. **Aviso medido:** reconstruir esa imagen
+NO te devuelve las 40 aristas *selladas* — te devuelve el estrato del grafo con sus 33
+aristas medidas en el código. El sello lleva dentro el id de la imagen, y ese id cambia
+porque la capa `apt-get` no está fijada; verlo caducar es el sistema de huella funcionando.
+El detalle, con los dos ids y el número exacto, en
+[`bench/contenedor-publicable.md`](bench/contenedor-publicable.md).
 
 ## 2 · Instalación
 

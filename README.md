@@ -55,7 +55,7 @@ cuesta el **0,032 %** de lo que cuesta convertir *(MEDIDO — `bench/coste-verif
 | **Leer la auditoría del ecosistema** | [`ANALISIS-COMPLETO.md`](ANALISIS-COMPLETO.md) — 22 proyectos, leídos y ejecutados, con licencia y veredicto por repositorio |
 | **Leer el código** | [`filex/`](filex/) — 22 módulos, biblioteca estándar, cero dependencias. Empieza por `invocacion.py`, el único sitio que puede lanzar un proceso, y sigue por `verificador.py`, que es el contrato |
 | **Contribuir** | [`CONTRIBUTING.md`](CONTRIBUTING.md) — los carriles, las cuatro declaraciones que necesita un recuento de suite y **qué NO puede comprobar la CI**, que es lo primero que hay que saber |
-| **Modificar el código sin repetir errores ajenos** | [`CLAUDE.md`](CLAUDE.md) — las reglas de trabajo y las **125 trampas ya pagadas**, cada una con la medida que la respalda. Es el documento más útil del repositorio si vas a tocar algo |
+| **Modificar el código sin repetir errores ajenos** | [`CLAUDE.md`](CLAUDE.md) — las reglas de trabajo y las **126 trampas ya pagadas**, cada una con la medida que la respalda. Es el documento más útil del repositorio si vas a tocar algo |
 | **Saber qué falta** | [`PENDIENTE.md`](PENDIENTE.md) — la lista corta y accionable |
 | **Qué cambió en cada versión** | [`CHANGELOG.md`](CHANGELOG.md) |
 
@@ -141,7 +141,8 @@ analysis/    Un documento por repositorio auditado, más los transversales
 bench/       Las mediciones: 100 informes, con sus scripts y arneses
 corpus/      44 ficheros de prueba con los casos patológicos (39 en Git LFS, 254 MiB)
 ci/          Las comprobaciones de integridad documental y las sondas de aptitud
-docker/      Compose de los competidores, levantados para medirlos
+docker/      Dockerfile.c13, la imagen documental del producto (fijada por digest),
+             y los compose de los competidores, levantados para medirlos
 ```
 
 **Los binarios de salida no se versionan.** Cada carpeta excluida conserva un
