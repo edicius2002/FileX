@@ -1,0 +1,56 @@
+control del arnes (orden que empieza por builtin): rc=0  VIVO_DESDE_UN_BUILTIN
+control de la sonda de encoders: {'aac': True, 'libx264': True, 'pcm_s16le': True, 'flac': True}  (total 226)
+
+(B) escribir DENTRO del contenedor lo que el ffmpeg de Windows rechaza:
+  semillas dentro: rc=0 (6 lineas)
+  ac4         s48.wav     rc=8    bytes=-1        Error opening output files: Encoder not found
+  aea         s48.wav     rc=8    bytes=-1        Error opening output files: Encoder not found
+  avs3        s_cif.mp4   rc=8    bytes=-1        Error opening output files: Encoder not found
+  bit         s48.wav     rc=8    bytes=-1        Error opening output files: Encoder not found
+  cavsvideo   s_cif.mp4   rc=8    bytes=-1        Error opening output files: Encoder not found
+  codec2      s48.wav     rc=0    bytes=182       ESCRITO
+  codec2raw   s48.wav     rc=0    bytes=175       ESCRITO
+  evc         s_cif.mp4   rc=8    bytes=-1        Error opening output files: Encoder not found
+  gsm         s48.wav     rc=255  bytes=0         [aost#0:0/libgsm @ 0x639f6ee7c940] [enc:libgsm @ 0x639f6ee7cf00] Error while opening encod
+  ilbc        s48.wav     rc=8    bytes=-1        Error opening output files: Encoder not found
+  oma         s48.wav     rc=8    bytes=-1        Error opening output files: Encoder not found
+  vc1         s_cif.mp4   rc=8    bytes=-1        Error opening output files: Encoder not found
+  vc1test     s_cif.mp4   rc=8    bytes=-1        Error opening output files: Encoder not found
+  jacosub     s.srt       rc=234  bytes=-1        [out#0/jacosub @ 0x5aeceafad7c0] Output file does not contain any stream
+  mcc         s.srt       rc=234  bytes=-1        [out#0/mcc @ 0x592af6a237c0] Output file does not contain any stream
+  microdvd    s.srt       rc=234  bytes=-1        [out#0/microdvd @ 0x64e97985a7c0] Output file does not contain any stream
+  scc         s.srt       rc=234  bytes=-1        [out#0/scc @ 0x5fad1d71a7c0] Output file does not contain any stream
+  sup         s.srt       rc=234  bytes=-1        [out#0/sup @ 0x59754e9ba7c0] Output file does not contain any stream
+
+  escritos dentro del contenedor: 2 de 18
+
+(C) oeb con Calibre, listando el directorio:
+RC=0
+--- nuevos ---
+_conv.log
+salida.oeb
+--- que es salida.oeb ---
+DIRECTORIO
+total 84
+drwxr-xr-x 2 root root  4096 Sep  4 22:26 .
+drwxr-xr-x 3 root root  4096 Sep  4 22:26 ..
+-rw-r--r-- 1 root root  1614 Sep  4 22:26 content.opf
+-rw-r--r-- 1 root root 46695 Sep  4 22:26 cover_image.jpg
+-rw-r--r-- 1 root root   400 Sep  4 22:26 index.html
+-rw-r--r-- 1 root root    51 Sep  4 22:26 page_styles.css
+-rw-r--r-- 1 root root   166 Sep  4 22:26 page_styles1.css
+-rw-r--r-- 1 root root   334 Sep  4 22:26 stylesheet.css
+-rw-r--r-- 1 root root   787 Sep  4 22:26 titlepage.xhtml
+-rw-r--r-- 1 root root   479 Sep  4 22:26 toc.ncx
+--- cola del log ---
+Cleaning up manifest...
+Trimming unused files from manifest...
+Creating OEB Output...
+67% Running OEB Output plugin
+OEB output written to /tmp/c50/salida.oeb
+Output saved to   /tmp/c50/salida.oeb
+
+
+msgconvert en el contenedor: /usr/bin/msgconvert
+
+escrito contenedor2.json
