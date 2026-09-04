@@ -1,0 +1,31 @@
+{
+  "identidad": {
+    "sha_viejo": "e760be95fdf12d25",
+    "sha_nuevo": "9d62dbd6389dea5f",
+    "SON_DISTINTAS": true
+  },
+  "n_por_celda": 20000,
+  "uri_a_ruta_us_acepta": {
+    "viejo": 3.2127,
+    "nuevo": 3.9047,
+    "ratio_nuevo_sobre_viejo": 1.215
+  },
+  "uri_a_ruta_us_rechaza": {
+    "viejo": 2.351,
+    "nuevo": 2.1637,
+    "ratio_nuevo_sobre_viejo": 0.92
+  },
+  "uri_a_ruta_us_mezcla": {
+    "viejo": 2.4188,
+    "nuevo": 3.1454,
+    "ratio_nuevo_sobre_viejo": 1.3
+  },
+  "resolver_us": {
+    "prohibido_R1": 5.873,
+    "no_existe": 146.777,
+    "existe": 169.733
+  },
+  "resolver_ratio_no_existe_sobre_prohibido": 24.99,
+  "nota_resolver": "`Confinamiento.resolver` NO se toca en N37: se mide para dejar constancia del orden de magnitud, no como un antes/después.",
+  "podadas_us": 10.909
+}

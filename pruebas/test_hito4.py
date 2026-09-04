@@ -1055,5 +1055,212 @@ class RaicesMixtasPorMCP(unittest.TestCase):
         self.assertTrue(g.sin_acceso)
 
 
+class _SesionDeUris:
+    """Doble que entrega URIs LITERALES, no rutas.
+
+    `_SesionDeRoots` fabrica el URI con `"file:///" + ruta`, que es justo la
+    forma cuya traducción N37 pone a prueba: con él no se puede expresar una
+    *authority*. Se añade uno nuevo en vez de cambiar aquél porque aquél es el
+    instrumento de N34 y **un arnés no se toca mientras mide otra cosa**.
+    """
+
+    def __init__(self, uris):
+        self._uris = list(uris)
+        self.llamadas = 0
+
+    async def list_roots(self):
+        import anyio
+
+        self.llamadas += 1
+        await anyio.sleep(0.0)
+
+        class _R:
+            def __init__(self, uri):
+                self.uri = uri
+
+        class _Res:
+            def __init__(self, roots):
+                self.roots = roots
+
+        return _Res([_R(u) for u in self._uris])
+
+
+class AuthorityDeUriN37(unittest.TestCase):
+    """N37 — `bench/uri-authority.md`. La *authority* de un `file://`.
+
+    `_uri_a_ruta` descartaba `p.netloc`, y eso no perdía la raíz: la
+    **sustituía**. `file://servidor/recurso` daba `\\recurso`, que `abspath`
+    completa con la unidad del proceso, así que un root de red acababa
+    confinando en `D:\\recurso` — y `file://nas-de-la-empresa/Work`, en
+    `D:\\Work` entero.
+
+    **Una prueba por RAMA del predicado (trampa 118).** La 118 nació justo de
+    aquí al lado: una corrección sobre `_dentro` desmontó una de las dos ramas
+    del `or` y publicó una conclusión falsa sobre la que no probó. Las ramas de
+    `_uri_a_ruta` son seis y están numeradas en los nombres.
+    """
+
+    def test_R1_lo_que_no_es_file_se_ignora(self):
+        for uri in ("", "http://servidor/recurso", "D:/Work", "ftp://x/y"):
+            with self.subTest(uri=uri):
+                self.assertEqual(M._uri_a_ruta(uri), "")
+
+    def test_R2_una_authority_de_red_se_RECHAZA_entera(self):
+        """La fila N37. Antes devolvía `\\recurso`; ahora, nada."""
+        for uri in ("file://servidor/recurso",
+                    "file://servidor/recurso/sub",
+                    "file://nas-de-la-empresa/Work",
+                    "file://192.168.1.10/datos"):
+            with self.subTest(uri=uri):
+                self.assertEqual(
+                    M._uri_a_ruta(uri), "",
+                    "una authority de red no puede acabar en una ruta local")
+
+    def test_R3_localhost_es_la_authority_vacia_y_SIGUE_valiendo(self):
+        """RFC 8089 §2, y no es teoría: rechazarla rompía 2 de 4 legítimas.
+
+        Es la mitad que separa este arreglo de una regresión con mejor pinta
+        (trampa 51). Node normaliza `localhost` él solo y Python no, así que
+        sin esta rama el mismo root funcionaría o no según el runtime del
+        cliente.
+        """
+        esperado = os.path.normpath("D:/Work") if os.name == "nt" else "/Work"
+        crudo = "file://localhost/D:/Work" if os.name == "nt" else "file://localhost/Work"
+        for uri in (crudo, crudo.replace("localhost", "LOCALHOST")):
+            with self.subTest(uri=uri):
+                self.assertEqual(M._uri_a_ruta(uri), esperado)
+
+    def test_R4_el_caso_canonico_local_no_se_mueve(self):
+        """El que emite el cliente de verdad — MEDIDO contra Claude Code 2.1.260,
+        que responde `file:///D:/...` con la authority vacía."""
+        if os.name != "nt":
+            self.skipTest("la rama de la letra de unidad es de Windows")
+        self.assertEqual(M._uri_a_ruta("file:///D:/Work/research/FileX"),
+                         os.path.normpath("D:/Work/research/FileX"))
+        # Y el `unquote` sigue delante del recorte:
+        self.assertEqual(M._uri_a_ruta("file:///C:/a%20b"),
+                         os.path.normpath("C:/a b"))
+
+    def test_R5_en_Windows_una_ruta_SIN_unidad_se_rechaza(self):
+        """Misma fuga que N37 pero sin authority a la que culpar.
+
+        `file:///recurso` caía en `D:\\recurso` porque `abspath` le pone la
+        unidad del proceso. Y `file:////servidor/recurso` es una UNC entrando
+        por la puerta de atrás: sin *authority*, pero UNC igual.
+        """
+        if os.name != "nt":
+            self.skipTest("en POSIX `/recurso` sí es una ruta absoluta legítima")
+        for uri in ("file:///recurso", "file:////servidor/recurso",
+                    "file://///servidor/recurso"):
+            with self.subTest(uri=uri):
+                self.assertEqual(M._uri_a_ruta(uri), "")
+
+    def test_R6_una_ruta_vacia_ya_no_es_el_cwd(self):
+        """`normpath("")` devuelve `"."`, y nadie lo había registrado.
+
+        `file://` es authority vacía y path vacío: pasaba el `if p:` de
+        `asegurar` y confinaba en el **directorio de trabajo del servidor**.
+        """
+        self.assertEqual(M._uri_a_ruta("file://"), "")
+        self.assertEqual(M._uri_a_ruta("file://localhost"), "")
+
+    # ------------------------------------------------- por la SUPERFICIE
+    # Trampa 70: el daño de una traducción mala no aparece donde se mira, sino
+    # donde el valor se USA. Estas tres van por `asegurar`, no por la función.
+
+    def _asegurar(self, uris):
+        import anyio
+
+        fx = FileX()
+        g = M.Raices(fx, None)
+        g.sin_acceso = False
+        anyio.run(g.asegurar, _SesionDeUris(uris))
+        return fx, g
+
+    @unittest.skipUnless(HAY_ANYIO, "hace falta anyio (viene con el SDK de MCP)")
+    def test_un_root_de_red_no_concede_NINGUNA_ruta_local(self):
+        """La prueba de la fuga, en la moneda en la que dolía: qué se concede."""
+        fx, g = self._asegurar(["file://nas-de-la-empresa/Work"])
+        self.assertTrue(g.sin_acceso, "sin ninguna raíz utilizable, R6 deniega")
+        self.assertIsNone(fx.confinamiento)
+
+    @unittest.skipUnless(HAY_ANYIO, "hace falta anyio (viene con el SDK de MCP)")
+    def test_y_el_root_de_red_NO_le_quita_al_cliente_los_que_si_valen(self):
+        """N35 no se deshace: descartar uno deja los demás en pie.
+
+        Es la misma exigencia que `RaicesMixtasPorMCP`, sobre la causa nueva:
+        si rechazar la *authority* se llevara por delante la lista blanca
+        entera, esto sería N35 reabierto por otra puerta.
+        """
+        d = tempfile.mkdtemp(prefix="n37-t-")
+        self.addCleanup(shutil.rmtree, d, ignore_errors=True)
+        uri_bueno = "file:///" + os.path.abspath(d).replace(os.sep, "/")
+        fx, g = self._asegurar(["file://servidor/recurso", uri_bueno])
+        self.assertFalse(g.sin_acceso)
+        self.assertIsNotNone(fx.confinamiento)
+        self.assertEqual(fx.confinamiento.lectura,
+                         [_conf._norm(os.path.abspath(d))])
+        # Y no se cuela la ruta local que el root de red producía antes.
+        unidad = os.path.splitdrive(os.path.abspath(d))[0]
+        with self.assertRaises(_conf.Denegado):
+            fx.confinamiento.resolver(os.path.join(unidad + os.sep, "recurso"))
+
+    @unittest.skipUnless(HAY_ANYIO, "hace falta anyio (viene con el SDK de MCP)")
+    def test_el_descarte_deja_RASTRO_cuando_se_pide(self):
+        """N37: la poda de N35 y el descarte de un URI eran mudos.
+
+        Se comprueba el canal, no la prosa: sin la variable no se escribe nada
+        y con ella aparecen las dos causas separadas (trampa 25: dos cosas con
+        la misma pinta desde fuera necesitan registros distintos).
+        """
+        d = tempfile.mkdtemp(prefix="n37-r-")
+        self.addCleanup(shutil.rmtree, d, ignore_errors=True)
+        reg = os.path.join(d, "registro.tsv")
+        uri_bueno = "file:///" + os.path.abspath(d).replace(os.sep, "/")
+        antes = dict(os.environ)
+        os.environ[M.Raices.VAR_REGISTRO] = reg
+        try:
+            self._asegurar(["file://servidor/recurso", uri_bueno])
+        finally:
+            os.environ.clear()
+            os.environ.update(antes)
+        self.assertTrue(os.path.exists(reg), "el descarte tiene que dejar rastro")
+        texto = open(reg, encoding="utf-8").read()
+        self.assertIn("motivo=uri_no_traducible", texto)
+        self.assertIn("file://servidor/recurso", texto)
+
+
+class RaizVaciaN37(unittest.TestCase):
+    """N37: una raíz `""` confinaba en el `cwd` del proceso.
+
+    Vive aquí y no en `test_hito1` porque el pendiente lo dejó escrito worker5
+    junto a los otros dos de N37, pero el arreglo está en
+    `filex/confinamiento.py` y se prueba también desde su propia superficie.
+    """
+
+    def test_una_raiz_vacia_no_concede_el_directorio_de_trabajo(self):
+        with self.assertRaises(ValueError):
+            _conf.Confinamiento([""])
+        for basura in ("", "   ", "\t"):
+            with self.subTest(raiz=repr(basura)):
+                self.assertEqual(_conf.Confinamiento._preparar([basura]), [])
+
+    def test_y_no_se_lleva_por_delante_a_las_raices_buenas(self):
+        """Monotonía, igual que N35: podar sólo QUITA."""
+        d = tempfile.mkdtemp(prefix="n37-v-")
+        self.addCleanup(shutil.rmtree, d, ignore_errors=True)
+        c = _conf.Confinamiento(["", d])
+        self.assertEqual(c.lectura, [_conf._norm(os.path.abspath(d))])
+        self.assertTrue(c.puede_leer(d))
+
+    def test_la_poda_dice_QUE_descarto(self):
+        d = tempfile.mkdtemp(prefix="n37-p-")
+        self.addCleanup(shutil.rmtree, d, ignore_errors=True)
+        unidad = os.path.splitdrive(os.path.abspath(d))[0] + os.sep
+        self.assertEqual(_conf.Confinamiento._podadas(["", unidad, d]),
+                         ["", unidad])
+        self.assertEqual(_conf.Confinamiento._podadas([d]), [])
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

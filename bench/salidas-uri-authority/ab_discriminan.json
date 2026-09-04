@@ -1,0 +1,234 @@
+{
+  "nota": "A/B de N37: ¿discriminan mis pruebas y siguen vivos N34 y N35?",
+  "python": "3.11.9",
+  "control_de_identidad": {
+    "filex/mcp.py @ antes_de_N37": {
+      "sha_actual": "f493bbfadd50d81e",
+      "sha_vieja": "4b89ae49e2fd3c56",
+      "SON_DISTINTAS": true
+    },
+    "filex/mcp.py @ antes_de_N34": {
+      "sha_actual": "f493bbfadd50d81e",
+      "sha_vieja": "2f15c7b9f383014b",
+      "SON_DISTINTAS": true
+    },
+    "filex/mcp.py @ antes_de_N35": {
+      "sha_actual": "f493bbfadd50d81e",
+      "sha_vieja": "471f4c06bfa18843",
+      "SON_DISTINTAS": true
+    },
+    "filex/confinamiento.py @ antes_de_N37": {
+      "sha_actual": "040364bcc3ee9024",
+      "sha_vieja": "42056ea259ccc2f1",
+      "SON_DISTINTAS": true
+    },
+    "filex/confinamiento.py @ antes_de_N35": {
+      "sha_actual": "040364bcc3ee9024",
+      "sha_vieja": "1a9e8fb20dc5262b",
+      "SON_DISTINTAS": true
+    }
+  },
+  "todas_las_versiones_contrastan": true,
+  "TODAS_LAS_CELDAS_CUMPLEN": true,
+  "celdas": [
+    {
+      "rc": 0,
+      "veredicto": "verde",
+      "compila": {
+        "filex/mcp.py": true,
+        "filex/confinamiento.py": true
+      },
+      "clases_de_error": [],
+      "cola": [
+        "............                                             [100%]",
+        "12 passed, 45 deselected, 16 subtests passed in 4.09s"
+      ],
+      "n_failed": 0,
+      "version": "ACTUAL",
+      "seleccion": "N37 (mías)",
+      "se_exige": "verde",
+      "CUMPLE": true
+    },
+    {
+      "rc": 0,
+      "veredicto": "verde",
+      "compila": {
+        "filex/mcp.py": true,
+        "filex/confinamiento.py": true
+      },
+      "clases_de_error": [],
+      "cola": [
+        "...                                                                      [100%]",
+        "3 passed, 54 deselected in 4.15s"
+      ],
+      "n_failed": 0,
+      "version": "ACTUAL",
+      "seleccion": "N34",
+      "se_exige": "verde",
+      "CUMPLE": true
+    },
+    {
+      "rc": 0,
+      "veredicto": "verde",
+      "compila": {
+        "filex/mcp.py": true,
+        "filex/confinamiento.py": true
+      },
+      "clases_de_error": [],
+      "cola": [
+        "...                                                                    [100%]",
+        "3 passed, 54 deselected, 2 subtests passed in 4.44s"
+      ],
+      "n_failed": 0,
+      "version": "ACTUAL",
+      "seleccion": "N35 por MCP",
+      "se_exige": "verde",
+      "CUMPLE": true
+    },
+    {
+      "rc": 0,
+      "veredicto": "verde",
+      "compila": {
+        "filex/mcp.py": true,
+        "filex/confinamiento.py": true
+      },
+      "clases_de_error": [],
+      "cola": [
+        ".........                                                              [100%]",
+        "9 passed, 35 deselected, 2 subtests passed in 3.02s"
+      ],
+      "n_failed": 0,
+      "version": "ACTUAL",
+      "seleccion": "N35 en el núcleo",
+      "se_exige": "verde",
+      "CUMPLE": true
+    },
+    {
+      "rc": 1,
+      "veredicto": "rojo",
+      "compila": {
+        "filex/mcp.py": true,
+        "filex/confinamiento.py": true
+      },
+      "clases_de_error": [
+        "'c",
+        "+",
+        "+ ['c",
+        "-  'c",
+        "- .",
+        "- ['c"
+      ],
+      "cola": [
+        "FAILED pruebas/test_hito4.py::RaizVaciaN37::test_una_raiz_vacia_no_concede_el_directorio_de_trabajo",
+        "FAILED pruebas/test_hito4.py::RaizVaciaN37::test_y_no_se_lleva_por_delante_a_las_raices_buenas",
+        "14 failed, 5 passed, 45 deselected, 6 subtests passed in 4.77s"
+      ],
+      "n_failed": 14,
+      "version": "antes_de_N37",
+      "seleccion": "N37 (mías)",
+      "se_exige": "rojo",
+      "CUMPLE": true
+    },
+    {
+      "rc": 1,
+      "veredicto": "rojo",
+      "compila": {
+        "filex/mcp.py": true,
+        "filex/confinamiento.py": true
+      },
+      "clases_de_error": [
+        "AssertionError"
+      ],
+      "cola": [
+        "FAILED pruebas/test_hito4.py::RaicesEnConcurrencia::test_un_fallo_no_sella_NADA_ni_con_raices_de_servidor",
+        "FAILED pruebas/test_hito4.py::RaicesEnConcurrencia::test_una_raiz_que_no_confina_es_SIN_ACCESO_no_sin_confinamiento",
+        "3 failed, 54 deselected in 4.30s"
+      ],
+      "n_failed": 3,
+      "version": "antes_de_N34",
+      "seleccion": "N34",
+      "se_exige": "rojo",
+      "CUMPLE": true
+    },
+    {
+      "rc": 1,
+      "veredicto": "rojo",
+      "compila": {
+        "filex/mcp.py": true,
+        "filex/confinamiento.py": true
+      },
+      "clases_de_error": [
+        "AssertionError",
+        "AttributeError"
+      ],
+      "cola": [
+        "SUBFAILED(primero='sub') pruebas/test_hito4.py::RaicesMixtasPorMCP::test_un_root_que_no_confina_NO_le_quita_al_cliente_los_que_si",
+        "FAILED pruebas/test_hito4.py::RaicesMixtasPorMCP::test_y_el_confinamiento_que_queda_sigue_DENEGANDO_lo_de_fuera",
+        "3 failed, 2 passed, 54 deselected in 4.61s"
+      ],
+      "n_failed": 3,
+      "version": "antes_de_N35",
+      "seleccion": "N35 por MCP",
+      "se_exige": "rojo",
+      "CUMPLE": true
+    },
+    {
+      "rc": 1,
+      "veredicto": "rojo",
+      "compila": {
+        "filex/mcp.py": true,
+        "filex/confinamiento.py": true
+      },
+      "clases_de_error": [
+        "AssertionError",
+        "ValueError"
+      ],
+      "cola": [
+        "SUBFAILED(orden='AB') pruebas/test_hito1.py::RaicesMixtasN35::test_una_raiz_que_no_confina_NO_se_lleva_por_delante_a_las_demas",
+        "SUBFAILED(orden='BA') pruebas/test_hito1.py::RaicesMixtasN35::test_una_raiz_que_no_confina_NO_se_lleva_por_delante_a_las_demas",
+        "7 failed, 4 passed, 35 deselected in 4.08s"
+      ],
+      "n_failed": 7,
+      "version": "antes_de_N35",
+      "seleccion": "N35 en el núcleo",
+      "se_exige": "rojo",
+      "CUMPLE": true
+    },
+    {
+      "rc": 0,
+      "veredicto": "verde",
+      "compila": {
+        "filex/mcp.py": true,
+        "filex/confinamiento.py": true
+      },
+      "clases_de_error": [],
+      "cola": [
+        "...                                                                      [100%]",
+        "3 passed, 54 deselected in 4.20s"
+      ],
+      "n_failed": 0,
+      "version": "antes_de_N37",
+      "seleccion": "N34",
+      "se_exige": "verde",
+      "CUMPLE": true
+    },
+    {
+      "rc": 0,
+      "veredicto": "verde",
+      "compila": {
+        "filex/mcp.py": true,
+        "filex/confinamiento.py": true
+      },
+      "clases_de_error": [],
+      "cola": [
+        "...                                                                    [100%]",
+        "3 passed, 54 deselected, 2 subtests passed in 4.31s"
+      ],
+      "n_failed": 0,
+      "version": "antes_de_N37",
+      "seleccion": "N35 por MCP",
+      "se_exige": "verde",
+      "CUMPLE": true
+    }
+  ]
+}
