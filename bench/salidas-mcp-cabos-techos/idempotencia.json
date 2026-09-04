@@ -1,0 +1,89 @@
+{
+  "interprete": "3.11.9",
+  "plataforma": "win32",
+  "mcp_version": "2.0.0",
+  "M0": {
+    "modulo_que_usa_filex": "mcp.server.lowlevel",
+    "lowlevel_exporta_maquinaria_resolve": [],
+    "mcpserver_resolve_exporta": [
+      "Elicit",
+      "ListRoots",
+      "Resolve",
+      "Sample"
+    ],
+    "filex_puede_sufrir_doble_ejecucion": false
+  },
+  "entrada_bytes": 42855,
+  "entrada_es_puntero_lfs": false,
+  "M1_M2": {
+    "roots_list_llamadas": 1,
+    "job_id_1": "1cf82454e0b1",
+    "job_id_2": "720919bf7462",
+    "job_id_distintos": true,
+    "n_trabajos_registrados": 2,
+    "respuesta_1": {
+      "job_id": "1cf82454e0b1",
+      "estado": "working",
+      "sondeo_ms": 1000,
+      "camino": [
+        "png",
+        "jpg"
+      ],
+      "motores": [
+        "imagemagick"
+      ]
+    },
+    "respuesta_2": {
+      "job_id": "720919bf7462",
+      "estado": "working",
+      "sondeo_ms": 1000,
+      "camino": [
+        "png",
+        "jpg"
+      ],
+      "motores": [
+        "imagemagick"
+      ]
+    }
+  },
+  "M3": {
+    "roots_list_llamadas": 1,
+    "sin_acceso": true,
+    "resuelto_marcado": false,
+    "confinamiento_es_none": true,
+    "respuesta": {
+      "error": "ruta no accesible"
+    },
+    "reintento_roots_list_llamadas": 2,
+    "reintento_respuesta": {
+      "ruta": "C:\\Users\\krato\\AppData\\Local\\Temp\\c36-idem-rne0mbnk\\entrada.png",
+      "bytes": 42855,
+      "firma": "png",
+      "formato": "png",
+      "categoria": "imagen",
+      "ancho": 1920,
+      "alto": 1080,
+      "profundidad_bits": 16,
+      "tiene_alfa": true,
+      "canales": 4,
+      "paleta": false,
+      "n_imagenes": 1,
+      "inspect_ms": 0.166
+    },
+    "reintento_sin_acceso": false
+  },
+  "M4_sin_ceder": {
+    "doble_cede_el_bucle": false,
+    "roots_list_llamadas": 1,
+    "entradas_simultaneas_en_roots_list": 1,
+    "las_dos_respondieron": true,
+    "ninguna_es_error": true
+  },
+  "M4_cediendo": {
+    "doble_cede_el_bucle": true,
+    "roots_list_llamadas": 2,
+    "entradas_simultaneas_en_roots_list": 2,
+    "las_dos_respondieron": true,
+    "ninguna_es_error": true
+  }
+}

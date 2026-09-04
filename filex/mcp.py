@@ -406,9 +406,37 @@ class Raices:
         self._resuelto = False
         self._lock = threading.Lock()
 
+    #: Cuántas veces ha llegado `notifications/roots/list_changed` en esta
+    #: sesión. **Es la instrumentación del ítem 3 de C36, y su valor esperado
+    #: hoy es 0.** El pendiente lleva abierto desde el hito 4 —*«observar una
+    #: emisión real sigue PENDIENTE»*— y **no se puede forzar**: en headless no
+    #: hay forma de cambiar los roots a media sesión. Lo que sí se puede es
+    #: dejar puesto el contador, para que el día que llegue una emisión haya
+    #: dónde verlo en vez de tener que volver a instrumentar. Coste: un entero.
+    emisiones: int = 0
+
+    #: Si esta variable de entorno nombra un fichero, cada emisión se anota
+    #: además ahí, con marca de tiempo — porque el contador vive y muere con el
+    #: proceso del servidor, y una emisión real llegaría en una sesión de
+    #: Claude Code que nadie está observando desde dentro.
+    VAR_REGISTRO = "FILEX_MCP_REGISTRO_ROOTS"
+
     def invalidar(self) -> None:
         with self._lock:
             self._resuelto = False
+            self.emisiones += 1
+            n = self.emisiones
+        destino = os.environ.get(self.VAR_REGISTRO)
+        if not destino:
+            return
+        try:
+            import time
+            with open(destino, "a", encoding="utf-8") as fh:
+                fh.write("%s\troots/list_changed\tn=%d\tpid=%d\n"
+                         % (time.strftime("%Y-%m-%dT%H:%M:%S"), n, os.getpid()))
+        except OSError:
+            # Un registrador que tumba el servidor no es un registrador.
+            pass
 
     @staticmethod
     def _interseca(servidor: list[str], cliente: list[str]) -> list[str]:
@@ -442,11 +470,26 @@ class Raices:
         Hoy Claude Code negocia `2025-11-25` y usa la vía clásica —una sola
         ejecución— pero la regla de idempotencia hasta esta línea se respeta
         igual, porque el cliente se actualizará.
+
+        **Y no se cachea una denegación nacida de un fallo — MEDIDO**
+        (`bench/mcp-cabos-y-techos.md` §2, celda M3). Con `roots/list` fallando
+        una vez, el `except` de abajo dejaba `cliente = []`, y con el servidor
+        también sin raíces salía `sin_acceso = True` **con `_resuelto = True`
+        detrás**: la sesión quedaba denegada **para siempre**, y el reintento
+        del cliente no volvía a preguntar (0 llamadas nuevas, `sin_acceso`
+        seguía en `True`). Es la **trampa 43** sobre otro recurso —*toda
+        detección por excepción necesita separar «no se puede» de «no está»*—
+        y aquí la separación no hace falta hacerla por la clase de la
+        excepción, que no es clasificable: basta **no sellar el resultado
+        cuando el resultado es «ninguna raíz» y hubo un fallo al preguntar**.
+        El coste es una ida y vuelta más por llamada, y sólo en la sesión que
+        ya estaba denegada de todos modos.
         """
         with self._lock:
             if self._resuelto:
                 return
         cliente: list[str] = []
+        fallo = False
         try:
             r = await sesion.list_roots()
             for raiz in getattr(r, "roots", []) or []:
@@ -455,7 +498,9 @@ class Raices:
                     cliente.append(p)
         except Exception:
             # Un cliente sin `roots` no es un error: es el caso de `--raiz` sola.
+            # Pero tampoco es una respuesta: se anota, y decide más abajo.
             cliente = []
+            fallo = True
         efectivas = self._interseca(self.servidor, cliente)
         try:
             self.fx.confinamiento = _conf.Confinamiento(efectivas) if efectivas else None
@@ -466,7 +511,10 @@ class Raices:
         # rutas: es «no hay lista blanca». Todo predicado sigue en el núcleo.
         self.sin_acceso = not efectivas
         with self._lock:
-            self._resuelto = True
+            # Se sella todo salvo la esquina «falló la pregunta Y no queda
+            # ninguna raíz»: ésa es la única en la que volver a preguntar puede
+            # cambiar la respuesta.
+            self._resuelto = not (fallo and not efectivas)
 
 
 def _uri_a_ruta(uri: str) -> str:
