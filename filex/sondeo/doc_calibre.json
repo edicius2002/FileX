@@ -1,63 +1,63 @@
 {
   "motor": "doc_calibre",
   "build": "doc_calibre 29.4.3 · filex-c13@6d359bad483e",
-  "fecha": "2026-09-02",
-  "informe": "bench/acuerdo-y-cruce.md",
+  "fecha": "2026-09-03",
+  "informe": "bench/rasteriza-declaradas.md",
   "huella": {
-    "motor": "5ccb326907e06e1e",
+    "motor": "2291ddcd4246f75a",
     "invocacion": "3a2c16603bb46673",
     "contrato": "fe41b4d52413299c"
   },
   "interprete": "3.11",
-  "nota_huella": "RESONDEADO (no resellado por algoritmo) el 2026-09-02 por worker2, ronda 7: `C31` (ronda 6) cambio el componente `contrato` -- FIRMAS (TGA/CUR) y `_datos` (RAM) -- y `bench/salidas-huella/resellar.py --comprobar` confirmo que la huella guardada NO coincidia con el algoritmo anterior sobre el arbol de ahora: no era un cambio de algoritmo, hacia falta resondear. Las 62/70/8/16/16 aristas se remidieron de verdad (FileX.convertir() real, contrato de cinco puntos incluido), no se copio el JSON viejo con un campo cambiado.",
+  "nota_huella": "RESONDEADO (no resellado por algoritmo) el 2026-09-03 por worker14, carril rasteriza-declaradas: `bench/rasteriza-declaradas.md` convierte `_DECLARADAS` de `tuple` de pares en `dict` `{(o,d): rasteriza}` y hace que `_EnContenedor._aristas()` lea el valor. Hasta hoy toda arista nacida de `_DECLARADAS` salia con `rasteriza=False` mintiera o no, y `sondeo.aplicar()` conserva `rasteriza` de la arista que ya existe, asi que el valor falso sobrevivia al sondeo. Eso cambia el AST de la clase y de su base `_EnContenedor`, y CADUCA la huella `motor` (5ccb326907e06e1e -> 2291ddcd4246f75a); `invocacion` y `contrato` no se tocaron y no cambiaron (comprobado antes de editar: los cinco ficheros del disco coincidian con el arbol). Las 8 aristas que este fichero aplica se REMIDIERON de verdad con `FileX.convertir()` real -contrato de cinco puntos y censo del punto 5 incluidos- via `bench/salidas-rasteriza-declaradas/_resondeo40.py`; 8 de 8 reprodujeron su veredicto anterior. AUDITORIA: es la primera vez que las 8 se remiden. 7 conservan el centinela; `mobi>azw3` va con sonda de texto CIEGA (AZW3 comprime el texto), y su no-rasterizacion se apoya en la ida y vuelta a epub ya medida en `bench/salidas-sondeo-doc/d2.json` seccion C. AVISO MEDIDO: `epub>epub` NO es determinista -4 corridas dan 19596/18555/141175/17712 B y 4 sha256 distintos, con 564 caracteres y centinela en las 4-; la varianza esta en `cover_image.jpg` (portada que Calibre GENERA), `content.opf` y `toc.ncx`, y las otras 8 entradas del zip son identicas al CRC. El `ms` y los bytes de este fichero son de UNA corrida; el veredicto es lo estable.",
   "aristas": {
     "azw3>epub": {
       "estado": "real",
-      "ms": 7363.5,
-      "motivo": "17764 B, 564 caracteres, contrato ok_parcial",
-      "caso": "S17"
+      "ms": 4110.7,
+      "motivo": "20029 B, 564 caracteres, contrato ok_parcial",
+      "caso": "W34"
     },
     "azw3>pdf": {
       "estado": "real",
-      "ms": 6557.4,
+      "ms": 6523.5,
       "motivo": "27387 B, 456 caracteres, contrato ok",
-      "caso": "S19"
+      "caso": "W36"
     },
     "epub>epub": {
       "estado": "real",
-      "ms": 5020.6,
-      "motivo": "33749 B, 564 caracteres, contrato ok_parcial",
-      "caso": "S22"
+      "ms": 4064.0,
+      "motivo": "19596 B, 564 caracteres, contrato ok_parcial",
+      "caso": "W39"
     },
     "md>epub": {
       "estado": "real",
-      "ms": 5818.4,
-      "motivo": "10781 B, 558 caracteres, contrato ok_parcial",
-      "caso": "S21"
+      "ms": 3979.8,
+      "motivo": "11844 B, 558 caracteres, contrato ok_parcial",
+      "caso": "W38"
     },
     "mobi>azw3": {
       "estado": "real",
-      "ms": 3976.2,
-      "motivo": "12614 B, 12603 caracteres, contrato ok_parcial; sonda de texto CIEGA (comprime el texto), verificado por ida y vuelta a epub en d2.json §C",
-      "caso": "S23"
+      "ms": 3133.3,
+      "motivo": "12614 B, 12603 caracteres, contrato ok_parcial; sonda de texto CIEGA (comprime el texto), no rasteriza por la ida y vuelta a epub de bench/salidas-sondeo-doc/d2.json seccion C",
+      "caso": "W40"
     },
     "mobi>epub": {
       "estado": "real",
-      "ms": 11140.2,
-      "motivo": "20195 B, 610 caracteres, contrato ok_parcial",
-      "caso": "S16"
+      "ms": 7078.2,
+      "motivo": "30875 B, 610 caracteres, contrato ok_parcial",
+      "caso": "W33"
     },
     "mobi>pdf": {
       "estado": "real",
-      "ms": 12525.1,
+      "ms": 9203.2,
       "motivo": "31178 B, 488 caracteres, contrato ok",
-      "caso": "S18"
+      "caso": "W35"
     },
     "txt>epub": {
       "estado": "real",
-      "ms": 5374.3,
-      "motivo": "10019 B, 484 caracteres, contrato ok_parcial",
-      "caso": "S20"
+      "ms": 6840.5,
+      "motivo": "10022 B, 484 caracteres, contrato ok_parcial",
+      "caso": "W37"
     }
   }
 }

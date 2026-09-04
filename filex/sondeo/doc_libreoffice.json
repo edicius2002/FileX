@@ -2,110 +2,110 @@
   "motor": "doc_libreoffice",
   "build": "doc_libreoffice 29.4.3 · filex-c13@6d359bad483e",
   "fecha": "2026-09-03",
-  "informe": "bench/aristas-documentales-cierre.md",
+  "informe": "bench/rasteriza-declaradas.md",
   "huella": {
-    "motor": "48e14e7a35210f60",
+    "motor": "ae44ff79d26ded79",
     "invocacion": "3a2c16603bb46673",
     "contrato": "fe41b4d52413299c"
   },
   "interprete": "3.11",
-  "nota_huella": "RESONDEADO (no resellado por algoritmo) el 2026-09-03 por worker7, carril aristas-documentales-doc: `bench/aristas-documentales-cierre.md` anadio 8 tuplas a `_DECLARADAS` (csv>xlsx, xlsx>pdf, xlsx>csv, xlsx>html, csv>pdf, pptx>pdf, pptx>odp, svg>pdf) para cerrar el hueco de `fx.destinos('csv') -> []`. Eso cambio el AST de la clase y CADUCO la huella `motor` (de ffe3c41451f77538 a 48e14e7a35210f60); `invocacion` y `contrato` no se tocaron y no cambiaron. Las 24 aristas REAL de este motor (10 `_MEDIDAS` + 14 `_DECLARADAS`) se REMIDIERON de verdad con `FileX.convertir()` real (contrato de cinco puntos, censo del punto 5 incluido) via `bench/salidas-aristas-documentales-cierre/_resondeo55.py`, no se copio el JSON viejo con la huella cambiada. `pptx>png` y `svg>png` siguen SIN tupla en `_DECLARADAS` a proposito (rasterizan y `_aristas()` no puede marcarlas `rasteriza=True` sin un tercer campo en la tupla - ver el comentario en motor_contenedor.py): sus dos entradas se conservan del sellado de worker2 (ronda 7, 2026-09-02) sin re-medir, porque siguen siendo evidencia real aunque el codigo de hoy no las use.",
+  "nota_huella": "RESONDEADO (no resellado por algoritmo) el 2026-09-03 por worker14, carril rasteriza-declaradas: `bench/rasteriza-declaradas.md` convierte `_DECLARADAS` de `tuple` de pares en `dict` `{(o,d): rasteriza}` y hace que `_EnContenedor._aristas()` lea el valor. Hasta hoy toda arista nacida de `_DECLARADAS` salia con `rasteriza=False` mintiera o no, y `sondeo.aplicar()` conserva `rasteriza` de la arista que ya existe, asi que el valor falso sobrevivia al sondeo. Eso cambia el AST de la clase y de su base `_EnContenedor`, y CADUCA la huella `motor` (48e14e7a35210f60 -> ae44ff79d26ded79); `invocacion` y `contrato` no se tocaron y no cambiaron (comprobado antes de editar: los cinco ficheros del disco coincidian con el arbol). Las 16 aristas que este fichero aplica se REMIDIERON de verdad con `FileX.convertir()` real -contrato de cinco puntos y censo del punto 5 incluidos- via `bench/salidas-rasteriza-declaradas/_resondeo40.py`; 16 de 16 reprodujeron su veredicto anterior. ADEMAS entran al grafo `pptx>png` y `svg>png`, que llevaban desde el 2026-09-02 medidas `real` en este mismo fichero y FUERA del grafo porque `_DECLARADAS` no sabia declararlas `rasteriza=True` (comentario de worker7 en `motor_contenedor.py`). Las dos se remidieron y las dos siguen rasterizando: 0 caracteres recuperados y sin centinela.",
   "aristas": {
     "csv>pdf": {
       "estado": "real",
-      "ms": 2169.5,
+      "ms": 4495.7,
       "motivo": "20944 B, 119 caracteres, contrato ok",
-      "caso": "R22"
+      "caso": "W11"
     },
     "csv>xlsx": {
       "estado": "real",
-      "ms": 2797.1,
+      "ms": 3804.2,
       "motivo": "5790 B, 338 caracteres, contrato ok_parcial",
-      "caso": "R01"
+      "caso": "W01"
     },
     "docx>rtf": {
       "estado": "real",
-      "ms": 2038.8,
+      "ms": 3311.7,
       "motivo": "8213 B, 8213 caracteres, contrato ok",
-      "caso": "R18"
+      "caso": "W07"
     },
     "html>odt": {
       "estado": "real",
-      "ms": 2177.8,
-      "motivo": "8124 B, 1192 caracteres, contrato ok_parcial",
-      "caso": "R15"
+      "ms": 3825.3,
+      "motivo": "8122 B, 1190 caracteres, contrato ok_parcial",
+      "caso": "W04"
     },
     "odt>html": {
       "estado": "real",
-      "ms": 2394.0,
+      "ms": 3901.7,
       "motivo": "2476 B, 895 caracteres, contrato ok",
-      "caso": "R17"
+      "caso": "W06"
     },
     "pptx>odp": {
       "estado": "real",
-      "ms": 2686.5,
-      "motivo": "32668 B, 2825 caracteres, contrato ok_parcial",
-      "caso": "R24"
+      "ms": 5171.2,
+      "motivo": "32669 B, 2825 caracteres, contrato ok_parcial",
+      "caso": "W13"
     },
     "pptx>pdf": {
       "estado": "real",
-      "ms": 2643.3,
+      "ms": 4560.3,
       "motivo": "24534 B, 456 caracteres, contrato ok",
-      "caso": "R23"
+      "caso": "W12"
     },
     "pptx>png": {
       "estado": "real",
-      "ms": 3381.4,
-      "motivo": "50462 B, 0 caracteres, contrato ok; RASTERIZA: 0 caracteres, es el precio del destino, no un fallo",
-      "caso": "Q09"
+      "ms": 3222.7,
+      "motivo": "50462 B, 0 caracteres, contrato ok; RASTERIZA: sin centinela y 0 caracteres, es el precio del destino, no un fallo",
+      "caso": "W15"
     },
     "rtf>docx": {
       "estado": "real",
-      "ms": 1950.9,
+      "ms": 2938.4,
       "motivo": "5293 B, 542 caracteres, contrato ok_parcial",
-      "caso": "R14"
+      "caso": "W03"
     },
     "rtf>odt": {
       "estado": "real",
-      "ms": 2112.0,
+      "ms": 2834.1,
       "motivo": "14173 B, 1767 caracteres, contrato ok_parcial",
-      "caso": "R13"
+      "caso": "W02"
     },
     "svg>pdf": {
       "estado": "real",
-      "ms": 1779.1,
+      "ms": 2435.0,
       "motivo": "12500 B, 44 caracteres, contrato ok",
-      "caso": "R33"
+      "caso": "W14"
     },
     "svg>png": {
       "estado": "real",
-      "ms": 3648.7,
-      "motivo": "9081 B, 0 caracteres, contrato ok; RASTERIZA: 0 caracteres, es el precio del destino, no un fallo",
-      "caso": "Q11"
+      "ms": 5297.0,
+      "motivo": "9081 B, 0 caracteres, contrato ok; RASTERIZA: sin centinela y 0 caracteres, es el precio del destino, no un fallo",
+      "caso": "W16"
     },
     "txt>odt": {
       "estado": "real",
-      "ms": 2671.1,
+      "ms": 3148.3,
       "motivo": "12117 B, 1104 caracteres, contrato ok_parcial",
-      "caso": "R16"
+      "caso": "W05"
     },
     "xlsx>csv": {
       "estado": "real",
-      "ms": 2883.2,
+      "ms": 3574.9,
       "motivo": "109 B, 108 caracteres, contrato ok",
-      "caso": "R20"
+      "caso": "W09"
     },
     "xlsx>html": {
       "estado": "real",
-      "ms": 2095.4,
+      "ms": 3405.2,
       "motivo": "2902 B, 464 caracteres, contrato ok",
-      "caso": "R21"
+      "caso": "W10"
     },
     "xlsx>pdf": {
       "estado": "real",
-      "ms": 2201.0,
+      "ms": 7410.1,
       "motivo": "27403 B, 119 caracteres, contrato ok",
-      "caso": "R19"
+      "caso": "W08"
     }
   }
 }
