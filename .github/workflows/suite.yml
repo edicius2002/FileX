@@ -92,12 +92,17 @@ jobs:
     # Vuelve a MEDIR qué es apto, en el runner de verdad. `ci/linux-apto.json`
     # se midió en WSL2 sobre DrvFs con Python 3.14, y la trampa 41 es explícita:
     # un resultado de una familia de sistemas de ficheros no se extrapola a otra,
-    # ni con el signo. Este trabajo no rompe nada -- informa de que la lista
-    # congelada se ha quedado vieja.
+    # ni con el signo.
+    #
+    # Este trabajo FALLA cuando la lista se mueve, y no siempre fue así: con
+    # `continue-on-error: true` y un paso que sólo imprimía, la deriva quedó
+    # invisible desde el 01/09 -- `ci/linux-apto.json` declaraba 7 módulos
+    # mientras el runner medía 16, así que la CI ejecutaba 7 de 18 y nadie lo
+    # sabía. Es la trampa 110 hasta el final: un check sólo protege si alguien
+    # lo mira, y un check que no puede ponerse rojo no se mira nunca.
     if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     timeout-minutes: 45
-    continue-on-error: true
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7
         with:
@@ -113,15 +118,22 @@ jobs:
       - name: ¿Se ha movido la lista?
         run: |
           python3 - <<'EOF'
-          import json
+          import json, sys
           congelada = set(json.load(open("ci/linux-apto.json"))["aptos"])
           medida = set(json.load(open("/tmp/linux-apto-runner.json"))["aptos"])
           if congelada == medida:
               print("sin deriva: %d módulos" % len(medida))
-          else:
-              print("DERIVA -- actualiza ci/linux-apto.json con `python3 ci/sonda_linux.py`")
-              print("  ya no son aptos: %s" % sorted(congelada - medida))
-              print("  aptos nuevos:    %s" % sorted(medida - congelada))
+              sys.exit(0)
+          perdidos = sorted(congelada - medida)
+          nuevos = sorted(medida - congelada)
+          print("DERIVA -- regenera ci/linux-apto.json desde el artefacto de ESTA ejecución")
+          print("  ya no son aptos: %s" % perdidos)
+          print("  aptos nuevos:    %s" % nuevos)
+          # Las dos direcciones son fallo, y por motivos distintos. Perder un
+          # módulo es una regresión. Ganarlo también hay que atenderlo: mientras
+          # no entre en el fichero, el trabajo `linux` NO LO EJECUTA, así que la
+          # lista vieja es cobertura que se está perdiendo en silencio.
+          sys.exit(1)
           EOF
 
       - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a  # v7
