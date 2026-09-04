@@ -1,0 +1,14 @@
+{
+  "_norm('C:\\\\')": "c:\\",
+  "_norm('C:\\\\Users')": "c:\\users",
+  "candidato": "c:\\windows\\win.ini",
+  "raiz_unidad + os.sep": "c:\\\\",
+  "raiz_normal + os.sep": "c:\\users\\",
+  "candidato == raiz_unidad": false,
+  "candidato.startswith(raiz_unidad + os.sep)": false,
+  "candidato.startswith(raiz_normal + os.sep)": false,
+  "_dentro(win.ini, [C:\\Users])": false,
+  "_dentro(win.ini, [C:\\])": false,
+  "_dentro(C:\\Users\\publico.txt, [C:\\Users])": true,
+  "conclusion": "la raiz de unidad ya termina en el separador, asi que `r + os.sep` produce una barra DOBLE que ningun candidato normalizado casa: `_dentro` devuelve False para todo. R3 dice literalmente lo que pasa -«no confina nada»- y no confina nada en el sentido de que DENIEGA todo, no en el de que lo permita todo."
+}

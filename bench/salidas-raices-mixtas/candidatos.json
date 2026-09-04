@@ -1,0 +1,788 @@
+{
+  "plataforma": "win32",
+  "python": "3.11.9",
+  "base_desechable": "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n35-meb8ds6o",
+  "objetivos": {
+    "O1_dentro_de_la_raiz_legitima": "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n35-meb8ds6o\\legit\\dentro.txt",
+    "O2_hermano_no_declarado": "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n35-meb8ds6o\\hermano\\fuera.txt",
+    "O3_otra_unidad": "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-af0fa20bb8ba9d275\\corpus\\imagen\\tipico.png",
+    "O4_bajo_la_unidad_fuera_de_legit": "C:\\Windows\\win.ini"
+  },
+  "objetivos_ausentes": [],
+  "esperado_por_fila": {
+    "1_solo_legitima_CONTROL": {
+      "O1_dentro_de_la_raiz_legitima": true,
+      "O2_hermano_no_declarado": false,
+      "O3_otra_unidad": false,
+      "O4_bajo_la_unidad_fuera_de_legit": false
+    },
+    "2_solo_raiz_de_unidad_N7": {
+      "O1_dentro_de_la_raiz_legitima": false,
+      "O2_hermano_no_declarado": false,
+      "O3_otra_unidad": false,
+      "O4_bajo_la_unidad_fuera_de_legit": false
+    },
+    "3_MIXTA_mala_primero_N35": {
+      "O1_dentro_de_la_raiz_legitima": true,
+      "O2_hermano_no_declarado": false,
+      "O3_otra_unidad": false,
+      "O4_bajo_la_unidad_fuera_de_legit": false
+    },
+    "4_MIXTA_buena_primero_N35": {
+      "O1_dentro_de_la_raiz_legitima": true,
+      "O2_hermano_no_declarado": false,
+      "O3_otra_unidad": false,
+      "O4_bajo_la_unidad_fuera_de_legit": false
+    },
+    "5_dos_malas": {
+      "O1_dentro_de_la_raiz_legitima": false,
+      "O2_hermano_no_declarado": false,
+      "O3_otra_unidad": false,
+      "O4_bajo_la_unidad_fuera_de_legit": false
+    },
+    "6_dos_buenas": {
+      "O1_dentro_de_la_raiz_legitima": true,
+      "O2_hermano_no_declarado": false,
+      "O3_otra_unidad": false,
+      "O4_bajo_la_unidad_fuera_de_legit": false
+    },
+    "7_MIXTA_con_UNC": {
+      "O1_dentro_de_la_raiz_legitima": true,
+      "O2_hermano_no_declarado": false,
+      "O3_otra_unidad": false,
+      "O4_bajo_la_unidad_fuera_de_legit": false
+    },
+    "8_vacia": {
+      "O1_dentro_de_la_raiz_legitima": false,
+      "O2_hermano_no_declarado": false,
+      "O3_otra_unidad": false,
+      "O4_bajo_la_unidad_fuera_de_legit": false
+    }
+  },
+  "celdas": {
+    "1_solo_legitima_CONTROL": {
+      "A_rechazar": {
+        "raices_declaradas": [
+          "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n35-meb8ds6o\\legit"
+        ],
+        "constructor": "ok",
+        "raices_efectivas": [
+          "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-meb8ds6o\\legit"
+        ],
+        "lee": {
+          "O1_dentro_de_la_raiz_legitima": true,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "esperado": {
+          "O1_dentro_de_la_raiz_legitima": true,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "coincide_con_lo_esperado": true
+      },
+      "B_podar": {
+        "raices_declaradas": [
+          "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n35-meb8ds6o\\legit"
+        ],
+        "constructor": "ok",
+        "raices_efectivas": [
+          "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-meb8ds6o\\legit"
+        ],
+        "lee": {
+          "O1_dentro_de_la_raiz_legitima": true,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "esperado": {
+          "O1_dentro_de_la_raiz_legitima": true,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "coincide_con_lo_esperado": true
+      },
+      "C_podar_sin_guarda": {
+        "raices_declaradas": [
+          "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n35-meb8ds6o\\legit"
+        ],
+        "constructor": "ok",
+        "raices_efectivas": [
+          "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-meb8ds6o\\legit"
+        ],
+        "lee": {
+          "O1_dentro_de_la_raiz_legitima": true,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "esperado": {
+          "O1_dentro_de_la_raiz_legitima": true,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "coincide_con_lo_esperado": true
+      },
+      "E_aceptar": {
+        "raices_declaradas": [
+          "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n35-meb8ds6o\\legit"
+        ],
+        "constructor": "ok",
+        "raices_efectivas": [
+          "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-meb8ds6o\\legit"
+        ],
+        "lee": {
+          "O1_dentro_de_la_raiz_legitima": true,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "esperado": {
+          "O1_dentro_de_la_raiz_legitima": true,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "coincide_con_lo_esperado": true
+      }
+    },
+    "2_solo_raiz_de_unidad_N7": {
+      "A_rechazar": {
+        "raices_declaradas": [
+          "C:\\"
+        ],
+        "constructor": "ValueError",
+        "mensaje": "una raíz no puede ser la raíz de una unidad (R3)",
+        "raices_efectivas": null,
+        "lee": {
+          "O1_dentro_de_la_raiz_legitima": false,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "esperado": {
+          "O1_dentro_de_la_raiz_legitima": false,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "coincide_con_lo_esperado": true
+      },
+      "B_podar": {
+        "raices_declaradas": [
+          "C:\\"
+        ],
+        "constructor": "ValueError",
+        "mensaje": "sin raíces de lectura accesibles: FileX no arranca (R6)",
+        "raices_efectivas": null,
+        "lee": {
+          "O1_dentro_de_la_raiz_legitima": false,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "esperado": {
+          "O1_dentro_de_la_raiz_legitima": false,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "coincide_con_lo_esperado": true
+      },
+      "C_podar_sin_guarda": {
+        "raices_declaradas": [
+          "C:\\"
+        ],
+        "constructor": "ok",
+        "raices_efectivas": [],
+        "lee": {
+          "O1_dentro_de_la_raiz_legitima": false,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "esperado": {
+          "O1_dentro_de_la_raiz_legitima": false,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "coincide_con_lo_esperado": true
+      },
+      "E_aceptar": {
+        "raices_declaradas": [
+          "C:\\"
+        ],
+        "constructor": "ok",
+        "raices_efectivas": [
+          "c:\\"
+        ],
+        "lee": {
+          "O1_dentro_de_la_raiz_legitima": false,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "esperado": {
+          "O1_dentro_de_la_raiz_legitima": false,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "coincide_con_lo_esperado": true
+      }
+    },
+    "3_MIXTA_mala_primero_N35": {
+      "A_rechazar": {
+        "raices_declaradas": [
+          "C:\\",
+          "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n35-meb8ds6o\\legit"
+        ],
+        "constructor": "ValueError",
+        "mensaje": "una raíz no puede ser la raíz de una unidad (R3)",
+        "raices_efectivas": null,
+        "lee": {
+          "O1_dentro_de_la_raiz_legitima": false,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "esperado": {
+          "O1_dentro_de_la_raiz_legitima": true,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "coincide_con_lo_esperado": false
+      },
+      "B_podar": {
+        "raices_declaradas": [
+          "C:\\",
+          "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n35-meb8ds6o\\legit"
+        ],
+        "constructor": "ok",
+        "raices_efectivas": [
+          "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-meb8ds6o\\legit"
+        ],
+        "lee": {
+          "O1_dentro_de_la_raiz_legitima": true,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "esperado": {
+          "O1_dentro_de_la_raiz_legitima": true,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "coincide_con_lo_esperado": true
+      },
+      "C_podar_sin_guarda": {
+        "raices_declaradas": [
+          "C:\\",
+          "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n35-meb8ds6o\\legit"
+        ],
+        "constructor": "ok",
+        "raices_efectivas": [
+          "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-meb8ds6o\\legit"
+        ],
+        "lee": {
+          "O1_dentro_de_la_raiz_legitima": true,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "esperado": {
+          "O1_dentro_de_la_raiz_legitima": true,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "coincide_con_lo_esperado": true
+      },
+      "E_aceptar": {
+        "raices_declaradas": [
+          "C:\\",
+          "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n35-meb8ds6o\\legit"
+        ],
+        "constructor": "ok",
+        "raices_efectivas": [
+          "c:\\",
+          "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-meb8ds6o\\legit"
+        ],
+        "lee": {
+          "O1_dentro_de_la_raiz_legitima": true,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "esperado": {
+          "O1_dentro_de_la_raiz_legitima": true,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "coincide_con_lo_esperado": true
+      }
+    },
+    "4_MIXTA_buena_primero_N35": {
+      "A_rechazar": {
+        "raices_declaradas": [
+          "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n35-meb8ds6o\\legit",
+          "C:\\"
+        ],
+        "constructor": "ValueError",
+        "mensaje": "una raíz no puede ser la raíz de una unidad (R3)",
+        "raices_efectivas": null,
+        "lee": {
+          "O1_dentro_de_la_raiz_legitima": false,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "esperado": {
+          "O1_dentro_de_la_raiz_legitima": true,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "coincide_con_lo_esperado": false
+      },
+      "B_podar": {
+        "raices_declaradas": [
+          "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n35-meb8ds6o\\legit",
+          "C:\\"
+        ],
+        "constructor": "ok",
+        "raices_efectivas": [
+          "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-meb8ds6o\\legit"
+        ],
+        "lee": {
+          "O1_dentro_de_la_raiz_legitima": true,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "esperado": {
+          "O1_dentro_de_la_raiz_legitima": true,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "coincide_con_lo_esperado": true
+      },
+      "C_podar_sin_guarda": {
+        "raices_declaradas": [
+          "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n35-meb8ds6o\\legit",
+          "C:\\"
+        ],
+        "constructor": "ok",
+        "raices_efectivas": [
+          "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-meb8ds6o\\legit"
+        ],
+        "lee": {
+          "O1_dentro_de_la_raiz_legitima": true,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "esperado": {
+          "O1_dentro_de_la_raiz_legitima": true,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "coincide_con_lo_esperado": true
+      },
+      "E_aceptar": {
+        "raices_declaradas": [
+          "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n35-meb8ds6o\\legit",
+          "C:\\"
+        ],
+        "constructor": "ok",
+        "raices_efectivas": [
+          "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-meb8ds6o\\legit",
+          "c:\\"
+        ],
+        "lee": {
+          "O1_dentro_de_la_raiz_legitima": true,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "esperado": {
+          "O1_dentro_de_la_raiz_legitima": true,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "coincide_con_lo_esperado": true
+      }
+    },
+    "5_dos_malas": {
+      "A_rechazar": {
+        "raices_declaradas": [
+          "C:\\",
+          "D:\\"
+        ],
+        "constructor": "ValueError",
+        "mensaje": "una raíz no puede ser la raíz de una unidad (R3)",
+        "raices_efectivas": null,
+        "lee": {
+          "O1_dentro_de_la_raiz_legitima": false,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "esperado": {
+          "O1_dentro_de_la_raiz_legitima": false,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "coincide_con_lo_esperado": true
+      },
+      "B_podar": {
+        "raices_declaradas": [
+          "C:\\",
+          "D:\\"
+        ],
+        "constructor": "ValueError",
+        "mensaje": "sin raíces de lectura accesibles: FileX no arranca (R6)",
+        "raices_efectivas": null,
+        "lee": {
+          "O1_dentro_de_la_raiz_legitima": false,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "esperado": {
+          "O1_dentro_de_la_raiz_legitima": false,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "coincide_con_lo_esperado": true
+      },
+      "C_podar_sin_guarda": {
+        "raices_declaradas": [
+          "C:\\",
+          "D:\\"
+        ],
+        "constructor": "ok",
+        "raices_efectivas": [],
+        "lee": {
+          "O1_dentro_de_la_raiz_legitima": false,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "esperado": {
+          "O1_dentro_de_la_raiz_legitima": false,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "coincide_con_lo_esperado": true
+      },
+      "E_aceptar": {
+        "raices_declaradas": [
+          "C:\\",
+          "D:\\"
+        ],
+        "constructor": "ok",
+        "raices_efectivas": [
+          "c:\\",
+          "d:\\"
+        ],
+        "lee": {
+          "O1_dentro_de_la_raiz_legitima": false,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "esperado": {
+          "O1_dentro_de_la_raiz_legitima": false,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "coincide_con_lo_esperado": true
+      }
+    },
+    "6_dos_buenas": {
+      "A_rechazar": {
+        "raices_declaradas": [
+          "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n35-meb8ds6o\\legit",
+          "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n35-meb8ds6o\\legit2"
+        ],
+        "constructor": "ok",
+        "raices_efectivas": [
+          "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-meb8ds6o\\legit",
+          "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-meb8ds6o\\legit2"
+        ],
+        "lee": {
+          "O1_dentro_de_la_raiz_legitima": true,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "esperado": {
+          "O1_dentro_de_la_raiz_legitima": true,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "coincide_con_lo_esperado": true
+      },
+      "B_podar": {
+        "raices_declaradas": [
+          "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n35-meb8ds6o\\legit",
+          "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n35-meb8ds6o\\legit2"
+        ],
+        "constructor": "ok",
+        "raices_efectivas": [
+          "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-meb8ds6o\\legit",
+          "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-meb8ds6o\\legit2"
+        ],
+        "lee": {
+          "O1_dentro_de_la_raiz_legitima": true,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "esperado": {
+          "O1_dentro_de_la_raiz_legitima": true,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "coincide_con_lo_esperado": true
+      },
+      "C_podar_sin_guarda": {
+        "raices_declaradas": [
+          "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n35-meb8ds6o\\legit",
+          "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n35-meb8ds6o\\legit2"
+        ],
+        "constructor": "ok",
+        "raices_efectivas": [
+          "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-meb8ds6o\\legit",
+          "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-meb8ds6o\\legit2"
+        ],
+        "lee": {
+          "O1_dentro_de_la_raiz_legitima": true,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "esperado": {
+          "O1_dentro_de_la_raiz_legitima": true,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "coincide_con_lo_esperado": true
+      },
+      "E_aceptar": {
+        "raices_declaradas": [
+          "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n35-meb8ds6o\\legit",
+          "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n35-meb8ds6o\\legit2"
+        ],
+        "constructor": "ok",
+        "raices_efectivas": [
+          "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-meb8ds6o\\legit",
+          "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-meb8ds6o\\legit2"
+        ],
+        "lee": {
+          "O1_dentro_de_la_raiz_legitima": true,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "esperado": {
+          "O1_dentro_de_la_raiz_legitima": true,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "coincide_con_lo_esperado": true
+      }
+    },
+    "7_MIXTA_con_UNC": {
+      "A_rechazar": {
+        "raices_declaradas": [
+          "\\\\servidor\\recurso",
+          "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n35-meb8ds6o\\legit"
+        ],
+        "constructor": "ValueError",
+        "mensaje": "una raíz no puede ser la raíz de una unidad (R3)",
+        "raices_efectivas": null,
+        "lee": {
+          "O1_dentro_de_la_raiz_legitima": false,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "esperado": {
+          "O1_dentro_de_la_raiz_legitima": true,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "coincide_con_lo_esperado": false
+      },
+      "B_podar": {
+        "raices_declaradas": [
+          "\\\\servidor\\recurso",
+          "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n35-meb8ds6o\\legit"
+        ],
+        "constructor": "ok",
+        "raices_efectivas": [
+          "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-meb8ds6o\\legit"
+        ],
+        "lee": {
+          "O1_dentro_de_la_raiz_legitima": true,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "esperado": {
+          "O1_dentro_de_la_raiz_legitima": true,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "coincide_con_lo_esperado": true
+      },
+      "C_podar_sin_guarda": {
+        "raices_declaradas": [
+          "\\\\servidor\\recurso",
+          "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n35-meb8ds6o\\legit"
+        ],
+        "constructor": "ok",
+        "raices_efectivas": [
+          "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-meb8ds6o\\legit"
+        ],
+        "lee": {
+          "O1_dentro_de_la_raiz_legitima": true,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "esperado": {
+          "O1_dentro_de_la_raiz_legitima": true,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "coincide_con_lo_esperado": true
+      },
+      "E_aceptar": {
+        "raices_declaradas": [
+          "\\\\servidor\\recurso",
+          "C:\\Users\\krato\\AppData\\Local\\Temp\\filex-n35-meb8ds6o\\legit"
+        ],
+        "constructor": "ok",
+        "raices_efectivas": [
+          "\\\\servidor\\recurso",
+          "c:\\users\\krato\\appdata\\local\\temp\\filex-n35-meb8ds6o\\legit"
+        ],
+        "lee": {
+          "O1_dentro_de_la_raiz_legitima": true,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "esperado": {
+          "O1_dentro_de_la_raiz_legitima": true,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "coincide_con_lo_esperado": true
+      }
+    },
+    "8_vacia": {
+      "A_rechazar": {
+        "raices_declaradas": [],
+        "constructor": "ValueError",
+        "mensaje": "sin raíces de lectura accesibles: FileX no arranca (R6)",
+        "raices_efectivas": null,
+        "lee": {
+          "O1_dentro_de_la_raiz_legitima": false,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "esperado": {
+          "O1_dentro_de_la_raiz_legitima": false,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "coincide_con_lo_esperado": true
+      },
+      "B_podar": {
+        "raices_declaradas": [],
+        "constructor": "ValueError",
+        "mensaje": "sin raíces de lectura accesibles: FileX no arranca (R6)",
+        "raices_efectivas": null,
+        "lee": {
+          "O1_dentro_de_la_raiz_legitima": false,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "esperado": {
+          "O1_dentro_de_la_raiz_legitima": false,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "coincide_con_lo_esperado": true
+      },
+      "C_podar_sin_guarda": {
+        "raices_declaradas": [],
+        "constructor": "ok",
+        "raices_efectivas": [],
+        "lee": {
+          "O1_dentro_de_la_raiz_legitima": false,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "esperado": {
+          "O1_dentro_de_la_raiz_legitima": false,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "coincide_con_lo_esperado": true
+      },
+      "E_aceptar": {
+        "raices_declaradas": [],
+        "constructor": "ValueError",
+        "mensaje": "sin raíces de lectura accesibles: FileX no arranca (R6)",
+        "raices_efectivas": null,
+        "lee": {
+          "O1_dentro_de_la_raiz_legitima": false,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "esperado": {
+          "O1_dentro_de_la_raiz_legitima": false,
+          "O2_hermano_no_declarado": false,
+          "O3_otra_unidad": false,
+          "O4_bajo_la_unidad_fuera_de_legit": false
+        },
+        "coincide_con_lo_esperado": true
+      }
+    }
+  }
+}
