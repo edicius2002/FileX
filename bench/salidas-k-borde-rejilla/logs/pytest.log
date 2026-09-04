@@ -1,0 +1,61 @@
+........................................................... [ 12%]
+........s......................................................................................................... [ 37%]
+.......................................................... [ 49%]
+...................s................................................. [ 64%]
+.................s...................................s.................................. [ 83%]
+........................................................F. [ 96%]
+.................                                                        [100%]
+================================== FAILURES ===================================
+_____________ CerrojoPosix.test_proc_ve_al_escritor_y_replace_no ______________
+
+self = <test_watcher_n.CerrojoPosix testMethod=test_proc_ve_al_escritor_y_replace_no>
+
+    @unittest.skipUnless(_hay_wsl(), "no hay wsl.exe: no se puede medir POSIX")
+    def test_proc_ve_al_escritor_y_replace_no(self):
+        """La prueba que **falla sin el arreglo**: en POSIX `os.replace(p,p)`
+        aprueba mientras otro proceso escribe, y `/proc` no.
+    
+        Se corre entera dentro de WSL2, con un tenedor que también vive allí:
+        el candado y la observación no cruzan de sistema (MEDIDO), así que un
+        tenedor de Windows daría un falso negativo que parecería un fallo.
+        """
+        guion = os.path.join(SALIDAS, "prueba_posix.py")
+        r = subprocess.run(
+            ["wsl.exe", "-e", "python3", _a_wsl(guion),
+             "--raiz", _a_wsl(RAIZ), "--tenedor", _a_wsl(TENEDOR),
+             "--origen", _a_wsl(PNG)],
+            stdin=subprocess.DEVNULL, capture_output=True, text=True,
+            timeout=TOPE)
+        salida = (r.stdout or "").replace("\x00", "").strip()
+>       self.assertEqual(r.returncode, 0, salida + (r.stderr or "")[:400])
+E       AssertionError: 4294967295 != 0 :
+
+pruebas\test_watcher_n.py:147: AssertionError
+============================== warnings summary ===============================
+pruebas/test_hito4.py::Catalogo::test_ni_resources_ni_prompts
+pruebas/test_hito4.py::ServidorReal::test_se_construye_sin_arrancar
+  C:\Users\krato\orca\workspaces\FileX\filex-k-borde-rejilla\filex\mcp.py:528: MCPDeprecationWarning: The roots capability is deprecated as of 2026-07-28 (SEP-2577).
+    srv = Server(
+
+pruebas/test_watcher_n.py::CerrojoPosix::test_proc_ve_al_escritor_y_replace_no
+  D:\Work\research\FileX\.venv-mcp-filex\Lib\site-packages\_pytest\threadexception.py:58: PytestUnhandledThreadExceptionWarning: Exception in thread Thread-906 (_readerthread)
+  
+  Traceback (most recent call last):
+    File "C:\Users\krato\AppData\Local\Programs\Python\Python311\Lib\threading.py", line 1045, in _bootstrap_inner
+      self.run()
+    File "C:\Users\krato\AppData\Local\Programs\Python\Python311\Lib\threading.py", line 982, in run
+      self._target(*self._args, **self._kwargs)
+    File "C:\Users\krato\AppData\Local\Programs\Python\Python311\Lib\subprocess.py", line 1599, in _readerthread
+      buffer.append(fh.read())
+                    ^^^^^^^^^
+    File "<frozen codecs>", line 322, in decode
+  UnicodeDecodeError: 'utf-8' codec can't decode byte 0xf3 in position 26: invalid continuation byte
+  
+  Enable tracemalloc to get traceback where the object was allocated.
+  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+    warnings.warn(pytest.PytestUnhandledThreadExceptionWarning(msg))
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED pruebas/test_watcher_n.py::CerrojoPosix::test_proc_ve_al_escritor_y_replace_no
+1 failed, 458 passed, 4 skipped, 3 warnings, 130 subtests passed in 202.12s (0:03:22)

@@ -1,0 +1,605 @@
+{
+  "easyocr": {
+    "k_rejilla_b23": 1.6,
+    "k_rejilla_entera": 1.6,
+    "regret_b23": [
+      0.05,
+      0.2
+    ],
+    "regret_entera": [
+      1.35,
+      4.5
+    ],
+    "regret_de_k_b23_en_rejilla_entera": [
+      1.35,
+      4.5
+    ],
+    "factores_rectangulares": [
+      0.75,
+      0.875,
+      1.0,
+      1.125,
+      1.25,
+      1.4,
+      1.6,
+      1.75,
+      2.0,
+      2.25,
+      2.5,
+      3.0,
+      3.5,
+      4.0,
+      5.0,
+      6.0
+    ],
+    "factores_parciales": [],
+    "omitidos_vram": [],
+    "incidencias": [],
+    "cer": {
+      "x0.75": {
+        "escaneado_d5a": 31.0,
+        "escaneado_d5c": 42.3,
+        "escaneado_d5": 49.3,
+        "escaneado_d5b": 70.6
+      },
+      "x0.875": {
+        "escaneado_d5a": 15.6,
+        "escaneado_d5c": 30.2,
+        "escaneado_d5": 38.1,
+        "escaneado_d5b": 57.2
+      },
+      "x1": {
+        "escaneado_d5a": 6.0,
+        "escaneado_d5c": 10.1,
+        "escaneado_d5": 18.5,
+        "escaneado_d5b": 37.2
+      },
+      "x1.12": {
+        "escaneado_d5a": 3.9,
+        "escaneado_d5c": 9.6,
+        "escaneado_d5": 21.6,
+        "escaneado_d5b": 35.1
+      },
+      "x1.25": {
+        "escaneado_d5a": 3.2,
+        "escaneado_d5c": 10.2,
+        "escaneado_d5": 21.6,
+        "escaneado_d5b": 35.9
+      },
+      "x1.4": {
+        "escaneado_d5a": 5.7,
+        "escaneado_d5c": 11.4,
+        "escaneado_d5": 18.3,
+        "escaneado_d5b": 35.1
+      },
+      "x1.6": {
+        "escaneado_d5a": 3.4,
+        "escaneado_d5c": 8.6,
+        "escaneado_d5": 16.8,
+        "escaneado_d5b": 32.0
+      },
+      "x1.75": {
+        "escaneado_d5a": 3.9,
+        "escaneado_d5c": 12.8,
+        "escaneado_d5": 18.3,
+        "escaneado_d5b": 32.4
+      },
+      "x2": {
+        "escaneado_d5a": 3.5,
+        "escaneado_d5c": 9.2,
+        "escaneado_d5": 21.5,
+        "escaneado_d5b": 27.5
+      },
+      "x2.25": {
+        "escaneado_d5a": 4.4,
+        "escaneado_d5c": 11.7,
+        "escaneado_d5": 17.8,
+        "escaneado_d5b": 34.1
+      },
+      "x2.5": {
+        "escaneado_d5a": 4.4,
+        "escaneado_d5c": 8.2,
+        "escaneado_d5": 16.6,
+        "escaneado_d5b": 32.4
+      },
+      "x3": {
+        "escaneado_d5a": 4.2,
+        "escaneado_d5c": 8.4,
+        "escaneado_d5": 19.0,
+        "escaneado_d5b": 31.7
+      },
+      "x3.5": {
+        "escaneado_d5a": 3.4,
+        "escaneado_d5c": 11.4,
+        "escaneado_d5": 19.1,
+        "escaneado_d5b": 31.5
+      },
+      "x4": {
+        "escaneado_d5a": 4.4,
+        "escaneado_d5c": 8.1,
+        "escaneado_d5": 21.5,
+        "escaneado_d5b": 32.2
+      },
+      "x5": {
+        "escaneado_d5a": 4.7,
+        "escaneado_d5c": 9.9,
+        "escaneado_d5": 19.6,
+        "escaneado_d5b": 32.4
+      },
+      "x6": {
+        "escaneado_d5a": 4.5,
+        "escaneado_d5c": 9.4,
+        "escaneado_d5": 20.1,
+        "escaneado_d5b": 31.4
+      }
+    },
+    "regret_entera_por_factor": {
+      "x0.75": [
+        34.45,
+        43.1
+      ],
+      "x0.875": [
+        21.425,
+        29.7
+      ],
+      "x1": [
+        4.1,
+        9.7
+      ],
+      "x1.12": [
+        3.7,
+        7.6
+      ],
+      "x1.25": [
+        3.875,
+        8.4
+      ],
+      "x1.4": [
+        3.775,
+        7.6
+      ],
+      "x1.6": [
+        1.35,
+        4.5
+      ],
+      "x1.75": [
+        3.0,
+        4.9
+      ],
+      "x2": [
+        1.575,
+        4.9
+      ],
+      "x2.25": [
+        3.15,
+        6.6
+      ],
+      "x2.5": [
+        1.55,
+        4.9
+      ],
+      "x3": [
+        1.975,
+        4.2
+      ],
+      "x3.5": [
+        2.5,
+        4.0
+      ],
+      "x4": [
+        2.7,
+        4.9
+      ],
+      "x5": [
+        2.8,
+        4.9
+      ],
+      "x6": [
+        2.5,
+        3.9
+      ]
+    }
+  },
+  "tess11": {
+    "k_rejilla_b23": 1.6,
+    "k_rejilla_entera": 2.0,
+    "regret_b23": [
+      0.075,
+      0.2
+    ],
+    "regret_entera": [
+      0.325,
+      0.6
+    ],
+    "regret_de_k_b23_en_rejilla_entera": [
+      2.2,
+      8.2
+    ],
+    "factores_rectangulares": [
+      0.75,
+      0.875,
+      1.0,
+      1.125,
+      1.25,
+      1.4,
+      1.6,
+      1.75,
+      2.0,
+      2.25,
+      2.5,
+      3.0,
+      3.5,
+      4.0,
+      5.0,
+      6.0
+    ],
+    "factores_parciales": [],
+    "omitidos_vram": [],
+    "incidencias": [],
+    "cer": {
+      "x0.75": {
+        "escaneado_d5a": 24.8,
+        "escaneado_d5c": 30.9,
+        "escaneado_d5": 42.8,
+        "escaneado_d5b": 69.5
+      },
+      "x0.875": {
+        "escaneado_d5a": 7.0,
+        "escaneado_d5c": 15.1,
+        "escaneado_d5": 26.3,
+        "escaneado_d5b": 48.5
+      },
+      "x1": {
+        "escaneado_d5a": 1.2,
+        "escaneado_d5c": 2.0,
+        "escaneado_d5": 10.2,
+        "escaneado_d5b": 25.3
+      },
+      "x1.12": {
+        "escaneado_d5a": 1.2,
+        "escaneado_d5c": 2.3,
+        "escaneado_d5": 4.4,
+        "escaneado_d5b": 22.0
+      },
+      "x1.25": {
+        "escaneado_d5a": 0.7,
+        "escaneado_d5c": 1.3,
+        "escaneado_d5": 2.3,
+        "escaneado_d5b": 17.8
+      },
+      "x1.4": {
+        "escaneado_d5a": 0.3,
+        "escaneado_d5c": 0.7,
+        "escaneado_d5": 1.8,
+        "escaneado_d5b": 16.3
+      },
+      "x1.6": {
+        "escaneado_d5a": 0.5,
+        "escaneado_d5c": 0.8,
+        "escaneado_d5": 1.8,
+        "escaneado_d5b": 14.4
+      },
+      "x1.75": {
+        "escaneado_d5a": 0.3,
+        "escaneado_d5c": 1.3,
+        "escaneado_d5": 2.3,
+        "escaneado_d5b": 7.7
+      },
+      "x2": {
+        "escaneado_d5a": 0.5,
+        "escaneado_d5c": 1.3,
+        "escaneado_d5": 1.7,
+        "escaneado_d5b": 6.5
+      },
+      "x2.25": {
+        "escaneado_d5a": 0.5,
+        "escaneado_d5c": 1.7,
+        "escaneado_d5": 3.0,
+        "escaneado_d5b": 10.4
+      },
+      "x2.5": {
+        "escaneado_d5a": 0.7,
+        "escaneado_d5c": 1.3,
+        "escaneado_d5": 3.0,
+        "escaneado_d5b": 6.2
+      },
+      "x3": {
+        "escaneado_d5a": 0.7,
+        "escaneado_d5c": 1.2,
+        "escaneado_d5": 1.7,
+        "escaneado_d5b": 9.4
+      },
+      "x3.5": {
+        "escaneado_d5a": 0.5,
+        "escaneado_d5c": 1.3,
+        "escaneado_d5": 2.9,
+        "escaneado_d5b": 11.6
+      },
+      "x4": {
+        "escaneado_d5a": 0.3,
+        "escaneado_d5c": 1.5,
+        "escaneado_d5": 3.0,
+        "escaneado_d5b": 8.9
+      },
+      "x5": {
+        "escaneado_d5a": 0.8,
+        "escaneado_d5c": 1.3,
+        "escaneado_d5": 1.5,
+        "escaneado_d5b": 8.7
+      },
+      "x6": {
+        "escaneado_d5a": 0.5,
+        "escaneado_d5c": 1.5,
+        "escaneado_d5": 2.0,
+        "escaneado_d5b": 10.2
+      }
+    },
+    "regret_entera_por_factor": {
+      "x0.75": [
+        39.825,
+        63.3
+      ],
+      "x0.875": [
+        22.05,
+        42.3
+      ],
+      "x1": [
+        7.5,
+        19.1
+      ],
+      "x1.12": [
+        5.3,
+        15.8
+      ],
+      "x1.25": [
+        3.35,
+        11.6
+      ],
+      "x1.4": [
+        2.6,
+        10.1
+      ],
+      "x1.6": [
+        2.2,
+        8.2
+      ],
+      "x1.75": [
+        0.725,
+        1.5
+      ],
+      "x2": [
+        0.325,
+        0.6
+      ],
+      "x2.25": [
+        1.725,
+        4.2
+      ],
+      "x2.5": [
+        0.625,
+        1.5
+      ],
+      "x3": [
+        1.075,
+        3.2
+      ],
+      "x3.5": [
+        1.9,
+        5.4
+      ],
+      "x4": [
+        1.25,
+        2.7
+      ],
+      "x5": [
+        0.9,
+        2.5
+      ],
+      "x6": [
+        1.375,
+        4.0
+      ]
+    }
+  },
+  "docling-r6": {
+    "k_rejilla_b23": 1.6,
+    "k_rejilla_entera": 3.5,
+    "regret_b23": [
+      2.325,
+      8.8
+    ],
+    "regret_entera": [
+      0.0,
+      0.0
+    ],
+    "regret_de_k_b23_en_rejilla_entera": [
+      10.7,
+      16.1
+    ],
+    "factores_rectangulares": [
+      0.75,
+      0.875,
+      1.0,
+      1.125,
+      1.25,
+      1.4,
+      1.6,
+      1.75,
+      2.0,
+      2.25,
+      2.5,
+      3.0,
+      3.5,
+      4.0,
+      5.0,
+      6.0
+    ],
+    "factores_parciales": [],
+    "omitidos_vram": [],
+    "incidencias": [],
+    "cer": {
+      "x0.75": {
+        "escaneado_d5a": 18.1,
+        "escaneado_d5c": 27.3,
+        "escaneado_d5": 19.3,
+        "escaneado_d5b": 32.2
+      },
+      "x0.875": {
+        "escaneado_d5a": 18.1,
+        "escaneado_d5c": 9.4,
+        "escaneado_d5": 18.8,
+        "escaneado_d5b": 25.2
+      },
+      "x1": {
+        "escaneado_d5a": 18.1,
+        "escaneado_d5c": 27.3,
+        "escaneado_d5": 18.5,
+        "escaneado_d5b": 26.5
+      },
+      "x1.12": {
+        "escaneado_d5a": 9.1,
+        "escaneado_d5c": 9.4,
+        "escaneado_d5": 18.3,
+        "escaneado_d5b": 38.3
+      },
+      "x1.25": {
+        "escaneado_d5a": 18.1,
+        "escaneado_d5c": 9.4,
+        "escaneado_d5": 18.1,
+        "escaneado_d5b": 20.0
+      },
+      "x1.4": {
+        "escaneado_d5a": 0.3,
+        "escaneado_d5c": 9.2,
+        "escaneado_d5": 18.8,
+        "escaneado_d5b": 26.7
+      },
+      "x1.6": {
+        "escaneado_d5a": 9.1,
+        "escaneado_d5c": 9.7,
+        "escaneado_d5": 9.2,
+        "escaneado_d5b": 19.3
+      },
+      "x1.75": {
+        "escaneado_d5a": 0.3,
+        "escaneado_d5c": 20.5,
+        "escaneado_d5": 0.8,
+        "escaneado_d5b": 19.1
+      },
+      "x2": {
+        "escaneado_d5a": 13.8,
+        "escaneado_d5c": 0.5,
+        "escaneado_d5": 0.7,
+        "escaneado_d5b": 16.6
+      },
+      "x2.25": {
+        "escaneado_d5a": 0.3,
+        "escaneado_d5c": 0.5,
+        "escaneado_d5": 0.7,
+        "escaneado_d5b": 10.1
+      },
+      "x2.5": {
+        "escaneado_d5a": 0.3,
+        "escaneado_d5c": 0.5,
+        "escaneado_d5": 0.5,
+        "escaneado_d5b": 10.2
+      },
+      "x3": {
+        "escaneado_d5a": 0.3,
+        "escaneado_d5c": 0.5,
+        "escaneado_d5": 0.7,
+        "escaneado_d5b": 3.7
+      },
+      "x3.5": {
+        "escaneado_d5a": 0.3,
+        "escaneado_d5c": 0.5,
+        "escaneado_d5": 0.5,
+        "escaneado_d5b": 3.2
+      },
+      "x4": {
+        "escaneado_d5a": 0.3,
+        "escaneado_d5c": 0.7,
+        "escaneado_d5": 0.7,
+        "escaneado_d5b": 3.7
+      },
+      "x5": {
+        "escaneado_d5a": 0.3,
+        "escaneado_d5c": 0.7,
+        "escaneado_d5": 0.5,
+        "escaneado_d5b": 3.9
+      },
+      "x6": {
+        "escaneado_d5a": 0.3,
+        "escaneado_d5c": 0.7,
+        "escaneado_d5": 0.5,
+        "escaneado_d5b": 4.2
+      }
+    },
+    "regret_entera_por_factor": {
+      "x0.75": [
+        23.1,
+        29.0
+      ],
+      "x0.875": [
+        16.75,
+        22.0
+      ],
+      "x1": [
+        21.475,
+        26.8
+      ],
+      "x1.12": [
+        17.65,
+        35.1
+      ],
+      "x1.25": [
+        15.275,
+        17.8
+      ],
+      "x1.4": [
+        12.625,
+        23.5
+      ],
+      "x1.6": [
+        10.7,
+        16.1
+      ],
+      "x1.75": [
+        9.05,
+        20.0
+      ],
+      "x2": [
+        6.775,
+        13.5
+      ],
+      "x2.25": [
+        1.775,
+        6.9
+      ],
+      "x2.5": [
+        1.75,
+        7.0
+      ],
+      "x3": [
+        0.175,
+        0.5
+      ],
+      "x3.5": [
+        0.0,
+        0.0
+      ],
+      "x4": [
+        0.225,
+        0.5
+      ],
+      "x5": [
+        0.225,
+        0.7
+      ],
+      "x6": [
+        0.3,
+        1.0
+      ]
+    }
+  }
+}
