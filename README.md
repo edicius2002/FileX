@@ -141,7 +141,8 @@ analysis/    Un documento por repositorio auditado, más los transversales
 bench/       Las mediciones: 100 informes, con sus scripts y arneses
 corpus/      44 ficheros de prueba con los casos patológicos (39 en Git LFS, 254 MiB)
 ci/          Las comprobaciones de integridad documental y las sondas de aptitud
-docker/      Compose de los competidores, levantados para medirlos
+docker/      Dockerfile.c13, la imagen documental del producto (fijada por digest),
+             y los compose de los competidores, levantados para medirlos
 ```
 
 **Los binarios de salida no se versionan.** Cada carpeta excluida conserva un

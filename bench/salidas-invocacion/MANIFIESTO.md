@@ -34,7 +34,7 @@ Informe: **`bench/invocacion-aristas.md`**.
 
 | Fichero | Bytes | sha256 | Orden que lo reproduce |
 |---|---:|---|---|
-| `Dockerfile.c13` | 367 | `268e4f2c2f95676a…` | docker build -f Dockerfile.c13 -t filex-c13 . |
+| ~~`Dockerfile.c13`~~ | 367 | `268e4f2c2f95676a…` | **TRASLADADO a `docker/Dockerfile.c13`** el 04/09/2026 |
 | `_extrae.py` | 3 570 | `63ee5b94c6f8b032…` | — |
 | `_p2_agrega.py` | 3 929 | `d1ee03b2404c5f52…` | — |
 | `_p2_c17.py` | 10 716 | `100f6d4b25c6880d…` | — |
@@ -146,6 +146,14 @@ Informe: **`bench/invocacion-aristas.md`**.
 | `validacion_p2_extra.json` | 1 316 | `b4a220db611aa683…` | ver log-p2-valida2.txt (script en linea) |
 | `verificador_p2.py` | 167 824 | `cb3e479b6a75dddf…` | copia congelada de bench/scripts/verificador.py (P3 lo edita en paralelo) |
 
+> **`Dockerfile.c13` ya no está en este directorio.** El 04/09/2026 se trasladó a
+> **`docker/Dockerfile.c13`**, donde un tercero lo encuentra, y allí quedó fijado por
+> digest en vez de por `:latest` (informe `bench/contenedor-publicable.md`). Lo que se
+> midió aquí el 21/08/2026 fueron **367 B**,
+> `sha256:268e4f2c2f95676ac8a225d65d5bf85b0f7cdb38f29bc83f65350a1918ebbe66`, con
+> `FROM ghcr.io/c4illin/convertx:latest`; el contenido de hoy es distinto y el histórico
+> vive en git. Los informes de bench anteriores a esa fecha lo citan por su ruta vieja.
+
 ## 3. Orden de ejecución completo
 
 ```
@@ -164,7 +172,8 @@ python _p2_resid2.py           # 2a vuelta con las reglas U, C2 y R2
 python _p2_valida.py           # control antifalso positivo
 python _p2_c17.py              # censo de gs y gotenberg
 python _p2_c17b.py             # 2a vuelta de semillas de LibreOffice
-docker build -f Dockerfile.c13 -t filex-c13 .
+docker build --platform linux/amd64 \
+    -f docker/Dockerfile.c13 -t filex-c13 docker/   # trasladado 04/09
 docker run --rm --entrypoint sh -v <SAL>/c13:/w filex-c13 /w/c13_dentro.sh
 docker run --rm --entrypoint sh -v <SAL>/c13:/w filex-c13 /w/c13_ocr.sh
 python _p2_final.py            # LA CIFRA

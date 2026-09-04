@@ -1,8 +1,0 @@
-# P2 / C13 - los dos motores que no trae ninguna imagen levantada.
-# CLAUDE.md sec.2: en Windows no hay gestor de paquetes; lo que falte va en contenedor.
-FROM ghcr.io/c4illin/convertx:latest
-USER root
-RUN apt-get update \
- && apt-get install -y --no-install-recommends \
-      qpdf tesseract-ocr tesseract-ocr-spa tesseract-ocr-eng \
- && rm -rf /var/lib/apt/lists/*

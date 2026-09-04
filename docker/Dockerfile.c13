@@ -1,0 +1,80 @@
+# filex-c13 — la imagen documental de FileX.
+#
+# Es `ghcr.io/c4illin/convertx` con los DOS motores que esa imagen no trae:
+# `qpdf` y `tesseract`. De aquí salen LibreOffice, Pandoc y Calibre, que son
+# los tres motores que FileX invoca dentro de un contenedor
+# (`filex/motor_contenedor.py`), y que sostienen **40 de las 172 aristas
+# selladas** del proyecto (16 LibreOffice + 16 Pandoc + 8 Calibre).
+#
+# ORDEN QUE LA CONSTRUYE:
+#     docker build --platform linux/amd64 -f docker/Dockerfile.c13 -t filex-c13 docker/
+#
+# Sin ella, `python -m filex motores` marca ✗ los tres motores documentales
+# con el motivo exacto («el demonio responde pero no está ninguna de las
+# imágenes: …») y desaparece el estrato ofimático entero del grafo.
+# `FILEX_IMAGEN_DOC` sobreescribe qué imagen se usa.
+#
+# ---------------------------------------------------------------------------
+# POR QUÉ VA FIJADA POR DIGEST Y NO POR `:latest`
+# ---------------------------------------------------------------------------
+# Este repositorio tiene MEDIDO que un `:latest` ajeno destruye la
+# reproducibilidad — se lo midió a OTROS proyectos:
+# `bench/salidas-competidores/MANIFIESTO-retirado.md` conserva evidencia
+# forense declarada «irreproducible: los contenedores de ConvertX y SnapOtter
+# cambian de versión, así que sus fallos no se regeneran». Esta receta
+# dependía de un `:latest` ajeno hasta el 04/09/2026.
+#
+# El digest es el del ÍNDICE OCI multi-plataforma (linux/amd64 + linux/arm64):
+# es lo que `FROM` resuelve, y conserva la portabilidad a arm64. NO es el
+# digest del config ni el de un manifiesto de plataforma — se confunden con
+# facilidad, y `docker images --digests` muestra en esta versión de Docker un
+# valor que COINCIDE con `.Id`, que no es lo que hace falta aquí.
+#
+#   índice   sha256:b515b04bfd25298a5cdc775b2fcd48b9399bab658ce13e2598b65df1b16098c8
+#   amd64    sha256:081d1638e8c6dfb6b5e69f47ff90e6f6037cdee29a2f25ddd44ddc6d2e52451d
+#   arm64    sha256:c65ab84cab4c3e3ede28853f9dfcbaf5ddf1e52fd27e2c9ee5d02c77218eed60
+#
+# Todas las medidas del proyecto se tomaron sobre **linux/amd64**. El índice
+# también sirve arm64, y ahí no hay una sola medida: de ahí el `--platform`.
+#
+# COMPROBAR QUE EL DIGEST SIGUE SIENDO EL DE `:latest` (MEDIDO el 04/09/2026:
+# lo era, y coincide con el que `bench/docker.md` registró el 22/08/2026):
+#     docker buildx imagetools inspect ghcr.io/c4illin/convertx:latest
+# El campo `Digest:` de la cabecera es el índice. Si deja de coincidir, el
+# upstream ha publicado una imagen nueva: eso NO rompe esta receta —sigue
+# construyendo la imagen medida— pero conviene anotarlo.
+#
+# ---------------------------------------------------------------------------
+# LO QUE ESTE DIGEST **NO** COMPRA — MEDIDO el 04/09/2026
+# ---------------------------------------------------------------------------
+# Fijar la base es NECESARIO y NO SUFICIENTE. La capa `apt-get` de abajo no
+# está fijada, y el índice de Debian forky/sid se mueve: reconstruyendo desde
+# esta misma receta, con esta misma base fijada, sale una imagen con OTRO id.
+#
+#   sellada en filex/sondeo/doc_*.json   filex-c13@6d359bad483e   (qpdf 12.4.0)
+#   reconstruida el 04/09/2026           filex-c13@0210178ee7b3   (qpdf 12.4.1)
+#
+# Y el id de la imagen forma parte del `build` que sella cada arista, así que
+# el efecto es exacto y está medido pareado en la misma tanda:
+#
+#   con la sellada       doc_libreoffice 28 aristas (26 medidas)
+#                        doc_pandoc      31 (31) · doc_calibre 17 (16)  = 73
+#   con la reconstruida  doc_libreoffice 28 aristas (10 medidas)
+#                        doc_pandoc      31 (15) · doc_calibre 17 (8)   = 33
+#
+# La diferencia es **exactamente 40**: las 40 aristas selladas. Quien
+# reconstruya esta imagen NO hereda los sellos — los ve caducar, que es el
+# sistema de huella funcionando, no un fallo. Para volver a sellarlas hay que
+# RESONDEAR (`bench/rasteriza-declaradas.md`).
+#
+# No se fijan las versiones de `apt` a propósito: Debian sid RETIRA las
+# versiones viejas de sus índices, así que un `qpdf=12.4.0-1` haría que esta
+# receta dejara de construir en semanas. Se prefiere una receta que construye
+# siempre y un sello que caduca a la vista, sobre una receta que se rompe.
+#
+FROM ghcr.io/c4illin/convertx@sha256:b515b04bfd25298a5cdc775b2fcd48b9399bab658ce13e2598b65df1b16098c8
+USER root
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends \
+      qpdf tesseract-ocr tesseract-ocr-spa tesseract-ocr-eng \
+ && rm -rf /var/lib/apt/lists/*
