@@ -371,19 +371,35 @@ segundo empujón porque `bench/salidas-ci-windows-trazas` no tenía todavía su
   corpus real y Docker vivo: **78 pruebas · OK · 1 saltada** — los guardas
   nuevos son **inocuos donde el activo está**, que es la mitad que ningún runner
   puede comprobar.
-* **Suite completa en esta máquina: lanzada, y en cola A PROPÓSITO.** Mientras
-  escribo esto hay **otra sesión corriendo `pytest pruebas/`** (`-q -rs`, PID
-  5496, desde las 21:03) y el carril de GPU con una tanda de `b26_borde.py`
-  encima. Correr la mía a la vez sería medir contención: la trampa 101 ya
-  documenta una tanda de `test_cancelacion_procesos` que dio **2 rojos a ×3,4 de
-  duración** con la máquina cargada y **15 verdes en tres pasadas** con la
-  máquina tranquila, sin que el código hubiera cambiado una línea. Queda
-  encolada esperando a que la otra termine. **Estado: PENDIENTE**, y con la
-  causa dicha, que es la diferencia entre un pendiente y una excusa.
-  *(Y una nota de método pagada en el mismo sitio: mis dos primeros intentos se
-  solaparon entre sí por mi culpa, y el primero dio una `F`. Antes de culpar a
-  los guardas comprobé quién estaba vivo por línea de órdenes —trampa 31—: el
-  proceso que más CPU gastaba no era mío, era `b26_borde.py` del otro carril.)*
+* **Suite completa en esta máquina: `1 failed · 458 passed · 4 skipped · 130
+  subtests` en 293,92 s**, y **el rojo no es mío** — es la **cuarta
+  declaración** de la trampa 101, el estado de la máquina:
+
+  * El fallo es `test_hito7.py::ApiDefensas::test_cuerpo_demasiado_grande`, que
+    muere en un `ConnectionResetError` de `urllib` contra su propio servidor
+    HTTP de prueba.
+  * **Mi rama no toca ese código**: `git diff --stat main..HEAD -- filex/
+    pruebas/test_hito7.py` devuelve **0 líneas**. La trampa 101 pide justo esto
+    —*antes de culpar al cambio, comprueba si el cambio tocó código*— y aquí
+    convierte «lo rompió worker13» en imposible.
+  * **Reproducción intentada, 3 de 3 verdes**: `pytest -k ApiDefensas` da
+    **13 passed** en 3,09 s / 3,43 s / 3,02 s.
+  * Y el estado de la máquina lo explica: la tanda duró **293,92 s frente a los
+    ~165 s** de la línea base de `CLAUDE.md` (**×1,78**), con **otra sesión
+    corriendo `pytest pruebas/`** y el carril de GPU con `b26_borde.py` encima.
+    Es la misma forma que la trampa 101 ya midió: 2 rojos a ×3,4 de duración con
+    la máquina cargada, 15 verdes en tres pasadas con la máquina tranquila, sin
+    una línea de diferencia en el código.
+  * **Lo que sí es mío está verde**: los tres módulos que toqué —
+    `test_cerrojo`, `test_hito1`, `test_watcher_n`— dan **78 pruebas, OK, 1
+    saltada**, y los 8 guardas nuevos se saltan **cero** veces aquí, que es la
+    prueba de que son inocuos donde el activo está.
+
+  *(Nota de método pagada en el camino: mis dos primeros intentos se solaparon
+  entre sí por mi culpa y el primero dio una `F`. Antes de culpar a los guardas
+  miré quién estaba vivo por línea de órdenes —trampa 31—, y el proceso que más
+  CPU gastaba no era mío: era `b26_borde.py` del otro carril. Matarlo «para
+  limpiar» habría tirado una tanda de GPU ajena.)*
 * **`ci/integridad.py`**: todo en verde salvo `informes-registrados`, por §9.1.
 * **Runner**: ejecución **33827476219**, `success`, 18 módulos, **14 aptos ·
   331 pruebas · 67 saltos · 10,8 s · 0 colgados**.
