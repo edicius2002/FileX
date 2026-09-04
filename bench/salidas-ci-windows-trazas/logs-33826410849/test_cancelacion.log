@@ -1,0 +1,41 @@
+test_job_cancelar_detiene_la_conversion_en_vuelo (pruebas.test_cancelacion.CancelarPorElServicio.test_job_cancelar_detiene_la_conversion_en_vuelo)
+MEDIDO: `tipico.mp4 \u2192 webm` tarda ~26 s sin cancelar. ... skipped 'falta el corpus de vídeo o ffmpeg'
+test_sin_canal_de_mando_lo_dice_en_vez_de_fingir (pruebas.test_cancelacion.CancelarPorElServicio.test_sin_canal_de_mando_lo_dice_en_vez_de_fingir)
+El alcance de C34, conservado como el ANTES medible. ... skipped 'falta el corpus de vídeo o ffmpeg'
+test_cada_invocacion_acuña_un_nombre_DISTINTO (pruebas.test_cancelacion.ContenedorPuro.test_cada_invocacion_acuña_un_nombre_DISTINTO)
+Un nombre constante mataría el contenedor del vecino, que es justo ... ok
+test_el_gancho_parar_ya_NO_esta_muerto (pruebas.test_cancelacion.ContenedorPuro.test_el_gancho_parar_ya_NO_esta_muerto)
+`Motor.parar()` era un `return None` que ninguna subclase ... ok
+test_la_orden_DECLARA_el_contenedor_en_vez_de_dejarlo_adivinar (pruebas.test_cancelacion.ContenedorPuro.test_la_orden_DECLARA_el_contenedor_en_vez_de_dejarlo_adivinar) ... ok
+test_parar_sin_contenedor_en_este_hilo_no_hace_nada (pruebas.test_cancelacion.ContenedorPuro.test_parar_sin_contenedor_en_este_hilo_no_hace_nada)
+Un `parar()` sin `orden()` previa no puede tocar a nadie: el ... ok
+test_solo_se_acepta_un_nombre_ACUÑADO_POR_FILEX (pruebas.test_cancelacion.ContenedorPuro.test_solo_se_acepta_un_nombre_ACUÑADO_POR_FILEX)
+La cancelación no puede apuntar a un contenedor ajeno. ... ok
+test_un_motor_nativo_no_dispara_la_caza_de_contenedores (pruebas.test_cancelacion.ContenedorPuro.test_un_motor_nativo_no_dispara_la_caza_de_contenedores)
+Coste cero en el camino normal: si no es `docker run`, no se mira. ... ok
+test_cancelar_EN_EL_ARRANQUE_no_deja_huerfano (pruebas.test_cancelacion.ContenedorReal.test_cancelar_EN_EL_ARRANQUE_no_deja_huerfano)
+La carrera que costó 1 de 9 (`bench/cancelacion-y-servicio.md` §3). ... skipped 'no hay demonio de docker, o la imagen ghcr.io/c4illin/convertx:latest no está cacheada localmente (evita el cuelgue de C42: `docker run` sobre una imagen ausente la descarga, 5,7 GB)'
+test_cancelar_mata_el_contenedor_y_no_solo_el_cliente (pruebas.test_cancelacion.ContenedorReal.test_cancelar_mata_el_contenedor_y_no_solo_el_cliente)
+MEDIDO en `CLAUDE.md` §3: matar el `docker run` NO mata el ... skipped 'no hay demonio de docker, o la imagen ghcr.io/c4illin/convertx:latest no está cacheada localmente (evita el cuelgue de C42: `docker run` sobre una imagen ausente la descarga, 5,7 GB)'
+test_cancelar_una_conversion_NO_toca_el_contenedor_de_la_de_al_lado (pruebas.test_cancelacion.ContenedorReal.test_cancelar_una_conversion_NO_toca_el_contenedor_de_la_de_al_lado)
+Lo que N-a no pudo comprobar, y el fallo que la deducción rozaba. ... skipped 'no hay demonio de docker, o la imagen ghcr.io/c4illin/convertx:latest no está cacheada localmente (evita el cuelgue de C42: `docker run` sobre una imagen ausente la descarga, 5,7 GB)'
+test_parar_para_el_contenedor_cuando_el_tope_de_FUERA_dispara (pruebas.test_cancelacion.ContenedorReal.test_parar_para_el_contenedor_cuando_el_tope_de_FUERA_dispara)
+`_EnContenedor.parar()` de verdad, por la vía exacta del núcleo. ... skipped 'no hay demonio de docker, o la imagen ghcr.io/c4illin/convertx:latest no está cacheada localmente (evita el cuelgue de C42: `docker run` sobre una imagen ausente la descarga, 5,7 GB)'
+test_las_tres_clases_viven_en_servicio (pruebas.test_cancelacion.ElServicioNoEsDeMcp.test_las_tres_clases_viven_en_servicio) ... ok
+test_mcp_ya_no_define_ni_trabajos_ni_servicio (pruebas.test_cancelacion.ElServicioNoEsDeMcp.test_mcp_ya_no_define_ni_trabajos_ni_servicio) ... ok
+test_ninguna_superficie_entra_por_la_puerta_vieja (pruebas.test_cancelacion.ElServicioNoEsDeMcp.test_ninguna_superficie_entra_por_la_puerta_vieja)
+La afirmación estructural de R10, del derecho. ... ok
+test_servicio_no_importa_el_protocolo (pruebas.test_cancelacion.ElServicioNoEsDeMcp.test_servicio_no_importa_el_protocolo)
+Al revés que antes: ahora el que no puede saber de MCP es el servicio. ... ok
+test_cancelar_mata_el_motor_y_no_lo_llama_tiempo_agotado (pruebas.test_cancelacion.MatarElMotorEnVuelo.test_cancelar_mata_el_motor_y_no_lo_llama_tiempo_agotado)
+El corazón de C34: matar el árbol de un motor que está corriendo. ... skipped 'falta ffmpeg'
+test_cancelar_un_hilo_no_toca_al_de_al_lado (pruebas.test_cancelacion.MatarElMotorEnVuelo.test_cancelar_un_hilo_no_toca_al_de_al_lado)
+Dos trabajos a la vez: cancelar uno no puede matar al otro. ... skipped 'falta ffmpeg'
+test_olvidar_hilo_limpia_la_marca_porque_los_ident_se_reciclan (pruebas.test_cancelacion.MatarElMotorEnVuelo.test_olvidar_hilo_limpia_la_marca_porque_los_ident_se_reciclan) ... skipped 'falta ffmpeg'
+test_un_hilo_cancelado_no_arranca_el_siguiente_motor (pruebas.test_cancelacion.MatarElMotorEnVuelo.test_un_hilo_cancelado_no_arranca_el_siguiente_motor)
+La ventana ENTRE saltos, que no tiene ningún `Popen` que matar. ... skipped 'falta ffmpeg'
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.304s
+
+OK (skipped=10)

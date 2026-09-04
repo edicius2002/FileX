@@ -1,0 +1,33 @@
+test_el_desvio_normal_de_NVENC_no_es_un_fallo (pruebas.test_bitrate_y_lock.ElBitrateDeVideoTieneRegla.test_el_desvio_normal_de_NVENC_no_es_un_fallo)
+Las cuatro celdas de `hevc_nvenc` de `hito2-nvenc.md` §4.3, con sus ... ok
+test_el_umbral_deja_margen_sobre_el_peor_legitimo_medido (pruebas.test_bitrate_y_lock.ElBitrateDeVideoTieneRegla.test_el_umbral_deja_margen_sobre_el_peor_legitimo_medido)
++56,30 % (`libsvtav1`, fuente pequeña) y \u221254,83 % (`libvpx-vp9` ... ok
+test_la_sonda_NO_publica_el_bitrate_de_una_pista_de_video (pruebas.test_bitrate_y_lock.ElBitrateDeVideoTieneRegla.test_la_sonda_NO_publica_el_bitrate_de_una_pista_de_video)
+La causa real del hueco, y no es el filtro `tipo == "audio"`. ... skipped 'corpus ausente o en punteros de LFS (trampa 34)'
+test_por_abajo_es_fallo_con_audio_y_sin_el (pruebas.test_bitrate_y_lock.ElBitrateDeVideoTieneRegla.test_por_abajo_es_fallo_con_audio_y_sin_el)
+El audio solo SUMA: el contenedor es cota superior del vídeo, así ... ok
+test_por_arriba_CON_audio_declarado_sigue_informativo (pruebas.test_bitrate_y_lock.ElBitrateDeVideoTieneRegla.test_por_arriba_CON_audio_declarado_sigue_informativo)
+N28: ``-b:a`` pedido no es una cota del audio obtenido. ... ok
+test_por_arriba_CON_audio_es_informativo_y_no_fallo (pruebas.test_bitrate_y_lock.ElBitrateDeVideoTieneRegla.test_por_arriba_CON_audio_es_informativo_y_no_fallo)
+MEDIDO: `2pistas.mkv -> .mp4` pidiendo 200 kbps de vídeo entrega ... ok
+test_por_arriba_sin_audio_es_fallo (pruebas.test_bitrate_y_lock.ElBitrateDeVideoTieneRegla.test_por_arriba_sin_audio_es_fallo) ... ok
+test_sin_bitrate_video_pedido_la_regla_calla (pruebas.test_bitrate_y_lock.ElBitrateDeVideoTieneRegla.test_sin_bitrate_video_pedido_la_regla_calla) ... ok
+test_el_nucleo_no_esta_en_la_huella_de_ningun_motor (pruebas.test_bitrate_y_lock.ElLockRodeaAlCodificado.test_el_nucleo_no_esta_en_la_huella_de_ningun_motor)
+Por qué N25 no caduca ni una arista: los tres componentes son ... ok
+test_la_ejecucion_esta_DENTRO_del_with_en_el_arbol (pruebas.test_bitrate_y_lock.ElLockRodeaAlCodificado.test_la_ejecucion_esta_DENTRO_del_with_en_el_arbol)
+Forma, sobre el AST. Sin el parche, `ejecutar` es un `Expr` suelto. ... ok
+test_la_guardia_no_se_repite_en_la_reentrada (pruebas.test_bitrate_y_lock.ElLockRodeaAlCodificado.test_la_guardia_no_se_repite_en_la_reentrada)
+*«Preguntar por la VRAM en cada conversión sería caro»* — §6.3 de H2. ... ok
+test_lo_que_no_toca_la_tarjeta_no_toca_el_lock (pruebas.test_bitrate_y_lock.ElLockRodeaAlCodificado.test_lo_que_no_toca_la_tarjeta_no_toca_el_lock) ... ok
+test_lo_que_toca_la_tarjeta_sostiene_el_lock_durante_la_ejecucion (pruebas.test_bitrate_y_lock.ElLockRodeaAlCodificado.test_lo_que_toca_la_tarjeta_sostiene_el_lock_durante_la_ejecucion) ... ok
+test_el_byte_60_separa_la_imagen_del_libro (pruebas.test_bitrate_y_lock.ElPdbEsUnContenedorDePalm.test_el_byte_60_separa_la_imagen_del_libro) ... ok
+test_el_nombre_del_fichero_NO_decide_la_firma (pruebas.test_bitrate_y_lock.ElPdbEsUnContenedorDePalm.test_el_nombre_del_fichero_NO_decide_la_firma)
+El motivo por el que F1 lo dejó fuera era cierto y medía otra cosa. ... ok
+test_el_pdb_deja_de_ser_sin_vocabulario (pruebas.test_bitrate_y_lock.ElPdbEsUnContenedorDePalm.test_el_pdb_deja_de_ser_sin_vocabulario) ... ok
+test_la_imagen_de_palm_no_se_despacha_como_libro (pruebas.test_bitrate_y_lock.ElPdbEsUnContenedorDePalm.test_la_imagen_de_palm_no_se_despacha_como_libro)
+Trampa 70: la firma alimenta al DESPACHADOR, no solo al punto 1. ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.309s
+
+OK (skipped=1)

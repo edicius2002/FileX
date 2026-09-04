@@ -1,0 +1,33 @@
+test_A7_no_opina_cuando_el_pedido_cambia_los_canales (pruebas.test_contrato_v.CanalSilenciado.test_A7_no_opina_cuando_el_pedido_cambia_los_canales)
+`canales` en el pedido = el usuario pidió mover la energía. A7 se ... skipped 'hace falta ffmpeg para fabricar el caso'
+test_el_canal_mudo_hacia_destino_con_perdida_es_FALLO (pruebas.test_contrato_v.CanalSilenciado.test_el_canal_mudo_hacia_destino_con_perdida_es_FALLO) ... skipped 'hace falta ffmpeg para fabricar el caso'
+test_la_conversion_BUENA_no_dispara_A7 (pruebas.test_contrato_v.CanalSilenciado.test_la_conversion_BUENA_no_dispara_A7) ... skipped 'hace falta ffmpeg para fabricar el caso'
+test_los_cinco_puntos_del_CONTRATO_siguen_sin_verlo (pruebas.test_contrato_v.CanalSilenciado.test_los_cinco_puntos_del_CONTRATO_siguen_sin_verlo)
+Y esto NO es un defecto que arreglar: es la formulación de ... skipped 'hace falta ffmpeg para fabricar el caso'
+test_el_riesgo_real_esta_en_los_alias_sin_marcador (pruebas.test_contrato_v.G6SigueSiendoAviso.test_el_riesgo_real_esta_en_los_alias_sin_marcador) ... ok
+test_la_severidad_de_G6_es_aviso (pruebas.test_contrato_v.G6SigueSiendoAviso.test_la_severidad_de_G6_es_aviso)
+Se monta el caso emblematico de verdad —un PNG entregado con una ... ok
+test_los_dos_casos_que_el_inventario_temia_no_pueden_disparar_G6 (pruebas.test_contrato_v.G6SigueSiendoAviso.test_los_dos_casos_que_el_inventario_temia_no_pueden_disparar_G6)
+REFUTADO: `png -> apng` y `mkv -> mka` NO son un riesgo para G6, ... ok
+test_EXT_FAMILIA_contiene_extensiones_y_no_caracteres (pruebas.test_contrato_v.NivelDeFamilia.test_EXT_FAMILIA_contiene_extensiones_y_no_caracteres) ... ok
+test_G5_se_emite_de_verdad_sobre_un_csv (pruebas.test_contrato_v.NivelDeFamilia.test_G5_se_emite_de_verdad_sobre_un_csv) ... ok
+test_familia_SIGUE_contando_como_cobertura (pruebas.test_contrato_v.NivelDeFamilia.test_familia_SIGUE_contando_como_cobertura)
+La decision, con su numero: llevar `familia` a `ok_parcial` mueve 3 ... D:\a\FileX\FileX\pruebas\test_contrato_v.py:288: ResourceWarning: unclosed file <_io.TextIOWrapper name='D:\\a\\FileX\\FileX\\filex\\verificador.py' mode='r' encoding='utf-8'>
+  fuente = open(V.__file__, encoding="utf-8").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_punto1_estado_devuelve_familia_donde_toca (pruebas.test_contrato_v.NivelDeFamilia.test_punto1_estado_devuelve_familia_donde_toca) ... ok
+test_blanco_ruido_y_negativo_tambien (pruebas.test_contrato_v.SueloDeV8.test_blanco_ruido_y_negativo_tambien) ... ok
+test_el_peor_del_patron_oro_ni_se_acerca (pruebas.test_contrato_v.SueloDeV8.test_el_peor_del_patron_oro_ni_se_acerca) ... ok
+test_el_suelo_no_puede_subir_sin_volver_a_medir (pruebas.test_contrato_v.SueloDeV8.test_el_suelo_no_puede_subir_sin_volver_a_medir)
+Subirlo a 12, 15 o 18 dB atrapa EXACTAMENTE las mismas 12 celdas ... ok
+test_el_video_enteramente_negro_es_FALLO (pruebas.test_contrato_v.SueloDeV8.test_el_video_enteramente_negro_es_FALLO) ... ok
+test_la_recodificacion_agresiva_LEGITIMA_sigue_siendo_aviso (pruebas.test_contrato_v.SueloDeV8.test_la_recodificacion_agresiva_LEGITIMA_sigue_siendo_aviso) ... ok
+test_A7_esta_declarada_entre_las_reglas_de_fidelidad (pruebas.test_contrato_v.UmbralesDeA7.test_A7_esta_declarada_entre_las_reglas_de_fidelidad) ... ok
+test_el_umbral_de_audible_deja_fuera_el_canal_que_un_codec_puede_tirar (pruebas.test_contrato_v.UmbralesDeA7.test_el_umbral_de_audible_deja_fuera_el_canal_que_un_codec_puede_tirar) ... ok
+test_el_umbral_de_silencio_deja_pasar_el_peor_canal_legitimo (pruebas.test_contrato_v.UmbralesDeA7.test_el_umbral_de_silencio_deja_pasar_el_peor_canal_legitimo) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.025s
+
+OK (skipped=4)

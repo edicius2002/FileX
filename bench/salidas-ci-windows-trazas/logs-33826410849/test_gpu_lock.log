@@ -1,0 +1,22 @@
+test_api_contexto (pruebas.test_gpu_lock.GpuMutex.test_api_contexto) ... ok
+test_python_excluye_y_muerto_se_libera (pruebas.test_gpu_lock.GpuMutex.test_python_excluye_y_muerto_se_libera) ... ok
+test_en_win32_llama_a_la_rama_de_tasklist (pruebas.test_gpu_lock.VivoDespachaPorPlataforma.test_en_win32_llama_a_la_rama_de_tasklist) ... ok
+test_fuera_de_win32_llama_a_la_rama_de_os_kill (pruebas.test_gpu_lock.VivoDespachaPorPlataforma.test_fuera_de_win32_llama_a_la_rama_de_os_kill) ... ok
+test_sin_winpid_no_roba_en_ninguna_rama (pruebas.test_gpu_lock.VivoDespachaPorPlataforma.test_sin_winpid_no_roba_en_ninguna_rama)
+Formato viejo (sin PID): ni siquiera se pregunta, en ninguna de ... ok
+test_error_no_clasificado_no_roba (pruebas.test_gpu_lock.VivoPosixMecanismo.test_error_no_clasificado_no_roba) ... ok
+test_pid_de_otro_usuario_sin_permiso_se_asume_vivo (pruebas.test_gpu_lock.VivoPosixMecanismo.test_pid_de_otro_usuario_sin_permiso_se_asume_vivo)
+EPERM significa que el proceso EXISTE (solo que no es nuestro): ... ok
+test_pid_inexistente_no_esta_vivo (pruebas.test_gpu_lock.VivoPosixMecanismo.test_pid_inexistente_no_esta_vivo) ... ok
+test_pid_vivo_pero_imagen_distinta_no_es_el_dueno (pruebas.test_gpu_lock.VivoPosixMecanismo.test_pid_vivo_pero_imagen_distinta_no_es_el_dueno)
+PID reutilizado por otro binario -- el equivalente POSIX de que ... ok
+test_pid_vivo_sin_imagen_declarada_se_asume_vivo (pruebas.test_gpu_lock.VivoPosixMecanismo.test_pid_vivo_sin_imagen_declarada_se_asume_vivo) ... ok
+test_pid_vivo_y_misma_imagen_por_prefijo_de_comm (pruebas.test_gpu_lock.VivoPosixMecanismo.test_pid_vivo_y_misma_imagen_por_prefijo_de_comm) ... ok
+test_sin_proc_no_se_puede_verificar_identidad_no_roba (pruebas.test_gpu_lock.VivoPosixMecanismo.test_sin_proc_no_se_puede_verificar_identidad_no_roba)
+Sin `/proc` (no Linux) no hay con qué comprobar el nombre: se ... ok
+test_winpid_no_numerico_no_roba (pruebas.test_gpu_lock.VivoPosixMecanismo.test_winpid_no_numerico_no_roba) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.362s
+
+OK

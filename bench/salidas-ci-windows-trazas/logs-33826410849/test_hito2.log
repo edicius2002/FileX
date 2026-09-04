@@ -1,0 +1,65 @@
+test_av1_produce_un_fichero_con_bytes (pruebas.test_hito2.ConversionDeVerdad.test_av1_produce_un_fichero_con_bytes)
+La comprobación que faltaba: `rc=0` **no basta** — la primera versión ... skipped 'no hay ffmpeg'
+test_hevc_produce_un_fichero_con_bytes (pruebas.test_hito2.ConversionDeVerdad.test_hevc_produce_un_fichero_con_bytes) ... skipped 'no hay ffmpeg'
+test_las_dos_pistas_de_audio_sobreviven (pruebas.test_hito2.ConversionDeVerdad.test_las_dos_pistas_de_audio_sobreviven)
+`corpus/video/patologico_2pistas.mkv` existe para vigilar `-map 0`. ... skipped 'no hay ffmpeg'
+test_av1_degrada_a_libsvtav1_y_lo_declara (pruebas.test_hito2.DegradacionSinIntervencion.test_av1_degrada_a_libsvtav1_y_lo_declara) ... skipped 'no hay ffmpeg'
+test_codec_desconocido_no_pasa_en_silencio (pruebas.test_hito2.DegradacionSinIntervencion.test_codec_desconocido_no_pasa_en_silencio) ... skipped 'no hay ffmpeg'
+test_el_argv_degradado_no_lleva_banderas_del_codec_anterior (pruebas.test_hito2.DegradacionSinIntervencion.test_el_argv_degradado_no_lleva_banderas_del_codec_anterior) ... skipped 'no hay ffmpeg'
+test_el_bitrate_de_audio_pedido_no_se_publica_como_obtenido (pruebas.test_hito2.DegradacionSinIntervencion.test_el_bitrate_de_audio_pedido_no_se_publica_como_obtenido)
+N28: ``-b:a`` no prueba la tasa obtenida por cada pista. ... skipped 'no hay ffmpeg'
+test_el_bitrate_de_video_no_usa_la_clave_del_contrato (pruebas.test_hito2.DegradacionSinIntervencion.test_el_bitrate_de_video_no_usa_la_clave_del_contrato)
+`bitrate_bps` la lee la regla de bitrate del contrato, **que solo ... skipped 'no hay ffmpeg'
+test_el_bitrate_pedido_va_a_los_metadatos_de_salida (pruebas.test_hito2.DegradacionSinIntervencion.test_el_bitrate_pedido_va_a_los_metadatos_de_salida) ... skipped 'no hay ffmpeg'
+test_hevc_degrada_a_libx265_si_la_tarjeta_falla (pruebas.test_hito2.DegradacionSinIntervencion.test_hevc_degrada_a_libx265_si_la_tarjeta_falla) ... skipped 'no hay ffmpeg'
+test_hevc_usa_nvenc_por_defecto (pruebas.test_hito2.DegradacionSinIntervencion.test_hevc_usa_nvenc_por_defecto) ... skipped 'no hay ffmpeg'
+test_la_degradacion_va_a_los_metadatos_de_salida (pruebas.test_hito2.DegradacionSinIntervencion.test_la_degradacion_va_a_los_metadatos_de_salida) ... skipped 'no hay ffmpeg'
+test_map_0_explicito_sigue_estando (pruebas.test_hito2.DegradacionSinIntervencion.test_map_0_explicito_sigue_estando)
+Regla no negociable del proyecto: sin `-map 0` ffmpeg descarta la ... skipped 'no hay ffmpeg'
+test_sin_codec_video_el_argv_no_cambia (pruebas.test_hito2.DegradacionSinIntervencion.test_sin_codec_video_el_argv_no_cambia)
+**La red de seguridad de las 210 aristas ya medidas.** El hito 2 no ... skipped 'no hay ffmpeg'
+test_hevc_no_es_un_formato (pruebas.test_hito2.ElFormatoHevcNoEsUnaExtension.test_hevc_no_es_un_formato) ... ok
+test_se_pide_por_parametro_no_por_extension (pruebas.test_hito2.ElFormatoHevcNoEsUnaExtension.test_se_pide_por_parametro_no_por_extension) ... ok
+test_el_fichero_por_defecto_es_el_del_arnes (pruebas.test_hito2.LockDeGpu.test_el_fichero_por_defecto_es_el_del_arnes)
+`bench/lib/harness.sh` usa `$GPU_LOCK` o `/tmp/filex-gpu.lock`, que ... ok
+test_el_formato_del_fichero_es_el_del_arnes (pruebas.test_hito2.LockDeGpu.test_el_formato_del_fichero_es_el_del_arnes)
+Seis campos separados por tabulador. El arnés lee el 3 y el 4 para ... D:\a\FileX\FileX\pruebas\test_hito2.py:372: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\test-h2-lock-cjp9_ey2\\filex-gpu.lock' mode='r' encoding='utf-8'>
+  campos = open(self.ruta, encoding="utf-8").readline().rstrip("\n").split("\t")
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_el_primitivo_es_creacion_exclusiva (pruebas.test_hito2.LockDeGpu.test_el_primitivo_es_creacion_exclusiva)
+MEDIDO: un candado de rango de bytes **no** excluye a un ... ok
+test_es_reentrante_dentro_del_proceso (pruebas.test_hito2.LockDeGpu.test_es_reentrante_dentro_del_proceso)
+Un lote toma el lock para toda la tanda y luego pide `capacidad()`. ... ok
+test_la_guardia_decide_por_vram_libre_total (pruebas.test_hito2.LockDeGpu.test_la_guardia_decide_por_vram_libre_total)
+Trampa 31: por PID no es observable en esta máquina. ... skipped 'no hay tarjeta'
+test_los_umbrales_son_los_del_arnes (pruebas.test_hito2.LockDeGpu.test_los_umbrales_son_los_del_arnes) ... ok
+test_no_roba_un_lock_de_dueno_vivo (pruebas.test_hito2.LockDeGpu.test_no_roba_un_lock_de_dueno_vivo) ... ok
+test_recoge_un_huerfano_con_espera_cero (pruebas.test_hito2.LockDeGpu.test_recoge_un_huerfano_con_espera_cero)
+**El reintento inmediato.** Sin él, recoger el huérfano y salir por ... ok
+test_usa_gpu_detecta_nvenc_en_el_argv (pruebas.test_hito2.LockDeGpu.test_usa_gpu_detecta_nvenc_en_el_argv) ... ok
+test_av1_nvenc_esta_listado_y_no_funciona (pruebas.test_hito2.SondeoEnEjecucion.test_av1_nvenc_esta_listado_y_no_funciona)
+La premisa del hito, comprobada por los DOS lados: si algún día la ... skipped 'no hay ffmpeg'
+test_hevc_nvenc_si_funciona (pruebas.test_hito2.SondeoEnEjecucion.test_hevc_nvenc_si_funciona) ... skipped 'no hay ffmpeg'
+test_la_capacidad_se_cachea (pruebas.test_hito2.SondeoEnEjecucion.test_la_capacidad_se_cachea) ... skipped 'no hay ffmpeg'
+test_un_lienzo_pequeno_da_falso_negativo (pruebas.test_hito2.SondeoEnEjecucion.test_un_lienzo_pequeno_da_falso_negativo)
+El mecanismo de la trampa, reproducido. **No basta con que la sonda ... skipped 'no hay ffmpeg'
+test_alias_de_codec (pruebas.test_hito2.TablaDeCodecs.test_alias_de_codec) ... ok
+test_bitrate_a_bps (pruebas.test_hito2.TablaDeCodecs.test_bitrate_a_bps) ... ok
+test_la_sonda_lleva_el_tope_dentro_de_la_orden (pruebas.test_hito2.TablaDeCodecs.test_la_sonda_lleva_el_tope_dentro_de_la_orden)
+Trampa 52: `lavfi` genera flujo infinito y el tope del cliente no ... ok
+test_la_sonda_no_usa_un_lienzo_pequeno (pruebas.test_hito2.TablaDeCodecs.test_la_sonda_no_usa_un_lienzo_pequeno)
+**La trampa medida de este hito.** `hevc_nvenc` exige 129x33 y ... ok
+test_nvenc_si_lleva_maxrate (pruebas.test_hito2.TablaDeCodecs.test_nvenc_si_lleva_maxrate)
+El control de la anterior: si ninguna familia llevara `-maxrate`, la ... ok
+test_svtav1_no_lleva_maxrate (pruebas.test_hito2.TablaDeCodecs.test_svtav1_no_lleva_maxrate)
+MEDIDO: `Svt[error]: Max Bitrate only supported with CRF mode`, ... ok
+test_toda_familia_tiene_una_salida_de_cpu (pruebas.test_hito2.TablaDeCodecs.test_toda_familia_tiene_una_salida_de_cpu)
+**El criterio del hito es «degrada sin intervención», y eso exige que ... ok
+test_todo_candidato_tiene_control_de_tasa (pruebas.test_hito2.TablaDeCodecs.test_todo_candidato_tiene_control_de_tasa)
+El fallo que casi se publica como hito cumplido: degradar el códec ... ok
+
+----------------------------------------------------------------------
+Ran 37 tests in 0.118s
+
+OK (skipped=19)
