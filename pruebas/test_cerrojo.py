@@ -51,6 +51,35 @@ ES_WINDOWS = sys.platform == "win32"
 #: la entrada.
 HAY_IMAGEMAGICK = shutil.which("magick") is not None
 
+
+def _es_real(ruta: str) -> bool:
+    """El motor puede estar y el corpus no: `os.path.exists()` es `True`
+    tambien para un puntero de Git LFS sin descargar --~130 B de texto que
+    empiezan por `version https://git-lfs...`--, asi que un guarda que
+    comprueba EXISTENCIA no protege de nada (trampa 107; el dano, la 34). Se
+    mira la CABECERA, que es exacta y no necesita umbral."""
+    try:
+        with open(ruta, "rb") as fh:
+            return not fh.read(40).startswith(b"version https://git-lfs")
+    except OSError:
+        return False
+
+
+#: `HAY_IMAGEMAGICK` no basta: `windows-latest` TRAE `magick` 7.1.2-25
+#: preinstalado y aun asi no puede convertir nada de aqui, porque el job hace
+#: `actions/checkout` con `lfs: false` y `corpus/imagen/tipico.{png,jpg}` llegan
+#: como punteros. Es exactamente la pareja de la trampa 107: motor presente,
+#: activo ausente, y el guarda mirando la variable equivocada.
+#:
+#: **Este guarda NO cambia el recuento de la ejecucion 33826410849**: alli los 9
+#: fallos los produce antes el nombre corto 8.3 del `%TEMP%` del runner
+#: (`bench/ci-windows-trazas.md` S2), que es un fallo de producto y no se salta.
+#: Se pone para que el dia que ese fallo se cierre, el modulo no vuelva a dar 9
+#: rojos que ya sabemos que no son suyos.
+CORPUS_REAL = _es_real(PNG) and _es_real(JPG)
+_MOTIVO_CORPUS = ("no hay ImageMagick (`magick`) o el corpus son punteros de "
+                  "Git LFS (`git lfs checkout`) -- ningun motor lee png/jpg")
+
 #: Tope de TODO lo que se lanza aquí. `CLAUDE.md` §3: timeouts explícitos en
 #: todo, que estos procesos dejan huérfanos vivos 13 minutos.
 TOPE = 300
@@ -263,8 +292,8 @@ class CarreraEntreProcesos(_Base):
             filas.append(fila)
         return filas, len(os.listdir(self.dsal))
 
-    @unittest.skipUnless(HAY_IMAGEMAGICK,
-                        "no hay ImageMagick (`magick`): ningún motor lee png/jpg")
+    @unittest.skipUnless(HAY_IMAGEMAGICK and CORPUS_REAL,
+                         _MOTIVO_CORPUS)
     def test_sin_el_cerrojo_de_maquina_los_dos_procesos_devuelven_ok(self):
         """**La prueba que falla sin el arreglo.** Es el estado del hito 7:
         `FILEX_CERROJO_DESTINO=proceso` es exactamente el `set` en memoria.
@@ -308,8 +337,8 @@ class CarreraEntreProcesos(_Base):
                         "fichero que ya no existe -- reales=%s filas=%s"
                         % (reales, filas))
 
-    @unittest.skipUnless(HAY_IMAGEMAGICK,
-                        "no hay ImageMagick (`magick`): ningún motor lee png/jpg")
+    @unittest.skipUnless(HAY_IMAGEMAGICK and CORPUS_REAL,
+                         _MOTIVO_CORPUS)
     def test_con_el_cerrojo_de_maquina_solo_uno_gana(self):
         """El mismo caso, con el defecto. **El ganador no es determinista; el
         invariante sí** — tres pasadas en §2 del informe, con dos ganadores
@@ -498,6 +527,8 @@ class VentanaAntesDelMove(_Base):
         with open(self.salida, "rb") as f:
             return fila, f.read(4)
 
+    @unittest.skipUnless(HAY_IMAGEMAGICK and CORPUS_REAL,
+                         _MOTIVO_CORPUS)
     def test_con_shutil_move_el_tercero_de_la_ventana_es_atropellado(self):
         """El estado anterior a N12. **12 de 12 celdas** del arnés acabaron
         así: FileX dice `ok` y el fichero del tercero deja de existir, porque
@@ -507,6 +538,8 @@ class VentanaAntesDelMove(_Base):
         self.assertNotEqual(cabecera, b"TTTT",
                             "con shutil.move el fichero del tercero se pisa")
 
+    @unittest.skipUnless(HAY_IMAGEMAGICK and CORPUS_REAL,
+                         _MOTIVO_CORPUS)
     def test_con_os_replace_filex_se_niega_y_no_lo_toca(self):
         """`os.replace` funde la detección y la acción en una sola llamada del
         sistema, así que no queda ventana entre medias."""
@@ -568,16 +601,16 @@ class UnSoloProceso(_Base):
         super().setUp()
         self.fx = FileX(raices_lectura=[self.dir])
 
-    @unittest.skipUnless(HAY_IMAGEMAGICK,
-                        "no hay ImageMagick (`magick`): ningún motor lee png/jpg")
+    @unittest.skipUnless(HAY_IMAGEMAGICK and CORPUS_REAL,
+                         _MOTIVO_CORPUS)
     def test_tres_conversiones_seguidas_al_mismo_destino(self):
         for i in range(3):
             conv = self.fx.convertir(self.png, self.salida, {})
             self.assertTrue(conv.ok, f"pasada {i}: {conv.motivo}")
         self.assertEqual(len(os.listdir(self.dsal)), 1)
 
-    @unittest.skipUnless(HAY_IMAGEMAGICK,
-                        "no hay ImageMagick (`magick`): ningún motor lee png/jpg")
+    @unittest.skipUnless(HAY_IMAGEMAGICK and CORPUS_REAL,
+                         _MOTIVO_CORPUS)
     def test_el_destino_recien_escrito_no_se_detecta_como_ocupado(self):
         """El falso positivo que habría roto todo: FileX acaba de cerrar ese
         fichero. Si `os.replace(p,p)` viera su propio rastro, la segunda
@@ -664,8 +697,8 @@ class DestinoQueEsDirectorio(_Base):
         # El destino existe y es un DIRECTORIO. Nadie lo tiene abierto.
         os.makedirs(self.salida)
 
-    @unittest.skipUnless(HAY_IMAGEMAGICK,
-                        "no hay ImageMagick (`magick`): ningún motor lee png/jpg")
+    @unittest.skipUnless(HAY_IMAGEMAGICK and CORPUS_REAL,
+                         _MOTIVO_CORPUS)
     def test_el_motivo_no_habla_de_otro_proceso(self):
         """**La prueba que se pone roja sin el arreglo**: antes decía
         literalmente «otro proceso tiene abierta esa ruta de salida», y no
