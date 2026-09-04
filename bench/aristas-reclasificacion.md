@@ -428,6 +428,14 @@ contenedores, cero suite, cero GPU, cero lecturas del `corpus/`.** El resto son 
 JSON y de texto ya en disco. `git lfs checkout` **no hizo falta y no se ejecutó**: ningún
 instrumento de este informe abre un fichero del corpus. **[MEDIDO]**
 
+**Y eso no se afirma, se comprueba, porque el worktree da el control gratis:**
+`corpus/imagen/tipico.png` pesa **130 B** —es un puntero de LFS sin descargar (trampa 34)—
+durante todo el informe. Si algún instrumento hubiera leído el corpus, habría fallado
+ruidosamente; los cuatro controles de §1.1 salen exactos con el corpus en punteros, que es
+la prueba positiva de que ninguno lo toca. *(Y es el reverso de la trampa 107: allí
+`os.path.exists` sobre un puntero daba `True` y dejaba entrar a un `ffmpeg`; aquí lo que se
+comprueba es el **tamaño**, que es lo que la trampa prescribe.)*
+
 **PENDIENTE, por orden de lo que devuelve:**
 
 1. **Escribir los 54 de §4.1 con ffmpeg** y materializarlos. Cierra hasta **10 908 aristas**
