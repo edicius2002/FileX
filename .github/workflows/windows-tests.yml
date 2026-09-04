@@ -91,13 +91,22 @@ jobs:
           explícitamente con workflow_dispatch, medir=true)
         if: github.event_name == 'workflow_dispatch' && inputs.medir
         shell: pwsh
-        run: python ci/sonda_windows_hosted.py --tope 90 --json ci-windows-hosted-medido.json
+        run: >-
+          python ci/sonda_windows_hosted.py --tope 90
+          --json ci-windows-hosted-medido.json
+          --logs ci-windows-hosted-logs
 
+      # `always()` a proposito: si la sonda revienta a mitad, lo que interesa
+      # es justo la salida que ya habia escrito -- descartar la salida del caso
+      # que falla es la trampa 103.
       - uses: actions/upload-artifact@v7
-        if: github.event_name == 'workflow_dispatch' && inputs.medir
+        if: >-
+          always() && github.event_name == 'workflow_dispatch' && inputs.medir
         with:
           name: windows-hosted-medido
-          path: ci-windows-hosted-medido.json
+          path: |
+            ci-windows-hosted-medido.json
+            ci-windows-hosted-logs/
 
       - name: >-
           Correr la lista YA CONGELADA (ci/windows-hosted-apto.json), si

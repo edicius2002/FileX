@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """Qué módulos de la suite puede ejecutar un runner Windows HOSPEDADO por
-GitHub (`windows-latest`), MEDIDO.
+GitHub (`windows-latest`), MEDIDO — **con la traza de cada fallo, no sólo su
+recuento**.
 
     python3 ci/sonda_windows_hosted.py [--tope 90] [--json ruta.json]
+                                       [--logs directorio]
 
 **Es un fichero aparte de `ci/sonda_windows.py`, no el mismo con una bandera
 distinta**, por el mismo motivo que separó a éste de `ci/sonda_linux.py`
@@ -25,6 +27,30 @@ sale de `.github/workflows/windows-tests.yml` con `workflow_dispatch` (entrada
 
 Mecánica idéntica a `ci/sonda_linux.py`: tope **por módulo**, no alrededor de
 la suite entera (trampas 52 y 25) -- un tope global no dice cuál colgó.
+
+─────────────────────────────────────────────────────────────────────────────
+POR QUÉ CAPTURA LA TRAZA (ronda 13, C-trazas)
+─────────────────────────────────────────────────────────────────────────────
+La primera versión guardaba **el recuento** de fallos por módulo, y con eso se
+congeló `ci/windows-hosted-apto.json` el 03/09: cinco módulos con «N de M
+fallos -- PENDIENTE de traza, motivo no verificado». **Un recuento no separa
+causas** -- es la trampa 25 en el nivel del arnés: «9 de 24 fallos» tiene la
+misma pinta viniendo de un motor ausente, de un puntero de LFS, de una
+diferencia de sistema de ficheros o de un fallo real del producto, **y los
+cuatro remedios son distintos**. El precedente es `C42` en Linux: diez módulos
+que parecían diez causas eran **dos mecanismos repetidos**, y sólo se vio
+leyendo la traza.
+
+Así que esta versión:
+
+* parsea los bloques `FAIL:` / `ERROR:` de `unittest -v` y guarda, por cada
+  uno, **el nombre del test y su traceback completo** en el JSON;
+* vuelca **la salida íntegra** de cada módulo a `--logs/<modulo>.log`, incluida
+  la de los que fallan y la de los que cuelgan. La trampa 103 se pagó por
+  canalizar a `tail` justo la salida del caso que fallaba: **un arnés que
+  descarta la salida del caso que falla ha medido y no ha aprendido**;
+* imprime un resumen de las trazas por pantalla, para que el log del paso de
+  Actions ya sirva aunque nadie descargue el artefacto.
 """
 
 from __future__ import annotations
@@ -44,8 +70,33 @@ _RESUMEN = re.compile(r"^Ran (\d+) tests? in ([\d.]+)s", re.M)
 _SALTOS = re.compile(r"skipped=(\d+)")
 _FALLOS = re.compile(r"(?:failures|errors)=(\d+)")
 
+# Un bloque de fallo de unittest: 70 '=' , cabecera 'FAIL: ...' o 'ERROR: ...',
+# 70 '-', el traceback, y hasta la siguiente linea de 70 '=' o '-'.
+_BLOQUE = re.compile(
+    r"^={70}\n(FAIL|ERROR):[ ]+(.*?)\n-{70}\n(.*?)(?=^={70}\n|^-{70}\n)",
+    re.M | re.S)
 
-def mide(modulo: str, tope: int) -> dict:
+# Tope por traza: una traza larguisima no puede tapar a las demas en el log.
+TOPE_TRAZA = 6000
+
+
+def _trazas(salida: str) -> list[dict]:
+    """Los bloques FAIL/ERROR de una salida de `unittest -v`, con traceback."""
+    fuera = []
+    for tipo, prueba, traza in _BLOQUE.findall(salida):
+        traza = traza.rstrip()
+        recortada = len(traza) > TOPE_TRAZA
+        if recortada:
+            # Recorta por el PRINCIPIO: la ultima linea es la excepcion, que es
+            # justo lo que identifica la causa.
+            traza = "[... %d caracteres recortados ...]\n%s" % (
+                len(traza) - TOPE_TRAZA, traza[-TOPE_TRAZA:])
+        fuera.append({"tipo": tipo, "prueba": prueba.strip(),
+                      "traza": traza, "recortada": recortada})
+    return fuera
+
+
+def mide(modulo: str, tope: int, logs: pathlib.Path | None) -> dict:
     t0 = time.monotonic()
     try:
         r = subprocess.run(
@@ -74,9 +125,23 @@ def mide(modulo: str, tope: int) -> dict:
     else:
         veredicto, culpable = "FALLA", ""
 
+    # La salida ENTERA a disco, tambien --y sobre todo-- la de los que fallan
+    # y la de los que cuelgan (trampa 103).
+    ruta_log = ""
+    if logs is not None:
+        logs.mkdir(parents=True, exist_ok=True)
+        f = logs / ("%s.log" % modulo)
+        f.write_text(salida, encoding="utf-8", errors="replace")
+        try:
+            ruta_log = str(f.relative_to(RAIZ))
+        except ValueError:
+            ruta_log = str(f)
+
     return {"modulo": modulo, "veredicto": veredicto, "rc": rc,
             "corridas": corridas, "saltos": saltos, "fallos": fallos,
-            "segundos": round(segundos, 1), "cuelga_en": culpable}
+            "segundos": round(segundos, 1), "cuelga_en": culpable,
+            "trazas": _trazas(salida), "log": ruta_log,
+            "bytes_de_salida": len(salida)}
 
 
 def main() -> int:
@@ -85,8 +150,13 @@ def main() -> int:
                     help="segundos por módulo (defecto 90, como Linux)")
     ap.add_argument("--json", type=pathlib.Path,
                     default=RAIZ / "ci" / "windows-hosted-apto.json")
+    ap.add_argument("--logs", type=pathlib.Path,
+                    default=RAIZ / "ci-windows-hosted-logs",
+                    help="directorio donde volcar la salida ÍNTEGRA de cada "
+                         "módulo (vacío para no volcar nada)")
     args = ap.parse_args()
 
+    logs = args.logs if str(args.logs) else None
     modulos = sorted(p.stem for p in PRUEBAS.glob("test_*.py"))
     print("%-26s %-7s %6s %6s %6s %7s  %s" % (
         "modulo", "verdicto", "corr", "salt", "fall", "seg", "cuelga en"))
@@ -94,7 +164,7 @@ def main() -> int:
 
     filas = []
     for m in modulos:
-        f = mide(m, args.tope)
+        f = mide(m, args.tope, logs)
         filas.append(f)
         print("%-26s %-7s %6d %6d %6d %7.1f  %s" % (
             f["modulo"], f["veredicto"], f["corridas"], f["saltos"],
@@ -119,6 +189,19 @@ def main() -> int:
         print("FALLA: %s" % ", ".join(
             "%s (%s)" % kv for kv in no_aptos_falla.items()))
 
+    # Las TRAZAS por pantalla: el log del paso de Actions tiene que servir sin
+    # descargar el artefacto.
+    for f in filas:
+        if f["veredicto"] == "APTO" or not f["trazas"]:
+            continue
+        print("\n" + "=" * 82)
+        print("TRAZAS de %s -- %d bloque(s), salida íntegra en %s"
+              % (f["modulo"], len(f["trazas"]), f["log"] or "(sin volcar)"))
+        print("=" * 82)
+        for t in f["trazas"]:
+            print("\n--- %s: %s" % (t["tipo"], t["prueba"]))
+            print(t["traza"])
+
     salida = {
         "_": ("Medido con %s el %s en windows-latest (runner hospedado por "
               "GitHub). Se regenera lanzando `.github/workflows/"
@@ -126,7 +209,10 @@ def main() -> int:
               "true) -- correrlo en otra máquina Windows mide otro entorno "
               "y no vale (trampa 104). APTO = rc 0 dentro del tope; no "
               "significa que la prueba MIDA algo en Windows, sólo que no "
-              "rompe ni cuelga." % (sys.version.split()[0], time.strftime("%Y-%m-%d"))),
+              "rompe ni cuelga. Cada fila de `detalle` trae `trazas` con el "
+              "nombre y el traceback de cada FAIL/ERROR, y `log` con la ruta "
+              "de la salida íntegra: un recuento no separa causas (trampa 25 "
+              "en el nivel del arnés)." % (sys.version.split()[0], time.strftime("%Y-%m-%d"))),
         "interprete": sys.version.split()[0],
         "plataforma": sys.platform,
         "medido_en": "PENDIENTE -- rellenar con el número de `run` real de "
