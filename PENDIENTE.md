@@ -20,6 +20,14 @@ suite        501 passed · 3 skipped · 0 failed · 179 subtests · 265,49 s
 > filas rehecha sin volver a mirar el inventario sería exactamente la cifra caducada que
 > este documento existe para evitar.
 
+> **Vocabulario, para quien llegue de fuera.** Este proyecto se desarrolla en **rondas** de
+> trabajo paralelo, y cada carril de una ronda lo lleva una sesión con un identificador
+> (`worker1`, `worker2`…); **«el maestro»** es quien integra y verifica lo que entrega cada
+> carril. Esos nombres aparecen aquí como **atribución de quién midió cada cosa**, que es la
+> trazabilidad que el repositorio exige a cualquier cifra — no como reparto de trabajo
+> vigente ni como algo que un lector tenga que seguir. Las filas (`B3`, `C28`…) son
+> identificadores del inventario de [`ESTADO-Y-REPARTO.md`](ESTADO-Y-REPARTO.md) §3.
+
 Este documento **no** toca `ESTADO-Y-REPARTO.md` ni `CLAUDE.md` ni ningún módulo de
 `filex/` — sólo los lee.
 
