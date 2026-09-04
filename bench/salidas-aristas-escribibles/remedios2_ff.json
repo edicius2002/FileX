@@ -1,0 +1,582 @@
+{
+ "alp": {
+  "bytes": 11041,
+  "celdas": [
+   {
+    "argv": [
+     "ffmpeg",
+     "-nostdin",
+     "-y",
+     "-i",
+     "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\semillas\\s48.wav",
+     "-f",
+     "alp",
+     "-c:a",
+     "adpcm_ima_alp",
+     "-ar",
+     "22050",
+     "-ac",
+     "1",
+     "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\trabajo\\c6001\\m.alp"
+    ],
+    "bytes": 11041,
+    "bytes_dir": 11041,
+    "clase_rc": "rc0",
+    "escribe_directorio": false,
+    "ficheros_extra": [],
+    "motivo_del_remedio": "alp: 'Could not write header (incorrect codec parameters ?)'",
+    "ms": 67.6,
+    "n": 6001,
+    "nivel": "remedio+muxer",
+    "ok": true,
+    "rc": 0,
+    "semilla": "audio48",
+    "stderr": "",
+    "token": "alp"
+   }
+  ],
+  "materializado": true,
+  "remedio": "-f alp -c:a adpcm_ima_alp -ar 22050 -ac 1"
+ },
+ "daud": {
+  "bytes": 1728192,
+  "celdas": [
+   {
+    "argv": [
+     "ffmpeg",
+     "-nostdin",
+     "-y",
+     "-i",
+     "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\semillas\\s48.wav",
+     "-f",
+     "daud",
+     "-ac",
+     "6",
+     "-ar",
+     "96000",
+     "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\trabajo\\c6002\\m.daud"
+    ],
+    "bytes": 1728192,
+    "bytes_dir": 1728192,
+    "clase_rc": "rc0",
+    "escribe_directorio": false,
+    "ficheros_extra": [],
+    "motivo_del_remedio": "daud: 'Invalid number of channels 1, must be exactly 6'",
+    "ms": 61.9,
+    "n": 6002,
+    "nivel": "remedio+muxer",
+    "ok": true,
+    "rc": 0,
+    "semilla": "audio48",
+    "stderr": "",
+    "token": "daud"
+   }
+  ],
+  "materializado": true,
+  "remedio": "-f daud -ac 6 -ar 96000"
+ },
+ "filmstrip": {
+  "bytes": 10137636,
+  "celdas": [
+   {
+    "argv": [
+     "ffmpeg",
+     "-nostdin",
+     "-y",
+     "-i",
+     "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\semillas\\s_cif.mp4",
+     "-f",
+     "filmstrip",
+     "-pix_fmt",
+     "rgba",
+     "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\trabajo\\c6003\\m.filmstrip"
+    ],
+    "bytes": 10137636,
+    "bytes_dir": 10137636,
+    "clase_rc": "rc0",
+    "escribe_directorio": false,
+    "ficheros_extra": [],
+    "motivo_del_remedio": "filmstrip: 'only AV_PIX_FMT_RGBA is supported'",
+    "ms": 66.2,
+    "n": 6003,
+    "nivel": "remedio+muxer",
+    "ok": true,
+    "rc": 0,
+    "semilla": "video_cif",
+    "stderr": "",
+    "token": "filmstrip"
+   }
+  ],
+  "materializado": true,
+  "remedio": "-f filmstrip -pix_fmt rgba"
+ },
+ "g723_1": {
+  "bytes": 816,
+  "celdas": [
+   {
+    "argv": [
+     "ffmpeg",
+     "-nostdin",
+     "-y",
+     "-i",
+     "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\semillas\\s48.wav",
+     "-f",
+     "g723_1",
+     "-ar",
+     "8000",
+     "-ac",
+     "1",
+     "-b:a",
+     "6.3k",
+     "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\trabajo\\c6004\\m.g723_1"
+    ],
+    "bytes": 816,
+    "bytes_dir": 816,
+    "clase_rc": "rc0",
+    "escribe_directorio": false,
+    "ficheros_extra": [],
+    "motivo_del_remedio": "g723_1: Error while opening encoder; G.723.1 solo admite 8 kHz mono",
+    "ms": 76.4,
+    "n": 6004,
+    "nivel": "remedio+muxer",
+    "ok": true,
+    "rc": 0,
+    "semilla": "audio48",
+    "stderr": "",
+    "token": "g723_1"
+   }
+  ],
+  "materializado": true,
+  "remedio": "-f g723_1 -ar 8000 -ac 1 -b:a 6.3k"
+ },
+ "g726": {
+  "bytes": 2000,
+  "celdas": [
+   {
+    "argv": [
+     "ffmpeg",
+     "-nostdin",
+     "-y",
+     "-i",
+     "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\semillas\\s48.wav",
+     "-f",
+     "g726",
+     "-ar",
+     "8000",
+     "-ac",
+     "1",
+     "-b:a",
+     "16k",
+     "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\trabajo\\c6005\\m.g726"
+    ],
+    "bytes": 2000,
+    "bytes_dir": 2000,
+    "clase_rc": "rc0",
+    "escribe_directorio": false,
+    "ficheros_extra": [],
+    "motivo_del_remedio": "g726: Error while opening encoder; ADPCM G.726 exige 8 kHz mono y tasa fija",
+    "ms": 70.0,
+    "n": 6005,
+    "nivel": "remedio+muxer",
+    "ok": true,
+    "rc": 0,
+    "semilla": "audio48",
+    "stderr": "",
+    "token": "g726"
+   }
+  ],
+  "materializado": true,
+  "remedio": "-f g726 -ar 8000 -ac 1 -b:a 16k"
+ },
+ "g726le": {
+  "bytes": 2000,
+  "celdas": [
+   {
+    "argv": [
+     "ffmpeg",
+     "-nostdin",
+     "-y",
+     "-i",
+     "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\semillas\\s48.wav",
+     "-f",
+     "g726le",
+     "-ar",
+     "8000",
+     "-ac",
+     "1",
+     "-b:a",
+     "16k",
+     "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\trabajo\\c6006\\m.g726le"
+    ],
+    "bytes": 2000,
+    "bytes_dir": 2000,
+    "clase_rc": "rc0",
+    "escribe_directorio": false,
+    "ficheros_extra": [],
+    "motivo_del_remedio": "idem g726",
+    "ms": 53.4,
+    "n": 6006,
+    "nivel": "remedio+muxer",
+    "ok": true,
+    "rc": 0,
+    "semilla": "audio48",
+    "stderr": "",
+    "token": "g726le"
+   }
+  ],
+  "materializado": true,
+  "remedio": "-f g726le -ar 8000 -ac 1 -b:a 16k"
+ },
+ "jacosub": {
+  "bytes": -1,
+  "celdas": [
+   {
+    "argv": [
+     "ffmpeg",
+     "-nostdin",
+     "-y",
+     "-i",
+     "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\semillas\\s.srt",
+     "-f",
+     "jacosub",
+     "-c:s",
+     "jacosub",
+     "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\trabajo\\c6007\\m.jacosub"
+    ],
+    "bytes": -1,
+    "bytes_dir": 0,
+    "clase_rc": "ENCODER_NOT_FOUND",
+    "escribe_directorio": false,
+    "ficheros_extra": [],
+    "motivo_del_remedio": "idem",
+    "ms": 39.1,
+    "n": 6007,
+    "nivel": "remedio+muxer",
+    "ok": false,
+    "rc": -1129203192,
+    "semilla": "subtitulo",
+    "stderr": "-enable-libxavs2 --enable-libxvid --enable-libzimg --enable-libzvbi --extra-cflags=-DLIBTWOLAME_STATIC --extra-cxxflags= --extra-libs=-lgomp --extra-ldflags=-pthread --extra-ldexeflags= --cc=x86_64-w64-mingw32-gcc --cxx=x86_64-w64-mingw32-g++ --ar=x86_64-w64-mingw32-gcc-ar --ranlib=x86_64-w64-mingw32-gcc-ranlib --nm=x86_64-w64-mingw32-gcc-nm --extra-version=20250921 |   libavutil      60. 13.100 / 60. 13.100 |   libavcodec     62. 15.100 / 62. 15.100 |   libavformat    62.  6.100 / 62.  6.100 |   libavdevice    62.  2.100 / 62.  2.100 |   libavfilter    11.  9.100 / 11.  9.100 |   libswscale      9.  3.100 /  9.  3.100 |   libswresample   6.  2.100 /  6.  2.100 | Input #0, srt, from 'D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\semillas\\s.srt': |   Duration: N/A, bitrate: N/A |   Stream #0:0: Subtitle: subrip (srt) | [sost#0:0 @ 000001f75262f940] Unknown encoder 'jacosub' | [sost#0:0 @ 000001f75262f940] Error selecting an encoder | Error opening output file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\trabajo\\c6007\\m.jacosub. | Error opening output files: Encoder not found | ",
+    "token": "jacosub"
+   },
+   {
+    "argv": [
+     "ffmpeg",
+     "-nostdin",
+     "-y",
+     "-i",
+     "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\semillas\\s.srt",
+     "-f",
+     "jacosub",
+     "-c:s",
+     "text",
+     "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\trabajo\\c6008\\m.jacosub"
+    ],
+    "bytes": 0,
+    "bytes_dir": 0,
+    "clase_rc": "EINVAL",
+    "escribe_directorio": false,
+    "ficheros_extra": [],
+    "motivo_del_remedio": "alt",
+    "ms": 42.0,
+    "n": 6008,
+    "nivel": "remedio+muxer",
+    "ok": false,
+    "rc": -22,
+    "semilla": "subtitulo",
+    "stderr": "   libavutil      60. 13.100 / 60. 13.100 |   libavcodec     62. 15.100 / 62. 15.100 |   libavformat    62.  6.100 / 62.  6.100 |   libavdevice    62.  2.100 / 62.  2.100 |   libavfilter    11.  9.100 / 11.  9.100 |   libswscale      9.  3.100 /  9.  3.100 |   libswresample   6.  2.100 /  6.  2.100 | Input #0, srt, from 'D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\semillas\\s.srt': |   Duration: N/A, bitrate: N/A |   Stream #0:0: Subtitle: subrip (srt) | Stream mapping: |   Stream #0:0 -> #0:0 (subrip (srt) -> text (native)) | [jacosub @ 000001dd7a789b80] jacosub muxer supports only codec jacosub for type subtitle | [out#0/jacosub @ 000001dd7a7e70c0] Could not write header (incorrect codec parameters ?): Invalid argument | [sost#0:0/text @ 000001dd7a797000] Task finished with error code: -22 (Invalid argument) | [sost#0:0/text @ 000001dd7a797000] Terminating thread with return code -22 (Invalid argument) | [out#0/jacosub @ 000001dd7a7e70c0] Nothing was written into output file, because at least one of its streams received no packets. | size=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00     | Conversion failed! | ",
+    "token": "jacosub"
+   }
+  ],
+  "materializado": false,
+  "remedio": null
+ },
+ "mcc": {
+  "bytes": -1,
+  "celdas": [
+   {
+    "argv": [
+     "ffmpeg",
+     "-nostdin",
+     "-y",
+     "-i",
+     "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\semillas\\s.srt",
+     "-f",
+     "mcc",
+     "-c:s",
+     "eia_608",
+     "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\trabajo\\c6009\\m.mcc"
+    ],
+    "bytes": -1,
+    "bytes_dir": 0,
+    "clase_rc": "ENCODER_NOT_FOUND",
+    "escribe_directorio": false,
+    "ficheros_extra": [],
+    "motivo_del_remedio": "idem",
+    "ms": 48.1,
+    "n": 6009,
+    "nivel": "remedio+muxer",
+    "ok": false,
+    "rc": -1129203192,
+    "semilla": "subtitulo",
+    "stderr": "65 --enable-libxavs2 --enable-libxvid --enable-libzimg --enable-libzvbi --extra-cflags=-DLIBTWOLAME_STATIC --extra-cxxflags= --extra-libs=-lgomp --extra-ldflags=-pthread --extra-ldexeflags= --cc=x86_64-w64-mingw32-gcc --cxx=x86_64-w64-mingw32-g++ --ar=x86_64-w64-mingw32-gcc-ar --ranlib=x86_64-w64-mingw32-gcc-ranlib --nm=x86_64-w64-mingw32-gcc-nm --extra-version=20250921 |   libavutil      60. 13.100 / 60. 13.100 |   libavcodec     62. 15.100 / 62. 15.100 |   libavformat    62.  6.100 / 62.  6.100 |   libavdevice    62.  2.100 / 62.  2.100 |   libavfilter    11.  9.100 / 11.  9.100 |   libswscale      9.  3.100 /  9.  3.100 |   libswresample   6.  2.100 /  6.  2.100 | Input #0, srt, from 'D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\semillas\\s.srt': |   Duration: N/A, bitrate: N/A |   Stream #0:0: Subtitle: subrip (srt) | [sost#0:0 @ 000002903eaebcc0] Unknown encoder 'eia_608' | [sost#0:0 @ 000002903eaebcc0] Error selecting an encoder | Error opening output file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\trabajo\\c6009\\m.mcc. | Error opening output files: Encoder not found | ",
+    "token": "mcc"
+   },
+   {
+    "argv": [
+     "ffmpeg",
+     "-nostdin",
+     "-y",
+     "-i",
+     "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\semillas\\s.srt",
+     "-f",
+     "mcc",
+     "-c:s",
+     "text",
+     "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\trabajo\\c6010\\m.mcc"
+    ],
+    "bytes": 0,
+    "bytes_dir": 0,
+    "clase_rc": "EINVAL",
+    "escribe_directorio": false,
+    "ficheros_extra": [],
+    "motivo_del_remedio": "alt",
+    "ms": 44.4,
+    "n": 6010,
+    "nivel": "remedio+muxer",
+    "ok": false,
+    "rc": -22,
+    "semilla": "subtitulo",
+    "stderr": "libavutil      60. 13.100 / 60. 13.100 |   libavcodec     62. 15.100 / 62. 15.100 |   libavformat    62.  6.100 / 62.  6.100 |   libavdevice    62.  2.100 / 62.  2.100 |   libavfilter    11.  9.100 / 11.  9.100 |   libswscale      9.  3.100 /  9.  3.100 |   libswresample   6.  2.100 /  6.  2.100 | Input #0, srt, from 'D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\semillas\\s.srt': |   Duration: N/A, bitrate: N/A |   Stream #0:0: Subtitle: subrip (srt) | Stream mapping: |   Stream #0:0 -> #0:0 (subrip (srt) -> text (native)) | [mcc @ 000002a83fa39b40] time code rate not set, you need to use -override_time_code_rate to set it | [out#0/mcc @ 000002a83fa98a80] Could not write header (incorrect codec parameters ?): Invalid argument | [sost#0:0/text @ 000002a83fa3b400] Task finished with error code: -22 (Invalid argument) | [sost#0:0/text @ 000002a83fa3b400] Terminating thread with return code -22 (Invalid argument) | [out#0/mcc @ 000002a83fa98a80] Nothing was written into output file, because at least one of its streams received no packets. | size=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00     | Conversion failed! | ",
+    "token": "mcc"
+   }
+  ],
+  "materializado": false,
+  "remedio": null
+ },
+ "microdvd": {
+  "bytes": -1,
+  "celdas": [
+   {
+    "argv": [
+     "ffmpeg",
+     "-nostdin",
+     "-y",
+     "-i",
+     "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\semillas\\s.srt",
+     "-f",
+     "microdvd",
+     "-c:s",
+     "microdvd",
+     "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\trabajo\\c6011\\m.microdvd"
+    ],
+    "bytes": -1,
+    "bytes_dir": 0,
+    "clase_rc": "ENCODER_NOT_FOUND",
+    "escribe_directorio": false,
+    "ficheros_extra": [],
+    "motivo_del_remedio": "muxer sin stream: se fuerza el codec de subtitulo",
+    "ms": 56.0,
+    "n": 6011,
+    "nivel": "remedio+muxer",
+    "ok": false,
+    "rc": -1129203192,
+    "semilla": "subtitulo",
+    "stderr": "nable-libxavs2 --enable-libxvid --enable-libzimg --enable-libzvbi --extra-cflags=-DLIBTWOLAME_STATIC --extra-cxxflags= --extra-libs=-lgomp --extra-ldflags=-pthread --extra-ldexeflags= --cc=x86_64-w64-mingw32-gcc --cxx=x86_64-w64-mingw32-g++ --ar=x86_64-w64-mingw32-gcc-ar --ranlib=x86_64-w64-mingw32-gcc-ranlib --nm=x86_64-w64-mingw32-gcc-nm --extra-version=20250921 |   libavutil      60. 13.100 / 60. 13.100 |   libavcodec     62. 15.100 / 62. 15.100 |   libavformat    62.  6.100 / 62.  6.100 |   libavdevice    62.  2.100 / 62.  2.100 |   libavfilter    11.  9.100 / 11.  9.100 |   libswscale      9.  3.100 /  9.  3.100 |   libswresample   6.  2.100 /  6.  2.100 | Input #0, srt, from 'D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\semillas\\s.srt': |   Duration: N/A, bitrate: N/A |   Stream #0:0: Subtitle: subrip (srt) | [sost#0:0 @ 000002617edb0cc0] Unknown encoder 'microdvd' | [sost#0:0 @ 000002617edb0cc0] Error selecting an encoder | Error opening output file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\trabajo\\c6011\\m.microdvd. | Error opening output files: Encoder not found | ",
+    "token": "microdvd"
+   },
+   {
+    "argv": [
+     "ffmpeg",
+     "-nostdin",
+     "-y",
+     "-i",
+     "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\semillas\\s.srt",
+     "-f",
+     "microdvd",
+     "-c:s",
+     "text",
+     "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\trabajo\\c6012\\m.microdvd"
+    ],
+    "bytes": 0,
+    "bytes_dir": 0,
+    "clase_rc": "EINVAL",
+    "escribe_directorio": false,
+    "ficheros_extra": [],
+    "motivo_del_remedio": "alt: codificador de texto crudo",
+    "ms": 43.7,
+    "n": 6012,
+    "nivel": "remedio+muxer",
+    "ok": false,
+    "rc": -22,
+    "semilla": "subtitulo",
+    "stderr": "bavutil      60. 13.100 / 60. 13.100 |   libavcodec     62. 15.100 / 62. 15.100 |   libavformat    62.  6.100 / 62.  6.100 |   libavdevice    62.  2.100 / 62.  2.100 |   libavfilter    11.  9.100 / 11.  9.100 |   libswscale      9.  3.100 /  9.  3.100 |   libswresample   6.  2.100 /  6.  2.100 | Input #0, srt, from 'D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\semillas\\s.srt': |   Duration: N/A, bitrate: N/A |   Stream #0:0: Subtitle: subrip (srt) | Stream mapping: |   Stream #0:0 -> #0:0 (subrip (srt) -> text (native)) | [microdvd @ 0000020dbf489b40] microdvd muxer supports only codec microdvd for type subtitle | [out#0/microdvd @ 0000020dbf4e6b80] Could not write header (incorrect codec parameters ?): Invalid argument | [sost#0:0/text @ 0000020dbf48fb00] Task finished with error code: -22 (Invalid argument) | [sost#0:0/text @ 0000020dbf48fb00] Terminating thread with return code -22 (Invalid argument) | [out#0/microdvd @ 0000020dbf4e6b80] Nothing was written into output file, because at least one of its streams received no packets. | size=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00     | Conversion failed! | ",
+    "token": "microdvd"
+   }
+  ],
+  "materializado": false,
+  "remedio": null
+ },
+ "scc": {
+  "bytes": -1,
+  "celdas": [
+   {
+    "argv": [
+     "ffmpeg",
+     "-nostdin",
+     "-y",
+     "-i",
+     "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\semillas\\s.srt",
+     "-f",
+     "scc",
+     "-c:s",
+     "eia_608",
+     "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\trabajo\\c6013\\m.scc"
+    ],
+    "bytes": -1,
+    "bytes_dir": 0,
+    "clase_rc": "ENCODER_NOT_FOUND",
+    "escribe_directorio": false,
+    "ficheros_extra": [],
+    "motivo_del_remedio": "idem",
+    "ms": 47.8,
+    "n": 6013,
+    "nivel": "remedio+muxer",
+    "ok": false,
+    "rc": -1129203192,
+    "semilla": "subtitulo",
+    "stderr": "65 --enable-libxavs2 --enable-libxvid --enable-libzimg --enable-libzvbi --extra-cflags=-DLIBTWOLAME_STATIC --extra-cxxflags= --extra-libs=-lgomp --extra-ldflags=-pthread --extra-ldexeflags= --cc=x86_64-w64-mingw32-gcc --cxx=x86_64-w64-mingw32-g++ --ar=x86_64-w64-mingw32-gcc-ar --ranlib=x86_64-w64-mingw32-gcc-ranlib --nm=x86_64-w64-mingw32-gcc-nm --extra-version=20250921 |   libavutil      60. 13.100 / 60. 13.100 |   libavcodec     62. 15.100 / 62. 15.100 |   libavformat    62.  6.100 / 62.  6.100 |   libavdevice    62.  2.100 / 62.  2.100 |   libavfilter    11.  9.100 / 11.  9.100 |   libswscale      9.  3.100 /  9.  3.100 |   libswresample   6.  2.100 /  6.  2.100 | Input #0, srt, from 'D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\semillas\\s.srt': |   Duration: N/A, bitrate: N/A |   Stream #0:0: Subtitle: subrip (srt) | [sost#0:0 @ 0000017c20974e40] Unknown encoder 'eia_608' | [sost#0:0 @ 0000017c20974e40] Error selecting an encoder | Error opening output file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\trabajo\\c6013\\m.scc. | Error opening output files: Encoder not found | ",
+    "token": "scc"
+   },
+   {
+    "argv": [
+     "ffmpeg",
+     "-nostdin",
+     "-y",
+     "-i",
+     "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\semillas\\s.srt",
+     "-f",
+     "scc",
+     "-c:s",
+     "text",
+     "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\trabajo\\c6014\\m.scc"
+    ],
+    "bytes": 0,
+    "bytes_dir": 0,
+    "clase_rc": "EINVAL",
+    "escribe_directorio": false,
+    "ficheros_extra": [],
+    "motivo_del_remedio": "alt",
+    "ms": 40.1,
+    "n": 6014,
+    "nivel": "remedio+muxer",
+    "ok": false,
+    "rc": -22,
+    "semilla": "subtitulo",
+    "stderr": "rsion=20250921 |   libavutil      60. 13.100 / 60. 13.100 |   libavcodec     62. 15.100 / 62. 15.100 |   libavformat    62.  6.100 / 62.  6.100 |   libavdevice    62.  2.100 / 62.  2.100 |   libavfilter    11.  9.100 / 11.  9.100 |   libswscale      9.  3.100 /  9.  3.100 |   libswresample   6.  2.100 /  6.  2.100 | Input #0, srt, from 'D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\semillas\\s.srt': |   Duration: N/A, bitrate: N/A |   Stream #0:0: Subtitle: subrip (srt) | Stream mapping: |   Stream #0:0 -> #0:0 (subrip (srt) -> text (native)) | [scc @ 00000268e6803900] scc muxer supports only codec eia_608 for type subtitle | [out#0/scc @ 00000268e6857c00] Could not write header (incorrect codec parameters ?): Invalid argument | [sost#0:0/text @ 00000268e67fafc0] Task finished with error code: -22 (Invalid argument) | [sost#0:0/text @ 00000268e67fafc0] Terminating thread with return code -22 (Invalid argument) | [out#0/scc @ 00000268e6857c00] Nothing was written into output file, because at least one of its streams received no packets. | size=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00     | Conversion failed! | ",
+    "token": "scc"
+   }
+  ],
+  "materializado": false,
+  "remedio": null
+ },
+ "sup": {
+  "bytes": -1,
+  "celdas": [
+   {
+    "argv": [
+     "ffmpeg",
+     "-nostdin",
+     "-y",
+     "-i",
+     "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\semillas\\s.srt",
+     "-f",
+     "sup",
+     "-c:s",
+     "dvdsub",
+     "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\trabajo\\c6015\\m.sup"
+    ],
+    "bytes": -1,
+    "bytes_dir": 0,
+    "clase_rc": "EINVAL",
+    "escribe_directorio": false,
+    "ficheros_extra": [],
+    "motivo_del_remedio": "sup es HDMV PGS: subtitulo de MAPA DE BITS",
+    "ms": 40.1,
+    "n": 6015,
+    "nivel": "remedio+muxer",
+    "ok": false,
+    "rc": -22,
+    "semilla": "subtitulo",
+    "stderr": "5 --enable-libxavs2 --enable-libxvid --enable-libzimg --enable-libzvbi --extra-cflags=-DLIBTWOLAME_STATIC --extra-cxxflags= --extra-libs=-lgomp --extra-ldflags=-pthread --extra-ldexeflags= --cc=x86_64-w64-mingw32-gcc --cxx=x86_64-w64-mingw32-g++ --ar=x86_64-w64-mingw32-gcc-ar --ranlib=x86_64-w64-mingw32-gcc-ranlib --nm=x86_64-w64-mingw32-gcc-nm --extra-version=20250921 |   libavutil      60. 13.100 / 60. 13.100 |   libavcodec     62. 15.100 / 62. 15.100 |   libavformat    62.  6.100 / 62.  6.100 |   libavdevice    62.  2.100 / 62.  2.100 |   libavfilter    11.  9.100 / 11.  9.100 |   libswscale      9.  3.100 /  9.  3.100 |   libswresample   6.  2.100 /  6.  2.100 | Input #0, srt, from 'D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\semillas\\s.srt': |   Duration: N/A, bitrate: N/A |   Stream #0:0: Subtitle: subrip (srt) | [sost#0:0/dvdsub @ 00000144350eb440] Subtitle encoding currently only possible from text to text or bitmap to bitmap | Error opening output file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\trabajo\\c6015\\m.sup. | Error opening output files: Invalid argument | ",
+    "token": "sup"
+   },
+   {
+    "argv": [
+     "ffmpeg",
+     "-nostdin",
+     "-y",
+     "-i",
+     "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\semillas\\s_cif.mp4",
+     "-f",
+     "sup",
+     "-c:s",
+     "dvdsub",
+     "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\trabajo\\c6016\\m.sup"
+    ],
+    "bytes": -1,
+    "bytes_dir": 0,
+    "clase_rc": "EINVAL",
+    "escribe_directorio": false,
+    "ficheros_extra": [],
+    "motivo_del_remedio": "alt: desde video",
+    "ms": 45.7,
+    "n": 6016,
+    "nivel": "remedio+muxer",
+    "ok": false,
+    "rc": -22,
+    "semilla": "video_cif",
+    "stderr": "c56accbd58e35021\\bench\\salidas-aristas-escribibles\\semillas\\s_cif.mp4': |   Metadata: |     major_brand     : isom |     minor_version   : 512 |     compatible_brands: isomiso2avc1mp41 |     encoder         : Lavf62.6.100 |   Duration: 00:00:01.00, start: 0.000000, bitrate: 840 kb/s |   Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 352x288 [SAR 1:1 DAR 11:9], 57 kb/s, 25 fps, 25 tbr, 12800 tbn (default) |     Metadata: |       handler_name    : VideoHandler |       vendor_id       : [0][0][0][0] |       encoder         : Lavc62.15.100 libx264 |   Stream #0:1[0x2](und): Audio: pcm_s16le (ipcm / 0x6D637069), 48000 Hz, mono, s16, 768 kb/s (default) |     Metadata: |       handler_name    : SoundHandler |       vendor_id       : [0][0][0][0] | Output #0, sup, to 'D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\trabajo\\c6016\\m.sup': | [out#0/sup @ 0000026bcd668680] Output file does not contain any stream | Error opening output file D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\trabajo\\c6016\\m.sup. | Error opening output files: Invalid argument | ",
+    "token": "sup"
+   }
+  ],
+  "materializado": false,
+  "remedio": null
+ },
+ "truehd": {
+  "bytes": 35060,
+  "celdas": [
+   {
+    "argv": [
+     "ffmpeg",
+     "-nostdin",
+     "-y",
+     "-i",
+     "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\semillas\\s48.wav",
+     "-f",
+     "truehd",
+     "-strict",
+     "-2",
+     "-ar",
+     "48000",
+     "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-ac56accbd58e35021\\bench\\salidas-aristas-escribibles\\trabajo\\c6017\\m.truehd"
+    ],
+    "bytes": 35060,
+    "bytes_dir": 35060,
+    "clase_rc": "rc0",
+    "escribe_directorio": false,
+    "ficheros_extra": [],
+    "motivo_del_remedio": "AVERROR_EXPERIMENTAL; mismo codificador que thd, que C28 escribio 2/2",
+    "ms": 73.1,
+    "n": 6017,
+    "nivel": "remedio+muxer",
+    "ok": true,
+    "rc": 0,
+    "semilla": "audio48",
+    "stderr": "",
+    "token": "truehd"
+   }
+  ],
+  "materializado": true,
+  "remedio": "-f truehd -strict -2 -ar 48000"
+ }
+}
