@@ -1,0 +1,192 @@
+{
+ "contenedor": "filex-convertx",
+ "control_arnes": {
+  "rc": 0,
+  "salida": "VIVO_DESDE_UN_BUILTIN"
+ },
+ "control_sonda_encoders": {
+  "control": {
+   "aac": true,
+   "flac": true,
+   "libx264": true,
+   "pcm_s16le": true
+  },
+  "total": 226
+ },
+ "ejecucion_dentro": {
+  "ac4": {
+   "bytes": -1,
+   "mensaje": "Error opening output files: Encoder not found",
+   "ms": 482.4,
+   "ok": false,
+   "rc": 8,
+   "salida": "RC=8\nBYTES=-1\nError opening output files: Encoder not found",
+   "semilla": "s48.wav"
+  },
+  "aea": {
+   "bytes": -1,
+   "mensaje": "Error opening output files: Encoder not found",
+   "ms": 273.5,
+   "ok": false,
+   "rc": 8,
+   "salida": "RC=8\nBYTES=-1\nError opening output files: Encoder not found",
+   "semilla": "s48.wav"
+  },
+  "avs3": {
+   "bytes": -1,
+   "mensaje": "Error opening output files: Encoder not found",
+   "ms": 264.9,
+   "ok": false,
+   "rc": 8,
+   "salida": "RC=8\nBYTES=-1\nError opening output files: Encoder not found",
+   "semilla": "s_cif.mp4"
+  },
+  "bit": {
+   "bytes": -1,
+   "mensaje": "Error opening output files: Encoder not found",
+   "ms": 401.2,
+   "ok": false,
+   "rc": 8,
+   "salida": "RC=8\nBYTES=-1\nError opening output files: Encoder not found",
+   "semilla": "s48.wav"
+  },
+  "cavsvideo": {
+   "bytes": -1,
+   "mensaje": "Error opening output files: Encoder not found",
+   "ms": 385.8,
+   "ok": false,
+   "rc": 8,
+   "salida": "RC=8\nBYTES=-1\nError opening output files: Encoder not found",
+   "semilla": "s_cif.mp4"
+  },
+  "codec2": {
+   "bytes": 182,
+   "mensaje": "",
+   "ms": 409.8,
+   "ok": true,
+   "rc": 0,
+   "salida": "RC=0\nBYTES=182",
+   "semilla": "s48.wav"
+  },
+  "codec2raw": {
+   "bytes": 175,
+   "mensaje": "",
+   "ms": 726.9,
+   "ok": true,
+   "rc": 0,
+   "salida": "RC=0\nBYTES=175",
+   "semilla": "s48.wav"
+  },
+  "evc": {
+   "bytes": -1,
+   "mensaje": "Error opening output files: Encoder not found",
+   "ms": 313.0,
+   "ok": false,
+   "rc": 8,
+   "salida": "RC=8\nBYTES=-1\nError opening output files: Encoder not found",
+   "semilla": "s_cif.mp4"
+  },
+  "gsm": {
+   "bytes": 0,
+   "mensaje": "[aost#0:0/libgsm @ 0x639f6ee7c940] [enc:libgsm @ 0x639f6ee7cf00] Error while opening encoder - maybe incorrect parameters such as bit_rate, rate, width or height.",
+   "ms": 983.6,
+   "ok": false,
+   "rc": 255,
+   "salida": "RC=255\nBYTES=0\n[aost#0:0/libgsm @ 0x639f6ee7c940] [enc:libgsm @ 0x639f6ee7cf00] Error while opening encoder - maybe incorrect parameters such as bit_rate, rate, width or height.",
+   "semilla": "s48.wav"
+  },
+  "ilbc": {
+   "bytes": -1,
+   "mensaje": "Error opening output files: Encoder not found",
+   "ms": 477.8,
+   "ok": false,
+   "rc": 8,
+   "salida": "RC=8\nBYTES=-1\nError opening output files: Encoder not found",
+   "semilla": "s48.wav"
+  },
+  "jacosub": {
+   "bytes": -1,
+   "mensaje": "[out#0/jacosub @ 0x5aeceafad7c0] Output file does not contain any stream",
+   "ms": 347.8,
+   "ok": false,
+   "rc": 234,
+   "salida": "RC=234\nBYTES=-1\n[out#0/jacosub @ 0x5aeceafad7c0] Output file does not contain any stream",
+   "semilla": "s.srt"
+  },
+  "mcc": {
+   "bytes": -1,
+   "mensaje": "[out#0/mcc @ 0x592af6a237c0] Output file does not contain any stream",
+   "ms": 432.0,
+   "ok": false,
+   "rc": 234,
+   "salida": "RC=234\nBYTES=-1\n[out#0/mcc @ 0x592af6a237c0] Output file does not contain any stream",
+   "semilla": "s.srt"
+  },
+  "microdvd": {
+   "bytes": -1,
+   "mensaje": "[out#0/microdvd @ 0x64e97985a7c0] Output file does not contain any stream",
+   "ms": 372.2,
+   "ok": false,
+   "rc": 234,
+   "salida": "RC=234\nBYTES=-1\n[out#0/microdvd @ 0x64e97985a7c0] Output file does not contain any stream",
+   "semilla": "s.srt"
+  },
+  "oma": {
+   "bytes": -1,
+   "mensaje": "Error opening output files: Encoder not found",
+   "ms": 337.0,
+   "ok": false,
+   "rc": 8,
+   "salida": "RC=8\nBYTES=-1\nError opening output files: Encoder not found",
+   "semilla": "s48.wav"
+  },
+  "scc": {
+   "bytes": -1,
+   "mensaje": "[out#0/scc @ 0x5fad1d71a7c0] Output file does not contain any stream",
+   "ms": 433.8,
+   "ok": false,
+   "rc": 234,
+   "salida": "RC=234\nBYTES=-1\n[out#0/scc @ 0x5fad1d71a7c0] Output file does not contain any stream",
+   "semilla": "s.srt"
+  },
+  "sup": {
+   "bytes": -1,
+   "mensaje": "[out#0/sup @ 0x59754e9ba7c0] Output file does not contain any stream",
+   "ms": 388.7,
+   "ok": false,
+   "rc": 234,
+   "salida": "RC=234\nBYTES=-1\n[out#0/sup @ 0x59754e9ba7c0] Output file does not contain any stream",
+   "semilla": "s.srt"
+  },
+  "vc1": {
+   "bytes": -1,
+   "mensaje": "Error opening output files: Encoder not found",
+   "ms": 302.1,
+   "ok": false,
+   "rc": 8,
+   "salida": "RC=8\nBYTES=-1\nError opening output files: Encoder not found",
+   "semilla": "s_cif.mp4"
+  },
+  "vc1test": {
+   "bytes": -1,
+   "mensaje": "Error opening output files: Encoder not found",
+   "ms": 490.8,
+   "ok": false,
+   "rc": 8,
+   "salida": "RC=8\nBYTES=-1\nError opening output files: Encoder not found",
+   "semilla": "s_cif.mp4"
+  }
+ },
+ "msgconvert_en_contenedor": "/usr/bin/msgconvert",
+ "oeb": {
+  "ms": 1466.7,
+  "orden": "cd /tmp/c50 && rm -rf salida.oeb && ls > /tmp/c50/_antes.txt; ebook-convert x.epub salida.oeb > /tmp/c50/_conv.log 2>&1; echo RC=$?; echo '--- nuevos ---'; ls | grep -v -x -F -f /tmp/c50/_antes.txt; echo '--- que es salida.oeb ---'; if [ -d salida.oeb ]; then echo DIRECTORIO; ls -la salida.oeb; elif [ -f salida.oeb ]; then echo FICHERO; stat -c '%s bytes' salida.oeb; else echo NO_EXISTE; fi; echo '--- cola del log ---'; tail -6 /tmp/c50/_conv.log",
+  "rc_cliente": 0,
+  "salida": "RC=0\n--- nuevos ---\n_conv.log\nsalida.oeb\n--- que es salida.oeb ---\nDIRECTORIO\ntotal 84\ndrwxr-xr-x 2 root root  4096 Sep  4 22:26 .\ndrwxr-xr-x 3 root root  4096 Sep  4 22:26 ..\n-rw-r--r-- 1 root root  1614 Sep  4 22:26 content.opf\n-rw-r--r-- 1 root root 46695 Sep  4 22:26 cover_image.jpg\n-rw-r--r-- 1 root root   400 Sep  4 22:26 index.html\n-rw-r--r-- 1 root root    51 Sep  4 22:26 page_styles.css\n-rw-r--r-- 1 root root   166 Sep  4 22:26 page_styles1.css\n-rw-r--r-- 1 root root   334 Sep  4 22:26 stylesheet.css\n-rw-r--r-- 1 root root   787 Sep  4 22:26 titlepage.xhtml\n-rw-r--r-- 1 root root   479 Sep  4 22:26 toc.ncx\n--- cola del log ---\nCleaning up manifest...\nTrimming unused files from manifest...\nCreating OEB Output...\n67% Running OEB Output plugin\nOEB output written to /tmp/c50/salida.oeb\nOutput saved to   /tmp/c50/salida.oeb\n",
+  "stderr": ""
+ },
+ "semillas_dentro": {
+  "ls": "total 304\ndrwxr-xr-x 2 root root   4096 Sep  4 22:26 .\ndrwxrwxrwt 1 root root   4096 Sep  4 22:26 ..\n-rw-r--r-- 1 root root     52 Sep  4 22:26 s.srt\n-rw-r--r-- 1 root root 192078 Sep  4 22:26 s48.wav\n-rw-r--r-- 1 root root 105097 Sep  4 22:26 s_cif.mp4\n",
+  "rc": 0
+ }
+}

@@ -1,0 +1,52 @@
+ffmpeg dentro: ffmpeg version 8.1.1-4 Copyright (c) 2000-2026 the FFmpeg developers
+
+(A) catalogos del ffmpeg de Linux:
+  devices   15 entradas (rc=0)
+  demuxers  370 entradas (rc=0)
+  muxers    191 entradas (rc=0)
+  encoders  225 entradas (rc=0)
+
+(A) los 12 `ff_desconocido_por_el_binario`:
+  alsa           devices=DE   demuxers=None muxers=Ed   -> dispositivo
+  awb            devices=None demuxers=None muxers=None -> tampoco lo conoce esta build
+  fbdev          devices=DE   demuxers=None muxers=Ed   -> dispositivo
+  iec61883       devices=D    demuxers=None muxers=None -> dispositivo
+  jack           devices=D    demuxers=None muxers=None -> dispositivo
+  kmsgrab        devices=D    demuxers=None muxers=None -> dispositivo
+  oss            devices=DE   demuxers=None muxers=Ed   -> dispositivo
+  pp             devices=None demuxers=None muxers=None -> tampoco lo conoce esta build
+  pulse          devices=DE   demuxers=None muxers=Ed   -> dispositivo
+  sndio          devices=None demuxers=None muxers=None -> tampoco lo conoce esta build
+  video4linux2   devices=DE   demuxers=None muxers=Ed   -> dispositivo
+  x11grab        devices=D    demuxers=None muxers=None -> dispositivo
+
+(B) los 13 sin codificador en el ffmpeg de Windows:
+  ac4         muxers=E     encoders=None  
+  aea         muxers=E     encoders=None  
+  avs3        muxers=E     encoders=None  
+  bit         muxers=E     encoders=None  
+  cavsvideo   muxers=E     encoders=None  
+  codec2      muxers=E     encoders=None  
+  codec2raw   muxers=E     encoders=None  
+  evc         muxers=E     encoders=None  
+  gsm         muxers=E     encoders=None  
+  ilbc        muxers=E     encoders=None  
+  oma         muxers=E     encoders=None  
+  vc1         muxers=E     encoders=None  
+  vc1test     muxers=E     encoders=None  
+
+(C) oeb con Calibre, LISTANDO el directorio:
+  preparar epub: rc=0
+total 36
+drwxr-xr-x 2 root root  4096 Sep  4 22:24 .
+drwxrwxrwt 1 root root  4096 Sep  4 22:24 ..
+-rw-r--r-- 1 root root 20721 Sep  4 22:24 x.epub
+-rw-r--r-- 1 root root    13 Sep  4 22:24 x.txt
+
+RC=127
+--- find ---
+--- tipo de salida.oeb ---
+NO_EXISTE
+
+
+escrito contenedor.json

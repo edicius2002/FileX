@@ -1,0 +1,11 @@
+chk solo_video   rc=0     ficheros=['h.chk', 'm_1.chk'] bytes=22777 -> OK
+chk solo_audio   rc=0     ficheros=['a_1.chk', 'ha.chk'] bytes=6383 -> OK
+mask_desde_alpha     rc=1    ficheros=[] -> no
+    magick: image does not have an mask channel `m.mask' @ error/mask.c/WriteMASKImage/353. | 
+mask_write_mask      rc=0    ficheros=['m.mask'] -> OK
+clip_con_path        rc=1    ficheros=[] -> no
+    magick: no clip path defined 'D:\Work\research\FileX\.claude\worktrees\agent-ac56accbd58e35021\corpus\imagen\tipico.png': No error @ error/image.c/ClipImagePath/730. | 
+clip_desde_alpha     rc=1    ficheros=[] -> no
+    magick: no clip path defined 'D:\Work\research\FileX\.claude\worktrees\agent-ac56accbd58e35021\corpus\imagen\alpha.png': No error @ error/image.c/ClipImagePath/730. | 
+
+escrito cierres2.json
