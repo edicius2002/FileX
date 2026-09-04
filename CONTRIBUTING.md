@@ -3,7 +3,7 @@
 Proyecto de investigación **en español**. Informes, comentarios y mensajes de commit,
 en español.
 
-Este fichero es la versión corta y operativa. Las reglas completas —y las **128 trampas ya
+Este fichero es la versión corta y operativa. Las reglas completas —y las **129 trampas ya
 pagadas**— están en [`CLAUDE.md`](CLAUDE.md), que es el documento más útil del repositorio
 si vas a tocar algo. El inventario de trabajo, con su estado fila a fila, vive en
 [`ESTADO-Y-REPARTO.md`](ESTADO-Y-REPARTO.md).

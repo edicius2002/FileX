@@ -1,0 +1,45 @@
+{
+  "informe": "N38 en Windows — carrera symlink-TOCTOU y abrir_confinado",
+  "plataforma": "win32",
+  "python": "3.11.9",
+  "nota_privilegio": "esta maquina crea symlinks (modo desarrollador)",
+  "duracion_por_fase_s": 8.0,
+  "vulnerable_resolver_open": {
+    "sujeto": "VULNERABLE: resolver()+open",
+    "intentos": 4504,
+    "toggles_atacante": 743,
+    "errores_atacante": 592,
+    "conteo": {
+      "dentro": 2124,
+      "denegado": 1375,
+      "bloqueado_o_enoent": 1002,
+      "WIN_FUERA": 3
+    },
+    "wins_fuera": 3,
+    "tasa_win_%": 0.0666
+  },
+  "abrir_confinado_reabre_ruta": {
+    "sujeto": "abrir_confinado + motor reabre .ruta (comportamiento nucleo en Windows)",
+    "intentos": 35513,
+    "toggles_atacante": 1013,
+    "errores_atacante": 5268,
+    "conteo": {
+      "dentro": 10099,
+      "denegado": 25414
+    },
+    "wins_fuera": 0,
+    "tasa_win_%": 0.0
+  },
+  "abrir_confinado_por_fd": {
+    "sujeto": "abrir_confinado + leer por fd (via anclada; el motor externo no la usa)",
+    "intentos": 24184,
+    "toggles_atacante": 925,
+    "errores_atacante": 7884,
+    "conteo": {
+      "dentro": 8095,
+      "denegado": 16089
+    },
+    "wins_fuera": 0,
+    "tasa_win_%": 0.0
+  }
+}

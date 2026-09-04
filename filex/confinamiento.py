@@ -162,6 +162,109 @@ def nombre_seguro(nombre: str) -> bool:
     return True
 
 
+def _ruta_real_de_fd(fd: int) -> str:
+    """La ruta REAL de lo que `fd` tiene abierto — del descriptor, no de una cadena.
+
+    Linux: `/proc/self/fd/<fd>` es un enlace mágico al inodo abierto; leerlo da
+    la ruta real actual (trampa 45: `/proc/<pid>/fd` es el primitivo POSIX del
+    proyecto). Windows: `GetFinalPathNameByHandle` sobre el `HANDLE` del `fd`.
+    """
+    if not _ES_WINDOWS:
+        return os.readlink(f"/proc/self/fd/{fd}")
+    # Windows: no hay /proc. Se pide la ruta final canónica del HANDLE.
+    import ctypes
+    from ctypes import wintypes
+    import msvcrt
+    handle = msvcrt.get_osfhandle(fd)
+    GetFinalPathNameByHandleW = ctypes.windll.kernel32.GetFinalPathNameByHandleW
+    GetFinalPathNameByHandleW.restype = wintypes.DWORD
+    GetFinalPathNameByHandleW.argtypes = [wintypes.HANDLE, wintypes.LPWSTR,
+                                          wintypes.DWORD, wintypes.DWORD]
+    buf = ctypes.create_unicode_buffer(4096)
+    n = GetFinalPathNameByHandleW(handle, buf, 4096, 0)  # 0 = FILE_NAME_NORMALIZED|VOLUME_NAME_DOS
+    if n == 0 or n >= 4096:
+        raise OSError("GetFinalPathNameByHandle falló")
+    real = buf.value
+    # Quita el prefijo extendido `\\?\` que Windows antepone; deja `C:\...` o
+    # `\\servidor\...` (UNC llega como `\\?\UNC\servidor\...`).
+    if real.startswith("\\\\?\\UNC\\"):
+        real = "\\\\" + real[len("\\\\?\\UNC\\"):]
+    elif real.startswith("\\\\?\\"):
+        real = real[len("\\\\?\\"):]
+    return real
+
+
+def _ruta_estable_para_motor(fd: int, real: str) -> str:
+    """La ruta que se le entrega al motor externo, que la REABRE por ruta.
+
+    Linux: `/proc/<pid>/fd/<fd>` — MEDIDO (`bench/toctou-fd.md`): otro proceso
+    que la abre alcanza el INODO FIJADO, no re-traversa la ruta original, así
+    que la conmutación del atacante ya no cambia lo que el motor lee. `cat`,
+    `magick` y `ffmpeg` la aceptan.
+
+    Windows: no hay ruta mágica estable; se devuelve la ruta real validada. El
+    motor la reabre y la ventana de reapertura por ruta queda cubierta por el
+    bloqueo del sistema, no por esta función (ver `abrir_confinado`). PENDIENTE.
+    """
+    if not _ES_WINDOWS:
+        return f"/proc/{os.getpid()}/fd/{fd}"
+    return real
+
+
+class _EntradaConfinada:
+    """El `fd` validado de una entrada + la ruta ESTABLE que se le da al motor.
+
+    Gestor de contexto: el `fd` se mantiene abierto mientras el motor lee (en
+    Linux, cerrarlo invalida `/proc/<pid>/fd/<fd>`) y se cierra al salir del
+    `with` o con `.cerrar()`.
+    """
+
+    __slots__ = ("fd", "ruta", "real")
+
+    def __init__(self, fd: int, ruta: str, real: str) -> None:
+        self.fd = fd
+        self.ruta = ruta
+        self.real = real
+
+    def __enter__(self) -> "_EntradaConfinada":
+        return self
+
+    def __exit__(self, *exc) -> None:
+        self.cerrar()
+
+    def cerrar(self) -> None:
+        if self.fd is not None:
+            try:
+                os.close(self.fd)
+            except OSError:
+                pass
+            self.fd = None
+
+
+class _EntradaPassthrough:
+    """Sin confinamiento (`confinamiento is None`): la ruta absoluta, tal cual.
+
+    Preserva el comportamiento previo —el motor recibía `os.path.abspath(entrada)`—
+    para las superficies o pruebas que construyen `FileX` sin lista blanca.
+    """
+
+    __slots__ = ("fd", "ruta", "real")
+
+    def __init__(self, ruta: str) -> None:
+        self.fd = None
+        self.ruta = ruta
+        self.real = ruta
+
+    def __enter__(self) -> "_EntradaPassthrough":
+        return self
+
+    def __exit__(self, *exc) -> None:
+        pass
+
+    def cerrar(self) -> None:
+        pass
+
+
 class Confinamiento:
     """R6: denegar por defecto. Sin ninguna raíz accesible, no se arranca."""
 
@@ -425,3 +528,78 @@ class Confinamiento:
             return True
         except Denegado:
             return False
+
+    def abrir_confinado(self, ruta: str, *, escritura: bool = False) -> "_EntradaConfinada":
+        """N38: abre el DESCRIPTOR y valida el descriptor, no una cadena reabrible.
+
+        Cierra la carrera symlink-TOCTOU que la trampa 128 midió (`resolver()`
+        devuelve `os.path.realpath(ruta)`, el motor la reabre, y entre medias un
+        atacante conmuta un componente de directorio: dir real → symlink a
+        fuera). El antipatrón es *comprobar la ruta resuelta y volver a abrirla*;
+        la defensa es *abrir una vez y validar QUÉ se abrió*. MEDIDO
+        (`bench/toctou-fd.md`): con `resolver()`+reabrir la carrera gana
+        **17,5 %**; con esto, **0 de ~34 000** bajo el mismo ataque.
+
+        Devuelve un `_EntradaConfinada` (gestor de contexto) con:
+        - `.fd`: el descriptor abierto y validado (para un lector en proceso).
+        - `.ruta`: la ruta ESTABLE que se le entrega al motor externo.
+          En Linux es `/proc/<pid>/fd/<fd>`, que **un motor que reabre por ruta
+          alcanza al INODO FIJADO aunque el atacante haya envenenado la ruta
+          original después** — MEDIDO cross-proceso con `cat`, `magick` y
+          `ffmpeg`, que la aceptan (sniffean por contenido, no por extensión).
+          El `fd` debe seguir ABIERTO mientras el motor lee: cerrarlo invalida
+          `/proc/<pid>/fd/<fd>`.
+        - `.real`: la ruta real que se abrió, ya validada dentro de la raíz.
+
+        **En Windows no existe `/proc` ni un primitivo equivalente** (MEDIDO): se
+        valida el descriptor con `GetFinalPathNameByHandle` —lo que DETECTA si
+        lo que se abrió resolvió fuera— pero `.ruta` es la ruta real validada, y
+        el motor la reabre, así que la ventana de reapertura por ruta **NO** se
+        cierra aquí: la cubre el bloqueo de fichero del sistema (79 % de fallo
+        del atacante, heredado) y el privilegio que exige crear un symlink. El
+        cierre total en Windows queda PENDIENTE (`bench/toctou-fd.md` §Windows).
+
+        **No paga el suelo temporal de N9 a propósito.** Solo se invoca en la
+        vía VÁLIDA, después de que `_resolver()` haya cerrado el oráculo de
+        existencia bajo `operacion()`; su `Denegado` es un artefacto de carrera,
+        no un oráculo cronometrable, y pagar un segundo suelo aquí reabriría el
+        residuo `existe/prohibido` que N32 cerró.
+        """
+        if not self._lexico_ok(ruta):
+            raise Denegado()
+        raices = self.escritura if escritura else self.lectura
+        if not raices:
+            raise Denegado()
+        # R1: predicado léxico ANTES de tocar el disco, igual que `resolver()`.
+        if not self._dentro(os.path.abspath(ruta), raices):
+            raise Denegado()
+
+        # El paso que cambia todo: se ABRE el descriptor aquí, en vez de
+        # devolver un `realpath` que otro reabrirá más tarde. Si el atacante ya
+        # había conmutado el componente, `os.open` sigue el symlink y abre el
+        # fichero de FUERA — y entonces `_ruta_real_de_fd` lo delata y se
+        # deniega. Si no lo había conmutado, se ancla el inodo de DENTRO y una
+        # conmutación posterior ya no cambia lo que el motor leerá.
+        flags = os.O_RDONLY | getattr(os, "O_BINARY", 0) | getattr(os, "O_CLOEXEC", 0)
+        try:
+            fd = os.open(ruta, flags)
+        except OSError:
+            raise Denegado() from None
+        try:
+            import stat as _stat
+            if not _stat.S_ISREG(os.fstat(fd).st_mode):
+                # Un directorio o un dispositivo no es una entrada de conversión.
+                # Mismo mensaje opaco que R4 (`ruta no accesible`).
+                raise Denegado()
+            real = _ruta_real_de_fd(fd)
+            # Y otra vez sobre la RESUELTA-DE-VERDAD (la del descriptor, no una
+            # cadena): es lo que cierra el enlace simbólico sin dejar ventana.
+            if not self._dentro(real, raices):
+                raise Denegado()
+        except Denegado:
+            os.close(fd)
+            raise
+        except OSError:
+            os.close(fd)
+            raise Denegado() from None
+        return _EntradaConfinada(fd, _ruta_estable_para_motor(fd, real), real)
