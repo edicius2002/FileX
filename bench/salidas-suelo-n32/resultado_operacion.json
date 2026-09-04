@@ -1,0 +1,43 @@
+{
+ "sin_ecualizar": {
+  "prohibido": {
+   "mediana_us": 16.7,
+   "p90_us": 22.5
+  },
+  "no_existe": {
+   "mediana_us": 337.85,
+   "p90_us": 482.95
+  },
+  "existe": {
+   "mediana_us": 280.6,
+   "p90_us": 421.06
+  }
+ },
+ "ecualizado": {
+  "prohibido": {
+   "mediana_us": 307.3,
+   "p90_us": 311.89
+  },
+  "no_existe": {
+   "mediana_us": 339.55,
+   "p90_us": 447.55
+  },
+  "existe": {
+   "mediana_us": 349.1,
+   "p90_us": 382.46
+  }
+ },
+ "ratios_ecualizado": {
+  "no_existe_sobre_existe": 0.973,
+  "existe_sobre_prohibido_mediana": 1.136,
+  "existe_sobre_prohibido_p90": 1.226
+ },
+ "comparacion_antes_por_llamada": {
+  "existe_mediana_us": 659.55,
+  "existe_p90_us": 715.39,
+  "prohibido_mediana_us": 312.5,
+  "prohibido_p90_us": 332.91,
+  "ratio_mediana": 2.111,
+  "ratio_p90": 2.149
+ }
+}

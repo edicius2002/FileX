@@ -1,0 +1,47 @@
+{
+ "suelo_actual_s": 0.0003,
+ "suelo_candidato_s": 0.0005,
+ "suelo_actual_300us": {
+  "prohibido": {
+   "mediana_us": 301.3,
+   "p90_us": 303.1,
+   "n": 2000
+  },
+  "no_existe": {
+   "mediana_us": 300.8,
+   "p90_us": 304.09,
+   "n": 2000
+  },
+  "existe": {
+   "mediana_us": 300.9,
+   "p90_us": 302.9,
+   "n": 2000
+  }
+ },
+ "suelo_candidato_500us": {
+  "prohibido": {
+   "mediana_us": 502.0,
+   "p90_us": 505.5,
+   "n": 2000
+  },
+  "no_existe": {
+   "mediana_us": 501.2,
+   "p90_us": 502.8,
+   "n": 2000
+  },
+  "existe": {
+   "mediana_us": 501.1,
+   "p90_us": 502.7,
+   "n": 2000
+  }
+ },
+ "ratio_p90_no_existe_sobre_prohibido": {
+  "suelo_actual": 1.003,
+  "suelo_candidato": 0.995
+ },
+ "coste_del_rechazo_prohibido": {
+  "mediana_actual_us": 301.3,
+  "mediana_candidato_us": 502.0,
+  "incremento_x": 1.666
+ }
+}

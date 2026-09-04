@@ -1,0 +1,24 @@
+{
+ "rc": -1,
+ "duracion_s": 20.2,
+ "pico_rss_mb": 520.5,
+ "muestras_rss": 94,
+ "tope_alcanzado": false,
+ "abortado_por_docker": true,
+ "cmdline_docker": [
+  "C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.EXE run --rm -d --name surya-vllm-51920 --runtime nvidia --gpus device=0 -v C:\\Users\\krato/.cache/huggingface:/root/.cache/huggingface -p 51920:8000 --ipc=host vllm/vllm-openai:v0.20.1 --model datalab-to/surya-ocr-2 --no-enforce-eager --max-num-seqs 32 --dtype bfloat16 --max-model-len 18000 --max-num-batched-tokens 8192 --gpu-memory-utilization 0.85 --enable-prefix-caching --mm-processor-kwargs {\"min_pixels\": 3136, \"max_pixels\": 6291456} --served-model-name datalab-to/surya-ocr-2 --speculative-config {\"method\": \"mtp\", \"num_speculative_tokens\": 2}",
+  "docker-credential-desktop get",
+  "C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker-credential-wincred.exe get"
+ ],
+ "cmd": [
+  "D:\\Work\\research\\FileX\\.venv-marker\\Scripts\\marker_single.exe",
+  "C:\\Users\\krato\\orca\\workspaces\\FileX\\filex-suelo-y-mcp\\corpus\\pdf\\tipico_texto.pdf",
+  "--output_dir",
+  "C:\\Users\\krato\\orca\\workspaces\\FileX\\filex-suelo-y-mcp\\bench\\salidas-suelo-n32\\marker_out",
+  "--output_format",
+  "markdown",
+  "--mode",
+  "fast"
+ ],
+ "cola_stdout": ""
+}

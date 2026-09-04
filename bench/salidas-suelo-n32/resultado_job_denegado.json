@@ -1,0 +1,44 @@
+{
+ "sin_gate": {
+  "prohibido": {
+   "mediana_us": 2601.65,
+   "p90_us": 3362.85,
+   "n": 200,
+   "job_ids_gastados": 200
+  },
+  "existe": {
+   "mediana_us": 2799.4,
+   "p90_us": 3726.41,
+   "n": 200,
+   "job_ids_gastados": 200
+  }
+ },
+ "con_gate": {
+  "prohibido": {
+   "mediana_us": 19.4,
+   "p90_us": 22.43,
+   "n": 200,
+   "job_ids_gastados": 0
+  },
+  "existe": {
+   "mediana_us": 3248.15,
+   "p90_us": 3952.23,
+   "n": 200,
+   "job_ids_gastados": 200
+  }
+ },
+ "comparacion": {
+  "prohibido_mediana_us": {
+   "sin_gate": 2601.65,
+   "con_gate": 19.4
+  },
+  "existe_mediana_us": {
+   "sin_gate": 2799.4,
+   "con_gate": 3248.15
+  },
+  "job_ids_gastados_en_denegado": {
+   "sin_gate": 200,
+   "con_gate": 0
+  }
+ }
+}
