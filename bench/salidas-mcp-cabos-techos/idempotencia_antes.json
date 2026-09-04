@@ -1,0 +1,77 @@
+{
+  "interprete": "3.11.9",
+  "plataforma": "win32",
+  "mcp_version": "2.0.0",
+  "M0": {
+    "modulo_que_usa_filex": "mcp.server.lowlevel",
+    "lowlevel_exporta_maquinaria_resolve": [],
+    "mcpserver_resolve_exporta": [
+      "Elicit",
+      "ListRoots",
+      "Resolve",
+      "Sample"
+    ],
+    "filex_puede_sufrir_doble_ejecucion": false
+  },
+  "entrada_bytes": 42855,
+  "entrada_es_puntero_lfs": false,
+  "M1_M2": {
+    "roots_list_llamadas": 1,
+    "job_id_1": "26b890d1fc21",
+    "job_id_2": "65ba78e51862",
+    "job_id_distintos": true,
+    "n_trabajos_registrados": 2,
+    "respuesta_1": {
+      "job_id": "26b890d1fc21",
+      "estado": "working",
+      "sondeo_ms": 1000,
+      "camino": [
+        "png",
+        "jpg"
+      ],
+      "motores": [
+        "imagemagick"
+      ]
+    },
+    "respuesta_2": {
+      "job_id": "65ba78e51862",
+      "estado": "working",
+      "sondeo_ms": 1000,
+      "camino": [
+        "png",
+        "jpg"
+      ],
+      "motores": [
+        "imagemagick"
+      ]
+    }
+  },
+  "M3": {
+    "roots_list_llamadas": 1,
+    "sin_acceso": true,
+    "resuelto_marcado": true,
+    "confinamiento_es_none": true,
+    "respuesta": {
+      "error": "ruta no accesible"
+    },
+    "reintento_roots_list_llamadas": 1,
+    "reintento_respuesta": {
+      "error": "ruta no accesible"
+    },
+    "reintento_sin_acceso": true
+  },
+  "M4_sin_ceder": {
+    "doble_cede_el_bucle": false,
+    "roots_list_llamadas": 1,
+    "entradas_simultaneas_en_roots_list": 1,
+    "las_dos_respondieron": true,
+    "ninguna_es_error": true
+  },
+  "M4_cediendo": {
+    "doble_cede_el_bucle": true,
+    "roots_list_llamadas": 2,
+    "entradas_simultaneas_en_roots_list": 2,
+    "las_dos_respondieron": true,
+    "ninguna_es_error": true
+  }
+}

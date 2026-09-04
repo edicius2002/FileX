@@ -608,5 +608,205 @@ class ServidorReal(unittest.TestCase):
         self.assertIsInstance(raices, M.Raices)
 
 
+class Subsuncion(unittest.TestCase):
+    """C36 ítem 5 — `PLAN-ORQUESTADOR.md` §4.4: *si el esquema de A es un
+    subconjunto estricto del de B con la misma semántica, A sobra*.
+
+    **La regla tiene dos conjuntos y sólo el del esquema es automatizable.**
+    Aquí se comprueba ese medio predicado sobre el catálogo de FileX, y se
+    comprueba con un CONTROL POSITIVO sintético al lado: con cinco herramientas
+    de nombres de parámetro disjuntos, un `assertEqual(0)` pasaría con el
+    comprobador puesto y con el comprobador roto (trampas 60 y 109).
+
+    La medida contra el catálogo real que se sabe redundante —las 27 de
+    `video-audio-mcp`, 13 casos particulares de 2— vive en
+    `bench/salidas-mcp-cabos-techos/subsuncion.py`, porque necesita `repos/`,
+    que está en `.gitignore` y no existe en un clon.
+    """
+
+    @staticmethod
+    def _normalizar(herr):
+        out = {}
+        for h in herr:
+            if not isinstance(h, dict):
+                h = h.model_dump(exclude_none=True, by_alias=True)
+            esq = h.get("inputSchema") or {}
+            props = {k: str((v or {}).get("type") or "?")
+                     for k, v in (esq.get("properties") or {}).items()}
+            out[h["name"]] = (props, set(esq.get("required") or []))
+        return out
+
+    @classmethod
+    def _subsume(cls, a, b, exigir_rellenable=True):
+        (pa, ra), (pb, rb) = a, b
+        if not pa:                       # sin parámetros no se subsume a nadie
+            return False
+        if set(pa) - set(pb):
+            return False
+        if any(pa[k] != pb.get(k) for k in pa):
+            return False
+        if exigir_rellenable and (rb - set(pa)):
+            return False
+        return not (set(pa) == set(pb) and ra == rb)
+
+    @classmethod
+    def _sobrantes(cls, cat, exigir_rellenable=True):
+        return sorted({na for na, a in cat.items()
+                       for nb, b in cat.items()
+                       if na != nb and cls._subsume(a, b, exigir_rellenable)})
+
+    def test_el_comprobador_atrapa_una_subsuncion_de_verdad(self):
+        """CONTROL POSITIVO. Sin esto el test de abajo no dice nada."""
+        cat = self._normalizar([
+            {"name": "poner_calidad", "inputSchema": {
+                "type": "object",
+                "properties": {"entrada": {"type": "string"},
+                               "salida": {"type": "string"},
+                               "calidad": {"type": "integer"}},
+                "required": ["entrada", "salida", "calidad"]}},
+            {"name": "convertir", "inputSchema": {
+                "type": "object",
+                "properties": {"entrada": {"type": "string"},
+                               "salida": {"type": "string"},
+                               "calidad": {"type": "integer"},
+                               "ancho": {"type": "integer"}},
+                "required": ["entrada", "salida"]}},
+        ])
+        self.assertEqual(self._sobrantes(cat), ["poner_calidad"])
+
+    def test_el_comprobador_no_atrapa_lo_que_solo_se_PARECE(self):
+        """CONTROL NEGATIVO: mismo número de parámetros, nombres distintos.
+
+        Es el modo de fallo que la mitad semántica de la regla tendría que
+        arbitrar, y el que el esquema **no** debe inventarse.
+        """
+        cat = self._normalizar([
+            {"name": "poner_codec", "inputSchema": {
+                "type": "object",
+                "properties": {"entrada": {"type": "string"},
+                               "codec": {"type": "string"}},
+                "required": ["entrada", "codec"]}},
+            {"name": "poner_bitrate", "inputSchema": {
+                "type": "object",
+                "properties": {"entrada": {"type": "string"},
+                               "bitrate": {"type": "string"}},
+                "required": ["entrada", "bitrate"]}},
+        ])
+        self.assertEqual(self._sobrantes(cat), [])
+
+    def test_el_catalogo_de_filex_no_tiene_ninguna_herramienta_que_sobre(self):
+        cat = self._normalizar(M.catalogo(FileX()))
+        self.assertEqual(len(cat), 5, "el catálogo son cinco herramientas")
+        # Con las DOS variantes del predicado: si sólo pasara con la estricta,
+        # el 0 sería del predicado y no del catálogo.
+        self.assertEqual(self._sobrantes(cat, True), [])
+        self.assertEqual(self._sobrantes(cat, False), [])
+
+
+class RootsCacheYFallo(unittest.TestCase):
+    """C36 ítem 6 — lo que la caché de roots puede y no puede sellar."""
+
+    class _Raiz:
+        def __init__(self, uri):
+            self.uri = uri
+
+    class _Res:
+        def __init__(self, roots):
+            self.roots = roots
+
+    class _Sesion:
+        """Cuenta los `roots/list` y falla en los turnos que se le digan."""
+
+        def __init__(self, raices, fallar_en=()):
+            self.raices = list(raices)
+            self.fallar_en = set(fallar_en)
+            self.llamadas = 0
+
+        async def list_roots(self):
+            self.llamadas += 1
+            if self.llamadas in self.fallar_en:
+                raise RuntimeError("el canal de vuelta no respondió")
+            return RootsCacheYFallo._Res(
+                [RootsCacheYFallo._Raiz("file:///" + r.replace(os.sep, "/"))
+                 for r in self.raices])
+
+    @staticmethod
+    def _correr(coro):
+        import asyncio
+        return asyncio.run(coro)
+
+    def test_los_roots_se_preguntan_UNA_vez_por_sesion(self):
+        g = M.Raices(FileX(), None)
+        s = self._Sesion([_RAIZ])
+        self._correr(g.asegurar(s))
+        self._correr(g.asegurar(s))
+        self._correr(g.asegurar(s))
+        self.assertEqual(s.llamadas, 1)
+        self.assertFalse(g.sin_acceso)
+
+    def test_un_fallo_al_preguntar_NO_deja_la_sesion_denegada_para_siempre(self):
+        """MEDIDO (`bench/mcp-cabos-y-techos.md` §2, celda M3).
+
+        Antes del arreglo: `roots/list` falla una vez, `except Exception` deja
+        `cliente = []`, sale `sin_acceso = True` **y `_resuelto = True`**, así
+        que el reintento del cliente no volvía a preguntar (0 llamadas nuevas)
+        y la sesión quedaba denegada entera. Trampa 43: *separar «no se puede»
+        de «no está»*.
+        """
+        g = M.Raices(FileX(), None)
+        s = self._Sesion([_RAIZ], fallar_en={1})
+        self._correr(g.asegurar(s))
+        self.assertTrue(g.sin_acceso, "sin raíces se deniega, y está bien")
+        self.assertEqual(s.llamadas, 1)
+        # Lo que se arregla: la denegación NO se sella.
+        self._correr(g.asegurar(s))
+        self.assertEqual(s.llamadas, 2, "el reintento tiene que volver a preguntar")
+        self.assertFalse(g.sin_acceso, "y la sesión se recupera")
+
+    def test_un_fallo_CON_raiz_de_servidor_si_se_sella(self):
+        """El contrapunto: si queda alguna raíz, la respuesta es buena aunque
+        el cliente no contestara, y volver a preguntar no cambiaría nada."""
+        g = M.Raices(FileX(), [_RAIZ])
+        s = self._Sesion([], fallar_en={1})
+        self._correr(g.asegurar(s))
+        self.assertFalse(g.sin_acceso)
+        self._correr(g.asegurar(s))
+        self.assertEqual(s.llamadas, 1, "no hace falta repreguntar")
+
+    def test_la_emision_de_roots_list_changed_queda_CONTADA(self):
+        """C36 ítem 3 — no se puede forzar una emisión real, así que lo que se
+        entrega es el sitio donde se vería. El valor esperado hoy es 0."""
+        g = M.Raices(FileX(), [_RAIZ])
+        self.assertEqual(g.emisiones, 0)
+        g.invalidar()
+        self.assertEqual(g.emisiones, 1)
+        self.assertFalse(g._resuelto, "invalidar tiene que invalidar")
+
+    def test_el_registro_de_emisiones_es_opt_in_y_no_revienta(self):
+        d = tempfile.mkdtemp(prefix="h4-roots-")
+        try:
+            reg = os.path.join(d, "emisiones.tsv")
+            g = M.Raices(FileX(), [_RAIZ])
+            g.invalidar()
+            self.assertFalse(os.path.exists(reg), "sin la variable, no escribe")
+            os.environ[M.Raices.VAR_REGISTRO] = reg
+            try:
+                g.invalidar()
+            finally:
+                os.environ.pop(M.Raices.VAR_REGISTRO, None)
+            with open(reg, encoding="utf-8") as fh:
+                lineas = fh.read().strip().splitlines()
+            self.assertEqual(len(lineas), 1)
+            self.assertIn("roots/list_changed", lineas[0])
+            # Un destino imposible no puede tumbar el servidor.
+            os.environ[M.Raices.VAR_REGISTRO] = os.path.join(d, "no", "hay", "x")
+            try:
+                g.invalidar()
+            finally:
+                os.environ.pop(M.Raices.VAR_REGISTRO, None)
+        finally:
+            shutil.rmtree(d, ignore_errors=True)
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

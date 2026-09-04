@@ -1,0 +1,154 @@
+{
+  "interprete": "3.11.9",
+  "filex": {
+    "n_herramientas": 5,
+    "herramientas": {
+      "convert": {
+        "props": [
+          "entrada",
+          "formato_destino",
+          "parametros",
+          "salida"
+        ],
+        "req": [
+          "entrada",
+          "salida"
+        ]
+      },
+      "inspect": {
+        "props": [
+          "ruta"
+        ],
+        "req": [
+          "ruta"
+        ]
+      },
+      "list_targets": {
+        "props": [
+          "formato_destino",
+          "formato_origen"
+        ],
+        "req": [
+          "formato_origen"
+        ]
+      },
+      "batch": {
+        "props": [
+          "directorio_salida",
+          "entradas",
+          "formato_destino"
+        ],
+        "req": [
+          "directorio_salida",
+          "entradas",
+          "formato_destino"
+        ]
+      },
+      "job": {
+        "props": [
+          "accion",
+          "job_id"
+        ],
+        "req": [
+          "job_id"
+        ]
+      }
+    },
+    "subsumidas": [],
+    "n_subsumidas": 0,
+    "subsumidas_relajado": [],
+    "n_subsumidas_relajado": 0
+  },
+  "referencia": {
+    "fichero": "D:\\Work\\research\\FileX\\repos\\mcp-refs\\video-audio-mcp\\server.py",
+    "n_herramientas": 27,
+    "n_parejas_subsumidas": 2,
+    "n_herramientas_que_sobran": 2,
+    "conocidas_del_informe": 13,
+    "aciertos_mismo_subsumidor": [
+      "convert_audio_format",
+      "convert_video_format"
+    ],
+    "n_aciertos": 2,
+    "atrapadas_con_otro_subsumidor": {},
+    "escapadas": [
+      "set_audio_bitrate",
+      "set_audio_channels",
+      "set_audio_sample_rate",
+      "set_video_audio_track_bitrate",
+      "set_video_audio_track_channels",
+      "set_video_audio_track_codec",
+      "set_video_audio_track_sample_rate",
+      "set_video_bitrate",
+      "set_video_codec",
+      "set_video_frame_rate",
+      "set_video_resolution"
+    ],
+    "candidatas_no_declaradas_en_el_informe": [],
+    "parejas": [
+      {
+        "sobra": "convert_audio_format",
+        "cubierta_por": "convert_audio_properties",
+        "motivo": "props(a) subset props(b) y req(b) subset props(a)"
+      },
+      {
+        "sobra": "convert_video_format",
+        "cubierta_por": "convert_video_properties",
+        "motivo": "props(a) subset props(b) y req(b) subset props(a)"
+      }
+    ],
+    "variantes": [
+      {
+        "exigir_rellenable": true,
+        "n_parejas": 2,
+        "n_herramientas_que_sobran": 2,
+        "aciertos_sobre_las_13": 2,
+        "aciertos": [
+          "convert_audio_format",
+          "convert_video_format"
+        ],
+        "escapadas": [
+          "set_audio_bitrate",
+          "set_audio_channels",
+          "set_audio_sample_rate",
+          "set_video_audio_track_bitrate",
+          "set_video_audio_track_channels",
+          "set_video_audio_track_codec",
+          "set_video_audio_track_sample_rate",
+          "set_video_bitrate",
+          "set_video_codec",
+          "set_video_frame_rate",
+          "set_video_resolution"
+        ],
+        "no_declaradas": [],
+        "n_no_declaradas": 0
+      },
+      {
+        "exigir_rellenable": false,
+        "n_parejas": 14,
+        "n_herramientas_que_sobran": 14,
+        "aciertos_sobre_las_13": 13,
+        "aciertos": [
+          "convert_audio_format",
+          "convert_video_format",
+          "set_audio_bitrate",
+          "set_audio_channels",
+          "set_audio_sample_rate",
+          "set_video_audio_track_bitrate",
+          "set_video_audio_track_channels",
+          "set_video_audio_track_codec",
+          "set_video_audio_track_sample_rate",
+          "set_video_bitrate",
+          "set_video_codec",
+          "set_video_frame_rate",
+          "set_video_resolution"
+        ],
+        "escapadas": [],
+        "no_declaradas": [
+          "trim_video"
+        ],
+        "n_no_declaradas": 1
+      }
+    ]
+  }
+}

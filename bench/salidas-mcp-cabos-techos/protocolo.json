@@ -1,0 +1,112 @@
+{
+  "interprete": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "plataforma": "win32",
+  "mcp_version": "2.0.0",
+  "mcp_types_version": "2.0.0",
+  "versiones_conocidas": [
+    "2024-11-05",
+    "2025-03-26",
+    "2025-06-18",
+    "2025-11-25",
+    "2026-07-28"
+  ],
+  "version_ultima": "2026-07-28",
+  "versiones_soportadas": [
+    "2024-11-05",
+    "2025-03-26",
+    "2025-06-18",
+    "2025-11-25",
+    "2026-07-28"
+  ],
+  "list_roots_deprecado": true,
+  "list_roots_texto": "The roots capability is deprecated as of 2026-07-28 (SEP-2577).",
+  "avisos_al_construir_filex": [
+    {
+      "categoria": "MCPDeprecationWarning",
+      "texto": "The roots capability is deprecated as of 2026-07-28 (SEP-2577)."
+    }
+  ],
+  "n_avisos_al_construir_filex": 1,
+  "avisos_control_sin_roots": [],
+  "n_avisos_control_sin_roots": 0,
+  "capacidades_servidor": {
+    "experimental": {},
+    "tools": {
+      "list_changed": false
+    },
+    "extensions": {}
+  },
+  "ListRoots_existe": true,
+  "ListRoots_doc": "A resolver's request for the client's roots via `roots/list`; the framework injects the `ListRootsResult`.",
+  "Resolve_doc": "Marker for `Annotated[T, Resolve(fn)]`: fill the parameter by running `fn`.",
+  "ListRoots_deprecado": false,
+  "resolve_docstring": "Resolver dependency injection for MCPServer tools.\n\nA tool parameter annotated `Annotated[T, Resolve(fn)]` is filled by running the\nresolver `fn` before the tool body, instead of from the LLM-supplied arguments.\nResolvers form a DAG: a resolver may declare its own `Resolve(...)` dependencies,\ntake tool arguments by name, and take the `Context`. A resolver may return a\nrequest marker (`Elicit[T]` to ask the user, `Sample` to sample the client's\nLLM, `ListRoots` to fetch its roots); the framework injects the response.\n\nThe transport follows the negotiated protocol: >= 2026-07-28 batches the requests\ninto an `InputRequiredResult` and resumes when the client retries with\n`input_responses`/`request_state`; <= 2025-11-25 sends each standalone server-to-client\nrequest mid-call. Only *asked* outcomes ride `request_state`, so each question is asked once. Resolver\nbodies may re-run on every round; a recorded outcome is consulted only when the\nbody asks its question again, so a resolver's own computation always wins over\nanything the client echoes back in `request_state`.\n\nWhether the consumer receives the unwrapped model or the full\n`ElicitationResult` union is decided by the consumer's annotation:\n\n- `Annotated[T, Resolve(fn)]` -> unwrapped `T`; decline/cancel aborts the call.\n- `Annotated[ElicitationResult[T], Resolve(fn)]` (or a specific member) -> the\n  full outcome; the consumer branches on accept/decline/cancel.\n\n`Sample` and `ListRoots` have no decline arm; their consumers annotate the result type directly.",
+  "campos_ClientCapabilities": [
+    "elicitation",
+    "experimental",
+    "extensions",
+    "roots",
+    "sampling",
+    "tasks"
+  ],
+  "campos_ServerCapabilities": [
+    "completions",
+    "experimental",
+    "extensions",
+    "logging",
+    "prompts",
+    "resources",
+    "tasks",
+    "tools"
+  ],
+  "tipos_de_tarea": [
+    "CancelTaskRequest",
+    "CancelTaskRequestParams",
+    "CancelTaskResult",
+    "ClientTasksCapability",
+    "ClientTasksRequestsCapability",
+    "CreateTaskResult",
+    "GetTaskPayloadRequest",
+    "GetTaskPayloadRequestParams",
+    "GetTaskPayloadResult",
+    "GetTaskRequest",
+    "GetTaskRequestParams",
+    "GetTaskResult",
+    "ListTasksRequest",
+    "ListTasksResult",
+    "RelatedTaskMetadata",
+    "ServerTasksCapability",
+    "ServerTasksRequestsCapability",
+    "Task",
+    "TaskMetadata",
+    "TaskStatus",
+    "TaskStatusNotification",
+    "TaskStatusNotificationParams",
+    "TasksCallCapability",
+    "TasksCancelCapability",
+    "TasksCreateElicitationCapability",
+    "TasksCreateMessageCapability",
+    "TasksElicitationCapability",
+    "TasksListCapability",
+    "TasksSamplingCapability",
+    "TasksToolsCapability"
+  ],
+  "Task_campos": [
+    "created_at",
+    "last_updated_at",
+    "poll_interval",
+    "status",
+    "status_message",
+    "task_id",
+    "ttl"
+  ],
+  "Task_doc": "Data associated with a task (2025-11-25 only).",
+  "TaskStatus": "typing.Literal['working', 'input_required', 'completed', 'failed', 'cancelled']",
+  "tareas_deprecadas": {
+    "Task": false,
+    "CreateTaskResult": false,
+    "GetTaskRequest": false,
+    "CancelTaskRequest": false,
+    "ListTasksRequest": false
+  }
+}
