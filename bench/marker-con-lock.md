@@ -329,16 +329,66 @@ paga ese valor, no la mediana.)*
 **MEDIDO al terminar:**
 
 ```
-lock:        fichero inexistente · gpu.esta_libre() = True · gpu.dueno() = None
+lock:         fichero inexistente · gpu.esta_libre() = True · gpu.dueno() = None
 docker ps -a: los 5 de FileX en marcha + los 2 `Created` del 03/09 (16:17 y 16:24), AJENOS
-nvidia-smi:  1 987 MiB usados · 10 129 MiB libres  (base: 1 999 / 10 117)
+nvidia-smi:   2 022 MiB usados · 10 094 MiB libres  (base: 1 999 / 10 117)
 ```
 
 Ningún contenedor `surya-vllm-*` ni `filex-b3-sonda-*` sobrevive; ningún fichero fuera del
-destino; los desechables borrados. **Los dos contenedores en `Created` son anteriores a esta
-ronda y no se han tocado.**
+destino. **Los dos contenedores en `Created` son del 03/09, anteriores a esta ronda, y no se han
+tocado**; los dos `filex-gpu-mutex.*.json` de `%TEMP%` son del **31/08**, 0 B y ajenos, tampoco.
 
-### 7.1 Un defecto de MI instrumento, con control positivo
+### 7.1 Mi arnés dejó DOS procesos vivos 50 minutos, y el desechable con ellos
+
+**Esto lo encontró la verificación final, no el arnés, y es el hallazgo más accionable del día.**
+
+Al comprobar que no quedaba nada, apareció el desechable del intento 1 —
+`%TEMP%\filex-b3-i1-uuw_ncz5`— **todavía en disco**, con el `shutil.rmtree` del `finally`
+fallando con:
+
+```
+PermissionError [WinError 32] El proceso no tiene acceso al archivo porque está siendo
+utilizado por otro proceso: 'C:\Users\krato\AppData\Local\Temp\filex-b3-i1-uuw_ncz5'
+```
+
+**Y el directorio estaba VACÍO**, así que no era un fichero abierto: era el **`cwd`**. La cadena
+completa, MEDIDA:
+
+1. Mi arnés pasa `cwd=desechable` a `marker_single` (trampa 21: hay motores que escriben en el
+   `cwd`, así que se les da uno de usar y tirar).
+2. `surya` arranca **servidores locales de torch** con
+   `subprocess.Popen([sys.executable, "-m", <server>, …])` (`common/batch_service/client.py:47-71`)
+   — los de `fast_layout` y `ocr_error`, que **no** son Docker sino procesos, y **heredan el
+   `cwd`**.
+3. `marker_single` muere con `rc=1`… **y ellos no.** Sus descriptores lo dicen con nombre y hora:
+   `~/.cache/datalab/surya/fast_layout_server.json` (`pid 41452`, **04/09 08:15:47**) y
+   `ocr_error_server.json` (`pid 31624`, **04/09 08:16:00**) — mi intento 1 arrancó a las
+   **08:15:34**. `tasklist` los daba **vivos ~50 minutos después**.
+4. Con ese `cwd` retenido, el directorio no se puede borrar.
+
+**Prueba causal, no correlación:** el mismo `rmtree` que devolvía `WinError 32` **funciona a la
+primera** después de un `taskkill /F` a esos dos PID. Un cambio, un efecto.
+
+**Y el fallo es mío, en dos sitios, los dos del mismo tipo:**
+
+- **Sólo mato el árbol en el camino de excepción.** Mi bucle hace
+  `if tope_alcanzado or proc.poll() is None: <matar hijos y padre>`. Cuando `marker` **termina
+  solo** —que es lo que pasó— esa rama no se ejecuta y **los huérfanos se quedan**. La limpieza
+  estaba escrita para el caso raro y no para el normal.
+- **`shutil.rmtree(..., ignore_errors=True)` se lo tragó.** El `finally` intentó borrar, falló, y
+  **no lo registró en ninguna parte**: el JSON declara el desechable como si se hubiera borrado.
+  Es un silencio que fabriqué yo, exactamente de la familia que este proyecto lleva 111 trampas
+  documentando.
+
+Nada de esto invalida las medidas de §3 y §4 —los huérfanos son dos servidores de layout de
+3,9 MB de RSS cada uno, no tocan la GPU y aparecen *después* del `rc`—, pero **es justo el
+material de la trampa 47**: *«un `taskkill /F` no ejecuta `finally`: deja un desechable de R18 por
+conversión en vuelo, y el `%TEMP%` llegó a 978 directorios en menos de cinco horas»*. Aquí no hizo
+falta ni un `taskkill`: **basta con que el motor termine normalmente y deje hijos vivos.**
+
+Ya está limpio: los dos PID matados y el desechable borrado, verificado con `os.path.exists`.
+
+### 7.2 Un defecto de MI instrumento, con control positivo
 
 El coordinador observó, desde fuera, que tras la sonda el fichero de lock nombraba
 `B3-sonda-vllm` con un `winpid` ya muerto, mientras que mi JSON declaraba
@@ -402,12 +452,18 @@ verde. Línea propuesta:
 
 > | **B3** | *(se conserva lo tachado y lo de worker10)* … **CAUSA RAÍZ MEDIDA el 04/09/2026 por worker1** (`bench/marker-con-lock.md`), **por el camino (a): con el lock de GPU tomado y dejando que `marker` use la tarjeta.** El contenedor **arranca** —la imagen `vllm/vllm-openai:v0.20.1` ya está en la máquina, 31,8 GB, `LastTagTime` del 03/09, y el 31/08 no estaba— y **muere a los 109,2 s con `ExitCode=1` y `OOMKilled=false`**: `RuntimeError: The NVIDIA driver on your system is too old (found version 12080)`. La imagen trae **`torch 2.11.0+cu130`** (medido con `docker run --entrypoint python3`) y esta máquina es **driver 572.61 / CUDA 12.8**. **`marker_single` devuelve `rc=1` a los 643,87 s y NO produce `.md`, así que no hay CER que publicar** —publicar 100 % sería la trampa 99—. **No es VRAM**: pico 2 083 MiB sobre 1 999 de base. **Es del par (imagen, driver) y no la evita ninguna variable de entorno de `marker`/`surya`**: las dos salidas son actualizar el driver —decisión del usuario, con `.venv-ai`/`.venv-paddle`/`.venv-mcp-md` declarados frágiles enfrente— o `VLLM_DOCKER_IMAGE` con una imagen `cu12x`, decenas de GB y sin garantía. **`B3` se cierra por decisión, igual que `B4` (surya) y `B5` (MinerU), y por el MISMO mecanismo — que ahora tiene número: el contenedor vLLM no puede funcionar en esta máquina con este driver, y eso convierte tres descartes separados en un solo hecho de máquina.** Queda sin probar la vía más barata para sacarlo del bloqueo: `marker_single --disable_ocr` sobre un PDF que **ya tiene capa de texto**, que es justo el caso de `tipico_texto.pdf` | 🔴 **CERRADO POR BLOQUEO, causa raíz medida (driver CUDA 12.8 vs imagen cu130)** · `bench/marker-con-lock.md` |
 
-### 9.2 Retirada de un dato caducado en `CLAUDE.md` §1
+### 9.3 Retirada de un dato caducado en `CLAUDE.md` §1
 
 La fila de `.wslconfig` dice *«los 2 vCPU y 1,9 GiB de la VM de Docker»*. **Hoy son `memory=10GB`
 y `processors=6`**, confirmado desde el otro lado por `docker info` (9,71 GiB, 6 CPU). La regla no
 cambia; la cifra sí, y se usa para razonar.
 
-### 9.3 Trampa candidata (si el maestro la acepta, **al final**, como la 112)
+### 9.4 Trampas candidatas (si el maestro las acepta, **al final**, como 112 y 113)
 
-> 112. **Un testigo de «no dejé el lock puesto» puede mirar sólo una de las dos poblaciones de la exclusión, y el campo que lo dice es honesto — MEDIDO el 04/09 con control positivo** (`bench/marker-con-lock.md` §7.1). `gpu.esta_libre()` y `gpu.dueno()` consultan el **mutex `Global\`**; con un fichero de lock **presente** y de dueño ajeno muerto devuelven **`True`** y **`None`**. La trampa 96 ya midió que *el viejo sigue siendo la exclusión hasta que migre el último consumidor* —**24 de 25 arneses `.py` toman `O_CREAT|O_EXCL` sobre el fichero**—, así que un fichero huérfano **es** exclusión para ellos y **es invisible** para este testigo. Es la trampa 44 en su forma exacta: **el campo dice la verdad («el mutex está libre») y su nombre promete otra cosa («el lock está libre»)**, y por eso nadie lo discute. Un arnés que declare limpieza tiene que comprobar **las dos**: `esta_libre()` **y** `os.path.exists(gpu.fichero_lock())`. Corolario que amplía la 77: **media exclusión es peor que ninguna, y medio TESTIGO es peor todavía**, porque el de la mitad buena informa en verde.
+Las dos salen de defectos de **mi propio instrumento**, no de los motores medidos. La 112 es la
+más accionable: afecta a cualquier arnés del proyecto que dé un `cwd` desechable a un motor que
+arranque servidores propios.
+
+> 112. **Un motor puede TERMINAR bien y dejar hijos vivos que retienen el desechable por su `cwd`, y la limpieza escrita para el camino de excepción no se ejecuta en el normal — MEDIDO el 04/09 con prueba causal** (`bench/marker-con-lock.md` §7.1). `marker_single` murió con `rc=1` y **sus dos servidores locales de surya siguieron vivos ~50 minutos** —`fast_layout` (`pid 41452`) y `ocr_error` (`pid 31624`), arrancados con `Popen([sys.executable, "-m", <server>])` y por tanto **hijos que heredan el `cwd`**—, así que el `shutil.rmtree` del `finally` falló con **`WinError 32` sobre un directorio VACÍO**: no era un fichero abierto, era el `cwd`. El mismo `rmtree` **funciona a la primera** tras un `taskkill /F` a esos dos PID. Dos errores propios lo hicieron invisible: (a) la matanza del árbol estaba bajo `if tope_alcanzado or proc.poll() is None`, es decir **sólo en el camino de excepción**, y el motor terminó solo; y (b) **`ignore_errors=True` se tragó el fallo sin registrarlo**, así que el JSON declaraba el desechable borrado. Amplía la trampa 47: allí hacía falta un `taskkill` para dejar desechables huérfanos; **aquí basta con que el motor termine normalmente**. Y amplía la 37 por el otro lado: se vigilaban los hijos **Docker** —que sí se mataban con `docker rm -f`— y no los hijos **proceso**, que en surya 0.22.1 son la mitad de la arquitectura (`cleanup_kind: "process"` frente a `"docker"`, y el propio descriptor lo dice). **Mata el árbol también cuando el proceso sale con éxito, y que el borrado del desechable REGISTRE su fallo en vez de tragárselo.**
+>
+> 113. **Un testigo de «no dejé el lock puesto» puede mirar sólo una de las dos poblaciones de la exclusión, y el campo que lo dice es honesto — MEDIDO el 04/09 con control positivo** (`bench/marker-con-lock.md` §7.2). `gpu.esta_libre()` y `gpu.dueno()` consultan el **mutex `Global\`**; con un fichero de lock **presente** y de dueño ajeno muerto devuelven **`True`** y **`None`**. La trampa 96 ya midió que *el viejo sigue siendo la exclusión hasta que migre el último consumidor* —**24 de 25 arneses `.py` toman `O_CREAT|O_EXCL` sobre el fichero**—, así que un fichero huérfano **es** exclusión para ellos y **es invisible** para este testigo. Es la trampa 44 en su forma exacta: **el campo dice la verdad («el mutex está libre») y su nombre promete otra cosa («el lock está libre»)**, y por eso nadie lo discute. Un arnés que declare limpieza tiene que comprobar **las dos**: `esta_libre()` **y** `os.path.exists(gpu.fichero_lock())`. Corolario que amplía la 77: **media exclusión es peor que ninguna, y medio TESTIGO es peor todavía**, porque el de la mitad buena informa en verde.
