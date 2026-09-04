@@ -1,0 +1,70 @@
+{
+  "plataforma": "wsl2",
+  "kernel": "6.18.33.2-microsoft-standard-WSL2",
+  "fs_tmp": "tmpfs",
+  "duracion_por_fase_s": 2.0,
+  "allowed_root": "/tmp/c5_toctou/allowed",
+  "estatico": {
+    "B_read_directo": "SECRETO-DE-FUERA-ENVENENADO",
+    "B_servidor": "denegado",
+    "A_servidor": "dentro"
+  },
+  "control_positivo_vulnerable_natural": {
+    "sujeto": "puro-python vulnerable (sin ventana forzada)",
+    "ventana_forzada_s": 0.0,
+    "intentos": 14979,
+    "toggles_atacante": 16409,
+    "conteo": {
+      "denegado": 1803,
+      "WIN_FUERA": 3369,
+      "enoent": 6823,
+      "dentro": 2984
+    },
+    "wins_fuera": 3369,
+    "tasa_win_%": 22.491
+  },
+  "control_positivo_vulnerable_ventana": {
+    "sujeto": "puro-python vulnerable (ventana forzada 2ms)",
+    "ventana_forzada_s": 0.002,
+    "intentos": 2313,
+    "toggles_atacante": 149510,
+    "conteo": {
+      "enoent": 821,
+      "dentro": 461,
+      "denegado": 648,
+      "WIN_FUERA": 383
+    },
+    "wins_fuera": 383,
+    "tasa_win_%": 16.559
+  },
+  "control_negativo_seguro": {
+    "sujeto": "puro-python seguro por fd (ventana forzada 2ms)",
+    "ventana_forzada_s": 0.002,
+    "intentos": 15959,
+    "toggles_atacante": 141270,
+    "conteo": {
+      "denegado": 1420,
+      "enoent": 14326,
+      "dentro": 213
+    },
+    "wins_fuera": 0,
+    "tasa_win_%": 0.0
+  },
+  "servidor_referencia": {
+    "sujeto": "servers/filesystem dist/index.js (node)",
+    "vivo_antes": true,
+    "vivo_despues": true,
+    "intentos": 2361,
+    "toggles_atacante": 67000,
+    "conteo": {
+      "denegado": 1801,
+      "dentro": 363,
+      "WIN_FUERA": 197
+    },
+    "wins_fuera": 197,
+    "tasa_win_%": 8.344,
+    "ejemplo_win": "{\"result\": {\"content\": [{\"type\": \"text\", \"text\": \"SECRETO-DE-FUERA-ENVENENADO\\n\"}], \"structuredContent\": {\"content\": \"SECRETO-DE-FUERA-ENVENENADO\\n\"}}, \"jsonrpc\": \"2.0\", \"id\": 11}",
+    "ejemplo_denegado": "{\"result\": {\"content\": [{\"type\": \"text\", \"text\": \"ENOENT: no such file or directory, open '/tmp/c5_toctou/allowed/target/secret.txt'\"}], \"isError\": true}, \"jsonrpc\": \"2.0\", \"id\": 2}",
+    "ejemplo_dentro": "{\"result\": {\"content\": [{\"type\": \"text\", \"text\": \"CONTENIDO-DENTRO-LEGITIMO\\n\"}], \"structuredContent\": {\"content\": \"CONTENIDO-DENTRO-LEGITIMO\\n\"}}, \"jsonrpc\": \"2.0\", \"id\": 3}"
+  }
+}
