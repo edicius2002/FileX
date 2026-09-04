@@ -4,9 +4,12 @@ Esta guía es para quien sólo quiere **usar** FileX: convertir ficheros, no toc
 Si vas a contribuir o a modificar `filex/`, esta guía no es para ti — lee
 [`CONTRIBUTING.md`](CONTRIBUTING.md) y [`CLAUDE.md`](CLAUDE.md) en su lugar.
 
-Todo lo que hay aquí abajo se ejecutó de verdad en la máquina de referencia el 03/09/2026,
+Todo lo que hay aquí abajo se ejecutó de verdad en la máquina de referencia el 04/09/2026,
 con el intérprete `.venv-mcp-filex/Scripts/python.exe` (win32, 3.11.9) y Docker levantado. La
 salida está copiada tal cual, no reconstruida.
+
+**Los tiempos en milisegundos son de esa tanda y no son comparables con los tuyos**; el
+resto de la salida —caminos, veredictos, recuentos de bytes— sí es reproducible.
 
 ---
 
@@ -49,6 +52,12 @@ $ .venv\Scripts\filex --version
 filex 0.1.0
 ```
 
+*(Las rutas de arriba son las de Windows, que es donde se midió. En Linux o macOS los
+mismos pasos son `.venv/bin/pip` y `.venv/bin/filex`. **El producto se ha ejercitado en
+Windows**: la CI comprueba que el paquete importa y que parte de la suite pasa en Linux,
+pero las garantías más fuertes —los cerrojos de fichero, por ejemplo— están medidas sobre
+NTFS. Ver el apartado de CI del [`README.md`](README.md).)*
+
 Si no quieres instalarlo, no hace falta: `python -m filex ...` funciona igual desde la raíz
 del repositorio clonado, sin ningún paso previo. Todos los ejemplos de esta guía se
 ejecutaron así.
@@ -74,11 +83,11 @@ MOTORES
   ✓ imagemagick    7.1.2-21       67 aristas (67 medidas)
   ✓ ghostscript    10.07.0         4 aristas (4 medidas)
   ✓ ffmpeg         N-121159-g0bd5a7d371-20250921   85 aristas (83 medidas)
-  ✓ doc_libreoffice 29.4.3 · filex-c13@6d359bad483e   18 aristas (16 medidas)
-  ✓ doc_pandoc     29.4.3 · filex-c13@6d359bad483e   24 aristas (24 medidas)
+  ✓ doc_libreoffice 29.4.3 · filex-c13@6d359bad483e   28 aristas (26 medidas)
+  ✓ doc_pandoc     29.4.3 · filex-c13@6d359bad483e   31 aristas (31 medidas)
   ✓ doc_calibre    29.4.3 · filex-c13@6d359bad483e   17 aristas (16 medidas)
 
-GRAFO: 215 aristas, 210 respaldadas por una medición reproducible del patrón oro.
+GRAFO: 232 aristas, 227 respaldadas por una medición reproducible del patrón oro.
 El resto están SIN SONDEAR y se marcan como tal: declarar 'nominal'
 como si fuera 'real' es el fallo central del sector (41,0 % de las
 aristas que los catálogos declaran no existen).
@@ -125,7 +134,7 @@ NO HAY CAMINO — ningún motor disponible escribe 'xyz'
 ```
 $ python -m filex --raiz corpus --raiz . convertir corpus/video/patologico_2pistas.mkv salida.mp4
 salida.mp4   [ok]
-  mkv→mp4 [ffmpeg]  rc=0  5273 ms  contrato 6/6 → ok
+  mkv→mp4 [ffmpeg]  rc=0  2155 ms  contrato 6/6 → ok
       [informativo] N9: el fichero declarado lleva el 100.0 % de los bytes escritos (3966842 de 3966842 B)
 ```
 
