@@ -763,15 +763,45 @@ class RootsCacheYFallo(unittest.TestCase):
         self.assertEqual(s.llamadas, 2, "el reintento tiene que volver a preguntar")
         self.assertFalse(g.sin_acceso, "y la sesión se recupera")
 
-    def test_un_fallo_CON_raiz_de_servidor_si_se_sella(self):
-        """El contrapunto: si queda alguna raíz, la respuesta es buena aunque
-        el cliente no contestara, y volver a preguntar no cambiaría nada."""
+    def test_un_fallo_CON_raiz_de_servidor_TAMPOCO_se_sella(self):
+        """~~El contrapunto: si queda alguna raíz, la respuesta es buena aunque
+        el cliente no contestara, y volver a preguntar no cambiaría nada.~~
+        **REFUTADO por N34** (`bench/roots-concurrencia.md`, celda N3).
+
+        La premisa vieja era que con `efectivas` no vacía la respuesta ya es
+        buena. Y **`_interseca(servidor, [])` devuelve la lista del SERVIDOR
+        ENTERA**, así que un `roots/list` que falla no deja «ninguna raíz»:
+        deja **todas**, y sellarlo fijaba para toda la sesión un confinamiento
+        **más ancho que la intersección que R13 exige**. Volver a preguntar sí
+        cambia la respuesta, y esta prueba lo mide en la segunda mitad: con el
+        cliente respondiendo, el confinamiento se ESTRECHA a su raíz.
+
+        Es la trampa 43 un nivel más adentro de donde M3 la aplicó: un fallo al
+        preguntar no distingue «el cliente no tiene roots» de «el cliente tiene
+        roots y no contestó», y sólo la primera justifica quedarse con los del
+        servidor. El precio es una ida y vuelta más, y sólo mientras el cliente
+        siga sin contestar.
+        """
+        sub = os.path.join(_RAIZ, "filex")          # más estrecho que `_RAIZ`
         g = M.Raices(FileX(), [_RAIZ])
-        s = self._Sesion([], fallar_en={1})
+        s = self._Sesion([sub], fallar_en={1})
         self._correr(g.asegurar(s))
+        # Con el fallo: no hay respuesta del cliente, así que quedan las raíces
+        # del servidor. Se opera —eso no cambia— pero NO se sella.
         self.assertFalse(g.sin_acceso)
+        self.assertFalse(g._resuelto, "un resultado nacido de un fallo no se "
+                                      "sella (N34)")
+        self.assertEqual(g.fx.confinamiento.lectura,
+                         [_conf._norm(os.path.abspath(_RAIZ))])
+        # Y el reintento demuestra que preguntar SÍ cambiaba la respuesta.
         self._correr(g.asegurar(s))
-        self.assertEqual(s.llamadas, 1, "no hace falta repreguntar")
+        self.assertEqual(s.llamadas, 2, "hay que repreguntar: el fallo escondía "
+                                        "las raíces del cliente")
+        self.assertTrue(g._resuelto)
+        self.assertEqual(g.fx.confinamiento.lectura,
+                         [_conf._norm(os.path.abspath(sub))],
+                         "la intersección de R13 es más estrecha que la lista "
+                         "del servidor que el sellado había fijado")
 
     def test_la_emision_de_roots_list_changed_queda_CONTADA(self):
         """C36 ítem 3 — no se puede forzar una emisión real, así que lo que se
