@@ -1,0 +1,18 @@
+aristas indeterminadas: 75874
+
+  ff_solo_demuxer                                  29406   38.76 %
+  ff_extension_de_demuxer                          16470   21.71 %
+  ff_declarado_muxer                               12242   16.13 %
+  im_formato_real_solo_lectura                     11451   15.09 %
+  ff_desconocido_por_el_binario                     2028    2.67 %
+  no_aplica_generador                               1790    2.36 %
+  im_pseudo_operador                                1253    1.65 %
+  no_aplica_protocolo                                716    0.94 %
+  no_aplica_dispositivo                              338    0.45 %
+  ff_declarado_muxer+im_formato_real_solo_lectura      90    0.12 %
+  ff_extension_de_demuxer+im_formato_real_solo_lectura      90    0.12 %
+
+de los 73 `ff_declarado_muxer`, NUNCA probados como salida: 54
+aristas del grafo A con uno de esos 54 como ORIGEN: 10908
+
+lista: aea, alaw, alp, argo_asf, cavsvideo, codec2, codec2raw, dash, daud, dirac, f32be, f32le, f64be, f64le, ffmetadata, film_cpk, filmstrip, g723_1, g726, g726le, h264, hls, ilbc, image2, jacosub, kvag, mcc, microdvd, mpjpeg, mulaw, rawvideo, rtp, rtsp, s16be, s16le, s24be, s24le, s32be, s32le, s8, sap, smjpeg, truehd, u16be, u16le, u24be, u24le, u32be, u32le, u8, vc1test, vidc, webvtt, wsaud

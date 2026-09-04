@@ -1,0 +1,2227 @@
+{
+ "ffmpeg|302": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|3dostr": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|3g2": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|3gp": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|4xm": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|669": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|722": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|aa": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|aa3": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|aax": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|ac4": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|ace": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|acm": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|act": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|adf": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|adp": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|ads": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|aea": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|aix": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|alaw": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|alias_pix": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|alp": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|alsa": {
+  "clase": "ff_desconocido_por_el_binario",
+  "evidencia": "en censo.json ffmpeg.muertos_in: ningun demuxer, extension ni dispositivo lo reconoce",
+  "mueve": false
+ },
+ "ffmpeg|amf": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|amr": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|amrnb": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|amrwb": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|ams": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|anm": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|ans": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|apc": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|ape": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|apl": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|aqt": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|aqtitle": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|argo_asf": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|argo_brp": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|asc": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|asf_o": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|av1": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|avc": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|avr": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|avs3": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|awb": {
+  "clase": "ff_desconocido_por_el_binario",
+  "evidencia": "en censo.json ffmpeg.muertos_in: ningun demuxer, extension ni dispositivo lo reconoce",
+  "mueve": false
+ },
+ "ffmpeg|bcstm": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|bethsoftvid": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|bfi": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|bfstm": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|bin": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|bink": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|binka": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|bit": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|bitpacked": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|bmv": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|boa": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|bonk": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|brender_pix": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|brstm": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|c2": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|c93": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|cavsvideo": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|cdata": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|cdg": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|cdxl": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|cgi": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|cif": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|cine": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|codec2": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|codec2raw": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|concat": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|cri": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|dash": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|dat": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|daud": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|dav": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|dbm": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|dcstr": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|derf": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|dfa": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|dhav": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|dif": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|digi": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|dirac": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|diz": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|dmf": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|dnxhd": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|dpx_pipe": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|dsf": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|dsicin": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|dsm": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|dss": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|dtk": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|dtm": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|dts": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|dtshd": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|dv": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|dvbsub": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|dvbtxt": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|dxa": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|ea": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|ea_cdata": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|epaf": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|evc": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|exr_pipe": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|f32be": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|f32le": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|f64be": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|f64le": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|fap": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|far": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|fbdev": {
+  "clase": "ff_desconocido_por_el_binario",
+  "evidencia": "en censo.json ffmpeg.muertos_in: ningun demuxer, extension ni dispositivo lo reconoce",
+  "mueve": false
+ },
+ "ffmpeg|ffmetadata": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|film_cpk": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|filmstrip": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|flic": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|flm": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|frm": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|fsb": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|fwse": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|g723_1": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|g726": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|g726le": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|g729": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|gdm": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|gdv": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|genh": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|gsm": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|gxf": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|h264": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|h265": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|h266": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|h26l": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|hca": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|hcom": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|hls": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|hnm": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|ice": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|idcin": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|idf": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|idx": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|iec61883": {
+  "clase": "ff_desconocido_por_el_binario",
+  "evidencia": "en censo.json ffmpeg.muertos_in: ningun demuxer, extension ni dispositivo lo reconoce",
+  "mueve": false
+ },
+ "ffmpeg|iff": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|ifv": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|ilbc": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|image2": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|imf": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|imx": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|ingenient": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|ipmovie": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|ipu": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|ism": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|iss": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|it": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|iv8": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|ivr": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|j2b": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|jack": {
+  "clase": "ff_desconocido_por_el_binario",
+  "evidencia": "en censo.json ffmpeg.muertos_in: ningun demuxer, extension ni dispositivo lo reconoce",
+  "mueve": false
+ },
+ "ffmpeg|jacosub": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|jpegls": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|jv": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|kmsgrab": {
+  "clase": "ff_desconocido_por_el_binario",
+  "evidencia": "en censo.json ffmpeg.muertos_in: ningun demuxer, extension ni dispositivo lo reconoce",
+  "mueve": false
+ },
+ "ffmpeg|kux": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|kvag": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|laf": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|lavfi": {
+  "clase": "no_aplica_dispositivo",
+  "evidencia": "-devices: 'D  lavfi  Libavfilter virtual input device'",
+  "mueve": true
+ },
+ "ffmpeg|lmlm4": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|luodat": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|lvf": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|lxf": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|m15": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|mac": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|mca": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|mcc": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|mdl": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|med": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|microdvd": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|mj2": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|mk3d": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|mka": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|mks": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|mlp": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|mlv": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|mm": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|mmcmp": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|mmf": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|mms": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|mo3": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|mod": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|mods": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|moflex": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|mpc8": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|mpjpeg": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|mpl2": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|mpo": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|mpsub": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|mptm": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|msf": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|msnwctcp": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|msp": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|mt2": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|mtaf": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|mtm": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|mulaw": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|musx": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|mv": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|mvi": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|mxg": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|nc": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|nfo": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|nist": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|nistsphere": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|nsp": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|nst": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|nsv": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|nuv": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|okt": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|oma": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|omg": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|openal": {
+  "clase": "no_aplica_dispositivo",
+  "evidencia": "-devices: 'D  openal  OpenAL audio capture device'",
+  "mueve": true
+ },
+ "ffmpeg|osq": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|oss": {
+  "clase": "ff_desconocido_por_el_binario",
+  "evidencia": "en censo.json ffmpeg.muertos_in: ningun demuxer, extension ni dispositivo lo reconoce",
+  "mueve": false
+ },
+ "ffmpeg|paf": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|pdv": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|photocd": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|pictor": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|pjs": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|plm": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|pmp": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|pp": {
+  "clase": "ff_desconocido_por_el_binario",
+  "evidencia": "en censo.json ffmpeg.muertos_in: ningun demuxer, extension ni dispositivo lo reconoce",
+  "mueve": false
+ },
+ "ffmpeg|psm": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|psxstr": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|pt36": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|ptm": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|pulse": {
+  "clase": "ff_desconocido_por_el_binario",
+  "evidencia": "en censo.json ffmpeg.muertos_in: ningun demuxer, extension ni dispositivo lo reconoce",
+  "mueve": false
+ },
+ "ffmpeg|pva": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|pvf": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|qcif": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|qcp": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|qdraw": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|r3d": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|rawvideo": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|rco": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|rcv": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|realtext": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|redspark": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|rka": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|rl2": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|roq": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|rpl": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|rsd": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|rt": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|rtp": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|rtsp": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|s16be": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|s16le": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|s24be": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|s24le": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|s32be": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|s32le": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|s337m": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|s3m": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|s8": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|sami": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|sap": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|sbg": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|scc": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|sdns": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|sdp": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|sdr2": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|sds": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|sdx": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|ser": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|sfx": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|sfx2": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|sga": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|shn": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|siff": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|sln": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|smi": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|smjpeg": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|smk": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|smush": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|sndio": {
+  "clase": "ff_desconocido_por_el_binario",
+  "evidencia": "en censo.json ffmpeg.muertos_in: ningun demuxer, extension ni dispositivo lo reconoce",
+  "mueve": false
+ },
+ "ffmpeg|sol": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|son": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|sph": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|ss2": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|st26": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|stk": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|stl": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|stm": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|stp": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|str": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|sub": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|sup": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|svag": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|svs": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|tak": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|tco": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|tedcaptions": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|thd": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|thp": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|tiertexseq": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|tmv": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|truehd": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|tty": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|txd": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|ty": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|ty+": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|u16be": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|u16le": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|u24be": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|u24le": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|u32be": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|u32le": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|u8": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|ult": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|umx": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|usm": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|v": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|v210": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|v210x": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|vb": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|vc1": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|vc1test": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|vidc": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|video4linux2": {
+  "clase": "ff_desconocido_por_el_binario",
+  "evidencia": "en censo.json ffmpeg.muertos_in: ningun demuxer, extension ni dispositivo lo reconoce",
+  "mueve": false
+ },
+ "ffmpeg|viv": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|vividas": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|vivo": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|vmd": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|vobsub": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|vpk": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|vplayer": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|vqe": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|vqf": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|vql": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|vt": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|wa": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|way": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|wc3movie": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|webvtt": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|wow": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|wsaud": {
+  "clase": "ff_declarado_muxer",
+  "evidencia": "aparece en `ffmpeg -muxers`: el binario declara que SI lo escribe -> el motivo del censo es falso",
+  "mueve": false
+ },
+ "ffmpeg|wsd": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|wsvqa": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|wve": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|x11grab": {
+  "clase": "ff_desconocido_por_el_binario",
+  "evidencia": "en censo.json ffmpeg.muertos_in: ningun demuxer, extension ni dispositivo lo reconoce",
+  "mueve": false
+ },
+ "ffmpeg|xa": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|xbin": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|xl": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|xm": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|xmd": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|xmv": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|xpk": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "ffmpeg|xvag": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|xwma": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|yop": {
+  "clase": "ff_solo_demuxer",
+  "evidencia": "en `-demuxers` y NO en `-muxers`: ffmpeg lo lee y no lo escribe",
+  "mueve": false
+ },
+ "ffmpeg|yuv10": {
+  "clase": "ff_extension_de_demuxer",
+  "evidencia": "no es nombre de demuxer/muxer pero NO esta en censo.muertos_in -> por complemento esta en las 'Common extensions' de algun demuxer",
+  "mueve": false
+ },
+ "imagemagick|3fr": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=DNG, modo r--, 'Hasselblad CFV/H3D39II Raw Format (0.22.1-Release)'",
+  "mueve": false
+ },
+ "imagemagick|3g2": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=VIDEO, modo r--, 'Media Container'",
+  "mueve": false
+ },
+ "imagemagick|3gp": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=VIDEO, modo r--, 'Media Container'",
+  "mueve": false
+ },
+ "imagemagick|arw": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=DNG, modo r--, 'Sony Alpha Raw Format (0.22.1-Release)'",
+  "mueve": false
+ },
+ "imagemagick|avci": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=HEIC, modo r--, 'AVC Image File Format (1.21.2)'",
+  "mueve": false
+ },
+ "imagemagick|canvas": {
+  "clase": "no_aplica_generador",
+  "evidencia": "-list format: Module=XC, modo r--",
+  "mueve": true
+ },
+ "imagemagick|caption": {
+  "clase": "no_aplica_generador",
+  "evidencia": "-list format: Module=CAPTION, modo r--",
+  "mueve": true
+ },
+ "imagemagick|clip": {
+  "clase": "im_pseudo_operador",
+  "evidencia": "-list format: Module=CLIP, modo rw+, 'Image Clip Mask' -- consume un fichero o una imagen: NO se reclasifica",
+  "mueve": false
+ },
+ "imagemagick|cr2": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=DNG, modo r--, 'Canon Digital Camera Raw Format (0.22.1-Release)'",
+  "mueve": false
+ },
+ "imagemagick|cr3": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=DNG, modo r--, 'Canon Digital Camera Raw Format (0.22.1-Release)'",
+  "mueve": false
+ },
+ "imagemagick|crw": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=DNG, modo r--, 'Canon Digital Camera Raw Format (0.22.1-Release)'",
+  "mueve": false
+ },
+ "imagemagick|cube": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=CUBE, modo r--, 'Cube LUT'",
+  "mueve": false
+ },
+ "imagemagick|cut": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=CUT, modo r--, 'DR Halo'",
+  "mueve": false
+ },
+ "imagemagick|dcm": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=DCM, modo r--, 'Digital Imaging and Communications in Medicine image'",
+  "mueve": false
+ },
+ "imagemagick|dcr": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=DNG, modo r--, 'Kodak Digital Camera Raw Format (0.22.1-Release)'",
+  "mueve": false
+ },
+ "imagemagick|dcraw": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=DNG, modo r--, 'Raw Photo Decoder (dcraw) (0.22.1-Release)'",
+  "mueve": false
+ },
+ "imagemagick|dfont": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=TTF, modo r--, 'Multi-face font package (Freetype 2.14.3)'",
+  "mueve": false
+ },
+ "imagemagick|dng": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=DNG, modo r--, 'Digital Negative Raw Format (0.22.1-Release)'",
+  "mueve": false
+ },
+ "imagemagick|emf": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=EMF, modo r--, 'Windows Enhanced Meta File'",
+  "mueve": false
+ },
+ "imagemagick|erf": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=DNG, modo r--, 'Epson Raw Format (0.22.1-Release)'",
+  "mueve": false
+ },
+ "imagemagick|fff": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=DNG, modo r--, 'Hasselblad CFV/H3D39II Raw Format (0.22.1-Release)'",
+  "mueve": false
+ },
+ "imagemagick|file": {
+  "clase": "no_aplica_protocolo",
+  "evidencia": "-list format: Module=URL, 'Uniform Resource Locator'",
+  "mueve": true
+ },
+ "imagemagick|fractal": {
+  "clase": "no_aplica_generador",
+  "evidencia": "-list format: Module=PLASMA, modo r--",
+  "mueve": true
+ },
+ "imagemagick|ftp": {
+  "clase": "no_aplica_protocolo",
+  "evidencia": "-list format: Module=URL, 'Uniform Resource Locator'",
+  "mueve": true
+ },
+ "imagemagick|gradient": {
+  "clase": "no_aplica_generador",
+  "evidencia": "-list format: Module=GRADIENT, modo r--",
+  "mueve": true
+ },
+ "imagemagick|hald": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=HALD, modo r--, 'Identity Hald color lookup table image'",
+  "mueve": false
+ },
+ "imagemagick|heic": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=HEIC, modo r--, 'High Efficiency Image Format (1.21.2)'",
+  "mueve": false
+ },
+ "imagemagick|heif": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=HEIC, modo r--, 'High Efficiency Image Format (1.21.2)'",
+  "mueve": false
+ },
+ "imagemagick|http": {
+  "clase": "no_aplica_protocolo",
+  "evidencia": "-list format: Module=URL, 'Uniform Resource Locator'",
+  "mueve": true
+ },
+ "imagemagick|https": {
+  "clase": "no_aplica_protocolo",
+  "evidencia": "-list format: Module=URL, 'Uniform Resource Locator'",
+  "mueve": true
+ },
+ "imagemagick|iiq": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=DNG, modo r--, 'Phase One Raw Format (0.22.1-Release)'",
+  "mueve": false
+ },
+ "imagemagick|jnx": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=JNX, modo r--, 'Garmin tile format'",
+  "mueve": false
+ },
+ "imagemagick|jpt": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=JP2, modo rw-, 'JPEG-2000 File Format Syntax (2.5.4)'",
+  "mueve": false
+ },
+ "imagemagick|k25": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=DNG, modo r--, 'Kodak Digital Camera Raw Format (0.22.1-Release)'",
+  "mueve": false
+ },
+ "imagemagick|kdc": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=DNG, modo r--, 'Kodak Digital Camera Raw Format (0.22.1-Release)'",
+  "mueve": false
+ },
+ "imagemagick|label": {
+  "clase": "no_aplica_generador",
+  "evidencia": "-list format: Module=LABEL, modo r--",
+  "mueve": true
+ },
+ "imagemagick|mac": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=MAC, modo r--, 'MAC Paint'",
+  "mueve": false
+ },
+ "imagemagick|mask": {
+  "clase": "im_pseudo_operador",
+  "evidencia": "-list format: Module=MASK, modo rw+, 'Image Clip Mask' -- consume un fichero o una imagen: NO se reclasifica",
+  "mueve": false
+ },
+ "imagemagick|mdc": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=DNG, modo r--, 'Minolta Digital Camera Raw Format (0.22.1-Release)'",
+  "mueve": false
+ },
+ "imagemagick|mef": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=DNG, modo r--, 'Mamiya Raw Format (0.22.1-Release)'",
+  "mueve": false
+ },
+ "imagemagick|mos": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=DNG, modo r--, 'Aptus Leaf Raw Format (0.22.1-Release)'",
+  "mueve": false
+ },
+ "imagemagick|mpo": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=JPEG, modo r--, 'Joint Photographic Experts Group JFIF format (libjpeg-turbo 3.1.3)'",
+  "mueve": false
+ },
+ "imagemagick|mrw": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=DNG, modo r--, 'Sony (Minolta) Raw Format (0.22.1-Release)'",
+  "mueve": false
+ },
+ "imagemagick|msl": {
+  "clase": "im_pseudo_operador",
+  "evidencia": "-list format: Module=MSL, modo r--, 'Magick Scripting Language' -- consume un fichero o una imagen: NO se reclasifica",
+  "mueve": false
+ },
+ "imagemagick|nef": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=DNG, modo r--, 'Nikon Digital SLR Camera Raw Format (0.22.1-Release)'",
+  "mueve": false
+ },
+ "imagemagick|nrw": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=DNG, modo r--, 'Nikon Digital SLR Camera Raw Format (0.22.1-Release)'",
+  "mueve": false
+ },
+ "imagemagick|ora": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=ORA, modo r--, 'OpenRaster format'",
+  "mueve": false
+ },
+ "imagemagick|orf": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=DNG, modo r--, 'Olympus Digital Camera Raw Format (0.22.1-Release)'",
+  "mueve": false
+ },
+ "imagemagick|otf": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=TTF, modo r--, 'Open Type font (Freetype 2.14.3)'",
+  "mueve": false
+ },
+ "imagemagick|pango": {
+  "clase": "im_pseudo_operador",
+  "evidencia": "-list format: Module=PANGO, modo r--, 'Pango Markup Language (Pangocairo 1.45.2)' -- consume un fichero o una imagen: NO se reclasifica",
+  "mueve": false
+ },
+ "imagemagick|pattern": {
+  "clase": "no_aplica_generador",
+  "evidencia": "-list format: Module=PATTERN, modo r--",
+  "mueve": true
+ },
+ "imagemagick|pef": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=DNG, modo r--, 'Pentax Electronic Raw Format (0.22.1-Release)'",
+  "mueve": false
+ },
+ "imagemagick|pes": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=PES, modo r--, 'Embrid Embroidery Format'",
+  "mueve": false
+ },
+ "imagemagick|pfa": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=TTF, modo r--, 'Postscript Type 1 font (ASCII) (Freetype 2.14.3)'",
+  "mueve": false
+ },
+ "imagemagick|pfb": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=TTF, modo r--, 'Postscript Type 1 font (binary) (Freetype 2.14.3)'",
+  "mueve": false
+ },
+ "imagemagick|plasma": {
+  "clase": "no_aplica_generador",
+  "evidencia": "-list format: Module=PLASMA, modo r--",
+  "mueve": true
+ },
+ "imagemagick|pwp": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=PWP, modo r--, 'Seattle Film Works'",
+  "mueve": false
+ },
+ "imagemagick|radial-gradient": {
+  "clase": "no_aplica_generador",
+  "evidencia": "-list format: Module=GRADIENT, modo r--",
+  "mueve": true
+ },
+ "imagemagick|raf": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=DNG, modo r--, 'Fuji CCD-RAW Graphic Raw Format (0.22.1-Release)'",
+  "mueve": false
+ },
+ "imagemagick|raw": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=DNG, modo r--, 'Raw (0.22.1-Release)'",
+  "mueve": false
+ },
+ "imagemagick|rgb565": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=RGB, modo r--, 'Raw red, green, blue samples in 565 format'",
+  "mueve": false
+ },
+ "imagemagick|rla": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=RLA, modo r--, 'Alias/Wavefront image'",
+  "mueve": false
+ },
+ "imagemagick|rle": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=RLE, modo r--, 'Utah Run length encoded image'",
+  "mueve": false
+ },
+ "imagemagick|rmf": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=DNG, modo r--, 'Raw Media Format (0.22.1-Release)'",
+  "mueve": false
+ },
+ "imagemagick|rw2": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=DNG, modo r--, 'Panasonic Lumix Raw Format (0.22.1-Release)'",
+  "mueve": false
+ },
+ "imagemagick|rwl": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=DNG, modo r--, 'Leica Raw Format (0.22.1-Release)'",
+  "mueve": false
+ },
+ "imagemagick|scr": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=SCR, modo r--, 'ZX-Spectrum SCREEN$'",
+  "mueve": false
+ },
+ "imagemagick|screenshot": {
+  "clase": "no_aplica_generador",
+  "evidencia": "-list format: Module=SCREENSHO, modo r--",
+  "mueve": true
+ },
+ "imagemagick|sct": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=SCT, modo r--, 'Scitex HandShake'",
+  "mueve": false
+ },
+ "imagemagick|sfw": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=SFW, modo r--, 'Seattle Film Works'",
+  "mueve": false
+ },
+ "imagemagick|sr2": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=DNG, modo r--, 'Sony Raw Format 2 (0.22.1-Release)'",
+  "mueve": false
+ },
+ "imagemagick|srf": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=DNG, modo r--, 'Sony Raw Format (0.22.1-Release)'",
+  "mueve": false
+ },
+ "imagemagick|srw": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=DNG, modo r--, 'Samsung Raw Format (0.22.1-Release)'",
+  "mueve": false
+ },
+ "imagemagick|stegano": {
+  "clase": "im_pseudo_operador",
+  "evidencia": "-list format: Module=STEGANO, modo r--, 'Steganographic image' -- consume un fichero o una imagen: NO se reclasifica",
+  "mueve": false
+ },
+ "imagemagick|sti": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=DNG, modo r--, 'Sinar CaptureShop Raw Format (0.22.1-Release)'",
+  "mueve": false
+ },
+ "imagemagick|text": {
+  "clase": "im_pseudo_operador",
+  "evidencia": "-list format: Module=TXT, modo r--, 'Text' -- consume un fichero o una imagen: NO se reclasifica",
+  "mueve": false
+ },
+ "imagemagick|tile": {
+  "clase": "im_pseudo_operador",
+  "evidencia": "-list format: Module=TILE, modo r--, 'Tile image with a texture' -- consume un fichero o una imagen: NO se reclasifica",
+  "mueve": false
+ },
+ "imagemagick|tim": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=TIM, modo r--, 'PSX TIM'",
+  "mueve": false
+ },
+ "imagemagick|tm2": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=TIM2, modo r--, 'PS2 TIM2'",
+  "mueve": false
+ },
+ "imagemagick|ttc": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=TTF, modo r--, 'TrueType font collection (Freetype 2.14.3)'",
+  "mueve": false
+ },
+ "imagemagick|ttf": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=TTF, modo r--, 'TrueType font (Freetype 2.14.3)'",
+  "mueve": false
+ },
+ "imagemagick|wmf": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=EMF, modo r--, 'Windows Meta File'",
+  "mueve": false
+ },
+ "imagemagick|x3f": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=DNG, modo r--, 'Sigma Camera RAW Format (0.22.1-Release)'",
+  "mueve": false
+ },
+ "imagemagick|xc": {
+  "clase": "no_aplica_generador",
+  "evidencia": "-list format: Module=XC, modo r--",
+  "mueve": true
+ },
+ "imagemagick|xcf": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=XCF, modo r--, 'GIMP image'",
+  "mueve": false
+ },
+ "imagemagick|xps": {
+  "clase": "im_formato_real_solo_lectura",
+  "evidencia": "-list format: Module=XPS, modo r--, 'Microsoft XML Paper Specification'",
+  "mueve": false
+ }
+}

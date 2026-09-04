@@ -1,0 +1,6 @@
+semi_salida ffmpeg: 202 tokens probados, 169 vivos
+
+tokens no_materializables que ffmpeg declara MUXER: 73
+  ffmpeg SI se intento (estaba en viva_ff_out) : 5
+  probado como salida y MUERTO -> no se intento: 14  ['ac4', 'avs3', 'bit', 'dnxhd', 'dts', 'dv', 'evc', 'gsm', 'gxf', 'mlp', 'oma', 'scc', 'sup', 'vc1']
+  nunca probado como salida    -> no se intento: 54  ['aea', 'alaw', 'alp', 'argo_asf', 'cavsvideo', 'codec2', 'codec2raw', 'dash', 'daud', 'dirac', 'f32be', 'f32le', 'f64be', 'f64le', 'ffmetadata']
