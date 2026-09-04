@@ -66,6 +66,14 @@ De la pasada 1, **los 36 escritos son los 36 del grupo «nunca probado»**:
 predicción de la trampa 122 confirmada por ejecución: *«no se pudo» y «no se intentó»
 se escriben igual, y aquí se separan con 338 invocaciones*.
 
+**Y no vale extender la conclusión a las tres pasadas, así que la doy entera.** Con
+los remedios de §1.2 puestos, el reparto final es **43 de 54 · 5 de 14 · 5 de 5**: los
+dos grupos que el censo sí había intentado también se cierran, porque lo que les
+faltaba era la invocación correcta y no una sonda. **Lo que la partición predice es la
+pasada BARATA** —la que sólo fuerza el muxer—, y ahí el corte es limpio: 36 y 0. Decir
+«los ya probados no se escriben» sería falso; lo cierto es que **a los nunca probados
+les bastaba con intentarlo**.
+
 ### 1.2 El `rc` dirigió los remedios, y son los mensajes del propio motor
 
 Ninguna bandera de la pasada 2 sale de la documentación de ffmpeg: **todas salen del
