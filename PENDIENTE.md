@@ -1,11 +1,11 @@
 # Lo que queda por hacer
 
 **Al 04/09/2026**, tras fusionar la ronda 16. Este fichero es la lista corta y accionable;
-el inventario completo —**125 filas**— vive en
+el inventario completo —**126 filas**— vive en
 [`ESTADO-Y-REPARTO.md`](ESTADO-Y-REPARTO.md) §3 y lo cuenta a máquina `ci/integridad.py`.
 
 ```
-inventario   6 ⚫ · 3 🔴 · 3 🟡 · 113 🟢   sobre 125 filas
+inventario   6 ⚫ · 3 🔴 · 3 🟡 · 114 🟢   sobre 126 filas
              (contado a máquina el 04/09 por `ci/integridad.py`)
 suite        501 passed · 3 skipped · 0 failed · 179 subtests · 265,49 s
              (04/09, win32 3.11.9, Docker 29.4.3 levantado, corpus de LFS

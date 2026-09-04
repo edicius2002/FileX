@@ -65,14 +65,14 @@ Todas verificadas contra la fuente antes de tocarlas. **La columna «Real» es M
 | Dónde | Decía | Real (04/09/2026) | Cómo se comprobó |
 |---|---|---|---|
 | `README.md` | suite `460 passed · 3 skipped · 130 subtests · 243,58 s` | `501 · 3 · 0 · 179 · 265,49 s` | ejecutada (§1) |
-| `README.md` | inventario `118 filas: 97 cerradas, 9 en curso, 6 abiertas` | **125 filas**: 113 🟢 · 3 🟡 · 3 🔴 · 6 ⚫ | `ci/integridad.py` |
+| `README.md` | inventario `118 filas: 97 cerradas, 9 en curso, 6 abiertas` | **126 filas**: 114 🟢 · 3 🟡 · 3 🔴 · 6 ⚫ | `ci/integridad.py` |
 | `README.md` | `corpus/` **20 ficheros** | **44** versionados, **39** en LFS | `git ls-files` |
 | `README.md` | **18** ficheros de pruebas | **19** | `git ls-files 'pruebas/test_*.py'` |
 | `CONTRIBUTING.md` | **107 trampas** | **119** | `ci/integridad.py`; iba **doce** por detrás |
 | `CONTRIBUTING.md` | deuda heredada: *«3 binarios sueltos y 17 directorios sin manifiesto»* | **las dos listas de `ci/heredado.json` están VACÍAS** | lectura del fichero |
 | `GUIA-DE-USO.md` | `filex motores`: **215 aristas (210 medidas)** | **232 aristas (227 medidas)** | `python -m filex motores` |
 | `GUIA-DE-USO.md` | LibreOffice **18** aristas · Pandoc **24** | **28** · **31** | ídem |
-| `PENDIENTE.md` | *«tras fusionar la ronda 13»*, **121 filas**, suite `478 · 3 · 175` | ronda **16**, **125 filas**, suite §1 | `git log`, `ci/integridad.py` |
+| `PENDIENTE.md` | *«tras fusionar la ronda 13»*, **121 filas**, suite `478 · 3 · 175` | ronda **16**, **126 filas**, suite §1 | `git log`, `ci/integridad.py` |
 | `RESULTADOS-MCP.md` | *«la regla de ≤1.200 tokens se confirma»* | el catálogo real va por **1 650** y crece ≈2,6 tokens por arista | `CLAUDE.md` §5 (medido el 04/09) |
 | `BENCHMARKS.md` | *«más de 80 informes»* | **100** | `git ls-files` |
 
@@ -86,6 +86,32 @@ son **el mismo número en unidades distintas**, y la del README era correcta. Se
 Es la **trampa 58** en su forma más barata: *reproduce la medida antes de arreglar el hecho*.
 Corregirlo a 266 habría metido un error donde no lo había, y encima habría roto la
 comparación que da sentido a la cifra —la cuota de 1 GB/mes de ancho de banda de LFS—.
+
+### 2.2 Una cifra mía caducó DENTRO de la sesión, y sólo se vio al mirar el diff
+
+**MEDIDO.** Publiqué el inventario en **125 filas (113 🟢)**, contado a máquina sobre mi base
+`7bd0927`. Mientras trabajaba, `main` avanzó a `2498f4b` (*«C6 descartada y C7 aplazada… nace
+N37»*), que **mueve el inventario a 126 filas (114 🟢)**. Mis dos cifras eran correctas
+respecto de mi base y **caducadas respecto de `main`**: exactamente el defecto que este
+encargo venía a corregir, reproducido por quien lo corregía.
+
+**Lo que lo destapó no fue una comprobación, fue leer el `git diff --stat`** — que mostraba
+`ESTADO-Y-REPARTO.md` con 9 líneas cambiadas en un carril que tiene prohibido tocarlo. La
+primera lectura («he editado un maestro sin darme cuenta») era **falsa**: el diff se estaba
+tomando contra `main`, que ya no era mi base. `git diff 7bd0927..HEAD` lo desmiente en una
+línea, y `git diff --name-only … -- CLAUDE.md ESTADO-Y-REPARTO.md PLAN-ORQUESTADOR.md filex
+pruebas` sale **vacío**. Se rebasó sobre `main` y se actualizaron las dos cifras.
+
+**Dos lecciones, y la segunda es la cara:**
+
+- **Un recuento tomado de un fichero que otro carril puede mover caduca sin que nadie toque
+  tu rama.** No basta con contarlo a máquina: hay que contarlo **contra la punta con la que
+  se va a fusionar**, y volver a contarlo antes de entregar.
+- **Un `diff --stat` contra `main` no es un diff de tu trabajo si `main` se ha movido**, y el
+  modo de fallo es el peor: parece que has tocado un fichero prohibido. Es la trampa 101 en
+  su corolario de método —*antes de culpar al cambio, comprueba si el cambio tocó código*—
+  aplicado al propio instrumento: **compara siempre contra la BASE, no contra la rama que
+  crees que es la base.**
 
 ---
 

@@ -95,7 +95,7 @@ carga —fila `N36` del inventario—: esta pasada salió limpia, y una pasada l
 una fila de inestabilidad.)*
 
 **El inventario de trabajo** vive en [`ESTADO-Y-REPARTO.md`](ESTADO-Y-REPARTO.md) §3 y lo
-cuenta a máquina `ci/integridad.py`: **125 filas — 113 🟢 cerradas · 3 🟡 en curso · 3 🔴
+cuenta a máquina `ci/integridad.py`: **126 filas — 114 🟢 cerradas · 3 🟡 en curso · 3 🔴
 abiertas**, más 6 ⚫ históricas que se conservan porque documentan una refutación y no
 cuentan como trabajo vivo.
 
