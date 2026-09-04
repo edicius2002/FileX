@@ -140,14 +140,21 @@ def una(variante: str, carga: int, demora: float = 0.0) -> dict:
         jid, pid_hijo = arr["job_id"], arr["pid"]
         fila.update(jid=jid, pid_hijo=pid_hijo, pid_popen=proc.pid,
                     lanzador=(pid_hijo != proc.pid))
-        fila["en_vuelo"] = bool(_lee_evento(proc, "en_vuelo").get("hay"))
+        _v = _lee_evento(proc, "en_vuelo")
+        fila["en_vuelo"] = bool(_v.get("hay"))
 
         # **Sólo en B**, y el motivo es una trampa que costó 20 celdas verdes:
         # la consulta CIM cuesta ~1 s, y ponerla ANTES del `taskkill` en la
         # variante A metía una demora que el arnés real no tiene. Con ella, A
         # daba 20 de 20 `working` y parecía refutar el mecanismo. La sonda tiene
         # que hacer lo que hace el sujeto, y en el mismo instante.
-        nietos = hijos_de(pid_hijo) if variante == "B" else []
+        # Los PID de los motores los PUBLICA el hijo en `en_vuelo`. Antes se
+        # censaban con una consulta CIM, y esa consulta cuesta ~1 s: puesta
+        # ANTES del `taskkill` metia una demora que el sujeto real no tiene, y
+        # con ella la variante A daba 20 de 20 celdas verdes. **El control de
+        # identidad de un A/B es que las dos ramas hagan lo mismo salvo la
+        # variable** (trampa 119): ahora ninguna de las dos espera.
+        nietos = list(_v.get("motores") or [])
         fila["nietos"] = nietos
         time.sleep(max(demora, 0.0))
         antes = lee_json(trabajos, jid)
