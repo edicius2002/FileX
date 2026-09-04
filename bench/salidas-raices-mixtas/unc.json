@@ -1,0 +1,61 @@
+{
+  "filas": [
+    {
+      "ruta_declarada": "\\\\servidor\\recurso",
+      "uri_que_construye_el_doble": "file://///servidor/recurso",
+      "ruta_de_vuelta": "\\\\\\servidor\\recurso",
+      "sobrevive_identica": false,
+      "normalizada_de_vuelta": "\\\\\\servidor\\recurso",
+      "no_confina_de_vuelta": false,
+      "no_confina_de_ida": true
+    },
+    {
+      "ruta_declarada": "\\\\servidor\\recurso\\sub",
+      "uri_que_construye_el_doble": "file://///servidor/recurso/sub",
+      "ruta_de_vuelta": "\\\\\\servidor\\recurso\\sub",
+      "sobrevive_identica": false,
+      "normalizada_de_vuelta": "\\\\\\servidor\\recurso\\sub",
+      "no_confina_de_vuelta": false,
+      "no_confina_de_ida": false
+    },
+    {
+      "ruta_declarada": "C:\\",
+      "uri_que_construye_el_doble": "file:///C:/",
+      "ruta_de_vuelta": "C:\\",
+      "sobrevive_identica": true,
+      "normalizada_de_vuelta": "c:\\",
+      "no_confina_de_vuelta": true,
+      "no_confina_de_ida": true
+    },
+    {
+      "ruta_declarada": "C:\\Users",
+      "uri_que_construye_el_doble": "file:///C:/Users",
+      "ruta_de_vuelta": "C:\\Users",
+      "sobrevive_identica": true,
+      "normalizada_de_vuelta": "c:\\users",
+      "no_confina_de_vuelta": false,
+      "no_confina_de_ida": false
+    },
+    {
+      "ruta_declarada": "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-af0fa20bb8ba9d275\\bench\\salidas-raices-mixtas",
+      "uri_que_construye_el_doble": "file:///D:/Work/research/FileX/.claude/worktrees/agent-af0fa20bb8ba9d275/bench/salidas-raices-mixtas",
+      "ruta_de_vuelta": "D:\\Work\\research\\FileX\\.claude\\worktrees\\agent-af0fa20bb8ba9d275\\bench\\salidas-raices-mixtas",
+      "sobrevive_identica": true,
+      "normalizada_de_vuelta": "d:\\work\\research\\filex\\.claude\\worktrees\\agent-af0fa20bb8ba9d275\\bench\\salidas-raices-mixtas",
+      "no_confina_de_vuelta": false,
+      "no_confina_de_ida": false
+    }
+  ],
+  "discrepan": [
+    {
+      "ruta_declarada": "\\\\servidor\\recurso",
+      "uri_que_construye_el_doble": "file://///servidor/recurso",
+      "ruta_de_vuelta": "\\\\\\servidor\\recurso",
+      "sobrevive_identica": false,
+      "normalizada_de_vuelta": "\\\\\\servidor\\recurso",
+      "no_confina_de_vuelta": false,
+      "no_confina_de_ida": true
+    }
+  ],
+  "n_discrepan": 1
+}
