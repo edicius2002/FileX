@@ -2,110 +2,110 @@
   "motor": "doc_pandoc",
   "build": "doc_pandoc 29.4.3 · filex-c13@6d359bad483e",
   "fecha": "2026-09-03",
-  "informe": "bench/aristas-documentales-cierre.md",
+  "informe": "bench/rasteriza-declaradas.md",
   "huella": {
-    "motor": "08817e0e76ef187f",
+    "motor": "f82b19cb9263ef45",
     "invocacion": "3a2c16603bb46673",
     "contrato": "fe41b4d52413299c"
   },
   "interprete": "3.11",
-  "nota_huella": "RESONDEADO (no resellado por algoritmo) el 2026-09-03 por worker7, carril aristas-documentales-doc: `bench/aristas-documentales-cierre.md` anadio 7 tuplas a `_DECLARADAS` (md>pptx, md>tex, docx>tex, tex>docx, tex>html, tex>pdf, pptx>md), ninguna rasteriza. Eso cambio el AST de la clase y CADUCO la huella `motor` (de f750a96c5bcb196a a 08817e0e76ef187f); `invocacion` y `contrato` no se tocaron y no cambiaron. Las 31 aristas REAL de este motor (15 `_MEDIDAS` + 16 `_DECLARADAS`) se REMIDIERON de verdad con `FileX.convertir()` real (contrato de cinco puntos, censo del punto 5 incluido) via `bench/salidas-aristas-documentales-cierre/_resondeo55.py`, no se copio el JSON viejo con la huella cambiada.",
+  "nota_huella": "RESONDEADO (no resellado por algoritmo) el 2026-09-03 por worker14, carril rasteriza-declaradas: `bench/rasteriza-declaradas.md` convierte `_DECLARADAS` de `tuple` de pares en `dict` `{(o,d): rasteriza}` y hace que `_EnContenedor._aristas()` lea el valor. Hasta hoy toda arista nacida de `_DECLARADAS` salia con `rasteriza=False` mintiera o no, y `sondeo.aplicar()` conserva `rasteriza` de la arista que ya existe, asi que el valor falso sobrevivia al sondeo. Eso cambia el AST de la clase y de su base `_EnContenedor`, y CADUCA la huella `motor` (08817e0e76ef187f -> f82b19cb9263ef45); `invocacion` y `contrato` no se tocaron y no cambiaron (comprobado antes de editar: los cinco ficheros del disco coincidian con el arbol). Las 16 aristas que este fichero aplica se REMIDIERON de verdad con `FileX.convertir()` real -contrato de cinco puntos y censo del punto 5 incluidos- via `bench/salidas-rasteriza-declaradas/_resondeo40.py`; 16 de 16 reprodujeron su veredicto anterior. AUDITORIA: el comentario anterior afirmaba que ninguna rasteriza *porque pandoc no produce imagenes desde estos pares*, que es el hecho por la causa (trampa 58). Medido de verdad, el criterio es si el TEXTO sobrevive: las 16 devuelven el centinela, asi que la conclusion aguanta y ahora es una medida.",
   "aristas": {
     "docx>odt": {
       "estado": "real",
-      "ms": 966.6,
+      "ms": 1121.3,
       "motivo": "7202 B, 515 caracteres, contrato ok_parcial",
-      "caso": "R45"
+      "caso": "W21"
     },
     "docx>tex": {
       "estado": "real",
-      "ms": 1103.5,
+      "ms": 865.3,
       "motivo": "2698 B, 2649 caracteres, contrato ok",
-      "caso": "R52"
+      "caso": "W28"
     },
     "epub>docx": {
       "estado": "real",
-      "ms": 762.6,
-      "motivo": "10992 B, 635 caracteres, contrato ok_parcial",
-      "caso": "R46"
+      "ms": 820.7,
+      "motivo": "10993 B, 635 caracteres, contrato ok_parcial",
+      "caso": "W22"
     },
     "epub>txt": {
       "estado": "real",
-      "ms": 691.0,
+      "ms": 1163.0,
       "motivo": "566 B, 514 caracteres, contrato ok",
-      "caso": "R47"
+      "caso": "W23"
     },
     "html>epub": {
       "estado": "real",
-      "ms": 721.8,
+      "ms": 1307.5,
       "motivo": "5284 B, 554 caracteres, contrato ok_parcial",
-      "caso": "R42"
+      "caso": "W18"
     },
     "html>odt": {
       "estado": "real",
-      "ms": 754.5,
+      "ms": 2563.9,
       "motivo": "7285 B, 543 caracteres, contrato ok_parcial",
-      "caso": "R43"
+      "caso": "W19"
     },
     "html>rtf": {
       "estado": "real",
-      "ms": 869.3,
+      "ms": 1747.2,
       "motivo": "1756 B, 1754 caracteres, contrato ok",
-      "caso": "R44"
+      "caso": "W20"
     },
     "md>pptx": {
       "estado": "real",
-      "ms": 731.5,
-      "motivo": "28169 B, 2218 caracteres, contrato ok_parcial",
-      "caso": "R02"
+      "ms": 4636.4,
+      "motivo": "28170 B, 2218 caracteres, contrato ok_parcial",
+      "caso": "W17"
     },
     "md>rtf": {
       "estado": "real",
-      "ms": 955.2,
+      "ms": 835.0,
       "motivo": "1700 B, 1698 caracteres, contrato ok",
-      "caso": "R50"
+      "caso": "W26"
     },
     "md>tex": {
       "estado": "real",
-      "ms": 1447.9,
+      "ms": 1602.1,
       "motivo": "2748 B, 2699 caracteres, contrato ok",
-      "caso": "R51"
+      "caso": "W27"
     },
     "pptx>md": {
       "estado": "real",
-      "ms": 2830.1,
+      "ms": 1232.1,
       "motivo": "549 B, 499 caracteres, contrato ok",
-      "caso": "R56"
+      "caso": "W32"
     },
     "rtf>html": {
       "estado": "real",
-      "ms": 830.7,
+      "ms": 1805.1,
       "motivo": "4324 B, 3133 caracteres, contrato ok",
-      "caso": "R49"
+      "caso": "W25"
     },
     "rtf>md": {
       "estado": "real",
-      "ms": 1143.6,
+      "ms": 1851.5,
       "motivo": "471 B, 466 caracteres, contrato ok",
-      "caso": "R48"
+      "caso": "W24"
     },
     "tex>docx": {
       "estado": "real",
-      "ms": 1282.6,
-      "motivo": "10771 B, 394 caracteres, contrato ok_parcial",
-      "caso": "R53"
+      "ms": 1931.0,
+      "motivo": "10772 B, 394 caracteres, contrato ok_parcial",
+      "caso": "W29"
     },
     "tex>html": {
       "estado": "real",
-      "ms": 929.4,
+      "ms": 894.6,
       "motivo": "4651 B, 2939 caracteres, contrato ok",
-      "caso": "R54"
+      "caso": "W30"
     },
     "tex>pdf": {
       "estado": "real",
-      "ms": 6570.4,
-      "motivo": "9754 B, 268 caracteres, contrato aviso",
-      "caso": "R55"
+      "ms": 5613.0,
+      "motivo": "9758 B, 268 caracteres, contrato aviso",
+      "caso": "W31"
     }
   }
 }

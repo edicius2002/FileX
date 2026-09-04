@@ -319,13 +319,29 @@ class _EnContenedor:
     #: existen, y aquí se dice cuáles y con qué motor.
     _MUERTAS: dict = {}
 
-    #: (origen, destino) que el motor declara y **nadie de este proyecto ha
-    #: ejecutado**. Van `SIN_SONDEAR` y el grafo les suma +2,0 para que no
-    #: adelanten jamás a una medida. La lista es DELIBERADAMENTE corta:
-    #: LibreOffice declara 132 extensiones y Calibre 26 de entrada por 20 de
-    #: salida, y volcarlas aquí sería exactamente el fallo que este proyecto
-    #: mide en los demás — el 41,0 % de aristas nominales.
-    _DECLARADAS: tuple = ()
+    #: (origen, destino) -> rasteriza. Aristas que el motor declara y **nadie
+    #: de este proyecto ha ejecutado**. Van `SIN_SONDEAR` y el grafo les suma
+    #: +2,0 para que no adelanten jamás a una medida. La lista es
+    #: DELIBERADAMENTE corta: LibreOffice declara 132 extensiones y Calibre 26
+    #: de entrada por 20 de salida, y volcarlas aquí sería exactamente el fallo
+    #: que este proyecto mide en los demás — el 41,0 % de aristas nominales.
+    #:
+    #: **Es un `dict` y no una tupla de pares porque el valor NO es opcional.**
+    #: Hasta el 03/09/2026 esto era `tuple` y `_aristas()` construía las
+    #: `Arista` sin pasar `rasteriza=`, así que **toda arista nacida de
+    #: `_DECLARADAS` quedaba en `False`, rasterizara o no** —y `sondeo.aplicar`
+    #: toma `rasteriza=a.rasteriza` de la arista que YA existe, nunca del
+    #: sondeo, así que el valor falso sobrevivía a la medición—. El daño no es
+    #: teórico: el planificador habría elegido un camino que rasteriza sin
+    #: pagar la penalización de +1000 y habría entregado una salida sin una
+    #: letra, sin avisar — la familia de `resvg`. Por eso `pptx→png` y
+    #: `svg→png` estaban FUERA del grafo pese a estar medidas `real`.
+    #: Con un `dict` el valor hay que escribirlo: no hay defecto que mienta.
+    #: La forma es la misma de `_MEDIDAS` y `_MUERTAS`, y el aviso de la
+    #: trampa 48 vale aquí — un `for o, d in self._DECLARADAS` sigue
+    #: funcionando sobre un `dict` y no leería el valor, así que `_aristas()`
+    #: itera `.items()`, que revienta si alguien vuelve a la tupla.
+    _DECLARADAS: dict = {}
 
     #: Coste de una arista sin medir: el peor medido de este submotor. Suponer
     #: que lo no medido es barato es la manera de que el grafo lo elija.
@@ -365,13 +381,17 @@ class _EnContenedor:
                 parametrizacion=self.dentro, estado=NOMINAL, coste=1.0,
                 evidencia=f"bench/salidas-hito5/sonda.json:{caso}"))
         vistas = set(self._MEDIDAS) | set(self._MUERTAS)
-        for o, d in self._DECLARADAS:
+        # `.items()` y no `for o, d in ...`: sobre un `dict` las dos formas
+        # funcionan y solo una lee el valor. Iterar los pares dejaría
+        # `rasteriza=False` por defecto otra vez, en silencio y con la tabla
+        # bien escrita — que es exactamente el fallo que este bucle arregla.
+        for (o, d), rast in self._DECLARADAS.items():
             if (o, d) in vistas:
                 continue
             out.append(Arista(
                 origen=o, destino=d, motor=self.nombre, build=self.build,
                 parametrizacion=self.dentro, estado=SIN_SONDEAR,
-                coste=self.COSTE_SIN_SONDEAR, evidencia=""))
+                coste=self.COSTE_SIN_SONDEAR, rasteriza=rast, evidencia=""))
         return out
 
     # --------------------------------------------------------------- invocar
@@ -527,27 +547,32 @@ class LibreOfficeEnContenedor(_EnContenedor, Motor):
         # no lo IMPORTA. Es la arista que decide el hito.
         ("epub", "pdf"): ('L10',),
     }
-    #: No medidas. Se declaran porque son el mismo filtro de importación que una
-    #: medida, con otro filtro de exportación — no porque el catálogo las liste.
+    #: No medidas al declararse. Se declaran porque son el mismo filtro de
+    #: importación que una medida, con otro filtro de exportación — no porque
+    #: el catálogo las liste.
     #:
     #: Pendiente 5 de `hito5-documental.md`, MEDIDAS por S3 en
     #: `bench/sondeo-documental.md` §3 y RESONDEADAS de verdad por worker7 en
-    #: `bench/aristas-documentales-cierre.md`. **NO** entran `("pptx", "png")`
-    #: ni `("svg", "png")`, aunque las dos están medidas `real`: `_aristas()`
-    #: construye las `Arista` de `_DECLARADAS` sin pasar `rasteriza=`, así que
-    #: quedarían con `rasteriza=False` a pesar de rasterizar de verdad, y
-    #: `sondeo.aplicar()` toma `rasteriza=a.rasteriza` de la arista QUE YA
-    #: EXISTÍA antes de superponer — nunca del sondeo. El planificador podría
-    #: entonces elegir un camino que rasteriza sin pagar la penalización de
-    #: +1000, entregando una salida sin una letra y sin avisar: la misma
-    #: familia de `resvg`. Arreglarlo de verdad exige un tercer campo en la
-    #: tupla (o una tupla aparte) que toque `_aristas()` y `sondeo.aplicar()`,
-    #: y se queda fuera de esta ronda a propósito.
-    _DECLARADAS = (("rtf", "odt"), ("rtf", "docx"), ("html", "odt"),
-                   ("txt", "odt"), ("odt", "html"), ("docx", "rtf"),
-                   ("csv", "xlsx"), ("xlsx", "pdf"), ("xlsx", "csv"),
-                   ("xlsx", "html"), ("csv", "pdf"), ("pptx", "pdf"),
-                   ("pptx", "odp"), ("svg", "pdf"))
+    #: `bench/aristas-documentales-cierre.md`.
+    #:
+    #: **Las DOS últimas entran el 03/09/2026 y son el motivo del cambio de
+    #: forma de esta tabla** (`bench/rasteriza-declaradas.md`). `pptx→png` y
+    #: `svg→png` llevaban desde el 02/09 medidas `real` en
+    #: `filex/sondeo/doc_libreoffice.json` y **fuera del grafo**, porque
+    #: mientras `_DECLARADAS` era una tupla de pares no había forma de que
+    #: dijeran la verdad sobre si rasterizan. Ahora la hay, y la dicen.
+    #: Las dos van a `png`, que no admite texto: la penalización de +1000 no
+    #: las castiga como destino final — se activa cuando aparecen EN MEDIO de
+    #: un camino hacia un destino que sí admite texto, que es justo el caso
+    #: que la bandera existe para atrapar.
+    _DECLARADAS = {("rtf", "odt"): False, ("rtf", "docx"): False,
+                   ("html", "odt"): False, ("txt", "odt"): False,
+                   ("odt", "html"): False, ("docx", "rtf"): False,
+                   ("csv", "xlsx"): False, ("xlsx", "pdf"): False,
+                   ("xlsx", "csv"): False, ("xlsx", "html"): False,
+                   ("csv", "pdf"): False, ("pptx", "pdf"): False,
+                   ("pptx", "odp"): False, ("svg", "pdf"): False,
+                   ("pptx", "png"): True, ("svg", "png"): True}
     COSTE_SIN_SONDEAR = 1.21
 
     def __init__(self) -> None:
@@ -588,14 +613,23 @@ class PandocEnContenedor(_EnContenedor, Motor):
     }
     _MUERTAS = {}
     #: Ídem `LibreOfficeEnContenedor._DECLARADAS`: pendiente 5, MEDIDAS por S3
-    #: y RESONDEADAS por worker7. Las 7 completas, sin exclusión — ninguna
-    #: rasteriza (`pandoc` no produce imágenes desde estos pares).
-    _DECLARADAS = (("html", "epub"), ("html", "odt"), ("html", "rtf"),
-                   ("docx", "odt"), ("epub", "docx"), ("epub", "txt"),
-                   ("rtf", "md"), ("rtf", "html"), ("md", "rtf"),
-                   ("md", "pptx"), ("md", "tex"), ("docx", "tex"),
-                   ("tex", "docx"), ("tex", "html"), ("tex", "pdf"),
-                   ("pptx", "md"))
+    #: y RESONDEADAS por worker7.
+    #:
+    #: **Ninguna rasteriza, y desde el 03/09 eso es una MEDIDA y no una
+    #: afirmación** (`bench/rasteriza-declaradas.md` §4). El comentario que
+    #: había aquí razonaba *«pandoc no produce imágenes desde estos pares»*,
+    #: que es el hecho por la causa (trampa 58): lo que decide si una arista
+    #: rasteriza no es si el motor sabe escribir un PNG, es si el TEXTO de la
+    #: entrada sobrevive en la salida. Las 16 se remidieron una por una con
+    #: `FileX.convertir()` real y las 16 devuelven el centinela.
+    _DECLARADAS = {("html", "epub"): False, ("html", "odt"): False,
+                   ("html", "rtf"): False, ("docx", "odt"): False,
+                   ("epub", "docx"): False, ("epub", "txt"): False,
+                   ("rtf", "md"): False, ("rtf", "html"): False,
+                   ("md", "rtf"): False, ("md", "pptx"): False,
+                   ("md", "tex"): False, ("docx", "tex"): False,
+                   ("tex", "docx"): False, ("tex", "html"): False,
+                   ("tex", "pdf"): False, ("pptx", "md"): False}
     COSTE_SIN_SONDEAR = 1.21
 
     def __init__(self) -> None:
@@ -642,9 +676,21 @@ class CalibreEnContenedor(_EnContenedor, Motor):
         # tiene que poder elegir, que es de lo que va el hito 1.
         ("epub", "html"): ('C06',),
     }
-    _DECLARADAS = (("mobi", "epub"), ("azw3", "epub"), ("mobi", "pdf"),
-                   ("azw3", "pdf"), ("txt", "epub"), ("md", "epub"),
-                   ("epub", "epub"), ("mobi", "azw3"))
+    #: Ninguna rasteriza — MEDIDO el 03/09 (`bench/rasteriza-declaradas.md`
+    #: §4), no deducido de que Calibre escriba ebooks: las ocho se remidieron
+    #: con `FileX.convertir()` real, **siete** devuelven el centinela y la
+    #: octava —`mobi→azw3`— va con **sonda de texto CIEGA**, porque AZW3
+    #: comprime el texto y un `centinela=False` en ella no significa que se
+    #: haya perdido; su no-rasterización se apoya en la ida y vuelta a `epub`
+    #: medida en `bench/salidas-sondeo-doc/d2.json` §C. Decir «las ocho
+    #: conservan el texto» sería la trampa 44: una nota falsa al lado de siete
+    #: medidas buenas. Las dos que van a `pdf` son las que podían mentir —el
+    #: destino admite texto y el motor podía entregarlo en píxeles, que es el
+    #: fallo de `resvg`— y no mienten: 488 y 456 caracteres con centinela.
+    _DECLARADAS = {("mobi", "epub"): False, ("azw3", "epub"): False,
+                   ("mobi", "pdf"): False, ("azw3", "pdf"): False,
+                   ("txt", "epub"): False, ("md", "epub"): False,
+                   ("epub", "epub"): False, ("mobi", "azw3"): False}
     COSTE_SIN_SONDEAR = 1.21
 
     def __init__(self) -> None:

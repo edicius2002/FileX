@@ -1,0 +1,20 @@
+..............................................F....... [ 80%]
+.............                                                        [100%]
+================================== FAILURES ===================================
+______________ LockDeGpu.test_recoge_un_huerfano_con_espera_cero ______________
+
+self = <test_hito2.LockDeGpu testMethod=test_recoge_un_huerfano_con_espera_cero>
+
+    def test_recoge_un_huerfano_con_espera_cero(self):
+        """**El reintento inmediato.** Sin él, recoger el huérfano y salir por
+        el tope en la misma vuelta devolvía `False` habiendo dejado el lock
+        libre, y la recogida no servía nunca con `espera=0`."""
+        with open(self.ruta, "w", encoding="utf-8") as f:
+            f.write("muerto\t999999\t999999\tningun_proceso.exe\t0\t/tmp\n")
+        gpu._PROFUNDIDAD = 0
+        l = gpu.Lock("yo", ruta=self.ruta)
+>       self.assertTrue(l.tomar(espera=0.0))
+E       AssertionError: False is not true
+
+pruebas\test_hito2.py:404: AssertionError
+1 failed, 66 passed, 22 subtests passed in 12.47s

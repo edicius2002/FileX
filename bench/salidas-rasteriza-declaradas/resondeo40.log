@@ -1,0 +1,56 @@
+contenedores VIVOS antes: 5 · TODOS (-a): 7
+    743aacb0484c|filex-956c-1951e7fc5494422d8d21238fcefef29e|filex-c13|Created
+    46590da6cf49|filex-956c-3b173cd69d8342c4867ae7f7aff7d4cd|ghcr.io/c4illin/convertx:latest|Created
+    19a7a940a15d|filex-convertx|ghcr.io/c4illin/convertx:latest|Up 9 hours
+    e446d1d7ad78|filex-snapotter|snapotter/snapotter:latest|Up 9 hours (healthy)
+    851f149b14b4|filex-snapotter-pg|postgres:17-alpine|Up 9 hours (healthy)
+    c0a97b977b80|filex-snapotter-redis|redis:8-alpine|Up 9 hours (healthy)
+    6efb0c4e8fac|filex-gotenberg8|gotenberg/gotenberg:8|Up 9 hours (healthy)
+builds: {'doc_libreoffice': 'doc_libreoffice 29.4.3 · filex-c13@6d359bad483e', 'doc_pandoc': 'doc_pandoc 29.4.3 · filex-c13@6d359bad483e', 'doc_calibre': 'doc_calibre 29.4.3 · filex-c13@6d359bad483e'}
+semilla epub->mobi: ok=True ok_parcial 10196 B
+semilla epub->azw3: ok=True ok_parcial 11692 B
+W01  doc_libreoffice    csv->xlsx  rc=0     3804 ms      5790 B  car=   338 cent=S rast_med=no    rast_dec=False contrato=ok_parcial sobra=0
+     semilla guardada: C:\Users\krato\orca\workspaces\FileX\filex-rasteriza-declaradas\bench\salidas-rasteriza-declaradas\entradas\entrada.xlsx (5790 B)
+W17  doc_pandoc          md->pptx  rc=0     4636 ms     28170 B  car=  2218 cent=S rast_med=no    rast_dec=False contrato=ok_parcial sobra=0
+     semilla guardada: C:\Users\krato\orca\workspaces\FileX\filex-rasteriza-declaradas\bench\salidas-rasteriza-declaradas\entradas\entrada.pptx (28170 B)
+W02  doc_libreoffice    rtf->odt   rc=0     2834 ms     14173 B  car=  1767 cent=S rast_med=no    rast_dec=False contrato=ok_parcial sobra=0
+W03  doc_libreoffice    rtf->docx  rc=0     2938 ms      5293 B  car=   542 cent=S rast_med=no    rast_dec=False contrato=ok_parcial sobra=0
+W04  doc_libreoffice   html->odt   rc=0     3825 ms      8122 B  car=  1190 cent=S rast_med=no    rast_dec=False contrato=ok_parcial sobra=0
+W05  doc_libreoffice    txt->odt   rc=0     3148 ms     12117 B  car=  1104 cent=S rast_med=no    rast_dec=False contrato=ok_parcial sobra=0
+W06  doc_libreoffice    odt->html  rc=0     3902 ms      2476 B  car=   895 cent=S rast_med=no    rast_dec=False contrato=ok         sobra=0
+W07  doc_libreoffice   docx->rtf   rc=0     3312 ms      8213 B  car=  8213 cent=S rast_med=no    rast_dec=False contrato=ok         sobra=0
+W08  doc_libreoffice   xlsx->pdf   rc=0     7410 ms     27403 B  car=   119 cent=S rast_med=no    rast_dec=False contrato=ok         sobra=0
+W09  doc_libreoffice   xlsx->csv   rc=0     3575 ms       109 B  car=   108 cent=S rast_med=no    rast_dec=False contrato=ok         sobra=0
+W10  doc_libreoffice   xlsx->html  rc=0     3405 ms      2902 B  car=   464 cent=S rast_med=no    rast_dec=False contrato=ok         sobra=0
+W11  doc_libreoffice    csv->pdf   rc=0     4496 ms     20944 B  car=   119 cent=S rast_med=no    rast_dec=False contrato=ok         sobra=0
+W12  doc_libreoffice   pptx->pdf   rc=0     4560 ms     24534 B  car=   456 cent=S rast_med=no    rast_dec=False contrato=ok         sobra=0
+W13  doc_libreoffice   pptx->odp   rc=0     5171 ms     32669 B  car=  2825 cent=S rast_med=no    rast_dec=False contrato=ok_parcial sobra=0
+W14  doc_libreoffice    svg->pdf   rc=0     2435 ms     12500 B  car=    44 cent=S rast_med=no    rast_dec=False contrato=ok         sobra=0
+W15  doc_libreoffice   pptx->png   rc=0     3223 ms     50462 B  car=     0 cent=n rast_med=si    rast_dec=True  contrato=ok         sobra=0
+W16  doc_libreoffice    svg->png   rc=0     5297 ms      9081 B  car=     0 cent=n rast_med=si    rast_dec=True  contrato=ok         sobra=0
+W18  doc_pandoc        html->epub  rc=0     1308 ms      5284 B  car=   554 cent=S rast_med=no    rast_dec=False contrato=ok_parcial sobra=0
+W19  doc_pandoc        html->odt   rc=0     2564 ms      7285 B  car=   543 cent=S rast_med=no    rast_dec=False contrato=ok_parcial sobra=0
+W20  doc_pandoc        html->rtf   rc=0     1747 ms      1756 B  car=  1754 cent=S rast_med=no    rast_dec=False contrato=ok         sobra=0
+W21  doc_pandoc        docx->odt   rc=0     1121 ms      7202 B  car=   515 cent=S rast_med=no    rast_dec=False contrato=ok_parcial sobra=0
+W22  doc_pandoc        epub->docx  rc=0      821 ms     10993 B  car=   635 cent=S rast_med=no    rast_dec=False contrato=ok_parcial sobra=0
+W23  doc_pandoc        epub->txt   rc=0     1163 ms       566 B  car=   514 cent=S rast_med=no    rast_dec=False contrato=ok         sobra=0
+W24  doc_pandoc         rtf->md    rc=0     1852 ms       471 B  car=   466 cent=S rast_med=no    rast_dec=False contrato=ok         sobra=0
+W25  doc_pandoc         rtf->html  rc=0     1805 ms      4324 B  car=  3133 cent=S rast_med=no    rast_dec=False contrato=ok         sobra=0
+W26  doc_pandoc          md->rtf   rc=0      835 ms      1700 B  car=  1698 cent=S rast_med=no    rast_dec=False contrato=ok         sobra=0
+W27  doc_pandoc          md->tex   rc=0     1602 ms      2748 B  car=  2699 cent=S rast_med=no    rast_dec=False contrato=ok         sobra=0
+W28  doc_pandoc        docx->tex   rc=0      865 ms      2698 B  car=  2649 cent=S rast_med=no    rast_dec=False contrato=ok         sobra=0
+W29  doc_pandoc         tex->docx  rc=0     1931 ms     10772 B  car=   394 cent=S rast_med=no    rast_dec=False contrato=ok_parcial sobra=0
+W30  doc_pandoc         tex->html  rc=0      895 ms      4651 B  car=  2939 cent=S rast_med=no    rast_dec=False contrato=ok         sobra=0
+W31  doc_pandoc         tex->pdf   rc=0     5613 ms      9758 B  car=   268 cent=S rast_med=no    rast_dec=False contrato=aviso      sobra=0
+W32  doc_pandoc        pptx->md    rc=0     1232 ms       549 B  car=   499 cent=S rast_med=no    rast_dec=False contrato=ok         sobra=0
+W33  doc_calibre       mobi->epub  rc=0     7078 ms     30875 B  car=   610 cent=S rast_med=no    rast_dec=False contrato=ok_parcial sobra=0
+W34  doc_calibre       azw3->epub  rc=0     4111 ms     20029 B  car=   564 cent=S rast_med=no    rast_dec=False contrato=ok_parcial sobra=0
+W35  doc_calibre       mobi->pdf   rc=0     9203 ms     31178 B  car=   488 cent=S rast_med=no    rast_dec=False contrato=ok         sobra=0
+W36  doc_calibre       azw3->pdf   rc=0     6524 ms     27387 B  car=   456 cent=S rast_med=no    rast_dec=False contrato=ok         sobra=0
+W37  doc_calibre        txt->epub  rc=0     6840 ms     10022 B  car=   484 cent=S rast_med=no    rast_dec=False contrato=ok_parcial sobra=0
+W38  doc_calibre         md->epub  rc=0     3980 ms     11844 B  car=   558 cent=S rast_med=no    rast_dec=False contrato=ok_parcial sobra=0
+W39  doc_calibre       epub->epub  rc=0     4064 ms     19596 B  car=   564 cent=S rast_med=no    rast_dec=False contrato=ok_parcial sobra=0
+W40  doc_calibre       mobi->azw3  rc=0     3133 ms     12614 B  car= 12603 cent=n rast_med=ciego rast_dec=False contrato=ok_parcial sobra=0
+
+total 141.4 s
+contenedores VIVOS despues: 5 · TODOS (-a): 7 · NUEVOS (-a): 0
