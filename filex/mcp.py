@@ -443,6 +443,45 @@ class Raices:
             # Un registrador que tumba el servidor no es un registrador.
             pass
 
+    def _anota_descartes(self, uris: list[str], efectivas: list[str]) -> None:
+        """N37: deja rastro de las raíces que se cayeron, y de por cuál motivo.
+
+        Son dos causas distintas y se registran por separado a propósito
+        (trampa 25: dos cosas con la misma pinta desde fuera):
+
+        * `uri_no_traducible` — el root no nombra una ruta local (una
+          *authority* de red, una ruta sin unidad, `file://` a secas).
+        * `raiz_no_confina` — la poda de N35: normaliza a la raíz de una unidad
+          o de un recurso.
+
+        Va por el MISMO canal que las emisiones de `roots/list_changed`
+        (`FILEX_MCP_REGISTRO_ROOTS`) y con el mismo criterio: si nadie lo
+        declara no cuesta nada, y **un registrador que tumba el servidor no es
+        un registrador**. No entra en `stderr` ni en la respuesta: R4 manda un
+        mensaje opaco al cliente, y esto es para el operador de la máquina.
+        """
+        destino = os.environ.get(self.VAR_REGISTRO)
+        if not destino:
+            # Antes de calcular nada: `_podadas` recorre las raíces otra vez
+            # (10,2 µs medidos) y no hay a quién contárselo. Sin registro
+            # declarado, esto no cuesta más que una lectura de entorno.
+            return
+        podadas = _conf.Confinamiento._podadas(efectivas)
+        if not uris and not podadas:
+            return
+        try:
+            import time
+            sello = time.strftime("%Y-%m-%dT%H:%M:%S")
+            with open(destino, "a", encoding="utf-8") as fh:
+                for u in uris:
+                    fh.write("%s\troot_descartado\tmotivo=uri_no_traducible\t"
+                             "uri=%s\tpid=%d\n" % (sello, u, os.getpid()))
+                for r in podadas:
+                    fh.write("%s\troot_descartado\tmotivo=raiz_no_confina\t"
+                             "raiz=%s\tpid=%d\n" % (sello, r, os.getpid()))
+        except OSError:
+            pass
+
     @staticmethod
     def _interseca(servidor: list[str], cliente: list[str]) -> list[str]:
         """Intersección de dos conjuntos de DIRECTORIOS, no de cadenas.
@@ -558,19 +597,29 @@ class Raices:
                 if self._resuelto:
                     return
             cliente: list[str] = []
+            #: N37: los roots que se caen, para que el descarte deje de ser
+            #: mudo. Un URI que no nombra una ruta local se ignoraba sin dejar
+            #: rastro, igual que la poda de N35, y las dos cosas se manifiestan
+            #: después como un `ruta no accesible` que R4 obliga a dejar opaco:
+            #: el operador ve la consecuencia y nunca la causa.
+            descartados: list[str] = []
             fallo = False
             try:
                 r = await sesion.list_roots()
                 for raiz in getattr(r, "roots", []) or []:
-                    p = _uri_a_ruta(str(getattr(raiz, "uri", "")))
+                    u = str(getattr(raiz, "uri", ""))
+                    p = _uri_a_ruta(u)
                     if p:
                         cliente.append(p)
+                    else:
+                        descartados.append(u)
             except Exception:
                 # Un cliente sin `roots` no es un error: es el caso de `--raiz`
                 # sola. Pero tampoco es una respuesta: se anota, y decide abajo.
                 cliente = []
                 fallo = True
             efectivas = self._interseca(self.servidor, cliente)
+            self._anota_descartes(descartados, efectivas)
             sin_confinar = False
             try:
                 self.fx.confinamiento = (_conf.Confinamiento(efectivas)
@@ -591,16 +640,106 @@ class Raices:
                 self._resuelto = not fallo
 
 
+#: RFC 8089 §2: `file://localhost/p` es EQUIVALENTE a `file:///p`. No es una
+#: concesión: es la única *authority* que la norma declara igual a la vacía, y
+#: los dos runtimes de cliente discrepan al tratarla — MEDIDO
+#: (`bench/salidas-uri-authority/`): Node la normaliza él solo
+#: (`new URL("file://localhost/D:/Work").host` da `""`) y Python **no**
+#: (`urlparse` devuelve `netloc="localhost"`). Si esta lista no estuviera, un
+#: cliente escrito en Python perdería una raíz perfectamente legítima mientras
+#: el mismo root desde Node funcionaría: el candidato que rechazaba TODA
+#: authority rompía 2 de las 4 raíces legítimas de la tabla de N37.
+_AUTHORITY_VACIA = ("", "localhost")
+
+
 def _uri_a_ruta(uri: str) -> str:
-    """`file:///D:/x` → `D:\\x`. Un root que no sea `file://` se ignora."""
+    """`file:///D:/x` → `D:\\x`. Lo que no nombre una ruta local se ignora.
+
+    **N37: la *authority* NO se puede tirar al suelo, y tirarla no perdía la
+    raíz — la SUSTITUÍA por otra — MEDIDO** (`bench/uri-authority.md`). Con
+    `p.path` a secas, `file://servidor/recurso` daba `\\recurso`, que
+    `os.path.abspath` completa con la unidad del proceso: el cliente declaraba
+    un recurso de red y FileX confinaba en `D:\\recurso`, una ruta local que
+    nadie declaró. El caso caro estaba a un nombre de distancia:
+    `file://nas-de-la-empresa/Work` concedía **`D:\\Work` entero**, con
+    `D:\\Work\\research\\ASR` —otro proyecto— dentro. Y no es una forma
+    rebuscada: es la que emiten los dos productores reales para una ruta UNC
+    (`pathToFileURL` de Node y `Path.as_uri()` de Python, los dos
+    `file://servidor/recurso`), y la que RFC 8089 da por canónica.
+
+    La política es **rechazar**, no traducir a UNC, y la razón es medida y no
+    de gusto: las dos cierran las mismas 4 fugas y no rompen ninguna raíz
+    legítima —empatan en la tabla de candidatos—, pero admitir raíces UNC mete
+    a FileX en un espacio de nombres donde **el cerrojo de destinos da DOS
+    DUEÑOS del mismo fichero en el caso normal**. `nucleo._clave_destino` ya lo
+    nombra en su docstring («el nombre corto 8.3, un `subst`, un enlace de
+    directorio, **una UNC**») y su defensa —`_identidad_destino`, con
+    `st_dev`+`st_ino`— **sólo se puede consultar si el fichero EXISTE**, que
+    es justo lo que un destino recién convertido no hace. MEDIDO con control
+    positivo (`sonda_alias_destino.json`): con el destino aún sin crear las dos
+    formas no comparten **ninguna** clave; con el fichero creado, las
+    identidades sí coinciden. Es la trampa 26 por un alias nuevo, así que
+    admitir UNC exige cerrar antes esa mitad: es otra fila, no un efecto
+    colateral de ésta.
+
+    Lo que se rechaza, y por qué cada cosa (una rama por línea, trampa 118):
+
+    * *authority* que no sea vacía ni `localhost` — la fila N37.
+    * ruta vacía: `file://` daba `normpath("") == "."`, es decir **el `cwd` del
+      servidor**, que aquí es el worktree entero. Nadie lo había registrado.
+    * en Windows, una ruta sin letra de unidad: `file:///recurso` caía en
+      `D:\\recurso` por el mismo mecanismo que la fila N37 pero sin authority
+      que culpar, y `file:////servidor/recurso` es una UNC entrando por la
+      puerta de atrás, sin *authority*. Se exige que la unidad termine en `:`,
+      que es lo único que distingue `D:` de `\\\\servidor\\recurso`.
+
+    El consumidor de referencia del runtime del cliente coincide: Node rechaza
+    con `File URL path must be absolute` las tres formas que esta función
+    aceptaba y traducía a rutas locales inventadas (MEDIDO,
+    `productores_node.json`).
+
+    **El arreglo vive en la superficie MCP a propósito, y eso no contradice
+    R10** (*la validación vive en el núcleo*): lo que se valida aquí no es una
+    ruta, es la **traducción de un URI a ruta**, y los URI entran sólo por
+    aquí. Comprobado, no supuesto: `_uri_a_ruta` tiene un único consumidor en
+    todo `filex/` —la línea de `asegurar()`— y ningún otro módulo menciona
+    `file://`; la CLI, el watcher y la API reciben rutas ya formadas. Todo
+    predicado SOBRE rutas sigue en `confinamiento.py`, sin tocar.
+    """
     if not uri.startswith("file://"):
         return ""
     from urllib.parse import unquote, urlparse
 
     p = urlparse(uri)
+    if p.netloc.lower() not in _AUTHORITY_VACIA:
+        # N37. Se ignora la raíz entera: es lo que ya hace R6 con una raíz que
+        # no confina —se poda— y deja el resto de la lista blanca en pie, que
+        # es la mitad que N35 vino a arreglar. Denegar aquí NO puede conceder
+        # nada nuevo: `_dentro` es un OR sobre las raíces y esto sólo quita un
+        # término.
+        return ""
     ruta = unquote(p.path)
-    if os.name == "nt" and len(ruta) > 2 and ruta[0] == "/" and ruta[2] == ":":
-        ruta = ruta[1:]
+    if os.name == "nt":
+        if len(ruta) > 2 and ruta[0] == "/" and ruta[2] == ":":
+            ruta = ruta[1:]
+        # `splitdrive` devuelve `D:` para una ruta con unidad y
+        # `\\\\servidor\\recurso` para una UNC: exigir los dos puntos separa
+        # una de otra, y de paso descarta la ruta sin unidad.
+        if not os.path.splitdrive(ruta)[0].endswith(":"):
+            return ""
+        # Y tener unidad NO es ser absoluta. `file:///D:` —sin barra— da `D:`,
+        # que en Windows es *relativa a la unidad*: `abspath("D:")` devuelve el
+        # directorio actual DE ESA UNIDAD, o sea el `cwd` del servidor otra vez.
+        # Es la misma fuga del `cwd` entrando por una tercera puerta, y la
+        # encontró enumerar las ramas después del arreglo, no antes (trampa
+        # 118). MEDIDO: `file:///D:` confinaba en el worktree entero, y
+        # `file:///C:` daba `C:\` sólo porque el directorio actual de `C:` es
+        # su raíz — es decir, el resultado dependía de un estado del proceso
+        # que nadie declaró.
+        if not os.path.isabs(ruta):
+            return ""
+    if not ruta:
+        return ""
     return os.path.normpath(ruta)
 
 
