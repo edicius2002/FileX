@@ -70,7 +70,7 @@ directorio de trabajo del proceso, en silencio. **PENDIENTE**.)*
 
 ---
 
-## 3. La refutación: la raíz de unidad no es ANCHA, es INERTE — MEDIDO
+## 3. La refutación (y la refutación de la refutación) — MEDIDO
 
 Yo entré a este encargo con una hipótesis, y era falsa. Esperaba que el
 candidato «aceptar `C:\` como raíz» fuera la fuga: si se admite, pensé, se lee
@@ -581,35 +581,42 @@ prueba es **qué código se midió**, no un orden temporal.
 
 ### (a) Fila de la tabla de §1 — la que arregla la CI
 
-> | 04/09 | **`bench/raices-mixtas.md`** (worker5, `nucleo/raices-mixtas`) | **`N35` cerrada PODANDO, y el reverso de la fuga de ayer queda cerrado sin reabrirla.** Una raíz que no confina se descarta ella, no invalida el conjunto: un cliente que declare `["C:\", <legítimo>]` conserva el legítimo. Elegido con **4 candidatos × 8 filas × 2 superficies** (núcleo y MCP), no con una intuición. **La demostración de que no se reabre N7 es la misma sonda sobre el código de antes y el de después, con la misma base de rutas: 11 filas, 7 SIN_CAMBIO y 4 RECUPERA_ACCESO, con CERO accesos indebidos ganados y la celda de N7 idéntica.** El camino de denegación **no paga nada** (trampa 28: el delta queda bajo el ruido y **el signo se invierte entre las dos tandas**); lo único que se mueve es construir con raíces mixtas, ×4,9–5,9 **una vez** —y ese ratio compara «hacer el trabajo» contra «abortar en el primer elemento», no una regresión—. 11 pruebas nuevas en dos superficies, **10 de las 11 rojas contra el código anterior** y las 3 que pasan en ambos son justo las de no-regresión. **Se refuta a sí mismo tres veces**, una de ellas sobre el propio sujeto: la raíz de unidad **no es ancha, es INERTE**. Trampas **118** y **119** |
+> | 04/09 | **`bench/raices-mixtas.md`** (worker5, `nucleo/raices-mixtas`) | **`N35` cerrada PODANDO, y el reverso de la fuga de ayer queda cerrado sin reabrirla.** Una raíz que no confina se descarta ella, no invalida el conjunto: un cliente que declare `["C:\", <legítimo>]` conserva el legítimo. Elegido con **4 candidatos × 8 filas × 2 superficies** (núcleo y MCP), no con una intuición. **La demostración de que no se reabre N7 es la misma sonda sobre el código de antes y el de después, con la misma base de rutas: 11 filas, 7 SIN_CAMBIO y 4 RECUPERA_ACCESO, con CERO accesos indebidos ganados y la celda de N7 idéntica.** El camino de denegación **no paga nada** (trampa 28: el delta queda bajo el ruido y **el signo se invierte entre las tres tandas**); lo único que se mueve es construir con raíces mixtas, ×4,9–5,9 **una vez** —y ese ratio compara «hacer el trabajo» contra «abortar en el primer elemento», no una regresión—. 12 pruebas nuevas en dos superficies, **8 de las 12 rojas contra el código anterior** y las 4 que pasan en ambos son justo las que afirman lo que no debe cambiar. **Se refuta a sí mismo SEIS veces**, y la más importante no la vio él: una revisión independiente encontró que la frase que sostenía la decisión —*«la raíz de unidad es inerte, no concede nada»*— **era falsa** (concede 1 candidato de 5, ella misma) **y que la prueba que la blindaba era vacua**. El veredicto aguanta porque los motivos buenos son estructurales —monotonía del OR, y que ese acceso nunca existió—, pero aguantó por suerte. Trampas **118** y **119** |
 
 ### (b) La fila `N35` del inventario, que hoy está 🔴 ABIERTO
 
-> | **N35** | *(texto actual)* … **CERRADA el 04/09/2026 por worker5** (`bench/raices-mixtas.md`): se **poda** —las raíces que no confinan se descartan una a una y el `ValueError` queda para lo que R6 siempre quiso decir, *no queda ninguna*—, elegido con 4 candidatos sobre 2 superficies. **No reabre N7: 0 accesos indebidos ganados sobre 11 filas y la celda de N7 SIN_CAMBIO.** Coste: el camino de denegación no se mueve; construir con raíces mixtas, ×4,9–5,9 una vez. Y **refuta la lectura que todos hacíamos de R3**: una raíz de unidad no confina demasiado, **no confina NADA** —`_dentro` genera una barra doble y deniega hasta lo que está literalmente debajo—, que es lo que convierte «podar» de apuesta en teorema. PENDIENTE declarado: `_uri_a_ruta` rompe los roots UNC canónicos, la raíz `""` confina en el `cwd`, y la poda es silenciosa | 🟢 **CERRADO** · `bench/raices-mixtas.md` |
+> | **N35** | *(texto actual)* … **CERRADA el 04/09/2026 por worker5** (`bench/raices-mixtas.md`): se **poda** —las raíces que no confinan se descartan una a una y el `ValueError` queda para lo que R6 siempre quiso decir, *no queda ninguna*—, elegido con 4 candidatos sobre 2 superficies. **No reabre N7: 0 accesos indebidos ganados sobre 11 filas y la celda de N7 SIN_CAMBIO.** Coste: el camino de denegación no se mueve; construir con raíces mixtas, ×4,9–5,9 una vez. Y **corrige la lectura que todos hacíamos de R3**: una raíz de unidad no confina demasiado —la barra doble deniega hasta lo que está literalmente debajo— pero **tampoco «nada»**: concede la propia raíz. Lo que convierte «podar» de apuesta en teorema no es esa inercia sino la **monotonía del OR** de `_dentro`, más que ese acceso **nunca pudo existir** con el código anterior. PENDIENTE declarado: `_uri_a_ruta` rompe los roots UNC canónicos, la raíz `""` confina en el `cwd`, y la poda es silenciosa | 🟢 **CERRADO** · `bench/raices-mixtas.md` |
 
 ### Trampa propuesta — la 118
 
-> 118. **Una raíz que «no confina nada» puede denegarlo TODO en vez de
-> permitirlo todo, y de qué lado esté decide si el arreglo es seguro — MEDIDO
-> el 04/09** (`bench/raices-mixtas.md` §3). R3 dice que *«una raíz que
-> normaliza a la raíz de una unidad no confina nada»*, y entré a N35 leyendo
-> eso como «confina demasiado»: esperaba que admitir `C:\` abriera la unidad
-> entera. Es al revés y el mecanismo es de una línea: `_dentro` compara con
-> `r + os.sep`, la raíz de unidad **ya termina en separador**, y `c:\` + `\` da
-> la barra **doble** `c:\\`, que no casa ningún candidato normalizado. MEDIDO
-> con control positivo y negativo: con `C:\` de única raíz se deniegan los 4
-> objetivos, **incluido `C:\Windows\win.ini`, que está literalmente debajo**.
-> **La consecuencia decide el encargo entero**: si la raíz fuera ancha, podarla
-> sería quitar acceso y habría que pensárselo; siendo inerte, podarla **no
-> puede quitar nada porque no concedía nada**, y eso convierte «podar» de una
-> apuesta en un teorema. Y reencuadra la fuga de la ronda anterior: **N7 no la
-> causaba la anchura de `C:\`, la causaba el `confinamiento = None`** que el
-> `except` ponía —`nucleo.py::_resolver` con `None` hace
-> `return os.path.abspath(entrada)`—, así que el par a vigilar no es «una raíz
-> ancha» sino **`confinamiento is None` con `sin_acceso = False`**. Es la
-> trampa 58 sobre una regla del propio proyecto: **el hecho estaba escrito y
-> bien, y yo le puse la causa al revés** — y la única razón de que no costara
-> caro es que la tabla se midió antes de escribir el arreglo, no después.
+> 118. **Un `or` de dos ramas se desmonta ENTERO o no se ha desmontado, y la
+> mitad que se olvida es la que sostiene la conclusión — MEDIDO el 04/09**
+> (`bench/raices-mixtas.md` §3). R3 dice que *«una raíz que normaliza a la raíz
+> de una unidad no confina nada»*, y yo entré a N35 leyéndolo como «confina
+> demasiado»: esperaba que admitir `C:\` abriera la unidad entera. Lo sondeé,
+> salió lo contrario, y **publiqué la corrección con el mismo defecto que el
+> error original**: *«es INERTE, `_dentro` devuelve `False` para todo»*.
+> `_dentro` es `c == r or c.startswith(r + os.sep)`; la barra doble que produce
+> `c:\` + `\` mata **la segunda** rama, y la primera **acepta un candidato:
+> la propia raíz**. MEDIDO: `_dentro("C:\", ["c:\"])` es `True` y concede
+> **1 de 5** de la muestra. Mi sonda desmontó una rama, midió cuatro objetivos
+> que resultaron ser los cuatro descendientes, y **no probó nunca el único
+> candidato que sí pasaba**.
+> **Lo caro no es el error, es de qué frase se trataba**: era la que sostenía
+> toda la decisión —*«quitar una raíz inerte no puede quitar acceso porque no
+> concedía ninguno»*—, y la prueba escrita para blindarla era **vacua** (trampa
+> 109: construía el objeto con la raíz **ya podada**, así que no podía
+> distinguir «es inerte» de «se quitó»). Las dos cosas juntas son la trampa 44
+> en su forma más peligrosa: **una afirmación falsa con una prueba verde
+> encima**, y ninguna de las dos la habría encontrado yo — la encontró una
+> revisión independiente. El veredicto aguantó **por suerte**, porque los
+> motivos buenos eran otros y son estructurales: **(a) monotonía** —`_dentro`
+> es un OR sobre las raíces y quitar un término sólo reduce el conjunto
+> aceptado— y **(b) ese acceso nunca existió**, porque con el código anterior
+> un `Confinamiento` construido no pudo contener jamás una raíz de unidad.
+> **Cuando midas un predicado, enumera sus ramas y prueba un caso de cada una;
+> y cuando una prueba blinde una afirmación sobre lo que un valor CONCEDE,
+> comprueba que el valor está presente cuando se evalúa.**
 
 ### Trampa propuesta — la 119
 
