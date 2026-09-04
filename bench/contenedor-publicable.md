@@ -301,6 +301,37 @@ sobre una receta que se rompe. Queda escrito dentro del propio Dockerfile.
 6. **PENDIENTE — `ci/integridad.py` revienta con `UnicodeEncodeError`** bajo la consola
    cp1252 de esta máquina; funciona con `PYTHONIOENCODING=utf-8`. Es del terminal, no del
    comprobador, pero un tercero en Windows se lo va a encontrar.
+7. **PENDIENTE — el detalle de `informes-registrados` es una nota falsa al lado de un campo
+   honesto** (trampa 44). Al fallar imprime:
+
+   ```
+   MAL  informes-registrados   105 informes, todos citados
+         contenedor-publicable.md
+   ```
+
+   **«todos citados» es exactamente lo contrario de lo que acaba de detectar.** El recuento
+   (105) es verdadero y la frase pegada a él es falsa; sólo la lista de debajo dice la
+   verdad. La cadena se construye igual en el camino de éxito y en el de fallo. Es barato de
+   arreglar y no lo toco porque `ci/` no es mi encargo.
+
+---
+
+## 6bis. Estado de la suite tras el cambio
+
+No toqué `filex/` ni `pruebas/`, así que no correspondía la suite entera; sí los dos módulos
+del área afectada. **Las cuatro declaraciones que exige el proyecto** (trampas 94 y 101):
+
+| | |
+|---|---|
+| **Intérprete** | `.venv-mcp-filex/Scripts/python.exe` — **win32**, 3.11.9 |
+| **Entorno** | Docker 29.4.3 **levantado**, imagen `filex-c13` presente, corpus de LFS materializado |
+| **Qué quedó fuera** | Los otros 17 módulos (no toqué su código). **0 saltadas** en los dos ejecutados: las 8 de `Integracion` **sí corrieron** |
+| **Estado de la máquina** | worker10 midiendo ffmpeg en paralelo; sin disputa por la GPU |
+
+`pytest pruebas/test_hito5.py pruebas/test_sondeo.py -q` → **73 passed · 14 subtests · 0
+failed · 0 skipped**, 46,76 s. Que `test_sondeo` pase importa especialmente: es el módulo
+que compara huellas y `build`, es decir el que habría cantado si mover el fichero hubiera
+tocado algo real.
 
 ---
 
