@@ -167,6 +167,7 @@ En el PR:
   ocho documentos y este repositorio ya lo pagó una vez. Actualiza el número en `README.md`
   y en §10 de `ESTADO-Y-REPARTO.md`; la CI comprueba que los tres coincidan y que no haya
   huecos.
+- **Si citas un commit de TU PROPIA rama, dilo en el PR: el `--squash` lo mata.** Al fusionar con `--squash` y borrar la rama, esos commits dejan de ser alcanzables y la cita muere — y **no lo ves en tu máquina**, donde tu rama sigue viva. O se archiva la rama, o se cita algo que sobreviva. Trampa 115.
 - **No cites un hash sin comprobarlo.** `git cat-file -e <hash>`. La CI lo hace por ti, y
   si el hash es de otro repositorio decláralo en `ci/citas-ajenas.txt` con una línea que
   diga de dónde sale.
