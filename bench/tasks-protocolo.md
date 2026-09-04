@@ -480,6 +480,18 @@ las mediciones, que es lo que hace falta para repetirlas.)*
 | **Qué quedó fuera** | La suite completa (no toqué código de producto) y lo listado en §7 |
 | **Estado de la máquina** | No despejada: otros workers en la ronda 15. **Ninguna medida de aquí es de tiempo** — son deterministas (conteo de tokens, presencia de símbolos, contenido de un `initialize`), así que el ruido no las mueve. Los únicos milisegundos publicados son de traza, no de comparación |
 
-`ci/integridad.py` sobre esta rama: **9 de 9 en verde** *(con `PYTHONIOENCODING=utf-8`: la
-consola `cp1252` de esta máquina revienta al imprimir el `⚫` del inventario — es del terminal,
-no del script)*.
+**`ci/integridad.py` sobre esta rama: 8 de 9 en verde.** La que falla es
+`informes-registrados`, y **falla a propósito**: exige que este informe esté citado en la
+tabla de §1 de `ESTADO-Y-REPARTO.md`, y el encargo prohíbe expresamente tocar ese fichero.
+**Se cierra sola en cuanto el maestro pegue la fila de §8.2.** Las otras ocho —citas (50
+vivas, 1 ajena declarada, 0 muertas), inventario, un-emoji-por-fila, trampas (115, sin
+huecos), manifiestos (**0 nuevos sin manifiesto**), secretos, binarios, en-curso— pasan.
+
+*(Detalle de máquina, por si le pasa a otro: `ci/integridad.py` **revienta** en esta consola
+sin `PYTHONIOENCODING=utf-8`, con `UnicodeEncodeError: 'charmap' codec can't encode
+character '⚫'` al imprimir el `⚫` del inventario. Es del terminal `cp1252`, **no del
+script**, y no es un fallo de la comprobación: es la trampa 25 en versión de consola —una
+excepción que se parece muchísimo a «la comprobación está rota»—.)*
+
+**No cito ningún commit de mi propia rama** (trampa 115): las únicas referencias de este
+informe son a ficheros y a secciones de informes, que sobreviven al `--squash`.
