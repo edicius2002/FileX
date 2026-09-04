@@ -149,9 +149,15 @@ def main() -> int:
     ap.add_argument("--tope", type=int, default=90,
                     help="segundos por módulo (defecto 90, como Linux)")
     ap.add_argument("--json", type=pathlib.Path,
-                    default=RAIZ / "ci" / "windows-hosted-apto.json")
+                    # NO por defecto `ci/windows-hosted-apto.json`: ese fichero
+                    # se congela A MANO tras revisar la medida, y un `--json`
+                    # que apunte a él convierte cualquier ejecución distraída
+                    # --incluida una en la máquina equivocada, que es el error
+                    # que la trampa 104 castiga-- en un pisotón silencioso de la
+                    # lista buena. Se escribe al lado y se copia a mano.
+                    default=pathlib.Path("ci-windows-hosted-medido.json"))
     ap.add_argument("--logs", type=pathlib.Path,
-                    default=RAIZ / "ci-windows-hosted-logs",
+                    default=pathlib.Path("ci-windows-hosted-logs"),
                     help="directorio donde volcar la salida ÍNTEGRA de cada "
                          "módulo (vacío para no volcar nada)")
     args = ap.parse_args()

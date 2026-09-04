@@ -137,9 +137,17 @@ Faltaba una tercera celda: la raíz **y** la ruta, las dos resueltas. Con ella
 **F1: `Confinamiento` guarda sus raíces en UNA sola forma, y valida contra
 DOS.** El predicado léxico de R1 —que corre antes del `realpath` a propósito,
 porque `realpath` es un vector de DoS (R17)— compara la ruta **sin resolver**;
-la segunda comprobación compara la **resuelta**. Con una raíz cuya forma
-absoluta difiere de su forma resuelta, **ninguna de las dos formas de pedir la
-ruta pasa las dos comprobaciones**. No hay manera de usar esa raíz.
+la segunda comprobación compara la **resuelta**. Consecuencia exacta, que
+conviene no exagerar:
+
+* **Una raíz registrada en su forma 8.3 es inservible**: la petición en 8.3
+  muere en la segunda comprobación y la petición resuelta muere en la primera.
+  Ninguna de las dos formas de pedir pasa las dos comprobaciones.
+* **Una raíz registrada resuelta sirve, pero sólo para peticiones resueltas** —
+  y quien la usa no controla la forma en que le llega la ruta.
+
+Y eso es justo lo que hace `tempfile.mkdtemp()` en este runner: devuelve la
+forma 8.3, y las pruebas la usan tal cual para las dos cosas.
 
 ### 3.3 · Por qué es del producto y no del arnés
 
@@ -328,15 +336,54 @@ segundo empujón porque `bench/salidas-ci-windows-trazas` no tenía todavía su
 3. **`test_hito4` se retoma tras fusionar `edicius2002/filex-suelo-y-mcp`.**
 4. La fila de `bench/ci-windows-hosted.md` (worker4) sigue siendo válida en todo
    salvo en el motivo de `test_hito7`, que este informe refuta con dos vías.
+5. **Trampa nueva, redactada aquí y no pegada en `CLAUDE.md`** — ese fichero lo
+   gobierna el maestro y dos workers añadiendo al final a la vez se pisan. Si le
+   parece bien, va **al final**, como manda la regla:
+
+   > **111. Un `CONFIRMADO` puede salir de mirar el paso de al lado en vez de la
+   > traza del módulo, y entonces vale menos que un `PENDIENTE` — MEDIDO el
+   > 03/09** (`bench/ci-windows-trazas.md` §5). `ci/windows-hosted-apto.json`
+   > declaraba cuatro filas `PENDIENTE` y **una** `CONFIRMADO`: *«`test_hito7`:
+   > el demonio Docker responde pero no está ninguna imagen»*. El dato del
+   > entorno era **cierto** —`docker images` devuelve 0— y la atribución
+   > **falsa**: las 42 pruebas del módulo **no mencionan a Docker ni una vez** en
+   > su salida íntegra (`grep -i`, 0 líneas), y las 16 que fallan lo hacen por un
+   > fallo de producto que dispara antes que ningún motor. Se escribió leyendo el
+   > log del paso «El paquete importa y la CLI arranca», que estaba **al lado**.
+   > **La asimetría es lo caro**: los cuatro `PENDIENTE` invitaban a mirar y el
+   > `CONFIRMADO` invitaba a no mirar, así que el único motivo escrito era el
+   > único que nadie iba a revisar. Es la trampa 36 —una explicación plausible no
+   > es un mecanismo— con la agravante de una etiqueta que desalienta la
+   > comprobación. **Un motivo se escribe con la traza del sujeto delante, o se
+   > deja en `PENDIENTE`.** Y su corolario positivo, del mismo informe: la
+   > hipótesis que sustituyó a ésta —«la raíz en 8.3 cierra la lista blanca»—
+   > citaba la trampa correcta (la 33), sonaba bien y **también era falsa**; la
+   > tumbó **el control negativo dentro de la propia sonda**, que dijo `false`
+   > donde la hipótesis exigía `true`. **Toda sonda de causa lleva dentro la
+   > celda que la refutaría.**
 
 ---
 
 ## 10 · Verificación
 
-* **Suite local**, `D:\Work\research\FileX\.venv-mcp-filex\Scripts\python.exe`
-  (win32, 3.11.9), máquina del proyecto, corpus real y Docker vivo:
-  **420 passed · 2 skipped · 0 failed** — los guardas nuevos son **inocuos donde
-  el activo está**, que es la mitad que ningún runner puede comprobar.
+* **Los tres módulos tocados**, en la máquina del proyecto con
+  `D:\Work\research\FileX\.venv-mcp-filex\Scripts\python.exe` (win32, 3.11.9),
+  corpus real y Docker vivo: **78 pruebas · OK · 1 saltada** — los guardas
+  nuevos son **inocuos donde el activo está**, que es la mitad que ningún runner
+  puede comprobar.
+* **Suite completa en esta máquina: lanzada, y en cola A PROPÓSITO.** Mientras
+  escribo esto hay **otra sesión corriendo `pytest pruebas/`** (`-q -rs`, PID
+  5496, desde las 21:03) y el carril de GPU con una tanda de `b26_borde.py`
+  encima. Correr la mía a la vez sería medir contención: la trampa 101 ya
+  documenta una tanda de `test_cancelacion_procesos` que dio **2 rojos a ×3,4 de
+  duración** con la máquina cargada y **15 verdes en tres pasadas** con la
+  máquina tranquila, sin que el código hubiera cambiado una línea. Queda
+  encolada esperando a que la otra termine. **Estado: PENDIENTE**, y con la
+  causa dicha, que es la diferencia entre un pendiente y una excusa.
+  *(Y una nota de método pagada en el mismo sitio: mis dos primeros intentos se
+  solaparon entre sí por mi culpa, y el primero dio una `F`. Antes de culpar a
+  los guardas comprobé quién estaba vivo por línea de órdenes —trampa 31—: el
+  proceso que más CPU gastaba no era mío, era `b26_borde.py` del otro carril.)*
 * **`ci/integridad.py`**: todo en verde salvo `informes-registrados`, por §9.1.
 * **Runner**: ejecución **33827476219**, `success`, 18 módulos, **14 aptos ·
   331 pruebas · 67 saltos · 10,8 s · 0 colgados**.
