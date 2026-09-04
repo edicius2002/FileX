@@ -115,12 +115,13 @@ def quien(d: dict) -> str:
     return "el_propio_dueno"
 
 
-def una(variante: str, carga: int) -> dict:
+def una(variante: str, carga: int, demora: float = 0.0) -> dict:
     d = tempfile.mkdtemp(prefix="dm-")
     trabajos = os.path.join(d, "trabajos")
     os.makedirs(trabajos, exist_ok=True)
     cargas, proc = [], None
-    fila: dict = {"variante": variante, "carga": carga}
+    fila: dict = {"variante": variante, "carga": carga,
+                  "demora": demora}
     try:
         for _ in range(carga):
             cargas.append(subprocess.Popen(
@@ -141,8 +142,14 @@ def una(variante: str, carga: int) -> dict:
                     lanzador=(pid_hijo != proc.pid))
         fila["en_vuelo"] = bool(_lee_evento(proc, "en_vuelo").get("hay"))
 
-        nietos = hijos_de(pid_hijo)
+        # **Sólo en B**, y el motivo es una trampa que costó 20 celdas verdes:
+        # la consulta CIM cuesta ~1 s, y ponerla ANTES del `taskkill` en la
+        # variante A metía una demora que el arnés real no tiene. Con ella, A
+        # daba 20 de 20 `working` y parecía refutar el mecanismo. La sonda tiene
+        # que hacer lo que hace el sujeto, y en el mismo instante.
+        nietos = hijos_de(pid_hijo) if variante == "B" else []
         fila["nietos"] = nietos
+        time.sleep(max(demora, 0.0))
         antes = lee_json(trabajos, jid)
         # La PRECONDICIÓN de la prueba: antes de matar tiene que decir working.
         fila["estado_antes"] = antes.get("estado")
@@ -201,11 +208,13 @@ def main() -> int:
     ap.add_argument("--n", type=int, default=10)
     ap.add_argument("--variante", choices=["A", "B"], default="A")
     ap.add_argument("--carga", type=int, default=0)
+    ap.add_argument("--demora", type=float, default=0.0,
+                    help="segundos entre `en_vuelo` y el kill")
     args = ap.parse_args()
-    et = f"{args.variante}-carga{args.carga}"
+    et = f"{args.variante}-carga{args.carga}-d{args.demora}"
     filas = []
     for i in range(1, args.n + 1):
-        f = una(args.variante, args.carga)
+        f = una(args.variante, args.carga, args.demora)
         f["i"] = i
         filas.append(f)
         print(json.dumps(f, ensure_ascii=False), flush=True)

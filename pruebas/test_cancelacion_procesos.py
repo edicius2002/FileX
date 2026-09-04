@@ -26,6 +26,7 @@ import ast
 import json
 import os
 import shutil
+import signal
 import subprocess
 import sys
 import tempfile
@@ -111,8 +112,12 @@ class _ConHijo(unittest.TestCase):
         _arrancado = _lee_evento(self.proc, "arrancado")
         self.jid = _arrancado["job_id"]
         self.pid_hijo = _arrancado["pid"]
-        self.assertTrue(_lee_evento(self.proc, "en_vuelo")["hay"],
-                        "el motor del hijo no llegó a arrancar")
+        _vuelo = _lee_evento(self.proc, "en_vuelo")
+        self.assertTrue(_vuelo["hay"], "el motor del hijo no llegó a arrancar")
+        # Los PID de los motores, para poder matarlos POR IDENTIDAD cuando el
+        # dueño ya no esté para heredarlos (trampas 47 y 93). Ver
+        # `DuenoMuerto._matar_al_hijo` y `tearDown`.
+        self.pids_motores = list(_vuelo.get("motores") or [])
         # El servicio de ESTE proceso, que solo conoce al trabajo por el disco.
         self.sv = S.Servicio(_FxFalso(), S.Trabajos(self.trabajos))
 
@@ -135,6 +140,28 @@ class _ConHijo(unittest.TestCase):
             return {}
 
     def tearDown(self):
+        # `self.proc.kill()` a secas mataba **sólo al lanzador** —el
+        # `python.exe` de un venv lo es, trampa 93—, así que el `filex` dueño y
+        # su `ffmpeg` sobrevivían a pytest. MEDIDO: el módulo dejaba **3
+        # `ffmpeg.exe` vivos** por pasada, uno por cada prueba que ni cancela ni
+        # mata, codificando VP9 con `-threads 4` durante ~20-60 s **dentro de la
+        # pasada siguiente**. Es la trampa 112 —el motor termina y sus hijos no—
+        # y era el origen de la carga que hacía lentas las pasadas.
+        # Se mata el ÁRBOL DEL DUEÑO por su PID real, y los motores por
+        # identidad por si ya perdieron a su padre (trampa 47).
+        for pid in (getattr(self, "pid_hijo", None), *getattr(self, "pids_motores", ())):
+            if not pid:
+                continue
+            try:
+                if sys.platform == "win32":
+                    subprocess.run(
+                        ["taskkill", "/F", "/T", "/PID", str(pid)],
+                        stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL,
+                        stderr=subprocess.DEVNULL, timeout=30, check=False)
+                else:
+                    os.kill(pid, signal.SIGKILL)
+            except Exception:
+                pass
         try:
             self.proc.kill()
         except Exception:
@@ -262,13 +289,56 @@ class SinCanalNoSeAlcanza(_ConHijo):
 class DuenoMuerto(_ConHijo):
 
     def _matar_al_hijo(self) -> None:
+        """Mata al dueño **sin darle tiempo a cerrar su trabajo**.
+
+        N36. Antes esto era `taskkill /F /T` sobre `self.proc.pid`, y de ahí
+        salía la inestabilidad del módulo. **El `/T` recorre el árbol y no es
+        atómico**: si el nieto (`ffmpeg`) muere antes que el hijo (el `python`
+        dueño), el dueño vuelve de `communicate`, ve `conv.ok == False`,
+        comprueba que nadie pidió cancelar y escribe **`failed`** en el disco
+        —`el_motor_rechazo_la_conversion`, MEDIDO: 5 fallos en 20 pasadas del
+        módulo, `bench/cancelacion-inestable.md`—. Y entonces la condición que
+        estas dos pruebas dicen reproducir, *«el dueño murió SIN cerrar su
+        trabajo»*, **no se dio**, así que su veredicto no medía lo que dice
+        (trampa 38).
+
+        El orden es el arreglo, y las tres partes son deliberadas:
+
+        1. **El dueño primero y solo**, por su PID REAL —el `Popen.pid` es el
+           del lanzador del venv, trampa 93—. Un muerto no escribe: no hay
+           ventana que cerrar porque no hay nadie que la aproveche.
+        2. **Los motores después, por identidad** (trampa 47): al morir el
+           dueño, `ffmpeg` pierde a su padre y un `taskkill /T` sobre el abuelo
+           ya no lo alcanzaría. Sus PID los publica el hijo en `en_vuelo`.
+        3. **El lanzador al final**, que es lo único que `self.proc` nombra.
+        """
         if sys.platform == "win32":
-            subprocess.run(["taskkill", "/F", "/T", "/PID", str(self.proc.pid)],
-                           stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL,
-                           stderr=subprocess.DEVNULL, timeout=30, check=False)
+            def tk(args):
+                subprocess.run(["taskkill", "/F"] + args,
+                               stdin=subprocess.DEVNULL,
+                               stdout=subprocess.DEVNULL,
+                               stderr=subprocess.DEVNULL, timeout=30,
+                               check=False)
+            tk(["/PID", str(self.pid_hijo)])
+            for pid in self.pids_motores:
+                tk(["/T", "/PID", str(pid)])
+            tk(["/T", "/PID", str(self.proc.pid)])
         else:
+            for pid in (self.pid_hijo, *self.pids_motores):
+                try:
+                    os.kill(pid, signal.SIGKILL)
+                except OSError:
+                    pass
             self.proc.kill()
         self.proc.wait(timeout=30)
+        # **Registra que la condición SE DIO** (trampa 38). Si el dueño alcanzó
+        # a cerrar su trabajo, lo que sigue no mide un huérfano y el rojo tiene
+        # que decirlo con esas palabras en vez de disfrazarse de otra cosa.
+        d = self._en_disco()
+        if d.get("estado") != S.TRABAJANDO:
+            self.fail("el dueño cerró su trabajo ANTES de morir, así que no "
+                      "hay huérfano que medir y el veredicto de esta prueba no "
+                      f"valdría (trampa 38). En disco: {d}")
 
     def test_un_working_sin_dueno_vivo_se_detecta_y_se_cierra(self):
         """**La otra mitad.** Un mecanismo que solo alcanza a quien coopera
