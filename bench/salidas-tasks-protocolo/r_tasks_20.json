@@ -1,0 +1,105 @@
+{
+  "tope_s": 30,
+  "pasos": [
+    {
+      "paso": "initialize",
+      "t_ms": 1056.98,
+      "enviado": "initialize",
+      "respuesta": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "result": {
+          "capabilities": {
+            "experimental": {},
+            "tools": {
+              "listChanged": false
+            }
+          },
+          "protocolVersion": "2025-11-25",
+          "serverInfo": {
+            "name": "sonda-tasks-20",
+            "version": "0.0.1"
+          }
+        }
+      }
+    },
+    {
+      "paso": "tools/list",
+      "t_ms": 1058.98,
+      "enviado": "tools/list",
+      "respuesta": {
+        "jsonrpc": "2.0",
+        "id": 2,
+        "result": {
+          "tools": [
+            {
+              "description": "Sonda: simula una conversion larga.",
+              "inputSchema": {
+                "properties": {},
+                "type": "object"
+              },
+              "name": "convertir_lento"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "paso": "tasks/get",
+      "t_ms": 1059.98,
+      "enviado": "tasks/get",
+      "respuesta": {
+        "jsonrpc": "2.0",
+        "id": 3,
+        "result": {
+          "taskId": "t-42",
+          "status": "working",
+          "createdAt": "2026-09-04T00:00:00Z",
+          "lastUpdatedAt": "2026-09-04T00:00:00Z",
+          "ttl": 60000,
+          "pollInterval": 1000
+        }
+      }
+    },
+    {
+      "paso": "tasks/list",
+      "t_ms": 1060.98,
+      "enviado": "tasks/list",
+      "respuesta": {
+        "jsonrpc": "2.0",
+        "id": 4,
+        "result": {
+          "tasks": [
+            {
+              "taskId": "t-42",
+              "status": "working",
+              "createdAt": "2026-09-04T00:00:00Z",
+              "lastUpdatedAt": "2026-09-04T00:00:00Z",
+              "ttl": 60000,
+              "pollInterval": 1000
+            }
+          ]
+        }
+      }
+    },
+    {
+      "paso": "tasks/cancel",
+      "t_ms": 1060.98,
+      "enviado": "tasks/cancel",
+      "respuesta": {
+        "jsonrpc": "2.0",
+        "id": 5,
+        "result": {
+          "taskId": "t-42",
+          "status": "cancelled",
+          "createdAt": "2026-09-04T00:00:00Z",
+          "lastUpdatedAt": "2026-09-04T00:00:01Z",
+          "ttl": 60000,
+          "pollInterval": 1000
+        }
+      }
+    }
+  ],
+  "rc_servidor": 0,
+  "stderr_servidor_cola": []
+}

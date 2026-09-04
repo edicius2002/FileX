@@ -405,6 +405,11 @@ class Raices:
         self.servidor = list(raices_servidor or [])
         self._resuelto = False
         self._lock = threading.Lock()
+        #: El candado ASÍNCRONO de N34, que sí se sostiene a través del
+        #: `await` de `roots/list`. Se crea perezosamente dentro del bucle de
+        #: eventos —`construir()` se llama fuera de él— y eso es seguro porque
+        #: entre el `if` y la asignación no hay punto de suspensión.
+        self._alock = None
 
     #: Cuántas veces ha llegado `notifications/roots/list_changed` en esta
     #: sesión. **Es la instrumentación del ítem 3 de C36, y su valor esperado
@@ -484,37 +489,91 @@ class Raices:
         cuando el resultado es «ninguna raíz» y hubo un fallo al preguntar**.
         El coste es una ida y vuelta más por llamada, y sólo en la sesión que
         ya estaba denegada de todos modos.
+
+        **Y la petición va SERIALIZADA, no sólo la lectura de la caché —
+        MEDIDO** (`bench/roots-concurrencia.md`, N34). El `threading.Lock` de
+        arriba se suelta antes del `await`, así que N herramientas que entren a
+        la vez con la caché fría hacían **N** `roots/list` (8 de 8 con N=8).
+        Mientras un fallo se sellaba eso era sólo ruido; desde M3 **no**, y
+        entonces **dos llamadas concurrentes pueden traer respuestas distintas
+        y el ORDEN decide con qué queda la sesión**: en las dos órdenes medidas
+        del mismo par, el estado final salió `sin_acceso=False` con
+        confinamiento en una y `sin_acceso=True` sin él en la otra. Con el
+        candado asíncrono sostenido a través del `await`, N=1..8 dan **1** ida
+        y vuelta y el estado final **no depende del orden**. **No empeora el
+        caso del cliente mudo**: con un `roots/list` que no vuelve, ni una sola
+        herramienta responde ni con candado ni sin él (lo que cambia es que hay
+        1 petición colgada en vez de N). Coste en caliente —el 99 % de las
+        llamadas— **0,4 µs de mediana, el mismo que sin candado**.
+
+        **Y ningún resultado nacido de un FALLO se sella, ni siquiera el que
+        sale con raíces — MEDIDO** (ídem, celda N3). M3 dejó abierta una
+        esquina que no necesita concurrencia para morder: con `--raiz` puesta,
+        `_interseca(servidor, [])` devuelve la lista del **servidor entera**,
+        así que un `roots/list` que falla no deja «ninguna raíz» sino
+        **todas**, y con `efectivas` no vacía se sellaba `_resuelto = True`
+        **para toda la sesión**, con un confinamiento MÁS ANCHO que la
+        intersección que R13 exige. La condición correcta es `not fallo`.
+
+        **Y un `Confinamiento` que no se puede construir es «sin acceso», no
+        «sin confinamiento» — MEDIDO** (ídem, celda N7). `Confinamiento` lanza
+        `ValueError` cuando ninguna raíz confina (R3: una raíz que normaliza a
+        la raíz de una unidad no confina nada), y este `except` lo convertía en
+        `confinamiento = None` **dejando `sin_acceso = False`**, porque
+        `efectivas` no estaba vacía. Y `nucleo._resolver()` con
+        `confinamiento is None` devuelve la ruta tal cual: con un cliente que
+        declare `C:\\` como root, FileX leía un fichero de **otro directorio y
+        de otra unidad**, con el control de raíz normal denegando los dos.
+        `Confinamiento.__init__` ya lo dice —*«R6: denegar por defecto. Sin
+        ninguna raíz accesible, no se arranca»*—: el núcleo deja subir el
+        `ValueError` y era esta superficie la que se lo tragaba.
         """
         with self._lock:
             if self._resuelto:
                 return
-        cliente: list[str] = []
-        fallo = False
-        try:
-            r = await sesion.list_roots()
-            for raiz in getattr(r, "roots", []) or []:
-                p = _uri_a_ruta(str(getattr(raiz, "uri", "")))
-                if p:
-                    cliente.append(p)
-        except Exception:
-            # Un cliente sin `roots` no es un error: es el caso de `--raiz` sola.
-            # Pero tampoco es una respuesta: se anota, y decide más abajo.
-            cliente = []
-            fallo = True
-        efectivas = self._interseca(self.servidor, cliente)
-        try:
-            self.fx.confinamiento = _conf.Confinamiento(efectivas) if efectivas else None
-        except ValueError:
-            self.fx.confinamiento = None
-        # R6: denegar por defecto. Sin ninguna raíz, no se opera. Es lo ÚNICO
-        # que decide esta capa sobre el acceso, y no es un predicado sobre
-        # rutas: es «no hay lista blanca». Todo predicado sigue en el núcleo.
-        self.sin_acceso = not efectivas
-        with self._lock:
-            # Se sella todo salvo la esquina «falló la pregunta Y no queda
-            # ninguna raíz»: ésa es la única en la que volver a preguntar puede
-            # cambiar la respuesta.
-            self._resuelto = not (fallo and not efectivas)
+        import anyio
+
+        if self._alock is None:
+            # Atómico dentro del bucle: no hay `await` entre el `if` y la
+            # asignación. Perezoso porque `construir()` corre fuera del bucle.
+            self._alock = anyio.Lock()
+        async with self._alock:
+            with self._lock:
+                # Segunda mirada: otro pudo resolverlo mientras se esperaba.
+                if self._resuelto:
+                    return
+            cliente: list[str] = []
+            fallo = False
+            try:
+                r = await sesion.list_roots()
+                for raiz in getattr(r, "roots", []) or []:
+                    p = _uri_a_ruta(str(getattr(raiz, "uri", "")))
+                    if p:
+                        cliente.append(p)
+            except Exception:
+                # Un cliente sin `roots` no es un error: es el caso de `--raiz`
+                # sola. Pero tampoco es una respuesta: se anota, y decide abajo.
+                cliente = []
+                fallo = True
+            efectivas = self._interseca(self.servidor, cliente)
+            sin_confinar = False
+            try:
+                self.fx.confinamiento = (_conf.Confinamiento(efectivas)
+                                         if efectivas else None)
+            except ValueError:
+                self.fx.confinamiento = None
+                sin_confinar = True
+            # R6: denegar por defecto. Sin ninguna raíz —o con raíces que no
+            # confinan nada— no se opera. Es lo ÚNICO que decide esta capa
+            # sobre el acceso, y no es un predicado sobre rutas: es «no hay
+            # lista blanca». Todo predicado sigue en el núcleo.
+            self.sin_acceso = (not efectivas) or sin_confinar
+            with self._lock:
+                # No se sella NINGÚN resultado nacido de un fallo: volver a
+                # preguntar es lo único que puede cambiar la respuesta, y el
+                # sellado de un fallo con raíces de servidor ensanchaba el
+                # confinamiento para toda la sesión.
+                self._resuelto = not fallo
 
 
 def _uri_a_ruta(uri: str) -> str:

@@ -1,0 +1,223 @@
+{
+  "S0_entorno": {
+    "python": "3.11.9",
+    "plataforma": "win32",
+    "ejecutable": "D:\\Work\\research\\FileX\\.venv-mcp-filex\\Scripts\\python.exe",
+    "mcp": "2.0.0",
+    "mcp_types": "2.0.0"
+  },
+  "S1_eras": {
+    "LATEST_PROTOCOL_VERSION": "2026-07-28",
+    "SUPPORTED_PROTOCOL_VERSIONS": "AUSENTE",
+    "DEFAULT_NEGOTIATED_VERSION": "2025-03-26",
+    "modulos_de_version_en_mcp_types": [
+      "_v2025_11_25",
+      "_v2026_07_28"
+    ]
+  },
+  "S2_mecanismo": {
+    "modulos": {
+      "mcp.server.experimental": "ModuleNotFoundError: No module named 'mcp.server.experimental'",
+      "mcp.client.experimental": "ModuleNotFoundError: No module named 'mcp.client.experimental'",
+      "mcp.shared.experimental": "ModuleNotFoundError: No module named 'mcp.shared.experimental'",
+      "mcp.shared.experimental.tasks": "ModuleNotFoundError: No module named 'mcp.shared.experimental'",
+      "mcp.server.experimental.tasks": "ModuleNotFoundError: No module named 'mcp.server.experimental'"
+    },
+    "simbolos": {
+      "lowlevel.Server.experimental": false,
+      "lowlevel.Server.enable_tasks": false,
+      "lowlevel.dir_tasks": [],
+      "FastMCP": "ERROR No module named 'mcp.server.fastmcp'"
+    },
+    "metodos_registrables": "ERROR 'Server' object has no attribute 'request_handlers'"
+  },
+  "S3_tipos": {
+    "cinco_de_worker2": {
+      "CreateTaskResult": {
+        "modulo": "mcp_types._types",
+        "deprecated_attr": false,
+        "avisos_al_tocarlo": [],
+        "docstring_1a_linea": [
+          "A response to a task-augmented request (2025-11-25 only)."
+        ]
+      },
+      "Task": {
+        "modulo": "mcp_types._types",
+        "deprecated_attr": false,
+        "avisos_al_tocarlo": [],
+        "docstring_1a_linea": [
+          "Data associated with a task (2025-11-25 only)."
+        ]
+      },
+      "GetTaskRequest": {
+        "modulo": "mcp_types._types",
+        "deprecated_attr": false,
+        "avisos_al_tocarlo": [],
+        "docstring_1a_linea": [
+          "A request to retrieve the state of a task (2025-11-25 only)."
+        ]
+      },
+      "TaskStatus": {
+        "modulo": "typing",
+        "deprecated_attr": false,
+        "avisos_al_tocarlo": [],
+        "docstring_1a_linea": []
+      },
+      "ServerTasksCapability": {
+        "modulo": "mcp_types._types",
+        "deprecated_attr": false,
+        "avisos_al_tocarlo": [],
+        "docstring_1a_linea": [
+          "Capability for server tasks operations (2025-11-25 only)."
+        ]
+      }
+    },
+    "familia_en_mcp_types": [
+      "CancelTaskRequest",
+      "CancelTaskRequestParams",
+      "CancelTaskResult",
+      "ClientTasksCapability",
+      "ClientTasksRequestsCapability",
+      "CreateTaskResult",
+      "GetTaskPayloadRequest",
+      "GetTaskPayloadRequestParams",
+      "GetTaskPayloadResult",
+      "GetTaskRequest",
+      "GetTaskRequestParams",
+      "GetTaskResult",
+      "ListTasksRequest",
+      "ListTasksResult",
+      "RelatedTaskMetadata",
+      "ServerTasksCapability",
+      "ServerTasksRequestsCapability",
+      "Task",
+      "TaskMetadata",
+      "TaskStatus",
+      "TaskStatusNotification",
+      "TaskStatusNotificationParams",
+      "TasksCallCapability",
+      "TasksCancelCapability",
+      "TasksCreateElicitationCapability",
+      "TasksCreateMessageCapability",
+      "TasksElicitationCapability",
+      "TasksListCapability",
+      "TasksSamplingCapability",
+      "TasksToolsCapability"
+    ],
+    "familia_en_mcp_types_reexport": [
+      "CancelTaskRequest",
+      "CancelTaskRequestParams",
+      "CancelTaskResult",
+      "ClientTasksCapability",
+      "ClientTasksRequestsCapability",
+      "CreateTaskResult",
+      "GetTaskPayloadRequest",
+      "GetTaskPayloadRequestParams",
+      "GetTaskPayloadResult",
+      "GetTaskRequest",
+      "GetTaskRequestParams",
+      "GetTaskResult",
+      "ListTasksRequest",
+      "ListTasksResult",
+      "RelatedTaskMetadata",
+      "ServerTasksCapability",
+      "ServerTasksRequestsCapability",
+      "Task",
+      "TaskMetadata",
+      "TaskStatus",
+      "TaskStatusNotification",
+      "TaskStatusNotificationParams",
+      "TasksCallCapability",
+      "TasksCancelCapability",
+      "TasksCreateElicitationCapability",
+      "TasksCreateMessageCapability",
+      "TasksElicitationCapability",
+      "TasksListCapability",
+      "TasksSamplingCapability",
+      "TasksToolsCapability"
+    ]
+  },
+  "S4_por_era": {
+    "_v2025_11_25": {
+      "tipos_task": [
+        "CancelTaskRequest",
+        "CancelTaskResult",
+        "CreateTaskResult",
+        "GetTaskPayloadRequest",
+        "GetTaskPayloadResult",
+        "GetTaskRequest",
+        "GetTaskResult",
+        "ListTasksRequest",
+        "ListTasksResult",
+        "RelatedTaskMetadata",
+        "Task",
+        "TaskAugmentedRequestParams",
+        "TaskMetadata",
+        "TaskStatus",
+        "TaskStatusNotification",
+        "TaskStatusNotificationParams",
+        "Tasks",
+        "Tasks1"
+      ],
+      "n_tipos_task": 18,
+      "ServerCapabilities.tasks": true,
+      "ServerCapabilities.campos": [
+        "completions",
+        "experimental",
+        "logging",
+        "prompts",
+        "resources",
+        "tasks",
+        "tools"
+      ],
+      "ClientCapabilities.tasks": true,
+      "ClientCapabilities.campos": [
+        "elicitation",
+        "experimental",
+        "roots",
+        "sampling",
+        "tasks"
+      ]
+    },
+    "_v2026_07_28": {
+      "tipos_task": [],
+      "n_tipos_task": 0,
+      "ServerCapabilities.tasks": false,
+      "ServerCapabilities.campos": [
+        "completions",
+        "experimental",
+        "extensions",
+        "logging",
+        "prompts",
+        "resources",
+        "tools"
+      ],
+      "ClientCapabilities.tasks": false,
+      "ClientCapabilities.campos": [
+        "elicitation",
+        "experimental",
+        "extensions",
+        "roots",
+        "sampling"
+      ]
+    }
+  },
+  "S5_resolucion_reexport": {
+    "CreateTaskResult": "mcp_types._types",
+    "Task": "mcp_types._types",
+    "GetTaskRequest": "mcp_types._types",
+    "TaskStatus": "typing",
+    "ServerTasksCapability": "mcp_types._types",
+    "ServerCapabilities": "mcp_types._types",
+    "ClientCapabilities": "mcp_types._types",
+    "InitializeResult": "mcp_types._types"
+  },
+  "S6_control": {
+    "ServerSession.list_roots.deprecated": true,
+    "ServerSession.list_roots.doc": [
+      "Send a roots/list request.",
+      ""
+    ],
+    "avisos": []
+  }
+}
