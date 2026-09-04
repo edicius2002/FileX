@@ -18,7 +18,8 @@ import unittest
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from filex import formatos, invocacion  # noqa: E402
-from filex.confinamiento import Confinamiento, Denegado, nombre_seguro  # noqa: E402
+from filex.confinamiento import (Confinamiento, Denegado, _norm,  # noqa: E402
+                                 nombre_seguro)
 from filex.grafo import REAL, SIN_SONDEAR, Arista, Grafo  # noqa: E402
 from filex.nucleo import FileX  # noqa: E402
 from filex.trabajo import DirectorioDeTrabajo  # noqa: E402
@@ -212,6 +213,140 @@ class Confinar(unittest.TestCase):
             self.assertFalse(nombre_seguro("x.txt:oculto"))  # ADS: W9 lo concedió
             self.assertFalse(nombre_seguro("CON.txt"))
             self.assertFalse(nombre_seguro("x.png."))
+
+
+class RaicesMixtasN35(unittest.TestCase):
+    """N35 (`bench/raices-mixtas.md`): una raíz que no confina se PODA.
+
+    Antes, `_preparar` lanzaba `ValueError` en cuanto UNA raíz no confinaba,
+    así que un cliente que declarase `["C:\\", <un directorio legítimo>]`
+    perdía **también** el legítimo. Es el reverso exacto de la fuga de N7
+    —aquélla abría de más, ésta cerraba de más— y el mismo `except ValueError`
+    de `mcp.py` tapaba las dos, así que arreglar una sin reabrir la otra es
+    todo el asunto.
+    """
+
+    def setUp(self):
+        self.base = tempfile.mkdtemp(prefix="filex-n35-")
+        self.addCleanup(shutil.rmtree, self.base, ignore_errors=True)
+        self.legit = os.path.join(self.base, "legit")
+        self.escr = os.path.join(self.base, "escr")
+        self.hermano = os.path.join(self.base, "hermano")
+        for d in (self.legit, self.escr, self.hermano):
+            os.makedirs(d, exist_ok=True)
+        self.dentro = os.path.join(self.legit, "dentro.txt")
+        self.fuera = os.path.join(self.hermano, "fuera.txt")
+        for p in (self.dentro, self.fuera):
+            open(p, "w").close()
+        #: La raíz que no confina. En POSIX no existe una «raíz de unidad»
+        #: distinta de `/`, y `/` es exactamente el caso: `dirname('/') == '/'`.
+        self.inerte = "C:\\" if sys.platform == "win32" else "/"
+
+    # ------------------------------------------------ el defecto que se cierra
+
+    def test_una_raiz_que_no_confina_NO_se_lleva_por_delante_a_las_demas(self):
+        """MEDIDO: antes esto era `ValueError` y la sesión perdía el acceso."""
+        for orden in (["A", "B"], ["B", "A"]):
+            raices = [self.inerte if o == "A" else self.legit for o in orden]
+            with self.subTest(orden="".join(orden)):
+                c = Confinamiento(raices)
+                self.assertEqual(c.lectura, [_norm(os.path.abspath(self.legit))],
+                                 "la raíz inerte se poda y la legítima se queda")
+                self.assertTrue(c.puede_leer(self.dentro))
+
+    # ------------------------- y las tres cosas que NO puede hacer el arreglo
+
+    def test_podar_NO_reabre_N7_sin_ninguna_raiz_util_sigue_sin_arrancar(self):
+        """R6 intacta: es la celda que demuestra que no se reabrió la fuga.
+
+        Si la poda se lleva TODAS las raíces de lectura, el constructor tiene
+        que lanzar igual que antes de N35 — `mcp.py` lo traduce a
+        `sin_acceso = True`, y lo que la fuga de N7 producía era justo lo
+        contrario, `confinamiento = None` con `sin_acceso = False`.
+        """
+        with self.assertRaises(ValueError):
+            Confinamiento([self.inerte])
+        with self.assertRaises(ValueError):
+            Confinamiento([self.inerte, self.inerte])
+
+    def test_una_raiz_inerte_no_concedia_NADA_asi_que_podarla_no_quita_nada(self):
+        """El motivo por el que podar es seguro, medido y no argumentado.
+
+        `_dentro` compara con `r + os.sep`, y sobre `c:\\` eso da la barra
+        DOBLE `c:\\\\`, que ningún candidato normalizado casa. Así que la raíz
+        de una unidad **no es una raíz ancha: es inerte**, y quitarla no puede
+        quitar ningún acceso porque no concedía ninguno.
+        """
+        c = Confinamiento([self.legit, self.inerte])
+        # Nada de lo que caería bajo la raíz inerte —y no bajo la legítima—
+        # se lee, ni antes ni después de podarla.
+        bajo_la_inerte = os.path.abspath(
+            r"C:\Windows\win.ini" if sys.platform == "win32" else "/etc/hostname")
+        if os.path.exists(bajo_la_inerte):
+            self.assertFalse(c.puede_leer(bajo_la_inerte))
+        self.assertFalse(c.puede_leer(self.fuera))
+
+    def test_podar_solo_QUITA_el_resultado_es_subconjunto_de_lo_declarado(self):
+        """No hay forma de que la poda AÑADA una raíz: la propiedad, afirmada."""
+        declaradas = [self.inerte, self.legit, self.escr]
+        c = Confinamiento(declaradas)
+        norm = {_norm(os.path.abspath(r)) for r in declaradas}
+        self.assertTrue(set(c.lectura) <= norm)
+        self.assertEqual(len(c.lectura), 2)
+
+    # ------------------------------------------------------ el eje ESCRITURA
+
+    def test_declarar_escritura_y_que_ninguna_confine_es_un_ERROR_no_un_silencio(self):
+        """Trampa 43/44: separar «no declaré» de «declaré y ninguna sirve».
+
+        La guarda R6 mira sólo la lectura, así que al podar aparecía un camino
+        nuevo hasta `escritura == []`: toda la escritura denegada en silencio
+        donde antes había un error.
+
+        **Y se comprueba de qué guarda sale el error, no sólo que salga**: con
+        el código de antes de N35 esto también lanzaba `ValueError`, pero desde
+        `_preparar` —o sea por el motivo viejo—, así que un `assertRaises` a
+        secas pasa en las dos versiones y no demuestra nada (trampa 109). Lo
+        que sólo puede ocurrir con la guarda nueva es que el mensaje hable de
+        la ESCRITURA.
+        """
+        with self.assertRaises(ValueError) as ctx:
+            Confinamiento([self.legit], [self.inerte])
+        self.assertIn("escritura", str(ctx.exception),
+                      "el error tiene que venir de la guarda de escritura (N35), "
+                      "no del rechazo global que `_preparar` hacía antes")
+
+    def test_no_declarar_escritura_sigue_siendo_legitimo(self):
+        """El otro lado de la misma moneda: `[]` y `None` no son un error."""
+        c = Confinamiento([self.legit], [])          # solo lectura, a propósito
+        self.assertEqual(c.escritura, [])
+        with self.assertRaises(Denegado):
+            c.resolver(self.escr, escritura=True)
+        d = Confinamiento([self.legit], None)        # hereda la de lectura
+        self.assertEqual(d.escritura, d.lectura)
+
+    def test_la_escritura_MIXTA_conserva_la_raiz_util(self):
+        c = Confinamiento([self.legit], [self.inerte, self.escr])
+        self.assertEqual(c.escritura, [_norm(os.path.abspath(self.escr))])
+        self.assertTrue(c.resolver(self.escr, escritura=True))
+        with self.assertRaises(Denegado):
+            c.resolver(self.hermano, escritura=True)
+
+    # -------------------------------------------- la superficie del NÚCLEO
+
+    def test_por_el_NUCLEO_una_raiz_mixta_resuelve_su_propia_raiz(self):
+        """La validación vive en el núcleo, así que se comprueba por ahí.
+
+        `FileX._resolver()` es la vía de la CLI, el watcher y la API HTTP —
+        tres de las cuatro superficies—, y con `confinamiento is None` devuelve
+        la ruta tal cual, que es como se veía la fuga de N7.
+        """
+        fx = FileX.__new__(FileX)                    # sin sondear motores
+        fx.confinamiento = Confinamiento([self.inerte, self.legit])
+        ent, _sal = fx._resolver(self.dentro, os.path.join(self.legit, "s.txt"))
+        self.assertEqual(_norm(ent), _norm(os.path.realpath(self.dentro)))
+        with self.assertRaises(Denegado):
+            fx._resolver(self.fuera, os.path.join(self.legit, "s.txt"))
 
 
 class OraculoTemporalN9(unittest.TestCase):
