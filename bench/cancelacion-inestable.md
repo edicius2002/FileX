@@ -223,6 +223,14 @@ terminara y muerto solo ~60 s más tarde. Tres de esos, a `-threads 4` cada uno,
 sobre 12 núcleos, **dentro de la pasada siguiente**. Es la trampa 112 —el motor
 termina y sus hijos no— cruzada con la 93.
 
+**Y hay un rastro más, que no es mío.** Al cerrar el encargo quedaba en `%TEMP%`
+**un** desechable `n10-21jb6aqj` creado a las **11:43**, anterior a mi primera
+tanda (12:58): es de una pasada previa del módulo —presumiblemente la verificación
+que abrió esta fila—. **No lo he borrado**: no es mío y el barrido se hace por
+identidad, no por prefijo (trampa 47, cuyo remedio ingenuo estuvo a punto de
+llevarse los candados de la máquina entera). Lo dejo escrito porque es la misma
+fuga vista desde fuera. **`ffmpeg.exe` huérfanos al terminar: 0.**
+
 **El control que separa las dos piezas — MEDIDO.** Con el **kill viejo** puesto y
 **sólo** la fuga de huérfanos arreglada, el módulo entero bajo la misma carga 8:
 
@@ -384,6 +392,22 @@ mejora que yo publique.
 ---
 
 ## 8. Texto propuesto (NO lo he escrito yo: `ESTADO-Y-REPARTO.md` y `CLAUDE.md` están vedados)
+
+> **`ci/integridad.py` da 8 de 9, y la que falla es estructural, no un descuido.**
+> `informes-registrados` exige que `cancelacion-inestable.md` aparezca en
+> `ESTADO-Y-REPARTO.md`, y el encargo me prohíbe tocar ese fichero: son dos
+> instrucciones que no pueden cumplirse a la vez, y elijo obedecer la prohibición
+> y **declarar la consecuencia** en vez de saltármela en silencio.
+>
+> **No lo deduzco, lo medí:** añadiendo una sola línea que nombre el fichero,
+> `ci/integridad.py` pasa a **9 de 9 · «Todo en orden»**. Después revertí con
+> `git checkout --` y comprobé con `diff` que `ESTADO-Y-REPARTO.md` queda
+> **idéntico al original** — interrogando al fichero, no al mandato (trampa 119).
+> Las otras ocho comprobaciones están en verde, incluida `manifiestos`, que sólo
+> se puso verde **después de commitear** el `MANIFIESTO.md`: la comprobación mira
+> `git ls-files`, no el disco (trampa 104), y eso es correcto.
+>
+> Basta con que el maestro pegue la fila de §8.1 para que quede en 9 de 9.
 
 ### 8.1 Fila `N36` de `ESTADO-Y-REPARTO.md`
 
