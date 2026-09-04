@@ -47,6 +47,19 @@ def _pedido_intermedio(pedido: dict) -> dict:
     return {k: v for k, v in (pedido or {}).items() if k in CLAVES_DE_PIXEL}
 
 
+def _es_motor_contenedor(motor) -> bool:
+    """N38: ¿es un motor de contenedor? (bind mount + formato por extensión).
+
+    Import perezoso para no arrastrar `motor_contenedor` al importar `nucleo`
+    ni tocar su huella. Si el módulo no está, no hay motor de contenedor.
+    """
+    try:
+        from .motor_contenedor import _EnContenedor
+    except Exception:
+        return False
+    return isinstance(motor, _EnContenedor)
+
+
 # --------------------------------------------------------------------------
 # El destino en curso — un agujero que solo se ve con CONCURRENCIA
 # --------------------------------------------------------------------------
@@ -759,7 +772,21 @@ class FileX:
 
         temporales: list[DirectorioDeTrabajo] = []
         try:
+            # Solo el PRIMER salto lee la entrada del usuario. Se le da la ruta
+            # ANCLADA (/proc/<pid>/fd/N en Linux) si su motor la acepta —los
+            # LOCALES la abren como una ruta cualquiera y sniffean el formato por
+            # contenido (MEDIDO: magick/ffmpeg/gs la aceptan)—; el motor de
+            # CONTENEDOR NO —deduce el formato de la extensión de `entrada` y la
+            # monta por bind—, así que recibe `ent_seg.real` (su vector TOCTOU es
+            # aparte y PENDIENTE, `bench/symlink-toctou.md` §4bis). En Windows la
+            # anclada coincide con la real, así que esto solo decide en Linux.
+            # Se detecta por tipo, en vez de con un atributo de clase, para NO
+            # tocar la huella de `motores.py`/`motor_contenedor.py` (trampa 32:
+            # un atributo nuevo en la clase caducaría todas sus aristas).
             actual = ent_seg.ruta
+            if ent_seg.ruta != ent_seg.real and _es_motor_contenedor(
+                    self.motores[dec.camino.pasos[0].arista.motor]):
+                actual = ent_seg.real
             for i, paso in enumerate(dec.camino.pasos):
                 ultimo = i == len(dec.camino.pasos) - 1
                 s = self._un_salto(paso.arista, actual, sal_abs, pedido,
