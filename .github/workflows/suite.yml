@@ -136,7 +136,14 @@ jobs:
           sys.exit(1)
           EOF
 
+      # `always()` no es decoración: sin él, el paso de arriba sale con rc=1, éste
+      # se salta y la ejecución que detecta la deriva es justo la que NO deja el
+      # fichero con el que arreglarla -- y el mensaje de remedio manda usarlo.
+      # Medido: la ejecución 33833727560 falló como debía y devolvió «no valid
+      # artifacts found». Es la trampa 103 -- un arnés que descarta la salida del
+      # caso que falla ha medido y no ha aprendido.
       - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a  # v7
+        if: always()
         with:
           name: linux-apto-runner
           path: /tmp/linux-apto-runner.json
