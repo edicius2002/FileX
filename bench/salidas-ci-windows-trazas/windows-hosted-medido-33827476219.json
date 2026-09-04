@@ -1,0 +1,410 @@
+{
+  "_": "Medido con 3.11.9 el 2026-09-04 en windows-latest (runner hospedado por GitHub). Se regenera lanzando `.github/workflows/windows-tests.yml` con workflow_dispatch (entrada medir: true) -- correrlo en otra máquina Windows mide otro entorno y no vale (trampa 104). APTO = rc 0 dentro del tope; no significa que la prueba MIDA algo en Windows, sólo que no rompe ni cuelga. Cada fila de `detalle` trae `trazas` con el nombre y el traceback de cada FAIL/ERROR, y `log` con la ruta de la salida íntegra: un recuento no separa causas (trampa 25 en el nivel del arnés).",
+  "interprete": "3.11.9",
+  "plataforma": "win32",
+  "medido_en": "PENDIENTE -- rellenar con el número de `run` real de GitHub Actions tras el `workflow_dispatch`",
+  "tope_por_modulo_s": 90,
+  "aptos": [
+    "test_a7_ciego",
+    "test_bitrate_y_lock",
+    "test_cancelacion",
+    "test_cancelacion_procesos",
+    "test_cerrojo_unico",
+    "test_contrato_v",
+    "test_datos_csv",
+    "test_firmas_cierre",
+    "test_gpu_lock",
+    "test_hito2",
+    "test_hito5",
+    "test_hito6",
+    "test_sondeo",
+    "test_watcher_n"
+  ],
+  "no_aptos": {
+    "cuelga": {},
+    "falla": {
+      "test_cerrojo": "1 fallos",
+      "test_hito1": "3 fallos",
+      "test_hito4": "3 fallos",
+      "test_hito7": "16 fallos"
+    }
+  },
+  "detalle": [
+    {
+      "modulo": "test_a7_ciego",
+      "veredicto": "APTO",
+      "rc": 0,
+      "corridas": 6,
+      "saltos": 6,
+      "fallos": 0,
+      "segundos": 0.3,
+      "cuelga_en": "",
+      "trazas": [],
+      "log": "ci-windows-hosted-logs\\test_a7_ciego.log",
+      "bytes_de_salida": 2016
+    },
+    {
+      "modulo": "test_bitrate_y_lock",
+      "veredicto": "APTO",
+      "rc": 0,
+      "corridas": 17,
+      "saltos": 1,
+      "fallos": 0,
+      "segundos": 0.8,
+      "cuelga_en": "",
+      "trazas": [],
+      "log": "ci-windows-hosted-logs\\test_bitrate_y_lock.log",
+      "bytes_de_salida": 3612
+    },
+    {
+      "modulo": "test_cancelacion",
+      "veredicto": "APTO",
+      "rc": 0,
+      "corridas": 20,
+      "saltos": 10,
+      "fallos": 0,
+      "segundos": 0.6,
+      "cuelga_en": "",
+      "trazas": [],
+      "log": "ci-windows-hosted-logs\\test_cancelacion.log",
+      "bytes_de_salida": 5098
+    },
+    {
+      "modulo": "test_cancelacion_procesos",
+      "veredicto": "APTO",
+      "rc": 0,
+      "corridas": 15,
+      "saltos": 8,
+      "fallos": 0,
+      "segundos": 0.2,
+      "cuelga_en": "",
+      "trazas": [],
+      "log": "ci-windows-hosted-logs\\test_cancelacion_procesos.log",
+      "bytes_de_salida": 4043
+    },
+    {
+      "modulo": "test_cerrojo",
+      "veredicto": "FALLA",
+      "rc": 1,
+      "corridas": 24,
+      "saltos": 8,
+      "fallos": 1,
+      "segundos": 2.6,
+      "cuelga_en": "",
+      "trazas": [
+        {
+          "tipo": "FAIL",
+          "prueba": "test_con_deteccion_filex_se_niega_y_no_lo_toca (pruebas.test_cerrojo.TerceroQueNoCoopera.test_con_deteccion_filex_se_niega_y_no_lo_toca)",
+          "traza": "Traceback (most recent call last):\n  File \"D:\\a\\FileX\\FileX\\pruebas\\test_cerrojo.py\", line 472, in test_con_deteccion_filex_se_niega_y_no_lo_toca\n    self.assertIn(\"otro proceso tiene abierta\", fila[\"motivo\"])\nAssertionError: 'otro proceso tiene abierta' not found in 'ruta no accesible'",
+          "recortada": false
+        }
+      ],
+      "log": "ci-windows-hosted-logs\\test_cerrojo.log",
+      "bytes_de_salida": 8225
+    },
+    {
+      "modulo": "test_cerrojo_unico",
+      "veredicto": "APTO",
+      "rc": 0,
+      "corridas": 15,
+      "saltos": 0,
+      "fallos": 0,
+      "segundos": 1.4,
+      "cuelga_en": "",
+      "trazas": [],
+      "log": "ci-windows-hosted-logs\\test_cerrojo_unico.log",
+      "bytes_de_salida": 4147
+    },
+    {
+      "modulo": "test_contrato_v",
+      "veredicto": "APTO",
+      "rc": 0,
+      "corridas": 19,
+      "saltos": 4,
+      "fallos": 0,
+      "segundos": 0.1,
+      "cuelga_en": "",
+      "trazas": [],
+      "log": "ci-windows-hosted-logs\\test_contrato_v.log",
+      "bytes_de_salida": 3774
+    },
+    {
+      "modulo": "test_datos_csv",
+      "veredicto": "APTO",
+      "rc": 0,
+      "corridas": 5,
+      "saltos": 0,
+      "fallos": 0,
+      "segundos": 3.2,
+      "cuelga_en": "",
+      "trazas": [],
+      "log": "ci-windows-hosted-logs\\test_datos_csv.log",
+      "bytes_de_salida": 873
+    },
+    {
+      "modulo": "test_firmas_cierre",
+      "veredicto": "APTO",
+      "rc": 0,
+      "corridas": 37,
+      "saltos": 0,
+      "fallos": 0,
+      "segundos": 0.4,
+      "cuelga_en": "",
+      "trazas": [],
+      "log": "ci-windows-hosted-logs\\test_firmas_cierre.log",
+      "bytes_de_salida": 7197
+    },
+    {
+      "modulo": "test_gpu_lock",
+      "veredicto": "APTO",
+      "rc": 0,
+      "corridas": 13,
+      "saltos": 0,
+      "fallos": 0,
+      "segundos": 0.7,
+      "cuelga_en": "",
+      "trazas": [],
+      "log": "ci-windows-hosted-logs\\test_gpu_lock.log",
+      "bytes_de_salida": 2082
+    },
+    {
+      "modulo": "test_hito1",
+      "veredicto": "FALLA",
+      "rc": 1,
+      "corridas": 35,
+      "saltos": 1,
+      "fallos": 3,
+      "segundos": 2.0,
+      "cuelga_en": "",
+      "trazas": [
+        {
+          "tipo": "ERROR",
+          "prueba": "test_ecualizado_las_tres_vias_convergen_al_mismo_suelo (pruebas.test_hito1.OraculoTemporalN9.test_ecualizado_las_tres_vias_convergen_al_mismo_suelo) (ruta='no_existe.txt')",
+          "traza": "Traceback (most recent call last):\n  File \"D:\\a\\FileX\\FileX\\pruebas\\test_hito1.py\", line 270, in test_ecualizado_las_tres_vias_convergen_al_mismo_suelo\n    c.resolver(ruta)\n  File \"D:\\a\\FileX\\FileX\\filex\\confinamiento.py\", line 219, in resolver\n    return self._resolver_sin_ecualizar(ruta, escritura=escritura)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\a\\FileX\\FileX\\filex\\confinamiento.py\", line 242, in _resolver_sin_ecualizar\n    raise Denegado()\nfilex.confinamiento.Denegado: ruta no accesible",
+          "recortada": false
+        },
+        {
+          "tipo": "ERROR",
+          "prueba": "test_ecualizado_las_tres_vias_convergen_al_mismo_suelo (pruebas.test_hito1.OraculoTemporalN9.test_ecualizado_las_tres_vias_convergen_al_mismo_suelo) (ruta='x.txt')",
+          "traza": "Traceback (most recent call last):\n  File \"D:\\a\\FileX\\FileX\\pruebas\\test_hito1.py\", line 270, in test_ecualizado_las_tres_vias_convergen_al_mismo_suelo\n    c.resolver(ruta)\n  File \"D:\\a\\FileX\\FileX\\filex\\confinamiento.py\", line 219, in resolver\n    return self._resolver_sin_ecualizar(ruta, escritura=escritura)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\a\\FileX\\FileX\\filex\\confinamiento.py\", line 242, in _resolver_sin_ecualizar\n    raise Denegado()\nfilex.confinamiento.Denegado: ruta no accesible",
+          "recortada": false
+        },
+        {
+          "tipo": "FAIL",
+          "prueba": "test_lo_que_esta_dentro_si_entra (pruebas.test_hito1.Confinar.test_lo_que_esta_dentro_si_entra)",
+          "traza": "Traceback (most recent call last):\n  File \"D:\\a\\FileX\\FileX\\pruebas\\test_hito1.py\", line 181, in test_lo_que_esta_dentro_si_entra\n    self.assertTrue(self.c.puede_leer(f))\nAssertionError: False is not true",
+          "recortada": false
+        }
+      ],
+      "log": "ci-windows-hosted-logs\\test_hito1.log",
+      "bytes_de_salida": 8197
+    },
+    {
+      "modulo": "test_hito2",
+      "veredicto": "APTO",
+      "rc": 0,
+      "corridas": 37,
+      "saltos": 19,
+      "fallos": 0,
+      "segundos": 0.2,
+      "cuelga_en": "",
+      "trazas": [],
+      "log": "ci-windows-hosted-logs\\test_hito2.log",
+      "bytes_de_salida": 6843
+    },
+    {
+      "modulo": "test_hito4",
+      "veredicto": "FALLA",
+      "rc": 1,
+      "corridas": 31,
+      "saltos": 7,
+      "fallos": 3,
+      "segundos": 3.5,
+      "cuelga_en": "",
+      "trazas": [
+        {
+          "tipo": "FAIL",
+          "prueba": "test_el_trabajo_se_persiste_en_disco (pruebas.test_hito4.NoBloquear.test_el_trabajo_se_persiste_en_disco)\n§5.3: *el fallo de origen es que el trabajo sobrevivió a quien lo",
+          "traza": "Traceback (most recent call last):\n  File \"D:\\a\\FileX\\FileX\\pruebas\\test_hito4.py\", line 561, in test_el_trabajo_se_persiste_en_disco\n    self.assertEqual(t.estado, S.COMPLETADO)\nAssertionError: 'failed' != 'completed'\n- failed\n+ completed",
+          "recortada": false
+        },
+        {
+          "tipo": "FAIL",
+          "prueba": "test_la_salida_preexistente_no_cuelga (pruebas.test_hito4.NoBloquear.test_la_salida_preexistente_no_cuelga)\nEl disparador exacto de las 26: la ruta de salida **ya existe**.",
+          "traza": "Traceback (most recent call last):\n  File \"D:\\a\\FileX\\FileX\\pruebas\\test_hito4.py\", line 538, in test_la_salida_preexistente_no_cuelga\n    self.assertEqual(fin[\"estado\"], S.COMPLETADO)\nAssertionError: 'failed' != 'completed'\n- failed\n+ completed",
+          "recortada": false
+        },
+        {
+          "tipo": "FAIL",
+          "prueba": "test_inspect_esta_exento_del_presupuesto_pero_no_del_confinamiento (pruebas.test_hito4.Respuestas.test_inspect_esta_exento_del_presupuesto_pero_no_del_confinamiento)\n`inspect` es la excepción a R8 y a R18 —lectura de cabeceras en",
+          "traza": "Traceback (most recent call last):\n  File \"D:\\a\\FileX\\FileX\\pruebas\\test_hito4.py\", line 492, in test_inspect_esta_exento_del_presupuesto_pero_no_del_confinamiento\n    self.assertEqual(r[\"firma\"], \"png\")\nAssertionError: 'texto' != 'png'\n- texto\n+ png",
+          "recortada": false
+        }
+      ],
+      "log": "ci-windows-hosted-logs\\test_hito4.log",
+      "bytes_de_salida": 7239
+    },
+    {
+      "modulo": "test_hito5",
+      "veredicto": "APTO",
+      "rc": 0,
+      "corridas": 25,
+      "saltos": 8,
+      "fallos": 0,
+      "segundos": 0.3,
+      "cuelga_en": "",
+      "trazas": [],
+      "log": "ci-windows-hosted-logs\\test_hito5.log",
+      "bytes_de_salida": 4182
+    },
+    {
+      "modulo": "test_hito6",
+      "veredicto": "APTO",
+      "rc": 0,
+      "corridas": 55,
+      "saltos": 3,
+      "fallos": 0,
+      "segundos": 0.4,
+      "cuelga_en": "",
+      "trazas": [],
+      "log": "ci-windows-hosted-logs\\test_hito6.log",
+      "bytes_de_salida": 9703
+    },
+    {
+      "modulo": "test_hito7",
+      "veredicto": "FALLA",
+      "rc": 1,
+      "corridas": 42,
+      "saltos": 1,
+      "fallos": 16,
+      "segundos": 6.8,
+      "cuelga_en": "",
+      "trazas": [
+        {
+          "tipo": "FAIL",
+          "prueba": "test_dos_peticiones_al_mismo_destino_no_devuelven_dos_ok (pruebas.test_hito7.ApiConcurrencia.test_dos_peticiones_al_mismo_destino_no_devuelven_dos_ok)\n**La regresión del hallazgo del hito** (`bench/hito7-superficies.md`",
+          "traza": "Traceback (most recent call last):\n  File \"D:\\a\\FileX\\FileX\\pruebas\\test_hito7.py\", line 1101, in test_dos_peticiones_al_mismo_destino_no_devuelven_dos_ok\n    self.assertEqual(len(exitos), 1,\nAssertionError: 0 != 1 : dos conversiones simultáneas al mismo destino no pueden devolver dos éxitos",
+          "recortada": false
+        },
+        {
+          "tipo": "FAIL",
+          "prueba": "test_ocho_conversiones_simultaneas_no_se_pisan (pruebas.test_hito7.ApiConcurrencia.test_ocho_conversiones_simultaneas_no_se_pisan)\nMEDIDO: 8 asas en **69,6 ms**, las 8 `completed`, 8 ficheros en el",
+          "traza": "Traceback (most recent call last):\n  File \"D:\\a\\FileX\\FileX\\pruebas\\test_hito7.py\", line 1067, in test_ocho_conversiones_simultaneas_no_se_pisan\n    self.assertEqual([r[\"estado\"] for r in resultados], [\"completed\"] * 8)\nAssertionError: Lists differ: ['failed', 'failed', 'failed', 'failed', 'f[32 chars]led'] != ['completed', 'completed', 'completed', 'co[56 chars]ted']\n\nFirst differing element 0:\n'failed'\n'completed'\n\n- ['failed', 'failed', 'failed', 'failed', 'failed', 'failed', 'failed', 'failed']\n+ ['completed',\n+  'completed',\n+  'completed',\n+  'completed',\n+  'completed',\n+  'completed',\n+  'completed',\n+  'completed']",
+          "recortada": false
+        },
+        {
+          "tipo": "FAIL",
+          "prueba": "test_la_respuesta_no_lleva_contenido (pruebas.test_hito7.ApiDefensas.test_la_respuesta_no_lleva_contenido)\n*Ruta y metadatos, nunca contenido* — y «contenido» incluye base64.",
+          "traza": "Traceback (most recent call last):\n  File \"D:\\a\\FileX\\FileX\\pruebas\\test_hito7.py\", line 965, in test_la_respuesta_no_lleva_contenido\n    self.assertEqual(res.get(\"estado\"), \"completed\")\nAssertionError: 'failed' != 'completed'\n- failed\n+ completed",
+          "recortada": false
+        },
+        {
+          "tipo": "FAIL",
+          "prueba": "test_v5_conversion_legitima_y_el_punto_5_cubierto (pruebas.test_hito7.CuatroSuperficies.test_v5_conversion_legitima_y_el_punto_5_cubierto) (superficie='cla')\nLas cuatro convierten, y las cuatro traen el punto 5 CUBIERTO.",
+          "traza": "Traceback (most recent call last):\n  File \"D:\\a\\FileX\\FileX\\pruebas\\test_hito7.py\", line 504, in test_v5_conversion_legitima_y_el_punto_5_cubierto\n    self.assertNotIn(_conf.MENSAJE_OPACO, texto)\nAssertionError: 'ruta no accesible' unexpectedly found in '{\\n \"entrada\": \"C:\\\\\\\\Users\\\\\\\\RUNNER~1\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\filex-h7-_689a_81\\\\\\\\dentro\\\\\\\\bueno.png\",\\n \"salida\": \"C:\\\\\\\\Users\\\\\\\\RUNNER~1\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\filex-h7-_689a_81\\\\\\\\salida\\\\\\\\v5_cla\\\\\\\\bueno.webp\",\\n \"ok\": false,\\n \"veredicto\": \"fallo\",\\n \"motivo\": \"ruta no accesible\",\\n \"aviso\": \"\",\\n \"camino\": [],\\n \"saltos\": [],\\n \"descartados\": []\\n}\\n'",
+          "recortada": false
+        },
+        {
+          "tipo": "FAIL",
+          "prueba": "test_v5_conversion_legitima_y_el_punto_5_cubierto (pruebas.test_hito7.CuatroSuperficies.test_v5_conversion_legitima_y_el_punto_5_cubierto) (superficie='mcp')\nLas cuatro convierten, y las cuatro traen el punto 5 CUBIERTO.",
+          "traza": "Traceback (most recent call last):\n  File \"D:\\a\\FileX\\FileX\\pruebas\\test_hito7.py\", line 504, in test_v5_conversion_legitima_y_el_punto_5_cubierto\n    self.assertNotIn(_conf.MENSAJE_OPACO, texto)\nAssertionError: 'ruta no accesible' unexpectedly found in '{\"job_id\": \"41a2fbfcca25\", \"estado\": \"failed\", \"ms\": 2.0, \"ok\": false, \"veredicto\": \"fallo\", \"camino\": [], \"motores\": [], \"ms_motor\": 0, \"motivo\": \"ruta no accesible\"}'",
+          "recortada": false
+        },
+        {
+          "tipo": "FAIL",
+          "prueba": "test_v5_conversion_legitima_y_el_punto_5_cubierto (pruebas.test_hito7.CuatroSuperficies.test_v5_conversion_legitima_y_el_punto_5_cubierto) (superficie='watcher')\nLas cuatro convierten, y las cuatro traen el punto 5 CUBIERTO.",
+          "traza": "Traceback (most recent call last):\n  File \"D:\\a\\FileX\\FileX\\pruebas\\test_hito7.py\", line 504, in test_v5_conversion_legitima_y_el_punto_5_cubierto\n    self.assertNotIn(_conf.MENSAJE_OPACO, texto)\nAssertionError: 'ruta no accesible' unexpectedly found in '{\"estado\": \"fallido\", \"motivo\": \"ruta no accesible\", \"veredicto\": \"fallo\", \"salida\": \"C:\\\\\\\\Users\\\\\\\\RUNNER~1\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\filex-h7-_689a_81\\\\\\\\salida\\\\\\\\v5_watcher\\\\\\\\bueno.webp\", \"cobertura\": {}}'",
+          "recortada": false
+        },
+        {
+          "tipo": "FAIL",
+          "prueba": "test_v5_conversion_legitima_y_el_punto_5_cubierto (pruebas.test_hito7.CuatroSuperficies.test_v5_conversion_legitima_y_el_punto_5_cubierto) (superficie='api')\nLas cuatro convierten, y las cuatro traen el punto 5 CUBIERTO.",
+          "traza": "Traceback (most recent call last):\n  File \"D:\\a\\FileX\\FileX\\pruebas\\test_hito7.py\", line 504, in test_v5_conversion_legitima_y_el_punto_5_cubierto\n    self.assertNotIn(_conf.MENSAJE_OPACO, texto)\nAssertionError: 'ruta no accesible' unexpectedly found in '{\"job_id\": \"201b37060ff4\", \"estado\": \"failed\", \"ms\": 1.8, \"ok\": false, \"veredicto\": \"fallo\", \"camino\": [], \"motores\": [], \"ms_motor\": 0, \"motivo\": \"ruta no accesible\"}'",
+          "recortada": false
+        },
+        {
+          "tipo": "FAIL",
+          "prueba": "test_v5_conversion_legitima_y_el_punto_5_cubierto (pruebas.test_hito7.CuatroSuperficies.test_v5_conversion_legitima_y_el_punto_5_cubierto)\nLas cuatro convierten, y las cuatro traen el punto 5 CUBIERTO.",
+          "traza": "Traceback (most recent call last):\n  File \"D:\\a\\FileX\\FileX\\pruebas\\test_hito7.py\", line 519, in test_v5_conversion_legitima_y_el_punto_5_cubierto\n    self.assertEqual(len(set(veredictos.values())), 1, veredictos)\nAssertionError: 0 != 1 : {}",
+          "recortada": false
+        },
+        {
+          "tipo": "FAIL",
+          "prueba": "test_convertir_rechaza_un_destino_reservado (pruebas.test_hito7.NucleoDestinoEnCurso.test_convertir_rechaza_un_destino_reservado)",
+          "traza": "Traceback (most recent call last):\n  File \"D:\\a\\FileX\\FileX\\pruebas\\test_hito7.py\", line 1152, in test_convertir_rechaza_un_destino_reservado\n    self.assertIn(\"escribiendo ya esa ruta\", conv.motivo)\nAssertionError: 'escribiendo ya esa ruta' not found in 'ruta no accesible'",
+          "recortada": false
+        },
+        {
+          "tipo": "FAIL",
+          "prueba": "test_estabilidad_mas_cerrojo_solo_ve_el_fichero_completo (pruebas.test_hito7.WatcherCompletitud.test_estabilidad_mas_cerrojo_solo_ve_el_fichero_completo)\nLa configuración por defecto. MEDIDO: **1 sola conversión** y sobre",
+          "traza": "Traceback (most recent call last):\n  File \"D:\\a\\FileX\\FileX\\pruebas\\test_hito7.py\", line 647, in test_estabilidad_mas_cerrojo_solo_ve_el_fichero_completo\n    self.assertEqual([r.estado for r in hechos], [\"convertido\"])\nAssertionError: Lists differ: ['fallido'] != ['convertido']\n\nFirst differing element 0:\n'fallido'\n'convertido'\n\n- ['fallido']\n+ ['convertido']",
+          "recortada": false
+        },
+        {
+          "tipo": "FAIL",
+          "prueba": "test_dos_entradas_con_el_mismo_tallo_colisionan_y_R9_lo_atrapa (pruebas.test_hito7.WatcherDuplicados.test_dos_entradas_con_el_mismo_tallo_colisionan_y_R9_lo_atrapa)\nMEDIDO en la primera prueba de humo del watcher por línea de órdenes:",
+          "traza": "Traceback (most recent call last):\n  File \"D:\\a\\FileX\\FileX\\pruebas\\test_hito7.py\", line 737, in test_dos_entradas_con_el_mismo_tallo_colisionan_y_R9_lo_atrapa\n    self.assertEqual(sorted(r.estado for r in hechos),\nAssertionError: Lists differ: ['fallido', 'fallido'] != ['convertido', 'saltado']\n\nFirst differing element 0:\n'fallido'\n'convertido'\n\n- ['fallido', 'fallido']\n+ ['convertido', 'saltado']",
+          "recortada": false
+        },
+        {
+          "tipo": "FAIL",
+          "prueba": "test_reescribir_en_sitio_no_sobrescribe_en_silencio (pruebas.test_hito7.WatcherDuplicados.test_reescribir_en_sitio_no_sobrescribe_en_silencio)\nR9. MEDIDO: la reescritura produce una huella nueva —y debe—, pero",
+          "traza": "Traceback (most recent call last):\n  File \"D:\\a\\FileX\\FileX\\pruebas\\test_hito7.py\", line 707, in test_reescribir_en_sitio_no_sobrescribe_en_silencio\n    self.assertEqual(hechos[0].estado, \"saltado\")\nAssertionError: 'fallido' != 'saltado'\n- fallido\n+ saltado",
+          "recortada": false
+        },
+        {
+          "tipo": "FAIL",
+          "prueba": "test_renombrar_produce_una_salida_nueva (pruebas.test_hito7.WatcherDuplicados.test_renombrar_produce_una_salida_nueva)\nMEDIDO, y es una DECISIÓN, no un descuido: la identidad lleva la",
+          "traza": "Traceback (most recent call last):\n  File \"D:\\a\\FileX\\FileX\\pruebas\\test_hito7.py\", line 691, in test_renombrar_produce_una_salida_nueva\n    self.assertEqual(hechos[0].estado, \"convertido\")\nAssertionError: 'fallido' != 'convertido'\n- fallido\n+ convertido",
+          "recortada": false
+        },
+        {
+          "tipo": "FAIL",
+          "prueba": "test_un_touch_sin_cambio_de_bytes_cuenta_como_fichero_nuevo (pruebas.test_hito7.WatcherDuplicados.test_un_touch_sin_cambio_de_bytes_cuenta_como_fichero_nuevo)\nEl PRECIO declarado de no hacer hash del contenido.",
+          "traza": "Traceback (most recent call last):\n  File \"D:\\a\\FileX\\FileX\\pruebas\\test_hito7.py\", line 724, in test_un_touch_sin_cambio_de_bytes_cuenta_como_fichero_nuevo\n    self.assertEqual(hechos[0].estado, \"saltado\")   # R9 lo detiene igual\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 'fallido' != 'saltado'\n- fallido\n+ saltado",
+          "recortada": false
+        },
+        {
+          "tipo": "FAIL",
+          "prueba": "test_el_punto_5_llega_cubierto_y_no_lo_verifica_el_watcher (pruebas.test_hito7.WatcherNucleo.test_el_punto_5_llega_cubierto_y_no_lo_verifica_el_watcher)\nEl watcher no llama al contrato. No puede: el punto 5 se toma dentro",
+          "traza": "Traceback (most recent call last):\n  File \"D:\\a\\FileX\\FileX\\pruebas\\test_hito7.py\", line 797, in test_el_punto_5_llega_cubierto_y_no_lo_verifica_el_watcher\n    self.assertEqual(r.estado, \"convertido\")\nAssertionError: 'fallido' != 'convertido'\n- fallido\n+ convertido",
+          "recortada": false
+        },
+        {
+          "tipo": "FAIL",
+          "prueba": "test_el_trabajo_del_watcher_lo_ve_la_capa_mcp (pruebas.test_hito7.WatcherNucleo.test_el_trabajo_del_watcher_lo_ve_la_capa_mcp)\n*«Un JSON por trabajo sirve además a la CLI, al watcher y a la API:",
+          "traza": "Traceback (most recent call last):\n  File \"D:\\a\\FileX\\FileX\\pruebas\\test_hito7.py\", line 818, in test_el_trabajo_del_watcher_lo_ve_la_capa_mcp\n    self.assertEqual(d.get(\"estado\"), \"completed\")\nAssertionError: 'failed' != 'completed'\n- failed\n+ completed",
+          "recortada": false
+        }
+      ],
+      "log": "ci-windows-hosted-logs\\test_hito7.log",
+      "bytes_de_salida": 20441
+    },
+    {
+      "modulo": "test_sondeo",
+      "veredicto": "APTO",
+      "rc": 0,
+      "corridas": 48,
+      "saltos": 0,
+      "fallos": 0,
+      "segundos": 1.8,
+      "cuelga_en": "",
+      "trazas": [],
+      "log": "ci-windows-hosted-logs\\test_sondeo.log",
+      "bytes_de_salida": 7377
+    },
+    {
+      "modulo": "test_watcher_n",
+      "veredicto": "APTO",
+      "rc": 0,
+      "corridas": 19,
+      "saltos": 8,
+      "fallos": 0,
+      "segundos": 0.4,
+      "cuelga_en": "",
+      "trazas": [],
+      "log": "ci-windows-hosted-logs\\test_watcher_n.log",
+      "bytes_de_salida": 4505
+    }
+  ]
+}

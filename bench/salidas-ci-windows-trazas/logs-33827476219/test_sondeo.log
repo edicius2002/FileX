@@ -1,0 +1,57 @@
+test_el_cierre_EXCLUYE_lo_que_no_se_llama (pruebas.test_sondeo.AlcanceDelContrato.test_el_cierre_EXCLUYE_lo_que_no_se_llama) ... ok
+test_el_cierre_incluye_lo_que_se_llama (pruebas.test_sondeo.AlcanceDelContrato.test_el_cierre_incluye_lo_que_se_llama) ... ok
+test_sobre_el_verificador_real_entra_el_contrato_y_no_la_fidelidad (pruebas.test_sondeo.AlcanceDelContrato.test_sobre_el_verificador_real_entra_el_contrato_y_no_la_fidelidad) ... ok
+test_tocar_lo_alcanzado_SI_caduca_el_sondeo (pruebas.test_sondeo.AlcanceDelContrato.test_tocar_lo_alcanzado_SI_caduca_el_sondeo) ... ok
+test_tocar_lo_no_alcanzado_no_caduca_el_sondeo (pruebas.test_sondeo.AlcanceDelContrato.test_tocar_lo_no_alcanzado_no_caduca_el_sondeo) ... ok
+test_basta_UN_componente_distinto (pruebas.test_sondeo.AplicarConHuella.test_basta_UN_componente_distinto) ... ok
+test_con_la_huella_DISTINTA_no_se_aplica (pruebas.test_sondeo.AplicarConHuella.test_con_la_huella_DISTINTA_no_se_aplica) ... ok
+test_con_la_huella_igual_SI_se_aplica (pruebas.test_sondeo.AplicarConHuella.test_con_la_huella_igual_SI_se_aplica) ... ok
+test_el_BUILD_sigue_mandando_aunque_la_huella_coincida (pruebas.test_sondeo.AplicarConHuella.test_el_BUILD_sigue_mandando_aunque_la_huella_coincida) ... ok
+test_el_diagnostico_nombra_el_componente_que_caduco (pruebas.test_sondeo.AplicarConHuella.test_el_diagnostico_nombra_el_componente_que_caduco) ... ok
+test_un_componente_que_el_fichero_NO_declara_no_lo_invalida (pruebas.test_sondeo.AplicarConHuella.test_un_componente_que_el_fichero_NO_declara_no_lo_invalida) ... ok
+test_un_fichero_SIN_huella_se_aplica_pero_se_DECLARA_legado (pruebas.test_sondeo.AplicarConHuella.test_un_fichero_SIN_huella_se_aplica_pero_se_DECLARA_legado) ... ok
+test_con_el_interprete_DISTINTO_no_se_aplica_AUNQUE_LA_HUELLA_COINCIDA (pruebas.test_sondeo.AplicarConInterprete.test_con_el_interprete_DISTINTO_no_se_aplica_AUNQUE_LA_HUELLA_COINCIDA) ... ok
+test_con_el_interprete_igual_y_la_huella_igual_SI_se_aplica (pruebas.test_sondeo.AplicarConInterprete.test_con_el_interprete_igual_y_la_huella_igual_SI_se_aplica) ... ok
+test_el_diagnostico_se_limpia_entre_pasadas (pruebas.test_sondeo.AplicarConInterprete.test_el_diagnostico_se_limpia_entre_pasadas) ... ok
+test_el_interprete_distinto_se_declara_APARTE_de_caducados (pruebas.test_sondeo.AplicarConInterprete.test_el_interprete_distinto_se_declara_APARTE_de_caducados) ... ok
+test_un_fichero_SIN_interprete_se_aplica_pero_se_DECLARA_legado (pruebas.test_sondeo.AplicarConInterprete.test_un_fichero_SIN_interprete_se_aplica_pero_se_DECLARA_legado) ... ok
+test_congelado_una_escritura_de_otro_agente_ya_no_entra (pruebas.test_sondeo.Congelar.test_congelado_una_escritura_de_otro_agente_ya_no_entra) ... ok
+test_congelar_no_inventa_lo_que_no_hay (pruebas.test_sondeo.Congelar.test_congelar_no_inventa_lo_que_no_hay) ... ok
+test_quien_congela_no_puede_modificar_lo_congelado_por_accidente (pruebas.test_sondeo.Congelar.test_quien_congela_no_puede_modificar_lo_congelado_por_accidente) ... ok
+test_sin_congelar_el_disco_manda_a_mitad_de_pasada (pruebas.test_sondeo.Congelar.test_sin_congelar_el_disco_manda_a_mitad_de_pasada) ... ok
+test_la_huella_de_fichero_SI_los_confunde (pruebas.test_sondeo.GranularidadPorMotor.test_la_huella_de_fichero_SI_los_confunde) ... ok
+test_la_huella_de_una_clase_incluye_sus_BASES_dentro_de_filex (pruebas.test_sondeo.GranularidadPorMotor.test_la_huella_de_una_clase_incluye_sus_BASES_dentro_de_filex) ... ok
+test_los_tres_motores_nativos_tienen_huellas_distintas (pruebas.test_sondeo.GranularidadPorMotor.test_los_tres_motores_nativos_tienen_huellas_distintas) ... ok
+test_tocar_una_clase_no_cambia_la_huella_de_la_otra (pruebas.test_sondeo.GranularidadPorMotor.test_tocar_una_clase_no_cambia_la_huella_de_la_otra) ... ok
+test_NO_incluye_el_parche (pruebas.test_sondeo.InterpreteActual.test_NO_incluye_el_parche) ... ok
+test_devuelve_mayor_punto_menor (pruebas.test_sondeo.InterpreteActual.test_devuelve_mayor_punto_menor) ... ok
+test_es_una_cadena_no_vacia (pruebas.test_sondeo.InterpreteActual.test_es_una_cadena_no_vacia) ... ok
+test_cambiar_el_CUERPO_si_caduca_el_sondeo (pruebas.test_sondeo.NormalizacionAST.test_cambiar_el_CUERPO_si_caduca_el_sondeo) ... ok
+test_cambiar_una_CONSTANTE_si_caduca_el_sondeo (pruebas.test_sondeo.NormalizacionAST.test_cambiar_una_CONSTANTE_si_caduca_el_sondeo) ... ok
+test_mover_codigo_de_sitio_NO_caduca_el_sondeo (pruebas.test_sondeo.NormalizacionAST.test_mover_codigo_de_sitio_NO_caduca_el_sondeo) ... ok
+test_un_comentario_NO_caduca_el_sondeo (pruebas.test_sondeo.NormalizacionAST.test_un_comentario_NO_caduca_el_sondeo) ... ok
+test_un_docstring_NO_caduca_el_sondeo (pruebas.test_sondeo.NormalizacionAST.test_un_docstring_NO_caduca_el_sondeo) ... ok
+test_una_fuente_rota_no_tumba_el_registro (pruebas.test_sondeo.NormalizacionAST.test_una_fuente_rota_no_tumba_el_registro) ... ok
+test_los_ficheros_del_disco_declaran_su_interprete_de_sellado (pruebas.test_sondeo.SelladoDelDisco.test_los_ficheros_del_disco_declaran_su_interprete_de_sellado)
+`C43`: el sello lleva ahora un cuarto dato — con qué intérprete se ... ok
+test_los_ficheros_del_disco_llevan_huella (pruebas.test_sondeo.SelladoDelDisco.test_los_ficheros_del_disco_llevan_huella) ... ok
+test_ningun_motor_disponible_es_no_comparable_bajo_este_interprete (pruebas.test_sondeo.SelladoDelDisco.test_ningun_motor_disponible_es_no_comparable_bajo_este_interprete)
+El criterio de aceptación duro de `C43`: **no puede caducar ni una ... ok
+test_ningun_motor_disponible_tiene_el_sondeo_caducado (pruebas.test_sondeo.SelladoDelDisco.test_ningun_motor_disponible_tiene_el_sondeo_caducado) ... ok
+test_el_ORDEN_de_los_bucles_importa (pruebas.test_sondeo.TablasDeDatos.test_el_ORDEN_de_los_bucles_importa) ... ok
+test_el_bucle_de_lo_NO_alcanzado_sigue_sin_caducar_nada (pruebas.test_sondeo.TablasDeDatos.test_el_bucle_de_lo_NO_alcanzado_sigue_sin_caducar_nada) ... ok
+test_el_cierre_de_una_clase_NO_se_traga_el_fichero_entero (pruebas.test_sondeo.TablasDeDatos.test_el_cierre_de_una_clase_NO_se_traga_el_fichero_entero)
+La granularidad por motor tiene que sobrevivir al arreglo: si el ... ok
+test_el_componente_MOTOR_ve_las_constantes_de_MODULO (pruebas.test_sondeo.TablasDeDatos.test_el_componente_MOTOR_ve_las_constantes_de_MODULO)
+El mismo agujero, en el otro componente: `MARGEN_TOPE` y ... ok
+test_las_constantes_reales_de_los_motores_caducan_su_huella (pruebas.test_sondeo.TablasDeDatos.test_las_constantes_reales_de_los_motores_caducan_su_huella) ... ok
+test_las_seis_tablas_llevan_su_CONTENIDO_no_solo_su_tamano (pruebas.test_sondeo.TablasDeDatos.test_las_seis_tablas_llevan_su_CONTENIDO_no_solo_su_tamano) ... ok
+test_las_seis_tablas_reales_del_verificador_caducan_el_sondeo (pruebas.test_sondeo.TablasDeDatos.test_las_seis_tablas_reales_del_verificador_caducan_el_sondeo) ... ok
+test_tocar_el_BUCLE_que_puebla_la_tabla_SI_caduca_el_sondeo (pruebas.test_sondeo.TablasDeDatos.test_tocar_el_BUCLE_que_puebla_la_tabla_SI_caduca_el_sondeo) ... ok
+test_tocar_el_bucle_de_un_DICCIONARIO_tambien_caduca (pruebas.test_sondeo.TablasDeDatos.test_tocar_el_bucle_de_un_DICCIONARIO_tambien_caduca) ... ok
+test_una_tabla_poblada_por_un_bucle_ESTA_en_el_cierre (pruebas.test_sondeo.TablasDeDatos.test_una_tabla_poblada_por_un_bucle_ESTA_en_el_cierre) ... ok
+
+----------------------------------------------------------------------
+Ran 48 tests in 1.680s
+
+OK

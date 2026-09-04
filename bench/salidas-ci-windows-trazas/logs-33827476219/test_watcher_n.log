@@ -1,0 +1,42 @@
+test_borra_al_muerto (pruebas.test_watcher_n.BarridoDeHuerfanos.test_borra_al_muerto) ... ok
+test_cerrar_suelta_el_candado_y_borra_su_fichero (pruebas.test_watcher_n.BarridoDeHuerfanos.test_cerrar_suelta_el_candado_y_borra_su_fichero) ... ok
+test_dos_barridos_seguidos_no_cambian_la_decision (pruebas.test_watcher_n.BarridoDeHuerfanos.test_dos_barridos_seguidos_no_cambian_la_decision)
+Regresión de un fallo propio: `esta_libre` CREA el fichero de ... ok
+test_la_variable_lo_apaga (pruebas.test_watcher_n.BarridoDeHuerfanos.test_la_variable_lo_apaga)
+Control negativo: si con `FILEX_BARRER=0` también desapareciera, las ... ok
+test_no_toca_el_directorio_de_candados (pruebas.test_watcher_n.BarridoDeHuerfanos.test_no_toca_el_directorio_de_candados)
+El fallo que encontró la sonda EN MI PROPIO CÓDIGO: `filex-destinos` ... ok
+test_respeta_al_vivo_de_OTRO_proceso (pruebas.test_watcher_n.BarridoDeHuerfanos.test_respeta_al_vivo_de_OTRO_proceso)
+La que importa: un `set` en memoria no habría distinguido esto, y es ... C:\hostedtoolcache\windows\Python\3.11.9\x64\Lib\unittest\case.py:579: ResourceWarning: unclosed file <_io.TextIOWrapper name=3 encoding='cp1252'>
+  if method() is not None:
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\hostedtoolcache\windows\Python\3.11.9\x64\Lib\unittest\case.py:579: ResourceWarning: unclosed file <_io.TextIOWrapper name=4 encoding='cp1252'>
+  if method() is not None:
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_respeta_al_vivo_del_mismo_proceso (pruebas.test_watcher_n.BarridoDeHuerfanos.test_respeta_al_vivo_del_mismo_proceso) ... ok
+test_sin_candado_y_joven_no_se_toca (pruebas.test_watcher_n.BarridoDeHuerfanos.test_sin_candado_y_joven_no_se_toca)
+Un `filex` anterior a esto, o uno cuyo candado se degradó. La edad es ... ok
+test_proc_ve_al_escritor_y_replace_no (pruebas.test_watcher_n.CerrojoPosix.test_proc_ve_al_escritor_y_replace_no)
+La prueba que **falla sin el arreglo**: en POSIX `os.replace(p,p)` ... skipped 'no hay wsl.exe: no se puede medir POSIX'
+test_sin_proc_no_se_inventa_una_defensa (pruebas.test_watcher_n.CerrojoPosix.test_sin_proc_no_se_inventa_una_defensa)
+Si no se puede mirar, se devuelve `True` y se sigue con la ... ok
+test_windows_ve_al_que_lo_tiene_abierto (pruebas.test_watcher_n.CerrojoPosix.test_windows_ve_al_que_lo_tiene_abierto)
+Control positivo del lado que ya estaba: sin esto, el 'no' de POSIX ... ok
+test_csv_no_declara_nada_y_se_dice (pruebas.test_watcher_n.CoherenciaDeclarada.test_csv_no_declara_nada_y_se_dice)
+`sin_declaracion` NO es un aprobado: es el residuo declarado. ... ok
+test_png_truncado_se_ve (pruebas.test_watcher_n.CoherenciaDeclarada.test_png_truncado_se_ve) ... skipped 'hace falta el corpus REAL, no el puntero de Git LFS (`git lfs checkout`) -- trampas 34 y 107'
+test_riff_de_relleno_no_es_un_incompleto (pruebas.test_watcher_n.CoherenciaDeclarada.test_riff_de_relleno_no_es_un_incompleto)
+El falso positivo MEDIDO: `ffmpeg` escribiendo a una tubería no puede ... skipped 'hace falta el corpus REAL, no el puntero de Git LFS (`git lfs checkout`) -- trampas 34 y 107'
+test_wav_truncado_se_ve (pruebas.test_watcher_n.CoherenciaDeclarada.test_wav_truncado_se_ve) ... skipped 'hace falta el corpus REAL, no el puntero de Git LFS (`git lfs checkout`) -- trampas 34 y 107'
+test_con_coherencia_lo_aplaza (pruebas.test_watcher_n.PacienciaDelWatcher.test_con_coherencia_lo_aplaza) ... skipped 'hace falta el corpus REAL, no el puntero de Git LFS (`git lfs checkout`) -- trampas 34 y 107'
+test_la_paciencia_se_acaba_y_no_hay_veto_perpetuo (pruebas.test_watcher_n.PacienciaDelWatcher.test_la_paciencia_se_acaba_y_no_hay_veto_perpetuo)
+Un fichero truncado de verdad no se mueve nunca más. Sin paciencia, ... skipped 'hace falta el corpus REAL, no el puntero de Git LFS (`git lfs checkout`) -- trampas 34 y 107'
+test_sin_coherencia_madura_un_wav_a_medias (pruebas.test_watcher_n.PacienciaDelWatcher.test_sin_coherencia_madura_un_wav_a_medias)
+El ANTES. Si esta prueba pasara con la defensa puesta, la defensa no ... skipped 'hace falta el corpus REAL, no el puntero de Git LFS (`git lfs checkout`) -- trampas 34 y 107'
+test_un_wav_entero_no_se_aplaza (pruebas.test_watcher_n.PacienciaDelWatcher.test_un_wav_entero_no_se_aplaza) ... skipped 'hace falta el corpus REAL, no el puntero de Git LFS (`git lfs checkout`) -- trampas 34 y 107'
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.236s
+
+OK (skipped=8)
