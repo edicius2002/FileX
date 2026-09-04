@@ -1,0 +1,1306 @@
+{
+ "n_origenes": 24,
+ "n_aristas_probadas": 144,
+ "n_aristas_buenas": 96,
+ "tasa_aristas_buenas": 0.6667,
+ "origenes_con_al_menos_un_destino_bueno": 24,
+ "criterio": "rc==0 y bytes>0 (trampa 75), NO el contrato de 5 puntos completo",
+ "filas": [
+  {
+   "motor": "ffmpeg",
+   "origen": "cavsvideo",
+   "destino": "mkv",
+   "rc": 0,
+   "bytes": 465243,
+   "ms": 926.2,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "cavsvideo",
+   "destino": "gif",
+   "rc": 0,
+   "bytes": 8859617,
+   "ms": 705.6,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "cavsvideo",
+   "destino": "png",
+   "rc": 4294967274,
+   "bytes": 567126,
+   "ms": 1311.4,
+   "buena": false
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "cavsvideo",
+   "destino": "mp3",
+   "rc": 4294967274,
+   "bytes": 0,
+   "ms": 45.6,
+   "buena": false
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "cavsvideo",
+   "destino": "wav",
+   "rc": 4294967274,
+   "bytes": 0,
+   "ms": 50.4,
+   "buena": false
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "cavsvideo",
+   "destino": "flac",
+   "rc": 4294967274,
+   "bytes": 0,
+   "ms": 74.8,
+   "buena": false
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "vc1test",
+   "destino": "mkv",
+   "rc": 0,
+   "bytes": 410350,
+   "ms": 326.1,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "vc1test",
+   "destino": "gif",
+   "rc": 0,
+   "bytes": 3437640,
+   "ms": 263.7,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "vc1test",
+   "destino": "png",
+   "rc": 4294967274,
+   "bytes": 559269,
+   "ms": 436.3,
+   "buena": false
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "vc1test",
+   "destino": "mp3",
+   "rc": 4294967274,
+   "bytes": 0,
+   "ms": 47.4,
+   "buena": false
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "vc1test",
+   "destino": "wav",
+   "rc": 4294967274,
+   "bytes": 0,
+   "ms": 39.2,
+   "buena": false
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "vc1test",
+   "destino": "flac",
+   "rc": 4294967274,
+   "bytes": 0,
+   "ms": 57.8,
+   "buena": false
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "roq",
+   "destino": "mkv",
+   "rc": 0,
+   "bytes": 1142502,
+   "ms": 748.0,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "roq",
+   "destino": "gif",
+   "rc": 0,
+   "bytes": 12863463,
+   "ms": 580.4,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "roq",
+   "destino": "png",
+   "rc": 4294967274,
+   "bytes": 247338,
+   "ms": 159.0,
+   "buena": false
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "roq",
+   "destino": "mp3",
+   "rc": 0,
+   "bytes": 47664,
+   "ms": 87.4,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "roq",
+   "destino": "wav",
+   "rc": 0,
+   "bytes": 516678,
+   "ms": 46.5,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "roq",
+   "destino": "flac",
+   "rc": 0,
+   "bytes": 229681,
+   "ms": 886.0,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "anm",
+   "destino": "mkv",
+   "rc": 0,
+   "bytes": 30399,
+   "ms": 148.4,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "anm",
+   "destino": "gif",
+   "rc": 0,
+   "bytes": 295847,
+   "ms": 71.7,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "anm",
+   "destino": "png",
+   "rc": 4294967274,
+   "bytes": 7180,
+   "ms": 40.5,
+   "buena": false
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "anm",
+   "destino": "mp3",
+   "rc": 4294967274,
+   "bytes": 0,
+   "ms": 28.9,
+   "buena": false
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "anm",
+   "destino": "wav",
+   "rc": 4294967274,
+   "bytes": 0,
+   "ms": 29.8,
+   "buena": false
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "anm",
+   "destino": "flac",
+   "rc": 4294967274,
+   "bytes": 0,
+   "ms": 34.0,
+   "buena": false
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "c93",
+   "destino": "mkv",
+   "rc": 0,
+   "bytes": 588897,
+   "ms": 431.0,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "c93",
+   "destino": "gif",
+   "rc": 0,
+   "bytes": 4077801,
+   "ms": 218.2,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "c93",
+   "destino": "png",
+   "rc": 4294967274,
+   "bytes": 22494,
+   "ms": 60.3,
+   "buena": false
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "c93",
+   "destino": "mp3",
+   "rc": 0,
+   "bytes": 50660,
+   "ms": 96.3,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "c93",
+   "destino": "wav",
+   "rc": 0,
+   "bytes": 539070,
+   "ms": 33.9,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "c93",
+   "destino": "flac",
+   "rc": 0,
+   "bytes": 125591,
+   "ms": 139.0,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "dfa",
+   "destino": "mkv",
+   "rc": 0,
+   "bytes": 4586,
+   "ms": 53.2,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "dfa",
+   "destino": "gif",
+   "rc": 0,
+   "bytes": 12268,
+   "ms": 39.2,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "dfa",
+   "destino": "png",
+   "rc": 4294967274,
+   "bytes": 3008,
+   "ms": 49.7,
+   "buena": false
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "dfa",
+   "destino": "mp3",
+   "rc": 4294967274,
+   "bytes": 0,
+   "ms": 38.8,
+   "buena": false
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "dfa",
+   "destino": "wav",
+   "rc": 4294967274,
+   "bytes": 0,
+   "ms": 53.4,
+   "buena": false
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "dfa",
+   "destino": "flac",
+   "rc": 4294967274,
+   "bytes": 0,
+   "ms": 47.1,
+   "buena": false
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "iss",
+   "destino": "mkv",
+   "rc": 0,
+   "bytes": 36210,
+   "ms": 81.2,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "iss",
+   "destino": "gif",
+   "rc": 4294967274,
+   "bytes": 0,
+   "ms": 31.6,
+   "buena": false
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "iss",
+   "destino": "png",
+   "rc": 4294967274,
+   "bytes": 0,
+   "ms": 30.8,
+   "buena": false
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "iss",
+   "destino": "mp3",
+   "rc": 0,
+   "bytes": 22378,
+   "ms": 58.0,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "iss",
+   "destino": "wav",
+   "rc": 0,
+   "bytes": 241886,
+   "ms": 34.4,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "iss",
+   "destino": "flac",
+   "rc": 0,
+   "bytes": 158253,
+   "ms": 38.7,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "wsvqa",
+   "destino": "mkv",
+   "rc": 0,
+   "bytes": 13759,
+   "ms": 49.7,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "wsvqa",
+   "destino": "gif",
+   "rc": 0,
+   "bytes": 77188,
+   "ms": 42.2,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "wsvqa",
+   "destino": "png",
+   "rc": 4294967274,
+   "bytes": 14340,
+   "ms": 57.5,
+   "buena": false
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "wsvqa",
+   "destino": "mp3",
+   "rc": 0,
+   "bytes": 3674,
+   "ms": 43.0,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "wsvqa",
+   "destino": "wav",
+   "rc": 0,
+   "bytes": 35358,
+   "ms": 41.0,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "wsvqa",
+   "destino": "flac",
+   "rc": 0,
+   "bytes": 29875,
+   "ms": 58.8,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "wsaud",
+   "destino": "mkv",
+   "rc": 0,
+   "bytes": 7373,
+   "ms": 67.2,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "wsaud",
+   "destino": "gif",
+   "rc": 4294967274,
+   "bytes": 0,
+   "ms": 33.1,
+   "buena": false
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "wsaud",
+   "destino": "png",
+   "rc": 4294967274,
+   "bytes": 0,
+   "ms": 36.6,
+   "buena": false
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "wsaud",
+   "destino": "mp3",
+   "rc": 0,
+   "bytes": 2420,
+   "ms": 42.0,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "wsaud",
+   "destino": "wav",
+   "rc": 0,
+   "bytes": 20942,
+   "ms": 42.9,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "wsaud",
+   "destino": "flac",
+   "rc": 0,
+   "bytes": 21970,
+   "ms": 42.7,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "daud",
+   "destino": "mkv",
+   "rc": 0,
+   "bytes": 3945,
+   "ms": 47.5,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "daud",
+   "destino": "gif",
+   "rc": 4294967274,
+   "bytes": 0,
+   "ms": 35.4,
+   "buena": false
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "daud",
+   "destino": "png",
+   "rc": 4294967274,
+   "bytes": 0,
+   "ms": 33.3,
+   "buena": false
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "daud",
+   "destino": "mp3",
+   "rc": 0,
+   "bytes": 2156,
+   "ms": 36.9,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "daud",
+   "destino": "wav",
+   "rc": 0,
+   "bytes": 87462,
+   "ms": 35.2,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "daud",
+   "destino": "flac",
+   "rc": 0,
+   "bytes": 8314,
+   "ms": 38.6,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "argo_asf",
+   "destino": "mkv",
+   "rc": 0,
+   "bytes": 103960,
+   "ms": 152.8,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "argo_asf",
+   "destino": "gif",
+   "rc": 4294967274,
+   "bytes": 0,
+   "ms": 39.5,
+   "buena": false
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "argo_asf",
+   "destino": "png",
+   "rc": 4294967274,
+   "bytes": 0,
+   "ms": 31.8,
+   "buena": false
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "argo_asf",
+   "destino": "mp3",
+   "rc": 0,
+   "bytes": 80493,
+   "ms": 128.4,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "argo_asf",
+   "destino": "wav",
+   "rc": 0,
+   "bytes": 882270,
+   "ms": 51.8,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "argo_asf",
+   "destino": "flac",
+   "rc": 0,
+   "bytes": 399391,
+   "ms": 48.3,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "amr",
+   "destino": "mkv",
+   "rc": 0,
+   "bytes": 20489,
+   "ms": 47.5,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "amr",
+   "destino": "gif",
+   "rc": 4294967274,
+   "bytes": 0,
+   "ms": 32.2,
+   "buena": false
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "amr",
+   "destino": "png",
+   "rc": 4294967274,
+   "bytes": 0,
+   "ms": 36.2,
+   "buena": false
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "amr",
+   "destino": "mp3",
+   "rc": 0,
+   "bytes": 6092,
+   "ms": 42.3,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "amr",
+   "destino": "wav",
+   "rc": 0,
+   "bytes": 90958,
+   "ms": 39.8,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "amr",
+   "destino": "flac",
+   "rc": 0,
+   "bytes": 118685,
+   "ms": 39.9,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "ipmovie",
+   "destino": "mkv",
+   "rc": 0,
+   "bytes": 136271,
+   "ms": 286.8,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "ipmovie",
+   "destino": "gif",
+   "rc": 0,
+   "bytes": 3958371,
+   "ms": 233.0,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "ipmovie",
+   "destino": "png",
+   "rc": 4294967274,
+   "bytes": 1346,
+   "ms": 139.4,
+   "buena": false
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "ipmovie",
+   "destino": "mp3",
+   "rc": 0,
+   "bytes": 42883,
+   "ms": 83.6,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "ipmovie",
+   "destino": "wav",
+   "rc": 0,
+   "bytes": 464930,
+   "ms": 39.6,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "ipmovie",
+   "destino": "flac",
+   "rc": 0,
+   "bytes": 275841,
+   "ms": 207.4,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "dsicin",
+   "destino": "mkv",
+   "rc": 0,
+   "bytes": 103011,
+   "ms": 200.5,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "dsicin",
+   "destino": "gif",
+   "rc": 0,
+   "bytes": 399062,
+   "ms": 67.9,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "dsicin",
+   "destino": "png",
+   "rc": 4294967274,
+   "bytes": 1207,
+   "ms": 41.1,
+   "buena": false
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "dsicin",
+   "destino": "mp3",
+   "rc": 0,
+   "bytes": 46515,
+   "ms": 91.3,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "dsicin",
+   "destino": "wav",
+   "rc": 0,
+   "bytes": 507366,
+   "ms": 38.1,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "dsicin",
+   "destino": "flac",
+   "rc": 0,
+   "bytes": 276367,
+   "ms": 57.4,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "ans",
+   "destino": "mkv",
+   "rc": 0,
+   "bytes": 436329,
+   "ms": 267.3,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "ans",
+   "destino": "gif",
+   "rc": 0,
+   "bytes": 777695,
+   "ms": 195.8,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "ans",
+   "destino": "png",
+   "rc": 4294967274,
+   "bytes": 2613,
+   "ms": 58.5,
+   "buena": false
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "ans",
+   "destino": "mp3",
+   "rc": 4294967274,
+   "bytes": 0,
+   "ms": 35.5,
+   "buena": false
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "ans",
+   "destino": "wav",
+   "rc": 4294967274,
+   "bytes": 0,
+   "ms": 30.6,
+   "buena": false
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "ans",
+   "destino": "flac",
+   "rc": 4294967274,
+   "bytes": 0,
+   "ms": 35.6,
+   "buena": false
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "psxstr",
+   "destino": "mkv",
+   "rc": 0,
+   "bytes": 43634,
+   "ms": 84.6,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "psxstr",
+   "destino": "gif",
+   "rc": 0,
+   "bytes": 73087,
+   "ms": 59.8,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "psxstr",
+   "destino": "png",
+   "rc": 4294967274,
+   "bytes": 1889,
+   "ms": 69.9,
+   "buena": false
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "psxstr",
+   "destino": "mp3",
+   "rc": 0,
+   "bytes": 24452,
+   "ms": 67.6,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "psxstr",
+   "destino": "wav",
+   "rc": 0,
+   "bytes": 298446,
+   "ms": 39.6,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "psxstr",
+   "destino": "flac",
+   "rc": 0,
+   "bytes": 129029,
+   "ms": 68.2,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "film_cpk",
+   "destino": "mkv",
+   "rc": 0,
+   "bytes": 27813,
+   "ms": 89.8,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "film_cpk",
+   "destino": "gif",
+   "rc": 0,
+   "bytes": 195567,
+   "ms": 53.5,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "film_cpk",
+   "destino": "png",
+   "rc": 4294967274,
+   "bytes": 69221,
+   "ms": 60.5,
+   "buena": false
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "film_cpk",
+   "destino": "mp3",
+   "rc": 0,
+   "bytes": 12790,
+   "ms": 50.6,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "film_cpk",
+   "destino": "wav",
+   "rc": 0,
+   "bytes": 132430,
+   "ms": 46.4,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "film_cpk",
+   "destino": "flac",
+   "rc": 0,
+   "bytes": 77438,
+   "ms": 56.5,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "bethsoftvid",
+   "destino": "mkv",
+   "rc": 0,
+   "bytes": 251505,
+   "ms": 235.9,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "bethsoftvid",
+   "destino": "gif",
+   "rc": 0,
+   "bytes": 771763,
+   "ms": 152.6,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "bethsoftvid",
+   "destino": "png",
+   "rc": 4294967274,
+   "bytes": 1287,
+   "ms": 78.8,
+   "buena": false
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "bethsoftvid",
+   "destino": "mp3",
+   "rc": 0,
+   "bytes": 25434,
+   "ms": 73.4,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "bethsoftvid",
+   "destino": "wav",
+   "rc": 0,
+   "bytes": 277388,
+   "ms": 59.0,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "bethsoftvid",
+   "destino": "flac",
+   "rc": 0,
+   "bytes": 57428,
+   "ms": 108.5,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "brender_pix",
+   "destino": "mkv",
+   "rc": 0,
+   "bytes": 1730,
+   "ms": 73.2,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "brender_pix",
+   "destino": "gif",
+   "rc": 0,
+   "bytes": 1489,
+   "ms": 49.5,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "brender_pix",
+   "destino": "png",
+   "rc": 0,
+   "bytes": 1571,
+   "ms": 49.7,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "brender_pix",
+   "destino": "mp3",
+   "rc": 4294967274,
+   "bytes": 0,
+   "ms": 37.6,
+   "buena": false
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "brender_pix",
+   "destino": "wav",
+   "rc": 4294967274,
+   "bytes": 0,
+   "ms": 39.9,
+   "buena": false
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "brender_pix",
+   "destino": "flac",
+   "rc": 4294967274,
+   "bytes": 0,
+   "ms": 46.0,
+   "buena": false
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "alias_pix",
+   "destino": "mkv",
+   "rc": 0,
+   "bytes": 2962,
+   "ms": 50.1,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "alias_pix",
+   "destino": "gif",
+   "rc": 0,
+   "bytes": 17427,
+   "ms": 70.2,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "alias_pix",
+   "destino": "png",
+   "rc": 0,
+   "bytes": 10885,
+   "ms": 47.7,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "alias_pix",
+   "destino": "mp3",
+   "rc": 4294967274,
+   "bytes": 0,
+   "ms": 46.4,
+   "buena": false
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "alias_pix",
+   "destino": "wav",
+   "rc": 4294967274,
+   "bytes": 0,
+   "ms": 33.6,
+   "buena": false
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "alias_pix",
+   "destino": "flac",
+   "rc": 4294967274,
+   "bytes": 0,
+   "ms": 43.1,
+   "buena": false
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "ea_cdata",
+   "destino": "mkv",
+   "rc": 0,
+   "bytes": 18136,
+   "ms": 92.1,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "ea_cdata",
+   "destino": "gif",
+   "rc": 4294967274,
+   "bytes": 0,
+   "ms": 40.5,
+   "buena": false
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "ea_cdata",
+   "destino": "png",
+   "rc": 4294967274,
+   "bytes": 0,
+   "ms": 38.5,
+   "buena": false
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "ea_cdata",
+   "destino": "mp3",
+   "rc": 0,
+   "bytes": 13292,
+   "ms": 80.2,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "ea_cdata",
+   "destino": "wav",
+   "rc": 0,
+   "bytes": 153678,
+   "ms": 54.9,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "ea_cdata",
+   "destino": "flac",
+   "rc": 0,
+   "bytes": 94595,
+   "ms": 50.8,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "tiertexseq",
+   "destino": "mkv",
+   "rc": 0,
+   "bytes": 40110,
+   "ms": 172.7,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "tiertexseq",
+   "destino": "gif",
+   "rc": 0,
+   "bytes": 138671,
+   "ms": 139.6,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "tiertexseq",
+   "destino": "png",
+   "rc": 4294967274,
+   "bytes": 4060,
+   "ms": 131.3,
+   "buena": false
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "tiertexseq",
+   "destino": "mp3",
+   "rc": 0,
+   "bytes": 12765,
+   "ms": 93.3,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "tiertexseq",
+   "destino": "wav",
+   "rc": 0,
+   "bytes": 135906,
+   "ms": 90.7,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "tiertexseq",
+   "destino": "flac",
+   "rc": 0,
+   "bytes": 48885,
+   "ms": 111.8,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "mvi",
+   "destino": "mkv",
+   "rc": 0,
+   "bytes": 636737,
+   "ms": 425.2,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "mvi",
+   "destino": "gif",
+   "rc": 0,
+   "bytes": 4642826,
+   "ms": 198.3,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "mvi",
+   "destino": "png",
+   "rc": 4294967274,
+   "bytes": 7851,
+   "ms": 102.9,
+   "buena": false
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "mvi",
+   "destino": "mp3",
+   "rc": 0,
+   "bytes": 33245,
+   "ms": 75.1,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "mvi",
+   "destino": "wav",
+   "rc": 0,
+   "bytes": 361700,
+   "ms": 47.5,
+   "buena": true
+  },
+  {
+   "motor": "ffmpeg",
+   "origen": "mvi",
+   "destino": "flac",
+   "rc": 0,
+   "bytes": 113569,
+   "ms": 213.3,
+   "buena": true
+  },
+  {
+   "motor": "imagemagick",
+   "origen": "heic",
+   "destino": "png",
+   "rc": 0,
+   "bytes": 1072298,
+   "ms": 432.3,
+   "buena": true
+  },
+  {
+   "motor": "imagemagick",
+   "origen": "heic",
+   "destino": "jpg",
+   "rc": 0,
+   "bytes": 246287,
+   "ms": 134.5,
+   "buena": true
+  },
+  {
+   "motor": "imagemagick",
+   "origen": "heic",
+   "destino": "webp",
+   "rc": 0,
+   "bytes": 78206,
+   "ms": 209.3,
+   "buena": true
+  },
+  {
+   "motor": "imagemagick",
+   "origen": "heic",
+   "destino": "bmp",
+   "rc": 0,
+   "bytes": 2764938,
+   "ms": 146.4,
+   "buena": true
+  },
+  {
+   "motor": "imagemagick",
+   "origen": "heic",
+   "destino": "tiff",
+   "rc": 0,
+   "bytes": 2765088,
+   "ms": 202.9,
+   "buena": true
+  },
+  {
+   "motor": "imagemagick",
+   "origen": "heic",
+   "destino": "gif",
+   "rc": 0,
+   "bytes": 526808,
+   "ms": 651.7,
+   "buena": true
+  }
+ ]
+}

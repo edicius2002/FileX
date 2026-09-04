@@ -1,0 +1,223 @@
+{
+ "n_formatos": 12,
+ "n_medidos": 2,
+ "n_vivas": 2,
+ "n_muertas": 0,
+ "n_no_encontrado_en_fate": 5,
+ "n_colision_extension": 1,
+ "n_no_aplica_vips": 4,
+ "filas": [
+  {
+   "formato": "ac4",
+   "codec_real_esperado": "ac4",
+   "clase_censo": "AVERROR_ENCODER_NOT_FOUND",
+   "resultado": "no_encontrado_en_fate",
+   "motivo": "ni subdirectorio 'ac4' ni ficheros '.ac4' en los 2 529 ficheros / 303 subdirectorios de FATE"
+  },
+  {
+   "formato": "avs3",
+   "codec_real_esperado": "avs3",
+   "clase_censo": "AVERROR_ENCODER_NOT_FOUND",
+   "resultado": "no_encontrado_en_fate",
+   "motivo": "ni subdirectorio 'avs3' ni ficheros '.avs3' en los 2 529 ficheros / 303 subdirectorios de FATE"
+  },
+  {
+   "formato": "bit",
+   "codec_real_esperado": "g729",
+   "clase_censo": "AVERROR_ENCODER_NOT_FOUND",
+   "candidatos_por_extension": [
+    {
+     "ruta": "D:\\Work\\research\\fate-suite\\vvc-conformance\\RAP_A_1.bit",
+     "bytes": 1957
+    },
+    {
+     "ruta": "D:\\Work\\research\\fate-suite\\hevc-conformance\\IPCM_A_RExt_NEC.bit",
+     "bytes": 4255
+    },
+    {
+     "ruta": "D:\\Work\\research\\fate-suite\\hevc-conformance\\IPCM_B_RExt_NEC.bit",
+     "bytes": 4973
+    },
+    {
+     "ruta": "D:\\Work\\research\\fate-suite\\hevc-conformance\\ipcm_A_NEC_2.bit",
+     "bytes": 5153
+    },
+    {
+     "ruta": "D:\\Work\\research\\fate-suite\\hevc-conformance\\ipcm_A_NEC_3.bit",
+     "bytes": 5153
+    },
+    {
+     "ruta": "D:\\Work\\research\\fate-suite\\hevc-conformance\\ipcm_E_NEC_2.bit",
+     "bytes": 5461
+    },
+    {
+     "ruta": "D:\\Work\\research\\fate-suite\\hevc-conformance\\ipcm_B_NEC_2.bit",
+     "bytes": 5643
+    },
+    {
+     "ruta": "D:\\Work\\research\\fate-suite\\hevc-conformance\\ipcm_B_NEC_3.bit",
+     "bytes": 5643
+    },
+    {
+     "ruta": "D:\\Work\\research\\fate-suite\\hevc-conformance\\ipcm_D_NEC_2.bit",
+     "bytes": 5797
+    },
+    {
+     "ruta": "D:\\Work\\research\\fate-suite\\hevc-conformance\\ipcm_D_NEC_3.bit",
+     "bytes": 5797
+    }
+   ],
+   "sondeo_extension": [
+    {
+     "ruta": "D:\\Work\\research\\fate-suite\\vvc-conformance\\RAP_A_1.bit",
+     "bytes": 1957,
+     "sonda_ffprobe": "Input #0, vvc, from 'D:\\Work\\research\\fate-suite\\vvc-conformance\\RAP_A_1.bit': |   Duration: N/A, bitrate: N/A |   Stream #0:0: Video: vvc (Main 10), yuv420p10le(tv), 416x240, 25 fps, 1200k tbr, 1200k tbn | ",
+     "coincide_con_codec_esperado": false
+    },
+    {
+     "ruta": "D:\\Work\\research\\fate-suite\\hevc-conformance\\IPCM_A_RExt_NEC.bit",
+     "bytes": 4255,
+     "sonda_ffprobe": "Input #0, hevc, from 'D:\\Work\\research\\fate-suite\\hevc-conformance\\IPCM_A_RExt_NEC.bit': |   Duration: N/A, bitrate: N/A |   Stream #0:0: Video: hevc (Rext), yuv422p10le(tv), 416x240, 25 fps, 1200k tbr, 1200k tbn | ",
+     "coincide_con_codec_esperado": false
+    },
+    {
+     "ruta": "D:\\Work\\research\\fate-suite\\hevc-conformance\\IPCM_B_RExt_NEC.bit",
+     "bytes": 4973,
+     "sonda_ffprobe": "Input #0, hevc, from 'D:\\Work\\research\\fate-suite\\hevc-conformance\\IPCM_B_RExt_NEC.bit': |   Duration: N/A, bitrate: N/A |   Stream #0:0: Video: hevc (Rext), yuv444p12le(tv), 416x240, 25 fps, 1200k tbr, 1200k tbn | ",
+     "coincide_con_codec_esperado": false
+    },
+    {
+     "ruta": "D:\\Work\\research\\fate-suite\\hevc-conformance\\ipcm_A_NEC_2.bit",
+     "bytes": 5153,
+     "sonda_ffprobe": "Input #0, hevc, from 'D:\\Work\\research\\fate-suite\\hevc-conformance\\ipcm_A_NEC_2.bit': |   Duration: N/A, bitrate: N/A |   Stream #0:0: Video: hevc (Main), yuv420p(tv), 416x240, 25 fps, 1200k tbr, 1200k tbn | ",
+     "coincide_con_codec_esperado": false
+    },
+    {
+     "ruta": "D:\\Work\\research\\fate-suite\\hevc-conformance\\ipcm_A_NEC_3.bit",
+     "bytes": 5153,
+     "sonda_ffprobe": "Input #0, hevc, from 'D:\\Work\\research\\fate-suite\\hevc-conformance\\ipcm_A_NEC_3.bit': |   Duration: N/A, bitrate: N/A |   Stream #0:0: Video: hevc (Main), yuv420p(tv), 416x240, 25 fps, 1200k tbr, 1200k tbn | ",
+     "coincide_con_codec_esperado": false
+    }
+   ],
+   "resultado": "extension_coincide_pero_contenido_NO",
+   "motivo": "hay 231 fichero(s) '.bit' en FATE pero NINGUNO decodifica como 'g729' segun ffprobe sin forzar formato -- es una COLISION de extension (misma familia que la trampa 70/73: '.bit' lo comparten HEVC/VVC/MP3 de conformidad, no G.729)"
+  },
+  {
+   "formato": "c2",
+   "codec_real_esperado": "codec2",
+   "clase_censo": "AVERROR_ENCODER_NOT_FOUND",
+   "resultado": "no_encontrado_en_fate",
+   "motivo": "ni subdirectorio 'c2' ni ficheros '.c2' en los 2 529 ficheros / 303 subdirectorios de FATE"
+  },
+  {
+   "formato": "cavs",
+   "codec_real_esperado": "cavs",
+   "clase_censo": "AVERROR_ENCODER_NOT_FOUND",
+   "fate_ruta": "D:\\Work\\research\\fate-suite\\cavs\\bunny.mp4",
+   "fate_bytes": 177752,
+   "origen_eleccion": "directorio_mismo_nombre (bunny.mp4)",
+   "sonda_ffprobe_elegido": "[cavs @ 000002a6f2b27880] weighted prediction not yet supported | [cavs @ 000002a6f2b27880] no frame decoded | Input #0, cavsvideo, from 'D:\\Work\\research\\fate-suite\\cavs\\bunny.mp4': |   Duration: N/A, bitrate: N/A |   Stream #0:0: Video: cavs, yuv420p, 1280x720, 25 fps, 30 tbr, 1200k tbn | ",
+   "estado": "viva",
+   "intentos": [
+    {
+     "destino": "mkv",
+     "rc": 0,
+     "bytes": 465243,
+     "ms": 1127.3,
+     "err": ""
+    }
+   ],
+   "resultado": "medido"
+  },
+  {
+   "formato": "cvg",
+   "codec_real_esperado": "adpcm_psx",
+   "clase_censo": "AVERROR_ENCODER_NOT_FOUND",
+   "resultado": "no_encontrado_en_fate",
+   "motivo": "ni subdirectorio 'cvg' ni ficheros '.cvg' en los 2 529 ficheros / 303 subdirectorios de FATE"
+  },
+  {
+   "formato": "dzi",
+   "codec_real_esperado": null,
+   "clase_censo": "vips: no lo sabe escribir",
+   "resultado": "no_aplica_a_fate",
+   "motivo": "formato de vips (deep-zoom/NIfTI/paleta de GIMP), no es un codec de video/audio: FATE es el corpus de conformidad de ffmpeg y no tiene subdirectorio ni ficheros de este tipo",
+   "fate_dir_existe": false
+  },
+  {
+   "formato": "lbc",
+   "codec_real_esperado": "ilbc",
+   "clase_censo": "AVERROR_ENCODER_NOT_FOUND",
+   "resultado": "no_encontrado_en_fate",
+   "motivo": "ni subdirectorio 'lbc' ni ficheros '.lbc' en los 2 529 ficheros / 303 subdirectorios de FATE"
+  },
+  {
+   "formato": "nia",
+   "codec_real_esperado": null,
+   "clase_censo": "vips: no lo sabe escribir",
+   "resultado": "no_aplica_a_fate",
+   "motivo": "formato de vips (deep-zoom/NIfTI/paleta de GIMP), no es un codec de video/audio: FATE es el corpus de conformidad de ffmpeg y no tiene subdirectorio ni ficheros de este tipo",
+   "fate_dir_existe": false
+  },
+  {
+   "formato": "nii",
+   "codec_real_esperado": null,
+   "clase_censo": "vips: no lo sabe escribir",
+   "resultado": "no_aplica_a_fate",
+   "motivo": "formato de vips (deep-zoom/NIfTI/paleta de GIMP), no es un codec de video/audio: FATE es el corpus de conformidad de ffmpeg y no tiene subdirectorio ni ficheros de este tipo",
+   "fate_dir_existe": false
+  },
+  {
+   "formato": "pml",
+   "codec_real_esperado": null,
+   "clase_censo": "vips: no lo sabe escribir",
+   "resultado": "no_aplica_a_fate",
+   "motivo": "formato de vips (deep-zoom/NIfTI/paleta de GIMP), no es un codec de video/audio: FATE es el corpus de conformidad de ffmpeg y no tiene subdirectorio ni ficheros de este tipo",
+   "fate_dir_existe": false
+  },
+  {
+   "formato": "rcv",
+   "codec_real_esperado": "wmv3",
+   "clase_censo": "AVERROR_ENCODER_NOT_FOUND",
+   "candidatos_por_extension": [
+    {
+     "ruta": "D:\\Work\\research\\fate-suite\\vc1\\SMM0015.rcv",
+     "bytes": 437157
+    },
+    {
+     "ruta": "D:\\Work\\research\\fate-suite\\vc1\\SMM0005.rcv",
+     "bytes": 1000819
+    }
+   ],
+   "sondeo_extension": [
+    {
+     "ruta": "D:\\Work\\research\\fate-suite\\vc1\\SMM0015.rcv",
+     "bytes": 437157,
+     "sonda_ffprobe": "Input #0, vc1test, from 'D:\\Work\\research\\fate-suite\\vc1\\SMM0015.rcv': |   Duration: 00:00:01.00, bitrate: 3497 kb/s |   Stream #0:0: Video: wmv3 (Main), yuv420p, 720x576, 25 fps, 25 tbr, 25 tbn | ",
+     "coincide_con_codec_esperado": true
+    },
+    {
+     "ruta": "D:\\Work\\research\\fate-suite\\vc1\\SMM0005.rcv",
+     "bytes": 1000819,
+     "sonda_ffprobe": "[vc1test @ 000001e7bf782ac0] Zero FPS specified, defaulting to 1 FPS | Input #0, vc1test, from 'D:\\Work\\research\\fate-suite\\vc1\\SMM0005.rcv': |   Duration: 00:00:24.00, bitrate: 333 kb/s |   Stream #0:0: Video: wmv3 (Main), yuv420p, 720x480, 1 fps, 1 tbr, 1 tbn | ",
+     "coincide_con_codec_esperado": true
+    }
+   ],
+   "fate_ruta": "D:\\Work\\research\\fate-suite\\vc1\\SMM0015.rcv",
+   "fate_bytes": 437157,
+   "origen_eleccion": "extension_.rcv_verificada_por_ffprobe (SMM0015.rcv)",
+   "sonda_ffprobe_elegido": "Input #0, vc1test, from 'D:\\Work\\research\\fate-suite\\vc1\\SMM0015.rcv': |   Duration: 00:00:01.00, bitrate: 3497 kb/s |   Stream #0:0: Video: wmv3 (Main), yuv420p, 720x576, 25 fps, 25 tbr, 25 tbn | ",
+   "estado": "viva",
+   "intentos": [
+    {
+     "destino": "mkv",
+     "rc": 0,
+     "bytes": 410350,
+     "ms": 334.3,
+     "err": ""
+    }
+   ],
+   "resultado": "medido"
+  }
+ ]
+}
