@@ -1,0 +1,6 @@
+{"t_ms": 0.998, "clase": "arranque", "dato": {"argv": ["D:/Work/research/FileX/.claude/worktrees/agent-a40a9791b8e6f047b/bench/salidas-tasks-protocolo/srv_sonda_initialize.py"], "proto_ofrecido": "(eco del cliente)"}}
+{"t_ms": 225.404, "clase": "recibido", "dato": {"method": "initialize", "params": {"protocolVersion": "2025-11-25", "capabilities": {"roots": {"listChanged": true}, "elicitation": {}}, "clientInfo": {"name": "claude-code", "title": "Claude Code", "version": "2.1.260", "description": "Anthropic's agentic coding tool", "websiteUrl": "https://claude.com/claude-code"}}, "jsonrpc": "2.0", "id": 0}}
+{"t_ms": 225.404, "clase": "respondemos_initialize", "dato": {"protocolVersion": "2025-11-25", "serverInfo": {"name": "filex-sonda", "version": "0.0.1"}, "capabilities": {"tools": {}, "tasks": {"list": {}, "cancel": {}, "requests": {"tools": {"call": {}}}}}}}
+{"t_ms": 244.401, "clase": "recibido", "dato": {"jsonrpc": "2.0", "method": "notifications/initialized"}}
+{"t_ms": 477.472, "clase": "recibido", "dato": {"method": "tools/list", "jsonrpc": "2.0", "id": 1}}
+{"t_ms": 7290.363, "clase": "fin_stdin", "dato": {}}
