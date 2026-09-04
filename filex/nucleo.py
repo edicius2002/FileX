@@ -25,7 +25,8 @@ import uuid
 from dataclasses import dataclass, field
 
 from . import cerrojo, contrato, formatos, gpu, invocacion, motores as _motores
-from .confinamiento import Confinamiento, Denegado, nombre_seguro
+from .confinamiento import (Confinamiento, Denegado, _EntradaPassthrough,
+                            nombre_seguro)
 from .grafo import Arista, Camino, Decision, Grafo
 from .trabajo import DirectorioDeTrabajo, barrer_huerfanos
 
@@ -652,6 +653,18 @@ class FileX:
             self.confinamiento.resolver(dsal, escritura=True)
         return ent, os.path.abspath(salida)
 
+    def _abrir_entrada(self, entrada: str):
+        """N38: abre la entrada de forma confinada por DESCRIPTOR (trampa 128).
+
+        Con confinamiento, delega en `Confinamiento.abrir_confinado`, que valida
+        el descriptor y devuelve una ruta estable para el motor. Sin
+        confinamiento (`None`), devuelve un pasarela con `os.path.abspath` — el
+        comportamiento previo, para las superficies/pruebas sin lista blanca.
+        """
+        if self.confinamiento is None:
+            return _EntradaPassthrough(os.path.abspath(entrada))
+        return self.confinamiento.abrir_confinado(entrada)
+
     def validar(self, entrada: str, salida: str) -> bool:
         """C36-7 (`hito4-mcp.md` §8.6): ¿pasaría `_resolver()` sin `Denegado`?
 
@@ -728,9 +741,25 @@ class FileX:
             conv.motivo = MOTIVO_NO_ES_FICHERO
             return conv
 
-        actual = ent_abs
+        # N38: la entrada del usuario se ABRE de forma confinada y el motor
+        # recibe una ruta ESTABLE anclada al inodo (en Linux, `/proc/<pid>/fd/N`),
+        # no el `ent_abs` reabrible que la trampa 128 midió vulnerable a la
+        # carrera symlink-TOCTOU. El `fd` se mantiene abierto durante toda la
+        # conversión (cerrarlo invalidaría `/proc/<pid>/fd/N`); solo el PRIMER
+        # salto lee la entrada del usuario —los intermedios ya viven en un
+        # desechable de confianza—, pero se sostiene hasta el `finally` por
+        # simplicidad. `abrir_confinado` re-valida; su `Denegado` aquí es una
+        # carrera perdida por el atacante, no un oráculo (ya pasó `_resolver`).
+        try:
+            ent_seg = self._abrir_entrada(entrada)
+        except Denegado as e:
+            _soltar_destino(sal_abs)
+            conv.motivo = str(e)
+            return conv
+
         temporales: list[DirectorioDeTrabajo] = []
         try:
+            actual = ent_seg.ruta
             for i, paso in enumerate(dec.camino.pasos):
                 ultimo = i == len(dec.camino.pasos) - 1
                 s = self._un_salto(paso.arista, actual, sal_abs, pedido,
@@ -744,6 +773,7 @@ class FileX:
             conv.ok = True
             return conv
         finally:
+            ent_seg.cerrar()
             _soltar_destino(sal_abs)
             for t in temporales:
                 t.cerrar()
