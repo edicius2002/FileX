@@ -275,6 +275,14 @@ registro por fichero siguen puestos y en 0.
 
 ## 7. Propuesta de fila para `ESTADO-Y-REPARTO.md`
 
+> **`ci/integridad.py` da 8 de 9 en esta rama, y el noveno es esto.**
+> `informes-registrados` exige que el nombre del informe aparezca en
+> `ESTADO-Y-REPARTO.md`, y ese fichero **no es mío en esta ronda** («consolido
+> yo»). Falla **sólo** por `roots-concurrencia.md`; los otros ocho pasan, y
+> `manifiestos` pasa desde que el `MANIFIESTO.md` está **commiteado** —lee
+> `git ls-files`, no el disco, que es justo la trampa 104—. Se cierra con la
+> fila de abajo, que ya contiene el nombre del fichero.
+
 > **N34 — la caché de raíces en concurrencia. 🟢 CERRADO (ronda 15, worker3,
 > `bench/roots-concurrencia.md`).** Se **serializa**: candado asíncrono
 > sostenido a través del `await` y **ningún resultado nacido de un fallo se
