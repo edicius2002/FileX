@@ -1,0 +1,57 @@
+{
+  "informe": "N38 — abrir_confinado cierra la carrera symlink-TOCTOU (trampa 128)",
+  "plataforma": "wsl2",
+  "kernel": "6.18.33.2-microsoft-standard-WSL2",
+  "tmpfs": "tmpfs          tmpfs   5092412     0   5092412   0% /tmp",
+  "python": "3.14.4",
+  "duracion_por_fase_s": 12.0,
+  "estatico": {
+    "B_symlink_abrir_confinado": "denegado",
+    "A_dirreal_abrir_confinado": "CONTENIDO-DENTRO-LEGITIMO",
+    "B_symlink_resolver": "denegado"
+  },
+  "control_positivo_vulnerable": {
+    "sujeto": "VULNERABLE: resolver()+open (patrón de nucleo antes de N38)",
+    "confinamiento_ecualizar_temporal": false,
+    "sujeto_vivo_antes": true,
+    "atacante_detenido": true,
+    "intentos": 85867,
+    "toggles_atacante": 69881,
+    "conteo": {
+      "enoent": 39735,
+      "denegado": 13208,
+      "dentro": 18735,
+      "WIN_FUERA": 14189
+    },
+    "wins_fuera": 14189,
+    "tasa_win_%": 16.5244
+  },
+  "arreglo_en_proceso": {
+    "sujeto": "ARREGLO: abrir_confinado + lector en proceso (reabre /proc/pid/fd/N)",
+    "confinamiento_ecualizar_temporal": false,
+    "sujeto_vivo_antes": true,
+    "atacante_detenido": true,
+    "intentos": 217716,
+    "toggles_atacante": 39373,
+    "conteo": {
+      "denegado": 207315,
+      "dentro": 10401
+    },
+    "wins_fuera": 0,
+    "tasa_win_%": 0.0
+  },
+  "arreglo_motor_externo_cat": {
+    "sujeto": "ARREGLO: abrir_confinado + MOTOR EXTERNO cat (reabre la ruta estable)",
+    "confinamiento_ecualizar_temporal": false,
+    "sujeto_vivo_antes": true,
+    "atacante_detenido": true,
+    "intentos": 60585,
+    "toggles_atacante": 282384,
+    "conteo": {
+      "denegado": 58932,
+      "dentro": 1653
+    },
+    "wins_fuera": 0,
+    "tasa_win_%": 0.0
+  }
+}
