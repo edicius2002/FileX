@@ -157,23 +157,60 @@ def _confin(conf):
 def candidatos(M):
     import anyio
 
+    class A_Historico(M.Raices):
+        """El `asegurar` de ANTES de N34, reimplementado a propósito.
+
+        **No es nostalgia: es el control positivo del arnés, y sin él el
+        control negativo deja de discriminar en cuanto el objeto se arregla.**
+        La primera versión de esta sonda comparaba «doble que cede» contra
+        «doble que no cede» sobre la clase de producción: con el defecto puesto
+        daba 2 contra 1 y probaba que había concurrencia; con el arreglo puesto
+        da **1 contra 1**, y el arnés ya no puede demostrar que solapó nada.
+        Es la trampa 65 —*cuando una prueba que documenta un fallo antiguo se
+        pone verde sola, pregúntate qué defensa la está tapando*— aplicada al
+        control de un arnés en vez de a una prueba.
+        """
+
+        async def asegurar(self, sesion) -> None:
+            with self._lock:
+                if self._resuelto:
+                    return
+            cliente, fallo = [], False
+            try:
+                r = await sesion.list_roots()
+                for raiz in getattr(r, "roots", []) or []:
+                    p = M._uri_a_ruta(str(getattr(raiz, "uri", "")))
+                    if p:
+                        cliente.append(p)
+            except Exception:
+                cliente, fallo = [], True
+            efectivas = self._interseca(self.servidor, cliente)
+            try:
+                self.fx.confinamiento = (M._conf.Confinamiento(efectivas)
+                                         if efectivas else None)
+            except ValueError:
+                self.fx.confinamiento = None
+            self.sin_acceso = not efectivas
+            with self._lock:
+                self._resuelto = not (fallo and not efectivas)
+
     class B_Serializado(M.Raices):
         """Candidato B: un candado ASÍNCRONO sostenido a través del `await`."""
 
-        def _alock(self):
-            a = getattr(self, "_alock_", None)
+        def _alock_del_arnes(self):
+            a = getattr(self, "_alock_arnes", None)
             if a is None:
                 # Crearlo perezosamente es seguro: desde el `if` hasta la
                 # asignación no hay punto de suspensión, así que dentro de un
                 # bucle de eventos esto es atómico.
-                a = self._alock_ = anyio.Lock()
+                a = self._alock_arnes = anyio.Lock()
             return a
 
         async def asegurar(self, sesion) -> None:
             with self._lock:
                 if self._resuelto:
                     return
-            async with self._alock():
+            async with self._alock_del_arnes():
                 with self._lock:
                     if self._resuelto:
                         return          # otro lo resolvió mientras esperaba
@@ -216,7 +253,7 @@ def candidatos(M):
             with self._lock:
                 if self._resuelto:
                     return
-            async with self._alock():
+            async with self._alock_del_arnes():
                 with self._lock:
                     if self._resuelto:
                         return
@@ -239,7 +276,8 @@ def candidatos(M):
                 with self._lock:
                     self._resuelto = not fallo
 
-    return {"A_hoy": M.Raices, "B_serializado": B_Serializado,
+    return {"A_historico": A_Historico, "A_hoy": M.Raices,
+            "B_serializado": B_Serializado,
             "C_primer_sellador": C_PrimerSelladorGana,
             "D_serializado_sin_sellar_fallos": D_SerializadoSinSellarFallos}
 
@@ -295,8 +333,8 @@ def main() -> int:
     # =====================================================================
     # N0 — el control del arnés (trampa 114)
     # =====================================================================
-    async def n0(ceder):
-        srv, _, ges = nuevo_servidor()
+    async def n0(ceder, clase=None):
+        srv, _, ges = nuevo_servidor(clase)
         ses = SesionFalsa([tmp], ceder=ceder)
         res = {}
 
@@ -311,8 +349,12 @@ def main() -> int:
                 "entradas_simultaneas_en_roots_list": ses.entradas_simultaneas,
                 "las_dos_respondieron": sorted(res) == ["a", "b"]}
 
-    r["N0_sin_ceder_CONTROL_NEGATIVO"] = anyio.run(n0, False)
-    r["N0_cediendo"] = anyio.run(n0, True)
+    # El sujeto de N0 es el HISTÓRICO, no producción: sobre producción las dos
+    # celdas dan 1 y el control deja de discriminar (ver `A_Historico`).
+    CH = CAND["A_historico"]
+    r["N0_sin_ceder_CONTROL_NEGATIVO"] = anyio.run(n0, False, CH)
+    r["N0_cediendo"] = anyio.run(n0, True, CH)
+    r["N0_sobre_produccion_cediendo"] = anyio.run(n0, True, None)
     r["N0_el_arnes_mide_concurrencia"] = (
         r["N0_cediendo"]["entradas_simultaneas_en_roots_list"] > 1
         and r["N0_sin_ceder_CONTROL_NEGATIVO"]
@@ -566,6 +608,29 @@ def main() -> int:
         r["N7_raiz_de_unidad"]["raiz_de_unidad"]["lee_un_fichero_de_OTRO_directorio"]
         and not r["N7_raiz_de_unidad"]["CONTROL_raiz_normal"]
                 ["lee_un_fichero_de_OTRO_directorio"])
+
+    # =====================================================================
+    # N8 — el COSTE del arreglo de N7: raíces MIXTAS
+    # =====================================================================
+    # `Confinamiento._preparar` lanza en cuanto UNA raíz no confina, así que un
+    # cliente que declare `["C:\\", <un directorio legítimo>]` pierde también
+    # el directorio legítimo. Antes eso salía «sin confinamiento y con la
+    # puerta abierta» (peor); ahora sale «sin acceso» (seguro, y estricto).
+    # Se publica porque es el precio, no para esconderlo.
+    async def n8(clase=None):
+        srv, _, ges = nuevo_servidor(clase)
+        ses = SesionFalsa([unidad, sub], ceder=True, retardo=0.0)
+        res = _leer(await llamar(srv, ses, "inspect", {"ruta": ent}))
+        return {"raices_cliente": [unidad, sub],
+                "sin_acceso": bool(getattr(ges, "sin_acceso", None)),
+                "confinamiento": _confin(ges.fx.confinamiento),
+                "lee_un_fichero_de_SU_PROPIA_raiz_legitima":
+                    not res.get("error")}
+
+    r["N8_raices_mixtas"] = {
+        "A_historico": anyio.run(n8, CAND["A_historico"]),
+        "produccion": anyio.run(n8, None),
+    }
 
     shutil.rmtree(fuera, ignore_errors=True)
     shutil.rmtree(tmp, ignore_errors=True)

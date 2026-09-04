@@ -808,5 +808,148 @@ class RootsCacheYFallo(unittest.TestCase):
             shutil.rmtree(d, ignore_errors=True)
 
 
+try:
+    import anyio as _anyio  # noqa: F401
+
+    HAY_ANYIO = True
+except Exception:
+    HAY_ANYIO = False
+
+
+class _SesionDeRoots:
+    """Doble de sesión para N34. Cuenta las idas y vueltas y puede fallar.
+
+    **El `await` no es decoración**: un `async def` sin punto de suspensión no
+    cede el bucle, así que dos corrutinas «a la vez» corren en serie y la
+    prueba mediría a su doble (trampa 114). El retardo va donde un `roots/list`
+    real tendría su ida y vuelta por el cable.
+    """
+
+    def __init__(self, raices, fallar=False, retardo=0.05):
+        self._raices = list(raices)
+        self.fallar = fallar
+        self.retardo = retardo
+        self.llamadas = 0
+
+    async def list_roots(self):
+        import anyio
+
+        self.llamadas += 1
+        await anyio.sleep(self.retardo)
+        if self.fallar:
+            raise RuntimeError("el cliente no respondió a roots/list")
+
+        class _R:
+            def __init__(self, uri):
+                self.uri = uri
+
+        class _Res:
+            def __init__(self, roots):
+                self.roots = roots
+
+        return _Res([_R("file:///" + r.replace(os.sep, "/"))
+                     for r in self._raices])
+
+
+@unittest.skipUnless(HAY_ANYIO, "hace falta anyio (viene con el SDK de MCP)")
+class RaicesEnConcurrencia(unittest.TestCase):
+    """N34 — `bench/roots-concurrencia.md`.
+
+    Tres fallos medidos en `Raices.asegurar`, los tres del mismo sitio: el
+    `threading.Lock` se soltaba antes del `await` y el resultado se sellaba en
+    esquinas donde no debía.
+    """
+
+    def setUp(self):
+        self.d = tempfile.mkdtemp(prefix="n34-t-")
+        self.sub = os.path.join(self.d, "sub")
+        os.makedirs(self.sub, exist_ok=True)
+        self.addCleanup(shutil.rmtree, self.d, ignore_errors=True)
+
+    def test_dos_a_la_vez_con_la_cache_fria_hacen_UNA_ida_y_vuelta(self):
+        """MEDIDO: con el candado soltado antes del `await`, N=8 daba 8.
+
+        La condición que la prueba dice reproducir queda REGISTRADA (trampa
+        38): si la segunda llamada no hubiera solapado con la primera, no
+        habría esperado, y se afirma que esperó.
+        """
+        import anyio
+
+        fx = FileX()
+        g = M.Raices(fx, None)
+        ses = _SesionDeRoots([self.sub], retardo=0.05)
+        tardanzas = {}
+
+        async def uno(k):
+            t0 = time.perf_counter()
+            await g.asegurar(ses)
+            tardanzas[k] = time.perf_counter() - t0
+
+        async def a_la_vez():
+            async with anyio.create_task_group() as tg:
+                for k in range(4):
+                    tg.start_soon(uno, k)
+
+        anyio.run(a_la_vez)
+        self.assertEqual(ses.llamadas, 1, "una ida y vuelta por sesión, no N")
+        # El registro de que hubo solape: las cuatro entraron antes de que la
+        # primera terminase, así que las cuatro pagaron la ida y vuelta.
+        self.assertEqual(len(tardanzas), 4)
+        self.assertGreaterEqual(min(tardanzas.values()), 0.04,
+                                "si alguna no esperó, no hubo concurrencia y "
+                                "esta prueba no mide lo que dice")
+        self.assertFalse(getattr(g, "sin_acceso", True))
+
+    def test_un_fallo_no_sella_NADA_ni_con_raices_de_servidor(self):
+        """MEDIDO (celda N3): sellaba la lista blanca del servidor ENTERA.
+
+        `_interseca(servidor, [])` devuelve el servidor entero, así que un
+        `roots/list` que falla dejaba `efectivas` no vacía y `_resuelto=True`
+        **con un confinamiento más ancho que la intersección que R13 exige**.
+        """
+        import anyio
+
+        fx = FileX()
+        g = M.Raices(fx, [self.d])          # el servidor confina a `d`
+        malo = _SesionDeRoots([self.sub], fallar=True, retardo=0.0)
+        anyio.run(g.asegurar, malo)
+        self.assertFalse(g._resuelto, "un resultado nacido de un fallo no se "
+                                      "sella: volver a preguntar es lo único "
+                                      "que puede cambiar la respuesta")
+        # Y el reintento sí pregunta y sí estrecha hasta la intersección.
+        bueno = _SesionDeRoots([self.sub], retardo=0.0)
+        anyio.run(g.asegurar, bueno)
+        self.assertEqual(bueno.llamadas, 1)
+        self.assertTrue(g._resuelto)
+        self.assertEqual(fx.confinamiento.lectura,
+                         [_conf._norm(os.path.abspath(self.sub))])
+
+    def test_una_raiz_que_no_confina_es_SIN_ACCESO_no_sin_confinamiento(self):
+        """MEDIDO (celda N7): era una fuga total del confinamiento.
+
+        `Confinamiento` lanza `ValueError` cuando ninguna raíz confina (R3), y
+        el `except` lo convertía en `confinamiento = None` dejando
+        `sin_acceso = False`. Con `confinamiento is None`, `nucleo._resolver()`
+        devuelve la ruta tal cual: un cliente que declarase la raíz de una
+        unidad leía ficheros de otro directorio y de otra unidad.
+        """
+        import anyio
+
+        unidad = os.path.splitdrive(os.path.abspath(self.sub))[0] + os.sep
+        fx = FileX()
+        g = M.Raices(fx, None)
+        g.sin_acceso = False
+        anyio.run(g.asegurar, _SesionDeRoots([unidad], retardo=0.0))
+        self.assertIsNone(fx.confinamiento)
+        self.assertTrue(g.sin_acceso,
+                        "sin confinamiento construible no se opera (R6)")
+        # Control: con una raíz normal, ni deniega ni se queda sin confinar.
+        fx2 = FileX()
+        g2 = M.Raices(fx2, None)
+        g2.sin_acceso = False
+        anyio.run(g2.asegurar, _SesionDeRoots([self.sub], retardo=0.0))
+        self.assertFalse(g2.sin_acceso)
+        self.assertIsNotNone(fx2.confinamiento)
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)
