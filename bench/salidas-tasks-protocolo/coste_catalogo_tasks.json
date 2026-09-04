@@ -1,0 +1,48 @@
+{
+  "metodo": "tiktoken o200k_base sobre el catalogo serializado como cable",
+  "n_aristas": "no sondeable por esta via",
+  "E0_hoy": {
+    "herramientas": [
+      "convert",
+      "inspect",
+      "list_targets",
+      "batch",
+      "job"
+    ],
+    "n_herramientas": 5,
+    "tokens_total": 1650,
+    "tokens_por_herramienta": {
+      "convert": 669,
+      "inspect": 129,
+      "list_targets": 322,
+      "batch": 375,
+      "job": 153
+    }
+  },
+  "E1_migracion": {
+    "herramientas": [
+      "convert",
+      "inspect",
+      "list_targets",
+      "batch"
+    ],
+    "n_herramientas": 4,
+    "tokens_total": 1497,
+    "ahorro_tokens": 153,
+    "ahorro_pct": 9.27
+  },
+  "E2_doble": {
+    "anotadas": [
+      "convert",
+      "batch"
+    ],
+    "n_herramientas": 5,
+    "tokens_total": 1672,
+    "sobrecoste_tokens": 22,
+    "sobrecoste_pct": 1.33
+  },
+  "control_anotacion_aislada": {
+    "fragmento": "\"execution\": {\"taskSupport\": \"optional\"}",
+    "tokens": 10
+  }
+}

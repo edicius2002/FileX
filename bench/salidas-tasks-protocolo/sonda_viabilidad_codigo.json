@@ -1,0 +1,55 @@
+{
+  "V1_registro": {
+    "add_request_handler": "(method: 'str', params_type: 'type[_ParamsT]', handler: 'RequestHandler[LifespanResultT, _ParamsT]') -> 'None'",
+    "add_notification_handler": "(method: 'str', params_type: 'type[_ParamsT]', handler: 'NotificationHandler[LifespanResultT, _ParamsT]') -> 'None'",
+    "get_request_handler": "(method: 'str') -> 'HandlerEntry[LifespanResultT] | None'",
+    "manejadores_de_serie": [
+      "ping",
+      "server/discover"
+    ]
+  },
+  "V2_registro_de_tasks": {
+    "tasks/get": "REGISTRADO con GetTaskRequestParams",
+    "tasks/result": "REGISTRADO con GetTaskPayloadRequestParams",
+    "tasks/list": "REGISTRADO con PaginatedRequestParams",
+    "tasks/cancel": "REGISTRADO con CancelTaskRequestParams",
+    "manejadores_tras_registrar": [
+      "ping",
+      "server/discover",
+      "tasks/cancel",
+      "tasks/get",
+      "tasks/list",
+      "tasks/result"
+    ]
+  },
+  "V3_capacidades": {
+    "capacidades_emitidas": {
+      "experimental": {},
+      "extensions": {}
+    },
+    "tasks_en_capacidades": false,
+    "protocolo_de_las_opciones": "n/a"
+  },
+  "V4_tipos": {
+    "Task": "ValidationError: 1 validation error for Task\nlastUpdatedAt\n  Field required [type=missing, input_value={'taskId': 't-1', 'status...0, 'pollInterval': 1000}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing",
+    "campos_Task": [
+      "created_at",
+      "last_updated_at",
+      "poll_interval",
+      "status",
+      "status_message",
+      "task_id",
+      "ttl"
+    ],
+    "campos_CreateTaskResult": [
+      "meta",
+      "task"
+    ],
+    "TaskStatus": "typing.Literal['working', 'input_required', 'completed', 'failed', 'cancelled']"
+  },
+  "V5_era_2026": {
+    "ServerCapabilities_2026_tiene_tasks": false,
+    "campo_nuevo_extensions": true,
+    "construir_con_tasks": "ACEPTADO (campo ignorado o extra)"
+  }
+}

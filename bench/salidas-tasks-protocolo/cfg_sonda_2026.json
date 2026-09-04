@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "sonda": {
+      "type": "stdio",
+      "command": "D:/Work/research/FileX/.venv-mcp-filex/Scripts/python.exe",
+      "args": [
+        "D:/Work/research/FileX/.claude/worktrees/agent-a40a9791b8e6f047b/bench/salidas-tasks-protocolo/srv_sonda_initialize.py"
+      ],
+      "env": {
+        "FILEX_SONDA_SALIDA": "D:/Work/research/FileX/.claude/worktrees/agent-a40a9791b8e6f047b/bench/salidas-tasks-protocolo/r_cliente_2026.jsonl",
+        "FILEX_SONDA_PROTO": "2026-07-28"
+      }
+    }
+  }
+}
