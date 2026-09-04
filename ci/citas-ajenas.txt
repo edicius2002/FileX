@@ -1,8 +1,15 @@
-# Hashes citados en los informes que NO son de este repositorio, y por eso no
-# tienen que resolver contra `git cat-file`. Formato: <hash> <de donde sale>.
+# Hashes citados en los informes que NO TIENEN QUE RESOLVER contra `git cat-file`,
+# cada uno con su motivo. Formato: <hash> <por que no tiene que resolver>.
+#
+# Son DOS clases, y la segunda se anadio el 04/09 al ampliar la comprobacion:
+#   (a) AJENOS  — el hash es de otro repositorio.
+#   (b) MUERTOS A PROPOSITO — el hash es de este repositorio, esta muerto, y el
+#       documento lo cita PRECISAMENTE PARA DECIR QUE ESTA MUERTO. Marcarlos
+#       seria castigar al unico sitio donde el defecto esta explicado.
 #
 # Sin esta lista la comprobación `citas` da un falso rojo, que es justo lo que
 # no puede hacer: un rojo se investiga, y el que investiga el primero se
 # acostumbra a que la CI mienta. Cada línea es una afirmación verificable.
 
-e1a6226  clon de marker en repos/, leido el 2026-08-07 (AGENTES-PRUEBAS-PENDIENTES.md §143)
+e1a6226  (a) ajeno: clon de marker en repos/, leido el 2026-08-07 (AGENTES-PRUEBAS-PENDIENTES.md §143)
+23b8d3c  (b) muerto a proposito: murio al borrar las ramas ccb/w1..w3 (trampa 115) y bench/documentacion-publica.md lo cita para documentarlo; su sustituto vivo es dcd4057, ya puesto en RESULTADOS-MCP.md

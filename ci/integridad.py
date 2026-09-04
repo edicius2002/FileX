@@ -163,12 +163,28 @@ def _ajenas():
     "solo error: un hash muerto se lee igual que uno vivo.",
 )
 def citas():
-    patron = re.compile(r"(?:commit|revisi[oó]n)e?s? +`([0-9a-f]{7,40})`", re.I)
+    # Dos formas, y la segunda se anadio el 04/09 porque FALTABA: el patron
+    # original exige la palabra «commit» PEGADA al hash entrecomillado, asi que
+    # `git show 23b8d3c:FICHERO.md` no se miraba — y ese hash llevaba muerto
+    # desde que se borraron las ramas `ccb/w*`. La comprobacion publicaba
+    # «0 muertas» con dos citas muertas delante. Es la trampa 120, y su leccion
+    # general: cuando una comprobacion nace de un incidente, el patron que se le
+    # escribe describe ESE incidente y no la clase entera.
+    #
+    # No se amplia mas, y esta medido por que: buscar todo [0-9a-f]{7,40} marca
+    # `sha256`, `md5` y componentes de huella —la trampa 102 ya lo pago, con una
+    # sonda que dio «243 hashes, 0 vivos»—. Y la tabla vieja->nueva de
+    # `salidas-publicacion/MANIFIESTO.md` queda fuera A PROPOSITO: alli el hash
+    # muerto esta declarado como muerto, que es justo lo que ese fichero es.
+    patron = re.compile(
+        r"(?:commit|revisi[oó]n)e?s? +`([0-9a-f]{7,40})`"
+        r"|git +(?:show|log|diff) +`?([0-9a-f]{7,40})`?", re.I)
     ajenas = _ajenas()
     muertas, vivas, saltadas = [], 0, 0
     for p in _md():
         for n, linea in enumerate(p.read_text(encoding="utf-8").splitlines(), 1):
-            for h in patron.findall(linea):
+            for grupos in patron.findall(linea):
+                h = grupos[0] or grupos[1]
                 if h.lower() in ajenas:
                     saltadas += 1
                     continue
@@ -266,13 +282,22 @@ def trampas():
     if repes:
         problemas.append("números repetidos: %s" % repes)
 
-    for fichero in (LEEME, ESTADO):
-        for citado in re.findall(r"las \*\*(\d+)\*\* trampas|las (\d+) trampas",
-                                 fichero.read_text(encoding="utf-8")):
-            n = int(citado[0] or citado[1])
-            if n != ultima:
-                problemas.append("%s cita %d trampas y hay %d"
-                                 % (fichero.name, n, ultima))
+    # TODOS los .md versionados, no solo README y ESTADO — ampliado el 04/09.
+    # `CONTRIBUTING.md` decia «las **107 trampas ya pagadas**» con doce de
+    # diferencia y nadie lo veia, porque la comprobacion solo miraba dos ficheros
+    # y ademas el patron viejo no toleraba que la negrita abarcara la palabra.
+    #
+    # El patron exige «ya pagadas», y eso NO es decoracion: sin ese anclaje,
+    # `saturacion-herramientas.md` marca dos veces con «las 28 trampas DEL
+    # EXPERIMENTO», que es otro sentido de la palabra. MEDIDO: con el anclaje,
+    # 0 falsos positivos; sin el, 2. Es la trampa 106 —un umbral generoso no es
+    # mas seguro— en su version barata: aqui solo costaba un rojo, no un borrado.
+    cita = re.compile(r"las\s+\*{0,2}(\d+)\*{0,2}\s+trampas ya pagadas", re.I)
+    for fichero in _md():
+        for n in cita.findall(fichero.read_text(encoding="utf-8")):
+            if int(n) != ultima:
+                problemas.append("%s cita %s trampas y hay %d"
+                                 % (fichero.relative_to(RAIZ), n, ultima))
     return not problemas, "%d trampas, sin huecos" % ultima, problemas
 
 
