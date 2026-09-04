@@ -1,0 +1,16 @@
+pendientes con remedio en la tabla: 12  ['alp', 'daud', 'filmstrip', 'g723_1', 'g726', 'g726le', 'jacosub', 'mcc', 'microdvd', 'scc', 'sup', 'truehd']
+
+  alp        ESCRITO 11041 B  [-f alp -c:a adpcm_ima_alp -ar 22050 -ac 1]
+  daud       ESCRITO 1728192 B  [-f daud -ac 6 -ar 96000]
+  filmstrip  ESCRITO 10137636 B  [-f filmstrip -pix_fmt rgba]
+  g723_1     ESCRITO 816 B  [-f g723_1 -ar 8000 -ac 1 -b:a 6.3k]
+  g726       ESCRITO 2000 B  [-f g726 -ar 8000 -ac 1 -b:a 16k]
+  g726le     ESCRITO 2000 B  [-f g726le -ar 8000 -ac 1 -b:a 16k]
+  jacosub    no (EINVAL, ENCODER_NOT_FOUND)
+  mcc        no (EINVAL, ENCODER_NOT_FOUND)
+  microdvd   no (EINVAL, ENCODER_NOT_FOUND)
+  scc        no (EINVAL, ENCODER_NOT_FOUND)
+  sup        no (EINVAL)
+  truehd     ESCRITO 35060 B  [-f truehd -strict -2 -ar 48000]
+
+RECUPERADOS POR EL `-f` QUE FALTABA: 7 de 12  (1s)

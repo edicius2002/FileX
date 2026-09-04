@@ -1,0 +1,139 @@
+{
+ "contenedor": "filex-convertx",
+ "desconocidos": {
+  "alsa": {
+   "en_demuxers": null,
+   "en_devices": "DE",
+   "en_muxers": "Ed",
+   "veredicto": "dispositivo"
+  },
+  "awb": {
+   "en_demuxers": null,
+   "en_devices": null,
+   "en_muxers": null,
+   "veredicto": "tampoco lo conoce esta build"
+  },
+  "fbdev": {
+   "en_demuxers": null,
+   "en_devices": "DE",
+   "en_muxers": "Ed",
+   "veredicto": "dispositivo"
+  },
+  "iec61883": {
+   "en_demuxers": null,
+   "en_devices": "D",
+   "en_muxers": null,
+   "veredicto": "dispositivo"
+  },
+  "jack": {
+   "en_demuxers": null,
+   "en_devices": "D",
+   "en_muxers": null,
+   "veredicto": "dispositivo"
+  },
+  "kmsgrab": {
+   "en_demuxers": null,
+   "en_devices": "D",
+   "en_muxers": null,
+   "veredicto": "dispositivo"
+  },
+  "oss": {
+   "en_demuxers": null,
+   "en_devices": "DE",
+   "en_muxers": "Ed",
+   "veredicto": "dispositivo"
+  },
+  "pp": {
+   "en_demuxers": null,
+   "en_devices": null,
+   "en_muxers": null,
+   "veredicto": "tampoco lo conoce esta build"
+  },
+  "pulse": {
+   "en_demuxers": null,
+   "en_devices": "DE",
+   "en_muxers": "Ed",
+   "veredicto": "dispositivo"
+  },
+  "sndio": {
+   "en_demuxers": null,
+   "en_devices": null,
+   "en_muxers": null,
+   "veredicto": "tampoco lo conoce esta build"
+  },
+  "video4linux2": {
+   "en_demuxers": null,
+   "en_devices": "DE",
+   "en_muxers": "Ed",
+   "veredicto": "dispositivo"
+  },
+  "x11grab": {
+   "en_demuxers": null,
+   "en_devices": "D",
+   "en_muxers": null,
+   "veredicto": "dispositivo"
+  }
+ },
+ "ffmpeg_dentro": "ffmpeg version 8.1.1-4 Copyright (c) 2000-2026 the FFmpeg developers",
+ "oeb": {
+  "ms": 313.9,
+  "orden": "cd /tmp/c50 && rm -rf salida* && ebook-convert x.epub salida.oeb; echo RC=$?; echo '--- find ---'; find . -newer x.epub | head -40; echo '--- tipo de salida.oeb ---'; if [ -d salida.oeb ]; then echo DIRECTORIO; ls -la salida.oeb | head -20; elif [ -f salida.oeb ]; then echo FICHERO; stat -c '%s bytes' salida.oeb; else echo NO_EXISTE; fi",
+  "rc_cliente": 0,
+  "salida": "RC=127\n--- find ---\n--- tipo de salida.oeb ---\nNO_EXISTE\n",
+  "stderr": "timeout: failed to run command 'cd': No such file or directory\nfind: 'x.epub': No such file or directory\n"
+ },
+ "sin_encoder": {
+  "ac4": {
+   "en_encoders": null,
+   "en_muxers": "E"
+  },
+  "aea": {
+   "en_encoders": null,
+   "en_muxers": "E"
+  },
+  "avs3": {
+   "en_encoders": null,
+   "en_muxers": "E"
+  },
+  "bit": {
+   "en_encoders": null,
+   "en_muxers": "E"
+  },
+  "cavsvideo": {
+   "en_encoders": null,
+   "en_muxers": "E"
+  },
+  "codec2": {
+   "en_encoders": null,
+   "en_muxers": "E"
+  },
+  "codec2raw": {
+   "en_encoders": null,
+   "en_muxers": "E"
+  },
+  "evc": {
+   "en_encoders": null,
+   "en_muxers": "E"
+  },
+  "gsm": {
+   "en_encoders": null,
+   "en_muxers": "E"
+  },
+  "ilbc": {
+   "en_encoders": null,
+   "en_muxers": "E"
+  },
+  "oma": {
+   "en_encoders": null,
+   "en_muxers": "E"
+  },
+  "vc1": {
+   "en_encoders": null,
+   "en_muxers": "E"
+  },
+  "vc1test": {
+   "en_encoders": null,
+   "en_muxers": "E"
+  }
+ }
+}

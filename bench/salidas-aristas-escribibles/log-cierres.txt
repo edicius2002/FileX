@@ -1,0 +1,23 @@
+(1) chk = webm_chunk, con su paradigma:
+  chk nominal_un_fichero             rc=-22   ficheros=0  bytes=0        no
+  chk paradigma_cabecera_y_trozos    rc=-22   ficheros=0  bytes=0        no
+  chk paradigma_audio                rc=-22   ficheros=0  bytes=0        no
+
+(2) clip y mask, que ImageMagick declara rw+:
+  clip  escribir rc=1    bytes=-1       no | leer -
+  mask  escribir rc=1    bytes=-1       no | leer -
+
+(3) gsm dentro del contenedor, remediado:
+  gsm dentro con -ar 8000 -ac 1: rc=0 bytes=1650 -> ESCRITO
+
+(4) eml / msgconvert:
+/usr/bin/msgconvert
+HELP_RC=2
+RC=2
+--- nuevos ---
+_log.txt
+--- log ---
+Can't locate Email/Address.pm in @INC (you may need to install the Email::Address module) (@INC entries checked: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.40.1 /usr/local/share/perl/5.40.1 /usr/lib/x86_64-linux-gnu/perl5/5.40 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl-base /usr/lib/x86_64-linux-gnu/perl/5.40 /usr/share/perl/5.40 /usr/local/lib/site_perl) at /usr/bin/msgconvert line 8.
+BEGIN failed--compilation aborted at /usr/bin/msgconvert line 8.
+
+escrito cierres.json

@@ -1,0 +1,24 @@
+--- CONTROL 1: la agregacion original ---
+  original                   total 138501 | viva 40252 | muerta 22235 | INDET 75874 (54.78 %) | otro 140 | ret 0
+  COINCIDE con aristas-nominales.md
+
+--- CONTROL 2: el recuento de worker9 (C49) ---
+  worker9                    total 135535 | viva 40252 | muerta 22113 | INDET 73030 (53.88 %) | otro 140 | ret 2966
+  COINCIDE con aristas-reclasificacion.md 5
+
+--- C50 paso (a): retirar los 9 dispositivos de Linux ---
+  worker9 + dispositivos     total 133717 | viva 40252 | muerta 21816 | INDET 71509 (53.48 %) | otro 140 | ret 4784
+     dispositivos retirados: 9 tokens, 1818 aristas mas fuera de la poblacion
+
+--- C50 paso (b): + los 53 materializados y leidos ---
+  C50 completo               total 133717 | viva 44641 | muerta 26379 | INDET 62557 (46.78 %) | otro 140 | ret 4784
+
+  de los 53: 26 vivas, 27 muertas (columna nominal)
+  el estrato indeterminado pasa de 54.78 % (original) a 53.88 % (worker9) a 46.78 % (C50)
+  aristas sacadas del estrato por C50: 10473 (de las 73030 que worker9 dejo)
+
+--- control de sensibilidad: si el grafo decidiera con el demuxer FORZADO ---
+  C50 con demuxer forzado    total 133717 | viva 48359 | muerta 22661 | INDET 62557 (46.78 %) | otro 140 | ret 4784
+     3718 aristas mas vivas: la eleccion de columna vale ese tanto
+
+escrito recuento50.json
