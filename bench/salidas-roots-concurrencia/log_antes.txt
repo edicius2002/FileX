@@ -1,0 +1,627 @@
+D:\Work\research\FileX\.claude\worktrees\agent-af58a52dac243ca0f\filex\mcp.py:576: MCPDeprecationWarning: The roots capability is deprecated as of 2026-07-28 (SEP-2577).
+  srv = Server(
+{
+  "interprete": "3.11.9",
+  "plataforma": "win32",
+  "mcp_version": "2.0.0",
+  "resolucion_perf_counter_s": 1e-07,
+  "clase_de_produccion_hoy": "Raices",
+  "retardo_simulado_de_roots_list_s": 0.05,
+  "entrada_bytes": 42855,
+  "entrada_es_puntero_lfs": false,
+  "N0_sin_ceder_CONTROL_NEGATIVO": {
+    "doble_cede_el_bucle": false,
+    "roots_list_llamadas": 1,
+    "entradas_simultaneas_en_roots_list": 1,
+    "las_dos_respondieron": true
+  },
+  "N0_cediendo": {
+    "doble_cede_el_bucle": true,
+    "roots_list_llamadas": 2,
+    "entradas_simultaneas_en_roots_list": 2,
+    "las_dos_respondieron": true
+  },
+  "N0_el_arnes_mide_concurrencia": true,
+  "N1_escalado": {
+    "A_hoy": [
+      {
+        "n_herramientas": 1,
+        "roots_list_llamadas": 1,
+        "entradas_simultaneas": 1,
+        "pared_ms": 57.77,
+        "espera_min_ms": 57.49,
+        "espera_max_ms": 57.49,
+        "ninguna_es_error": true
+      },
+      {
+        "n_herramientas": 2,
+        "roots_list_llamadas": 2,
+        "entradas_simultaneas": 2,
+        "pared_ms": 67.71,
+        "espera_min_ms": 66.99,
+        "espera_max_ms": 67.47,
+        "ninguna_es_error": true
+      },
+      {
+        "n_herramientas": 4,
+        "roots_list_llamadas": 4,
+        "entradas_simultaneas": 4,
+        "pared_ms": 54.32,
+        "espera_min_ms": 51.84,
+        "espera_max_ms": 53.88,
+        "ninguna_es_error": true
+      },
+      {
+        "n_herramientas": 8,
+        "roots_list_llamadas": 8,
+        "entradas_simultaneas": 8,
+        "pared_ms": 64.33,
+        "espera_min_ms": 60.37,
+        "espera_max_ms": 63.99,
+        "ninguna_es_error": true
+      }
+    ],
+    "B_serializado": [
+      {
+        "n_herramientas": 1,
+        "roots_list_llamadas": 1,
+        "entradas_simultaneas": 1,
+        "pared_ms": 55.79,
+        "espera_min_ms": 55.61,
+        "espera_max_ms": 55.61,
+        "ninguna_es_error": true
+      },
+      {
+        "n_herramientas": 2,
+        "roots_list_llamadas": 1,
+        "entradas_simultaneas": 1,
+        "pared_ms": 59.35,
+        "espera_min_ms": 58.66,
+        "espera_max_ms": 59.13,
+        "ninguna_es_error": true
+      },
+      {
+        "n_herramientas": 4,
+        "roots_list_llamadas": 1,
+        "entradas_simultaneas": 1,
+        "pared_ms": 59.51,
+        "espera_min_ms": 57.72,
+        "espera_max_ms": 58.75,
+        "ninguna_es_error": true
+      },
+      {
+        "n_herramientas": 8,
+        "roots_list_llamadas": 1,
+        "entradas_simultaneas": 1,
+        "pared_ms": 57.03,
+        "espera_min_ms": 54.12,
+        "espera_max_ms": 56.62,
+        "ninguna_es_error": true
+      }
+    ],
+    "C_primer_sellador": [
+      {
+        "n_herramientas": 1,
+        "roots_list_llamadas": 1,
+        "entradas_simultaneas": 1,
+        "pared_ms": 58.95,
+        "espera_min_ms": 58.64,
+        "espera_max_ms": 58.64,
+        "ninguna_es_error": true
+      },
+      {
+        "n_herramientas": 2,
+        "roots_list_llamadas": 2,
+        "entradas_simultaneas": 2,
+        "pared_ms": 54.24,
+        "espera_min_ms": 53.6,
+        "espera_max_ms": 53.99,
+        "ninguna_es_error": true
+      },
+      {
+        "n_herramientas": 4,
+        "roots_list_llamadas": 4,
+        "entradas_simultaneas": 4,
+        "pared_ms": 59.81,
+        "espera_min_ms": 58.23,
+        "espera_max_ms": 59.54,
+        "ninguna_es_error": true
+      },
+      {
+        "n_herramientas": 8,
+        "roots_list_llamadas": 8,
+        "entradas_simultaneas": 8,
+        "pared_ms": 60.2,
+        "espera_min_ms": 56.77,
+        "espera_max_ms": 59.8,
+        "ninguna_es_error": true
+      }
+    ],
+    "D_serializado_sin_sellar_fallos": [
+      {
+        "n_herramientas": 1,
+        "roots_list_llamadas": 1,
+        "entradas_simultaneas": 1,
+        "pared_ms": 134.2,
+        "espera_min_ms": 133.93,
+        "espera_max_ms": 133.93,
+        "ninguna_es_error": true
+      },
+      {
+        "n_herramientas": 2,
+        "roots_list_llamadas": 1,
+        "entradas_simultaneas": 1,
+        "pared_ms": 63.34,
+        "espera_min_ms": 62.51,
+        "espera_max_ms": 63.1,
+        "ninguna_es_error": true
+      },
+      {
+        "n_herramientas": 4,
+        "roots_list_llamadas": 1,
+        "entradas_simultaneas": 1,
+        "pared_ms": 58.9,
+        "espera_min_ms": 57.39,
+        "espera_max_ms": 58.67,
+        "ninguna_es_error": true
+      },
+      {
+        "n_herramientas": 8,
+        "roots_list_llamadas": 1,
+        "entradas_simultaneas": 1,
+        "pared_ms": 64.3,
+        "espera_min_ms": 61.06,
+        "espera_max_ms": 63.98,
+        "ninguna_es_error": true
+      }
+    ]
+  },
+  "N2_divergencia": {
+    "A_hoy": {
+      "celdas": [
+        {
+          "orden": "gana_el_fallo",
+          "roots_list_llamadas": 2,
+          "entradas_simultaneas": 2,
+          "orden_de_terminacion": [
+            2,
+            1
+          ],
+          "respuestas_con_error": [
+            false,
+            true
+          ],
+          "las_dos_coinciden": false,
+          "final_sin_acceso": false,
+          "final_resuelto": true,
+          "final_confinamiento": {
+            "lectura": [
+              "c:\\users\\krato\\appdata\\local\\temp\\n34-sndtdzfw\\sub"
+            ],
+            "escritura": [
+              "c:\\users\\krato\\appdata\\local\\temp\\n34-sndtdzfw\\sub"
+            ]
+          }
+        },
+        {
+          "orden": "gana_la_respuesta",
+          "roots_list_llamadas": 2,
+          "entradas_simultaneas": 2,
+          "orden_de_terminacion": [
+            2,
+            1
+          ],
+          "respuestas_con_error": [
+            false,
+            true
+          ],
+          "las_dos_coinciden": false,
+          "final_sin_acceso": true,
+          "final_resuelto": false,
+          "final_confinamiento": null
+        }
+      ],
+      "el_orden_cambia_el_estado_final": true,
+      "alguna_celda_discrepa_entre_llamadores": true
+    },
+    "B_serializado": {
+      "celdas": [
+        {
+          "orden": "gana_el_fallo",
+          "roots_list_llamadas": 1,
+          "entradas_simultaneas": 1,
+          "orden_de_terminacion": [
+            1
+          ],
+          "respuestas_con_error": [
+            false,
+            false
+          ],
+          "las_dos_coinciden": true,
+          "final_sin_acceso": false,
+          "final_resuelto": true,
+          "final_confinamiento": {
+            "lectura": [
+              "c:\\users\\krato\\appdata\\local\\temp\\n34-sndtdzfw\\sub"
+            ],
+            "escritura": [
+              "c:\\users\\krato\\appdata\\local\\temp\\n34-sndtdzfw\\sub"
+            ]
+          }
+        },
+        {
+          "orden": "gana_la_respuesta",
+          "roots_list_llamadas": 2,
+          "entradas_simultaneas": 1,
+          "orden_de_terminacion": [
+            1,
+            2
+          ],
+          "respuestas_con_error": [
+            false,
+            true
+          ],
+          "las_dos_coinciden": false,
+          "final_sin_acceso": false,
+          "final_resuelto": true,
+          "final_confinamiento": {
+            "lectura": [
+              "c:\\users\\krato\\appdata\\local\\temp\\n34-sndtdzfw\\sub"
+            ],
+            "escritura": [
+              "c:\\users\\krato\\appdata\\local\\temp\\n34-sndtdzfw\\sub"
+            ]
+          }
+        }
+      ],
+      "el_orden_cambia_el_estado_final": false,
+      "alguna_celda_discrepa_entre_llamadores": true
+    },
+    "C_primer_sellador": {
+      "celdas": [
+        {
+          "orden": "gana_el_fallo",
+          "roots_list_llamadas": 2,
+          "entradas_simultaneas": 2,
+          "orden_de_terminacion": [
+            2,
+            1
+          ],
+          "respuestas_con_error": [
+            false,
+            true
+          ],
+          "las_dos_coinciden": false,
+          "final_sin_acceso": false,
+          "final_resuelto": true,
+          "final_confinamiento": {
+            "lectura": [
+              "c:\\users\\krato\\appdata\\local\\temp\\n34-sndtdzfw\\sub"
+            ],
+            "escritura": [
+              "c:\\users\\krato\\appdata\\local\\temp\\n34-sndtdzfw\\sub"
+            ]
+          }
+        },
+        {
+          "orden": "gana_la_respuesta",
+          "roots_list_llamadas": 2,
+          "entradas_simultaneas": 2,
+          "orden_de_terminacion": [
+            2,
+            1
+          ],
+          "respuestas_con_error": [
+            false,
+            false
+          ],
+          "las_dos_coinciden": true,
+          "final_sin_acceso": false,
+          "final_resuelto": true,
+          "final_confinamiento": {
+            "lectura": [
+              "c:\\users\\krato\\appdata\\local\\temp\\n34-sndtdzfw\\sub"
+            ],
+            "escritura": [
+              "c:\\users\\krato\\appdata\\local\\temp\\n34-sndtdzfw\\sub"
+            ]
+          }
+        }
+      ],
+      "el_orden_cambia_el_estado_final": false,
+      "alguna_celda_discrepa_entre_llamadores": true
+    },
+    "D_serializado_sin_sellar_fallos": {
+      "celdas": [
+        {
+          "orden": "gana_el_fallo",
+          "roots_list_llamadas": 1,
+          "entradas_simultaneas": 1,
+          "orden_de_terminacion": [
+            1
+          ],
+          "respuestas_con_error": [
+            false,
+            false
+          ],
+          "las_dos_coinciden": true,
+          "final_sin_acceso": false,
+          "final_resuelto": true,
+          "final_confinamiento": {
+            "lectura": [
+              "c:\\users\\krato\\appdata\\local\\temp\\n34-sndtdzfw\\sub"
+            ],
+            "escritura": [
+              "c:\\users\\krato\\appdata\\local\\temp\\n34-sndtdzfw\\sub"
+            ]
+          }
+        },
+        {
+          "orden": "gana_la_respuesta",
+          "roots_list_llamadas": 2,
+          "entradas_simultaneas": 1,
+          "orden_de_terminacion": [
+            1,
+            2
+          ],
+          "respuestas_con_error": [
+            false,
+            true
+          ],
+          "las_dos_coinciden": false,
+          "final_sin_acceso": false,
+          "final_resuelto": true,
+          "final_confinamiento": {
+            "lectura": [
+              "c:\\users\\krato\\appdata\\local\\temp\\n34-sndtdzfw\\sub"
+            ],
+            "escritura": [
+              "c:\\users\\krato\\appdata\\local\\temp\\n34-sndtdzfw\\sub"
+            ]
+          }
+        }
+      ],
+      "el_orden_cambia_el_estado_final": false,
+      "alguna_celda_discrepa_entre_llamadores": true
+    }
+  },
+  "N3_sellado_por_fallo": {
+    "A_hoy": {
+      "tras_el_fallo": {
+        "roots_list_llamadas": 1,
+        "resuelto": true,
+        "sin_acceso": false,
+        "confinamiento": {
+          "lectura": [
+            "c:\\users\\krato\\appdata\\local\\temp\\n34-sndtdzfw"
+          ],
+          "escritura": [
+            "c:\\users\\krato\\appdata\\local\\temp\\n34-sndtdzfw"
+          ]
+        },
+        "error": false
+      },
+      "tras_el_reintento": {
+        "roots_list_llamadas": 1,
+        "confinamiento": {
+          "lectura": [
+            "c:\\users\\krato\\appdata\\local\\temp\\n34-sndtdzfw"
+          ],
+          "escritura": [
+            "c:\\users\\krato\\appdata\\local\\temp\\n34-sndtdzfw"
+          ]
+        }
+      },
+      "raiz_servidor": "C:\\Users\\krato\\AppData\\Local\\Temp\\n34-sndtdzfw",
+      "raiz_cliente": "C:\\Users\\krato\\AppData\\Local\\Temp\\n34-sndtdzfw\\sub",
+      "sella_un_confinamiento_mas_ancho_que_la_interseccion": true
+    },
+    "B_serializado": {
+      "tras_el_fallo": {
+        "roots_list_llamadas": 1,
+        "resuelto": true,
+        "sin_acceso": false,
+        "confinamiento": {
+          "lectura": [
+            "c:\\users\\krato\\appdata\\local\\temp\\n34-sndtdzfw"
+          ],
+          "escritura": [
+            "c:\\users\\krato\\appdata\\local\\temp\\n34-sndtdzfw"
+          ]
+        },
+        "error": false
+      },
+      "tras_el_reintento": {
+        "roots_list_llamadas": 1,
+        "confinamiento": {
+          "lectura": [
+            "c:\\users\\krato\\appdata\\local\\temp\\n34-sndtdzfw"
+          ],
+          "escritura": [
+            "c:\\users\\krato\\appdata\\local\\temp\\n34-sndtdzfw"
+          ]
+        }
+      },
+      "raiz_servidor": "C:\\Users\\krato\\AppData\\Local\\Temp\\n34-sndtdzfw",
+      "raiz_cliente": "C:\\Users\\krato\\AppData\\Local\\Temp\\n34-sndtdzfw\\sub",
+      "sella_un_confinamiento_mas_ancho_que_la_interseccion": true
+    },
+    "C_primer_sellador": {
+      "tras_el_fallo": {
+        "roots_list_llamadas": 1,
+        "resuelto": true,
+        "sin_acceso": false,
+        "confinamiento": {
+          "lectura": [
+            "c:\\users\\krato\\appdata\\local\\temp\\n34-sndtdzfw"
+          ],
+          "escritura": [
+            "c:\\users\\krato\\appdata\\local\\temp\\n34-sndtdzfw"
+          ]
+        },
+        "error": false
+      },
+      "tras_el_reintento": {
+        "roots_list_llamadas": 1,
+        "confinamiento": {
+          "lectura": [
+            "c:\\users\\krato\\appdata\\local\\temp\\n34-sndtdzfw"
+          ],
+          "escritura": [
+            "c:\\users\\krato\\appdata\\local\\temp\\n34-sndtdzfw"
+          ]
+        }
+      },
+      "raiz_servidor": "C:\\Users\\krato\\AppData\\Local\\Temp\\n34-sndtdzfw",
+      "raiz_cliente": "C:\\Users\\krato\\AppData\\Local\\Temp\\n34-sndtdzfw\\sub",
+      "sella_un_confinamiento_mas_ancho_que_la_interseccion": true
+    },
+    "D_serializado_sin_sellar_fallos": {
+      "tras_el_fallo": {
+        "roots_list_llamadas": 1,
+        "resuelto": false,
+        "sin_acceso": false,
+        "confinamiento": {
+          "lectura": [
+            "c:\\users\\krato\\appdata\\local\\temp\\n34-sndtdzfw"
+          ],
+          "escritura": [
+            "c:\\users\\krato\\appdata\\local\\temp\\n34-sndtdzfw"
+          ]
+        },
+        "error": false
+      },
+      "tras_el_reintento": {
+        "roots_list_llamadas": 2,
+        "confinamiento": {
+          "lectura": [
+            "c:\\users\\krato\\appdata\\local\\temp\\n34-sndtdzfw\\sub"
+          ],
+          "escritura": [
+            "c:\\users\\krato\\appdata\\local\\temp\\n34-sndtdzfw\\sub"
+          ]
+        }
+      },
+      "raiz_servidor": "C:\\Users\\krato\\AppData\\Local\\Temp\\n34-sndtdzfw",
+      "raiz_cliente": "C:\\Users\\krato\\AppData\\Local\\Temp\\n34-sndtdzfw\\sub",
+      "sella_un_confinamiento_mas_ancho_que_la_interseccion": false
+    }
+  },
+  "N5_cache_caliente": {
+    "A_hoy": {
+      "reps": 200,
+      "mediana_us": 0.4,
+      "p10_us": 0.4,
+      "p90_us": 0.5,
+      "roots_list_llamadas_extra": 0
+    },
+    "B_serializado": {
+      "reps": 200,
+      "mediana_us": 0.6,
+      "p10_us": 0.6,
+      "p90_us": 0.7,
+      "roots_list_llamadas_extra": 0
+    },
+    "C_primer_sellador": {
+      "reps": 200,
+      "mediana_us": 0.5,
+      "p10_us": 0.4,
+      "p90_us": 0.6,
+      "roots_list_llamadas_extra": 0
+    },
+    "D_serializado_sin_sellar_fallos": {
+      "reps": 200,
+      "mediana_us": 0.4,
+      "p10_us": 0.4,
+      "p90_us": 0.5,
+      "roots_list_llamadas_extra": 0
+    }
+  },
+  "N5_espera_del_segundo_en_frio": {
+    "A_hoy": {
+      "n2_espera_max_ms": 67.47,
+      "n8_espera_max_ms": 63.99
+    },
+    "B_serializado": {
+      "n2_espera_max_ms": 59.13,
+      "n8_espera_max_ms": 56.62
+    },
+    "C_primer_sellador": {
+      "n2_espera_max_ms": 53.99,
+      "n8_espera_max_ms": 59.8
+    },
+    "D_serializado_sin_sellar_fallos": {
+      "n2_espera_max_ms": 63.1,
+      "n8_espera_max_ms": 63.98
+    }
+  },
+  "N5_roots_list_que_no_vuelve": {
+    "A_hoy": {
+      "tope_s": 1.0,
+      "acabadas": [],
+      "pared_ms": 1013.0,
+      "roots_list_llamadas": 2,
+      "ninguna_responde": true
+    },
+    "B_serializado": {
+      "tope_s": 1.0,
+      "acabadas": [],
+      "pared_ms": 1000.1,
+      "roots_list_llamadas": 1,
+      "ninguna_responde": true
+    },
+    "C_primer_sellador": {
+      "tope_s": 1.0,
+      "acabadas": [],
+      "pared_ms": 1004.7,
+      "roots_list_llamadas": 2,
+      "ninguna_responde": true
+    },
+    "D_serializado_sin_sellar_fallos": {
+      "tope_s": 1.0,
+      "acabadas": [],
+      "pared_ms": 1007.0,
+      "roots_list_llamadas": 1,
+      "ninguna_responde": true
+    }
+  },
+  "N6_par_atomico_para_corrutinas": {
+    "linea_confinamiento": 43,
+    "linea_sin_acceso": 49,
+    "awaits": [
+      31
+    ],
+    "awaits_entre_las_dos": [],
+    "una_corrutina_no_puede_ver_el_par_a_medias": true
+  },
+  "N7_raiz_de_unidad": {
+    "CONTROL_raiz_normal": {
+      "raiz_declarada_por_el_cliente": "C:\\Users\\krato\\AppData\\Local\\Temp\\n34-sndtdzfw\\sub",
+      "sin_acceso": false,
+      "confinamiento": {
+        "lectura": [
+          "c:\\users\\krato\\appdata\\local\\temp\\n34-sndtdzfw\\sub"
+        ],
+        "escritura": [
+          "c:\\users\\krato\\appdata\\local\\temp\\n34-sndtdzfw\\sub"
+        ]
+      },
+      "lee_un_fichero_de_OTRO_directorio": false,
+      "lee_un_fichero_de_OTRA_UNIDAD": false,
+      "unidad_del_ajeno": "C:",
+      "unidad_del_corpus": "D:"
+    },
+    "raiz_de_unidad": {
+      "raiz_declarada_por_el_cliente": "C:\\",
+      "sin_acceso": false,
+      "confinamiento": null,
+      "lee_un_fichero_de_OTRO_directorio": true,
+      "lee_un_fichero_de_OTRA_UNIDAD": true,
+      "unidad_del_ajeno": "C:",
+      "unidad_del_corpus": "D:"
+    },
+    "hay_fuga": true
+  }
+}
+
+-> bench/salidas-roots-concurrencia/carrera_antes.json
