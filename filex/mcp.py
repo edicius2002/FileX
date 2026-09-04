@@ -727,6 +727,17 @@ def _uri_a_ruta(uri: str) -> str:
         # una de otra, y de paso descarta la ruta sin unidad.
         if not os.path.splitdrive(ruta)[0].endswith(":"):
             return ""
+        # Y tener unidad NO es ser absoluta. `file:///D:` —sin barra— da `D:`,
+        # que en Windows es *relativa a la unidad*: `abspath("D:")` devuelve el
+        # directorio actual DE ESA UNIDAD, o sea el `cwd` del servidor otra vez.
+        # Es la misma fuga del `cwd` entrando por una tercera puerta, y la
+        # encontró enumerar las ramas después del arreglo, no antes (trampa
+        # 118). MEDIDO: `file:///D:` confinaba en el worktree entero, y
+        # `file:///C:` daba `C:\` sólo porque el directorio actual de `C:` es
+        # su raíz — es decir, el resultado dependía de un estado del proceso
+        # que nadie declaró.
+        if not os.path.isabs(ruta):
+            return ""
     if not ruta:
         return ""
     return os.path.normpath(ruta)

@@ -1155,6 +1155,23 @@ class AuthorityDeUriN37(unittest.TestCase):
             with self.subTest(uri=uri):
                 self.assertEqual(M._uri_a_ruta(uri), "")
 
+    def test_R5b_tener_unidad_no_es_ser_ABSOLUTA(self):
+        """`file:///D:` (sin barra) es *relativa a la unidad*: da el `cwd`.
+
+        La encontró enumerar las ramas **después** del arreglo: la guarda de
+        `splitdrive` acepta `D:` porque unidad tiene, y `abspath("D:")` devuelve
+        el directorio actual de esa unidad. Y el caso hermano prueba que el
+        resultado dependía de estado no declarado: `file:///C:` daba `C:\\`
+        sólo porque el directorio actual de `C:` era su raíz.
+        """
+        if os.name != "nt":
+            self.skipTest("las rutas relativas a la unidad son de Windows")
+        for uri in ("file:///D:", "file:///d:", "file:///C:"):
+            with self.subTest(uri=uri):
+                self.assertEqual(M._uri_a_ruta(uri), "")
+        # Y con la barra sí, que es la forma que sí nombra un directorio:
+        self.assertEqual(M._uri_a_ruta("file:///D:/"), os.path.normpath("D:/"))
+
     def test_R6_una_ruta_vacia_ya_no_es_el_cwd(self):
         """`normpath("")` devuelve `"."`, y nadie lo había registrado.
 
