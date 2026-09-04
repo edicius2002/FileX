@@ -55,6 +55,31 @@ y publicó una conclusión falsa sobre la rama que no probó). Sobre el código 
 | `file:///` | R3 sin-letra | `d:\` | no: N35 la poda |
 | `http://…`, `""` | R1 no-file | — | se ignora |
 
+### 1.0 Y una TERCERA puerta al mismo `cwd`, que encontró enumerar las ramas *después* del arreglo
+
+Con el rechazo de la *authority* ya escrito y sus pruebas en verde, volví a
+pasar la lista de ramas — y apareció un residuo que ninguna de las dos primeras
+vueltas había tocado:
+
+```
+file:///D:  ->  'D:'   ->  abspath = D:\Work\research\FileX\.claude\worktrees\agent-…
+file:///C:  ->  'C:'   ->  abspath = C:\
+```
+
+**Tener unidad no es ser absoluta.** `D:` es en Windows una ruta *relativa a la
+unidad*, y `abspath` la completa con **el directorio actual de esa unidad**. Mi
+primera guarda (`splitdrive(ruta)[0].endswith(":")`) la aceptaba porque unidad
+tiene. El caso hermano es el que lo deja claro: `file:///C:` daba `C:\` **sólo
+porque el directorio actual de `C:` era su raíz**, es decir, el confinamiento
+dependía de un estado del proceso que nadie había declarado.
+
+Se cierra con `os.path.isabs`, que es lo que separa `D:` de `D:\`. Lo anoto con
+su orden porque la lección es de método y no de código: **la enumeración de
+ramas hay que repetirla DESPUÉS del arreglo**, porque el arreglo cambia las
+ramas. Es la trampa 118 aplicada a mi propio trabajo, y es el tercer sitio
+distinto por el que se llegaba al mismo `cwd` —`file://`, la raíz `""` y
+`file:///D:`— cada uno por un mecanismo diferente.
+
 ### 1.1 El caso caro, con rutas que existen
 
 No es un ejemplo de laboratorio. Un cliente que declare la raíz UNC de un NAS:
@@ -322,7 +347,7 @@ AST —o cualquier A/B— puede salir verde porque la fuente no compila).
 | ACTUAL | N34 | verde | **verde** | 0 | — |
 | ACTUAL | N35 por MCP | verde | **verde** | 0 | — |
 | ACTUAL | N35 en el núcleo | verde | **verde** | 0 | — |
-| antes_de_N37 | N37 (mías) | **rojo** | **rojo** | 14 | aserción |
+| antes_de_N37 | N37 (mías) | **rojo** | **rojo** | 17 | aserción |
 | antes_de_N34 | N34 | **rojo** | **rojo** | 3 | `AssertionError` |
 | antes_de_N35 | N35 por MCP | **rojo** | **rojo** | 3 | `AssertionError` |
 | antes_de_N35 | N35 en el núcleo | **rojo** | **rojo** | 7 | `AssertionError`, `ValueError` |
@@ -331,8 +356,10 @@ AST —o cualquier A/B— puede salir verde porque la fuente no compila).
 
 Las tres cosas que hay que leer aquí:
 
-1. **Mis pruebas no son vacuas**: 14 fallos contra el código de antes. Sin esta
-   celda, un «12 passed» no distingue una prueba que blinda de una que decora.
+1. **Mis pruebas no son vacuas**: **17 fallos** contra el código de antes. Sin
+   esta celda, un «13 passed» no distingue una prueba que blinda de una que
+   decora — y ése es exactamente el resultado que la trampa 119 fabrica cuando
+   el revert no revierte.
 2. **N34 y N35 siguen discriminando**, y **por sus aserciones**, no por un error
    de carga (trampa 25: un rojo hay que saber de qué es). Los tests que caen son
    exactamente los que documentan aquellos arreglos:
@@ -409,7 +436,63 @@ ejecutó.
 | **3. Qué quedó fuera** | *(ver el recuento abajo)* |
 | **4. Estado de la máquina** | **NO despejada: otro agente trabajando en documentación**, declarado por el encargo y no comprobado por mí |
 
-*(El recuento va en §8.1, escrito al terminar la tanda.)*
+### 8.1 Y DOS tandas se descartaron antes de la buena — trampa 84
+
+*«Mientras haya una tanda corriendo, el código que mide y el que se mide no se
+tocan.»* La incumplí **dos veces**, las dos por el mismo motivo —seguir puliendo
+mientras la suite corría de fondo— y las dos tandas se tiran enteras. No es
+ceremonia: lo que hace daño no es la corrida que muere, es la que **sigue
+devolviendo un número** de una versión que ya no existe.
+
+Lo que dieron, y por qué se citan igual (son informativas, no la medida):
+
+| Tanda | Resultado | Estado |
+|---|---|---|
+| 1ª (contaminada) | 1 failed · 512 passed · 3 skipped · 195 subtests · **296,65 s** | descartada |
+| 2ª (contaminada) | **0 failed** · 513 passed · 3 skipped · 195 subtests · **199,18 s** | descartada |
+| 3ª (limpia) | *§8.2* | **la que cuenta** |
+
+Y de propina traen un dato bueno: el único fallo de la 1ª fue
+`test_cancelacion_procesos.py::DuenoMuerto::test_sin_deteccion_el_trabajo_se_queda_working_para_siempre`,
+y en la 2ª —con casi el mismo código y la máquina más tranquila, 199 s frente a
+297— **no reapareció**. Es la trampa 101 otra vez: ese módulo es sensible al
+estado de la máquina. El control de que no es mío está en §8.3.
+
+### 8.2 El recuento
+
+```
+514 passed · 3 skipped · 0 failed · 198 subtests · 191,81 s
+```
+
+con `.venv-mcp-filex\Scripts\python.exe -m pytest pruebas -q`, **Python 3.11.9
+win32**, **Docker 29.4.3 levantado**, y la máquina **no despejada**.
+
+**Qué quedó fuera, y por qué** — los 3 saltos son los honestos que la trampa 94
+dejó declarados, ninguno nuevo y ninguno mío:
+
+| Salto | Motivo declarado |
+|---|---|
+| `test_hito6` — ráster | `falta el ráster (bench/salidas-hito6/preparar_h6.py)` |
+| `test_hito6` — sidecar | `necesita la tarjeta: FILEX_PRUEBAS_SIDECAR=1` |
+| `test_hito6` — intérprete OCR | `falta FILEX_PY_OCR con el intérprete del venv de OCR` |
+
+Con Docker arriba, las 12 que se saltan sin demonio —el hito 5 entero y la
+cancelación real de contenedor— **sí se ejecutaron**.
+
+**Contra la referencia del encargo** (500 passed · 1 failed · 3 skipped · 179
+subtests · 224,56 s, con la máquina tranquila): +14 passed y +19 subtests, que
+son las pruebas de N37; los mismos 3 saltos; y **0 failed**. El fallo de la fila
+N36 que el encargo anunciaba como posible **no apareció** en la tanda limpia —
+sí lo hizo en la primera de las descartadas, lo que confirma su inestabilidad
+(§8.1) más que otra cosa.
+
+### 8.3 El control de que un rojo de cancelación no sería mío
+
+`git diff --stat 2498f4b HEAD -- filex/ pruebas/` da **tres ficheros**:
+`filex/confinamiento.py`, `filex/mcp.py`, `pruebas/test_hito4.py`. Ninguno es de
+cancelación, y `git diff --name-only | grep -i cancel` no devuelve nada. La
+regla de `CONTRIBUTING.md` §5 —*antes de culpar a un cambio, mira si el cambio
+tocó código*— convierte «lo rompió N37» en imposible para ese módulo.
 
 ---
 
@@ -428,7 +511,13 @@ ejecutó.
    segunda vía que nadie había registrado y que **sí pasa por MCP**: el URI
    `file://` a secas, porque `normpath("")` devuelve `"."`. La raíz `""` sólo
    llega por CLI; `file://` llega por el protocolo.
-4. **«C4 no se puede medir en esta máquina» — FALSO, y me lo refuté a mí
+4. **«Con la *authority* rechazada, la fuga del `cwd` está cerrada» — FALSO, y
+   lo refuté yo mismo media hora después de escribirlo** (§1.0). Quedaba
+   `file:///D:`, que tiene unidad y **no es absoluta**: `abspath("D:")` da el
+   directorio actual de esa unidad. Tres puertas al mismo `cwd`, por tres
+   mecanismos distintos. La lección de método: **la enumeración de ramas hay
+   que repetirla DESPUÉS del arreglo**, porque el arreglo cambia las ramas.
+5. **«C4 no se puede medir en esta máquina» — FALSO, y me lo refuté a mí
    mismo.** Mi primera reacción fue descartar C4 por falta de material; hay
    recurso UNC accesible (`\\localhost\D$`), C4 se midió, **funciona**, y se
    descarta por un motivo mucho mejor: el alias del cerrojo. Un descarte por

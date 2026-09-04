@@ -40,16 +40,17 @@ los producen.
 | `r_roots_cliente.jsonl` | `38e635a2962a` | 1 851 | `cd bench/salidas-uri-authority && rm -f r_roots_cliente.jsonl && timeout 300 claude -p "Responde solo con la palabra LISTO." --mcp-config cfg_roots.json --strict-mcp-config --max-turns 1` |
 | `sonda_unc.py` | `07f4430ed35b` | 2 360 | *(arnés)* |
 | `sonda_unc.json` | `cabcf220e552` | 1 420 | `python bench/salidas-uri-authority/sonda_unc.py` |
-| `sonda_c4_unc.py` | `3139098988415` | 4 596 | *(arnés)* |
+| `sonda_c4_unc.py` | `313909898841` | 4 596 | *(arnés)* |
 | `sonda_c4_unc.json` | `20c6a85bd626` | 1 322 | `python bench/salidas-uri-authority/sonda_c4_unc.py` |
 | `sonda_alias_destino.py` | `53ff81f11844` | 4 016 | *(arnés)* |
 | `sonda_alias_destino.json` | `5844153bc4e3` | 1 752 | `python bench/salidas-uri-authority/sonda_alias_destino.py` |
 | `ab_discriminan.py` | `d4a90c4f7eea` | 7 850 | *(arnés)* |
-| `ab_discriminan.json` | `5e24d959c0dc` | 6 952 | `python bench/salidas-uri-authority/ab_discriminan.py` |
+| `ab_discriminan.json` | `b57ceb58baf7` | 6 947 | `python bench/salidas-uri-authority/ab_discriminan.py` |
 | `coste_n37.py` | `ba6f1faa37e2` | 5 578 | *(arnés)* |
 | `coste_n37.json` | `ea35d7b3ba66` | 839 | `python bench/salidas-uri-authority/coste_n37.py` |
 | `coste_n37_tanda2.json` | `ef4ff0aa532d` | 837 | ídem, segunda tanda |
 | `coste_n37_tanda3.json` | `fb8154a690c3` | 835 | ídem, tercera tanda |
+| `suite.log` | `b4a01c6f15e5` | 1 142 | `python -m pytest pruebas -q > bench/salidas-uri-authority/suite.log` (la tanda LIMPIA de §8.2) |
 
 `python` = `.venv-mcp-filex\Scripts\python.exe`, con `PYTHONIOENCODING=utf-8`
 (sin ella, la consola `cp1252` de esta máquina revienta al imprimir un emoji;
