@@ -1,5 +1,30 @@
 # FileX — Los huecos competitivos, reevaluados
 
+> ### Qué es este documento, si llegas de fuera
+>
+> **FileX es un conversor universal de ficheros que verifica su propia salida** (ver
+> [`README.md`](README.md)). Un «hueco competitivo» es **una razón candidata para que FileX
+> exista**: algo que ninguno de los proyectos auditados hace, y que justificaría construir
+> uno nuevo en vez de usar los que ya hay.
+>
+> **Este documento es el que somete esas razones a ejecución y dice cuáles NO se
+> sostuvieron.** Se listaron cinco candidatas y aquí quedan confirmadas, debilitadas o
+> refutadas, una por una, con el informe de `bench/` que decide cada caso. Es, a propósito,
+> el documento donde el proyecto se lleva la contraria a sí mismo.
+>
+> **Convención, que gobierna todo lo de abajo:** cada afirmación va marcada **MEDIDO** (hay
+> un dato en `bench/` que la respalda) o **PENDIENTE** (se cree o se dedujo, y no vale como
+> base de una decisión).
+>
+> **Aviso de lectura:** el bloque que sigue es un **registro cronológico de revisiones**
+> —cinco pasadas entre el 19 y el 21 de agosto de 2026—, no un resumen. Si buscas la
+> conclusión y no el camino, ve directamente a las secciones numeradas. Y si buscas sólo las
+> cifras vigentes, están reunidas en [`BENCHMARKS.md`](BENCHMARKS.md).
+>
+> **Este documento no se ha actualizado con las mediciones posteriores al 21/08/2026**, y el
+> repositorio siguió midiendo hasta septiembre: donde una cifra de aquí y una de `bench/` no
+> coincidan, **manda la de `bench/`**.
+
 **Fecha:** 19 de agosto de 2026 · **revisado el 21 de agosto de 2026 (00:32, 03:30, 10:00 y 14:00)**
 **Estado:** revisión crítica tras la fase de ejecución
 

@@ -1,7 +1,8 @@
 # BENCHMARKS — los números que sostienen a FileX, en un sitio
 
-**Curado por worker6, ronda de productización, 03/09/2026.** Este documento no mide nada
-nuevo: extrae de los más de 80 informes de `bench/` las cifras que ya están **MEDIDAS**, con
+**Curado el 03/09/2026.** Este documento no mide nada
+nuevo: extrae de los informes de `bench/` —**100** a fecha de 04/09/2026, contados con
+`git ls-files`— las cifras que ya están **MEDIDAS**, con
 `n` declarado, y que le sirven a alguien que se pregunta *«¿debería usar esto?»* — no a
 alguien investigando OCR, ppp o normalización, que tiene su propio rincón en `bench/`.
 
