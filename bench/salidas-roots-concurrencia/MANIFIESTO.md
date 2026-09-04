@@ -20,6 +20,17 @@ mismo carril (CPU 42 %, 424 procesos, 12 `python` vivos).
 | `log_antes.txt` | `32b65eeabd1da37db605cd4fa7b95823e999121dba57a74b1a22900eabd20fdb` | 18 170 | ídem, con la salida redirigida |
 | `suite.txt` | `0ef2614b3dfa97e31c59eb8776b87183058c80cb3cf5e39a4c4a36fb12198b75` | 7 529 | `.venv-mcp-filex/Scripts/python.exe -m unittest discover -s pruebas -p "test_*.py"` |
 
+## Los `sha256` identifican ESTAS tandas, no son un objetivo a reproducir
+
+Los JSON llevan **milisegundos, microsegundos y rutas de directorio temporal**,
+así que volver a lanzar la orden da un fichero con **otro `sha256`**: el hash
+sirve para saber si el fichero que se lee es el que se publicó, no para
+verificar una reejecución. **Lo que sí tiene que reproducirse son las celdas
+categóricas** —`roots_list_llamadas`, `el_orden_cambia_el_estado_final`,
+`sella_un_confinamiento_mas_ancho_que_la_interseccion`, `hay_fuga`—, que son
+deterministas y son las que decide la fila. Los tiempos de pared **no son
+comparables con los de otra tanda** (`CLAUDE.md` §3).
+
 ## La tanda `antes` no se reproduce con la orden sola, y hay que decirlo
 
 `carrera_antes.json` se midió **con `filex/mcp.py` anterior al arreglo de
