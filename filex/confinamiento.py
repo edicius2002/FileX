@@ -174,6 +174,18 @@ class Confinamiento:
                                         else raices_lectura)
         if not self.lectura:
             raise ValueError("sin raíces de lectura accesibles: FileX no arranca (R6)")
+        # N35: la guarda R6 de arriba mira SOLO la lectura, y desde que
+        # `_preparar` poda en vez de rechazar hay un camino nuevo hasta
+        # `escritura == []` — declarar raíces de escritura y que la poda se las
+        # lleve todas. Se separa «no declaré escritura» (lista vacía o `None`:
+        # es legítimo, significa solo-lectura o heredar la de lectura) de
+        # «declaré escritura y ninguna confina», que es la trampa 43: toda
+        # detección por ausencia tiene que separar «no se puede» de «no está».
+        # MEDIDO (`bench/salidas-raices-mixtas/escritura.json`): sin esto, el
+        # caso pasa de `ValueError` a denegar toda la escritura EN SILENCIO —
+        # seguro, pero mudo, que es la trampa 44.
+        if raices_escritura and not self.escritura:
+            raise ValueError("se declararon raíces de escritura y ninguna confina (R6+R9)")
         # N9: ver PISO_TEMPORAL_S. Por defecto False: CLI/watcher/MCP no pagan
         # nada por un adversario que no tienen.
         self.ecualizar_temporal = ecualizar_temporal
@@ -184,13 +196,41 @@ class Confinamiento:
 
     @staticmethod
     def _preparar(raices) -> list[str]:
+        """R3 + N35: las raíces que no confinan se PODAN, no invalidan el conjunto.
+
+        **Antes se lanzaba `ValueError` en cuanto UNA raíz no confinaba**, así
+        que un cliente que declarase `["C:\\", <un directorio legítimo>]`
+        perdía también el directorio legítimo: `sin_acceso = True` sobre una
+        sesión que tenía una lista blanca perfectamente utilizable. Es el
+        reverso exacto de la fuga que cerró N7 —aquélla abría de más, ésta
+        cerraba de más— y **el mismo `except ValueError` de `mcp.py` tapaba
+        las dos**.
+
+        Podar es seguro, y no de palabra (`bench/raices-mixtas.md`):
+
+        1. **Una raíz de unidad es INERTE, no ancha.** `_dentro` compara con
+           `r + os.sep`, y sobre `c:\\` eso da la barra DOBLE `c:\\\\`, que
+           ningún candidato normalizado casa. MEDIDO: con `C:\\` como única
+           raíz se deniegan los 4 objetivos, incluido `C:\\Windows\\win.ini`,
+           que está literalmente debajo. Quitarla no quita ningún acceso
+           porque no concedía ninguno.
+        2. **Podar sólo QUITA.** El conjunto efectivo es un subconjunto de lo
+           declarado: no hay forma de que la poda añada una raíz.
+        3. **La guarda R6 sigue en pie.** Si tras podar no queda ninguna raíz
+           de lectura, el `__init__` lanza igual que antes, así que el caso de
+           N7 —`["C:\\"]` sola— sale idéntico al de ayer: `sin_acceso = True`,
+           `confinamiento = None`. MEDIDO celda a celda: A y B coinciden en
+           esa fila en las dos superficies.
+        """
         out = []
         for r in raices or []:
             a = _norm(os.path.abspath(r))
-            # R3: una raíz que normaliza a la raíz de una unidad no confina nada.
+            # R3: una raíz que normaliza a la raíz de una unidad —o a la de un
+            # recurso UNC `\\servidor\recurso`, que da lo mismo aquí— no
+            # confina nada. Se descarta ELLA, no el conjunto (N35).
             padre = os.path.dirname(a)
             if padre == a:
-                raise ValueError("una raíz no puede ser la raíz de una unidad (R3)")
+                continue
             out.append(a)
         return out
 
