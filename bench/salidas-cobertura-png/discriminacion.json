@@ -1,0 +1,531 @@
+{
+ "interprete": "3.11.9",
+ "plataforma": "win32",
+ "modulo": "pruebas.test_cob_png",
+ "pruebas_en_verde": 54,
+ "sha256_verificador": "fc0385500de90f1f8b09cbf10a0eef6a565032163d79732b2bcdc2076779b415",
+ "mutaciones": 29,
+ "aplicadas": 29,
+ "discriminan": 26,
+ "equivalentes": 3,
+ "sin_explicar": [],
+ "celdas": [
+  {
+   "id": "M01",
+   "funcion": "_paeth",
+   "ocurrencias": 1,
+   "fragmento": "return b if pb <= pc else c",
+   "aplicada": true,
+   "sha_mutado": "78753954414285cb",
+   "rc": 1,
+   "pruebas": 54,
+   "fallan": [
+    "test_alfa_variado_por_pixel.test_alfa_variado_por_pixel",
+    "test_el_desfiltrado_por_fila_completa_reconstruye_los_colores.test_el_desfiltrado_por_fila_completa_reconstruye_los_colores",
+    "test_el_hueco_en_la_fila_cero_usa_ceros_como_fila_previa.test_el_hueco_en_la_fila_cero_usa_ceros_como_fila_previa",
+    "test_exhaustivo_sobre_un_octante.test_exhaustivo_sobre_un_octante",
+    "test_la_salida_del_atajo_reconstruye_bien_la_fila_siguiente.test_la_salida_del_atajo_reconstruye_bien_la_fila_siguiente",
+    "test_los_empates_van_por_a_luego_b_luego_c.test_los_empates_van_por_a_luego_b_luego_c",
+    "test_un_alfa_que_varia_EN_LAS_DOS_DIRECCIONES.test_un_alfa_que_varia_EN_LAS_DOS_DIRECCIONES",
+    "test_un_solo_pixel_transparente_en_todas_las_combinaciones.test_un_solo_pixel_transparente_en_todas_las_combinaciones",
+    "test_varios_idat_se_concatenan.test_varios_idat_se_concatenan"
+   ],
+   "n_fallan": 9,
+   "discrimina": true
+  },
+  {
+   "id": "M02",
+   "funcion": "_rep",
+   "ocurrencias": 1,
+   "fragmento": "_FFS[clave] = bytes([valor]) * n",
+   "aplicada": true,
+   "sha_mutado": "06981fe7270ad2f6",
+   "rc": 1,
+   "pruebas": 54,
+   "fallan": [
+    "test_la_salida_del_atajo_reconstruye_bien_la_fila_siguiente.test_la_salida_del_atajo_reconstruye_bien_la_fila_siguiente",
+    "test_rep_devuelve_el_relleno_pedido.test_rep_devuelve_el_relleno_pedido",
+    "test_un_solo_pixel_transparente_en_todas_las_combinaciones.test_un_solo_pixel_transparente_en_todas_las_combinaciones"
+   ],
+   "n_fallan": 3,
+   "discrimina": true
+  },
+  {
+   "id": "M03",
+   "funcion": "_desfiltrar_carril (filtro 3, Average)",
+   "ocurrencias": 1,
+   "fragmento": "a = (filt[j] + ((a + previo[j]) >> 1)) & 255",
+   "aplicada": true,
+   "sha_mutado": "3e4a8239fa63b1d5",
+   "rc": 1,
+   "pruebas": 54,
+   "fallan": [
+    "test_D1_un_alfa_de_16_bits_con_el_byte_alto_a_255_se_da_por_opaco.test_D1_un_alfa_de_16_bits_con_el_byte_alto_a_255_se_da_por_opaco",
+    "test_alfa_variado_por_pixel.test_alfa_variado_por_pixel",
+    "test_el_hueco_en_la_fila_cero_usa_ceros_como_fila_previa.test_el_hueco_en_la_fila_cero_usa_ceros_como_fila_previa",
+    "test_la_salida_del_atajo_reconstruye_bien_la_fila_siguiente.test_la_salida_del_atajo_reconstruye_bien_la_fila_siguiente",
+    "test_un_solo_pixel_transparente_barriendo_toda_la_rejilla_8x8.test_un_solo_pixel_transparente_barriendo_toda_la_rejilla_8x8",
+    "test_un_solo_pixel_transparente_en_todas_las_combinaciones.test_un_solo_pixel_transparente_en_todas_las_combinaciones",
+    "test_varios_idat_se_concatenan.test_varios_idat_se_concatenan"
+   ],
+   "n_fallan": 7,
+   "discrimina": true
+  },
+  {
+   "id": "M04",
+   "funcion": "_desfiltrar_carril (filtro 4: orden de a y b) [EQUIVALENTE]",
+   "ocurrencias": 1,
+   "fragmento": "a = (filt[j] + _paeth(a, b, c)) & 255",
+   "aplicada": true,
+   "sha_mutado": "9023c64ce5dfabcd",
+   "rc": 0,
+   "pruebas": 54,
+   "fallan": [],
+   "n_fallan": 0,
+   "discrimina": false,
+   "equivalente": "`_paeth` es SIMETRICO en sus dos primeros argumentos: comprobado exhaustivamente, 0 asimetrias en los 8 355 840 tercetos con a<b (bench/salidas-cobertura-png/_paeth_simetria.py). Intercambiarlos no puede cambiar ningun pixel."
+  },
+  {
+   "id": "M04b",
+   "funcion": "_desfiltrar_carril (filtro 4: el vecino de arriba-izquierda)",
+   "ocurrencias": 1,
+   "fragmento": "out[j] = a",
+   "aplicada": true,
+   "sha_mutado": "ffb80edc126a7d9b",
+   "rc": 1,
+   "pruebas": 54,
+   "fallan": [
+    "test_alfa_variado_por_pixel.test_alfa_variado_por_pixel",
+    "test_un_alfa_que_varia_EN_LAS_DOS_DIRECCIONES.test_un_alfa_que_varia_EN_LAS_DOS_DIRECCIONES",
+    "test_un_solo_pixel_transparente_en_todas_las_combinaciones.test_un_solo_pixel_transparente_en_todas_las_combinaciones"
+   ],
+   "n_fallan": 3,
+   "discrimina": true
+  },
+  {
+   "id": "M05",
+   "funcion": "_pixel_en_byte",
+   "ocurrencias": 1,
+   "fragmento": "return k",
+   "aplicada": true,
+   "sha_mutado": "2721768dc0bf4980",
+   "rc": 1,
+   "pruebas": 54,
+   "fallan": [
+    "test_la_coordenada_x_es_del_PIXEL_y_no_del_BYTE.test_la_coordenada_x_es_del_PIXEL_y_no_del_BYTE",
+    "test_paleta_entrelazada_de_pocos_bits.test_paleta_entrelazada_de_pocos_bits",
+    "test_todas_las_profundidades_contra_el_oraculo.test_todas_las_profundidades_contra_el_oraculo"
+   ],
+   "n_fallan": 3,
+   "discrimina": true
+  },
+  {
+   "id": "M06",
+   "funcion": "_alfa_min_png (salida por cabecera)",
+   "ocurrencias": 1,
+   "fragmento": "if m[\"trns\"] is None and ct not in (4, 6):",
+   "aplicada": true,
+   "sha_mutado": "d59cab1f8b5150da",
+   "rc": 1,
+   "pruebas": 54,
+   "fallan": [
+    "test_rgb_y_gris_sin_trns_salen_por_la_cabecera.test_rgb_y_gris_sin_trns_salen_por_la_cabecera"
+   ],
+   "n_fallan": 1,
+   "discrimina": true
+  },
+  {
+   "id": "M07",
+   "funcion": "_alfa_min_png (tabla de la paleta empaquetada)",
+   "ocurrencias": 1,
+   "fragmento": "tabla = bytes(min(alfa[(v >> (8 - bd * (k + 1))) & masc]",
+   "aplicada": true,
+   "sha_mutado": "d396ebaec2c7a176",
+   "rc": 1,
+   "pruebas": 54,
+   "fallan": [
+    "test_la_coordenada_x_es_del_PIXEL_y_no_del_BYTE.test_la_coordenada_x_es_del_PIXEL_y_no_del_BYTE",
+    "test_la_paleta_tambien_corta_en_cuanto_encuentra_transparencia.test_la_paleta_tambien_corta_en_cuanto_encuentra_transparencia",
+    "test_todas_las_profundidades_contra_el_oraculo.test_todas_las_profundidades_contra_el_oraculo"
+   ],
+   "n_fallan": 3,
+   "discrimina": true
+  },
+  {
+   "id": "M08",
+   "funcion": "_alfa_min_png (bits de relleno de la ultima celda)",
+   "ocurrencias": 1,
+   "fragmento": "if sobra and bd < 8 and len(car):",
+   "aplicada": true,
+   "sha_mutado": "e564f0532405af2e",
+   "rc": 1,
+   "pruebas": 54,
+   "fallan": [
+    "test_los_bits_de_relleno_de_la_ultima_celda_no_son_pixeles.test_los_bits_de_relleno_de_la_ultima_celda_no_son_pixeles"
+   ],
+   "n_fallan": 1,
+   "discrimina": true
+  },
+  {
+   "id": "M09",
+   "funcion": "_alfa_min_png (carril del alfa)",
+   "ocurrencias": 1,
+   "fragmento": "desp = (canales - 1) * bps",
+   "aplicada": true,
+   "sha_mutado": "00a6a49685518da8",
+   "rc": 1,
+   "pruebas": 54,
+   "fallan": [
+    "test_D1_un_alfa_de_16_bits_con_el_byte_alto_a_255_se_da_por_opaco.test_D1_un_alfa_de_16_bits_con_el_byte_alto_a_255_se_da_por_opaco",
+    "test_D1b_el_umbral_esta_justo_en_0xFF00.test_D1b_el_umbral_esta_justo_en_0xFF00",
+    "test_D3_las_dos_vias_no_dicen_lo_mismo_de_primer_transparente.test_D3_las_dos_vias_no_dicen_lo_mismo_de_primer_transparente",
+    "test_alfa_cero_es_alfa_cero.test_alfa_cero_es_alfa_cero",
+    "test_alfa_variado_por_pixel.test_alfa_variado_por_pixel",
+    "test_el_alfa_trivial_no_es_transparencia.test_el_alfa_trivial_no_es_transparencia",
+    "test_el_hueco_en_la_fila_cero_usa_ceros_como_fila_previa.test_el_hueco_en_la_fila_cero_usa_ceros_como_fila_previa",
+    "test_el_patron_reconoce_la_fila_opaca_con_cada_filtro.test_el_patron_reconoce_la_fila_opaca_con_cada_filtro",
+    "test_la_salida_del_atajo_reconstruye_bien_la_fila_siguiente.test_la_salida_del_atajo_reconstruye_bien_la_fila_siguiente",
+    "test_sin_exacto_corta_en_la_primera_fila_con_alfa.test_sin_exacto_corta_en_la_primera_fila_con_alfa",
+    "test_un_alfa_que_varia_EN_LAS_DOS_DIRECCIONES.test_un_alfa_que_varia_EN_LAS_DOS_DIRECCIONES",
+    "test_un_solo_pixel_transparente_en_todas_las_combinaciones.test_un_solo_pixel_transparente_en_todas_las_combinaciones",
+    "test_varios_idat_se_concatenan.test_varios_idat_se_concatenan"
+   ],
+   "n_fallan": 13,
+   "discrimina": true
+  },
+  {
+   "id": "M10",
+   "funcion": "_alfa_min_png (fila previa al salir del atajo)",
+   "ocurrencias": 1,
+   "fragmento": "previos = [bytearray(_rep(0 if y == 0 else maxv, an))",
+   "aplicada": true,
+   "sha_mutado": "22bf84f1af53dbc3",
+   "rc": 1,
+   "pruebas": 54,
+   "fallan": [
+    "test_D1_un_alfa_de_16_bits_con_el_byte_alto_a_255_se_da_por_opaco.test_D1_un_alfa_de_16_bits_con_el_byte_alto_a_255_se_da_por_opaco",
+    "test_alfa_cero_es_alfa_cero.test_alfa_cero_es_alfa_cero",
+    "test_alfa_variado_por_pixel.test_alfa_variado_por_pixel",
+    "test_el_hueco_en_la_fila_cero_usa_ceros_como_fila_previa.test_el_hueco_en_la_fila_cero_usa_ceros_como_fila_previa",
+    "test_la_salida_del_atajo_reconstruye_bien_la_fila_siguiente.test_la_salida_del_atajo_reconstruye_bien_la_fila_siguiente",
+    "test_un_alfa_que_varia_EN_LAS_DOS_DIRECCIONES.test_un_alfa_que_varia_EN_LAS_DOS_DIRECCIONES",
+    "test_un_solo_pixel_transparente_en_todas_las_combinaciones.test_un_solo_pixel_transparente_en_todas_las_combinaciones"
+   ],
+   "n_fallan": 7,
+   "discrimina": true
+  },
+  {
+   "id": "M11",
+   "funcion": "_PATRON_OPACO (filtro 3, fila no inicial) [mas ESTRICTO]",
+   "ocurrencias": 1,
+   "fragmento": "False: {0: (255, 255), 1: (255, 0), 2: (0, 0), 3: (128, 0), 4: (0, 0)},",
+   "aplicada": true,
+   "sha_mutado": "2aa5f14117d03916",
+   "rc": 0,
+   "pruebas": 54,
+   "fallan": [],
+   "n_fallan": 0,
+   "discrimina": false,
+   "equivalente": "El patron de fila opaca es un ATAJO. Un valor mas estricto solo hace que la fila se reconstruya de verdad, con el mismo resultado: cuesta tiempo, no correccion. El lado peligroso -- un patron mas LAXO, que se traga transparencia real -- es M11b, y ese SI se ve."
+  },
+  {
+   "id": "M11b",
+   "funcion": "_alfa_min_png (el atajo mira solo el primer byte) [mas LAXO]",
+   "ocurrencias": 1,
+   "fragmento": "if all(c[:1] == bytes([b0]) and c[1:] == _rep(resto, len(c) - 1)",
+   "aplicada": true,
+   "sha_mutado": "68df65c716047a00",
+   "rc": 1,
+   "pruebas": 54,
+   "fallan": [
+    "test_D1b_el_umbral_esta_justo_en_0xFF00.test_D1b_el_umbral_esta_justo_en_0xFF00",
+    "test_alfa_cero_es_alfa_cero.test_alfa_cero_es_alfa_cero",
+    "test_alfa_variado_por_pixel.test_alfa_variado_por_pixel",
+    "test_el_hueco_en_la_fila_cero_usa_ceros_como_fila_previa.test_el_hueco_en_la_fila_cero_usa_ceros_como_fila_previa",
+    "test_la_salida_del_atajo_reconstruye_bien_la_fila_siguiente.test_la_salida_del_atajo_reconstruye_bien_la_fila_siguiente",
+    "test_sin_exacto_pero_con_alfa_cero_sigue_siendo_exacto.test_sin_exacto_pero_con_alfa_cero_sigue_siendo_exacto",
+    "test_un_solo_pixel_transparente_en_todas_las_combinaciones.test_un_solo_pixel_transparente_en_todas_las_combinaciones",
+    "test_varios_idat_se_concatenan.test_varios_idat_se_concatenan"
+   ],
+   "n_fallan": 8,
+   "discrimina": true
+  },
+  {
+   "id": "M12",
+   "funcion": "_ADAM7 (geometria de la pasada 5)",
+   "ocurrencias": 1,
+   "fragmento": "_ADAM7 = ((0, 0, 8, 8), (4, 0, 8, 8), (0, 4, 4, 8), (2, 0, 4, 4),",
+   "aplicada": true,
+   "sha_mutado": "a21a325dd48d2f82",
+   "rc": 1,
+   "pruebas": 54,
+   "fallan": [
+    "test_D1_un_alfa_de_16_bits_con_el_byte_alto_a_255_se_da_por_opaco.test_D1_un_alfa_de_16_bits_con_el_byte_alto_a_255_se_da_por_opaco",
+    "test_adam7_sin_exacto_corta_la_pasada_y_el_barrido.test_adam7_sin_exacto_corta_la_pasada_y_el_barrido",
+    "test_alfa_cero_es_alfa_cero.test_alfa_cero_es_alfa_cero",
+    "test_alfa_variado_por_pixel.test_alfa_variado_por_pixel",
+    "test_el_alfa_trivial_no_es_transparencia.test_el_alfa_trivial_no_es_transparencia",
+    "test_imagenes_pequenas_dejan_pasadas_vacias.test_imagenes_pequenas_dejan_pasadas_vacias",
+    "test_la_coordenada_x_es_del_PIXEL_y_no_del_BYTE.test_la_coordenada_x_es_del_PIXEL_y_no_del_BYTE",
+    "test_paleta_entrelazada_de_pocos_bits.test_paleta_entrelazada_de_pocos_bits",
+    "test_todas_las_profundidades_contra_el_oraculo.test_todas_las_profundidades_contra_el_oraculo",
+    "test_trns_mas_corto_que_la_paleta.test_trns_mas_corto_que_la_paleta",
+    "test_un_alfa_que_varia_EN_LAS_DOS_DIRECCIONES.test_un_alfa_que_varia_EN_LAS_DOS_DIRECCIONES",
+    "test_un_solo_pixel_transparente_barriendo_toda_la_rejilla_8x8.test_un_solo_pixel_transparente_barriendo_toda_la_rejilla_8x8",
+    "test_un_solo_pixel_transparente_en_todas_las_combinaciones.test_un_solo_pixel_transparente_en_todas_las_combinaciones",
+    "test_varios_idat_se_concatenan.test_varios_idat_se_concatenan"
+   ],
+   "n_fallan": 14,
+   "discrimina": true
+  },
+  {
+   "id": "M13",
+   "funcion": "_alfa_min_png_adam7 (mapeo a coordenadas reales)",
+   "ocurrencias": 1,
+   "fragmento": "r[\"primer_transparente\"] = (min(xini + idx * xpaso, an - 1),",
+   "aplicada": true,
+   "sha_mutado": "3d6c4d3dc6aeddd4",
+   "rc": 1,
+   "pruebas": 54,
+   "fallan": [
+    "test_alfa_cero_es_alfa_cero.test_alfa_cero_es_alfa_cero",
+    "test_la_coordenada_x_es_del_PIXEL_y_no_del_BYTE.test_la_coordenada_x_es_del_PIXEL_y_no_del_BYTE",
+    "test_un_solo_pixel_transparente_barriendo_toda_la_rejilla_8x8.test_un_solo_pixel_transparente_barriendo_toda_la_rejilla_8x8",
+    "test_un_solo_pixel_transparente_en_todas_las_combinaciones.test_un_solo_pixel_transparente_en_todas_las_combinaciones",
+    "test_varios_idat_se_concatenan.test_varios_idat_se_concatenan"
+   ],
+   "n_fallan": 5,
+   "discrimina": true
+  },
+  {
+   "id": "M14",
+   "funcion": "_alfa_min_png_adam7.rellenar (tope del bucle)",
+   "ocurrencias": 1,
+   "fragmento": "while len(buf) < n:",
+   "aplicada": true,
+   "sha_mutado": "61f4887addef2b02",
+   "rc": 0,
+   "pruebas": 54,
+   "fallan": [],
+   "n_fallan": 0,
+   "discrimina": false,
+   "equivalente": "El tope del bucle decide cuando dejar de pedir bloques; el veredicto lo da el `return len(buf) >= n`, que no se toca. Los bloques llegan en bulto, asi que pedir un byte menos no cambia que bloques se consumen. Los dos lados que si deciden son M14b (el fin de los IDAT) y M14c (lo que aporta cada bloque), y los dos se ven."
+  },
+  {
+   "id": "M14b",
+   "funcion": "_alfa_min_png_adam7.rellenar (se acabaron los IDAT)",
+   "ocurrencias": 1,
+   "fragmento": "return len(buf) >= n",
+   "aplicada": true,
+   "sha_mutado": "bbb63d61f3b870bf",
+   "rc": 1,
+   "pruebas": 54,
+   "fallan": [
+    "test_adam7_con_el_idat_cortado.test_adam7_con_el_idat_cortado"
+   ],
+   "n_fallan": 1,
+   "discrimina": true
+  },
+  {
+   "id": "M14c",
+   "funcion": "_alfa_min_png_adam7.rellenar (lo que aporta cada bloque)",
+   "ocurrencias": 1,
+   "fragmento": "buf.extend(do.decompress(bloque))",
+   "aplicada": true,
+   "sha_mutado": "1a7746fbc8264fa4",
+   "rc": 1,
+   "pruebas": 54,
+   "fallan": [
+    "test_D1_un_alfa_de_16_bits_con_el_byte_alto_a_255_se_da_por_opaco.test_D1_un_alfa_de_16_bits_con_el_byte_alto_a_255_se_da_por_opaco",
+    "test_adam7_sin_exacto_corta_la_pasada_y_el_barrido.test_adam7_sin_exacto_corta_la_pasada_y_el_barrido",
+    "test_alfa_variado_por_pixel.test_alfa_variado_por_pixel",
+    "test_el_alfa_trivial_no_es_transparencia.test_el_alfa_trivial_no_es_transparencia",
+    "test_filtro_de_fila_desconocido.test_filtro_de_fila_desconocido",
+    "test_imagenes_pequenas_dejan_pasadas_vacias.test_imagenes_pequenas_dejan_pasadas_vacias",
+    "test_la_coordenada_x_es_del_PIXEL_y_no_del_BYTE.test_la_coordenada_x_es_del_PIXEL_y_no_del_BYTE",
+    "test_los_bits_de_relleno_de_la_ultima_celda_no_son_pixeles.test_los_bits_de_relleno_de_la_ultima_celda_no_son_pixeles",
+    "test_paleta_entrelazada_de_pocos_bits.test_paleta_entrelazada_de_pocos_bits",
+    "test_todas_las_profundidades_contra_el_oraculo.test_todas_las_profundidades_contra_el_oraculo",
+    "test_trns_mas_corto_que_la_paleta.test_trns_mas_corto_que_la_paleta",
+    "test_un_alfa_que_varia_EN_LAS_DOS_DIRECCIONES.test_un_alfa_que_varia_EN_LAS_DOS_DIRECCIONES",
+    "test_un_solo_pixel_transparente_barriendo_toda_la_rejilla_8x8.test_un_solo_pixel_transparente_barriendo_toda_la_rejilla_8x8",
+    "test_un_solo_pixel_transparente_en_todas_las_combinaciones.test_un_solo_pixel_transparente_en_todas_las_combinaciones",
+    "test_varios_idat_se_concatenan.test_varios_idat_se_concatenan"
+   ],
+   "n_fallan": 15,
+   "discrimina": true
+  },
+  {
+   "id": "M15",
+   "funcion": "_alfa_min_png_adam7 (pareja hi/lo de 16 bits)",
+   "ocurrencias": 1,
+   "fragmento": "v = 65280 + (min(lo) if lo else 255)",
+   "aplicada": true,
+   "sha_mutado": "a78deea5cf2b2cb4",
+   "rc": 1,
+   "pruebas": 54,
+   "fallan": [
+    "test_D1_un_alfa_de_16_bits_con_el_byte_alto_a_255_se_da_por_opaco.test_D1_un_alfa_de_16_bits_con_el_byte_alto_a_255_se_da_por_opaco"
+   ],
+   "n_fallan": 1,
+   "discrimina": true
+  },
+  {
+   "id": "M16",
+   "funcion": "_leer_plte (troceado de la paleta)",
+   "ocurrencias": 1,
+   "fragmento": "return [(d[i], d[i + 1], d[i + 2]) for i in range(0, ln - 2, 3)]",
+   "aplicada": true,
+   "sha_mutado": "a0a69f26c0a6a0ba",
+   "rc": 1,
+   "pruebas": 54,
+   "fallan": [
+    "test_una_paleta_de_tres_bytes.test_una_paleta_de_tres_bytes"
+   ],
+   "n_fallan": 1,
+   "discrimina": true
+  },
+  {
+   "id": "M17",
+   "funcion": "_predice (modo 3, arriba-derecha)",
+   "ocurrencias": 1,
+   "fragmento": "if modo == 3:",
+   "aplicada": true,
+   "sha_mutado": "b074ea764547ff4b",
+   "rc": 1,
+   "pruebas": 54,
+   "fallan": [
+    "test_los_modos_1_a_4_son_los_cuatro_vecinos.test_los_modos_1_a_4_son_los_cuatro_vecinos",
+    "test_los_trece_modos_que_coinciden_con_libwebp.test_los_trece_modos_que_coinciden_con_libwebp"
+   ],
+   "n_fallan": 2,
+   "discrimina": true
+  },
+  {
+   "id": "M18",
+   "funcion": "_predice (modo 10)",
+   "ocurrencias": 1,
+   "fragmento": "return _med2(_med2(L, TL), _med2(T, TR))",
+   "aplicada": true,
+   "sha_mutado": "bcd86105a9ad54aa",
+   "rc": 1,
+   "pruebas": 54,
+   "fallan": [
+    "test_los_trece_modos_que_coinciden_con_libwebp.test_los_trece_modos_que_coinciden_con_libwebp"
+   ],
+   "n_fallan": 1,
+   "discrimina": true
+  },
+  {
+   "id": "M19",
+   "funcion": "_selecciona",
+   "ocurrencias": 1,
+   "fragmento": "return a if d <= 0 else b",
+   "aplicada": true,
+   "sha_mutado": "d6678144dd5a9fe9",
+   "rc": 1,
+   "pruebas": 54,
+   "fallan": [
+    "test_los_trece_modos_que_coinciden_con_libwebp.test_los_trece_modos_que_coinciden_con_libwebp",
+    "test_selecciona_elige_el_vecino_que_menos_se_aleja.test_selecciona_elige_el_vecino_que_menos_se_aleja"
+   ],
+   "n_fallan": 2,
+   "discrimina": true
+  },
+  {
+   "id": "M20",
+   "funcion": "_clamp_full (saturacion)",
+   "ocurrencias": 1,
+   "fragmento": "v |= (0 if x < 0 else (255 if x > 255 else x)) << desp",
+   "aplicada": true,
+   "sha_mutado": "a29b3356cc52d4b8",
+   "rc": 1,
+   "pruebas": 54,
+   "fallan": [
+    "test_clamp_full_satura_en_0_y_en_255_canal_a_canal.test_clamp_full_satura_en_0_y_en_255_canal_a_canal",
+    "test_los_trece_modos_que_coinciden_con_libwebp.test_los_trece_modos_que_coinciden_con_libwebp"
+   ],
+   "n_fallan": 2,
+   "discrimina": true
+  },
+  {
+   "id": "M21",
+   "funcion": "_clamp_half (la mitad)",
+   "ocurrencias": 1,
+   "fragmento": "x = av + (av - ((c >> desp) & 0xFF)) // 2",
+   "aplicada": true,
+   "sha_mutado": "e24140e8c1d57c37",
+   "rc": 1,
+   "pruebas": 54,
+   "fallan": [
+    "test_D2_el_predictor_13_divide_como_Python_y_no_como_C.test_D2_el_predictor_13_divide_como_Python_y_no_como_C"
+   ],
+   "n_fallan": 1,
+   "discrimina": true
+  },
+  {
+   "id": "M22",
+   "funcion": "_distancia_plano (codigos > 120)",
+   "ocurrencias": 1,
+   "fragmento": "return cod - 120",
+   "aplicada": true,
+   "sha_mutado": "9b50655e76031935",
+   "rc": 1,
+   "pruebas": 54,
+   "fallan": [
+    "test_por_encima_de_120_el_codigo_es_la_distancia_directa.test_por_encima_de_120_el_codigo_es_la_distancia_directa"
+   ],
+   "n_fallan": 1,
+   "discrimina": true
+  },
+  {
+   "id": "M23",
+   "funcion": "_codigo_a_plano (orden de la tabla)",
+   "ocurrencias": 1,
+   "fragmento": "pares.sort(key=lambda p: (p[0] * p[0] + p[1] * p[1], -p[1], p[0] < 0))",
+   "aplicada": true,
+   "sha_mutado": "d672299dd9ed83f0",
+   "rc": 1,
+   "pruebas": 54,
+   "fallan": [
+    "test_el_alfa_sobrevive_a_la_ida_y_vuelta_sin_perdida.test_el_alfa_sobrevive_a_la_ida_y_vuelta_sin_perdida",
+    "test_la_tabla_de_planos_reproduce_los_ocho_primeros_de_libwebp.test_la_tabla_de_planos_reproduce_los_ocho_primeros_de_libwebp"
+   ],
+   "n_fallan": 2,
+   "discrimina": true
+  },
+  {
+   "id": "M24",
+   "funcion": "_med2",
+   "ocurrencias": 1,
+   "fragmento": "return (((a ^ b) & 0xFEFEFEFE) >> 1) + (a & b)",
+   "aplicada": true,
+   "sha_mutado": "2c8f7fe27a5d9491",
+   "rc": 1,
+   "pruebas": 54,
+   "fallan": [
+    "test_los_trece_modos_que_coinciden_con_libwebp.test_los_trece_modos_que_coinciden_con_libwebp",
+    "test_med2_es_la_media_entera_canal_a_canal.test_med2_es_la_media_entera_canal_a_canal"
+   ],
+   "n_fallan": 2,
+   "discrimina": true
+  },
+  {
+   "id": "M25",
+   "funcion": "_alfa_min_png (normalizacion final de 16 bits)",
+   "ocurrencias": 1,
+   "fragmento": "r[\"alfa_min\"] = mn_pareja / float(tope)",
+   "aplicada": true,
+   "sha_mutado": "be7f964543f7e5ba",
+   "rc": 1,
+   "pruebas": 54,
+   "fallan": [
+    "test_alfa_cero_es_alfa_cero.test_alfa_cero_es_alfa_cero",
+    "test_sin_exacto_corta_en_la_primera_fila_con_alfa.test_sin_exacto_corta_en_la_primera_fila_con_alfa",
+    "test_sin_exacto_pero_con_alfa_cero_sigue_siendo_exacto.test_sin_exacto_pero_con_alfa_cero_sigue_siendo_exacto"
+   ],
+   "n_fallan": 3,
+   "discrimina": true
+  }
+ ]
+}

@@ -1,0 +1,682 @@
+{
+ "base": {
+  "cubiertas": 1126,
+  "sin_ejecutar": 2133,
+  "sentencias": 3259,
+  "pct": 32.62
+ },
+ "solo_este_modulo": {
+  "cubiertas": 913,
+  "sentencias": 3259,
+  "pct": 26.1
+ },
+ "lineas_ganadas": 698,
+ "por_funcion": [
+  {
+   "funcion": "_alfa_min_png",
+   "faltaban": 106,
+   "ahora_ejecutadas": 106,
+   "siguen_sin_ejecutar": 0
+  },
+  {
+   "funcion": "_vp8l_flujo",
+   "faltaban": 148,
+   "ahora_ejecutadas": 96,
+   "siguen_sin_ejecutar": 52
+  },
+  {
+   "funcion": "_alfa_min_png_adam7",
+   "faltaban": 94,
+   "ahora_ejecutadas": 94,
+   "siguen_sin_ejecutar": 0
+  },
+  {
+   "funcion": "png_tinta_cajas",
+   "faltaban": 71,
+   "ahora_ejecutadas": 56,
+   "siguen_sin_ejecutar": 15
+  },
+  {
+   "funcion": "_alfa_min_webp",
+   "faltaban": 74,
+   "ahora_ejecutadas": 35,
+   "siguen_sin_ejecutar": 39
+  },
+  {
+   "funcion": "_predice",
+   "faltaban": 33,
+   "ahora_ejecutadas": 33,
+   "siguen_sin_ejecutar": 0
+  },
+  {
+   "funcion": "_desfiltrar_carril",
+   "faltaban": 26,
+   "ahora_ejecutadas": 25,
+   "siguen_sin_ejecutar": 1
+  },
+  {
+   "funcion": "_huff_tabla",
+   "faltaban": 27,
+   "ahora_ejecutadas": 25,
+   "siguen_sin_ejecutar": 2
+  },
+  {
+   "funcion": "_leer_longitudes",
+   "faltaban": 24,
+   "ahora_ejecutadas": 23,
+   "siguen_sin_ejecutar": 1
+  },
+  {
+   "funcion": "_png_meta",
+   "faltaban": 24,
+   "ahora_ejecutadas": 23,
+   "siguen_sin_ejecutar": 1
+  },
+  {
+   "funcion": "_desfiltrar_fila",
+   "faltaban": 21,
+   "ahora_ejecutadas": 20,
+   "siguen_sin_ejecutar": 1
+  },
+  {
+   "funcion": "_vp8l_decodificar",
+   "faltaban": 21,
+   "ahora_ejecutadas": 17,
+   "siguen_sin_ejecutar": 4
+  },
+  {
+   "funcion": "_leer_codigo_huffman",
+   "faltaban": 18,
+   "ahora_ejecutadas": 16,
+   "siguen_sin_ejecutar": 2
+  },
+  {
+   "funcion": "alfa_minimo",
+   "faltaban": 23,
+   "ahora_ejecutadas": 12,
+   "siguen_sin_ejecutar": 11
+  },
+  {
+   "funcion": "_leer_plte",
+   "faltaban": 11,
+   "ahora_ejecutadas": 11,
+   "siguen_sin_ejecutar": 0
+  },
+  {
+   "funcion": "_png_filas",
+   "faltaban": 15,
+   "ahora_ejecutadas": 11,
+   "siguen_sin_ejecutar": 4
+  },
+  {
+   "funcion": "_alfa_min_png_adam7.rellenar",
+   "faltaban": 12,
+   "ahora_ejecutadas": 10,
+   "siguen_sin_ejecutar": 2
+  },
+  {
+   "funcion": "_png_bloques_idat",
+   "faltaban": 12,
+   "ahora_ejecutadas": 10,
+   "siguen_sin_ejecutar": 2
+  },
+  {
+   "funcion": "_clamp_half",
+   "faltaban": 7,
+   "ahora_ejecutadas": 7,
+   "siguen_sin_ejecutar": 0
+  },
+  {
+   "funcion": "_lum_png",
+   "faltaban": 19,
+   "ahora_ejecutadas": 7,
+   "siguen_sin_ejecutar": 12
+  },
+  {
+   "funcion": "_BitsLSB.leer",
+   "faltaban": 7,
+   "ahora_ejecutadas": 6,
+   "siguen_sin_ejecutar": 1
+  },
+  {
+   "funcion": "_leer_simbolo",
+   "faltaban": 7,
+   "ahora_ejecutadas": 6,
+   "siguen_sin_ejecutar": 1
+  },
+  {
+   "funcion": "_rep",
+   "faltaban": 6,
+   "ahora_ejecutadas": 6,
+   "siguen_sin_ejecutar": 0
+  },
+  {
+   "funcion": "_clamp_full",
+   "faltaban": 5,
+   "ahora_ejecutadas": 5,
+   "siguen_sin_ejecutar": 0
+  },
+  {
+   "funcion": "_distancia_plano",
+   "faltaban": 5,
+   "ahora_ejecutadas": 5,
+   "siguen_sin_ejecutar": 0
+  },
+  {
+   "funcion": "_paeth",
+   "faltaban": 5,
+   "ahora_ejecutadas": 5,
+   "siguen_sin_ejecutar": 0
+  },
+  {
+   "funcion": "_selecciona",
+   "faltaban": 5,
+   "ahora_ejecutadas": 5,
+   "siguen_sin_ejecutar": 0
+  },
+  {
+   "funcion": "_BitsLSB.__init__",
+   "faltaban": 4,
+   "ahora_ejecutadas": 4,
+   "siguen_sin_ejecutar": 0
+  },
+  {
+   "funcion": "_BitsLSB._llenar",
+   "faltaban": 4,
+   "ahora_ejecutadas": 4,
+   "siguen_sin_ejecutar": 0
+  },
+  {
+   "funcion": "_BitsLSB.ojear",
+   "faltaban": 4,
+   "ahora_ejecutadas": 4,
+   "siguen_sin_ejecutar": 0
+  },
+  {
+   "funcion": "_prefijo",
+   "faltaban": 4,
+   "ahora_ejecutadas": 4,
+   "siguen_sin_ejecutar": 0
+  },
+  {
+   "funcion": "_pixel_en_byte",
+   "faltaban": 4,
+   "ahora_ejecutadas": 3,
+   "siguen_sin_ejecutar": 1
+  },
+  {
+   "funcion": "_BitsLSB.saltar",
+   "faltaban": 2,
+   "ahora_ejecutadas": 2,
+   "siguen_sin_ejecutar": 0
+  },
+  {
+   "funcion": "_med2",
+   "faltaban": 1,
+   "ahora_ejecutadas": 1,
+   "siguen_sin_ejecutar": 0
+  },
+  {
+   "funcion": "_suma_argb",
+   "faltaban": 1,
+   "ahora_ejecutadas": 1,
+   "siguen_sin_ejecutar": 0
+  },
+  {
+   "funcion": "_a7_energia_por_canal",
+   "faltaban": 7,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 7
+  },
+  {
+   "funcion": "_a7_tasa_efectiva",
+   "faltaban": 4,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 4
+  },
+  {
+   "funcion": "_alfa_min_gif",
+   "faltaban": 44,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 44
+  },
+  {
+   "funcion": "_alfa_min_tiff",
+   "faltaban": 81,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 81
+  },
+  {
+   "funcion": "_alph_desfiltrar",
+   "faltaban": 25,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 25
+  },
+  {
+   "funcion": "_cajas",
+   "faltaban": 5,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 5
+  },
+  {
+   "funcion": "_codec_norm",
+   "faltaban": 1,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 1
+  },
+  {
+   "funcion": "_correr",
+   "faltaban": 4,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 4
+  },
+  {
+   "funcion": "_datos",
+   "faltaban": 23,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 23
+  },
+  {
+   "funcion": "_db",
+   "faltaban": 1,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 1
+  },
+  {
+   "funcion": "_dbfs",
+   "faltaban": 2,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 2
+  },
+  {
+   "funcion": "_ebml_num",
+   "faltaban": 2,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 2
+  },
+  {
+   "funcion": "_estilo",
+   "faltaban": 10,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 10
+  },
+  {
+   "funcion": "_ffmpeg_astats",
+   "faltaban": 1,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 1
+  },
+  {
+   "funcion": "_ffmpeg_framemd5",
+   "faltaban": 12,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 12
+  },
+  {
+   "funcion": "_ffmpeg_md5_pcm",
+   "faltaban": 5,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 5
+  },
+  {
+   "funcion": "_ffmpeg_pcm",
+   "faltaban": 5,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 5
+  },
+  {
+   "funcion": "_ffmpeg_psnr",
+   "faltaban": 13,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 13
+  },
+  {
+   "funcion": "_ffprobe_etiquetas",
+   "faltaban": 2,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 2
+  },
+  {
+   "funcion": "_ffprobe_fotogramas",
+   "faltaban": 7,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 7
+  },
+  {
+   "funcion": "_firma_cfb",
+   "faltaban": 1,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 1
+  },
+  {
+   "funcion": "_firma_texto",
+   "faltaban": 8,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 8
+  },
+  {
+   "funcion": "_firma_zip",
+   "faltaban": 9,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 9
+  },
+  {
+   "funcion": "_flac",
+   "faltaban": 12,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 12
+  },
+  {
+   "funcion": "_gif",
+   "faltaban": 34,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 34
+  },
+  {
+   "funcion": "_gif_bloques",
+   "faltaban": 35,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 35
+  },
+  {
+   "funcion": "_gs_texto",
+   "faltaban": 17,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 17
+  },
+  {
+   "funcion": "_imprimir",
+   "faltaban": 11,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 11
+  },
+  {
+   "funcion": "_isobmff.recorre",
+   "faltaban": 7,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 7
+  },
+  {
+   "funcion": "_jpeg",
+   "faltaban": 9,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 9
+  },
+  {
+   "funcion": "_lzw_gif_usa",
+   "faltaban": 36,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 36
+  },
+  {
+   "funcion": "_lzw_tiff",
+   "faltaban": 33,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 33
+  },
+  {
+   "funcion": "_magick_metrica",
+   "faltaban": 14,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 14
+  },
+  {
+   "funcion": "_matroska.recorre",
+   "faltaban": 7,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 7
+  },
+  {
+   "funcion": "_mp3",
+   "faltaban": 2,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 2
+  },
+  {
+   "funcion": "_num",
+   "faltaban": 11,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 11
+  },
+  {
+   "funcion": "_ogg",
+   "faltaban": 8,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 8
+  },
+  {
+   "funcion": "_packbits",
+   "faltaban": 13,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 13
+  },
+  {
+   "funcion": "_paleta_es_rejilla",
+   "faltaban": 6,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 6
+  },
+  {
+   "funcion": "_paleta_gif",
+   "faltaban": 10,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 10
+  },
+  {
+   "funcion": "_pcm_desfase",
+   "faltaban": 11,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 11
+  },
+  {
+   "funcion": "_pdf",
+   "faltaban": 9,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 9
+  },
+  {
+   "funcion": "_pixel_magick",
+   "faltaban": 15,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 15
+  },
+  {
+   "funcion": "_png",
+   "faltaban": 3,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 3
+  },
+  {
+   "funcion": "_prof",
+   "faltaban": 2,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 2
+  },
+  {
+   "funcion": "_tiff",
+   "faltaban": 45,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 45
+  },
+  {
+   "funcion": "_tiff_descomprimir",
+   "faltaban": 9,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 9
+  },
+  {
+   "funcion": "_tiff_ifd0",
+   "faltaban": 29,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 29
+  },
+  {
+   "funcion": "_tiff_min_fila_16",
+   "faltaban": 11,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 11
+  },
+  {
+   "funcion": "_tiff_min_fila_8",
+   "faltaban": 3,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 3
+  },
+  {
+   "funcion": "_wav",
+   "faltaban": 1,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 1
+  },
+  {
+   "funcion": "_webp",
+   "faltaban": 14,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 14
+  },
+  {
+   "funcion": "censar",
+   "faltaban": 1,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 1
+  },
+  {
+   "funcion": "censar_dir",
+   "faltaban": 4,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 4
+  },
+  {
+   "funcion": "es_svg",
+   "faltaban": 2,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 2
+  },
+  {
+   "funcion": "fidelidad_audio",
+   "faltaban": 26,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 26
+  },
+  {
+   "funcion": "fidelidad_imagen",
+   "faltaban": 69,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 69
+  },
+  {
+   "funcion": "fidelidad_pdf",
+   "faltaban": 48,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 48
+  },
+  {
+   "funcion": "fidelidad_vectorial",
+   "faltaban": 40,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 40
+  },
+  {
+   "funcion": "fidelidad_video",
+   "faltaban": 74,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 74
+  },
+  {
+   "funcion": "firma_real",
+   "faltaban": 15,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 15
+  },
+  {
+   "funcion": "main",
+   "faltaban": 55,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 55
+  },
+  {
+   "funcion": "mtime_dir",
+   "faltaban": 4,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 4
+  },
+  {
+   "funcion": "punto1_firma",
+   "faltaban": 3,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 3
+  },
+  {
+   "funcion": "punto2_flujos",
+   "faltaban": 7,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 7
+  },
+  {
+   "funcion": "punto3_propiedades",
+   "faltaban": 16,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 16
+  },
+  {
+   "funcion": "punto4_pedido",
+   "faltaban": 52,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 52
+  },
+  {
+   "funcion": "punto5_escritura",
+   "faltaban": 14,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 14
+  },
+  {
+   "funcion": "senal_alucinacion",
+   "faltaban": 9,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 9
+  },
+  {
+   "funcion": "sondear",
+   "faltaban": 9,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 9
+  },
+  {
+   "funcion": "sondear_en_proceso",
+   "faltaban": 10,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 10
+  },
+  {
+   "funcion": "sondear_subproceso",
+   "faltaban": 80,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 80
+  },
+  {
+   "funcion": "svg_textos",
+   "faltaban": 44,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 44
+  },
+  {
+   "funcion": "v2",
+   "faltaban": 1,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 1
+  },
+  {
+   "funcion": "verificar",
+   "faltaban": 7,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 7
+  },
+  {
+   "funcion": "verificar_fidelidad",
+   "faltaban": 3,
+   "ahora_ejecutadas": 0,
+   "siguen_sin_ejecutar": 3
+  }
+ ]
+}
