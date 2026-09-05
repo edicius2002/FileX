@@ -138,6 +138,26 @@ class Manejador(BaseHTTPRequestHandler):
     protocol_version = "HTTP/1.1"
     timeout = TIMEOUT_SOCKET
 
+    #: ¿Ya se consumió el cuerpo de ESTA petición? Lo marca `_cuerpo` y lo
+    #: consulta `_rechazo` para no volver a leer lo que ya no está. Es de
+    #: CLASE para que valga como valor por defecto en cualquier manejador que
+    #: no pase por `handle_one_request` (los bancos de prueba sin socket), y
+    #: se rearma por petición ahí abajo.
+    _cuerpo_consumido = False
+
+    def handle_one_request(self) -> None:
+        """Cada petición empieza con su cuerpo SIN consumir.
+
+        El manejador se **reutiliza** a lo largo de una conexión `keep-alive`,
+        así que la marca de `_cuerpo` es de la PETICIÓN y no del manejador.
+        Sin este rearme, un `POST` con cuerpo válido dejaría a la petición
+        siguiente rechazando **sin descartar el suyo**, que es exactamente el
+        `WinError 10053` que `_rechazo` viene a impedir: el arreglo de un
+        fallo habría abierto el otro.
+        """
+        self._cuerpo_consumido = False
+        super().handle_one_request()
+
     # ------------------------------------------------------------- utilidades
 
     @property
@@ -178,12 +198,22 @@ class Manejador(BaseHTTPRequestHandler):
         socket y la siguiente petición se lee sobre la mitad de la anterior:
         MEDIDO como `ConnectionAbortedError` (WinError 10053) en la primera
         pasada de `pruebas/test_hito7.py`. Se descarta lo que quepa y se cierra.
+
+        **Pero sólo si queda algo que descartar** (`bench/fix-superficies.md`
+        §1). Cuando quien rechaza es `_cuerpo` —o `do_POST` después de él— el
+        cuerpo ya se leyó, y este segundo `read(n)` se quedaba esperando bytes
+        que no iban a llegar hasta agotar `TIMEOUT_SOCKET`: **30 s de un hilo
+        del `ThreadingHTTPServer` a cambio de 5 bytes de un cliente sin
+        autenticar**. Aislado y contando las llamadas: `[5, 5]`. La lectura no
+        se quita —la necesitan los rechazos que llegan ANTES de leer: `415`,
+        `413`, `421`, `403` y el `405` de los métodos que no se atienden—: se
+        condiciona a que el cuerpo siga ahí.
         """
         try:
             n = int(self.headers.get("Content-Length") or 0)
         except ValueError:
             n = 0
-        if 0 < n <= MAX_CUERPO:
+        if not self._cuerpo_consumido and 0 < n <= MAX_CUERPO:
             try:
                 self.rfile.read(n)
             except OSError:
@@ -251,6 +281,11 @@ class Manejador(BaseHTTPRequestHandler):
             self._rechazo(413, "cuerpo demasiado grande")
             return None
         crudo = self.rfile.read(n) if n else b"{}"
+        # A partir de aquí el cuerpo YA NO ESTÁ en el socket, y eso vale para
+        # los tres rechazos de abajo y para el `404` con que `do_POST` cierra
+        # una ruta desconocida — que es el tercer camino del defecto y el
+        # único que no se ve desde esta función.
+        self._cuerpo_consumido = True
         try:
             d = json.loads(crudo.decode("utf-8"))
         except (ValueError, UnicodeDecodeError):

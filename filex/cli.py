@@ -200,6 +200,69 @@ def _consola_utf8() -> None:
 _ORDENES = {"convertir", "motores", "destinos", "plan"}
 
 
+def _banderas_con_valor(p: argparse.ArgumentParser) -> set[str]:
+    """Qué opciones consumen el token siguiente, **preguntándoselo al parser**.
+
+    La forma corta se detecta antes de `parse_args` contando posicionales, y
+    para contarlos hay que saber cuál de los tokens que quedan es el VALOR de
+    una bandera y no un fichero. Esa verdad ya existe y vive en
+    `construir_parser()`: una lista escrita a mano aquí se desincronizaría en
+    silencio el día que alguien añada una bandera, y el síntoma sería este
+    mismo defecto otra vez (`bench/fix-superficies.md` §2).
+
+    Se recorren también los SUBPARSERS, porque la forma corta reescribe a
+    `convertir` y `--params`/`--timeout` viven ahí. `nargs == 0` es lo que
+    distingue a `--json`, `-v`, `--version` y `-h`, que no consumen nada.
+
+    `argparse` no publica esto: `_actions` y `_SubParsersAction` son privados.
+    Se usan igualmente porque la alternativa —duplicar la tabla— es justo el
+    fallo que se está arreglando, y porque un cambio en esos nombres se vería
+    de inmediato (`test_las_banderas_con_valor_salen_del_PARSER_...`).
+    """
+    con_valor: set[str] = set()
+
+    def _recorrer(parser: argparse.ArgumentParser) -> None:
+        for a in parser._actions:
+            if isinstance(a, argparse._SubParsersAction):
+                for sub in a.choices.values():
+                    _recorrer(sub)
+            elif a.option_strings and a.nargs != 0:
+                con_valor.update(a.option_strings)
+
+    _recorrer(p)
+    return con_valor
+
+
+def _posicionales(argv: list[str], con_valor: set[str]) -> tuple[list[str], int]:
+    """Los posicionales de `argv` y el índice del primero (`-1` si no hay).
+
+    El índice hace falta: `convertir` NO se puede anteponer a todo el `argv`,
+    porque las banderas del parser principal —`--raiz`— dejan de reconocerse
+    en cuanto van detrás del subcomando. MEDIDO: `parse_args(["convertir",
+    "--raiz", "D", "a.png", "b.webp"])` sale con `SystemExit(2)` y
+    *«unrecognized arguments»*, es decir el mismo código de salida que el
+    fallo que se venía a arreglar. El subcomando va justo ANTES del primer
+    posicional.
+
+    `--bandera=valor` no consume el token siguiente y aquí tampoco: no
+    coincide con ninguna cadena de `con_valor`, que son las opciones desnudas.
+    """
+    resto: list[str] = []
+    primero = -1
+    saltar = False
+    for i, a in enumerate(argv):
+        if saltar:
+            saltar = False
+            continue
+        if a.startswith("-") and a != "-":
+            saltar = a in con_valor
+            continue
+        if primero < 0:
+            primero = i
+        resto.append(a)
+    return resto, primero
+
+
 def main(argv=None) -> int:
     """Punto de entrada del CLI. Códigos de salida — interfaz para terceros:
 
@@ -238,9 +301,17 @@ def main(argv=None) -> int:
     # aborta con `SystemExit(2)` ("invalid choice") antes de que el código
     # de más abajo pudiera mirar `args.orden is None` — la forma corta
     # estaba MUERTA desde el commit del hito 1 (MEDIDO: nunca se ejecutó).
-    resto = [a for a in argv if not a.startswith("-")]
+    #
+    # Y el filtro tiene que descontar el VALOR de cada bandera, no sólo la
+    # bandera (`bench/fix-superficies.md` §2). Con `[a for a in argv if not
+    # a.startswith("-")]`, `--raiz D a.png b.webp` daba TRES posicionales —la
+    # forma corta y el confinamiento eran incompatibles, `SystemExit(2)`— y
+    # `--raiz D motores` daba DOS, así que la forma corta se activaba por
+    # error y el subcomando del usuario se volvía el primer posicional de
+    # otro. Un solo defecto, dos síntomas opuestos.
+    resto, primero = _posicionales(argv, _banderas_con_valor(p))
     if resto and resto[0] not in _ORDENES and len(resto) == 2:
-        argv = ["convertir", *argv]
+        argv = [*argv[:primero], "convertir", *argv[primero:]]
 
     args = p.parse_args(argv)
     if args.orden is None:

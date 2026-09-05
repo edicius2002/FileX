@@ -495,43 +495,94 @@ class CliExtremoAExtremo(unittest.TestCase):
         self.assertIn("no se puede arrancar", err.getvalue())
         self.assertEqual(out.getvalue(), "")
 
-    def test_defecto_el_VALOR_de_una_bandera_cuenta_como_posicional(self):
-        """**Defecto MEDIDO, caso mínimo, dos síntomas y una sola causa.**
+    def test_el_VALOR_de_una_bandera_ya_no_cuenta_como_posicional(self):
+        """**Defecto MEDIDO y ARREGLADO** (`bench/fix-superficies.md` §2).
+        Dos síntomas, una sola causa.
 
-        La forma corta se detecta ANTES de `parse_args` con
-        `resto = [a for a in argv if not a.startswith("-")]`, y ese filtro
-        quita las BANDERAS pero no sus VALORES. Consecuencias:
+        La forma corta se detecta ANTES de `parse_args`, y el filtro de
+        entonces —`[a for a in argv if not a.startswith("-")]`— quitaba las
+        BANDERAS pero no sus VALORES. Consecuencias que ya no se dan:
 
-        a. `filex --raiz D a.png b.webp` da `resto` de 3 elementos, la forma
-           corta no se activa, argparse ve `a.png` donde espera un subcomando
-           y aborta con `SystemExit(2)`. **La forma corta y el confinamiento
-           son incompatibles**, que es justo la combinación que escribiría un
-           usuario prudente.
-        b. `filex --raiz D motores` da `resto == ["D", "motores"]`, que **sí**
-           mide 2, así que la forma corta se activa por error y la orden se
-           reescribe a `convertir --raiz D motores`: el subcomando del usuario
-           se convierte en el primer posicional de otro.
+        a. `filex --raiz D a.png b.webp` daba `resto` de 3 elementos, la forma
+           corta no se activaba, argparse veía `a.png` donde espera un
+           subcomando y abortaba con `SystemExit(2)`. **La forma corta y el
+           confinamiento eran incompatibles**, que es justo la combinación que
+           escribiría un usuario prudente.
+        b. `filex --raiz D motores` daba `resto == ["D", "motores"]`, que sí
+           mide 2, así que la forma corta se activaba **por error** y la orden
+           se reescribía a `convertir --raiz D motores`.
 
-        No se parchea aquí —esta ronda no toca `filex/`—; queda el caso mínimo.
+        Y se comprueba además que la raíz **manda de verdad**: no basta con que
+        la orden analice sintácticamente, tiene que confinar.
         """
-        salida = os.path.join(self.dir, "nunca.webp")
-        with _salidas(), self.assertRaises(SystemExit) as ctx:
-            _cli.main(["--raiz", self.dir, self.entrada, salida])
-        self.assertEqual(ctx.exception.code, 2)
-        self.assertFalse(os.path.exists(salida))
-
-        with _salidas() as (_, err), self.assertRaises(SystemExit) as ctx2:
-            _cli.main(["--raiz", self.dir, "motores"])
-        self.assertEqual(ctx2.exception.code, 2)
-        # La prueba de que se reescribió: el error es del subparser `convertir`.
-        self.assertIn("convertir", err.getvalue())
-
-        # Y con el subcomando explícito y tres posicionales la misma orden sí
-        # funciona: la diferencia es la forma corta, no la raíz.
-        with _salidas():
-            rc = _cli.main(["--raiz", self.dir, "convertir", self.entrada, salida])
+        salida = os.path.join(self.dir, "corta-con-raiz.webp")
+        with _salidas() as (out, _):
+            rc = _cli.main(["--raiz", self.dir, self.entrada, salida])
         self.assertEqual(rc, 0)
         self.assertTrue(os.path.isfile(salida))
+        # Con `--raiz` NO sale el aviso de «sin lista blanca»: es la prueba de
+        # que la bandera llegó al parser principal y no al subparser.
+        self.assertIn("corta-con-raiz.webp", out.getvalue())
+
+        # (b) El subcomando del usuario sigue siendo suyo.
+        with _salidas() as (out2, err2):
+            rc2 = _cli.main(["--raiz", self.dir, "motores"])
+        self.assertEqual(rc2, 0)
+        self.assertIn("motores", out2.getvalue().lower())
+        self.assertNotIn("convertir", err2.getvalue())
+
+        # Y con el subcomando explícito la misma orden sigue funcionando.
+        with _salidas():
+            rc3 = _cli.main(["--raiz", self.dir, "convertir", self.entrada,
+                             os.path.join(self.dir, "explicita.webp")])
+        self.assertEqual(rc3, 0)
+
+    def test_la_forma_corta_con_raiz_SIGUE_confinando(self):
+        """La forma corta que ahora convive con `--raiz` no puede convertirse
+        en una puerta trasera: con la raíz puesta, una entrada de fuera se
+        deniega igual que con el subcomando explícito.
+
+        Sin esta prueba, «`--raiz D a.png b.webp` ya funciona» sería
+        compatible con haber colado `--raiz` dentro del subparser y perderla.
+        """
+        fuera = tempfile.mkdtemp(prefix="filex-cob-cli-fuera-")
+        try:
+            ajena = os.path.join(fuera, "ajena.png")
+            shutil.copy2(PNG, ajena)
+            with _salidas() as (out, err):
+                rc = _cli.main(["--raiz", self.dir, ajena,
+                                os.path.join(self.dir, "nunca.webp")])
+            self.assertEqual(rc, 1)
+            self.assertFalse(os.path.exists(os.path.join(self.dir, "nunca.webp")))
+            self.assertNotIn(fuera, out.getvalue() + err.getvalue())
+        finally:
+            shutil.rmtree(fuera, ignore_errors=True)
+
+    def test_una_bandera_del_subcomando_con_valor_tampoco_cuenta(self):
+        """El mismo defecto por la otra puerta: `--params` lleva valor y vive
+        en el subparser `convertir`. Antes, `filex a.png b.webp --params {...}`
+        daba `resto` de 3 y la forma corta no se activaba."""
+        salida = os.path.join(self.dir, "params.webp")
+        with _salidas() as (out, _):
+            rc = _cli.main([self.entrada, salida, "--params", '{"ancho": 40}'])
+        self.assertEqual(rc, 0)
+        self.assertTrue(os.path.isfile(salida))
+        self.assertIn("params.webp", out.getvalue())
+
+    def test_las_banderas_con_valor_salen_del_PARSER_y_no_de_una_lista_a_mano(self):
+        """La fuente de verdad es `construir_parser()`, recorrido también por
+        sus subparsers. Una lista escrita a mano se desincroniza en silencio el
+        día que alguien añada una bandera — y el síntoma sería este mismo
+        defecto, otra vez.
+
+        Se comprueba en las dos direcciones (trampa 73): las que llevan valor
+        están, y las que no llevan valor NO están.
+        """
+        con_valor = _cli._banderas_con_valor(_cli.construir_parser())
+        for lleva in ("--raiz", "--params", "--timeout"):
+            self.assertIn(lleva, con_valor)
+        for no_lleva in ("--json", "-v", "--verboso", "--version", "-h", "--help"):
+            self.assertNotIn(no_lleva, con_valor)
 
 
 # ===========================================================================
@@ -875,39 +926,93 @@ class _ManejadorImpaciente(_api.Manejador):
     Es la ÚNICA diferencia: `timeout` es un atributo de clase de
     `BaseHTTPRequestHandler`, así que todo lo que se ejecuta debajo —
     `do_POST`, `_cuerpo`, `_rechazo`, `_responder` — es el de `filex/api.py`.
-    Existe para que la prueba del defecto de abajo no cueste 30 s por celda.
+    Existe porque, **con el defecto puesto**, cada celda de la prueba de abajo
+    costaba el `TIMEOUT_SOCKET` entero: es el instrumento que hace medible el
+    fallo sin pagar 30 s por celda. Se conserva después del arreglo porque es
+    justo lo que convierte una regresión en un rojo barato en vez de en una
+    suite que tarda un minuto y medio más.
     """
 
     timeout = 1.5
 
 
+class _RfileEspia:
+    """Registra los `read(n)` con `n > 0` y delega todo lo demás.
+
+    Las cabeceras entran por `readline`, así que lo que este espía cuenta es
+    **el cuerpo y sólo el cuerpo**. No sustituye a ninguna pieza de
+    producción: la envuelve.
+    """
+
+    def __init__(self, crudo, registro):
+        self._crudo = crudo
+        self._registro = registro
+
+    def read(self, n=-1):
+        if n:
+            self._registro.append(n)
+        return self._crudo.read(n)
+
+    def __getattr__(self, nombre):
+        return getattr(self._crudo, nombre)
+
+
+class _ManejadorQueCuenta(_ManejadorImpaciente):
+    """Cuenta las lecturas de cuerpo **por petición**, no por conexión.
+
+    Hace falta por petición porque la propiedad que hay que demostrar es de
+    `keep-alive`: un manejador atiende varias peticiones seguidas, así que
+    «el cuerpo ya se consumió» tiene que rearmarse en cada una o la petición
+    siguiente rechazaría sin descartar el suyo — que es el `WinError 10053`
+    que `_rechazo` viene a impedir.
+
+    El espía se monta sobre el `rfile` **crudo** guardado la primera vez: sin
+    eso, la segunda petición envolvería al espía de la primera y contaría dos
+    veces cada lectura (un instrumento que se mide a sí mismo).
+    """
+
+    lecturas: list = []
+
+    def handle_one_request(self):
+        crudo = getattr(self, "_rfile_crudo", None)
+        if crudo is None:
+            crudo = self._rfile_crudo = self.rfile
+        self._lecturas_peticion = []
+        type(self).lecturas.append(self._lecturas_peticion)
+        self.rfile = _RfileEspia(crudo, self._lecturas_peticion)
+        super().handle_one_request()
+
+
 @unittest.skipUnless(HAY_CORPUS, _SIN_CORPUS)
-class ApiCuerpoLeidoDosVeces(unittest.TestCase):
-    """**Defecto MEDIDO**: `_cuerpo` consume el cuerpo y luego llama a
-    `_rechazo`, que **lo vuelve a leer**. Objetivo: 256-261 y 324.
+class ApiCuerpoLeidoUnaSolaVez(unittest.TestCase):
+    """**Defecto MEDIDO y ARREGLADO** (`bench/fix-superficies.md` §1).
+    Objetivo: 256-261 y 324.
 
-    `_rechazo` descarta el cuerpo a propósito —con `keep-alive`, rechazar sin
-    consumirlo deja bytes en el socket y la petición siguiente se lee sobre la
-    mitad de la anterior, MEDIDO como `WinError 10053`—. Pero cuando quien lo
-    llama es `_cuerpo`, el cuerpo **ya se ha leído**: el segundo `read(n)` se
-    queda esperando bytes que no van a llegar y sólo lo desatasca el plazo del
-    socket, `TIMEOUT_SOCKET = 30 s`.
+    Antes: `_cuerpo` consumía el cuerpo y luego llamaba a `_rechazo`, que
+    **lo volvía a leer**; el segundo `read(n)` se quedaba esperando bytes que
+    no iban a llegar y sólo lo desatascaba el plazo del socket,
+    `TIMEOUT_SOCKET = 30 s`. Aislado, contando las llamadas: **`[5, 5]`**.
 
-    Alcance, MEDIDO abajo: pasa en los tres caminos en que `do_POST` rechaza
-    DESPUÉS de `_cuerpo` —cuerpo que no es JSON, cuerpo que no es un objeto, y
-    `POST` a una ruta desconocida— y **no** pasa en los que rechazan antes
-    (`415`, `413`, `421`, `403`), que son los que la suite ya tenía. Con
-    `ThreadingHTTPServer` cada petición ocupa un hilo, así que un cliente sin
-    autenticar retiene un hilo 30 s con 5 bytes.
+    `_rechazo` descarta el cuerpo **a propósito** —con `keep-alive`, rechazar
+    sin consumirlo deja bytes en el socket y la petición siguiente se lee
+    sobre la mitad de la anterior, MEDIDO como `WinError 10053`—, así que el
+    arreglo no es quitar esa lectura: es que `_cuerpo` marque el cuerpo como
+    consumido. **Las dos propiedades se comprueban por separado aquí**: que se
+    lee una sola vez (abajo) y que el descarte SIGUE ocurriendo cuando el
+    rechazo llega antes de leer, incluso en la segunda petición de una misma
+    conexión (`test_un_rechazo_ANTES_...` y `test_la_marca_...`).
 
-    No se parchea aquí (esta ronda no toca `filex/`); queda el caso mínimo, y
-    el remedio evidente es que `_cuerpo` marque el cuerpo como consumido.
+    Alcance, MEDIDO: el fallo estaba en los **tres** caminos en que `do_POST`
+    rechaza DESPUÉS de `_cuerpo` —cuerpo que no es JSON, cuerpo que no es un
+    objeto, y `POST` a una ruta desconocida— y **no** en los que rechazan
+    antes (`415`, `413`, `421`, `403`), que eran justo los que la suite ya
+    tenía: las cuatro defensas probadas eran las cuatro que no lo disparan.
     """
 
     @classmethod
     def setUpClass(cls):
         cls.dir = tempfile.mkdtemp(prefix="filex-cob-api2-")
-        cls.srv = _api.Servidor(("127.0.0.1", 0), _ManejadorImpaciente,
+        cls.srv = _api.Servidor(("127.0.0.1", 0), _ManejadorQueCuenta,
                                 _api.Servicio(fx_de([cls.dir]),
                                               Trabajos(os.path.join(cls.dir, "_t"))))
         cls.puerto = cls.srv.server_address[1]
@@ -921,20 +1026,31 @@ class ApiCuerpoLeidoDosVeces(unittest.TestCase):
         cls.hilo.join(timeout=10)
         shutil.rmtree(cls.dir, ignore_errors=True)
 
-    def _post(self, ruta, crudo):
+    def setUp(self):
+        _ManejadorQueCuenta.lecturas = []
+
+    def _post(self, ruta, crudo, tipo="application/json"):
         req = urllib.request.Request(
             f"http://127.0.0.1:{self.puerto}{ruta}", data=crudo,
-            headers={"Content-Type": "application/json"}, method="POST")
+            headers={"Content-Type": tipo}, method="POST")
         try:
             with urllib.request.urlopen(req, timeout=60) as r:
                 return r.status, json.loads(r.read().decode())
         except urllib.error.HTTPError as e:
             return e.code, json.loads(e.read().decode())
 
-    def test_el_cuerpo_se_lee_dos_veces_y_el_segundo_read_no_tiene_nada(self):
+    def _lecturas_de_cuerpo(self):
+        """Las lecturas de cuerpo de las peticiones que llegaron a tener una.
+
+        Un `ThreadingHTTPServer` con `keep-alive` deja peticiones abiertas sin
+        cuerpo (la que se queda esperando la siguiente línea); esas no cuentan.
+        """
+        return [l for l in _ManejadorQueCuenta.lecturas if l]
+
+    def test_el_cuerpo_se_lee_UNA_sola_vez(self):
         """El mecanismo, sin socket y sin plazo: se cuenta cuántas veces se
-        llama a `read`. Dos, y la segunda pide los mismos bytes que la
-        primera ya se llevó."""
+        llama a `read`. **Una.** Con el defecto puesto era `[5, 5]`, y la
+        segunda pedía los mismos bytes que la primera ya se había llevado."""
         pedidos = []
 
         class _Rfile:
@@ -944,33 +1060,102 @@ class ApiCuerpoLeidoDosVeces(unittest.TestCase):
             def read(self, n):
                 pedidos.append(n)
                 datos, self.queda = self.queda[:n], self.queda[n:]
-                return datos                  # la 2.ª vez devuelve b""
+                return datos
 
         m = _ManejadorDeBanco({"Content-Length": "5"}, rfile=_Rfile())
         self.assertIsNone(m._cuerpo())
         self.assertEqual(m.codigo, 400)
-        self.assertEqual(pedidos, [5, 5],
-                         "el cuerpo tendría que leerse UNA vez, no dos")
+        self.assertEqual(pedidos, [5],
+                         "el cuerpo tiene que leerse UNA vez, no dos")
 
-    def test_los_tres_caminos_que_rechazan_despues_de_leer_el_cuerpo(self):
-        """Los tres acaban respondiendo lo correcto —el `except OSError` del
-        `_rechazo` se traga el plazo del socket— pero sólo después de agotarlo.
+    def test_los_tres_caminos_que_rechazan_despues_de_leer_leen_el_cuerpo_UNA_vez(self):
+        """Los tres caminos que disparaban el defecto, sobre socket de verdad.
 
-        Sin `_ManejadorImpaciente` cada una de estas tres celdas costaría el
-        `TIMEOUT_SOCKET` entero.
+        La aserción es el **número de lecturas**, no el reloj: la espera de 30 s
+        era la consecuencia de la segunda lectura, y contar lecturas es
+        determinista mientras que un umbral de tiempo depende del estado de la
+        máquina (trampa 101). El coste en reloj se mide aparte, en
+        `bench/salidas-fix-superficies/reloj.py`.
         """
         for ruta, crudo, codigo, trozo in (
                 ("/convertir", b"{roto", 400, "no es JSON válido"),
                 ("/convertir", b"[1,2]", 400, "objeto JSON"),
                 ("/no-existe", b"{}", 404, "no hay tal recurso")):
             with self.subTest(ruta=ruta, crudo=crudo):
+                _ManejadorQueCuenta.lecturas = []
                 cod, d = self._post(ruta, crudo)
                 self.assertEqual(cod, codigo)
                 self.assertIn(trozo, d["error"])
+                self.assertEqual(self._lecturas_de_cuerpo(), [[len(crudo)]],
+                                 "el cuerpo se leyó más de una vez")
 
-    def test_un_cuerpo_vacio_no_dispara_el_defecto(self):
+    def test_un_rechazo_ANTES_de_leer_sigue_descartando_el_cuerpo(self):
+        """La otra mitad del contrato, sobre socket de verdad: cuando el
+        rechazo llega ANTES de `_cuerpo` (aquí un `415` por `Content-Type`),
+        `_rechazo` **sí** tiene que consumir el cuerpo. Una lectura, y es la
+        del descarte."""
+        cod, d = self._post("/convertir", b"{}" * 8, tipo="text/plain")
+        self.assertEqual(cod, 415)
+        self.assertIn("application/json", d["error"])
+        self.assertEqual(self._lecturas_de_cuerpo(), [[16]],
+                         "el rechazo dejó de descartar el cuerpo")
+
+    def test_la_marca_de_consumido_se_rearma_en_cada_peticion(self):
+        """`keep-alive`: el manejador se reutiliza, así que la marca es de la
+        PETICIÓN y no del manejador.
+
+        Petición 1: un `POST` válido que consume su cuerpo y **no** cierra la
+        conexión. Petición 2, por el mismo socket: un `415`, que rechaza antes
+        de leer y por tanto tiene que descartar. Sin el rearme, la marca de la
+        primera sobreviviría y la segunda dejaría 16 bytes en el socket.
+        """
+        s = socket.create_connection(("127.0.0.1", self.puerto), timeout=20)
+        try:
+            uno = json.dumps({"entrada": "no-existe.png",
+                              "salida": "no-existe.webp"}).encode()
+            s.sendall(b"POST /convertir HTTP/1.1\r\nHost: 127.0.0.1\r\n"
+                      b"Content-Type: application/json\r\nContent-Length: "
+                      + str(len(uno)).encode() + b"\r\n\r\n" + uno)
+            cab = self._leer_respuesta(s)
+            self.assertNotIn(b"Connection: close", cab,
+                             "la 1.ª petición cerró: no hay 2.ª que medir")
+
+            dos = b"{}" * 8
+            s.sendall(b"POST /convertir HTTP/1.1\r\nHost: 127.0.0.1\r\n"
+                      b"Content-Type: text/plain\r\nContent-Length: "
+                      + str(len(dos)).encode() + b"\r\n\r\n" + dos)
+            cab2 = self._leer_respuesta(s)
+            self.assertIn(b" 415 ", cab2)
+        finally:
+            s.close()
+        self.assertEqual(self._lecturas_de_cuerpo(), [[len(uno)], [len(dos)]],
+                         "la 2.ª petición de la conexión no descartó su cuerpo")
+
+    @staticmethod
+    def _leer_respuesta(s) -> bytes:
+        """Lee cabeceras y, si lo hay, el cuerpo declarado. Sin `http.client`
+        para que la conexión la gobierne la prueba y no una biblioteca."""
+        datos = b""
+        while b"\r\n\r\n" not in datos:
+            trozo = s.recv(4096)
+            if not trozo:
+                break
+            datos += trozo
+        cab, _, resto = datos.partition(b"\r\n\r\n")
+        n = 0
+        for linea in cab.split(b"\r\n"):
+            if linea.lower().startswith(b"content-length:"):
+                n = int(linea.split(b":")[1])
+        while len(resto) < n:
+            trozo = s.recv(4096)
+            if not trozo:
+                break
+            resto += trozo
+        return cab
+
+    def test_un_cuerpo_vacio_no_lee_nada(self):
         """`n == 0` no lee nada, así que `_rechazo` tampoco: la frontera del
-        defecto es «se leyó algo», no «se rechazó»."""
+        defecto era «se leyó algo», no «se rechazó»."""
         req = urllib.request.Request(
             f"http://127.0.0.1:{self.puerto}/no-existe", data=b"",
             headers={"Content-Type": "application/json", "Content-Length": "0"},
@@ -980,6 +1165,7 @@ class ApiCuerpoLeidoDosVeces(unittest.TestCase):
             self.fail("debería ser 404")
         except urllib.error.HTTPError as e:
             self.assertEqual(e.code, 404)
+        self.assertEqual(self._lecturas_de_cuerpo(), [])
 
 
 def _hay_loopback_ipv6() -> bool:
