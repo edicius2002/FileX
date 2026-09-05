@@ -1,0 +1,60 @@
+{
+ "mismo_orden": {
+  "etiquetas_entrada": [
+   {
+    "tipo": "audio",
+    "language": null,
+    "title": null
+   },
+   {
+    "tipo": "video",
+    "language": "spa",
+    "title": "Prueba"
+   }
+  ],
+  "etiquetas_salida": [
+   {
+    "tipo": "audio",
+    "language": null,
+    "title": null
+   },
+   {
+    "tipo": "video",
+    "language": "spa",
+    "title": "Prueba"
+   }
+  ],
+  "severidad": "informativo",
+  "mensaje": "las 1 etiquetas de pista se conservan",
+  "conjunto_conservado": true
+ },
+ "reordenado": {
+  "etiquetas_entrada": [
+   {
+    "tipo": "audio",
+    "language": null,
+    "title": null
+   },
+   {
+    "tipo": "video",
+    "language": "spa",
+    "title": "Prueba"
+   }
+  ],
+  "etiquetas_salida": [
+   {
+    "tipo": "video",
+    "language": "spa",
+    "title": "Prueba"
+   },
+   {
+    "tipo": "audio",
+    "language": null,
+    "title": null
+   }
+  ],
+  "severidad": "aviso",
+  "mensaje": "se pierden etiquetas de pista: pista 1 language: 'spa' -> None; pista 1 title: 'Prueba' -> None",
+  "conjunto_conservado": true
+ }
+}
