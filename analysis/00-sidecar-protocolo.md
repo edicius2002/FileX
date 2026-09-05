@@ -1,6 +1,6 @@
 # Sidecar Python persistente en SnapOtter — disección de ingeniería
 
-Fuente: `D:\Work\research\FileX\repos\orchestrators\SnapOtter\`. Todas las rutas son relativas a esa raíz.
+Fuente: `repos/orchestrators/SnapOtter/` (bajo la raíz del clon). Todas las rutas son relativas a esa raíz.
 Todo lo afirmado aquí está citado con `fichero:línea`. Lo que no he podido verificar en el código está marcado explícitamente como **[no verificado]**.
 
 ---

@@ -39,7 +39,7 @@ es de verdad del protocolo: el catálogo, los *roots* y el servidor.
 
 Arranque:
 
-    .venv-mcp-filex/Scripts/python.exe -m filex.mcp --raiz D:/Work/research/FileX
+    .venv-mcp-filex/Scripts/python.exe -m filex.mcp --raiz /ruta/a/tu/clon-de-FileX
 
 Requiere **`mcp>=2.0.0`** (§5.3) y **un venv propio**: `mcp~=1.8.0` y
 `mcp>=2.0.0` no coexisten.

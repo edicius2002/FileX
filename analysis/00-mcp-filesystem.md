@@ -1,6 +1,6 @@
 # 00 — Implementación de referencia oficial MCP: `filesystem`, `everything`, `fetch`
 
-Repo analizado: `D:\Work\research\FileX\repos\mcp-refs\servers\src\` (modelcontextprotocol/servers, **MIT/Apache-2.0 en transición** — ver aviso).
+Repo analizado: `repos/mcp-refs/servers/src/` (bajo la raíz del clon; modelcontextprotocol/servers, **MIT/Apache-2.0 en transición** — ver aviso).
 
 > ⚠️ **Corrección de licencia (21/08/2026).** Este documento y varios otros daban el repo por **MIT**. Su `LICENSE`
 > empieza: *«The MCP project is undergoing a licensing transition from the MIT License to the Apache License,
