@@ -920,6 +920,12 @@ def _webp(fh) -> dict:
     fh.seek(12)
     d = {"formato": "webp", "categoria": "imagen", "tiene_alfa": False,
          "profundidad_bits": 8, "n_imagenes": 1}
+    # Los fotogramas se cuentan APARTE, arrancando en cero. Sumandolos sobre el
+    # `n_imagenes: 1` inicial, un animado de N daba N+1 —dos trozos ANMF,
+    # `n_imagenes = 3`— mientras `magick identify` decia 2
+    # (`bench/cobertura-webp.md` §5). `n_imagenes` es una propiedad DECLARADA
+    # que el punto 3 del contrato compara entre entrada y salida.
+    anmf = 0
     while True:
         cab = fh.read(8)
         if len(cab) < 8:
@@ -931,7 +937,6 @@ def _webp(fh) -> dict:
             d["tiene_alfa"] = bool(cuerpo[0] & 0x10)
             d["ancho"] = 1 + int.from_bytes(cuerpo[4:7], "little")
             d["alto"] = 1 + int.from_bytes(cuerpo[7:10], "little")
-            d["n_imagenes"] = 1
         elif tipo == b"VP8 " and "ancho" not in d:
             d["ancho"] = _u16(cuerpo, 6, be=False) & 0x3FFF
             d["alto"] = _u16(cuerpo, 8, be=False) & 0x3FFF
@@ -945,9 +950,11 @@ def _webp(fh) -> dict:
         elif tipo == b"ALPH":
             d["tiene_alfa"] = True
         elif tipo == b"ANMF":
-            d["n_imagenes"] = d.get("n_imagenes", 0) + 1
+            anmf += 1
         if salto > 0:
             fh.seek(salto, io.SEEK_CUR)
+    if anmf:
+        d["n_imagenes"] = anmf
     return d
 
 
@@ -1910,7 +1917,22 @@ def _alfa_min_png(ruta: str, exacto: bool = False) -> dict:
                         r["primer_transparente"] = (rec[0].index(v), y)
             else:
                 hi, lo = rec[0], rec[1]
-                if min(hi) < 255:
+                # La guarda tiene que ser el MINIMO CORRIENTE, no 255. Con
+                # `min(hi) < 255` la fila entera se saltaba en cuanto todos los
+                # bytes altos valian 0xFF, asi que TODO alfa entre 0xFF00 y
+                # 0xFFFE se perdia: se publicaba `alfa_min = 1.0` **y
+                # `exacto = True`**, que es una afirmacion falsa y no una duda,
+                # y con ella `alfa_no_trivial` pasaba a False y la regla I3
+                # daba la entrada por «sin zonas transparentes» sin mirar la
+                # salida (`bench/cobertura-png.md` §2). La rama Adam7 de este
+                # mismo modulo ya lo hacia bien.
+                #
+                # `min(hi) <= mn_pareja >> 8` es EXACTA en las dos direcciones:
+                # un pixel con `hi > mn_pareja >> 8` cumple `hi << 8 > mn_pareja`
+                # y no puede bajar el minimo, asi que saltarse la fila no
+                # pierde nada; y con el minimo corriente todavia en 0xFFFF la
+                # guarda vale 255 y la fila se mira siempre.
+                if min(hi) <= mn_pareja >> 8:
                     for j in range(an):
                         v = (hi[j] << 8) | lo[j]
                         if v < mn_pareja:
@@ -2378,11 +2400,23 @@ def _clamp_full(a, b, c):
 
 
 def _clamp_half(a, b, c):
+    # libwebp (`dsp/lossless.c`) define
+    #   AddSubtractComponentHalf(a, b) = Clip255(a + (a - b) / 2)
+    # con la division entera de C, que **trunca hacia CERO**. `//` de Python
+    # trunca hacia -infinito, y los dos difieren en 1 siempre que `a - b` sea
+    # negativo e IMPAR: sobre 20 000 vecindades ARGB, el modo 13 discrepaba en
+    # 12 434 y los otros trece en 0 (`bench/cobertura-webp.md` §4). No era
+    # teorico: en 10 de 40 imagenes escritas por este mismo `magick` movia el
+    # `alfa_min` PUBLICADO, hasta siete niveles de alfa.
+    #
+    # `int(d / 2)` truncaria como C pero pasa por coma flotante; `-(-d // 2)`
+    # para los negativos es exacto y entero.
     m = _med2(a, b)
     v = 0
     for desp in (24, 16, 8, 0):
         av = (m >> desp) & 0xFF
-        x = av + (av - ((c >> desp) & 0xFF)) // 2
+        d = av - ((c >> desp) & 0xFF)
+        x = av + (d // 2 if d >= 0 else -((-d) // 2))
         v |= (0 if x < 0 else (255 if x > 255 else x)) << desp
     return v
 
@@ -2700,6 +2734,18 @@ def _lzw_gif_usa(datos: bytes, mcs: int, objetivo: int, tope: int) -> bool:
     aparece el indice 'objetivo'; no decodifica el resto. Ese corte temprano es
     lo que hace barato el caso que importa (el GIF que SI tiene transparencia).
     """
+    # `mcs` sale de un byte del fichero, sin filtrar. Con `mcs >= 9`, el
+    # `bytes([i]) for i in range(1 << mcs)` de la linea siguiente lanzaba
+    # `ValueError: bytes must be in range(0, 256)`: un error de la
+    # implementacion disfrazado de error del formato
+    # (`bench/cobertura-tiffgif.md` §6 D2). GIF89a fija el rango en 2..8 —y el
+    # censo de este repositorio lo confirma: los 180 bloques de imagen de los
+    # GIF del arbol usan `mcs = 8` y ninguno otro valor—. Se sigue lanzando
+    # `ValueError`, que es lo que `_alfa_min_gif` captura; lo que cambia es que
+    # el motivo dice cual es el byte malo.
+    if not 2 <= mcs <= 8:
+        raise ValueError("mcs de GIF fuera del rango 2..8 del formato: %d"
+                         % mcs)
     limpio = 1 << mcs
     fin = limpio + 1
     base = [bytes([i]) for i in range(limpio)]
@@ -2740,7 +2786,15 @@ def _lzw_gif_usa(datos: bytes, mcs: int, objetivo: int, tope: int) -> bool:
 
 
 def _packbits(datos: bytes, n: int) -> bytearray:
-    """Descompresion PackBits (TIFF compresion 32773)."""
+    """Descompresion PackBits (TIFF compresion 32773). `n` es un TOPE EXACTO.
+
+    El `len(out) < n` del bucle se evalua ANTES de volcar un literal de hasta
+    128 bytes, asi que la salida se pasaba —28 bytes pidiendo 17—, y `esperado`
+    significaba dos cosas distintas dentro de `_tiff_descomprimir`: tope exacto
+    en las compresiones 1, 5, 8 y 32946, y simple condicion de parada en esta
+    (`bench/cobertura-tiffgif.md` §6 D3). Se recorta al final: el nombre del
+    parametro invita a tomarlo por un tope, y ahora lo es en las cinco.
+    """
     out = bytearray()
     i, ln = 0, len(datos)
     while i < ln and len(out) < n:
@@ -2753,6 +2807,7 @@ def _packbits(datos: bytes, n: int) -> bytearray:
             if i < ln:
                 out += bytes([datos[i]]) * (257 - h)
             i += 1
+    del out[n:]
     return out
 
 
@@ -2981,7 +3036,19 @@ def _alfa_min_tiff(ruta: str, exacto: bool = False) -> dict:
 #     se anota que los demas pueden declararla sin mostrarla.
 
 def _gif_bloques(datos: bytes):
-    """Itera (tipo, info) sobre los bloques de un GIF. tipo: 'gce' o 'img'."""
+    """Itera (tipo, info) sobre los bloques de un GIF. tipo: 'gce' o 'img'.
+
+    PARA donde se le acaban los datos, igual que `_gif`. Sin las guardas de
+    longitud, un GIF truncado reventaba: `struct.unpack_from("<HHHH", ...)`
+    sobre un descriptor de imagen a medias lanzaba `struct.error`, y mas
+    adelante saltaba un `IndexError` dentro de los sub-bloques. Sobre los 32
+    cortes de un GIF minimo de 44 B, `_gif` devolvia un recuento en los 32 y
+    este generador no (`bench/cobertura-tiffgif.md` §6 D1). Dos lectores del
+    mismo formato con dos disciplinas distintas, y el precio no era una
+    excepcion sin capturar —la red de `alfa_minimo` esta dos capas mas arriba—
+    sino la perdida del MOTIVO: lo que llegaba al contrato era el volcado de la
+    excepcion en vez de una de las frases que `_alfa_min_gif` sabe escribir.
+    """
     if len(datos) < 13 or datos[:3] != b"GIF":
         return
     i = 13
@@ -2993,6 +3060,8 @@ def _gif_bloques(datos: bytes):
         if b == 0x3B:                                  # trailer
             return
         if b == 0x21:                                  # extension
+            if i + 2 > ln:                             # falta la etiqueta
+                return
             etiq = datos[i + 1]
             i += 2
             sub = []
@@ -3004,11 +3073,15 @@ def _gif_bloques(datos: bytes):
                 yield "gce", {"transparente": sub[0][0] & 0x01,
                               "indice": sub[0][3]}
         elif b == 0x2C:                                # descriptor de imagen
+            if i + 10 > ln:            # geometria (8 B) + banderas (1 B)
+                return
             izq, arr, ai, al_ = struct.unpack_from("<HHHH", datos, i + 1)
             banderas = datos[i + 9]
             i += 10
             n_local = 2 ** ((banderas & 0x07) + 1) if banderas & 0x80 else 0
             i += 3 * n_local
+            if i >= ln:                # la tabla local o el `mcs` no caben
+                return
             mcs = datos[i]
             i += 1
             trozos = []
@@ -3036,7 +3109,24 @@ def _alfa_min_gif(ruta: str, exacto: bool = False) -> dict:
     gce = None
     n_img = 0
     declara_despues = False
-    for tipo, info in _gif_bloques(datos):
+    # La iteracion del generador va DENTRO de un `try`: estaba fuera, y el
+    # unico `try` de esta funcion envolvia la llamada a `_lzw_gif_usa`, asi que
+    # cualquier fallo de `_gif_bloques` salia por aqui sin motivo
+    # (`bench/cobertura-tiffgif.md` §6 D1). Con las guardas de longitud del
+    # generador esto ya no deberia dispararse nunca; se deja porque el
+    # generador lee un formato de entrada y un lector sin red no es un lector,
+    # y porque si algun dia vuelve a lanzar, lo que llegue al contrato tiene
+    # que ser una frase y no el volcado de una excepcion.
+    bloques = _gif_bloques(datos)
+    while True:
+        try:
+            tipo, info = next(bloques)
+        except StopIteration:
+            break
+        except (struct.error, IndexError, ValueError) as e:
+            return dict(r, evaluable=False, alfa_min=None, cota_alfa_min=0.0,
+                        motivo="bloques del GIF ilegibles: %s: %s"
+                               % (type(e).__name__, e))
         if tipo == "gce":
             gce = info
             if n_img >= 1 and info["transparente"]:
@@ -4453,6 +4543,37 @@ def _ffprobe_etiquetas(ruta: str):
     return fuera, None
 
 
+def _emparejar_por_tipo(te, ts):
+    """V5: empareja cada pista de la ENTRADA con la de la SALIDA del mismo
+    tipo y la misma posicion DENTRO de su tipo. Devuelve una lista paralela a
+    `te`, con `None` donde la salida no tiene con quien emparejar.
+
+    V5 emparejaba por POSICION ABSOLUTA (`ts[i] if i < len(ts) else None`), y
+    reordenar las pistas —que es lo que hace `ffmpeg` por defecto cuando no se
+    le pasa `-map 0`— cruzaba el video con el audio: sobre un `.mkv` con
+    `[0]=audio sin etiquetar, [1]=video con language=spa`, remuxear a
+    `-map 0:v -map 0:a` daba `aviso: se pierden etiquetas` sin que hubiera
+    desaparecido ninguna (`bench/cobertura-fidelidad.md` §5.2). FileX invoca
+    `ffmpeg` con `-map 0` explicito por regla de diseno, asi que el falso
+    positivo aparecia al juzgar una salida que produjo OTRO, que es justo lo
+    que hace `--solo-fidelidad`.
+    """
+    por_tipo, cuenta = {}, {}
+    for s in ts:
+        t = s.get("tipo")
+        k = cuenta.get(t, 0)
+        cuenta[t] = k + 1
+        por_tipo[(t, k)] = s
+    cuenta = {}
+    fuera = []
+    for e in te:
+        t = e.get("tipo")
+        k = cuenta.get(t, 0)
+        cuenta[t] = k + 1
+        fuera.append(por_tipo.get((t, k)))
+    return fuera
+
+
 def _ffmpeg_psnr(salida: str, entrada: str):
     rc, out, err = _correr(["ffmpeg", "-hide_banner", "-loglevel", "info",
                             "-i", salida, "-i", entrada,
@@ -5071,10 +5192,11 @@ def fidelidad_video(salida, entrada, pedido, sonda, sonda_ent, ms):
                               "discrimina" % len(te), None, 0))
             else:
                 perdidas = []
+                parejas = _emparejar_por_tipo(te, ts)
                 for i, x in enumerate(te):
                     if not (x["language"] or x["title"]):
                         continue
-                    y = ts[i] if i < len(ts) else None
+                    y = parejas[i]
                     for campo in ("language", "title"):
                         # 'und' es el valor por defecto de MP4/Matroska: que la
                         # salida ponga 'und' donde la entrada no decia nada no

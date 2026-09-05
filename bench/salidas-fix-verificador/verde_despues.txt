@@ -1,0 +1,34 @@
+===== test_cob_png =====
+Ran 54 tests in 1.349s
+OK
+rc=0
+===== test_cob_tiffgif =====
+Ran 75 tests in 2.288s
+OK
+rc=0
+===== test_cob_webp =====
+Ran 45 tests in 0.217s
+OK
+rc=0
+===== test_cob_fidelidad =====
+Ran 129 tests in 12.969s
+OK
+rc=0
+===== test_contrato_v =====
+Ran 19 tests in 0.710s
+OK
+rc=0
+===== test_a7_ciego =====
+Ran 6 tests in 2.805s
+OK
+rc=0
+===== test_sondeo =====
+FAIL: test_ningun_motor_disponible_es_no_comparable_bajo_este_interprete (pruebas.test_sondeo.SelladoDelDisco.test_ningun_motor_disponible_es_no_comparable_bajo_este_interprete) (motor='imagemagick')
+FAIL: test_ningun_motor_disponible_es_no_comparable_bajo_este_interprete (pruebas.test_sondeo.SelladoDelDisco.test_ningun_motor_disponible_es_no_comparable_bajo_este_interprete) (motor='ffmpeg')
+FAIL: test_ningun_motor_disponible_es_no_comparable_bajo_este_interprete (pruebas.test_sondeo.SelladoDelDisco.test_ningun_motor_disponible_es_no_comparable_bajo_este_interprete) (motor='doc_libreoffice')
+FAIL: test_ningun_motor_disponible_es_no_comparable_bajo_este_interprete (pruebas.test_sondeo.SelladoDelDisco.test_ningun_motor_disponible_es_no_comparable_bajo_este_interprete) (motor='doc_pandoc')
+FAIL: test_ningun_motor_disponible_es_no_comparable_bajo_este_interprete (pruebas.test_sondeo.SelladoDelDisco.test_ningun_motor_disponible_es_no_comparable_bajo_este_interprete) (motor='doc_calibre')
+FAIL: test_ningun_motor_disponible_tiene_el_sondeo_caducado (pruebas.test_sondeo.SelladoDelDisco.test_ningun_motor_disponible_tiene_el_sondeo_caducado)
+Ran 48 tests in 2.322s
+FAILED (failures=6)
+rc=1
