@@ -1,0 +1,421 @@
+[
+ {
+  "mutacion": "_webp / bandera de alfa de VP8X",
+  "estado": "ROJA",
+  "pruebas_rojas": [
+   "test_la_bandera_de_alfa_de_vp8x_decide_cuando_no_hay_alph"
+  ]
+ },
+ {
+  "mutacion": "_webp / recuento de ANMF",
+  "estado": "ROJA",
+  "pruebas_rojas": [
+   "test_DEFECTO_el_webp_animado_cuenta_un_fotograma_de_mas"
+  ]
+ },
+ {
+  "mutacion": "_webp / ancho de VP8L",
+  "estado": "ROJA",
+  "pruebas_rojas": [
+   "test_dimensiones_y_alfa_de_cada_familia"
+  ]
+ },
+ {
+  "mutacion": "_BitsLSB.leer / mascara",
+  "estado": "ROJA",
+  "pruebas_rojas": [
+   "test_DEFECTO_el_predictor_13_mueve_el_alfa_min_publicado",
+   "test_al_agotarse_los_datos_devuelve_ceros",
+   "test_alfa_minimo_publica_el_minimo_y_su_posicion",
+   "test_cache_de_color_de_mas_de_once_bits",
+   "test_cada_fixture_llega_a_la_transformacion_que_dice_ejercitar",
+   "test_control_positivo_del_escritor_de_vp8l",
+   "test_el_alph_comprimido_pasa_por_el_vp8l_de_plano_alfa",
+   "test_el_plano_alfa_coincide_byte_a_byte_con_libwebp",
+   "test_el_rgba_entero_coincide_byte_a_byte_con_libwebp",
+   "test_la_paleta_ancha_usa_indices_sin_empaquetar",
+   "test_la_paleta_estrecha_empaqueta_ocho_indices_por_byte",
+   "test_lee_en_orden_lsb_primero",
+   "test_leer_de_cero_bits_no_consume_nada",
+   "test_referencia_hacia_atras_fuera_de_rango",
+   "test_repeticion_de_longitudes_fuera_de_rango",
+   "test_segundo_simbolo_simple_fuera_del_alfabeto",
+   "test_simbolo_simple_fuera_del_alfabeto",
+   "test_transformacion_repetida",
+   "test_version_vp8l_no_soportada"
+  ]
+ },
+ {
+  "mutacion": "_BitsLSB.ojear / mascara",
+  "estado": "ROJA",
+  "pruebas_rojas": [
+   "test_DEFECTO_el_predictor_13_mueve_el_alfa_min_publicado",
+   "test_alfa_minimo_publica_el_minimo_y_su_posicion",
+   "test_cada_fixture_llega_a_la_transformacion_que_dice_ejercitar",
+   "test_codigo_huffman_con_hueco",
+   "test_el_alph_comprimido_pasa_por_el_vp8l_de_plano_alfa",
+   "test_el_plano_alfa_coincide_byte_a_byte_con_libwebp",
+   "test_el_rgba_entero_coincide_byte_a_byte_con_libwebp",
+   "test_la_paleta_ancha_usa_indices_sin_empaquetar",
+   "test_la_paleta_estrecha_empaqueta_ocho_indices_por_byte",
+   "test_ojear_no_consume_y_saltar_si",
+   "test_referencia_hacia_atras_fuera_de_rango",
+   "test_repeticion_de_longitudes_fuera_de_rango"
+  ]
+ },
+ {
+  "mutacion": "_BitsLSB.saltar",
+  "estado": "ROJA",
+  "pruebas_rojas": [
+   "test_DEFECTO_el_predictor_13_mueve_el_alfa_min_publicado",
+   "test_alfa_minimo_publica_el_minimo_y_su_posicion",
+   "test_cada_fixture_llega_a_la_transformacion_que_dice_ejercitar",
+   "test_codigo_huffman_con_hueco",
+   "test_el_alph_comprimido_pasa_por_el_vp8l_de_plano_alfa",
+   "test_el_plano_alfa_coincide_byte_a_byte_con_libwebp",
+   "test_el_rgba_entero_coincide_byte_a_byte_con_libwebp",
+   "test_la_paleta_ancha_usa_indices_sin_empaquetar",
+   "test_la_paleta_estrecha_empaqueta_ocho_indices_por_byte",
+   "test_referencia_hacia_atras_fuera_de_rango"
+  ]
+ },
+ {
+  "mutacion": "_leer_simbolo / consumo del codigo",
+  "estado": "ROJA",
+  "pruebas_rojas": [
+   "test_DEFECTO_el_predictor_13_mueve_el_alfa_min_publicado",
+   "test_alfa_minimo_publica_el_minimo_y_su_posicion",
+   "test_cada_fixture_llega_a_la_transformacion_que_dice_ejercitar",
+   "test_codigo_huffman_con_hueco",
+   "test_el_alph_comprimido_pasa_por_el_vp8l_de_plano_alfa",
+   "test_el_plano_alfa_coincide_byte_a_byte_con_libwebp",
+   "test_el_rgba_entero_coincide_byte_a_byte_con_libwebp",
+   "test_la_paleta_ancha_usa_indices_sin_empaquetar",
+   "test_la_paleta_estrecha_empaqueta_ocho_indices_por_byte",
+   "test_referencia_hacia_atras_fuera_de_rango",
+   "test_repeticion_de_longitudes_fuera_de_rango"
+  ]
+ },
+ {
+  "mutacion": "_huff_tabla / codigo canonico",
+  "estado": "ROJA",
+  "pruebas_rojas": [
+   "test_DEFECTO_el_predictor_13_mueve_el_alfa_min_publicado",
+   "test_alfa_minimo_publica_el_minimo_y_su_posicion",
+   "test_cada_fixture_llega_a_la_transformacion_que_dice_ejercitar",
+   "test_el_alph_comprimido_pasa_por_el_vp8l_de_plano_alfa",
+   "test_el_plano_alfa_coincide_byte_a_byte_con_libwebp",
+   "test_el_rgba_entero_coincide_byte_a_byte_con_libwebp",
+   "test_la_paleta_ancha_usa_indices_sin_empaquetar",
+   "test_la_paleta_estrecha_empaqueta_ocho_indices_por_byte"
+  ]
+ },
+ {
+  "mutacion": "_huff_tabla / inversion de bits",
+  "estado": "ROJA",
+  "pruebas_rojas": [
+   "test_DEFECTO_el_predictor_13_mueve_el_alfa_min_publicado",
+   "test_alfa_minimo_publica_el_minimo_y_su_posicion",
+   "test_cada_fixture_llega_a_la_transformacion_que_dice_ejercitar",
+   "test_el_alph_comprimido_pasa_por_el_vp8l_de_plano_alfa",
+   "test_el_plano_alfa_coincide_byte_a_byte_con_libwebp",
+   "test_el_rgba_entero_coincide_byte_a_byte_con_libwebp",
+   "test_la_paleta_ancha_usa_indices_sin_empaquetar",
+   "test_la_paleta_estrecha_empaqueta_ocho_indices_por_byte"
+  ]
+ },
+ {
+  "mutacion": "_leer_codigo_huffman / ncod",
+  "estado": "ROJA",
+  "pruebas_rojas": [
+   "test_DEFECTO_el_predictor_13_mueve_el_alfa_min_publicado",
+   "test_alfa_minimo_publica_el_minimo_y_su_posicion",
+   "test_cada_fixture_llega_a_la_transformacion_que_dice_ejercitar",
+   "test_codigo_huffman_con_hueco",
+   "test_el_alph_comprimido_pasa_por_el_vp8l_de_plano_alfa",
+   "test_el_plano_alfa_coincide_byte_a_byte_con_libwebp",
+   "test_el_rgba_entero_coincide_byte_a_byte_con_libwebp",
+   "test_la_paleta_ancha_usa_indices_sin_empaquetar",
+   "test_la_paleta_estrecha_empaqueta_ocho_indices_por_byte",
+   "test_referencia_hacia_atras_fuera_de_rango",
+   "test_repeticion_de_longitudes_fuera_de_rango"
+  ]
+ },
+ {
+  "mutacion": "_leer_codigo_huffman / simbolo simple de 8 bits",
+  "estado": "ROJA",
+  "pruebas_rojas": [
+   "test_DEFECTO_el_predictor_13_mueve_el_alfa_min_publicado",
+   "test_alfa_minimo_publica_el_minimo_y_su_posicion",
+   "test_cada_fixture_llega_a_la_transformacion_que_dice_ejercitar",
+   "test_codigo_huffman_con_hueco",
+   "test_control_positivo_del_escritor_de_vp8l",
+   "test_el_alph_comprimido_pasa_por_el_vp8l_de_plano_alfa",
+   "test_el_plano_alfa_coincide_byte_a_byte_con_libwebp",
+   "test_el_rgba_entero_coincide_byte_a_byte_con_libwebp",
+   "test_la_paleta_ancha_usa_indices_sin_empaquetar",
+   "test_la_paleta_estrecha_empaqueta_ocho_indices_por_byte",
+   "test_referencia_hacia_atras_fuera_de_rango",
+   "test_segundo_simbolo_simple_fuera_del_alfabeto",
+   "test_simbolo_simple_fuera_del_alfabeto"
+  ]
+ },
+ {
+  "mutacion": "_leer_longitudes / desplazamiento de repeticion",
+  "estado": "ROJA",
+  "pruebas_rojas": [
+   "test_DEFECTO_el_predictor_13_mueve_el_alfa_min_publicado",
+   "test_alfa_minimo_publica_el_minimo_y_su_posicion",
+   "test_cada_fixture_llega_a_la_transformacion_que_dice_ejercitar",
+   "test_el_alph_comprimido_pasa_por_el_vp8l_de_plano_alfa",
+   "test_el_plano_alfa_coincide_byte_a_byte_con_libwebp",
+   "test_el_rgba_entero_coincide_byte_a_byte_con_libwebp",
+   "test_la_paleta_ancha_usa_indices_sin_empaquetar",
+   "test_la_paleta_estrecha_empaqueta_ocho_indices_por_byte",
+   "test_referencia_hacia_atras_fuera_de_rango"
+  ]
+ },
+ {
+  "mutacion": "_prefijo / bits extra",
+  "estado": "ROJA",
+  "pruebas_rojas": [
+   "test_alfa_minimo_publica_el_minimo_y_su_posicion",
+   "test_cada_fixture_llega_a_la_transformacion_que_dice_ejercitar",
+   "test_el_alph_comprimido_pasa_por_el_vp8l_de_plano_alfa",
+   "test_el_plano_alfa_coincide_byte_a_byte_con_libwebp",
+   "test_el_rgba_entero_coincide_byte_a_byte_con_libwebp",
+   "test_la_paleta_estrecha_empaqueta_ocho_indices_por_byte"
+  ]
+ },
+ {
+  "mutacion": "_distancia_plano / tabla de planos",
+  "estado": "ROJA",
+  "pruebas_rojas": [
+   "test_alfa_minimo_publica_el_minimo_y_su_posicion",
+   "test_cada_fixture_llega_a_la_transformacion_que_dice_ejercitar",
+   "test_el_alph_comprimido_pasa_por_el_vp8l_de_plano_alfa",
+   "test_el_plano_alfa_coincide_byte_a_byte_con_libwebp",
+   "test_el_rgba_entero_coincide_byte_a_byte_con_libwebp",
+   "test_la_paleta_estrecha_empaqueta_ocho_indices_por_byte"
+  ]
+ },
+ {
+  "mutacion": "_predice / modo 7 (media de L y T)",
+  "estado": "ROJA",
+  "pruebas_rojas": [
+   "test_DEFECTO_el_predictor_13_mueve_el_alfa_min_publicado",
+   "test_el_rgba_entero_coincide_byte_a_byte_con_libwebp",
+   "test_los_modos_0_a_12_coinciden_con_la_especificacion"
+  ]
+ },
+ {
+  "mutacion": "_predice / modo 12 (clamp completo)",
+  "estado": "ROJA",
+  "pruebas_rojas": [
+   "test_el_rgba_entero_coincide_byte_a_byte_con_libwebp",
+   "test_los_modos_0_a_12_coinciden_con_la_especificacion"
+  ]
+ },
+ {
+  "mutacion": "_predice / modo 13 (clamp a la mitad)",
+  "estado": "ROJA",
+  "pruebas_rojas": [
+   "test_DEFECTO_el_predictor_13_mueve_el_alfa_min_publicado"
+  ]
+ },
+ {
+  "mutacion": "_selecciona (predictor 11)",
+  "estado": "ROJA",
+  "pruebas_rojas": [
+   "test_los_modos_0_a_12_coinciden_con_la_especificacion"
+  ]
+ },
+ {
+  "mutacion": "_med2 (Average2)",
+  "estado": "ROJA",
+  "pruebas_rojas": [
+   "test_DEFECTO_el_predictor_13_mueve_el_alfa_min_publicado",
+   "test_alfa_minimo_publica_el_minimo_y_su_posicion",
+   "test_el_plano_alfa_coincide_byte_a_byte_con_libwebp",
+   "test_el_rgba_entero_coincide_byte_a_byte_con_libwebp",
+   "test_los_modos_0_a_12_coinciden_con_la_especificacion"
+  ]
+ },
+ {
+  "mutacion": "_vp8l_flujo / orden de canales del pixel",
+  "estado": "ROJA",
+  "pruebas_rojas": [
+   "test_control_positivo_del_escritor_de_vp8l",
+   "test_el_plano_alfa_coincide_byte_a_byte_con_libwebp",
+   "test_el_rgba_entero_coincide_byte_a_byte_con_libwebp"
+  ]
+ },
+ {
+  "mutacion": "_vp8l_flujo / cache de color",
+  "estado": "ROJA",
+  "pruebas_rojas": [
+   "test_el_plano_alfa_coincide_byte_a_byte_con_libwebp",
+   "test_el_rgba_entero_coincide_byte_a_byte_con_libwebp"
+  ]
+ },
+ {
+  "mutacion": "_vp8l_flujo / referencia hacia atras",
+  "estado": "ROJA",
+  "pruebas_rojas": [
+   "test_alfa_minimo_publica_el_minimo_y_su_posicion",
+   "test_cada_fixture_llega_a_la_transformacion_que_dice_ejercitar",
+   "test_el_alph_comprimido_pasa_por_el_vp8l_de_plano_alfa",
+   "test_el_plano_alfa_coincide_byte_a_byte_con_libwebp",
+   "test_el_rgba_entero_coincide_byte_a_byte_con_libwebp"
+  ]
+ },
+ {
+  "mutacion": "_vp8l_flujo / guarda de referencia hacia atras",
+  "estado": "ROJA",
+  "pruebas_rojas": [
+   "test_referencia_hacia_atras_fuera_de_rango"
+  ]
+ },
+ {
+  "mutacion": "_vp8l_flujo / transformacion 0 (predictor), primera fila",
+  "estado": "ROJA",
+  "pruebas_rojas": [
+   "test_el_rgba_entero_coincide_byte_a_byte_con_libwebp"
+  ]
+ },
+ {
+  "mutacion": "_vp8l_flujo / transformacion 0, seleccion de modo",
+  "estado": "ROJA",
+  "pruebas_rojas": [
+   "test_DEFECTO_el_predictor_13_mueve_el_alfa_min_publicado",
+   "test_alfa_minimo_publica_el_minimo_y_su_posicion",
+   "test_cada_fixture_llega_a_la_transformacion_que_dice_ejercitar",
+   "test_el_plano_alfa_coincide_byte_a_byte_con_libwebp",
+   "test_el_rgba_entero_coincide_byte_a_byte_con_libwebp"
+  ]
+ },
+ {
+  "mutacion": "_vp8l_flujo / transformacion 1 (color cruzado)",
+  "estado": "ROJA",
+  "pruebas_rojas": [
+   "test_el_rgba_entero_coincide_byte_a_byte_con_libwebp"
+  ]
+ },
+ {
+  "mutacion": "_vp8l_flujo / transformacion 2 (restar verde)",
+  "estado": "ROJA",
+  "pruebas_rojas": [
+   "test_el_rgba_entero_coincide_byte_a_byte_con_libwebp"
+  ]
+ },
+ {
+  "mutacion": "_vp8l_flujo / transformacion 3, paleta sin empaquetar",
+  "estado": "ROJA",
+  "pruebas_rojas": [
+   "test_el_rgba_entero_coincide_byte_a_byte_con_libwebp"
+  ]
+ },
+ {
+  "mutacion": "_vp8l_flujo / transformacion 3, paleta empaquetada",
+  "estado": "ROJA",
+  "pruebas_rojas": [
+   "test_alfa_minimo_publica_el_minimo_y_su_posicion",
+   "test_el_alph_comprimido_pasa_por_el_vp8l_de_plano_alfa",
+   "test_el_plano_alfa_coincide_byte_a_byte_con_libwebp",
+   "test_el_rgba_entero_coincide_byte_a_byte_con_libwebp"
+  ]
+ },
+ {
+  "mutacion": "_vp8l_flujo / suma de la paleta",
+  "estado": "ROJA",
+  "pruebas_rojas": [
+   "test_el_rgba_entero_coincide_byte_a_byte_con_libwebp"
+  ]
+ },
+ {
+  "mutacion": "_vp8l_flujo / imagen meta-Huffman",
+  "estado": "ROJA",
+  "pruebas_rojas": [
+   "test_alfa_minimo_publica_el_minimo_y_su_posicion",
+   "test_el_plano_alfa_coincide_byte_a_byte_con_libwebp",
+   "test_el_rgba_entero_coincide_byte_a_byte_con_libwebp"
+  ]
+ },
+ {
+  "mutacion": "_vp8l_flujo / alfabeto con cache de color",
+  "estado": "ROJA",
+  "pruebas_rojas": [
+   "test_alfa_minimo_publica_el_minimo_y_su_posicion",
+   "test_cada_fixture_llega_a_la_transformacion_que_dice_ejercitar",
+   "test_el_plano_alfa_coincide_byte_a_byte_con_libwebp",
+   "test_el_rgba_entero_coincide_byte_a_byte_con_libwebp"
+  ]
+ },
+ {
+  "mutacion": "_vp8l_decodificar / orden RGBA de salida",
+  "estado": "ROJA",
+  "pruebas_rojas": [
+   "test_control_positivo_del_escritor_de_vp8l",
+   "test_el_rgba_entero_coincide_byte_a_byte_con_libwebp"
+  ]
+ },
+ {
+  "mutacion": "_vp8l_decodificar / plano alfa del trozo ALPH",
+  "estado": "ROJA",
+  "pruebas_rojas": [
+   "test_alfa_minimo_publica_el_minimo_y_su_posicion",
+   "test_el_plano_alfa_coincide_byte_a_byte_con_libwebp"
+  ]
+ },
+ {
+  "mutacion": "_alph_desfiltrar / filtro 1 (horizontal)",
+  "estado": "ROJA",
+  "pruebas_rojas": [
+   "test_el_plano_alfa_coincide_byte_a_byte_con_libwebp",
+   "test_los_cuatro_filtros_coinciden_con_libwebp"
+  ]
+ },
+ {
+  "mutacion": "_alph_desfiltrar / filtro 3 (gradiente)",
+  "estado": "ROJA",
+  "pruebas_rojas": [
+   "test_los_cuatro_filtros_coinciden_con_libwebp"
+  ]
+ },
+ {
+  "mutacion": "_alph_desfiltrar / acumulacion",
+  "estado": "ROJA",
+  "pruebas_rojas": [
+   "test_alfa_minimo_publica_el_minimo_y_su_posicion",
+   "test_el_alph_comprimido_pasa_por_el_vp8l_de_plano_alfa",
+   "test_el_plano_alfa_coincide_byte_a_byte_con_libwebp",
+   "test_los_cuatro_filtros_coinciden_con_libwebp"
+  ]
+ },
+ {
+  "mutacion": "_alfa_min_webp / atajo alpha_is_used",
+  "estado": "ROJA",
+  "pruebas_rojas": [
+   "test_DEFECTO_el_predictor_13_mueve_el_alfa_min_publicado",
+   "test_alfa_minimo_publica_el_minimo_y_su_posicion",
+   "test_la_paleta_ancha_usa_indices_sin_empaquetar"
+  ]
+ },
+ {
+  "mutacion": "_alfa_min_webp / posicion del primer transparente",
+  "estado": "ROJA",
+  "pruebas_rojas": [
+   "test_alfa_minimo_publica_el_minimo_y_su_posicion",
+   "test_los_cuatro_filtros_coinciden_con_libwebp"
+  ]
+ },
+ {
+  "mutacion": "_alfa_min_webp / escala del minimo",
+  "estado": "ROJA",
+  "pruebas_rojas": [
+   "test_DEFECTO_el_predictor_13_mueve_el_alfa_min_publicado",
+   "test_alfa_minimo_publica_el_minimo_y_su_posicion",
+   "test_la_paleta_ancha_usa_indices_sin_empaquetar"
+  ]
+ }
+]
