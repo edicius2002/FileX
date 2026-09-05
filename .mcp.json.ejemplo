@@ -1,0 +1,28 @@
+{
+  "//": "PLANTILLA. Copia este fichero a .mcp.json y sustituye <RAIZ> por la ruta ABSOLUTA de tu clon de FileX. El .mcp.json real NO se versiona (es config de tu maquina): ver .gitignore.",
+  "mcpServers": {
+    "markitdown": {
+      "type": "stdio",
+      "command": "<RAIZ>/.venv-mcp-md/Scripts/markitdown-mcp.exe",
+      "args": [],
+      "env": { "MARKITDOWN_ENABLE_PLUGINS": "false" }
+    },
+    "docling": {
+      "type": "stdio",
+      "command": "<RAIZ>/.venv-ai/Scripts/docling-mcp-server.exe",
+      "args": ["--transport", "stdio", "conversion"],
+      "env": {
+        "DOCLING_MCP_CONVERSION_MODE": "local",
+        "DOCLING_MCP_DO_OCR": "false",
+        "DOCLING_MCP_DO_TABLE_STRUCTURE": "true",
+        "DOCLING_MCP_KEEP_IMAGES": "false"
+      }
+    },
+    "filex": {
+      "type": "stdio",
+      "command": "<RAIZ>/.venv-mcp-filex/Scripts/python.exe",
+      "args": ["-m", "filex.mcp", "--raiz", "<RAIZ>"],
+      "env": { "PYTHONPATH": "<RAIZ>", "PYTHONUTF8": "1" }
+    }
+  }
+}

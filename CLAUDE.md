@@ -12,7 +12,7 @@ Proyecto de investigación en español. **Escribe todo en español**, incluidos 
 | **`.venv-ai/`, `.venv-paddle/`, `.venv-mcp-md/`, `.venv-marker/`** | Entornos CUDA funcionales y frágiles. **Usarlos para ejecutar sí; instalar en ellos, jamás** |
 | **El código fuente de `repos/`** | Son clones de referencia. Instalar dependencias o construir dentro está bien (`repos/` está en `.gitignore`); editar su código no |
 | **La sesión de escritorio remoto** | Está activa a propósito. No la cierres |
-| **`~/.claude.json`** | Configuración MCP **solo de proyecto**, en `D:\Work\research\FileX\.mcp.json` |
+| **`~/.claude.json`** | Configuración MCP **solo de proyecto**, en el `.mcp.json` de la raíz del repositorio. **Ese `.mcp.json` NO se versiona desde el 04/09** (traía rutas absolutas de esta máquina y el repo es público): se versiona `.mcp.json.ejemplo` con `<RAIZ>` como marcador, y cada clon copia y sustituye |
 | **`bench/salidas-referencia/referencia.json`** | Es el patrón oro: se lee, no se toca |
 | **`bench/scripts/mcp_probe_bin.py`, `bench/salidas-mcp/mcp_probe.py`** | Arneses compartidos. Si necesitas una variante, cópiala a tu directorio de salidas |
 

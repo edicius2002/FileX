@@ -59,7 +59,7 @@ rutas sino de protocolo** — no contradicen R10, viven en otra capa:
 
 Arranque:
 
-    python -m filex.api --raiz D:/Work/research/FileX
+    python -m filex.api --raiz /ruta/a/tu/clon-de-FileX
 """
 
 from __future__ import annotations
