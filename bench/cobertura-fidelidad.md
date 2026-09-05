@@ -137,6 +137,22 @@ nombres alcanzados por verificar():            123 antes y después
 `python -m unittest pruebas.test_sondeo` → **48 pruebas, OK**, antes y después.
 **Cero aristas caducadas, cero que resondear, cero que resellar.**
 
+Los dos arreglos de §5 **sí cambian comportamiento**, así que además de la
+huella hay que mirar quién más pisa esas funciones. Los módulos de prueba que
+mencionan `svg_textos`, `png_tinta_cajas`, `fidelidad_vectorial`, `I9` o
+`verificar_fidelidad` son **cuatro**, y los tres que no son el mío corren en
+verde con los arreglos puestos: `test_sondeo` **48 OK**, `test_contrato_v`
+**19 OK**, `test_a7_ciego` **6 OK**. **No he lanzado la suite completa**, y es
+deliberado: hay cinco carriles más midiendo en esta máquina y seis suites a la
+vez fabrican la carga que pone roja `test_cancelacion_procesos` sin que nadie
+toque el código (trampas 101 y 123). **La suite integral la corre quien integre**
+— y ése es el sitio donde se acepta un encargo, no el fichero de pruebas que
+escribió su propio autor (trampa 98).
+
+`ci/integridad.py` pasa **8 de 9**; la que falla es `informes-registrados`,
+porque este informe tiene que citarse en `ESTADO-Y-REPARTO.md`, que es del
+maestro y este carril no toca.
+
 Y el motivo estructural, comprobado y no supuesto: `verificar()` no llama a
 ninguna de las siete, ni a `_translate_acumulado`. La frontera de la trampa 32
 aguanta también para un cambio que **sí** modifica el comportamiento de la
