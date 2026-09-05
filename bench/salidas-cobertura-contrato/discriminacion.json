@@ -1,0 +1,678 @@
+{
+ "objetivo": "filex/verificador.py",
+ "modulo": "pruebas.test_cob_contrato",
+ "sha256_12_del_original": "fc0385500de9",
+ "arbol_limpio_al_terminar": true,
+ "n_mutaciones": 49,
+ "n_discriminan": 49,
+ "filas": [
+  {
+   "mutacion": "M01 subtitulos",
+   "funcion": "sondear_subproceso",
+   "pruebas_esperadas": [
+    "test_av_cuenta_la_pista_de_subtitulos"
+   ],
+   "pruebas_rojas": [
+    "test_av_cuenta_la_pista_de_subtitulos"
+   ],
+   "rc": 1,
+   "esperadas_que_siguen_verdes": [],
+   "veredicto": "DISCRIMINA"
+  },
+  {
+   "mutacion": "M02 bitrate de pista",
+   "funcion": "sondear_subproceso",
+   "pruebas_esperadas": [
+    "test_av_publica_pistas_y_un_solo_proceso",
+    "test_con_sonda_REAL_por_subproceso_la_rama_se_alcanza"
+   ],
+   "pruebas_rojas": [
+    "test_av_publica_pistas_y_un_solo_proceso",
+    "test_con_sonda_REAL_por_subproceso_la_rama_se_alcanza",
+    "test_el_bitrate_de_pista_solo_lo_publica_el_subproceso"
+   ],
+   "rc": 1,
+   "esperadas_que_siguen_verdes": [],
+   "veredicto": "DISCRIMINA"
+  },
+  {
+   "mutacion": "M03 error de identify",
+   "funcion": "sondear_subproceso",
+   "pruebas_esperadas": [
+    "test_imagen_rota_devuelve_error_de_identify"
+   ],
+   "pruebas_rojas": [
+    "test_imagen_rota_devuelve_error_de_identify"
+   ],
+   "rc": 1,
+   "esperadas_que_siguen_verdes": [],
+   "veredicto": "DISCRIMINA"
+  },
+  {
+   "mutacion": "M04 ppp en centimetros",
+   "funcion": "sondear_subproceso",
+   "pruebas_esperadas": [
+    "test_pixels_per_centimeter_se_convierte_a_pulgadas"
+   ],
+   "pruebas_rojas": [
+    "test_pixels_per_centimeter_se_convierte_a_pulgadas"
+   ],
+   "rc": 1,
+   "esperadas_que_siguen_verdes": [],
+   "veredicto": "DISCRIMINA"
+  },
+  {
+   "mutacion": "M05 ppp indefinido",
+   "funcion": "sondear_subproceso",
+   "pruebas_esperadas": [
+    "test_unidad_indefinida_no_inventa_un_ppp"
+   ],
+   "pruebas_rojas": [
+    "test_unidad_indefinida_no_inventa_un_ppp"
+   ],
+   "rc": 1,
+   "esperadas_que_siguen_verdes": [],
+   "veredicto": "DISCRIMINA"
+  },
+  {
+   "mutacion": "M06 paginas de un pdf roto",
+   "funcion": "sondear_subproceso",
+   "pruebas_esperadas": [
+    "test_pdf_roto_no_inventa_un_numero_de_paginas"
+   ],
+   "pruebas_rojas": [
+    "test_pdf_roto_no_inventa_un_numero_de_paginas"
+   ],
+   "rc": 1,
+   "esperadas_que_siguen_verdes": [],
+   "veredicto": "DISCRIMINA"
+  },
+  {
+   "mutacion": "M07 salida de 0 bytes",
+   "funcion": "sondear_subproceso",
+   "pruebas_esperadas": [
+    "test_fichero_vacio_sale_antes_de_lanzar_un_solo_proceso"
+   ],
+   "pruebas_rojas": [
+    "test_fichero_vacio_sale_antes_de_lanzar_un_solo_proceso"
+   ],
+   "rc": 1,
+   "esperadas_que_siguen_verdes": [],
+   "veredicto": "DISCRIMINA"
+  },
+  {
+   "mutacion": "M08a redimensionado: mensaje",
+   "funcion": "punto4_pedido",
+   "pruebas_esperadas": [
+    "test_redimensionado_no_solicitado"
+   ],
+   "pruebas_rojas": [
+    "test_redimensionado_no_solicitado"
+   ],
+   "rc": 1,
+   "esperadas_que_siguen_verdes": [],
+   "veredicto": "DISCRIMINA"
+  },
+  {
+   "mutacion": "M08b redimensionado: rama",
+   "funcion": "punto4_pedido",
+   "pruebas_esperadas": [
+    "test_redimensionado_no_solicitado",
+    "test_la_geometria_de_una_pista_de_video_tambien_cuenta",
+    "test_el_redimensionado_llega_al_veredicto_por_verificar"
+   ],
+   "pruebas_rojas": [
+    "test_el_redimensionado_llega_al_veredicto_por_verificar",
+    "test_la_geometria_de_una_pista_de_video_tambien_cuenta",
+    "test_redimensionado_no_solicitado",
+    "test_una_sonda_con_error_no_produce_ni_un_hallazgo"
+   ],
+   "rc": 1,
+   "esperadas_que_siguen_verdes": [],
+   "veredicto": "DISCRIMINA"
+  },
+  {
+   "mutacion": "M09 dimensiones pedidas",
+   "funcion": "punto4_pedido",
+   "pruebas_esperadas": [
+    "test_alto_distinto_del_pedido_con_ancho_correcto"
+   ],
+   "pruebas_rojas": [
+    "test_alto_distinto_del_pedido_con_ancho_correcto"
+   ],
+   "rc": 1,
+   "esperadas_que_siguen_verdes": [],
+   "veredicto": "DISCRIMINA"
+  },
+  {
+   "mutacion": "M10 aspecto",
+   "funcion": "punto4_pedido",
+   "pruebas_esperadas": [
+    "test_la_relacion_de_aspecto_delata_las_barras_anadidas"
+   ],
+   "pruebas_rojas": [
+    "test_la_relacion_de_aspecto_delata_las_barras_anadidas"
+   ],
+   "rc": 1,
+   "esperadas_que_siguen_verdes": [],
+   "veredicto": "DISCRIMINA"
+  },
+  {
+   "mutacion": "M11 ppp pedido",
+   "funcion": "punto4_pedido",
+   "pruebas_esperadas": [
+    "test_ppp_distinto_del_pedido"
+   ],
+   "pruebas_rojas": [
+    "test_ppp_distinto_del_pedido"
+   ],
+   "rc": 1,
+   "esperadas_que_siguen_verdes": [],
+   "veredicto": "DISCRIMINA"
+  },
+  {
+   "mutacion": "M12 pdf a imagen",
+   "funcion": "punto4_pedido",
+   "pruebas_esperadas": [
+    "test_pdf_a_imagen_la_resolucion_debe_seguir_al_ppp_pedido",
+    "test_pdf_a_imagen_con_la_resolucion_correcta_no_avisa"
+   ],
+   "pruebas_rojas": [
+    "test_pdf_a_imagen_con_la_resolucion_correcta_no_avisa",
+    "test_pdf_a_imagen_la_resolucion_debe_seguir_al_ppp_pedido"
+   ],
+   "rc": 1,
+   "esperadas_que_siguen_verdes": [],
+   "veredicto": "DISCRIMINA"
+  },
+  {
+   "mutacion": "M13 techo de profundidad",
+   "funcion": "punto4_pedido",
+   "pruebas_esperadas": [
+    "test_la_misma_bajada_hacia_jpeg_es_perdida_INEVITABLE"
+   ],
+   "pruebas_rojas": [
+    "test_el_destino_por_defecto_sale_de_la_extension_de_la_salida",
+    "test_la_misma_bajada_hacia_jpeg_es_perdida_INEVITABLE"
+   ],
+   "rc": 1,
+   "esperadas_que_siguen_verdes": [],
+   "veredicto": "DISCRIMINA"
+  },
+  {
+   "mutacion": "M14 profundidad pedida",
+   "funcion": "punto4_pedido",
+   "pruebas_esperadas": [
+    "test_una_profundidad_pedida_explicitamente_no_produce_hallazgo"
+   ],
+   "pruebas_rojas": [
+    "test_una_profundidad_pedida_explicitamente_no_produce_hallazgo"
+   ],
+   "rc": 1,
+   "esperadas_que_siguen_verdes": [],
+   "veredicto": "DISCRIMINA"
+  },
+  {
+   "mutacion": "M15 profundidad inflada",
+   "funcion": "punto4_pedido",
+   "pruebas_esperadas": [
+    "test_profundidad_INFLADA_en_audio_sin_perdida"
+   ],
+   "pruebas_rojas": [
+    "test_profundidad_INFLADA_en_audio_sin_perdida"
+   ],
+   "rc": 1,
+   "esperadas_que_siguen_verdes": [],
+   "veredicto": "DISCRIMINA"
+  },
+  {
+   "mutacion": "M16 alfa no trivial",
+   "funcion": "punto4_pedido",
+   "pruebas_esperadas": [
+    "test_un_alfa_TRIVIAL_perdido_no_es_hallazgo"
+   ],
+   "pruebas_rojas": [
+    "test_sin_min_alfa_calculado_la_regla_se_declara_NO_EVALUABLE",
+    "test_un_alfa_TRIVIAL_perdido_no_es_hallazgo"
+   ],
+   "rc": 1,
+   "esperadas_que_siguen_verdes": [],
+   "veredicto": "DISCRIMINA"
+  },
+  {
+   "mutacion": "M17 destino sin alfa",
+   "funcion": "punto4_pedido",
+   "pruebas_esperadas": [
+    "test_hacia_jpeg_la_misma_perdida_es_inevitable"
+   ],
+   "pruebas_rojas": [
+    "test_hacia_jpeg_la_misma_perdida_es_inevitable"
+   ],
+   "rc": 1,
+   "esperadas_que_siguen_verdes": [],
+   "veredicto": "DISCRIMINA"
+  },
+  {
+   "mutacion": "M18 solo_audio pista a pista",
+   "funcion": "punto4_pedido",
+   "pruebas_esperadas": [
+    "test_solo_audio_compara_PISTA_contra_PISTA"
+   ],
+   "pruebas_rojas": [
+    "test_solo_audio_compara_PISTA_contra_PISTA"
+   ],
+   "rc": 1,
+   "esperadas_que_siguen_verdes": [],
+   "veredicto": "DISCRIMINA"
+  },
+  {
+   "mutacion": "M19 tolerancia de duracion",
+   "funcion": "punto4_pedido",
+   "pruebas_esperadas": [
+    "test_la_duracion_cambia_mas_de_la_tolerancia",
+    "test_la_tolerancia_de_un_MP3_es_la_de_su_trama_no_10_ms",
+    "test_solo_audio_compara_PISTA_contra_PISTA"
+   ],
+   "pruebas_rojas": [
+    "test_la_duracion_cambia_mas_de_la_tolerancia",
+    "test_la_tolerancia_de_un_MP3_es_la_de_su_trama_no_10_ms",
+    "test_solo_audio_compara_PISTA_contra_PISTA",
+    "test_solo_audio_sin_una_sola_pista_de_audio_con_duracion"
+   ],
+   "rc": 1,
+   "esperadas_que_siguen_verdes": [],
+   "veredicto": "DISCRIMINA"
+  },
+  {
+   "mutacion": "M20 excepcion de Opus",
+   "funcion": "punto4_pedido",
+   "pruebas_esperadas": [
+    "test_opus_fuerza_48_kHz_y_eso_es_informativo"
+   ],
+   "pruebas_rojas": [
+    "test_opus_fuerza_48_kHz_y_eso_es_informativo"
+   ],
+   "rc": 1,
+   "esperadas_que_siguen_verdes": [],
+   "veredicto": "DISCRIMINA"
+  },
+  {
+   "mutacion": "M21 canales alterados",
+   "funcion": "punto4_pedido",
+   "pruebas_esperadas": [
+    "test_los_canales_pedidos_no_son_un_hallazgo"
+   ],
+   "pruebas_rojas": [
+    "test_los_canales_pedidos_no_son_un_hallazgo"
+   ],
+   "rc": 1,
+   "esperadas_que_siguen_verdes": [],
+   "veredicto": "DISCRIMINA"
+  },
+  {
+   "mutacion": "M22 bitrate fallo/aviso",
+   "funcion": "punto4_pedido",
+   "pruebas_esperadas": [
+    "test_bitrate_muy_lejos_del_pedido_es_fallo",
+    "test_con_sonda_REAL_por_subproceso_la_rama_se_alcanza"
+   ],
+   "pruebas_rojas": [
+    "test_bitrate_muy_lejos_del_pedido_es_fallo",
+    "test_con_sonda_REAL_por_subproceso_la_rama_se_alcanza",
+    "test_una_pista_de_VIDEO_no_secuestra_la_regla_de_bitrate"
+   ],
+   "rc": 1,
+   "esperadas_que_siguen_verdes": [],
+   "veredicto": "DISCRIMINA"
+  },
+  {
+   "mutacion": "M23 bitrate umbral de aviso",
+   "funcion": "punto4_pedido",
+   "pruebas_esperadas": [
+    "test_bitrate_lejos_del_pedido_es_aviso"
+   ],
+   "pruebas_rojas": [
+    "test_bitrate_lejos_del_pedido_es_aviso"
+   ],
+   "rc": 1,
+   "esperadas_que_siguen_verdes": [],
+   "veredicto": "DISCRIMINA"
+  },
+  {
+   "mutacion": "M24 caja de pagina",
+   "funcion": "punto4_pedido",
+   "pruebas_esperadas": [
+    "test_la_densidad_tambien_se_lee_de_params_densidad"
+   ],
+   "pruebas_rojas": [
+    "test_la_densidad_tambien_se_lee_de_params_densidad"
+   ],
+   "rc": 1,
+   "esperadas_que_siguen_verdes": [],
+   "veredicto": "DISCRIMINA"
+  },
+  {
+   "mutacion": "M25 pagina absurda",
+   "funcion": "punto4_pedido",
+   "pruebas_esperadas": [
+    "test_un_pixel_un_punto_es_una_pagina_absurda"
+   ],
+   "pruebas_rojas": [
+    "test_un_pixel_un_punto_es_una_pagina_absurda"
+   ],
+   "rc": 1,
+   "esperadas_que_siguen_verdes": [],
+   "veredicto": "DISCRIMINA"
+  },
+  {
+   "mutacion": "M26 numero de paginas",
+   "funcion": "punto4_pedido",
+   "pruebas_esperadas": [
+    "test_cambia_el_numero_de_paginas"
+   ],
+   "pruebas_rojas": [
+    "test_cambia_el_numero_de_paginas"
+   ],
+   "rc": 1,
+   "esperadas_que_siguen_verdes": [],
+   "veredicto": "DISCRIMINA"
+  },
+  {
+   "mutacion": "M27 cero filas",
+   "funcion": "punto4_pedido",
+   "pruebas_esperadas": [
+    "test_cero_filas_no_se_confunde_con_ausencia_de_dato"
+   ],
+   "pruebas_rojas": [
+    "test_cero_filas_no_se_confunde_con_ausencia_de_dato"
+   ],
+   "rc": 1,
+   "esperadas_que_siguen_verdes": [],
+   "veredicto": "DISCRIMINA"
+  },
+  {
+   "mutacion": "M28 cabecera ordenada",
+   "funcion": "punto4_pedido",
+   "pruebas_esperadas": [
+    "test_una_cabecera_REORDENADA_no_es_una_cabecera_perdida"
+   ],
+   "pruebas_rojas": [
+    "test_una_cabecera_REORDENADA_no_es_una_cabecera_perdida"
+   ],
+   "rc": 1,
+   "esperadas_que_siguen_verdes": [],
+   "veredicto": "DISCRIMINA"
+  },
+  {
+   "mutacion": "M29 BOM pedido",
+   "funcion": "punto4_pedido",
+   "pruebas_esperadas": [
+    "test_un_BOM_PEDIDO_no_es_un_aviso"
+   ],
+   "pruebas_rojas": [
+    "test_un_BOM_PEDIDO_no_es_un_aviso"
+   ],
+   "rc": 1,
+   "esperadas_que_siguen_verdes": [],
+   "veredicto": "DISCRIMINA"
+  },
+  {
+   "mutacion": "M30 guarda de sonda con error",
+   "funcion": "punto4_pedido",
+   "pruebas_esperadas": [
+    "test_una_sonda_con_error_no_produce_ni_un_hallazgo"
+   ],
+   "pruebas_rojas": [
+    "test_una_sonda_con_error_no_produce_ni_un_hallazgo"
+   ],
+   "rc": 1,
+   "esperadas_que_siguen_verdes": [],
+   "veredicto": "DISCRIMINA"
+  },
+  {
+   "mutacion": "M43 tipo de pista no casado",
+   "funcion": "sondear_subproceso",
+   "pruebas_esperadas": [
+    "test_una_pista_que_no_es_ni_video_ni_audio_ni_subtitulo_se_cuenta_igual"
+   ],
+   "pruebas_rojas": [
+    "test_una_pista_que_no_es_ni_video_ni_audio_ni_subtitulo_se_cuenta_igual"
+   ],
+   "rc": 1,
+   "esperadas_que_siguen_verdes": [],
+   "veredicto": "DISCRIMINA"
+  },
+  {
+   "mutacion": "M44 guarda del bitrate de pista",
+   "funcion": "punto4_pedido",
+   "pruebas_esperadas": [
+    "test_sin_bitrate_en_ninguna_pista_la_regla_se_CALLA"
+   ],
+   "pruebas_rojas": [
+    "test_sin_bitrate_en_ninguna_pista_la_regla_se_CALLA"
+   ],
+   "rc": 1,
+   "esperadas_que_siguen_verdes": [],
+   "veredicto": "DISCRIMINA"
+  },
+  {
+   "mutacion": "M45 caja de pagina correcta",
+   "funcion": "punto4_pedido",
+   "pruebas_esperadas": [
+    "test_una_caja_de_pagina_CORRECTA_no_produce_hallazgo"
+   ],
+   "pruebas_rojas": [
+    "test_una_caja_de_pagina_CORRECTA_no_produce_hallazgo"
+   ],
+   "rc": 1,
+   "esperadas_que_siguen_verdes": [],
+   "veredicto": "DISCRIMINA"
+  },
+  {
+   "mutacion": "M46 paginas ausentes",
+   "funcion": "punto4_pedido",
+   "pruebas_esperadas": [
+    "test_sin_numero_de_paginas_en_una_de_las_dos_la_regla_P1_se_calla"
+   ],
+   "pruebas_rojas": [
+    "test_sin_numero_de_paginas_en_una_de_las_dos_la_regla_P1_se_calla"
+   ],
+   "rc": 1,
+   "esperadas_que_siguen_verdes": [],
+   "veredicto": "DISCRIMINA"
+  },
+  {
+   "mutacion": "M47 pista de audio sin duracion",
+   "funcion": "punto4_pedido",
+   "pruebas_esperadas": [
+    "test_solo_audio_sin_una_sola_pista_de_audio_con_duracion"
+   ],
+   "pruebas_rojas": [
+    "test_solo_audio_sin_una_sola_pista_de_audio_con_duracion"
+   ],
+   "rc": 1,
+   "esperadas_que_siguen_verdes": [],
+   "veredicto": "DISCRIMINA"
+  },
+  {
+   "mutacion": "M48 el bucle de bitrate no se rompe antes",
+   "funcion": "punto4_pedido",
+   "pruebas_esperadas": [
+    "test_bitrate_muy_lejos_del_pedido_es_fallo",
+    "test_bitrate_lejos_del_pedido_es_aviso",
+    "test_una_pista_de_VIDEO_no_secuestra_la_regla_de_bitrate"
+   ],
+   "pruebas_rojas": [
+    "test_bitrate_lejos_del_pedido_es_aviso",
+    "test_bitrate_muy_lejos_del_pedido_es_fallo",
+    "test_con_sonda_REAL_por_subproceso_la_rama_se_alcanza",
+    "test_una_pista_de_VIDEO_no_secuestra_la_regla_de_bitrate"
+   ],
+   "rc": 1,
+   "esperadas_que_siguen_verdes": [],
+   "veredicto": "DISCRIMINA"
+  },
+  {
+   "mutacion": "M31 censar",
+   "funcion": "main",
+   "pruebas_esperadas": [
+    "test_censar_vuelca_el_censo_de_un_directorio",
+    "test_censar_admite_varios_directorios"
+   ],
+   "pruebas_rojas": [
+    "test_censar_admite_varios_directorios",
+    "test_censar_vuelca_el_censo_de_un_directorio"
+   ],
+   "rc": 1,
+   "esperadas_que_siguen_verdes": [],
+   "veredicto": "DISCRIMINA"
+  },
+  {
+   "mutacion": "M32 exacto de alfa-min",
+   "funcion": "main",
+   "pruebas_esperadas": [
+    "test_alfa_min_exacto_recorre_la_imagen_entera"
+   ],
+   "pruebas_rojas": [
+    "test_alfa_min_exacto_recorre_la_imagen_entera"
+   ],
+   "rc": 1,
+   "esperadas_que_siguen_verdes": [],
+   "veredicto": "DISCRIMINA"
+  },
+  {
+   "mutacion": "M33 motor de --sondear",
+   "funcion": "main",
+   "pruebas_esperadas": [
+    "test_sondear_con_motor_subproceso"
+   ],
+   "pruebas_rojas": [
+    "test_sondear_con_motor_subproceso"
+   ],
+   "rc": 1,
+   "esperadas_que_siguen_verdes": [],
+   "veredicto": "DISCRIMINA"
+  },
+  {
+   "mutacion": "M34 rc del lote",
+   "funcion": "main",
+   "pruebas_esperadas": [
+    "test_lote_devuelve_una_lista_y_el_rc_del_peor"
+   ],
+   "pruebas_rojas": [
+    "test_lote_devuelve_una_lista_y_el_rc_del_peor"
+   ],
+   "rc": 1,
+   "esperadas_que_siguen_verdes": [],
+   "veredicto": "DISCRIMINA"
+  },
+  {
+   "mutacion": "M35 fidelidad en lote",
+   "funcion": "main",
+   "pruebas_esperadas": [
+    "test_lote_con_fidelidad"
+   ],
+   "pruebas_rojas": [
+    "test_lote_con_fidelidad"
+   ],
+   "rc": 1,
+   "esperadas_que_siguen_verdes": [],
+   "veredicto": "DISCRIMINA"
+  },
+  {
+   "mutacion": "M36 destino por defecto",
+   "funcion": "main",
+   "pruebas_esperadas": [
+    "test_el_destino_por_defecto_sale_de_la_extension_de_la_salida"
+   ],
+   "pruebas_rojas": [
+    "test_el_destino_por_defecto_sale_de_la_extension_de_la_salida"
+   ],
+   "rc": 1,
+   "esperadas_que_siguen_verdes": [],
+   "veredicto": "DISCRIMINA"
+  },
+  {
+   "mutacion": "M37 params",
+   "funcion": "main",
+   "pruebas_esperadas": [
+    "test_params_json_llega_al_punto_4"
+   ],
+   "pruebas_rojas": [
+    "test_params_json_llega_al_punto_4"
+   ],
+   "rc": 1,
+   "esperadas_que_siguen_verdes": [],
+   "veredicto": "DISCRIMINA"
+  },
+  {
+   "mutacion": "M38 censo",
+   "funcion": "main",
+   "pruebas_esperadas": [
+    "test_el_censo_habilita_el_punto_5"
+   ],
+   "pruebas_rojas": [
+    "test_el_censo_habilita_el_punto_5"
+   ],
+   "rc": 1,
+   "esperadas_que_siguen_verdes": [],
+   "veredicto": "DISCRIMINA"
+  },
+  {
+   "mutacion": "M39 interruptor V2",
+   "funcion": "main",
+   "pruebas_esperadas": [
+    "test_sin_v2_declara_la_regla_NO_CUBIERTA_en_vez_de_darla_por_buena"
+   ],
+   "pruebas_rojas": [
+    "test_sin_v2_declara_la_regla_NO_CUBIERTA_en_vez_de_darla_por_buena"
+   ],
+   "rc": 1,
+   "esperadas_que_siguen_verdes": [],
+   "veredicto": "DISCRIMINA"
+  },
+  {
+   "mutacion": "M40 rc del contrato",
+   "funcion": "main",
+   "pruebas_esperadas": [
+    "test_un_fallo_del_contrato_devuelve_1",
+    "test_params_json_llega_al_punto_4",
+    "test_el_destino_por_defecto_sale_de_la_extension_de_la_salida"
+   ],
+   "pruebas_rojas": [
+    "test_el_destino_por_defecto_sale_de_la_extension_de_la_salida",
+    "test_params_json_llega_al_punto_4",
+    "test_un_fallo_del_contrato_devuelve_1"
+   ],
+   "rc": 1,
+   "esperadas_que_siguen_verdes": [],
+   "veredicto": "DISCRIMINA"
+  },
+  {
+   "mutacion": "M41 segundo bloque de fidelidad",
+   "funcion": "main",
+   "pruebas_esperadas": [
+    "test_fidelidad_imprime_DOS_bloques_con_DOS_veredictos"
+   ],
+   "pruebas_rojas": [
+    "test_fidelidad_imprime_DOS_bloques_con_DOS_veredictos"
+   ],
+   "rc": 1,
+   "esperadas_que_siguen_verdes": [],
+   "veredicto": "DISCRIMINA"
+  },
+  {
+   "mutacion": "M42 titulo de solo-fidelidad",
+   "funcion": "main",
+   "pruebas_esperadas": [
+    "test_solo_fidelidad_omite_el_contrato"
+   ],
+   "pruebas_rojas": [
+    "test_solo_fidelidad_omite_el_contrato"
+   ],
+   "rc": 1,
+   "esperadas_que_siguen_verdes": [],
+   "veredicto": "DISCRIMINA"
+  }
+ ]
+}
