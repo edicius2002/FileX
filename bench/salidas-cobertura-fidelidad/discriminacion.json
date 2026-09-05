@@ -112,6 +112,87 @@
    "resumen": "FAILED (failures=1)"
   },
   {
+   "id": "tr-suma-tx",
+   "funcion": "_translate_acumulado",
+   "clase": "SvgTextos",
+   "estado": "ok",
+   "rojos": [
+    "test_dos_translate_en_el_MISMO_atributo",
+    "test_los_translate_anidados_se_SUMAN",
+    "test_un_translate_de_un_solo_argumento_no_mueve_la_y",
+    "test_un_translate_en_el_GRUPO_mueve_la_caja",
+    "test_un_translate_en_el_PROPIO_text_tambien_cuenta"
+   ],
+   "resumen": "FAILED (failures=5)"
+  },
+  {
+   "id": "tr-suma-ty",
+   "funcion": "_translate_acumulado",
+   "clase": "SvgTextos",
+   "estado": "ok",
+   "rojos": [
+    "test_dos_translate_en_el_MISMO_atributo",
+    "test_los_translate_anidados_se_SUMAN",
+    "test_un_translate_en_el_GRUPO_mueve_la_caja",
+    "test_un_translate_en_el_PROPIO_text_tambien_cuenta"
+   ],
+   "resumen": "FAILED (failures=4)"
+  },
+  {
+   "id": "tr-solo-translate",
+   "funcion": "_translate_acumulado",
+   "clase": "SvgTextos",
+   "estado": "ok",
+   "rojos": [
+    "test_lo_que_NO_es_traslacion_se_declara_NO_MEDIBLE_no_se_inventa"
+   ],
+   "resumen": "FAILED (failures=3)"
+  },
+  {
+   "id": "tr-sube-al-padre",
+   "funcion": "_translate_acumulado",
+   "clase": "SvgTextos",
+   "estado": "ok",
+   "rojos": [
+    "test_dos_translate_en_el_MISMO_atributo",
+    "test_lo_que_NO_es_traslacion_se_declara_NO_MEDIBLE_no_se_inventa",
+    "test_los_translate_anidados_se_SUMAN",
+    "test_un_translate_de_un_solo_argumento_no_mueve_la_y",
+    "test_un_translate_en_el_GRUPO_mueve_la_caja"
+   ],
+   "resumen": "FAILED (failures=11)"
+  },
+  {
+   "id": "tr-nomedible",
+   "funcion": "svg_textos",
+   "clase": "SvgTextos",
+   "estado": "ok",
+   "rojos": [
+    "test_lo_que_NO_es_traslacion_se_declara_NO_MEDIBLE_no_se_inventa"
+   ],
+   "resumen": "FAILED (failures=7)"
+  },
+  {
+   "id": "png-filtro-corrupto",
+   "funcion": "png_tinta_cajas",
+   "clase": "PngTintaCajas",
+   "estado": "ok",
+   "rojos": [
+    "test_un_byte_de_filtro_CORRUPTO_se_declara_no_evaluable_no_revienta"
+   ],
+   "resumen": "FAILED (errors=1)"
+  },
+  {
+   "id": "i9-nomedible",
+   "funcion": "fidelidad_vectorial",
+   "clase": "FidelidadVectorial",
+   "estado": "ok",
+   "rojos": [
+    "test_un_transform_que_no_es_traslacion_NO_es_la_regla_no_aplica"
+   ],
+   "resumen": "FAILED (failures=1)"
+  },
+  {
    "id": "i9-umbral-minimo",
    "funcion": "fidelidad_vectorial",
    "clase": "FidelidadVectorial",
@@ -179,10 +260,11 @@
    "clase": "FidelidadVideoMotor",
    "estado": "ok",
    "rojos": [
+    "test_V5_empareja_por_POSICION_y_REORDENAR_le_parece_una_perdida",
     "test_V5_perder_el_idioma_es_un_AVISO",
     "test_V5_una_pista_SIN_etiquetas_no_cuenta_como_perdida"
    ],
-   "resumen": "FAILED (failures=2)"
+   "resumen": "FAILED (failures=3)"
   },
   {
    "id": "v2-comparacion",
@@ -308,6 +390,6 @@
    "resumen": "FAILED (failures=1)"
   }
  ],
- "discriminan": 30,
- "total": 30
+ "discriminan": 37,
+ "total": 37
 }
