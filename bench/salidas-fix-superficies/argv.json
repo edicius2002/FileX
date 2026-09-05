@@ -1,0 +1,383 @@
+{
+ "banderas_con_valor": [
+  "--params",
+  "--raiz",
+  "--timeout"
+ ],
+ "discrimina": true,
+ "ganan": [
+  "forma corta con --raiz",
+  "forma corta con --raiz=D",
+  "forma corta con --params",
+  "forma corta con --timeout",
+  "subcomando motores con --raiz"
+ ],
+ "pierden": [],
+ "cambian_de_orden": [],
+ "rechazados_en_los_dos": [
+  "un solo posicional",
+  "tres posicionales",
+  "--raiz DESPUÉS de los posicionales"
+ ],
+ "limitacion_que_queda": [
+  "--raiz DESPUÉS de los posicionales"
+ ],
+ "filas": [
+  {
+   "caso": "forma corta desnuda",
+   "argv": [
+    "a.png",
+    "b.webp"
+   ],
+   "viejo_reescribe_a": [
+    "convertir",
+    "a.png",
+    "b.webp"
+   ],
+   "viejo": "convertir",
+   "nuevo_reescribe_a": [
+    "convertir",
+    "a.png",
+    "b.webp"
+   ],
+   "nuevo": "convertir",
+   "cambia": false,
+   "gana": false,
+   "pierde": false
+  },
+  {
+   "caso": "forma corta con --raiz",
+   "argv": [
+    "--raiz",
+    "D",
+    "a.png",
+    "b.webp"
+   ],
+   "viejo_reescribe_a": [
+    "--raiz",
+    "D",
+    "a.png",
+    "b.webp"
+   ],
+   "viejo": "SystemExit(2)",
+   "nuevo_reescribe_a": [
+    "--raiz",
+    "D",
+    "convertir",
+    "a.png",
+    "b.webp"
+   ],
+   "nuevo": "convertir",
+   "cambia": true,
+   "gana": true,
+   "pierde": false
+  },
+  {
+   "caso": "forma corta con --raiz=D",
+   "argv": [
+    "--raiz=D",
+    "a.png",
+    "b.webp"
+   ],
+   "viejo_reescribe_a": [
+    "convertir",
+    "--raiz=D",
+    "a.png",
+    "b.webp"
+   ],
+   "viejo": "SystemExit(2)",
+   "nuevo_reescribe_a": [
+    "--raiz=D",
+    "convertir",
+    "a.png",
+    "b.webp"
+   ],
+   "nuevo": "convertir",
+   "cambia": true,
+   "gana": true,
+   "pierde": false
+  },
+  {
+   "caso": "forma corta con --params",
+   "argv": [
+    "a.png",
+    "b.webp",
+    "--params",
+    "{}"
+   ],
+   "viejo_reescribe_a": [
+    "a.png",
+    "b.webp",
+    "--params",
+    "{}"
+   ],
+   "viejo": "SystemExit(2)",
+   "nuevo_reescribe_a": [
+    "convertir",
+    "a.png",
+    "b.webp",
+    "--params",
+    "{}"
+   ],
+   "nuevo": "convertir",
+   "cambia": true,
+   "gana": true,
+   "pierde": false
+  },
+  {
+   "caso": "forma corta con --json",
+   "argv": [
+    "a.png",
+    "b.webp",
+    "--json"
+   ],
+   "viejo_reescribe_a": [
+    "convertir",
+    "a.png",
+    "b.webp",
+    "--json"
+   ],
+   "viejo": "convertir",
+   "nuevo_reescribe_a": [
+    "convertir",
+    "a.png",
+    "b.webp",
+    "--json"
+   ],
+   "nuevo": "convertir",
+   "cambia": false,
+   "gana": false,
+   "pierde": false
+  },
+  {
+   "caso": "forma corta con --timeout",
+   "argv": [
+    "a.png",
+    "b.webp",
+    "--timeout",
+    "5"
+   ],
+   "viejo_reescribe_a": [
+    "a.png",
+    "b.webp",
+    "--timeout",
+    "5"
+   ],
+   "viejo": "SystemExit(2)",
+   "nuevo_reescribe_a": [
+    "convertir",
+    "a.png",
+    "b.webp",
+    "--timeout",
+    "5"
+   ],
+   "nuevo": "convertir",
+   "cambia": true,
+   "gana": true,
+   "pierde": false
+  },
+  {
+   "caso": "subcomando motores con --raiz",
+   "argv": [
+    "--raiz",
+    "D",
+    "motores"
+   ],
+   "viejo_reescribe_a": [
+    "convertir",
+    "--raiz",
+    "D",
+    "motores"
+   ],
+   "viejo": "SystemExit(2)",
+   "nuevo_reescribe_a": [
+    "--raiz",
+    "D",
+    "motores"
+   ],
+   "nuevo": "motores",
+   "cambia": true,
+   "gana": true,
+   "pierde": false
+  },
+  {
+   "caso": "subcomando destinos con --raiz",
+   "argv": [
+    "--raiz",
+    "D",
+    "destinos",
+    "png"
+   ],
+   "viejo_reescribe_a": [
+    "--raiz",
+    "D",
+    "destinos",
+    "png"
+   ],
+   "viejo": "destinos",
+   "nuevo_reescribe_a": [
+    "--raiz",
+    "D",
+    "destinos",
+    "png"
+   ],
+   "nuevo": "destinos",
+   "cambia": false,
+   "gana": false,
+   "pierde": false
+  },
+  {
+   "caso": "subcomando plan con --raiz",
+   "argv": [
+    "--raiz",
+    "D",
+    "plan",
+    "a.png",
+    "b.webp"
+   ],
+   "viejo_reescribe_a": [
+    "--raiz",
+    "D",
+    "plan",
+    "a.png",
+    "b.webp"
+   ],
+   "viejo": "plan",
+   "nuevo_reescribe_a": [
+    "--raiz",
+    "D",
+    "plan",
+    "a.png",
+    "b.webp"
+   ],
+   "nuevo": "plan",
+   "cambia": false,
+   "gana": false,
+   "pierde": false
+  },
+  {
+   "caso": "convertir explícito con --raiz",
+   "argv": [
+    "--raiz",
+    "D",
+    "convertir",
+    "a.png",
+    "b.webp"
+   ],
+   "viejo_reescribe_a": [
+    "--raiz",
+    "D",
+    "convertir",
+    "a.png",
+    "b.webp"
+   ],
+   "viejo": "convertir",
+   "nuevo_reescribe_a": [
+    "--raiz",
+    "D",
+    "convertir",
+    "a.png",
+    "b.webp"
+   ],
+   "nuevo": "convertir",
+   "cambia": false,
+   "gana": false,
+   "pierde": false
+  },
+  {
+   "caso": "motores desnudo",
+   "argv": [
+    "motores"
+   ],
+   "viejo_reescribe_a": [
+    "motores"
+   ],
+   "viejo": "motores",
+   "nuevo_reescribe_a": [
+    "motores"
+   ],
+   "nuevo": "motores",
+   "cambia": false,
+   "gana": false,
+   "pierde": false
+  },
+  {
+   "caso": "sin nada",
+   "argv": [],
+   "viejo_reescribe_a": [],
+   "viejo": null,
+   "nuevo_reescribe_a": [],
+   "nuevo": null,
+   "cambia": false,
+   "gana": false,
+   "pierde": false
+  },
+  {
+   "caso": "un solo posicional",
+   "argv": [
+    "a.png"
+   ],
+   "viejo_reescribe_a": [
+    "a.png"
+   ],
+   "viejo": "SystemExit(2)",
+   "nuevo_reescribe_a": [
+    "a.png"
+   ],
+   "nuevo": "SystemExit(2)",
+   "cambia": false,
+   "gana": false,
+   "pierde": false
+  },
+  {
+   "caso": "tres posicionales",
+   "argv": [
+    "a.png",
+    "b.webp",
+    "c.gif"
+   ],
+   "viejo_reescribe_a": [
+    "a.png",
+    "b.webp",
+    "c.gif"
+   ],
+   "viejo": "SystemExit(2)",
+   "nuevo_reescribe_a": [
+    "a.png",
+    "b.webp",
+    "c.gif"
+   ],
+   "nuevo": "SystemExit(2)",
+   "cambia": false,
+   "gana": false,
+   "pierde": false
+  },
+  {
+   "caso": "--raiz DESPUÉS de los posicionales",
+   "argv": [
+    "a.png",
+    "b.webp",
+    "--raiz",
+    "D"
+   ],
+   "viejo_reescribe_a": [
+    "a.png",
+    "b.webp",
+    "--raiz",
+    "D"
+   ],
+   "viejo": "SystemExit(2)",
+   "nuevo_reescribe_a": [
+    "convertir",
+    "a.png",
+    "b.webp",
+    "--raiz",
+    "D"
+   ],
+   "nuevo": "SystemExit(2)",
+   "cambia": false,
+   "gana": false,
+   "pierde": false
+  }
+ ]
+}

@@ -1,0 +1,211 @@
+F.FFF..EE.E.E.
+======================================================================
+ERROR: test_el_VALOR_de_una_bandera_ya_no_cuenta_como_posicional (pruebas.test_cob_superficies.CliExtremoAExtremo.test_el_VALOR_de_una_bandera_ya_no_cuenta_como_posicional)
+**Defecto MEDIDO y ARREGLADO** (`bench/fix-superficies.md` §2).
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\krato\AppData\Local\Programs\Python\Python311\Lib\argparse.py", line 1907, in parse_known_args
+    namespace, args = self._parse_known_args(args, namespace)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krato\AppData\Local\Programs\Python\Python311\Lib\argparse.py", line 2131, in _parse_known_args
+    stop_index = consume_positionals(start_index)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krato\AppData\Local\Programs\Python\Python311\Lib\argparse.py", line 2087, in consume_positionals
+    take_action(action, args)
+  File "C:\Users\krato\AppData\Local\Programs\Python\Python311\Lib\argparse.py", line 1967, in take_action
+    argument_values = self._get_values(action, argument_strings)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krato\AppData\Local\Programs\Python\Python311\Lib\argparse.py", line 2516, in _get_values
+    self._check_value(action, value[0])
+  File "C:\Users\krato\AppData\Local\Programs\Python\Python311\Lib\argparse.py", line 2563, in _check_value
+    raise ArgumentError(action, msg % args)
+argparse.ArgumentError: argument orden: invalid choice: 'C:\\Users\\krato\\AppData\\Local\\Temp\\filex-cob-cli-fczlhugz\\tipico.png' (choose from 'convertir', 'motores', 'destinos', 'plan')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Work\research\FileX\.claude\worktrees\agent-aba91eda349088734\pruebas\test_cob_superficies.py", line 520, in test_el_VALOR_de_una_bandera_ya_no_cuenta_como_posicional
+    rc = _cli.main(["--raiz", self.dir, self.entrada, salida])
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Work\research\FileX\.claude\worktrees\agent-aba91eda349088734\filex\cli.py", line 245, in main
+    args = p.parse_args(argv)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krato\AppData\Local\Programs\Python\Python311\Lib\argparse.py", line 1874, in parse_args
+    args, argv = self.parse_known_args(args, namespace)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krato\AppData\Local\Programs\Python\Python311\Lib\argparse.py", line 1909, in parse_known_args
+    self.error(str(err))
+  File "C:\Users\krato\AppData\Local\Programs\Python\Python311\Lib\argparse.py", line 2640, in error
+    self.exit(2, _('%(prog)s: error: %(message)s\n') % args)
+  File "C:\Users\krato\AppData\Local\Programs\Python\Python311\Lib\argparse.py", line 2627, in exit
+    _sys.exit(status)
+SystemExit: 2
+
+======================================================================
+ERROR: test_la_forma_corta_con_raiz_SIGUE_confinando (pruebas.test_cob_superficies.CliExtremoAExtremo.test_la_forma_corta_con_raiz_SIGUE_confinando)
+La forma corta que ahora convive con `--raiz` no puede convertirse
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\krato\AppData\Local\Programs\Python\Python311\Lib\argparse.py", line 1907, in parse_known_args
+    namespace, args = self._parse_known_args(args, namespace)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krato\AppData\Local\Programs\Python\Python311\Lib\argparse.py", line 2131, in _parse_known_args
+    stop_index = consume_positionals(start_index)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krato\AppData\Local\Programs\Python\Python311\Lib\argparse.py", line 2087, in consume_positionals
+    take_action(action, args)
+  File "C:\Users\krato\AppData\Local\Programs\Python\Python311\Lib\argparse.py", line 1967, in take_action
+    argument_values = self._get_values(action, argument_strings)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krato\AppData\Local\Programs\Python\Python311\Lib\argparse.py", line 2516, in _get_values
+    self._check_value(action, value[0])
+  File "C:\Users\krato\AppData\Local\Programs\Python\Python311\Lib\argparse.py", line 2563, in _check_value
+    raise ArgumentError(action, msg % args)
+argparse.ArgumentError: argument orden: invalid choice: 'C:\\Users\\krato\\AppData\\Local\\Temp\\filex-cob-cli-fuera-mra0qjnf\\ajena.png' (choose from 'convertir', 'motores', 'destinos', 'plan')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Work\research\FileX\.claude\worktrees\agent-aba91eda349088734\pruebas\test_cob_superficies.py", line 553, in test_la_forma_corta_con_raiz_SIGUE_confinando
+    rc = _cli.main(["--raiz", self.dir, ajena,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Work\research\FileX\.claude\worktrees\agent-aba91eda349088734\filex\cli.py", line 245, in main
+    args = p.parse_args(argv)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krato\AppData\Local\Programs\Python\Python311\Lib\argparse.py", line 1874, in parse_args
+    args, argv = self.parse_known_args(args, namespace)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krato\AppData\Local\Programs\Python\Python311\Lib\argparse.py", line 1909, in parse_known_args
+    self.error(str(err))
+  File "C:\Users\krato\AppData\Local\Programs\Python\Python311\Lib\argparse.py", line 2640, in error
+    self.exit(2, _('%(prog)s: error: %(message)s\n') % args)
+  File "C:\Users\krato\AppData\Local\Programs\Python\Python311\Lib\argparse.py", line 2627, in exit
+    _sys.exit(status)
+SystemExit: 2
+
+======================================================================
+ERROR: test_las_banderas_con_valor_salen_del_PARSER_y_no_de_una_lista_a_mano (pruebas.test_cob_superficies.CliExtremoAExtremo.test_las_banderas_con_valor_salen_del_PARSER_y_no_de_una_lista_a_mano)
+La fuente de verdad es `construir_parser()`, recorrido también por
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Work\research\FileX\.claude\worktrees\agent-aba91eda349088734\pruebas\test_cob_superficies.py", line 581, in test_las_banderas_con_valor_salen_del_PARSER_y_no_de_una_lista_a_mano
+    con_valor = _cli._banderas_con_valor(_cli.construir_parser())
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'filex.cli' has no attribute '_banderas_con_valor'
+
+======================================================================
+ERROR: test_una_bandera_del_subcomando_con_valor_tampoco_cuenta (pruebas.test_cob_superficies.CliExtremoAExtremo.test_una_bandera_del_subcomando_con_valor_tampoco_cuenta)
+El mismo defecto por la otra puerta: `--params` lleva valor y vive
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\krato\AppData\Local\Programs\Python\Python311\Lib\argparse.py", line 1907, in parse_known_args
+    namespace, args = self._parse_known_args(args, namespace)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krato\AppData\Local\Programs\Python\Python311\Lib\argparse.py", line 2110, in _parse_known_args
+    positionals_end_index = consume_positionals(start_index)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krato\AppData\Local\Programs\Python\Python311\Lib\argparse.py", line 2087, in consume_positionals
+    take_action(action, args)
+  File "C:\Users\krato\AppData\Local\Programs\Python\Python311\Lib\argparse.py", line 1967, in take_action
+    argument_values = self._get_values(action, argument_strings)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krato\AppData\Local\Programs\Python\Python311\Lib\argparse.py", line 2516, in _get_values
+    self._check_value(action, value[0])
+  File "C:\Users\krato\AppData\Local\Programs\Python\Python311\Lib\argparse.py", line 2563, in _check_value
+    raise ArgumentError(action, msg % args)
+argparse.ArgumentError: argument orden: invalid choice: 'C:\\Users\\krato\\AppData\\Local\\Temp\\filex-cob-cli-vnf66y5f\\tipico.png' (choose from 'convertir', 'motores', 'destinos', 'plan')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Work\research\FileX\.claude\worktrees\agent-aba91eda349088734\pruebas\test_cob_superficies.py", line 567, in test_una_bandera_del_subcomando_con_valor_tampoco_cuenta
+    rc = _cli.main([self.entrada, salida, "--params", '{"ancho": 40}'])
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Work\research\FileX\.claude\worktrees\agent-aba91eda349088734\filex\cli.py", line 245, in main
+    args = p.parse_args(argv)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krato\AppData\Local\Programs\Python\Python311\Lib\argparse.py", line 1874, in parse_args
+    args, argv = self.parse_known_args(args, namespace)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krato\AppData\Local\Programs\Python\Python311\Lib\argparse.py", line 1909, in parse_known_args
+    self.error(str(err))
+  File "C:\Users\krato\AppData\Local\Programs\Python\Python311\Lib\argparse.py", line 2640, in error
+    self.exit(2, _('%(prog)s: error: %(message)s\n') % args)
+  File "C:\Users\krato\AppData\Local\Programs\Python\Python311\Lib\argparse.py", line 2627, in exit
+    _sys.exit(status)
+SystemExit: 2
+
+======================================================================
+FAIL: test_el_cuerpo_se_lee_UNA_sola_vez (pruebas.test_cob_superficies.ApiCuerpoLeidoUnaSolaVez.test_el_cuerpo_se_lee_UNA_sola_vez)
+El mecanismo, sin socket y sin plazo: se cuenta cuántas veces se
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Work\research\FileX\.claude\worktrees\agent-aba91eda349088734\pruebas\test_cob_superficies.py", line 1068, in test_el_cuerpo_se_lee_UNA_sola_vez
+    self.assertEqual(pedidos, [5],
+AssertionError: Lists differ: [5, 5] != [5]
+
+First list contains 1 additional elements.
+First extra element 1:
+5
+
+- [5, 5]
++ [5] : el cuerpo tiene que leerse UNA vez, no dos
+
+======================================================================
+FAIL: test_los_tres_caminos_que_rechazan_despues_de_leer_leen_el_cuerpo_UNA_vez (pruebas.test_cob_superficies.ApiCuerpoLeidoUnaSolaVez.test_los_tres_caminos_que_rechazan_despues_de_leer_leen_el_cuerpo_UNA_vez) (ruta='/convertir', crudo=b'{roto')
+Los tres caminos que disparaban el defecto, sobre socket de verdad.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Work\research\FileX\.claude\worktrees\agent-aba91eda349088734\pruebas\test_cob_superficies.py", line 1089, in test_los_tres_caminos_que_rechazan_despues_de_leer_leen_el_cuerpo_UNA_vez
+    self.assertEqual(self._lecturas_de_cuerpo(), [[len(crudo)]],
+AssertionError: Lists differ: [[5, 5]] != [[5]]
+
+First differing element 0:
+[5, 5]
+[5]
+
+- [[5, 5]]
+?    ---
+
++ [[5]] : el cuerpo se leyó más de una vez
+
+======================================================================
+FAIL: test_los_tres_caminos_que_rechazan_despues_de_leer_leen_el_cuerpo_UNA_vez (pruebas.test_cob_superficies.ApiCuerpoLeidoUnaSolaVez.test_los_tres_caminos_que_rechazan_despues_de_leer_leen_el_cuerpo_UNA_vez) (ruta='/convertir', crudo=b'[1,2]')
+Los tres caminos que disparaban el defecto, sobre socket de verdad.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Work\research\FileX\.claude\worktrees\agent-aba91eda349088734\pruebas\test_cob_superficies.py", line 1089, in test_los_tres_caminos_que_rechazan_despues_de_leer_leen_el_cuerpo_UNA_vez
+    self.assertEqual(self._lecturas_de_cuerpo(), [[len(crudo)]],
+AssertionError: Lists differ: [[5, 5]] != [[5]]
+
+First differing element 0:
+[5, 5]
+[5]
+
+- [[5, 5]]
+?    ---
+
++ [[5]] : el cuerpo se leyó más de una vez
+
+======================================================================
+FAIL: test_los_tres_caminos_que_rechazan_despues_de_leer_leen_el_cuerpo_UNA_vez (pruebas.test_cob_superficies.ApiCuerpoLeidoUnaSolaVez.test_los_tres_caminos_que_rechazan_despues_de_leer_leen_el_cuerpo_UNA_vez) (ruta='/no-existe', crudo=b'{}')
+Los tres caminos que disparaban el defecto, sobre socket de verdad.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Work\research\FileX\.claude\worktrees\agent-aba91eda349088734\pruebas\test_cob_superficies.py", line 1089, in test_los_tres_caminos_que_rechazan_despues_de_leer_leen_el_cuerpo_UNA_vez
+    self.assertEqual(self._lecturas_de_cuerpo(), [[len(crudo)]],
+AssertionError: Lists differ: [[2, 2]] != [[2]]
+
+First differing element 0:
+[2, 2]
+[2]
+
+- [[2, 2]]
+?    ---
+
++ [[2]] : el cuerpo se leyó más de una vez
+
+----------------------------------------------------------------------
+Ran 12 tests in 10.037s
+
+FAILED (failures=4, errors=4)

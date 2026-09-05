@@ -1,0 +1,85 @@
+{
+ "plazo_s": 3.0,
+ "timeout_socket_de_produccion_s": 30.0,
+ "nota": "se publica el cociente contra el plazo, no un tiempo absoluto (CLAUDE.md §3); las dos configuraciones van en la misma tanda (trampa 59)",
+ "celdas_que_agotan_el_plazo": {
+  "vulnerable": 3,
+  "arreglado": 0
+ },
+ "el_arnes_dispara": true,
+ "todas_responden_lo_correcto": true,
+ "filas": [
+  {
+   "configuracion": "vulnerable",
+   "celda": "no es JSON",
+   "codigo": 400,
+   "codigo_esperado": 400,
+   "correcto": true,
+   "veces_el_plazo": 1.006,
+   "agota_el_plazo": true
+  },
+  {
+   "configuracion": "vulnerable",
+   "celda": "no es objeto",
+   "codigo": 400,
+   "codigo_esperado": 400,
+   "correcto": true,
+   "veces_el_plazo": 1.003,
+   "agota_el_plazo": true
+  },
+  {
+   "configuracion": "vulnerable",
+   "celda": "ruta desconocida",
+   "codigo": 404,
+   "codigo_esperado": 404,
+   "correcto": true,
+   "veces_el_plazo": 1.005,
+   "agota_el_plazo": true
+  },
+  {
+   "configuracion": "vulnerable",
+   "celda": "415 (rechaza ANTES)",
+   "codigo": 415,
+   "codigo_esperado": 415,
+   "correcto": true,
+   "veces_el_plazo": 0.0,
+   "agota_el_plazo": false
+  },
+  {
+   "configuracion": "arreglado",
+   "celda": "no es JSON",
+   "codigo": 400,
+   "codigo_esperado": 400,
+   "correcto": true,
+   "veces_el_plazo": 0.0,
+   "agota_el_plazo": false
+  },
+  {
+   "configuracion": "arreglado",
+   "celda": "no es objeto",
+   "codigo": 400,
+   "codigo_esperado": 400,
+   "correcto": true,
+   "veces_el_plazo": 0.0,
+   "agota_el_plazo": false
+  },
+  {
+   "configuracion": "arreglado",
+   "celda": "ruta desconocida",
+   "codigo": 404,
+   "codigo_esperado": 404,
+   "correcto": true,
+   "veces_el_plazo": 0.0,
+   "agota_el_plazo": false
+  },
+  {
+   "configuracion": "arreglado",
+   "celda": "415 (rechaza ANTES)",
+   "codigo": 415,
+   "codigo_esperado": 415,
+   "correcto": true,
+   "veces_el_plazo": 0.0,
+   "agota_el_plazo": false
+  }
+ ]
+}
