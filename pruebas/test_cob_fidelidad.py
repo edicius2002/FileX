@@ -1033,18 +1033,19 @@ class FidelidadVideoMotor(Desechable):
         # Una sola perdida por campo, y ninguna atribuida a la pista 0.
         self.assertNotIn("pista 0", v5["mensaje"])
 
-    def test_V5_empareja_por_POSICION_y_REORDENAR_le_parece_una_perdida(self):
-        """DEFECTO DOCUMENTADO, NO ARREGLADO (informe §5.2).
+    def test_V5_REORDENAR_las_pistas_ya_NO_le_parece_una_perdida(self):
+        """DEFECTO ARREGLADO en `fix/verificador` (informe §5.2 de
+        `cobertura-fidelidad.md`).
 
-        `y = ts[i] if i < len(ts) else None` empareja la pista `i` de la
+        `y = ts[i] if i < len(ts) else None` emparejaba la pista `i` de la
         entrada con la `i` de la salida. Reordenar las pistas --que es lo que
-        hace ffmpeg por defecto cuando no se pasa `-map 0`-- cruza el video con
-        el audio y V5 declara `aviso: se pierden etiquetas` sobre una salida
-        que conserva TODAS.
+        hace ffmpeg por defecto cuando no se pasa `-map 0`-- cruzaba el video
+        con el audio y V5 declaraba `aviso: se pierden etiquetas` sobre una
+        salida que conserva TODAS. El emparejamiento es ahora por TIPO de pista
+        y orden DENTRO de su tipo.
 
-        Esta prueba fija el comportamiento de HOY, no el deseable: si alguien
-        arregla el emparejamiento se pondra roja, y ese es el sitio donde
-        encontrara el motivo (trampa 65).
+        Se conserva el caso minimo entero, con su control: lo que cambia es el
+        veredicto que se exige.
         """
         reord = os.path.join(self.dir, "reordenado.mkv")
         self._ff(["-i", self.dos, "-map", "0:v", "-map", "0:a", "-c", "copy",
@@ -1058,10 +1059,28 @@ class FidelidadVideoMotor(Desechable):
 
         # Control: NINGUNA etiqueta ha desaparecido. Solo cambio el orden.
         self.assertEqual(conjunto(etq_e), conjunto(etq_s))
+        # Control de la premisa: el orden SI cambio, o la celda no mide nada.
+        self.assertNotEqual([x["tipo"] for x in etq_e],
+                            [x["tipo"] for x in etq_s])
         h, cob = self._fid(reord, self.dos)
         v5 = [x for x in h if x["regla"] == "V5"][0]
-        self.assertEqual(v5["severidad"], "aviso")       # <- el falso positivo
-        self.assertIn("se pierden etiquetas", v5["mensaje"])
+        self.assertEqual(v5["severidad"], "informativo")
+        self.assertIn("se conservan", v5["mensaje"])
+
+    def test_V5_empareja_por_TIPO_y_no_por_posicion(self):
+        """La unidad, sin ffmpeg de por medio: emparejar por posicion cruzaba
+        el video con el audio."""
+        te = [{"tipo": "audio", "language": None, "title": None},
+              {"tipo": "video", "language": "spa", "title": "Prueba"}]
+        ts = [{"tipo": "video", "language": "spa", "title": "Prueba"},
+              {"tipo": "audio", "language": None, "title": None}]
+        self.assertEqual(V._emparejar_por_tipo(te, ts), [ts[1], ts[0]])
+        # una salida a la que le falta el tipo entero se empareja con None
+        self.assertEqual(V._emparejar_por_tipo(te, [ts[1]]), [ts[1], None])
+        # y dentro de un mismo tipo se respeta el orden: 2 audios, 2 audios
+        a = [{"tipo": "audio", "language": "spa", "title": None},
+             {"tipo": "audio", "language": "eng", "title": None}]
+        self.assertEqual(V._emparejar_por_tipo(a, a), a)
 
     def test_V5_no_se_evalua_hacia_los_destinos_de_un_solo_fotograma(self):
         for dest in ("wav", "bmp", "png", "jpg", "jpeg"):

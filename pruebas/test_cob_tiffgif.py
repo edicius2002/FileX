@@ -408,19 +408,32 @@ class LzwGif(Discriminada):
                          "            if leidos >= tope * 10 ** 9:\n"
                          "                return False"))
 
-    def test_mcs_mayor_que_8_lanza_ValueError_y_alfa_min_gif_lo_ATRAPA(self):
-        """CASO MINIMO de un defecto: `_lzw_gif_usa` no valida `mcs`.
+    def test_un_mcs_fuera_de_rango_es_un_error_DECLARADO(self):
+        """CASO MINIMO del defecto, ARREGLADO: `_lzw_gif_usa` no validaba
+        `mcs`.
 
-        `mcs` sale de un byte del fichero, sin comprobar. Con `mcs >= 9`,
-        `bytes([i]) for i in range(1 << mcs)` lanza `ValueError: bytes must be
-        in range(0, 256)` en la PRIMERA linea util. `_alfa_min_gif` lo captura
-        y devuelve `evaluable=False` con motivo, que es el comportamiento
-        correcto de cara al contrato; pero cualquier otro llamador de
-        `_lzw_gif_usa` recibe la excepcion. Se documenta, no se parchea
-        (`filex/` no se toca en este carril).
+        `mcs` sale de un byte del fichero. Con `mcs >= 9`,
+        `bytes([i]) for i in range(1 << mcs)` lanzaba `ValueError: bytes must
+        be in range(0, 256)` en la PRIMERA linea util —un error de la
+        implementacion, no del formato—. GIF89a fija el rango en 2..8, y el
+        censo de este repositorio lo confirma: los 180 bloques de imagen de los
+        GIF del arbol usan `mcs = 8`, ninguno otro valor.
+
+        Sigue siendo un `ValueError`, asi que `_alfa_min_gif` lo captura igual y
+        el contrato ve el mismo campo; lo que cambia es el MENSAJE, que ahora
+        dice cual es el byte malo.
         """
-        with self.assertRaises(ValueError):
-            V._lzw_gif_usa(b"\x00\x01", 9, 0, 10 ** 9)
+        for mcs in (9, 12, 255, 1, 0):
+            with self.subTest(mcs=mcs):
+                with self.assertRaises(ValueError) as cm:
+                    V._lzw_gif_usa(b"\x00\x01", mcs, 0, 10 ** 9)
+                self.assertIn("mcs", str(cm.exception))
+                self.assertIn(str(mcs), str(cm.exception))
+        # ...y los del rango legitimo no lanzan
+        for mcs in range(2, 9):
+            with self.subTest(mcs=mcs):
+                V._lzw_gif_usa(F.lzw_gif_comprimir(b"\x00\x01", mcs), mcs, 0,
+                               10 ** 9)
         datos = F.gif(4, 2, [F.gif_gce(0, True),
                              F.gif_imagen(4, 2, b"\x00" * 8, mcs=9,
                                           datos=b"\x00\x01\x02")])
@@ -428,6 +441,7 @@ class LzwGif(Discriminada):
         self.assertFalse(r["evaluable"])
         self.assertIn("LZW del fotograma 1 ilegible", r["motivo"])
         self.assertIn("ValueError", r["motivo"])
+        self.assertIn("mcs", r["motivo"])
         self.assertEqual(r["cota_alfa_min"], 0.0)
 
 
@@ -663,21 +677,23 @@ class Ifd0YDescompresion(Discriminada):
             self.assertEqual(bytes(mod._tiff_descomprimir(comp, compr,
                                                           len(datos))),
                              datos, "compresion %d" % compr)
-        # HALLAZGO, y por eso el `esperado` NO se comprueba igual en las cinco:
-        # `esperado` significa dos cosas distintas segun la compresion. En 1, 5,
-        # 8 y 32946 es un TOPE EXACTO; en PackBits es solo una condicion de
-        # parada del bucle, que se evalua ANTES de volcar un literal de hasta
-        # 128 bytes, asi que la salida puede pasarse. No hace dano —el carril
-        # alfa rebana por filas y sobra por el final— pero un llamador que lo
-        # tome por un tope se lleva una sorpresa.
-        for compr in (1, 5, 8, 32946):
+        # HALLAZGO, ARREGLADO: `esperado` significaba dos cosas distintas segun
+        # la compresion. En 1, 5, 8 y 32946 era un TOPE EXACTO; en PackBits era
+        # solo una condicion de parada del bucle, que se evalua ANTES de volcar
+        # un literal de hasta 128 bytes, asi que la salida se pasaba (28 bytes
+        # pidiendo 17). No hacia dano —el carril alfa rebana por filas y lo que
+        # sobra queda al final— pero un llamador que lo tomara por un tope se
+        # llevaba una sorpresa, y el nombre del parametro invita a tomarlo por
+        # un tope. Ahora es un tope en las CINCO.
+        for compr in (1, 5, 8, 32946, 32773):
             self.assertEqual(len(mod._tiff_descomprimir(pares[compr], compr,
                                                         17)), 17,
                              "compresion %d: `esperado` es un tope" % compr)
-        sobra = len(mod._tiff_descomprimir(pares[32773], 32773, 17))
-        self.assertGreaterEqual(sobra, 17)
-        self.assertLess(sobra, 17 + 128,
-                        "PackBits se pasa como mucho un literal completo")
+        # ...y el contenido de los 17 primeros bytes no se ha movido
+        for compr in (1, 5, 8, 32946, 32773):
+            self.assertEqual(bytes(mod._tiff_descomprimir(pares[compr], compr,
+                                                          17)),
+                             datos[:17], "compresion %d" % compr)
 
     def test_descomprimir(self):
         self._c_descomprimir(V)
@@ -1132,58 +1148,58 @@ class SondaGif(Discriminada):
 
 
 class TruncadosGifDefecto(Discriminada):
-    """DEFECTO ENCONTRADO — caso minimo, sin parche (`filex/` no se toca).
+    """DEFECTO ARREGLADO en `fix/verificador` — se conserva el caso minimo.
 
-    `_gif` sobrevive a los 32 cortes; **`_gif_bloques` NO**, y el que lo llama
-    —`_alfa_min_gif`— itera el generador FUERA de su `try`. Dos lectores del
+    `_gif` sobrevivia a los 32 cortes; **`_gif_bloques` NO**, y el que lo llama
+    —`_alfa_min_gif`— iteraba el generador FUERA de su `try`. Dos lectores del
     mismo formato, en el mismo fichero, con dos disciplinas distintas.
 
-    Lo que salva al producto es el `except` de `alfa_minimo`, dos capas mas
-    arriba, que ya atrapa `struct.error` e `IndexError`. **Asi que esto no es
-    un fallo de superficie: es una perdida de MOTIVO.** `_alfa_min_gif` esta
+    Lo que salvaba al producto era el `except` de `alfa_minimo`, dos capas mas
+    arriba, que ya atrapa `struct.error` e `IndexError`. **Asi que no era un
+    fallo de superficie: era una perdida de MOTIVO.** `_alfa_min_gif` esta
     escrito para explicar por que no puede («no es un GIF», «GIF sin bloques de
     imagen», «LZW del fotograma 1 ilegible: ...»), y en este camino el motivo
-    que llega al contrato es el volcado de la excepcion. En este proyecto el
+    que llegaba al contrato era el volcado de la excepcion. En este proyecto el
     mensaje es parte del contrato, no decoracion.
 
-    Cualquier otro llamador de `_gif_bloques` —hoy solo hay uno— recibiria la
-    excepcion sin red.
+    Ahora `_gif_bloques` para donde se le acaban los datos, igual que `_gif`, y
+    `_alfa_min_gif` envuelve TAMBIEN la iteracion del generador. Las tres capas
+    se siguen midiendo por separado, que es lo que hace util este caso.
     """
 
-    def test_gif_bloques_lanza_donde_gif_sobrevive(self):
+    def test_gif_bloques_sobrevive_a_los_mismos_cortes_que_gif(self):
         entero = F.gif(4, 2, [F.gif_gce(0, True),
                               F.gif_imagen(4, 2, b"\x00\x01" * 4)])
-        i = entero.index(b"\x2c", 13)
         revientan = []
         for corte in range(13, len(entero) + 1):
             try:
                 list(V._gif_bloques(entero[:corte]))
             except (struct.error, IndexError) as e:
                 revientan.append((corte, type(e).__name__))
-        self.assertTrue(revientan, "si esto queda vacio, el defecto se cerro y "
-                                   "esta prueba hay que reescribirla")
-        cortes = dict(revientan)
-        # Un corte que deja el descriptor de imagen a medias (0x2C presente,
-        # los 8 bytes de geometria no) revienta en el `unpack_from`.
-        self.assertEqual(cortes.get(i + 1), "error")          # struct.error
-        # y el modo de fallo cambia mas adelante, dentro de los sub-bloques
-        self.assertIn("IndexError", cortes.values())
-        # mientras `_gif`, sobre EXACTAMENTE los mismos cortes, no lanza ni uno
-        for corte in cortes:
+        self.assertEqual(revientan, [])
+        # ...y `_gif`, sobre EXACTAMENTE los mismos cortes, tampoco lanza uno
+        for corte in range(13, len(entero) + 1):
             p = self.escribe("cmp%d.gif" % corte, entero[:corte])
             with open(p, "rb") as fh:
                 self.assertIn("n_imagenes", V._gif(fh), "corte %d" % corte)
 
-    def test_el_defecto_llega_hasta_alfa_min_gif(self):
+    def test_el_corte_que_reventaba_ahora_da_un_MOTIVO(self):
+        """El corte que dejaba el descriptor de imagen a medias (0x2C presente,
+        los 8 bytes de geometria no) reventaba en el `unpack_from`. Ahora
+        `_gif_bloques` no emite ese bloque y `_alfa_min_gif` contesta con una
+        de sus frases, no con el volcado de una excepcion."""
         entero = F.gif(4, 2, [F.gif_gce(0, True),
                               F.gif_imagen(4, 2, b"\x00\x01" * 4)])
         i = entero.index(b"\x2c", 13)
         p = self.escribe("truncado.gif", entero[:i + 4])
-        with self.assertRaises(struct.error):
-            V._alfa_min_gif(p)
+        r = V._alfa_min_gif(p)
+        self.assertFalse(r["evaluable"])
+        self.assertEqual(r["motivo"], "GIF sin bloques de imagen")
 
-    def test_pero_el_despachador_publico_lo_atrapa(self):
-        """La red esta, y hay que decir donde: en `alfa_minimo`, no aqui."""
+    def test_y_el_despachador_publico_publica_ese_mismo_motivo(self):
+        """La red de `alfa_minimo` sigue estando; lo que cambia es que ya no
+        hace falta que la use, asi que el motivo que llega al contrato es una
+        frase escrita y no un `struct.error`."""
         entero = F.gif(4, 2, [F.gif_gce(0, True),
                               F.gif_imagen(4, 2, b"\x00\x01" * 4)])
         i = entero.index(b"\x2c", 13)
@@ -1191,12 +1207,25 @@ class TruncadosGifDefecto(Discriminada):
         self.assertFalse(r["evaluable"])
         self.assertIsNone(r["alfa_min"])
         self.assertIsNone(r["alfa_no_trivial"])
-        # ...y el precio: el motivo es el volcado de la excepcion, no una de
-        # las frases que `_alfa_min_gif` sabe escribir.
-        self.assertIn("error", r["motivo"])
-        for frase in ("no es un GIF", "GIF sin bloques de imagen",
-                      "LZW del fotograma 1 ilegible"):
-            self.assertNotIn(frase, r["motivo"])
+        self.assertEqual(r["motivo"], "GIF sin bloques de imagen")
+
+    def test_ningun_corte_deja_escapar_una_excepcion_por_alfa_min_gif(self):
+        """La prueba ancha: los 32 cortes por la via de `_alfa_min_gif`, que es
+        donde vivia el agujero (iteraba el generador fuera de su `try`)."""
+        entero = F.gif(4, 2, [F.gif_gce(0, True),
+                              F.gif_imagen(4, 2, b"\x00\x01" * 4)])
+        for corte in range(13, len(entero) + 1):
+            p = self.escribe("ancho%d.gif" % corte, entero[:corte])
+            with self.subTest(corte=corte):
+                r = V._alfa_min_gif(p)       # no lanza: eso es la asercion
+                if not r["evaluable"]:
+                    # y si no puede, lo dice con una de sus frases
+                    self.assertTrue(
+                        any(f in r["motivo"] for f in
+                            ("no es un GIF", "GIF sin bloques de imagen",
+                             "LZW del fotograma 1 ilegible",
+                             "bloques del GIF ilegibles")),
+                        r["motivo"])
 
 
 # ===========================================================================

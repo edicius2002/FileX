@@ -671,7 +671,8 @@ class Paeth(unittest.TestCase):
 
 class PredictoresVp8l(unittest.TestCase):
     """Los 14 predictores de `_predice` contra el oraculo escrito desde la
-    especificacion de libwebp. El modo 13 esta aparte: divergen (defecto D2)."""
+    especificacion de libwebp. El modo 13 divergia (defecto D2) y ya no: entra
+    en el barrido como los otros trece."""
 
     SEMILLAS = (0x00000000, 0xFFFFFFFF, 0xFF000000, 0x0000FF00, 0x80808080,
                 0x017F01FE, 0x01020304, 0xFEFDFCFB, 0x7F80817E, 0x0A0A0A0A,
@@ -685,15 +686,13 @@ class PredictoresVp8l(unittest.TestCase):
         px[i - 1], px[i - w], px[i - w - 1], px[i - w + 1] = L, T, TL, TR
         return px, i, w
 
-    def test_los_trece_modos_que_coinciden_con_libwebp(self):
+    def test_los_catorce_modos_coinciden_con_libwebp(self):
         import itertools
-        vistos = {m: 0 for m in range(14) if m != 13}
+        vistos = {m: 0 for m in range(14)}
         for L, T, TL, TR in itertools.islice(
                 itertools.product(self.SEMILLAS, repeat=4), 0, None, 7):
             px, i, w = self._vecindad(L, T, TL, TR)
             for modo in range(14):
-                if modo == 13:
-                    continue
                 with self.subTest(modo=modo, L=L, T=T, TL=TL, TR=TR):
                     self.assertEqual(V._predice(modo, px, i, w),
                                      F.predice_ref(modo, L, T, TL, TR))
@@ -819,20 +818,23 @@ class Vp8lDeVerdad(BasePng):
 # ---------------------------------------------------------------------------
 
 class DefectosVigentes(BasePng):
-    """Estas pruebas fijan el comportamiento ACTUAL, que es INCORRECTO.
+    """Los dos defectos que este carril midio, ARREGLADOS en `fix/verificador`.
 
-    Se escriben asi por la trampa 116: el control positivo de un arnes es el
-    sujeto CON el defecto, conservado a proposito. Si alguna se pone roja es
-    que el defecto se arreglo — **quitala y anota el arreglo en
-    `bench/cobertura-png.md`**, no la relajes. El carril `cob/png` tiene
-    prohibido tocar `filex/`.
+    Se conserva el CASO MINIMO que los reprodujo —que es lo que tiene que
+    seguir vigilandolos— y se le da la vuelta a la asercion: donde antes se
+    fijaba el valor equivocado de hoy, ahora se exige el correcto. La trampa
+    116 pide que el control positivo de un arnes sea el sujeto CON el defecto:
+    aqui ese papel lo hace el ORACULO (`F.referencia`, y la rama Adam7 del
+    mismo modulo), que se sigue evaluando en la misma celda.
     """
 
-    def test_D1_un_alfa_de_16_bits_con_el_byte_alto_a_255_se_da_por_opaco(self):
-        """`_alfa_min_png` solo entra a comparar la pareja (hi, lo) si
-        `min(hi) < 255`, asi que todo alfa entre 0xFF00 y 0xFFFE se pierde: se
-        publica `alfa_min = 1.0` **y `exacto = True`**, que es una afirmacion
-        falsa, no una duda. La rama Adam7 del mismo fichero SI lo ve.
+    def test_D1_un_alfa_de_16_bits_con_el_byte_alto_a_255_SE_VE(self):
+        """ARREGLADO. `_alfa_min_png` se saltaba la fila entera si
+        `min(hi) == 255`, asi que todo alfa entre 0xFF00 y 0xFFFE se perdia:
+        publicaba `alfa_min = 1.0` **y `exacto = True`**, que es una afirmacion
+        falsa, no una duda. La guarda es ahora `min(hi) <= mn_pareja >> 8`, que
+        es exacta —ningun pixel con `hi > mn>>8` puede bajar el minimo— y hace
+        que las DOS vias del modulo, entrelazada y no, den lo mismo.
         """
         for alfa in (65280, 65407, 65534):
             px = F.rgba_con_hueco(6, 4, 3, 2, alfa, bd=16)
@@ -843,50 +845,48 @@ class DefectosVigentes(BasePng):
             with self.subTest(alfa=alfa):
                 a = V.alfa_minimo(plano, "png", exacto=True)
                 b = V.alfa_minimo(entre, "png", exacto=True)
-                # el oraculo y la via entrelazada coinciden...
+                # el oraculo, la via entrelazada y la NO entrelazada: los tres
                 self.assertAlmostEqual(F.referencia(F.png(
                     px, 6, 16, filtros=TODOS_LOS_FILTROS))["alfa_min"],
                     esperado, places=12)
                 self.assertAlmostEqual(b["alfa_min"], esperado, places=12)
+                self.assertAlmostEqual(a["alfa_min"], esperado, places=12)
                 self.assertEqual(tuple(b["primer_transparente"]), (3, 2))
-                # ...y la via NO entrelazada da 1.0, exacto, y sin coordenada
-                self.assertEqual(a["alfa_min"], 1.0)
+                self.assertEqual(tuple(a["primer_transparente"]), (3, 2))
                 self.assertTrue(a["exacto"])
-                self.assertIsNone(a["primer_transparente"])
                 # la consecuencia, que es lo que se publica hacia el contrato:
-                # `alfa_no_trivial` pasa de True a False, y la regla I3 da la
-                # entrada por «sin zonas transparentes» sin mirar la salida.
+                # `alfa_no_trivial` ya no pasa de True a False, asi que la regla
+                # I3 deja de dar la entrada por «sin zonas transparentes» sin
+                # mirar la salida.
                 self.assertIs(b["alfa_no_trivial"], esperado < 0.999)
-                self.assertIs(a["alfa_no_trivial"], False)
+                self.assertIs(a["alfa_no_trivial"], esperado < 0.999)
 
-    def test_D1b_el_umbral_esta_justo_en_0xFF00(self):
-        """Caso minimo del limite: 0xFEFF se ve, 0xFF00 no."""
-        for alfa, se_ve in ((65279, True), (65280, False)):
+    def test_D1b_el_umbral_que_estaba_en_0xFF00_ya_no_esta(self):
+        """Caso minimo del limite: 0xFEFF se veia y 0xFF00 no. Ahora los dos."""
+        for alfa in (65279, 65280):
             px = F.rgba_con_hueco(4, 2, 1, 1, alfa, bd=16)
             p = self.escribe(F.png(px, 6, 16, filtros=(0,)))
             got = V.alfa_minimo(p, "png", exacto=True)
             with self.subTest(alfa=alfa):
-                if se_ve:
-                    self.assertAlmostEqual(got["alfa_min"], alfa / 65535.0,
-                                           places=12)
-                else:
-                    self.assertEqual(got["alfa_min"], 1.0)
+                self.assertAlmostEqual(got["alfa_min"], alfa / 65535.0,
+                                       places=12)
 
-    def test_D2_el_predictor_13_divide_como_Python_y_no_como_C(self):
-        """libwebp calcula `a + (a - b) / 2` con division ENTERA DE C, que
-        trunca hacia cero; `_clamp_half` usa `//`, que trunca hacia -infinito.
-        Difieren en 1 siempre que `a - b` sea negativo e impar.
+    def test_D2_el_predictor_13_divide_COMO_C(self):
+        """ARREGLADO. libwebp calcula `a + (a - b) / 2` con division ENTERA DE
+        C, que trunca hacia cero; `_clamp_half` usaba `//`, que trunca hacia
+        -infinito. Difieren en 1 siempre que `a - b` sea negativo e impar.
 
         Caso minimo: L = T = 0x0A0A0A0A, TL = 0x0F0F0F0F. Media = 10,
-        10 + (10-15)/2 -> C: 10 + (-2) = 8; Python: 10 + (-3) = 7.
+        10 + (10-15)/2 -> C: 10 + (-2) = 8; Python: 10 + (-3) = 7. El arbitro
+        es `F.clamp_half_ref`, la especificacion reescrita en el fixture.
         """
         L = T = 0x0A0A0A0A
         TL = 0x0F0F0F0F
-        self.assertEqual(V._clamp_half(L, T, TL), 0x07070707)
         self.assertEqual(F.clamp_half_ref(L, T, TL), 0x08080808)
+        self.assertEqual(V._clamp_half(L, T, TL), 0x08080808)
         px, i, w = PredictoresVp8l._vecindad(L, T, TL, 0)
-        self.assertEqual(V._predice(13, px, i, w), 0x07070707)
-        # cuando la diferencia es par o positiva, coinciden
+        self.assertEqual(V._predice(13, px, i, w), 0x08080808)
+        # y donde ya coincidian —diferencia par o positiva— sigue coincidiendo
         for L2, T2, TL2 in ((0x0A0A0A0A, 0x0A0A0A0A, 0x0E0E0E0E),
                             (0x1E1E1E1E, 0x1E1E1E1E, 0x0A0A0A0A)):
             with self.subTest(TL=TL2):
