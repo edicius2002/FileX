@@ -1,0 +1,395 @@
+{
+ "celdas": [
+  {
+   "id": "num-unidades",
+   "funcion": "_num",
+   "clase": "Num",
+   "estado": "ok",
+   "rojos": [
+    "test_quita_las_siete_unidades_de_longitud"
+   ],
+   "resumen": "FAILED (failures=6)"
+  },
+  {
+   "id": "num-por-defecto",
+   "funcion": "_num",
+   "clase": "Num",
+   "estado": "ok",
+   "rojos": [
+    "test_None_devuelve_el_por_defecto"
+   ],
+   "resumen": "FAILED (failures=1)"
+  },
+  {
+   "id": "svg-anchor-middle",
+   "funcion": "svg_textos",
+   "clase": "SvgTextos",
+   "estado": "ok",
+   "rojos": [
+    "test_los_tres_anclajes_mueven_la_caja"
+   ],
+   "resumen": "FAILED (failures=1)"
+  },
+  {
+   "id": "svg-caja-degenerada",
+   "funcion": "svg_textos",
+   "clase": "SvgTextos",
+   "estado": "ok",
+   "rojos": [
+    "test_una_caja_degenerada_se_descarta_en_vez_de_publicarse"
+   ],
+   "resumen": "FAILED (failures=1)"
+  },
+  {
+   "id": "svg-texto-vacio",
+   "funcion": "svg_textos",
+   "clase": "SvgTextos",
+   "estado": "ok",
+   "rojos": [
+    "test_un_text_vacio_o_de_solo_espacios_no_cuenta"
+   ],
+   "resumen": "FAILED (failures=1)"
+  },
+  {
+   "id": "svg-banda-vertical",
+   "funcion": "svg_textos",
+   "clase": "SvgTextos",
+   "estado": "ok",
+   "rojos": [
+    "test_el_font_size_puede_venir_dentro_de_style",
+    "test_el_viewBox_desplaza_el_origen"
+   ],
+   "resumen": "FAILED (failures=2)"
+  },
+  {
+   "id": "png-umbral-tinta",
+   "funcion": "png_tinta_cajas",
+   "clase": "PngTintaCajas",
+   "estado": "ok",
+   "rojos": [
+    "test_RGB_de_8_bits_usa_la_luminancia_ponderada"
+   ],
+   "resumen": "FAILED (failures=1)"
+  },
+  {
+   "id": "png-fondo-mas-frecuente",
+   "funcion": "png_tinta_cajas",
+   "clase": "PngTintaCajas",
+   "estado": "ok",
+   "rojos": [
+    "test_el_fondo_es_el_mas_frecuente_no_el_blanco"
+   ],
+   "resumen": "FAILED (failures=1)"
+  },
+  {
+   "id": "png-corte-por-y-max",
+   "funcion": "png_tinta_cajas",
+   "clase": "PngTintaCajas",
+   "estado": "ok",
+   "rojos": [
+    "test_solo_lee_las_filas_que_hacen_falta"
+   ],
+   "resumen": "FAILED (failures=1)"
+  },
+  {
+   "id": "png-guarda-entrelazado",
+   "funcion": "png_tinta_cajas",
+   "clase": "PngTintaCajas",
+   "estado": "ok",
+   "rojos": [
+    "test_Adam7_se_declara_no_implementado_en_vez_de_inventar_un_numero"
+   ],
+   "resumen": "FAILED (failures=1)"
+  },
+  {
+   "id": "png-caja-sin-pixeles",
+   "funcion": "png_tinta_cajas",
+   "clase": "PngTintaCajas",
+   "estado": "ok",
+   "rojos": [
+    "test_una_caja_sin_pixeles_declara_tinta_None_no_cero"
+   ],
+   "resumen": "FAILED (failures=1)"
+  },
+  {
+   "id": "tr-suma-tx",
+   "funcion": "_translate_acumulado",
+   "clase": "SvgTextos",
+   "estado": "ok",
+   "rojos": [
+    "test_dos_translate_en_el_MISMO_atributo",
+    "test_los_translate_anidados_se_SUMAN",
+    "test_un_translate_de_un_solo_argumento_no_mueve_la_y",
+    "test_un_translate_en_el_GRUPO_mueve_la_caja",
+    "test_un_translate_en_el_PROPIO_text_tambien_cuenta"
+   ],
+   "resumen": "FAILED (failures=5)"
+  },
+  {
+   "id": "tr-suma-ty",
+   "funcion": "_translate_acumulado",
+   "clase": "SvgTextos",
+   "estado": "ok",
+   "rojos": [
+    "test_dos_translate_en_el_MISMO_atributo",
+    "test_los_translate_anidados_se_SUMAN",
+    "test_un_translate_en_el_GRUPO_mueve_la_caja",
+    "test_un_translate_en_el_PROPIO_text_tambien_cuenta"
+   ],
+   "resumen": "FAILED (failures=4)"
+  },
+  {
+   "id": "tr-solo-translate",
+   "funcion": "_translate_acumulado",
+   "clase": "SvgTextos",
+   "estado": "ok",
+   "rojos": [
+    "test_lo_que_NO_es_traslacion_se_declara_NO_MEDIBLE_no_se_inventa"
+   ],
+   "resumen": "FAILED (failures=3)"
+  },
+  {
+   "id": "tr-sube-al-padre",
+   "funcion": "_translate_acumulado",
+   "clase": "SvgTextos",
+   "estado": "ok",
+   "rojos": [
+    "test_dos_translate_en_el_MISMO_atributo",
+    "test_lo_que_NO_es_traslacion_se_declara_NO_MEDIBLE_no_se_inventa",
+    "test_los_translate_anidados_se_SUMAN",
+    "test_un_translate_de_un_solo_argumento_no_mueve_la_y",
+    "test_un_translate_en_el_GRUPO_mueve_la_caja"
+   ],
+   "resumen": "FAILED (failures=11)"
+  },
+  {
+   "id": "tr-nomedible",
+   "funcion": "svg_textos",
+   "clase": "SvgTextos",
+   "estado": "ok",
+   "rojos": [
+    "test_lo_que_NO_es_traslacion_se_declara_NO_MEDIBLE_no_se_inventa"
+   ],
+   "resumen": "FAILED (failures=7)"
+  },
+  {
+   "id": "png-filtro-corrupto",
+   "funcion": "png_tinta_cajas",
+   "clase": "PngTintaCajas",
+   "estado": "ok",
+   "rojos": [
+    "test_un_byte_de_filtro_CORRUPTO_se_declara_no_evaluable_no_revienta"
+   ],
+   "resumen": "FAILED (errors=1)"
+  },
+  {
+   "id": "i9-nomedible",
+   "funcion": "fidelidad_vectorial",
+   "clase": "FidelidadVectorial",
+   "estado": "ok",
+   "rojos": [
+    "test_un_transform_que_no_es_traslacion_NO_es_la_regla_no_aplica"
+   ],
+   "resumen": "FAILED (failures=1)"
+  },
+  {
+   "id": "i9-umbral-minimo",
+   "funcion": "fidelidad_vectorial",
+   "clase": "FidelidadVectorial",
+   "estado": "ok",
+   "rojos": [
+    "test_TEXTO_PERDIDO_es_FALLO_el_caso_resvg"
+   ],
+   "resumen": "FAILED (failures=1)"
+  },
+  {
+   "id": "i9-peor-por-caja",
+   "funcion": "fidelidad_vectorial",
+   "clase": "FidelidadVectorial",
+   "estado": "ok",
+   "rojos": [
+    "test_TEXTO_PARCIALMENTE_PERDIDO_cuando_solo_una_caja_esta_vacia"
+   ],
+   "resumen": "FAILED (failures=1)"
+  },
+  {
+   "id": "i9-escala",
+   "funcion": "fidelidad_vectorial",
+   "clase": "FidelidadVectorial",
+   "estado": "ok",
+   "rojos": [
+    "test_la_escala_sale_de_la_geometria_declarada_por_la_sonda"
+   ],
+   "resumen": "FAILED (failures=1)"
+  },
+  {
+   "id": "i9-cobertura-falsa",
+   "funcion": "fidelidad_vectorial",
+   "clase": "FidelidadVectorial",
+   "estado": "ok",
+   "rojos": [
+    "test_si_la_salida_no_es_un_PNG_legible_I9_NO_se_da_por_aprobada"
+   ],
+   "resumen": "FAILED (failures=1)"
+  },
+  {
+   "id": "v9-rejilla",
+   "funcion": "fidelidad_video",
+   "clase": "FidelidadVideoV9",
+   "estado": "ok",
+   "rojos": [
+    "test_la_paleta_generica_de_ffmpeg_es_un_AVISO",
+    "test_si_no_hay_paleta_legible_V9_no_se_da_por_aprobada"
+   ],
+   "resumen": "FAILED (errors=2)"
+  },
+  {
+   "id": "v9-cobertura",
+   "funcion": "fidelidad_video",
+   "clase": "FidelidadVideoV9",
+   "estado": "ok",
+   "rojos": [
+    "test_si_no_hay_paleta_legible_V9_no_se_da_por_aprobada",
+    "test_un_GIF_sin_tabla_de_color_global_tampoco_aprueba"
+   ],
+   "resumen": "FAILED (failures=2)"
+  },
+  {
+   "id": "v5-und",
+   "funcion": "fidelidad_video",
+   "clase": "FidelidadVideoMotor",
+   "estado": "ok",
+   "rojos": [
+    "test_V5_empareja_por_POSICION_y_REORDENAR_le_parece_una_perdida",
+    "test_V5_perder_el_idioma_es_un_AVISO",
+    "test_V5_una_pista_SIN_etiquetas_no_cuenta_como_perdida"
+   ],
+   "resumen": "FAILED (failures=3)"
+  },
+  {
+   "id": "v2-comparacion",
+   "funcion": "fidelidad_video",
+   "clase": "FidelidadVideoMotor",
+   "estado": "ok",
+   "rojos": [
+    "test_V2_perder_fotogramas_es_FALLO"
+   ],
+   "resumen": "FAILED (failures=1)"
+  },
+  {
+   "id": "v8-suelo",
+   "funcion": "fidelidad_video",
+   "clase": "FidelidadVideoMotor",
+   "estado": "ok",
+   "rojos": [
+    "test_V8_por_debajo_del_SUELO_es_FALLO_no_aviso"
+   ],
+   "resumen": "FAILED (failures=1)"
+  },
+  {
+   "id": "v6-copia",
+   "funcion": "fidelidad_video",
+   "clase": "FidelidadVideoMotor",
+   "estado": "ok",
+   "rojos": [
+    "test_V6_pedir_COPIA_y_ver_pixeles_distintos_es_FALLO"
+   ],
+   "resumen": "FAILED (errors=1)"
+  },
+  {
+   "id": "i6-rmse",
+   "funcion": "fidelidad_imagen",
+   "clase": "FidelidadImagen",
+   "estado": "ok",
+   "rojos": [
+    "test_I6_una_conversion_SIN_PERDIDA_que_cambia_pixeles_es_FALLO"
+   ],
+   "resumen": "FAILED (failures=1)"
+  },
+  {
+   "id": "i7-umbral",
+   "funcion": "fidelidad_imagen",
+   "clase": "FidelidadImagen",
+   "estado": "ok",
+   "rojos": [
+    "test_I7_la_excusa_de_los_16_BITS_cuantizados_a_8",
+    "test_I7_la_excusa_del_ALFA_de_AVIF",
+    "test_I7_la_excusa_del_GRAFISMO_tiene_suelo_de_20_dB",
+    "test_I7_por_debajo_del_umbral_y_sin_excusa_es_AVISO"
+   ],
+   "resumen": "FAILED (failures=4)"
+  },
+  {
+   "id": "i7-excusa-grafismo",
+   "funcion": "fidelidad_imagen",
+   "clase": "FidelidadImagen",
+   "estado": "ok",
+   "rojos": [
+    "test_I7_la_excusa_del_GRAFISMO_tiene_suelo_de_20_dB"
+   ],
+   "resumen": "FAILED (failures=1)"
+  },
+  {
+   "id": "i3-negro",
+   "funcion": "fidelidad_imagen",
+   "clase": "FidelidadImagen",
+   "estado": "ok",
+   "rojos": [
+    "test_I3_aplanado_sobre_NEGRO_es_el_hallazgo"
+   ],
+   "resumen": "FAILED (failures=1)"
+  },
+  {
+   "id": "i8-grafismo",
+   "funcion": "fidelidad_imagen",
+   "clase": "FidelidadImagen",
+   "estado": "ok",
+   "rojos": [
+    "test_I8_un_grafismo_codificado_CON_PERDIDA_en_webp_es_AVISO"
+   ],
+   "resumen": "FAILED (errors=1)"
+  },
+  {
+   "id": "p6-umbral-basura",
+   "funcion": "fidelidad_pdf",
+   "clase": "FidelidadPdf",
+   "estado": "ok",
+   "rojos": [
+    "test_P6_dos_caracteres_son_BASURA_no_una_capa_de_texto"
+   ],
+   "resumen": "FAILED (failures=1)"
+  },
+  {
+   "id": "p9-severidad-ocr",
+   "funcion": "fidelidad_pdf",
+   "clase": "FidelidadPdf",
+   "estado": "ok",
+   "rojos": [
+    "test_P9_la_misma_alucinacion_es_FALLO_si_se_PIDIO_OCR"
+   ],
+   "resumen": "FAILED (failures=1)"
+  },
+  {
+   "id": "p2-sha",
+   "funcion": "fidelidad_pdf",
+   "clase": "FidelidadPdf",
+   "estado": "ok",
+   "rojos": [
+    "test_P2_un_PDF_a_PDF_que_pierde_el_texto_es_FALLO"
+   ],
+   "resumen": "FAILED (failures=1)"
+  },
+  {
+   "id": "p5-ocr",
+   "funcion": "fidelidad_pdf",
+   "clase": "FidelidadPdf",
+   "estado": "ok",
+   "rojos": [
+    "test_P5_se_pidio_OCR_y_la_salida_NO_trae_texto_es_FALLO"
+   ],
+   "resumen": "FAILED (failures=1)"
+  }
+ ],
+ "discriminan": 37,
+ "total": 37
+}

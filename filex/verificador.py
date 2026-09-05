@@ -4574,6 +4574,47 @@ def _estilo(el, clave, heredado=None):
     return v if v is not None else heredado
 
 
+def _translate_acumulado(el, padres):
+    """Desplazamiento (tx, ty) que arrastra `el` por los `transform` suyos y de
+    sus ancestros, o None si alguno NO es una traslacion.
+
+    DEFECTO MEDIDO Y CERRADO (`bench/cobertura-fidelidad.md` §5.1): la version
+    anterior IGNORABA `transform`, asi que un `<text>` dentro de un
+    `<g transform="translate(100,100)">` producia una caja en el sitio
+    equivocado y I9 declaraba `fallo: TEXTO PERDIDO` sobre una rasterizacion
+    CORRECTA -- el mismo PNG, con la misma tinta al 0,870 %, que sin el
+    `transform` sale `informativo` con 24,37 % en la caja.
+
+    Solo se aplican TRASLACIONES, y no por comodidad: componer traslaciones es
+    exacto y conmutativo, asi que la caja resultante es tan buena como la del
+    caso sin `transform`. Para `scale`, `rotate`, `matrix` o `skew` la caja
+    seria una invencion, y este verificador prefiere declarar que no puede
+    mirar (cobertura `False`) antes que un `fallo` que no ha comprobado.
+    """
+    tx = ty = 0.0
+    nodo = el
+    while nodo is not None:
+        t = (nodo.get("transform") or "").strip()
+        if t:
+            resto = t
+            while resto:
+                izq, sep, der = resto.partition("(")
+                if not sep or ")" not in der:
+                    return None
+                nombre = izq.strip().lstrip(",").strip()
+                args, _, resto = der.partition(")")
+                resto = resto.strip().lstrip(",").strip()
+                if nombre != "translate":
+                    return None
+                piezas = args.replace(",", " ").split()
+                if not 1 <= len(piezas) <= 2:
+                    return None
+                tx += _num(piezas[0])
+                ty += _num(piezas[1]) if len(piezas) > 1 else 0.0
+        nodo = padres.get(id(nodo))
+    return tx, ty
+
+
 def svg_textos(ruta: str) -> dict:
     """Elementos <text> de un SVG, con su caja ESTIMADA en coordenadas de
     usuario. En proceso, con xml.etree (biblioteca estandar).
@@ -4587,7 +4628,7 @@ def svg_textos(ruta: str) -> dict:
     """
     import xml.etree.ElementTree as ET
     r = {"evaluable": False, "motivo": None, "n_textos": 0, "cajas": [],
-         "ancho_usuario": None, "alto_usuario": None}
+         "n_no_medibles": 0, "ancho_usuario": None, "alto_usuario": None}
     try:
         arbol = ET.parse(ruta)
     except Exception as e:                                   # noqa: BLE001
@@ -4608,15 +4649,27 @@ def svg_textos(ruta: str) -> dict:
         return r
     r["ancho_usuario"], r["alto_usuario"] = vw, vh
 
+    # xml.etree no guarda punteros al padre: el mapa se construye una vez y se
+    # indexa por id() porque los Element no son hashables por identidad estable.
+    padres = {}
+    for p in raiz.iter():
+        for hijo in p:
+            padres[id(hijo)] = p
     for el in raiz.iter():
         if el.tag != _NS_SVG + "text" and el.tag != "text":
             continue
         txt = "".join(el.itertext()).strip()
         if not txt:
             continue
+        despl = _translate_acumulado(el, padres)
+        if despl is None:
+            # Un `transform` que no es una traslacion: la caja seria inventada.
+            r["n_no_medibles"] += 1
+            continue
+        dx, dy = despl
         fs = _num(_estilo(el, "font-size"), 16.0) or 16.0
-        x = _num(el.get("x"), 0.0)
-        y = _num(el.get("y"), 0.0)
+        x = _num(el.get("x"), 0.0) + dx
+        y = _num(el.get("y"), 0.0) + dy
         anchor = (_estilo(el, "text-anchor") or "start").strip()
         n = min(len(txt), 24)
         an = 0.50 * fs * n                       # avance medio conservador
@@ -4725,7 +4778,17 @@ def png_tinta_cajas(ruta: str, cajas, esc_x=1.0, esc_y=1.0) -> dict:
         for filtro, filt in _png_filas(fh, m["pos_idat"], tam_fila):
             if y >= y_max:
                 break
-            fila = _desfiltrar_fila(filtro, filt, previo, bpp)
+            try:
+                fila = _desfiltrar_fila(filtro, filt, previo, bpp)
+            except ValueError as e:
+                # DEFECTO MEDIDO Y CERRADO (informe §5.3): un byte de filtro
+                # fuera de 0-4 --un PNG corrupto-- hacia que `_desfiltrar_fila`
+                # lanzara y la excepcion subiera hasta `verificar_fidelidad`,
+                # tumbando la verificacion entera. Todas las demas
+                # malformaciones de esta funcion se declaran con `motivo`; esta
+                # era la unica que reventaba.
+                r["motivo"] = "PNG corrupto: %s" % e
+                return r
             previo = fila
             r["filas_leidas"] += 1
             for k, (x0, y0, x1, y1) in enumerate(pix):
@@ -5526,9 +5589,21 @@ def fidelidad_vectorial(salida, entrada, pedido, sonda, sonda_ent, ms):
         return h, cob
     if not tx["n_textos"]:
         ms["I9"] = ms["I9_origen"]
-        h.append(_fid("I9", "informativo",
-                      "el SVG de origen no tiene elementos <text>: la regla no "
-                      "aplica", None, 0))
+        # Trampa 44: "no hay texto" y "hay texto que no se donde cae" son dos
+        # cosas distintas, y la segunda NO puede contarse como regla que no
+        # aplica. Si hubo <text> con un transform que no es traslacion, la
+        # regla se declara NO CUBIERTA con su motivo.
+        if tx["n_no_medibles"]:
+            cob["I9"] = False
+            h.append(_fid("I9", "informativo",
+                          "los %d elemento(s) <text> del origen llevan un "
+                          "transform que no es una traslacion: la caja seria "
+                          "inventada y la regla no se puede evaluar"
+                          % tx["n_no_medibles"], None, tx["n_no_medibles"]))
+        else:
+            h.append(_fid("I9", "informativo",
+                          "el SVG de origen no tiene elementos <text>: la regla "
+                          "no aplica", None, 0))
         return h, cob
     an = sonda.get("ancho")
     al = sonda.get("alto")
