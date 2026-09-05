@@ -572,6 +572,19 @@ class PuntosDeEntrada(unittest.TestCase):
         self.assertIn("usage: filex", out.getvalue())
         self.assertIn("convertir", out.getvalue())
 
+    def test_importar_el_punto_de_entrada_NO_arranca_la_CLI(self):
+        """La otra mitad del `if __name__ == "__main__"`, y la que de verdad
+        importa: `import filex.__main__` tiene que ser inerte. Un punto de
+        entrada que hiciera algo al importarse convertiría cualquier
+        herramienta que recorra el paquete —un `pydoc`, un `pkgutil.walk`— en
+        un lanzador de la CLI."""
+        sys.modules.pop("filex.__main__", None)
+        with self._como_main("no-deberia-mirarse") as (out, err):
+            import filex.__main__ as entrada
+        self.assertEqual(out.getvalue(), "")
+        self.assertEqual(err.getvalue(), "")
+        self.assertIs(entrada.main, _cli.main)
+
     def test_python_m_filex_cli_es_el_mismo_punto_de_entrada(self):
         with self._como_main("filex.cli") as (out, _):
             with self.assertRaises(SystemExit) as ctx:
@@ -1416,6 +1429,22 @@ class WatcherSondeo(unittest.TestCase):
         nombres = sorted(os.path.basename(h.ruta) for h in v._candidatos())
         self.assertEqual(nombres, ["si.png"])
 
+    def test_sin_recursivo_no_se_baja_a_los_subdirectorios_y_con_el_si(self):
+        """Un `os.walk` sin `--recursivo` se corta tras el primer nivel. Es la
+        diferencia entre vigilar una bandeja de entrada y vigilar un árbol."""
+        hondo = os.path.join(self.ent, "sub", "mas")
+        os.makedirs(hondo)
+        shutil.copy2(PNG, os.path.join(self.ent, "arriba.png"))
+        shutil.copy2(PNG, os.path.join(hondo, "abajo.png"))
+
+        llano = sorted(os.path.basename(h.ruta)
+                       for h in self._vigilante()._candidatos())
+        self.assertEqual(llano, ["arriba.png"])
+
+        hondos = sorted(os.path.basename(h.ruta)
+                        for h in self._vigilante(recursivo=True)._candidatos())
+        self.assertEqual(hondos, ["abajo.png", "arriba.png"])
+
     def test_un_fichero_que_desaparece_entre_el_listado_y_el_stat_se_salta(self):
         """El `scandir` y el `stat` no son atómicos. Sin el `except OSError` el
         sondeo entero se cae por un fichero temporal que ya no está."""
@@ -1462,6 +1491,14 @@ class WatcherSondeo(unittest.TestCase):
         pasos.clear()
         v.correr(hasta=0.001)
         self.assertGreaterEqual(len(pasos), 1)
+
+        # `al_atender` es opcional: sin él el bucle sigue atendiendo y sólo
+        # deja de informar. Un `correr` que exigiera la llamada de vuelta
+        # obligaría a toda superficie a inventarse una.
+        atendidos = [Atendido(entrada="a.png", salida="b.webp",
+                              estado="convertido")]
+        v.paso = lambda: atendidos
+        v.correr(ciclos=1)                        # sin al_atender: no revienta
 
 
 class WatcherAtender(unittest.TestCase):
@@ -1545,9 +1582,26 @@ class WatcherArranque(unittest.TestCase):
                 "--raiz", self.dir, "--ciclos", "1", "--estables", "1",
                 "--intervalo", "0", *extra]
 
-    def test_un_ciclo_convierte_crea_el_directorio_de_salida_y_lo_cuenta(self):
+    def test_el_directorio_de_salida_lo_crea_MAIN_aunque_no_haya_nada_que_convertir(self):
+        """**Refutación de mi propia primera prueba, y sale del control de
+        discriminación.** La versión inicial comprobaba que el directorio
+        existía DESPUÉS de convertir, y pasaba también con el `os.makedirs`
+        borrado: **lo crea el núcleo al mover la salida**. Así que aquella
+        aserción no medía la línea que decía medir (trampa 116).
+
+        Lo que la línea sí garantiza —y sólo se ve con la carpeta vigilada
+        VACÍA— es que un watcher arrancado antes de que llegue el primer
+        fichero deja el destino listo en vez de esperar a tener suerte.
+        """
+        self.assertFalse(os.path.isdir(self.sal))
+        with _salidas():
+            rc = _watch.main(self._base())
+        self.assertEqual(rc, 0)
+        self.assertTrue(os.path.isdir(self.sal),
+                        "main tiene que crear el destino aunque no convierta nada")
+
+    def test_un_ciclo_convierte_y_lo_cuenta(self):
         shutil.copy2(PNG, os.path.join(self.ent, "tipico.png"))
-        self.assertFalse(os.path.isdir(self.sal))     # main lo crea
         with _salidas() as (out, err):
             rc = _watch.main(self._base("--memoria",
                                         os.path.join(self.dir, "mem.json")))

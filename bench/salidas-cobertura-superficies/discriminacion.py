@@ -206,8 +206,8 @@ MUTACIONES = [
     ("watcher.py", "if pid == yo:\n            continue", "if False:\n            continue",
      "WatcherTenedoresPosix.test_encuentra_al_que_tiene_el_inodo_y_solo_a_ese",
      "el watcher se cuenta a sí mismo como tenedor"),
-    ("watcher.py", "except OSError:\n            return None                    # no es Linux: no hay defensa que dar",
-     "except KeyError:\n            return None                    # no es Linux: no hay defensa que dar",
+    ("watcher.py", "except OSError:\n        return None                    # no es Linux: no hay defensa que dar",
+     "except KeyError:\n        return None                    # no es Linux: no hay defensa que dar",
      "WatcherTenedoresPosix.test_sin_proc_no_hay_defensa_que_dar_y_se_dice_None",
      "sin /proc el sondeo revienta en vez de decir «no se pudo»"),
     ("watcher.py", "if not st.st_ino:\n        return None                    # sistema de ficheros sin identidad",
@@ -265,7 +265,7 @@ MUTACIONES = [
      "WatcherAtender.test_la_linea_de_lo_que_no_se_convirtio_nombra_la_ENTRADA",
      "un fallo nombra una salida que no existe"),
     ("watcher.py", "os.makedirs(v.salida, exist_ok=True)", "pass",
-     "WatcherArranque.test_un_ciclo_convierte_crea_el_directorio_de_salida_y_lo_cuenta",
+     "WatcherArranque.test_el_directorio_de_salida_lo_crea_MAIN_aunque_no_haya_nada_que_convertir",
      "el watcher no crea su directorio de salida"),
     ("watcher.py", "if args.json:\n            print(json.dumps({", "if False:\n            print(json.dumps({",
      "WatcherArranque.test_con_json_cada_fichero_es_una_linea_de_json_con_su_asa",
@@ -288,6 +288,17 @@ MUTACIONES = [
      'print(f"no se puede arrancar: {e}", file=sys.stderr)\n        return 0',
      "WatcherArranque.test_una_raiz_que_no_confina_impide_arrancar_con_rc_2",
      "no poder arrancar deja de ser rc=2"),
+    # --------------------------- ramas que sólo el segundo pase destapó
+    ("__main__.py", 'if __name__ == "__main__":', "if True:",
+     "PuntosDeEntrada.test_importar_el_punto_de_entrada_NO_arranca_la_CLI",
+     "importar el punto de entrada arranca la CLI"),
+    ("watcher.py", "if not self.recursivo:\n                    break",
+     "if False:\n                    break",
+     "WatcherSondeo.test_sin_recursivo_no_se_baja_a_los_subdirectorios_y_con_el_si",
+     "el watcher se baja siempre a los subdirectorios"),
+    ("watcher.py", "if al_atender is not None:", "if False:",
+     "WatcherArranque.test_un_ciclo_convierte_y_lo_cuenta",
+     "el bucle deja de llamar a la llamada de vuelta"),
 ]
 
 

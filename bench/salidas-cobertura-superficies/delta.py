@@ -60,6 +60,7 @@ def main(base_json, nuevo_json, raiz):
     base = por_nombre(base_json)
     nuevo = por_nombre(nuevo_json)
     total_ganadas = 0
+    total_ramas = 0
     resumen = {}
     for nombre in sorted(OBJETIVO):
         b, n = base.get(nombre), nuevo.get(nombre)
@@ -70,12 +71,25 @@ def main(base_json, nuevo_json, raiz):
         ejecutadas = set(n["executed_lines"])
         ganadas = sorted(sin_base & ejecutadas)
         quedan = sorted(sin_base - ejecutadas)
+        # Las RAMAS son el otro eje, y el porcentaje que publica coverage con
+        # `--branch` es el COMBINADO de los dos: compararlo contra un
+        # porcentaje de sentencias seria mezclar dos metricas (trampa 55).
+        ram_base_fuera = {tuple(x) for x in b["missing_branches"]}
+        ram_mias = {tuple(x) for x in n["executed_branches"]}
+        ram_ganadas = sorted(ram_base_fuera & ram_mias)
+        ram_quedan = sorted(ram_base_fuera - ram_mias)
         stmts = b["summary"]["num_statements"]
+        nram = b["summary"]["num_branches"]
         antes = b["summary"]["percent_covered"]
-        despues = 100.0 * (stmts - len(quedan)) / stmts
-        print(f"\n{nombre}  {stmts} sentencias   "
-              f"{antes:.1f} % -> {despues:.1f} %   "
-              f"ganadas {len(ganadas)}   quedan {len(quedan)}")
+        cub = (stmts - len(quedan)) + (b["summary"]["covered_branches"]
+                                       + len(ram_ganadas))
+        despues = 100.0 * cub / (stmts + nram)
+        print(f"\n{nombre}  {stmts} sentencias + {nram} ramas   "
+              f"{antes:.1f} % -> {despues:.1f} % (combinado)")
+        print(f"    sentencias: ganadas {len(ganadas)}, quedan {len(quedan)}")
+        print(f"    ramas:      ganadas {len(ram_ganadas)}, "
+              f"quedan {len(ram_quedan)}  {ram_quedan if ram_quedan else ''}")
+        total_ramas += len(ram_ganadas)
         tabla = funciones(os.path.join(raiz, "filex", nombre))
         por_fn = {}
         for l in ganadas:
@@ -91,13 +105,18 @@ def main(base_json, nuevo_json, raiz):
                 print(f"    -{len(ls):>3}  {fn}  {ls}")
         total_ganadas += len(ganadas)
         resumen[nombre] = {
-            "sentencias": stmts, "antes_pct": round(antes, 1),
-            "despues_pct": round(despues, 1), "ganadas": ganadas,
-            "quedan": quedan,
+            "sentencias": stmts, "ramas": nram,
+            "antes_pct_combinado": round(antes, 1),
+            "despues_pct_combinado": round(despues, 1),
+            "ganadas": ganadas, "quedan": quedan,
+            "ramas_ganadas": [list(x) for x in ram_ganadas],
+            "ramas_que_quedan": [list(x) for x in ram_quedan],
             "ganadas_por_funcion": {k: v for k, v in sorted(por_fn.items())},
         }
-    print(f"\nTOTAL ganadas: {total_ganadas}")
+    print(f"\nTOTAL sentencias ganadas: {total_ganadas}")
+    print(f"TOTAL ramas ganadas:      {total_ramas}")
     resumen["_total_ganadas"] = total_ganadas
+    resumen["_total_ramas_ganadas"] = total_ramas
     return resumen
 
 
