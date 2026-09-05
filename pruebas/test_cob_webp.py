@@ -24,8 +24,9 @@ tocarlas caducaría las 232 aristas selladas.
      imágenes. Aquí se cierra: sobre 40 semillas de 24x24, **9 disparan el modo
      13 y las 9 mueven el `alfa_min` publicado**, hasta siete niveles de alfa.
   2. `_webp` cuenta **N+1** fotogramas en un WebP animado de N.
-`test_DEFECTO_*` documenta el valor equivocado de HOY y el correcto al lado; el
-día que se arreglen, esas pruebas fallarán, que es justo lo que se quiere.
+Los dos quedaron ARREGLADOS en el carril `fix/verificador`, y las pruebas que
+fijaban el valor equivocado de hoy conservan sus celdas con la aserción dada la
+vuelta (`bench/fix-verificador.md`).
 
 Ninguna prueba de este fichero usa la GPU, ni Docker, ni un motor externo:
 todos los fixtures viajan como bytes en `fixtures_cob_webp.py`.
@@ -90,13 +91,16 @@ RGBA_LIBWEBP = {
     "LL_OPACO":              (1536,  "4b7f2f70ca80dac01ad82cb5d6f276e287d1ca7bba4ecbca3d48811064758bdb"),
     "LL_DAMERO":             (16384, "526b478a09d8c89ef14ed080d1f9ec0113ae7ba4a1b748e66bf43860df47faef"),
 }
-# El séptimo VP8L, `DEFECTO_MODO13`, NO coincide con libwebp: es el fixture del
-# defecto del predictor 13. libwebp da este RGBA y FileX da otro.
+# El séptimo VP8L, `DEFECTO_MODO13`, es el fixture del defecto del predictor 13:
+# el que libwebp y FileX decodificaban distinto. Arreglado `_clamp_half`, este
+# `sha256` es el de LOS DOS.
 RGBA_LIBWEBP_DEFECTO = (2304, "abdc1591415f9007a74f28b5e5ba035db1674f833970e3a0a37c717048849809")
 
-# El fixture donde el defecto del predictor 13 se ve en el resultado PUBLICADO.
-# Sobre el MISMO píxel (20,18), libwebp mide 60 y FileX publica 53: siete
-# niveles de alfa de diferencia en el número que decide el «alfa trivial».
+# El fixture donde el defecto del predictor 13 se veía en el resultado
+# PUBLICADO. Sobre el MISMO píxel (20,18), libwebp mide 60 y FileX publicaba
+# 53: siete niveles de alfa de diferencia en el número que decide el «alfa
+# trivial». Las dos cifras se conservan para que la prueba pueda seguir
+# distinguiéndolas.
 MODO13_LIBWEBP = (60, (20, 18))
 MODO13_FILEX_HOY = (53, (20, 18))
 
@@ -395,18 +399,22 @@ class Predictores(unittest.TestCase):
                     self.assertEqual(self._pedir(modo, L, T, TL, TR),
                                      _ref_predice(modo, L, T, TL, TR))
 
-    def test_DEFECTO_el_modo_13_NO_coincide_con_la_especificacion(self):
-        """El único de los catorce que se desvía. Ver `DefectosMedidos`.
+    def test_el_modo_13_YA_coincide_con_la_especificacion(self):
+        """Era el único de los catorce que se desviaba (D-W1), y esta prueba
+        fijaba la desviación. ARREGLADO en `fix/verificador`: `_clamp_half`
+        trunca hacia cero como la división entera de C.
 
-        Se afirma la desviación, no la coincidencia: el día que se arregle,
-        esta prueba fallará y habrá que borrarla, que es lo correcto.
+        Se conserva la celda que lo destapó —las vecindades donde `a - b` es
+        negativo e impar— porque es la que tiene que seguir vigilándolo.
         """
         desviados = [(L, T, TL) for L, T, TL, TR in self.VECINOS
                      if self._pedir(13, L, T, TL, TR)
                      != _ref_predice(13, L, T, TL, TR)]
-        self.assertTrue(desviados,
-                        "¿arreglado el modo 13? entonces esta prueba sobra")
-        # ...y coincide cuando la diferencia con TL es par en los cuatro canales
+        self.assertEqual(desviados, [])
+        # el caso mínimo del defecto: promedio 100, TL 103, a-b = -3 (impar)
+        self.assertEqual(self._pedir(13, 0x00000064, 0x00000064, 0x00000067, 0),
+                         _ref_predice(13, 0x00000064, 0x00000064, 0x00000067, 0))
+        # ...y donde ya coincidía —diferencia par— sigue coincidiendo
         self.assertEqual(self._pedir(13, 0x11223344, 0x11223344, 0x11223344, 0),
                          _ref_predice(13, 0x11223344, 0x11223344, 0x11223344, 0))
 
@@ -594,55 +602,55 @@ class DespachadorAlfa(unittest.TestCase):
 
 
 class DefectosMedidos(unittest.TestCase):
-    """Los dos defectos que este carril encontró. NO se arreglan aquí.
+    """Los dos defectos que este carril encontró, ARREGLADOS en
+    `fix/verificador`.
 
-    Estas pruebas fijan el comportamiento EQUIVOCADO de hoy y dejan al lado el
-    correcto. El día que alguien los arregle se pondrán rojas, y eso es lo
-    que se quiere: una prueba verde sobre un valor equivocado es la trampa 44.
+    Se conservan las mismas celdas —el fixture `DEFECTO_MODO13`, que es el
+    único de los siete VP8L donde el predictor 13 mueve el número publicado, y
+    `ANIMADO`— y se les da la vuelta a las aserciones: donde fijaban el valor
+    equivocado de hoy, ahora exigen el de libwebp. El árbitro sigue siendo
+    EXTERNO (`RGBA_LIBWEBP_DEFECTO` es el RGBA que decodifica libwebp vía
+    `magick`), no el criterio de este arnés.
     """
 
-    def test_DEFECTO_el_predictor_13_redondea_al_reves_que_libwebp(self):
-        """`_clamp_half` usa `//`, que redondea hacia -inf; C trunca hacia 0.
+    def test_el_predictor_13_redondea_COMO_libwebp(self):
+        """`_clamp_half` usaba `//`, que redondea hacia -inf; C trunca hacia 0.
 
         Caso mínimo: L = T = 0x00000064 (azul 100), TL = 0x00000067 (azul 103).
         Promedio = 100; 100 - 103 = -3. Python `-3 // 2` = -2 y C `-3 / 2` = -1,
-        así que FileX devuelve 98 donde la especificación pide 99.
+        así que FileX devolvía 98 donde la especificación pide 99.
         """
         self.assertEqual(V._clamp_half(0x00000064, 0x00000064, 0x00000067),
-                         0x00000062,   # 98: lo que hace FileX HOY
-                         "¿arreglado? el valor correcto es 0x00000063 (99)")
-        # y donde la diferencia es PAR los dos coinciden: no es un error general
+                         0x00000063)   # 99: lo que pide libwebp
+        # y donde la diferencia es PAR ya coincidían: el arreglo no los mueve
         self.assertEqual(V._clamp_half(0x00000064, 0x00000064, 0x00000068),
                          0x00000062)
 
-    def test_DEFECTO_el_predictor_13_mueve_el_alfa_min_publicado(self):
-        """El defecto no se queda en un byte interno: sale por la API pública.
+    def test_el_predictor_13_ya_no_mueve_el_alfa_min_publicado(self):
+        """El defecto no se quedaba en un byte interno: salía por la API
+        pública. Sobre `DEFECTO_MODO13`, y en el MISMO píxel (20,18), libwebp
+        mide min(alfa)=60 y FileX publicaba 53.
 
-        Sobre `DEFECTO_MODO13`, y en el MISMO píxel (20,18), libwebp mide
-        min(alfa)=60 y FileX publica 53. Cierra el PENDIENTE 2 de
-        `bench/cobertura-png.md`: el defecto SÍ llega a un fichero escrito por
-        este mismo `magick`.
+        Ahora el RGBA entero coincide con el de libwebp —2 304 bytes, mismo
+        `sha256`— y `alfa_min` publica 60/255.
         """
         n, sha = RGBA_LIBWEBP_DEFECTO
         _, _, rgba = V._vp8l_decodificar(F.trozo(F.DEFECTO_MODO13, b"VP8L"),
                                          None, None, plano_alfa=False)
         self.assertEqual(len(rgba), n)
-        self.assertNotEqual(hashlib.sha256(bytes(rgba)).hexdigest(), sha,
-                            "¿arreglado? entonces ya coincide con libwebp")
+        self.assertEqual(hashlib.sha256(bytes(rgba)).hexdigest(), sha)
         r = V.alfa_minimo(_escribir(F.DEFECTO_MODO13))
         self.assertTrue(r["evaluable"])
-        mn_hoy, pos_hoy = MODO13_FILEX_HOY
+        mn_hoy, _ = MODO13_FILEX_HOY
         mn_bien, pos_bien = MODO13_LIBWEBP
-        self.assertNotEqual(mn_hoy, mn_bien)          # el defecto sigue vivo
-        self.assertAlmostEqual(r["alfa_min"], mn_hoy / 255.0, places=9,
-                               msg="¿arreglado? libwebp mide %d" % mn_bien)
-        self.assertEqual(pos_hoy, pos_bien)   # el píxel es el mismo; el valor no
-        self.assertEqual(r["primer_transparente"], pos_hoy)
+        self.assertNotEqual(mn_hoy, mn_bien)   # las dos cifras siguen siendo 2
+        self.assertAlmostEqual(r["alfa_min"], mn_bien / 255.0, places=9)
+        self.assertEqual(r["primer_transparente"], pos_bien)
 
-    def test_DEFECTO_el_webp_animado_cuenta_un_fotograma_de_mas(self):
-        """`_webp` arranca `n_imagenes` en 1 y luego SUMA uno por cada ANMF.
-
-        `ANIMADO` tiene dos trozos ANMF —dos fotogramas— y FileX dice 3.
+    def test_el_webp_animado_cuenta_sus_fotogramas_y_no_uno_mas(self):
+        """`_webp` arrancaba `n_imagenes` en 1 y luego SUMABA uno por cada
+        ANMF, así que un animado de N daba N+1. `ANIMADO` tiene dos trozos
+        ANMF —dos fotogramas— y FileX decía 3.
         """
         datos = F.ANIMADO
         anmf = 0
@@ -654,8 +662,20 @@ class DefectosMedidos(unittest.TestCase):
             i += 8 + ln + (ln & 1)
         self.assertEqual(anmf, 2)
         d = V.sondear_en_proceso(_escribir(datos))
-        self.assertEqual(d["n_imagenes"], anmf + 1,
-                         "¿arreglado? lo correcto es %d" % anmf)
+        self.assertEqual(d["n_imagenes"], anmf)
+
+    def test_un_webp_sin_ANMF_sigue_declarando_un_fotograma(self):
+        """El otro lado del arreglo: el recuento no puede quedarse en 0 para
+        los fijos, que son la inmensa mayoría. Sin ningún ANMF, `n_imagenes`
+        vale 1 —con VP8X y sin él—.
+        """
+        for nombre in ("LL_OPACO", "LL_DAMERO", "PERDIDA_ALPH_CRUDO",
+                       "PERDIDA_ALPH_VP8L", "DEFECTO_MODO13"):
+            with self.subTest(fixture=nombre):
+                datos = getattr(F, nombre)
+                self.assertNotIn(b"ANMF", datos)      # control de la premisa
+                d = V.sondear_en_proceso(_escribir(datos))
+                self.assertEqual(d["n_imagenes"], 1)
 
 
 class LectorDeBits(unittest.TestCase):

@@ -1,0 +1,845 @@
+{
+  "base": "4333278",
+  "sha256_12_base": "6008ea33f358",
+  "sha256_12_ahora": "9e91ae3bf763",
+  "n_ordenes": 39,
+  "n_evaluadas": 38,
+  "faltan": [
+    "pdf.rasterizado"
+  ],
+  "n_cambian": 0,
+  "cambian": [],
+  "veredictos_ahora": {
+    "ok_parcial": 31,
+    "fallo": 6,
+    "aviso": 1
+  },
+  "filas": [
+    {
+      "id": "img.png2webp",
+      "salida": "tipico_png-to.webp",
+      "base": {
+        "veredicto": "ok_parcial",
+        "reglas": [
+          [
+            "I5",
+            "informativo"
+          ]
+        ],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "ahora": {
+        "veredicto": "ok_parcial",
+        "reglas": [
+          [
+            "I5",
+            "informativo"
+          ]
+        ],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "cambia": false
+    },
+    {
+      "id": "img.png2avif",
+      "salida": "tipico_png-to.avif",
+      "base": {
+        "veredicto": "ok_parcial",
+        "reglas": [
+          [
+            "I5",
+            "informativo"
+          ]
+        ],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "ahora": {
+        "veredicto": "ok_parcial",
+        "reglas": [
+          [
+            "I5",
+            "informativo"
+          ]
+        ],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "cambia": false
+    },
+    {
+      "id": "img.png2jpg",
+      "salida": "tipico_png-to.jpg",
+      "base": {
+        "veredicto": "ok_parcial",
+        "reglas": [
+          [
+            "I5",
+            "informativo"
+          ]
+        ],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "ahora": {
+        "veredicto": "ok_parcial",
+        "reglas": [
+          [
+            "I5",
+            "informativo"
+          ]
+        ],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "cambia": false
+    },
+    {
+      "id": "img.alpha2webp",
+      "salida": "alpha_png-to.webp",
+      "base": {
+        "veredicto": "ok_parcial",
+        "reglas": [],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "ahora": {
+        "veredicto": "ok_parcial",
+        "reglas": [],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "cambia": false
+    },
+    {
+      "id": "img.alpha2avif",
+      "salida": "alpha_png-to.avif",
+      "base": {
+        "veredicto": "ok_parcial",
+        "reglas": [],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "ahora": {
+        "veredicto": "ok_parcial",
+        "reglas": [],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "cambia": false
+    },
+    {
+      "id": "img.alpha2jpg.negro",
+      "salida": "alpha_png-to.jpg",
+      "base": {
+        "veredicto": "ok_parcial",
+        "reglas": [
+          [
+            "I2",
+            "informativo"
+          ]
+        ],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "ahora": {
+        "veredicto": "ok_parcial",
+        "reglas": [
+          [
+            "I2",
+            "informativo"
+          ]
+        ],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "cambia": false
+    },
+    {
+      "id": "img.alpha2jpg.blanco",
+      "salida": "alpha_png-to-flat.jpg",
+      "base": {
+        "veredicto": "ok_parcial",
+        "reglas": [
+          [
+            "I2",
+            "informativo"
+          ]
+        ],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "ahora": {
+        "veredicto": "ok_parcial",
+        "reglas": [
+          [
+            "I2",
+            "informativo"
+          ]
+        ],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "cambia": false
+    },
+    {
+      "id": "img.tif16_2png",
+      "salida": "16bit_tif-to-default.png",
+      "base": {
+        "veredicto": "ok_parcial",
+        "reglas": [],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "ahora": {
+        "veredicto": "ok_parcial",
+        "reglas": [],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "cambia": false
+    },
+    {
+      "id": "img.tif16_2png8",
+      "salida": "16bit_tif-to-d8.png",
+      "base": {
+        "veredicto": "fallo",
+        "reglas": [
+          [
+            "I4",
+            "fallo"
+          ]
+        ],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "ahora": {
+        "veredicto": "fallo",
+        "reglas": [
+          [
+            "I4",
+            "fallo"
+          ]
+        ],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "cambia": false
+    },
+    {
+      "id": "img.trivial2webp.lossy",
+      "salida": "trivial_png-to.webp",
+      "base": {
+        "veredicto": "ok_parcial",
+        "reglas": [],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "ahora": {
+        "veredicto": "ok_parcial",
+        "reglas": [],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "cambia": false
+    },
+    {
+      "id": "img.trivial2webp.lossless",
+      "salida": "trivial_png-to-lossless.webp",
+      "base": {
+        "veredicto": "ok_parcial",
+        "reglas": [],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "ahora": {
+        "veredicto": "ok_parcial",
+        "reglas": [],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "cambia": false
+    },
+    {
+      "id": "img.png2pdf.72",
+      "salida": "tipico_png-to.pdf",
+      "base": {
+        "veredicto": "aviso",
+        "reglas": [
+          [
+            "P7",
+            "aviso"
+          ]
+        ],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "ahora": {
+        "veredicto": "aviso",
+        "reglas": [
+          [
+            "P7",
+            "aviso"
+          ]
+        ],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "cambia": false
+    },
+    {
+      "id": "img.png2pdf.150",
+      "salida": "tipico_png-to-150dpi.pdf",
+      "base": {
+        "veredicto": "ok_parcial",
+        "reglas": [],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "ahora": {
+        "veredicto": "ok_parcial",
+        "reglas": [],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "cambia": false
+    },
+    {
+      "id": "pdf.2png",
+      "salida": "tipico_texto_pdf-to-p1.png",
+      "base": {
+        "veredicto": "ok_parcial",
+        "reglas": [],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "ahora": {
+        "veredicto": "ok_parcial",
+        "reglas": [],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "cambia": false
+    },
+    {
+      "id": "pdf.2jpg",
+      "salida": "tipico_texto_pdf-to-p1.jpg",
+      "base": {
+        "veredicto": "ok_parcial",
+        "reglas": [],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "ahora": {
+        "veredicto": "ok_parcial",
+        "reglas": [],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "cambia": false
+    },
+    {
+      "id": "pdf.2tif",
+      "salida": "tipico_texto_pdf-to.tif",
+      "base": {
+        "veredicto": "ok_parcial",
+        "reglas": [],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "ahora": {
+        "veredicto": "ok_parcial",
+        "reglas": [],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "cambia": false
+    },
+    {
+      "id": "pdf.2pdf",
+      "salida": "tipico_texto_pdf-to-gs.pdf",
+      "base": {
+        "veredicto": "ok_parcial",
+        "reglas": [],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "ahora": {
+        "veredicto": "ok_parcial",
+        "reglas": [],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "cambia": false
+    },
+    {
+      "id": "vid.mkv2mp4.default",
+      "salida": "2pistas_mkv-to-DEFAULT.mp4",
+      "base": {
+        "veredicto": "fallo",
+        "reglas": [
+          [
+            "V3",
+            "fallo"
+          ]
+        ],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "ahora": {
+        "veredicto": "fallo",
+        "reglas": [
+          [
+            "V3",
+            "fallo"
+          ]
+        ],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "cambia": false
+    },
+    {
+      "id": "vid.mkv2mp4.map0",
+      "salida": "2pistas_mkv-to-MAP0.mp4",
+      "base": {
+        "veredicto": "ok_parcial",
+        "reglas": [],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "ahora": {
+        "veredicto": "ok_parcial",
+        "reglas": [],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "cambia": false
+    },
+    {
+      "id": "vid.mkv2mp4.copy",
+      "salida": "2pistas_mkv-to-COPY.mp4",
+      "base": {
+        "veredicto": "ok_parcial",
+        "reglas": [],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "ahora": {
+        "veredicto": "ok_parcial",
+        "reglas": [],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "cambia": false
+    },
+    {
+      "id": "vid.mp42webm",
+      "salida": "tipico_mp4-to.webm",
+      "base": {
+        "veredicto": "ok_parcial",
+        "reglas": [
+          [
+            "A3",
+            "informativo"
+          ]
+        ],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "ahora": {
+        "veredicto": "ok_parcial",
+        "reglas": [
+          [
+            "A3",
+            "informativo"
+          ]
+        ],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "cambia": false
+    },
+    {
+      "id": "vid.mp42mkv",
+      "salida": "tipico_mp4-to.mkv",
+      "base": {
+        "veredicto": "ok_parcial",
+        "reglas": [],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "ahora": {
+        "veredicto": "ok_parcial",
+        "reglas": [],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "cambia": false
+    },
+    {
+      "id": "vid.2gif.paleta",
+      "salida": "trivial_mp4-to-palette.gif",
+      "base": {
+        "veredicto": "fallo",
+        "reglas": [
+          [
+            "I1/V7",
+            "fallo"
+          ]
+        ],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "ahora": {
+        "veredicto": "fallo",
+        "reglas": [
+          [
+            "I1/V7",
+            "fallo"
+          ]
+        ],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "cambia": false
+    },
+    {
+      "id": "vid.2gif.naive",
+      "salida": "trivial_mp4-to-naive.gif",
+      "base": {
+        "veredicto": "fallo",
+        "reglas": [
+          [
+            "I1/V7",
+            "fallo"
+          ]
+        ],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "ahora": {
+        "veredicto": "fallo",
+        "reglas": [
+          [
+            "I1/V7",
+            "fallo"
+          ]
+        ],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "cambia": false
+    },
+    {
+      "id": "vid.extraer.mp3",
+      "salida": "tipico_mp4-audio.mp3",
+      "base": {
+        "veredicto": "fallo",
+        "reglas": [
+          [
+            "V7",
+            "fallo"
+          ]
+        ],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "ahora": {
+        "veredicto": "fallo",
+        "reglas": [
+          [
+            "V7",
+            "fallo"
+          ]
+        ],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "cambia": false
+    },
+    {
+      "id": "vid.extraer.copy",
+      "salida": "tipico_mp4-audio-copy.m4a",
+      "base": {
+        "veredicto": "fallo",
+        "reglas": [
+          [
+            "V7",
+            "fallo"
+          ]
+        ],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "ahora": {
+        "veredicto": "fallo",
+        "reglas": [
+          [
+            "V7",
+            "fallo"
+          ]
+        ],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "cambia": false
+    },
+    {
+      "id": "aud.wav2mp3",
+      "salida": "trivial_wav-to.mp3",
+      "base": {
+        "veredicto": "ok_parcial",
+        "reglas": [],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "ahora": {
+        "veredicto": "ok_parcial",
+        "reglas": [],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "cambia": false
+    },
+    {
+      "id": "aud.wav2flac",
+      "salida": "trivial_wav-to.flac",
+      "base": {
+        "veredicto": "ok_parcial",
+        "reglas": [],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "ahora": {
+        "veredicto": "ok_parcial",
+        "reglas": [],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "cambia": false
+    },
+    {
+      "id": "aud.wav2opus",
+      "salida": "trivial_wav-to.opus",
+      "base": {
+        "veredicto": "ok_parcial",
+        "reglas": [
+          [
+            "A3",
+            "informativo"
+          ]
+        ],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "ahora": {
+        "veredicto": "ok_parcial",
+        "reglas": [
+          [
+            "A3",
+            "informativo"
+          ]
+        ],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "cambia": false
+    },
+    {
+      "id": "aud.wav2aac",
+      "salida": "trivial_wav-to.m4a",
+      "base": {
+        "veredicto": "ok_parcial",
+        "reglas": [],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "ahora": {
+        "veredicto": "ok_parcial",
+        "reglas": [],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "cambia": false
+    },
+    {
+      "id": "aud.flac2wav",
+      "salida": "tipico_flac-to.wav",
+      "base": {
+        "veredicto": "ok_parcial",
+        "reglas": [],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "ahora": {
+        "veredicto": "ok_parcial",
+        "reglas": [],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "cambia": false
+    },
+    {
+      "id": "aud.flac2mp3",
+      "salida": "tipico_flac-to.mp3",
+      "base": {
+        "veredicto": "ok_parcial",
+        "reglas": [],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "ahora": {
+        "veredicto": "ok_parcial",
+        "reglas": [],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "cambia": false
+    },
+    {
+      "id": "aud.flac2opus",
+      "salida": "tipico_flac-to.opus",
+      "base": {
+        "veredicto": "ok_parcial",
+        "reglas": [
+          [
+            "A3",
+            "informativo"
+          ]
+        ],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "ahora": {
+        "veredicto": "ok_parcial",
+        "reglas": [
+          [
+            "A3",
+            "informativo"
+          ]
+        ],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "cambia": false
+    },
+    {
+      "id": "aud.mp32wav",
+      "salida": "tipico_mp3-to.wav",
+      "base": {
+        "veredicto": "ok_parcial",
+        "reglas": [],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "ahora": {
+        "veredicto": "ok_parcial",
+        "reglas": [],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "cambia": false
+    },
+    {
+      "id": "aud.mp32flac",
+      "salida": "tipico_mp3-to.flac",
+      "base": {
+        "veredicto": "ok_parcial",
+        "reglas": [],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "ahora": {
+        "veredicto": "ok_parcial",
+        "reglas": [],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "cambia": false
+    },
+    {
+      "id": "dat.csv2json",
+      "salida": "patologico_bom_csv-to.json",
+      "base": {
+        "veredicto": "ok_parcial",
+        "reglas": [
+          [
+            "G5",
+            "informativo"
+          ]
+        ],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "ahora": {
+        "veredicto": "ok_parcial",
+        "reglas": [
+          [
+            "G5",
+            "informativo"
+          ]
+        ],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "cambia": false
+    },
+    {
+      "id": "dat.csv2csv",
+      "salida": "patologico_bom_csv-to-normalizado.csv",
+      "base": {
+        "veredicto": "ok_parcial",
+        "reglas": [
+          [
+            "G5",
+            "informativo"
+          ]
+        ],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "ahora": {
+        "veredicto": "ok_parcial",
+        "reglas": [
+          [
+            "G5",
+            "informativo"
+          ]
+        ],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "cambia": false
+    },
+    {
+      "id": "dat.json2csv",
+      "salida": "tipico_json-to.csv",
+      "base": {
+        "veredicto": "ok_parcial",
+        "reglas": [
+          [
+            "G5",
+            "informativo"
+          ]
+        ],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "ahora": {
+        "veredicto": "ok_parcial",
+        "reglas": [
+          [
+            "G5",
+            "informativo"
+          ]
+        ],
+        "punto1": null,
+        "punto1_estado": null
+      },
+      "cambia": false
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "n_webp": 6,
+  "n_que_usan_el_modo_13": 0,
+  "control_positivo": {
+    "fichero": "DEFECTO_MODO13 (fixture)",
+    "modos": {
+      "5": 128,
+      "6": 49,
+      "7": 296,
+      "13": 56
+    },
+    "usa_el_modo_13": true,
+    "alfa_min": 0.23529411764705882,
+    "via": "VP8L"
+  },
+  "filas": [
+    {
+      "fichero": "tipico.webp",
+      "modos": {},
+      "usa_el_modo_13": false,
+      "alfa_min": 1.0,
+      "via": "cabecera"
+    },
+    {
+      "fichero": "16bit_tif-to.webp",
+      "modos": {},
+      "usa_el_modo_13": false,
+      "alfa_min": 1.0,
+      "via": "cabecera"
+    },
+    {
+      "fichero": "alpha_png-to.webp",
+      "modos": {},
+      "usa_el_modo_13": false,
+      "alfa_min": 0.0,
+      "via": "ALPH comprimido sin perdida (VP8L)"
+    },
+    {
+      "fichero": "tipico_png-to.webp",
+      "modos": {},
+      "usa_el_modo_13": false,
+      "alfa_min": 1.0,
+      "via": "cabecera"
+    },
+    {
+      "fichero": "trivial_png-to-lossless.webp",
+      "modos": {},
+      "usa_el_modo_13": false,
+      "alfa_min": 1.0,
+      "via": "cabecera VP8L (alpha_is_used=0)"
+    },
+    {
+      "fichero": "trivial_png-to.webp",
+      "modos": {},
+      "usa_el_modo_13": false,
+      "alfa_min": 1.0,
+      "via": "cabecera"
+    }
+  ]
+}
