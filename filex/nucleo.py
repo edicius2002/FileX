@@ -636,10 +636,16 @@ class FileX:
         return sorted(vistos - {o})
 
     def planificar(self, entrada: str, salida: str) -> Decision:
-        return self.grafo.camino(
+        decision = self.grafo.camino(
             formatos.normaliza(os.path.splitext(entrada)[1]),
             formatos.normaliza(os.path.splitext(salida)[1]),
         )
+        if not decision.hay:
+            from .limites_destinos import motivo
+            limite = motivo(formatos.normaliza(os.path.splitext(salida)[1]))
+            if limite:
+                decision.motivo += "; " + limite
+        return decision
 
     # ------------------------------------------------------------ conversión
 
