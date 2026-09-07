@@ -193,7 +193,10 @@ def barrer_huerfanos(base: str | None = None, *,
             except OSError:
                 parte["errores"] += 1
                 continue
-            if edad < edad_sin_candado:
+            # N38: cero pide barrido inmediato, incluso si el reloj de pared
+            # queda detrás del mtime (resolución distinta o ajuste del reloj).
+            # Con umbral positivo, una fecha futura sigue protegida.
+            if edad_sin_candado > 0 and edad < edad_sin_candado:
                 parte["sin_candado_jovenes"] += 1
                 continue
         tam = _tamano_arbol(e.path)
