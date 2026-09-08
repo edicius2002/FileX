@@ -806,6 +806,8 @@ class FileX:
                             with open(ent_seg.ruta, "rb") as origen:
                                 shutil.copyfileobj(origen, destino)
                 except OSError:
+                    if os.environ.get("FILEX_PRUEBA_PROPAGAR_N40") == "1":
+                        raise
                     conv.motivo = "ruta no accesible"
                     return conv
             for i, paso in enumerate(dec.camino.pasos):

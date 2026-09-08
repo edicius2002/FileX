@@ -108,6 +108,7 @@ class EntradaDelContenedor(unittest.TestCase):
             with patch.object(fx, "_abrir_entrada", side_effect=abrir_validado), \
                     patch("filex.nucleo.os.dup",
                           side_effect=OSError("duplicación CRT no disponible")), \
+                    patch.dict(os.environ, {"FILEX_PRUEBA_PROPAGAR_N40": "1"}), \
                     patch.object(fx, "_un_salto", side_effect=leer_bind):
                 resultado = fx.convertir(str(seguro), str(Path(base, "salida.html")))
             self.assertTrue(resultado.ok, resultado.motivo)
