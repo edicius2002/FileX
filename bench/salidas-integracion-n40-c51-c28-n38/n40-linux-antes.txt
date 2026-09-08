@@ -1,0 +1,57 @@
+test_bind_lee_descriptor_y_conserva_extension_y_limpieza (pruebas.test_n40_contenedor.EntradaDelContenedor.test_bind_lee_descriptor_y_conserva_extension_y_limpieza) ... FAIL
+test_pandoc_real_recibe_bytes_del_descriptor (pruebas.test_n40_contenedor.EntradaDelContenedor.test_pandoc_real_recibe_bytes_del_descriptor) ... skipped 'Docker CPU optativo'
+test_sustitucion_real_del_directorio_despues_de_validar (pruebas.test_n40_contenedor.EntradaDelContenedor.test_sustitucion_real_del_directorio_despues_de_validar) ... FAIL
+
+======================================================================
+FAIL: test_bind_lee_descriptor_y_conserva_extension_y_limpieza (pruebas.test_n40_contenedor.EntradaDelContenedor.test_bind_lee_descriptor_y_conserva_extension_y_limpieza)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/repo/pruebas/test_n40_contenedor.py", line 96, in test_bind_lee_descriptor_y_conserva_extension_y_limpieza
+    resultado = fx.convertir(str(seguro), str(Path(base, "salida.html")))
+  File ".nucleo-base-control.py", line 792, in convertir
+    s = self._un_salto(paso.arista, actual, sal_abs, pedido,
+                       ultimo=ultimo, timeout=timeout,
+                       temporales=temporales)
+  File "/usr/lib/python3.13/unittest/mock.py", line 1169, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/unittest/mock.py", line 1173, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/unittest/mock.py", line 1240, in _execute_mock_call
+    result = effect(*args, **kwargs)
+  File "/repo/pruebas/test_n40_contenedor.py", line 89, in leer_bind
+    self.assertEqual(Path(entrada).read_bytes(), seguro.read_bytes())
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: b'CONTENIDO AJENO' != b'CONTENIDO PERMITIDO'
+
+======================================================================
+FAIL: test_sustitucion_real_del_directorio_despues_de_validar (pruebas.test_n40_contenedor.EntradaDelContenedor.test_sustitucion_real_del_directorio_despues_de_validar)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/repo/pruebas/test_n40_contenedor.py", line 46, in test_sustitucion_real_del_directorio_despues_de_validar
+    self.assertTrue(fx.convertir(str(permitido / "entrada.md"),
+                    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                 str(raiz / "salida.html")).ok)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ".nucleo-base-control.py", line 792, in convertir
+    s = self._un_salto(paso.arista, actual, sal_abs, pedido,
+                       ultimo=ultimo, timeout=timeout,
+                       temporales=temporales)
+  File "/usr/lib/python3.13/unittest/mock.py", line 1169, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/unittest/mock.py", line 1173, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/unittest/mock.py", line 1240, in _execute_mock_call
+    result = effect(*args, **kwargs)
+  File "/repo/pruebas/test_n40_contenedor.py", line 41, in leer
+    self.assertEqual(Path(entrada).read_bytes(), b"PERMITIDO")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: b'AJENO' != b'PERMITIDO'
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.036s
+
+FAILED (failures=2, skipped=1)

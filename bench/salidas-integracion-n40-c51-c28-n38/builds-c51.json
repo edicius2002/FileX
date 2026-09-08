@@ -1,0 +1,21 @@
+{
+  "cpu": true,
+  "gpu": false,
+  "sidecar": false,
+  "publicacion": false,
+  "docker": "29.4.3",
+  "buildx": "v0.33.0-desktop.1",
+  "intentos": [
+    {"etiqueta": "filex-c51-prueba-a", "sin_cache": true, "rc": 0, "manifest": "sha256:c3579f40f0b83ee27eb66393fda49dcea3c52a7169742bb31c14c979ce9dded7", "condicion": "snapshot, exportacion normal"},
+    {"etiqueta": "filex-c51-prueba-b", "sin_cache": true, "rc": 1, "error": "exporter option rewrite-timestamp conflicts with unpack"},
+    {"etiqueta": "filex-c51-prueba-b", "sin_cache": false, "rc": 0, "manifest": "sha256:13a65e55147b56830b6b8cdaeaced46b259cb3d3e54cf7a2c23b62444d8dfafb", "condicion": "exportar capa anterior con unpack=false"},
+    {"etiqueta": "filex-c51-prueba-c", "sin_cache": true, "rc": 0, "manifest": "sha256:6c1f8e51a7863179a4ad3c7800d223b8afcb299353a675364d937f76bab3304e", "condicion": "epoch solo por defecto"},
+    {"etiqueta": "filex-c51-final-a", "sin_cache": true, "rc": 0, "manifest": "sha256:e2c17f4da61f0e0319977bb719d9abe6a4c6bbc2b31a7fb5b97c12d7d4d68760", "condicion": "sin aux-cache, epoch solo por defecto"},
+    {"etiqueta": "filex-c51-final-b", "sin_cache": true, "rc": 0, "manifest": "sha256:6281d3271e6f039c5a27be7b92a02eb7152a8a0a53ecd3a47a34cb135520af0d", "condicion": "sin aux-cache, epoch solo por defecto"},
+    {"etiqueta": "filex-c51-epoch-a", "sin_cache": true, "rc": 0, "manifest": "sha256:85334f0c0482e4aaf780f1789ca7cde7608a6e24c47f15b2fdd4e95a2673e472", "condicion": "epoch explicito, sin aux-cache, rewrite-timestamp, unpack=false"},
+    {"etiqueta": "filex-c51-epoch-b", "sin_cache": true, "rc": 0, "manifest": "sha256:85334f0c0482e4aaf780f1789ca7cde7608a6e24c47f15b2fdd4e95a2673e472", "condicion": "repeticion independiente"},
+    {"etiqueta": "filex-c51-entrega", "sin_cache": true, "rc": 0, "manifest": "sha256:85334f0c0482e4aaf780f1789ca7cde7608a6e24c47f15b2fdd4e95a2673e472", "condicion": "wrapper publico y sonda CPU completa"}
+  ],
+  "control_negativo_imagen_historica": {"rc": 1, "motivo": "digest distinto del build medido"},
+  "sonda_final": {"pandoc_html_centinela": true, "pandoc_docx": true, "libreoffice_pdf_qpdf": true, "calibre_epub_centinela": true, "fidelidad_general": "no evaluada"}
+}

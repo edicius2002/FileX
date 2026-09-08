@@ -131,4 +131,18 @@ jobs:
         run: |
           $modulos = (python -c "import json; print(' '.join('pruebas.'+m for m in json.load(open('ci/windows-hosted-apto.json'))['aptos']))")
           Write-Host "ejecutando: $modulos"
-          python -m unittest $modulos.Split(' ')
+          python -m unittest $modulos.Split(' ') pruebas.test_n38_reloj pruebas.test_n38_campana pruebas.test_n40_contenedor pruebas.test_c28_destinos
+
+      - name: N38 cien intentos contados sin reintentos
+        if: always()
+        shell: pwsh
+        run: python ci/repetir_n38.py --n 100 --json n38-intentos.json
+
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          # Un rerun no sustituye el artefacto del intento que falló.
+          name: n38-${{ github.run_id }}-intento-${{ github.run_attempt }}
+          path: |
+            n38-intentos.json
+            n38-intentos.jsonl

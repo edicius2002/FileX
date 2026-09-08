@@ -57,18 +57,25 @@ Lo que **sí** desaparece es el estrato documental entero — nada de `docx→*`
 del motivo** (`el demonio responde pero no está ninguna de las imágenes: …`), que es un
 fallo honesto y no un silencio.
 
-Para recuperarlo, una sola orden — la imagen pesa **5,78 GB** y tarda ~30 s sobre la base ya
-descargada:
+Para construir y comprobar la imagen documental reproducible en CPU (C51):
 
 ```
-docker build --platform linux/amd64 -f docker/Dockerfile.c13 -t filex-c13 docker/
+python docker/construir_c13.py --tag filex-c13-repro
+python docker/verificar_c13.py filex-c13-repro
 ```
 
-`FILEX_IMAGEN_DOC` sobreescribe qué imagen se usa. **Aviso medido:** reconstruir esa imagen
-NO te devuelve las 40 aristas *selladas* — te devuelve el estrato del grafo con sus 33
-aristas medidas en el código. El sello lleva dentro el id de la imagen, y ese id cambia
-porque la capa `apt-get` no está fijada; verlo caducar es el sistema de huella funcionando.
-El detalle, con los dos ids y el número exacto, en
+Selecciona la imagen con `FILEX_IMAGEN_DOC=filex-c13-repro`; en PowerShell:
+`$env:FILEX_IMAGEN_DOC='filex-c13-repro'`. **MEDIDO:** tres construcciones sin caché
+produjeron la identidad fijada en `docker/c13.lock.json`. El wrapper congela base,
+snapshot apt, epoch y exportador; comprueba el digest y el arranque de los tres
+motores sin red ni GPU. Necesita acceso al registro y al snapshot para construir.
+
+Las cifras de la tabla anterior describen la campaña histórica. La imagen nueva
+**no hereda las 40 aristas selladas** de la anterior. Además, sobre esta rama los
+sellos ya caducan por cambios del contrato: no se deben actualizar huellas sin
+volver a ejecutar las conversiones. El recuento actual y los controles están en
+[`bench/integracion-n40-c51-c28-n38.md`](bench/integracion-n40-c51-c28-n38.md);
+el diagnóstico histórico de apt móvil permanece en
 [`bench/contenedor-publicable.md`](bench/contenedor-publicable.md).
 
 ## 2 · Instalación

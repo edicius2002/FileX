@@ -636,10 +636,16 @@ class FileX:
         return sorted(vistos - {o})
 
     def planificar(self, entrada: str, salida: str) -> Decision:
-        return self.grafo.camino(
+        decision = self.grafo.camino(
             formatos.normaliza(os.path.splitext(entrada)[1]),
             formatos.normaliza(os.path.splitext(salida)[1]),
         )
+        if not decision.hay:
+            from .limites_destinos import motivo
+            limite = motivo(formatos.normaliza(os.path.splitext(salida)[1]))
+            if limite:
+                decision.motivo += "; " + limite
+        return decision
 
     # ------------------------------------------------------------ conversión
 
@@ -772,21 +778,27 @@ class FileX:
 
         temporales: list[DirectorioDeTrabajo] = []
         try:
-            # Solo el PRIMER salto lee la entrada del usuario. Se le da la ruta
-            # ANCLADA (/proc/<pid>/fd/N en Linux) si su motor la acepta —los
-            # LOCALES la abren como una ruta cualquiera y sniffean el formato por
-            # contenido (MEDIDO: magick/ffmpeg/gs la aceptan)—; el motor de
-            # CONTENEDOR NO —deduce el formato de la extensión de `entrada` y la
-            # monta por bind—, así que recibe `ent_seg.real` (su vector TOCTOU es
-            # aparte y PENDIENTE, `bench/symlink-toctou.md` §4bis). En Windows la
-            # anclada coincide con la real, así que esto solo decide en Linux.
-            # Se detecta por tipo, en vez de con un atributo de clase, para NO
-            # tocar la huella de `motores.py`/`motor_contenedor.py` (trampa 32:
-            # un atributo nuevo en la clase caducaría todas sus aristas).
+            # N40: Docker re-resuelve el bind en otro espacio de nombres.
+            # Copiar desde el descriptor VALIDADO a un desechable vivo evita
+            # devolverle la cadena controlada por quien pidió la conversión.
+            # Entrada separada del directorio de salida: el quinto punto sigue
+            # viendo sólo lo que escribió el motor. Se conserva la extensión.
             actual = ent_seg.ruta
-            if ent_seg.ruta != ent_seg.real and _es_motor_contenedor(
+            if _es_motor_contenedor(
                     self.motores[dec.camino.pasos[0].arista.motor]):
-                actual = ent_seg.real
+                copia = DirectorioDeTrabajo()
+                temporales.append(copia)
+                actual = copia.destino(f"entrada.{dec.camino.pasos[0].arista.origen}")
+                try:
+                    fd = getattr(ent_seg, "fd", None)
+                    origen = (os.fdopen(os.dup(fd), "rb") if fd is not None
+                              else open(ent_seg.ruta, "rb"))
+                    with origen, open(actual, "xb") as destino:
+                        origen.seek(0)
+                        shutil.copyfileobj(origen, destino)
+                except OSError:
+                    conv.motivo = "ruta no accesible"
+                    return conv
             for i, paso in enumerate(dec.camino.pasos):
                 ultimo = i == len(dec.camino.pasos) - 1
                 s = self._un_salto(paso.arista, actual, sal_abs, pedido,

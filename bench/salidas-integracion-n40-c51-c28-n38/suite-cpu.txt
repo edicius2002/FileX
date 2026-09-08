@@ -1,0 +1,73 @@
+............................................. [  5%]
+.......................s................................................ [ 13%]
+........................................................................ [ 21%]
+....................................................... [ 27%]
+............................................................................................................................... [ 41%]
+........................................................ [ 47%]
+............................................................ [ 54%]
+........................................ [ 58%]
+.............. [ 60%]
+................................................................................................... [ 71%]
+........................... [ 74%]
+.....................................s............................. [ 82%]
+................................................................... [ 89%]
+........................ss..................................... [ 96%]
+......F.......................                                      [100%]
+================================== FAILURES ===================================
+_ SelladoDelDisco.test_ningun_motor_disponible_es_no_comparable_bajo_este_interprete (motor='imagemagick') _
+pruebas\test_sondeo.py:656: in test_ningun_motor_disponible_es_no_comparable_bajo_este_interprete
+    self.assertNotIn(m.nombre, diag["caducados"])
+E   AssertionError: 'imagemagick' unexpectedly found in {'ffmpeg': ['contrato'], 'doc_libreoffice': ['contrato'], 'doc_pandoc': ['contrato'], 'doc_calibre': ['contrato'], 'imagemagick': ['contrato']}
+_ SelladoDelDisco.test_ningun_motor_disponible_es_no_comparable_bajo_este_interprete (motor='ffmpeg') _
+pruebas\test_sondeo.py:656: in test_ningun_motor_disponible_es_no_comparable_bajo_este_interprete
+    self.assertNotIn(m.nombre, diag["caducados"])
+E   AssertionError: 'ffmpeg' unexpectedly found in {'doc_libreoffice': ['contrato'], 'doc_pandoc': ['contrato'], 'doc_calibre': ['contrato'], 'imagemagick': ['contrato'], 'ffmpeg': ['contrato']}
+_ SelladoDelDisco.test_ningun_motor_disponible_es_no_comparable_bajo_este_interprete (motor='doc_libreoffice') _
+pruebas\test_sondeo.py:656: in test_ningun_motor_disponible_es_no_comparable_bajo_este_interprete
+    self.assertNotIn(m.nombre, diag["caducados"])
+E   AssertionError: 'doc_libreoffice' unexpectedly found in {'doc_pandoc': ['contrato'], 'doc_calibre': ['contrato'], 'imagemagick': ['contrato'], 'ffmpeg': ['contrato'], 'doc_libreoffice': ['contrato']}
+_ SelladoDelDisco.test_ningun_motor_disponible_es_no_comparable_bajo_este_interprete (motor='doc_pandoc') _
+pruebas\test_sondeo.py:656: in test_ningun_motor_disponible_es_no_comparable_bajo_este_interprete
+    self.assertNotIn(m.nombre, diag["caducados"])
+E   AssertionError: 'doc_pandoc' unexpectedly found in {'doc_calibre': ['contrato'], 'imagemagick': ['contrato'], 'ffmpeg': ['contrato'], 'doc_libreoffice': ['contrato'], 'doc_pandoc': ['contrato']}
+_ SelladoDelDisco.test_ningun_motor_disponible_es_no_comparable_bajo_este_interprete (motor='doc_calibre') _
+pruebas\test_sondeo.py:656: in test_ningun_motor_disponible_es_no_comparable_bajo_este_interprete
+    self.assertNotIn(m.nombre, diag["caducados"])
+E   AssertionError: 'doc_calibre' unexpectedly found in {'imagemagick': ['contrato'], 'ffmpeg': ['contrato'], 'doc_libreoffice': ['contrato'], 'doc_pandoc': ['contrato'], 'doc_calibre': ['contrato']}
+____ SelladoDelDisco.test_ningun_motor_disponible_tiene_el_sondeo_caducado ____
+pruebas\test_sondeo.py:601: in test_ningun_motor_disponible_tiene_el_sondeo_caducado
+    self.assertEqual(malos, {}, (
+E   AssertionError: {'imagemagick': ['contrato'], 'ffmpeg': ['[96 chars]to']} != {}
+E   + {}
+E   - {'doc_calibre': ['contrato'],
+E   -  'doc_libreoffice': ['contrato'],
+E   -  'doc_pandoc': ['contrato'],
+E   -  'ffmpeg': ['contrato'],
+E   -  'imagemagick': ['contrato']} : el código que decide estas aristas cambió después de sondearlas: hay que RESONDEAR y volver a sellar, no editar la huella a mano
+============================== warnings summary ===============================
+pruebas/test_cob_superficies.py::PuntosDeEntrada::test_python_m_filex_api_se_niega_a_salir_de_loopback
+  <frozen runpy>:128: RuntimeWarning: 'filex.api' found in sys.modules after import of package 'filex', but prior to execution of 'filex.api'; this may result in unpredictable behaviour
+
+pruebas/test_cob_superficies.py::PuntosDeEntrada::test_python_m_filex_cli_es_el_mismo_punto_de_entrada
+  <frozen runpy>:128: RuntimeWarning: 'filex.cli' found in sys.modules after import of package 'filex', but prior to execution of 'filex.cli'; this may result in unpredictable behaviour
+
+pruebas/test_cob_superficies.py::PuntosDeEntrada::test_python_m_filex_sin_argumentos_imprime_la_ayuda_y_sale_con_0
+  <frozen runpy>:128: RuntimeWarning: 'filex.__main__' found in sys.modules after import of package 'filex', but prior to execution of 'filex.__main__'; this may result in unpredictable behaviour
+
+pruebas/test_cob_superficies.py::PuntosDeEntrada::test_python_m_filex_watcher_rechaza_un_params_que_no_es_json
+  <frozen runpy>:128: RuntimeWarning: 'filex.watcher' found in sys.modules after import of package 'filex', but prior to execution of 'filex.watcher'; this may result in unpredictable behaviour
+
+pruebas/test_hito4.py::Catalogo::test_ni_resources_ni_prompts
+pruebas/test_hito4.py::ServidorReal::test_se_construye_sin_arrancar
+  C:\Users\krato\orca\workspaces\FileX\filex-integrar-n40-c51-c28-n38\filex\mcp.py:789: MCPDeprecationWarning: The roots capability is deprecated as of 2026-07-28 (SEP-2577).
+    srv = Server(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+SUBFAILED(motor='imagemagick') pruebas/test_sondeo.py::SelladoDelDisco::test_ningun_motor_disponible_es_no_comparable_bajo_este_interprete
+SUBFAILED(motor='ffmpeg') pruebas/test_sondeo.py::SelladoDelDisco::test_ningun_motor_disponible_es_no_comparable_bajo_este_interprete
+SUBFAILED(motor='doc_libreoffice') pruebas/test_sondeo.py::SelladoDelDisco::test_ningun_motor_disponible_es_no_comparable_bajo_este_interprete
+SUBFAILED(motor='doc_pandoc') pruebas/test_sondeo.py::SelladoDelDisco::test_ningun_motor_disponible_es_no_comparable_bajo_este_interprete
+SUBFAILED(motor='doc_calibre') pruebas/test_sondeo.py::SelladoDelDisco::test_ningun_motor_disponible_es_no_comparable_bajo_este_interprete
+FAILED pruebas/test_sondeo.py::SelladoDelDisco::test_ningun_motor_disponible_tiene_el_sondeo_caducado
+6 failed, 889 passed, 4 skipped, 6 warnings, 77688 subtests passed in 247.84s (0:04:07)
