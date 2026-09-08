@@ -1,0 +1,5171 @@
+{
+  "denominadores": {
+    "corpus_versionado": 42,
+    "entradas_documentales": 7,
+    "pool_roles_historicos": 10,
+    "pool_tokens_historicos": 111,
+    "registros": 170
+  },
+  "disponibilidad": {
+    "ausente": 111,
+    "disponible": 59,
+    "puntero_lfs": 0
+  },
+  "esquema": "filex.cr-010.indice-semillas.v1",
+  "estado": "DERIVADO del arbol local; no ejecuta conversiones",
+  "fuentes": [
+    "bench/salidas-invocacion/pool_indice.json",
+    "corpus/pdf/MANIFIESTO-d4.md",
+    "corpus/pdf/MANIFIESTO-d5.md",
+    "bench/salidas-hito5/MANIFIESTO.md",
+    "bench/salidas-invocacion/MANIFIESTO.md",
+    "bench/salidas-referencia/MANIFIESTO.md"
+  ],
+  "manifiestos_fuente": [
+    {
+      "bytes": 5703,
+      "ruta": "corpus/pdf/MANIFIESTO-d4.md",
+      "sha256": "58757a9444b3aa810cb57f10d481f21b918383263f57fb0752ed265f4498217a"
+    },
+    {
+      "bytes": 9057,
+      "ruta": "corpus/pdf/MANIFIESTO-d5.md",
+      "sha256": "09bfb9a82fa98963c4ef62082f0cb083763e1e06d30acd79037909a19ef4cc4c"
+    },
+    {
+      "bytes": 9282,
+      "ruta": "bench/salidas-hito5/MANIFIESTO.md",
+      "sha256": "883f214182de997dd4707546dccf74f914e5914dfaea4e60922d5b7e5c39c78e"
+    },
+    {
+      "bytes": 11762,
+      "ruta": "bench/salidas-invocacion/MANIFIESTO.md",
+      "sha256": "d66fb51252cad96561f948863b7394ad6f38fb433f3f1ce69ee18ff77a021ad8"
+    },
+    {
+      "bytes": 7678,
+      "ruta": "bench/salidas-referencia/MANIFIESTO.md",
+      "sha256": "2b695cccdde6fec188733b2ea098898ae672df957de91817abd7c29e4306613b"
+    }
+  ],
+  "semillas": [
+    {
+      "argv_esperado": [],
+      "bytes": 1152693,
+      "disponibilidad": "disponible",
+      "formato_token": "flac",
+      "id": "corpus:corpus/audio/habla_jfk.flac",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": true,
+        "oid_sha256": "63a4b1e4c1dc655ac70961ffbf518acd249df237e5a0152faae9a4a836949715"
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "arbol versionado del HEAD; identidad fijada por sha256",
+        "fuente": "corpus/audio/habla_jfk.flac",
+        "tipo": "corpus"
+      },
+      "ruta_relativa": "corpus/audio/habla_jfk.flac",
+      "sha256": "63a4b1e4c1dc655ac70961ffbf518acd249df237e5a0152faae9a4a836949715",
+      "uso_esperado": "fixture versionado para sondeos y verificaciones del repositorio"
+    },
+    {
+      "argv_esperado": [],
+      "bytes": 31995100,
+      "disponibilidad": "disponible",
+      "formato_token": "flac",
+      "id": "corpus:corpus/audio/habla_largo.flac",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": true,
+        "oid_sha256": "dd53a5f9baa7a048a9e8533d117b2ac383cdff1fc3acc933e408b41717e3ff32"
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "arbol versionado del HEAD; identidad fijada por sha256",
+        "fuente": "corpus/audio/habla_largo.flac",
+        "tipo": "corpus"
+      },
+      "ruta_relativa": "corpus/audio/habla_largo.flac",
+      "sha256": "dd53a5f9baa7a048a9e8533d117b2ac383cdff1fc3acc933e408b41717e3ff32",
+      "uso_esperado": "fixture versionado para sondeos y verificaciones del repositorio"
+    },
+    {
+      "argv_esperado": [],
+      "bytes": 104318,
+      "disponibilidad": "disponible",
+      "formato_token": "flac",
+      "id": "corpus:corpus/audio/tipico.flac",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": true,
+        "oid_sha256": "b4950a7155d749deb68c894e96143194e1b6767895549ad33a9c3ec05717e684"
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "arbol versionado del HEAD; identidad fijada por sha256",
+        "fuente": "corpus/audio/tipico.flac",
+        "tipo": "corpus"
+      },
+      "ruta_relativa": "corpus/audio/tipico.flac",
+      "sha256": "b4950a7155d749deb68c894e96143194e1b6767895549ad33a9c3ec05717e684",
+      "uso_esperado": "fixture versionado para sondeos y verificaciones del repositorio"
+    },
+    {
+      "argv_esperado": [],
+      "bytes": 64591,
+      "disponibilidad": "disponible",
+      "formato_token": "mp3",
+      "id": "corpus:corpus/audio/tipico.mp3",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": true,
+        "oid_sha256": "04b12a569ebe74fbda11b5e8b72e8e848fd6ae0eaec8ad4633d0bb902d087549"
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "arbol versionado del HEAD; identidad fijada por sha256",
+        "fuente": "corpus/audio/tipico.mp3",
+        "tipo": "corpus"
+      },
+      "ruta_relativa": "corpus/audio/tipico.mp3",
+      "sha256": "04b12a569ebe74fbda11b5e8b72e8e848fd6ae0eaec8ad4633d0bb902d087549",
+      "uso_esperado": "fixture versionado para sondeos y verificaciones del repositorio"
+    },
+    {
+      "argv_esperado": [],
+      "bytes": 705678,
+      "disponibilidad": "disponible",
+      "formato_token": "wav",
+      "id": "corpus:corpus/audio/trivial.wav",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": true,
+        "oid_sha256": "b5fb614afefa1581dd00e2e417ba2578081ca7b512ed375d478890fbd86d2123"
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "arbol versionado del HEAD; identidad fijada por sha256",
+        "fuente": "corpus/audio/trivial.wav",
+        "tipo": "corpus"
+      },
+      "ruta_relativa": "corpus/audio/trivial.wav",
+      "sha256": "b5fb614afefa1581dd00e2e417ba2578081ca7b512ed375d478890fbd86d2123",
+      "uso_esperado": "fixture versionado para sondeos y verificaciones del repositorio"
+    },
+    {
+      "argv_esperado": [],
+      "bytes": 88,
+      "disponibilidad": "disponible",
+      "formato_token": "csv",
+      "id": "corpus:corpus/datos/patologico_bom.csv",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "arbol versionado del HEAD; identidad fijada por sha256",
+        "fuente": "corpus/datos/patologico_bom.csv",
+        "tipo": "corpus"
+      },
+      "ruta_relativa": "corpus/datos/patologico_bom.csv",
+      "sha256": "e1493e4ff2ffd3cd400b6e0776c6a491b856fa957e5a9fefc3337cabbe35bff7",
+      "uso_esperado": "fixture versionado para sondeos y verificaciones del repositorio"
+    },
+    {
+      "argv_esperado": [],
+      "bytes": 46,
+      "disponibilidad": "disponible",
+      "formato_token": "json",
+      "id": "corpus:corpus/datos/tipico.json",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "arbol versionado del HEAD; identidad fijada por sha256",
+        "fuente": "corpus/datos/tipico.json",
+        "tipo": "corpus"
+      },
+      "ruta_relativa": "corpus/datos/tipico.json",
+      "sha256": "d0c31e1802c7000d6e51c9965ff3159094d3f76c41b9b031fd174fc555b6f01e",
+      "uso_esperado": "fixture versionado para sondeos y verificaciones del repositorio"
+    },
+    {
+      "argv_esperado": [],
+      "bytes": 2780,
+      "disponibilidad": "disponible",
+      "formato_token": "png",
+      "id": "corpus:corpus/imagen/alpha.png",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": true,
+        "oid_sha256": "1e0ea1fb03488afd1dd3e5335fdc27ebfafdceca4f74a242110967269235dc81"
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "arbol versionado del HEAD; identidad fijada por sha256",
+        "fuente": "corpus/imagen/alpha.png",
+        "tipo": "corpus"
+      },
+      "ruta_relativa": "corpus/imagen/alpha.png",
+      "sha256": "1e0ea1fb03488afd1dd3e5335fdc27ebfafdceca4f74a242110967269235dc81",
+      "uso_esperado": "fixture versionado para sondeos y verificaciones del repositorio"
+    },
+    {
+      "argv_esperado": [],
+      "bytes": 72001016,
+      "disponibilidad": "disponible",
+      "formato_token": "tif",
+      "id": "corpus:corpus/imagen/patologico_16bit.tif",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": true,
+        "oid_sha256": "0b2af27d843cff65e12f492f6f0a67f7bc965fde2caa05627edea280d1303021"
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "arbol versionado del HEAD; identidad fijada por sha256",
+        "fuente": "corpus/imagen/patologico_16bit.tif",
+        "tipo": "corpus"
+      },
+      "ruta_relativa": "corpus/imagen/patologico_16bit.tif",
+      "sha256": "0b2af27d843cff65e12f492f6f0a67f7bc965fde2caa05627edea280d1303021",
+      "uso_esperado": "fixture versionado para sondeos y verificaciones del repositorio"
+    },
+    {
+      "argv_esperado": [],
+      "bytes": 87954,
+      "disponibilidad": "disponible",
+      "formato_token": "jpg",
+      "id": "corpus:corpus/imagen/tipico.jpg",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": true,
+        "oid_sha256": "920a3d6f7e0a10e580e699225611f33dc203bf3d2bb993455b5e0fc7cb711cc0"
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "arbol versionado del HEAD; identidad fijada por sha256",
+        "fuente": "corpus/imagen/tipico.jpg",
+        "tipo": "corpus"
+      },
+      "ruta_relativa": "corpus/imagen/tipico.jpg",
+      "sha256": "920a3d6f7e0a10e580e699225611f33dc203bf3d2bb993455b5e0fc7cb711cc0",
+      "uso_esperado": "fixture versionado para sondeos y verificaciones del repositorio"
+    },
+    {
+      "argv_esperado": [],
+      "bytes": 42855,
+      "disponibilidad": "disponible",
+      "formato_token": "png",
+      "id": "corpus:corpus/imagen/tipico.png",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": true,
+        "oid_sha256": "e645f85a6eec4e4d50f29f6b5336cf4916f2ed196e43913f04ca80e9bc1d0953"
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "arbol versionado del HEAD; identidad fijada por sha256",
+        "fuente": "corpus/imagen/tipico.png",
+        "tipo": "corpus"
+      },
+      "ruta_relativa": "corpus/imagen/tipico.png",
+      "sha256": "e645f85a6eec4e4d50f29f6b5336cf4916f2ed196e43913f04ca80e9bc1d0953",
+      "uso_esperado": "fixture versionado para sondeos y verificaciones del repositorio"
+    },
+    {
+      "argv_esperado": [],
+      "bytes": 12796,
+      "disponibilidad": "disponible",
+      "formato_token": "webp",
+      "id": "corpus:corpus/imagen/tipico.webp",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": true,
+        "oid_sha256": "d2b9dbd6f068e14cec6772509bf9c1372020a97104d5d091fdacabe4c22f92cd"
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "arbol versionado del HEAD; identidad fijada por sha256",
+        "fuente": "corpus/imagen/tipico.webp",
+        "tipo": "corpus"
+      },
+      "ruta_relativa": "corpus/imagen/tipico.webp",
+      "sha256": "d2b9dbd6f068e14cec6772509bf9c1372020a97104d5d091fdacabe4c22f92cd",
+      "uso_esperado": "fixture versionado para sondeos y verificaciones del repositorio"
+    },
+    {
+      "argv_esperado": [],
+      "bytes": 316,
+      "disponibilidad": "disponible",
+      "formato_token": "png",
+      "id": "corpus:corpus/imagen/trivial.png",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": true,
+        "oid_sha256": "446bccc44ead0348974e89abe47a8bcb6cf112d3f276dc6861e5b1a7d13f9536"
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "arbol versionado del HEAD; identidad fijada por sha256",
+        "fuente": "corpus/imagen/trivial.png",
+        "tipo": "corpus"
+      },
+      "ruta_relativa": "corpus/imagen/trivial.png",
+      "sha256": "446bccc44ead0348974e89abe47a8bcb6cf112d3f276dc6861e5b1a7d13f9536",
+      "uso_esperado": "fixture versionado para sondeos y verificaciones del repositorio"
+    },
+    {
+      "argv_esperado": [],
+      "bytes": 1387,
+      "disponibilidad": "disponible",
+      "formato_token": "txt",
+      "id": "corpus:corpus/pdf/REFERENCIA-d5.txt",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "arbol versionado del HEAD; identidad fijada por sha256",
+        "fuente": "corpus/pdf/REFERENCIA-d5.txt",
+        "tipo": "corpus"
+      },
+      "ruta_relativa": "corpus/pdf/REFERENCIA-d5.txt",
+      "sha256": "dba574c37b0f75bf1ebf7f1f96324cc13e7e06f6fd37e776ff7982cb5afbe9a9",
+      "uso_esperado": "fixture versionado para sondeos y verificaciones del repositorio"
+    },
+    {
+      "argv_esperado": [],
+      "bytes": 84653,
+      "disponibilidad": "disponible",
+      "formato_token": "pdf",
+      "id": "corpus:corpus/pdf/escaneado_d1.pdf",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": true,
+        "oid_sha256": "ead0130810584f20f467c24fcbddb2dd05d63322cc3e129e1dcf4571b5abf401"
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "arbol versionado del HEAD; identidad fijada por sha256",
+        "fuente": "corpus/pdf/escaneado_d1.pdf",
+        "tipo": "corpus"
+      },
+      "ruta_relativa": "corpus/pdf/escaneado_d1.pdf",
+      "sha256": "ead0130810584f20f467c24fcbddb2dd05d63322cc3e129e1dcf4571b5abf401",
+      "uso_esperado": "fixture versionado para sondeos y verificaciones del repositorio"
+    },
+    {
+      "argv_esperado": [],
+      "bytes": 41904,
+      "disponibilidad": "disponible",
+      "formato_token": "pdf",
+      "id": "corpus:corpus/pdf/escaneado_d2.pdf",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": true,
+        "oid_sha256": "ea81dbb5596fe26ae123bc9f456179d785af316d733d68e1bcb5421dc9a16667"
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "arbol versionado del HEAD; identidad fijada por sha256",
+        "fuente": "corpus/pdf/escaneado_d2.pdf",
+        "tipo": "corpus"
+      },
+      "ruta_relativa": "corpus/pdf/escaneado_d2.pdf",
+      "sha256": "ea81dbb5596fe26ae123bc9f456179d785af316d733d68e1bcb5421dc9a16667",
+      "uso_esperado": "fixture versionado para sondeos y verificaciones del repositorio"
+    },
+    {
+      "argv_esperado": [],
+      "bytes": 40824,
+      "disponibilidad": "disponible",
+      "formato_token": "pdf",
+      "id": "corpus:corpus/pdf/escaneado_d3.pdf",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": true,
+        "oid_sha256": "795aa6cc42559ea552eae11978b9d8fe17f511ae9f3ab58eaf2fe21cc71b582e"
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "arbol versionado del HEAD; identidad fijada por sha256",
+        "fuente": "corpus/pdf/escaneado_d3.pdf",
+        "tipo": "corpus"
+      },
+      "ruta_relativa": "corpus/pdf/escaneado_d3.pdf",
+      "sha256": "795aa6cc42559ea552eae11978b9d8fe17f511ae9f3ab58eaf2fe21cc71b582e",
+      "uso_esperado": "fixture versionado para sondeos y verificaciones del repositorio"
+    },
+    {
+      "argv_esperado": [],
+      "bytes": 103365,
+      "disponibilidad": "disponible",
+      "formato_token": "pdf",
+      "id": "corpus:corpus/pdf/escaneado_d4.pdf",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": true,
+        "oid_sha256": "644ea27431e1508ea342cbf55216a368244c9d0d10bc928c79e4e7715643af02"
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "arbol versionado del HEAD; identidad fijada por sha256",
+        "fuente": "corpus/pdf/escaneado_d4.pdf",
+        "tipo": "corpus"
+      },
+      "ruta_relativa": "corpus/pdf/escaneado_d4.pdf",
+      "sha256": "644ea27431e1508ea342cbf55216a368244c9d0d10bc928c79e4e7715643af02",
+      "uso_esperado": "fixture versionado para sondeos y verificaciones del repositorio"
+    },
+    {
+      "argv_esperado": [],
+      "bytes": 122577,
+      "disponibilidad": "disponible",
+      "formato_token": "pdf",
+      "id": "corpus:corpus/pdf/escaneado_d4a.pdf",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": true,
+        "oid_sha256": "602e87b430f26b2b31bafbc3fb9f8839e20183bf7820d081f4f1d438b909bb43"
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "arbol versionado del HEAD; identidad fijada por sha256",
+        "fuente": "corpus/pdf/escaneado_d4a.pdf",
+        "tipo": "corpus"
+      },
+      "ruta_relativa": "corpus/pdf/escaneado_d4a.pdf",
+      "sha256": "602e87b430f26b2b31bafbc3fb9f8839e20183bf7820d081f4f1d438b909bb43",
+      "uso_esperado": "fixture versionado para sondeos y verificaciones del repositorio"
+    },
+    {
+      "argv_esperado": [],
+      "bytes": 129390,
+      "disponibilidad": "disponible",
+      "formato_token": "pdf",
+      "id": "corpus:corpus/pdf/escaneado_d4b.pdf",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": true,
+        "oid_sha256": "62e12565ff4c01bd2d40a255383fc8f440238bd69322fd1af151a650451742be"
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "arbol versionado del HEAD; identidad fijada por sha256",
+        "fuente": "corpus/pdf/escaneado_d4b.pdf",
+        "tipo": "corpus"
+      },
+      "ruta_relativa": "corpus/pdf/escaneado_d4b.pdf",
+      "sha256": "62e12565ff4c01bd2d40a255383fc8f440238bd69322fd1af151a650451742be",
+      "uso_esperado": "fixture versionado para sondeos y verificaciones del repositorio"
+    },
+    {
+      "argv_esperado": [],
+      "bytes": 116902,
+      "disponibilidad": "disponible",
+      "formato_token": "pdf",
+      "id": "corpus:corpus/pdf/escaneado_d4c.pdf",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": true,
+        "oid_sha256": "b566c9a31d0836ae9cf9a67c6780d7fc1f08fc3bc992d0d2c76b31caaa32d2c0"
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "arbol versionado del HEAD; identidad fijada por sha256",
+        "fuente": "corpus/pdf/escaneado_d4c.pdf",
+        "tipo": "corpus"
+      },
+      "ruta_relativa": "corpus/pdf/escaneado_d4c.pdf",
+      "sha256": "b566c9a31d0836ae9cf9a67c6780d7fc1f08fc3bc992d0d2c76b31caaa32d2c0",
+      "uso_esperado": "fixture versionado para sondeos y verificaciones del repositorio"
+    },
+    {
+      "argv_esperado": [],
+      "bytes": 86659,
+      "disponibilidad": "disponible",
+      "formato_token": "pdf",
+      "id": "corpus:corpus/pdf/escaneado_d4e.pdf",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": true,
+        "oid_sha256": "3a11d9af97f96fa5ba4070184105eb6cde3c6766a04f9b5504320c8867789068"
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "arbol versionado del HEAD; identidad fijada por sha256",
+        "fuente": "corpus/pdf/escaneado_d4e.pdf",
+        "tipo": "corpus"
+      },
+      "ruta_relativa": "corpus/pdf/escaneado_d4e.pdf",
+      "sha256": "3a11d9af97f96fa5ba4070184105eb6cde3c6766a04f9b5504320c8867789068",
+      "uso_esperado": "fixture versionado para sondeos y verificaciones del repositorio"
+    },
+    {
+      "argv_esperado": [],
+      "bytes": 151807,
+      "disponibilidad": "disponible",
+      "formato_token": "pdf",
+      "id": "corpus:corpus/pdf/escaneado_d4f.pdf",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": true,
+        "oid_sha256": "e6f8eb2f3b60da075907cd308a3e9a51f8f75ce5f50a5b726d3ae6b2e97d2e3b"
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "arbol versionado del HEAD; identidad fijada por sha256",
+        "fuente": "corpus/pdf/escaneado_d4f.pdf",
+        "tipo": "corpus"
+      },
+      "ruta_relativa": "corpus/pdf/escaneado_d4f.pdf",
+      "sha256": "e6f8eb2f3b60da075907cd308a3e9a51f8f75ce5f50a5b726d3ae6b2e97d2e3b",
+      "uso_esperado": "fixture versionado para sondeos y verificaciones del repositorio"
+    },
+    {
+      "argv_esperado": [],
+      "bytes": 25555,
+      "disponibilidad": "disponible",
+      "formato_token": "pdf",
+      "id": "corpus:corpus/pdf/escaneado_d5.pdf",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": true,
+        "oid_sha256": "c04b242c8758ca98fa96a4613c2ca3fb3cc5cadecb20451e17d11cd9845b8dfe"
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "arbol versionado del HEAD; identidad fijada por sha256",
+        "fuente": "corpus/pdf/escaneado_d5.pdf",
+        "tipo": "corpus"
+      },
+      "ruta_relativa": "corpus/pdf/escaneado_d5.pdf",
+      "sha256": "c04b242c8758ca98fa96a4613c2ca3fb3cc5cadecb20451e17d11cd9845b8dfe",
+      "uso_esperado": "fixture versionado para sondeos y verificaciones del repositorio"
+    },
+    {
+      "argv_esperado": [],
+      "bytes": 40551,
+      "disponibilidad": "disponible",
+      "formato_token": "pdf",
+      "id": "corpus:corpus/pdf/escaneado_d5a.pdf",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": true,
+        "oid_sha256": "b8f61c83269be9d1147564a37acc4f323351c48b824faf2cba6b1e663ba7a77a"
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "arbol versionado del HEAD; identidad fijada por sha256",
+        "fuente": "corpus/pdf/escaneado_d5a.pdf",
+        "tipo": "corpus"
+      },
+      "ruta_relativa": "corpus/pdf/escaneado_d5a.pdf",
+      "sha256": "b8f61c83269be9d1147564a37acc4f323351c48b824faf2cba6b1e663ba7a77a",
+      "uso_esperado": "fixture versionado para sondeos y verificaciones del repositorio"
+    },
+    {
+      "argv_esperado": [],
+      "bytes": 18870,
+      "disponibilidad": "disponible",
+      "formato_token": "pdf",
+      "id": "corpus:corpus/pdf/escaneado_d5b.pdf",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": true,
+        "oid_sha256": "fa9e2d095c2debb9e98db82c00c9bdeee781a9ca62ed3faa992acf5d0d47075a"
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "arbol versionado del HEAD; identidad fijada por sha256",
+        "fuente": "corpus/pdf/escaneado_d5b.pdf",
+        "tipo": "corpus"
+      },
+      "ruta_relativa": "corpus/pdf/escaneado_d5b.pdf",
+      "sha256": "fa9e2d095c2debb9e98db82c00c9bdeee781a9ca62ed3faa992acf5d0d47075a",
+      "uso_esperado": "fixture versionado para sondeos y verificaciones del repositorio"
+    },
+    {
+      "argv_esperado": [],
+      "bytes": 29084,
+      "disponibilidad": "disponible",
+      "formato_token": "pdf",
+      "id": "corpus:corpus/pdf/escaneado_d5c.pdf",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": true,
+        "oid_sha256": "762626e157475f299ffbd1d475eff4ecb7f54b638b0efeb3d28283814b5eec23"
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "arbol versionado del HEAD; identidad fijada por sha256",
+        "fuente": "corpus/pdf/escaneado_d5c.pdf",
+        "tipo": "corpus"
+      },
+      "ruta_relativa": "corpus/pdf/escaneado_d5c.pdf",
+      "sha256": "762626e157475f299ffbd1d475eff4ecb7f54b638b0efeb3d28283814b5eec23",
+      "uso_esperado": "fixture versionado para sondeos y verificaciones del repositorio"
+    },
+    {
+      "argv_esperado": [],
+      "bytes": 362861,
+      "disponibilidad": "disponible",
+      "formato_token": "pdf",
+      "id": "corpus:corpus/pdf/patologico_d5.pdf",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": true,
+        "oid_sha256": "c2d7f29ba7048d2a7e18bb3b691a5a8c7da5acea7eb5ea234831468fd532d43b"
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "arbol versionado del HEAD; identidad fijada por sha256",
+        "fuente": "corpus/pdf/patologico_d5.pdf",
+        "tipo": "corpus"
+      },
+      "ruta_relativa": "corpus/pdf/patologico_d5.pdf",
+      "sha256": "c2d7f29ba7048d2a7e18bb3b691a5a8c7da5acea7eb5ea234831468fd532d43b",
+      "uso_esperado": "fixture versionado para sondeos y verificaciones del repositorio"
+    },
+    {
+      "argv_esperado": [],
+      "bytes": 201924,
+      "disponibilidad": "disponible",
+      "formato_token": "pdf",
+      "id": "corpus:corpus/pdf/patologico_d5a.pdf",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": true,
+        "oid_sha256": "1a99dd3e933ebcd09fb17b7cf353e50b5399f0fe5a38b59df79b530bb383a788"
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "arbol versionado del HEAD; identidad fijada por sha256",
+        "fuente": "corpus/pdf/patologico_d5a.pdf",
+        "tipo": "corpus"
+      },
+      "ruta_relativa": "corpus/pdf/patologico_d5a.pdf",
+      "sha256": "1a99dd3e933ebcd09fb17b7cf353e50b5399f0fe5a38b59df79b530bb383a788",
+      "uso_esperado": "fixture versionado para sondeos y verificaciones del repositorio"
+    },
+    {
+      "argv_esperado": [],
+      "bytes": 301364,
+      "disponibilidad": "disponible",
+      "formato_token": "pdf",
+      "id": "corpus:corpus/pdf/patologico_d5b.pdf",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": true,
+        "oid_sha256": "2f1ac7c35a5aa9bda8a012a9ea4144b5d5828312092ced7a79ba6735e1928080"
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "arbol versionado del HEAD; identidad fijada por sha256",
+        "fuente": "corpus/pdf/patologico_d5b.pdf",
+        "tipo": "corpus"
+      },
+      "ruta_relativa": "corpus/pdf/patologico_d5b.pdf",
+      "sha256": "2f1ac7c35a5aa9bda8a012a9ea4144b5d5828312092ced7a79ba6735e1928080",
+      "uso_esperado": "fixture versionado para sondeos y verificaciones del repositorio"
+    },
+    {
+      "argv_esperado": [],
+      "bytes": 437167,
+      "disponibilidad": "disponible",
+      "formato_token": "pdf",
+      "id": "corpus:corpus/pdf/patologico_d5e.pdf",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": true,
+        "oid_sha256": "88cc08efc5d66ef93d22b5eb875e57b898ef1aba10d106e2319476bfbaa5662a"
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "arbol versionado del HEAD; identidad fijada por sha256",
+        "fuente": "corpus/pdf/patologico_d5e.pdf",
+        "tipo": "corpus"
+      },
+      "ruta_relativa": "corpus/pdf/patologico_d5e.pdf",
+      "sha256": "88cc08efc5d66ef93d22b5eb875e57b898ef1aba10d106e2319476bfbaa5662a",
+      "uso_esperado": "fixture versionado para sondeos y verificaciones del repositorio"
+    },
+    {
+      "argv_esperado": [],
+      "bytes": 8555521,
+      "disponibilidad": "disponible",
+      "formato_token": "pdf",
+      "id": "corpus:corpus/pdf/patologico_escaneado.pdf",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": true,
+        "oid_sha256": "8683cd2a00df7f659f287735719365bad14b5132b82bf86c7c16cec72a1c7d8c"
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "arbol versionado del HEAD; identidad fijada por sha256",
+        "fuente": "corpus/pdf/patologico_escaneado.pdf",
+        "tipo": "corpus"
+      },
+      "ruta_relativa": "corpus/pdf/patologico_escaneado.pdf",
+      "sha256": "8683cd2a00df7f659f287735719365bad14b5132b82bf86c7c16cec72a1c7d8c",
+      "uso_esperado": "fixture versionado para sondeos y verificaciones del repositorio"
+    },
+    {
+      "argv_esperado": [],
+      "bytes": 84535,
+      "disponibilidad": "disponible",
+      "formato_token": "pdf",
+      "id": "corpus:corpus/pdf/realista_d5.pdf",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": true,
+        "oid_sha256": "5ef4b642d45205b53237eae62845e8edfc2387213577d298114a0e4aaad3d0a1"
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "arbol versionado del HEAD; identidad fijada por sha256",
+        "fuente": "corpus/pdf/realista_d5.pdf",
+        "tipo": "corpus"
+      },
+      "ruta_relativa": "corpus/pdf/realista_d5.pdf",
+      "sha256": "5ef4b642d45205b53237eae62845e8edfc2387213577d298114a0e4aaad3d0a1",
+      "uso_esperado": "fixture versionado para sondeos y verificaciones del repositorio"
+    },
+    {
+      "argv_esperado": [],
+      "bytes": 100797,
+      "disponibilidad": "disponible",
+      "formato_token": "pdf",
+      "id": "corpus:corpus/pdf/realista_d5a.pdf",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": true,
+        "oid_sha256": "691a6235865f42b0bae2ee4db12355a1e5212ed76329d671037667a11c2572cd"
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "arbol versionado del HEAD; identidad fijada por sha256",
+        "fuente": "corpus/pdf/realista_d5a.pdf",
+        "tipo": "corpus"
+      },
+      "ruta_relativa": "corpus/pdf/realista_d5a.pdf",
+      "sha256": "691a6235865f42b0bae2ee4db12355a1e5212ed76329d671037667a11c2572cd",
+      "uso_esperado": "fixture versionado para sondeos y verificaciones del repositorio"
+    },
+    {
+      "argv_esperado": [],
+      "bytes": 97231,
+      "disponibilidad": "disponible",
+      "formato_token": "pdf",
+      "id": "corpus:corpus/pdf/realista_d5b.pdf",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": true,
+        "oid_sha256": "a787d524456360248a7aaf74366c19123946ae7299fe86b2e6aac73d31d25dd5"
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "arbol versionado del HEAD; identidad fijada por sha256",
+        "fuente": "corpus/pdf/realista_d5b.pdf",
+        "tipo": "corpus"
+      },
+      "ruta_relativa": "corpus/pdf/realista_d5b.pdf",
+      "sha256": "a787d524456360248a7aaf74366c19123946ae7299fe86b2e6aac73d31d25dd5",
+      "uso_esperado": "fixture versionado para sondeos y verificaciones del repositorio"
+    },
+    {
+      "argv_esperado": [],
+      "bytes": 68991,
+      "disponibilidad": "disponible",
+      "formato_token": "pdf",
+      "id": "corpus:corpus/pdf/realista_d5e.pdf",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": true,
+        "oid_sha256": "09a8fccae06604f237309b16bccd64abaa2a3064a484ccde55963dcf7f5665a3"
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "arbol versionado del HEAD; identidad fijada por sha256",
+        "fuente": "corpus/pdf/realista_d5e.pdf",
+        "tipo": "corpus"
+      },
+      "ruta_relativa": "corpus/pdf/realista_d5e.pdf",
+      "sha256": "09a8fccae06604f237309b16bccd64abaa2a3064a484ccde55963dcf7f5665a3",
+      "uso_esperado": "fixture versionado para sondeos y verificaciones del repositorio"
+    },
+    {
+      "argv_esperado": [],
+      "bytes": 3219,
+      "disponibilidad": "disponible",
+      "formato_token": "pdf",
+      "id": "corpus:corpus/pdf/tipico_texto.pdf",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": true,
+        "oid_sha256": "a99692f0985e6f8ae9ed0d3b1bccbc996791a574839d3ec6840913ec658b313d"
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "arbol versionado del HEAD; identidad fijada por sha256",
+        "fuente": "corpus/pdf/tipico_texto.pdf",
+        "tipo": "corpus"
+      },
+      "ruta_relativa": "corpus/pdf/tipico_texto.pdf",
+      "sha256": "a99692f0985e6f8ae9ed0d3b1bccbc996791a574839d3ec6840913ec658b313d",
+      "uso_esperado": "fixture versionado para sondeos y verificaciones del repositorio"
+    },
+    {
+      "argv_esperado": [],
+      "bytes": 6356,
+      "disponibilidad": "disponible",
+      "formato_token": "pdf",
+      "id": "corpus:corpus/pdf/trivial.pdf",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": true,
+        "oid_sha256": "5f51f999be1994a085fa295dc93bd8420e4ca3d93a65f037b8ffd0573caa13f0"
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "arbol versionado del HEAD; identidad fijada por sha256",
+        "fuente": "corpus/pdf/trivial.pdf",
+        "tipo": "corpus"
+      },
+      "ruta_relativa": "corpus/pdf/trivial.pdf",
+      "sha256": "5f51f999be1994a085fa295dc93bd8420e4ca3d93a65f037b8ffd0573caa13f0",
+      "uso_esperado": "fixture versionado para sondeos y verificaciones del repositorio"
+    },
+    {
+      "argv_esperado": [],
+      "bytes": 127932819,
+      "disponibilidad": "disponible",
+      "formato_token": "mp4",
+      "id": "corpus:corpus/video/fuente_4k.mp4",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": true,
+        "oid_sha256": "88537ece8a1ee88917ec20f5ed874453cf8f15b1811142c98be73f8655dd580d"
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "arbol versionado del HEAD; identidad fijada por sha256",
+        "fuente": "corpus/video/fuente_4k.mp4",
+        "tipo": "corpus"
+      },
+      "ruta_relativa": "corpus/video/fuente_4k.mp4",
+      "sha256": "88537ece8a1ee88917ec20f5ed874453cf8f15b1811142c98be73f8655dd580d",
+      "uso_esperado": "fixture versionado para sondeos y verificaciones del repositorio"
+    },
+    {
+      "argv_esperado": [],
+      "bytes": 4079196,
+      "disponibilidad": "disponible",
+      "formato_token": "mkv",
+      "id": "corpus:corpus/video/patologico_2pistas.mkv",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": true,
+        "oid_sha256": "e333ad7f6d175d8a3b9e41d3a749165394a3469e12665b126bba7c7f4f3407bd"
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "arbol versionado del HEAD; identidad fijada por sha256",
+        "fuente": "corpus/video/patologico_2pistas.mkv",
+        "tipo": "corpus"
+      },
+      "ruta_relativa": "corpus/video/patologico_2pistas.mkv",
+      "sha256": "e333ad7f6d175d8a3b9e41d3a749165394a3469e12665b126bba7c7f4f3407bd",
+      "uso_esperado": "fixture versionado para sondeos y verificaciones del repositorio"
+    },
+    {
+      "argv_esperado": [],
+      "bytes": 16246490,
+      "disponibilidad": "disponible",
+      "formato_token": "mp4",
+      "id": "corpus:corpus/video/tipico.mp4",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": true,
+        "oid_sha256": "8ea345d3dc3f60dfae282de51735dc81a1516138733e9ec9643b5ff9ce657e76"
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "arbol versionado del HEAD; identidad fijada por sha256",
+        "fuente": "corpus/video/tipico.mp4",
+        "tipo": "corpus"
+      },
+      "ruta_relativa": "corpus/video/tipico.mp4",
+      "sha256": "8ea345d3dc3f60dfae282de51735dc81a1516138733e9ec9643b5ff9ce657e76",
+      "uso_esperado": "fixture versionado para sondeos y verificaciones del repositorio"
+    },
+    {
+      "argv_esperado": [],
+      "bytes": 552638,
+      "disponibilidad": "disponible",
+      "formato_token": "mp4",
+      "id": "corpus:corpus/video/trivial.mp4",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": true,
+        "oid_sha256": "6a30a41ffa671bf98ad33e9fb84eb3a5f41579bc9f805e3106fcfed449c33193"
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "arbol versionado del HEAD; identidad fijada por sha256",
+        "fuente": "corpus/video/trivial.mp4",
+        "tipo": "corpus"
+      },
+      "ruta_relativa": "corpus/video/trivial.mp4",
+      "sha256": "6a30a41ffa671bf98ad33e9fb84eb3a5f41579bc9f805e3106fcfed449c33193",
+      "uso_esperado": "fixture versionado para sondeos y verificaciones del repositorio"
+    },
+    {
+      "argv_esperado": [],
+      "bytes": 1354,
+      "disponibilidad": "disponible",
+      "formato_token": "docx",
+      "id": "hito5:bench/salidas-hito5/entradas/entrada.docx",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "arbol versionado del HEAD; identidad fijada por sha256",
+        "fuente": "bench/salidas-hito5/entradas/entrada.docx",
+        "tipo": "hito5"
+      },
+      "ruta_relativa": "bench/salidas-hito5/entradas/entrada.docx",
+      "sha256": "d74e7fceff4a80cb9aee6cd3611cb71207241ffd55a441c57e21e5fc2b72309d",
+      "uso_esperado": "entrada documental de bench/salidas-hito5/_sonda.py"
+    },
+    {
+      "argv_esperado": [],
+      "bytes": 1685,
+      "disponibilidad": "disponible",
+      "formato_token": "epub",
+      "id": "hito5:bench/salidas-hito5/entradas/entrada.epub",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "arbol versionado del HEAD; identidad fijada por sha256",
+        "fuente": "bench/salidas-hito5/entradas/entrada.epub",
+        "tipo": "hito5"
+      },
+      "ruta_relativa": "bench/salidas-hito5/entradas/entrada.epub",
+      "sha256": "918e7022ef5627819117b828271c120c4fa70d4d56f8fe5b05473a2671097c26",
+      "uso_esperado": "entrada documental de bench/salidas-hito5/_sonda.py"
+    },
+    {
+      "argv_esperado": [],
+      "bytes": 733,
+      "disponibilidad": "disponible",
+      "formato_token": "html",
+      "id": "hito5:bench/salidas-hito5/entradas/entrada.html",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "arbol versionado del HEAD; identidad fijada por sha256",
+        "fuente": "bench/salidas-hito5/entradas/entrada.html",
+        "tipo": "hito5"
+      },
+      "ruta_relativa": "bench/salidas-hito5/entradas/entrada.html",
+      "sha256": "4c1d99ca350fff21760f8a0b639c3c6e8197840cc7ea1e2e371de0eadbe8c82c",
+      "uso_esperado": "entrada documental de bench/salidas-hito5/_sonda.py"
+    },
+    {
+      "argv_esperado": [],
+      "bytes": 508,
+      "disponibilidad": "disponible",
+      "formato_token": "md",
+      "id": "hito5:bench/salidas-hito5/entradas/entrada.md",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "arbol versionado del HEAD; identidad fijada por sha256",
+        "fuente": "bench/salidas-hito5/entradas/entrada.md",
+        "tipo": "hito5"
+      },
+      "ruta_relativa": "bench/salidas-hito5/entradas/entrada.md",
+      "sha256": "2604544adde467e121f241b710e8c2e650853d60eae9d0a7da56611c3ebae001",
+      "uso_esperado": "entrada documental de bench/salidas-hito5/_sonda.py"
+    },
+    {
+      "argv_esperado": [],
+      "bytes": 1097,
+      "disponibilidad": "disponible",
+      "formato_token": "odt",
+      "id": "hito5:bench/salidas-hito5/entradas/entrada.odt",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "arbol versionado del HEAD; identidad fijada por sha256",
+        "fuente": "bench/salidas-hito5/entradas/entrada.odt",
+        "tipo": "hito5"
+      },
+      "ruta_relativa": "bench/salidas-hito5/entradas/entrada.odt",
+      "sha256": "fc0587fd3a6c196a56c4cf8559589e396500612193c9c792cbb6bd8b9a7be566",
+      "uso_esperado": "entrada documental de bench/salidas-hito5/_sonda.py"
+    },
+    {
+      "argv_esperado": [],
+      "bytes": 534,
+      "disponibilidad": "disponible",
+      "formato_token": "rtf",
+      "id": "hito5:bench/salidas-hito5/entradas/entrada.rtf",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "arbol versionado del HEAD; identidad fijada por sha256",
+        "fuente": "bench/salidas-hito5/entradas/entrada.rtf",
+        "tipo": "hito5"
+      },
+      "ruta_relativa": "bench/salidas-hito5/entradas/entrada.rtf",
+      "sha256": "a80c01df4e380cd60bf9b7a6eb3ff3726d417b9964ca74a588672c2b78107db8",
+      "uso_esperado": "entrada documental de bench/salidas-hito5/_sonda.py"
+    },
+    {
+      "argv_esperado": [],
+      "bytes": 384,
+      "disponibilidad": "disponible",
+      "formato_token": "txt",
+      "id": "hito5:bench/salidas-hito5/entradas/entrada.txt",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "arbol versionado del HEAD; identidad fijada por sha256",
+        "fuente": "bench/salidas-hito5/entradas/entrada.txt",
+        "tipo": "hito5"
+      },
+      "ruta_relativa": "bench/salidas-hito5/entradas/entrada.txt",
+      "sha256": "9ae8d0d5c5f30b3e32e3989e9f1c72debc6d0211a13a4719315ca6f251ff3885",
+      "uso_esperado": "entrada documental de bench/salidas-hito5/_sonda.py"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-f",
+        "lavfi",
+        "-i",
+        "sine=frequency=440:duration=0.5",
+        "-ar",
+        "8000",
+        "-ac",
+        "1",
+        "{salida:s.wav}"
+      ],
+      "bytes": null,
+      "disponibilidad": "ausente",
+      "formato_token": "wav",
+      "id": "pool-rol:audio",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "bench/salidas-invocacion/_p2_semillas.py",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#__semillas__.audio",
+        "tipo": "pool_rol_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/s.wav",
+      "sha256": null,
+      "uso_esperado": "rol canonico audio del pool historico P2"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-f",
+        "lavfi",
+        "-i",
+        "sine=frequency=440:duration=1:sample_rate=48000",
+        "-ac",
+        "2",
+        "{salida:s48.wav}"
+      ],
+      "bytes": null,
+      "disponibilidad": "ausente",
+      "formato_token": "wav",
+      "id": "pool-rol:audio48",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "bench/salidas-invocacion/_p2_semillas.py",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#__semillas__.audio48",
+        "tipo": "pool_rol_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/s48.wav",
+      "sha256": null,
+      "uso_esperado": "rol canonico audio48 del pool historico P2"
+    },
+    {
+      "argv_esperado": [
+        "copiar",
+        "corpus/pdf/tipico_texto.pdf",
+        "{salida:s.pdf}"
+      ],
+      "bytes": null,
+      "disponibilidad": "ausente",
+      "formato_token": "pdf",
+      "id": "pool-rol:documento",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "bench/salidas-invocacion/_p2_semillas.py",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#__semillas__.documento",
+        "tipo": "pool_rol_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/s.pdf",
+      "sha256": null,
+      "uso_esperado": "rol canonico documento del pool historico P2"
+    },
+    {
+      "argv_esperado": [
+        "magick",
+        "-size",
+        "64x48",
+        "gradient:red-blue",
+        "-fill",
+        "white",
+        "-draw",
+        "rectangle 8,8 40,30",
+        "{salida:s.png}"
+      ],
+      "bytes": null,
+      "disponibilidad": "ausente",
+      "formato_token": "png",
+      "id": "pool-rol:imagen",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "bench/salidas-invocacion/_p2_semillas.py",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#__semillas__.imagen",
+        "tipo": "pool_rol_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/s.png",
+      "sha256": null,
+      "uso_esperado": "rol canonico imagen del pool historico P2"
+    },
+    {
+      "argv_esperado": [],
+      "bytes": 87954,
+      "disponibilidad": "disponible",
+      "formato_token": "jpg",
+      "id": "pool-rol:jpeg_exif",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": true,
+        "oid_sha256": "920a3d6f7e0a10e580e699225611f33dc203bf3d2bb993455b5e0fc7cb711cc0"
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "bench/salidas-invocacion/_p2_semillas.py",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#__semillas__.jpeg_exif",
+        "tipo": "pool_rol_historico"
+      },
+      "ruta_relativa": "corpus/imagen/tipico.jpg",
+      "sha256": "920a3d6f7e0a10e580e699225611f33dc203bf3d2bb993455b5e0fc7cb711cc0",
+      "uso_esperado": "rol canonico jpeg_exif del pool historico P2"
+    },
+    {
+      "argv_esperado": [],
+      "bytes": 2780,
+      "disponibilidad": "disponible",
+      "formato_token": "png",
+      "id": "pool-rol:png_alfa",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": true,
+        "oid_sha256": "1e0ea1fb03488afd1dd3e5335fdc27ebfafdceca4f74a242110967269235dc81"
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "bench/salidas-invocacion/_p2_semillas.py",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#__semillas__.png_alfa",
+        "tipo": "pool_rol_historico"
+      },
+      "ruta_relativa": "corpus/imagen/alpha.png",
+      "sha256": "1e0ea1fb03488afd1dd3e5335fdc27ebfafdceca4f74a242110967269235dc81",
+      "uso_esperado": "rol canonico png_alfa del pool historico P2"
+    },
+    {
+      "argv_esperado": [
+        "escribir-fixture-utf8",
+        "{salida:s.srt}"
+      ],
+      "bytes": null,
+      "disponibilidad": "ausente",
+      "formato_token": "srt",
+      "id": "pool-rol:subtitulo",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "bench/salidas-invocacion/_p2_semillas.py",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#__semillas__.subtitulo",
+        "tipo": "pool_rol_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/s.srt",
+      "sha256": null,
+      "uso_esperado": "rol canonico subtitulo del pool historico P2"
+    },
+    {
+      "argv_esperado": [],
+      "bytes": 42855,
+      "disponibilidad": "disponible",
+      "formato_token": "png",
+      "id": "pool-rol:tif16",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": true,
+        "oid_sha256": "e645f85a6eec4e4d50f29f6b5336cf4916f2ed196e43913f04ca80e9bc1d0953"
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "bench/salidas-invocacion/_p2_semillas.py",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#__semillas__.tif16",
+        "tipo": "pool_rol_historico"
+      },
+      "ruta_relativa": "corpus/imagen/tipico.png",
+      "sha256": "e645f85a6eec4e4d50f29f6b5336cf4916f2ed196e43913f04ca80e9bc1d0953",
+      "uso_esperado": "rol canonico tif16 del pool historico P2"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-f",
+        "lavfi",
+        "-i",
+        "testsrc=size=64x48:rate=10:duration=0.5",
+        "-f",
+        "lavfi",
+        "-i",
+        "sine=frequency=440:duration=0.5",
+        "-c:v",
+        "libx264",
+        "-pix_fmt",
+        "yuv420p",
+        "-c:a",
+        "aac",
+        "-shortest",
+        "{salida:s.mp4}"
+      ],
+      "bytes": null,
+      "disponibilidad": "ausente",
+      "formato_token": "mp4",
+      "id": "pool-rol:video",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "bench/salidas-invocacion/_p2_semillas.py",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#__semillas__.video",
+        "tipo": "pool_rol_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/s.mp4",
+      "sha256": null,
+      "uso_esperado": "rol canonico video del pool historico P2"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-f",
+        "lavfi",
+        "-i",
+        "testsrc=size=352x288:rate=25:duration=1",
+        "-f",
+        "lavfi",
+        "-i",
+        "sine=frequency=440:duration=1:sample_rate=48000",
+        "-c:v",
+        "libx264",
+        "-pix_fmt",
+        "yuv420p",
+        "-c:a",
+        "pcm_s16le",
+        "-shortest",
+        "{salida:s_cif.mp4}"
+      ],
+      "bytes": null,
+      "disponibilidad": "ausente",
+      "formato_token": "mp4",
+      "id": "pool-rol:video_cif",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "bench/salidas-invocacion/_p2_semillas.py",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#__semillas__.video_cif",
+        "tipo": "pool_rol_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/s_cif.mp4",
+      "sha256": null,
+      "uso_esperado": "rol canonico video_cif del pool historico P2"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:video_cif}",
+        "{salida:m.264}"
+      ],
+      "bytes": 7674,
+      "disponibilidad": "ausente",
+      "formato_token": "264",
+      "geometria_origen": null,
+      "id": "pool-token:264",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-video_cif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#264",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.264",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:video_cif}",
+        "{salida:m.265}"
+      ],
+      "bytes": 7390,
+      "disponibilidad": "ausente",
+      "formato_token": "265",
+      "geometria_origen": null,
+      "id": "pool-token:265",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-video_cif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#265",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.265",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:video_cif}",
+        "{salida:m.266}"
+      ],
+      "bytes": 3836,
+      "disponibilidad": "ausente",
+      "formato_token": "266",
+      "geometria_origen": null,
+      "id": "pool-token:266",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-video_cif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#266",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.266",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:video_cif}",
+        "{salida:m.ac3}"
+      ],
+      "bytes": 12288,
+      "disponibilidad": "ausente",
+      "formato_token": "ac3",
+      "geometria_origen": null,
+      "id": "pool-token:ac3",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-video_cif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#ac3",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.ac3",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:video_cif}",
+        "{salida:m.al}"
+      ],
+      "bytes": 48000,
+      "disponibilidad": "ausente",
+      "formato_token": "al",
+      "geometria_origen": null,
+      "id": "pool-token:al",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-video_cif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#al",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.al",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:video_cif}",
+        "{salida:m.apm}"
+      ],
+      "bytes": 24100,
+      "disponibilidad": "ausente",
+      "formato_token": "apm",
+      "geometria_origen": null,
+      "id": "pool-token:apm",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-video_cif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#apm",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.apm",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:video_cif}",
+        "{salida:m.apng}"
+      ],
+      "bytes": 316882,
+      "disponibilidad": "ausente",
+      "formato_token": "apng",
+      "geometria_origen": null,
+      "id": "pool-token:apng",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-video_cif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#apng",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.apng",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:video_cif}",
+        "{salida:m.aptx}"
+      ],
+      "bytes": 48000,
+      "disponibilidad": "ausente",
+      "formato_token": "aptx",
+      "geometria_origen": null,
+      "id": "pool-token:aptx",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-video_cif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#aptx",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.aptx",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:video_cif}",
+        "{salida:m.aptxhd}"
+      ],
+      "bytes": 72000,
+      "disponibilidad": "ausente",
+      "formato_token": "aptxhd",
+      "geometria_origen": null,
+      "id": "pool-token:aptxhd",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-video_cif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#aptxhd",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.aptxhd",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:video_cif}",
+        "{salida:m.asf}"
+      ],
+      "bytes": 81063,
+      "disponibilidad": "ausente",
+      "formato_token": "asf",
+      "geometria_origen": null,
+      "id": "pool-token:asf",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-video_cif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#asf",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.asf",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:subtitulo}",
+        "{salida:m.ass}"
+      ],
+      "bytes": 726,
+      "disponibilidad": "ausente",
+      "formato_token": "ass",
+      "geometria_origen": null,
+      "id": "pool-token:ass",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-subtitulo",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#ass",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.ass",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:video_cif}",
+        "{salida:m.ast}"
+      ],
+      "bytes": 97568,
+      "disponibilidad": "ausente",
+      "formato_token": "ast",
+      "geometria_origen": null,
+      "id": "pool-token:ast",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-video_cif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#ast",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.ast",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:video_cif}",
+        "{salida:m.au}"
+      ],
+      "bytes": 96032,
+      "disponibilidad": "ausente",
+      "formato_token": "au",
+      "geometria_origen": null,
+      "id": "pool-token:au",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-video_cif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#au",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.au",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:video_cif}",
+        "{salida:m.avi}"
+      ],
+      "bytes": 87200,
+      "disponibilidad": "ausente",
+      "formato_token": "avi",
+      "geometria_origen": null,
+      "id": "pool-token:avi",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-video_cif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#avi",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.avi",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:video_cif}",
+        "{salida:m.avif}"
+      ],
+      "bytes": 6713,
+      "disponibilidad": "ausente",
+      "formato_token": "avif",
+      "geometria_origen": null,
+      "id": "pool-token:avif",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-video_cif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#avif",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.avif",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:video_cif}",
+        "{salida:m.avs}"
+      ],
+      "bytes": 5943,
+      "disponibilidad": "ausente",
+      "formato_token": "avs",
+      "geometria_origen": null,
+      "id": "pool-token:avs",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-video_cif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#avs",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.avs",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:video_cif}",
+        "{salida:m.avs2}"
+      ],
+      "bytes": 5943,
+      "disponibilidad": "ausente",
+      "formato_token": "avs2",
+      "geometria_origen": null,
+      "id": "pool-token:avs2",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-video_cif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#avs2",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.avs2",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "magick",
+        "{rol:jpeg_exif}",
+        "-auto-orient",
+        "{salida:m.bayer}"
+      ],
+      "bytes": 2073600,
+      "disponibilidad": "ausente",
+      "formato_token": "bayer",
+      "geometria_origen": [
+        1920,
+        1080
+      ],
+      "id": "pool-token:bayer",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "magick<-jpeg_exif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#bayer",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.bayer",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "magick",
+        "{rol:jpeg_exif}",
+        "-auto-orient",
+        "{salida:m.bayera}"
+      ],
+      "bytes": 2073600,
+      "disponibilidad": "ausente",
+      "formato_token": "bayera",
+      "geometria_origen": [
+        1920,
+        1080
+      ],
+      "id": "pool-token:bayera",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "magick<-jpeg_exif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#bayera",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.bayera",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "magick",
+        "{rol:jpeg_exif}",
+        "-auto-orient",
+        "{salida:m.bgr}"
+      ],
+      "bytes": 6220800,
+      "disponibilidad": "ausente",
+      "formato_token": "bgr",
+      "geometria_origen": [
+        1920,
+        1080
+      ],
+      "id": "pool-token:bgr",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "magick<-jpeg_exif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#bgr",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.bgr",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "magick",
+        "{rol:jpeg_exif}",
+        "-auto-orient",
+        "{salida:m.bgra}"
+      ],
+      "bytes": 8294400,
+      "disponibilidad": "ausente",
+      "formato_token": "bgra",
+      "geometria_origen": [
+        1920,
+        1080
+      ],
+      "id": "pool-token:bgra",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "magick<-jpeg_exif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#bgra",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.bgra",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "magick",
+        "{rol:jpeg_exif}",
+        "-auto-orient",
+        "{salida:m.bgro}"
+      ],
+      "bytes": 6220800,
+      "disponibilidad": "ausente",
+      "formato_token": "bgro",
+      "geometria_origen": [
+        1920,
+        1080
+      ],
+      "id": "pool-token:bgro",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "magick<-jpeg_exif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#bgro",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.bgro",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:jpeg_exif}",
+        "{salida:m.bmp}"
+      ],
+      "bytes": 6220854,
+      "disponibilidad": "ausente",
+      "formato_token": "bmp",
+      "geometria_origen": [
+        1920,
+        1080
+      ],
+      "id": "pool-token:bmp",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-jpeg_exif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#bmp",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.bmp",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:video_cif}",
+        "{salida:m.caf}"
+      ],
+      "bytes": 96199,
+      "disponibilidad": "ausente",
+      "formato_token": "caf",
+      "geometria_origen": null,
+      "id": "pool-token:caf",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-video_cif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#caf",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.caf",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "magick",
+        "{rol:jpeg_exif}",
+        "-auto-orient",
+        "{salida:m.cals}"
+      ],
+      "bytes": 3083,
+      "disponibilidad": "ausente",
+      "formato_token": "cals",
+      "geometria_origen": [
+        1920,
+        1080
+      ],
+      "id": "pool-token:cals",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "magick<-jpeg_exif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#cals",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.cals",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "magick",
+        "{rol:jpeg_exif}",
+        "-auto-orient",
+        "{salida:m.cmyk}"
+      ],
+      "bytes": 8294400,
+      "disponibilidad": "ausente",
+      "formato_token": "cmyk",
+      "geometria_origen": [
+        1920,
+        1080
+      ],
+      "id": "pool-token:cmyk",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "magick<-jpeg_exif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#cmyk",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.cmyk",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "magick",
+        "{rol:jpeg_exif}",
+        "-auto-orient",
+        "{salida:m.cmyka}"
+      ],
+      "bytes": 10368000,
+      "disponibilidad": "ausente",
+      "formato_token": "cmyka",
+      "geometria_origen": [
+        1920,
+        1080
+      ],
+      "id": "pool-token:cmyka",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "magick<-jpeg_exif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#cmyka",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.cmyka",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "magick",
+        "{rol:jpeg_exif}",
+        "-auto-orient",
+        "{salida:m.data}"
+      ],
+      "bytes": 87752,
+      "disponibilidad": "ausente",
+      "formato_token": "data",
+      "geometria_origen": [
+        1920,
+        1080
+      ],
+      "id": "pool-token:data",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "magick<-jpeg_exif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#data",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.data",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "magick",
+        "{rol:jpeg_exif}",
+        "-auto-orient",
+        "{salida:m.dds}"
+      ],
+      "bytes": 1036928,
+      "disponibilidad": "ausente",
+      "formato_token": "dds",
+      "geometria_origen": [
+        1920,
+        1080
+      ],
+      "id": "pool-token:dds",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "magick<-jpeg_exif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#dds",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.dds",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:video_cif}",
+        "{salida:m.dfpwm}"
+      ],
+      "bytes": 6000,
+      "disponibilidad": "ausente",
+      "formato_token": "dfpwm",
+      "geometria_origen": null,
+      "id": "pool-token:dfpwm",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-video_cif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#dfpwm",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.dfpwm",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:video_cif}",
+        "{salida:m.ec3}"
+      ],
+      "bytes": 12288,
+      "disponibilidad": "ausente",
+      "formato_token": "ec3",
+      "geometria_origen": null,
+      "id": "pool-token:ec3",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-video_cif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#ec3",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.ec3",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "magick",
+        "{rol:jpeg_exif}",
+        "-auto-orient",
+        "{salida:m.epsi}"
+      ],
+      "bytes": 13154110,
+      "disponibilidad": "ausente",
+      "formato_token": "epsi",
+      "geometria_origen": [
+        1920,
+        1080
+      ],
+      "id": "pool-token:epsi",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "magick<-jpeg_exif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#epsi",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.epsi",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:video_cif}",
+        "{salida:m.f4v}"
+      ],
+      "bytes": 18819,
+      "disponibilidad": "ausente",
+      "formato_token": "f4v",
+      "geometria_origen": null,
+      "id": "pool-token:f4v",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-video_cif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#f4v",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.f4v",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:video_cif}",
+        "{salida:m.fits}"
+      ],
+      "bytes": 7704000,
+      "disponibilidad": "ausente",
+      "formato_token": "fits",
+      "geometria_origen": null,
+      "id": "pool-token:fits",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-video_cif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#fits",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.fits",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [],
+      "bytes": 104318,
+      "disponibilidad": "disponible",
+      "formato_token": "flac",
+      "geometria_origen": null,
+      "id": "pool-token:flac",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": true,
+        "oid_sha256": "b4950a7155d749deb68c894e96143194e1b6767895549ad33a9c3ec05717e684"
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "corpus",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#flac",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "corpus/audio/tipico.flac",
+      "sha256": "b4950a7155d749deb68c894e96143194e1b6767895549ad33a9c3ec05717e684",
+      "uso_esperado": "entrada directa elegida como el fichero menor del corpus para el token"
+    },
+    {
+      "argv_esperado": [
+        "magick",
+        "{rol:jpeg_exif}",
+        "-auto-orient",
+        "{salida:m.ftxt}"
+      ],
+      "bytes": 53646000,
+      "disponibilidad": "ausente",
+      "formato_token": "ftxt",
+      "geometria_origen": [
+        1920,
+        1080
+      ],
+      "id": "pool-token:ftxt",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "magick<-jpeg_exif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#ftxt",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.ftxt",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "magick",
+        "{rol:jpeg_exif}",
+        "-auto-orient",
+        "{salida:m.g4}"
+      ],
+      "bytes": 6282,
+      "disponibilidad": "ausente",
+      "formato_token": "g4",
+      "geometria_origen": [
+        1920,
+        1080
+      ],
+      "id": "pool-token:g4",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "magick<-jpeg_exif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#g4",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.g4",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:video_cif}",
+        "{salida:m.g722}"
+      ],
+      "bytes": 24000,
+      "disponibilidad": "ausente",
+      "formato_token": "g722",
+      "geometria_origen": null,
+      "id": "pool-token:g722",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-video_cif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#g722",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.g722",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:video_cif}",
+        "{salida:m.gif}"
+      ],
+      "bytes": 112439,
+      "disponibilidad": "ausente",
+      "formato_token": "gif",
+      "geometria_origen": null,
+      "id": "pool-token:gif",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-video_cif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#gif",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.gif",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "magick",
+        "{rol:jpeg_exif}",
+        "-auto-orient",
+        "{salida:m.gif87}"
+      ],
+      "bytes": 121524,
+      "disponibilidad": "ausente",
+      "formato_token": "gif87",
+      "geometria_origen": [
+        1920,
+        1080
+      ],
+      "id": "pool-token:gif87",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "magick<-jpeg_exif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#gif87",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.gif87",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "magick",
+        "{rol:jpeg_exif}",
+        "-auto-orient",
+        "{salida:m.gray}"
+      ],
+      "bytes": 2073600,
+      "disponibilidad": "ausente",
+      "formato_token": "gray",
+      "geometria_origen": [
+        1920,
+        1080
+      ],
+      "id": "pool-token:gray",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "magick<-jpeg_exif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#gray",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.gray",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "magick",
+        "{rol:jpeg_exif}",
+        "-auto-orient",
+        "{salida:m.graya}"
+      ],
+      "bytes": 4147200,
+      "disponibilidad": "ausente",
+      "formato_token": "graya",
+      "geometria_origen": [
+        1920,
+        1080
+      ],
+      "id": "pool-token:graya",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "magick<-jpeg_exif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#graya",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.graya",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "magick",
+        "{rol:jpeg_exif}",
+        "-auto-orient",
+        "{salida:m.group4}"
+      ],
+      "bytes": 87752,
+      "disponibilidad": "ausente",
+      "formato_token": "group4",
+      "geometria_origen": [
+        1920,
+        1080
+      ],
+      "id": "pool-token:group4",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "magick<-jpeg_exif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#group4",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.group4",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:video_cif}",
+        "{salida:m.h261}"
+      ],
+      "bytes": 66814,
+      "disponibilidad": "ausente",
+      "formato_token": "h261",
+      "geometria_origen": null,
+      "id": "pool-token:h261",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-video_cif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#h261",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.h261",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:video_cif}",
+        "{salida:m.h263}"
+      ],
+      "bytes": 68302,
+      "disponibilidad": "ausente",
+      "formato_token": "h263",
+      "geometria_origen": null,
+      "id": "pool-token:h263",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-video_cif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#h263",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.h263",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:jpeg_exif}",
+        "{salida:m.hdr}"
+      ],
+      "bytes": 182634,
+      "disponibilidad": "ausente",
+      "formato_token": "hdr",
+      "geometria_origen": [
+        1920,
+        1080
+      ],
+      "id": "pool-token:hdr",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-jpeg_exif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#hdr",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.hdr",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:video_cif}",
+        "{salida:m.hevc}"
+      ],
+      "bytes": 7390,
+      "disponibilidad": "ausente",
+      "formato_token": "hevc",
+      "geometria_origen": null,
+      "id": "pool-token:hevc",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-video_cif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#hevc",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.hevc",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "magick",
+        "{rol:jpeg_exif}",
+        "-auto-orient",
+        "{salida:m.ipl}"
+      ],
+      "bytes": 6220852,
+      "disponibilidad": "ausente",
+      "formato_token": "ipl",
+      "geometria_origen": [
+        1920,
+        1080
+      ],
+      "id": "pool-token:ipl",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "magick<-jpeg_exif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#ipl",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.ipl",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:video_cif}",
+        "{salida:m.isma}"
+      ],
+      "bytes": 18959,
+      "disponibilidad": "ausente",
+      "formato_token": "isma",
+      "geometria_origen": null,
+      "id": "pool-token:isma",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-video_cif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#isma",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.isma",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:jpeg_exif}",
+        "{salida:m.j2k}"
+      ],
+      "bytes": 153556,
+      "disponibilidad": "ausente",
+      "formato_token": "j2k",
+      "geometria_origen": [
+        1920,
+        1080
+      ],
+      "id": "pool-token:j2k",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-jpeg_exif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#j2k",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.j2k",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:jpeg_exif}",
+        "{salida:m.jpeg}"
+      ],
+      "bytes": 60382,
+      "disponibilidad": "ausente",
+      "formato_token": "jpeg",
+      "geometria_origen": [
+        1920,
+        1080
+      ],
+      "id": "pool-token:jpeg",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-jpeg_exif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#jpeg",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.jpeg",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:video_cif}",
+        "{salida:m.loas}"
+      ],
+      "bytes": 9251,
+      "disponibilidad": "ausente",
+      "formato_token": "loas",
+      "geometria_origen": null,
+      "id": "pool-token:loas",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-video_cif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#loas",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.loas",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:subtitulo}",
+        "{salida:m.lrc}"
+      ],
+      "bytes": 98,
+      "disponibilidad": "ausente",
+      "formato_token": "lrc",
+      "geometria_origen": null,
+      "id": "pool-token:lrc",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-subtitulo",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#lrc",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.lrc",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "magick",
+        "{rol:jpeg_exif}",
+        "-auto-orient",
+        "{salida:m.map}"
+      ],
+      "bytes": 2074095,
+      "disponibilidad": "ausente",
+      "formato_token": "map",
+      "geometria_origen": [
+        1920,
+        1080
+      ],
+      "id": "pool-token:map",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "magick<-jpeg_exif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#map",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.map",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "magick",
+        "{rol:jpeg_exif}",
+        "-auto-orient",
+        "{salida:m.miff}"
+      ],
+      "bytes": 6221342,
+      "disponibilidad": "ausente",
+      "formato_token": "miff",
+      "geometria_origen": [
+        1920,
+        1080
+      ],
+      "id": "pool-token:miff",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "magick<-jpeg_exif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#miff",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.miff",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:video_cif}",
+        "{salida:m.mjpeg}"
+      ],
+      "bytes": 161974,
+      "disponibilidad": "ausente",
+      "formato_token": "mjpeg",
+      "geometria_origen": null,
+      "id": "pool-token:mjpeg",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-video_cif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#mjpeg",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.mjpeg",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:video_cif}",
+        "{salida:m.mjpg}"
+      ],
+      "bytes": 161974,
+      "disponibilidad": "ausente",
+      "formato_token": "mjpg",
+      "geometria_origen": null,
+      "id": "pool-token:mjpg",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-video_cif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#mjpg",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.mjpg",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [],
+      "bytes": 4079196,
+      "disponibilidad": "disponible",
+      "formato_token": "mkv",
+      "geometria_origen": null,
+      "id": "pool-token:mkv",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": true,
+        "oid_sha256": "e333ad7f6d175d8a3b9e41d3a749165394a3469e12665b126bba7c7f4f3407bd"
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "corpus",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#mkv",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "corpus/video/patologico_2pistas.mkv",
+      "sha256": "e333ad7f6d175d8a3b9e41d3a749165394a3469e12665b126bba7c7f4f3407bd",
+      "uso_esperado": "entrada directa elegida como el fichero menor del corpus para el token"
+    },
+    {
+      "argv_esperado": [
+        "magick",
+        "{rol:jpeg_exif}",
+        "-auto-orient",
+        "{salida:m.mono}"
+      ],
+      "bytes": 259200,
+      "disponibilidad": "ausente",
+      "formato_token": "mono",
+      "geometria_origen": [
+        1920,
+        1080
+      ],
+      "id": "pool-token:mono",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "magick<-jpeg_exif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#mono",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.mono",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:video_cif}",
+        "{salida:m.mov}"
+      ],
+      "bytes": 18886,
+      "disponibilidad": "ausente",
+      "formato_token": "mov",
+      "geometria_origen": null,
+      "id": "pool-token:mov",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-video_cif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#mov",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.mov",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:video_cif}",
+        "{salida:m.mp2}"
+      ],
+      "bytes": 48384,
+      "disponibilidad": "ausente",
+      "formato_token": "mp2",
+      "geometria_origen": null,
+      "id": "pool-token:mp2",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-video_cif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#mp2",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.mp2",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [],
+      "bytes": 64591,
+      "disponibilidad": "disponible",
+      "formato_token": "mp3",
+      "geometria_origen": null,
+      "id": "pool-token:mp3",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": true,
+        "oid_sha256": "04b12a569ebe74fbda11b5e8b72e8e848fd6ae0eaec8ad4633d0bb902d087549"
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "corpus",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#mp3",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "corpus/audio/tipico.mp3",
+      "sha256": "04b12a569ebe74fbda11b5e8b72e8e848fd6ae0eaec8ad4633d0bb902d087549",
+      "uso_esperado": "entrada directa elegida como el fichero menor del corpus para el token"
+    },
+    {
+      "argv_esperado": [],
+      "bytes": 552638,
+      "disponibilidad": "disponible",
+      "formato_token": "mp4",
+      "geometria_origen": null,
+      "id": "pool-token:mp4",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": true,
+        "oid_sha256": "6a30a41ffa671bf98ad33e9fb84eb3a5f41579bc9f805e3106fcfed449c33193"
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "corpus",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#mp4",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "corpus/video/trivial.mp4",
+      "sha256": "6a30a41ffa671bf98ad33e9fb84eb3a5f41579bc9f805e3106fcfed449c33193",
+      "uso_esperado": "entrada directa elegida como el fichero menor del corpus para el token"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:video_cif}",
+        "{salida:m.mpa}"
+      ],
+      "bytes": 48384,
+      "disponibilidad": "ausente",
+      "formato_token": "mpa",
+      "geometria_origen": null,
+      "id": "pool-token:mpa",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-video_cif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#mpa",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.mpa",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "magick",
+        "{rol:jpeg_exif}",
+        "-auto-orient",
+        "{salida:m.mpc}"
+      ],
+      "bytes": 590,
+      "disponibilidad": "ausente",
+      "formato_token": "mpc",
+      "geometria_origen": [
+        1920,
+        1080
+      ],
+      "id": "pool-token:mpc",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "magick<-jpeg_exif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#mpc",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.mpc",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:video_cif}",
+        "{salida:m.msbc}"
+      ],
+      "bytes": 15750,
+      "disponibilidad": "ausente",
+      "formato_token": "msbc",
+      "geometria_origen": null,
+      "id": "pool-token:msbc",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-video_cif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#msbc",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.msbc",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "magick",
+        "{rol:jpeg_exif}",
+        "-auto-orient",
+        "{salida:m.msvg}"
+      ],
+      "bytes": 44592,
+      "disponibilidad": "ausente",
+      "formato_token": "msvg",
+      "geometria_origen": [
+        1920,
+        1080
+      ],
+      "id": "pool-token:msvg",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "magick<-jpeg_exif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#msvg",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.msvg",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "magick",
+        "{rol:jpeg_exif}",
+        "-auto-orient",
+        "{salida:m.mtv}"
+      ],
+      "bytes": 6220810,
+      "disponibilidad": "ausente",
+      "formato_token": "mtv",
+      "geometria_origen": [
+        1920,
+        1080
+      ],
+      "id": "pool-token:mtv",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "magick<-jpeg_exif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#mtv",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.mtv",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:video_cif}",
+        "{salida:m.mxf}"
+      ],
+      "bytes": 205369,
+      "disponibilidad": "ausente",
+      "formato_token": "mxf",
+      "geometria_origen": null,
+      "id": "pool-token:mxf",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-video_cif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#mxf",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.mxf",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:video_cif}",
+        "{salida:m.ogg}"
+      ],
+      "bytes": 37465,
+      "disponibilidad": "ausente",
+      "formato_token": "ogg",
+      "geometria_origen": null,
+      "id": "pool-token:ogg",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-video_cif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#ogg",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.ogg",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:video_cif}",
+        "{salida:m.opus}"
+      ],
+      "bytes": 10212,
+      "disponibilidad": "ausente",
+      "formato_token": "opus",
+      "geometria_origen": null,
+      "id": "pool-token:opus",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-video_cif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#opus",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.opus",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "magick",
+        "{rol:jpeg_exif}",
+        "-auto-orient",
+        "{salida:m.pal}"
+      ],
+      "bytes": 4147200,
+      "disponibilidad": "ausente",
+      "formato_token": "pal",
+      "geometria_origen": [
+        1920,
+        1080
+      ],
+      "id": "pool-token:pal",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "magick<-jpeg_exif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#pal",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.pal",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "magick",
+        "{rol:jpeg_exif}",
+        "-auto-orient",
+        "{salida:m.pcl}"
+      ],
+      "bytes": 2349154,
+      "disponibilidad": "ausente",
+      "formato_token": "pcl",
+      "geometria_origen": [
+        1920,
+        1080
+      ],
+      "id": "pool-token:pcl",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "magick<-jpeg_exif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#pcl",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.pcl",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "magick",
+        "{rol:jpeg_exif}",
+        "-auto-orient",
+        "{salida:m.pdb}"
+      ],
+      "bytes": 15572,
+      "disponibilidad": "ausente",
+      "formato_token": "pdb",
+      "geometria_origen": [
+        1920,
+        1080
+      ],
+      "id": "pool-token:pdb",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "magick<-jpeg_exif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#pdb",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.pdb",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [],
+      "bytes": 3219,
+      "disponibilidad": "disponible",
+      "formato_token": "pdf",
+      "geometria_origen": null,
+      "id": "pool-token:pdf",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": true,
+        "oid_sha256": "a99692f0985e6f8ae9ed0d3b1bccbc996791a574839d3ec6840913ec658b313d"
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "corpus",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#pdf",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "corpus/pdf/tipico_texto.pdf",
+      "sha256": "a99692f0985e6f8ae9ed0d3b1bccbc996791a574839d3ec6840913ec658b313d",
+      "uso_esperado": "entrada directa elegida como el fichero menor del corpus para el token"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:jpeg_exif}",
+        "{salida:m.pfm}"
+      ],
+      "bytes": 24883222,
+      "disponibilidad": "ausente",
+      "formato_token": "pfm",
+      "geometria_origen": [
+        1920,
+        1080
+      ],
+      "id": "pool-token:pfm",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-jpeg_exif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#pfm",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.pfm",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:jpeg_exif}",
+        "{salida:m.pgm}"
+      ],
+      "bytes": 2073617,
+      "disponibilidad": "ausente",
+      "formato_token": "pgm",
+      "geometria_origen": [
+        1920,
+        1080
+      ],
+      "id": "pool-token:pgm",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-jpeg_exif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#pgm",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.pgm",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:jpeg_exif}",
+        "{salida:m.pix}"
+      ],
+      "bytes": 76182,
+      "disponibilidad": "ausente",
+      "formato_token": "pix",
+      "geometria_origen": [
+        1920,
+        1080
+      ],
+      "id": "pool-token:pix",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-jpeg_exif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#pix",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.pix",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "magick",
+        "{rol:jpeg_exif}",
+        "-auto-orient",
+        "{salida:m.pjpeg}"
+      ],
+      "bytes": 94457,
+      "disponibilidad": "ausente",
+      "formato_token": "pjpeg",
+      "geometria_origen": [
+        1920,
+        1080
+      ],
+      "id": "pool-token:pjpeg",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "magick<-jpeg_exif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#pjpeg",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.pjpeg",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [],
+      "bytes": 316,
+      "disponibilidad": "disponible",
+      "formato_token": "png",
+      "geometria_origen": [
+        64,
+        64
+      ],
+      "id": "pool-token:png",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": true,
+        "oid_sha256": "446bccc44ead0348974e89abe47a8bcb6cf112d3f276dc6861e5b1a7d13f9536"
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "corpus",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#png",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "corpus/imagen/trivial.png",
+      "sha256": "446bccc44ead0348974e89abe47a8bcb6cf112d3f276dc6861e5b1a7d13f9536",
+      "uso_esperado": "entrada directa elegida como el fichero menor del corpus para el token"
+    },
+    {
+      "argv_esperado": [
+        "magick",
+        "{rol:jpeg_exif}",
+        "-auto-orient",
+        "{salida:m.png48}"
+      ],
+      "bytes": 48560,
+      "disponibilidad": "ausente",
+      "formato_token": "png48",
+      "geometria_origen": [
+        1920,
+        1080
+      ],
+      "id": "pool-token:png48",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "magick<-jpeg_exif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#png48",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.png48",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "magick",
+        "{rol:jpeg_exif}",
+        "-auto-orient",
+        "{salida:m.ptif}"
+      ],
+      "bytes": 8293748,
+      "disponibilidad": "ausente",
+      "formato_token": "ptif",
+      "geometria_origen": [
+        1920,
+        1080
+      ],
+      "id": "pool-token:ptif",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "magick<-jpeg_exif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#ptif",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.ptif",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:video_cif}",
+        "{salida:m.rgb}"
+      ],
+      "bytes": 3801600,
+      "disponibilidad": "ausente",
+      "formato_token": "rgb",
+      "geometria_origen": null,
+      "id": "pool-token:rgb",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-video_cif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#rgb",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.rgb",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "magick",
+        "{rol:jpeg_exif}",
+        "-auto-orient",
+        "{salida:m.rgba}"
+      ],
+      "bytes": 8294400,
+      "disponibilidad": "ausente",
+      "formato_token": "rgba",
+      "geometria_origen": [
+        1920,
+        1080
+      ],
+      "id": "pool-token:rgba",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "magick<-jpeg_exif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#rgba",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.rgba",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "magick",
+        "{rol:jpeg_exif}",
+        "-auto-orient",
+        "{salida:m.rgbo}"
+      ],
+      "bytes": 8294400,
+      "disponibilidad": "ausente",
+      "formato_token": "rgbo",
+      "geometria_origen": [
+        1920,
+        1080
+      ],
+      "id": "pool-token:rgbo",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "magick<-jpeg_exif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#rgbo",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.rgbo",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "magick",
+        "{rol:png_alfa}",
+        "-auto-orient",
+        "{salida:m.rgf}"
+      ],
+      "bytes": 5002,
+      "disponibilidad": "ausente",
+      "formato_token": "rgf",
+      "geometria_origen": [
+        200,
+        200
+      ],
+      "id": "pool-token:rgf",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "magick<-png_alfa",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#rgf",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.rgf",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:video_cif}",
+        "{salida:m.sb}"
+      ],
+      "bytes": 48000,
+      "disponibilidad": "ausente",
+      "formato_token": "sb",
+      "geometria_origen": null,
+      "id": "pool-token:sb",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-video_cif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#sb",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.sb",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "magick",
+        "{rol:jpeg_exif}",
+        "-auto-orient",
+        "{salida:m.sf3}"
+      ],
+      "bytes": 87752,
+      "disponibilidad": "ausente",
+      "formato_token": "sf3",
+      "geometria_origen": [
+        1920,
+        1080
+      ],
+      "id": "pool-token:sf3",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "magick<-jpeg_exif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#sf3",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.sf3",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:video_cif}",
+        "{salida:m.sox}"
+      ],
+      "bytes": 192032,
+      "disponibilidad": "ausente",
+      "formato_token": "sox",
+      "geometria_origen": null,
+      "id": "pool-token:sox",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-video_cif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#sox",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.sox",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:subtitulo}",
+        "{salida:m.srt}"
+      ],
+      "bytes": 111,
+      "disponibilidad": "ausente",
+      "formato_token": "srt",
+      "geometria_origen": null,
+      "id": "pool-token:srt",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-subtitulo",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#srt",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.srt",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:subtitulo}",
+        "{salida:m.ssa}"
+      ],
+      "bytes": 726,
+      "disponibilidad": "ausente",
+      "formato_token": "ssa",
+      "geometria_origen": null,
+      "id": "pool-token:ssa",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-subtitulo",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#ssa",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.ssa",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "magick",
+        "{rol:jpeg_exif}",
+        "-auto-orient",
+        "{salida:m.svg}"
+      ],
+      "bytes": 44592,
+      "disponibilidad": "ausente",
+      "formato_token": "svg",
+      "geometria_origen": [
+        1920,
+        1080
+      ],
+      "id": "pool-token:svg",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "magick<-jpeg_exif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#svg",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.svg",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:video_cif}",
+        "{salida:m.sw}"
+      ],
+      "bytes": 96000,
+      "disponibilidad": "ausente",
+      "formato_token": "sw",
+      "geometria_origen": null,
+      "id": "pool-token:sw",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-video_cif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#sw",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.sw",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:jpeg_exif}",
+        "{salida:m.tiff}"
+      ],
+      "bytes": 6248413,
+      "disponibilidad": "ausente",
+      "formato_token": "tiff",
+      "geometria_origen": [
+        1920,
+        1080
+      ],
+      "id": "pool-token:tiff",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-jpeg_exif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#tiff",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.tiff",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:video_cif}",
+        "{salida:m.tta}"
+      ],
+      "bytes": 15944,
+      "disponibilidad": "ausente",
+      "formato_token": "tta",
+      "geometria_origen": null,
+      "id": "pool-token:tta",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-video_cif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#tta",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.tta",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "magick",
+        "{rol:jpeg_exif}",
+        "-auto-orient",
+        "{salida:m.txt}"
+      ],
+      "bytes": 103121842,
+      "disponibilidad": "ausente",
+      "formato_token": "txt",
+      "geometria_origen": [
+        1920,
+        1080
+      ],
+      "id": "pool-token:txt",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "magick<-jpeg_exif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#txt",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.txt",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:video_cif}",
+        "{salida:m.ub}"
+      ],
+      "bytes": 48000,
+      "disponibilidad": "ausente",
+      "formato_token": "ub",
+      "geometria_origen": null,
+      "id": "pool-token:ub",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-video_cif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#ub",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.ub",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:video_cif}",
+        "{salida:m.ul}"
+      ],
+      "bytes": 48000,
+      "disponibilidad": "ausente",
+      "formato_token": "ul",
+      "geometria_origen": null,
+      "id": "pool-token:ul",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-video_cif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#ul",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.ul",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:video_cif}",
+        "{salida:m.uw}"
+      ],
+      "bytes": 96000,
+      "disponibilidad": "ausente",
+      "formato_token": "uw",
+      "geometria_origen": null,
+      "id": "pool-token:uw",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-video_cif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#uw",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.uw",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "magick",
+        "{rol:jpeg_exif}",
+        "-auto-orient",
+        "{salida:m.uyvy}"
+      ],
+      "bytes": 4147200,
+      "disponibilidad": "ausente",
+      "formato_token": "uyvy",
+      "geometria_origen": [
+        1920,
+        1080
+      ],
+      "id": "pool-token:uyvy",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "magick<-jpeg_exif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#uyvy",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.uyvy",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:video_cif}",
+        "{salida:m.vag}"
+      ],
+      "bytes": 24014,
+      "disponibilidad": "ausente",
+      "formato_token": "vag",
+      "geometria_origen": null,
+      "id": "pool-token:vag",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-video_cif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#vag",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.vag",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:video_cif}",
+        "{salida:m.voc}"
+      ],
+      "bytes": 96227,
+      "disponibilidad": "ausente",
+      "formato_token": "voc",
+      "geometria_origen": null,
+      "id": "pool-token:voc",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-video_cif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#voc",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.voc",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:subtitulo}",
+        "{salida:m.vtt}"
+      ],
+      "bytes": 102,
+      "disponibilidad": "ausente",
+      "formato_token": "vtt",
+      "geometria_origen": null,
+      "id": "pool-token:vtt",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-subtitulo",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#vtt",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.vtt",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:video_cif}",
+        "{salida:m.vvc}"
+      ],
+      "bytes": 3836,
+      "disponibilidad": "ausente",
+      "formato_token": "vvc",
+      "geometria_origen": null,
+      "id": "pool-token:vvc",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-video_cif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#vvc",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.vvc",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:video_cif}",
+        "{salida:m.w64}"
+      ],
+      "bytes": 96104,
+      "disponibilidad": "ausente",
+      "formato_token": "w64",
+      "geometria_origen": null,
+      "id": "pool-token:w64",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-video_cif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#w64",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.w64",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [],
+      "bytes": 12796,
+      "disponibilidad": "disponible",
+      "formato_token": "webp",
+      "geometria_origen": [
+        1920,
+        1080
+      ],
+      "id": "pool-token:webp",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": true,
+        "oid_sha256": "d2b9dbd6f068e14cec6772509bf9c1372020a97104d5d091fdacabe4c22f92cd"
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "corpus",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#webp",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "corpus/imagen/tipico.webp",
+      "sha256": "d2b9dbd6f068e14cec6772509bf9c1372020a97104d5d091fdacabe4c22f92cd",
+      "uso_esperado": "entrada directa elegida como el fichero menor del corpus para el token"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:video_cif}",
+        "{salida:m.wtv}"
+      ],
+      "bytes": 122880,
+      "disponibilidad": "ausente",
+      "formato_token": "wtv",
+      "geometria_origen": null,
+      "id": "pool-token:wtv",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-video_cif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#wtv",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.wtv",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:video_cif}",
+        "{salida:m.y4m}"
+      ],
+      "bytes": 3801810,
+      "disponibilidad": "ausente",
+      "formato_token": "y4m",
+      "geometria_origen": null,
+      "id": "pool-token:y4m",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-video_cif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#y4m",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.y4m",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "magick",
+        "{rol:jpeg_exif}",
+        "-auto-orient",
+        "{salida:m.ycbcr}"
+      ],
+      "bytes": 6220800,
+      "disponibilidad": "ausente",
+      "formato_token": "ycbcr",
+      "geometria_origen": [
+        1920,
+        1080
+      ],
+      "id": "pool-token:ycbcr",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "magick<-jpeg_exif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#ycbcr",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.ycbcr",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "magick",
+        "{rol:jpeg_exif}",
+        "-auto-orient",
+        "{salida:m.ycbcra}"
+      ],
+      "bytes": 8294400,
+      "disponibilidad": "ausente",
+      "formato_token": "ycbcra",
+      "geometria_origen": [
+        1920,
+        1080
+      ],
+      "id": "pool-token:ycbcra",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "magick<-jpeg_exif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#ycbcra",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.ycbcra",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    },
+    {
+      "argv_esperado": [
+        "ffmpeg",
+        "-nostdin",
+        "-y",
+        "-i",
+        "{rol:video_cif}",
+        "{salida:m.yuv}"
+      ],
+      "bytes": 3801600,
+      "disponibilidad": "ausente",
+      "formato_token": "yuv",
+      "geometria_origen": null,
+      "id": "pool-token:yuv",
+      "lfs": {
+        "es_puntero": false,
+        "gestionado": false
+      },
+      "licencia": {
+        "estado": "desconocida",
+        "fuente": "no hay metadato de licencia por semilla en las fuentes indexadas",
+        "identificador": "NO-DECLARADA"
+      },
+      "origen": {
+        "base": "ffmpeg<-video_cif",
+        "fuente": "bench/salidas-invocacion/pool_indice.json#yuv",
+        "tipo": "pool_token_historico"
+      },
+      "ruta_relativa": "bench/salidas-invocacion/pool/in/m.yuv",
+      "sha256": null,
+      "uso_esperado": "salida regenerable historica; no materializada en este worktree"
+    }
+  ]
+}
