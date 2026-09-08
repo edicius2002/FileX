@@ -11,7 +11,9 @@ class DestinosNoAdmitidos(unittest.TestCase):
         casos = {"sup": "mapa de bits", "clip": "metadatos",
                  "eml": "no implementado", "chk": "paquete",
                  "oeb": "directorio", "rtsp": "red", "sap": "red",
-                 "ac4": "encoder", "js": "encoder"}
+                 "ac4": "encoder", "js": "encoder", "c2": "encoder",
+                 "dzi": "escritor", "8bim": "metadatos", "jpt": "variante",
+                 "iptcwtext": "sin salida"}
         for destino, motivo in casos.items():
             with self.subTest(destino=destino):
                 decision = fx.planificar("entrada.png", "salida." + destino)
