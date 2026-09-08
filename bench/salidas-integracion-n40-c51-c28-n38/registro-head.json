@@ -1,0 +1,160 @@
+{
+  "head": "5ecd2fb495686a310f368d5aacccb7dcfaac7c31",
+  "auditoria_sha256": "7f3a37232a2d0dd79b8964d5fb3d8601c8677b1ce0a7d069432de3edda3c6148",
+  "auditoria_historica": {
+    "NOMINAL_REFUTADA": 5,
+    "REAL_HISTORICA_SIN_SELLO": 57,
+    "REAL_SELLADA_VIGENTE": 170
+  },
+  "conversiones_nuevas_en_este_recuento": 0,
+  "huellas": {
+    "imagemagick": {
+      "sello": {
+        "motor": "277736c49b765989",
+        "invocacion": "3a2c16603bb46673",
+        "contrato": "fe41b4d52413299c"
+      },
+      "actual": {
+        "motor": "277736c49b765989",
+        "invocacion": "3a2c16603bb46673",
+        "contrato": "80791e4b492afc94"
+      },
+      "diferencias": [
+        "contrato"
+      ],
+      "aristas_selladas": 62
+    },
+    "ffmpeg": {
+      "sello": {
+        "motor": "52bd204369ca3053",
+        "invocacion": "3a2c16603bb46673",
+        "contrato": "fe41b4d52413299c"
+      },
+      "actual": {
+        "motor": "52bd204369ca3053",
+        "invocacion": "3a2c16603bb46673",
+        "contrato": "80791e4b492afc94"
+      },
+      "diferencias": [
+        "contrato"
+      ],
+      "aristas_selladas": 70
+    },
+    "doc_libreoffice": {
+      "sello": {
+        "motor": "ae44ff79d26ded79",
+        "invocacion": "3a2c16603bb46673",
+        "contrato": "fe41b4d52413299c"
+      },
+      "actual": {
+        "motor": "ae44ff79d26ded79",
+        "invocacion": "3a2c16603bb46673",
+        "contrato": "80791e4b492afc94"
+      },
+      "diferencias": [
+        "contrato"
+      ],
+      "aristas_selladas": 16
+    },
+    "doc_pandoc": {
+      "sello": {
+        "motor": "f82b19cb9263ef45",
+        "invocacion": "3a2c16603bb46673",
+        "contrato": "fe41b4d52413299c"
+      },
+      "actual": {
+        "motor": "f82b19cb9263ef45",
+        "invocacion": "3a2c16603bb46673",
+        "contrato": "80791e4b492afc94"
+      },
+      "diferencias": [
+        "contrato"
+      ],
+      "aristas_selladas": 16
+    },
+    "doc_calibre": {
+      "sello": {
+        "motor": "2291ddcd4246f75a",
+        "invocacion": "3a2c16603bb46673",
+        "contrato": "fe41b4d52413299c"
+      },
+      "actual": {
+        "motor": "2291ddcd4246f75a",
+        "invocacion": "3a2c16603bb46673",
+        "contrato": "80791e4b492afc94"
+      },
+      "diferencias": [
+        "contrato"
+      ],
+      "aristas_selladas": 8
+    }
+  },
+  "total_aristas_disponibles": 232,
+  "estados_runtime": {
+    "sin_sondear": 172,
+    "real": 57,
+    "nominal": 3
+  },
+  "motores": [
+    {
+      "nombre": "imagemagick",
+      "disponible": true,
+      "build": "imagemagick 7.1.2-21",
+      "n": 67
+    },
+    {
+      "nombre": "ghostscript",
+      "disponible": true,
+      "build": "ghostscript 10.07.0",
+      "n": 4
+    },
+    {
+      "nombre": "ffmpeg",
+      "disponible": true,
+      "build": "ffmpeg N-121159-g0bd5a7d371-20250921",
+      "n": 85
+    },
+    {
+      "nombre": "doc_libreoffice",
+      "disponible": true,
+      "build": "doc_libreoffice 29.4.3 · filex-c13@6d359bad483e",
+      "n": 28
+    },
+    {
+      "nombre": "doc_pandoc",
+      "disponible": true,
+      "build": "doc_pandoc 29.4.3 · filex-c13@6d359bad483e",
+      "n": 31
+    },
+    {
+      "nombre": "doc_calibre",
+      "disponible": true,
+      "build": "doc_calibre 29.4.3 · filex-c13@6d359bad483e",
+      "n": 17
+    }
+  ],
+  "diagnostico": {
+    "sin_huella": [],
+    "caducados": {
+      "imagemagick": [
+        "contrato"
+      ],
+      "ffmpeg": [
+        "contrato"
+      ],
+      "doc_libreoffice": [
+        "contrato"
+      ],
+      "doc_pandoc": [
+        "contrato"
+      ],
+      "doc_calibre": [
+        "contrato"
+      ]
+    },
+    "build_distinto": [],
+    "sin_interprete": [],
+    "interprete_distinto": []
+  },
+  "nota": "Disponibilidad y tablas basales no equivalen a ejecución actual ni fidelidad. No se reselló nada."
+}
