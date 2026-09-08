@@ -106,6 +106,8 @@ class EntradaDelContenedor(unittest.TestCase):
                 return Salto(arista=arista, rc=0, veredicto="ok")
 
             with patch.object(fx, "_abrir_entrada", side_effect=abrir_validado), \
+                    patch("filex.nucleo.os.dup",
+                          side_effect=OSError("duplicación CRT no disponible")), \
                     patch.object(fx, "_un_salto", side_effect=leer_bind):
                 resultado = fx.convertir(str(seguro), str(Path(base, "salida.html")))
             self.assertTrue(resultado.ok, resultado.motivo)
