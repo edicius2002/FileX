@@ -708,11 +708,19 @@ class FileX:
         conv = Conversion(entrada=entrada, salida=salida)
 
         try:
-            ent_abs, sal_abs = self._resolver(entrada, salida)
+            _ent_abs, sal_abs = self._resolver(entrada, salida)
         except Denegado as e:
             conv.motivo = str(e)
             return conv
-        if not os.path.isfile(ent_abs):
+        # Esta es sólo la guarda opaca y temprana de R4. La autoridad no es la
+        # cadena canónica devuelta por ``_resolver``: es el descriptor que
+        # ``_abrir_entrada`` abre y vuelve a validar más abajo. En Windows
+        # hosted, TEMP puede aparecer con grafías larga/8.3 distintas y la
+        # canónica dejar de ser reabrible aunque el nombre pedido y el
+        # descriptor sean válidos. Consultar el nombre original evita abortar
+        # antes de llegar a esa autoridad; una carrera posterior sigue cerrada
+        # por la validación del descriptor.
+        if not os.path.isfile(entrada):
             # R4: el MISMO mensaje que para «prohibido». Distinguirlos convierte
             # el conversor en un oráculo de existencia del disco ajeno.
             conv.motivo = "ruta no accesible"

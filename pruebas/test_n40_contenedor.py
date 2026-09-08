@@ -99,6 +99,40 @@ class EntradaDelContenedor(unittest.TestCase):
             with self.assertRaises(OSError):
                 os.fstat(fd)
 
+    def test_el_descriptor_gana_si_el_alias_resuelto_no_se_puede_reabrir(self):
+        """Windows hosted puede normalizar TEMP a otra grafía antes del open.
+
+        La comprobación previa de existencia es sólo una guarda opaca; la
+        autoridad real es el descriptor que ``abrir_confinado`` ya validó.
+        """
+        with tempfile.TemporaryDirectory() as base:
+            seguro = Path(base, "seguro.md")
+            salida = Path(base, "salida.html")
+            seguro.write_bytes(b"DESCRIPTOR VALIDADO")
+            alias_no_reabrible = str(Path(base, "alias-que-no-existe.md"))
+            fd = os.open(seguro, os.O_RDONLY | getattr(os, "O_BINARY", 0))
+            ent = _EntradaConfinada(fd, str(seguro), str(seguro))
+            fx = FileX.__new__(FileX)
+            fx.confinamiento = Confinamiento([base], [base])
+            motor = PandocEnContenedor()
+            fx.motores = {motor.nombre: motor}
+            arista = Arista("md", "html", motor.nombre, estado=REAL)
+            fx.grafo = Grafo([arista])
+
+            def leer_bind(arista, entrada, *args, **kwargs):
+                self.assertEqual(Path(entrada).read_bytes(), b"DESCRIPTOR VALIDADO")
+                return Salto(arista=arista, rc=0, veredicto="ok")
+
+            try:
+                with patch.object(fx, "_resolver", return_value=(alias_no_reabrible,
+                                                                  str(salida))), \
+                        patch.object(fx, "_abrir_entrada", return_value=ent), \
+                        patch.object(fx, "_un_salto", side_effect=leer_bind):
+                    resultado = fx.convertir(str(seguro), str(salida))
+                self.assertTrue(resultado.ok, resultado.motivo)
+            finally:
+                ent.cerrar()
+
 
 if __name__ == "__main__":
     unittest.main()

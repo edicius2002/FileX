@@ -10,6 +10,7 @@ repositorio. No se habilitó GPU, OpenCL ni aceleración hardware.
 | `resondeo-imagemagick.json` | 124 celdas: 62 pares por dos semillas | `sonda_im.py <semillas> <salidas> <json>` con OpenCL apagado |
 | `resondeo-ico256.json` | 7 controles adicionales de escritura ICO | `_ico256_r7.py <semillas> <salidas> <json>` |
 | `resondeo-documentos.json` | 40 conversiones sobre `filex-c13@6d359bad…` | `_resondeo40.py --salida <json> --out <temporal>` |
+| `n38-windows-34175258765.json` | artefacto hospedado: 100 intentos N38 sobre Windows | workflow `windows-tests`, run 34175258765 |
 | `sellar.py` | valida claves, conteos, builds y resultados antes de escribir los cinco sellos | ver orden siguiente |
 
 Sellado reproducible a partir de los registros crudos:
@@ -30,3 +31,5 @@ SHA-256 de los cuatro registros: FFmpeg
 ImageMagick `384901ae12ff6326c065ae216d3605624ae24ad0e2df437906e08b280ff964b2`;
 ICO `6a03fe513e9a5d816f9ed1c3fcd5255edbafebccd6cda583bf776da95a22339f`;
 documentos `dd4d5e9d2cf79efad6d04c14c63a4cbcd1be4a6e7c159e85e103e9d55ee9095`.
+El artefacto N38 tiene SHA-256
+`c4c1e1293591fa4fa268915c3b3da9aafb5901337c9fcc1c8aa35cfdbfbc39d7`.

@@ -46,9 +46,24 @@ contrato `cc1e0253f7da074f`, el mismo build que antes y Python 3.11.
 - CR-002 y regresiones relacionadas: 134 aprobadas; el arnés específico añade
   6 pruebas aprobadas entre unidad y conversión real.
 - `pruebas/test_sondeo.py`: 48 aprobadas.
-- Suite completa `python -X utf8 -m pytest pruebas -q -p no:cacheprovider`:
-  **994 aprobadas, 11 omitidas, 0 fallos, 4 avisos**, 205,63 s.
+- Suite completa final, tras el ajuste hospedado de N40,
+  `python -X utf8 -m pytest pruebas -q -p no:cacheprovider`:
+  **995 aprobadas, 11 omitidas, 0 fallos, 4 avisos**, 180,44 s.
 - `python -X utf8 ci/integridad.py`: 9 comprobaciones en orden.
 
-La ejecución hospedada de `windows-tests` para N38 se registra en este informe
-cuando termine; no se sustituirá por un resultado local.
+## Windows hospedado
+
+La ejecución [34175258765](https://github.com/edicius2002/FileX/actions/runs/34175258765)
+sobre `623b302` validó N38 en `windows-latest`: **100/100 intentos completos,
+0 fallos**. Ocho intentos observaron un `delta_s` negativo; ninguno borró el
+directorio joven y los 100 barridos posteriores sí borraron el vencido. El
+artefacto íntegro está versionado como
+`salidas-cierre-global/n38-windows-34175258765.json`.
+
+El mismo run destapó un fallo independiente en N40: la guarda temprana por ruta
+abortó con `ruta no accesible` antes de consumir el descriptor validado y dejó
+el fichero abierto. Se reprodujo con una regresión roja y se corrigió haciendo
+que esa guarda consulte el nombre original; el descriptor sigue siendo la
+autoridad revalidada para los bytes. Pasaron 4/4 pruebas N40 con Docker local,
+98 pruebas de confinamiento/sondeo y la suite final de 995. La segunda
+ejecución hospedada se enlaza al cerrar este informe.
