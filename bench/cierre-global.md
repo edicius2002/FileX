@@ -48,7 +48,7 @@ contrato `cc1e0253f7da074f`, el mismo build que antes y Python 3.11.
 - `pruebas/test_sondeo.py`: 48 aprobadas.
 - Suite completa final, tras el ajuste hospedado de N40,
   `python -X utf8 -m pytest pruebas -q -p no:cacheprovider`:
-  **995 aprobadas, 11 omitidas, 0 fallos, 4 avisos**, 180,44 s.
+  **995 aprobadas, 11 omitidas, 0 fallos, 4 avisos**, 177,71 s.
 - `python -X utf8 ci/integridad.py`: 9 comprobaciones en orden.
 
 ## Windows hospedado
@@ -60,10 +60,18 @@ directorio joven y los 100 barridos posteriores sí borraron el vencido. El
 artefacto íntegro está versionado como
 `salidas-cierre-global/n38-windows-34175258765.json`.
 
-El mismo run destapó un fallo independiente en N40: la guarda temprana por ruta
-abortó con `ruta no accesible` antes de consumir el descriptor validado y dejó
-el fichero abierto. Se reprodujo con una regresión roja y se corrigió haciendo
-que esa guarda consulte el nombre original; el descriptor sigue siendo la
-autoridad revalidada para los bytes. Pasaron 4/4 pruebas N40 con Docker local,
-98 pruebas de confinamiento/sondeo y la suite final de 995. La segunda
-ejecución hospedada se enlaza al cerrar este informe.
+El mismo run destapó un fallo independiente en N40. El arnés abría el HANDLE
+antes del orden productivo y Windows 3.11 impedía el `stat` posterior; corregido
+el orden del arnés, apareció el defecto real: la raíz corta `RUNNER~1` pasaba el
+filtro léxico, pero su ruta final larga se comparaba otra vez contra la raíz
+corta y era denegada. `Confinamiento` conserva ahora raíces léxicas para R1 y
+raíces canónicas para validar rutas ya resueltas, sin reintroducir raíces de
+unidad. La copia al staging se endureció además para leer el descriptor
+autorizado directamente, sin duplicarlo mediante el CRT.
+
+La ejecución final
+[34177718923](https://github.com/edicius2002/FileX/actions/runs/34177718923)
+sobre `ed2bf09` quedó completamente verde: **339 pruebas, 69 omitidas y 0
+fallos** en la lista congelada, más **100/100 intentos N38**. Localmente, las
+194 pruebas focalizadas de N40/confinamiento quedaron verdes (8 omitidas),
+incluido el control Docker CPU, y la suite completa mantuvo 995/11/0.

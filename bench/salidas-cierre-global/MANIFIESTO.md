@@ -33,3 +33,7 @@ ICO `6a03fe513e9a5d816f9ed1c3fcd5255edbafebccd6cda583bf776da95a22339f`;
 documentos `dd4d5e9d2cf79efad6d04c14c63a4cbcd1be4a6e7c159e85e103e9d55ee9095`.
 El artefacto N38 tiene SHA-256
 `c4c1e1293591fa4fa268915c3b3da9aafb5901337c9fcc1c8aa35cfdbfbc39d7`.
+El cierre hospedado completo (lista congelada + N38) quedó verde en el run
+[`34177718923`](https://github.com/edicius2002/FileX/actions/runs/34177718923)
+sobre `ed2bf09`; no se duplica su artefacto porque el de 100 intentos ya está
+versionado arriba.
