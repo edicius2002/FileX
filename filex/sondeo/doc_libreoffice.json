@@ -1,109 +1,109 @@
 {
   "motor": "doc_libreoffice",
   "build": "doc_libreoffice 29.4.3 · filex-c13@6d359bad483e",
-  "fecha": "2026-09-03",
-  "informe": "bench/rasteriza-declaradas.md",
+  "fecha": "2026-09-07",
+  "informe": "bench/cierre-global.md",
   "huella": {
     "motor": "ae44ff79d26ded79",
     "invocacion": "3a2c16603bb46673",
-    "contrato": "fe41b4d52413299c"
+    "contrato": "cc1e0253f7da074f"
   },
   "interprete": "3.11",
-  "nota_huella": "RESONDEADO (no resellado por algoritmo) el 2026-09-03 por worker14, carril rasteriza-declaradas: `bench/rasteriza-declaradas.md` convierte `_DECLARADAS` de `tuple` de pares en `dict` `{(o,d): rasteriza}` y hace que `_EnContenedor._aristas()` lea el valor. Hasta hoy toda arista nacida de `_DECLARADAS` salia con `rasteriza=False` mintiera o no, y `sondeo.aplicar()` conserva `rasteriza` de la arista que ya existe, asi que el valor falso sobrevivia al sondeo. Eso cambia el AST de la clase y de su base `_EnContenedor`, y CADUCA la huella `motor` (48e14e7a35210f60 -> ae44ff79d26ded79); `invocacion` y `contrato` no se tocaron y no cambiaron (comprobado antes de editar: los cinco ficheros del disco coincidian con el arbol). Las 16 aristas que este fichero aplica se REMIDIERON de verdad con `FileX.convertir()` real -contrato de cinco puntos y censo del punto 5 incluidos- via `bench/salidas-rasteriza-declaradas/_resondeo40.py`; 16 de 16 reprodujeron su veredicto anterior. ADEMAS entran al grafo `pptx>png` y `svg>png`, que llevaban desde el 2026-09-02 medidas `real` en este mismo fichero y FUERA del grafo porque `_DECLARADAS` no sabia declararlas `rasteriza=True` (comentario de worker7 en `motor_contenedor.py`). Las dos se remidieron y las dos siguen rasterizando: 0 caracteres recuperados y sin centinela.",
+  "nota_huella": "RESONDEADO de verdad el 2026-09-07 durante el cierre global tras corregir CR-002: cada arista pasó por FileX.convertir() y el contrato completo; no se copió ni reselló la tabla anterior.",
   "aristas": {
     "csv>pdf": {
       "estado": "real",
-      "ms": 4495.7,
+      "ms": 13322.5,
       "motivo": "20944 B, 119 caracteres, contrato ok",
       "caso": "W11"
     },
     "csv>xlsx": {
       "estado": "real",
-      "ms": 3804.2,
+      "ms": 3257.9,
       "motivo": "5790 B, 338 caracteres, contrato ok_parcial",
       "caso": "W01"
     },
     "docx>rtf": {
       "estado": "real",
-      "ms": 3311.7,
+      "ms": 6453.6,
       "motivo": "8213 B, 8213 caracteres, contrato ok",
       "caso": "W07"
     },
     "html>odt": {
       "estado": "real",
-      "ms": 3825.3,
-      "motivo": "8122 B, 1190 caracteres, contrato ok_parcial",
+      "ms": 2938.1,
+      "motivo": "8124 B, 1192 caracteres, contrato ok_parcial",
       "caso": "W04"
     },
     "odt>html": {
       "estado": "real",
-      "ms": 3901.7,
+      "ms": 5201.6,
       "motivo": "2476 B, 895 caracteres, contrato ok",
       "caso": "W06"
     },
     "pptx>odp": {
       "estado": "real",
-      "ms": 5171.2,
+      "ms": 11863.0,
       "motivo": "32669 B, 2825 caracteres, contrato ok_parcial",
       "caso": "W13"
     },
     "pptx>pdf": {
       "estado": "real",
-      "ms": 4560.3,
+      "ms": 3093.0,
       "motivo": "24534 B, 456 caracteres, contrato ok",
       "caso": "W12"
     },
     "pptx>png": {
       "estado": "real",
-      "ms": 3222.7,
-      "motivo": "50462 B, 0 caracteres, contrato ok; RASTERIZA: sin centinela y 0 caracteres, es el precio del destino, no un fallo",
+      "ms": 2822.3,
+      "motivo": "50462 B, 0 caracteres, contrato ok; rasteriza según el centinela de texto",
       "caso": "W15"
     },
     "rtf>docx": {
       "estado": "real",
-      "ms": 2938.4,
+      "ms": 2808.2,
       "motivo": "5293 B, 542 caracteres, contrato ok_parcial",
       "caso": "W03"
     },
     "rtf>odt": {
       "estado": "real",
-      "ms": 2834.1,
-      "motivo": "14173 B, 1767 caracteres, contrato ok_parcial",
+      "ms": 2116.4,
+      "motivo": "14174 B, 1769 caracteres, contrato ok_parcial",
       "caso": "W02"
     },
     "svg>pdf": {
       "estado": "real",
-      "ms": 2435.0,
+      "ms": 3541.0,
       "motivo": "12500 B, 44 caracteres, contrato ok",
       "caso": "W14"
     },
     "svg>png": {
       "estado": "real",
-      "ms": 5297.0,
-      "motivo": "9081 B, 0 caracteres, contrato ok; RASTERIZA: sin centinela y 0 caracteres, es el precio del destino, no un fallo",
+      "ms": 3023.6,
+      "motivo": "9081 B, 0 caracteres, contrato ok; rasteriza según el centinela de texto",
       "caso": "W16"
     },
     "txt>odt": {
       "estado": "real",
-      "ms": 3148.3,
-      "motivo": "12117 B, 1104 caracteres, contrato ok_parcial",
+      "ms": 2155.1,
+      "motivo": "12127 B, 1112 caracteres, contrato ok_parcial",
       "caso": "W05"
     },
     "xlsx>csv": {
       "estado": "real",
-      "ms": 3574.9,
+      "ms": 3013.0,
       "motivo": "109 B, 108 caracteres, contrato ok",
       "caso": "W09"
     },
     "xlsx>html": {
       "estado": "real",
-      "ms": 3405.2,
+      "ms": 2719.2,
       "motivo": "2902 B, 464 caracteres, contrato ok",
       "caso": "W10"
     },
     "xlsx>pdf": {
       "estado": "real",
-      "ms": 7410.1,
+      "ms": 2273.0,
       "motivo": "27403 B, 119 caracteres, contrato ok",
       "caso": "W08"
     }

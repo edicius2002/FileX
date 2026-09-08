@@ -1,297 +1,295 @@
 {
   "motor": "ffmpeg",
   "build": "ffmpeg N-121159-g0bd5a7d371-20250921",
-  "fecha": "2026-09-02",
-  "informe": "bench/acuerdo-y-cruce.md",
+  "fecha": "2026-09-07",
+  "informe": "bench/cierre-global.md",
   "huella": {
     "motor": "52bd204369ca3053",
     "invocacion": "3a2c16603bb46673",
-    "contrato": "fe41b4d52413299c"
+    "contrato": "cc1e0253f7da074f"
   },
   "interprete": "3.11",
-  "nota_huella": "RESONDEADO (no resellado por algoritmo) el 2026-09-02 por worker2, ronda 7: `C31` (ronda 6) cambio el componente `contrato` -- FIRMAS (TGA/CUR) y `_datos` (RAM) -- y `bench/salidas-huella/resellar.py --comprobar` confirmo que la huella guardada NO coincidia con el algoritmo anterior sobre el arbol de ahora: no era un cambio de algoritmo, hacia falta resondear. Las 62/70/8/16/16 aristas se remidieron de verdad (FileX.convertir() real, contrato de cinco puntos incluido), no se copio el JSON viejo con un campo cambiado.",
+  "nota_huella": "RESONDEADO de verdad el 2026-09-07 durante el cierre global tras corregir CR-002: cada arista pasó por FileX.convertir() y el contrato completo; no se copió ni reselló la tabla anterior.",
   "aristas": {
     "avi>flac": {
       "estado": "real",
-      "ms": 81.4
+      "ms": 48.1
     },
     "avi>gif": {
       "estado": "real",
-      "ms": 1424.7
+      "ms": 1812.3
     },
     "avi>m4a": {
       "estado": "real",
-      "ms": 809.8
+      "ms": 668.2
     },
     "avi>mkv": {
       "estado": "real",
-      "ms": 1997.5
+      "ms": 1389.0
     },
     "avi>mov": {
       "estado": "real",
-      "ms": 2611.3
+      "ms": 1488.7
     },
     "avi>mp3": {
       "estado": "real",
-      "ms": 125.1
+      "ms": 138.4
     },
     "avi>mp4": {
       "estado": "real",
-      "ms": 2524.2
+      "ms": 1435.9
     },
     "avi>ogg": {
       "estado": "real",
-      "ms": 143.8
+      "ms": 134.6
     },
     "avi>opus": {
       "estado": "real",
-      "ms": 131.3
+      "ms": 122.3
     },
     "avi>wav": {
       "estado": "real",
-      "ms": 119.2
+      "ms": 48.0
     },
     "avi>webm": {
       "estado": "real",
-      "ms": 9884.5
+      "ms": 6670.4
     },
     "flac>m4a": {
       "estado": "real",
-      "ms": 796.1
+      "ms": 475.1
     },
     "flac>ogg": {
       "estado": "real",
-      "ms": 123.1
+      "ms": 122.0
     },
     "m4a>flac": {
       "estado": "real",
-      "ms": 88.8
+      "ms": 45.4
     },
     "m4a>mp3": {
       "estado": "real",
-      "ms": 152.6
+      "ms": 78.2
     },
     "m4a>ogg": {
       "estado": "real",
-      "ms": 121.9
+      "ms": 108.9
     },
     "m4a>opus": {
       "estado": "real",
-      "ms": 115.9
+      "ms": 88.4
     },
     "m4a>wav": {
       "estado": "real",
-      "ms": 67.4
+      "ms": 46.5
     },
     "mkv>avi": {
       "estado": "real",
-      "ms": 2725.8
+      "ms": 1416.5
     },
     "mkv>flac": {
       "estado": "real",
-      "ms": 86.9
+      "ms": 49.5
     },
     "mkv>gif": {
       "estado": "real",
-      "ms": 1230.8
+      "ms": 1269.1
     },
     "mkv>m4a": {
-      "estado": "nominal",
-      "motivo": "rc=0 y el fichero es correcto para ffprobe (10,031 s); el contrato dicta fallo porque la sonda EN PROCESO no lee el elst y cuenta la trama de priming del AAC: 10,054 s, +31 ms sobre una tolerancia de 23,2 ms",
-      "causa": "verificador_tolerancia"
+      "estado": "real",
+      "ms": 492.2
     },
     "mkv>mov": {
       "estado": "real",
-      "ms": 2305.0
+      "ms": 1522.8
     },
     "mkv>mp3": {
       "estado": "real",
-      "ms": 127.5
+      "ms": 85.0
     },
     "mkv>ogg": {
       "estado": "real",
-      "ms": 148.2
+      "ms": 112.4
     },
     "mkv>opus": {
       "estado": "real",
-      "ms": 144.4
+      "ms": 105.8
     },
     "mkv>wav": {
       "estado": "real",
-      "ms": 76.7
+      "ms": 50.0
     },
     "mkv>webm": {
       "estado": "real",
-      "ms": 8695.4
+      "ms": 6355.4
     },
     "mov>avi": {
       "estado": "real",
-      "ms": 2606.3
+      "ms": 1491.5
     },
     "mov>flac": {
       "estado": "real",
-      "ms": 64.9
+      "ms": 54.1
     },
     "mov>gif": {
       "estado": "real",
-      "ms": 1479.8
+      "ms": 761.9
     },
     "mov>m4a": {
-      "estado": "nominal",
-      "motivo": "rc=0 y el fichero es correcto para ffprobe (10,031 s); el contrato dicta fallo porque la sonda EN PROCESO no lee el elst y cuenta la trama de priming del AAC: 10,054 s, +31 ms sobre una tolerancia de 23,2 ms",
-      "causa": "verificador_tolerancia"
+      "estado": "real",
+      "ms": 551.0
     },
     "mov>mkv": {
       "estado": "real",
-      "ms": 2627.3
+      "ms": 1491.7
     },
     "mov>mp3": {
       "estado": "real",
-      "ms": 137.7
+      "ms": 91.5
     },
     "mov>mp4": {
       "estado": "real",
-      "ms": 2130.8
+      "ms": 1416.1
     },
     "mov>ogg": {
       "estado": "real",
-      "ms": 155.7
+      "ms": 113.5
     },
     "mov>opus": {
       "estado": "real",
-      "ms": 145.2
+      "ms": 101.2
     },
     "mov>wav": {
       "estado": "real",
-      "ms": 95.2
+      "ms": 53.8
     },
     "mov>webm": {
       "estado": "real",
-      "ms": 9249.5
+      "ms": 6337.3
     },
     "mp3>m4a": {
       "estado": "real",
-      "ms": 571.5
+      "ms": 580.8
     },
     "mp3>ogg": {
       "estado": "real",
-      "ms": 137.0
+      "ms": 102.8
     },
     "mp3>opus": {
       "estado": "real",
-      "ms": 109.2
+      "ms": 94.7
     },
     "mp4>avi": {
       "estado": "real",
-      "ms": 2521.8
+      "ms": 1438.8
     },
     "mp4>flac": {
       "estado": "real",
-      "ms": 74.5
+      "ms": 60.8
     },
     "mp4>mov": {
       "estado": "real",
-      "ms": 2519.3
+      "ms": 1601.8
     },
     "mp4>ogg": {
       "estado": "real",
-      "ms": 195.5
+      "ms": 120.0
     },
     "mp4>opus": {
       "estado": "real",
-      "ms": 191.9
+      "ms": 97.7
     },
     "mp4>wav": {
       "estado": "real",
-      "ms": 100.5
+      "ms": 51.1
     },
     "ogg>flac": {
       "estado": "real",
-      "ms": 61.0
+      "ms": 49.3
     },
     "ogg>m4a": {
       "estado": "real",
-      "ms": 524.1
+      "ms": 449.4
     },
     "ogg>mp3": {
       "estado": "real",
-      "ms": 111.3
+      "ms": 84.1
     },
     "ogg>opus": {
       "estado": "real",
-      "ms": 139.4
+      "ms": 113.4
     },
     "ogg>wav": {
       "estado": "real",
-      "ms": 63.4
+      "ms": 40.9
     },
     "opus>flac": {
       "estado": "real",
-      "ms": 78.4
+      "ms": 56.7
     },
     "opus>m4a": {
       "estado": "real",
-      "ms": 781.1
+      "ms": 607.2
     },
     "opus>mp3": {
       "estado": "real",
-      "ms": 126.1
+      "ms": 138.2
     },
     "opus>ogg": {
       "estado": "real",
-      "ms": 252.7
+      "ms": 126.0
     },
     "opus>wav": {
       "estado": "real",
-      "ms": 78.7
+      "ms": 53.0
     },
     "wav>ogg": {
       "estado": "real",
-      "ms": 144.5
+      "ms": 115.8
     },
     "webm>avi": {
       "estado": "real",
-      "ms": 2330.6
+      "ms": 1523.4
     },
     "webm>flac": {
       "estado": "real",
-      "ms": 92.5
+      "ms": 64.2
     },
     "webm>gif": {
       "estado": "real",
-      "ms": 1392.6
+      "ms": 1062.3
     },
     "webm>m4a": {
       "estado": "real",
-      "ms": 790.1
+      "ms": 607.6
     },
     "webm>mkv": {
       "estado": "real",
-      "ms": 2454.0
+      "ms": 1466.0
     },
     "webm>mov": {
       "estado": "real",
-      "ms": 2170.3
+      "ms": 1471.9
     },
     "webm>mp3": {
       "estado": "real",
-      "ms": 119.1
+      "ms": 103.5
     },
     "webm>mp4": {
       "estado": "real",
-      "ms": 2477.9
+      "ms": 1484.3
     },
     "webm>ogg": {
       "estado": "real",
-      "ms": 241.8
+      "ms": 136.9
     },
     "webm>opus": {
       "estado": "real",
-      "ms": 125.2
+      "ms": 97.8
     },
     "webm>wav": {
       "estado": "real",
-      "ms": 90.1
+      "ms": 60.2
     }
   }
 }

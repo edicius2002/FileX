@@ -1,0 +1,1815 @@
+{
+ "casos": [
+  {
+   "id": "W01",
+   "motor": "doc_libreoffice",
+   "origen": "csv",
+   "destino": "xlsx",
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "motivo": "",
+   "rc": 0,
+   "ms": 3257.9,
+   "contrato": "ok_parcial",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": false,
+    "4_pedido": false,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (5790 de 5790 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 5790,
+   "sha256": "276f1e000d30415d31e3f936ff89ae914108c3d14d1e0593b7bd2408543066d8",
+   "caracteres": 338,
+   "centinela": true,
+   "sonda_texto_ciega": false,
+   "rasteriza_medido": "no",
+   "espia": {
+    "entrada.csv": 109
+   },
+   "build": "doc_libreoffice 29.4.3 · filex-c13@6d359bad483e",
+   "estado_arista_antes": "sin_sondear",
+   "rasteriza_declarado": false
+  },
+  {
+   "id": "W02",
+   "motor": "doc_libreoffice",
+   "origen": "rtf",
+   "destino": "odt",
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "motivo": "",
+   "rc": 0,
+   "ms": 2116.4,
+   "contrato": "ok_parcial",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": false,
+    "4_pedido": false,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (14174 de 14174 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 14174,
+   "sha256": "5e2ed1715efd903cf2624fbd44efdb8fa3f6301804d57e96c5b816dc215066aa",
+   "caracteres": 1769,
+   "centinela": true,
+   "sonda_texto_ciega": false,
+   "rasteriza_medido": "no",
+   "espia": {
+    "entrada.rtf": 534
+   },
+   "build": "doc_libreoffice 29.4.3 · filex-c13@6d359bad483e",
+   "estado_arista_antes": "sin_sondear",
+   "rasteriza_declarado": false
+  },
+  {
+   "id": "W03",
+   "motor": "doc_libreoffice",
+   "origen": "rtf",
+   "destino": "docx",
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "motivo": "",
+   "rc": 0,
+   "ms": 2808.2,
+   "contrato": "ok_parcial",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": false,
+    "4_pedido": false,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (5293 de 5293 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 5293,
+   "sha256": "4b26e5512bbe5127dfe4fa82f98c7b586ddfc2d85736d839a141411d3e694e34",
+   "caracteres": 542,
+   "centinela": true,
+   "sonda_texto_ciega": false,
+   "rasteriza_medido": "no",
+   "espia": {
+    "entrada.rtf": 534
+   },
+   "build": "doc_libreoffice 29.4.3 · filex-c13@6d359bad483e",
+   "estado_arista_antes": "sin_sondear",
+   "rasteriza_declarado": false
+  },
+  {
+   "id": "W04",
+   "motor": "doc_libreoffice",
+   "origen": "html",
+   "destino": "odt",
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "motivo": "",
+   "rc": 0,
+   "ms": 2938.1,
+   "contrato": "ok_parcial",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": false,
+    "4_pedido": false,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (8124 de 8124 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 8124,
+   "sha256": "cd540f96efe5fea13a2bfa7158303fcd1ded84b98e8b529521fd5d21048cc6a5",
+   "caracteres": 1192,
+   "centinela": true,
+   "sonda_texto_ciega": false,
+   "rasteriza_medido": "no",
+   "espia": {
+    "entrada.html": 733
+   },
+   "build": "doc_libreoffice 29.4.3 · filex-c13@6d359bad483e",
+   "estado_arista_antes": "sin_sondear",
+   "rasteriza_declarado": false
+  },
+  {
+   "id": "W05",
+   "motor": "doc_libreoffice",
+   "origen": "txt",
+   "destino": "odt",
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "motivo": "",
+   "rc": 0,
+   "ms": 2155.1,
+   "contrato": "ok_parcial",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": false,
+    "4_pedido": false,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (12127 de 12127 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 12127,
+   "sha256": "d044612d00e8f27d46fb55bd26153836647a7d17ce8f6a1c7ebf83790334a7d7",
+   "caracteres": 1112,
+   "centinela": true,
+   "sonda_texto_ciega": false,
+   "rasteriza_medido": "no",
+   "espia": {
+    "entrada.txt": 385
+   },
+   "build": "doc_libreoffice 29.4.3 · filex-c13@6d359bad483e",
+   "estado_arista_antes": "sin_sondear",
+   "rasteriza_declarado": false
+  },
+  {
+   "id": "W06",
+   "motor": "doc_libreoffice",
+   "origen": "odt",
+   "destino": "html",
+   "ok": true,
+   "veredicto": "ok",
+   "motivo": "",
+   "rc": 0,
+   "ms": 5201.6,
+   "contrato": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "G5",
+     "sev": "informativo",
+     "msg": "marcador de FAMILIA, no de formato: se comprueba que es html|texto|xml, no que sea .html"
+    },
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (2476 de 2476 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 2476,
+   "sha256": "a9e64ee428e3c21e6898265973189aca6425c499a121d1020588cc3336d255c2",
+   "caracteres": 895,
+   "centinela": true,
+   "sonda_texto_ciega": false,
+   "rasteriza_medido": "no",
+   "espia": {
+    "entrada.odt": 1097
+   },
+   "build": "doc_libreoffice 29.4.3 · filex-c13@6d359bad483e",
+   "estado_arista_antes": "sin_sondear",
+   "rasteriza_declarado": false
+  },
+  {
+   "id": "W07",
+   "motor": "doc_libreoffice",
+   "origen": "docx",
+   "destino": "rtf",
+   "ok": true,
+   "veredicto": "ok",
+   "motivo": "",
+   "rc": 0,
+   "ms": 6453.6,
+   "contrato": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (8213 de 8213 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 8213,
+   "sha256": "6625c6c16010f425ff6637d21546065081f39643392f697b57d1555a54190f79",
+   "caracteres": 8213,
+   "centinela": true,
+   "sonda_texto_ciega": false,
+   "rasteriza_medido": "no",
+   "espia": {
+    "entrada.docx": 1354
+   },
+   "build": "doc_libreoffice 29.4.3 · filex-c13@6d359bad483e",
+   "estado_arista_antes": "sin_sondear",
+   "rasteriza_declarado": false
+  },
+  {
+   "id": "W08",
+   "motor": "doc_libreoffice",
+   "origen": "xlsx",
+   "destino": "pdf",
+   "ok": true,
+   "veredicto": "ok",
+   "motivo": "",
+   "rc": 0,
+   "ms": 2273.0,
+   "contrato": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (27403 de 27403 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 27403,
+   "sha256": "b6f2f9aca003e511b7e148a1dd039c82abc48a86936eff59f11907f2fa6f08b1",
+   "caracteres": 119,
+   "centinela": true,
+   "sonda_texto_ciega": false,
+   "rasteriza_medido": "no",
+   "espia": {
+    "entrada.xlsx": 5790
+   },
+   "build": "doc_libreoffice 29.4.3 · filex-c13@6d359bad483e",
+   "estado_arista_antes": "sin_sondear",
+   "rasteriza_declarado": false
+  },
+  {
+   "id": "W09",
+   "motor": "doc_libreoffice",
+   "origen": "xlsx",
+   "destino": "csv",
+   "ok": true,
+   "veredicto": "ok",
+   "motivo": "",
+   "rc": 0,
+   "ms": 3013.0,
+   "contrato": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "G5",
+     "sev": "informativo",
+     "msg": "marcador de FAMILIA, no de formato: se comprueba que es texto, no que sea .csv"
+    },
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (109 de 109 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 109,
+   "sha256": "c19d31f488b5f0baabc98079ae3682a38a6336f8fc34dc1e8e9ce8807d234ae4",
+   "caracteres": 108,
+   "centinela": true,
+   "sonda_texto_ciega": false,
+   "rasteriza_medido": "no",
+   "espia": {
+    "entrada.xlsx": 5790
+   },
+   "build": "doc_libreoffice 29.4.3 · filex-c13@6d359bad483e",
+   "estado_arista_antes": "sin_sondear",
+   "rasteriza_declarado": false
+  },
+  {
+   "id": "W10",
+   "motor": "doc_libreoffice",
+   "origen": "xlsx",
+   "destino": "html",
+   "ok": true,
+   "veredicto": "ok",
+   "motivo": "",
+   "rc": 0,
+   "ms": 2719.2,
+   "contrato": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "G5",
+     "sev": "informativo",
+     "msg": "marcador de FAMILIA, no de formato: se comprueba que es html|texto|xml, no que sea .html"
+    },
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (2902 de 2902 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 2902,
+   "sha256": "f33778451253dfcddb23821850d2feb76cc71e910a078a808a6916913c06e2e4",
+   "caracteres": 464,
+   "centinela": true,
+   "sonda_texto_ciega": false,
+   "rasteriza_medido": "no",
+   "espia": {
+    "entrada.xlsx": 5790
+   },
+   "build": "doc_libreoffice 29.4.3 · filex-c13@6d359bad483e",
+   "estado_arista_antes": "sin_sondear",
+   "rasteriza_declarado": false
+  },
+  {
+   "id": "W11",
+   "motor": "doc_libreoffice",
+   "origen": "csv",
+   "destino": "pdf",
+   "ok": true,
+   "veredicto": "ok",
+   "motivo": "",
+   "rc": 0,
+   "ms": 13322.5,
+   "contrato": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (20944 de 20944 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 20944,
+   "sha256": "8e8059d856c535f6ebceba1ebd297e3c1b122c93240a7346b0313aff277b5329",
+   "caracteres": 119,
+   "centinela": true,
+   "sonda_texto_ciega": false,
+   "rasteriza_medido": "no",
+   "espia": {
+    "entrada.csv": 109
+   },
+   "build": "doc_libreoffice 29.4.3 · filex-c13@6d359bad483e",
+   "estado_arista_antes": "sin_sondear",
+   "rasteriza_declarado": false
+  },
+  {
+   "id": "W12",
+   "motor": "doc_libreoffice",
+   "origen": "pptx",
+   "destino": "pdf",
+   "ok": true,
+   "veredicto": "ok",
+   "motivo": "",
+   "rc": 0,
+   "ms": 3093.0,
+   "contrato": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (24534 de 24534 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 24534,
+   "sha256": "aed5f48b2e94810e92c3ec34c838121d9e5909f4c3207148cf5e9eb4544ad670",
+   "caracteres": 456,
+   "centinela": true,
+   "sonda_texto_ciega": false,
+   "rasteriza_medido": "no",
+   "espia": {
+    "entrada.pptx": 28170
+   },
+   "build": "doc_libreoffice 29.4.3 · filex-c13@6d359bad483e",
+   "estado_arista_antes": "sin_sondear",
+   "rasteriza_declarado": false
+  },
+  {
+   "id": "W13",
+   "motor": "doc_libreoffice",
+   "origen": "pptx",
+   "destino": "odp",
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "motivo": "",
+   "rc": 0,
+   "ms": 11863.0,
+   "contrato": "ok_parcial",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": false,
+    "4_pedido": false,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (32669 de 32669 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 32669,
+   "sha256": "28b4ad083edaa8e55693e5e32e3f7f822379bc28fdeef30e6b9c2bcfb2e47c5e",
+   "caracteres": 2825,
+   "centinela": true,
+   "sonda_texto_ciega": false,
+   "rasteriza_medido": "no",
+   "espia": {
+    "entrada.pptx": 28170
+   },
+   "build": "doc_libreoffice 29.4.3 · filex-c13@6d359bad483e",
+   "estado_arista_antes": "sin_sondear",
+   "rasteriza_declarado": false
+  },
+  {
+   "id": "W14",
+   "motor": "doc_libreoffice",
+   "origen": "svg",
+   "destino": "pdf",
+   "ok": true,
+   "veredicto": "ok",
+   "motivo": "",
+   "rc": 0,
+   "ms": 3541.0,
+   "contrato": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (12500 de 12500 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 12500,
+   "sha256": "d192cb144c34732b090ee8f239921c46496147f8e65a927250c629731e625b21",
+   "caracteres": 44,
+   "centinela": true,
+   "sonda_texto_ciega": false,
+   "rasteriza_medido": "no",
+   "espia": {
+    "entrada.svg": 495
+   },
+   "build": "doc_libreoffice 29.4.3 · filex-c13@6d359bad483e",
+   "estado_arista_antes": "sin_sondear",
+   "rasteriza_declarado": false
+  },
+  {
+   "id": "W15",
+   "motor": "doc_libreoffice",
+   "origen": "pptx",
+   "destino": "png",
+   "ok": true,
+   "veredicto": "ok",
+   "motivo": "",
+   "rc": 0,
+   "ms": 2822.3,
+   "contrato": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (50462 de 50462 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 50462,
+   "sha256": "4d587e300819a90e511cc533b7268412a3e3b48a6325b987c82d47f40a362bdf",
+   "caracteres": 0,
+   "centinela": false,
+   "sonda_texto_ciega": false,
+   "rasteriza_medido": "si",
+   "espia": {
+    "entrada.pptx": 28170
+   },
+   "build": "doc_libreoffice 29.4.3 · filex-c13@6d359bad483e",
+   "estado_arista_antes": "sin_sondear",
+   "rasteriza_declarado": true
+  },
+  {
+   "id": "W16",
+   "motor": "doc_libreoffice",
+   "origen": "svg",
+   "destino": "png",
+   "ok": true,
+   "veredicto": "ok",
+   "motivo": "",
+   "rc": 0,
+   "ms": 3023.6,
+   "contrato": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (9081 de 9081 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 9081,
+   "sha256": "a234bdbc0ad1652dc7b6ac57d86a73081339e2e9f958dd9b0ada03f7bcf50d51",
+   "caracteres": 0,
+   "centinela": false,
+   "sonda_texto_ciega": false,
+   "rasteriza_medido": "si",
+   "espia": {
+    "entrada.svg": 495
+   },
+   "build": "doc_libreoffice 29.4.3 · filex-c13@6d359bad483e",
+   "estado_arista_antes": "sin_sondear",
+   "rasteriza_declarado": true
+  },
+  {
+   "id": "W17",
+   "motor": "doc_pandoc",
+   "origen": "md",
+   "destino": "pptx",
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "motivo": "",
+   "rc": 0,
+   "ms": 863.8,
+   "contrato": "ok_parcial",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": false,
+    "4_pedido": false,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (28170 de 28170 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 28170,
+   "sha256": "06e1bbc0004127d7800eb4ecf11ac02d6324ccf20f7131a83d21198e7360a3f8",
+   "caracteres": 2218,
+   "centinela": true,
+   "sonda_texto_ciega": false,
+   "rasteriza_medido": "no",
+   "espia": {
+    "entrada.md": 518
+   },
+   "build": "doc_pandoc 29.4.3 · filex-c13@6d359bad483e",
+   "estado_arista_antes": "sin_sondear",
+   "rasteriza_declarado": false
+  },
+  {
+   "id": "W18",
+   "motor": "doc_pandoc",
+   "origen": "html",
+   "destino": "epub",
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "motivo": "",
+   "rc": 0,
+   "ms": 960.7,
+   "contrato": "ok_parcial",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": false,
+    "4_pedido": false,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (5284 de 5284 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 5284,
+   "sha256": "6aea076b0318f7eeb5143066973d6f1a91a113631a82638711858619fbc9be11",
+   "caracteres": 554,
+   "centinela": true,
+   "sonda_texto_ciega": false,
+   "rasteriza_medido": "no",
+   "espia": {
+    "entrada.html": 733
+   },
+   "build": "doc_pandoc 29.4.3 · filex-c13@6d359bad483e",
+   "estado_arista_antes": "sin_sondear",
+   "rasteriza_declarado": false
+  },
+  {
+   "id": "W19",
+   "motor": "doc_pandoc",
+   "origen": "html",
+   "destino": "odt",
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "motivo": "",
+   "rc": 0,
+   "ms": 712.9,
+   "contrato": "ok_parcial",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": false,
+    "4_pedido": false,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (7285 de 7285 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 7285,
+   "sha256": "4ebf63885f4b8263221b4ce232db3ecd2daac0f5e2fc8657e1a2ee4d156ac58d",
+   "caracteres": 543,
+   "centinela": true,
+   "sonda_texto_ciega": false,
+   "rasteriza_medido": "no",
+   "espia": {
+    "entrada.html": 733
+   },
+   "build": "doc_pandoc 29.4.3 · filex-c13@6d359bad483e",
+   "estado_arista_antes": "sin_sondear",
+   "rasteriza_declarado": false
+  },
+  {
+   "id": "W20",
+   "motor": "doc_pandoc",
+   "origen": "html",
+   "destino": "rtf",
+   "ok": true,
+   "veredicto": "ok",
+   "motivo": "",
+   "rc": 0,
+   "ms": 734.3,
+   "contrato": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (1756 de 1756 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 1756,
+   "sha256": "a89e37f5d3731e7d1197188a1141d5606d2c4bda8b5dbec7a78a59edb7a5df8c",
+   "caracteres": 1754,
+   "centinela": true,
+   "sonda_texto_ciega": false,
+   "rasteriza_medido": "no",
+   "espia": {
+    "entrada.html": 733
+   },
+   "build": "doc_pandoc 29.4.3 · filex-c13@6d359bad483e",
+   "estado_arista_antes": "sin_sondear",
+   "rasteriza_declarado": false
+  },
+  {
+   "id": "W21",
+   "motor": "doc_pandoc",
+   "origen": "docx",
+   "destino": "odt",
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "motivo": "",
+   "rc": 0,
+   "ms": 699.1,
+   "contrato": "ok_parcial",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": false,
+    "4_pedido": false,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (7203 de 7203 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 7203,
+   "sha256": "3e7fc6b1c1971e31144c500d4c06f401e48440cf5e2e7d91a0a066f8b558f942",
+   "caracteres": 515,
+   "centinela": true,
+   "sonda_texto_ciega": false,
+   "rasteriza_medido": "no",
+   "espia": {
+    "entrada.docx": 1354
+   },
+   "build": "doc_pandoc 29.4.3 · filex-c13@6d359bad483e",
+   "estado_arista_antes": "sin_sondear",
+   "rasteriza_declarado": false
+  },
+  {
+   "id": "W22",
+   "motor": "doc_pandoc",
+   "origen": "epub",
+   "destino": "docx",
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "motivo": "",
+   "rc": 0,
+   "ms": 714.7,
+   "contrato": "ok_parcial",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": false,
+    "4_pedido": false,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (10992 de 10992 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 10992,
+   "sha256": "42dc57d8a4e53a4fe6a9fdc4c4874382a0bbd21a25e2157a57a42c1b3dbc529d",
+   "caracteres": 635,
+   "centinela": true,
+   "sonda_texto_ciega": false,
+   "rasteriza_medido": "no",
+   "espia": {
+    "entrada.epub": 1685
+   },
+   "build": "doc_pandoc 29.4.3 · filex-c13@6d359bad483e",
+   "estado_arista_antes": "sin_sondear",
+   "rasteriza_declarado": false
+  },
+  {
+   "id": "W23",
+   "motor": "doc_pandoc",
+   "origen": "epub",
+   "destino": "txt",
+   "ok": true,
+   "veredicto": "ok",
+   "motivo": "",
+   "rc": 0,
+   "ms": 683.0,
+   "contrato": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "G5",
+     "sev": "informativo",
+     "msg": "marcador de FAMILIA, no de formato: se comprueba que es im_texto|texto, no que sea .txt"
+    },
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (566 de 566 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 566,
+   "sha256": "9b4bb779f5b8e7c658683b525a6917a31d74d6a0ae2a1b667fd3bccdc560c2ac",
+   "caracteres": 514,
+   "centinela": true,
+   "sonda_texto_ciega": false,
+   "rasteriza_medido": "no",
+   "espia": {
+    "entrada.epub": 1685
+   },
+   "build": "doc_pandoc 29.4.3 · filex-c13@6d359bad483e",
+   "estado_arista_antes": "sin_sondear",
+   "rasteriza_declarado": false
+  },
+  {
+   "id": "W24",
+   "motor": "doc_pandoc",
+   "origen": "rtf",
+   "destino": "md",
+   "ok": true,
+   "veredicto": "ok",
+   "motivo": "",
+   "rc": 0,
+   "ms": 5368.1,
+   "contrato": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "G5",
+     "sev": "informativo",
+     "msg": "marcador de FAMILIA, no de formato: se comprueba que es im_texto|texto, no que sea .md"
+    },
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (471 de 471 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 471,
+   "sha256": "b7f1b3f7c07d311650cf613a2f6af4eb081dfbcfe1b3bd3e8bf41ac25633364e",
+   "caracteres": 466,
+   "centinela": true,
+   "sonda_texto_ciega": false,
+   "rasteriza_medido": "no",
+   "espia": {
+    "entrada.rtf": 534
+   },
+   "build": "doc_pandoc 29.4.3 · filex-c13@6d359bad483e",
+   "estado_arista_antes": "sin_sondear",
+   "rasteriza_declarado": false
+  },
+  {
+   "id": "W25",
+   "motor": "doc_pandoc",
+   "origen": "rtf",
+   "destino": "html",
+   "ok": true,
+   "veredicto": "ok",
+   "motivo": "",
+   "rc": 0,
+   "ms": 966.4,
+   "contrato": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "G5",
+     "sev": "informativo",
+     "msg": "marcador de FAMILIA, no de formato: se comprueba que es html|texto|xml, no que sea .html"
+    },
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (4324 de 4324 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 4324,
+   "sha256": "d190a684c87c1fafcfb383fcb03da86b05eb6a5709e2206d913affc5eb9da9b0",
+   "caracteres": 3133,
+   "centinela": true,
+   "sonda_texto_ciega": false,
+   "rasteriza_medido": "no",
+   "espia": {
+    "entrada.rtf": 534
+   },
+   "build": "doc_pandoc 29.4.3 · filex-c13@6d359bad483e",
+   "estado_arista_antes": "sin_sondear",
+   "rasteriza_declarado": false
+  },
+  {
+   "id": "W26",
+   "motor": "doc_pandoc",
+   "origen": "md",
+   "destino": "rtf",
+   "ok": true,
+   "veredicto": "ok",
+   "motivo": "",
+   "rc": 0,
+   "ms": 627.1,
+   "contrato": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (1700 de 1700 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 1700,
+   "sha256": "a70efd2528eca365c6b05c2343be95dcc4eac7c70b72880b7122fdba0acddaf9",
+   "caracteres": 1698,
+   "centinela": true,
+   "sonda_texto_ciega": false,
+   "rasteriza_medido": "no",
+   "espia": {
+    "entrada.md": 518
+   },
+   "build": "doc_pandoc 29.4.3 · filex-c13@6d359bad483e",
+   "estado_arista_antes": "sin_sondear",
+   "rasteriza_declarado": false
+  },
+  {
+   "id": "W27",
+   "motor": "doc_pandoc",
+   "origen": "md",
+   "destino": "tex",
+   "ok": true,
+   "veredicto": "ok",
+   "motivo": "",
+   "rc": 0,
+   "ms": 953.1,
+   "contrato": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "G4",
+     "sev": "informativo",
+     "msg": "el formato no tiene marcador (texto plano: no hay marcador de formato): el punto 1 NO APLICA a .tex"
+    },
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (2748 de 2748 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 2748,
+   "sha256": "2a2b2b9a26cd3095cf9d15f071f6360c5b587f18d0dcdaee6c3e1331f395d7f5",
+   "caracteres": 2699,
+   "centinela": true,
+   "sonda_texto_ciega": false,
+   "rasteriza_medido": "no",
+   "espia": {
+    "entrada.md": 518
+   },
+   "build": "doc_pandoc 29.4.3 · filex-c13@6d359bad483e",
+   "estado_arista_antes": "sin_sondear",
+   "rasteriza_declarado": false
+  },
+  {
+   "id": "W28",
+   "motor": "doc_pandoc",
+   "origen": "docx",
+   "destino": "tex",
+   "ok": true,
+   "veredicto": "ok",
+   "motivo": "",
+   "rc": 0,
+   "ms": 793.2,
+   "contrato": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "G4",
+     "sev": "informativo",
+     "msg": "el formato no tiene marcador (texto plano: no hay marcador de formato): el punto 1 NO APLICA a .tex"
+    },
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (2698 de 2698 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 2698,
+   "sha256": "3669682677bcf4a7a84d848ccbb9872d81992a70ffebd696e9cb8ee3ff177cc5",
+   "caracteres": 2649,
+   "centinela": true,
+   "sonda_texto_ciega": false,
+   "rasteriza_medido": "no",
+   "espia": {
+    "entrada.docx": 1354
+   },
+   "build": "doc_pandoc 29.4.3 · filex-c13@6d359bad483e",
+   "estado_arista_antes": "sin_sondear",
+   "rasteriza_declarado": false
+  },
+  {
+   "id": "W29",
+   "motor": "doc_pandoc",
+   "origen": "tex",
+   "destino": "docx",
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "motivo": "",
+   "rc": 0,
+   "ms": 862.0,
+   "contrato": "ok_parcial",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": false,
+    "4_pedido": false,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (10771 de 10771 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 10771,
+   "sha256": "17f0f8c778d8a4c5135e7b5ac1ca6609f705c1b8037e65ed00c303e78d29cc89",
+   "caracteres": 394,
+   "centinela": true,
+   "sonda_texto_ciega": false,
+   "rasteriza_medido": "no",
+   "espia": {
+    "entrada.tex": 424
+   },
+   "build": "doc_pandoc 29.4.3 · filex-c13@6d359bad483e",
+   "estado_arista_antes": "sin_sondear",
+   "rasteriza_declarado": false
+  },
+  {
+   "id": "W30",
+   "motor": "doc_pandoc",
+   "origen": "tex",
+   "destino": "html",
+   "ok": true,
+   "veredicto": "ok",
+   "motivo": "",
+   "rc": 0,
+   "ms": 741.7,
+   "contrato": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "G5",
+     "sev": "informativo",
+     "msg": "marcador de FAMILIA, no de formato: se comprueba que es html|texto|xml, no que sea .html"
+    },
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (4651 de 4651 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 4651,
+   "sha256": "2196e8bd81dda130b4c4a48a08f1c736c8d4c10859b2c606b30cd622e5a37667",
+   "caracteres": 2939,
+   "centinela": true,
+   "sonda_texto_ciega": false,
+   "rasteriza_medido": "no",
+   "espia": {
+    "entrada.tex": 424
+   },
+   "build": "doc_pandoc 29.4.3 · filex-c13@6d359bad483e",
+   "estado_arista_antes": "sin_sondear",
+   "rasteriza_declarado": false
+  },
+  {
+   "id": "W31",
+   "motor": "doc_pandoc",
+   "origen": "tex",
+   "destino": "pdf",
+   "ok": true,
+   "veredicto": "aviso",
+   "motivo": "",
+   "rc": 0,
+   "ms": 8919.9,
+   "contrato": "aviso",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "n: to convert a .tex file to PDF, you get better results by using pdflatex (or lualatex or xelatex) directly, try `pdflatex /ent/salida.tex` instead of `pandoc /ent/salida.tex -o /trabajo/salida.pdf`.",
+   "hallazgos": [
+    {
+     "regla": "P1",
+     "sev": "aviso",
+     "msg": "el numero de paginas vive en un flujo comprimido y no se puede contar sin descomprimirlo"
+    },
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (9754 de 9754 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 9754,
+   "sha256": "00fa47e72c7e90e17e9a39cc78baa09d6485119bc0dd60b1746aab7e3d0c3e6d",
+   "caracteres": 268,
+   "centinela": true,
+   "sonda_texto_ciega": false,
+   "rasteriza_medido": "no",
+   "espia": {
+    "entrada.tex": 424
+   },
+   "build": "doc_pandoc 29.4.3 · filex-c13@6d359bad483e",
+   "estado_arista_antes": "sin_sondear",
+   "rasteriza_declarado": false
+  },
+  {
+   "id": "W32",
+   "motor": "doc_pandoc",
+   "origen": "pptx",
+   "destino": "md",
+   "ok": true,
+   "veredicto": "ok",
+   "motivo": "",
+   "rc": 0,
+   "ms": 661.2,
+   "contrato": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "G5",
+     "sev": "informativo",
+     "msg": "marcador de FAMILIA, no de formato: se comprueba que es im_texto|texto, no que sea .md"
+    },
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (549 de 549 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 549,
+   "sha256": "5e9b6868661ba5e35d7005ad8e6ecdbd08c5b649a0807f21a22b4a8ec3b5c79a",
+   "caracteres": 499,
+   "centinela": true,
+   "sonda_texto_ciega": false,
+   "rasteriza_medido": "no",
+   "espia": {
+    "entrada.pptx": 28170
+   },
+   "build": "doc_pandoc 29.4.3 · filex-c13@6d359bad483e",
+   "estado_arista_antes": "sin_sondear",
+   "rasteriza_declarado": false
+  },
+  {
+   "id": "W33",
+   "motor": "doc_calibre",
+   "origen": "mobi",
+   "destino": "epub",
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "motivo": "",
+   "rc": 0,
+   "ms": 5894.2,
+   "contrato": "ok_parcial",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": false,
+    "4_pedido": false,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (141776 de 141776 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 141776,
+   "sha256": "aad9a13a0745a0613baa905657f232e0254aaa6d8bb5ad28420444b1678a9d8e",
+   "caracteres": 610,
+   "centinela": true,
+   "sonda_texto_ciega": false,
+   "rasteriza_medido": "no",
+   "espia": {
+    "entrada.mobi": 10196
+   },
+   "build": "doc_calibre 29.4.3 · filex-c13@6d359bad483e",
+   "estado_arista_antes": "sin_sondear",
+   "rasteriza_declarado": false
+  },
+  {
+   "id": "W34",
+   "motor": "doc_calibre",
+   "origen": "azw3",
+   "destino": "epub",
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "motivo": "",
+   "rc": 0,
+   "ms": 6171.3,
+   "contrato": "ok_parcial",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": false,
+    "4_pedido": false,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (20262 de 20262 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 20262,
+   "sha256": "c5ba8324fb74ceb2efe9248208ea4f3a525f02dd9dff699bbc808952870842dd",
+   "caracteres": 564,
+   "centinela": true,
+   "sonda_texto_ciega": false,
+   "rasteriza_medido": "no",
+   "espia": {
+    "entrada.azw3": 11692
+   },
+   "build": "doc_calibre 29.4.3 · filex-c13@6d359bad483e",
+   "estado_arista_antes": "sin_sondear",
+   "rasteriza_declarado": false
+  },
+  {
+   "id": "W35",
+   "motor": "doc_calibre",
+   "origen": "mobi",
+   "destino": "pdf",
+   "ok": true,
+   "veredicto": "ok",
+   "motivo": "",
+   "rc": 0,
+   "ms": 5849.9,
+   "contrato": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "tialize Vulkan\nUnable to detect GPU vendor.\n[8:15:0908/004914.580663:ERROR:bus.cc(408)] Failed to connect to the bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (31178 de 31178 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 31178,
+   "sha256": "037194bcab3ed9c5d96bb4c8b634c3710fb11b13b8ea895e7183e4e2180b3a23",
+   "caracteres": 488,
+   "centinela": true,
+   "sonda_texto_ciega": false,
+   "rasteriza_medido": "no",
+   "espia": {
+    "entrada.mobi": 10196
+   },
+   "build": "doc_calibre 29.4.3 · filex-c13@6d359bad483e",
+   "estado_arista_antes": "sin_sondear",
+   "rasteriza_declarado": false
+  },
+  {
+   "id": "W36",
+   "motor": "doc_calibre",
+   "origen": "azw3",
+   "destino": "pdf",
+   "ok": true,
+   "veredicto": "ok",
+   "motivo": "",
+   "rc": 0,
+   "ms": 8027.6,
+   "contrato": "ok",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "tialize Vulkan\nUnable to detect GPU vendor.\n[8:16:0908/004920.099658:ERROR:bus.cc(408)] Failed to connect to the bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (27387 de 27387 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 27387,
+   "sha256": "2ff5c988299c35fc5dbfad93cf81c3553f2f562b42a7cc7fdbf55a7a216a60a2",
+   "caracteres": 456,
+   "centinela": true,
+   "sonda_texto_ciega": false,
+   "rasteriza_medido": "no",
+   "espia": {
+    "entrada.azw3": 11692
+   },
+   "build": "doc_calibre 29.4.3 · filex-c13@6d359bad483e",
+   "estado_arista_antes": "sin_sondear",
+   "rasteriza_declarado": false
+  },
+  {
+   "id": "W37",
+   "motor": "doc_calibre",
+   "origen": "txt",
+   "destino": "epub",
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "motivo": "",
+   "rc": 0,
+   "ms": 6492.6,
+   "contrato": "ok_parcial",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": false,
+    "4_pedido": false,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (26231 de 26231 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 26231,
+   "sha256": "95241209c472f39714fc83f86daeb69b22ae1c0a64429533b7fd0a1f7812b33b",
+   "caracteres": 484,
+   "centinela": true,
+   "sonda_texto_ciega": false,
+   "rasteriza_medido": "no",
+   "espia": {
+    "entrada.txt": 385
+   },
+   "build": "doc_calibre 29.4.3 · filex-c13@6d359bad483e",
+   "estado_arista_antes": "sin_sondear",
+   "rasteriza_declarado": false
+  },
+  {
+   "id": "W38",
+   "motor": "doc_calibre",
+   "origen": "md",
+   "destino": "epub",
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "motivo": "",
+   "rc": 0,
+   "ms": 3322.4,
+   "contrato": "ok_parcial",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": false,
+    "4_pedido": false,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (11848 de 11848 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 11848,
+   "sha256": "30b4c50f07ba73c37bb89786d77db641061a6eab5ebd52cfbacfa317784e1c0b",
+   "caracteres": 558,
+   "centinela": true,
+   "sonda_texto_ciega": false,
+   "rasteriza_medido": "no",
+   "espia": {
+    "entrada.md": 518
+   },
+   "build": "doc_calibre 29.4.3 · filex-c13@6d359bad483e",
+   "estado_arista_antes": "sin_sondear",
+   "rasteriza_declarado": false
+  },
+  {
+   "id": "W39",
+   "motor": "doc_calibre",
+   "origen": "epub",
+   "destino": "epub",
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "motivo": "",
+   "rc": 0,
+   "ms": 5660.1,
+   "contrato": "ok_parcial",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": false,
+    "4_pedido": false,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (21210 de 21210 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 21210,
+   "sha256": "3171751cbd9d1b96838f9caff27f38b1dcfffd0e0ca440788c67e1cb459fe7d1",
+   "caracteres": 564,
+   "centinela": true,
+   "sonda_texto_ciega": false,
+   "rasteriza_medido": "no",
+   "espia": {
+    "entrada.epub": 1685
+   },
+   "build": "doc_calibre 29.4.3 · filex-c13@6d359bad483e",
+   "estado_arista_antes": "sin_sondear",
+   "rasteriza_declarado": false
+  },
+  {
+   "id": "W40",
+   "motor": "doc_calibre",
+   "origen": "mobi",
+   "destino": "azw3",
+   "ok": true,
+   "veredicto": "ok_parcial",
+   "motivo": "",
+   "rc": 0,
+   "ms": 2548.1,
+   "contrato": "ok_parcial",
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": false,
+    "4_pedido": false,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "sobrantes": {},
+   "motivo_salto": "",
+   "err_cola": "",
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "sev": "informativo",
+     "msg": "el fichero declarado lleva el 100.0 % de los bytes escritos (12614 de 12614 B)"
+    }
+   ],
+   "recogida": true,
+   "bytes": 12614,
+   "sha256": "d2509a28219c876de8d11ee723d2807f82471a7ae500c78546a79e59e5f42786",
+   "caracteres": 12603,
+   "centinela": false,
+   "sonda_texto_ciega": true,
+   "rasteriza_medido": "ciego",
+   "espia": {
+    "entrada.mobi": 10196
+   },
+   "build": "doc_calibre 29.4.3 · filex-c13@6d359bad483e",
+   "estado_arista_antes": "sin_sondear",
+   "rasteriza_declarado": false
+  }
+ ],
+ "contenedores_vivos_antes": [
+  "19a7a940a15d|filex-convertx|ghcr.io/c4illin/convertx:latest|Up 3 hours",
+  "e446d1d7ad78|filex-snapotter|snapotter/snapotter:latest|Up 3 hours (healthy)",
+  "851f149b14b4|filex-snapotter-pg|postgres:17-alpine|Up 3 hours (healthy)",
+  "c0a97b977b80|filex-snapotter-redis|redis:8-alpine|Up 3 hours (healthy)",
+  "6efb0c4e8fac|filex-gotenberg8|gotenberg/gotenberg:8|Up 3 hours (healthy)"
+ ],
+ "contenedores_todos_antes": [
+  "19a7a940a15d|filex-convertx|ghcr.io/c4illin/convertx:latest|Up 3 hours",
+  "e446d1d7ad78|filex-snapotter|snapotter/snapotter:latest|Up 3 hours (healthy)",
+  "851f149b14b4|filex-snapotter-pg|postgres:17-alpine|Up 3 hours (healthy)",
+  "c0a97b977b80|filex-snapotter-redis|redis:8-alpine|Up 3 hours (healthy)",
+  "6efb0c4e8fac|filex-gotenberg8|gotenberg/gotenberg:8|Up 3 hours (healthy)"
+ ],
+ "contenedores_vivos_despues": [
+  "19a7a940a15d|filex-convertx|ghcr.io/c4illin/convertx:latest|Up 3 hours",
+  "e446d1d7ad78|filex-snapotter|snapotter/snapotter:latest|Up 3 hours (healthy)",
+  "851f149b14b4|filex-snapotter-pg|postgres:17-alpine|Up 3 hours (healthy)",
+  "c0a97b977b80|filex-snapotter-redis|redis:8-alpine|Up 3 hours (healthy)",
+  "6efb0c4e8fac|filex-gotenberg8|gotenberg/gotenberg:8|Up 3 hours (healthy)"
+ ],
+ "contenedores_todos_despues": [
+  "19a7a940a15d|filex-convertx|ghcr.io/c4illin/convertx:latest|Up 3 hours",
+  "e446d1d7ad78|filex-snapotter|snapotter/snapotter:latest|Up 3 hours (healthy)",
+  "851f149b14b4|filex-snapotter-pg|postgres:17-alpine|Up 3 hours (healthy)",
+  "c0a97b977b80|filex-snapotter-redis|redis:8-alpine|Up 3 hours (healthy)",
+  "6efb0c4e8fac|filex-gotenberg8|gotenberg/gotenberg:8|Up 3 hours (healthy)"
+ ],
+ "contenedores_nuevos": [],
+ "builds": {
+  "doc_libreoffice": "doc_libreoffice 29.4.3 · filex-c13@6d359bad483e",
+  "doc_pandoc": "doc_pandoc 29.4.3 · filex-c13@6d359bad483e",
+  "doc_calibre": "doc_calibre 29.4.3 · filex-c13@6d359bad483e"
+ },
+ "timeout_fuera_s": 100.0,
+ "umbral_texto": 10
+}

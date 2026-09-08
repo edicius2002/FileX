@@ -13,9 +13,10 @@ python -m unittest -v bench/salidas-cr-aac/test_diagnostico.py
 ```
 
 Salida esperada de la segunda orden: `Ran 1 test` y `OK`. La prueba comprueba
-que las dos aristas son rojas únicamente con la sonda en proceso, que FFprobe
-no emite A1/V1, que hay tres pistas en cada contenedor fuente, que los controles
-con/sin `elst` se distinguen y que el truncado es rechazado.
+que las dos sondas aceptan `mkv→m4a` y `mov→m4a` sin A1/V1, que la sonda interna
+publica la duración presentada y conserva `mdhd`, que hay tres pistas en cada
+fuente, que los controles con/sin `elst` se distinguen y que el truncado se
+rechaza.
 
 ## Ficheros versionados
 
@@ -59,6 +60,15 @@ sidecar, Docker ni aceleración hardware.
 ---
 
 # Informe CR-002: duración AAC y `elst`
+
+> **RESUELTO E INTEGRADO el 07/09/2026 en `d9d7892`.** `_isobmff()` conserva
+> `duracion_media_s`, interpreta `elst` v0/v1 y usa su duración presentada para
+> A1/V1. Sólo acepta una edición no vacía, tasa 1 y escalas coherentes; listas
+> múltiples, vacías, truncadas o incompatibles quedan explícitamente no
+> evaluables. El arnés real da `ok_parcial` en proceso y subproceso para las dos
+> aristas, sin A1/V1; las 172 aristas afectadas se resondearon después y constan
+> en `bench/cierre-global.md`. Lo que sigue conserva el diagnóstico previo como
+> evidencia histórica de la causa y del rojo anterior.
 
 **Base diagnosticada:** `0ec60d5930444077fefffbac00d19e6dc5ecb55c`.
 **Fecha:** 07/09/2026. **Recursos:** CPU únicamente,

@@ -1,10 +1,10 @@
 {
   "esquema": 1,
   "base_diagnosticada": "0ec60d5930444077fefffbac00d19e6dc5ecb55c",
-  "commit_verificador": "483a7e881191752023ff862b476586ad312ff815",
+  "commit_verificador": "d9d7892c5f45c5db4c43f6cba13836b85c83ec4c",
   "verificador": {
-    "sha256_fichero": "9e91ae3bf76374f7bc4625c19d77d285b4c57b00d4b9b591ef4c6bf3cf345853",
-    "huella_contrato": "80791e4b492afc94",
+    "sha256_fichero": "0437e01b1c771a9fc9ba0c1f7ebbaed624f12169508b25b90d0e5f5dfb93893e",
+    "huella_contrato": "cc1e0253f7da074f",
     "interprete_huella": "3.11"
   },
   "cpu_unicamente": true,
@@ -375,29 +375,35 @@
           {
             "ancho": 64,
             "alto": 64,
-            "duracion_s": 1.0,
             "sample_rate_mdhd": 16000,
             "codec": "mp4v",
             "profundidad_bits": 0,
-            "tipo": "video"
+            "tipo": "video",
+            "duracion_media_s": 1.0,
+            "duracion_presentada_evaluable": false,
+            "motivo_duracion_no_evaluable": "edit list multiple o vacia"
           },
           {
-            "duracion_s": 1.0445,
             "sample_rate_mdhd": 44100,
             "codec": "mp4a",
             "canales": 1,
             "profundidad_bits": 16,
             "sample_rate": 44100,
-            "tipo": "audio"
+            "tipo": "audio",
+            "duracion_media_s": 1.044467120181406,
+            "duracion_s": 1.045,
+            "duracion_presentada_evaluable": true
           },
           {
-            "duracion_s": 1.0445,
             "sample_rate_mdhd": 44100,
             "codec": "mp4a",
             "canales": 1,
             "profundidad_bits": 16,
             "sample_rate": 44100,
-            "tipo": "audio"
+            "tipo": "audio",
+            "duracion_media_s": 1.044467120181406,
+            "duracion_s": 1.045,
+            "duracion_presentada_evaluable": true
           }
         ],
         "n_video": 1,
@@ -530,13 +536,16 @@
         "categoria": "av",
         "pistas": [
           {
-            "duracion_s": 1.0679,
             "sample_rate_mdhd": 44100,
             "codec": "mp4a",
             "canales": 1,
             "profundidad_bits": 16,
             "sample_rate": 44100,
-            "tipo": "audio"
+            "tipo": "audio",
+            "duracion_media_s": 1.0679138321995465,
+            "duracion_s": 1.044,
+            "duracion_presentada_evaluable": true,
+            "priming_muestras": 1024
           }
         ],
         "n_video": 0,
@@ -584,7 +593,7 @@
           "entrada": "<TMP>\\fuente.mkv",
           "motor": "proceso",
           "categoria": "av",
-          "veredicto": "fallo",
+          "veredicto": "ok_parcial",
           "cobertura": {
             "1_firma": true,
             "2_flujos": true,
@@ -594,16 +603,7 @@
             "5_escritura": false
           },
           "punto1": "evaluado",
-          "hallazgos": [
-            {
-              "punto": 4,
-              "regla": "A1/V1",
-              "severidad": "fallo",
-              "mensaje": "la duracion cambia mas de la tolerancia",
-              "esperado": "1.0230 +-0.023",
-              "obtenido": 1.0679
-            }
-          ],
+          "hallazgos": [],
           "n_procesos": 0
         },
         "subproceso": {
@@ -674,13 +674,16 @@
         "categoria": "av",
         "pistas": [
           {
-            "duracion_s": 1.0679,
             "sample_rate_mdhd": 44100,
             "codec": "mp4a",
             "canales": 1,
             "profundidad_bits": 16,
             "sample_rate": 44100,
-            "tipo": "audio"
+            "tipo": "audio",
+            "duracion_media_s": 1.0679138321995465,
+            "duracion_s": 1.044,
+            "duracion_presentada_evaluable": true,
+            "priming_muestras": 1024
           }
         ],
         "n_video": 0,
@@ -728,7 +731,7 @@
           "entrada": "<TMP>\\fuente.mov",
           "motor": "proceso",
           "categoria": "av",
-          "veredicto": "fallo",
+          "veredicto": "ok_parcial",
           "cobertura": {
             "1_firma": true,
             "2_flujos": true,
@@ -738,16 +741,7 @@
             "5_escritura": false
           },
           "punto1": "evaluado",
-          "hallazgos": [
-            {
-              "punto": 4,
-              "regla": "A1/V1",
-              "severidad": "fallo",
-              "mensaje": "la duracion cambia mas de la tolerancia",
-              "esperado": "1.0445 +-0.023",
-              "obtenido": 1.0679
-            }
-          ],
+          "hallazgos": [],
           "n_procesos": 0
         },
         "subproceso": {
@@ -818,13 +812,16 @@
         "categoria": "av",
         "pistas": [
           {
-            "duracion_s": 1.0232,
             "sample_rate_mdhd": 44100,
             "codec": "mp4a",
             "canales": 1,
             "profundidad_bits": 16,
             "sample_rate": 44100,
-            "tipo": "audio"
+            "tipo": "audio",
+            "duracion_media_s": 1.023219954648526,
+            "duracion_s": 1.0,
+            "duracion_presentada_evaluable": true,
+            "priming_muestras": 1024
           }
         ],
         "n_video": 0,
@@ -944,13 +941,15 @@
         "categoria": "av",
         "pistas": [
           {
-            "duracion_s": 1.0232,
             "sample_rate_mdhd": 44100,
             "codec": "mp4a",
             "canales": 1,
             "profundidad_bits": 16,
             "sample_rate": 44100,
-            "tipo": "audio"
+            "tipo": "audio",
+            "duracion_media_s": 1.023219954648526,
+            "duracion_s": 1.0232,
+            "duracion_presentada_evaluable": true
           }
         ],
         "n_video": 0,
@@ -1119,7 +1118,7 @@
         }
       ],
       "duracion_verificador_contenedor_s": 1.0,
-      "duracion_verificador_pista_s": 1.0232
+      "duracion_verificador_pista_s": 1.0
     },
     "sin-edit-list.m4a": {
       "duracion_presentada_ffprobe_s": 1.02322,
@@ -1142,7 +1141,7 @@
         }
       ],
       "duracion_verificador_contenedor_s": 1.045,
-      "duracion_verificador_pista_s": 1.0679
+      "duracion_verificador_pista_s": 1.044
     },
     "desde-mov.m4a": {
       "duracion_presentada_ffprobe_s": 1.043991,
@@ -1156,7 +1155,7 @@
         }
       ],
       "duracion_verificador_contenedor_s": 1.045,
-      "duracion_verificador_pista_s": 1.0679
+      "duracion_verificador_pista_s": 1.044
     }
   },
   "tolerancia_frame_aac_44100_s": 0.023219954648526078,

@@ -1,0 +1,4927 @@
+{
+ "build": "ffmpeg N-121159-g0bd5a7d371-20250921",
+ "n": 1,
+ "segundos": 77.6,
+ "fuentes": {
+  "mkv": {
+   "existe": true,
+   "bytes": 4079196,
+   "n_video": 1,
+   "n_audio": 2,
+   "codecs": [
+    "h264",
+    "aac",
+    "aac"
+   ],
+   "formato": "matroska,webm",
+   "duracion": "10.023000"
+  },
+  "wav": {
+   "existe": true,
+   "bytes": 705678,
+   "n_video": 0,
+   "n_audio": 1,
+   "codecs": [
+    "pcm_s16le"
+   ],
+   "formato": "wav",
+   "duracion": "8.000000"
+  },
+  "flac": {
+   "existe": true,
+   "bytes": 104318,
+   "n_video": 0,
+   "n_audio": 1,
+   "codecs": [
+    "flac"
+   ],
+   "formato": "flac",
+   "duracion": "8.000000"
+  },
+  "mp3": {
+   "existe": true,
+   "bytes": 64591,
+   "n_video": 0,
+   "n_audio": 1,
+   "codecs": [
+    "mp3"
+   ],
+   "formato": "mp3",
+   "duracion": "8.000000"
+  },
+  "mp4": {
+   "existe": true,
+   "bytes": 4085275,
+   "n_video": 1,
+   "n_audio": 2,
+   "codecs": [
+    "h264",
+    "aac",
+    "aac"
+   ],
+   "formato": "mov,mp4,m4a,3gp,3g2,mj2",
+   "duracion": "10.030590"
+  },
+  "mov": {
+   "existe": true,
+   "bytes": 4085382,
+   "n_video": 1,
+   "n_audio": 2,
+   "codecs": [
+    "h264",
+    "aac",
+    "aac"
+   ],
+   "formato": "mov,mp4,m4a,3gp,3g2,mj2",
+   "duracion": "10.030590"
+  },
+  "avi": {
+   "existe": true,
+   "bytes": 8091090,
+   "n_video": 1,
+   "n_audio": 2,
+   "codecs": [
+    "mpeg4",
+    "mp3",
+    "mp3"
+   ],
+   "formato": "avi",
+   "duracion": "10.066667"
+  },
+  "webm": {
+   "existe": true,
+   "bytes": 3627924,
+   "n_video": 1,
+   "n_audio": 2,
+   "codecs": [
+    "vp9",
+    "opus",
+    "opus"
+   ],
+   "formato": "matroska,webm",
+   "duracion": "10.038000"
+  },
+  "m4a": {
+   "existe": true,
+   "bytes": 131397,
+   "n_video": 0,
+   "n_audio": 1,
+   "codecs": [
+    "aac"
+   ],
+   "formato": "mov,mp4,m4a,3gp,3g2,mj2",
+   "duracion": "8.000000"
+  },
+  "opus": {
+   "existe": true,
+   "bytes": 209834,
+   "n_video": 0,
+   "n_audio": 1,
+   "codecs": [
+    "opus"
+   ],
+   "formato": "ogg",
+   "duracion": "8.006500"
+  },
+  "ogg": {
+   "existe": true,
+   "bytes": 67870,
+   "n_video": 0,
+   "n_audio": 1,
+   "codecs": [
+    "vorbis"
+   ],
+   "formato": "ogg",
+   "duracion": "8.000000"
+  }
+ },
+ "aristas": {
+  "mp4>mov": {
+   "estado": "real",
+   "ms": 1601.8,
+   "n": 1,
+   "ms_todas": [
+    1601.8
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {},
+   "sin_declarar_solo_audio": null,
+   "fuente": "f.mp4",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 3966949,
+    "n_video": 1,
+    "n_audio": 2,
+    "codecs": [
+     "h264",
+     "aac",
+     "aac"
+    ],
+    "formato": "mov,mp4,m4a,3gp,3g2,mj2",
+    "duracion": "10.033008"
+   },
+   "map0": {
+    "fuente": 2,
+    "salida": 2,
+    "esperadas": 2,
+    "ok": true
+   },
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (3966949 de 3966949 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     27.3,
+     27.9
+    ],
+    "deriva_ms": [
+     20.9,
+     24.9
+    ],
+    "topado": false
+   }
+  },
+  "mp4>avi": {
+   "estado": "real",
+   "ms": 1438.8,
+   "n": 1,
+   "ms_todas": [
+    1438.8
+   ],
+   "rc": 0,
+   "veredicto": "ok_parcial",
+   "motivo": "",
+   "pedido": {},
+   "sin_declarar_solo_audio": null,
+   "fuente": "f.mp4",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 3996458,
+    "n_video": 1,
+    "n_audio": 2,
+    "codecs": [
+     "h264",
+     "aac",
+     "aac"
+    ],
+    "formato": "avi",
+    "duracion": "10.077460"
+   },
+   "map0": {
+    "fuente": 2,
+    "salida": 2,
+    "esperadas": 2,
+    "ok": true
+   },
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (3996458 de 3996458 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": false,
+    "4_pedido": false,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     27.7,
+     24.8
+    ],
+    "deriva_ms": [
+     22.9,
+     22.7
+    ],
+    "topado": false
+   }
+  },
+  "mkv>webm": {
+   "estado": "real",
+   "ms": 6355.4,
+   "n": 1,
+   "ms_todas": [
+    6355.4
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {},
+   "sin_declarar_solo_audio": null,
+   "fuente": "patologico_2pistas.mkv",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 4306234,
+    "n_video": 1,
+    "n_audio": 2,
+    "codecs": [
+     "vp9",
+     "opus",
+     "opus"
+    ],
+    "formato": "matroska,webm",
+    "duracion": "10.038000"
+   },
+   "map0": {
+    "fuente": 2,
+    "salida": 2,
+    "esperadas": 2,
+    "ok": true
+   },
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "A3",
+     "severidad": "informativo",
+     "mensaje": "Opus fuerza 48 kHz",
+     "esperado": 44100,
+     "obtenido": 48000
+    },
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (4306234 de 4306234 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     24.1,
+     29.7
+    ],
+    "deriva_ms": [
+     22.5,
+     25.2
+    ],
+    "topado": false
+   }
+  },
+  "mkv>mov": {
+   "estado": "real",
+   "ms": 1522.8,
+   "n": 1,
+   "ms_todas": [
+    1522.8
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {},
+   "sin_declarar_solo_audio": null,
+   "fuente": "patologico_2pistas.mkv",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 3966949,
+    "n_video": 1,
+    "n_audio": 2,
+    "codecs": [
+     "h264",
+     "aac",
+     "aac"
+    ],
+    "formato": "mov,mp4,m4a,3gp,3g2,mj2",
+    "duracion": "10.033008"
+   },
+   "map0": {
+    "fuente": 2,
+    "salida": 2,
+    "esperadas": 2,
+    "ok": true
+   },
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (3966949 de 3966949 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     26.8,
+     27.8
+    ],
+    "deriva_ms": [
+     25.4,
+     25.0
+    ],
+    "topado": false
+   }
+  },
+  "mkv>avi": {
+   "estado": "real",
+   "ms": 1416.5,
+   "n": 1,
+   "ms_todas": [
+    1416.5
+   ],
+   "rc": 0,
+   "veredicto": "ok_parcial",
+   "motivo": "",
+   "pedido": {},
+   "sin_declarar_solo_audio": null,
+   "fuente": "patologico_2pistas.mkv",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 3996458,
+    "n_video": 1,
+    "n_audio": 2,
+    "codecs": [
+     "h264",
+     "aac",
+     "aac"
+    ],
+    "formato": "avi",
+    "duracion": "10.077460"
+   },
+   "map0": {
+    "fuente": 2,
+    "salida": 2,
+    "esperadas": 2,
+    "ok": true
+   },
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (3996458 de 3996458 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": false,
+    "4_pedido": false,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     26.4,
+     25.5
+    ],
+    "deriva_ms": [
+     22.9,
+     23.2
+    ],
+    "topado": false
+   }
+  },
+  "webm>mp4": {
+   "estado": "real",
+   "ms": 1484.3,
+   "n": 1,
+   "ms_todas": [
+    1484.3
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {},
+   "sin_declarar_solo_audio": null,
+   "fuente": "f.webm",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 4148875,
+    "n_video": 1,
+    "n_audio": 2,
+    "codecs": [
+     "h264",
+     "aac",
+     "aac"
+    ],
+    "formato": "mov,mp4,m4a,3gp,3g2,mj2",
+    "duracion": "10.038000"
+   },
+   "map0": {
+    "fuente": 2,
+    "salida": 2,
+    "esperadas": 2,
+    "ok": true
+   },
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (4148875 de 4148875 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     26.6,
+     28.1
+    ],
+    "deriva_ms": [
+     22.2,
+     24.6
+    ],
+    "topado": false
+   }
+  },
+  "webm>mkv": {
+   "estado": "real",
+   "ms": 1466.0,
+   "n": 1,
+   "ms_todas": [
+    1466.0
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {},
+   "sin_declarar_solo_audio": null,
+   "fuente": "f.webm",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 4144568,
+    "n_video": 1,
+    "n_audio": 2,
+    "codecs": [
+     "h264",
+     "aac",
+     "aac"
+    ],
+    "formato": "matroska,webm",
+    "duracion": "10.059000"
+   },
+   "map0": {
+    "fuente": 2,
+    "salida": 2,
+    "esperadas": 2,
+    "ok": true
+   },
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (4144568 de 4144568 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     26.3,
+     27.1
+    ],
+    "deriva_ms": [
+     23.9,
+     22.6
+    ],
+    "topado": false
+   }
+  },
+  "webm>mov": {
+   "estado": "real",
+   "ms": 1471.9,
+   "n": 1,
+   "ms_todas": [
+    1471.9
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {},
+   "sin_declarar_solo_audio": null,
+   "fuente": "f.webm",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 4148982,
+    "n_video": 1,
+    "n_audio": 2,
+    "codecs": [
+     "h264",
+     "aac",
+     "aac"
+    ],
+    "formato": "mov,mp4,m4a,3gp,3g2,mj2",
+    "duracion": "10.038000"
+   },
+   "map0": {
+    "fuente": 2,
+    "salida": 2,
+    "esperadas": 2,
+    "ok": true
+   },
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (4148982 de 4148982 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     27.7,
+     25.5
+    ],
+    "deriva_ms": [
+     24.8,
+     23.8
+    ],
+    "topado": false
+   }
+  },
+  "webm>avi": {
+   "estado": "real",
+   "ms": 1523.4,
+   "n": 1,
+   "ms_todas": [
+    1523.4
+   ],
+   "rc": 0,
+   "veredicto": "ok_parcial",
+   "motivo": "",
+   "pedido": {},
+   "sin_declarar_solo_audio": null,
+   "fuente": "f.webm",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 4179602,
+    "n_video": 1,
+    "n_audio": 2,
+    "codecs": [
+     "h264",
+     "aac",
+     "aac"
+    ],
+    "formato": "avi",
+    "duracion": "10.090667"
+   },
+   "map0": {
+    "fuente": 2,
+    "salida": 2,
+    "esperadas": 2,
+    "ok": true
+   },
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (4179602 de 4179602 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": false,
+    "4_pedido": false,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     25.6,
+     27.0
+    ],
+    "deriva_ms": [
+     21.6,
+     22.9
+    ],
+    "topado": false
+   }
+  },
+  "mov>mp4": {
+   "estado": "real",
+   "ms": 1416.1,
+   "n": 1,
+   "ms_todas": [
+    1416.1
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {},
+   "sin_declarar_solo_audio": null,
+   "fuente": "f.mov",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 3966842,
+    "n_video": 1,
+    "n_audio": 2,
+    "codecs": [
+     "h264",
+     "aac",
+     "aac"
+    ],
+    "formato": "mov,mp4,m4a,3gp,3g2,mj2",
+    "duracion": "10.033008"
+   },
+   "map0": {
+    "fuente": 2,
+    "salida": 2,
+    "esperadas": 2,
+    "ok": true
+   },
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (3966842 de 3966842 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     27.3,
+     37.3
+    ],
+    "deriva_ms": [
+     23.2,
+     25.7
+    ],
+    "topado": false
+   }
+  },
+  "mov>mkv": {
+   "estado": "real",
+   "ms": 1491.7,
+   "n": 1,
+   "ms_todas": [
+    1491.7
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {},
+   "sin_declarar_solo_audio": null,
+   "fuente": "f.mov",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 3962995,
+    "n_video": 1,
+    "n_audio": 2,
+    "codecs": [
+     "h264",
+     "aac",
+     "aac"
+    ],
+    "formato": "matroska,webm",
+    "duracion": "10.054000"
+   },
+   "map0": {
+    "fuente": 2,
+    "salida": 2,
+    "esperadas": 2,
+    "ok": true
+   },
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (3962995 de 3962995 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     35.3,
+     30.3
+    ],
+    "deriva_ms": [
+     30.4,
+     27.8
+    ],
+    "topado": false
+   }
+  },
+  "mov>webm": {
+   "estado": "real",
+   "ms": 6337.3,
+   "n": 1,
+   "ms_todas": [
+    6337.3
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {},
+   "sin_declarar_solo_audio": null,
+   "fuente": "f.mov",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 4306494,
+    "n_video": 1,
+    "n_audio": 2,
+    "codecs": [
+     "vp9",
+     "opus",
+     "opus"
+    ],
+    "formato": "matroska,webm",
+    "duracion": "10.038000"
+   },
+   "map0": {
+    "fuente": 2,
+    "salida": 2,
+    "esperadas": 2,
+    "ok": true
+   },
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "A3",
+     "severidad": "informativo",
+     "mensaje": "Opus fuerza 48 kHz",
+     "esperado": 44100,
+     "obtenido": 48000
+    },
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (4306494 de 4306494 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     28.6,
+     24.3
+    ],
+    "deriva_ms": [
+     21.6,
+     21.9
+    ],
+    "topado": false
+   }
+  },
+  "mov>avi": {
+   "estado": "real",
+   "ms": 1491.5,
+   "n": 1,
+   "ms_todas": [
+    1491.5
+   ],
+   "rc": 0,
+   "veredicto": "ok_parcial",
+   "motivo": "",
+   "pedido": {},
+   "sin_declarar_solo_audio": null,
+   "fuente": "f.mov",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 3996458,
+    "n_video": 1,
+    "n_audio": 2,
+    "codecs": [
+     "h264",
+     "aac",
+     "aac"
+    ],
+    "formato": "avi",
+    "duracion": "10.077460"
+   },
+   "map0": {
+    "fuente": 2,
+    "salida": 2,
+    "esperadas": 2,
+    "ok": true
+   },
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (3996458 de 3996458 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": false,
+    "4_pedido": false,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     26.3,
+     25.5
+    ],
+    "deriva_ms": [
+     21.3,
+     25.5
+    ],
+    "topado": false
+   }
+  },
+  "avi>mp4": {
+   "estado": "real",
+   "ms": 1435.9,
+   "n": 1,
+   "ms_todas": [
+    1435.9
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {},
+   "sin_declarar_solo_audio": null,
+   "fuente": "f.avi",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 4027656,
+    "n_video": 1,
+    "n_audio": 2,
+    "codecs": [
+     "h264",
+     "aac",
+     "aac"
+    ],
+    "formato": "mov,mp4,m4a,3gp,3g2,mj2",
+    "duracion": "10.066016"
+   },
+   "map0": {
+    "fuente": 2,
+    "salida": 2,
+    "esperadas": 2,
+    "ok": true
+   },
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "V3",
+     "severidad": "informativo",
+     "mensaje": "sin referencia de entrada: no se puede comparar el numero de pistas",
+     "esperado": null,
+     "obtenido": null
+    },
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (4027656 de 4027656 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     28.1,
+     25.9
+    ],
+    "deriva_ms": [
+     23.0,
+     29.5
+    ],
+    "topado": false
+   }
+  },
+  "avi>mkv": {
+   "estado": "real",
+   "ms": 1389.0,
+   "n": 1,
+   "ms_todas": [
+    1389.0
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {},
+   "sin_declarar_solo_audio": null,
+   "fuente": "f.avi",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 4023657,
+    "n_video": 1,
+    "n_audio": 2,
+    "codecs": [
+     "h264",
+     "aac",
+     "aac"
+    ],
+    "formato": "matroska,webm",
+    "duracion": "10.080000"
+   },
+   "map0": {
+    "fuente": 2,
+    "salida": 2,
+    "esperadas": 2,
+    "ok": true
+   },
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "V3",
+     "severidad": "informativo",
+     "mensaje": "sin referencia de entrada: no se puede comparar el numero de pistas",
+     "esperado": null,
+     "obtenido": null
+    },
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (4023657 de 4023657 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     24.4,
+     25.5
+    ],
+    "deriva_ms": [
+     22.9,
+     23.0
+    ],
+    "topado": false
+   }
+  },
+  "avi>webm": {
+   "estado": "real",
+   "ms": 6670.4,
+   "n": 1,
+   "ms_todas": [
+    6670.4
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {},
+   "sin_declarar_solo_audio": null,
+   "fuente": "f.avi",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 4254211,
+    "n_video": 1,
+    "n_audio": 2,
+    "codecs": [
+     "vp9",
+     "opus",
+     "opus"
+    ],
+    "formato": "matroska,webm",
+    "duracion": "10.066000"
+   },
+   "map0": {
+    "fuente": 2,
+    "salida": 2,
+    "esperadas": 2,
+    "ok": true
+   },
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "V3",
+     "severidad": "informativo",
+     "mensaje": "sin referencia de entrada: no se puede comparar el numero de pistas",
+     "esperado": null,
+     "obtenido": null
+    },
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (4254211 de 4254211 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     26.0,
+     27.0
+    ],
+    "deriva_ms": [
+     22.5,
+     21.9
+    ],
+    "topado": false
+   }
+  },
+  "avi>mov": {
+   "estado": "real",
+   "ms": 1488.7,
+   "n": 1,
+   "ms_todas": [
+    1488.7
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {},
+   "sin_declarar_solo_audio": null,
+   "fuente": "f.avi",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 4027763,
+    "n_video": 1,
+    "n_audio": 2,
+    "codecs": [
+     "h264",
+     "aac",
+     "aac"
+    ],
+    "formato": "mov,mp4,m4a,3gp,3g2,mj2",
+    "duracion": "10.066016"
+   },
+   "map0": {
+    "fuente": 2,
+    "salida": 2,
+    "esperadas": 2,
+    "ok": true
+   },
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "V3",
+     "severidad": "informativo",
+     "mensaje": "sin referencia de entrada: no se puede comparar el numero de pistas",
+     "esperado": null,
+     "obtenido": null
+    },
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (4027763 de 4027763 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     27.5,
+     30.3
+    ],
+    "deriva_ms": [
+     22.7,
+     25.9
+    ],
+    "topado": false
+   }
+  },
+  "mp4>wav": {
+   "estado": "real",
+   "ms": 51.1,
+   "n": 1,
+   "ms_todas": [
+    51.1
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {
+    "solo_audio": true,
+    "params": {
+     "solo_audio": true
+    }
+   },
+   "sin_declarar_solo_audio": {
+    "veredicto": "ok",
+    "rc": 0,
+    "reglas": []
+   },
+   "fuente": "f.mp4",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 884814,
+    "n_video": 0,
+    "n_audio": 1,
+    "codecs": [
+     "pcm_s16le"
+    ],
+    "formato": "wav",
+    "duracion": "10.031020"
+   },
+   "map0": {
+    "fuente": 2,
+    "salida": 1,
+    "esperadas": 1,
+    "ok": true
+   },
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (884814 de 884814 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     26.8,
+     29.0
+    ],
+    "deriva_ms": [
+     29.4,
+     28.1
+    ],
+    "topado": false
+   }
+  },
+  "mp4>flac": {
+   "estado": "real",
+   "ms": 60.8,
+   "n": 1,
+   "ms_todas": [
+    60.8
+   ],
+   "rc": 0,
+   "veredicto": "aviso",
+   "motivo": "",
+   "pedido": {
+    "solo_audio": true,
+    "params": {
+     "solo_audio": true
+    }
+   },
+   "sin_declarar_solo_audio": {
+    "veredicto": "aviso",
+    "rc": 0,
+    "reglas": []
+   },
+   "fuente": "f.mp4",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 505921,
+    "n_video": 0,
+    "n_audio": 1,
+    "codecs": [
+     "flac"
+    ],
+    "formato": "flac",
+    "duracion": "10.031020"
+   },
+   "map0": {
+    "fuente": 2,
+    "salida": 1,
+    "esperadas": 1,
+    "ok": true
+   },
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "A6",
+     "severidad": "aviso",
+     "mensaje": "profundidad de bits INFLADA sin informacion nueva",
+     "esperado": 16,
+     "obtenido": 24
+    },
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (505921 de 505921 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     26.2,
+     27.0
+    ],
+    "deriva_ms": [
+     29.3,
+     24.1
+    ],
+    "topado": false
+   }
+  },
+  "mp4>opus": {
+   "estado": "real",
+   "ms": 97.7,
+   "n": 1,
+   "ms_todas": [
+    97.7
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {
+    "solo_audio": true,
+    "params": {
+     "solo_audio": true
+    }
+   },
+   "sin_declarar_solo_audio": {
+    "veredicto": "ok",
+    "rc": 0,
+    "reglas": []
+   },
+   "fuente": "f.mp4",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 263482,
+    "n_video": 0,
+    "n_audio": 1,
+    "codecs": [
+     "opus"
+    ],
+    "formato": "ogg",
+    "duracion": "10.037313"
+   },
+   "map0": {
+    "fuente": 2,
+    "salida": 1,
+    "esperadas": 1,
+    "ok": true
+   },
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "A3",
+     "severidad": "informativo",
+     "mensaje": "Opus fuerza 48 kHz",
+     "esperado": 44100,
+     "obtenido": 48000
+    },
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (263482 de 263482 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     25.8,
+     24.6
+    ],
+    "deriva_ms": [
+     21.5,
+     25.0
+    ],
+    "topado": false
+   }
+  },
+  "mp4>ogg": {
+   "estado": "real",
+   "ms": 120.0,
+   "n": 1,
+   "ms_todas": [
+    120.0
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {
+    "solo_audio": true,
+    "params": {
+     "solo_audio": true
+    }
+   },
+   "sin_declarar_solo_audio": {
+    "veredicto": "ok",
+    "rc": 0,
+    "reglas": []
+   },
+   "fuente": "f.mp4",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 88205,
+    "n_video": 0,
+    "n_audio": 1,
+    "codecs": [
+     "vorbis"
+    ],
+    "formato": "ogg",
+    "duracion": "10.030816"
+   },
+   "map0": {
+    "fuente": 2,
+    "salida": 1,
+    "esperadas": 1,
+    "ok": true
+   },
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (88205 de 88205 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     36.0,
+     26.8
+    ],
+    "deriva_ms": [
+     23.9,
+     23.8
+    ],
+    "topado": false
+   }
+  },
+  "mkv>wav": {
+   "estado": "real",
+   "ms": 50.0,
+   "n": 1,
+   "ms_todas": [
+    50.0
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {
+    "solo_audio": true,
+    "params": {
+     "solo_audio": true
+    }
+   },
+   "sin_declarar_solo_audio": {
+    "veredicto": "ok",
+    "rc": 0,
+    "reglas": []
+   },
+   "fuente": "patologico_2pistas.mkv",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 884814,
+    "n_video": 0,
+    "n_audio": 1,
+    "codecs": [
+     "pcm_s16le"
+    ],
+    "formato": "wav",
+    "duracion": "10.031020"
+   },
+   "map0": {
+    "fuente": 2,
+    "salida": 1,
+    "esperadas": 1,
+    "ok": true
+   },
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (884814 de 884814 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     29.9,
+     26.0
+    ],
+    "deriva_ms": [
+     22.9,
+     23.0
+    ],
+    "topado": false
+   }
+  },
+  "mkv>flac": {
+   "estado": "real",
+   "ms": 49.5,
+   "n": 1,
+   "ms_todas": [
+    49.5
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {
+    "solo_audio": true,
+    "params": {
+     "solo_audio": true
+    }
+   },
+   "sin_declarar_solo_audio": {
+    "veredicto": "ok",
+    "rc": 0,
+    "reglas": []
+   },
+   "fuente": "patologico_2pistas.mkv",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 505842,
+    "n_video": 0,
+    "n_audio": 1,
+    "codecs": [
+     "flac"
+    ],
+    "formato": "flac",
+    "duracion": "10.031020"
+   },
+   "map0": {
+    "fuente": 2,
+    "salida": 1,
+    "esperadas": 1,
+    "ok": true
+   },
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (505842 de 505842 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     23.7,
+     25.6
+    ],
+    "deriva_ms": [
+     26.4,
+     22.7
+    ],
+    "topado": false
+   }
+  },
+  "mkv>mp3": {
+   "estado": "real",
+   "ms": 85.0,
+   "n": 1,
+   "ms_todas": [
+    85.0
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {
+    "solo_audio": true,
+    "params": {
+     "solo_audio": true
+    }
+   },
+   "sin_declarar_solo_audio": {
+    "veredicto": "ok",
+    "rc": 0,
+    "reglas": []
+   },
+   "fuente": "patologico_2pistas.mkv",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 242041,
+    "n_video": 0,
+    "n_audio": 1,
+    "codecs": [
+     "mp3"
+    ],
+    "formato": "mp3",
+    "duracion": "10.031020"
+   },
+   "map0": {
+    "fuente": 2,
+    "salida": 1,
+    "esperadas": 1,
+    "ok": true
+   },
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (242041 de 242041 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     24.2,
+     25.1
+    ],
+    "deriva_ms": [
+     22.0,
+     22.2
+    ],
+    "topado": false
+   }
+  },
+  "mkv>m4a": {
+   "estado": "real",
+   "ms": 492.2,
+   "n": 1,
+   "ms_todas": [
+    492.2
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {
+    "solo_audio": true,
+    "params": {
+     "solo_audio": true
+    }
+   },
+   "sin_declarar_solo_audio": {
+    "veredicto": "ok",
+    "rc": 0,
+    "reglas": []
+   },
+   "fuente": "patologico_2pistas.mkv",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 126057,
+    "n_video": 0,
+    "n_audio": 1,
+    "codecs": [
+     "aac"
+    ],
+    "formato": "mov,mp4,m4a,3gp,3g2,mj2",
+    "duracion": "10.030998"
+   },
+   "map0": {
+    "fuente": 2,
+    "salida": 1,
+    "esperadas": 1,
+    "ok": true
+   },
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (126057 de 126057 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     26.7,
+     26.2
+    ],
+    "deriva_ms": [
+     23.4,
+     22.8
+    ],
+    "topado": false
+   }
+  },
+  "mkv>opus": {
+   "estado": "real",
+   "ms": 105.8,
+   "n": 1,
+   "ms_todas": [
+    105.8
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {
+    "solo_audio": true,
+    "params": {
+     "solo_audio": true
+    }
+   },
+   "sin_declarar_solo_audio": {
+    "veredicto": "ok",
+    "rc": 0,
+    "reglas": []
+   },
+   "fuente": "patologico_2pistas.mkv",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 263363,
+    "n_video": 0,
+    "n_audio": 1,
+    "codecs": [
+     "opus"
+    ],
+    "formato": "ogg",
+    "duracion": "10.037313"
+   },
+   "map0": {
+    "fuente": 2,
+    "salida": 1,
+    "esperadas": 1,
+    "ok": true
+   },
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "A3",
+     "severidad": "informativo",
+     "mensaje": "Opus fuerza 48 kHz",
+     "esperado": 44100,
+     "obtenido": 48000
+    },
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (263363 de 263363 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     28.6,
+     27.0
+    ],
+    "deriva_ms": [
+     23.1,
+     23.4
+    ],
+    "topado": false
+   }
+  },
+  "mkv>ogg": {
+   "estado": "real",
+   "ms": 112.4,
+   "n": 1,
+   "ms_todas": [
+    112.4
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {
+    "solo_audio": true,
+    "params": {
+     "solo_audio": true
+    }
+   },
+   "sin_declarar_solo_audio": {
+    "veredicto": "ok",
+    "rc": 0,
+    "reglas": []
+   },
+   "fuente": "patologico_2pistas.mkv",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 88086,
+    "n_video": 0,
+    "n_audio": 1,
+    "codecs": [
+     "vorbis"
+    ],
+    "formato": "ogg",
+    "duracion": "10.030816"
+   },
+   "map0": {
+    "fuente": 2,
+    "salida": 1,
+    "esperadas": 1,
+    "ok": true
+   },
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (88086 de 88086 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     23.9,
+     26.8
+    ],
+    "deriva_ms": [
+     23.8,
+     24.2
+    ],
+    "topado": false
+   }
+  },
+  "webm>wav": {
+   "estado": "real",
+   "ms": 60.2,
+   "n": 1,
+   "ms_todas": [
+    60.2
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {
+    "solo_audio": true,
+    "params": {
+     "solo_audio": true
+    }
+   },
+   "sin_declarar_solo_audio": {
+    "veredicto": "ok",
+    "rc": 0,
+    "reglas": []
+   },
+   "fuente": "f.webm",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 963056,
+    "n_video": 0,
+    "n_audio": 1,
+    "codecs": [
+     "pcm_s16le"
+    ],
+    "formato": "wav",
+    "duracion": "10.031021"
+   },
+   "map0": {
+    "fuente": 2,
+    "salida": 1,
+    "esperadas": 1,
+    "ok": true
+   },
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (963056 de 963056 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     25.8,
+     25.4
+    ],
+    "deriva_ms": [
+     21.0,
+     24.2
+    ],
+    "topado": false
+   }
+  },
+  "webm>flac": {
+   "estado": "real",
+   "ms": 64.2,
+   "n": 1,
+   "ms_todas": [
+    64.2
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {
+    "solo_audio": true,
+    "params": {
+     "solo_audio": true
+    }
+   },
+   "sin_declarar_solo_audio": {
+    "veredicto": "ok",
+    "rc": 0,
+    "reglas": []
+   },
+   "fuente": "f.webm",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 538445,
+    "n_video": 0,
+    "n_audio": 1,
+    "codecs": [
+     "flac"
+    ],
+    "formato": "flac",
+    "duracion": "10.031021"
+   },
+   "map0": {
+    "fuente": 2,
+    "salida": 1,
+    "esperadas": 1,
+    "ok": true
+   },
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (538445 de 538445 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     26.2,
+     27.1
+    ],
+    "deriva_ms": [
+     22.0,
+     24.1
+    ],
+    "topado": false
+   }
+  },
+  "webm>mp3": {
+   "estado": "real",
+   "ms": 103.5,
+   "n": 1,
+   "ms_todas": [
+    103.5
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {
+    "solo_audio": true,
+    "params": {
+     "solo_audio": true
+    }
+   },
+   "sin_declarar_solo_audio": {
+    "veredicto": "ok",
+    "rc": 0,
+    "reglas": []
+   },
+   "fuente": "f.webm",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 241964,
+    "n_video": 0,
+    "n_audio": 1,
+    "codecs": [
+     "mp3"
+    ],
+    "formato": "mp3",
+    "duracion": "10.031021"
+   },
+   "map0": {
+    "fuente": 2,
+    "salida": 1,
+    "esperadas": 1,
+    "ok": true
+   },
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (241964 de 241964 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     31.7,
+     29.3
+    ],
+    "deriva_ms": [
+     21.8,
+     24.5
+    ],
+    "topado": false
+   }
+  },
+  "webm>m4a": {
+   "estado": "real",
+   "ms": 607.6,
+   "n": 1,
+   "ms_todas": [
+    607.6
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {
+    "solo_audio": true,
+    "params": {
+     "solo_audio": true
+    }
+   },
+   "sin_declarar_solo_audio": {
+    "veredicto": "ok",
+    "rc": 0,
+    "reglas": []
+   },
+   "fuente": "f.webm",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 169454,
+    "n_video": 0,
+    "n_audio": 1,
+    "codecs": [
+     "aac"
+    ],
+    "formato": "mov,mp4,m4a,3gp,3g2,mj2",
+    "duracion": "10.038000"
+   },
+   "map0": {
+    "fuente": 2,
+    "salida": 1,
+    "esperadas": 1,
+    "ok": true
+   },
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (169454 de 169454 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     27.7,
+     26.6
+    ],
+    "deriva_ms": [
+     25.1,
+     24.9
+    ],
+    "topado": false
+   }
+  },
+  "webm>opus": {
+   "estado": "real",
+   "ms": 97.8,
+   "n": 1,
+   "ms_todas": [
+    97.8
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {
+    "solo_audio": true,
+    "params": {
+     "solo_audio": true
+    }
+   },
+   "sin_declarar_solo_audio": {
+    "veredicto": "ok",
+    "rc": 0,
+    "reglas": []
+   },
+   "fuente": "f.webm",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 262464,
+    "n_video": 0,
+    "n_audio": 1,
+    "codecs": [
+     "opus"
+    ],
+    "formato": "ogg",
+    "duracion": "10.044521"
+   },
+   "map0": {
+    "fuente": 2,
+    "salida": 1,
+    "esperadas": 1,
+    "ok": true
+   },
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (262464 de 262464 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     30.3,
+     28.4
+    ],
+    "deriva_ms": [
+     21.9,
+     24.2
+    ],
+    "topado": false
+   }
+  },
+  "webm>ogg": {
+   "estado": "real",
+   "ms": 136.9,
+   "n": 1,
+   "ms_todas": [
+    136.9
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {
+    "solo_audio": true,
+    "params": {
+     "solo_audio": true
+    }
+   },
+   "sin_declarar_solo_audio": {
+    "veredicto": "ok",
+    "rc": 0,
+    "reglas": []
+   },
+   "fuente": "f.webm",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 89219,
+    "n_video": 0,
+    "n_audio": 1,
+    "codecs": [
+     "vorbis"
+    ],
+    "formato": "ogg",
+    "duracion": "10.033688"
+   },
+   "map0": {
+    "fuente": 2,
+    "salida": 1,
+    "esperadas": 1,
+    "ok": true
+   },
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (89219 de 89219 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     29.2,
+     27.4
+    ],
+    "deriva_ms": [
+     23.8,
+     29.6
+    ],
+    "topado": false
+   }
+  },
+  "mov>wav": {
+   "estado": "real",
+   "ms": 53.8,
+   "n": 1,
+   "ms_todas": [
+    53.8
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {
+    "solo_audio": true,
+    "params": {
+     "solo_audio": true
+    }
+   },
+   "sin_declarar_solo_audio": {
+    "veredicto": "ok",
+    "rc": 0,
+    "reglas": []
+   },
+   "fuente": "f.mov",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 884814,
+    "n_video": 0,
+    "n_audio": 1,
+    "codecs": [
+     "pcm_s16le"
+    ],
+    "formato": "wav",
+    "duracion": "10.031020"
+   },
+   "map0": {
+    "fuente": 2,
+    "salida": 1,
+    "esperadas": 1,
+    "ok": true
+   },
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (884814 de 884814 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     29.5,
+     30.9
+    ],
+    "deriva_ms": [
+     26.8,
+     24.8
+    ],
+    "topado": false
+   }
+  },
+  "mov>flac": {
+   "estado": "real",
+   "ms": 54.1,
+   "n": 1,
+   "ms_todas": [
+    54.1
+   ],
+   "rc": 0,
+   "veredicto": "aviso",
+   "motivo": "",
+   "pedido": {
+    "solo_audio": true,
+    "params": {
+     "solo_audio": true
+    }
+   },
+   "sin_declarar_solo_audio": {
+    "veredicto": "aviso",
+    "rc": 0,
+    "reglas": []
+   },
+   "fuente": "f.mov",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 505909,
+    "n_video": 0,
+    "n_audio": 1,
+    "codecs": [
+     "flac"
+    ],
+    "formato": "flac",
+    "duracion": "10.031020"
+   },
+   "map0": {
+    "fuente": 2,
+    "salida": 1,
+    "esperadas": 1,
+    "ok": true
+   },
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "A6",
+     "severidad": "aviso",
+     "mensaje": "profundidad de bits INFLADA sin informacion nueva",
+     "esperado": 16,
+     "obtenido": 24
+    },
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (505909 de 505909 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     27.8,
+     26.7
+    ],
+    "deriva_ms": [
+     23.7,
+     21.7
+    ],
+    "topado": false
+   }
+  },
+  "mov>mp3": {
+   "estado": "real",
+   "ms": 91.5,
+   "n": 1,
+   "ms_todas": [
+    91.5
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {
+    "solo_audio": true,
+    "params": {
+     "solo_audio": true
+    }
+   },
+   "sin_declarar_solo_audio": {
+    "veredicto": "ok",
+    "rc": 0,
+    "reglas": []
+   },
+   "fuente": "f.mov",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 242132,
+    "n_video": 0,
+    "n_audio": 1,
+    "codecs": [
+     "mp3"
+    ],
+    "formato": "mp3",
+    "duracion": "10.031020"
+   },
+   "map0": {
+    "fuente": 2,
+    "salida": 1,
+    "esperadas": 1,
+    "ok": true
+   },
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (242132 de 242132 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     29.5,
+     29.0
+    ],
+    "deriva_ms": [
+     22.9,
+     22.1
+    ],
+    "topado": false
+   }
+  },
+  "mov>m4a": {
+   "estado": "real",
+   "ms": 551.0,
+   "n": 1,
+   "ms_todas": [
+    551.0
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {
+    "solo_audio": true,
+    "params": {
+     "solo_audio": true
+    }
+   },
+   "sin_declarar_solo_audio": {
+    "veredicto": "ok",
+    "rc": 0,
+    "reglas": []
+   },
+   "fuente": "f.mov",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 126057,
+    "n_video": 0,
+    "n_audio": 1,
+    "codecs": [
+     "aac"
+    ],
+    "formato": "mov,mp4,m4a,3gp,3g2,mj2",
+    "duracion": "10.030998"
+   },
+   "map0": {
+    "fuente": 2,
+    "salida": 1,
+    "esperadas": 1,
+    "ok": true
+   },
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (126057 de 126057 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     32.2,
+     30.8
+    ],
+    "deriva_ms": [
+     24.7,
+     24.0
+    ],
+    "topado": false
+   }
+  },
+  "mov>opus": {
+   "estado": "real",
+   "ms": 101.2,
+   "n": 1,
+   "ms_todas": [
+    101.2
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {
+    "solo_audio": true,
+    "params": {
+     "solo_audio": true
+    }
+   },
+   "sin_declarar_solo_audio": {
+    "veredicto": "ok",
+    "rc": 0,
+    "reglas": []
+   },
+   "fuente": "f.mov",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 263454,
+    "n_video": 0,
+    "n_audio": 1,
+    "codecs": [
+     "opus"
+    ],
+    "formato": "ogg",
+    "duracion": "10.037313"
+   },
+   "map0": {
+    "fuente": 2,
+    "salida": 1,
+    "esperadas": 1,
+    "ok": true
+   },
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "A3",
+     "severidad": "informativo",
+     "mensaje": "Opus fuerza 48 kHz",
+     "esperado": 44100,
+     "obtenido": 48000
+    },
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (263454 de 263454 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     28.1,
+     25.1
+    ],
+    "deriva_ms": [
+     24.6,
+     22.6
+    ],
+    "topado": false
+   }
+  },
+  "mov>ogg": {
+   "estado": "real",
+   "ms": 113.5,
+   "n": 1,
+   "ms_todas": [
+    113.5
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {
+    "solo_audio": true,
+    "params": {
+     "solo_audio": true
+    }
+   },
+   "sin_declarar_solo_audio": {
+    "veredicto": "ok",
+    "rc": 0,
+    "reglas": []
+   },
+   "fuente": "f.mov",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 88177,
+    "n_video": 0,
+    "n_audio": 1,
+    "codecs": [
+     "vorbis"
+    ],
+    "formato": "ogg",
+    "duracion": "10.030816"
+   },
+   "map0": {
+    "fuente": 2,
+    "salida": 1,
+    "esperadas": 1,
+    "ok": true
+   },
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (88177 de 88177 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     29.6,
+     29.2
+    ],
+    "deriva_ms": [
+     27.6,
+     24.8
+    ],
+    "topado": false
+   }
+  },
+  "avi>wav": {
+   "estado": "real",
+   "ms": 48.0,
+   "n": 1,
+   "ms_todas": [
+    48.0
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {
+    "solo_audio": true,
+    "params": {
+     "solo_audio": true
+    }
+   },
+   "sin_declarar_solo_audio": {
+    "veredicto": "ok",
+    "rc": 0,
+    "reglas": []
+   },
+   "fuente": "f.avi",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 887118,
+    "n_video": 0,
+    "n_audio": 1,
+    "codecs": [
+     "pcm_s16le"
+    ],
+    "formato": "wav",
+    "duracion": "10.057143"
+   },
+   "map0": {
+    "fuente": 2,
+    "salida": 1,
+    "esperadas": 1,
+    "ok": true
+   },
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "V3",
+     "severidad": "informativo",
+     "mensaje": "sin referencia de entrada: no se puede comparar el numero de pistas",
+     "esperado": null,
+     "obtenido": null
+    },
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (887118 de 887118 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     26.2,
+     28.2
+    ],
+    "deriva_ms": [
+     23.6,
+     26.0
+    ],
+    "topado": false
+   }
+  },
+  "avi>flac": {
+   "estado": "real",
+   "ms": 48.1,
+   "n": 1,
+   "ms_todas": [
+    48.1
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {
+    "solo_audio": true,
+    "params": {
+     "solo_audio": true
+    }
+   },
+   "sin_declarar_solo_audio": {
+    "veredicto": "ok",
+    "rc": 0,
+    "reglas": []
+   },
+   "fuente": "f.avi",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 507206,
+    "n_video": 0,
+    "n_audio": 1,
+    "codecs": [
+     "flac"
+    ],
+    "formato": "flac",
+    "duracion": "10.057143"
+   },
+   "map0": {
+    "fuente": 2,
+    "salida": 1,
+    "esperadas": 1,
+    "ok": true
+   },
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "V3",
+     "severidad": "informativo",
+     "mensaje": "sin referencia de entrada: no se puede comparar el numero de pistas",
+     "esperado": null,
+     "obtenido": null
+    },
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (507206 de 507206 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     24.0,
+     29.4
+    ],
+    "deriva_ms": [
+     25.3,
+     24.4
+    ],
+    "topado": false
+   }
+  },
+  "avi>mp3": {
+   "estado": "real",
+   "ms": 138.4,
+   "n": 1,
+   "ms_todas": [
+    138.4
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {
+    "solo_audio": true,
+    "params": {
+     "solo_audio": true
+    }
+   },
+   "sin_declarar_solo_audio": {
+    "veredicto": "ok",
+    "rc": 0,
+    "reglas": []
+   },
+   "fuente": "f.avi",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 242701,
+    "n_video": 0,
+    "n_audio": 1,
+    "codecs": [
+     "mp3"
+    ],
+    "formato": "mp3",
+    "duracion": "10.057143"
+   },
+   "map0": {
+    "fuente": 2,
+    "salida": 1,
+    "esperadas": 1,
+    "ok": true
+   },
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "V3",
+     "severidad": "informativo",
+     "mensaje": "sin referencia de entrada: no se puede comparar el numero de pistas",
+     "esperado": null,
+     "obtenido": null
+    },
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (242701 de 242701 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     30.2,
+     24.7
+    ],
+    "deriva_ms": [
+     25.3,
+     22.9
+    ],
+    "topado": false
+   }
+  },
+  "avi>m4a": {
+   "estado": "real",
+   "ms": 668.2,
+   "n": 1,
+   "ms_todas": [
+    668.2
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {
+    "solo_audio": true,
+    "params": {
+     "solo_audio": true
+    }
+   },
+   "sin_declarar_solo_audio": {
+    "veredicto": "ok",
+    "rc": 0,
+    "reglas": []
+   },
+   "fuente": "f.avi",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 160970,
+    "n_video": 0,
+    "n_audio": 1,
+    "codecs": [
+     "aac"
+    ],
+    "formato": "mov,mp4,m4a,3gp,3g2,mj2",
+    "duracion": "10.057007"
+   },
+   "map0": {
+    "fuente": 2,
+    "salida": 1,
+    "esperadas": 1,
+    "ok": true
+   },
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "V3",
+     "severidad": "informativo",
+     "mensaje": "sin referencia de entrada: no se puede comparar el numero de pistas",
+     "esperado": null,
+     "obtenido": null
+    },
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (160970 de 160970 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     25.9,
+     28.5
+    ],
+    "deriva_ms": [
+     24.0,
+     25.4
+    ],
+    "topado": false
+   }
+  },
+  "avi>opus": {
+   "estado": "real",
+   "ms": 122.3,
+   "n": 1,
+   "ms_todas": [
+    122.3
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {
+    "solo_audio": true,
+    "params": {
+     "solo_audio": true
+    }
+   },
+   "sin_declarar_solo_audio": {
+    "veredicto": "ok",
+    "rc": 0,
+    "reglas": []
+   },
+   "fuente": "f.avi",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 263684,
+    "n_video": 0,
+    "n_audio": 1,
+    "codecs": [
+     "opus"
+    ],
+    "formato": "ogg",
+    "duracion": "10.063646"
+   },
+   "map0": {
+    "fuente": 2,
+    "salida": 1,
+    "esperadas": 1,
+    "ok": true
+   },
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "V3",
+     "severidad": "informativo",
+     "mensaje": "sin referencia de entrada: no se puede comparar el numero de pistas",
+     "esperado": null,
+     "obtenido": null
+    },
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (263684 de 263684 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     28.9,
+     27.2
+    ],
+    "deriva_ms": [
+     25.4,
+     22.4
+    ],
+    "topado": false
+   }
+  },
+  "avi>ogg": {
+   "estado": "real",
+   "ms": 134.6,
+   "n": 1,
+   "ms_todas": [
+    134.6
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {
+    "solo_audio": true,
+    "params": {
+     "solo_audio": true
+    }
+   },
+   "sin_declarar_solo_audio": {
+    "veredicto": "ok",
+    "rc": 0,
+    "reglas": []
+   },
+   "fuente": "f.avi",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 89150,
+    "n_video": 0,
+    "n_audio": 1,
+    "codecs": [
+     "vorbis"
+    ],
+    "formato": "ogg",
+    "duracion": "10.057143"
+   },
+   "map0": {
+    "fuente": 2,
+    "salida": 1,
+    "esperadas": 1,
+    "ok": true
+   },
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "V3",
+     "severidad": "informativo",
+     "mensaje": "sin referencia de entrada: no se puede comparar el numero de pistas",
+     "esperado": null,
+     "obtenido": null
+    },
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (89150 de 89150 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     42.0,
+     30.6
+    ],
+    "deriva_ms": [
+     32.8,
+     24.7
+    ],
+    "topado": false
+   }
+  },
+  "wav>ogg": {
+   "estado": "real",
+   "ms": 115.8,
+   "n": 1,
+   "ms_todas": [
+    115.8
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {
+    "solo_audio": true,
+    "params": {
+     "solo_audio": true
+    }
+   },
+   "sin_declarar_solo_audio": {
+    "veredicto": "ok",
+    "rc": 0,
+    "reglas": []
+   },
+   "fuente": "trivial.wav",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 67870,
+    "n_video": 0,
+    "n_audio": 1,
+    "codecs": [
+     "vorbis"
+    ],
+    "formato": "ogg",
+    "duracion": "8.000000"
+   },
+   "map0": null,
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (67870 de 67870 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     26.5,
+     24.7
+    ],
+    "deriva_ms": [
+     25.1,
+     21.3
+    ],
+    "topado": false
+   }
+  },
+  "flac>m4a": {
+   "estado": "real",
+   "ms": 475.1,
+   "n": 1,
+   "ms_todas": [
+    475.1
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {
+    "solo_audio": true,
+    "params": {
+     "solo_audio": true
+    }
+   },
+   "sin_declarar_solo_audio": {
+    "veredicto": "ok",
+    "rc": 0,
+    "reglas": []
+   },
+   "fuente": "tipico.flac",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 131397,
+    "n_video": 0,
+    "n_audio": 1,
+    "codecs": [
+     "aac"
+    ],
+    "formato": "mov,mp4,m4a,3gp,3g2,mj2",
+    "duracion": "8.000000"
+   },
+   "map0": null,
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (131397 de 131397 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     27.8,
+     27.8
+    ],
+    "deriva_ms": [
+     22.9,
+     23.5
+    ],
+    "topado": false
+   }
+  },
+  "flac>ogg": {
+   "estado": "real",
+   "ms": 122.0,
+   "n": 1,
+   "ms_todas": [
+    122.0
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {
+    "solo_audio": true,
+    "params": {
+     "solo_audio": true
+    }
+   },
+   "sin_declarar_solo_audio": {
+    "veredicto": "ok",
+    "rc": 0,
+    "reglas": []
+   },
+   "fuente": "tipico.flac",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 67870,
+    "n_video": 0,
+    "n_audio": 1,
+    "codecs": [
+     "vorbis"
+    ],
+    "formato": "ogg",
+    "duracion": "8.000000"
+   },
+   "map0": null,
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (67870 de 67870 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     33.5,
+     30.7
+    ],
+    "deriva_ms": [
+     23.6,
+     24.2
+    ],
+    "topado": false
+   }
+  },
+  "mp3>m4a": {
+   "estado": "real",
+   "ms": 580.8,
+   "n": 1,
+   "ms_todas": [
+    580.8
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {
+    "solo_audio": true,
+    "params": {
+     "solo_audio": true
+    }
+   },
+   "sin_declarar_solo_audio": {
+    "veredicto": "ok",
+    "rc": 0,
+    "reglas": []
+   },
+   "fuente": "tipico.mp3",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 142738,
+    "n_video": 0,
+    "n_audio": 1,
+    "codecs": [
+     "aac"
+    ],
+    "formato": "mov,mp4,m4a,3gp,3g2,mj2",
+    "duracion": "8.000000"
+   },
+   "map0": null,
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (142738 de 142738 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     32.1,
+     37.6
+    ],
+    "deriva_ms": [
+     31.4,
+     27.8
+    ],
+    "topado": false
+   }
+  },
+  "mp3>opus": {
+   "estado": "real",
+   "ms": 94.7,
+   "n": 1,
+   "ms_todas": [
+    94.7
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {
+    "solo_audio": true,
+    "params": {
+     "solo_audio": true
+    }
+   },
+   "sin_declarar_solo_audio": {
+    "veredicto": "ok",
+    "rc": 0,
+    "reglas": []
+   },
+   "fuente": "tipico.mp3",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 209875,
+    "n_video": 0,
+    "n_audio": 1,
+    "codecs": [
+     "opus"
+    ],
+    "formato": "ogg",
+    "duracion": "8.006500"
+   },
+   "map0": null,
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "A3",
+     "severidad": "informativo",
+     "mensaje": "Opus fuerza 48 kHz",
+     "esperado": 44100,
+     "obtenido": 48000
+    },
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (209875 de 209875 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     29.3,
+     30.1
+    ],
+    "deriva_ms": [
+     26.0,
+     25.4
+    ],
+    "topado": false
+   }
+  },
+  "mp3>ogg": {
+   "estado": "real",
+   "ms": 102.8,
+   "n": 1,
+   "ms_todas": [
+    102.8
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {
+    "solo_audio": true,
+    "params": {
+     "solo_audio": true
+    }
+   },
+   "sin_declarar_solo_audio": {
+    "veredicto": "ok",
+    "rc": 0,
+    "reglas": []
+   },
+   "fuente": "tipico.mp3",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 68372,
+    "n_video": 0,
+    "n_audio": 1,
+    "codecs": [
+     "vorbis"
+    ],
+    "formato": "ogg",
+    "duracion": "8.000000"
+   },
+   "map0": null,
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (68372 de 68372 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     30.1,
+     29.4
+    ],
+    "deriva_ms": [
+     27.1,
+     27.4
+    ],
+    "topado": false
+   }
+  },
+  "m4a>wav": {
+   "estado": "real",
+   "ms": 46.5,
+   "n": 1,
+   "ms_todas": [
+    46.5
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {
+    "solo_audio": true,
+    "params": {
+     "solo_audio": true
+    }
+   },
+   "sin_declarar_solo_audio": {
+    "veredicto": "ok",
+    "rc": 0,
+    "reglas": []
+   },
+   "fuente": "f.m4a",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 706638,
+    "n_video": 0,
+    "n_audio": 1,
+    "codecs": [
+     "pcm_s16le"
+    ],
+    "formato": "wav",
+    "duracion": "8.010884"
+   },
+   "map0": null,
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (706638 de 706638 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     32.4,
+     27.9
+    ],
+    "deriva_ms": [
+     22.4,
+     26.9
+    ],
+    "topado": false
+   }
+  },
+  "m4a>flac": {
+   "estado": "real",
+   "ms": 45.4,
+   "n": 1,
+   "ms_todas": [
+    45.4
+   ],
+   "rc": 0,
+   "veredicto": "aviso",
+   "motivo": "",
+   "pedido": {
+    "solo_audio": true,
+    "params": {
+     "solo_audio": true
+    }
+   },
+   "sin_declarar_solo_audio": {
+    "veredicto": "aviso",
+    "rc": 0,
+    "reglas": []
+   },
+   "fuente": "f.m4a",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 425009,
+    "n_video": 0,
+    "n_audio": 1,
+    "codecs": [
+     "flac"
+    ],
+    "formato": "flac",
+    "duracion": "8.010884"
+   },
+   "map0": null,
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "A6",
+     "severidad": "aviso",
+     "mensaje": "profundidad de bits INFLADA sin informacion nueva",
+     "esperado": 16,
+     "obtenido": 24
+    },
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (425009 de 425009 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     27.7,
+     27.0
+    ],
+    "deriva_ms": [
+     22.4,
+     22.4
+    ],
+    "topado": false
+   }
+  },
+  "m4a>mp3": {
+   "estado": "real",
+   "ms": 78.2,
+   "n": 1,
+   "ms_todas": [
+    78.2
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {
+    "solo_audio": true,
+    "params": {
+     "solo_audio": true
+    }
+   },
+   "sin_declarar_solo_audio": {
+    "veredicto": "ok",
+    "rc": 0,
+    "reglas": []
+   },
+   "fuente": "f.m4a",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 193866,
+    "n_video": 0,
+    "n_audio": 1,
+    "codecs": [
+     "mp3"
+    ],
+    "formato": "mp3",
+    "duracion": "8.010884"
+   },
+   "map0": null,
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (193866 de 193866 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     29.3,
+     28.9
+    ],
+    "deriva_ms": [
+     22.1,
+     24.5
+    ],
+    "topado": false
+   }
+  },
+  "m4a>opus": {
+   "estado": "real",
+   "ms": 88.4,
+   "n": 1,
+   "ms_todas": [
+    88.4
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {
+    "solo_audio": true,
+    "params": {
+     "solo_audio": true
+    }
+   },
+   "sin_declarar_solo_audio": {
+    "veredicto": "ok",
+    "rc": 0,
+    "reglas": []
+   },
+   "fuente": "f.m4a",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 210828,
+    "n_video": 0,
+    "n_audio": 1,
+    "codecs": [
+     "opus"
+    ],
+    "formato": "ogg",
+    "duracion": "8.017396"
+   },
+   "map0": null,
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "A3",
+     "severidad": "informativo",
+     "mensaje": "Opus fuerza 48 kHz",
+     "esperado": 44100,
+     "obtenido": 48000
+    },
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (210828 de 210828 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     28.3,
+     32.4
+    ],
+    "deriva_ms": [
+     24.5,
+     24.9
+    ],
+    "topado": false
+   }
+  },
+  "m4a>ogg": {
+   "estado": "real",
+   "ms": 108.9,
+   "n": 1,
+   "ms_todas": [
+    108.9
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {
+    "solo_audio": true,
+    "params": {
+     "solo_audio": true
+    }
+   },
+   "sin_declarar_solo_audio": {
+    "veredicto": "ok",
+    "rc": 0,
+    "reglas": []
+   },
+   "fuente": "f.m4a",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 68659,
+    "n_video": 0,
+    "n_audio": 1,
+    "codecs": [
+     "vorbis"
+    ],
+    "formato": "ogg",
+    "duracion": "8.010884"
+   },
+   "map0": null,
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (68659 de 68659 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     32.7,
+     48.5
+    ],
+    "deriva_ms": [
+     27.1,
+     26.9
+    ],
+    "topado": false
+   }
+  },
+  "opus>wav": {
+   "estado": "real",
+   "ms": 53.0,
+   "n": 1,
+   "ms_todas": [
+    53.0
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {
+    "solo_audio": true,
+    "params": {
+     "solo_audio": true
+    }
+   },
+   "sin_declarar_solo_audio": {
+    "veredicto": "ok",
+    "rc": 0,
+    "reglas": []
+   },
+   "fuente": "f.opus",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 768078,
+    "n_video": 0,
+    "n_audio": 1,
+    "codecs": [
+     "pcm_s16le"
+    ],
+    "formato": "wav",
+    "duracion": "8.000000"
+   },
+   "map0": null,
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (768078 de 768078 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     26.7,
+     26.9
+    ],
+    "deriva_ms": [
+     21.9,
+     23.3
+    ],
+    "topado": false
+   }
+  },
+  "opus>flac": {
+   "estado": "real",
+   "ms": 56.7,
+   "n": 1,
+   "ms_todas": [
+    56.7
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {
+    "solo_audio": true,
+    "params": {
+     "solo_audio": true
+    }
+   },
+   "sin_declarar_solo_audio": {
+    "veredicto": "ok",
+    "rc": 0,
+    "reglas": []
+   },
+   "fuente": "f.opus",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 464456,
+    "n_video": 0,
+    "n_audio": 1,
+    "codecs": [
+     "flac"
+    ],
+    "formato": "flac",
+    "duracion": "8.000000"
+   },
+   "map0": null,
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (464456 de 464456 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     27.7,
+     26.5
+    ],
+    "deriva_ms": [
+     27.3,
+     25.0
+    ],
+    "topado": false
+   }
+  },
+  "opus>mp3": {
+   "estado": "real",
+   "ms": 138.2,
+   "n": 1,
+   "ms_todas": [
+    138.2
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {
+    "solo_audio": true,
+    "params": {
+     "solo_audio": true
+    }
+   },
+   "sin_declarar_solo_audio": {
+    "veredicto": "ok",
+    "rc": 0,
+    "reglas": []
+   },
+   "fuente": "f.opus",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 193580,
+    "n_video": 0,
+    "n_audio": 1,
+    "codecs": [
+     "mp3"
+    ],
+    "formato": "mp3",
+    "duracion": "8.000000"
+   },
+   "map0": null,
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (193580 de 193580 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     40.4,
+     37.5
+    ],
+    "deriva_ms": [
+     28.8,
+     32.7
+    ],
+    "topado": false
+   }
+  },
+  "opus>m4a": {
+   "estado": "real",
+   "ms": 607.2,
+   "n": 1,
+   "ms_todas": [
+    607.2
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {
+    "solo_audio": true,
+    "params": {
+     "solo_audio": true
+    }
+   },
+   "sin_declarar_solo_audio": {
+    "veredicto": "ok",
+    "rc": 0,
+    "reglas": []
+   },
+   "fuente": "f.opus",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 140767,
+    "n_video": 0,
+    "n_audio": 1,
+    "codecs": [
+     "aac"
+    ],
+    "formato": "mov,mp4,m4a,3gp,3g2,mj2",
+    "duracion": "8.000000"
+   },
+   "map0": null,
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (140767 de 140767 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     38.5,
+     27.8
+    ],
+    "deriva_ms": [
+     32.7,
+     26.6
+    ],
+    "topado": false
+   }
+  },
+  "opus>ogg": {
+   "estado": "real",
+   "ms": 126.0,
+   "n": 1,
+   "ms_todas": [
+    126.0
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {
+    "solo_audio": true,
+    "params": {
+     "solo_audio": true
+    }
+   },
+   "sin_declarar_solo_audio": {
+    "veredicto": "ok",
+    "rc": 0,
+    "reglas": []
+   },
+   "fuente": "f.opus",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 78304,
+    "n_video": 0,
+    "n_audio": 1,
+    "codecs": [
+     "vorbis"
+    ],
+    "formato": "ogg",
+    "duracion": "8.000000"
+   },
+   "map0": null,
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (78304 de 78304 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     33.9,
+     29.2
+    ],
+    "deriva_ms": [
+     27.6,
+     24.5
+    ],
+    "topado": false
+   }
+  },
+  "ogg>wav": {
+   "estado": "real",
+   "ms": 40.9,
+   "n": 1,
+   "ms_todas": [
+    40.9
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {
+    "solo_audio": true,
+    "params": {
+     "solo_audio": true
+    }
+   },
+   "sin_declarar_solo_audio": {
+    "veredicto": "ok",
+    "rc": 0,
+    "reglas": []
+   },
+   "fuente": "f.ogg",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 705678,
+    "n_video": 0,
+    "n_audio": 1,
+    "codecs": [
+     "pcm_s16le"
+    ],
+    "formato": "wav",
+    "duracion": "8.000000"
+   },
+   "map0": null,
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (705678 de 705678 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     28.8,
+     28.5
+    ],
+    "deriva_ms": [
+     23.8,
+     22.7
+    ],
+    "topado": false
+   }
+  },
+  "ogg>flac": {
+   "estado": "real",
+   "ms": 49.3,
+   "n": 1,
+   "ms_todas": [
+    49.3
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {
+    "solo_audio": true,
+    "params": {
+     "solo_audio": true
+    }
+   },
+   "sin_declarar_solo_audio": {
+    "veredicto": "ok",
+    "rc": 0,
+    "reglas": []
+   },
+   "fuente": "f.ogg",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 396554,
+    "n_video": 0,
+    "n_audio": 1,
+    "codecs": [
+     "flac"
+    ],
+    "formato": "flac",
+    "duracion": "8.000000"
+   },
+   "map0": null,
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (396554 de 396554 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     31.0,
+     29.3
+    ],
+    "deriva_ms": [
+     24.6,
+     23.5
+    ],
+    "topado": false
+   }
+  },
+  "ogg>mp3": {
+   "estado": "real",
+   "ms": 84.1,
+   "n": 1,
+   "ms_todas": [
+    84.1
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {
+    "solo_audio": true,
+    "params": {
+     "solo_audio": true
+    }
+   },
+   "sin_declarar_solo_audio": {
+    "veredicto": "ok",
+    "rc": 0,
+    "reglas": []
+   },
+   "fuente": "f.ogg",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 193767,
+    "n_video": 0,
+    "n_audio": 1,
+    "codecs": [
+     "mp3"
+    ],
+    "formato": "mp3",
+    "duracion": "8.000000"
+   },
+   "map0": null,
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (193767 de 193767 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     28.0,
+     30.1
+    ],
+    "deriva_ms": [
+     23.6,
+     25.0
+    ],
+    "topado": false
+   }
+  },
+  "ogg>m4a": {
+   "estado": "real",
+   "ms": 449.4,
+   "n": 1,
+   "ms_todas": [
+    449.4
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {
+    "solo_audio": true,
+    "params": {
+     "solo_audio": true
+    }
+   },
+   "sin_declarar_solo_audio": {
+    "veredicto": "ok",
+    "rc": 0,
+    "reglas": []
+   },
+   "fuente": "f.ogg",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 135243,
+    "n_video": 0,
+    "n_audio": 1,
+    "codecs": [
+     "aac"
+    ],
+    "formato": "mov,mp4,m4a,3gp,3g2,mj2",
+    "duracion": "8.000000"
+   },
+   "map0": null,
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (135243 de 135243 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     27.4,
+     28.8
+    ],
+    "deriva_ms": [
+     23.8,
+     22.5
+    ],
+    "topado": false
+   }
+  },
+  "ogg>opus": {
+   "estado": "real",
+   "ms": 113.4,
+   "n": 1,
+   "ms_todas": [
+    113.4
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {
+    "solo_audio": true,
+    "params": {
+     "solo_audio": true
+    }
+   },
+   "sin_declarar_solo_audio": {
+    "veredicto": "ok",
+    "rc": 0,
+    "reglas": []
+   },
+   "fuente": "f.ogg",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 214701,
+    "n_video": 0,
+    "n_audio": 1,
+    "codecs": [
+     "opus"
+    ],
+    "formato": "ogg",
+    "duracion": "8.006500"
+   },
+   "map0": null,
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "A3",
+     "severidad": "informativo",
+     "mensaje": "Opus fuerza 48 kHz",
+     "esperado": 44100,
+     "obtenido": 48000
+    },
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (214701 de 214701 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     31.2,
+     40.6
+    ],
+    "deriva_ms": [
+     25.6,
+     33.7
+    ],
+    "topado": false
+   }
+  },
+  "mkv>gif": {
+   "estado": "real",
+   "ms": 1269.1,
+   "n": 1,
+   "ms_todas": [
+    1269.1
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {},
+   "sin_declarar_solo_audio": null,
+   "fuente": "patologico_2pistas.mkv",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 950250,
+    "n_video": 1,
+    "n_audio": 0,
+    "codecs": [
+     "gif"
+    ],
+    "formato": "gif",
+    "duracion": "10.000000"
+   },
+   "map0": {
+    "fuente": 2,
+    "salida": 0,
+    "esperadas": 0,
+    "ok": true
+   },
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (950250 de 950250 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     27.9,
+     30.4
+    ],
+    "deriva_ms": [
+     22.1,
+     22.8
+    ],
+    "topado": false
+   }
+  },
+  "webm>gif": {
+   "estado": "real",
+   "ms": 1062.3,
+   "n": 1,
+   "ms_todas": [
+    1062.3
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {},
+   "sin_declarar_solo_audio": null,
+   "fuente": "f.webm",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 1116228,
+    "n_video": 1,
+    "n_audio": 0,
+    "codecs": [
+     "gif"
+    ],
+    "formato": "gif",
+    "duracion": "10.000000"
+   },
+   "map0": {
+    "fuente": 2,
+    "salida": 0,
+    "esperadas": 0,
+    "ok": true
+   },
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (1116228 de 1116228 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     42.5,
+     28.2
+    ],
+    "deriva_ms": [
+     30.8,
+     22.4
+    ],
+    "topado": false
+   }
+  },
+  "mov>gif": {
+   "estado": "real",
+   "ms": 761.9,
+   "n": 1,
+   "ms_todas": [
+    761.9
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {},
+   "sin_declarar_solo_audio": null,
+   "fuente": "f.mov",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 950250,
+    "n_video": 1,
+    "n_audio": 0,
+    "codecs": [
+     "gif"
+    ],
+    "formato": "gif",
+    "duracion": "10.000000"
+   },
+   "map0": {
+    "fuente": 2,
+    "salida": 0,
+    "esperadas": 0,
+    "ok": true
+   },
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (950250 de 950250 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     26.2,
+     28.8
+    ],
+    "deriva_ms": [
+     22.1,
+     23.9
+    ],
+    "topado": false
+   }
+  },
+  "avi>gif": {
+   "estado": "real",
+   "ms": 1812.3,
+   "n": 1,
+   "ms_todas": [
+    1812.3
+   ],
+   "rc": 0,
+   "veredicto": "ok",
+   "motivo": "",
+   "pedido": {},
+   "sin_declarar_solo_audio": null,
+   "fuente": "f.avi",
+   "ffprobe": {
+    "existe": true,
+    "bytes": 1020849,
+    "n_video": 1,
+    "n_audio": 0,
+    "codecs": [
+     "gif"
+    ],
+    "formato": "gif",
+    "duracion": "10.080000"
+   },
+   "map0": {
+    "fuente": 2,
+    "salida": 0,
+    "esperadas": 0,
+    "ok": true
+   },
+   "sobrantes": {},
+   "hallazgos": [
+    {
+     "regla": "N9",
+     "severidad": "informativo",
+     "mensaje": "el fichero declarado lleva el 100.0 % de los bytes escritos (1020849 de 1020849 B)",
+     "esperado": "100 %",
+     "obtenido": 100.0
+    }
+   ],
+   "cobertura": {
+    "1_firma": true,
+    "2_flujos": true,
+    "3_propiedades": true,
+    "4_pedido": true,
+    "4_alfa": true,
+    "5_escritura": true
+   },
+   "diagnostico": null,
+   "testigos": {
+    "proceso_ms": [
+     28.1,
+     1951.3
+    ],
+    "deriva_ms": [
+     21.9,
+     47.9
+    ],
+    "topado": false
+   }
+  }
+ }
+}

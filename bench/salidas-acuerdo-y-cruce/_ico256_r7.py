@@ -14,7 +14,7 @@ import os
 import statistics
 import sys
 
-RAIZ = "C:/Users/krato/orca/workspaces/FileX/filex-cpu"
+RAIZ = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.insert(0, RAIZ)
 
 from filex.grafo import Arista, Grafo, SIN_SONDEAR  # noqa: E402
