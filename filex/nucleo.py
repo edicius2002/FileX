@@ -681,13 +681,7 @@ class FileX:
         comportamiento previo, para las superficies/pruebas sin lista blanca.
         """
         if self.confinamiento is None:
-            ruta = os.path.abspath(entrada)
-            # Sin lista blanca no existe ``abrir_confinado`` que haga la
-            # comprobación. Se conserva aquí el rechazo opaco de R4; con
-            # confinamiento, la apertura real de abajo es la única autoridad.
-            if not os.path.isfile(ruta):
-                raise Denegado()
-            return _EntradaPassthrough(ruta)
+            return _EntradaPassthrough(os.path.abspath(entrada))
         return self.confinamiento.abrir_confinado(entrada)
 
     def validar(self, entrada: str, salida: str) -> bool:
@@ -714,10 +708,16 @@ class FileX:
         conv = Conversion(entrada=entrada, salida=salida)
 
         try:
-            _ent_abs, sal_abs = self._resolver(entrada, salida)
+            ent_abs, sal_abs = self._resolver(entrada, salida)
         except Denegado as e:
             conv.motivo = str(e)
             return conv
+        if not os.path.isfile(ent_abs):
+            # R4: el MISMO mensaje que para «prohibido». Distinguirlos convierte
+            # el conversor en un oráculo de existencia del disco ajeno.
+            conv.motivo = "ruta no accesible"
+            return conv
+
         dec = self.planificar(entrada, salida)
         conv.camino = dec.camino
         conv.rechazados = dec.rechazados
@@ -791,22 +791,11 @@ class FileX:
                 actual = copia.destino(f"entrada.{dec.camino.pasos[0].arista.origen}")
                 try:
                     fd = getattr(ent_seg, "fd", None)
-                    with open(actual, "xb") as destino:
-                        if fd is not None:
-                            # Lee el descriptor AUTORIZADO directamente. En
-                            # Windows hosted, duplicarlo mediante el CRT puede
-                            # fallar aunque el HANDLE original siga siendo
-                            # legible; además, duplicarlo no aporta aislamiento:
-                            # este descriptor sólo pertenece a esta conversión.
-                            os.lseek(fd, 0, os.SEEK_SET)
-                            while True:
-                                bloque = os.read(fd, 1024 * 1024)
-                                if not bloque:
-                                    break
-                                destino.write(bloque)
-                        else:
-                            with open(ent_seg.ruta, "rb") as origen:
-                                shutil.copyfileobj(origen, destino)
+                    origen = (os.fdopen(os.dup(fd), "rb") if fd is not None
+                              else open(ent_seg.ruta, "rb"))
+                    with origen, open(actual, "xb") as destino:
+                        origen.seek(0)
+                        shutil.copyfileobj(origen, destino)
                 except OSError:
                     conv.motivo = "ruta no accesible"
                     return conv

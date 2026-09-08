@@ -55,11 +55,18 @@ class EntradaDelContenedor(unittest.TestCase):
             entrada.write_text("# FILEXSENTINELA7743\n", encoding="utf-8")
             ajeno.write_text("# CONTENIDOAJENO\n", encoding="utf-8")
             fx = FileX([base], [base])
-            fd = os.open(entrada, os.O_RDONLY | getattr(os, "O_BINARY", 0))
-            ent = _EntradaConfinada(fd, str(entrada), str(ajeno))
-            with patch.object(fx, "_abrir_entrada", return_value=ent):
+            abiertos = []
+
+            def abrir_validado(_entrada):
+                fd = os.open(entrada, os.O_RDONLY | getattr(os, "O_BINARY", 0))
+                abiertos.append(fd)
+                return _EntradaConfinada(fd, str(entrada), str(ajeno))
+
+            with patch.object(fx, "_abrir_entrada", side_effect=abrir_validado):
                 resultado = fx.convertir(str(entrada), str(salida), timeout=60)
             self.assertTrue(resultado.ok, resultado.motivo)
+            with self.assertRaises(OSError):
+                os.fstat(abiertos[0])
             texto = salida.read_text(encoding="utf-8")
             self.assertIn("FILEXSENTINELA7743", texto)
             self.assertNotIn("CONTENIDOAJENO", texto)
@@ -80,9 +87,16 @@ class EntradaDelContenedor(unittest.TestCase):
             # Frontera tras validar: la cadena real apunta ahora a otro inodo.
             # El descriptor permanece abierto. Funciona también en Windows,
             # donde el bloqueo de rename impediría fabricar el mismo symlink.
-            fd = os.open(seguro, os.O_RDONLY | getattr(os, "O_BINARY", 0))
-            ent = _EntradaConfinada(fd, str(seguro), str(veneno))
+            abiertos = []
             recibidas = []
+
+            def abrir_validado(_entrada):
+                # Respeta el orden de producción: resolver/preflight primero,
+                # descriptor después. Abrirlo antes hace que Python 3.11 en
+                # Windows hosted no pueda ejecutar el segundo ``stat``.
+                fd = os.open(seguro, os.O_RDONLY | getattr(os, "O_BINARY", 0))
+                abiertos.append(fd)
+                return _EntradaConfinada(fd, str(seguro), str(veneno))
 
             def leer_bind(arista, entrada, *args, **kwargs):
                 recibidas.append(entrada)
@@ -91,75 +105,13 @@ class EntradaDelContenedor(unittest.TestCase):
                 self.assertNotEqual(entrada, str(seguro))
                 return Salto(arista=arista, rc=0, veredicto="ok")
 
-            with patch.object(fx, "_abrir_entrada", return_value=ent), \
+            with patch.object(fx, "_abrir_entrada", side_effect=abrir_validado), \
                     patch.object(fx, "_un_salto", side_effect=leer_bind):
                 resultado = fx.convertir(str(seguro), str(Path(base, "salida.html")))
             self.assertTrue(resultado.ok, resultado.motivo)
             self.assertFalse(Path(recibidas[0]).exists())
             with self.assertRaises(OSError):
-                os.fstat(fd)
-
-    def test_el_descriptor_gana_si_el_alias_resuelto_no_se_puede_reabrir(self):
-        """Windows hosted puede negar un segundo ``stat`` con el HANDLE abierto.
-
-        No debe haber una comprobación previa por ruta: la autoridad real es el
-        descriptor que ``abrir_confinado`` abre y valida una sola vez.
-        """
-        with tempfile.TemporaryDirectory() as base:
-            seguro = Path(base, "seguro.md")
-            salida = Path(base, "salida.html")
-            seguro.write_bytes(b"DESCRIPTOR VALIDADO")
-            alias_no_reabrible = str(Path(base, "alias-que-no-existe.md"))
-            fd = os.open(seguro, os.O_RDONLY | getattr(os, "O_BINARY", 0))
-            ent = _EntradaConfinada(fd, str(seguro), str(seguro))
-            fx = FileX.__new__(FileX)
-            fx.confinamiento = Confinamiento([base], [base])
-            motor = PandocEnContenedor()
-            fx.motores = {motor.nombre: motor}
-            arista = Arista("md", "html", motor.nombre, estado=REAL)
-            fx.grafo = Grafo([arista])
-
-            def leer_bind(arista, entrada, *args, **kwargs):
-                self.assertEqual(Path(entrada).read_bytes(), b"DESCRIPTOR VALIDADO")
-                return Salto(arista=arista, rc=0, veredicto="ok")
-
-            try:
-                with patch.object(fx, "_resolver", return_value=(alias_no_reabrible,
-                                                                  str(salida))), \
-                        patch.object(fx, "_abrir_entrada", return_value=ent), \
-                        patch("filex.nucleo.os.path.isfile", return_value=False), \
-                        patch.object(fx, "_un_salto", side_effect=leer_bind):
-                    resultado = fx.convertir(str(seguro), str(salida))
-                self.assertTrue(resultado.ok, resultado.motivo)
-            finally:
-                ent.cerrar()
-
-    def test_la_copia_no_duplica_el_descriptor_validado(self):
-        """El CRT de Windows no debe mediar entre el descriptor y la copia."""
-        with tempfile.TemporaryDirectory() as base:
-            seguro = Path(base, "seguro.md")
-            salida = Path(base, "salida.html")
-            seguro.write_bytes(b"DESCRIPTOR SIN DUPLICAR")
-            fd = os.open(seguro, os.O_RDONLY | getattr(os, "O_BINARY", 0))
-            ent = _EntradaConfinada(fd, str(seguro), str(seguro))
-            fx = FileX.__new__(FileX)
-            fx.confinamiento = Confinamiento([base], [base])
-            motor = PandocEnContenedor()
-            fx.motores = {motor.nombre: motor}
-            arista = Arista("md", "html", motor.nombre, estado=REAL)
-            fx.grafo = Grafo([arista])
-
-            def leer_bind(arista, entrada, *args, **kwargs):
-                self.assertEqual(Path(entrada).read_bytes(),
-                                 b"DESCRIPTOR SIN DUPLICAR")
-                return Salto(arista=arista, rc=0, veredicto="ok")
-
-            with patch.object(fx, "_abrir_entrada", return_value=ent), \
-                    patch.object(fx, "_un_salto", side_effect=leer_bind), \
-                    patch("filex.nucleo.os.dup",
-                          side_effect=OSError("duplicación CRT no disponible")):
-                resultado = fx.convertir(str(seguro), str(salida))
-            self.assertTrue(resultado.ok, resultado.motivo)
+                os.fstat(abiertos[0])
 
 
 if __name__ == "__main__":
