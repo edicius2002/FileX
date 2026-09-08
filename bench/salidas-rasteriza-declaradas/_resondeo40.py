@@ -421,8 +421,7 @@ def main() -> int:
               f"rast_dec={str(reg.get('rasteriza_declarado')):<5} "
               f"contrato={reg.get('contrato', '-'):<10} "
               f"sobra={len(reg.get('sobrantes') or {})}", flush=True)
-        with open(a.salida, "w", encoding="utf-8", newline="
-") as f:
+        with open(a.salida, "w", encoding="utf-8", newline="\n") as f:
             json.dump({"casos": [previos[k] for k in sorted(previos)]}, f,
                       ensure_ascii=False, indent=1)
 
@@ -443,8 +442,7 @@ def main() -> int:
     for c in nuevos:
         print("   !", c)
 
-    with open(a.salida, "w", encoding="utf-8", newline="
-") as f:
+    with open(a.salida, "w", encoding="utf-8", newline="\n") as f:
         json.dump({"casos": [previos[k] for k in sorted(previos)],
                    "contenedores_vivos_antes": vivos_antes,
                    "contenedores_todos_antes": todos_antes,

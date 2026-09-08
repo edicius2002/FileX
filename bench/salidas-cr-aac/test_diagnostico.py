@@ -14,7 +14,7 @@ DIR = Path(__file__).resolve().parent
 
 
 class DiagnosticoCR002(unittest.TestCase):
-    def test_reproduce_rojos_controles_y_truncado(self):
+    def test_corrige_duracion_presentada_y_conserva_controles(self):
         with tempfile.TemporaryDirectory(prefix="test-cr002-") as td:
             salida = Path(td) / "resultado.json"
             r = subprocess.run(
@@ -32,9 +32,19 @@ class DiagnosticoCR002(unittest.TestCase):
             self.assertEqual(a["fuente.mkv"]["verificador_proceso"]["n_pistas"], 3)
             self.assertEqual(a["fuente.mov"]["verificador_proceso"]["n_pistas"], 3)
             for origen in ("mkv", "mov"):
-                v = a[f"desde-{origen}.m4a"]["verificacion"]
-                self.assertEqual(v["proceso"]["veredicto"], "fallo")
-                self.assertFalse(any(h["regla"] == "A1/V1" for h in v["subproceso"]["hallazgos"]))
+                artefacto = a[f"desde-{origen}.m4a"]
+                v = artefacto["verificacion"]
+                self.assertEqual(v["proceso"]["veredicto"], "ok_parcial")
+                self.assertEqual(v["proceso"]["veredicto"], v["subproceso"]["veredicto"])
+                for modo in ("proceso", "subproceso"):
+                    self.assertFalse(any(h["regla"] == "A1/V1" for h in v[modo]["hallazgos"]))
+                audio = next(
+                    p for p in artefacto["verificador_proceso"]["pistas"]
+                    if p["tipo"] == "audio"
+                )
+                self.assertAlmostEqual(audio["duracion_s"], 1.044, places=4)
+                self.assertAlmostEqual(audio["duracion_media_s"], 1.067913832, places=9)
+                self.assertEqual(audio["priming_muestras"], 1024)
             con = a["con-edit-list.m4a"]
             sin = a["sin-edit-list.m4a"]
             self.assertTrue(any(c["tipo"] == "elst" for c in con["isobmff_independiente"]["cajas_temporales"]))

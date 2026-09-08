@@ -1082,6 +1082,70 @@ def _isobmff(fh, tam_fichero: str) -> dict:
          "n_subtitulo": 0}
     estado = {"handler": None, "timescale": 1000, "dur_mov": 0}
 
+    def finaliza_duracion(p):
+        """Distingue la línea de medios de la presentación de una pista.
+
+        ``mdhd`` cuenta todas las muestras codificadas; una ``elst`` sencilla
+        puede recortar el priming y expresa su duración en la escala de
+        ``mvhd``.  Las listas complejas no se aproximan: quedan explícitamente
+        no evaluables para que A1/V1 no compare líneas de tiempo distintas.
+        """
+        cruda = p.get("_duracion_media_unidades")
+        escala_media = p.get("_timescale_media")
+        if cruda is not None and escala_media:
+            p["duracion_media_s"] = cruda / float(escala_media)
+            p["duracion_s"] = round(p["duracion_media_s"], 4)
+            p["duracion_presentada_evaluable"] = True
+
+        if not p.get("_elst_presente"):
+            return
+
+        motivo = p.get("_elst_error")
+        entradas = p.get("_elst_entradas") or []
+        escala_mov = estado.get("timescale")
+        if not motivo and len(entradas) != 1:
+            motivo = "edit list multiple o vacia"
+        if not motivo and not escala_mov:
+            motivo = "edit list sin escala de pelicula valida"
+        if not motivo and (cruda is None or not escala_media):
+            motivo = "edit list sin duracion de medios valida"
+
+        if not motivo:
+            segmento, tiempo_medio, tasa_entera, tasa_fraccion = entradas[0]
+            if tiempo_medio < 0:
+                motivo = "edit list con edicion vacia"
+            elif segmento <= 0:
+                motivo = "edit list con segmento nulo"
+            elif (tasa_entera, tasa_fraccion) != (1, 0):
+                motivo = "edit list con tasa de reproduccion distinta de 1"
+            else:
+                presentada = segmento / float(escala_mov)
+                fin_medio = tiempo_medio + presentada * escala_media
+                # ``segment_duration`` usa la escala (normalmente más gruesa)
+                # de película.  Al volver a unidades de medios puede sobrar
+                # hasta un tick de ``mvhd`` por el redondeo del escritor.
+                margen_redondeo = max(1.0, escala_media / float(escala_mov))
+                if fin_medio > cruda + margen_redondeo:
+                    motivo = "edit list fuera de la duracion de medios"
+                else:
+                    tkhd = p.get("_duracion_tkhd_unidades")
+                    if tkhd not in (None, 0) and abs(tkhd - segmento) > 1:
+                        motivo = "edit list incompatible con tkhd"
+
+        if motivo:
+            p.pop("duracion_s", None)
+            p["duracion_presentada_evaluable"] = False
+            p["motivo_duracion_no_evaluable"] = motivo
+            return
+
+        segmento, tiempo_medio, _, _ = entradas[0]
+        p["duracion_s"] = round(segmento / float(escala_mov), 4)
+        p["duracion_presentada_evaluable"] = True
+        if (p.get("codec") or "").lower() in ("aac", "mp4a") and tiempo_medio > 0:
+            # En AAC/MP4 la escala de mdhd coincide con las muestras por segundo.
+            if p.get("sample_rate") == escala_media:
+                p["priming_muestras"] = tiempo_medio
+
     def recorre(ini, fin, prof=0):
         if prof > 6:
             return
@@ -1096,6 +1160,7 @@ def _isobmff(fh, tam_fichero: str) -> dict:
                 else:
                     ts, dur = _u32(c, 12), _u32(c, 16)
                 if ts:
+                    estado["timescale"] = ts
                     d["duracion_s"] = round(dur / ts, 4)
             elif tipo == b"trak":
                 estado["handler"] = None
@@ -1114,6 +1179,10 @@ def _isobmff(fh, tam_fichero: str) -> dict:
                     d["n_subtitulo"] += 1
                 else:
                     p["tipo"] = "otro"
+                finaliza_duracion(p)
+                for clave in tuple(p):
+                    if clave.startswith("_"):
+                        p.pop(clave, None)
                 if p.get("tipo") != "otro":
                     d["pistas"].append(p)
             elif tipo == b"tkhd":
@@ -1121,6 +1190,11 @@ def _isobmff(fh, tam_fichero: str) -> dict:
                 c = fh.read(min(df - di, 92))
                 ver = c[0]
                 o = 84 if ver == 1 else 72
+                if ver == 1 and len(c) >= 36:
+                    estado.setdefault("pista", {})["_duracion_tkhd_unidades"] = \
+                        struct.unpack_from(">Q", c, 28)[0]
+                elif ver == 0 and len(c) >= 24:
+                    estado.setdefault("pista", {})["_duracion_tkhd_unidades"] = _u32(c, 20)
                 if len(c) >= o + 8:
                     an = _u32(c, o) / 65536.0
                     al = _u32(c, o + 4) / 65536.0
@@ -1136,8 +1210,32 @@ def _isobmff(fh, tam_fichero: str) -> dict:
                 else:
                     ts, dur = _u32(c, 12), _u32(c, 16)
                 if ts:
-                    estado.setdefault("pista", {})["duracion_s"] = round(dur / ts, 4)
-                    estado["pista"]["sample_rate_mdhd"] = ts
+                    p = estado.setdefault("pista", {})
+                    p["_duracion_media_unidades"] = dur
+                    p["_timescale_media"] = ts
+                    p["sample_rate_mdhd"] = ts
+            elif tipo == b"elst":
+                p = estado.setdefault("pista", {})
+                p["_elst_presente"] = True
+                fh.seek(di)
+                disponibles = df - di
+                cab = fh.read(min(disponibles, 28))
+                if len(cab) < 8:
+                    p["_elst_error"] = "edit list truncada"
+                else:
+                    ver = cab[0]
+                    n = _u32(cab, 4)
+                    tam_entrada = 20 if ver == 1 else (12 if ver == 0 else 0)
+                    if not tam_entrada:
+                        p["_elst_error"] = "version de edit list no soportada"
+                    elif n != 1:
+                        p["_elst_error"] = "edit list multiple o vacia"
+                    elif disponibles < 8 + tam_entrada or len(cab) < 8 + tam_entrada:
+                        p["_elst_error"] = "edit list truncada"
+                    elif ver == 1:
+                        p["_elst_entradas"] = [struct.unpack_from(">Qqhh", cab, 8)]
+                    else:
+                        p["_elst_entradas"] = [struct.unpack_from(">Iihh", cab, 8)]
             elif tipo == b"hdlr":
                 # QuickTime pone un SEGUNDO `hdlr` dentro de `minf` con el
                 # manejador de DATOS ('url ', 'alis'). Quedarse con el ULTIMO
@@ -3850,6 +3948,7 @@ def punto4_pedido(sonda: dict, sonda_ent: dict | None, pedido: dict) -> list:
 
     # ---------- duracion ----------
     du, due = sonda.get("duracion_s"), sonda_ent.get("duracion_s")
+    duracion_no_evaluable = []
     if p.get("solo_audio"):
         # Al extraer audio de un video hay que comparar PISTA contra PISTA, no
         # contra el contenedor: en tipico.mp4 el contenedor dura 20,0000 s y su
@@ -3858,13 +3957,26 @@ def punto4_pedido(sonda: dict, sonda_ent: dict | None, pedido: dict) -> list:
         # entrada daba otro de 23 ms en sentido contrario.
         for s_, clave in ((sonda_ent, "e"), (sonda, "s")):
             for x in s_.get("pistas", []):
-                if x.get("tipo") == "audio" and x.get("duracion_s"):
+                if x.get("tipo") != "audio":
+                    continue
+                if x.get("duracion_presentada_evaluable") is False:
+                    duracion_no_evaluable.append(
+                        x.get("motivo_duracion_no_evaluable") or "edit list no representable")
+                    if clave == "e":
+                        due = None
+                    else:
+                        du = None
+                elif x.get("duracion_s"):
                     if clave == "e":
                         due = x["duracion_s"]
                     else:
                         du = x["duracion_s"]
-                    break
-    if du and due and not p.get("recortar") and not p.get("fps"):
+                break
+    if duracion_no_evaluable and not p.get("recortar") and not p.get("fps"):
+        h.append(_hallazgo(
+            4, "A1/V1", "informativo", "duracion presentada no evaluable",
+            "edit list simple y valida", "; ".join(duracion_no_evaluable)))
+    elif du and due and not p.get("recortar") and not p.get("fps"):
         solo_v = sonda.get("n_video", 0) > 0
         tol = TOL_DURACION_VIDEO if solo_v else _tolerancia_audio(
             sonda.get("pistas"), sonda_ent.get("pistas"))
