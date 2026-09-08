@@ -1,0 +1,1169 @@
+{
+  "esquema": 1,
+  "base_diagnosticada": "0ec60d5930444077fefffbac00d19e6dc5ecb55c",
+  "commit_verificador": "483a7e881191752023ff862b476586ad312ff815",
+  "verificador": {
+    "sha256_fichero": "9e91ae3bf76374f7bc4625c19d77d285b4c57b00d4b9b591ef4c6bf3cf345853",
+    "huella_contrato": "80791e4b492afc94",
+    "interprete_huella": "3.11"
+  },
+  "cpu_unicamente": true,
+  "disable_hardware_acceleration": true,
+  "timeout_s": 30,
+  "versiones": {
+    "ffmpeg": {
+      "primera_linea": "ffmpeg version N-121159-g0bd5a7d371-20250921 Copyright (c) 2000-2025 the FFmpeg developers",
+      "sha256_binario": "98dc41cfdba89990d114cd8ceb7b360fd54fef12dc357d86343cadffa5541388",
+      "salida_completa": "ffmpeg version N-121159-g0bd5a7d371-20250921 Copyright (c) 2000-2025 the FFmpeg developers\nbuilt with gcc 15.2.0 (crosstool-NG 1.28.0.1_403899e)\nconfiguration: --prefix=/ffbuild/prefix --pkg-config-flags=--static --pkg-config=pkg-config --cross-prefix=x86_64-w64-mingw32- --arch=x86_64 --target-os=mingw32 --enable-gpl --enable-version3 --disable-debug --enable-shared --disable-static --disable-w32threads --enable-pthreads --enable-iconv --enable-zlib --enable-libxml2 --enable-libvmaf --enable-fontconfig --enable-libharfbuzz --enable-libfreetype --enable-libfribidi --enable-vulkan --enable-libshaderc --enable-libvorbis --disable-libxcb --disable-xlib --disable-libpulse --enable-opencl --enable-gmp --enable-lzma --enable-amf --enable-libaom --enable-libaribb24 --enable-avisynth --enable-chromaprint --enable-libdav1d --enable-libdavs2 --enable-libdvdread --enable-libdvdnav --disable-libfdk-aac --enable-ffnvcodec --enable-cuda-llvm --enable-frei0r --enable-libgme --enable-libkvazaar --enable-libaribcaption --enable-libass --enable-libbluray --enable-libjxl --enable-libmp3lame --enable-libopus --enable-libplacebo --enable-librist --enable-libssh --enable-libtheora --enable-libvpx --enable-libwebp --enable-libzmq --enable-lv2 --enable-libvpl --enable-openal --enable-liboapv --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenh264 --enable-libopenjpeg --enable-libopenmpt --enable-librav1e --enable-librubberband --enable-schannel --enable-sdl2 --enable-libsnappy --enable-libsoxr --enable-libsrt --enable-libsvtav1 --enable-libtwolame --enable-libuavs3d --disable-libdrm --enable-vaapi --enable-libvidstab --enable-libvvenc --enable-whisper --enable-libx264 --enable-libx265 --enable-libxavs2 --enable-libxvid --enable-libzimg --enable-libzvbi --extra-cflags=-DLIBTWOLAME_STATIC --extra-cxxflags= --extra-libs=-lgomp --extra-ldflags=-pthread --extra-ldexeflags= --cc=x86_64-w64-mingw32-gcc --cxx=x86_64-w64-mingw32-g++ --ar=x86_64-w64-mingw32-gcc-ar --ranlib=x86_64-w64-mingw32-gcc-ranlib --nm=x86_64-w64-mingw32-gcc-nm --extra-version=20250921\nlibavutil      60. 13.100 / 60. 13.100\nlibavcodec     62. 15.100 / 62. 15.100\nlibavformat    62.  6.100 / 62.  6.100\nlibavdevice    62.  2.100 / 62.  2.100\nlibavfilter    11.  9.100 / 11.  9.100\nlibswscale      9.  3.100 /  9.  3.100\nlibswresample   6.  2.100 /  6.  2.100\n\nExiting with exit code 0"
+    },
+    "ffprobe": {
+      "primera_linea": "ffprobe version N-121159-g0bd5a7d371-20250921 Copyright (c) 2007-2025 the FFmpeg developers",
+      "sha256_binario": "9f3ef519f02ba640fb24095f220fd937e5188efa4386d46954f67e30eb51e02f",
+      "salida_completa": "ffprobe version N-121159-g0bd5a7d371-20250921 Copyright (c) 2007-2025 the FFmpeg developers\nbuilt with gcc 15.2.0 (crosstool-NG 1.28.0.1_403899e)\nconfiguration: --prefix=/ffbuild/prefix --pkg-config-flags=--static --pkg-config=pkg-config --cross-prefix=x86_64-w64-mingw32- --arch=x86_64 --target-os=mingw32 --enable-gpl --enable-version3 --disable-debug --enable-shared --disable-static --disable-w32threads --enable-pthreads --enable-iconv --enable-zlib --enable-libxml2 --enable-libvmaf --enable-fontconfig --enable-libharfbuzz --enable-libfreetype --enable-libfribidi --enable-vulkan --enable-libshaderc --enable-libvorbis --disable-libxcb --disable-xlib --disable-libpulse --enable-opencl --enable-gmp --enable-lzma --enable-amf --enable-libaom --enable-libaribb24 --enable-avisynth --enable-chromaprint --enable-libdav1d --enable-libdavs2 --enable-libdvdread --enable-libdvdnav --disable-libfdk-aac --enable-ffnvcodec --enable-cuda-llvm --enable-frei0r --enable-libgme --enable-libkvazaar --enable-libaribcaption --enable-libass --enable-libbluray --enable-libjxl --enable-libmp3lame --enable-libopus --enable-libplacebo --enable-librist --enable-libssh --enable-libtheora --enable-libvpx --enable-libwebp --enable-libzmq --enable-lv2 --enable-libvpl --enable-openal --enable-liboapv --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenh264 --enable-libopenjpeg --enable-libopenmpt --enable-librav1e --enable-librubberband --enable-schannel --enable-sdl2 --enable-libsnappy --enable-libsoxr --enable-libsrt --enable-libsvtav1 --enable-libtwolame --enable-libuavs3d --disable-libdrm --enable-vaapi --enable-libvidstab --enable-libvvenc --enable-whisper --enable-libx264 --enable-libx265 --enable-libxavs2 --enable-libxvid --enable-libzimg --enable-libzvbi --extra-cflags=-DLIBTWOLAME_STATIC --extra-cxxflags= --extra-libs=-lgomp --extra-ldflags=-pthread --extra-ldexeflags= --cc=x86_64-w64-mingw32-gcc --cxx=x86_64-w64-mingw32-g++ --ar=x86_64-w64-mingw32-gcc-ar --ranlib=x86_64-w64-mingw32-gcc-ranlib --nm=x86_64-w64-mingw32-gcc-nm --extra-version=20250921\nlibavutil      60. 13.100 / 60. 13.100\nlibavcodec     62. 15.100 / 62. 15.100\nlibavformat    62.  6.100 / 62.  6.100\nlibavdevice    62.  2.100 / 62.  2.100\nlibavfilter    11.  9.100 / 11.  9.100\nlibswscale      9.  3.100 /  9.  3.100\nlibswresample   6.  2.100 /  6.  2.100"
+    }
+  },
+  "ordenes": [
+    [
+      "ffmpeg",
+      "-hide_banner",
+      "-loglevel",
+      "error",
+      "-nostdin",
+      "-y",
+      "-threads",
+      "1",
+      "-f",
+      "lavfi",
+      "-i",
+      "sine=frequency=440:sample_rate=44100:duration=1",
+      "-c:a",
+      "pcm_s16le",
+      "<TMP>\\referencia.wav"
+    ],
+    [
+      "ffmpeg",
+      "-hide_banner",
+      "-loglevel",
+      "error",
+      "-nostdin",
+      "-y",
+      "-threads",
+      "1",
+      "-f",
+      "lavfi",
+      "-i",
+      "testsrc2=size=64x64:rate=10:duration=1",
+      "-f",
+      "lavfi",
+      "-i",
+      "sine=frequency=440:sample_rate=44100:duration=1",
+      "-f",
+      "lavfi",
+      "-i",
+      "sine=frequency=880:sample_rate=44100:duration=1",
+      "-map",
+      "0:v:0",
+      "-map",
+      "1:a:0",
+      "-map",
+      "2:a:0",
+      "-c:v",
+      "mpeg4",
+      "-q:v",
+      "8",
+      "-c:a",
+      "aac",
+      "-b:a",
+      "96k",
+      "-fflags",
+      "+bitexact",
+      "-flags:v",
+      "+bitexact",
+      "-flags:a",
+      "+bitexact",
+      "<TMP>\\fuente.mkv"
+    ],
+    [
+      "ffmpeg",
+      "-hide_banner",
+      "-loglevel",
+      "error",
+      "-nostdin",
+      "-y",
+      "-threads",
+      "1",
+      "-i",
+      "<TMP>\\fuente.mkv",
+      "-map",
+      "0",
+      "-c",
+      "copy",
+      "<TMP>\\fuente.mov"
+    ],
+    [
+      "ffmpeg",
+      "-hide_banner",
+      "-nostdin",
+      "-y",
+      "-threads",
+      "4",
+      "-i",
+      "<TMP>\\fuente.mkv",
+      "-vn",
+      "-c:a",
+      "aac",
+      "-b:a",
+      "192k",
+      "-f",
+      "ipod",
+      "<TMP>\\desde-mkv.m4a"
+    ],
+    [
+      "ffmpeg",
+      "-hide_banner",
+      "-nostdin",
+      "-y",
+      "-threads",
+      "4",
+      "-i",
+      "<TMP>\\fuente.mov",
+      "-vn",
+      "-c:a",
+      "aac",
+      "-b:a",
+      "192k",
+      "-f",
+      "ipod",
+      "<TMP>\\desde-mov.m4a"
+    ],
+    [
+      "ffmpeg",
+      "-hide_banner",
+      "-loglevel",
+      "error",
+      "-nostdin",
+      "-y",
+      "-threads",
+      "1",
+      "-i",
+      "<TMP>\\referencia.wav",
+      "-c:a",
+      "aac",
+      "-b:a",
+      "192k",
+      "-use_editlist",
+      "1",
+      "<TMP>\\con-edit-list.m4a"
+    ],
+    [
+      "ffmpeg",
+      "-hide_banner",
+      "-loglevel",
+      "error",
+      "-nostdin",
+      "-y",
+      "-threads",
+      "1",
+      "-i",
+      "<TMP>\\referencia.wav",
+      "-c:a",
+      "aac",
+      "-b:a",
+      "192k",
+      "-use_editlist",
+      "0",
+      "<TMP>\\sin-edit-list.m4a"
+    ]
+  ],
+  "artefactos_transitorios": {
+    "referencia.wav": {
+      "bytes": 88278,
+      "sha256": "f9f6f1874f408ac1bd7f159e76e5190ce89713b0d9d8bc3d9b05361f91177676",
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "pcm_s16le",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "time_base": "1/44100",
+            "duration_ts": 44100,
+            "duration": "1.000000"
+          }
+        ],
+        "format": {
+          "duration": "1.000000"
+        },
+        "primer_paquete_audio": {
+          "pts": 0,
+          "pts_time": "0.000000",
+          "duration": 4096,
+          "duration_time": "0.092880"
+        }
+      },
+      "verificador_proceso": {
+        "ruta": "<TMP>\\referencia.wav",
+        "bytes": 88278,
+        "firma": "wav",
+        "motor": "proceso",
+        "formato": "wav",
+        "categoria": "av",
+        "n_video": 0,
+        "n_audio": 1,
+        "n_subtitulo": 0,
+        "n_pistas": 1,
+        "duracion_s": 1.0,
+        "bitrate_bps": 705600,
+        "pistas": [
+          {
+            "tipo": "audio",
+            "codec": "pcm_s16le",
+            "canales": 1,
+            "sample_rate": 44100,
+            "bitrate_bps": 705600,
+            "profundidad_bits": 16
+          }
+        ]
+      }
+    },
+    "fuente.mkv": {
+      "bytes": 32145,
+      "sha256": "aa0d2e99a5d02fe4b83723d20d7fc53150d7995b21d276e1bec68d0369ad0df3",
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "mpeg4",
+            "codec_type": "video",
+            "time_base": "1/1000",
+            "start_pts": 0,
+            "start_time": "0.000000"
+          },
+          {
+            "index": 1,
+            "codec_name": "aac",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "time_base": "1/1000",
+            "start_pts": -23,
+            "start_time": "-0.023000"
+          },
+          {
+            "index": 2,
+            "codec_name": "aac",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "time_base": "1/1000",
+            "start_pts": -23,
+            "start_time": "-0.023000"
+          }
+        ],
+        "format": {
+          "start_time": "-0.023000",
+          "duration": "1.023000"
+        },
+        "primer_paquete_audio": {
+          "pts": -23,
+          "pts_time": "-0.023000"
+        }
+      },
+      "verificador_proceso": {
+        "ruta": "<TMP>\\fuente.mkv",
+        "bytes": 32145,
+        "firma": "matroska",
+        "motor": "proceso",
+        "formato": "matroska",
+        "categoria": "av",
+        "pistas": [
+          {
+            "idioma": "und",
+            "codec": "V_MPEG4/ISO/ASP",
+            "ancho": 64,
+            "alto": 64,
+            "tipo": "video"
+          },
+          {
+            "idioma": "und",
+            "codec": "A_AAC",
+            "canales": 1,
+            "sample_rate": 44100,
+            "profundidad_bits": 32,
+            "tipo": "audio"
+          },
+          {
+            "idioma": "und",
+            "codec": "A_AAC",
+            "canales": 1,
+            "sample_rate": 44100,
+            "profundidad_bits": 32,
+            "tipo": "audio"
+          }
+        ],
+        "n_video": 1,
+        "n_audio": 2,
+        "n_subtitulo": 0,
+        "duracion_s": 1.023,
+        "bitrate_bps": 251378,
+        "n_pistas": 3
+      }
+    },
+    "fuente.mov": {
+      "bytes": 33586,
+      "sha256": "18159dcfda6bcdbb2dc3ecc2d61a2a19047b10db9f833981c5b378c5f07a01da",
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "mpeg4",
+            "codec_type": "video",
+            "time_base": "1/16000",
+            "start_pts": 368,
+            "start_time": "0.023000",
+            "duration_ts": 16000,
+            "duration": "1.000000",
+            "nb_frames": "10"
+          },
+          {
+            "index": 1,
+            "codec_name": "aac",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "time_base": "1/44100",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "duration_ts": 46061,
+            "duration": "1.044467",
+            "nb_frames": "45"
+          },
+          {
+            "index": 2,
+            "codec_name": "aac",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "time_base": "1/44100",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "duration_ts": 46061,
+            "duration": "1.044467",
+            "nb_frames": "45"
+          }
+        ],
+        "format": {
+          "start_time": "0.000000",
+          "duration": "1.044467"
+        },
+        "primer_paquete_audio": {
+          "pts": 0,
+          "pts_time": "0.000000",
+          "duration": 1024,
+          "duration_time": "0.023220"
+        }
+      },
+      "verificador_proceso": {
+        "ruta": "<TMP>\\fuente.mov",
+        "bytes": 33586,
+        "firma": "mov",
+        "motor": "proceso",
+        "categoria": "av",
+        "pistas": [
+          {
+            "ancho": 64,
+            "alto": 64,
+            "duracion_s": 1.0,
+            "sample_rate_mdhd": 16000,
+            "codec": "mp4v",
+            "profundidad_bits": 0,
+            "tipo": "video"
+          },
+          {
+            "duracion_s": 1.0445,
+            "sample_rate_mdhd": 44100,
+            "codec": "mp4a",
+            "canales": 1,
+            "profundidad_bits": 16,
+            "sample_rate": 44100,
+            "tipo": "audio"
+          },
+          {
+            "duracion_s": 1.0445,
+            "sample_rate_mdhd": 44100,
+            "codec": "mp4a",
+            "canales": 1,
+            "profundidad_bits": 16,
+            "sample_rate": 44100,
+            "tipo": "audio"
+          }
+        ],
+        "n_video": 1,
+        "n_audio": 2,
+        "n_subtitulo": 0,
+        "duracion_s": 1.045,
+        "n_pistas": 3,
+        "formato": "mp4",
+        "bitrate_bps": 257117
+      },
+      "isobmff_independiente": {
+        "cajas_temporales": [
+          {
+            "camino": "moov[3]/mvhd[0]",
+            "tipo": "mvhd",
+            "version": 0,
+            "escala": 1000,
+            "unidades": 1045,
+            "segundos": 1.045
+          },
+          {
+            "camino": "moov[3]/trak[1]/edts[1]/elst[0]",
+            "tipo": "elst",
+            "version": 0,
+            "entradas": [
+              {
+                "duracion_segmento": 23,
+                "media_time": -1
+              },
+              {
+                "duracion_segmento": 1000,
+                "media_time": 0
+              }
+            ]
+          },
+          {
+            "camino": "moov[3]/trak[1]/mdia[2]/mdhd[0]",
+            "tipo": "mdhd",
+            "version": 0,
+            "escala": 16000,
+            "unidades": 16000,
+            "segundos": 1.0
+          },
+          {
+            "camino": "moov[3]/trak[2]/edts[1]/elst[0]",
+            "tipo": "elst",
+            "version": 0,
+            "entradas": [
+              {
+                "duracion_segmento": 1045,
+                "media_time": 0
+              }
+            ]
+          },
+          {
+            "camino": "moov[3]/trak[2]/mdia[2]/mdhd[0]",
+            "tipo": "mdhd",
+            "version": 0,
+            "escala": 44100,
+            "unidades": 46061,
+            "segundos": 1.044467120181406
+          },
+          {
+            "camino": "moov[3]/trak[3]/edts[1]/elst[0]",
+            "tipo": "elst",
+            "version": 0,
+            "entradas": [
+              {
+                "duracion_segmento": 1045,
+                "media_time": 0
+              }
+            ]
+          },
+          {
+            "camino": "moov[3]/trak[3]/mdia[2]/mdhd[0]",
+            "tipo": "mdhd",
+            "version": 0,
+            "escala": 44100,
+            "unidades": 46061,
+            "segundos": 1.044467120181406
+          }
+        ]
+      }
+    },
+    "desde-mkv.m4a": {
+      "bytes": 16417,
+      "sha256": "c8e727e785093e999bbff6b0528bbb16ca09bbc872d5811a80f7016d23ae5c1a",
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "aac",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "time_base": "1/44100",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "duration_ts": 46040,
+            "duration": "1.043991",
+            "nb_frames": "46"
+          }
+        ],
+        "format": {
+          "start_time": "0.000000",
+          "duration": "1.043991"
+        },
+        "primer_paquete_audio": {
+          "pts": -1024,
+          "pts_time": "-0.023220",
+          "duration": 1024,
+          "duration_time": "0.023220",
+          "side_data_list": [
+            {
+              "side_data_type": "Skip Samples",
+              "skip_samples": 1024,
+              "discard_padding": 0,
+              "skip_reason": 0,
+              "discard_reason": 0
+            }
+          ]
+        }
+      },
+      "verificador_proceso": {
+        "ruta": "<TMP>\\desde-mkv.m4a",
+        "bytes": 16417,
+        "firma": "m4a",
+        "motor": "proceso",
+        "categoria": "av",
+        "pistas": [
+          {
+            "duracion_s": 1.0679,
+            "sample_rate_mdhd": 44100,
+            "codec": "mp4a",
+            "canales": 1,
+            "profundidad_bits": 16,
+            "sample_rate": 44100,
+            "tipo": "audio"
+          }
+        ],
+        "n_video": 0,
+        "n_audio": 1,
+        "n_subtitulo": 0,
+        "duracion_s": 1.045,
+        "n_pistas": 1,
+        "formato": "mp4",
+        "bitrate_bps": 125680
+      },
+      "isobmff_independiente": {
+        "cajas_temporales": [
+          {
+            "camino": "moov[3]/mvhd[0]",
+            "tipo": "mvhd",
+            "version": 0,
+            "escala": 1000,
+            "unidades": 1045,
+            "segundos": 1.045
+          },
+          {
+            "camino": "moov[3]/trak[1]/edts[1]/elst[0]",
+            "tipo": "elst",
+            "version": 0,
+            "entradas": [
+              {
+                "duracion_segmento": 1044,
+                "media_time": 1024
+              }
+            ]
+          },
+          {
+            "camino": "moov[3]/trak[1]/mdia[2]/mdhd[0]",
+            "tipo": "mdhd",
+            "version": 0,
+            "escala": 44100,
+            "unidades": 47095,
+            "segundos": 1.0679138321995465
+          }
+        ]
+      },
+      "verificacion": {
+        "proceso": {
+          "salida": "<TMP>\\desde-mkv.m4a",
+          "entrada": "<TMP>\\fuente.mkv",
+          "motor": "proceso",
+          "categoria": "av",
+          "veredicto": "fallo",
+          "cobertura": {
+            "1_firma": true,
+            "2_flujos": true,
+            "3_propiedades": true,
+            "4_pedido": true,
+            "4_alfa": true,
+            "5_escritura": false
+          },
+          "punto1": "evaluado",
+          "hallazgos": [
+            {
+              "punto": 4,
+              "regla": "A1/V1",
+              "severidad": "fallo",
+              "mensaje": "la duracion cambia mas de la tolerancia",
+              "esperado": "1.0230 +-0.023",
+              "obtenido": 1.0679
+            }
+          ],
+          "n_procesos": 0
+        },
+        "subproceso": {
+          "salida": "<TMP>\\desde-mkv.m4a",
+          "entrada": "<TMP>\\fuente.mkv",
+          "motor": "subproceso",
+          "categoria": "av",
+          "veredicto": "ok_parcial",
+          "cobertura": {
+            "1_firma": true,
+            "2_flujos": true,
+            "3_propiedades": true,
+            "4_pedido": true,
+            "4_alfa": true,
+            "5_escritura": false
+          },
+          "punto1": "evaluado",
+          "hallazgos": [],
+          "n_procesos": 2
+        }
+      }
+    },
+    "desde-mov.m4a": {
+      "bytes": 16417,
+      "sha256": "c8e727e785093e999bbff6b0528bbb16ca09bbc872d5811a80f7016d23ae5c1a",
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "aac",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "time_base": "1/44100",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "duration_ts": 46040,
+            "duration": "1.043991",
+            "nb_frames": "46"
+          }
+        ],
+        "format": {
+          "start_time": "0.000000",
+          "duration": "1.043991"
+        },
+        "primer_paquete_audio": {
+          "pts": -1024,
+          "pts_time": "-0.023220",
+          "duration": 1024,
+          "duration_time": "0.023220",
+          "side_data_list": [
+            {
+              "side_data_type": "Skip Samples",
+              "skip_samples": 1024,
+              "discard_padding": 0,
+              "skip_reason": 0,
+              "discard_reason": 0
+            }
+          ]
+        }
+      },
+      "verificador_proceso": {
+        "ruta": "<TMP>\\desde-mov.m4a",
+        "bytes": 16417,
+        "firma": "m4a",
+        "motor": "proceso",
+        "categoria": "av",
+        "pistas": [
+          {
+            "duracion_s": 1.0679,
+            "sample_rate_mdhd": 44100,
+            "codec": "mp4a",
+            "canales": 1,
+            "profundidad_bits": 16,
+            "sample_rate": 44100,
+            "tipo": "audio"
+          }
+        ],
+        "n_video": 0,
+        "n_audio": 1,
+        "n_subtitulo": 0,
+        "duracion_s": 1.045,
+        "n_pistas": 1,
+        "formato": "mp4",
+        "bitrate_bps": 125680
+      },
+      "isobmff_independiente": {
+        "cajas_temporales": [
+          {
+            "camino": "moov[3]/mvhd[0]",
+            "tipo": "mvhd",
+            "version": 0,
+            "escala": 1000,
+            "unidades": 1045,
+            "segundos": 1.045
+          },
+          {
+            "camino": "moov[3]/trak[1]/edts[1]/elst[0]",
+            "tipo": "elst",
+            "version": 0,
+            "entradas": [
+              {
+                "duracion_segmento": 1044,
+                "media_time": 1024
+              }
+            ]
+          },
+          {
+            "camino": "moov[3]/trak[1]/mdia[2]/mdhd[0]",
+            "tipo": "mdhd",
+            "version": 0,
+            "escala": 44100,
+            "unidades": 47095,
+            "segundos": 1.0679138321995465
+          }
+        ]
+      },
+      "verificacion": {
+        "proceso": {
+          "salida": "<TMP>\\desde-mov.m4a",
+          "entrada": "<TMP>\\fuente.mov",
+          "motor": "proceso",
+          "categoria": "av",
+          "veredicto": "fallo",
+          "cobertura": {
+            "1_firma": true,
+            "2_flujos": true,
+            "3_propiedades": true,
+            "4_pedido": true,
+            "4_alfa": true,
+            "5_escritura": false
+          },
+          "punto1": "evaluado",
+          "hallazgos": [
+            {
+              "punto": 4,
+              "regla": "A1/V1",
+              "severidad": "fallo",
+              "mensaje": "la duracion cambia mas de la tolerancia",
+              "esperado": "1.0445 +-0.023",
+              "obtenido": 1.0679
+            }
+          ],
+          "n_procesos": 0
+        },
+        "subproceso": {
+          "salida": "<TMP>\\desde-mov.m4a",
+          "entrada": "<TMP>\\fuente.mov",
+          "motor": "subproceso",
+          "categoria": "av",
+          "veredicto": "ok_parcial",
+          "cobertura": {
+            "1_firma": true,
+            "2_flujos": true,
+            "3_propiedades": true,
+            "4_pedido": true,
+            "4_alfa": true,
+            "5_escritura": false
+          },
+          "punto1": "evaluado",
+          "hallazgos": [],
+          "n_procesos": 2
+        }
+      }
+    },
+    "con-edit-list.m4a": {
+      "bytes": 17652,
+      "sha256": "bf46c7797e6744d3fe7decc4fd916b36485b028e6eada6cb1d7ee7b3aee43a48",
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "aac",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "time_base": "1/44100",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "duration_ts": 44100,
+            "duration": "1.000000",
+            "nb_frames": "45"
+          }
+        ],
+        "format": {
+          "start_time": "0.000000",
+          "duration": "1.000000"
+        },
+        "primer_paquete_audio": {
+          "pts": -1024,
+          "pts_time": "-0.023220",
+          "duration": 1024,
+          "duration_time": "0.023220",
+          "side_data_list": [
+            {
+              "side_data_type": "Skip Samples",
+              "skip_samples": 1024,
+              "discard_padding": 0,
+              "skip_reason": 0,
+              "discard_reason": 0
+            }
+          ]
+        }
+      },
+      "verificador_proceso": {
+        "ruta": "<TMP>\\con-edit-list.m4a",
+        "bytes": 17652,
+        "firma": "m4a",
+        "motor": "proceso",
+        "categoria": "av",
+        "pistas": [
+          {
+            "duracion_s": 1.0232,
+            "sample_rate_mdhd": 44100,
+            "codec": "mp4a",
+            "canales": 1,
+            "profundidad_bits": 16,
+            "sample_rate": 44100,
+            "tipo": "audio"
+          }
+        ],
+        "n_video": 0,
+        "n_audio": 1,
+        "n_subtitulo": 0,
+        "duracion_s": 1.0,
+        "n_pistas": 1,
+        "formato": "mp4",
+        "bitrate_bps": 141216
+      },
+      "isobmff_independiente": {
+        "cajas_temporales": [
+          {
+            "camino": "moov[3]/mvhd[0]",
+            "tipo": "mvhd",
+            "version": 0,
+            "escala": 1000,
+            "unidades": 1000,
+            "segundos": 1.0
+          },
+          {
+            "camino": "moov[3]/trak[1]/edts[1]/elst[0]",
+            "tipo": "elst",
+            "version": 0,
+            "entradas": [
+              {
+                "duracion_segmento": 1000,
+                "media_time": 1024
+              }
+            ]
+          },
+          {
+            "camino": "moov[3]/trak[1]/mdia[2]/mdhd[0]",
+            "tipo": "mdhd",
+            "version": 0,
+            "escala": 44100,
+            "unidades": 45124,
+            "segundos": 1.023219954648526
+          }
+        ]
+      },
+      "verificacion_control_wav": {
+        "proceso": {
+          "salida": "<TMP>\\con-edit-list.m4a",
+          "entrada": "<TMP>\\referencia.wav",
+          "motor": "proceso",
+          "categoria": "av",
+          "veredicto": "ok_parcial",
+          "cobertura": {
+            "1_firma": true,
+            "2_flujos": true,
+            "3_propiedades": true,
+            "4_pedido": true,
+            "4_alfa": true,
+            "5_escritura": false
+          },
+          "punto1": "evaluado",
+          "hallazgos": [],
+          "n_procesos": 0
+        },
+        "subproceso": {
+          "salida": "<TMP>\\con-edit-list.m4a",
+          "entrada": "<TMP>\\referencia.wav",
+          "motor": "subproceso",
+          "categoria": "av",
+          "veredicto": "ok_parcial",
+          "cobertura": {
+            "1_firma": true,
+            "2_flujos": true,
+            "3_propiedades": true,
+            "4_pedido": true,
+            "4_alfa": true,
+            "5_escritura": false
+          },
+          "punto1": "evaluado",
+          "hallazgos": [],
+          "n_procesos": 2
+        }
+      }
+    },
+    "sin-edit-list.m4a": {
+      "bytes": 17616,
+      "sha256": "d3c44d127bcfc389381fe429cd8fe849c117fb1278eb6ae78231a496619e9c4f",
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "aac",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "time_base": "1/44100",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "duration_ts": 45124,
+            "duration": "1.023220",
+            "nb_frames": "45"
+          }
+        ],
+        "format": {
+          "start_time": "0.000000",
+          "duration": "1.023220"
+        },
+        "primer_paquete_audio": {
+          "pts": 0,
+          "pts_time": "0.000000",
+          "duration": 1024,
+          "duration_time": "0.023220"
+        }
+      },
+      "verificador_proceso": {
+        "ruta": "<TMP>\\sin-edit-list.m4a",
+        "bytes": 17616,
+        "firma": "m4a",
+        "motor": "proceso",
+        "categoria": "av",
+        "pistas": [
+          {
+            "duracion_s": 1.0232,
+            "sample_rate_mdhd": 44100,
+            "codec": "mp4a",
+            "canales": 1,
+            "profundidad_bits": 16,
+            "sample_rate": 44100,
+            "tipo": "audio"
+          }
+        ],
+        "n_video": 0,
+        "n_audio": 1,
+        "n_subtitulo": 0,
+        "duracion_s": 1.024,
+        "n_pistas": 1,
+        "formato": "mp4",
+        "bitrate_bps": 137625
+      },
+      "isobmff_independiente": {
+        "cajas_temporales": [
+          {
+            "camino": "moov[3]/mvhd[0]",
+            "tipo": "mvhd",
+            "version": 0,
+            "escala": 1000,
+            "unidades": 1024,
+            "segundos": 1.024
+          },
+          {
+            "camino": "moov[3]/trak[1]/mdia[1]/mdhd[0]",
+            "tipo": "mdhd",
+            "version": 0,
+            "escala": 44100,
+            "unidades": 45124,
+            "segundos": 1.023219954648526
+          }
+        ]
+      },
+      "verificacion_control_wav": {
+        "proceso": {
+          "salida": "<TMP>\\sin-edit-list.m4a",
+          "entrada": "<TMP>\\referencia.wav",
+          "motor": "proceso",
+          "categoria": "av",
+          "veredicto": "ok_parcial",
+          "cobertura": {
+            "1_firma": true,
+            "2_flujos": true,
+            "3_propiedades": true,
+            "4_pedido": true,
+            "4_alfa": true,
+            "5_escritura": false
+          },
+          "punto1": "evaluado",
+          "hallazgos": [],
+          "n_procesos": 0
+        },
+        "subproceso": {
+          "salida": "<TMP>\\sin-edit-list.m4a",
+          "entrada": "<TMP>\\referencia.wav",
+          "motor": "subproceso",
+          "categoria": "av",
+          "veredicto": "ok_parcial",
+          "cobertura": {
+            "1_firma": true,
+            "2_flujos": true,
+            "3_propiedades": true,
+            "4_pedido": true,
+            "4_alfa": true,
+            "5_escritura": false
+          },
+          "punto1": "evaluado",
+          "hallazgos": [],
+          "n_procesos": 2
+        }
+      }
+    },
+    "truncada.m4a": {
+      "bytes": 512,
+      "sha256": "d5eca43929798826ecd9f3c5e1a8677c4ee3818e767a11ca39cc31cdac6b6c42",
+      "verificador": {
+        "proceso": {
+          "salida": "<TMP>\\truncada.m4a",
+          "entrada": "<TMP>\\referencia.wav",
+          "motor": "proceso",
+          "categoria": "av",
+          "veredicto": "fallo",
+          "cobertura": {
+            "1_firma": true,
+            "2_flujos": true,
+            "3_propiedades": true,
+            "4_pedido": true,
+            "4_alfa": true,
+            "5_escritura": false
+          },
+          "punto1": "evaluado",
+          "hallazgos": [
+            {
+              "punto": 2,
+              "regla": "V3",
+              "severidad": "fallo",
+              "mensaje": "numero de pistas de audio distinto del esperado",
+              "esperado": 1,
+              "obtenido": 0
+            },
+            {
+              "punto": 3,
+              "regla": "G4",
+              "severidad": "fallo",
+              "mensaje": "duracion nula o ilegible",
+              "esperado": ">0",
+              "obtenido": null
+            },
+            {
+              "punto": 3,
+              "regla": "G4",
+              "severidad": "fallo",
+              "mensaje": "el contenedor no declara ninguna pista",
+              "esperado": null,
+              "obtenido": null
+            }
+          ],
+          "n_procesos": 0
+        },
+        "subproceso": {
+          "salida": "<TMP>\\truncada.m4a",
+          "entrada": "<TMP>\\referencia.wav",
+          "motor": "subproceso",
+          "categoria": "av",
+          "veredicto": "fallo",
+          "cobertura": {
+            "1_firma": true,
+            "2_flujos": true,
+            "3_propiedades": false,
+            "4_pedido": false,
+            "4_alfa": true,
+            "5_escritura": false
+          },
+          "punto1": "evaluado",
+          "hallazgos": [
+            {
+              "punto": 2,
+              "regla": "G2",
+              "severidad": "fallo",
+              "mensaje": "la sonda no abre el fichero",
+              "esperado": null,
+              "obtenido": "[mov,mp4,m4a,3gp,3g2,mj2 @ <ADDR>] moov atom not found\r\n<TMP>\\truncada.m4a: Invalid data found when processing input"
+            },
+            {
+              "punto": 3,
+              "regla": "G2",
+              "severidad": "fallo",
+              "mensaje": "el fichero no se abre sin errores",
+              "esperado": null,
+              "obtenido": "[mov,mp4,m4a,3gp,3g2,mj2 @ <ADDR>] moov atom not found\r\n<TMP>\\truncada.m4a: Invalid data found when processing input"
+            }
+          ],
+          "n_procesos": 2
+        }
+      },
+      "ffprobe_rc": 1
+    }
+  },
+  "resumen_mediciones_m4a": {
+    "con-edit-list.m4a": {
+      "duracion_presentada_ffprobe_s": 1.0,
+      "duracion_contenedor_ffprobe_s": 1.0,
+      "duracion_stream_mdhd_s": 1.023219954648526,
+      "priming_ffprobe_muestras": 1024,
+      "edit_list": [
+        {
+          "duracion_segmento": 1000,
+          "media_time": 1024
+        }
+      ],
+      "duracion_verificador_contenedor_s": 1.0,
+      "duracion_verificador_pista_s": 1.0232
+    },
+    "sin-edit-list.m4a": {
+      "duracion_presentada_ffprobe_s": 1.02322,
+      "duracion_contenedor_ffprobe_s": 1.02322,
+      "duracion_stream_mdhd_s": 1.023219954648526,
+      "priming_ffprobe_muestras": 0,
+      "edit_list": [],
+      "duracion_verificador_contenedor_s": 1.024,
+      "duracion_verificador_pista_s": 1.0232
+    },
+    "desde-mkv.m4a": {
+      "duracion_presentada_ffprobe_s": 1.043991,
+      "duracion_contenedor_ffprobe_s": 1.043991,
+      "duracion_stream_mdhd_s": 1.0679138321995465,
+      "priming_ffprobe_muestras": 1024,
+      "edit_list": [
+        {
+          "duracion_segmento": 1044,
+          "media_time": 1024
+        }
+      ],
+      "duracion_verificador_contenedor_s": 1.045,
+      "duracion_verificador_pista_s": 1.0679
+    },
+    "desde-mov.m4a": {
+      "duracion_presentada_ffprobe_s": 1.043991,
+      "duracion_contenedor_ffprobe_s": 1.043991,
+      "duracion_stream_mdhd_s": 1.0679138321995465,
+      "priming_ffprobe_muestras": 1024,
+      "edit_list": [
+        {
+          "duracion_segmento": 1044,
+          "media_time": 1024
+        }
+      ],
+      "duracion_verificador_contenedor_s": 1.045,
+      "duracion_verificador_pista_s": 1.0679
+    }
+  },
+  "tolerancia_frame_aac_44100_s": 0.023219954648526078,
+  "controles_documentales_historicos": {
+    "docx->txt/libreoffice": "NOMINAL_REFUTADA: cuelgue/timeout y temporales",
+    "epub->pdf/libreoffice": "NOMINAL_REFUTADA: sin lector EPUB aplicable",
+    "epub->html/calibre": "NOMINAL_REFUTADA: HTML no soportado; HTMLZ no equivale a HTML",
+    "revalidacion_en_esta_tarea": "no ejecutada; Docker prohibido por el alcance CR-002"
+  }
+}
