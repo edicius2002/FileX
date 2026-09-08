@@ -799,11 +799,22 @@ class FileX:
                 actual = copia.destino(f"entrada.{dec.camino.pasos[0].arista.origen}")
                 try:
                     fd = getattr(ent_seg, "fd", None)
-                    origen = (os.fdopen(os.dup(fd), "rb") if fd is not None
-                              else open(ent_seg.ruta, "rb"))
-                    with origen, open(actual, "xb") as destino:
-                        origen.seek(0)
-                        shutil.copyfileobj(origen, destino)
+                    with open(actual, "xb") as destino:
+                        if fd is not None:
+                            # Lee el descriptor AUTORIZADO directamente. En
+                            # Windows hosted, duplicarlo mediante el CRT puede
+                            # fallar aunque el HANDLE original siga siendo
+                            # legible; además, duplicarlo no aporta aislamiento:
+                            # este descriptor sólo pertenece a esta conversión.
+                            os.lseek(fd, 0, os.SEEK_SET)
+                            while True:
+                                bloque = os.read(fd, 1024 * 1024)
+                                if not bloque:
+                                    break
+                                destino.write(bloque)
+                        else:
+                            with open(ent_seg.ruta, "rb") as origen:
+                                shutil.copyfileobj(origen, destino)
                 except OSError:
                     conv.motivo = "ruta no accesible"
                     return conv

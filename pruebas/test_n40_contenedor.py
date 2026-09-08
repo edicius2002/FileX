@@ -133,6 +133,33 @@ class EntradaDelContenedor(unittest.TestCase):
             finally:
                 ent.cerrar()
 
+    def test_la_copia_no_duplica_el_descriptor_validado(self):
+        """El CRT de Windows no debe mediar entre el descriptor y la copia."""
+        with tempfile.TemporaryDirectory() as base:
+            seguro = Path(base, "seguro.md")
+            salida = Path(base, "salida.html")
+            seguro.write_bytes(b"DESCRIPTOR SIN DUPLICAR")
+            fd = os.open(seguro, os.O_RDONLY | getattr(os, "O_BINARY", 0))
+            ent = _EntradaConfinada(fd, str(seguro), str(seguro))
+            fx = FileX.__new__(FileX)
+            fx.confinamiento = Confinamiento([base], [base])
+            motor = PandocEnContenedor()
+            fx.motores = {motor.nombre: motor}
+            arista = Arista("md", "html", motor.nombre, estado=REAL)
+            fx.grafo = Grafo([arista])
+
+            def leer_bind(arista, entrada, *args, **kwargs):
+                self.assertEqual(Path(entrada).read_bytes(),
+                                 b"DESCRIPTOR SIN DUPLICAR")
+                return Salto(arista=arista, rc=0, veredicto="ok")
+
+            with patch.object(fx, "_abrir_entrada", return_value=ent), \
+                    patch.object(fx, "_un_salto", side_effect=leer_bind), \
+                    patch("filex.nucleo.os.dup",
+                          side_effect=OSError("duplicación CRT no disponible")):
+                resultado = fx.convertir(str(seguro), str(salida))
+            self.assertTrue(resultado.ok, resultado.motivo)
+
 
 if __name__ == "__main__":
     unittest.main()
