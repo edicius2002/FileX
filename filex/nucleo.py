@@ -681,7 +681,13 @@ class FileX:
         comportamiento previo, para las superficies/pruebas sin lista blanca.
         """
         if self.confinamiento is None:
-            return _EntradaPassthrough(os.path.abspath(entrada))
+            ruta = os.path.abspath(entrada)
+            # Sin lista blanca no existe ``abrir_confinado`` que haga la
+            # comprobación. Se conserva aquí el rechazo opaco de R4; con
+            # confinamiento, la apertura real de abajo es la única autoridad.
+            if not os.path.isfile(ruta):
+                raise Denegado()
+            return _EntradaPassthrough(ruta)
         return self.confinamiento.abrir_confinado(entrada)
 
     def validar(self, entrada: str, salida: str) -> bool:
@@ -712,20 +718,6 @@ class FileX:
         except Denegado as e:
             conv.motivo = str(e)
             return conv
-        # Esta es sólo la guarda opaca y temprana de R4. La autoridad no es la
-        # cadena canónica devuelta por ``_resolver``: es el descriptor que
-        # ``_abrir_entrada`` abre y vuelve a validar más abajo. En Windows
-        # hosted, TEMP puede aparecer con grafías larga/8.3 distintas y la
-        # canónica dejar de ser reabrible aunque el nombre pedido y el
-        # descriptor sean válidos. Consultar el nombre original evita abortar
-        # antes de llegar a esa autoridad; una carrera posterior sigue cerrada
-        # por la validación del descriptor.
-        if not os.path.isfile(entrada):
-            # R4: el MISMO mensaje que para «prohibido». Distinguirlos convierte
-            # el conversor en un oráculo de existencia del disco ajeno.
-            conv.motivo = "ruta no accesible"
-            return conv
-
         dec = self.planificar(entrada, salida)
         conv.camino = dec.camino
         conv.rechazados = dec.rechazados

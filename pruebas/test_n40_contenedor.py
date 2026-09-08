@@ -100,10 +100,10 @@ class EntradaDelContenedor(unittest.TestCase):
                 os.fstat(fd)
 
     def test_el_descriptor_gana_si_el_alias_resuelto_no_se_puede_reabrir(self):
-        """Windows hosted puede normalizar TEMP a otra grafía antes del open.
+        """Windows hosted puede negar un segundo ``stat`` con el HANDLE abierto.
 
-        La comprobación previa de existencia es sólo una guarda opaca; la
-        autoridad real es el descriptor que ``abrir_confinado`` ya validó.
+        No debe haber una comprobación previa por ruta: la autoridad real es el
+        descriptor que ``abrir_confinado`` abre y valida una sola vez.
         """
         with tempfile.TemporaryDirectory() as base:
             seguro = Path(base, "seguro.md")
@@ -127,6 +127,7 @@ class EntradaDelContenedor(unittest.TestCase):
                 with patch.object(fx, "_resolver", return_value=(alias_no_reabrible,
                                                                   str(salida))), \
                         patch.object(fx, "_abrir_entrada", return_value=ent), \
+                        patch("filex.nucleo.os.path.isfile", return_value=False), \
                         patch.object(fx, "_un_salto", side_effect=leer_bind):
                     resultado = fx.convertir(str(seguro), str(salida))
                 self.assertTrue(resultado.ok, resultado.motivo)
