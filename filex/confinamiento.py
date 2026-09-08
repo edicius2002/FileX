@@ -289,6 +289,13 @@ class Confinamiento:
         # seguro, pero mudo, que es la trampa 44.
         if raices_escritura and not self.escritura:
             raise ValueError("se declararon raíces de escritura y ninguna confina (R6+R9)")
+        # La primera comparación conserva las raíces declaradas y no toca el
+        # disco (R1). La segunda compara rutas ya resueltas y, por tanto, debe
+        # usar raíces resueltas también. En Windows ``RUNNER~1`` y
+        # ``runneradmin`` nombran el mismo directorio pero no coinciden como
+        # cadenas; mezclar ambas grafías denegaba una raíz válida en hosted.
+        self._lectura_real = self._canonicas(self.lectura)
+        self._escritura_real = self._canonicas(self.escritura)
         # N9: ver PISO_TEMPORAL_S. Por defecto False: CLI/watcher/MCP no pagan
         # nada por un adversario que no tienen.
         self.ecualizar_temporal = ecualizar_temporal
@@ -388,6 +395,21 @@ class Confinamiento:
             if padre == a:
                 continue
             out.append(a)
+        return out
+
+    @staticmethod
+    def _canonicas(raices) -> list[str]:
+        """Raíces para comparar con rutas que ya pasaron por ``realpath``."""
+        out = []
+        for raiz in raices:
+            try:
+                real = _norm(os.path.realpath(raiz))
+            except OSError:
+                continue
+            # No reintroducir por un alias una raíz de unidad podada por R6.
+            if os.path.dirname(real) == real:
+                continue
+            out.append(real)
         return out
 
     # ---------------------------------------------------------------- léxico
@@ -518,7 +540,9 @@ class Confinamiento:
             raise Denegado() from None
 
         # Y otra vez sobre la RESUELTA: es lo que cierra el enlace simbólico.
-        if not self._dentro(resuelta, raices):
+        # Aquí las raíces también deben estar resueltas (alias 8.3/long path).
+        raices_reales = self._escritura_real if escritura else self._lectura_real
+        if not self._dentro(resuelta, raices_reales):
             raise Denegado()
         return resuelta
 
@@ -594,7 +618,8 @@ class Confinamiento:
             real = _ruta_real_de_fd(fd)
             # Y otra vez sobre la RESUELTA-DE-VERDAD (la del descriptor, no una
             # cadena): es lo que cierra el enlace simbólico sin dejar ventana.
-            if not self._dentro(real, raices):
+            raices_reales = self._escritura_real if escritura else self._lectura_real
+            if not self._dentro(real, raices_reales):
                 raise Denegado()
         except Denegado:
             os.close(fd)

@@ -12,6 +12,25 @@ from filex.nucleo import FileX, Salto
 
 
 class EntradaDelContenedor(unittest.TestCase):
+    def test_raiz_con_alias_y_ruta_final_canonica_siguen_siendo_la_misma(self):
+        with tempfile.TemporaryDirectory() as base:
+            corta = Path(base, "RUNNER~1")
+            larga = Path(base, "runneradmin")
+            entrada_corta = corta / "entrada.md"
+            entrada_larga = larga / "entrada.md"
+
+            def canonizar(ruta):
+                ruta = str(ruta)
+                if os.path.normcase(ruta).startswith(os.path.normcase(str(corta))):
+                    return str(larga) + ruta[len(str(corta)):]
+                return ruta
+
+            with patch("filex.confinamiento.os.path.realpath",
+                       side_effect=canonizar):
+                conf = Confinamiento([str(corta)], [str(corta)])
+                self.assertEqual(conf.resolver(str(entrada_corta)),
+                                 str(entrada_larga))
+
     @unittest.skipUnless(os.name == "posix", "sustitución de directorio: Linux")
     def test_sustitucion_real_del_directorio_despues_de_validar(self):
         with tempfile.TemporaryDirectory() as base:
@@ -108,7 +127,6 @@ class EntradaDelContenedor(unittest.TestCase):
             with patch.object(fx, "_abrir_entrada", side_effect=abrir_validado), \
                     patch("filex.nucleo.os.dup",
                           side_effect=OSError("duplicación CRT no disponible")), \
-                    patch.dict(os.environ, {"FILEX_PRUEBA_PROPAGAR_N40": "1"}), \
                     patch.object(fx, "_un_salto", side_effect=leer_bind):
                 resultado = fx.convertir(str(seguro), str(Path(base, "salida.html")))
             self.assertTrue(resultado.ok, resultado.motivo)
